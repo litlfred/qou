@@ -1,0 +1,994 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-math-0401068v1",
+  "pages": [
+    {
+      "page": 4,
+      "rotation": 0,
+      "drawings": 7,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1"
+      ],
+      "labels": [
+        {
+          "text": "p full twists",
+          "bbox": [
+            279.84,
+            154.01,
+            340.25,
+            165.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 1",
+          "bbox": [
+            288.72,
+            170.33,
+            331.53,
+            182.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "and with initial conditions",
+          "bbox": [
+            72.0,
+            201.29,
+            206.26,
+            213.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "−l2 + l3 + 2l2m2 + lm4 + 2l2m4 −lm6 −l2m8",
+          "bbox": [
+            235.68,
+            215.81,
+            467.79,
+            232.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "AK2(l, m)",
+          "bbox": [
+            157.68,
+            220.73,
+            206.5,
+            233.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            216.6,
+            220.73,
+            225.7,
+            232.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "+2lm10 + l2m10 + 2lm12 + m14 −lm14,",
+          "bbox": [
+            235.68,
+            233.45,
+            433.32,
+            250.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "l + m6,",
+          "bbox": [
+            235.68,
+            253.84,
+            272.04,
+            267.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "AK1(l, m)",
+          "bbox": [
+            157.68,
+            255.77,
+            206.5,
+            268.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            216.6,
+            255.77,
+            225.7,
+            267.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "AK0(l, m)",
+          "bbox": [
+            157.68,
+            273.17,
+            206.5,
+            286.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            216.6,
+            273.17,
+            225.7,
+            285.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1,",
+          "bbox": [
+            235.68,
+            273.17,
+            244.8,
+            285.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "−l + lm2 + m4 + 2lm4 + l2m4 + lm6 −lm8.",
+          "bbox": [
+            235.68,
+            285.77,
+            457.8,
+            302.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "AK−1(l, m)",
+          "bbox": [
+            151.92,
+            290.69,
+            206.5,
+            303.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR6",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            216.6,
+            290.69,
+            225.7,
+            302.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Now, we give a proof of Theorem 2.2.",
+          "bbox": [
+            84.0,
+            329.57,
+            276.48,
+            341.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Proof of Theorem 2.2 From the ﬁrst equation",
+          "bbox": [
+            72.0,
+            357.41,
+            303.97,
+            369.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            352.56,
+            374.44,
+            356.79,
+            382.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "f0(1, m2, x, y) = x(1 −",
+          "bbox": [
+            227.64,
+            376.13,
+            342.53,
+            397.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "xm2)",
+          "bbox": [
+            346.44,
+            376.13,
+            368.62,
+            391.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "m2) = l,",
+          "bbox": [
+            348.84,
+            385.01,
+            392.52,
+            408.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "x",
+          "bbox": [
+            352.32,
+            391.48,
+            357.09,
+            399.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "(1 −",
+          "bbox": [
+            322.56,
+            393.17,
+            344.93,
+            405.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "we get",
+          "bbox": [
+            72.0,
+            411.29,
+            104.86,
+            423.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "x = lm2 + 1",
+          "bbox": [
+            276.6,
+            420.41,
+            339.21,
+            444.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "m2 + l .",
+          "bbox": [
+            303.12,
+            432.89,
+            343.56,
+            453.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Moreover, the second equation",
+          "bbox": [
+            72.0,
+            454.37,
+            228.37,
+            466.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            325.32,
+            471.52,
+            329.55,
+            479.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "x",
+          "bbox": [
+            371.04,
+            471.52,
+            375.81,
+            479.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "f1(1, m2, x, y) = −xm2 (1 −",
+          "bbox": [
+            176.16,
+            473.21,
+            315.41,
+            494.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "xm2)(1 −",
+          "bbox": [
+            319.2,
+            473.21,
+            363.77,
+            488.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12",
+            "CMR6",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "m2)(1 −x)",
+          "bbox": [
+            367.56,
+            473.21,
+            421.18,
+            488.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR6",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "= 1",
+          "bbox": [
+            425.76,
+            481.97,
+            443.97,
+            493.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(1 −xy)(1 −x",
+          "bbox": [
+            317.52,
+            488.44,
+            390.93,
+            502.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "y)",
+          "bbox": [
+            386.28,
+            490.13,
+            396.7,
+            505.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "gives",
+          "bbox": [
+            72.0,
+            510.41,
+            96.65,
+            522.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "y2 + 1 = y",
+          "bbox": [
+            190.32,
+            524.45,
+            248.58,
+            544.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "m2(m4 −xm4 + x2m2 + m2 + 1 −x).",
+          "bbox": [
+            238.44,
+            527.57,
+            429.84,
+            552.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(7)",
+          "bbox": [
+            72.0,
+            532.49,
+            86.98,
+            544.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "It is clear that the claim for p = 0 holds. We consider the case p > 0. The third equation",
+          "bbox": [
+            72.0,
+            555.65,
+            529.33,
+            567.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "f2(1, m2, x, y) = −y2p+1 (1 −x",
+          "bbox": [
+            216.96,
+            571.84,
+            371.85,
+            596.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "y)",
+          "bbox": [
+            367.2,
+            573.53,
+            377.62,
+            588.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(1 −xy) = 1",
+          "bbox": [
+            338.16,
+            583.85,
+            403.29,
+            604.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "implies that",
+          "bbox": [
+            72.0,
+            610.01,
+            133.18,
+            621.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "y2p+1 + 1 −y2px −xy = 0,",
+          "bbox": [
+            242.64,
+            624.53,
+            377.52,
+            641.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(8)",
+          "bbox": [
+            72.0,
+            629.57,
+            86.98,
+            641.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "which can be changed to",
+          "bbox": [
+            72.0,
+            649.13,
+            198.45,
+            661.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(y + 1)(y2p −y2p−1 + y2p−2 −· · · + 1 −xy(y2p−2 −y2p−3 + · · · + 1))",
+          "bbox": [
+            156.96,
+            663.65,
+            498.22,
+            680.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            122.04,
+            668.69,
+            127.89,
+            680.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            137.88,
+            668.69,
+            146.98,
+            680.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(y + 1){(y2 + 1 −(1 + x)y)(y2(p−1) + y2(p−2) + · · · + y2 + 1)",
+          "bbox": [
+            156.96,
+            682.13,
+            458.02,
+            699.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            137.88,
+            687.05,
+            146.98,
+            699.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            307.8,
+            729.82,
+            312.4,
+            738.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        }
+      ]
+    }
+  ]
+}

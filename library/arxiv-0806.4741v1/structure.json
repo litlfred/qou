@@ -8,7 +8,7 @@
   "pages": 26,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:18Z",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -26,7 +26,7 @@
   "title_lines": [
    "The deformation quantizations of the hyperbolic plane"
   ],
-  "abstract": "We describe the space of (all) invariant deformation quantizations on the hyperbolic plane D as solutions of the evolution of a second order hyperbolic di\ufb00erential operator. The construction is entirely explicit and relies on non-commutative harmonic analytical techniques on symplectic symmetric spaces. The present work presents a uni\ufb01ed method producing every quantization of D, and provides, in the 2-dimensional context, an exact solution to Weinstein\u2019s WKB quantization program within geometric terms. The construction reveals the existence of a metric of Lorentz signature canonically attached (or \u2018dual\u2019) to the geometry of the hyperbolic plane through the quantization process.",
+  "abstract": "We describe the space of (all) invariant deformation quantizations on the hyperbolic plane D as solutions of the evolution of a second order hyperbolic diﬀerential operator. The construction is entirely explicit and relies on non-commutative harmonic analytical techniques on symplectic symmetric spaces. The present work presents a uniﬁed method producing every quantization of D, and provides, in the 2-dimensional context, an exact solution to Weinstein’s WKB quantization program within geometric terms. The construction reveals the existence of a metric of Lorentz signature canonically attached (or ‘dual’) to the geometry of the hyperbolic plane through the quantization process.",
   "docinfo": {
    "Producer": "pdfTeX-1.40.4",
    "Creator": "LaTeX with hyperref package",
@@ -128,7 +128,7 @@
   },
   {
    "level": 2,
-   "title": "The space of star products on the Poincar\u00e9 orbit M:=SO(1,1)R2/R",
+   "title": "The space of star products on the Poincaré orbit M:=SO(1,1)R2/R",
    "page": 11,
    "source": "outline",
    "number": null,
@@ -218,7 +218,7 @@
   },
   {
    "level": 2,
-   "title": "Co-adjoint orbits of iso(1,1): the Poincar\u00e9 plane",
+   "title": "Co-adjoint orbits of iso(1,1): the Poincaré plane",
    "page": 23,
    "source": "outline",
    "number": null,
@@ -253,7 +253,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "Contraction of the Kaehler orbit into a non-metric hyperbolic cylinder. Additionally to its invariance under the symmetries, the three-point function SW (when de\ufb01ned) has been shown in [38] to satisfy the following so-called admissibility condition (36)",
+   "title": "Contraction of the Kaehler orbit into a non-metric hyperbolic cylinder. Additionally to its invariance under the symmetries, the three-point function SW (when deﬁned) has been shown in [38] to satisfy the following so-called admissibility condition (36)",
    "page": 8,
    "confidence": 0.7,
    "evidence": [
@@ -265,7 +265,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "The canonical three-point phase obtained from projecting the orbit. The proof essentially relies in the fact that the \u03a0-projected exp(tX)-orbits in O exactly coincide with straight lines in p\u22c6",
+   "title": "The canonical three-point phase obtained from projecting the orbit. The proof essentially relies in the fact that the Π-projected exp(tX)-orbits in O exactly coincide with straight lines in p⋆",
    "page": 9,
    "confidence": 0.7,
    "evidence": [
@@ -531,8 +531,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1191,
-   "n_words": 159,
+   "n_chars": 1189,
+   "n_words": 158,
    "label_start": "1",
    "label_end": "1"
   },
@@ -543,7 +543,7 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 3,
+   "n_chars": 12,
    "n_words": 1,
    "label_start": "1",
    "label_end": "1"
@@ -555,7 +555,7 @@
    "level": 2,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 8339,
+   "n_chars": 8347,
    "n_words": 1406,
    "label_start": "1",
    "label_end": "3"
@@ -567,8 +567,8 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 3413,
-   "n_words": 545,
+   "n_chars": 3446,
+   "n_words": 552,
    "label_start": "3",
    "label_end": "4"
   },
@@ -579,8 +579,8 @@
    "level": 1,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 623,
-   "n_words": 100,
+   "n_chars": 619,
+   "n_words": 99,
    "label_start": "4",
    "label_end": "4"
   },
@@ -591,8 +591,8 @@
    "level": 2,
    "page_start": 4,
    "page_end": 7,
-   "n_chars": 7303,
-   "n_words": 1356,
+   "n_chars": 7336,
+   "n_words": 1359,
    "label_start": "4",
    "label_end": "7"
   },
@@ -603,8 +603,8 @@
    "level": 2,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 1903,
-   "n_words": 379,
+   "n_chars": 1964,
+   "n_words": 385,
    "label_start": "7",
    "label_end": "8"
   },
@@ -615,8 +615,8 @@
    "level": 2,
    "page_start": 8,
    "page_end": 11,
-   "n_chars": 6754,
-   "n_words": 1227,
+   "n_chars": 6806,
+   "n_words": 1232,
    "label_start": "8",
    "label_end": "11"
   },
@@ -627,20 +627,20 @@
    "level": 1,
    "page_start": 11,
    "page_end": 11,
-   "n_chars": 3,
-   "n_words": 1,
+   "n_chars": 24,
+   "n_words": 2,
    "label_start": "11",
    "label_end": "11"
   },
   {
-   "id": "sec-008-the-space-of-star-products-on-the-poincar\u00e9-orbit",
+   "id": "sec-008-the-space-of-star-products-on-the-poincaré-orbit",
    "number": null,
-   "title": "The space of star products on the Poincar\u00e9 orbit M:=SO(1,1)R2/R",
+   "title": "The space of star products on the Poincaré orbit M:=SO(1,1)R2/R",
    "level": 2,
    "page_start": 11,
    "page_end": 13,
-   "n_chars": 4144,
-   "n_words": 793,
+   "n_chars": 4211,
+   "n_words": 807,
    "label_start": "11",
    "label_end": "13"
   },
@@ -651,8 +651,8 @@
    "level": 2,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 3093,
-   "n_words": 570,
+   "n_chars": 3160,
+   "n_words": 578,
    "label_start": "13",
    "label_end": "13"
   },
@@ -663,8 +663,8 @@
    "level": 2,
    "page_start": 13,
    "page_end": 15,
-   "n_chars": 4078,
-   "n_words": 737,
+   "n_chars": 4140,
+   "n_words": 744,
    "label_start": "13",
    "label_end": "15"
   },
@@ -675,8 +675,8 @@
    "level": 2,
    "page_start": 15,
    "page_end": 17,
-   "n_chars": 2929,
-   "n_words": 658,
+   "n_chars": 2996,
+   "n_words": 666,
    "label_start": "15",
    "label_end": "17"
   },
@@ -686,34 +686,70 @@
    "title": "Normalizations and asymptotic expansions",
    "level": 2,
    "page_start": 17,
-   "page_end": 22,
-   "n_chars": 12300,
-   "n_words": 2625,
+   "page_end": 19,
+   "n_chars": 5236,
+   "n_words": 1175,
    "label_start": "17",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-013-the-case-k24-and-zagier-type-deformations",
+   "number": null,
+   "title": "The case k=24 and Zagier type deformations",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 1980,
+   "n_words": 393,
+   "label_start": "19",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-014-unterberger-type-solutions-and-weinsteins-asympt",
+   "number": null,
+   "title": "Unterberger type solutions and Weinstein's asymptotics",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 5053,
+   "n_words": 1050,
+   "label_start": "20",
    "label_end": "22"
   },
   {
-   "id": "sec-013-complements",
+   "id": "sec-015-complements",
    "number": null,
    "title": "Complements",
    "level": 1,
    "page_start": 22,
    "page_end": 22,
-   "n_chars": 3,
+   "n_chars": 11,
    "n_words": 1,
    "label_start": "22",
    "label_end": "22"
   },
   {
-   "id": "sec-014-on-d-and-m",
+   "id": "sec-016-on-d-and-m",
    "number": null,
    "title": "On D and M",
    "level": 2,
    "page_start": 22,
-   "page_end": 26,
-   "n_chars": 10607,
-   "n_words": 1747,
+   "page_end": 23,
+   "n_chars": 1186,
+   "n_words": 232,
    "label_start": "22",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-017-co-adjoint-orbits-of-iso11-the-poincaré-plane",
+   "number": null,
+   "title": "Co-adjoint orbits of iso(1,1): the Poincaré plane",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 26,
+   "n_chars": 9379,
+   "n_words": 1511,
+   "label_start": "23",
    "label_end": "26"
   }
  ],
@@ -728,13 +764,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 16,
-  "chars_total": 66686,
+  "sections": 19,
+  "chars_total": 67095,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Source.tex",
    "tex_sections": 16,
-   "overlaid": 10,
+   "overlaid": 12,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -749,14 +786,15 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.0,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-001-motivations",
      "title": "Motivations",
      "prose_ratio": 0.954,
-     "coverage_ratio": 0.992,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -764,7 +802,7 @@
      "id": "sec-002-what-is-done-in-the-present-work",
      "title": "What is done in the present work",
      "prose_ratio": 0.845,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -772,13 +810,13 @@
      "id": "sec-003-symplectic-symmetric-spaces",
      "title": "Symplectic symmetric spaces",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-004-definitions-and-elementary-properties",
      "title": "Definitions and elementary properties",
      "prose_ratio": 0.984,
-     "coverage_ratio": 0.988,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -786,7 +824,7 @@
      "id": "sec-005-group-type-symplectic-symmetric-surfaces-curvatu",
      "title": "Group type symplectic symmetric surfaces, curvature contractions",
      "prose_ratio": 0.988,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -794,7 +832,7 @@
      "id": "sec-006-admissible-functions-on-symplectic-symmetric-sur",
      "title": "Admissible functions on symplectic symmetric surfaces",
      "prose_ratio": 0.98,
-     "coverage_ratio": 0.988,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -802,13 +840,13 @@
      "id": "sec-007-deformation-quantization",
      "title": "Deformation Quantization",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-008-the-space-of-star-products-on-the-poincar\u00e9-orbit",
-     "title": "The space of star products on the Poincar\u00e9 orbit M:=SO(1,1)R2/R",
+     "id": "sec-008-the-space-of-star-products-on-the-poincaré-orbit",
+     "title": "The space of star products on the Poincaré orbit M:=SO(1,1)R2/R",
      "prose_ratio": 0.994,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -816,7 +854,7 @@
      "id": "sec-009-sl2r--triplets-of-derivations-and-an-unexpected",
      "title": "sl2(R)- triplets of derivations and an unexpected Lorentzian structure",
      "prose_ratio": 0.955,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -824,7 +862,7 @@
      "id": "sec-010-the-de-contraction-procedure-evolution-of-the-da",
      "title": "The de-contraction procedure: evolution of the Dalembert operator",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.98,
+     "coverage_ratio": 0.96,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -832,26 +870,47 @@
      "id": "sec-011-finding-solutions-of-the-dalembertian-evolution",
      "title": "Finding solutions of the Dalembertian evolution by variable separation",
      "prose_ratio": 0.948,
-     "coverage_ratio": 0.979,
+     "coverage_ratio": 0.95,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-012-normalizations-and-asymptotic-expansions",
      "title": "Normalizations and asymptotic expansions",
-     "prose_ratio": 0.971,
-     "coverage_ratio": 0.987,
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.961,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-013-complements",
+     "id": "sec-013-the-case-k24-and-zagier-type-deformations",
+     "title": "The case k=24 and Zagier type deformations",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-unterberger-type-solutions-and-weinsteins-asympt",
+     "title": "Unterberger type solutions and Weinstein's asymptotics",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-complements",
      "title": "Complements",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-014-on-d-and-m",
+     "id": "sec-016-on-d-and-m",
      "title": "On D and M",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-co-adjoint-orbits-of-iso11-the-poincaré-plane",
+     "title": "Co-adjoint orbits of iso(1,1): the Poincaré plane",
      "result": "no matching \\section"
     }
    ]

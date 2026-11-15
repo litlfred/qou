@@ -7,10 +7,11 @@
   "bytes": 4069500,
   "pages": 19,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,18 +21,28 @@
    "stamp_date": "21 Oct 2012"
   },
   "doi": null,
-  "title": "Contact Graphs of Unit Sphere Packings Revisited \u2217",
-  "authors_raw": "K\u00e1roly Bezdek\u2020and Samuel Reid \u2021",
+  "title": "Contact Graphs of Unit Sphere Packings Revisited ∗",
+  "authors_raw": "Károly Bezdek†and Samuel Reid‡",
   "title_lines": [
-   "Contact Graphs of Unit Sphere Packings Revisited \u2217"
+   "Contact Graphs of Unit Sphere Packings Revisited ∗"
   ],
-  "abstract": "The contact graph of an arbitrary \ufb01nite packing of unit balls in Euclidean 3-space is the (simple) graph whose vertices correspond to the packing elements and whose two vertices are connected by an edge if the corresponding two packing elements touch each other. One of the most basic questions on contact graphs is to \ufb01nd the maximum number of edges that a contact graph of a packing of n unit balls can have. In this paper, improving earlier estimates, we prove that the number of touching pairs in an arbitrary packing of n unit balls in E3 is always less than 6n \u22120.926n 2 3 . Moreover, as a natural extension of the above problem, we propose to study the maximum number of touching triplets (resp., quadruples) in an arbitrary packing of n unit balls in Euclidean 3-space. In particular, we prove that the number of touching triplets (resp., quadruples) in an arbitrary packing of n unit balls in E3 is at most 25 3 n (resp., 11 4 n).",
+  "abstract": "The contact graph of an arbitrary ﬁnite packing of unit balls in Euclidean 3-space is the (simple) graph whose vertices correspond to the packing elements and whose two vertices are connected by an edge if the corresponding two packing elements touch each other. One of the most basic questions on contact graphs is to ﬁnd the maximum number of edges that a contact graph of a packing of n unit balls can have. In this paper, improving earlier estimates, we prove that the number of touching pairs in an arbitrary packing of n unit balls in E3 is always less than 6n−0.926n 2 3 . Moreover, as a natural extension of the above problem, we propose to study the maximum number of touching triplets (resp., quadruples) in an arbitrary packing of n unit balls in Euclidean 3-space. In particular, we prove that the number of touching triplets (resp., quadruples) in an arbitrary packing of n unit balls in E3 is at most 25 3 n (resp., 11 4 n).",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20180508193212Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.12",
-   "Title": ""
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20180508193212Z"
+  },
+  "title_raw": "Contact Graphs of Unit Sphere Packings Revisited ∗",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Contact Graphs of Unit Sphere Packings Revisited ∗",
+   "outline": "1 Introduction",
+   "text": "Contact Graphs of Unit Sphere Packings Revisited ∗",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -40,95 +51,553 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Proof of (i) in Theorem 1",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Upper bounds for Lattice Packings",
    "page": 6,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Proof of (ii) in Theorem 1",
    "page": 6,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Proof of (ii) in Theorem 2",
    "page": 7,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Proof of (i) in Theorem 2 using Theorem 3",
    "page": 7,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "The Polygon Lemmas on S2 for Theorem 3",
    "page": 8,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "Proof of Theorem 3",
    "page": 13,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "An upper bound on touching triplets on S2",
    "page": 13,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "An upper bound on touching pairs on S2",
    "page": 16,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 1,
    "title": "Explicit Constructions",
    "page": 16,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "The Octahedral Construction",
    "page": 16,
    "source": "outline",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Tightness of the estimates in Problem 2",
    "page": 18,
    "source": "outline",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The isosceles triangle △o1pq",
+   "page": 3,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The plane reﬂections to obtain o′",
+   "page": 4,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Voronoi cells of a packing with yellow ci + B’s and blue ci + ˆrB’s",
+   "page": 5,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Projecting a spherical cap between two unit balls",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Three types of irregular triangles, types I, II, and III from left to right. Dashed sides represent side lengths of greater than π/3 and non-dashed sides represent side lengths of exactly π/3",
+   "page": 8,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "A triangulated C4 quadrilateral with side lengths of π/3",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Cases for the Quadrilateral Lemma Cases",
+   "page": 9,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "A triangulated C5 pentagon with side lengths of π/3",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "Cases for the Pentagon Lemma Cases",
+   "page": 10,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "A triangulated C6 hexagon with side lengths of π/3",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "table",
+   "number": "3",
+   "title": "Cases for C6 of the Hexagon Lemma α",
+   "page": 11,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "A triangulated C′",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "table",
+   "number": "4",
+   "title": "Cases for C′",
+   "page": 12,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "A triangulated C′′",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "table",
+   "number": "5",
+   "title": "Cases for C′′",
+   "page": 13,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "The conﬁguration described in case (5)12",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "The Octahedral Construction for k = 4",
+   "page": 17,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "17"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "An explicit construction of 10 tetrahedra sharing a vertex",
+   "page": 18,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "18"
+  },
+  {
+   "kind": "table",
+   "number": "6",
+   "title": "Polar coordinates of the points in P Polar Coordinates v1",
+   "page": 18,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "18"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1042,
+   "n_words": 185,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -136,8 +605,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 6243,
-   "n_words": 1157
+   "n_chars": 6277,
+   "n_words": 1179,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
    "id": "sec-001-2-proof-of-i-in-theorem-1",
@@ -146,8 +617,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 6,
-   "n_chars": 9278,
-   "n_words": 1888
+   "n_chars": 9438,
+   "n_words": 2022,
+   "label_start": "3",
+   "label_end": "6"
   },
   {
    "id": "sec-002-3-upper-bounds-for-lattice-packings",
@@ -156,8 +629,10 @@
    "level": 1,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 33,
+   "n_words": 5,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
    "id": "sec-003-31-proof-of-ii-in-theorem-1",
@@ -166,8 +641,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 2963,
-   "n_words": 600
+   "n_chars": 3033,
+   "n_words": 649,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
    "id": "sec-004-32-proof-of-ii-in-theorem-2",
@@ -176,8 +653,10 @@
    "level": 2,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 1034,
-   "n_words": 188
+   "n_chars": 1060,
+   "n_words": 193,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
    "id": "sec-005-4-proof-of-i-in-theorem-2-using-theorem-3",
@@ -186,8 +665,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 1804,
-   "n_words": 370
+   "n_chars": 1852,
+   "n_words": 385,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
    "id": "sec-006-5-the-polygon-lemmas-on-s2-for-theorem-3",
@@ -196,8 +677,10 @@
    "level": 1,
    "page_start": 8,
    "page_end": 13,
-   "n_chars": 11288,
-   "n_words": 2233
+   "n_chars": 11489,
+   "n_words": 2403,
+   "label_start": "8",
+   "label_end": "13"
   },
   {
    "id": "sec-007-6-proof-of-theorem-3",
@@ -206,8 +689,10 @@
    "level": 1,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 318,
-   "n_words": 54
+   "n_chars": 337,
+   "n_words": 58,
+   "label_start": "13",
+   "label_end": "13"
   },
   {
    "id": "sec-008-61-an-upper-bound-on-touching-triplets-on-s2",
@@ -216,8 +701,10 @@
    "level": 2,
    "page_start": 13,
    "page_end": 16,
-   "n_chars": 9580,
-   "n_words": 1815
+   "n_chars": 9629,
+   "n_words": 1829,
+   "label_start": "13",
+   "label_end": "16"
   },
   {
    "id": "sec-009-62-an-upper-bound-on-touching-pairs-on-s2",
@@ -226,8 +713,10 @@
    "level": 2,
    "page_start": 16,
    "page_end": 16,
-   "n_chars": 1816,
-   "n_words": 375
+   "n_chars": 1860,
+   "n_words": 388,
+   "label_start": "16",
+   "label_end": "16"
   },
   {
    "id": "sec-010-7-explicit-constructions",
@@ -236,8 +725,10 @@
    "level": 1,
    "page_start": 16,
    "page_end": 16,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 22,
+   "n_words": 2,
+   "label_start": "16",
+   "label_end": "16"
   },
   {
    "id": "sec-011-71-the-octahedral-construction",
@@ -246,8 +737,10 @@
    "level": 2,
    "page_start": 16,
    "page_end": 18,
-   "n_chars": 2471,
-   "n_words": 510
+   "n_chars": 2503,
+   "n_words": 517,
+   "label_start": "16",
+   "label_end": "18"
   },
   {
    "id": "sec-012-72-tightness-of-the-estimates-in-problem-2",
@@ -256,16 +749,26 @@
    "level": 2,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 3036,
-   "n_words": 515
+   "n_chars": 3065,
+   "n_words": 511,
+   "label_start": "18",
+   "label_end": "19"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 13,
-  "sections": 13,
-  "chars_total": 49831,
+  "toc_inferred_entries": 0,
+  "figure_entries": 19,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 14,
+  "chars_total": 51640,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Contact_Graphs_Revisited.tex",
@@ -278,10 +781,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.565,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.57,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-001-2-proof-of-i-in-theorem-1",
@@ -291,8 +799,8 @@
     {
      "id": "sec-002-3-upper-bounds-for-lattice-packings",
      "title": "Upper bounds for Lattice Packings",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.015,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-003-31-proof-of-ii-in-theorem-1",
@@ -323,7 +831,7 @@
      "id": "sec-008-61-an-upper-bound-on-touching-triplets-on-s2",
      "title": "An upper bound on touching triplets on S2",
      "prose_ratio": 0.979,
-     "coverage_ratio": 0.979,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -331,7 +839,7 @@
      "id": "sec-009-62-an-upper-bound-on-touching-pairs-on-s2",
      "title": "An upper bound on touching pairs on S2",
      "prose_ratio": 0.987,
-     "coverage_ratio": 0.987,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -339,13 +847,13 @@
      "id": "sec-010-7-explicit-constructions",
      "title": "Explicit Constructions",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-011-71-the-octahedral-construction",
      "title": "The Octahedral Construction",
      "prose_ratio": 0.752,
-     "coverage_ratio": 0.977,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },

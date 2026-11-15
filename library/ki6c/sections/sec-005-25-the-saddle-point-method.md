@@ -1,6 +1,6 @@
 ---
 doc_id: ki6c
-doc_title: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings Tomotada Ohtsuki and Yoshiyuki Yokota Introduction"
+doc_title: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings"
 section_id: sec-005-25-the-saddle-point-method
 section_title: "The saddle point method"
 section_number: 2.5
@@ -8,7 +8,9 @@ pages: 11-12
 source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
 toc_source: inferred
+doc_brief: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings — We give presentations of the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings."
 ---
+The saddle point method
 In this section, we review a proposition obtained from the saddle point method.
 Proposition 2.6 (see [20]). Let A be a non-singular symmetric complex 3×3 matrix, and
 let ψ(z1, z2, z3) and r(z1, z2, z3) be holomorphic functions of the forms,
@@ -109,4 +111,3 @@ a constant which is independent of N.
 The 61 knot
 In this section, we show Theorem 1.1 for the 61 knot. We give a proof of the theorem in
 Section 3.1, using lemmas shown in Section 3.2–3.5.
-3.1

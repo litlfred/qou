@@ -1,0 +1,60 @@
+Cluster Expansions: Necessary... Page 150f47 33
+
+To lighten the notation, we introduced partition schemes as families of maps on uncoloured
+structures. Notice, however, that partition schemes may be defined on coloured structures and
+may be allowed to depend on the colouring of the vertex set. Therefore, one could introduce
+families of maps 7tk,n(X{n}), indexed additionally by colourings xn] € X” of [n] = {1, ..., n}.
+Same graphs on the vertex set [] with different colourings x,,, of the vertices can be mapped
+onto different forests under such partition schemes.
+
+The existence of forest partition schemes is ensured by the existence of a large class of
+tree partition schemes, e.g, the Penrose tree partition scheme (see [8, 33]; for coulouring-
+dependent schemes see also [25, 31]).
+
+Example 3.1 A particular forest partition scheme can be defined as follows: For a given multi-
+rooted graph, construct a connected graph from it by adding a ghost-vertex and connecting
+it to every root directly by an edge. Then apply the Penrose partition scheme to the resulting
+connected graph to obtain a spanning tree of this connected graph. Finally, by removing the
+ghost vertex as well as every edge incident to it, one gets a spanning forest of the initial
+multi-rooted graph. For the map given by this construction, the characterizing properties of a
+forest partition scheme follow from the corresponding properties of the Penrose tree partition
+scheme.
+
+Naturally, the choice of the Penrose tree partition scheme in the example above is somewhat
+arbitrary; any tree partition scheme which does not “delete” any edge incident to the ghost
+vertex in the above construction yields a forest partition scheme via the same procedure.
+
+Proposition 3.2 (Forest-graph equality) Let (tn,k)neN, keNy be a forest partition scheme and
+let (Rn.k)neN,keNo provide the corresponding family of multi-rooted graphs as in Defini-
+tion 3.1. Then
+
+VnnskQ tnd = D> J] feix) Il (1+ fGi,x;))
+FEFnntk {i,jJEE(F) {i, JJEE(Rn,k(F))\E(F)
+foralln € N, k € No, and (x,..., Xnak) © Xt,
+
+Proof The proof is similar to the standard proof of the tree-graph equality [8, Proposition
+5]. We have
+
+Wnntk(X1,-+, Xn+k) = > w(G, (x1, ....%n4k))
+
+GEDan+k
+
+»~ > w(G, (x1, .-.,%n+k))
+
+FEFan+k GEDnn+k:
+
+Tn,k(G)=F
+= YY YT] ferx Il (1+ fli, x;)).
+FEF nntk (i, jJEE(P) (i, JJEE (Rn (F))\E(F)
+
+a
+
+In the case of repulsive interactions, the forest-graph equality allows for a direct proof of
+the alternating sign property for the graph weights W4%. For n = 1, it reduces to the
+well-known alternating sign property [8, Eq. (2.8)]
+
+On Xn) = (-D" Gr Or, an) (3.1)
+
+of the Ursell functions.
+
+D Springer

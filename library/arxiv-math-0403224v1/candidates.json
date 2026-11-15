@@ -1,15 +1,13 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-0403224v1",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "c25ccba77da375adc5ecdc95a1f245148dc0071fc677c2c904c0d702dd4fbb84",
   "file": "0403224v1.pdf"
  },
  "provenance": {
-  "title": "DIFFERENCE EQUATION OF THE COLORED JONES POLYNOMIAL FOR TORUS KNOT KAZUHIRO HIKAMI",
-  "authors": null,
+  "title": "arXiv:math/0403224v1 [math.GT] 14 Mar 2004",
+  "authors": "KAZUHIRO HIKAMI",
   "arxiv": {
    "id": "math/0403224",
    "version": "1",
@@ -18,145 +16,76 @@
   },
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 10,
+  "candidates": 4,
   "by_kind": {
-   "theorem": 5,
-   "proposition": 5
+   "recommendation": 4
   },
-  "formalization_candidates": 10
+  "formalization_candidates": 0
  },
  "candidates": [
   {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
    "name": null,
-   "statement": "The N-colored Jones polynomial for the torus knotTs, t is given",
-   "section_file": "sections/sec-002-2-c-olored-jones-polynomial.md",
-   "section_title": "C olored Jones Polynomial",
+   "statement": "Furthermore we shall show that this di\ufb00erence operator gives the A-polynomial of the torus knot as was demonstrated in Ref.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-001.md",
+   "section_title": "Page 1",
+   "pages": "1-1",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "It should be noted that a relationship between these polynomials is known for arbitrary knot K based on a slightly di\ufb00erent expansion as the Melvin\u2013 Morton conjecture [16,19], which was proved in Ref.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-002.md",
+   "section_title": "Page 2",
    "pages": "2-2",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   },
   {
-   "kind": "proposition",
-   "source_kind": "proposition",
-   "number": "2",
-   "name": " [17]",
-   "statement": "The N-colored Jones polynomial for the torus knot",
-   "section_file": "sections/sec-003-2-s1t11n.md",
-   "section_title": "(s\u22121)(t\u22121)(1\u2212N)",
-   "pages": "2-4",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "proposition",
-   "source_kind": "proposition",
-   "number": "3",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
    "name": null,
-   "statement": "Let the function Ks, t(N) be de\ufb01ned by eq. (3). Then it satis-",
-   "section_file": "sections/sec-003-2-s1t11n.md",
-   "section_title": "(s\u22121)(t\u22121)(1\u2212N)",
-   "pages": "2-4",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "statement": "The N-colored Jones polynomial for the torus knot Ts,t ful\ufb01lls a recursion relation of the second order; JTs,t(N) = q 1 2 (s\u22121)(t\u22121)(1\u2212N) 1 \u2212q\u2212N \u0010 1 \u2212qs(1\u2212N)\u22121 \u2212qt(1\u2212N)\u22121 + q(s+t)(1\u2212N)\u0011 + 1 \u2212q2\u2212N 1 \u2212q\u2212N qst(1\u2212N)\u22121 JTs,t(N \u22122) (7) We should note that this di\ufb00erence equation can be directly derived by use of Morton\u2019s expression (5).",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-003.md",
+   "section_title": "Page 3",
+   "pages": "3-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   },
   {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "4",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
    "name": null,
-   "statement": "The N-colored Jones polynomial for the torus knot Ts, t ful\ufb01lls",
-   "section_file": "sections/sec-003-2-s1t11n.md",
-   "section_title": "(s\u22121)(t\u22121)(1\u2212N)",
-   "pages": "2-4",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "proposition",
-   "source_kind": "proposition",
-   "number": "5",
-   "name": "see e.g. Ref. 9",
-   "statement": "The function K2, 2m+1(N) satis\ufb01es the di\ufb00er-",
-   "section_file": "sections/sec-003-2-s1t11n.md",
-   "section_title": "(s\u22121)(t\u22121)(1\u2212N)",
-   "pages": "2-4",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "6",
-   "name": null,
-   "statement": "The N-colored Jones polynomial for the torus knot T2, 2m+1",
-   "section_file": "sections/sec-004-4-kazuhiro-hikami.md",
-   "section_title": "KAZUHIRO HIKAMI",
-   "pages": "4-4",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "7",
-   "name": null,
-   "statement": "AJ conjecture (10) proposed in Ref. 5 is true for the torus knots",
-   "section_file": "sections/sec-005-3-a-p-olynomial.md",
-   "section_title": "A-P olynomial",
-   "pages": "4-6",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "8",
-   "name": " [9]",
-   "statement": "Let the function H2, 2m+1(x) be de\ufb01ned by",
-   "section_file": "sections/sec-005-3-a-p-olynomial.md",
-   "section_title": "A-P olynomial",
-   "pages": "4-6",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "proposition",
-   "source_kind": "proposition",
-   "number": "9",
-   "name": null,
-   "statement": "The N-colored Jones polynomial for the torus knot T2, 2 m+1",
-   "section_file": "sections/sec-005-3-a-p-olynomial.md",
-   "section_title": "A-P olynomial",
-   "pages": "4-6",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "proposition",
-   "source_kind": "proposition",
-   "number": "10",
-   "name": null,
-   "statement": "The N-colored Jones polynomial for the torus knotT2, 2 m+1",
-   "section_file": "sections/sec-006-6-kazuhiro-hikami.md",
-   "section_title": "KAZUHIRO HIKAMI",
-   "pages": "6-6",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "statement": "It should be remarked that in Ref.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-005.md",
+   "section_title": "Page 5",
+   "pages": "5-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   }
  ]
 }

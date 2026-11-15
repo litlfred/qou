@@ -1,0 +1,68 @@
+e Asymptotic case and some other cases for B,, [Gela].
+
+Moreover, these are exactly the cases where we have a description of the Kazhdan—Lusztig cells and
+Kazhdan-Lusztig families. A conjectural combinatorial description of the Kazhdan—Lusztig cells for
+
+type B,, is given by [BGIL].
+
+Example 2.10 The group G63 has three irreducible representations. Recalling the notation of Example
+2. for 1 > 0, each irreducible representation forms a family on its own. This is true in general for the
+symmetric group G,. For | = 0, all irreducible representations belong to the same family. This is true
+in general for the group algebra (L(s) = 0 for all s € S) of every finite Coxeter group.
+
+In Rouquier gave an alternative definition for Lusztig’s families. He showed that, for finite
+Weyl groups in the equal parameter case, the families of characters coincide with the blocks of the
+Iwahori-Hecke algebra H,(W, L) over the Rouquier ring
+
+Ric(a) = Zxla,g*,(a" — VYpsil-
+
+These are the Rouquier families of H,(W, L). One advantage of this definition, as we will see in the next
+chapter, is that it can be also applied to complex reflection groups. This is important in the project
+“Spetses” [BMM1] [BMMQ].
+
+Following the determination of Rouquier families for all complex reflection groups (see Section
+for references), and thus for all finite Coxeter groups, one can check that Rouquier’s result holds for all
+finite Coxeter groups for all choices of parameters (by comparing the Rouquier families with the already
+
+known Lusztig families [Lu6]); that is, we have the following:
+
+Theorem 2.11 Let (W,S) be a finite Coxeter system and let Hq(W,L) be an Iwahori-Hecke algebra
+associated to W. The Lusztig families and the Rouquier families of Ha(W, L) coincide.
+
+2.4 Decomposition maps and canonical basic sets
+
+As we saw in Section the specialisation q ++ 1 yields a bijection between the set of irreducible
+representations of K(q)H,(W, L) and Irr(W). What happens though when q specialises to a complex
+number? The resulting Iwahori—Hecke algebra is not necessarily semisimple and the first questions that
+need to be answered are the following: What are the simple modules for the newly obtained algebra? Is
+there a good way to parametrise them? What are their dimensions? One major approach to answering
+these questions is through the existence of “canonical basic sets”.
+
+Let 6: Zx([q,q-'] > K(n),q + 7 be a ring homomorphism such that 7 is a non-zero complex
+number. Let us denote by H,(W,L) the algebra obtained as a specialisation of Hy(W,L) via 6. Set
+K := K(n). Due to the form of the Schur elements of H,(W, L) given by ), and following Theorem
+the algebra KH,,(W, L) is semisimple unless 77 is a root of unity.
+
+Example 2.12 Since G3 is a Weyl group, the algebra Q(q)H,(G3, !) is split semisimple. Now, following
+Example the algebra Q(7)H»(G3,1) is semisimple if and only if 77! ¢ {—1,w,w?}, where w :=
+exp(27i/3).
+
+If KH,,(W, L) is semisimple, then, by Tits’s deformation theorem, the specialisation 0 yields a bijection
+between Irr(K(q)H,(W, L)) and Irr(KH,,(W, L)). Thus, the irreducible representations of KH,,(W, L)
+are parametrised by Irr(W). If KH,,(W, L) is not semisimple, then we have a well-defined decomposition
+map
+
+do : Ro(K(q)Hq(W, L)) > Ro(KHn(W, L))
+such that, for all E € Irr(W), we have
+
+do([V"]) = > [VE : M][M].
+
+Meélr(KH,,(W,L))
+The matrix
+Ey
+
+Do= (IV : M)) wetm(w), Mele(KH,(W,L))
+is the decomposition matrix with respect to 6. If KH,(W, L) is semisimple, then Dg is a permutation
+matrix.
+
+21

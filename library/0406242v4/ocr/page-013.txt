@@ -1,0 +1,44 @@
+Canonical triangulations 1251
+
+to checking that this is the same as finding in P a critical point of the total hyperbolic
+volume, an approach pioneered by Rivin [22]. A few facts concerning the volume of
+ideal tetrahedra will be needed.
+
+6.1 Volume of an ideal tetrahedron
+
+The volume of a hyperbolic tetrahedron whose dihedral angles are x, y,z > 0 is
+x y z
+(4) Va,y,2=- | log (2 sin u) du — | log (2 sin u) du — | log (2 sin u) du
+0 0 0
+
+(we refer to Milnor [17] for a proof). Since Io log (2 sin u) du = 0, Equation (4) easily
+implies the following proposition.
+
+Proposition 6.1 The function V can be continuously extended by 0 to all nonnegative
+triples (x,y,z) such thatx++y+z= 7. If 4(%;,y;,%) = (X,Y,Z) then
+
+—d
+(5) exp (Given Yt, =) = sin* x, sin” ys sin z;.
+
+Proof Straightforward. We will always apply this formula exactly in the form it is
+stated, because it will usually make the right hand side simplest. im
+
+6.2. Critical volume and trivial holonomy
+
+Lemma 6.2 (Rivin, Chan—Hodgson) On the open affine polyhedron P of sequences
+(wi) satisfying (3), define the volume functional V as the sum of the hyperbolic volumes
+of tetrahedra A; with dihedral angles x;,y;,z;, as given by Figure 5. Then (w;) is a
+critical point for V in P if and only if the gluing of the tetrahedra A; defines a complete
+finite-volume hyperbolic structure on the punctured torus bundle V.,.
+
+Proof This now standard fact holds for general ideal triangulations as well (see for
+example Chan [9] or Rivin [22]). The following proof, however, is deliberately specific
+to the example at hand. This will enable us to introduce a few objects and relationships
+that will be useful in the sequel. Conversely, the main idea of the present proof (associate
+to each edge of V,, an explicit deformation in the space of angle structures) can be used
+to prove the general case of Rivin’s theorem.
+
+First we assume (w;) is critical. Let B be the torus at infinity of V, with the vertices
+of the tessellation A removed. Let o be the hyperelliptic involution of the fiber T,
+
+Geometry & Topology 10 (2006)

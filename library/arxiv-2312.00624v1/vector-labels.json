@@ -1,0 +1,3689 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-2312.00624v1",
+  "pages": [
+    {
+      "page": 7,
+      "rotation": 0,
+      "drawings": 28,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. The hyperbolic knots known as the figure-eight knot (41), on the left side, and the three-twist knot (52), on the right side."
+      ],
+      "labels": [
+        {
+          "text": "state-integral invariant, or Andersen–Kashaev invariant [1, 27, 33]. This is a holomorphic function",
+          "bbox": [
+            60.66,
+            86.63,
+            534.7,
+            97.54
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of ℏ∈C′ = C\\(−∞, 0] and u ∈C. It can be explicitly verified [34] that it obeys the q-difference",
+          "bbox": [
+            60.66,
+            96.22,
+            534.6,
+            111.09
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "equation encoded in the quantized A-polynomial of the knot, that is,",
+          "bbox": [
+            60.66,
+            113.73,
+            390.15,
+            124.64
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ˆAK( ˆP, ˆX, q)χK(u; ℏ) = 0 .",
+          "bbox": [
+            237.06,
+            136.56,
+            358.22,
+            151.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(2.19)",
+          "bbox": [
+            506.74,
+            139.31,
+            534.62,
+            150.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Recall that S-duality exchanges b with 1/b. Therefore, the S-dual images of ℏand q are",
+          "bbox": [
+            80.99,
+            162.88,
+            503.87,
+            176.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSS10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ℏD = 4π2",
+          "bbox": [
+            194.44,
+            188.46,
+            240.05,
+            210.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "= 2π",
+          "bbox": [
+            244.78,
+            190.12,
+            269.16,
+            208.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "qD = eiℏD = e",
+          "bbox": [
+            288.33,
+            193.55,
+            353.48,
+            210.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI6",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2πi",
+          "bbox": [
+            354.67,
+            193.59,
+            364.99,
+            199.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "τ = ˜q−1,",
+          "bbox": [
+            357.74,
+            195.19,
+            400.84,
+            208.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI6",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "τ ,",
+          "bbox": [
+            260.52,
+            197.5,
+            275.6,
+            215.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(2.20)",
+          "bbox": [
+            506.74,
+            197.5,
+            534.62,
+            208.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ℏ",
+          "bbox": [
+            229.21,
+            202.6,
+            235.1,
+            213.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "where we have introduced ˜q = e−2πi",
+          "bbox": [
+            60.66,
+            225.91,
+            231.34,
+            240.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI6",
+            "CMR10",
+            "CMR6",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "τ , while the variable u is invariant under the action of S-duality",
+          "bbox": [
+            224.09,
+            228.44,
+            534.63,
+            240.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI6",
+            "CMR10"
+          ],
+          "sizes": [
+            5.98,
+            10.91
+          ]
+        },
+        {
+          "text": "and X transforms into",
+          "bbox": [
+            60.66,
+            243.16,
+            168.32,
+            254.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2πu",
+          "bbox": [
+            288.94,
+            253.88,
+            301.56,
+            259.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "2π",
+          "bbox": [
+            328.89,
+            253.88,
+            336.89,
+            259.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "XD = e",
+          "bbox": [
+            251.63,
+            257.79,
+            287.75,
+            270.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "= X",
+          "bbox": [
+            306.28,
+            257.79,
+            326.84,
+            268.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ℏ.",
+          "bbox": [
+            331.1,
+            257.79,
+            343.64,
+            268.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "MSBM7"
+          ],
+          "sizes": [
+            5.98,
+            10.91
+          ]
+        },
+        {
+          "text": "(2.21)",
+          "bbox": [
+            506.74,
+            257.79,
+            534.62,
+            268.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "b",
+          "bbox": [
+            293.61,
+            260.26,
+            296.89,
+            266.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSS8"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "Remarkably, the wave function χK(u; ℏ) is also invariant under this transformation, that is,",
+          "bbox": [
+            60.66,
+            276.69,
+            496.97,
+            290.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "χK(u; ℏ) = χK(u; ℏD) ,",
+          "bbox": [
+            244.82,
+            302.27,
+            350.46,
+            316.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(2.22)",
+          "bbox": [
+            506.74,
+            304.66,
+            534.62,
+            315.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "and, in particular, it satisfies the S-dual quantum A-polynomial equation",
+          "bbox": [
+            60.66,
+            330.25,
+            411.27,
+            341.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ˆAK( ˆPD, ˆXD, qD)χK(u; ℏ) = 0 ,",
+          "bbox": [
+            226.92,
+            353.08,
+            368.36,
+            367.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(2.23)",
+          "bbox": [
+            506.74,
+            355.83,
+            534.62,
+            366.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "where ˆPD is the quantum operator acting on u-states by shifting u into u + i/b, or, equivalently,",
+          "bbox": [
+            60.66,
+            378.66,
+            534.64,
+            394.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSS10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "transforming XD into qDXD, and ˆXD acts by multiplication.",
+          "bbox": [
+            60.66,
+            392.21,
+            352.36,
+            407.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "É",
+          "bbox": [
+            177.12,
+            454.8,
+            239.7,
+            590.06
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            ".SFUI-Regular_wdth_opsz5"
+          ],
+          "sizes": [
+            113.37
+          ]
+        },
+        {
+          "text": "Figure 1. The hyperbolic knots known as the figure-eight knot (41), on the left side, and the three-twist",
+          "bbox": [
+            60.66,
+            584.6,
+            534.63,
+            595.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "knot (52), on the right side.",
+          "bbox": [
+            60.66,
+            596.56,
+            182.21,
+            607.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Throughout this work, we look at two concrete examples of hyperbolic knots, which allow us",
+          "bbox": [
+            80.98,
+            622.41,
+            534.65,
+            633.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "to perform explicit and detailed calculations to provide support to and give insight into our claims.",
+          "bbox": [
+            60.66,
+            635.96,
+            534.7,
+            646.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "These are the figure-eight and the three-twist knots.",
+          "bbox": [
+            60.66,
+            649.51,
+            310.34,
+            660.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Example 2.1. The figure-eight knot, also denoted by 41, is shown on the left side of Fig. 1. Its",
+          "bbox": [
+            60.66,
+            673.47,
+            534.63,
+            685.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "classical A-polynomial can be written in symmetrized form as",
+          "bbox": [
+            60.66,
+            687.02,
+            356.16,
+            697.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "A41(P, X) = P −1 + P −(X2 + X−2 −X −X−1 −2) .",
+          "bbox": [
+            169.2,
+            707.96,
+            426.08,
+            725.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX8",
+            "CMMI10",
+            "CMR10",
+            "CMR6",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(2.24)",
+          "bbox": [
+            506.74,
+            712.6,
+            534.62,
+            723.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "– 6 –",
+          "bbox": [
+            285.82,
+            771.54,
+            309.46,
+            782.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 32,
+      "rotation": 0,
+      "drawings": 304,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2. The state integral χ41(u; ℏ) in the closed form of Eq. (5.18) as a function of x ∈R, at the bottom, and its components χ(±)"
+      ],
+      "labels": [
+        {
+          "text": "for 0 ≤k ≤PQ −1. Therefore, substituting Eq. (5.16) into Eq. (5.1), we obtain that the state-",
+          "bbox": [
+            60.66,
+            86.49,
+            534.67,
+            97.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "integral invariant of the figure-eight knot at rational values is given exactly by",
+          "bbox": [
+            60.66,
+            100.18,
+            434.92,
+            111.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "x2Q",
+          "bbox": [
+            202.19,
+            121.41,
+            216.3,
+            129.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "PQ−1",
+          "bbox": [
+            283.55,
+            123.75,
+            307.57,
+            131.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "2 −Q",
+          "bbox": [
+            252.68,
+            123.92,
+            272.85,
+            137.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR6",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "2πiP +x(2Q−1",
+          "bbox": [
+            201.27,
+            124.36,
+            256.34,
+            137.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR10",
+            "CMR6",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2P )",
+          "bbox": [
+            265.32,
+            124.5,
+            280.04,
+            137.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR10",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98,
+            10.91
+          ]
+        },
+        {
+          "text": "χ41(u; ℏ) = e",
+          "bbox": [
+            137.66,
+            128.4,
+            200.07,
+            148.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX8",
+            "CMMI10",
+            "CMR10",
+            "CMR6",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "eFk(y+(x)) −eFk(y−(x))\u0011",
+          "bbox": [
+            343.95,
+            131.13,
+            450.95,
+            146.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI6",
+            "CMMI8",
+            "CMR10",
+            "CMR6",
+            "CMR8",
+            "CMSY10",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "\u0010",
+          "bbox": [
+            337.44,
+            131.51,
+            343.95,
+            142.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "e−2xk",
+          "bbox": [
+            309.39,
+            131.87,
+            333.8,
+            146.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR10",
+            "CMR6",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            287.68,
+            133.26,
+            303.44,
+            144.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            454.59,
+            135.78,
+            457.62,
+            146.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(5.18)",
+          "bbox": [
+            506.74,
+            135.78,
+            534.62,
+            146.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "P",
+          "bbox": [
+            325.16,
+            138.25,
+            329.82,
+            144.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            223.9,
+            143.3,
+            234.81,
+            154.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "∆(exQ)",
+          "bbox": [
+            234.81,
+            144.13,
+            269.16,
+            155.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "ibQ",
+          "bbox": [
+            206.61,
+            144.99,
+            223.9,
+            155.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSS10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "k=0",
+          "bbox": [
+            287.84,
+            151.43,
+            303.28,
+            159.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "We conclude by noting that Φb(z) for b2 ∈Q>0 can be expressed explicitly in terms of more",
+          "bbox": [
+            60.66,
+            166.63,
+            534.62,
+            183.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSS10",
+            "CMSS8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "elementary functions [24]. The relevant formula is written in Eq. (C.11) and can be used to simplify",
+          "bbox": [
+            60.66,
+            184.28,
+            534.68,
+            195.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the computational implementation of Eq. (5.18) for arbitrary P, Q ∈Z>0 coprime.",
+          "bbox": [
+            60.66,
+            195.44,
+            453.37,
+            210.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            66.47,
+            229.37,
+            70.59,
+            237.63
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            314.69,
+            229.37,
+            318.8,
+            237.63
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "-1",
+          "bbox": [
+            62.15,
+            260.67,
+            70.58,
+            269.03
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "-1",
+          "bbox": [
+            310.36,
+            260.67,
+            318.8,
+            269.03
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "-2",
+          "bbox": [
+            62.15,
+            291.97,
+            70.58,
+            300.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "-2",
+          "bbox": [
+            310.36,
+            291.97,
+            318.8,
+            300.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "-3",
+          "bbox": [
+            62.15,
+            323.28,
+            70.58,
+            331.64
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "-3",
+          "bbox": [
+            310.36,
+            323.28,
+            318.8,
+            331.64
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "-10",
+          "bbox": [
+            66.16,
+            351.18,
+            78.71,
+            359.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "-5",
+          "bbox": [
+            120.14,
+            351.18,
+            128.57,
+            359.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            174.22,
+            351.18,
+            178.33,
+            359.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            226.14,
+            351.18,
+            230.25,
+            359.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            276.0,
+            351.18,
+            284.23,
+            359.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "-10",
+          "bbox": [
+            314.38,
+            351.18,
+            326.92,
+            359.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "-5",
+          "bbox": [
+            368.35,
+            351.18,
+            376.78,
+            359.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            422.43,
+            351.18,
+            426.55,
+            359.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            474.35,
+            351.18,
+            478.47,
+            359.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            524.21,
+            351.18,
+            532.44,
+            359.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "0.4",
+          "bbox": [
+            186.26,
+            360.65,
+            196.54,
+            368.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "0.3",
+          "bbox": [
+            186.26,
+            388.92,
+            196.54,
+            397.18
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "0.2",
+          "bbox": [
+            186.26,
+            417.18,
+            196.54,
+            425.44
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "0.1",
+          "bbox": [
+            186.26,
+            445.45,
+            196.54,
+            453.71
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "0.0",
+          "bbox": [
+            186.26,
+            473.72,
+            196.54,
+            481.98
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "-10",
+          "bbox": [
+            192.12,
+            493.84,
+            204.67,
+            502.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "-5",
+          "bbox": [
+            245.63,
+            493.84,
+            254.07,
+            502.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            299.25,
+            493.84,
+            303.37,
+            502.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            350.71,
+            493.84,
+            354.82,
+            502.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            400.1,
+            493.84,
+            408.33,
+            502.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "Figure 2. The state integral χ41(u; ℏ) in the closed form of Eq. (5.18) as a function of x ∈R, at the bottom,",
+          "bbox": [
+            60.66,
+            514.83,
+            534.62,
+            528.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMBX7",
+            "CMMI10",
+            "CMR10",
+            "CMR5",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and its components χ(±)",
+          "bbox": [
+            60.66,
+            527.97,
+            168.35,
+            540.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "41 (u; ℏ) in Eq. (5.19), in the top left and top right, respectively, for P = Q = 1. The",
+          "bbox": [
+            155.9,
+            528.72,
+            534.62,
+            544.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX7",
+            "CMMI10",
+            "CMR10",
+            "CMR5",
+            "MSBM10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "real and imaginary parts are displayed in blue and red.",
+          "bbox": [
+            60.66,
+            542.85,
+            301.18,
+            552.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We will now comment on the most notable features of the exact expression for the non-perturbative",
+          "bbox": [
+            80.98,
+            566.65,
+            540.8,
+            577.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "wave function in Eq. (5.18). It will be useful to introduce",
+          "bbox": [
+            60.66,
+            580.19,
+            335.2,
+            591.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "x2Q",
+          "bbox": [
+            241.01,
+            602.04,
+            255.11,
+            610.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "PQ−1",
+          "bbox": [
+            322.37,
+            604.38,
+            346.39,
+            612.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "2 −Q",
+          "bbox": [
+            291.5,
+            604.55,
+            311.67,
+            617.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR6",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "2πiP +x(2Q−1",
+          "bbox": [
+            240.09,
+            604.98,
+            295.15,
+            617.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR10",
+            "CMR6",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2P )",
+          "bbox": [
+            304.13,
+            605.12,
+            318.86,
+            618.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR10",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98,
+            10.91
+          ]
+        },
+        {
+          "text": "41 (u; ℏ) = e",
+          "bbox": [
+            179.16,
+            609.02,
+            238.89,
+            631.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX8",
+            "CMMI10",
+            "CMR10",
+            "CMR6",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "P eFk(y±(x)) ,",
+          "bbox": [
+            363.98,
+            611.9,
+            422.94,
+            627.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI6",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "e−2xk",
+          "bbox": [
+            348.21,
+            612.49,
+            372.62,
+            627.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR10",
+            "CMR6",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "χ(±)",
+          "bbox": [
+            172.33,
+            612.84,
+            192.33,
+            627.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            326.5,
+            613.88,
+            342.25,
+            624.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(5.19)",
+          "bbox": [
+            506.74,
+            616.4,
+            534.62,
+            627.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            262.71,
+            623.92,
+            273.62,
+            634.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "∆(exQ)",
+          "bbox": [
+            273.62,
+            624.76,
+            307.97,
+            636.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "ibQ",
+          "bbox": [
+            245.42,
+            625.61,
+            262.72,
+            636.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSS10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "k=0",
+          "bbox": [
+            326.66,
+            632.05,
+            342.1,
+            640.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "where again x ∈R, so that we write",
+          "bbox": [
+            60.66,
+            647.45,
+            232.78,
+            660.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "41 (u; ℏ) −χ(−)",
+          "bbox": [
+            277.59,
+            671.53,
+            350.06,
+            690.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX8",
+            "CMMI10",
+            "CMR10",
+            "CMR6",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "χ41(u; ℏ) = χ(+)",
+          "bbox": [
+            214.39,
+            671.64,
+            290.76,
+            687.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX8",
+            "CMMI10",
+            "CMR10",
+            "CMR6",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "41 (u; ℏ) .",
+          "bbox": [
+            336.89,
+            672.71,
+            380.89,
+            690.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX8",
+            "CMMI10",
+            "CMR10",
+            "CMR6",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(5.20)",
+          "bbox": [
+            506.74,
+            675.09,
+            534.62,
+            686.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Observe that the S-duality, which acts in the rational case via P ↔Q and x →xQ/P, leaves",
+          "bbox": [
+            60.66,
+            698.91,
+            534.6,
+            709.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "∆(exQ) unchanged while transforming y±,k(x) into y±,k(x)Q/P, and therefore the closed formula for",
+          "bbox": [
+            60.66,
+            710.94,
+            534.64,
+            724.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "– 31 –",
+          "bbox": [
+            283.09,
+            771.54,
+            312.19,
+            782.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 33,
+      "rotation": 0,
+      "drawings": 203,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3. The real part of the state integral χ41(u; ℏ) in the closed form of Eq. (5.18) as a function of x ∈R for rational values of b2. We show b2 = 1/3 (in red), 1/2 (in green), 2/3 (in blue), and 1 (in black), on the left, and b2 = 3 (in red), 2 (in green), 3/2 (in blue), and 1 (in black), on the right. The imaginary part is identically zero and not displayed explicitly in the plot."
+      ],
+      "labels": [
+        {
+          "text": "the state integral of the 41-knot in Eq. (5.18) is S-invariant, as expected. Similarly, we also find that",
+          "bbox": [
+            60.66,
+            86.63,
+            534.66,
+            98.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "its components in Eq. (5.19) are themselves invariant under S-duality. Moreover, we have that",
+          "bbox": [
+            60.66,
+            100.18,
+            513.09,
+            111.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "41 (u; ℏ)) = ℑ(χ(−)",
+          "bbox": [
+            244.55,
+            123.12,
+            334.6,
+            141.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX8",
+            "CMMI10",
+            "CMR10",
+            "CMR6",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "ℑ(χ(+)",
+          "bbox": [
+            225.61,
+            123.22,
+            257.72,
+            137.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "41 (u; ℏ)) ,",
+          "bbox": [
+            321.43,
+            124.29,
+            369.67,
+            141.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX8",
+            "CMMI10",
+            "CMR10",
+            "CMR6",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(5.21)",
+          "bbox": [
+            506.74,
+            126.67,
+            534.62,
+            137.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "while both ℜ(χ(±)",
+          "bbox": [
+            60.66,
+            151.12,
+            146.99,
+            165.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "41 (u; ℏ)) and ℑ(χ(±)",
+          "bbox": [
+            133.82,
+            151.12,
+            234.14,
+            169.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX8",
+            "CMMI10",
+            "CMR10",
+            "CMR6",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "41 (u; ℏ)) are even functions of x ∈R with singularities located at",
+          "bbox": [
+            220.96,
+            152.29,
+            534.63,
+            169.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX8",
+            "CMMI10",
+            "CMR10",
+            "CMR6",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "the points",
+          "bbox": [
+            60.66,
+            168.23,
+            108.61,
+            179.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            321.19,
+            173.98,
+            330.27,
+            184.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            336.93,
+            179.71,
+            345.57,
+            190.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "3 ±",
+          "bbox": [
+            302.4,
+            183.0,
+            318.77,
+            194.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "x = 1",
+          "bbox": [
+            243.05,
+            183.14,
+            272.06,
+            201.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            330.28,
+            183.14,
+            335.73,
+            194.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Q log",
+          "bbox": [
+            265.02,
+            190.52,
+            290.6,
+            208.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            349.2,
+            190.52,
+            352.23,
+            201.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(5.22)",
+          "bbox": [
+            506.74,
+            190.52,
+            534.62,
+            201.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            316.34,
+            198.01,
+            321.79,
+            208.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "which correspond to the zeros of ∆(exQ) in Eq. (5.13) and, as such, do not depend on the value of P.",
+          "bbox": [
+            60.66,
+            219.48,
+            534.62,
+            232.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "The discontinuities of ℜ(χ(±)",
+          "bbox": [
+            60.66,
+            233.03,
+            200.73,
+            247.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "41 (u; ℏ)) cancel with each other to give a smooth difference function in",
+          "bbox": [
+            187.56,
+            234.21,
+            534.63,
+            251.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX8",
+            "CMMI10",
+            "CMR10",
+            "CMR6",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Eq. (5.20), which is itself symmetric under x →−x. Remarkably, we find that the total state integral",
+          "bbox": [
+            60.66,
+            250.0,
+            534.65,
+            261.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "χ41(u; ℏ) is a real-valued smooth square-integrable function of x ∈R, while both functions χ(±)",
+          "bbox": [
+            60.66,
+            262.03,
+            508.64,
+            278.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX8",
+            "CMMI10",
+            "CMR10",
+            "CMR6",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "41 (u; ℏ)",
+          "bbox": [
+            495.47,
+            263.21,
+            534.62,
+            280.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX8",
+            "CMMI10",
+            "CMR10",
+            "CMR6",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "are neither real-valued, smooth, or square-integrable when considered separately. To illustrate these",
+          "bbox": [
+            60.66,
+            279.14,
+            534.64,
+            290.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "properties with an example, we show in Fig. 2 the functions in Eqs. (5.18), (5.19) for the benchmark",
+          "bbox": [
+            60.66,
+            292.69,
+            534.68,
+            303.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "choice P = Q = 1. The same features and similar functional profiles are verified for various choices",
+          "bbox": [
+            60.66,
+            306.24,
+            534.65,
+            317.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of P, Q ∈Z>0 coprime. We show in Fig. 3 the full non-perturbative wave function for a sample of",
+          "bbox": [
+            60.66,
+            317.4,
+            534.68,
+            332.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "small values of b2 ∈Q>0. We observe that χ41(u; ℏ) has a Gaussian-type profile centered at x = 0",
+          "bbox": [
+            60.66,
+            329.24,
+            534.62,
+            345.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX8",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR6",
+            "CMR8",
+            "CMSS10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "0.4",
+          "bbox": [
+            62.15,
+            356.62,
+            72.43,
+            364.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "0.4",
+          "bbox": [
+            310.36,
+            356.62,
+            320.65,
+            364.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "0.3",
+          "bbox": [
+            62.15,
+            384.89,
+            72.43,
+            393.15
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "0.3",
+          "bbox": [
+            310.36,
+            384.89,
+            320.65,
+            393.15
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "0.2",
+          "bbox": [
+            62.15,
+            413.16,
+            72.43,
+            421.42
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "0.2",
+          "bbox": [
+            310.36,
+            413.16,
+            320.65,
+            421.42
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "0.1",
+          "bbox": [
+            62.15,
+            441.42,
+            72.43,
+            449.68
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "0.1",
+          "bbox": [
+            310.36,
+            441.42,
+            320.65,
+            449.68
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "0.0",
+          "bbox": [
+            62.15,
+            469.69,
+            72.43,
+            477.95
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "0.0",
+          "bbox": [
+            310.36,
+            469.69,
+            320.65,
+            477.95
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "-10",
+          "bbox": [
+            68.01,
+            489.81,
+            80.56,
+            498.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "-5",
+          "bbox": [
+            121.53,
+            489.81,
+            129.96,
+            498.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            175.14,
+            489.81,
+            179.26,
+            498.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            226.6,
+            489.81,
+            230.71,
+            498.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            276.0,
+            489.81,
+            284.23,
+            498.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "-10",
+          "bbox": [
+            316.23,
+            489.81,
+            328.78,
+            498.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "-5",
+          "bbox": [
+            369.74,
+            489.81,
+            378.17,
+            498.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            423.36,
+            489.81,
+            427.47,
+            498.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            474.81,
+            489.81,
+            478.93,
+            498.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            524.21,
+            489.81,
+            532.44,
+            498.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.4
+          ]
+        },
+        {
+          "text": "Figure 3. The real part of the state integral χ41(u; ℏ) in the closed form of Eq. (5.18) as a function of x ∈R",
+          "bbox": [
+            60.66,
+            510.8,
+            534.61,
+            524.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMBX7",
+            "CMMI10",
+            "CMR10",
+            "CMR5",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "for rational values of b2. We show b2 = 1/3 (in red), 1/2 (in green), 2/3 (in blue), and 1 (in black), on the",
+          "bbox": [
+            60.66,
+            521.32,
+            534.66,
+            534.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSS10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "left, and b2 = 3 (in red), 2 (in green), 3/2 (in blue), and 1 (in black), on the right. The imaginary part is",
+          "bbox": [
+            60.66,
+            533.27,
+            534.69,
+            546.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSS10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "identically zero and not displayed explicitly in the plot.",
+          "bbox": [
+            60.66,
+            548.84,
+            302.39,
+            558.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "with lateral oscillations around the x-axis, which are quickly dampened. The peak at the origin can",
+          "bbox": [
+            60.66,
+            572.86,
+            534.65,
+            583.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "be evaluated directly from Eqs. (5.12), (5.17), and (5.18) for arbitrary P, Q ∈Z>0 coprime, yielding",
+          "bbox": [
+            60.66,
+            584.02,
+            534.62,
+            598.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "a result which is left unchanged by P ↔Q, as expected from the S-invariance of the state integral",
+          "bbox": [
+            60.66,
+            599.82,
+            534.63,
+            610.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "and evident in Fig. 3. In particular, the highest peak corresponds to the choice P = Q = 1 and",
+          "bbox": [
+            60.66,
+            613.51,
+            534.62,
+            624.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "amounts to",
+          "bbox": [
+            60.66,
+            627.06,
+            114.37,
+            637.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0012 V",
+          "bbox": [
+            233.78,
+            639.53,
+            251.0,
+            658.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            256.27,
+            647.38,
+            264.3,
+            658.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            199.49,
+            647.54,
+            204.95,
+            658.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0010",
+          "bbox": [
+            323.99,
+            650.65,
+            330.51,
+            661.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0010",
+          "bbox": [
+            346.91,
+            650.65,
+            353.42,
+            661.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0011\u0011",
+          "bbox": [
+            367.82,
+            650.65,
+            380.85,
+            661.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "πi",
+          "bbox": [
+            359.47,
+            651.01,
+            366.13,
+            656.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            194.95,
+            654.45,
+            204.04,
+            665.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "V = 2 ℑ",
+          "bbox": [
+            283.7,
+            654.77,
+            322.17,
+            665.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "χ41(0; 2π) =",
+          "bbox": [
+            132.0,
+            654.92,
+            190.73,
+            667.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX8",
+            "CMMI10",
+            "CMR10",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "3 sinh",
+          "bbox": [
+            204.04,
+            654.92,
+            231.97,
+            674.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            267.93,
+            654.92,
+            270.97,
+            665.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Li2",
+          "bbox": [
+            330.51,
+            654.92,
+            344.59,
+            666.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "e",
+          "bbox": [
+            353.42,
+            654.92,
+            358.27,
+            665.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "= 2.0298832 . . . ,",
+          "bbox": [
+            383.88,
+            654.92,
+            463.29,
+            665.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(5.23)",
+          "bbox": [
+            506.74,
+            654.92,
+            534.62,
+            665.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            360.97,
+            657.39,
+            364.62,
+            663.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "2π",
+          "bbox": [
+            243.01,
+            662.4,
+            254.68,
+            673.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "where Li2(z) is the standard dilogarithm and V is the volume of the 41-knot, as expected [24]. As",
+          "bbox": [
+            60.66,
+            685.51,
+            534.61,
+            697.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "b2 > 1 increases, the shape of the function χ41(u; ℏ) widens, while for decreasing b2 < 1, the shape",
+          "bbox": [
+            60.66,
+            695.1,
+            534.62,
+            711.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX8",
+            "CMMI10",
+            "CMR10",
+            "CMR6",
+            "CMR8",
+            "CMSS10",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "tightens, and in both cases the peak lowers.",
+          "bbox": [
+            60.66,
+            712.6,
+            269.43,
+            723.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "– 32 –",
+          "bbox": [
+            283.09,
+            771.54,
+            312.19,
+            782.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    }
+  ]
+}

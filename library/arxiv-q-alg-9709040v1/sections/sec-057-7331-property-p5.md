@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9709040v1
-doc_title: "arXiv:q-alg/9709040v1 29 Sep 1997"
+doc_title: "Deformation quantization of Poisson manifolds"
 section_id: sec-057-7331-property-p5
 section_title: "Property P5"
 section_number: 7.3.3.1
@@ -8,6 +8,7 @@ pages: 34-35
 source_pdf: 9709040v1.pdf
 source_sha256: 8baf650d86c5b8ab
 toc_source: inferred
+doc_brief: "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products"
 ---
 Conclusion. We constructed two ﬂat families over ΠT (Xaff) and a morphism between them. Fibers of
 these families are isomorphic to T and to D.
@@ -55,4 +56,3 @@ vanishes.
 Proof: One can prove analogously to the lemma in 7.3.1.1 that the integral does not depend on the
 choice of an angle map, and also on points z1, z2. In the case of φ = φh and both points z1, z2 are pure
 imaginary, the vanishing follows from the anti-symmetry of the integral under the involution z 7→−z.
-Q.E.D.

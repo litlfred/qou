@@ -1,0 +1,62 @@
+546 J. BORCEA, P. BRANDEN, AND T. M. LIGGETT
+
+such that guy < 9p, < ++: < Gy,. Then define the partial order < on SR, as the
+closure of <I’; i-e., set <Iv if there are two sequences {jij }729, {uj }F2o C SRn such
+that
+
+lim yp; =p, lim v; =v, and pj Sv; for all j EN
+
+joo jroo
+
+(as the measures are defined on 2!” it does not matter what notion of limit we use).
+We will also consider <I to be a partial order on the set of generating polynomials
+of strongly Rayleigh measures and write g, <1 g, whenever p< v.
+
+Remark 4.2. It seems likely that the partial orders <’ and < on SR, defined above
+are actually the same. However, since it is irrelevant for the present purposes, we
+do not further pursue this issue here.
+
+As we noted in the stochastic domination relation < defines a partial order
+on $,, (cf. [61)). The anti-symmetry of < follows from our next result.
+
+Proposition 4.12. Let 4: and v be strongly Rayleigh probability measures on 2").
+Then pv pxv.
+
+Proof. Clearly, we may assume that 9, < g,, so that by Theorem [4-1]]the polyno-
+mial in n+1 variables G = (g, + 2n419,)/2 is stable. Let 7 € Bn41 be the measure
+with generating polynomial G. By Theorem [4.9] y is NA. Let A be an increasing
+event not depending on the last coordinate and set B = {S € 2I"tU :n+1¢€ S}.
+Then
+
+1 1 1 1
+
+SHA) = (ANB) <(Av(B) = (Su(A) + 5u(A)) 5.
+which gives p(A) < v(A). o
+
+Recall that the standard partial order on the set of all Hermitian n x n matrices
+— often referred to as the Loewner order {61] — is induced by the cone of all positive
+semi-definite n x n matrices: A < B (respectively, A < B) means that B — A is
+positive semi-definite (respectively, positive definite). Using our discussion so far
+and the arguments further below, we can prove the following extension of one of
+the main results in [57]:
+
+Theorem 4.13. Let A and B be positive contractions such that A < B and let
+and v be their corresponding determinantal measures. Then wiv and thus uw =< v.
+
+In Theorem 8.1] Lyons proved the last statement (j < v) in Theorem
+under the additional hypothesis [A, B] = 0.
+We will need the following elementary lemma.
+
+Lemma 4.14. If A, B are positive semi-definite n x n matrices such that A< B<
+I, then A(I-— A)-! < BUI - B)*1.
+
+Proof. By a standard density argument it is enough to prove the lemma for positive
+definite matrices. Note first that if C is a positive definite n x n matrix such that
+C <I, then C-! >I. Moreover, if D is a positive definite n x n matrix such that
+C <D, then M*CM < M*DM for any n x n matrix M since
+
+(M*CMu, u) = (CMu, Mu) < (DMu, Mu) = (M*DMu, u)
+
+for any u € C”. The latter property with M = D~'/? yields D-'/?CD-!/? < I.
+Then by taking inverses and using the first property we get D'/?C—!D!/? > T, and
+finally by again using the second property with M = D~!/? we obtain C-! > D7!.

@@ -1,1 +1,0 @@
-Let AbeacohomologicallynoetherianDGring,andlet Rbeadualizing

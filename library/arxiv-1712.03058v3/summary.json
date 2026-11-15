@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1712.03058v3",
  "source_sha256": "ba48c5bbb2467374",
- "brief": "Iterated filtering methods for Markov process epidemic models Theresa Stocks1 1Department of Mathematics, Stockholm University, Sweden This manuscript is a preprint of a Chapter to appear in the Handb",
- "extended": "**Iterated filtering methods for Markov process epidemic models Theresa Stocks1 1Department of Mathematics, Stockholm University, Sweden This manuscript is a preprint of a Chapter to appear in the Handbook**\n\n29 pp, 17 sections.\n\n**Abstract.** Dynamic epidemic models have proven valuable for public health decision makers as they provide useful insights into the understanding and prevention of infectious diseases. However, inference for these types of models can be diﬃcult because the disease spread is typically only partially observed e.g. in form of reported incidences in given time periods. This chapter discusses how to perform likelihood- based inference for partially observed Markov epidemic models when it is relatively easy to generate samples from the Markov transmission model while the likelihood function is intractable. The ﬁrst part of the chapter reviews the theoretical back- ground of inference for partially observed Markov processes (POMP) via iterated ﬁltering. In the second part of the chapter the performance of the method and as- sociated practical diﬃculties are illustrated on two examples.\n\n**Outline.** 1.1 Introduction; 1 Iterated filtering methods for POMP; 1.2 Likelihood-based inference; 1.2.1 The likelihood approach; 1.2.2 Practical challenges; 1.3.1 Likelihood of a POMP; 1.3.2 Evaluation of the likelihood; 1.4 Iterated filtering methods; 1.4.1 Algorithm; 1.5.1 The problem of interest; 1.5.2 Formulation of a POMP model; 1.5.3 Inference; 1.5.4 Practical advice; 1.6 Extensions; 1.7 Rotavirus example; 1.8 Concluding comments; 1.8.2 Further reading",
+ "brief": "Iterated ﬁltering methods for Markov process epidemic models — Dynamic epidemic models have proven valuable for public health decision makers as they provide useful insights into the understanding",
+ "extended": "**Iterated ﬁltering methods for Markov process epidemic models**\n\n*Theresa Stocks1*\n\n29 pp, 22 sections.\n\n**Abstract.** Dynamic epidemic models have proven valuable for public health decision makers as they provide useful insights into the understanding and prevention of infectious diseases. However, inference for these types of models can be diﬃcult because the disease spread is typically only partially observed e.g. in form of reported incidences in given time periods. This chapter discusses how to perform likelihood- based inference for partially observed Markov epidemic models when it is relatively easy to generate samples from the Markov transmission model while the likelihood function is intractable. The ﬁrst part of the chapter reviews the theoretical back- ground of inference for partially observed Markov processes (POMP) via iterated ﬁltering. In the second part of the chapter the performance of the method and as- sociated practical diﬃculties are illustrated on two examples.\n\n**Outline.** Front matter; 1.1 Introduction; 1 Iterated filtering methods for POMP; 1.2 Likelihood-based inference; 1.2.1 The likelihood approach; 1.2.2 Practical challenges; 1.3 Inference for partially observed Markov pr; 1.3.1 Likelihood of a POMP; 1.3.2 Evaluation of the likelihood; 1.3.3 Particle filter; 1.4 Iterated filtering methods; 1.4.1 Algorithm; 1.5 Iterated filtering for SIR model given inc; 1.5.1 The problem of interest; 1.5.2 Formulation of a POMP model; 1.5.3 Inference; 1.5.4 Practical advice; 1.6 Extensions",
  "tokens": {
-  "brief": 50,
-  "extended": 397
+  "brief": 49,
+  "extended": 382
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
   {
    "id": "sec-000-11-introduction",
    "title": "Introduction",
@@ -35,62 +40,82 @@
    "pages": "4-5"
   },
   {
-   "id": "sec-005-131-likelihood-of-a-pomp",
+   "id": "sec-005-13-inference-for-partially-observed-markov-proce",
+   "title": "Inference for partially observed Markov processes (POMP)",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-006-131-likelihood-of-a-pomp",
    "title": "Likelihood of a POMP",
    "pages": "5-7"
   },
   {
-   "id": "sec-006-132-evaluation-of-the-likelihood",
+   "id": "sec-007-132-evaluation-of-the-likelihood",
    "title": "Evaluation of the likelihood",
-   "pages": "7-9"
+   "pages": "7-7"
   },
   {
-   "id": "sec-007-14-iterated-filtering-methods",
+   "id": "sec-008-133-particle-filter",
+   "title": "Particle filter",
+   "pages": "7-10"
+  },
+  {
+   "id": "sec-009-14-iterated-filtering-methods",
    "title": "Iterated filtering methods",
-   "pages": "9-10"
+   "pages": "10-10"
   },
   {
-   "id": "sec-008-141-algorithm",
+   "id": "sec-010-141-algorithm",
    "title": "Algorithm",
    "pages": "10-12"
   },
   {
-   "id": "sec-009-151-the-problem-of-interest",
+   "id": "sec-011-15-iterated-filtering-for-sir-model-given-incide",
+   "title": "Iterated filtering for SIR model given incidence data",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-012-151-the-problem-of-interest",
    "title": "The problem of interest",
    "pages": "12-12"
   },
   {
-   "id": "sec-010-152-formulation-of-a-pomp-model",
+   "id": "sec-013-152-formulation-of-a-pomp-model",
    "title": "Formulation of a POMP model",
    "pages": "12-14"
   },
   {
-   "id": "sec-011-153-inference",
+   "id": "sec-014-153-inference",
    "title": "Inference",
    "pages": "14-17"
   },
   {
-   "id": "sec-012-154-practical-advice",
+   "id": "sec-015-154-practical-advice",
    "title": "Practical advice",
    "pages": "17-18"
   },
   {
-   "id": "sec-013-16-extensions",
+   "id": "sec-016-16-extensions",
    "title": "Extensions",
    "pages": "18-21"
   },
   {
-   "id": "sec-014-17-rotavirus-example",
+   "id": "sec-017-17-rotavirus-example",
    "title": "Rotavirus example",
    "pages": "21-24"
   },
   {
-   "id": "sec-015-18-concluding-comments",
+   "id": "sec-018-18-concluding-comments",
    "title": "Concluding comments",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-019-181-pros-and-cons-of-iterated-filtering-methods",
+   "title": "Pros and cons of iterated filtering methods for outbreak data",
    "pages": "24-25"
   },
   {
-   "id": "sec-016-182-further-reading",
+   "id": "sec-020-182-further-reading",
    "title": "Further reading",
    "pages": "25-29"
   }

@@ -2,30 +2,65 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1103.1035v4",
  "source_sha256": "dd5c4660e1d08ea1",
- "brief": "MC ELEMENTS IN PRONILPOTENT DGLIE ALGEBRAS AMNON YEKUTIELI — Consider a pronilpotent DG (differential graded) Lie algebra over a ﬁeld of characteristic 0.",
- "extended": "**MC ELEMENTS IN PRONILPOTENT DGLIE ALGEBRAS AMNON YEKUTIELI**\n\n31 pp, 4 sections.\n\n**Abstract.** Consider a pronilpotent DG (differential graded) Lie algebra over a ﬁeld of characteristic 0. In the ﬁrst part of the paper we introduce the reduced Deligne groupoid associated to this DG Lie algebra. We prove that a DG Lie quasi- isomorphism between two such algebras induces an equivalence between the corresponding reduced Deligne groupoids. This extends the famous result of Goldman-Millson (attributed to Deligne) to the unbounded pronilpotent case. In the second part of the paper we consider the Deligne 2-groupoid. We show it exists under more relaxed assumptions than known before (the DG Lie algebra is either nilpotent or of quasi quantum type). We prove that a DG Lie quasi- isomorphism between such DG Lie algebras induces a weak equivalence between the corresponding Deligne 2-groupoids.\n\n**Outline.** 0 Introduction; 2 The Reduced Deligne Groupoid; 6 The Deligne 2-Groupoid; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 0.3: Let R be a parameter algebra over K, and let φ : g→ h be a DG Lie\n- Theorem 0.4: Let R be a parameter algebra, let g and h be DG Lie algebras, and let\n- Theorem 0.6: Let g and h be DG Lie algebras, let R be a parameter algebra, and let\n- Theorem 0.6: was known in the nilpotent case; see [Ko2, Theorem 4.6], and\n- Theorem 4.2: Let (R, m) be a complete parameter algebra, and let φ : g→ h be a DG Lie\n- Theorem 4.2: Let (R, m) be a parameter algebra over K, and let φ : g→ h be a DG Lie",
+ "brief": "MC ELEMENTS IN PRONILPOTENT DGLIE ALGEBRAS — Consider a pronilpotent DG (differential graded) Lie algebra over a ﬁeld of characteristic 0.",
+ "extended": "**MC ELEMENTS IN PRONILPOTENT DGLIE ALGEBRAS**\n\n*AMNON YEKUTIELI*\n\n31 pp, 11 sections.\n\n**Abstract.** Consider a pronilpotent DG (differential graded) Lie algebra over a ﬁeld of characteristic 0. In the ﬁrst part of the paper we introduce the reduced Deligne groupoid associated to this DG Lie algebra. We prove that a DG Lie quasi- isomorphism between two such algebras induces an equivalence between the corresponding reduced Deligne groupoids. This extends the famous result of Goldman-Millson (attributed to Deligne) to the unbounded pronilpotent case. In the second part of the paper we consider the Deligne 2-groupoid. We show it exists under more relaxed assumptions than known before (the DG Lie algebra is either nilpotent or of quasi quantum type). We prove that a DG Lie quasi- isomorphism between such DG Lie algebras induces a weak equivalence between the corresponding Deligne 2-groupoids.\n\n**Outline.** Front matter; 0 Introduction; 1 Some Facts about DG Lie Algebras; 2 The Reduced Deligne Groupoid; 3 DG Lie Quasi-isomorphisms – Nilpotent Algebr; 4 DG Lie Quasi-isomorphisms – Pronilpotent Alg; 5 Some Facts on 2-Groupoids; 6 The Deligne 2-Groupoid; 7 L Morphisms and Coalgebras; 8 L Quasi-isomorphisms between Pronilpotent Al; References",
  "tokens": {
-  "brief": 38,
-  "extended": 387
+  "brief": 34,
+  "extended": 313
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
    "id": "sec-000-0-introduction",
    "title": "Introduction",
-   "pages": "1-9"
+   "pages": "1-4"
   },
   {
-   "id": "sec-001-2-the-reduced-deligne-groupoid",
+   "id": "sec-001-1-some-facts-about-dg-lie-algebras",
+   "title": "Some Facts about DG Lie Algebras",
+   "pages": "4-7"
+  },
+  {
+   "id": "sec-002-2-the-reduced-deligne-groupoid",
    "title": "The Reduced Deligne Groupoid",
-   "pages": "9-23"
+   "pages": "7-10"
   },
   {
-   "id": "sec-002-6-the-deligne-2-groupoid",
+   "id": "sec-003-3-dg-lie-quasi-isomorphisms-nilpotent-algebras",
+   "title": "DG Lie Quasi-isomorphisms – Nilpotent Algebras",
+   "pages": "10-14"
+  },
+  {
+   "id": "sec-004-4-dg-lie-quasi-isomorphisms-pronilpotent-algebra",
+   "title": "DG Lie Quasi-isomorphisms – Pronilpotent Algebras",
+   "pages": "14-18"
+  },
+  {
+   "id": "sec-005-5-some-facts-on-2-groupoids",
+   "title": "Some Facts on 2-Groupoids",
+   "pages": "18-21"
+  },
+  {
+   "id": "sec-006-6-the-deligne-2-groupoid",
    "title": "The Deligne 2-Groupoid",
-   "pages": "23-31"
+   "pages": "21-24"
   },
   {
-   "id": "sec-003-references",
+   "id": "sec-007-7-l-morphisms-and-coalgebras",
+   "title": "L Morphisms and Coalgebras",
+   "pages": "24-26"
+  },
+  {
+   "id": "sec-008-8-l-quasi-isomorphisms-between-pronilpotent-alge",
+   "title": "L Quasi-isomorphisms between Pronilpotent Algebras",
+   "pages": "26-31"
+  },
+  {
+   "id": "sec-009-references",
    "title": "References",
    "pages": "31-31"
   }
@@ -34,8 +69,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

@@ -1,0 +1,553 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-math-0108215v1",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "1",
+   "text": "Correspondingauthor.(J.Simon)Tel:319-335-0768,fax:319-335-0627.",
+   "marks": [
+    {
+     "page": 1,
+     "context": "JonathanSimon"
+    }
+   ],
+   "block": "library/arxiv-math-0108215v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p001-2",
+   "page": 1,
+   "mark": "2",
+   "text": "ResearchsupportedbyChathamCollege,theUniversityofIowa,andNSFgrant #DMS0074315",
+   "marks": [
+    {
+     "page": 1,
+     "context": "EricJ.Rawdon"
+    }
+   ],
+   "block": "library/arxiv-math-0108215v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p001-3",
+   "page": 1,
+   "mark": "3",
+   "text": "ResearchsupportedbyNSFgrant#DMS9706789 Preprint submitted to Elsevier Preprint",
+   "marks": [
+    {
+     "page": 1,
+     "context": "JonathanSimon1,"
+    }
+   ],
+   "block": "library/arxiv-math-0108215v1/blocks/prose-sec-front-matter"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p001-4",
+   "page": 1,
+   "mark": "30",
+   "text": "October 2018",
+   "block": "library/arxiv-math-0108215v1/blocks/prose-sec-front-matter"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "d",
+   "context": "|x −y|2"
+  },
+  {
+   "page": 2,
+   "mark": "x",
+   "context": "|x −y|2d"
+  },
+  {
+   "page": 2,
+   "mark": "d",
+   "context": "|x −y|2dx"
+  },
+  {
+   "page": 2,
+   "mark": "y",
+   "context": "|x −y|2dxd"
+  },
+  {
+   "page": 2,
+   "mark": "4",
+   "context": "4π cr[K] ≤4π cr(K) < 4π acn(K) ≤ES(K) ≤EN(K) ≤c EL(K)"
+  },
+  {
+   "page": 3,
+   "mark": "4",
+   "context": "4EL(K)"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "arc(x, y)"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Lemma1LetKbeaC"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "Lemma1LetKbeaC2smoothcurveinR"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "asmoothknotinR"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "asmoothknotinR3,asimpleclosedcurvethatisatleastC"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "assumeC"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "dealwithC"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "dealwithC1,"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "MinRad(K) ,"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "arc(s, t)"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "|s −t|2= R"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "R"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "arc(s, t)"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "t2"
+  },
+  {
+   "page": 5,
+   "mark": "t",
+   "context": "t2d"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "Lemma5IfKisasmoothknotinR"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "arc(x, y)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "arc(x, y)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "arc(x, y)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "arc(s, t)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "arc(x, y)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "arc(s, t)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "arc(x, y)"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "1= inf(Rhigh).HereRlow̸= ∅becauseµ(Y∩S[2]) < ν"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "1= inf(Rhigh).HereRlow̸= ∅becauseµ(Y∩S[2]) < ν1,so"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "1. If the inequality is strict, then for each ρ ∈(r"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "1), µ(Y ∩S[2, ρ]) ≥ν"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "1.ThesetY∩S[2, r"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "1.ThesetY∩S[2, r1)is"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "1, ∞)is"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "1, ∞)isamonotoneunionofsets,eachwithmeasure<µ(Y ) −ν"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "j=inf(Rhigh).HereRlow̸=∅becauseρ"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "j,andwedeﬁneρ"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "j,andwedeﬁneρj=r"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "Theorem8IfKisasmoothknotinR"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "EO4(K) < 4.57 EL(K)"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "Theorem9IfKisasmoothknotinR"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "4EL(K)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "arc(x, y)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "arc(x, y)"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "t2"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "t2d"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "t2"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "t2d"
+  },
+  {
+   "page": 10,
+   "mark": "x",
+   "context": "I"
+  },
+  {
+   "page": 10,
+   "mark": "x",
+   "context": "I"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "2"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "4L"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "4L"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "4L"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "3(3"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "3(33 −1"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "ρ"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "FixxonK.LetYdistdenotethesetonwhichweintegratetocomputeI"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "2+ 1)"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "3(3"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "3(33 −1"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "3.For"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "(min{b, P} + 1)"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "(min{b, P} + 1)3−(min{a, P} + 1)"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "(b + 1)"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "(b + 1)3−(a + 1)"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "3((b + 1)"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "3((b + 1)3 −1"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "3π ((r + 1)"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "3π ((r + 1)3 −1"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "3π ((r + 1)3 −13).Thus,when"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "whosevolumeis"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "(r + 1)"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "(r + 1)3−1"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "expressI"
+  },
+  {
+   "page": 13,
+   "mark": "x",
+   "context": "I"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "(P−δ)"
+  },
+  {
+   "page": 13,
+   "mark": "104",
+   "context": "Theﬁrsttermof(10)is"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "(2 + (j −1)δ)"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "4(rj + 1)"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "4(rj + 1)2∆r + 4(rj+ 1)∆r"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "3∆r"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "r"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "4(r+1)"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "r"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "4(r + 1)"
+  },
+  {
+   "page": 13,
+   "mark": "x",
+   "context": "I"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "r"
+  },
+  {
+   "page": 13,
+   "mark": "4",
+   "context": "Thisboundismessy,butontheorderofL"
+  },
+  {
+   "page": 13,
+   "mark": "4",
+   "context": "systemtoplotthebounddividedbyL"
+  },
+  {
+   "page": 13,
+   "mark": "4",
+   "context": "EO4(K) ≤4.57L"
+  },
+  {
+   "page": 13,
+   "mark": "4",
+   "context": "EO4(K) ≤4L"
+  }
+ ]
+}

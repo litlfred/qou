@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.981
 latex_coverage_ratio: 0.964
+doc_brief: "SOERGEL CALCULUS — The monoidal category of Soergel bimodules is an incarnation of the Hecke category, a fundamental object in representation theory."
 ---
 A \emph{Bott-Samelson bimodule} is a bimodule of the form $B_{\un{w}} \define B_s \ot_R B_t \ot_R \cdots \ot_R B_u$ for an expression $\un{w}=st\dots u$. They form a full
 monoidal subcategory of $R-\Bim$, which we denote $\BSBim$. By definition, any Soergel bimodule is a direct sum of shifts of summands of bimodules in $\BSBim$. Said another way, the

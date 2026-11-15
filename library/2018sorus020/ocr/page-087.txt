@@ -1,0 +1,46 @@
+m™(M) — SLo(k— whose character is the point x. We denote by H*(M,p), the
+cohomological O,-modules and by H*(M,/) the residual cohomological k-vector
+
+spaces.
+
+Proposition 3.1.1. If the complex C*(M, p) is acyclic, then the Reidemeister func-
+tion tor(M, p) € k(X)* defines a rational function on the curve X. In particular, it
+
+is the case as soon as X is a geometric component.
+
+Proof. We just have to show that if X is a geometric component, then H*(M, p) = 0
+for all i. Since MZ has the homotopy type of a two-dimensional CW complex, it has
+no homology in rank greater that 2.
+
+The space of invariants H°(M, p) = {z € k(X)?|p(y)z = 2, Vy € m(M)} is non tri-
+vial if and only if Tr(p(7)) = 2 for all 7 € ™(M), but the tautological representation
+is irreducible, thus H°(M, p) = 0.
+
+We know that the Euler characteristic y(M) is zero, hence it is now enough to
+prove that H1(M,p) = 0. The Universal Coefficients Theorem provides isomor-
+phisms H1(M,p), @k(X) ~ H'(M,p) and H1(M,p) ~ H'(M,p), @ k, hence it
+is enough to show that for some x € X, one has H!(M,/p) = 0. It follows from
+Ragunathan’s vanishing theorem (see for instance Theorem 0.2]) that it is
+
+the case if y is the character of a holonomy representation. Oo
+
+Remark 3.1.2. As soon as there exists a character y € X such that H1(M, /) is
+trivial, the proposition applies and the torsion defines a well-defined function on the
+curve X. If follows from the semi-continuity of the dimension of H+(M,/) on X that
+in this case, H'(M, p) is trivial for all but a finite numbers y € X. It has been the
+way to define almost everywhere the torsion function on X, the novelty here is that
+it is defined a priori even at characters y with non trivial first cohomology groups.
+Indeed, we will show in the next section that the torsion vanishes exactly in those
+
+points.
+
+3.2 The case of a finite character
+
+3.2.1 Proof of Theorem
+
+In this section we give a proof of the following theorem :
+
+Theorem (Theorem|3.0.1). Let X be a one dimensional component of the character
+variety X(M) and p: 1(M) — SLo(k(X)) the tautological representation. Assume
+
+86

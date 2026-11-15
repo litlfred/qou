@@ -1,0 +1,74 @@
+---
+doc_id: schechtman-varchenko1991-arrangements
+doc_title: "Arrangements of hyperplanes and Lie algebra homology"
+section_id: page-052
+section_title: "Page 52"
+pages: 52-52
+pdf_page: 52
+source_pdf: schechtman-varchenko1991-arrangements.pdf
+source_sha256: 0100fd32438740f0
+text_source: ocr
+granularity: page
+doc_brief: "Arrangements of hyperplanes and Lie algebra homology — 56 sections: Page 1; Page 2; Page 3"
+---
+190 V.V. Schechtman and A.N. Varchenko
+
+In notations of 7.2, put Q,= ) Q,, the sum is taken over all roots of
+lal=q
+length q, ie. equal to a sum of q simple roots. Here is the key
+
+7.6.3 Lemma. We have an equality in M,@M),:
+Q4(fi...in V1 ® Y)
+
+N
+eS > Fin cigy ocdjgeerin 0, @Lh,...3,] Ys Y x).
+
+1Sjp<..<jgSN S=igt1
+
+v,eM, the generator, yeM).
+
+Proof. Fix a root a, |a|=q. Choose a base {e' in 5, consisting of simple commu-
+tators [e;,...j,]- Let {f{°} be the dual base in g_,. We have
+
+Qa (Siy ny P1 @ Y=(E CP OI) Sit P1 @Y)
+
+"SY Figctjpectigenin EL? fi, Is
+
+1Sfi<..<igSN i
+
+seFiy Msgr rnin 01 OL y =(we put LA] =Lj,...ie])
+
+7.6.2
+= x dies treet et hi, Fig yniw
+
+1Sfi<...<igSN i
+
+@K(e®, LADEE Oy. y.
+
+But UKE, LADS =LA] if LGleg-_., and zero otherwise. The lemma fol-
+lows.’ 1
+
+7.7 Suppose that K is non-degenerate on g. For a positive root a=) kj #; consid-
+er two operaors: Q,€9,@g-, acting M,;@M), and Q*=Qje(g_ J*Qq- a
+K=(ki, os k) acting on Mt @ M$ as in 7.2.
+
+7.7.1 Lemma. Q* is adjoint to Q,.
+
+Proof. For feg_,, pEM#, xEM;, <f-9, x =<g, —f-x>. On the other hand,
+if 6=S(-, fleg*,, (6-0, =o, —tf-x>. This follows from the commutativity
+of
+
+n* M*——>M*
+
+®
+sou |
+(c9)
+
+n  @ M*——M*¥
+id®. Ss
+
+Ss
+n ® M,—M,
+
+If Q2,=Ye? @f, then QF =) @FP where 5) =S(-, te). The lemma fol-
+lows. [J

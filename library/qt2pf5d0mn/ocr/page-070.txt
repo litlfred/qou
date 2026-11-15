@@ -1,0 +1,30 @@
+Section 4.2 Invariance under change of ordering
+
+where o|i] is the colored (k — 1)-simplex corresponding to the face 0;0. We combine the
+indices if there are multiple of them, e.g., o[i|[j] = oi, 7]. We use C(a) to denote the
+group element color on o if k = 1, and the object color if k = 2. For k = 3,4, a colored
+k-simplex ¢ is uniquely determined by the arrays o[i] ‘s. For k = 1,2, a colored k-simplex
+a is uniquely determined by the arrays o[?] ‘s and their colors.
+
+In the following, we consider in order the effect of the reordering of a k-simplex on
+its colorings for k = 1,2,3,4. This involves studying the action of F,, (resp. S,41) on S*.
+
+Firstly, define the action of F; on S! by
+
+This action factors through S2 since §? acts as the identity. Thus when the vertices of a
+colored 1-simplex are reordered by so, the color on the 1-simplex is changed to its inverse.
+By abusing of notations, we also write so(a) = G,a € G.
+
+Secondly, consider the action of F, on S?. For each & € Fy, define
+
+2 5(2)
+CDN LT
+0 z 1 sO)
+
+where 8(i) := p3(8)(t),i = 0,1,2, is the reordering, (a) is the action of p(S),o,1} on
+
+o___,, and 8(b), §(c) are defined analogously, and
+
+Explicitly, the generators act as
+
+61

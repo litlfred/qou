@@ -3,10 +3,10 @@
  "doc_id": "arxiv-2103.07383v1",
  "source_sha256": "9dca35ea16490ad8",
  "brief": "On the Analyticity of Critical Points of the Generalized Integral Menger Curvature in the Hilbert Case — We prove the analyticity of smooth critical points for generalized integral Menger cur- vature",
- "extended": "**On the Analyticity of Critical Points of the Generalized Integral Menger Curvature in the Hilbert Case**\n\n*Daniel Steenebrügge*\n\n31 pp, 13 sections.\n\n**Abstract.** We prove the analyticity of smooth critical points for generalized integral Menger cur- vature energies intM(p,2), with p ∈( 7 3, 8 3), subject to a ﬁxed length constraint. This implies, together with already well-known regularity results, that ﬁnite-energy, critical C1-curves γ : R/Z →Rn of generalized integral Menger curvature intM(p,2) subject to a ﬁxed length constraint are not only C∞but also analytic. Our approach is inspired by analyticity results on critical points for O’Hara’s knot energies based on Cauchy’s method of majorants and a decomposition of the ﬁrst variation. The main new idea is an additional iteration in the recursive estimate of the derivatives to obtain a suﬃcient diﬀerence in the order of regularity.\n\n**Outline.** Front matter; 1 Introduction; 2 Decomposition of the first variation; 3 Estimate of the main term Q(p); 4 The remainder term R(p); 4.1 Representation of the remainder term R(p); 4.2 A fractional Leibniz rule; 5 Proof of the main statement; 5.1 Recursive estimate and iteration; 5.2 Proof of Theorem 1.2; 6 A few simple consequences concerning critica; A Properties of analytic functions; C An inequality for Sobolev Norms\n\n**Extracted claims (proposals, not verified).**\n- Theorem: A.2 (Cauchy-Kovalevsky – ODE case). Suppose the function G : R2n →Rn is\n- Theorem 1.2: , is motivated from this method.\n- Proposition: A.1. Let f ∈C∞(R/Z, Rn) and s > 0. Then the function f is analytic on R/Z if\n- Corollary 5.1: Let γ ∈C∞(R/Z, Rn) be a critical point of intM(p,2) with respect to ﬁxed length\n- Lemma 5.2: Let γ ∈C∞(R/Z, Rn) parametrized by arc-length be a critical point of intM(p,2)\n- Lemma: B.1. Let U ⊆R be a neighborhood of 0 and f ∈Ck(U, Rn), n ∈N0. Moreover, let",
+ "extended": "**On the Analyticity of Critical Points of the Generalized Integral Menger Curvature in the Hilbert Case**\n\n*Daniel Steenebrügge*\n\n31 pp, 15 sections.\n\n**Abstract.** We prove the analyticity of smooth critical points for generalized integral Menger cur- vature energies intM(p,2), with p ∈( 7 3, 8 3), subject to a ﬁxed length constraint. This implies, together with already well-known regularity results, that ﬁnite-energy, critical C1-curves γ : R/Z →Rn of generalized integral Menger curvature intM(p,2) subject to a ﬁxed length constraint are not only C∞but also analytic. Our approach is inspired by analyticity results on critical points for O’Hara’s knot energies based on Cauchy’s method of majorants and a decomposition of the ﬁrst variation. The main new idea is an additional iteration in the recursive estimate of the derivatives to obtain a suﬃcient diﬀerence in the order of regularity.\n\n**Outline.** Front matter; 1 Introduction; 2 Decomposition of the first variation; 3 Estimate of the main term Q(p); 4 The remainder term R(p); 4.1 Representation of the remainder term R(p); 4.2 A fractional Leibniz rule; 4.3 Estimate of the remainder term R(p); 5 Proof of the main statement; 5.1 Recursive estimate and iteration; 5.2 Proof of Theorem 1.2; 6 A few simple consequences concerning critica; A Properties of analytic functions; B Faà di Bruno's formula; C An inequality for Sobolev Norms",
  "tokens": {
   "brief": 49,
-  "extended": 470
+  "extended": 350
  },
  "sections": [
   {
@@ -17,12 +17,12 @@
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-4"
+   "pages": "1-5"
   },
   {
    "id": "sec-001-2-decomposition-of-the-first-variation",
    "title": "Decomposition of the first variation",
-   "pages": "4-7"
+   "pages": "5-7"
   },
   {
    "id": "sec-002-3-estimate-of-the-main-term-qp",
@@ -42,35 +42,45 @@
   {
    "id": "sec-005-42-a-fractional-leibniz-rule",
    "title": "A fractional Leibniz rule",
-   "pages": "10-18"
+   "pages": "10-15"
   },
   {
-   "id": "sec-006-5-proof-of-the-main-statement",
+   "id": "sec-006-43-estimate-of-the-remainder-term-rp",
+   "title": "Estimate of the remainder term R(p)",
+   "pages": "15-18"
+  },
+  {
+   "id": "sec-007-5-proof-of-the-main-statement",
    "title": "Proof of the main statement",
    "pages": "18-18"
   },
   {
-   "id": "sec-007-51-recursive-estimate-and-iteration",
+   "id": "sec-008-51-recursive-estimate-and-iteration",
    "title": "Recursive estimate and iteration",
    "pages": "18-20"
   },
   {
-   "id": "sec-008-52-proof-of-theorem-12",
+   "id": "sec-009-52-proof-of-theorem-12",
    "title": "Proof of Theorem 1.2",
    "pages": "20-23"
   },
   {
-   "id": "sec-009-6-a-few-simple-consequences-concerning-critical",
+   "id": "sec-010-6-a-few-simple-consequences-concerning-critical",
    "title": "A few simple consequences concerning critical knots",
    "pages": "23-25"
   },
   {
-   "id": "sec-010-a-properties-of-analytic-functions",
+   "id": "sec-011-a-properties-of-analytic-functions",
    "title": "A Properties of analytic functions",
-   "pages": "25-27"
+   "pages": "25-26"
   },
   {
-   "id": "sec-011-c-an-inequality-for-sobolev-norms",
+   "id": "sec-012-b-faà-di-brunos-formula",
+   "title": "B Faà di Bruno's formula",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-013-c-an-inequality-for-sobolev-norms",
    "title": "C An inequality for Sobolev Norms",
    "pages": "27-31"
   }
@@ -79,8 +89,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

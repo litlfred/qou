@@ -67,7 +67,7 @@ First, the existing flag reaches the right conclusion by a wrong route: the
 Bring's curve is not hyperelliptic. The correct figure is the total
 Weierstrass weight `g³ − g = 60`, all of weight 1, with `Aut(B) = S₅`
 acting **transitively** (Braden & Disney-Hogg Prop. 3.3,
-`library/s40879-023-00706-0/sections/sec-006-31-weierstrass-points.md:42`).
+`library/s40879-023-00706-0/sections/sec-008-31-weierstrass-points.md:42`).
 
 Second — and this is the useful part — the same source, one paragraph
 later, gives **`60 = 6 × 10`: six Weierstrass points fixed by each of the
@@ -146,7 +146,7 @@ dimensions 1,3,3,4,5; conjugacy class sizes 1,15,20,12,12; orbit sizes
 **Laing & Singerman, "Transitivity on Weierstrass points", Ann. Acad. Sci.
 Fenn. Math. 37 (2012), Theorem 15** — quoted as Theorem 3.4 of
 `[braden-disney-hogg-2022]` at
-`library/s40879-023-00706-0/sections/sec-006-31-weierstrass-points.md`, and
+`library/s40879-023-00706-0/sections/sec-008-31-weierstrass-points.md`, and
 independently noted in `content/bib-qa-verifications.json:11038` for the
 arXiv note `2211.08164v2`:
 

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1006.1099v3
-doc_title: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS IV AN SMITH"
+doc_title: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS"
 section_id: sec-008-19-outline-of-proof
 section_title: "Outline of proof"
 section_number: 1.9
 pages: 7-9
 source_pdf: 1006.1099v3.pdf
 source_sha256: 76c1c4173cdee9d8
-doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS IV AN SMITH — There is a classical relationship in algebraic geometry bet ween a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.954
-latex_coverage_ratio: 0.991
+latex_coverage_ratio: 0.988
+doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS — There is a classical relationship in algebraic geometry between a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
 ---
 As mentioned previously, our proof of Theorem [\[Thm:Embed\]](#Thm:Embed){reference-type="ref" reference="Thm:Embed"} constructs equivalences with quasi-isomorphic images $$D^{\pi}\EuScript{F}(\Sigma) \ \hookrightarrow \ D^{\pi}\EuScript{F}(Z) \ \hookleftarrow  \ D^{\pi}\EuScript{F}(Q_0\cap Q_1;0).$$ Both $\EuScript{F}(\Sigma_g)$ and $\EuScript{F}(Q_0 \cap Q_1)$ are naturally ${\mathbb Z}_{4g-4}$-graded, but only the underlying ${\mathbb Z}_2$-graded categories are equivalent; from this perspective, that is because the intermediate category $\EuScript{F}(Z)$ only admits a ${\mathbb Z}_2$-grading. At a technical level, the proof of Theorem [\[Thm:Embed\]](#Thm:Embed){reference-type="ref" reference="Thm:Embed"} combines five principal ingredients.
 

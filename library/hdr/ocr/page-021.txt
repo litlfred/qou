@@ -1,0 +1,59 @@
+where < stands for the Chevalley—Bruhat order on W and P,,y € q~'Z[q~1]. The elements (Cw) wew
+also form a basis of H,(W, L), the Kazhdan—Lusztig basis.
+
+T. if L(s) =0
+
+Example 2.2 We have C, = T; = 1 and, for all s € S, C, = { T.+q¢!OT, if L(s)>0°
+
+Using the Kazhdan—Lusztig basis, we can define the following three relations on W. For 2,y € W,
+we have:
+
+exc y, if C, appears with non-zero coefficient in hC, for some h € H,(W, L).
+
+e x¢Ry, if Cy appears with non-zero coefficient in Cyh’ for some h’ € H,(W, L).
+
+extcry, if C, appears with non-zero coefficient in hC,h’ for some h, h’ € H,(W,L).
+
+If now we take the transitive closures of the above relations, we can define the following three preorders
+on W: <c, <r; <cr:-
+The preorder <, defines an equivalence relation ~¢ on W as follows:
+
+covey @ @Kcy and y<cx.
+
+The equivalence classes for ~¢ are called left cells. Similarly, one can define equivalence relations ~g
+and ~cr on W, whose equivalence classes are called, respectively, right cells and two-sided cells.
+
+Example 2.3 Following the notation of Example 2.1] for W = 63 = {1,s,t, st, ts, sts = tst} and 1 > 0,
+e the left cells are {1}, {s, ts}, {t, st} and {sts} ;
+e the right cells are {1}, {s, st}, {t,ts} and {sts} ;
+e the two-sided cells are {1}, {s,t, st,ts} and {sts}.
+If 1 = 0, then all elements of W belong to the same cell (left, right or two-sided).
+Let now € be a left cell of W. The following two Z[q, q~+]-modules are left ideals of H,(W, L):
+Hece = (Cyly <cw,w € €)ziqq-) and = Hee = (Cyly <cw,w € Cy € €)zjqq-1]-
+
+Then
+Me = He,e/Hece
+
+is a free left H,(W, L)-module with basis indexed by the elements of €.
+
+Let K C C be a field such that the algebra K(q)H,(W, L) is split semisimple (for example, we can
+take K = C, or K = Q if W is a Weyl group). Now, since the left cells form a partition of W, we obtain
+a corresponding direct sum decomposition of K(q)H,(W, L):
+
+K(q)H,(W, L) = Ba K(gMe (isomorphism of left K(q)H,4(W, L)-modules), (2.1)
+
+€ left cell
+
+where K(q)Me := K(q) ®zjq,q—1) Me. We obtain analogous decompositions with respect to right and
+two-sided cells.
+
+2.2 Schur elements and the a-function
+
+From now on, set R := Z{g,q~'] and let K C C be a field such that he algebra K(q)Hq(W, L) is split
+semisimple.
+Using the standard basis of the Iwahori-Hecke algebra, we define the linear map 7 : Hy(W,L) > R
+by setting
+1 ifw=1,
+7 (Dw) = { 0 otherwise.
+
+18

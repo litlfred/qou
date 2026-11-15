@@ -1,0 +1,81 @@
+---
+doc_id: ds15v1-2008
+doc_title: "Rogers-Ramanujan-Slater Type Identities"
+section_id: page-051
+section_title: "Page 51"
+pages: 51-51
+pdf_page: 51
+source_pdf: ds15v1-2008.pdf
+source_sha256: aef155a324c6fdf4
+text_source: ocr
+granularity: page
+doc_brief: "Rogers-Ramanujan-Slater Type Identities — In this survey article, we present an expanded version of Lucy Slater’s famous list of identities of the Rogers-Ramanujan type, including identities of"
+---
+[BP | (PBL) | (TBL) | (SIBL) | (S2BL) | (FBL) |
+
+Al | S98 S117
+
+A2| soa sso | (5.11.1)
+A3 | S99 S118 Sg1_ | (5.11.2)
+A4 | S96 S119 $82 | (5.11.3)
+A5 | $83 $100 (3.15.2) | (5.8.1)
+AG | S84 $62 | (5.8.2)
+A7 | S85 S95 (5.8.3)
+A8 S97 S63
+
+BI | S18 536 SI S13
+
+B2 | S14 $34
+
+B3 S8
+
+CI | Sol S79 (2.10.3)
+
+c3 | S60 $45 | (5.5.1)
+c4 | $59 (2.20.1) $43 | (5.5.2)
+C5 | (2.10.6) S52
+
+C6 | S46 $26 | (5.3.1)
+c7 | S44 $22 | (5.3.2)
+D5 (5.4.1)
+D6 (2.8.6) | (5.4.2)
+El | S3 S25
+
+E2 | $3 S4
+
+E3 | S7 (2.6.2) $2 | (5.0.1)
+Fl | 939 | S29, S23-
+
+F2 | $38 $28 | (5.3.2)
+F3 | S9 (2.2.4)
+
+Gi [$33 | S20, S2i-
+
+G2 | $31 $17 | (5.2.1)
+G3 | $32 S16
+
+G4] si9
+
+G5 $5 | (5.0.2)
+Go | S15
+
+Hi | 96 S10
+
+H2 | $39- $23-
+
+Hi7| Si
+
+H19| $27 Sil | (5.1.1)
+7 | Sa 366
+
+Is | $48 S67
+
+I9 | $58 S72
+
+lla | $54 S71
+
+115 | S87 S64
+
+116 S65
+
+THE ELECTRONIC JOURNAL OF COMBINATORICS 15 (2008), #DS15

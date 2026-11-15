@@ -8,9 +8,19 @@
   "pages": 70,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 6,
+    "reason": "11 of 442 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 25,
+    "reason": "15 of 481 words are a stray single letter: the text layer splits words"
+   }
+  ],
   "math_source": "latex"
  },
  "metadata": {
@@ -21,34 +31,35 @@
    "stamp_date": "22 Jun 2005"
   },
   "doi": null,
-  "title": "arXiv:math/0506456v1 [math.QA] 22 Jun 2005",
+  "title": "Asymptotics of the quantum invariants for surgeries on the figure 8 knot",
   "authors_raw": "University of Aarhus, Building 530, Ny Munkegade, 8000 Aarhus, Denmark",
   "title_lines": [
-   "c\u20ddWorld Scientific Publishing Company",
+   "c⃝World Scientific Publishing Company",
    "ASYMPTOTICS OF THE QUANTUM INVARIANTS FOR SURGERIES",
    "ON THE FIGURE 8 KNOT",
-   "J\u00d8RGEN ELLEGAARD ANDERSEN \u2217\u2020",
+   "JØRGEN ELLEGAARD ANDERSEN ∗†",
    "Department of Mathematical Sciences"
   ],
-  "abstract": "We investigate the Reshetikhin\u2013Turaev invariants associated to SU(2) for the 3\u2013 manifolds M obtained by doing any rational surgery along the \ufb01gure 8 knot. In partic- ular, we express these invariants in terms of certain complex double contour integrals. These integral formulae allow us to propose a formula for the leading asymptotics of the invariants in the limit of large quantum level. We analyze this expression using the saddle point method. We construct a certain surjection from the set of stationary points for the relevant phase functions onto the space of conjugacy classes of nonabelian SL(2, C)\u2013representations of the fundamental group of M and prove that the values of these phase functions at the relevant stationary points equals the classical Chern\u2013Simons invariants of the corresponding \ufb02at SU(2)\u2013connections. Our \ufb01ndings are in agreement with the asymptotic expansion conjecture. Moreover, we calculate the leading asymp- totics of the colored Jones polynomial of the \ufb01gure 8 knot following Kashaev [14]. This leads to a slightly \ufb01ner asymptotic description of the invariant than predicted by the volume conjecture [24].",
+  "abstract": "We investigate the Reshetikhin–Turaev invariants associated to SU(2) for the 3– manifolds M obtained by doing any rational surgery along the ﬁgure 8 knot. In partic- ular, we express these invariants in terms of certain complex double contour integrals. These integral formulae allow us to propose a formula for the leading asymptotics of the invariants in the limit of large quantum level. We analyze this expression using the saddle point method. We construct a certain surjection from the set of stationary points for the relevant phase functions onto the space of conjugacy classes of nonabelian SL(2, C)–representations of the fundamental group of M and prove that the values of these phase functions at the relevant stationary points equals the classical Chern–Simons invariants of the corresponding ﬂat SU(2)–connections. Our ﬁndings are in agreement with the asymptotic expansion conjecture. Moreover, we calculate the leading asymp- totics of the colored Jones polynomial of the ﬁgure 8 knot following Kashaev [14]. This leads to a slightly ﬁner asymptotic description of the invariant than predicted by the volume conjecture [24].",
   "docinfo": {
    "Title": "arXiv:math/0506456v1  [math.QA]  22 Jun 2005",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "CreationDate": "D:20181025124931-04'00'"
   },
-  "title_raw": "c\u20ddWorld Scientific Publishing Company ASYMPTOTICS OF THE QUANTUM INVARIANTS FOR SURGERIES ON THE FIGURE 8 KNOT J\u00d8RGEN ELLEGAARD ANDERSEN \u2217\u2020 Department of Mathematical Sciences",
+  "title_raw": "c⃝World Scientific Publishing Company ASYMPTOTICS OF THE QUANTUM INVARIANTS FOR SURGERIES ON THE FIGURE 8 KNOT JØRGEN ELLEGAARD ANDERSEN ∗† Department of Mathematical Sciences",
   "title_source": "metadata",
   "title_verified": true,
   "title_evidence": {
    "metadata": "arXiv:math/0506456v1 [math.QA] 22 Jun 2005",
-   "heading": "ASYMPTOTICS OF THE QUANTUM INVARIANTS FOR SURGERIES ON THE FIGURE 8 KNOT 1. Introduction In this paper we investigate the large level asymptotics of the Reshetikhin\u2013Turaev invariants of the 3\u2013manifolds obtained by doing surgery on the \ufb01gure 8 knot with an arbitrary rational surgery coe\ufb03cient. Let X",
-   "text": "c\u20ddWorld Scientific Publishing Company ASYMPTOTICS OF THE QUANTUM INVARIANTS FOR SURGERIES ON THE FIGURE 8 KNOT J\u00d8RGEN ELLEGAARD ANDERSEN \u2217\u2020 Department of Mathematical Sciences",
+   "heading": "ASYMPTOTICS OF THE QUANTUM INVARIANTS FOR SURGERIES ON THE FIGURE 8 KNOT 1. Introduction In this paper we investigate the large level asymptotics of the Reshetikhin–Turaev invariants of the 3–manifolds obtained by doing surgery on the ﬁgure 8 knot with an arbitrary rational surgery coeﬃcient. Let X",
+   "text": "c⃝World Scientific Publishing Company ASYMPTOTICS OF THE QUANTUM INVARIANTS FOR SURGERIES ON THE FIGURE 8 KNOT JØRGEN ELLEGAARD ANDERSEN ∗† Department of Mathematical Sciences",
    "corroborated_by": [
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:math/0506456v1 [math.QA] 22 Jun 2005"
  },
  "toc": [
   {
@@ -709,33 +720,129 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 12,
-   "n_chars": 25538,
-   "n_words": 4778,
+   "page_end": 10,
+   "n_chars": 21111,
+   "n_words": 3905,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-001-3-a-complex-double-contour-integral-formula-for",
+   "id": "sec-001-2-the-rt-invariant-for-surgeries-on-the-figure-8",
+   "number": "2",
+   "title": "The RT-invariant for surgeries on the figure $8$ knot",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 4288,
+   "n_words": 848,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-3-a-complex-double-contour-integral-formula-for",
    "number": "3",
    "title": "A complex double contour integral formula for $\\tau_{r}(M_{p/q})$",
    "level": 1,
    "page_start": 12,
    "page_end": 15,
-   "n_chars": 4469,
-   "n_words": 1021,
+   "n_chars": 3978,
+   "n_words": 936,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-002-41-semiclassical-asymptotics-of-the-quantum-dilo",
+   "id": "sec-003-4-the-large-r-asymptotics-of-j-kr-and-tau-rm-pq",
+   "number": "4",
+   "title": "The large $r$ asymptotics of $J'_K(r)$ and $\\tau_{r}(M_{p/q})$",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 457,
+   "n_words": 78,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-41-semiclassical-asymptotics-of-the-quantum-dilo",
    "number": "4.1",
    "title": "Semiclassical asymptotics of the quantum dilogarithm",
    "level": 2,
    "page_start": 15,
+   "page_end": 16,
+   "n_chars": 1459,
+   "n_words": 312,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-42-the-large-r-asymptotics-of-j-kr",
+   "number": "4.2",
+   "title": "The large $r$ asymptotics of $J_{K}'(r)$",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 19,
+   "n_chars": 6107,
+   "n_words": 1196,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-43-the-large-r-asymptotics-of-tau-rm-pq",
+   "number": "4.3",
+   "title": "The large $r$ asymptotics of $\\tau_{r}(M_{p/q})$",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 29,
+   "n_chars": 21845,
+   "n_words": 4594,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-5-classical-chern--simons-theory-on-m-pq",
+   "number": "5",
+   "title": "Classical Chern--Simons theory on $M_{p/q}$",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 1442,
+   "n_words": 237,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-51-the-moduli-space-of-flat-mboxrm-su2--connecti",
+   "number": "5.1",
+   "title": "The moduli space of flat $\\mbox{\\rm SU}(2)$--connections on $M_{p/q}$",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 35,
+   "n_chars": 10784,
+   "n_words": 2261,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-52-chern--simons-invariants",
+   "number": "5.2",
+   "title": "Chern--Simons invariants",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 39,
+   "n_chars": 8615,
+   "n_words": 1690,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-010-53-a-comparison-between-chern--simons-invariants",
+   "number": "5.3",
+   "title": "A comparison between Chern--Simons invariants and critical values of the phase functions $\\Phi_{n}^{a,b}$",
+   "level": 2,
+   "page_start": 39,
    "page_end": 70,
-   "n_chars": 103509,
-   "n_words": 21606,
+   "n_chars": 52928,
+   "n_words": 11240,
    "label_start": null,
    "label_end": null
   }
@@ -754,13 +861,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 4,
-  "chars_total": 135325,
+  "sections": 12,
+  "chars_total": 134823,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 11,
-   "overlaid": 3,
+   "overlaid": 9,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -775,26 +883,87 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.982,
-     "coverage_ratio": 0.975,
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.962,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-001-3-a-complex-double-contour-integral-formula-for",
+     "id": "sec-001-2-the-rt-invariant-for-surgeries-on-the-figure-8",
+     "title": "The RT-invariant for surgeries on the figure $8$ knot",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-a-complex-double-contour-integral-formula-for",
      "title": "A complex double contour integral formula for $\\tau_{r}(M_{p/q})$",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-4-the-large-r-asymptotics-of-j-kr-and-tau-rm-pq",
+     "title": "The large $r$ asymptotics of $J'_K(r)$ and $\\tau_{r}(M_{p/q})$",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-41-semiclassical-asymptotics-of-the-quantum-dilo",
+     "title": "Semiclassical asymptotics of the quantum dilogarithm",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-42-the-large-r-asymptotics-of-j-kr",
+     "title": "The large $r$ asymptotics of $J_{K}'(r)$",
+     "prose_ratio": 0.433,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-43-the-large-r-asymptotics-of-tau-rm-pq",
+     "title": "The large $r$ asymptotics of $\\tau_{r}(M_{p/q})$",
+     "prose_ratio": 0.803,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-5-classical-chern--simons-theory-on-m-pq",
+     "title": "Classical Chern--Simons theory on $M_{p/q}$",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-51-the-moduli-space-of-flat-mboxrm-su2--connecti",
+     "title": "The moduli space of flat $\\mbox{\\rm SU}(2)$--connections on $M_{p/q}$",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-52-chern--simons-invariants",
+     "title": "Chern--Simons invariants",
      "prose_ratio": 0.974,
      "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-41-semiclassical-asymptotics-of-the-quantum-dilo",
-     "title": "Semiclassical asymptotics of the quantum dilogarithm",
-     "prose_ratio": 0.949,
-     "coverage_ratio": 0.797,
-     "result": "overlaid",
-     "converter": "latex"
+     "id": "sec-010-53-a-comparison-between-chern--simons-invariants",
+     "title": "A comparison between Chern--Simons invariants and critical values of the phase functions $\\Phi_{n}^{a,b}$",
+     "prose_ratio": 0.919,
+     "coverage_ratio": 0.472,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

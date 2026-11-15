@@ -1,0 +1,50 @@
+364 Lucia DI VIZIO & Changgui ZHANG
+
+2.4. Proof of Theorem 2.6
+
+We know that our germs ¢(q,), q € (7, 1], of analytic functions at 0
+admit an analytic continuation along d. Moreover, for g < 1, the functions
+o(q, €) are actually meromorphic over C, which means that they are linear
+combination of a basis of solutions of My = 0 at oo. The main point of the
+proof is the careful choice of such a basis, which will allow us to prove that
+o(q,x) converges uniformly to ¢(1,€) on an infinite sector containing the
+direction d. Of course this ends the proof since Equations (2.1) and (2.2)
+imply that for any x € V we have:
+
+tiny ular) = iy [7 (LMM g) oa srs
+
+qol 0
+
+(2.3) - — lim (« (*) 7 wa) dg
+
+coe ral)
+- | $1, €)e~S ak.
+0
+
+The theorem results of the combination of two lemmas. First of all let
+us prove the uniform convergence around zero:
+
+LEMMA 2.12. — The family $(q,€) converges uniformly to $(1, x), when
+q — 1, on a closed disk centered at 0.
+
+Proof. — Let us write $(q,€) = Vns0 on(q)x" for any gq € (7, 1]. Then
+there exists N > 0 such that for any n > N the coefficients ¢,(q) verify
+a well defined recursive relation whose coefficients do not degenerate). A
+direct estimates of the recursive relation allows to conclude that |n(q)| <
+C” for a convenient real constant C, any n > N and any q € (7, 1]. This
+estimate, together with the fact that ¢,(q) is a continuous function of q,
+implies the uniform convergence on a convenient closed disk centered at 0
+(cf. for instance the estimates in [17, Lemma. 1.2.6]). im
+
+The last assumption in 2.7 implies that ¢(q, x) is a linear combination,
+whose coefficients are entries of the matrix C(q), of the canonical solutions
+at oo, constructed in [16, §1], using a g-analog of the Frobenius method.
+As noticed in [16, §3], the uniform part of the canonical solution at oo
+converges uniformly on any compact of Ph \ {0} where it is analytic, to
+the uniform part of the solutions of Ny = 0 constructed with the classi-
+cal Frobenius methods, once that the gauge transformation C'(1) has been
+
+(5) Notice that we have not assumed that 0 is a regular singular point with non resonant
+exponents at 0.
+
+ANNALES DE L’INSTITUT FOURIER

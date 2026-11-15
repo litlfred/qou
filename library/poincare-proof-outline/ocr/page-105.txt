@@ -1,0 +1,68 @@
+using * <is-poincare-line-cmat H) <intersects-x-axis-cmat H»
+by (simp add: vec-cnj-def)
+qed
+next
+show on-circline-cmat-cvec x-axis-cmat (calc-x-axis-intersection-cmat-cvec H)
+using * <is-poincare-line-cmat H»> ‘intersects-x-axis-cmat H» <is-real Ay
+using eq-cnj-iff-real[of A]
+by (simp add: vec-cnj-def)
+qed
+qed
+qed
+
+lemma unique-calc-x-axis-intersection:
+assumes is-poincare-line H and H # s-azis
+assumes «x € unit-disc and « € circline-set H ™ circline-set z-axis
+shows x = calc-x-axis-intersection H
+proof—
+have *: intersects-z-aris H
+using assms
+using intersects-x-avis-iff|OF assms(1)]
+by auto
+show «x = calc-z-axis-intersection H
+using calc-x-axis-intersection|OF assms(1) *]
+using calc-x-axis-intersection-in-unit-disc|OF assms(1) *]
+using assms
+using unique-is-poincare-line|of x calc-z-axis-intersection H H x-axis]
+by auto
+qed
+
+8.5 Check if an h-line intersects the positive part of the x-axis
+
+definition intersects-x-axis-positive-cmat :: complez-mat => bool where
+[simp]: intersects-x-axis-positive-cmat H = (let (A, B, C, D) = Hin Re A#0 A Re B/ Re A< -1)
+
+lift-definition intersects-2-axis-positive-clmat :: circline-mat = bool is intersects-x-axis-positive-cmat
+done
+
+lift-definition intersects-x-axis-positive :: circline = bool is intersects-x-axis-positive-clmat
+proof (transfer)
+fix H1 H2
+assume hh: hermitean H1 A H1 4 mat-zero and hermitean H2 \ H2 4 mat-zero
+obtain Ai B1 C1 D1 A2 B2 C2 D2 where *: H1 = (A1, B1, C1, D1) H2 = (A2, B2, C2, D2)
+by (cases H1, cases H2, auto)
+assume circline-eq-cmat H1 H2
+then obtain k where k 4 0 \ H2 = cork *sm H1
+by auto
+thus intersects-1-axis-positive-cmat H1 = intersects-x-axis-positive-cmat H2
+using *
+by simp
+qed
+
+lemma intersects-x-axis-positive-mk-circline:
+assumes is-real Aand A#0V B40
+shows intersects-x-axis-positive (mk-circline A B (cnj B) A) + Re B/ Re A < -1
+proof—
+let ?H = (A, B, (cnj B), A)
+have hermitean ?H
+using <is-real A»
+unfolding hermitean-def mat-adj-def mat-cnj-def
+using eq-cnj-iff-real
+by auto
+moreover
+have ?H 4 mat-zero
+using assms
+by auto
+ultimately
+
+105

@@ -1,0 +1,58 @@
+33 Page 6 of 47 S. Jansen, L. Kolesnikov
+
+for alln € N and (41,...,%») € X". Here we allow the functions (K38)n to assume the
+value “oo”. For non-negative potentials and on a suitably reduced domain, Ks differs from the
+standard Kirkwood-Salsburg operator [26, Chapter 4.2] by a mere sign-flip: it has | f (xs, y;)|
+instead of f (xs, yi).
+
+Theorem 2.1 Let z(-) be a non-negative activity and s(-) any selection rule. Consider the
+following two conditions:
+
+(i) There is a family & = (En)nen of measurable symmetric functions &, : X" — R4 such
+
+that
+2X1) 5n,1 + (KB 1s Xn) < En(X1,..-. Xn) (2.5)
+for alln € Nand (x1,..., Xn) € X".
+(ii) The series py(x1,..., Xn; Z) converges absolutely, for alln € N and (x1, ...,Xn) € X".
+
+Condition (i) is sufficient for (ii) to hold; moreover, if (i) is satisfied, then
+
+a
+
+Mg filme tte ain Sts oe wo) laCen)eCe)akldy) < En (XI, Xn)
+k=0 °
+
+(2.6)
+
+on X", foralln EN.
+In addition, if we assume the pair potential to be non-negative, then (ii) implies (i) as well,
+so that the two conditions are equivalent in this case.
+
+Remark 2.1 We formulate this theorem—as well as the following results—for non-negative
+activities, mainly for the purpose of notational convenience. Naturally, such conditions for
+absolute convergence can be formulated in the usual framework of complex analysis by
+exchanging complex activities z with |z| in the convergence criteria.
+
+We prove the theorem in Subsect. 3.2. The known sufficient convergence conditions of
+Kotecky—Preiss and Fernandez—Procacci types are easily recovered from Theorem 2.1. We
+start with the Kotecky—Preiss type criterion [18], as extended to soft-core and continuum
+systems by Ueltschi in [32] (and to stable interactions by Ueltschi and Poghosyan in [24]).
+
+Corollary 2.2. Let z be a non-negative activity function and assume stable interactions in the
+sense of (2.1) for some B > 0. If there exists a measurable function a : X — Rx such that
+forallx €X
+
+[re. nletrctdy) +280) < a0, 27)
+x
+then the activity expansions Py(X1, ...,Xn3 Zz) converge absolutely and the bounds
+Pu(X1y 22-5 Xns Z) Sex) + exp eOV FFA)
+hold for alln € N and (x1, ..., Xn) € X". Notice that for non-negative pair interactions, we
+
+can choose B = 0 in condition (2.7).
+
+Remark 2.2 Notice that via the substitution d = a — 2B the above criterion is equivalent to
+the existence of a measurable function a : X > R, such that for all x € X
+
+[ | f(x, y) e224, (dy) < a0).
+
+D Springer

@@ -1,0 +1,31 @@
+5.9. A smooth global family 133
+
+For the sake of completeness we include the following version of the
+generic flatness theorem that has been used in the above lemma.
+
+LEMMA 5.29. Let V and W be two integral schemes which are locally
+of finite type over a locally Noetherian, integral, regular base scheme S of
+dimension one. Suppose that for every point s in S the scheme-theoretic
+fibre Vs is non-empty and W, is reduced. Let
+
+f
+W
+S
+be an S-morphism of finite type. Then the flat locus
+
+Us = {we W| f is flat at v for all v € V with f(v) =w}
+
+is a Zariski-open dense subset of W which maps surjectively onto S.
+
+Vv
+
+Proof. Since V and W are integral schemes which dominate the integral
+regular one-dimensional scheme S, they are automatically flat over S in view
+of [55, prop. III.9.7]. So the fibre-wise flatness criterion [50, th. 11.3.10]
+shows that the morphism f is flat over a point w in W if and only if the
+restriction f; : V; > W; to the scheme-theoretic fibres over the image s € S$
+of w is flat over w. Now the generic flatness theorem [49, th. 6.9.1] applies
+on the one hand to the finite type morphism f : V > W and on the other
+hand to its restriction f; : V; > Ws. Since by assumption both W and W, are
+integral, it follows that the flat locus Us is on the one hand a Zariski-open
+dense subset of W and on the other hand meets every fibre W;. O

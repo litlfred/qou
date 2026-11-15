@@ -3,194 +3,149 @@
  "doc_id": "ki6c",
  "source_sha256": "b13a73517b349654",
  "brief": "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings — We give presentations of the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings.",
- "extended": "**On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings**\n\n*Tomotada Ohtsuki and Yoshiyuki Yokota*\n\n72 pp, 37 sections.\n\n**Abstract.** We give presentations of the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings. In particular, we show the volume conjecture for these knots, which states that the leading terms of the expansions present the hyperbolic volume and the Chern-Simons invariant of the complements of the knots. As higher coeﬃcients of the expansions, we obtain a new series of invariants of these knots. A non-trivial part of the proof is to apply the saddle point method to calculate the asymptotic expansion of an integral which presents the Kashaev invariant. A key step of this part is to give a concrete homotopy of the (real 3-dimensional) domain of the integral in C3 in such a way that the boundary of the domain always stays in a certain domain in C3 given by the potential function of the hyperbolic structure. Mathematics Subject Classi cation (2010) . Primary: 57M27.\n\n**Outline.** Abstract; 1 Introduction; 2 Preliminaries; 2.1 Integral presentation of (q)n; 2.2 Some behaviors of the dilogarithm function; 2.3 De; 2.4 The Poisson summation formula; 2.5 The saddle point method; 3 The 61 knot; 3.1 Proof of Theorem 1.1 for the 61 knot; 2 Li2(e2\u0019p\u00001t) + Li2(e2\u0019p\u00001s) + Li2(e2\u0019p\u00001u) +; 3.2 Estimate of the range of ∆′; 3.3 Calculation of the critical value; 2 Li2(x0) + Li2(y0) + Li2(z0) + \u00192; 3.4 Verifying the assumption of the Poisson su; 3.5 Verifying the assumption of the saddle poi; 4 The 62 knot; 4.1 Proof of Theorem 1.1 for the 62 knot\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: The asymptotic expansions of the Kashaev invariant ⟨K ⟩N of the knots\n- Proposition 2.3: For (c1;c 2;c 3) 2 C3 and an oriented 3-ball D′ in R3, we put\n- Proposition 2.6: LetA be a non-singular symmetric complex 3\u00023 matrix, and\n- Lemma 2.2: Lett be a real number with 0<t< 1. Then, there exists C >0 such that\n- Lemma 3.3: Since we will know later that the sum of the problem is of the order O(eN& R ),\n- Lemma 3.3: ^V has a unique critical point (t0;s 0;u 0) in P \u00001(∆′), where P : C3 ! R3 is",
+ "extended": "**On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings**\n\n*Tomotada Ohtsuki*\n\n72 pp, 28 sections.\n\n**Abstract.** We give presentations of the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings. In particular, we show the volume conjecture for these knots, which states that the leading terms of the expansions present the hyperbolic volume and the Chern-Simons invariant of the complements of the knots. As higher coeﬃcients of the expansions, we obtain a new series of invariants of these knots. A non-trivial part of the proof is to apply the saddle point method to calculate the asymptotic expansion of an integral which presents the Kashaev invariant. A key step of this part is to give a concrete homotopy of the (real 3-dimensional) domain of the integral in C3 in such a way that the boundary of the domain always stays in a certain domain in C3 given by the potential function of the hyperbolic structure. Mathematics Subject Classiﬁcation (2010). Primary: 57M27.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 2.2 Some behaviors of the dilogarithm function; 2.3 Deﬁnition of the Kashaev invariant; 2.4 The Poisson summation formula; 2.5 The saddle point method; 3.1 Proof of Theorem 1.1 for the 61 knot; 3.2 Estimate of the range of ∆′; 3.3 Calculation of the critical value; 3.4 Verifying the assumption of the Poisson su; 3.5 Verifying the assumption of the saddle poi; 4.1 Proof of Theorem 1.1 for the 62 knot; 4.2 Estimate of the range of ∆′; 4.3 Calculation of the critical value; 4.4 Verifying the assumption of the Poisson su; 4.5 Verifying the assumption of the saddle poi; 5.1 Proof of Theorem 1.1 for the 63 knot",
  "tokens": {
   "brief": 48,
-  "extended": 546
+  "extended": 425
  },
  "sections": [
   {
-   "id": "sec-000-abstract",
-   "title": "Abstract",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
    "pages": "1-4"
   },
   {
-   "id": "sec-002-2-preliminaries",
+   "id": "sec-001-2-preliminaries",
    "title": "Preliminaries",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-003-21-integral-presentation-of-qn",
-   "title": "Integral presentation of (q)n",
    "pages": "4-6"
   },
   {
-   "id": "sec-004-22-some-behaviors-of-the-dilogarithm-function",
+   "id": "sec-002-22-some-behaviors-of-the-dilogarithm-function",
    "title": "Some behaviors of the dilogarithm function",
    "pages": "6-7"
   },
   {
-   "id": "sec-005-23-de",
-   "title": "De",
+   "id": "sec-003-23-deﬁnition-of-the-kashaev-invariant",
+   "title": "Deﬁnition of the Kashaev invariant",
    "pages": "7-8"
   },
   {
-   "id": "sec-006-24-the-poisson-summation-formula",
+   "id": "sec-004-24-the-poisson-summation-formula",
    "title": "The Poisson summation formula",
    "pages": "8-11"
   },
   {
-   "id": "sec-007-25-the-saddle-point-method",
+   "id": "sec-005-25-the-saddle-point-method",
    "title": "The saddle point method",
    "pages": "11-12"
   },
   {
-   "id": "sec-008-3-the-61-knot",
-   "title": "The 61 knot",
-   "pages": "12-12"
-  },
-  {
-   "id": "sec-009-31-proof-of-theorem-11-for-the-61-knot",
+   "id": "sec-006-31-proof-of-theorem-11-for-the-61-knot",
    "title": "Proof of Theorem 1.1 for the 61 knot",
-   "pages": "12-14"
+   "pages": "12-16"
   },
   {
-   "id": "sec-010-2-li2e2p1t-li2e2p1s-li2e2p1u-2",
-   "title": "Li2(e2\u0019p\u00001t) + Li2(e2\u0019p\u00001s) + Li2(e2\u0019p\u00001u) + \u00192",
-   "pages": "14-16"
-  },
-  {
-   "id": "sec-011-32-estimate-of-the-range-of",
+   "id": "sec-007-32-estimate-of-the-range-of",
    "title": "Estimate of the range of ∆′",
    "pages": "16-18"
   },
   {
-   "id": "sec-012-33-calculation-of-the-critical-value",
+   "id": "sec-008-33-calculation-of-the-critical-value",
    "title": "Calculation of the critical value",
-   "pages": "18-19"
+   "pages": "18-20"
   },
   {
-   "id": "sec-013-2-li2x0-li2y0-li2z0-2",
-   "title": "Li2(x0) + Li2(y0) + Li2(z0) + \u00192",
-   "pages": "19-20"
-  },
-  {
-   "id": "sec-014-34-verifying-the-assumption-of-the-poisson-summa",
+   "id": "sec-009-34-verifying-the-assumption-of-the-poisson-summa",
    "title": "Verifying the assumption of the Poisson summation formula",
    "pages": "20-22"
   },
   {
-   "id": "sec-015-35-verifying-the-assumption-of-the-saddle-point",
+   "id": "sec-010-35-verifying-the-assumption-of-the-saddle-point",
    "title": "Verifying the assumption of the saddle point method",
    "pages": "22-26"
   },
   {
-   "id": "sec-016-4-the-62-knot",
-   "title": "The 62 knot",
-   "pages": "26-26"
-  },
-  {
-   "id": "sec-017-41-proof-of-theorem-11-for-the-62-knot",
+   "id": "sec-011-41-proof-of-theorem-11-for-the-62-knot",
    "title": "Proof of Theorem 1.1 for the 62 knot",
    "pages": "26-30"
   },
   {
-   "id": "sec-018-42-estimate-of-the-range-of",
+   "id": "sec-012-42-estimate-of-the-range-of",
    "title": "Estimate of the range of ∆′",
    "pages": "30-33"
   },
   {
-   "id": "sec-019-43-calculation-of-the-critical-value",
+   "id": "sec-013-43-calculation-of-the-critical-value",
    "title": "Calculation of the critical value",
    "pages": "33-35"
   },
   {
-   "id": "sec-020-44-verifying-the-assumption-of-the-poisson-summa",
+   "id": "sec-014-44-verifying-the-assumption-of-the-poisson-summa",
    "title": "Verifying the assumption of the Poisson summation formula",
    "pages": "35-37"
   },
   {
-   "id": "sec-021-45-verifying-the-assumption-of-the-saddle-point",
+   "id": "sec-015-45-verifying-the-assumption-of-the-saddle-point",
    "title": "Verifying the assumption of the saddle point method",
-   "pages": "37-41"
+   "pages": "37-44"
   },
   {
-   "id": "sec-022-2-arg-1-y-arg",
-   "title": "Arg (1 \u0000y) = Arg",
-   "pages": "41-41"
-  },
-  {
-   "id": "sec-023-2-arg-1-y-2",
-   "title": "Arg (1 \u0000y) < 2\u0019",
-   "pages": "41-41"
-  },
-  {
-   "id": "sec-024-2-arg-1-y-2",
-   "title": "Arg (1 \u0000y) + 2\u0019",
-   "pages": "41-43"
-  },
-  {
-   "id": "sec-025-1-we-note-that-when-s-u-1",
-   "title": "We note that, when s +u \u0015 1",
-   "pages": "43-43"
-  },
-  {
-   "id": "sec-026-1-it-is-a",
-   "title": "It is a",
-   "pages": "43-44"
-  },
-  {
-   "id": "sec-027-5-the-63-knot",
-   "title": "The 63 knot",
-   "pages": "44-44"
-  },
-  {
-   "id": "sec-028-51-proof-of-theorem-11-for-the-63-knot",
+   "id": "sec-016-51-proof-of-theorem-11-for-the-63-knot",
    "title": "Proof of Theorem 1.1 for the 63 knot",
-   "pages": "44-46"
+   "pages": "44-48"
   },
   {
-   "id": "sec-029-2-li2e2p1t-li2e2p1-st-2-li2e2p1s",
-   "title": "Li2(e2\u0019p\u00001t) \u0000 Li2(e\u00002\u0019p\u00001 (s\u0000t)) \u0000 2 Li2(e2\u0019p\u00001s)",
-   "pages": "46-48"
-  },
-  {
-   "id": "sec-030-52-estimate-of-the-range-of",
+   "id": "sec-017-52-estimate-of-the-range-of",
    "title": "Estimate of the range of ∆′",
    "pages": "48-50"
   },
   {
-   "id": "sec-031-53-calculation-of-the-critical-value",
+   "id": "sec-018-53-calculation-of-the-critical-value",
    "title": "Calculation of the critical value",
-   "pages": "50-51"
+   "pages": "50-52"
   },
   {
-   "id": "sec-032-2-li2x0-li2",
-   "title": "Li2(x0) \u0000 Li2",
-   "pages": "51-52"
-  },
-  {
-   "id": "sec-033-54-verifying-the-assumption-of-the-poisson-summa",
+   "id": "sec-019-54-verifying-the-assumption-of-the-poisson-summa",
    "title": "Verifying the assumption of the Poisson summation formula",
    "pages": "52-53"
   },
   {
-   "id": "sec-034-55-verifying-the-assumption-of-the-saddle-point",
+   "id": "sec-020-55-verifying-the-assumption-of-the-saddle-point",
    "title": "Verifying the assumption of the saddle point method",
-   "pages": "53-54"
+   "pages": "53-55"
   },
   {
-   "id": "sec-035-2-li2e2p1-txp1-li2e2p1-1ts2y-x",
-   "title": "Li2(e2\u0019p\u00001 (t+Xp\u00001)) \u0000 Li2(e2\u0019p\u00001 (1+t\u0000s)+2\u0019(Y \u0000X))",
-   "pages": "54-70"
+   "id": "sec-021-a-estimate-of-solutions-of-systems-of-equations",
+   "title": "A Estimate of solutions of systems of equations",
+   "pages": "55-56"
   },
   {
-   "id": "sec-036-references",
+   "id": "sec-022-estimate-of-solutions-of-35",
+   "title": "Estimate of solutions of (35)",
+   "pages": "56-56"
+  },
+  {
+   "id": "sec-023-estimate-of-a-solution-of-36",
+   "title": "Estimate of a solution of (36)",
+   "pages": "56-58"
+  },
+  {
+   "id": "sec-024-estimate-of-a-solution-of-58",
+   "title": "Estimate of a solution of (58)",
+   "pages": "58-59"
+  },
+  {
+   "id": "sec-025-curvature-of-the-boundary-of-a-convex-domain-in",
+   "title": "Curvature of the boundary of a convex domain in a plane",
+   "pages": "59-70"
+  },
+  {
+   "id": "sec-026-references",
    "title": "References",
    "pages": "70-72"
   }
@@ -199,8 +154,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

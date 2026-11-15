@@ -1,0 +1,41 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "generalised-markov-traces-and-jucys-murphy-element",
+ "source": {
+  "structure_sha256": "9246e10a44d0b4aa202468921605759f2494e87eeedee0ca1a75520cdb8c1022",
+  "file": "Generalised_Markov_traces_and_Jucys-Murphy_element.pdf"
+ },
+ "provenance": {
+  "title": "Glasgow Mathematical Journal (2026), 1\u201310",
+  "authors": "RESEARCH ARTICLE",
+  "arxiv": null,
+  "doi": "10.1017/S0017089526101050"
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "recommendation": 1
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The functionals \u03c6n\u22121 and \u03c6n, n \u22652 must satisfy (U1) \u03c6n(\u03b9(h)) = \u03c1\u03c6n\u22121(h).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-008-markov-traces-via-jucys-murphy-elements.md",
+   "section_title": "Markov traces via Jucys-Murphy elements",
+   "pages": "5-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

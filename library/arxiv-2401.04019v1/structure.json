@@ -6,10 +6,12 @@
   "sha256": "1a29e52a816396404032a27d93864e411e2f1cd775b4c0ac7a7bbe7cc2c52fcf",
   "bytes": 248056,
   "pages": 21,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,19 +23,26 @@
   "doi": null,
   "title": "TRUNCATED THETA SERIES RELATED TO THE JACOBI TRIPLE PRODUCT IDENTITY",
   "authors_raw": "CRISTINA BALLANTINE AND BROOKE FEIGON",
-  "abstract": "The work of Andrews and Merca on the truncated Euler\u2019s pen- tagonal number theorem led to a resurgence in research on tru ncated theta series identities. In particular, Yee proved a truncated ve rsion of the Jacobi Triple Product (JTP) identity. Recently, Merca conjecture d a stronger form of the truncated JTP identity. In this article we prove the \ufb01r st three cases of the conjecture and several related truncated identities. W e prove combinato- rially an identity related to the JTP identity which in parti cular cases reduces to identities conjectured by Merca and proved analytically by Krattenthaler, Merca and Radu. Moreover, we introduce a new combinatorial i nterpretation for the number of distinct 5-regular partitions of n.",
-  "docinfo": {
-   "Producer": "GPL Ghostscript 10.01.2",
-   "CreationDate": "D:20240108215106-05'00'",
-   "Creator": "LaTeX with hyperref",
-   "Title": "",
-   "Author": ""
-  },
-  "title_prev": "TRUNCA TED THETA SERIES RELA TED TO THE JACOBI TRIPLE PRODUCT IDENTITY",
   "title_lines": [
    "TRUNCATED THETA SERIES RELATED TO THE JACOBI",
    "TRIPLE PRODUCT IDENTITY"
-  ]
+  ],
+  "abstract": "The work of Andrews and Merca on the truncated Euler’s pen- tagonal number theorem led to a resurgence in research on truncated theta series identities. In particular, Yee proved a truncated version of the Jacobi Triple Product (JTP) identity. Recently, Merca conjectured a stronger form of the truncated JTP identity. In this article we prove the ﬁrst three cases of the conjecture and several related truncated identities. We prove combinato- rially an identity related to the JTP identity which in particular cases reduces to identities conjectured by Merca and proved analytically by Krattenthaler, Merca and Radu. Moreover, we introduce a new combinatorial interpretation for the number of distinct 5-regular partitions of n.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20240108215106-05'00'"
+  },
+  "title_raw": "TRUNCATED THETA SERIES RELATED TO THE JACOBI TRIPLE PRODUCT IDENTITY",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "TRUNCATED THETA SERIES RELATED TO THE JACOBI TRIPLE PRODUCT IDENTITY 1. Introduction A partition λ of n is a non-increasing sequence λ = ( λ 1 , λ 2 , . . . , λ ℓ ) of positive integers that add up to n . We refer to the integers λ i as the parts of λ . As usual, we denote by p ( n ) the number of p",
+   "outline": "1. Introduction",
+   "text": "TRUNCATED THETA SERIES RELATED TO THE JACOBI TRIPLE PRODUCT IDENTITY",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -41,81 +50,277 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Preliminaries and notation",
    "page": 5,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Proof of Theorem 1.1 and applications",
    "page": 6,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Proof of Theorems 1.2, 1.3, and 1.4",
    "page": 12,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Proof of Theorem 1.2",
    "page": 12,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Proof of Theorem 1.3",
    "page": 13,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Proof of Theorem 1.4",
    "page": 13,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Combinatorial proof of an identity related to the Jacobi Triple Product",
    "page": 13,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Distinct 5-regular partitions.",
    "page": 16,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Concluding remarks",
    "page": 18,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 889,
+   "n_words": 133,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -123,8 +328,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 5,
-   "n_chars": 7466,
-   "n_words": 1390
+   "n_chars": 7467,
+   "n_words": 1391,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-preliminaries-and-notation",
@@ -133,8 +340,10 @@
    "level": 1,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 3269,
-   "n_words": 702
+   "n_chars": 3289,
+   "n_words": 722,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-3-proof-of-theorem-11-and-applications",
@@ -143,8 +352,10 @@
    "level": 1,
    "page_start": 6,
    "page_end": 12,
-   "n_chars": 11273,
-   "n_words": 2404
+   "n_chars": 11179,
+   "n_words": 2310,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-4-proof-of-theorems-12-13-and-14",
@@ -154,7 +365,9 @@
    "page_start": 12,
    "page_end": 12,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-41-proof-of-theorem-12",
@@ -163,8 +376,10 @@
    "level": 2,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 2300,
-   "n_words": 422
+   "n_chars": 2317,
+   "n_words": 439,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-42-proof-of-theorem-13",
@@ -173,8 +388,10 @@
    "level": 2,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 627,
-   "n_words": 102
+   "n_chars": 638,
+   "n_words": 115,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-43-proof-of-theorem-14",
@@ -183,8 +400,10 @@
    "level": 2,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 420,
-   "n_words": 83
+   "n_chars": 495,
+   "n_words": 91,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-007-5-combinatorial-proof-of-an-identity-related-to",
@@ -193,8 +412,10 @@
    "level": 1,
    "page_start": 13,
    "page_end": 16,
-   "n_chars": 6507,
-   "n_words": 1263
+   "n_chars": 4640,
+   "n_words": 882,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-008-6-distinct-5-regular-partitions",
@@ -203,8 +424,10 @@
    "level": 1,
    "page_start": 16,
    "page_end": 18,
-   "n_chars": 2694,
-   "n_words": 442
+   "n_chars": 4590,
+   "n_words": 852,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-009-7-concluding-remarks",
@@ -213,8 +436,10 @@
    "level": 1,
    "page_start": 18,
    "page_end": 20,
-   "n_chars": 4535,
-   "n_words": 863
+   "n_chars": 4564,
+   "n_words": 892,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-010-references",
@@ -223,16 +448,29 @@
    "level": 1,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 3428,
-   "n_words": 572
+   "n_chars": 3389,
+   "n_words": 533,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 11,
-  "sections": 11,
-  "chars_total": 42519,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 12,
+  "chars_total": 43457,
+  "furniture_lines_stripped": 0,
+  "pages_read_in_print_order": [
+   16
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -245,26 +483,31 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.992,
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.922,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-preliminaries-and-notation",
      "title": "Preliminaries and notation",
-     "prose_ratio": 0.99,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.959,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-3-proof-of-theorem-11-and-applications",
      "title": "Proof of Theorem 1.1 and applications",
-     "prose_ratio": 0.983,
-     "coverage_ratio": 0.985,
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.943,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -277,43 +520,43 @@
      "id": "sec-004-41-proof-of-theorem-12",
      "title": "Proof of Theorem 1.2",
      "prose_ratio": 0.263,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-005-42-proof-of-theorem-13",
      "title": "Proof of Theorem 1.3",
      "prose_ratio": 0.333,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-006-43-proof-of-theorem-14",
      "title": "Proof of Theorem 1.4",
-     "prose_ratio": 0.789,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.947,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-007-5-combinatorial-proof-of-an-identity-related-to",
      "title": "Combinatorial proof of an identity related to the Jacobi Triple Product",
-     "prose_ratio": 0.993,
-     "coverage_ratio": 0.988,
+     "prose_ratio": 0.872,
+     "coverage_ratio": 0.939,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-008-6-distinct-5-regular-partitions",
      "title": "Distinct 5-regular partitions.",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.976,
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.661,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-009-7-concluding-remarks",
      "title": "Concluding remarks",
-     "prose_ratio": 0.991,
-     "coverage_ratio": 0.984,
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.955,
      "result": "overlaid",
      "converter": "pandoc"
     },

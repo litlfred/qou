@@ -9,17 +9,19 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-0305275v1",
+  "title": "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds Introduction",
   "contains": [
+    "library/arxiv-math-0305275v1/sections/sec-front-matter",
     "library/arxiv-math-0305275v1/sections/sec-000",
     "library/arxiv-math-0305275v1/sections/sec-001",
     "library/arxiv-math-0305275v1/sections/sec-002",
     "library/arxiv-math-0305275v1/sections/sec-003",
     "library/arxiv-math-0305275v1/sections/sec-004",
-    "library/arxiv-math-0305275v1/sections/sec-005"
+    "library/arxiv-math-0305275v1/sections/sec-005",
+    "library/arxiv-math-0305275v1/sections/sec-006"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
     "status": "stated",
@@ -29,7 +31,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-0305275v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0305275v1.pdf",
     "source_sha256": "9b356a9d716a0d3e8e2dfe0c4ba1283a28ed85e5c78d18072484030e71377fbc",
     "pages": 38,
@@ -40,8 +44,8 @@
       "stamp_date": "19 May 2003"
     },
     "doi": null,
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

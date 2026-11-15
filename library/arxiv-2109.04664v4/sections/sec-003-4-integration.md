@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.971
 latex_coverage_ratio: 0.945
+doc_brief: "ON THE ASYMPTOTIC BEHAVIOR OF THE COLORED JONES POLYNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIATED WITH A REAL NUMBER — We study the asymptotic behavior of the N-dimensional colored Jones polynomial"
 ---
 []{#sec:integration label="sec:integration"} In this section, we use the Poisson summation formula (see [@Ohtsuki:QT2016 Proposition 4.2]) to change the summation in [\[eq:J_summation\]](#eq:J_summation){reference-type="eqref" reference="eq:J_summation"} into an integration. Then by using the saddle point method (see also [@Ohtsuki:QT2016 Proposition 3.2]) to prove Theorem [\[thm:main\]](#thm:main){reference-type="ref" reference="thm:main"}.
 

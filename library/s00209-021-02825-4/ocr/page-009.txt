@@ -1,0 +1,56 @@
+A representation theoretic explanation... 1367
+
+The outer tensor product of V(A;), denoted V(A;) K--- & V(A,,), is a representation of
+(SL2(C))” with action by (¢1, ..., @m) on simple tensors given as follows:
+
+(pis+++ + bm) + (pi B+ B pm) = (b1- pi) B+ p2) B--- Bm +» Pm)
+
+This implies that V(A) and V(A;) &---& V(A,,) are isomorphic as representations, and this
+fact will be used when we define the symbol in Sect. 3.3.
+
+The inner tensor product of V (A), denoted V(A1) @--- ® V(A,), is a representation of
+SL2(C) with action by ¢ on simple tensors given as follows:
+
+(Pi @+++® Pm) := (P+ Pi) @ > p2) @+-- @ (> Pm)
+
+While V (A) and V(A})®- --@V (Am) are isomorphic as vector spaces, they are representations
+of different groups ((SL2(C))” and SL2(C) respectively). The inner tensor product relates
+to invariants of multiple polynomials with respect to a single SL2(C) action. For instance,
+the apolarity form takes two distinct polynomials as input, and it is a classical result that this
+form is invariant with respect to a single action by Mébius transformation. As it turns out,
+this form can be viewed as an SL2(C)-invaiant map on an inner tensor product of polynomial
+spaces. It will therefore be important for us to understand these inner tensor products in a
+little more detail.
+
+3.2 An important invariant map, and apolarity
+
+To aide in our investigation of inner tensor products of SL2(C) representations, we now
+define an important SL (C)-invariant linear map, denoted by D. This map has a long history
+in invariant theory, and we touch on this below.
+
+Proposition 3.1 The linear map D := (dy ® dy — dy @ dx) : Vin+1) @ Vim 4+ 1) >
+V(n) ® V(m) is SL2(C)-invariant.
+
+Proof It suffices to check this on simple tensors. Fix ¢ = [¢ 4] € SLi(C), p € Vin + 1),
+and gq € V(m + 1). We compute:
+
+(@-' 0 Dog)(p ®q) = (@ | 0 D)(p(dx = by, —cx + ay) ® q(dx — by, —cx + ay))
+= (dd, — cdy)p @ (—bd,x + ady)q — (—bd, + ady) p @ (ddy — cdy)q
+= (ad — bc)(dx p ® Iyq — yp ® xq)
+= D(p®q)
+
+That is, Dog = oD. ia
+
+Proposition 3.2 The multiplication map V(n) ® V(m) 4 V(n + m) is SL2(C)-invariant.
+Proof Trivial. ia}
+
+Powers of the D map actually appear in the literature under a few different names. The
+first comes from invariant theory, where the application of the map
+
+Vin) @ Vim) 25 Vin—r) @ Vn — 1) S Vin tm —2r)
+
+to polynomials p € V(n) and q € V(m) is called the rth transvectant of p and q. This map
+is also the result of the rth iteration of Cayley’s Q process. These notions are discussed, for
+example, in chapters 4 and 5 of [13], where they are used to explicitly compute invariants
+
+D Springer

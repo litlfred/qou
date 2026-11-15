@@ -1,0 +1,36 @@
+can be brought to bear. The menagerie of quantum invariants that exists today comes about in
+this manner.
+
+In the seminal work of Reshetikhin and Turaev ((36]), they construct quantum link in-
+variants as tensor functors from the tensor category of colored tangles to the category of modules
+over the quantum group U4, (g), for g a simple complex Lie algebra, using the quasi-triangular Hopf
+algebra structure on U4,(g) and choosing representations to label components. Specifically, a (d,d’)-
+tangle connecting d’ points on the bottom to d points on the top produces a U4,(g)-homomorphism
+Wu, @ OW, 2 Wy, 8---@W),, where the modules W,,, and W), are determined by the colors
+on the strands, In this context, links appear as (0,0)-tangles, as they have no endpoints, and so
+link invariants are U4,(g)-module endomorphisms of the ground field C(v). A family of polynomial
+invariants P, (n > 2) arises from the choice of g = s{(n) and the coloring of each component of the
+link by the standard n-dimensional representation. Each of the invariants P, are specializations
+
+of the HOMFLYPT polynomial at ¢ = v” (see IT.1), and they satisfy the skein relation:
+v" Pa (Ly) — 0" Pa(L_) = (v— 01) Pa(Lo). (1.1)
+
+At n = 1 the specialization is trivial, but the n = 0 case is evidently the Alexander polynomial
+
+1 in Conway’s normalization V(L)). However, to construct the Alexander polynomial
+
+(g=vu-v-
+as a quantum invariant, a suitable substitute for the meaningless sI(0) is required.
+
+One approach is to use the restricted Uc(sl(2)), where ¢ = J—I, labeling each component
+with the entire family of 2-dimensional modules W), A € C, and recovering the invariant in terms
+of X. Another approach is to use the superalgebra U4, (gl{1|1)) with a generic v, taking W to
+be its (1/1)-dimensional standard module. In either case, the quantized deformation admits a
+quasi-triangular Hopf (super-)algebra structure and hence a link invariant (see [40], [28], or [37]).
+However, there are some subtleties to these two alternative constructions, the main problem being
+that the quantum invariant evaluates to zero on any link. This is reflection of the fact that the
+quantum dimension vanishes on W for either algebra. The solution is to cut open the link to form
+
+a (1,1)-tangle, so that the Reshetikhin-Turaev functor produces an endomorphism of W, which
+
+by Schur’s Lemma is a scalar.

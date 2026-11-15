@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-1203.6531v1
-doc_title: "AMERICAN MATHEMATICAL SOCIETY S 0002-9947(XX)0000-0"
+doc_title: "Groebner-Shirshov basis and reduced words for affine Weyl group A_n"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
 latex_coverage_ratio: 0.908
+doc_brief: "Groebner-Shirshov basis and reduced words for affine Weyl group A_n — Using Buchberger-Shirshov Algorithm and Composition-Diamond lemma we obtain the reduced Gr¨obner-Shirshov bases of f An and"
 ---
 Gröbner-Shirshov bases and normal form of the elements were already found for the Coxeter groups of type $A_n,B_n$ and $D_n$ in [@bokut1]. They also proposed a conjecture for the general form of Gröbner-Shirshov bases for all Coxeter groups. In [@chen], an example was given an to show that the conjecture is not true in general. The Gröbner-Shirshov bases of the other finite Coxeter groups are given in [@E1] and [@E2]. This paper is another example of finding Gröbner-Shirshov bases for groups, defined by generators and defining relations.
 

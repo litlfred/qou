@@ -1,0 +1,86 @@
+real x10 = s*cos(9*pi/5);
+real y10 = s*sin(9*pi/5);
+
+real x09 = s*cos(8*pi/5);
+
+real y09 = s*sin(8*pi/5);
+
+real x02 = s*cos(pi/5);
+
+real y02 = s*sin(pi/5);
+
+border Gl (t=6*pi/5,4*pi/5) { x=ctr*cos(t); y=resin(t);};
+
+border G2 (t=6*pi/5,4*pi/5) { x=cos(pi/5)*(ctr*cos(t))—sin(pi/5)*r*sin(t);
+y=sin(pi/5)*(c+r*cos(t))+cos(pi/5)*r*sin(t);};
+
+border G3 (t—6*pi/5,4*pi/5) { x=cos(2*pi/5)*(ct+r*cos(t))—sin (2«pi/5)*r«sin(t);
+y=sin (2« pi /5)*(ctr*cos(t))+cos(2*pi/5)*r*sin(t);};
+
+border G4 (t—6*pi/5,4*pi/5) { x=cos(3*pi/5)*(ct+r*cos(t))—sin(3*pi/5)*r«sin(t);
+y=sin (3* pi /5)*(ctr*cos(t))+cos(3*pi/5)*resin(t);};
+
+border G5 (t—6*pi/5,4*pi/5) { x=cos(4*pi/5)*(ct+r*cos(t))—sin (4«pi/5)*r«sin(t);
+y=sin (4* pi /5)*(ctr*cos(t))+cos(4*pi/5)*r*sin(t);};
+
+border G6 (t=6«pi/5,4*pi/5) { x=cos(pi)*(ctr*cos(t))—sin(pi)*r*sin(t);
+y=sin (pi)*(ct+r*cos(t))+cos(pi)*r*sin(t);};
+
+border G7 (t—6*pi/5,4*pi/5) { x=cos(6*pi/5)*(ct+r*cos(t))—sin (6*pi/5)*r«sin(t);
+y=sin (6* pi /5)*(ctr*cos(t))+cos(6*pi/5)*r*sin(t);};
+
+border G8 (t—6*pi/5,4*pi/5) { x=cos(7*pi/5)*(ct+r*cos(t))—sin(7*pi/5)*r«sin(t);
+y=sin (7* pi /5)*(ctr*cos(t))+cos(7*pi/5)*r*sin(t);};
+
+border G9 (t—6*pi/5,4*pi/5) { x=cos(8*pi/5)*(ct+r*cos(t))—sin (8*pi/5)*r«sin(t);
+y=sin (8* pi /5)*(ctr*cos(t))+cos(8*pi/5)*r*sin(t);};
+
+border G10 (t=6*pi/5,4*pi/5) { x=cos(9«pi/5)*(ctr*cos(t))—sin(9* pi/5)*resin(t);
+y=sin (9* pi /5)*(ctr*cos(t))+cos(9*pi/5)*r*sin(t);};
+
+plot (G1(n)+G2(n)+G3(n)+G4(n)+G5(n)+G6(n)+G7(n)+G8(n)+G9(n)+G10(n) );
+
+mesh Th=buildmesh (G1(n)+G2(n)+G3(n)+G4(n)+G5(n)+G6(n)+G7(n)+G8(n)+G9(n)+G10(n) ,
+fixeborder=true );
+
+plot (Th, wait=true, fill=true);
+
+fespace Vh(Th,P2, periodic =[[1,y] ,[4, cos (2* pi/5)*(y—y04)—sin(—2*pi/5)*(x-x04)],
+
+2x pi/5)*(y—y03)—sin (2* pi/5)*(x-x03)],[6,y],
+
+2% pi /5)*(y—y05)—sin(—2«pi /5)*(x-x05)],
+
+2x pi/5)*(y—-y08)—sin(—2« pi /5)*(x—x08)],
+
+[7 , cos (2* pi /5)*(y—y07)—sin (2* pi /5)*(x-x07)],
+
+[10 , cos (2« pi /5)*(y—y10)—sin(—2«pi/5)*(x—x10)],
+
+[9 , cos (2* pi/5)*(y—y09)—sin (2 pi /5)*(x—x09)],
+
+[2 , cos (2 pi /5)*(y—y02)—sin (2* pi /5)*(x-x02)]]);
+
+[3, cos
+
+[5, cos
+
+[8 , cos
+
+Vh ul, u2;
+real sigma — 0.00001;
+
+varf op(ul,u2)= int2d(Th)(dx(ul)*dx(u2)+ dy(ul)*dy(u2)— sigma*(4*ul¥u2)/(1—x°2-y~>2)*2);
+varf b({ul] ,[u2]) = int2d (Th) ((4*ul*u2)/(1—x°2-y~>2)*2);
+
+matrix OP= op(Vh,Vh, solver=Crout , factorize=1);
+
+matrix B=b(Vh,Vh, solver=CG, eps=le —20);
+
+real[int] ev(nev);
+Vh[int] eV(nev);
+
+int k-EigenValue(OP,B,sym-true , sigma=sigma , value=ev , vector=eV, tol=le—10,maxit=0,ncv=0);
+for (int i=0;i<k;i++) {
+
+112

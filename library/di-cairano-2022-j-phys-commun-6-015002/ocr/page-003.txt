@@ -1,0 +1,71 @@
+IOP Publishing
+
+J. Phys. Commun. 6 (2022) 015002 LDiCairano
+
+mathematical and physical studies [22-28] which provide numerically or analytically the correct description of
+the kernel function depending on physical system that one considers.
+
+By definition, the diffusion is a dynamical process at non-equilibrium since the energy is not constant in time
+but it varies over time due to the interaction with the environment, thereby, it cannot be described through the
+Hamiltonian formalism. In fact, it is not possible to obtain a (generalized) Langevin equation from the
+Hamilton’s equations to any Hamiltonian when the time dependence is not explicit. However, if one introduces
+a further Hamiltonian containing all the microscopic details of the environment explicating the interactions
+with the system, the energy of both the system and the environment can vary but their sum will be unchanged.
+The first attempts to derive a GLE adopting this approach have been done by Mori [29] and Ford et al [30] in the
+context of linear system-environment interactions and, then, by Zwanzig [31] extending the previous works to
+the case of non-linear interactions.
+
+The nonlinear GLE obtained by Zwanzig in [31] is derived from a Hamiltonian function where the particles
+composing the environment oscillate harmonically around their global equilibrium configuration, denoted with
+the map a, which depends on the instantaneous system configuration. The equilibrium map, a, plays a
+fundamental role in the derivation since it contains the information about the coupling between the system and
+the environment and the (non) linearity feature of the GLE is determined by the (non) linear dependence of this
+map by the system variable.
+
+As shown by Zwanzig [31] through a purely theoretical derivation, even in presence ofa non-linear coupling,
+one can still provide a mathematical definition for the friction and noise terms and, thereby, the fluctuation-
+dissipation theorem [32] can be formulated. Unfortunately, as we will show in the upcoming section, by strictly
+applying the theoretical definitions derived in [31], one notices that the friction function is ill-defined since it
+does not contain the information about the coupling and this leads to obtain a tautology on the FDR and to an
+unbounded friction function in the continuum limit [31].
+
+The first aim of this paper is to formalize and adapt the Zwanzig’s derivation in order to provide a preciser
+definition of kernel and noise terms which is consistent with the continuum limit. The second aim is to
+underline the importance of the equilibrium map in the context of the GLE and to study its mathematical
+properties.
+
+1.2. Introduction to the problem
+In this section, we revisit and formalize the theoretical derivation of a GLE introduced by Zwanzig [31] putting in
+evidence what are the main inconsistencies and giving an insight about how to overcome them.
+
+The physical system that Zwanzig considered is composed by a subsystem that we call heavy particle
+described by the variable X := (Q, P) where Q is the generalized coordinate and P the conjugated momentum and
+a heat bath which is a set of N particles whose state is described by the collective variables Y := (q, p) with the same
+meaning as before.
+
+The whole Hamiltonian of this system is given by Zwanzig is [31]
+
+1
+A(X, Y) = H;(X) + lv — aCOFKLY — a(X)], (3)
+where the second term represents the interaction Hamiltonian since it involves the variables of both heavy
+particle and heat bath through the a(X) vector. In fact, in order to switch off the interactions, we have to impose
+
+somehow a(X) = 0 for each X = 0. Finally, the matrix K is a symmetric constant matrix.
+The equation of motion for the heat bath and heavy particle variables are, respectively:
+
+“0 = BK[Y(t) — a(X(t))],
+
+20) =VX) — AW(X() KY) — a(X())] (4)
+
+where A and Bare two constant antisymmetric matrix, i.e.:
+
+0 1
+Az h.p , B= ( 0 ")
+—lhnp 0 —lhy 0
+
+such that the ranks of A and Bare, in general, different and where W(x) = Vxa"(X), V(X) = AVxH{X).
+The heat-bath equation in (4) can be formally solved and we have:
+
+t d
+Y(t) — a(X(t)) = exp(BK t)[Y (0) — a(X(0))] + f exp(BK IA — 7))dr. (5)
+

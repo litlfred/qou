@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2209.06973v1/sections/sec-010",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Questions and projects",
+  "pageStart": 64,
+  "pageEnd": 66,
+  "contains": [
+    "library/arxiv-2209.06973v1/blocks/prose-sec-010",
+    "library/arxiv-2209.06973v1/blocks/recommendation-sec-010-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2209.06973v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2209.06973v1",
+  "provenance": "ingested"
+}

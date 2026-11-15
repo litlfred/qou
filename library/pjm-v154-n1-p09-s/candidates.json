@@ -1,23 +1,56 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "pjm-v154-n1-p09-s",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "cbf5c02babe5a61ed34fdd5b67f8af30c4c8b8fcdb8d4a64c33c94fc02860538",
   "file": "pjm-v154-n1-p09-s.pdf"
  },
  "provenance": {
-  "title": "Pacific Journal of Mathematics THE PERIOD MA TRIX OF BRING\u2019S CURVE",
-  "authors": "GONZALO RIERA AND RUBI RODRIGUEZ",
+  "title": "The period matrix of Bring's curve",
+  "authors": null,
   "arxiv": null,
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
+  "candidates": 2,
+  "by_kind": {
+   "recommendation": 2
+  },
   "formalization_candidates": 0
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "To do so we shall locate TQ in a fundamental region for this group.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-010.md",
+   "section_title": "Page 10",
+   "pages": "10-10",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall show in the next section that via a nat- ural isogeny every matrix Z = \u03c4 c is equivalent to the diagonal (5\u03c4,5\u03c4,5\u03c4,\u03c4).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-011.md",
+   "section_title": "Page 11",
+   "pages": "11-11",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
 }

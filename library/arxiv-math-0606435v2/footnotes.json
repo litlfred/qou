@@ -1,0 +1,6512 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-math-0606435v2",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p019-1",
+   "page": 19,
+   "mark": "1",
+   "text": "Note that here the bracketsfor polynomials and for braids have a completely different meaning.",
+   "marks": [
+    {
+     "page": 19,
+     "context": "degrees will be called left, middle and right terms"
+    },
+    {
+     "page": 19,
+     "context": "substitution v = 1, z = t"
+    },
+    {
+     "page": 19,
+     "context": "Otherwise,[β] < 3 −χ,sothecontribution ofthecoefﬁcientofz"
+    }
+   ],
+   "block": "library/arxiv-math-0606435v2/blocks/prose-sec-014"
+  },
+  {
+   "id": "fn-p022-1",
+   "page": 22,
+   "mark": "1",
+   "text": "Notethattheseareexactlythe3-braidswhicharereducibleintheterminologyofdynamicproperties;thisreducibilityhasnothingtodo, though, with the reducibility in Markov’s theorem.",
+   "marks": [
+    {
+     "page": 21,
+     "context": "Proof.Thesumofwrithesofcrossingsastrandpassesthrough eachofσ"
+    },
+    {
+     "page": 21,
+     "context": "1σ2σ"
+    },
+    {
+     "page": 21,
+     "context": "1σ2σ"
+    },
+    {
+     "page": 21,
+     "context": "1σ2σ1, we obtain a word in σ"
+    },
+    {
+     "page": 22,
+     "context": "which is the closure of an A-semiadequate 3-braid β, and V0V"
+    },
+    {
+     "page": 22,
+     "context": "a A-semiadequate 3 braid is either positive, in which case V"
+    },
+    {
+     "page": 22,
+     "context": " braid relations and cyclic letter permutations) of the form"
+    },
+    {
+     "page": 22,
+     "context": "Analogously tothatstudy,wecanseethatif V0V"
+    }
+   ],
+   "block": "library/arxiv-math-0606435v2/blocks/prose-sec-015"
+  },
+  {
+   "id": "fn-p022-2",
+   "page": 22,
+   "mark": "2",
+   "text": "Note that Vis here what is written as J, and not V, in [K].",
+   "marks": [
+    {
+     "page": 21,
+     "context": "ion 4.2If Kis a strongly quasi-positive 3-braid knot, then v"
+    },
+    {
+     "page": 21,
+     "context": "oof.Thesumofwrithesofcrossingsastrandpassesthrough eachofσ1,"
+    },
+    {
+     "page": 21,
+     "context": "1σ"
+    },
+    {
+     "page": 21,
+     "context": " of β0is number 3.We know from the skein relation of ∆that v"
+    },
+    {
+     "page": 21,
+     "context": "is number 3.We know from the skein relation of ∆that v2(K)−v"
+    },
+    {
+     "page": 21,
+     "context": "nenobu’s formula (23), is a multiple of Casson’s invariant v"
+    },
+    {
+     "page": 21,
+     "context": "1σ"
+    },
+    {
+     "page": 21,
+     "context": "1σ2σ1, we obtain a word in σ1,"
+    },
+    {
+     "page": 21,
+     "context": "l12 +l13 +l23 ≥2c/5 grows unboundedly, then so will l"
+    },
+    {
+     "page": 21,
+     "context": "12+l"
+    },
+    {
+     "page": 21,
+     "context": "13+l"
+    },
+    {
+     "page": 22,
+     "context": "L = [12] or L = [1"
+    },
+    {
+     "page": 22,
+     "context": "sure of an A-semiadequate 3-braid β, and V0V1 = −1, then V0V"
+    },
+    {
+     "page": 22,
+     "context": "−tand x = u +u−1.Let further"
+    },
+    {
+     "page": 22,
+     "context": "χ(β,t) = ieu−2eVˆβ(t)+u−e(x"
+    }
+   ],
+   "block": "library/arxiv-math-0606435v2/blocks/prose-sec-015"
+  },
+  {
+   "id": "fn-p043-1",
+   "page": 43,
+   "mark": "1",
+   "text": "Here consistently ‘tableau’ is used as a synonym for (Young) diagram, i.e.with no additional information attached to it.",
+   "marks": [
+    {
+     "page": 43,
+     "context": "ons (irreps) πYof Bn, indexed by Young diagrams (or tableaux"
+    },
+    {
+     "page": 43,
+     "context": "partition ofnisatuple(n"
+    }
+   ],
+   "block": "library/arxiv-math-0606435v2/blocks/prose-sec-027"
+  },
+  {
+   "id": "fn-p046-1",
+   "page": 46,
+   "mark": "1",
+   "text": "In the parametrizationP(v,z), used by Morton-Short,unlike for X, the coefﬁcientsof P(ˆβk,l) become quickly large and produce machine size integer overﬂows. In particular, we could not calculate correctly polynomials for |l| > 2.",
+   "marks": [
+    {
+     "page": 46,
+     "context": "We calculated for small"
+    }
+   ],
+   "block": "library/arxiv-math-0606435v2/blocks/prose-sec-027"
+  },
+  {
+   "id": "fn-p046-2",
+   "page": 46,
+   "mark": "2",
+   "text": "This is not to be confused with the variable e, which we use for exponent sum of a braid, or with the idempotent eifrom Jones’s lemma 9.1.",
+   "marks": [
+    {
+     "page": 46,
+     "context": "1+q"
+    },
+    {
+     "page": 46,
+     "context": "rmula on p.341.Call eY= n(n −1)r/d (with n = 6) the exponent"
+    },
+    {
+     "page": 46,
+     "context": "d"
+    },
+    {
+     "page": 46,
+     "context": ";itishelpfultomultiplyagainby(1 + q"
+    }
+   ],
+   "block": "library/arxiv-math-0606435v2/blocks/prose-sec-027"
+  },
+  {
+   "id": "fn-p052-1",
+   "page": 52,
+   "mark": "1",
+   "text": "The second duplication was noted in the remarks after Jones’s table, but not referred to correctly in its last column.",
+   "marks": [
+    {
+     "page": 52,
+     "context": "table"
+    }
+   ],
+   "block": "library/arxiv-math-0606435v2/blocks/prose-sec-029"
+  },
+  {
+   "id": "fn-p057-1",
+   "page": 57,
+   "mark": "1",
+   "text": "For the rest of the proof i is used as an index rather than the complex unit.",
+   "marks": [
+    {
+     "page": 56,
+     "context": "uestion is related to controlling |V(t)| and |∆(t)| for t ∈S"
+    },
+    {
+     "page": 56,
+     "context": "nator, observe that the norm in (64) is just the one in L2(S"
+    },
+    {
+     "page": 57,
+     "context": "maps e2πi[0,"
+    },
+    {
+     "page": 57,
+     "context": "maps e2πi[0,1/3]→e2πi[1/6,"
+    },
+    {
+     "page": 57,
+     "context": "apg:[0,1/3] →[1/6,1/2], whichisbijectiveandmonotonous, and C"
+    },
+    {
+     "page": 57,
+     "context": "min=min{g′(s):s ∈[0,"
+    },
+    {
+     "page": 57,
+     "context": "min,thenallintersection points"
+    }
+   ],
+   "block": "library/arxiv-math-0606435v2/blocks/prose-sec-035"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "with non-zero coefﬁcient in X. Let span"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "with non-zero coefﬁcient in X. Let spant X= maxdeg"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "ith non-zero coefﬁcient in X. Let spant X= maxdegt X −mindeg"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "[X]t"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "1,"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "maxdeg"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "maxdegx1 Xdenotes the maximal degree in x"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "1is regarded as a polynomial in"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "[X]x"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "e as in (2) the diagrams (from left to right) by D+, D−and D"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "v−1P+(v,z)−vP−(v,z) = zP"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "∆(t) = P(1,t"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "V(t) = P(t,t"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "call a polynomial ∆∈Z[t"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "∆(t) = (−1)"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "(t"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "(t1/2−t−1/2)"
+  },
+  {
+   "page": 7,
+   "mark": "w",
+   "context": "nparticular wehave foralinkdiagram DtherelationF(D)(a,z) = a"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i,wewrite V"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i,wewrite Vifor[V]mindegV+iand¯V"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "DL]) Assume that D is a connected A-adequate diagram. Then V"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "]) Assume that D is a connected A-adequate diagram. Then V0V"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "characteristic (number of vertices minus number of edges); V"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "The n-string braid group B"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "n is considered generated by the Artin standard generators σ"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "subject to relations of the type [σ"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "subject to relations of the type [σi,σ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1σ"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "1σ2σ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "i.For example, [21(33 −4)"
+  },
+  {
+   "page": 8,
+   "mark": "32",
+   "context": "i.For example, [21(33 −4)2"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "for σ2σ1(σ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "4)"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "4)2σ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "4)2σ3σ"
+  },
+  {
+   "page": 8,
+   "mark": "l",
+   "context": "σ"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "σl"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "with k"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "with ki̸ = k"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "with ki̸ = ki+1 and l"
+  },
+  {
+   "page": 8,
+   "mark": "l",
+   "context": "Call σ"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "Call σl"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "kithe syllables of β.For such a syllable, let"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "kithe syllables of β.For such a syllable, let k"
+  },
+  {
+   "page": 8,
+   "mark": "l",
+   "context": "h a syllable, let kibe called the index of the syllable, and"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "a syllable, let kibe called the index of the syllable, and l"
+  },
+  {
+   "page": 8,
+   "mark": "l",
+   "context": "We call a syllable σ"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "We call a syllable σl"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "k"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "kinon-trivial if |l"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "kinon-trivial if |li| > 1 and trivial if |l"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "i=1|l"
+  },
+  {
+   "page": 8,
+   "mark": "c",
+   "context": "i=1|li|,and"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "i=1|li|,andc±(β) = ∑±l"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "i=1|li|,andc±(β) = ∑±li>0±l"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "β.A word is positive if c−(β) = 0, or equivalently, if all l"
+  },
+  {
+   "page": 8,
+   "mark": "l",
+   "context": "i=1"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "i=1l"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "i=1"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "i=1k"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "i=1ki ·|l"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "if[β]k> 1for allk = 1,...,n −1,where [β]k= ∑k"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "if[β]k> 1for allk = 1,...,n −1,where [β]k= ∑ki=k l"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "allk = 1,...,n −1,where [β]k= ∑ki=k liisthe exponent sum ofσ"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "ˆβ), and s(ˆβ) is the number of strings of β (i.e.n for β ∈B"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "1α′, where"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "1ασ"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "which exchanges thesyllables ofindex 1in β,sothat weobtain σ"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "i,"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "i,j= σ"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "i,j= σi ...σ"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "with the special meaning of σ"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "with the special meaning of σ3 ∈B"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "with the special meaning of σ3 ∈B3 introduced above, σ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "with the special meaning of σ3 ∈B3 introduced above, σ3 =¯σ"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "ith the special meaning of σ3 ∈B3 introduced above, σ3 =¯σ1,"
+  },
+  {
+   "page": 9,
+   "mark": "v",
+   "context": "maxdeg"
+  },
+  {
+   "page": 9,
+   "mark": "v",
+   "context": "maxdegv P−mindeg"
+  },
+  {
+   "page": 9,
+   "mark": "l",
+   "context": "1 −s(D)+w(D)≤mindeg"
+  },
+  {
+   "page": 9,
+   "mark": "l",
+   "context": "1 −s(D)+w(D)≤mindegl P(D)≤maxdeg"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "of a conjugacy class in σ"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "of a conjugacy class in σ1,"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "of a conjugacy class in σ1,2,"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "of a conjugacy class in σ1,2,3.By Xu’s algorithm, each β ∈B"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "lest(non-trivial)VassilievknotinvariantistheCassoninvariantv"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "n-trivial)VassilievknotinvariantistheCassoninvariantv2,withv"
+  },
+  {
+   "page": 11,
+   "mark": "v",
+   "context": "mindeg"
+  },
+  {
+   "page": 11,
+   "mark": "l",
+   "context": "we have mindeg"
+  },
+  {
+   "page": 11,
+   "mark": "z",
+   "context": "we have mindegl P ≤maxdeg"
+  },
+  {
+   "page": 11,
+   "mark": "z",
+   "context": "we have mindegl P ≤maxdegz P, and by [St2] maxdeg"
+  },
+  {
+   "page": 11,
+   "mark": "l",
+   "context": "mindeg"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "ein polynomial of a n-component link is divisible by (v−v−1)"
+  },
+  {
+   "page": 11,
+   "mark": "v",
+   "context": "strongly quasi-positive knot from (16) we have mindeg"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "with σ"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "with σifollowed by σ"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "with σifollowed by σior σ"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "3ασ"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "to cyclic letter permutation a braid of the form σ"
+  },
+  {
+   "page": 11,
+   "mark": "l",
+   "context": "1σ"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "generator of given sign (for example σ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "2σ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "2σ1σ"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "2σ1σ2)"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "2σ1σ2)pσ"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "σ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "1, and conjugating with σ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "1, and conjugating with σ2σ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "1, and conjugating with σ2σ1σ"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "we have σ"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "3σ"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "σ"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "2.Since"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "2.Sincep,"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "2.Sincep,r > 0, this is Hopf plumbing equivalent to σ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "2.Sincep,r > 0, this is Hopf plumbing equivalent to σ3σ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "2.Sincep,r > 0, this is Hopf plumbing equivalent to σ3σ1σ"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "Sincep,r > 0, this is Hopf plumbing equivalent to σ3σ1σ2or σ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "ncep,r > 0, this is Hopf plumbing equivalent to σ3σ1σ2or σ3σ"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "Case4.−p,−r < 0,q > 0.Wehaveawordoftheformσ"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "1.Ifoneof"
+  },
+  {
+   "page": 13,
+   "mark": "r",
+   "context": "1.Ifoneofpand"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "1.Ifoneofpandris1,thenwehave"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "minimal word in Xu’s form is 2"
+  },
+  {
+   "page": 13,
+   "mark": "r",
+   "context": "minimal word in Xu’s form is 2q−2(−3)(−2)"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "minimal word in Xu’s form is 2q−2(−3)(−2)r−1(−1)"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "σ"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "1σ"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "= σ"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "1σ"
+  },
+  {
+   "page": 13,
+   "mark": "r",
+   "context": "2)"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "2)r = σ"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "1σ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "2σ"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "2σ1)σ"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "3σ"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "2σ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "= σ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "= σ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "3σ"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "an extension (in the sense of deﬁnition 2.1) of [(123)"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "5)Some minimal band form of L contains σ"
+  },
+  {
+   "page": 13,
+   "mark": "l",
+   "context": "1σ"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "2σ"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "1or σ"
+  },
+  {
+   "page": 13,
+   "mark": "l",
+   "context": "2σ"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "1σ"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "2as subword for"
+  },
+  {
+   "page": 13,
+   "mark": "l",
+   "context": "2as subword for k,"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "2as subword for k,l,"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "2as subword for k,l,m > 0, or is σ"
+  },
+  {
+   "page": 13,
+   "mark": "l",
+   "context": "1σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "σ1σ2σ1or σ2σ1σ2.By adjusting one of the two, we can have a σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "1or σ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "2if the next letter is σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2if the next letter is σ1or σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "f band.If the next letter is σ3, then we have σ1σ2σ1σ3 = σ1σ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "2σ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "syllables we are left with powers of σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "syllables we are left with powers of σ1σ"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "syllables we are left with powers of σ1σ2σ"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": ".Apply the skein relation for ∆at the last band.Then β−and β"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "of minimal length.We already proved, in (5) ⇒(1), that β"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "dy proved, in (5) ⇒(1), that β0is ﬁbered, so maxdeg∆= 1 −χ(β"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "Lemma 3.1The links L"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "Lemma 3.1The links Lk, given by the closed 3-braids [(123)"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "form [(123)"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "form [(123)k−2] = [(1221)"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "form [(123)k−2] = [(1221)k(−2)"
+  },
+  {
+   "page": 15,
+   "mark": "v",
+   "context": "Proof.Weknowmindeg"
+  },
+  {
+   "page": 15,
+   "mark": "z",
+   "context": "Proof.Weknowmindegv P = maxdeg"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Proof.Weknowmindegv P = maxdegz P = 1 −χ.So[P]z"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "eknowmindegv P = maxdegz P = 1 −χ.So[P]z1−χhasatermindegreev"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "cation of leading z-terms of P in [St2] it follows that [P]z"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "Lemma 4.2Letβ′= [(123)"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "β−withpositivesign(sinceβ"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "If [β]−[(123)"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "theAlexanderpolynomials oftwoclosedbraidsβ"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "ertybyinduction.Thenthemaximaltermsindegree1 −χ(ˆβ−) = −χ(ˆβ"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "cancel.The one of β−is +1, while the one of β"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "Proof.Firstweprovetheclaimifβ = [(123)"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "udemaxcf∆= −2.Applyingtheskeinrelationgivesthepolynomialsofβ"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "eskeinrelationgivesthepolynomialsofβ0andβ−withpositivesign.β"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "If β̸ = [(123)"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "Deﬁnition 4.1Letforβ ∈B"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "ition 4.1Letforβ ∈B3with6 |[β],theBirmandualβ∗bedeﬁnedbyβ−1δ"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": " |[β],theBirmandualβ∗bedeﬁnedbyβ−1δ2[β]/3,whereδ = [121]andδ"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "Weknowbytheorem3.3(orby[St2,St4],asnotedbefore)thatifβ ∈B"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "closures of [(123)"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "condition thatβhasonly onenon-trivial syllable.But[(123)"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "condition thatβhasonly onenon-trivial syllable.But[(123)2"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "em 4.2Let L be a non-split 3-braid link, and L =ˆβ with β ∈B"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "n polynomial. We apply again the result in [St2] that maxdeg"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "ddle degree and [β]+2 we call right degree.The terms of [P]z"
+  },
+  {
+   "page": 19,
+   "mark": "l",
+   "context": "ﬁrstclaim(thesecondclaimisanalogous).Letχ =χ(ˆβ).Sincemindeg"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "maxdeg"
+  },
+  {
+   "page": 19,
+   "mark": "l",
+   "context": "maxdegz P = 1−χ and 1−χ = [β]−2 ≥mindeg"
+  },
+  {
+   "page": 19,
+   "mark": "l",
+   "context": "gz P = 1−χ and 1−χ = [β]−2 ≥mindegl P by MWF, we have mindeg"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "nd 1−χ = [β]−2 ≥mindegl P by MWF, we have mindegl P = maxdeg"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "thatmaxcf"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "the Burau matrix ψ"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "L(−2) = 3(−2)"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "v"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "v2(K"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "v2(Ki)+3(−2)"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "lk(K"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "lk(Ki,K"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "lk(Ki,Kj)"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "lk(Ki,Kj)2+(n −1)(−2)"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "f.Thesumofwrithesofcrossingsastrandpassesthrough eachofσ1,2,"
+  },
+  {
+   "page": 21,
+   "mark": "13",
+   "context": "crossingsastrandpassesthrough eachofσ1,2,3isnon-negative.Sol"
+  },
+  {
+   "page": 21,
+   "mark": "23",
+   "context": "ngsastrandpassesthrough eachofσ1,2,3isnon-negative.Sol13 + l"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "e apply the skein relation of ∆at aletter of s.Let K= K,K−,K"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "f ∆at aletter of s.Let K= K,K−,K0be the skein triple,and β±,"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "ing braids.Also we can cyclically permute the indices in β±,"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "the permutation of β"
+  },
+  {
+   "page": 21,
+   "mark": "c",
+   "context": "1σ2σ1, we obtain a word in σ1,2of some length"
+  },
+  {
+   "page": 21,
+   "mark": "c",
+   "context": "1σ2σ1, we obtain a word in σ1,2of some length c with at most"
+  },
+  {
+   "page": 21,
+   "mark": "12",
+   "context": "l"
+  },
+  {
+   "page": 21,
+   "mark": "13",
+   "context": "l12 +l"
+  },
+  {
+   "page": 21,
+   "mark": "23",
+   "context": "l12 +l13 +l"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "[(312)"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "[[23]...31"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "[[23]...31"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": ", which is the closure of an A-semiadequate 3-braid β, and V"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "losure of an A-semiadequate 3-braid β, and V0V1 = −1, then V"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "[1−22−21−2...1−22−11"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "Analogously tothatstudy,wecanseethatif V"
+  },
+  {
+   "page": 22,
+   "mark": "e",
+   "context": "χ(β,t) = i"
+  },
+  {
+   "page": 22,
+   "mark": "e",
+   "context": "χ(β,t) = ieu−2"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "t)"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "t)2−1 +2(x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "x2(x"
+  },
+  {
+   "page": 23,
+   "mark": "e",
+   "context": "x2(x2−3)(u"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "x2(x2−3)(ue +e−e)+ −x"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "x2(x2−3)(ue +e−e)+ −x4 −2"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "x2(x2−3)(ue +e−e)+ −x4 −2x"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "x2(x2−3)(ue +e−e)+ −x4 −2x3 +3"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "x2(x2−3)(ue +e−e)+ −x4 −2x3 +3x"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "x2(x2−3)(ue +e−e)+ −x4 −2x3 +3x2 +4"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "x2(x"
+  },
+  {
+   "page": 23,
+   "mark": "e",
+   "context": "i"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "Q"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "Q1(L,x) := x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "Q1(L,x) := x2(x"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "·(−x"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "·(−x4−2x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "·(−x4−2x3+3x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "\u00032 ·x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "\u00032 ·x2(x"
+  },
+  {
+   "page": 23,
+   "mark": "e",
+   "context": "i"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "+2(x"
+  },
+  {
+   "page": 23,
+   "mark": "e",
+   "context": "i"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "ie(−t)−eV(t)·(−x"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "ie(−t)−eV(t)·(−x4−2x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "ie(−t)−eV(t)·(−x4−2x3+3x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "\u00032 ·x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "\u00032 ·x2(x"
+  },
+  {
+   "page": 23,
+   "mark": "e",
+   "context": "2i"
+  },
+  {
+   "page": 23,
+   "mark": "e",
+   "context": "2ie(−t)−3"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "−t)x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "−t)x3(x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "(x"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "(x2−2)(−x"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "(x2−2)(−x4−2x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "(x2−2)(−x4−2x3+3x"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "(x2−2)(−x4−2x3+3x2+4x−4)+x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "(x2−2)(−x4−2x3+3x2+4x−4)+x4(x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "(x2−2)(−x4−2x3+3x2+4x−4)+x4(x2−3)+2(x"
+  },
+  {
+   "page": 23,
+   "mark": "e",
+   "context": "(−t)"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "2(x"
+  },
+  {
+   "page": 23,
+   "mark": "e",
+   "context": "i"
+  },
+  {
+   "page": 23,
+   "mark": "e",
+   "context": "2i"
+  },
+  {
+   "page": 23,
+   "mark": "e",
+   "context": "2iet−3"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "−2(x−1)(x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "−2(x−1)(x2−3)(x"
+  },
+  {
+   "page": 23,
+   "mark": "e",
+   "context": "t"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "2(x"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "Now u = t"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "Now u = t1/2and x = t"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "m"
+  },
+  {
+   "page": 23,
+   "mark": "t",
+   "context": "mk = mindeg"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "mk = mindegt T"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "mk = mindegt Tkand maximal degrees M"
+  },
+  {
+   "page": 23,
+   "mark": "t",
+   "context": "mk = mindegt Tkand maximal degrees Mk = maxdeg"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "mk = mindegt Tkand maximal degrees Mk = maxdegt T"
+  },
+  {
+   "page": 23,
+   "mark": "e",
+   "context": "−3"
+  },
+  {
+   "page": 23,
+   "mark": "e",
+   "context": "−3"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "m"
+  },
+  {
+   "page": 24,
+   "mark": "t",
+   "context": "for k = 3,4,5.Then maxdeg"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "for k = 3,4,5.Then maxdegt Q"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "for k = 3,4,5.Then maxdegt Q1(L,x) ≥M"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "for k = 3,4,5.Then maxdegt Q1(L,x) ≥M1 −1.(Here Q"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "B-adequatecaseandshowthatM"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "B-adequatecaseandshowthatM1= M"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "B-adequatecaseandshowthatM1= M2≥M"
+  },
+  {
+   "page": 24,
+   "mark": "t",
+   "context": "B-adequatecaseandshowthatM1= M2≥Mk + 3/2impliesmaxdeg"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "B-adequatecaseandshowthatM1= M2≥Mk + 3/2impliesmaxdegt Q"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "quatecaseandshowthatM1= M2≥Mk + 3/2impliesmaxdegt Q1(L,x) ≥M"
+  },
+  {
+   "page": 24,
+   "mark": "t",
+   "context": "obtain similarly mindeg"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "obtain similarly mindegt Q"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "obtain similarly mindegt Q1(L,x) ≤m"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "x) ≤m1 +1, and the result follows by the (anti)symmetry of Q"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "NowifM"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "NowifM1= M"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "NowifM1= M2≥M"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "NowifM1= M2≥Mk + 3/2,thelastthreecoefﬁcientsofM"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "NowifM1= M2≥Mk + 3/2,thelastthreecoefﬁcientsofM1,"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "+ 3/2,thelastthreecoefﬁcientsofM1,2arenotcancelledfromotherM"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "l, then (apart from proper sign coincidences) we must have¯V"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "then (apart from proper sign coincidences) we must have¯V1¯V"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "from proper sign coincidences) we must have¯V1¯V0 = −1 and¯V"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "so M"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "so M3 ≥M"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "so M3 ≥M4, and we can discard M"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "M"
+  },
+  {
+   "page": 24,
+   "mark": "5",
+   "context": "M1 −M"
+  },
+  {
+   "page": 24,
+   "mark": "e",
+   "context": "M1 −M5 −1 = maxdegV −3"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "So we need to deal only with m"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "So we need to deal only with mk,M"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "l only with mk,Mkfor k ≤3. Moreover, we see from (21) that M"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "can apply lemma 4.11, we have for χ ≤0 that maxdegQ"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "can apply lemma 4.11, we have for χ ≤0 that maxdegQ1≥M"
+  },
+  {
+   "page": 24,
+   "mark": "z",
+   "context": "ma 4.11, we have for χ ≤0 that maxdegQ1≥M1 −1 > 2, so maxdeg"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "over, we have for a sequence of links from χ →−∞also maxdegM"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "To apply lemma 4.11, we need to check M"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "To apply lemma 4.11, we need to check M3 < M"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "To apply lemma 4.11, we need to check M3 < M1 −1 and m"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "To apply lemma 4.11, we need to check M3 < M1 −1 and m3 > m"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "at β is B-adequate.Then (21) holds, and itis enough to use M"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": " is B-adequate.Then (21) holds, and itis enough to use M3< M"
+  },
+  {
+   "page": 24,
+   "mark": "e",
+   "context": "mindegV −e−2 +3"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "m"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "m1 −m"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "M"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "M1 −M"
+  },
+  {
+   "page": 25,
+   "mark": "t",
+   "context": "do not cancel, we have mindeg"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "do not cancel, we have mindegt Q"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "do not cancel, we have mindegt Q1 ≤m"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": " we have mindegt Q1 ≤m1 +1/2, and are done.Otherwise again V"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "e have mindegt Q1 ≤m1 +1/2, and are done.Otherwise again V1V"
+  },
+  {
+   "page": 25,
+   "mark": "l",
+   "context": "β = [1−k2−21−2...1−22−11"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "form can be chosen, when written out as a word in σ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "form can be chosen, when written out as a word in σ1,"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "ependently onthelocation ofthebasepoint, equal tov2(T2,l) =l"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "v"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "v2≥l"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "+k"
+  },
+  {
+   "page": 25,
+   "mark": "c",
+   "context": "l≥4"
+  },
+  {
+   "page": 25,
+   "mark": "c",
+   "context": "So the r.h.s.in (32) is minimized for l≥4"
+  },
+  {
+   "page": 25,
+   "mark": "l",
+   "context": "5−3 when putting"
+  },
+  {
+   "page": 25,
+   "mark": "c",
+   "context": "5−3 when putting l =4"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "5−3.Then we have, with"
+  },
+  {
+   "page": 25,
+   "mark": "c",
+   "context": "5−3.Then we have, with k ≥3 and"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "v"
+  },
+  {
+   "page": 25,
+   "mark": "c",
+   "context": "v2≥3"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "v2≥3c"
+  },
+  {
+   "page": 25,
+   "mark": "c",
+   "context": "50−29"
+  },
+  {
+   "page": 27,
+   "mark": "l",
+   "context": "a)All σ"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "a)All σl"
+  },
+  {
+   "page": 27,
+   "mark": "l",
+   "context": "b)if α = σ"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "b)if α = σl"
+  },
+  {
+   "page": 27,
+   "mark": "l",
+   "context": "kare summit syllables, with no σ"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "k′for"
+  },
+  {
+   "page": 27,
+   "mark": "l",
+   "context": "k′for k′ ≥koccurring between α and α′, then all σ"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "koccurring in α"
+  },
+  {
+   "page": 27,
+   "mark": "l",
+   "context": "koccurring in αi, put the integer"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "koccurring in αi, put the integer lat the point (k,"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "occurring in αi, put the integer lat the point (k,i) ∈N×N ⊂R"
+  },
+  {
+   "page": 27,
+   "mark": "l",
+   "context": "changes between αiand αi+1.Then for a syllable σ"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "Note that neighbored summit syllables have indices k"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "i=1"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "i=1k"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "i=1ki · l"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "cannot bereduced by aYang-Baxter relation,i.e.βcontains no σ"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "ot bereduced by aYang-Baxter relation,i.e.βcontains no σi+1σ"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": " bereduced by aYang-Baxter relation,i.e.βcontains no σi+1σiσ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "word of the form ασ"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "Sinceallσ"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "n−1,σ"
+  },
+  {
+   "page": 29,
+   "mark": "k",
+   "context": "aroundMstartingwithσ"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "such that l +k = n −3 and {p"
+  },
+  {
+   "page": 29,
+   "mark": "k",
+   "context": "such that l +k = n −3 and {p1,..., p"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "such that l +k = n −3 and {p1,..., pk,q"
+  },
+  {
+   "page": 29,
+   "mark": "l",
+   "context": "such that l +k = n −3 and {p1,..., pk,q1,...,q"
+  },
+  {
+   "page": 29,
+   "mark": "p",
+   "context": "k−h(the"
+  },
+  {
+   "page": 29,
+   "mark": "h",
+   "context": "icontain the indices above"
+  },
+  {
+   "page": 29,
+   "mark": "p",
+   "context": "icontain the indices above h occurring as"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "icontain the indices above h occurring asp"
+  },
+  {
+   "page": 29,
+   "mark": "p",
+   "context": "1,...,"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "1@,...,"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "1@,...,"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "and are left with a word that has at least two σ"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "with the ﬁrst or last h −k syllables belonging to β"
+  },
+  {
+   "page": 30,
+   "mark": "5",
+   "context": "with the ﬁrst or last h −k syllables belonging to β2,"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "or last h −k syllables belonging to β2,5 and the others to β"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": " last h −k syllables belonging to β2,5 and the others to β1,"
+  },
+  {
+   "page": 30,
+   "mark": "4",
+   "context": "ast h −k syllables belonging to β2,5 and the others to β1,3,"
+  },
+  {
+   "page": 30,
+   "mark": "6",
+   "context": "t h −k syllables belonging to β2,5 and the others to β1,3,4,"
+  },
+  {
+   "page": 30,
+   "mark": "5",
+   "context": "W.l.o.g.assume 1 ∈β"
+  },
+  {
+   "page": 30,
+   "mark": "5",
+   "context": "W.l.o.g.assume 1 ∈β5 (which is meant to abbreviate that β"
+  },
+  {
+   "page": 30,
+   "mark": "5",
+   "context": "Case 2.1. Now if 2̸ ∈β"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "Case 2.1. Now if 2̸ ∈β5 (so 2 ∈β"
+  },
+  {
+   "page": 30,
+   "mark": "4",
+   "context": ".1. Now if 2̸ ∈β5 (so 2 ∈β2) then the 2-index syllables in β"
+  },
+  {
+   "page": 30,
+   "mark": "6",
+   "context": ". Now if 2̸ ∈β5 (so 2 ∈β2) then the 2-index syllables in β4,"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "subwords between β"
+  },
+  {
+   "page": 30,
+   "mark": "5",
+   "context": "subwords between β2and β"
+  },
+  {
+   "page": 30,
+   "mark": "5",
+   "context": "Case 2.1.1. 2|31. If 3 ∈β"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "Case 2.1.1. 2|31. If 3 ∈β5, then both 3 in β"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "Case 2.1.1. 2|31. If 3 ∈β5, then both 3 in β1,"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "Case 2.1.2. If 3 ∈β"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "Case 2.1.2. If 3 ∈β2,then one of both 3-index syllables in β"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "se 2.1.2. If 3 ∈β2,then one of both 3-index syllables in β1,"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "ex syllables in β1,3must be trivial.(It is the syllable in β"
+  },
+  {
+   "page": 30,
+   "mark": "5",
+   "context": "Case 2.2. Now assume 2 ∈β"
+  },
+  {
+   "page": 30,
+   "mark": "5",
+   "context": "Case 2.2. Now assume 2 ∈β5.Since 1 ∈β"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "In this case the above argument shows that the syllable 2 ∈β"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "Case 2.2.2. 3|21. Here 2 ∈β"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "Case 2.2.3. |123. As before 2 ∈β"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "letters of σ"
+  },
+  {
+   "page": 31,
+   "mark": "k",
+   "context": " all non-trivial). Also extensions of subwords (n−2 n−2 n−1)"
+  },
+  {
+   "page": 31,
+   "mark": "k",
+   "context": "words of the form [123412(334)"
+  },
+  {
+   "page": 31,
+   "mark": "l",
+   "context": "words of the form [123412(334)k3211234(334)"
+  },
+  {
+   "page": 31,
+   "mark": "k",
+   "context": "[123421(334)"
+  },
+  {
+   "page": 31,
+   "mark": "l",
+   "context": "[123421(334)k3211234(334)"
+  },
+  {
+   "page": 31,
+   "mark": "k",
+   "context": "[12342(334)"
+  },
+  {
+   "page": 31,
+   "mark": "l",
+   "context": "[12342(334)k32112341(334)"
+  },
+  {
+   "page": 31,
+   "mark": "k",
+   "context": "Case 2.2.1. [123412(334)"
+  },
+  {
+   "page": 31,
+   "mark": "l",
+   "context": "Case 2.2.1. [123412(334)k3211234(334)"
+  },
+  {
+   "page": 31,
+   "mark": "k",
+   "context": "12(334)"
+  },
+  {
+   "page": 32,
+   "mark": "k",
+   "context": "Case 2.2.2. [123421(334)"
+  },
+  {
+   "page": 32,
+   "mark": "l",
+   "context": "Case 2.2.2. [123421(334)k3211234(334)"
+  },
+  {
+   "page": 32,
+   "mark": "k",
+   "context": "21(334)"
+  },
+  {
+   "page": 32,
+   "mark": "k",
+   "context": "Case 2.2.3. [12342(334)"
+  },
+  {
+   "page": 32,
+   "mark": "l",
+   "context": "Case 2.2.3. [12342(334)k32112341(334)"
+  },
+  {
+   "page": 32,
+   "mark": "k",
+   "context": "2(334)"
+  },
+  {
+   "page": 32,
+   "mark": "k",
+   "context": "[1234(334)"
+  },
+  {
+   "page": 32,
+   "mark": "k",
+   "context": "[12341(334)"
+  },
+  {
+   "page": 32,
+   "mark": "k",
+   "context": "Case 2.3.1. [1234(334)"
+  },
+  {
+   "page": 32,
+   "mark": "k",
+   "context": "(334)"
+  },
+  {
+   "page": 32,
+   "mark": "k",
+   "context": "Case 2.3.2. [12341(334)"
+  },
+  {
+   "page": 32,
+   "mark": "k",
+   "context": "1(334)"
+  },
+  {
+   "page": 33,
+   "mark": "p",
+   "context": "Sothemaximalsubwordisoftheform1,2,3,(2!,3)"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "Sothemaximalsubwordisoftheform1,2,3,(2!,3)p,2,1,1,2,3,(2!,3)"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "single σ"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "plateau.Assume w.l.o.g.the (non-summit) σ"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "the syllables of β the syllable σ"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": " written to occur just before or after a syllable with index"
+  },
+  {
+   "page": 33,
+   "mark": "l",
+   "context": "β"
+  },
+  {
+   "page": 33,
+   "mark": "m",
+   "context": "βl,"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "βl,m,"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "βl,m,n = [12.3(223)"
+  },
+  {
+   "page": 33,
+   "mark": "m",
+   "context": "βl,m,n = [12.3(223)n1(223)"
+  },
+  {
+   "page": 33,
+   "mark": "l",
+   "context": "βl,m,n = [12.3(223)n1(223)m2..1123(223)"
+  },
+  {
+   "page": 33,
+   "mark": "l",
+   "context": "fitsextensions.NotethatMWFwillbemonotonous inm,n,l,i.e.MWF(β"
+  },
+  {
+   "page": 33,
+   "mark": "m",
+   "context": "tsextensions.NotethatMWFwillbemonotonous inm,n,l,i.e.MWF(βl,"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "extensions.NotethatMWFwillbemonotonous inm,n,l,i.e.MWF(βl,m,"
+  },
+  {
+   "page": 33,
+   "mark": "l",
+   "context": "MWF(β"
+  },
+  {
+   "page": 33,
+   "mark": "m",
+   "context": "MWF(βl,"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "MWF(βl,m,"
+  },
+  {
+   "page": 33,
+   "mark": "m",
+   "context": ".. in (36) must be trivial.Otherwise remove all 2! in (2!,3)"
+  },
+  {
+   "page": 33,
+   "mark": "l",
+   "context": "two loops as explained after (34).The ‘2!’ in (2!,3)"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "o loops as explained after (34).The ‘2!’ in (2!,3)lor (2!,3)"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "ments apply. So we have a family of words βl,m,n = [123(223)"
+  },
+  {
+   "page": 33,
+   "mark": "m",
+   "context": "pply. So we have a family of words βl,m,n = [123(223)n1(223)"
+  },
+  {
+   "page": 33,
+   "mark": "l",
+   "context": " have a family of words βl,m,n = [123(223)n1(223)m21123(223)"
+  },
+  {
+   "page": 33,
+   "mark": "l",
+   "context": "se 1.2.1. m = n = 0.These are extensions of [1231211123(223)"
+  },
+  {
+   "page": 33,
+   "mark": "l",
+   "context": "(223)"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "ity conditions on 2.. and 2.does not apply, we have 123(223)"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "(223)"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "s we use the two-cabled MWF inequality. Let for a braid β ∈B"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "nequality. Let for a braid β ∈Bn, the “two-cabled” braid (β)"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "ality. Let for a braid β ∈Bn, the “two-cabled” braid (β)2 ∈B"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "lity. Let for a braid β ∈Bn, the “two-cabled” braid (β)2 ∈B2"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "from β by replacing in (9) each σ"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "from β by replacing in (9) each σi by σ"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "from β by replacing in (9) each σi by σ2"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "from β by replacing in (9) each σi by σ2iσ"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "from β by replacing in (9) each σi by σ2iσ2"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "from β by replacing in (9) each σi by σ2iσ2i−1σ"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "from β by replacing in (9) each σi by σ2iσ2i−1σ2"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "from β by replacing in (9) each σi by σ2iσ2i−1σ2i+1σ"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "from β by replacing in (9) each σi by σ2iσ2i−1σ2i+1σ2"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "m β by replacing in (9) each σi by σ2iσ2i−1σ2i+1σ2i.Then (β)"
+  },
+  {
+   "page": 35,
+   "mark": "0",
+   "context": "theconnected cable (the onewith braid representation (β"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "theconnected cable (the onewith braid representation (β0)"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "econnected cable (the onewith braid representation (β0)2 · σ"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "(changingaσ"
+  },
+  {
+   "page": 35,
+   "mark": "a",
+   "context": "iinto"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "iintoaσ"
+  },
+  {
+   "page": 35,
+   "mark": "a",
+   "context": "ordeletingit)doesnotreducethetwo-cabledMWFbound.The2-cableof"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "claspandchanging twiceσ"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "i→σ"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "i→σi.Finally,the2-cableofanisolatedσ"
+  },
+  {
+   "page": 35,
+   "mark": "a",
+   "context": "mindeg"
+  },
+  {
+   "page": 35,
+   "mark": "v",
+   "context": "mindega F(L)=mindeg"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "[F(L)]a"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "[F(L)]a1−χ(L)= [P(L)(ia,iz)]a"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "where n"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "where ni ≥1 odd and k"
+  },
+  {
+   "page": 36,
+   "mark": "j",
+   "context": "where ni ≥1 odd and ki,"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "where ni ≥1 odd and ki,j ≥2 when 1 <j < n"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "where ni ≥1 odd and ki,j ≥2 when 1 <j < ni and k"
+  },
+  {
+   "page": 36,
+   "mark": "j",
+   "context": "where ni ≥1 odd and ki,j ≥2 when 1 <j < ni and ki,"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "≥1 odd and ki,j ≥2 when 1 <j < ni and ki,j ≥1 whenj = 1 or n"
+  },
+  {
+   "page": 36,
+   "mark": "a",
+   "context": ",j ≥2 when 1 <j < ni and ki,j ≥1 whenj = 1 or ni.Then mindeg"
+  },
+  {
+   "page": 36,
+   "mark": "a",
+   "context": "mindeg"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "D"
+  },
+  {
+   "page": 36,
+   "mark": "a",
+   "context": "D0has mindeg"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "D0has mindega Λ(D"
+  },
+  {
+   "page": 36,
+   "mark": "l",
+   "context": "D∞= D"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "D∞= Dl"
+  },
+  {
+   "page": 36,
+   "mark": "l",
+   "context": "D∞= Dl1#D"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "D∞= Dl1#Dl"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "D∞= Dl1#Dl2with l"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "D∞= Dl1#Dl2with l1 +l"
+  },
+  {
+   "page": 36,
+   "mark": "a",
+   "context": "D∞= Dl1#Dl2with l1 +l2 = l, so mindeg"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "D∞= Dl1#Dl2with l1 +l2 = l, so mindega Λ(D∞) = −l"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "D∞= Dl1#Dl2with l1 +l2 = l, so mindega Λ(D∞) = −l1 −l"
+  },
+  {
+   "page": 36,
+   "mark": "a",
+   "context": "with l1 +l2 = l, so mindega Λ(D∞) = −l1 −l2 = −l, and mindeg"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "where n"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "where ni ≥1 odd and k"
+  },
+  {
+   "page": 36,
+   "mark": "j",
+   "context": "where ni ≥1 odd and ki,"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "where ni ≥1 odd and ki,j≥2 when 1 <j < n"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "where ni ≥1 odd and ki,j≥2 when 1 <j < niand k"
+  },
+  {
+   "page": 36,
+   "mark": "j",
+   "context": "where ni ≥1 odd and ki,j≥2 when 1 <j < niand ki,"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "ni ≥1 odd and ki,j≥2 when 1 <j < niand ki,j≥1 whenj = 1 or n"
+  },
+  {
+   "page": 36,
+   "mark": "a",
+   "context": " ki,j≥2 when 1 <j < niand ki,j≥1 whenj = 1 or ni.Then mindeg"
+  },
+  {
+   "page": 36,
+   "mark": "a",
+   "context": "and mindeg"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "crossinginD = D−.ThenD"
+  },
+  {
+   "page": 36,
+   "mark": "a",
+   "context": "crossinginD = D−.ThenD0hasmindeg"
+  },
+  {
+   "page": 36,
+   "mark": "a",
+   "context": "andmindeg"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "ndmindega Λ = −2 > −lbyYokota’sresult.Oritcan(b)occurthatnoσ"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "mindega Λ = −2 > −lbyYokota’sresult.Oritcan(b)occurthatnoσ1σ"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "ndega Λ = −2 > −lbyYokota’sresult.Oritcan(b)occurthatnoσ1σ2σ"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "a Λ = −2 > −lbyYokota’sresult.Oritcan(b)occurthatnoσ1σ2σ1orσ"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "Λ = −2 > −lbyYokota’sresult.Oritcan(b)occurthatnoσ1σ2σ1orσ2σ"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "= −2 > −lbyYokota’sresult.Oritcan(b)occurthatnoσ1σ2σ1orσ2σ1σ"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "Then k"
+  },
+  {
+   "page": 36,
+   "mark": "j",
+   "context": "Then ki,"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "Then ki,j≥2 for 1 <j < n"
+  },
+  {
+   "page": 36,
+   "mark": "a",
+   "context": "mindeg"
+  },
+  {
+   "page": 36,
+   "mark": "a",
+   "context": "Itremains tojustify theclaimmindeg"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "that now we observe that all of Λ(D"
+  },
+  {
+   "page": 36,
+   "mark": "a",
+   "context": "mindeg"
+  },
+  {
+   "page": 36,
+   "mark": "a",
+   "context": "mindega F(D)=w(D) + mindeg"
+  },
+  {
+   "page": 36,
+   "mark": "a",
+   "context": "mindega F(D)=w(D) + mindega Λ(D)=3 −χ(ˆβ)+mindeg"
+  },
+  {
+   "page": 36,
+   "mark": "v",
+   "context": "but mindeg"
+  },
+  {
+   "page": 36,
+   "mark": "a",
+   "context": "but mindegv P(D) = 1 −χ(ˆβ) as before, so mindeg"
+  },
+  {
+   "page": 36,
+   "mark": "v",
+   "context": "but mindegv P(D) = 1 −χ(ˆβ) as before, so mindega F̸= mindeg"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "ions for˜P and Λ at the negative crossing.Then mindega Λ(D+,"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "t the negative crossing.Then mindega Λ(D+,0) = mindega˜P(D+,"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "−2,and [Λ(D+,"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "−2,and [Λ(D+,0)]a−2= [˜P(D+,"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "−2,and [Λ(D+,0)]a−2= [˜P(D+,0)]a−2by theorem 5.4 since D+,"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": " 2thenresolveanegativecrossinginD = D−viatherelation˜P−= z˜P"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "zΛ"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "zΛ0 +zΛ∞−Λ+.Now [˜P+,"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "zΛ0 +zΛ∞−Λ+.Now [˜P+,0]a−2= [Λ+,"
+  },
+  {
+   "page": 36,
+   "mark": "s",
+   "context": "r strongly quasi-positive knots satisfy the equality TB = 2g"
+  },
+  {
+   "page": 36,
+   "mark": "s",
+   "context": "quasi-positive 3-braid knots withTB < 2g"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "D = D[n] = b(σ"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "D = D[n] = b(σk"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "1σ"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "1σk"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "2...σ"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "2...σk"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "1δ"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "with n ≥1 odd, k"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "with n ≥1 odd, k1,k"
+  },
+  {
+   "page": 37,
+   "mark": "i",
+   "context": "with n ≥1 odd, k1,kn ≥1 and k"
+  },
+  {
+   "page": 37,
+   "mark": "a",
+   "context": " ≥1 odd, k1,kn ≥1 and ki ≥2 when i = 2,...,n −1, then mindeg"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "k)=(k"
+  },
+  {
+   "page": 37,
+   "mark": "l",
+   "context": "(k"
+  },
+  {
+   "page": 37,
+   "mark": "z",
+   "context": "we have maxdeg"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "= 1 we check directly (we have a reduced diagram of the (2,k"
+  },
+  {
+   "page": 37,
+   "mark": "a",
+   "context": "Thus mindeg"
+  },
+  {
+   "page": 37,
+   "mark": "a",
+   "context": "mindeg"
+  },
+  {
+   "page": 37,
+   "mark": "a",
+   "context": "mindega Λ(D) = −w(D)+mindeg"
+  },
+  {
+   "page": 37,
+   "mark": "z",
+   "context": "That maxdeg"
+  },
+  {
+   "page": 37,
+   "mark": "l",
+   "context": "k is not of these special types, then k"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "en kl≥3 for some 1 ≤l ≤n.We resolve a positive crossing in σ"
+  },
+  {
+   "page": 37,
+   "mark": "l",
+   "context": "n kl≥3 for some 1 ≤l ≤n.We resolve a positive crossing in σk"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "Λ(D+)=zΛ(D"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "Here D"
+  },
+  {
+   "page": 37,
+   "mark": "l",
+   "context": "Ifk"
+  },
+  {
+   "page": 37,
+   "mark": "i",
+   "context": "gative.Byrepeatingthistransformation,weobtainaformthathasnoσ"
+  },
+  {
+   "page": 37,
+   "mark": "i",
+   "context": "tive.Byrepeatingthistransformation,weobtainaformthathasnoσiσ"
+  },
+  {
+   "page": 37,
+   "mark": "i",
+   "context": ".Byrepeatingthistransformation,weobtainaformthathasnoσiσi±1σ"
+  },
+  {
+   "page": 37,
+   "mark": "i",
+   "context": "atingthistransformation,weobtainaformthathasnoσiσi±1σi(i.e.k"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "ItremainstodealwiththetermofD∞in(40).ItistheconnectedsumD[n"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "ainstodealwiththetermofD∞in(40).ItistheconnectedsumD[n1]#D[n"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "ealwiththetermofD∞in(40).ItistheconnectedsumD[n1]#D[n2]withn"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "ththetermofD∞in(40).ItistheconnectedsumD[n1]#D[n2]withn1 + n"
+  },
+  {
+   "page": 37,
+   "mark": "l",
+   "context": "k"
+  },
+  {
+   "page": 37,
+   "mark": "a",
+   "context": "kl −1 >1negativekinks.Sobyinductionmindeg"
+  },
+  {
+   "page": 37,
+   "mark": "l",
+   "context": "kl −1 >1negativekinks.Sobyinductionmindega Λ(D∞)= k"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "resentation β by theorem 1.1. So β is of Xu’s form R or (21)"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "almostpositive braid wehave Xu’s form Ror(21)"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "n1 > 3.We proved in theorem 3.2 that the forms (21)"
+  },
+  {
+   "page": 38,
+   "mark": "z",
+   "context": "plit, we have 1 −χ(L) > 0.It is also well known, that maxdeg"
+  },
+  {
+   "page": 38,
+   "mark": "v",
+   "context": "(see [Cr]).Now span"
+  },
+  {
+   "page": 38,
+   "mark": "z",
+   "context": "zerocoefﬁcientsinbothmonomials zmaxdeg"
+  },
+  {
+   "page": 38,
+   "mark": "v",
+   "context": "zerocoefﬁcientsinbothmonomials zmaxdegz Pvmaxdeg"
+  },
+  {
+   "page": 38,
+   "mark": "z",
+   "context": "erocoefﬁcientsinbothmonomials zmaxdegz Pvmaxdegv Pandzmaxdeg"
+  },
+  {
+   "page": 38,
+   "mark": "v",
+   "context": "entsinbothmonomials zmaxdegz Pvmaxdegv Pandzmaxdegz Pvmindeg"
+  },
+  {
+   "page": 38,
+   "mark": "z",
+   "context": "ormaxdeg"
+  },
+  {
+   "page": 38,
+   "mark": "v",
+   "context": "ormaxdegz P = −maxdeg"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "full P polynomial) is constant, but b(K"
+  },
+  {
+   "page": 39,
+   "mark": "b",
+   "context": "Moreover, for g ﬁxed, we have that lim"
+  },
+  {
+   "page": 39,
+   "mark": "g",
+   "context": "Moreover, for g ﬁxed, we have that limb→∞n"
+  },
+  {
+   "page": 39,
+   "mark": "b",
+   "context": "Moreover, for g ﬁxed, we have that limb→∞ng,"
+  },
+  {
+   "page": 39,
+   "mark": "6",
+   "context": "Moreover, for g ﬁxed, we have that limb→∞ng,b/b"
+  },
+  {
+   "page": 39,
+   "mark": "g",
+   "context": "Moreover, for g ﬁxed, we have that limb→∞ng,b/b6"
+  },
+  {
+   "page": 39,
+   "mark": "g",
+   "context": "Moreover, for g ﬁxed, we have that limb→∞ng,b/b6g−4= C"
+  },
+  {
+   "page": 39,
+   "mark": "g",
+   "context": "Proof.Theﬁnitenessofn"
+  },
+  {
+   "page": 39,
+   "mark": "b",
+   "context": "Proof.Theﬁnitenessofng,"
+  },
+  {
+   "page": 39,
+   "mark": "g",
+   "context": " course we could also gain, as in [SV], an estimate on the C"
+  },
+  {
+   "page": 39,
+   "mark": "6",
+   "context": "justmultiply by 2"
+  },
+  {
+   "page": 39,
+   "mark": "g",
+   "context": "justmultiply by 26"
+  },
+  {
+   "page": 39,
+   "mark": "i",
+   "context": "(a)The Murasugi (or connected) sum of three (2,n"
+  },
+  {
+   "page": 39,
+   "mark": "i",
+   "context": "sugi (or connected) sum of three (2,ni)-torus links (with |n"
+  },
+  {
+   "page": 40,
+   "mark": "l",
+   "context": "Γ(D) has ledges of variable multiplicity, we have 2"
+  },
+  {
+   "page": 40,
+   "mark": "l",
+   "context": "olynomials to calculate.Then we check for each such set of 2"
+  },
+  {
+   "page": 40,
+   "mark": "v",
+   "context": "polynomials that Q = P"
+  },
+  {
+   "page": 40,
+   "mark": "9",
+   "context": "polynomials that Q = Pv"
+  },
+  {
+   "page": 40,
+   "mark": "z",
+   "context": "polynomials that Q = Pv9−χ(D)is non-zero, and maxdeg"
+  },
+  {
+   "page": 40,
+   "mark": "z",
+   "context": "lynomials that Q = Pv9−χ(D)is non-zero, and maxdegz P−maxdeg"
+  },
+  {
+   "page": 40,
+   "mark": "z",
+   "context": "v9−χ(D)is non-zero, and maxdegz P−maxdegz Q as well as maxcf"
+  },
+  {
+   "page": 40,
+   "mark": "l",
+   "context": "of 2"
+  },
+  {
+   "page": 42,
+   "mark": "n",
+   "context": "1)(weaker version) If β,β′∈B"
+  },
+  {
+   "page": 42,
+   "mark": "n",
+   "context": "nfor"
+  },
+  {
+   "page": 42,
+   "mark": "6",
+   "context": "[St2] these links were described fully.If µ = σ"
+  },
+  {
+   "page": 42,
+   "mark": "a",
+   "context": "[St2] these links were described fully.If µ = σ6"
+  },
+  {
+   "page": 42,
+   "mark": "6",
+   "context": "Consider ﬁrst the knots K =ˆβ with β = µ∗for µ = σ"
+  },
+  {
+   "page": 42,
+   "mark": "a",
+   "context": "Consider ﬁrst the knots K =ˆβ with β = µ∗for µ = σ6"
+  },
+  {
+   "page": 42,
+   "mark": "s",
+   "context": "1 −χ"
+  },
+  {
+   "page": 42,
+   "mark": "n",
+   "context": "Using(13),weseethatif(44)isviolated forsomeβ′′∈B"
+  },
+  {
+   "page": 42,
+   "mark": "s",
+   "context": "1 −χ"
+  },
+  {
+   "page": 43,
+   "mark": "6",
+   "context": "Theeffortfocussesontheotherbraidsβ = µ∗forµ = σ"
+  },
+  {
+   "page": 43,
+   "mark": "a",
+   "context": "Theeffortfocussesontheotherbraidsβ = µ∗forµ = σ6"
+  },
+  {
+   "page": 43,
+   "mark": "n",
+   "context": "equalities(13)showthatwemustruleoutabraidrepresentationβ′′∈B"
+  },
+  {
+   "page": 43,
+   "mark": "a",
+   "context": "γ"
+  },
+  {
+   "page": 43,
+   "mark": "a",
+   "context": "γa=[4354]·[2132]6"
+  },
+  {
+   "page": 43,
+   "mark": "a",
+   "context": "6)−2"
+  },
+  {
+   "page": 43,
+   "mark": "6",
+   "context": "6)−2a∈B"
+  },
+  {
+   "page": 43,
+   "mark": "6",
+   "context": "6= [12345]6generating thecenter ofB"
+  },
+  {
+   "page": 43,
+   "mark": "a",
+   "context": "v-degree [γ"
+  },
+  {
+   "page": 43,
+   "mark": "a",
+   "context": "v-degree [γa]−5 or [γ"
+  },
+  {
+   "page": 43,
+   "mark": "k",
+   "context": "β"
+  },
+  {
+   "page": 43,
+   "mark": "l",
+   "context": "βk,"
+  },
+  {
+   "page": 43,
+   "mark": "l",
+   "context": "βk,l:=[4354]·[2132]k∆2"
+  },
+  {
+   "page": 43,
+   "mark": "k",
+   "context": "partition ofnisatuple(n1,...,n"
+  },
+  {
+   "page": 43,
+   "mark": "k",
+   "context": "partition ofnisatuple(n1,...,nk)withn"
+  },
+  {
+   "page": 43,
+   "mark": "i",
+   "context": "partition ofnisatuple(n1,...,nk)withnk> 0,n"
+  },
+  {
+   "page": 43,
+   "mark": "i",
+   "context": "partition ofnisatuple(n1,...,nk)withnk> 0,ni≥n"
+  },
+  {
+   "page": 43,
+   "mark": "i",
+   "context": "partition ofnisatuple(n1,...,nk)withnk> 0,ni≥ni+1and ∑n"
+  },
+  {
+   "page": 43,
+   "mark": "e",
+   "context": "Here"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "to avoid denominators it is useful to multiply (47) by (1 −q"
+  },
+  {
+   "page": 43,
+   "mark": "6",
+   "context": "ominators it is useful to multiply (47) by (1 −q2)·...·(1 −q"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "−(1 −q"
+  },
+  {
+   "page": 43,
+   "mark": "6",
+   "context": "−(1 −q2)·...·(1 −q"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "1 −λq·(1 −q)(1 −q"
+  },
+  {
+   "page": 43,
+   "mark": "6",
+   "context": "1 −λq·(1 −q)(1 −q2)·...·(1 −q"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "There are 11 Young diagrams Yof 6 boxes.Now β"
+  },
+  {
+   "page": 44,
+   "mark": "4",
+   "context": "There are 11 Young diagrams Yof 6 boxes.Now βk ∈B"
+  },
+  {
+   "page": 44,
+   "mark": "6",
+   "context": "There are 11 Young diagrams Yof 6 boxes.Now βk ∈B4 ⊂B"
+  },
+  {
+   "page": 44,
+   "mark": "4",
+   "context": "B"
+  },
+  {
+   "page": 44,
+   "mark": "n",
+   "context": "etely in §8 (see also §7.2 in this paper below). Denote by ψ"
+  },
+  {
+   "page": 44,
+   "mark": "n",
+   "context": "(n −1)-dimensionalrepresentationofB"
+  },
+  {
+   "page": 44,
+   "mark": "3",
+   "context": "πEisgivenbyq[.],πB= −ψ"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "πD= −V"
+  },
+  {
+   "page": 44,
+   "mark": "3",
+   "context": "πD= −V2ψ"
+  },
+  {
+   "page": 44,
+   "mark": "4",
+   "context": "being thehomomorphism B"
+  },
+  {
+   "page": 44,
+   "mark": "3",
+   "context": "being thehomomorphism B4 →B"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "= −ψ"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "alculate (see §2).We ﬁnd former’s eigenvalues to be ±tand −t"
+  },
+  {
+   "page": 44,
+   "mark": "3",
+   "context": "nd former’s eigenvalues to be ±tand −t2, and latter’s tand t"
+  },
+  {
+   "page": 44,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 44,
+   "mark": "3",
+   "context": "−q"
+  },
+  {
+   "page": 44,
+   "mark": "4",
+   "context": "q"
+  },
+  {
+   "page": 44,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 44,
+   "mark": "4",
+   "context": "q"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "−q"
+  },
+  {
+   "page": 44,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 44,
+   "mark": "3",
+   "context": "−q"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "−q"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "−q"
+  },
+  {
+   "page": 44,
+   "mark": "i",
+   "context": "Y(α) by δ"
+  },
+  {
+   "page": 44,
+   "mark": "i",
+   "context": "Thus πY(α) are all diagonalizable, with eigenvalues δ"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "tr πY(β"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "tr πY(βk)=tr πY(α"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "c(i,Y)δ"
+  },
+  {
+   "page": 45,
+   "mark": "i",
+   "context": "(= dimπY ) and r (rank of the idempotent e"
+  },
+  {
+   "page": 45,
+   "mark": "i",
+   "context": "themultiplicitiesM(i,Y)ofthe7possibleeigenvaluesδ"
+  },
+  {
+   "page": 45,
+   "mark": "4",
+   "context": "πY ′for4-boxYoungtableaux Y ′ofthesub-representation ofB"
+  },
+  {
+   "page": 46,
+   "mark": "5",
+   "context": "isappears at even exponent sum, with) an exterior power of ψ"
+  },
+  {
+   "page": 46,
+   "mark": "6",
+   "context": "−(1 −q)·...·(1 −q"
+  },
+  {
+   "page": 46,
+   "mark": "k",
+   "context": "−(1 −q)·...·(1 −q6)X(ˆβ"
+  },
+  {
+   "page": 46,
+   "mark": "l",
+   "context": "−(1 −q)·...·(1 −q6)X(ˆβk,"
+  },
+  {
+   "page": 46,
+   "mark": "l",
+   "context": "bWY(q,λ)q"
+  },
+  {
+   "page": 46,
+   "mark": "k",
+   "context": "c(i,Y)δ"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "hand-sides of(48) (indegrees"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "2,"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "2,...,"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "opposite eigenvalues δ"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "opposite eigenvalues δiand δ"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "opposite eigenvalues δiand δi′= −δ"
+  },
+  {
+   "page": 47,
+   "mark": "i",
+   "context": " Young tableaux Yof 6 boxes and the 7 possible eigenvalues δ"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "(1+q"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "(1+q2)(1+q+q"
+  },
+  {
+   "page": 47,
+   "mark": "q",
+   "context": "q(1−4"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "q(1−4q+q"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "−(q"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "−(q2(2+q"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "−(q"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "−(q2(2+q"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "2(1+q"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "2(1+q"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "(1+q"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "(1+q2)(1+q+q"
+  },
+  {
+   "page": 47,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "q3(1−q+q"
+  },
+  {
+   "page": 48,
+   "mark": "a",
+   "context": "s is, however, not really a problem, because in the braids γ"
+  },
+  {
+   "page": 48,
+   "mark": "6",
+   "context": " however, not really a problem, because in the braids γa = β"
+  },
+  {
+   "page": 48,
+   "mark": "a",
+   "context": "however, not really a problem, because in the braids γa = β6"
+  },
+  {
+   "page": 48,
+   "mark": "a",
+   "context": "r, not really a problem, because in the braids γa = β6a−1,−2"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "Z = (1 +q)(1 +q"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "Z = (1 +q)(1 +q2)(1 +q +q"
+  },
+  {
+   "page": 48,
+   "mark": "m",
+   "context": "ators in the c(i,Y), normalizing and taking coefﬁcients in λ"
+  },
+  {
+   "page": 48,
+   "mark": "q",
+   "context": "i"
+  },
+  {
+   "page": 48,
+   "mark": "l",
+   "context": "iq"
+  },
+  {
+   "page": 48,
+   "mark": "6",
+   "context": "e−5· Z · (1 −q)·...·(1 −q"
+  },
+  {
+   "page": 48,
+   "mark": "k",
+   "context": "e−5· Z · (1 −q)·...·(1 −q6)Xˆβ"
+  },
+  {
+   "page": 48,
+   "mark": "l",
+   "context": "e−5· Z · (1 −q)·...·(1 −q6)Xˆβk,"
+  },
+  {
+   "page": 48,
+   "mark": "k",
+   "context": "(Z ·c(i,Y))δ"
+  },
+  {
+   "page": 48,
+   "mark": "m",
+   "context": "λ"
+  },
+  {
+   "page": 48,
+   "mark": "m",
+   "context": "λ"
+  },
+  {
+   "page": 48,
+   "mark": "k",
+   "context": "and l = −2a for an integer a > 1 (and β"
+  },
+  {
+   "page": 48,
+   "mark": "l",
+   "context": "and l = −2a for an integer a > 1 (and βk,"
+  },
+  {
+   "page": 48,
+   "mark": "a",
+   "context": "and l = −2a for an integer a > 1 (and βk,l= γ"
+  },
+  {
+   "page": 48,
+   "mark": "3",
+   "context": "terms Z ·c(i,Y) into 5 terms˜c(i,Y) accounting for δ"
+  },
+  {
+   "page": 48,
+   "mark": "4",
+   "context": "terms Z ·c(i,Y) into 5 terms˜c(i,Y) accounting for δ3 = −δ"
+  },
+  {
+   "page": 48,
+   "mark": "6",
+   "context": "s Z ·c(i,Y) into 5 terms˜c(i,Y) accounting for δ3 = −δ4and δ"
+  },
+  {
+   "page": 48,
+   "mark": "7",
+   "context": "(i,Y) into 5 terms˜c(i,Y) accounting for δ3 = −δ4and δ6 = −δ"
+  },
+  {
+   "page": 48,
+   "mark": "q",
+   "context": "i"
+  },
+  {
+   "page": 48,
+   "mark": "l",
+   "context": "iq"
+  },
+  {
+   "page": 48,
+   "mark": "k",
+   "context": "˜c(i,Y)δ"
+  },
+  {
+   "page": 48,
+   "mark": "m",
+   "context": "λ"
+  },
+  {
+   "page": 48,
+   "mark": "k",
+   "context": "the smallest (it is 14 −36a).Thus [P(ˆβ"
+  },
+  {
+   "page": 48,
+   "mark": "l",
+   "context": "the smallest (it is 14 −36a).Thus [P(ˆβk,"
+  },
+  {
+   "page": 48,
+   "mark": "e",
+   "context": "the smallest (it is 14 −36a).Thus [P(ˆβk,l)]v"
+  },
+  {
+   "page": 48,
+   "mark": "6",
+   "context": "Remark 7.1Notethatonecouldhandlethecasesµ = σ"
+  },
+  {
+   "page": 48,
+   "mark": "a",
+   "context": "Remark 7.1Notethatonecouldhandlethecasesµ = σ6"
+  },
+  {
+   "page": 48,
+   "mark": "n",
+   "context": "descriptions ofπYintermsoftheBuraurepresentation ψ"
+  },
+  {
+   "page": 48,
+   "mark": "n",
+   "context": "representation ψngivenin[J].Againtheindexing ischosensothatψ"
+  },
+  {
+   "page": 48,
+   "mark": "n",
+   "context": "is the reduced (n −1)-dimensional representation of B"
+  },
+  {
+   "page": 49,
+   "mark": "e",
+   "context": "(β)(q) = (−1)"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "(β)(q) = (−1)eψ"
+  },
+  {
+   "page": 49,
+   "mark": "e",
+   "context": "(β)(q) = (−1)eψ2(β)(q) = q"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "(β)(q) = (−1)eψ2(β)(q) = qeψ"
+  },
+  {
+   "page": 49,
+   "mark": "e",
+   "context": "2.π(β) = (−1)"
+  },
+  {
+   "page": 49,
+   "mark": "e",
+   "context": "(β) = q"
+  },
+  {
+   "page": 49,
+   "mark": "3",
+   "context": "= −ψ"
+  },
+  {
+   "page": 49,
+   "mark": "e",
+   "context": "(β) = (−1)"
+  },
+  {
+   "page": 49,
+   "mark": "3",
+   "context": "(β) = (−1)eψ"
+  },
+  {
+   "page": 49,
+   "mark": "e",
+   "context": "(β)(q) = q"
+  },
+  {
+   "page": 49,
+   "mark": "3",
+   "context": "= −ψ"
+  },
+  {
+   "page": 49,
+   "mark": "3",
+   "context": "= −ψ3 ∧ψ"
+  },
+  {
+   "page": 49,
+   "mark": "e",
+   "context": "(β) = (−1)"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "(β) = (−1)eψ"
+  },
+  {
+   "page": 49,
+   "mark": "4",
+   "context": "(β) = (−1)eψ2(¯β), where bar denotes the homomorphism from B"
+  },
+  {
+   "page": 49,
+   "mark": "3",
+   "context": "(−1)eψ2(¯β), where bar denotes the homomorphism from B4 to B"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": " where bar denotes the homomorphism from B4 to B3 given by¯σ"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "here bar denotes the homomorphism from B4 to B3 given by¯σ1,"
+  },
+  {
+   "page": 49,
+   "mark": "3",
+   "context": "re bar denotes the homomorphism from B4 to B3 given by¯σ1,2,"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "r denotes the homomorphism from B4 to B3 given by¯σ1,2,3 = σ"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "denotes the homomorphism from B4 to B3 given by¯σ1,2,3 = σ1,"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "notes the homomorphism from B4 to B3 given by¯σ1,2,3 = σ1,2,"
+  },
+  {
+   "page": 49,
+   "mark": "e",
+   "context": "4.π(β) = (−1)"
+  },
+  {
+   "page": 49,
+   "mark": "e",
+   "context": "(β) = q"
+  },
+  {
+   "page": 49,
+   "mark": "e",
+   "context": "(t) ∈(−t)"
+  },
+  {
+   "page": 49,
+   "mark": "0",
+   "context": "nJ"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "nJ0ψ"
+  },
+  {
+   "page": 49,
+   "mark": "0",
+   "context": "nJ0ψn = J"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "t"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "t)"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "he (positivity of) the principal minor criterion. Since e±2π"
+  },
+  {
+   "page": 50,
+   "mark": "1",
+   "context": "So on the arcs of S"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "such, it can be written as Q∗Q, and then conjugating ψ"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "t)"
+  },
+  {
+   "page": 50,
+   "mark": "2",
+   "context": "t)"
+  },
+  {
+   "page": 50,
+   "mark": "4",
+   "context": "Proof.We have from [J] that if β ∈B"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "\u0014 t(1 −t"
+  },
+  {
+   "page": 50,
+   "mark": "2",
+   "context": "tr ψ3 +t"
+  },
+  {
+   "page": 50,
+   "mark": "2",
+   "context": "1 +ttr¯ψ"
+  },
+  {
+   "page": 50,
+   "mark": "5",
+   "context": "1 +ttr¯ψ2+1 −t"
+  },
+  {
+   "page": 50,
+   "mark": "2",
+   "context": "1 −t"
+  },
+  {
+   "page": 50,
+   "mark": "2",
+   "context": "1 −t"
+  },
+  {
+   "page": 50,
+   "mark": "2",
+   "context": "where¯ψ"
+  },
+  {
+   "page": 50,
+   "mark": "2",
+   "context": "where¯ψ2 is the composition of ψ"
+  },
+  {
+   "page": 50,
+   "mark": "4",
+   "context": "where¯ψ2 is the composition of ψ2 with¯ :B"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "where¯ψ2 is the composition of ψ2 with¯ :B4 →B"
+  },
+  {
+   "page": 50,
+   "mark": "2",
+   "context": "omposition of ψ2 with¯ :B4 →B3.Taking norms and using that¯ψ"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "ion of ψ2 with¯ :B4 →B3.Taking norms and using that¯ψ2 and ψ"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "1 −t"
+  },
+  {
+   "page": 50,
+   "mark": "5",
+   "context": "1 −t"
+  },
+  {
+   "page": 50,
+   "mark": "2",
+   "context": "1 −t"
+  },
+  {
+   "page": 50,
+   "mark": "2",
+   "context": "1 −t"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "t)"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "For β ∈B"
+  },
+  {
+   "page": 50,
+   "mark": "2",
+   "context": "t ·tr ψ"
+  },
+  {
+   "page": 50,
+   "mark": "2",
+   "context": "t ·tr ψ2 + (1 +t"
+  },
+  {
+   "page": 50,
+   "mark": "2",
+   "context": "and the result follows using |tr ψ"
+  },
+  {
+   "page": 50,
+   "mark": "2",
+   "context": " result[J,proposition 15.3] for n ≤4,where he considers t= e"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "esult[J,proposition 15.3] for n ≤4,where he considers t= e2π"
+  },
+  {
+   "page": 50,
+   "mark": "4",
+   "context": "example for MWF = 4.Again it appears that for β ∈B"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "ple for MWF = 4.Again it appears that for β ∈B4 and t̸ = e±π"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "t)"
+  },
+  {
+   "page": 50,
+   "mark": "2",
+   "context": "t)"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "t)2] for β ∈B"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "t)2] for β ∈B3 and t̸ = e±π"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "t)2] for β ∈B3 and t̸ = e±πi/3,e±π"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "Conjecture 7.2If β ∈B"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "t)"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "eorem 7.4For each n ≥2, if |t| = 1 and |argt| ≤2π/n and β ∈B"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "≤2"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "|1 −t"
+  },
+  {
+   "page": 50,
+   "mark": "0",
+   "context": "Proof.J"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "det(1 −ψ"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "|1 −t"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "and all eigenvalues of 1 −ψ"
+  },
+  {
+   "page": 51,
+   "mark": "n",
+   "context": "∆(ˆβ):β ∈B"
+  },
+  {
+   "page": 51,
+   "mark": "i",
+   "context": "Proof.∆is determined by ∆(t"
+  },
+  {
+   "page": 51,
+   "mark": "i",
+   "context": "Proof.∆is determined by ∆(ti) for k different t"
+  },
+  {
+   "page": 51,
+   "mark": "i",
+   "context": "Proof.∆is determined by ∆(ti) for k different tiwith |t"
+  },
+  {
+   "page": 51,
+   "mark": "i",
+   "context": "etermined by ∆(ti) for k different tiwith |ti| = 1, 0 < argt"
+  },
+  {
+   "page": 51,
+   "mark": "j",
+   "context": "using the (regular Vandermonde) matrix M = (t"
+  },
+  {
+   "page": 51,
+   "mark": "n",
+   "context": "i)"
+  },
+  {
+   "page": 51,
+   "mark": "j",
+   "context": "i,"
+  },
+  {
+   "page": 51,
+   "mark": "j",
+   "context": "i,j=1.So ||[∆(t)]t"
+  },
+  {
+   "page": 51,
+   "mark": "i",
+   "context": "i,j=1.So ||[∆(t)]tj||≤||M−1||·||∆(t"
+  },
+  {
+   "page": 51,
+   "mark": "4",
+   "context": "Corollary 7.3If β ∈B"
+  },
+  {
+   "page": 51,
+   "mark": "4",
+   "context": "|1 −t"
+  },
+  {
+   "page": 51,
+   "mark": "3",
+   "context": "when |t| = 1 and ℜt> 0.If β ∈B"
+  },
+  {
+   "page": 51,
+   "mark": "3",
+   "context": "|1 −t"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "∆(e"
+  },
+  {
+   "page": 51,
+   "mark": "i",
+   "context": "∆(e2π"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "Putting t= e"
+  },
+  {
+   "page": 51,
+   "mark": "i",
+   "context": "Putting t= e2π"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "138385 (where one can use t = e"
+  },
+  {
+   "page": 51,
+   "mark": "i",
+   "context": "138385 (where one can use t = e2π"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "38385 (where one can use t = e2πi/9) and 1437492 (with t = e"
+  },
+  {
+   "page": 51,
+   "mark": "i",
+   "context": "385 (where one can use t = e2πi/9) and 1437492 (with t = e2π"
+  },
+  {
+   "page": 51,
+   "mark": "4",
+   "context": "Proposition 7.2If β ∈B"
+  },
+  {
+   "page": 51,
+   "mark": "4",
+   "context": "\u0001e−3 ∆ˆβ(t)1 −t"
+  },
+  {
+   "page": 51,
+   "mark": "e",
+   "context": "1 −t−1 +(−t)"
+  },
+  {
+   "page": 51,
+   "mark": "3",
+   "context": "If β ∈B"
+  },
+  {
+   "page": 51,
+   "mark": "3",
+   "context": "\u0001e−2 ∆ˆβ(t)1 −t"
+  },
+  {
+   "page": 51,
+   "mark": "e",
+   "context": "1 −t−1 −(−t)"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 52,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 52,
+   "mark": "6",
+   "context": "q"
+  },
+  {
+   "page": 52,
+   "mark": "211",
+   "context": "eW"
+  },
+  {
+   "page": 52,
+   "mark": "22",
+   "context": "eW"
+  },
+  {
+   "page": 52,
+   "mark": "31",
+   "context": "eW"
+  },
+  {
+   "page": 52,
+   "mark": "4",
+   "context": "eW"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 52,
+   "mark": "3",
+   "context": "q2+q"
+  },
+  {
+   "page": 52,
+   "mark": "4",
+   "context": "q2+q3+q"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "1 +q"
+  },
+  {
+   "page": 52,
+   "mark": "3",
+   "context": "1 +q2+q"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "1 +q +q"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "1 +1/q +q"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "1 +1/q +1/q"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "λ"
+  },
+  {
+   "page": 52,
+   "mark": "5",
+   "context": "q"
+  },
+  {
+   "page": 52,
+   "mark": "6",
+   "context": "q5+q"
+  },
+  {
+   "page": 52,
+   "mark": "7",
+   "context": "q5+q6+q"
+  },
+  {
+   "page": 52,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "q3+q"
+  },
+  {
+   "page": 52,
+   "mark": "5",
+   "context": "q3+q2+q"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "q +q"
+  },
+  {
+   "page": 52,
+   "mark": "3",
+   "context": "q +q2+q"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "1/q +q +q"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "1/q +1/q"
+  },
+  {
+   "page": 52,
+   "mark": "3",
+   "context": "1/q +1/q2+1/q"
+  },
+  {
+   "page": 52,
+   "mark": "3",
+   "context": "−λ"
+  },
+  {
+   "page": 52,
+   "mark": "9",
+   "context": "q"
+  },
+  {
+   "page": 52,
+   "mark": "5",
+   "context": "q"
+  },
+  {
+   "page": 52,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 52,
+   "mark": "3",
+   "context": "1/q"
+  },
+  {
+   "page": 52,
+   "mark": "i",
+   "context": "column.In the ﬁrst row the symbol [i] denotes 1−q"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "Remark 7.4Note that the quantity χ in (24) is equal to utr ψ"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "−tand ψ"
+  },
+  {
+   "page": 52,
+   "mark": "4",
+   "context": " 2-variable skein polynomial X.We have, as in (47), for β ∈B"
+  },
+  {
+   "page": 52,
+   "mark": "e",
+   "context": "tr πY(q)"
+  },
+  {
+   "page": 52,
+   "mark": "e",
+   "context": "where the weights"
+  },
+  {
+   "page": 52,
+   "mark": "211",
+   "context": "thematrixintable3tothecolumnsofπ"
+  },
+  {
+   "page": 52,
+   "mark": "31",
+   "context": "thematrixintable3tothecolumnsofπ211,π"
+  },
+  {
+   "page": 52,
+   "mark": "22",
+   "context": "thematrixintable3tothecolumnsofπ211,π31andπ"
+  },
+  {
+   "page": 52,
+   "mark": "i",
+   "context": "3tothecolumnsofπ211,π31andπ22hasrank2.ThismeansthattwooftheX"
+  },
+  {
+   "page": 52,
+   "mark": "i",
+   "context": "olumnsofπ211,π31andπ22hasrank2.ThismeansthattwooftheXi= [X]λ"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "ations resultfrom the general substitutions λ = 1and λ = 1/q"
+  },
+  {
+   "page": 52,
+   "mark": "i",
+   "context": "pendent on the braid group. Thus the relations between the X"
+  },
+  {
+   "page": 53,
+   "mark": "a",
+   "context": "Xi(q)q"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "rows.Then for q where J"
+  },
+  {
+   "page": 53,
+   "mark": "i",
+   "context": "hen for q where J0is deﬁnite we obtain again estimates on |X"
+  },
+  {
+   "page": 54,
+   "mark": "3",
+   "context": "tr ψ"
+  },
+  {
+   "page": 54,
+   "mark": "3",
+   "context": "tr ψ3 ∧ψ"
+  },
+  {
+   "page": 54,
+   "mark": "e",
+   "context": "tr ψ3 ∧ψ3 = (−t)"
+  },
+  {
+   "page": 54,
+   "mark": "3",
+   "context": "tr ψ"
+  },
+  {
+   "page": 54,
+   "mark": "3",
+   "context": "tr ψ"
+  },
+  {
+   "page": 54,
+   "mark": "e",
+   "context": "tr ψ3(−t)−e/2−(−t)"
+  },
+  {
+   "page": 54,
+   "mark": "i",
+   "context": "tr ψ3(−t)−e/2−(−t)e"
+  },
+  {
+   "page": 54,
+   "mark": "3",
+   "context": "1 −trψ"
+  },
+  {
+   "page": 54,
+   "mark": "e",
+   "context": "1 −trψ3 +(−t)"
+  },
+  {
+   "page": 54,
+   "mark": "4",
+   "context": "1 −t"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "∆(t)"
+  },
+  {
+   "page": 54,
+   "mark": "4",
+   "context": "∆(t)1 −t"
+  },
+  {
+   "page": 54,
+   "mark": "e",
+   "context": "−1 +(−t)"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "λ"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "λ1 +λ"
+  },
+  {
+   "page": 54,
+   "mark": "3",
+   "context": "λ1 +λ2 +λ"
+  },
+  {
+   "page": 54,
+   "mark": "e",
+   "context": "λ1 +λ2 +λ3=(−t)"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "λ"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "λ1λ"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "λ1λ2 +λ"
+  },
+  {
+   "page": 54,
+   "mark": "3",
+   "context": "λ1λ2 +λ1λ"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "λ1λ2 +λ1λ3 +λ"
+  },
+  {
+   "page": 54,
+   "mark": "3",
+   "context": "λ1λ2 +λ1λ3 +λ2λ"
+  },
+  {
+   "page": 54,
+   "mark": "e",
+   "context": "λ1λ2 +λ1λ3 +λ2λ3=(−t)"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "λ"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "λ1λ"
+  },
+  {
+   "page": 54,
+   "mark": "3",
+   "context": "λ1λ2λ"
+  },
+  {
+   "page": 54,
+   "mark": "e",
+   "context": "λ1λ2λ3=(−t)"
+  },
+  {
+   "page": 54,
+   "mark": "k",
+   "context": "Hereyisarealnumberwedonotknow,andwetrytodetermine.Since|λ"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "|B| ≤3.So the range for y is [−y"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "|B| ≤3.So the range for y is [−y0,y"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "|B| ≤3.So the range for y is [−y0,y0] with y"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "9 −δ"
+  },
+  {
+   "page": 54,
+   "mark": "3",
+   "context": "tr ψ"
+  },
+  {
+   "page": 54,
+   "mark": "e",
+   "context": "tr ψ3∈[(−t)"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "tr ψ3∈[(−t)e/2(−y"
+  },
+  {
+   "page": 54,
+   "mark": "e",
+   "context": "tr ψ3∈[(−t)e/2(−y0 +iδ), (−t)"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "tr ψ3∈[(−t)e/2(−y0 +iδ), (−t)e/2(y"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "Now one can restrict the interval [−y"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "Now one can restrict the interval [−y0,y"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "Let ρ:= (−t)−e/2tr¯ψ"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "1 −t"
+  },
+  {
+   "page": 54,
+   "mark": "5",
+   "context": "−1 −t"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 54,
+   "mark": "e",
+   "context": "1 +t(−t)"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "1 −t"
+  },
+  {
+   "page": 54,
+   "mark": "3",
+   "context": "t(1 −t"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "1 −t"
+  },
+  {
+   "page": 54,
+   "mark": "5",
+   "context": "−1 −t"
+  },
+  {
+   "page": 54,
+   "mark": "e",
+   "context": "1 +2ℜt(−t)"
+  },
+  {
+   "page": 54,
+   "mark": "3",
+   "context": "t(1 −t"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "1 −t"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "2.˜y+ ˜y−≤0 or min(˜y"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "±+δ"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "y ∈[−y"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "y ∈[−y0,y"
+  },
+  {
+   "page": 54,
+   "mark": "3",
+   "context": "x"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "x3+ax"
+  },
+  {
+   "page": 54,
+   "mark": "3",
+   "context": "x3+ax2+bx+c:=x"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "x3+ax2+bx+c:=x3−Ax"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "2(−a"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "λ"
+  },
+  {
+   "page": 55,
+   "mark": "3",
+   "context": "−2a"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "27 (−a"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "27 (−a2b"
+  },
+  {
+   "page": 55,
+   "mark": "3",
+   "context": "27 (−a2b2+4b"
+  },
+  {
+   "page": 55,
+   "mark": "3",
+   "context": "27 (−a2b2+4b3+4a"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "27 (−a2b2+4b3+4a3c−18abc+27c"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "We must have that |λ"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "We must have that |λ1| = 1.Then we must check |λ"
+  },
+  {
+   "page": 55,
+   "mark": "3",
+   "context": "We must have that |λ1| = 1.Then we must check |λ2,"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "have λ"
+  },
+  {
+   "page": 55,
+   "mark": "3",
+   "context": "have λ2 +λ"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "have λ2 +λ3 = A−λ"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "have λ2 +λ3 = A−λ1 and λ"
+  },
+  {
+   "page": 55,
+   "mark": "3",
+   "context": "have λ2 +λ3 = A−λ1 and λ2λ"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "have λ2 +λ3 = A−λ1 and λ2λ3 = C/λ"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "have λ2 +λ3 = A−λ1 and λ2λ3 = C/λ1.In order |λ"
+  },
+  {
+   "page": 55,
+   "mark": "3",
+   "context": "have λ2 +λ3 = A−λ1 and λ2λ3 = C/λ1.In order |λ2,"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "λ"
+  },
+  {
+   "page": 55,
+   "mark": "3",
+   "context": "λ2 +λ"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "with c ∈[−2,2], so A−λ"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "(A−λ"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "(A−λ1)"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "(A−λ1)2λ"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": ".of(60)under(61)willbesomecurveinCthatgenericallyintersectsS"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "Proposition 7.4Assumefor some t∈S"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "for some t∈S1with|argt| ≤π/2 wecannot ﬁndyasin(60),suchthatλ"
+  },
+  {
+   "page": 55,
+   "mark": "4",
+   "context": "has norm 1 and (63) holds.Then there is no β ∈B"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "tive of the r.h.s.of (61) in y to have an error bound on ||λ"
+  },
+  {
+   "page": 55,
+   "mark": "4",
+   "context": "15144635,and15145731.Theyhaverepresentations β ∈B"
+  },
+  {
+   "page": 55,
+   "mark": "i",
+   "context": "haverepresentations β ∈B4,whoseBuraumatrixistrivialfor t= eπ"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": " formulas (see (64) and (65)).One can thus ask whether ||∆·W"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "for proper W"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "aker) whether M(∆) is bounded (and similarly M(V) and ||V ·W"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "{||(1 −t"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "{||(1 −t2"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "{||(1 −t2n)∆ˆβ(t)||2:β ∈B"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "{||(1 −t2n)∆ˆβ(t)||2:β ∈B2"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "X(e"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "X=(1 −t"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "X=(1 −t2"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "= det(1 −ψ"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "= det(1 −ψ2"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "2n,and this in turn is controlled by the unitarity of ψ"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "2n,and this in turn is controlled by the unitarity of ψ2"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "ominator, observe that the norm in (64) is just the one in L"
+  },
+  {
+   "page": 57,
+   "mark": "n",
+   "context": "2)"
+  },
+  {
+   "page": 57,
+   "mark": "n",
+   "context": "t+e"
+  },
+  {
+   "page": 57,
+   "mark": "n",
+   "context": "−(t)+e"
+  },
+  {
+   "page": 57,
+   "mark": "n",
+   "context": "2 −e"
+  },
+  {
+   "page": 57,
+   "mark": "n",
+   "context": "−(t)−e"
+  },
+  {
+   "page": 57,
+   "mark": "n",
+   "context": "0log |V"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "0log |Vn(e"
+  },
+  {
+   "page": 57,
+   "mark": "n",
+   "context": "Since V"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "s to consider the integral over s ∈[0,1/2].Herein, with t= e"
+  },
+  {
+   "page": 57,
+   "mark": "n",
+   "context": "1/3log |V"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "1/3log |Vn(e"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "maps e"
+  },
+  {
+   "page": 57,
+   "mark": "i",
+   "context": "maps e2π"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "maps e2πi[0,1/3]→e"
+  },
+  {
+   "page": 57,
+   "mark": "i",
+   "context": "maps e2πi[0,1/3]→e2π"
+  },
+  {
+   "page": 57,
+   "mark": "t",
+   "context": "2πarg"
+  },
+  {
+   "page": 57,
+   "mark": "f",
+   "context": "2πarg"
+  },
+  {
+   "page": 57,
+   "mark": "s",
+   "context": "min=min{g′(s):"
+  },
+  {
+   "page": 57,
+   "mark": "s",
+   "context": "min,thenallintersection points1"
+  },
+  {
+   "page": 57,
+   "mark": "i",
+   "context": "min,thenallintersection points1s"
+  },
+  {
+   "page": 57,
+   "mark": "h",
+   "context": "min,thenallintersection points1siofthe graphs of"
+  },
+  {
+   "page": 57,
+   "mark": "m",
+   "context": "min,thenallintersection points1siofthe graphs of hand"
+  },
+  {
+   "page": 57,
+   "mark": "i",
+   "context": "henallintersection points1siofthe graphs of hand mhave |m′(s"
+  },
+  {
+   "page": 57,
+   "mark": "i",
+   "context": "section points1siofthe graphs of hand mhave |m′(si)| > |h′(s"
+  },
+  {
+   "page": 57,
+   "mark": "i",
+   "context": "= h when s = 0.)In particular, between two critical points x"
+  },
+  {
+   "page": 57,
+   "mark": "n",
+   "context": "3"
+  },
+  {
+   "page": 57,
+   "mark": "i",
+   "context": "|m′(s"
+  },
+  {
+   "page": 57,
+   "mark": "i",
+   "context": "|m′(si)|−|h′(s"
+  },
+  {
+   "page": 57,
+   "mark": "i",
+   "context": "|m′(si)|−|h′(si)|≥(2 −|m(s"
+  },
+  {
+   "page": 57,
+   "mark": "s",
+   "context": "min> 0, for"
+  },
+  {
+   "page": 57,
+   "mark": "x",
+   "context": "min> 0, for s small, the"
+  },
+  {
+   "page": 57,
+   "mark": "i",
+   "context": "min> 0, for s small, the x"
+  },
+  {
+   "page": 57,
+   "mark": "i",
+   "context": "2 −|m(x"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "2 −|m(xi)| ≥C ·i"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 58,
+   "mark": "1",
+   "context": "for a constant C independent on i and n.Then if s"
+  },
+  {
+   "page": 58,
+   "mark": "n",
+   "context": "for a constant C independent on i and n.Then if s1,...,s"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "·|s−s"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "2 −|m(s"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "from(66)forsarounds"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "ough|m −h|decreasesslightlyaroundtheendpointsoftheinterval[x"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "h|m −h|decreasesslightlyaroundtheendpointsoftheinterval[xi,x"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "Zx"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "Zx"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "log |m(s)−h(s)|ds≥(x"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "log |m(s)−h(s)|ds≥(xi+1 −x"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "2 −|m(s"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "log|s−s"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "Sinceforsmalli(when2 −|m(s"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "Sinceforsmalli(when2 −|m(si)|issmall),thex"
+  },
+  {
+   "page": 58,
+   "mark": "m",
+   "context": "n),using(67)and"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "2 −|m(s"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "Let d"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "Let di := x"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "Let di := xi+1 −x"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "d"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "d"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "2 −|m(s"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "≤−C ·d"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "Zx"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "logd"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "1 +log|s−s"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "d"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "Zx"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "2 ·log|s−s"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": " similar.There m(s) ≡2, so instead of (68) we have for s ∈[x"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "milar.There m(s) ≡2, so instead of (68) we have for s ∈[xi,x"
+  },
+  {
+   "page": 58,
+   "mark": "i",
+   "context": "|s−s"
+  },
+  {
+   "page": 58,
+   "mark": "0",
+   "context": "skein polynomial and use the skein rule v−1P+ −vP−= zP"
+  },
+  {
+   "page": 59,
+   "mark": "n",
+   "context": "D"
+  },
+  {
+   "page": 59,
+   "mark": "i",
+   "context": "Dn"
+  },
+  {
+   "page": 59,
+   "mark": "n",
+   "context": "whereCTisaconstantthatdependsonlyonT.FurthermoreD"
+  },
+  {
+   "page": 59,
+   "mark": "l",
+   "context": "thatdependsonlyonT.FurthermoreDnaremadeofaproductofterms1 −q"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "Proof.WriteD(t"
+  },
+  {
+   "page": 59,
+   "mark": "k",
+   "context": "Proof.WriteD(t1,...,t"
+  },
+  {
+   "page": 59,
+   "mark": "t",
+   "context": "Proof.WriteD(t1,...,tk) = D"
+  },
+  {
+   "page": 59,
+   "mark": "t",
+   "context": "Proof.WriteD(t1,...,tk) = Dt1,...,"
+  },
+  {
+   "page": 59,
+   "mark": "i",
+   "context": ",...,tkforthediagram associatedtoTbyputtingintothei-thslot t"
+  },
+  {
+   "page": 59,
+   "mark": "i",
+   "context": "agram associatedtoTbyputtingintothei-thslot tifulltwists(onn"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "q) = XL(q,λ"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "X(Dt)(q,λ"
+  },
+  {
+   "page": 59,
+   "mark": "t",
+   "context": "X(Dt)(q,λ2/q)x"
+  },
+  {
+   "page": 59,
+   "mark": "n",
+   "context": "um.Since the full twist has e = n(n−1), we ﬁnd the terms 1−λ"
+  },
+  {
+   "page": 59,
+   "mark": "j",
+   "context": "the full twist has e = n(n−1), we ﬁnd the terms 1−λn(n−1)/2q"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "ent n(n−1)/2 becomes n(n−1) andj ≥−n(n−1)/2 when replacing λ"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "oninator terms occurring in thedeﬁnition of XL(and replace λ"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "is a unit, ﬁxed for given T, and remains so when replacing λ"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "5.6 and (5.5) we have some power of 1 −λq (that becomes 1 −λ"
+  },
+  {
+   "page": 59,
+   "mark": "l",
+   "context": "(inQ(q))products ofterms1 −q"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "1 −λ"
+  },
+  {
+   "page": 59,
+   "mark": "n",
+   "context": "1 −λ2and 1 −λ"
+  },
+  {
+   "page": 59,
+   "mark": "j",
+   "context": "1 −λ2and 1 −λn(n−1)q"
+  },
+  {
+   "page": 59,
+   "mark": "i",
+   "context": "t"
+  },
+  {
+   "page": 59,
+   "mark": "j",
+   "context": "tifor any ﬁxed value of t"
+  },
+  {
+   "page": 59,
+   "mark": "j",
+   "context": " j̸ = i.Moreover that recurrence itself does not depend on t"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "X(Dt1,...,tk)(q,λ"
+  },
+  {
+   "page": 59,
+   "mark": "t",
+   "context": "X(Dt1,...,tk)(q,λ2/q)x"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "X(Dt1,...,tk)(q,λ2/q)xt"
+  },
+  {
+   "page": 59,
+   "mark": "x",
+   "context": "1..."
+  },
+  {
+   "page": 59,
+   "mark": "t",
+   "context": "1...x"
+  },
+  {
+   "page": 59,
+   "mark": "k",
+   "context": "1...xt"
+  },
+  {
+   "page": 59,
+   "mark": "n",
+   "context": "hasademoninatorwhichistheproductoftheD"
+  },
+  {
+   "page": 59,
+   "mark": "i",
+   "context": "hasademoninatorwhichistheproductoftheDn"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "hasademoninatorwhichistheproductoftheDniandterms1 −λ"
+  },
+  {
+   "page": 59,
+   "mark": "n",
+   "context": "hasademoninatorwhichistheproductoftheDniandterms1 −λ2and1 −λ"
+  },
+  {
+   "page": 59,
+   "mark": "i",
+   "context": "asademoninatorwhichistheproductoftheDniandterms1 −λ2and1 −λn"
+  },
+  {
+   "page": 59,
+   "mark": "i",
+   "context": "demoninatorwhichistheproductoftheDniandterms1 −λ2and1 −λni(n"
+  },
+  {
+   "page": 59,
+   "mark": "j",
+   "context": "inatorwhichistheproductoftheDniandterms1 −λ2and1 −λni(ni−1)q"
+  },
+  {
+   "page": 59,
+   "mark": "i",
+   "context": "atorwhichistheproductoftheDniandterms1 −λ2and1 −λni(ni−1)qjx"
+  },
+  {
+   "page": 59,
+   "mark": "i",
+   "context": "−n"
+  },
+  {
+   "page": 59,
+   "mark": "i",
+   "context": "−ni(n"
+  },
+  {
+   "page": 59,
+   "mark": "i",
+   "context": "−ni(ni −1)/2.Thecaseswhent"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "1 −λ"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "1 −λ2.Since for ﬁxed Tthe powerpTof 1 −λ"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": " (seeproposition 15.1 of [J]),one canget disposed of the1 −λ"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "the coefﬁcients of (1 −λ"
+  },
+  {
+   "page": 59,
+   "mark": "p",
+   "context": "the coefﬁcients of (1 −λ2)"
+  },
+  {
+   "page": 59,
+   "mark": "n",
+   "context": "the coefﬁcients of (1 −λ2)pTPD ·∏D"
+  },
+  {
+   "page": 59,
+   "mark": "i",
+   "context": "the coefﬁcients of (1 −λ2)pTPD ·∏Dn"
+  },
+  {
+   "page": 60,
+   "mark": "4",
+   "context": "considerfor(x,y,z,w) ∈Z"
+  },
+  {
+   "page": 60,
+   "mark": "x",
+   "context": "considerfor(x,y,z,w) ∈Z4the4-braids β"
+  },
+  {
+   "page": 60,
+   "mark": "y",
+   "context": "considerfor(x,y,z,w) ∈Z4the4-braids βx,"
+  },
+  {
+   "page": 60,
+   "mark": "z",
+   "context": "considerfor(x,y,z,w) ∈Z4the4-braids βx,y,"
+  },
+  {
+   "page": 60,
+   "mark": "w",
+   "context": "considerfor(x,y,z,w) ∈Z4the4-braids βx,y,z,"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "considerfor(x,y,z,w) ∈Z4the4-braids βx,y,z,w= [212"
+  },
+  {
+   "page": 60,
+   "mark": "x",
+   "context": "considerfor(x,y,z,w) ∈Z4the4-braids βx,y,z,w= [212213"
+  },
+  {
+   "page": 60,
+   "mark": "y",
+   "context": "considerfor(x,y,z,w) ∈Z4the4-braids βx,y,z,w= [212213x2"
+  },
+  {
+   "page": 60,
+   "mark": "z",
+   "context": "considerfor(x,y,z,w) ∈Z4the4-braids βx,y,z,w= [212213x2y−12"
+  },
+  {
+   "page": 60,
+   "mark": "w",
+   "context": "onsiderfor(x,y,z,w) ∈Z4the4-braids βx,y,z,w= [212213x2y−12z3"
+  },
+  {
+   "page": 60,
+   "mark": "x",
+   "context": "(x,y,z,w) ∈Z4the4-braids βx,y,z,w= [212213x2y−12z3w],andletK"
+  },
+  {
+   "page": 60,
+   "mark": "y",
+   "context": ",y,z,w) ∈Z4the4-braids βx,y,z,w= [212213x2y−12z3w],andletKx,"
+  },
+  {
+   "page": 60,
+   "mark": "z",
+   "context": ",z,w) ∈Z4the4-braids βx,y,z,w= [212213x2y−12z3w],andletKx,y,"
+  },
+  {
+   "page": 60,
+   "mark": "w",
+   "context": ",w) ∈Z4the4-braids βx,y,z,w= [212213x2y−12z3w],andletKx,y,z,"
+  },
+  {
+   "page": 60,
+   "mark": "x",
+   "context": "∈Z4the4-braids βx,y,z,w= [212213x2y−12z3w],andletKx,y,z,w=ˆβ"
+  },
+  {
+   "page": 60,
+   "mark": "y",
+   "context": "4the4-braids βx,y,z,w= [212213x2y−12z3w],andletKx,y,z,w=ˆβx,"
+  },
+  {
+   "page": 60,
+   "mark": "z",
+   "context": "he4-braids βx,y,z,w= [212213x2y−12z3w],andletKx,y,z,w=ˆβx,y,"
+  },
+  {
+   "page": 60,
+   "mark": "w",
+   "context": "4-braids βx,y,z,w= [212213x2y−12z3w],andletKx,y,z,w=ˆβx,y,z,"
+  },
+  {
+   "page": 60,
+   "mark": "x",
+   "context": "observe that MWF(K"
+  },
+  {
+   "page": 60,
+   "mark": "y",
+   "context": "observe that MWF(Kx,"
+  },
+  {
+   "page": 60,
+   "mark": "z",
+   "context": "observe that MWF(Kx,y,"
+  },
+  {
+   "page": 60,
+   "mark": "w",
+   "context": "observe that MWF(Kx,y,z,"
+  },
+  {
+   "page": 60,
+   "mark": "x",
+   "context": ") ≤3 (see lemma 2.9 in [Kw]), but suspect that many of the K"
+  },
+  {
+   "page": 60,
+   "mark": "y",
+   "context": "≤3 (see lemma 2.9 in [Kw]), but suspect that many of the Kx,"
+  },
+  {
+   "page": 60,
+   "mark": "z",
+   "context": " (see lemma 2.9 in [Kw]), but suspect that many of the Kx,y,"
+  },
+  {
+   "page": 60,
+   "mark": "w",
+   "context": "see lemma 2.9 in [Kw]), but suspect that many of the Kx,y,z,"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "Proposition 7.7There is a natural number Nand 6 tuples (α"
+  },
+  {
+   "page": 60,
+   "mark": "4",
+   "context": "osition 7.7There is a natural number Nand 6 tuples (α1,...,α"
+  },
+  {
+   "page": 60,
+   "mark": "4",
+   "context": "on 7.7There is a natural number Nand 6 tuples (α1,...,α4) ∈Z"
+  },
+  {
+   "page": 60,
+   "mark": "4",
+   "context": "tuples (α1,...,α4) ∈Z4of different mod-2-reductions in (Z/2)"
+  },
+  {
+   "page": 60,
+   "mark": "i",
+   "context": "\u0010γ"
+  },
+  {
+   "page": 60,
+   "mark": "i",
+   "context": "\u0010γi −α"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "such that if Kγ := Kγ"
+  },
+  {
+   "page": 60,
+   "mark": "4",
+   "context": "such that if Kγ := Kγ1,...,γ"
+  },
+  {
+   "page": 60,
+   "mark": "i",
+   "context": "hat if Kγ := Kγ1,...,γ4is a knot, then b(Kγ) = 4 whenever (α"
+  },
+  {
+   "page": 60,
+   "mark": "i",
+   "context": " Kγ := Kγ1,...,γ4is a knot, then b(Kγ) = 4 whenever (αi) ≡(γ"
+  },
+  {
+   "page": 60,
+   "mark": "n",
+   "context": "\\ {0}, such that ∆ˆβ(t) is preserved when β is replaced by σ"
+  },
+  {
+   "page": 60,
+   "mark": "m",
+   "context": "h regard to Jones’ conjecture) the concrete examples K−1,−2,"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "regard to Jones’ conjecture) the concrete examples K−1,−2,m,"
+  },
+  {
+   "page": 60,
+   "mark": "m",
+   "context": "Proposition 7.8We have b(K−1,−2,"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "Proposition 7.8We have b(K−1,−2,m,"
+  },
+  {
+   "page": 60,
+   "mark": "m",
+   "context": "−1,−2,"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "−1,−2,m,"
+  },
+  {
+   "page": 60,
+   "mark": "m",
+   "context": "β−1,−2,"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "β−1,−2,m,"
+  },
+  {
+   "page": 60,
+   "mark": "i",
+   "context": "β−1,−2,m,2,obtained by replacing σ"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "β−1,−2,m,2,obtained by replacing σiby σ"
+  },
+  {
+   "page": 60,
+   "mark": "i",
+   "context": "β−1,−2,m,2,obtained by replacing σiby σ2"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "β−1,−2,m,2,obtained by replacing σiby σ2iσ"
+  },
+  {
+   "page": 60,
+   "mark": "i",
+   "context": "β−1,−2,m,2,obtained by replacing σiby σ2iσ2"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "β−1,−2,m,2,obtained by replacing σiby σ2iσ2i+1σ"
+  },
+  {
+   "page": 60,
+   "mark": "i",
+   "context": "β−1,−2,m,2,obtained by replacing σiby σ2iσ2i+1σ2"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "β−1,−2,m,2,obtained by replacing σiby σ2iσ2i+1σ2i−1σ"
+  },
+  {
+   "page": 60,
+   "mark": "i",
+   "context": "β−1,−2,m,2,obtained by replacing σiby σ2iσ2i+1σ2i−1σ2"
+  },
+  {
+   "page": 60,
+   "mark": "4",
+   "context": " σ2iσ2i+1σ2i−1σ2i,and wemay consider justthe coefﬁcient of v"
+  },
+  {
+   "page": 60,
+   "mark": "m",
+   "context": "σ2i−1σ2i,and wemay consider justthe coefﬁcient of v4[β−1,−2,"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "i−1σ2i,and wemay consider justthe coefﬁcient of v4[β−1,−2,m,"
+  },
+  {
+   "page": 60,
+   "mark": "i",
+   "context": "Again πY([2312]) has at most 7 different eigenvalues δ"
+  },
+  {
+   "page": 60,
+   "mark": "i",
+   "context": "Y⊢8,andareleftwith7differentq-rationalexpressionsc"
+  },
+  {
+   "page": 60,
+   "mark": "i",
+   "context": "m| ≤5, and used those 9 for |m| ≤4 in the determination of c"
+  },
+  {
+   "page": 60,
+   "mark": "i",
+   "context": "safety.The resulting linear equation system for c"
+  },
+  {
+   "page": 60,
+   "mark": "m",
+   "context": "y.The resulting linear equation system for ci(with matrix {δ"
+  },
+  {
+   "page": 60,
+   "mark": "i",
+   "context": "tremal q-degrees, we see that for |m| ≥6 among the 7 terms c"
+  },
+  {
+   "page": 60,
+   "mark": "m",
+   "context": "emal q-degrees, we see that for |m| ≥6 among the 7 terms ciδ"
+  },
+  {
+   "page": 60,
+   "mark": "i",
+   "context": "ithe one for"
+  },
+  {
+   "page": 60,
+   "mark": "m",
+   "context": "6, where we must use also that the leading coefﬁcient of c6δ"
+  },
+  {
+   "page": 61,
+   "mark": "4",
+   "context": "in Z"
+  },
+  {
+   "page": 61,
+   "mark": "4",
+   "context": "{(x,y,z,w) ∈Z"
+  },
+  {
+   "page": 61,
+   "mark": "x",
+   "context": "{(x,y,z,w) ∈Z4:b(K"
+  },
+  {
+   "page": 61,
+   "mark": "y",
+   "context": "{(x,y,z,w) ∈Z4:b(Kx,"
+  },
+  {
+   "page": 61,
+   "mark": "z",
+   "context": "{(x,y,z,w) ∈Z4:b(Kx,y,"
+  },
+  {
+   "page": 61,
+   "mark": "w",
+   "context": "{(x,y,z,w) ∈Z4:b(Kx,y,z,"
+  },
+  {
+   "page": 61,
+   "mark": "y",
+   "context": "x,"
+  },
+  {
+   "page": 61,
+   "mark": "z",
+   "context": "x,y,"
+  },
+  {
+   "page": 61,
+   "mark": "w",
+   "context": "x,y,z,"
+  },
+  {
+   "page": 61,
+   "mark": "4",
+   "context": "x,y,z,w)]v"
+  },
+  {
+   "page": 61,
+   "mark": "x",
+   "context": "x,y,z,w)]v4[β"
+  },
+  {
+   "page": 61,
+   "mark": "y",
+   "context": "x,y,z,w)]v4[βx,"
+  },
+  {
+   "page": 61,
+   "mark": "z",
+   "context": "x,y,z,w)]v4[βx,y,"
+  },
+  {
+   "page": 61,
+   "mark": "w",
+   "context": "x,y,z,w)]v4[βx,y,z,"
+  },
+  {
+   "page": 61,
+   "mark": "4",
+   "context": "q"
+  },
+  {
+   "page": 61,
+   "mark": "x",
+   "context": "q4[β"
+  },
+  {
+   "page": 61,
+   "mark": "y",
+   "context": "q4[βx,"
+  },
+  {
+   "page": 61,
+   "mark": "z",
+   "context": "q4[βx,y,"
+  },
+  {
+   "page": 61,
+   "mark": "w",
+   "context": "q4[βx,y,z,"
+  },
+  {
+   "page": 61,
+   "mark": "x",
+   "context": "cix,iy,iz,iwδ"
+  },
+  {
+   "page": 61,
+   "mark": "y",
+   "context": "ixδ"
+  },
+  {
+   "page": 61,
+   "mark": "z",
+   "context": "iyδ"
+  },
+  {
+   "page": 61,
+   "mark": "w",
+   "context": "izδ"
+  },
+  {
+   "page": 61,
+   "mark": "i",
+   "context": "wherec"
+  },
+  {
+   "page": 61,
+   "mark": "i",
+   "context": "wherecix,"
+  },
+  {
+   "page": 61,
+   "mark": "i",
+   "context": "wherecix,iy,"
+  },
+  {
+   "page": 61,
+   "mark": "i",
+   "context": "wherecix,iy,iz,"
+  },
+  {
+   "page": 61,
+   "mark": "p",
+   "context": "(σ"
+  },
+  {
+   "page": 61,
+   "mark": "p",
+   "context": "(σp−1σ"
+  },
+  {
+   "page": 61,
+   "mark": "1",
+   "context": "(σp−1σp−2···σ"
+  },
+  {
+   "page": 61,
+   "mark": "q",
+   "context": "(σp−1σp−2···σ1)"
+  },
+  {
+   "page": 61,
+   "mark": "1",
+   "context": "(σp−1σp−2···σ1)q(σ"
+  },
+  {
+   "page": 61,
+   "mark": "2",
+   "context": "(σp−1σp−2···σ1)q(σ1σ"
+  },
+  {
+   "page": 61,
+   "mark": "r",
+   "context": "(σp−1σp−2···σ1)q(σ1σ2 ···σ"
+  },
+  {
+   "page": 62,
+   "mark": "k",
+   "context": "Weconsider the braids [(123)"
+  },
+  {
+   "page": 62,
+   "mark": "k",
+   "context": "[(123)"
+  },
+  {
+   "page": 62,
+   "mark": "k",
+   "context": "[(123)k−2] →[(1223)"
+  },
+  {
+   "page": 62,
+   "mark": "k",
+   "context": "[(123)k−2] →[(1223)k−2] = [12(2312)"
+  },
+  {
+   "page": 62,
+   "mark": "k",
+   "context": "[(123)k−2] →[(1223)k−2] = [12(2312)k−123 −2] →[(2312)"
+  },
+  {
+   "page": 62,
+   "mark": "k",
+   "context": "1223)k−2] = [12(2312)k−123 −2] →[(2312)k−123 −212] = [(2312)"
+  },
+  {
+   "page": 62,
+   "mark": "k",
+   "context": "k−123 −2] →[(2312)k−123 −212] = [(2312)k−12312 −1] = [(2312)"
+  },
+  {
+   "page": 62,
+   "mark": "k",
+   "context": "Let Fbe the surface of the band representation β = [(2312)"
+  },
+  {
+   "page": 63,
+   "mark": "3",
+   "context": "submanifold Hof R"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "hosen is irrelevant), followed by a subsequent gluing of a D"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "into Halong a neighborhood N(P) ≃S"
+  },
+  {
+   "page": 63,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "ofncyclicallyconsecutivearcsa"
+  },
+  {
+   "page": 63,
+   "mark": "n",
+   "context": "ofncyclicallyconsecutivearcsa1,...,a"
+  },
+  {
+   "page": 64,
+   "mark": "k",
+   "context": "ksonly.TheseareequivalentunderHopf(de)plumbing tosomeof(123)"
+  },
+  {
+   "page": 66,
+   "mark": "3",
+   "context": ", Detecting ﬁbred links in S"
+  },
+  {
+   "page": 67,
+   "mark": "a",
+   "context": "O. Schreier,¨Uber die Gruppen A"
+  },
+  {
+   "page": 67,
+   "mark": "b",
+   "context": "O. Schreier,¨Uber die Gruppen AaB"
+  }
+ ]
+}

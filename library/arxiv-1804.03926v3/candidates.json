@@ -1,0 +1,76 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1804.03926v3",
+ "source": {
+  "structure_sha256": "8ad8e2d5a8881a5bcc890a08f8ec95627c0be9ef5d82e9731f9f57a1dcba0746",
+  "file": "1804.03926v3.pdf"
+ },
+ "provenance": {
+  "title": "Weighted Poincar\u00e9 inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one",
+  "authors": "Adrien Saumard",
+  "arxiv": {
+   "id": "1804.03926",
+   "version": "3",
+   "primary_class": "math.PR",
+   "stamp_date": "23 Nov 2018"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 3,
+  "by_kind": {
+   "recommendation": 3
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "It is reasonable to think that inequality (29) should be true under suitable conditions in higher dimension, with the right-hand side replaced by R |\u03c4 \u03bd\u2207f|2 d\u03bd up to a constant, where \u03c4 \u03bd is the Stein kernel constructed by Fathi in [Fat18] using moment maps.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-004-32-links-with-muckenhoupt-type-criteria.md",
+   "section_title": "Links with Muckenhoupt-type criteria",
+   "pages": "14-18",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We point out that Lemma 19 may have an interest by itself as it should be very handy when dealing with concentration inequalities using the Cram`er-Cherno\ufb00method.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-007-4-concentration-inequalities.md",
+   "section_title": "Concentration inequalities",
+   "pages": "21-28",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Along the way, we prove a general lemma for bounding the Laplace transform of a random variable, that should be useful in many other contexts when deriving concentration inequalities.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-1",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

@@ -7,10 +7,11 @@ section_number: null
 pages: 9-11
 source_pdf: 2507.13873v1.pdf
 source_sha256: fa1d38d08dc4976a
-doc_brief: "Probing the singularity at the holographic screen via q-holography — We study the emergence ofq-deformed spacetime in a lower-dimensional gravitational system whose asymptotic region geometrizes the"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.923
-latex_coverage_ratio: 0.927
+latex_coverage_ratio: 1.0
+doc_brief: "Probing the singularity at the holographic screen via q-holography — We study the emergence of q-deformed spacetime in a lower-dimensional gravitational system whose asymptotic region geometrizes the"
 ---
 We have up to this point only discussed the boundary quantum algebra action on boundary correlation functions. Here we show how this almost uniquely fixes the non-commutative geometrical features of the induced bulk region if this is to be the boundary theory. This roughly reverses the arguments of [@Berkooz:2022mfk; @Almheiri:2024ayc]. To match with conventional notation for quantum groups, we change the notation from the previous subsection into: $$q^{2L_0} \to K, \qquad  L_{+1} \to E^+, \qquad  L_{-1} \to E^-.$$
 

@@ -11,6 +11,7 @@
   ],
   "title": "Bring’s curve: old and new",
   "contains": [
+    "library/s40879-023-00706-0/sections/sec-front-matter",
     "library/s40879-023-00706-0/sections/sec-000",
     "library/s40879-023-00706-0/sections/sec-001",
     "library/s40879-023-00706-0/sections/sec-002",
@@ -32,10 +33,12 @@
     "library/s40879-023-00706-0/sections/sec-018",
     "library/s40879-023-00706-0/sections/sec-019",
     "library/s40879-023-00706-0/sections/sec-020",
-    "library/s40879-023-00706-0/sections/sec-021"
+    "library/s40879-023-00706-0/sections/sec-021",
+    "library/s40879-023-00706-0/sections/sec-022",
+    "library/s40879-023-00706-0/sections/sec-023"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "s40879-023-00706-0",
     "title_source": "pdf-info",
@@ -45,8 +48,8 @@
     "pages": 46,
     "arxiv": null,
     "doi": "10.1007/s40879-023-00706-0",
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

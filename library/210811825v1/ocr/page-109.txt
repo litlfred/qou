@@ -1,0 +1,50 @@
+CL]
+
+In Chapter 4, we aimed to analyze the Klein quartic in much the sathe-way asthe Bolza
+surface, to prove results about the low lying eigenspaces. Analysis of the Klein quartic
+in this manner proved to be more complicated than the work of Chapter 3, although we
+proved an initial result that the dimension of the first eigenspace is not one dimensional.
+Combined with the bound given on the multiplicity of the first eigenvalue using Selberg’s
+trace formula, and the dimensions of the irreducible representation of the automorphism
+group, we can say the the eigenspace is either 6, 7, or 8 dimensional. Also in this section,
+we investigated the systole and a pants decomposition of the Klein quartic, and gave
+Fenchel-Nielsen coordinates for the surface in Teichmiiller space. As in the case of the
+Bolza surface, proving a result on the first eigenspace would have been an early step
+
+towards proving the following
+
+Conjecture 5.2 Among all compact Riemann surfaces of genus 3 with constant nega-
+
+tive curvature, the Klein quartic globally maximizes the first positive eigenvalue in the
+
+spectr lm_of the Laplace-Beltrami operator.
+
+In Appendix D we have carried out numerical experimentl-1d support this conjecture.
+We calculated the spectrum of the surface denoted M3 in [72], which maximizes the systole
+length for genus 3 surfaces, and found it to have a smaller value of A; than the Klein
+quartic. Likewise, we investigated the Fermat quartic, and found that its first positive
+eigenvalue is smaller than that of the Klein quartic. Of course, the natural temptation
+
+in light of the previous two conjectures is to postulate
+
+Conjecture 5.3 For n > 2, among all compact Riemann surfaces of genus n with con-
+stant negative curvature, the surface with the largest automorphism group globally mazi-
+
+mizes the first positive eigenvalue in the spectrum of the Laplace-Beltrami operator.
+
+However, this assumes that there is a unique surface that maximizes the automorphism
+group. If we restrict our attention to Hurwitz surfaces, we can conjecture that the
+Macbeath surface in genus 7 has this maximization property. Unfortunately, in the next
+genus that admits a Hurwitz surface, thatis, genus 14, there is a triple of non-isomorphic
+Hurwitz surfaces (see, for example, [61]). It is unclear which of these would be the best
+candidate for eigenvalue maximization, but it seems reasonable to guess that one of them
+is.
+
+Alongside the surface M3, other surfaces different to the focal two have been touched
+upon in this thesis. The examples in genus 2 have simpler automorphism groups than
+the Bolza surface, so theoretically, results about their eigenspaces could be gained with-
+out as much work. In genus 3, the Fermat quartic and M3 surface again have smaller
+
+automorphism groups than that of the Klein quartic (although they are comparable to,
+
+99

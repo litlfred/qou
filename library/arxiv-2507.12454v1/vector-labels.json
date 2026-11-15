@@ -1,0 +1,2573 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-2507.12454v1",
+  "pages": [
+    {
+      "page": 2,
+      "rotation": 0,
+      "drawings": 21,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. Fundamental group of a k-punctured sphere"
+      ],
+      "labels": [
+        {
+          "text": "2",
+          "bbox": [
+            91.8,
+            58.24,
+            96.41,
+            67.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "ANTON MELLIT",
+          "bbox": [
+            284.38,
+            58.24,
+            358.21,
+            67.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "∗",
+          "bbox": [
+            319.73,
+            79.97,
+            325.71,
+            91.93
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "γ1",
+          "bbox": [
+            255.85,
+            146.58,
+            266.16,
+            159.46
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "γk",
+          "bbox": [
+            340.1,
+            149.04,
+            350.58,
+            161.92
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "γ2",
+          "bbox": [
+            294.59,
+            157.15,
+            304.9,
+            170.03
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "t1",
+          "bbox": [
+            268.63,
+            163.37,
+            277.09,
+            176.25
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "tk",
+          "bbox": [
+            361.98,
+            166.21,
+            370.62,
+            179.09
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "t2",
+          "bbox": [
+            311.15,
+            174.71,
+            319.61,
+            187.59
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "· · ·",
+          "bbox": [
+            333.9,
+            184.85,
+            347.86,
+            196.81
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 1. Fundamental group of a k-punctured sphere",
+          "bbox": [
+            177.46,
+            235.28,
+            465.12,
+            249.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "following presentation of the fundamental group:",
+          "bbox": [
+            91.8,
+            286.83,
+            341.63,
+            298.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "π1(∗, P1(C) \\ {t1, . . . , tk}) = ⟨γ1, . . . , γk | γ1 · · · γk = 1⟩.",
+          "bbox": [
+            182.67,
+            309.04,
+            459.93,
+            325.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(1.2)",
+          "bbox": [
+            91.8,
+            311.66,
+            115.88,
+            323.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "This presentation is better than the free group presentation for the following reason. Let",
+          "bbox": [
+            91.8,
+            336.48,
+            550.86,
+            348.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "us assume that A(t) has simple poles. In this case, analyzing the ODE locally around each",
+          "bbox": [
+            91.8,
+            353.79,
+            550.84,
+            365.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "puncture, one can compute the local monodromy matrices ρ(γi), up to conjugation, by a",
+          "bbox": [
+            91.8,
+            371.1,
+            550.83,
+            383.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "purely algebraic procedure. For instance, the characteristic polynomial of ρ(γi) coincides",
+          "bbox": [
+            91.8,
+            388.41,
+            550.79,
+            401.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2π√−1Ai",
+          "bbox": [
+            369.3,
+            396.17,
+            419.0,
+            418.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            363.82,
+            404.63,
+            369.3,
+            416.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            419.49,
+            404.63,
+            424.97,
+            416.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "with the characteristic polynomial of the matrix exp",
+          "bbox": [
+            91.8,
+            405.72,
+            361.87,
+            417.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": ", where Ai is the residue",
+          "bbox": [
+            424.97,
+            405.72,
+            550.8,
+            419.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "of A(t) at t = ti.",
+          "bbox": [
+            91.8,
+            423.03,
+            176.28,
+            435.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "In view of the presentation (1.2), a monodromy representation is encoded by a k-tuple",
+          "bbox": [
+            103.76,
+            440.34,
+            550.8,
+            452.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of n × n matrices M1, . . . , Mk satisfying",
+          "bbox": [
+            91.8,
+            457.49,
+            295.4,
+            471.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "M1 · · · Mk = In,",
+          "bbox": [
+            281.18,
+            482.32,
+            361.42,
+            496.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "where the local monodromy computation informs us about the conjugacy class of each Mi.",
+          "bbox": [
+            91.8,
+            507.3,
+            550.8,
+            520.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Contrary to the local monodromy computation, which is algebraic, we only know how",
+          "bbox": [
+            103.75,
+            524.61,
+            550.88,
+            536.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "to compute the global monodromy representation by transcendental techniques (unless",
+          "bbox": [
+            91.8,
+            541.92,
+            550.86,
+            553.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "in special cases).",
+          "bbox": [
+            91.8,
+            559.23,
+            180.28,
+            571.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "So it is probably hopeless to look for an algebraic way to compute",
+          "bbox": [
+            190.61,
+            559.23,
+            550.87,
+            571.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the global monodromy exactly. On the other hand, it still makes sense to formulate the",
+          "bbox": [
+            91.8,
+            576.54,
+            550.87,
+            588.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "following problem:",
+          "bbox": [
+            91.8,
+            593.85,
+            186.11,
+            605.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Problem 1.1. Given n, k, and a collection of local monodromies, list all algebraic relations",
+          "bbox": [
+            91.8,
+            629.24,
+            550.86,
+            641.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "between the entries of the matrices comprising the monodromy representation, satisfied by",
+          "bbox": [
+            91.8,
+            646.55,
+            550.83,
+            658.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "all monodromy representations with prescribed local monodromies.",
+          "bbox": [
+            91.8,
+            663.86,
+            435.81,
+            675.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "rotation": 0,
+      "drawings": 13,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2. Markov’s cubic as the complement of a triangle in the projective plane blown up at six points"
+      ],
+      "labels": [
+        {
+          "text": "COHOMOLOGY RINGS OF CHARACTER VARIETIES",
+          "bbox": [
+            170.73,
+            58.24,
+            410.67,
+            67.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            515.6,
+            58.24,
+            520.21,
+            67.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Figure 2. Markov’s cubic as the complement of a triangle in the projective",
+          "bbox": [
+            97.07,
+            258.98,
+            484.36,
+            273.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "plane blown up at six points",
+          "bbox": [
+            97.07,
+            275.53,
+            242.88,
+            287.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2.2. Geometry of the Markov cubic. In algebraic geometry, given an algebraic variety",
+          "bbox": [
+            61.2,
+            319.95,
+            520.25,
+            331.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "X, i.e. a set of solutions to a system of polynomial equations, we are usually interested",
+          "bbox": [
+            61.2,
+            337.26,
+            520.25,
+            349.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "in its cohomology ring H∗(X, C). Hodge theory extended by Deligne to non-compact and",
+          "bbox": [
+            61.2,
+            351.95,
+            520.24,
+            366.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "singular spaces [Del71, Del74] endows the cohomology with mixed Hodge structure. Struc-",
+          "bbox": [
+            61.2,
+            371.88,
+            520.2,
+            383.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ture constants of the ring typically encode interesting enumerative information. Sometimes",
+          "bbox": [
+            61.2,
+            389.18,
+            520.26,
+            401.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the cohomology ring as a ring itself can be an interesting object of study, perhaps making",
+          "bbox": [
+            61.2,
+            406.49,
+            520.27,
+            418.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "a connection with a ring constructed in some other way in a completely different field of",
+          "bbox": [
+            61.2,
+            423.8,
+            520.24,
+            435.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "mathematics.",
+          "bbox": [
+            61.2,
+            441.11,
+            129.56,
+            453.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Although the ring structure in the Fricke-Klein situation turns out to be trivial, the",
+          "bbox": [
+            73.15,
+            458.42,
+            520.26,
+            470.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "cohomology already has a non-trivial mixed Hodge structure. We explain how to compute",
+          "bbox": [
+            61.2,
+            475.73,
+            520.28,
+            487.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "it.",
+          "bbox": [
+            61.2,
+            493.04,
+            72.26,
+            504.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Assuming the parameters a1, a2, a3, a4 ∈C \\ {−2, 2} are generic, the cubic X given",
+          "bbox": [
+            73.15,
+            507.74,
+            520.21,
+            523.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "by the Markov equation (2.1) is nonsingular. Let X ⊂CP3 be the solution set of the",
+          "bbox": [
+            61.2,
+            523.32,
+            520.21,
+            539.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "homogenization of (2.1). Its affine part is X ⊂X, and the complement X \\ X is given",
+          "bbox": [
+            61.2,
+            544.81,
+            520.2,
+            556.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "in CP2 as the solution set of the homogeneous equation xyz = 0, thus it is a union of",
+          "bbox": [
+            61.2,
+            557.94,
+            520.23,
+            574.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "three lines forming a triangle. Denote this triangle by ∆. We refer to Figure 2. It is",
+          "bbox": [
+            61.2,
+            579.58,
+            520.26,
+            591.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "straightforward to check that homogenization of any cubic of the form",
+          "bbox": [
+            61.2,
+            596.89,
+            421.95,
+            608.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "xyz + x2 + y2 + z2 + lower degree terms",
+          "bbox": [
+            188.17,
+            616.78,
+            393.23,
+            633.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "does not have any singularities at infinity. So X is a smooth cubic surface, and therefore",
+          "bbox": [
+            61.2,
+            646.55,
+            520.21,
+            658.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "can be obtained as a blowup of CP2 at 6 points (for background see [Har77]). The cubic",
+          "bbox": [
+            61.2,
+            659.52,
+            520.24,
+            675.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 7,
+      "rotation": 0,
+      "drawings": 9,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3. Cohomology of the Markov cubic"
+      ],
+      "labels": [
+        {
+          "text": "COHOMOLOGY RINGS OF CHARACTER VARIETIES",
+          "bbox": [
+            170.73,
+            58.24,
+            410.67,
+            67.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "7",
+          "bbox": [
+            515.6,
+            58.24,
+            520.21,
+            67.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "H∗",
+          "bbox": [
+            134.67,
+            78.29,
+            149.53,
+            91.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "WiHi",
+          "bbox": [
+            214.91,
+            78.4,
+            242.85,
+            92.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Wi+2Hi/WiHi",
+          "bbox": [
+            340.7,
+            78.4,
+            413.76,
+            92.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "C4 = ⟨c1(Li) | i = 1, 2, 3, 4⟩",
+          "bbox": [
+            160.39,
+            89.63,
+            297.87,
+            106.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "C = ⟨ω = symplectic form⟩",
+          "bbox": [
+            308.23,
+            91.35,
+            446.73,
+            105.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "H2",
+          "bbox": [
+            134.67,
+            92.74,
+            149.53,
+            105.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "C = ⟨1⟩",
+          "bbox": [
+            209.36,
+            105.3,
+            248.89,
+            119.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "H0",
+          "bbox": [
+            134.67,
+            106.69,
+            149.53,
+            119.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 3. Cohomology of the Markov cubic",
+          "bbox": [
+            174.77,
+            130.74,
+            406.67,
+            145.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "to Xi+1 by removing a line. This leads to exact sequences for each i:",
+          "bbox": [
+            61.2,
+            175.07,
+            412.59,
+            188.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "0 →H1(Xi+1) →H2(Xi, Xi+1) →H2(Xi) →H2(Xi+1) →H3(Xi, Xi+1) →0",
+          "bbox": [
+            95.18,
+            198.08,
+            486.22,
+            212.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "0 →H3(Xi+1) →H4(Xi, Xi+1) →H4(Xi) →H4(Xi+1) →0,",
+          "bbox": [
+            136.22,
+            222.91,
+            445.18,
+            237.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "as we will see that the even cohomologies of Xi vanish at each step. At each step we will",
+          "bbox": [
+            61.2,
+            245.8,
+            520.2,
+            259.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "use that Hk(Xi, Xi+1) = Hk−2(Xi\\Xi+1) by excision, which is non-zero only for k = 0, 1, 2.",
+          "bbox": [
+            61.2,
+            261.78,
+            520.21,
+            275.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Initially we have H0(X0) = C, H2(X0) = C7 (represented by 7 algebraic cycles: the line in",
+          "bbox": [
+            61.2,
+            276.08,
+            520.21,
+            293.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "CP2 and the 6 exceptional curves), H4(X0) = C, all other cohomologies vanish.",
+          "bbox": [
+            61.2,
+            293.38,
+            467.31,
+            310.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "For i = 0 we have X0 \\ X1 = CP1, which has H0 = C and H2 = C. These coincide with",
+          "bbox": [
+            73.15,
+            310.69,
+            520.19,
+            328.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "H2(X0, X1) and H4(X0, X1) respectively and we see that in H2(X1) and in H4(X1) we have",
+          "bbox": [
+            61.2,
+            331.12,
+            520.2,
+            345.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "one less dimension than in H2(X0), respectively H4(X0). So H4(X1) = 0, H2(X1) = C6.",
+          "bbox": [
+            61.2,
+            347.04,
+            512.98,
+            362.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "For i = 1 we have X1 \\ X2 = C, which only has H0 = C. So we have that X2 has one",
+          "bbox": [
+            73.15,
+            362.62,
+            520.21,
+            380.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "dimension less in H2(X2), nothing else changes: H2(X1) = C5.",
+          "bbox": [
+            61.2,
+            381.66,
+            382.09,
+            397.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Finally, for i = 2 we have X2 \\ X3 = C∗, which has H0 = C and H1 = C, contributing",
+          "bbox": [
+            73.15,
+            397.24,
+            520.21,
+            415.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "to H2(X2, X3) and H3(X2, X3) correspondingly. Thus two things happen. First, only 4",
+          "bbox": [
+            61.2,
+            417.66,
+            520.24,
+            431.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "dimensions from H2(X2) out of 5 contribute to H2(X3). On the other hand, one extra",
+          "bbox": [
+            61.2,
+            434.97,
+            520.23,
+            449.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "The net total is H2(X3) = C5, as in X2, but the",
+          "bbox": [
+            254.64,
+            450.89,
+            520.2,
+            466.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "dimension comes from H3(X3, X2).",
+          "bbox": [
+            61.2,
+            452.28,
+            245.0,
+            466.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "nature of the 5 dimensions is different, and correspondingly the weights are different. The",
+          "bbox": [
+            61.2,
+            470.81,
+            520.22,
+            482.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "4 dimensions coming from H2(X2) have weight 2, and this is reflected by the fact that",
+          "bbox": [
+            61.2,
+            486.9,
+            520.22,
+            501.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "they are represented by algebraic cycles. The remaining class has weight 4 as it comes",
+          "bbox": [
+            61.2,
+            505.43,
+            520.22,
+            517.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "from H3(X3, X2). The weight of H1(C∗) is 2, but it gets increased by 2 when we pass to",
+          "bbox": [
+            61.2,
+            520.13,
+            520.22,
+            535.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "H3(X3, X2).",
+          "bbox": [
+            61.2,
+            538.83,
+            123.05,
+            552.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "These findings can be summarized in the table on Figure 3.",
+          "bbox": [
+            73.15,
+            557.36,
+            378.53,
+            569.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The 4 algebraic classes in H2(X) can be represented by characteristic classes of line",
+          "bbox": [
+            73.15,
+            573.44,
+            520.2,
+            586.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "bundles. The extra class can be represented by an explicit holomorphic symplectic form",
+          "bbox": [
+            61.2,
+            591.98,
+            520.22,
+            603.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "as explained below. Using the natural coordinates on C∗× C∗, the form is written as",
+          "bbox": [
+            61.2,
+            606.67,
+            497.63,
+            621.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "ω = dx",
+          "bbox": [
+            255.83,
+            628.43,
+            293.22,
+            648.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "x ∧dy",
+          "bbox": [
+            283.53,
+            628.43,
+            320.69,
+            656.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "y ,",
+          "bbox": [
+            311.94,
+            636.51,
+            325.57,
+            656.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "and one can verify that the form extends to the whole of X.",
+          "bbox": [
+            61.2,
+            663.86,
+            370.1,
+            675.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 10,
+      "rotation": 0,
+      "drawings": 19,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 4. Non-abelian Hodge correspondence"
+      ],
+      "labels": [
+        {
+          "text": "10",
+          "bbox": [
+            91.8,
+            58.24,
+            101.02,
+            67.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "ANTON MELLIT",
+          "bbox": [
+            284.38,
+            58.24,
+            358.21,
+            67.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Local systems",
+          "bbox": [
+            181.05,
+            79.62,
+            252.29,
+            91.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Higgs bundles",
+          "bbox": [
+            364.58,
+            79.62,
+            435.92,
+            91.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "π1(C) →GLn(C)",
+          "bbox": [
+            172.58,
+            91.35,
+            260.76,
+            106.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(E, θ): E algebraic vector bundle on C,",
+          "bbox": [
+            300.8,
+            93.81,
+            499.7,
+            105.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "θ : E →E ⊗ωC Higgs field",
+          "bbox": [
+            332.43,
+            107.76,
+            468.07,
+            121.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "punctures, Ji",
+          "bbox": [
+            183.1,
+            121.86,
+            249.75,
+            134.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "parabolic structure, stability",
+          "bbox": [
+            327.19,
+            121.86,
+            473.34,
+            133.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "∼= XD “Dolbeault” moduli space",
+          "bbox": [
+            317.01,
+            132.34,
+            483.52,
+            149.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "XB “Betti” moduli space",
+          "bbox": [
+            152.13,
+            135.81,
+            281.22,
+            149.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Hitchin system XD →Cdimension/2",
+          "bbox": [
+            314.63,
+            247.51,
+            485.38,
+            263.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "affine algebraic variety",
+          "bbox": [
+            158.95,
+            250.13,
+            274.42,
+            262.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Cohomology ring H∗(XB, C)",
+          "bbox": [
+            143.32,
+            261.46,
+            290.02,
+            276.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "the same ring",
+          "bbox": [
+            365.42,
+            264.07,
+            435.09,
+            276.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Weight “W” filtration W∗H∗",
+          "bbox": [
+            142.9,
+            276.69,
+            289.94,
+            290.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "perverse “P” filtration",
+          "bbox": [
+            343.07,
+            278.02,
+            457.45,
+            289.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 4. Non-abelian Hodge correspondence",
+          "bbox": [
+            200.47,
+            300.85,
+            442.15,
+            315.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(E, θ), where E is an algebraic vector bundle on C and θ a Higgs field, which is a twisted",
+          "bbox": [
+            91.8,
+            337.11,
+            550.8,
+            349.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "matrix-valued function on C of a certain kind. More precisely, θ : E →E ⊗ωC(D), where",
+          "bbox": [
+            91.8,
+            354.42,
+            550.8,
+            367.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "D = Pk",
+          "bbox": [
+            91.8,
+            369.19,
+            139.1,
+            392.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "i=1[ti] is the divisor on C corresponding to the marked points. Explicitly, this",
+          "bbox": [
+            134.69,
+            371.88,
+            550.83,
+            386.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "means that on an open subset of C with a trivialization of E is trivial, θ is a matrix whose",
+          "bbox": [
+            91.8,
+            389.04,
+            550.81,
+            401.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "entries are algebraic differential forms on C with simple residues at the marked points.",
+          "bbox": [
+            91.8,
+            406.5,
+            536.5,
+            418.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Furthermore, these Higgs bundles are required to be endowed with parabolic structures at",
+          "bbox": [
+            103.76,
+            423.81,
+            550.81,
+            435.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the marked points. This is simply a choice of a partial flag at the fiber of E at each marked",
+          "bbox": [
+            91.8,
+            440.96,
+            550.81,
+            453.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "point, preserved by the residue resti θ, which acts on that fiber by a linear transformation.",
+          "bbox": [
+            91.8,
+            458.43,
+            550.84,
+            473.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "The steps of the partial flag precisely match the dimensions of the generalized eigenspaces",
+          "bbox": [
+            91.8,
+            475.74,
+            550.82,
+            487.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of the Jordan forms Ji. The data of a Higgs bundle with a parabolic structure has to satisfy",
+          "bbox": [
+            91.8,
+            493.05,
+            550.85,
+            505.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "a stability condition. The data of the eigenvalues and the Jordan blocks of Ji translate into",
+          "bbox": [
+            91.8,
+            510.36,
+            550.82,
+            524.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "parabolic weights defining the stability condition, and into the Jordan form of resti θ acting",
+          "bbox": [
+            91.8,
+            527.67,
+            550.81,
+            542.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "on the subquotients of the flag. Details are given in [Sim90]. We summarize the features",
+          "bbox": [
+            91.8,
+            544.97,
+            550.84,
+            556.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "appearing on both sides of this correspondence in the table on Figure 4.",
+          "bbox": [
+            91.8,
+            562.28,
+            461.32,
+            574.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "4.2. Generators of H∗(X). Generators of the cohomology ring are known. There is a",
+          "bbox": [
+            91.8,
+            593.29,
+            550.85,
+            606.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMMI12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "general argument in [Mar02] concerning moduli spaces of sheaves on surfaces. With a",
+          "bbox": [
+            91.8,
+            611.93,
+            550.84,
+            623.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "little modification it can be applied to the situation of parabolic Higgs bundles. Basically",
+          "bbox": [
+            91.8,
+            629.24,
+            550.87,
+            641.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "speaking, certain Chern class of the complex of vector bundles on XD × XD computing",
+          "bbox": [
+            91.8,
+            646.39,
+            550.81,
+            660.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "the derived Hom between Higgs bundles is a multiple of the diagonal class. Moreover,",
+          "bbox": [
+            91.8,
+            663.86,
+            550.83,
+            675.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    }
+  ]
+}

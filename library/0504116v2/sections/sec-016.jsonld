@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/0504116v2/sections/sec-016",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Thurston's hyperbolic Dehn filling Theorem",
+  "pageStart": 19,
+  "pageEnd": 20,
+  "contains": [
+    "library/0504116v2/blocks/prose-sec-016"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0504116v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0504116v2",
+  "provenance": "ingested"
+}

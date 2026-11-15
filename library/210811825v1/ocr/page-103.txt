@@ -1,0 +1,64 @@
+4.3 Spectral theory of the Klein quartic
+
+The symmetry group of the Klein quartic comes from the 336 (2, 3, 7) triangles that
+tessellate the surface. We saw the presentation of such a group in the hyperbolic ge-
+
+ometry section; since there are side associations on our surface, we have the following
+presentation:
+
+(a,b,c) = = = (ab)? = ah Se (abc)® = e),
+
+where the lengths of a, b and ¢ are given in Section 2.2. As with the Bolza surface, we
+can use this presentation in GAP to get information about the structure of the group,
+
+and more importantly, its irreducible representations (see Appendix B). We sce that the
+
+isometry group (including reflections) of the Klein quartic has two one dimensional, three
+
+six dimensional, two seven dimensional, and two eight dimensional irreducible represen-
+tations.
+
+»
+1
+1
+’
+1
+‘
+1
+1
+1
+win
+1 72
+t
+1
+1
+1
+'
+1
+1
+'
+1
+'
+
+a
+
+Figure 4.5: The domain of integration in H
+
+As with the Bolza surface, we can exploit the symmetry group and its representhtion |
+theory to prove results about the spectrum of K, which is given numerically in Table pi]
+
+To begin with, we need an upper bound on the first eigenvalue pi the surtaqe; in Table D.1
+we see that this is roughly 2.67. Following the strategy of Section 3.3, we construct a test
+
+function that is close to the first eigenfunction. This can then be used in the Rayleigh
+quotient. We work once again in the upper half plane model, although this time we
+use a slightly different triangle.
+
+Joining the vertices of the fundamental 14-gon with
+(Euclidean) straight lines tessellates the Klein quartic with 14 (7, 7, 7) triangles of area
+
+=. We take one of these and map it to H using the Cayley transform on its vertices. We
+then use the fact that it has an additional line of symmetry with respect to the & axis,
+
+Ry
+and work with half the triangle, which has area a. This triangle, denoted Q, is shown

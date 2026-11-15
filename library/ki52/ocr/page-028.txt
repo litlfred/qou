@@ -1,0 +1,53 @@
+5 Proof of Theorem 1.1
+
+In this section, we give a proof of Theorem 1.1. In Section 5.1, we give a proof of the
+theorem by using lemmas proved in Sections 5.2, 5.3 and 5.4. In Section 5.2, we show
+lemmas which calculate the asymptotic expansion. In Section 5.3, we show a lemma
+which verifies the assumption of the saddle point method. In Section 5.4, we show a
+lemma which verifies the assumption of the Poisson summation formula.
+
+5.1 Proof of Theorem 1.1
+
+In this section, we give a proof of Theorem 1.1, which presents the asymptotic expansion
+of the Kashaev invariant (52), of the 52 knot. To obtain the asymptotic expansion, as
+mentioned in Section 2.2, we rewrite the sum (14) of (52), by using an integral by the
+Poisson summation formula (Proposition 4.6) and calculate the asymptotic expansion of
+the integral by the saddle point method (Proposition 3.5).
+
+Proof of Theorem 1.1. We recall that (52), is presented by the sum (14). By Proposition
+4.6 (Poisson summation formula) (see also Remark 4.8 and Appendix B), this sum is
+expressed by an integral,
+
+(52)y = eNSN%/? ( (v -V(t,s) — Nc)at ds + ote") (46)
+
+for some ¢4 > 0, noting that we verify the assumptions of Proposition 4.6 in Lemma 5.8
+below.
+
+In order to apply the saddle point method (Proposition 3.5, see also Remark 3.6 and
+Appendix B) to (46), we consider a critical point of V(t, s). From the definition of V(t, s),
+a critical point is a solution of the following equations,
+
+ae s) = —log(1— 6 "V1") — an /=1 (t+s—- 1) = 0,
+
+i 2 (47)
+5a tt 8) = —2 log(1—e"VT*) — 2n/-1 (t+ 28-1) = 0.
+
+Ss
+
+Hence, putting « = e2"V—!* and y = e2"V—15,
+1 l\o2 4
+1——)ay = -1, 1l-—-)ay =1.
+(1——)ay »  (l- 5) ey
+Therefore,
+1
+y
+Let (xo, yo) be the solution of these equations mentioned in the introduction. We consider
+
+the critical point (to, 39) such that (Reto, Re so) € A’ and (e2"V—!, e2"V-14) = (9, yo).
+It is numerically given by
+
+r=1- (y—1)® = y.
+
+ty = 0.22404487... — /=1- 0.04475430..., 59 = 0.16393269... + V—1- 0.06713145... .
+
+28

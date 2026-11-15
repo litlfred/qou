@@ -16,12 +16,10 @@
     "library/kohno1987-aif/sections/sec-001",
     "library/kohno1987-aif/sections/sec-002",
     "library/kohno1987-aif/sections/sec-003",
-    "library/kohno1987-aif/sections/sec-004",
-    "library/kohno1987-aif/sections/sec-005",
-    "library/kohno1987-aif/sections/sec-006"
+    "library/kohno1987-aif/sections/sec-004"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "kohno1987-aif",
     "title_source": "pdf-info",
@@ -31,8 +29,8 @@
     "pages": 23,
     "arxiv": null,
     "doi": null,
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

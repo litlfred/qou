@@ -1,0 +1,62 @@
+For t,s € R,
+ReV(t,s) = —A(—t)-—2A(—s) = A(t) +2A(s).
+
+Since 2A(4) — ¢, = —0.127043... <0, the values of A(t) and A(s) must be positive when
+(t,s) is in the domain (79). Hence, the domain (79) is included in the following area,
+
+{(t,s) ER? |0<t<05, 0<s < 0.5}.
+
+We assume that 0 <¢t < 0.5 and 0 < s < 0.5 in the following of this proof.
+
+We consider the minimal value tyin of t such that (t, s) is in the domain (79). It satisfies
+that A(tmin) + 2A(Z) = ¢,- Since A(0.04) + 2A(4) — ¢, = —0.031768... <0, we have that
+0.04 < tmin. Hence, the domain (11) is included in the area 0.04 < t for some sufficiently
+small ¢ > 0. Further, in similar ways, we can show that the domain (11) is included in
+the area
+
+{(t,s) € R? |0.04<¢<04, 0.05<s<04}
+
+for some sufficiently small ¢ > 0. We assume that (t, s) is in the above area in the following
+of this proof.
+By expanding A(t) at t = 0.3, we can show that
+
+A(t) < A(0.3) + A’(0.3)(t — 0.3).
+If (t, s) is in the domain (79),
+Se < A(t) +2A(s) < A(0.3) +.A‘(0.3)(t — 0.3) + 2(A(0.3) + A’(0.3)(s — 0.3)).
+
+Hence,
+Sp — 3A(0.3)
+
+t+2s <
+48 S 703)
+
++ 0.9.
+
+Further, since t < 0.4,
+
+t+s<
+
+1 /sp_ — 3A(0.3)
+<3( 2130303)
+
+13) = 0.571668... < 0.6.
+Koay + 3) = 0.571668... < 0.6
+
+Therefore, the domain (11) is included in A’ for some sufficiently small ¢ > 0, as required.
+Oo
+
+References
+
+[1] Andersen, J.E., Hansen, S.K., Asymptotics of the quantum invariants for surgeries on the figure 8
+knot, J. Knot Theory Ramifications 15 (2006) 479-548.
+
+[2] Dimofte T.D., Garoufalidis, $., The quantum content of the gluing equations, Geom. Topol. 17 (2013)
+1253-1315.
+
+[3] Dimofte, T., Gukov, S., Lenells, J., Zagier, D., Exact results for perturbative Chern-Simons theory
+with complex gauge group, Commun. Number Theory Phys. 3 (2009) 363-443.
+
+[4] Dubois, J., Huynh, V., Yamaguchi, Y., Non-abelian Reidemeister torsion for twist knots, J. Knot
+Theory Ramifications 18 (2009) 303-341.
+
+49

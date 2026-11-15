@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0511710v2
-doc_title: "arXiv:math/0511710v2 [math.DG] 28 Jun 2006"
+doc_title: "Higher gauge theory"
 section_id: sec-004-acknowledgements
 section_title: "Acknowledgements"
 section_number: null
@@ -8,6 +8,7 @@ pages: 27-29
 source_pdf: 0511710v2.pdf
 source_sha256: f88f50d459080490
 toc_source: inferred
+doc_brief: "Higher gauge theory — Just as gauge theory describes the parallel transport of point particles using connections on bundles, higher gauge theory describes the parallel transport of 1-dimensional"
 ---
 We are grateful to Orlando Alvarez, Paolo Aschieri, Toby Bartels, Larry Breen,
 Dan Christensen, James Dolan, Jens Fjelstad, Ezra Getzler, Branislav Jurˇco,

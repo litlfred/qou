@@ -7,11 +7,11 @@
   "bytes": 129200,
   "pages": 5,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,20 +21,29 @@
    "stamp_date": "31 Oct 2006"
   },
   "doi": null,
-  "title": "QUASIHOMOGENEITY OF ISOLATED HYPERSURF ACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY",
+  "title": "QUASIHOMOGENEITY OF ISOLATED HYPERSURFACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY",
   "authors_raw": "MICHEL GRANGER AND MATHIAS SCHULZE",
   "title_lines": [
-   "QUASIHOMOGENEITY OF ISOLATED HYPERSURF ACE",
+   "QUASIHOMOGENEITY OF ISOLATED HYPERSURFACE",
    "SINGULARITIES AND LOGARITHMIC COHOMOLOGY"
   ],
-  "abstract": "W e characterize quasihomogeneity of isolated hypersurfac e singu- larities by the injectivity of the map induced by the \ufb01rst di\ufb00 erential of the logarithmic di\ufb00erential complex in the top local cohomolog y supported in the singular point. 1. Formulation of the result We consider the germ of an isolated hypersurface singularity D \u2286 (Cn, 0). Let O = OCn,0 be the ring of germs of holomorphic functions on Cn at the origin with maximal ideal m andf \u2208 m2 a reduced de\ufb01ning equation of D. For notational simplicity, we shall write Cn instead of (Cn, 0). In terms of coordinates x1,...,x n on Cn, O = C{x1,...,x n} is the ring of convergent power series and m = \u27e8x1,...,x n\u27e9. We abbreviate by fi = \u2202f \u2202xi , i = 1,...,n , the partial derivatives of f . Let \u2126 \u2022 = \u2126 \u2022 Cn,0 be the complex of holomorphic di\ufb00erential forms at the origin and denote by \u2126 \u2022 (\u22c6D) = \u2126 \u2022 [f \u2212 1] the complex of meromorphic di\ufb00erential forms with poles along D. K. Saito [Sai80, \u00a71] introduced the subcomplex of logarithmic di\ufb00erential forms \u2126 \u2022 (logD) \u2286 \u2126 \u2022 (\u22c6D) along D. It is the maximal subcomplex consisting of forms with at most a simple pole along D. Let Der = Der C O be the module of C-linear derivations of O. It is a free O-module of rank n with a basis formed by the partial derivatives \u22021,...,\u2202 n with respect to x1,...,x n. The module of logarithmic vector \ufb01elds Der( \u2212 logD)) \u2286 Der consists of all vector \ufb01elds tangent to the smooth part of D. Under the natural inner product, Der( \u2212 logD)) and \u2126 1(logD) are mutually O-dual. Our object of interest in this article is the natural map H n 0 (O) d1 /d47/d47H n 0 (\u2126 1(logD)) induced by the \ufb01rst di\ufb00erential of \u2126 \u2022 (logD) in the top local cohomology supported at the origin. We shall show that its injectivity is equivalent to the qua sihomogene- ity of the singularity. Theorem 1. D is quasihomogeneous if and only if d1 is injective. For non\u2013isolated singularities, at least one implication fails: The divisor D \u2286 C3 de\ufb01ned by f =xy(x +y)(x +yz) is not quasihomogene",
+  "abstract": "We characterize quasihomogeneity of isolated hypersurface singu- larities by the injectivity of the map induced by the ﬁrst diﬀerential of the logarithmic diﬀerential complex in the top local cohomology supported in the singular point. 1. Formulation of the result We consider the germ of an isolated hypersurface singularity D ⊆(Cn, 0). Let O = OCn,0 be the ring of germs of holomorphic functions on Cn at the origin with maximal ideal m and f ∈m2 a reduced deﬁning equation of D. For notational simplicity, we shall write Cn instead of (Cn, 0). In terms of coordinates x1, . . . , xn on Cn, O = C{x1, . . . , xn} is the ring of convergent power series and m = ⟨x1, . . . , xn⟩. We abbreviate by fi = ∂f ∂xi , i = 1, . . . , n, the partial derivatives of f. Let Ω• = Ω• Cn,0 be the complex of holomorphic diﬀerential forms at the origin and denote by Ω•(⋆D) = Ω•[f −1] the complex of meromorphic diﬀerential forms with poles along D. K. Saito [Sai80, §1] introduced the subcomplex of logarithmic diﬀerential forms Ω•(log D) ⊆Ω•(⋆D) along D. It is the maximal subcomplex consisting of forms with at most a simple pole along D. Let Der = DerC O be the module of C-linear derivations of O. It is a free O-module of rank n with a basis formed by the partial derivatives ∂1, . . . , ∂n with respect to x1, . . . , xn. The module of logarithmic vector ﬁelds Der(−log D)) ⊆Der consists of all vector ﬁelds tangent to the smooth part of D. Under the natural inner product, Der(−log D)) and Ω1(log D) are mutually O-dual. Our object of interest in this article is the natural map Hn 0 (O) d1 / Hn 0 (Ω1(log D)) induced by the ﬁrst diﬀerential of Ω•(log D) in the top local cohomology supported at the origin. We shall show that its injectivity is equivalent to the quasihomogene- ity of the singularity. Theorem 1. D is quasihomogeneous if and only if d1 is injective. For non–isolated singularities, at least one implication fails: The divisor D ⊆C3 deﬁned by f = xy(x + y)(x + yz) is not quasihomogeneous b",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20210614075718-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20210614075718-04'00'"
+  },
+  "title_raw": "QUASIHOMOGENEITY OF ISOLATED HYPERSURFACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "QUASIHOMOGENEITY OF ISOLATED HYPERSURFACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY 1. Formulation of the result We consider the germ of an isolated hypersurface singularity D ⊆ ( C n , 0). Let O = O C n , 0 be the ring of germs of holomorphic functions on C n at the origin with maximal ideal m and f",
+   "outline": "1. Formulation of the result",
+   "text": "QUASIHOMOGENEITY OF ISOLATED HYPERSURFACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "QUASIHOMOGENEITY OF ISOLATED HYPERSURF ACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY"
  },
  "toc": [
   {
@@ -42,32 +51,95 @@
    "title": "Formulation of the result",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Relation to the logarithmic comparison theorem",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Proof of the theorem",
    "page": 2,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 408,
+   "n_words": 53,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-formulation-of-the-result",
    "number": "1",
@@ -75,8 +147,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 2090,
-   "n_words": 381
+   "n_chars": 2087,
+   "n_words": 385,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-relation-to-the-logarithmic-comparison-theorem",
@@ -85,8 +159,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 2,
-   "n_chars": 3050,
-   "n_words": 557
+   "n_chars": 2982,
+   "n_words": 541,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-3-proof-of-the-theorem",
@@ -95,8 +171,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 5,
-   "n_chars": 5330,
-   "n_words": 1139
+   "n_chars": 5086,
+   "n_words": 1103,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-references",
@@ -105,16 +183,26 @@
    "level": 1,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 1788,
-   "n_words": 287
+   "n_chars": 1764,
+   "n_words": 263,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 4,
-  "sections": 4,
-  "chars_total": 12258,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 5,
+  "chars_total": 12327,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "isd1.tex",
@@ -127,18 +215,23 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-formulation-of-the-result",
      "title": "Formulation of the result",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.932,
+     "coverage_ratio": 0.809,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-relation-to-the-logarithmic-comparison-theorem",
      "title": "Relation to the logarithmic comparison theorem",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.967,
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -146,7 +239,7 @@
      "id": "sec-002-3-proof-of-the-theorem",
      "title": "Proof of the theorem",
      "prose_ratio": 0.992,
-     "coverage_ratio": 0.944,
+     "coverage_ratio": 0.931,
      "result": "overlaid",
      "converter": "pandoc"
     },

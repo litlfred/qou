@@ -1,0 +1,60 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-111
+section_title: "Page 111"
+section_number: null
+pages: 111-111
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+Problems on invariants of knots and 3-manifolds 483
+
+Problem 7.14 (D. Thurston) Find a series of invariants of a 3-manifold (de-
+pending on roots of unity) that grows as its hyperbolic volume (or its simplicial
+volume).
+
+Problem 7.15 (D. Thurston) Find a correct generalization of the volume
+conjecture to other non-compact Lie groups.
+
+Remark The volume conjecture is related to the SL(2,C) Chern-Simons the-
+ory, which (formally) deduces the hyperbolic volume and the Chern-Simons
+invariant. It is a problem to find (or formulate) such invariants of 3-manifolds
+for other non-compact Lie groups.
+
+The Chern-Simons functional CS(A) € C of a SL(2;C) connection A on a
+closed 3-manifold M is defined by the formula (37), where we regard A in the
+formula as a sl(2;C)-valued 1-form on M in this case. Since a gauge transfor-
+mation of A changes CS(A) by an integer, CS([A]) of the gauge equivalence
+class of A is defined to be in C/Z. The Chern-Simons invariant CS(M) € R/Z
+and the volume vol(M/) € Ryo of a closed hyperbolic 3-manifold M is given
+by?5
+
+CS([Ao]) = CS(M) + V—Ivol(M), (42)
+
+where [Ao] is the gauge equivalence class of a SL(2;C) flat connection Ap asso-
+ciated to the conjugacy class of a holonomy representation 71(M/) > SL(2;C)
+of the hyperbolic structure on M. Further, when M is the complement of a
+hyperbolic knot (link) in a closed 3-manifold, CS(M) can be defined similarly.
+
+Problem 7.16 (S. Morita [228]) Define the Chern-Simons invariant CS(M)
+as a topological invariant of any closed oriented 3-manifold M , and of any knot
+(link) complement M in a closed 3-manifold.
+
+This problem includes two problems: to define CS(M) (topologically or com-
+binatorially) as a topological invariant, and to define it for non-hyperbolic 3-
+manifolds.
+
+Remark The hyperbolic volume (which is a counterpart of the Chern-Simons
+invariant) has a definition as a constant multiple of the simplicial volume, which
+is combinatorial, and can be applied, not only for hyperbolic 3-manifolds, but
+also for any other 3-manifolds.
+
+°°The Chern-Simons invariant was introduced by Chern and Simons [85] as an invariant of
+compact (4n — 1)-dimensional Riemannian manifolds. For hyperbolic 3-manifolds, Meyerhoff
+[282] extended CS(M) for M with cusps. See also (310, 96] for CS(M) of hyperbolic 3-
+manifolds M as a counterpart of vol(M).
+
+Geometry & Topology Monographs, Volume 4 (2002)

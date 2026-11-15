@@ -7,10 +7,11 @@
   "bytes": 447448,
   "pages": 39,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -23,17 +24,24 @@
   "title": "TURAEV-VIRO INVARIANTS AS AN EXTENDED TQFT",
   "authors_raw": "BENJAMIN BALSAM AND ALEXANDER KIRILLOV, JR",
   "title_lines": [
-   "TURAEV-VIRO INV ARIANTS AS AN EXTENDED TQFT"
+   "TURAEV-VIRO INVARIANTS AS AN EXTENDED TQFT"
   ],
-  "abstract": "In this paper we show how one can extend Turaev-Viro invarian ts, de\ufb01ned for an arbitrary spherical fusion category C, to 3-manifolds with cor- ners. W e demonstrate that this gives an extended TQFT which c onjecturally coincides with the Reshetikhin-Turaev TQFT corresponding to the Drinfeld center Z(C). In the present paper we give a partial proof of this stateme nt.",
+  "abstract": "In this paper we show how one can extend Turaev-Viro invariants, deﬁned for an arbitrary spherical fusion category C, to 3-manifolds with cor- ners. We demonstrate that this gives an extended TQFT which conjecturally coincides with the Reshetikhin-Turaev TQFT corresponding to the Drinfeld center Z(C). In the present paper we give a partial proof of this statement.",
   "docinfo": {
    "Producer": "GPL Ghostscript 10.01.2",
-   "CreationDate": "D:20241126172437-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20241126172437-05'00'"
   },
-  "title_prev": "TURAEV-VIRO INV ARIANTS AS AN EXTENDED TQFT"
+  "title_raw": "TURAEV-VIRO INVARIANTS AS AN EXTENDED TQFT",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "TURAEV-VIRO INVARIANTS AS AN EXTENDED TQFT Introduction Turaev–Viro (TV) invariants of 3-manifolds Z T V ( M ) were deﬁned by Turaev and Viro in [TV1992] using a quantum analog of 6j symbols for sl 2 . In the same paper it was shown that these invariants can be extended to a 3-dimensional TQFT. Late",
+   "outline": "Introduction",
+   "text": "TURAEV-VIRO INVARIANTS AS AN EXTENDED TQFT",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -41,123 +49,809 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Acknowledgments",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Preliminaries I: spherical categories",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Preliminaries II: Drinfeld Center",
    "page": 6,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Polytope decompositions",
    "page": 10,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "TV invariants from polytope decompositions",
    "page": 15,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Proof of independence of polytope decomposition",
    "page": 20,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Invariance under M1",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Invariance under M2",
    "page": 21,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Invariance under M3",
    "page": 22,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Surfaces with boundary",
    "page": 22,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Extended combinatorial surfaces",
    "page": 24,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Invariants of extended 3-manifolds",
    "page": 27,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Some computations",
    "page": 34,
    "source": "outline",
-   "number": "9"
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Cylinder over an annulus",
    "page": 34,
    "source": "outline",
-   "number": "9.1"
+   "number": "9.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Sphere with n holes",
    "page": 36,
    "source": "outline",
-   "number": "9.2"
+   "number": "9.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 38,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Round coupons We will also use the following convention: if a ﬁgure contains a pair of circular coupons, one with outgoing edges labeled V1, . . . , Vn and the other with edges la-",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Compatibility of pairing with composition",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Graph on a sphere and its “ﬂattening” to the plane",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Graphical presentation of the half-braiding ϕY : Y ⊗",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Half-braiding I(V ) ⊗W →W ⊗I(V ). Note that instead of normalizing factor √",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Diagram ˆΓ on the sphere and its ﬂattening to the plane. Arc γ is shown by a double line",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Invariance under homotopy",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Move M1 M2: removing an edge: Let e be a 1-cell which is regular and which is adjacent to exactly two distinct 2-cells c1, c2 as shown in the ﬁgure below",
+   "page": 11,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Move M2 M3: removing a 2-cell: Let c be a 2-cell which is regular and which is adjacent to exactly two distinct 3-cells F1, F2 as shown in the ﬁgure below",
+   "page": 11,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "Move M3 If F is an oriented d-dimensional cell of a combinatorial manifold M (i.e., a",
+   "page": 12,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "Pachner 3-2 move as composition of elementary moves",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "Pachner 4-1 move as composition of elementary moves",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "Proof of Lemma 3.6 sequence of moves M1, M2 and their inverses which do not change decomposition of ∂M",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "Proof of Lemma 3.6 □ □ Finally, we will need a slight generalization of this result",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "15",
+   "title": "Deﬁning the state space for a 2-cell Note that by (1.3), up to a canonical isomorphism, the state space only depends on the cyclic order of e1, . . . , en (which is deﬁned by C) and does not depend on the choice of the starting point",
+   "page": 15,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "16",
+   "title": "The dual graph on the boundary of a 3-cell Note that a labeling l of M deﬁnes a labeling of edges of this dual graph as",
+   "page": 16,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "17",
+   "title": "Coloring of the dual graph",
+   "page": 17,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "18",
+   "title": "The polytope decomposition of S2 δijk, it is easy to see that H(S2) = L",
+   "page": 19,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "19",
+   "title": "The cylinder over S2",
+   "page": 20,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "20",
+   "title": "Decomposing an open book into a single page book",
+   "page": 21,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "21",
+   "title": "",
+   "page": 22,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "22",
+   "title": "Extended surface Next, we can deﬁne cobordisms between such surfaces. As usual, such a cobordism will be a 3-manifold with boundary together with some “tubes” inside which connect the embedded disks on the boundary of M. The following gives a precise deﬁnition in the PL category",
+   "page": 23,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "23",
+   "title": "Extended 3-manifold",
+   "page": 24,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "24",
+   "title": "n-punctured sphere",
+   "page": 25,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "25",
+   "title": "Gluing of extended surfaces. To help visualize the cylinder, it is colored light gray",
+   "page": 26,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "26",
+   "title": "By Theorem 2.4 this deﬁnes a number ZRT (ˆΓ); as before, we let",
+   "page": 28,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "27",
+   "title": "Cylinder over sphere with n embedded disks",
+   "page": 36,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 505,
+   "n_words": 75,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -165,8 +859,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 2879,
-   "n_words": 506
+   "n_chars": 2847,
+   "n_words": 474,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-acknowledgments",
@@ -175,8 +871,10 @@
    "level": 2,
    "page_start": 2,
    "page_end": 2,
-   "n_chars": 74,
-   "n_words": 11
+   "n_chars": 73,
+   "n_words": 10,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-1-preliminaries-i-spherical-categories",
@@ -185,8 +883,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 6,
-   "n_chars": 6567,
-   "n_words": 1358
+   "n_chars": 6597,
+   "n_words": 1388,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-2-preliminaries-ii-drinfeld-center",
@@ -195,8 +895,10 @@
    "level": 1,
    "page_start": 6,
    "page_end": 10,
-   "n_chars": 6504,
-   "n_words": 1353
+   "n_chars": 6486,
+   "n_words": 1335,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-3-polytope-decompositions",
@@ -205,8 +907,10 @@
    "level": 1,
    "page_start": 10,
    "page_end": 15,
-   "n_chars": 9073,
-   "n_words": 1791
+   "n_chars": 8898,
+   "n_words": 1616,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-4-tv-invariants-from-polytope-decompositions",
@@ -215,8 +919,10 @@
    "level": 1,
    "page_start": 15,
    "page_end": 20,
-   "n_chars": 9198,
-   "n_words": 1854
+   "n_chars": 9136,
+   "n_words": 1792,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-5-proof-of-independence-of-polytope-decompositio",
@@ -225,8 +931,10 @@
    "level": 1,
    "page_start": 20,
    "page_end": 20,
-   "n_chars": 564,
-   "n_words": 106
+   "n_chars": 568,
+   "n_words": 110,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-007-invariance-under-m1",
@@ -235,8 +943,10 @@
    "level": 2,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 1348,
-   "n_words": 337
+   "n_chars": 1297,
+   "n_words": 286,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-008-invariance-under-m2",
@@ -245,8 +955,10 @@
    "level": 2,
    "page_start": 21,
    "page_end": 22,
-   "n_chars": 589,
-   "n_words": 144
+   "n_chars": 582,
+   "n_words": 137,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-009-invariance-under-m3",
@@ -255,8 +967,10 @@
    "level": 2,
    "page_start": 22,
    "page_end": 22,
-   "n_chars": 120,
-   "n_words": 19
+   "n_chars": 119,
+   "n_words": 18,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-010-6-surfaces-with-boundary",
@@ -265,8 +979,10 @@
    "level": 1,
    "page_start": 22,
    "page_end": 24,
-   "n_chars": 5298,
-   "n_words": 1016
+   "n_chars": 5260,
+   "n_words": 978,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-011-7-extended-combinatorial-surfaces",
@@ -275,8 +991,10 @@
    "level": 1,
    "page_start": 24,
    "page_end": 27,
-   "n_chars": 4035,
-   "n_words": 800
+   "n_chars": 4012,
+   "n_words": 777,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-012-8-invariants-of-extended-3-manifolds",
@@ -285,8 +1003,10 @@
    "level": 1,
    "page_start": 27,
    "page_end": 34,
-   "n_chars": 10332,
-   "n_words": 2159
+   "n_chars": 10235,
+   "n_words": 2062,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-013-9-some-computations",
@@ -295,8 +1015,10 @@
    "level": 1,
    "page_start": 34,
    "page_end": 34,
-   "n_chars": 73,
-   "n_words": 13
+   "n_chars": 72,
+   "n_words": 12,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-014-91-cylinder-over-an-annulus",
@@ -305,8 +1027,10 @@
    "level": 2,
    "page_start": 34,
    "page_end": 36,
-   "n_chars": 885,
-   "n_words": 231
+   "n_chars": 872,
+   "n_words": 218,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-015-92-sphere-with-n-holes",
@@ -315,8 +1039,10 @@
    "level": 2,
    "page_start": 36,
    "page_end": 38,
-   "n_chars": 1686,
-   "n_words": 433
+   "n_chars": 1697,
+   "n_words": 444,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-016-references",
@@ -325,16 +1051,26 @@
    "level": 1,
    "page_start": 38,
    "page_end": 39,
-   "n_chars": 3327,
-   "n_words": 457
+   "n_chars": 3296,
+   "n_words": 426,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 17,
-  "sections": 17,
+  "toc_inferred_entries": 0,
+  "figure_entries": 27,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 18,
   "chars_total": 62552,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "TV.tex",
@@ -347,10 +1083,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.91,
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.945,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -358,37 +1099,37 @@
      "id": "sec-001-acknowledgments",
      "title": "Acknowledgments",
      "prose_ratio": 0.467,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-002-1-preliminaries-i-spherical-categories",
      "title": "Preliminaries I: spherical categories",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.951,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-003-2-preliminaries-ii-drinfeld-center",
      "title": "Preliminaries II: Drinfeld Center",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.95,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-004-3-polytope-decompositions",
      "title": "Polytope decompositions",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-005-4-tv-invariants-from-polytope-decompositions",
      "title": "TV invariants from polytope decompositions",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -404,7 +1145,7 @@
      "id": "sec-007-invariance-under-m1",
      "title": "Invariance under M1",
      "prose_ratio": 0.934,
-     "coverage_ratio": 0.867,
+     "coverage_ratio": 0.861,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -420,29 +1161,29 @@
      "id": "sec-009-invariance-under-m3",
      "title": "Invariance under M3",
      "prose_ratio": 0.588,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-010-6-surfaces-with-boundary",
      "title": "Surfaces with boundary",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-011-7-extended-combinatorial-surfaces",
      "title": "Extended combinatorial surfaces",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.925,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-012-8-invariants-of-extended-3-manifolds",
      "title": "Invariants of extended 3-manifolds",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.944,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -466,7 +1207,7 @@
      "id": "sec-015-92-sphere-with-n-holes",
      "title": "Sphere with n holes",
      "prose_ratio": 0.2,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-016-references",

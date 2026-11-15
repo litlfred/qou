@@ -1,0 +1,50 @@
+1944 Lillian B. Pierce and Junyan Xu
+7B. Proofs of technical lemmas.
+
+Proof of Lemma 5.2. This argument originates in [Heath-Brown 2013, §4] and is similar but not identical
+to lemmas in [Heath-Brown and Pierce 2015; Pierce 2016]; for completeness we provide an argument.
+The first property in Lemma 5.2 is a direct result of the definition of A(m). Since each A(m) is a
+
+nonnegative integer,
+
+Am) < 0 Amy,
+
+and it suffices to prove the third property. We write
+
+Ni 4; N;—a!
+DAim? = 4p. p'sasa! sm = 84 im, Hh) Pam = 4m, + 1,/|
+m m P
+n
+=a ) ' |Ni-aiq Ni-aia|
+< — }#} p, p',a, a’: 0 < | ——— — — | < H/P
+(11 P |p yp |
+=||HIP" D> Mo, p’), (7-11)
+p.p'eP.
+where
+Ni—aiq N;—-a!
+Mp, 9) =#{a,a'.0<a) <p.0<6) < p's0<|M—84 N84) < yp}
+P P
+
+First consider p = p’. Then
+
+M(p, p) < #{a, a’: |(Ni — aig) — (Ni — 4/q)| < pCi /P) < 2Hj, i=1,...,n}
+<#{a,a!:|a;—aj| <2H;/q <2, i=1,...,n}.
+
+Here we have used H; <q. This shows that once a is chosen, there are at most 3” choices for a’, so that
+M(p, p) « P” and hence DL p=pleP M(p, p’) « P"*!, which suffices for our desired bound for (7-11).
+
+Next, consider the case p # p’. For each i = 1,..., we choose (by Bertrand’s postulate) a prime J;
+such that
+2.
+4 24,<4.
+Hj A;
+
+(Here we use the assumption that Hj <q for each i.) For each i, let Mj = [Nili/q] or Mi = [Nili/q]+ 1,
+so that J; { Mj. Then |Njli/q — M;| < 1 implies that |Nj — qMj/1;| < q/li, so that
+
+r
+
+M(p, p') <#la.a’: |qMi/li-aiq QMi/li-aiq| Hi, a, 4
+“lp pe |
+
+<K #{a,a’ :\(p' — p)M; — (a p' —a;p)l;| <12P, i=1,... wn}.

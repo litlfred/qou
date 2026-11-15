@@ -6,10 +6,26 @@
   "sha256": "cc9d2ab4c6c79b50a95ccb0b9939c59807a7e3ed9ef0b8dd3a258e636b8b1d33",
   "bytes": 481485,
   "pages": 32,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 11,
+    "reason": "12 of 391 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 24,
+    "reason": "11 of 387 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 25,
+    "reason": "10 of 332 words are a stray single letter: the text layer splits words"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,18 +35,33 @@
    "stamp_date": "29 May 2025"
   },
   "doi": null,
-  "title": "QUANTUM MODULAR FORMS AND RESURGENCE",
+  "title": "Quantum Modular Forms and Resurgence",
   "authors_raw": "ELEANOR MCSPIRIT AND LARRY ROLEN",
-  "abstract": "In 2010, Zagier described a new phenomenon which he called quantum mod- ularity. This connected various examples coming from disparate fields which exhibit near- modular behavior. In the fifteen years since, Zagier\u2019s philosophy has informed new devel- opments in areas such as knot theory, 3-dimensional topology, combinatorics, and physics. More recently, the concept of holomorphic quantum modularity has emerged, pointing to a clearer structure for Zagier\u2019s original examples. These new developments suggest connec- tions to perturbative quantum field theory, like the theory of resurgence. In 2024, Fantini and Rella proposed a means of codifying some of these connections under their program of \u201cmodular resurgence.\u201d Inspired by their work, we unify all of the examples of quantum modular forms in Zagier\u2019s original paper under the umbrella of resurgence. In doing so, we strengthen known quantum modularity results for holomorphic Eichler integrals of half-integer weight modular forms. Our main addition to the literature is a collection of median resummation type results which show that the examples of holomorphic quantum modular forms we consider can be recovered from their asymptotics, or the asymptotics of closely related functions.",
-  "docinfo": {
-   "Author": "Eleanor McSpirit; Larry Rolen",
-   "Creator": "arXiv GenPDF (tex2pdf:)",
-   "Producer": "pikepdf 8.15.1",
-   "Title": "Quantum Modular Forms and Resurgence"
-  },
   "title_lines": [
    "QUANTUM MODULAR FORMS AND RESURGENCE"
-  ]
+  ],
+  "abstract": "In 2010, Zagier described a new phenomenon which he called quantum mod- ularity. This connected various examples coming from disparate fields which exhibit near- modular behavior. In the fifteen years since, Zagier’s philosophy has informed new devel- opments in areas such as knot theory, 3-dimensional topology, combinatorics, and physics. More recently, the concept of holomorphic quantum modularity has emerged, pointing to a clearer structure for Zagier’s original examples. These new developments suggest connec- tions to perturbative quantum field theory, like the theory of resurgence. In 2024, Fantini and Rella proposed a means of codifying some of these connections under their program of “modular resurgence.” Inspired by their work, we unify all of the examples of quantum modular forms in Zagier’s original paper under the umbrella of resurgence. In doing so, we strengthen known quantum modularity results for holomorphic Eichler integrals of half-integer weight modular forms. Our main addition to the literature is a collection of median resummation type results which show that the examples of holomorphic quantum modular forms we consider can be recovered from their asymptotics, or the asymptotics of closely related functions.",
+  "docinfo": {
+   "Title": "Quantum Modular Forms and Resurgence",
+   "Author": "Eleanor McSpirit; Larry Rolen",
+   "Producer": "pikepdf 8.15.1",
+   "Creator": "arXiv GenPDF (tex2pdf:)"
+  },
+  "title_raw": "QUANTUM MODULAR FORMS AND RESURGENCE",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Quantum Modular Forms and Resurgence",
+   "heading": "QUANTUM MODULAR FORMS AND RESURGENCE 1. Introduction and statement of results In a seminal 2010 paper [31], Zagier defined a new type of modular object which he called a quantum modular form. This new notion was meant to capture the behavior of a collection of examples from the literature. As Zagier",
+   "outline": "1. Introduction and statement of results",
+   "text": "QUANTUM MODULAR FORMS AND RESURGENCE",
+   "corroborated_by": [
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "QUANTUM MODULAR FORMS AND RESURGENCE"
  },
  "toc": [
   {
@@ -38,109 +69,472 @@
    "title": "Introduction and statement of results",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Statement of Main Results",
    "page": 3,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Acknowledgements",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Preliminaries",
    "page": 7,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Resurgence",
    "page": 7,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Eichler Integrals of Cusp Forms of Integer and Half-Integer Weight",
    "page": 11,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Maass Waveforms",
    "page": 13,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "Intermediate results",
    "page": 15,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Asymptotics",
    "page": 15,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Median Resummation",
    "page": 19,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "Discontinuity Calculations",
    "page": 24,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 1,
    "title": "Proof of Theorem 1.5",
    "page": 27,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 1,
    "title": "Proofs of Corollaries",
    "page": 28,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
   },
   {
    "level": 1,
    "title": "Generalizations and Open Questions",
    "page": 30,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   },
   {
    "level": 1,
    "title": "References",
    "page": 31,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The contour Γ",
+   "page": 20,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "20"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1370,
+   "n_words": 200,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction-and-statement-of-results",
    "number": "1",
@@ -148,8 +542,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 4721,
-   "n_words": 750
+   "n_chars": 4729,
+   "n_words": 758,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
    "id": "sec-001-11-statement-of-main-results",
@@ -157,19 +553,23 @@
    "title": "Statement of Main Results",
    "level": 2,
    "page_start": 3,
-   "page_end": 6,
-   "n_chars": 6722,
-   "n_words": 1132
+   "page_end": 7,
+   "n_chars": 8839,
+   "n_words": 1552,
+   "label_start": "3",
+   "label_end": "7"
   },
   {
    "id": "sec-002-21-resurgence",
    "number": "2.1",
    "title": "Resurgence",
    "level": 2,
-   "page_start": 6,
+   "page_start": 7,
    "page_end": 7,
-   "n_chars": 3790,
-   "n_words": 645
+   "n_chars": 1766,
+   "n_words": 279,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
    "id": "sec-003-acknowledgements",
@@ -179,7 +579,9 @@
    "page_start": 7,
    "page_end": 7,
    "n_chars": 127,
-   "n_words": 21
+   "n_words": 21,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
    "id": "sec-004-2-preliminaries",
@@ -188,8 +590,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 11,
-   "n_chars": 6803,
-   "n_words": 1193
+   "n_chars": 6849,
+   "n_words": 1238,
+   "label_start": "7",
+   "label_end": "11"
   },
   {
    "id": "sec-005-22-eichler-integrals-of-cusp-forms-of-integer-an",
@@ -198,8 +602,10 @@
    "level": 2,
    "page_start": 11,
    "page_end": 13,
-   "n_chars": 4918,
-   "n_words": 946
+   "n_chars": 4894,
+   "n_words": 981,
+   "label_start": "11",
+   "label_end": "13"
   },
   {
    "id": "sec-006-23-maass-waveforms",
@@ -208,8 +614,10 @@
    "level": 2,
    "page_start": 13,
    "page_end": 15,
-   "n_chars": 3168,
-   "n_words": 572
+   "n_chars": 3195,
+   "n_words": 599,
+   "label_start": "13",
+   "label_end": "15"
   },
   {
    "id": "sec-007-3-intermediate-results",
@@ -219,7 +627,9 @@
    "page_start": 15,
    "page_end": 15,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "15",
+   "label_end": "15"
   },
   {
    "id": "sec-008-31-asymptotics",
@@ -228,8 +638,10 @@
    "level": 2,
    "page_start": 15,
    "page_end": 19,
-   "n_chars": 5717,
-   "n_words": 1101
+   "n_chars": 5828,
+   "n_words": 1212,
+   "label_start": "15",
+   "label_end": "19"
   },
   {
    "id": "sec-009-32-median-resummation",
@@ -238,8 +650,10 @@
    "level": 2,
    "page_start": 19,
    "page_end": 24,
-   "n_chars": 7840,
-   "n_words": 1505
+   "n_chars": 7937,
+   "n_words": 1632,
+   "label_start": "19",
+   "label_end": "24"
   },
   {
    "id": "sec-010-33-discontinuity-calculations",
@@ -248,8 +662,10 @@
    "level": 2,
    "page_start": 24,
    "page_end": 27,
-   "n_chars": 4148,
-   "n_words": 812
+   "n_chars": 4068,
+   "n_words": 838,
+   "label_start": "24",
+   "label_end": "27"
   },
   {
    "id": "sec-011-4-proof-of-theorem-15",
@@ -258,8 +674,10 @@
    "level": 1,
    "page_start": 27,
    "page_end": 28,
-   "n_chars": 1679,
-   "n_words": 308
+   "n_chars": 1703,
+   "n_words": 332,
+   "label_start": "27",
+   "label_end": "28"
   },
   {
    "id": "sec-012-5-proofs-of-corollaries",
@@ -268,8 +686,10 @@
    "level": 1,
    "page_start": 28,
    "page_end": 30,
-   "n_chars": 3823,
-   "n_words": 721
+   "n_chars": 3896,
+   "n_words": 794,
+   "label_start": "28",
+   "label_end": "30"
   },
   {
    "id": "sec-013-6-generalizations-and-open-questions",
@@ -279,7 +699,9 @@
    "page_start": 30,
    "page_end": 31,
    "n_chars": 1509,
-   "n_words": 241
+   "n_words": 241,
+   "label_start": "30",
+   "label_end": "31"
   },
   {
    "id": "sec-014-references",
@@ -288,16 +710,26 @@
    "level": 1,
    "page_start": 31,
    "page_end": 32,
-   "n_chars": 4733,
-   "n_words": 649
+   "n_chars": 4702,
+   "n_words": 618,
+   "label_start": "31",
+   "label_end": "32"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 15,
-  "sections": 15,
-  "chars_total": 59698,
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 16,
+  "chars_total": 61412,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "EM_LR_QMFs-and-Resurgence_Updated.tex",
@@ -310,6 +742,11 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction-and-statement-of-results",
      "title": "Introduction and statement of results",
      "prose_ratio": 0.966,
@@ -320,16 +757,16 @@
     {
      "id": "sec-001-11-statement-of-main-results",
      "title": "Statement of Main Results",
-     "prose_ratio": 0.766,
-     "coverage_ratio": 0.987,
+     "prose_ratio": 0.869,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-21-resurgence",
      "title": "Resurgence",
-     "prose_ratio": 0.312,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.23,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-003-acknowledgements",
@@ -343,13 +780,13 @@
      "id": "sec-004-2-preliminaries",
      "title": "Preliminaries",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-005-22-eichler-integrals-of-cusp-forms-of-integer-an",
      "title": "Eichler Integrals of Cusp Forms of Integer and Half-Integer Weight",
-     "prose_ratio": 0.966,
-     "coverage_ratio": 0.941,
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.951,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -357,7 +794,7 @@
      "id": "sec-006-23-maass-waveforms",
      "title": "Maass Waveforms",
      "prose_ratio": 0.949,
-     "coverage_ratio": 0.937,
+     "coverage_ratio": 0.95,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -365,13 +802,13 @@
      "id": "sec-007-3-intermediate-results",
      "title": "Intermediate results",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-008-31-asymptotics",
      "title": "Asymptotics",
      "prose_ratio": 0.935,
-     "coverage_ratio": 0.941,
+     "coverage_ratio": 0.956,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -387,7 +824,7 @@
      "id": "sec-010-33-discontinuity-calculations",
      "title": "Discontinuity Calculations",
      "prose_ratio": 0.748,
-     "coverage_ratio": 0.902,
+     "coverage_ratio": 0.86,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -399,16 +836,16 @@
     {
      "id": "sec-012-5-proofs-of-corollaries",
      "title": "Proofs of Corollaries",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.993,
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.945,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-013-6-generalizations-and-open-questions",
      "title": "Generalizations and Open Questions",
-     "prose_ratio": 0.992,
-     "coverage_ratio": 0.992,
+     "prose_ratio": 0.966,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },

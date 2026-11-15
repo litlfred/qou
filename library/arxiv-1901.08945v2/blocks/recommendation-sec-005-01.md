@@ -1,0 +1,1 @@
+In fact, he only states that $S$ should be locally noetherian with the extra condition on points, but the other properties are used implicitly since he uses results from Căldăraru's thesis, where the stronger assumptions are in effect [@caldararu2000 Section 2.1].

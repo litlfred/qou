@@ -2,120 +2,190 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2104.01786v1",
  "source_sha256": "34087d5063ef5507",
- "brief": "Spin(11, 3), particles and octonions — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a sin gle real",
- "extended": "**Spin(11, 3), particles and octonions**\n\n*School of Mathematical Sciences, University of Nottingham , NG7 2RD, UK*\n\n27 pp, 22 sections.\n\n**Abstract.** The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a sin gle real 64-dimensional semi- spinor representation S+ of the group Spin(11 ,3). We describe an octonionic model for Spin(11,3) in which the semi-spinor representation gets identiﬁed w ith S+ = O⊗ ˜O, where O,˜O are the usual and split octonions respectively. It is then we ll-known that choosing a unit imaginary octonion u ∈ Im(O) equips O with a complex structure J. Similarly, choosing a unit imaginary split octonion ˜ u ∈ Im( ˜O) equips ˜O with a complex structure ˜J, except that there are now two inequivalent complex structu res, one parametrised by a choice of a timelike and the other of a spacelike unit ˜ u. In either case, the identiﬁcation S+ = O ⊗ ˜O implies that there are two natural commuting complex struct ures J, ˜J on S+.\n\n**Outline.** 1 Introduction; 2.1 Octonions; 2 Spin(7) and octonions; 2.3 Lie algebra so(7); 2.4 Complex structure; 2.6 Parametrisation; 2.7 The group of automorphisms of the octonion; 2.8 The group SU(3); 3.1 Split octonions; 3.4 Complex structures; 3.6 Parametrisation; 3.7 Some useful formulas; 4.2 Lie algebra; 4.1 Yet another magic square; 4.3 Invariant pairing; 5 The left/right symmetric models; 5.3 Two Higgs in the adjoint; 6 Dictionary\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: Let X, Y be a pair of division algebras from the set C, ˜C, H, ˜H, O, ˜O, where C, ˜C\n- Theorem 2: There exist two complex structures J, ˜J on the space of semi-spinors of Spin(11, 3),",
+ "brief": "Spin(11, 3), particles and octonions — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a single real",
+ "extended": "**Spin(11, 3), particles and octonions**\n\n*Kirill Krasnov*\n\n27 pp, 36 sections.\n\n**Abstract.** The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a single real 64-dimensional semi- spinor representation S+ of the group Spin(11, 3). We describe an octonionic model for Spin(11, 3) in which the semi-spinor representation gets identiﬁed with S+ = O⊗˜O, where O, ˜O are the usual and split octonions respectively. It is then well-known that choosing a unit imaginary octonion u ∈Im(O) equips O with a complex structure J. Similarly, choosing a unit imaginary split octonion ˜u ∈Im(˜O) equips ˜O with a complex structure ˜J, except that there are now two inequivalent complex structures, one parametrised by a choice of a timelike and the other of a spacelike unit ˜u. In either case, the identiﬁcation S+ = O ⊗˜O implies that there are two natural commuting complex structures J, ˜J on S+.\n\n**Outline.** Front matter; 1 Introduction; 2.1 Octonions; 2 Spin(7) and octonions; 2.2 Clifford algebra Cliff7; 2.3 Lie algebra so(7); 2.4 Complex structure; 2.5 A different complex structure; 2.6 Parametrisation; 2.7 The group of automorphisms of the octonion; 2.8 The group SU(3); 3 Spin(4,3) and the split octonions; 3.2 The Clifford algebra Cliff4,3; 3.3 Lie algebra so(4,3); 3.4 Complex structures; 3.5 Decomposition of under so(3)so(1,3); 3.6 Parametrisation; 3.7 Some useful formulas",
  "tokens": {
   "brief": 49,
-  "extended": 435
+  "extended": 368
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-5"
+   "pages": "1-6"
   },
   {
    "id": "sec-001-21-octonions",
    "title": "Octonions",
-   "pages": "5-6"
+   "pages": "6-6"
   },
   {
    "id": "sec-002-2-spin7-and-octonions",
    "title": "Spin(7) and octonions",
-   "pages": "6-8"
+   "pages": "6-7"
   },
   {
-   "id": "sec-003-23-lie-algebra-so7",
+   "id": "sec-003-22-clifford-algebra-cliff7",
+   "title": "Clifford algebra Cliff7",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-004-23-lie-algebra-so7",
    "title": "Lie algebra so(7)",
    "pages": "8-8"
   },
   {
-   "id": "sec-004-24-complex-structure",
+   "id": "sec-005-24-complex-structure",
    "title": "Complex structure",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-006-25-a-different-complex-structure",
+   "title": "A different complex structure",
    "pages": "8-9"
   },
   {
-   "id": "sec-005-26-parametrisation",
+   "id": "sec-007-26-parametrisation",
    "title": "Parametrisation",
    "pages": "9-9"
   },
   {
-   "id": "sec-006-27-the-group-of-automorphisms-of-the-octonions",
+   "id": "sec-008-27-the-group-of-automorphisms-of-the-octonions",
    "title": "The group of automorphisms of the octonions",
    "pages": "9-10"
   },
   {
-   "id": "sec-007-28-the-group-su3",
+   "id": "sec-009-28-the-group-su3",
    "title": "The group SU(3)",
    "pages": "10-10"
   },
   {
-   "id": "sec-008-31-split-octonions",
-   "title": "Split octonions",
-   "pages": "10-12"
+   "id": "sec-010-3-spin43-and-the-split-octonions",
+   "title": "Spin(4,3) and the split octonions",
+   "pages": "10-11"
   },
   {
-   "id": "sec-009-34-complex-structures",
+   "id": "sec-011-32-the-clifford-algebra-cliff43",
+   "title": "The Clifford algebra Cliff4,3",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-012-33-lie-algebra-so43",
+   "title": "Lie algebra so(4,3)",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-013-34-complex-structures",
    "title": "Complex structures",
-   "pages": "12-14"
+   "pages": "12-13"
   },
   {
-   "id": "sec-010-36-parametrisation",
+   "id": "sec-014-35-decomposition-of-under-so3so13",
+   "title": "Decomposition of under so(3)so(1,3)",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-015-36-parametrisation",
    "title": "Parametrisation",
    "pages": "14-15"
   },
   {
-   "id": "sec-011-37-some-useful-formulas",
+   "id": "sec-016-37-some-useful-formulas",
    "title": "Some useful formulas",
    "pages": "15-16"
   },
   {
-   "id": "sec-012-42-lie-algebra",
-   "title": "Lie algebra",
+   "id": "sec-017-4-the-octonionic-model-for-spin113",
+   "title": "The octonionic model for Spin(11,3)",
    "pages": "16-16"
   },
   {
-   "id": "sec-013-41-yet-another-magic-square",
+   "id": "sec-018-41-yet-another-magic-square",
    "title": "Yet another magic square",
    "pages": "16-17"
   },
   {
-   "id": "sec-014-43-invariant-pairing",
+   "id": "sec-019-42-lie-algebra",
+   "title": "Lie algebra",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-020-43-invariant-pairing",
    "title": "Invariant pairing",
    "pages": "17-18"
   },
   {
-   "id": "sec-015-5-the-leftright-symmetric-models",
+   "id": "sec-021-5-the-leftright-symmetric-models",
    "title": "The left/right symmetric models",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-022-51-spinor-fields",
+   "title": "Spinor fields",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-023-52-bi-doublet-higgs-field",
+   "title": "Bi-doublet Higgs field",
    "pages": "18-19"
   },
   {
-   "id": "sec-016-53-two-higgs-in-the-adjoint",
+   "id": "sec-024-53-two-higgs-in-the-adjoint",
    "title": "Two Higgs in the adjoint",
    "pages": "19-20"
   },
   {
-   "id": "sec-017-6-dictionary",
+   "id": "sec-025-54-two-higgs-fields-in-the-fundamental",
+   "title": "Two Higgs fields in the fundamental",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-026-55-a-model-with-only-fundamental-higgs-fields",
+   "title": "A model with only fundamental Higgs fields",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-027-6-dictionary",
    "title": "Dictionary",
    "pages": "20-21"
   },
   {
-   "id": "sec-018-61-two-commuting-complex-structures-on-o",
+   "id": "sec-028-61-two-commuting-complex-structures-on-o",
    "title": "Two commuting complex structures on O",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-029-62-identification-with-particles",
+   "title": "Identification with particles",
    "pages": "21-22"
   },
   {
-   "id": "sec-019-7-mass-terms",
+   "id": "sec-030-7-mass-terms",
    "title": "Mass terms",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-031-71-projection-onto-3-r113",
+   "title": "Projection onto 3 R11,3",
    "pages": "22-23"
   },
   {
-   "id": "sec-020-73-evaluating-the-mass-terms",
+   "id": "sec-032-72-su3u1-and-lorentz-invariant-pairing",
+   "title": "SU(3)U(1) and Lorentz invariant pairing",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-033-73-evaluating-the-mass-terms",
    "title": "Evaluating the mass terms",
    "pages": "23-24"
   },
   {
-   "id": "sec-021-8-discussion",
+   "id": "sec-034-8-discussion",
    "title": "Discussion",
    "pages": "24-27"
   }
@@ -124,8 +194,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

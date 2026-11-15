@@ -1,0 +1,131 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "104171-rmi-1408",
+ "source": {
+  "structure_sha256": "eda199771108dff8901f7b28fb8fe2d02e21bc67ff7fb0c278254035438ae7af",
+  "file": "10.4171-rmi-1408.pdf"
+ },
+ "provenance": {
+  "title": "DOI 10.4171/RMI/1408 \u00a9 2023 Real Sociedad Matem\u00e1tica Espa\u00f1ola",
+  "authors": "Published by EMS Press and licensed under a CC BY 4.0 license",
+  "arxiv": null,
+  "doi": "10.4171/RMI/1408"
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 7,
+  "by_kind": {
+   "recommendation": 7
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "It must be remarked that these composition superalgebras appeared for the first time in Shes- takov\u2019s work on prime alternative superalgebras [18].",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "(The reader should compare with Proposition 3.4 in [14].) Recipe 2.7.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-2-from-algebras-to-superalgebras.md",
+   "section_title": "From algebras to superalgebras",
+   "pages": "3-10",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Also, the polar form may be considered as a linear map nWC \u02dd C !",
+   "strength": "may",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-3-from-octonions-to-composition-superalgebras.md",
+   "section_title": "From octonions to composition superalgebras",
+   "pages": "10-15",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "(3) There is a canonical basis such that \u001b.ui/ D ui; i D 1; 2; \u001b.u3/ D u3 C v3 \u0000 .e1 \u0000 e2/: (4) There is a canonical basis such that \u001b.ui/ D ui; i D 1; 2; \u001b.u3/ D u3 C u2 C v3 \u0000 .e1 \u0000 e2/: It must be remarked that the automorphism in item (1) above corresponds to the so called quaternionic idempotents of Okubo algebras, while the automorphism in item (4) corresponds to the singular idempotents of Okubo algebras.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-3-from-octonions-to-composition-superalgebras.md",
+   "section_title": "From octonions to composition superalgebras",
+   "pages": "10-15",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "From octonions to composition superalgebras via tensor categories 145 At this point, it should be remarked that, the characteristic being 3, Der.C/ is not the contragredient Lie algebra attached to the Cartan matrix \u0000 2 \u00003 \u00001 2 \u0001 .",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-4-semisimplification-skew-transformations-deriva.md",
+   "section_title": "Semisimplification: skew transformations, derivations",
+   "pages": "15-19",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall follow here [4], but restricted, for simplicity, to the use of the so-called para-Hurwitz algebras.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-004-5-the-extended-freudenthal-magic-square.md",
+   "section_title": "The extended Freudenthal magic square",
+   "pages": "19-23",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "From octonions to composition superalgebras via tensor categories 151 It must be pointed out here that in [14], g.B.1;2/;B.1;2// is obtained from the excep- tional Lie algebra of type E6 endowed with a suitable nilpotent derivation of order 3, while the above comments show that g.B.1; 2/; B.1; 2// is obtained too from the exceptional Lie algebra of type E8, that is, from the Lie algebra g.C;C0/ where both C and C0 are the split Cayley algebras, endowed with automorphisms of types (3) or (4) in Theorem 3.5.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-004-5-the-extended-freudenthal-magic-square.md",
+   "section_title": "The extended Freudenthal magic square",
+   "pages": "19-23",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

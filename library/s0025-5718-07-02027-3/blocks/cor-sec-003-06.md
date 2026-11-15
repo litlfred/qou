@@ -1,1 +1,0 @@
-If ζ ⁄=1 is a root of unity of order prime top,

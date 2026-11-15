@@ -8,7 +8,7 @@
   "pages": 29,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,12 +21,12 @@
    "stamp_date": "28 Jun 2006"
   },
   "doi": null,
-  "title": "arXiv:math/0511710v2 [math.DG] 28 Jun 2006",
+  "title": "Higher gauge theory",
   "authors_raw": "John Baez",
   "title_lines": [
    "Higher Gauge Theory"
   ],
-  "abstract": "Just as gauge theory describes the parallel transport of point particles using connections on bundles, higher gauge theory describes the parallel transport of 1-dimensional objects (e.g. strings) using 2-connections on 2-bundles. A 2-bundle is a categori\ufb01ed version of a bundle: that is, one where the \ufb01ber is not a manifold but a category with a suitable smooth structure. Where gauge theory uses Lie groups and Lie algebras, higher gauge theory uses their categori\ufb01ed analogues: Lie 2-groups and Lie 2- algebras. We describe a theory of 2-connections on principal 2-bundles and explain how this is related to Breen and Messing\u2019s theory of con- nections on nonabelian gerbes. The distinctive feature of our theory is that a 2-connection allows parallel transport along paths and surfaces in a parametrization-independent way. In terms of Breen and Messing\u2019s framework, this requires that the \u2018fake curvature\u2019 must vanish. In this paper we summarize the main results of our theory without proofs.",
+  "abstract": "Just as gauge theory describes the parallel transport of point particles using connections on bundles, higher gauge theory describes the parallel transport of 1-dimensional objects (e.g. strings) using 2-connections on 2-bundles. A 2-bundle is a categoriﬁed version of a bundle: that is, one where the ﬁber is not a manifold but a category with a suitable smooth structure. Where gauge theory uses Lie groups and Lie algebras, higher gauge theory uses their categoriﬁed analogues: Lie 2-groups and Lie 2- algebras. We describe a theory of 2-connections on principal 2-bundles and explain how this is related to Breen and Messing’s theory of con- nections on nonabelian gerbes. The distinctive feature of our theory is that a 2-connection allows parallel transport along paths and surfaces in a parametrization-independent way. In terms of Breen and Messing’s framework, this requires that the ‘fake curvature’ must vanish. In this paper we summarize the main results of our theory without proofs.",
   "docinfo": {
    "Title": "arXiv:math/0511710v2  [math.DG]  28 Jun 2006",
    "Producer": "GPL Ghostscript 10.01.2",
@@ -44,7 +44,8 @@
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:math/0511710v2 [math.DG] 28 Jun 2006"
  },
  "toc": [
   {
@@ -329,8 +330,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1348,
-   "n_words": 195,
+   "n_chars": 1346,
+   "n_words": 194,
    "label_start": null,
    "label_end": null
   },
@@ -341,7 +342,7 @@
    "level": 1,
    "page_start": 1,
    "page_end": 8,
-   "n_chars": 12739,
+   "n_chars": 12750,
    "n_words": 2362,
    "label_start": null,
    "label_end": null
@@ -352,9 +353,9 @@
    "title": "Internalization",
    "level": 1,
    "page_start": 8,
-   "page_end": 12,
-   "n_chars": 9980,
-   "n_words": 1813,
+   "page_end": 13,
+   "n_chars": 12661,
+   "n_words": 2323,
    "label_start": null,
    "label_end": null
   },
@@ -363,10 +364,10 @@
    "number": "3",
    "title": "2-Bundles",
    "level": 1,
-   "page_start": 12,
+   "page_start": 13,
    "page_end": 19,
-   "n_chars": 11666,
-   "n_words": 2159,
+   "n_chars": 9025,
+   "n_words": 1652,
    "label_start": null,
    "label_end": null
   },
@@ -377,8 +378,8 @@
    "level": 1,
    "page_start": 19,
    "page_end": 27,
-   "n_chars": 9445,
-   "n_words": 1775,
+   "n_chars": 9459,
+   "n_words": 1776,
    "label_start": null,
    "label_end": null
   },
@@ -410,7 +411,8 @@
    "items": []
   },
   "sections": 6,
-  "chars_total": 51289,
+  "chars_total": 51352,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "higher.tex",
@@ -438,16 +440,16 @@
     {
      "id": "sec-001-2-internalization",
      "title": "Internalization",
-     "prose_ratio": 0.876,
-     "coverage_ratio": 0.984,
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-3-2-bundles",
      "title": "2-Bundles",
-     "prose_ratio": 0.975,
-     "coverage_ratio": 0.821,
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.942,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -464,7 +466,7 @@
      "title": "Acknowledgements",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.197,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

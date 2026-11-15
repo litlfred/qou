@@ -1,0 +1,49 @@
+Finite points and residual representations
+
+If v is a finite point, Proposition |1.3.11]implies that the tautological representation
+
+can be chosen, up to conjugation, to be of the form p: T — SLo(O,), such a repre-
+
+sentation will be said convergent. Given a convergent representation p, we denote
+mod t,
+
+by p: T > SL2(O,) ——> SLo(k) the residual representation. If v corresponds to
+
+the character y € X, then the representation / is a lift of x.
+
+Ideal points and incompressible surfaces
+
+Here M is a 3-manifold with 0M = S! x S!, and [ = 7(M). We pick an ideal
+point v € X, and we know from Proposition that no representative p of
+the tautological representation converges (sends the whole group I’ into SL2(O,)).
+Now we describe quickly how to construct, from the action of T on T, a surface
+x Cc M, said dual to the action. The reader will find many details about this
+delicate construction in (TaI03].
+
+The main point is to construct a 7(/)-equivariant map f : M = T,. Pick any
+triangulation K of M, and lift it to a 7,(M)-invariant triangulation K of M; then
+pick a set of orbit representatives S$ for the action of 7(/) on the set of 0-
+simplices of K, and any map fo : 5 — T, from this set to the set of vertices of Ty.
+It induces an equivariant map from the 0-squeleton of K to T,, that we still denote
+by fo: K© > T,. Now it is possible to extend linearly this map to the 1-squeleton,
+as follows : pick a set of orbit representatives S“ for the action of 7(/) on the
+set of 1-simplices of K. Any edge o € S$) has endpoints mapped to some given
+vertices through the map fo, and we extend in the obvious way fo to 0. Now there
+is a unique 7(/)-equivariant extension f; : K® — T, of fo, it is continuous, and
+can be made simplicial, up to subdivide the triangulation K. Repeat this process
+up to obtain the desired simplicial, equivariant map f : M > T,.
+
+Now consider the set of midpoints E of the edges of T,,, the set f~!(E) is a surface
+S Cc M. This surface is non-empty because the action of 7,(M) on the tree T, is non
+trivial, and orientable because the map f is transverse to F. Moreover it is stable
+under the action of 7(M) on M, and hence its image through the covering map
+M > M isa surface S C M, non empty and orientable, dual to the action. It is
+
+worth to notice that it has no reason to be connected in general.
+
+Remark 1.3.12. There is some kind of converse construction, which maybe explains
+the use of the term "dual". Given $ an oriented surface in M, and $ the preimage
+
+of S' in the universal cover M, one can construct a tree Ts as follows : vertices are in
+
+34

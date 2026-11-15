@@ -1,0 +1,1 @@
+We find that as inflation ends, the theory approaches its strong coupling regime and general relativity must emerge, as an effective field theory, as the universe must reheat and enter its standard radiation era.

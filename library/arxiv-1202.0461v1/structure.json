@@ -8,7 +8,7 @@
   "pages": 6,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:19Z",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -22,12 +22,12 @@
   },
   "doi": null,
   "title": "Draft version October 11, 2018 DOUBLE DEGENERATE MERGERS AS PROGENITORS OF HIGH-FIELD MAGNETIC WHITE DWARFS",
-  "authors_raw": "Enrique Garc\u00b4\u0131a\u2013Berro1,2, Pablo Lor\u00e9n\u2013Aguilar1,2, Gabriela Aznar\u2013Sigu\u00e1n1,2, Santiago Torres1,2",
+  "authors_raw": "Enrique Garc´ıa–Berro1,2, Pablo Lorén–Aguilar1,2, Gabriela Aznar–Siguán1,2, Santiago Torres1,2",
   "title_lines": [
    "Draft version October 11, 2018",
    "DOUBLE DEGENERATE MERGERS AS PROGENITORS OF HIGH-FIELD MAGNETIC WHITE DWARFS"
   ],
-  "abstract": "High-\ufb01eld magnetic white dwarfs have been long suspected to be the result of stellar mergers. However, the nature of the coalescing stars and the precise mechanism that produces the magnetic \ufb01eld are still unknown. Here we show that the hot, convective, di\ufb00erentially rotating corona present in the outer layers of the remnant of the merger of two degenerate cores is able to produce magnetic \ufb01elds of the required strength that do not decay for long timescales. We also show, using an state-of-the-art Monte Carlo simulator, that the expected number of high-\ufb01eld magnetic white dwarfs produced in this way is consistent with that found in the Solar neighborhood. Subject headings: stars: interiors \u2014 stars: evolution \u2014 stars: white dwarfs \u2014 stars: rotation \u2014 stars: magnetic \ufb01eld \u2014 stars: binaries",
+  "abstract": "High-ﬁeld magnetic white dwarfs have been long suspected to be the result of stellar mergers. However, the nature of the coalescing stars and the precise mechanism that produces the magnetic ﬁeld are still unknown. Here we show that the hot, convective, diﬀerentially rotating corona present in the outer layers of the remnant of the merger of two degenerate cores is able to produce magnetic ﬁelds of the required strength that do not decay for long timescales. We also show, using an state-of-the-art Monte Carlo simulator, that the expected number of high-ﬁeld magnetic white dwarfs produced in this way is consistent with that found in the Solar neighborhood. Subject headings: stars: interiors — stars: evolution — stars: white dwarfs — stars: rotation — stars: magnetic ﬁeld — stars: binaries",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "LaTeX with hyperref package",
@@ -37,7 +37,7 @@
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "DOUBLE DEGENERATE MERGERS AS PROGENITORS OF HIGH-FIELD MAGNETIC WHITE DWARFS Enrique Garc\u00b4\u0131a\u2013Berro 1 , 2 , Pablo Lor\u00b4en\u2013Aguilar 1 , 2 , Gabriela Aznar\u2013Sigu\u00b4an 1 , 2 , Santiago Torres 1 , 2 , Judit Camacho 1 , 2 , Leandro G. Althaus 3 , 4 , Alejandro H. C\u00b4orsico 3 , 4 , Baybars K\u00a8ulebi 5 , 2 , & Jord",
+   "heading": "DOUBLE DEGENERATE MERGERS AS PROGENITORS OF HIGH-FIELD MAGNETIC WHITE DWARFS Enrique Garc´ıa–Berro 1 , 2 , Pablo Lor´en–Aguilar 1 , 2 , Gabriela Aznar–Sigu´an 1 , 2 , Santiago Torres 1 , 2 , Judit Camacho 1 , 2 , Leandro G. Althaus 3 , 4 , Alejandro H. C´orsico 3 , 4 , Baybars K¨ulebi 5 , 2 , & Jord",
    "text": "Draft version October 11, 2018 DOUBLE DEGENERATE MERGERS AS PROGENITORS OF HIGH-FIELD MAGNETIC WHITE DWARFS",
    "corroborated_by": [],
    "browser_print": false
@@ -103,7 +103,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "\u2014 Dynamo con\ufb01guration in a white dwarf merger. Temperature (solid line, left scale) and rotational velocity (dashed line, right scale) pro\ufb01les of the \ufb01nal remnant of a white dwarf merger as a function of radius are shown for the case of a binary system",
+   "title": "— Dynamo conﬁguration in a white dwarf merger. Temperature (solid line, left scale) and rotational velocity (dashed line, right scale) proﬁles of the ﬁnal remnant of a white dwarf merger as a function of radius are shown for the case of a binary system",
    "page": 2,
    "confidence": 0.9,
    "evidence": [
@@ -116,7 +116,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "\u2014 Mass distribution of the remnants of the mergers. The distribution shows the frequency of the di\ufb00erent merger channels",
+   "title": "— Mass distribution of the remnants of the mergers. The distribution shows the frequency of the diﬀerent merger channels",
    "page": 4,
    "confidence": 0.9,
    "evidence": [
@@ -212,14 +212,26 @@
    "title": "The stellar dynamo",
    "level": 1,
    "page_start": 1,
-   "page_end": 5,
-   "n_chars": 20649,
-   "n_words": 3481,
+   "page_end": 3,
+   "n_chars": 12504,
+   "n_words": 2116,
    "label_start": null,
+   "label_end": "3"
+  },
+  {
+   "id": "sec-002-3-magnetic-white-dwarfs-in-the-solar-neighborhoo",
+   "number": "3",
+   "title": "Magnetic white dwarfs in the solar neighborhood",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 8106,
+   "n_words": 1358,
+   "label_start": "3",
    "label_end": "5"
   },
   {
-   "id": "sec-002-4-summary-and-conclusions",
+   "id": "sec-003-4-summary-and-conclusions",
    "number": "4",
    "title": "Summary and conclusions",
    "level": 1,
@@ -245,13 +257,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 4,
-  "chars_total": 32826,
+  "sections": 5,
+  "chars_total": 32787,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "MWDs_vL.tex",
    "tex_sections": 4,
-   "overlaid": 2,
+   "overlaid": 3,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -274,17 +287,25 @@
     {
      "id": "sec-001-2-the-stellar-dynamo",
      "title": "The stellar dynamo",
-     "prose_ratio": 0.99,
+     "prose_ratio": 0.986,
      "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-4-summary-and-conclusions",
+     "id": "sec-002-3-magnetic-white-dwarfs-in-the-solar-neighborhoo",
+     "title": "Magnetic white dwarfs in the solar neighborhood",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.998,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-4-summary-and-conclusions",
      "title": "Summary and conclusions",
      "prose_ratio": 0.993,
      "coverage_ratio": 0.475,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

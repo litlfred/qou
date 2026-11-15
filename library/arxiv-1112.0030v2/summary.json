@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1112.0030v2",
  "source_sha256": "745f143c2df4734b",
- "brief": "Homological algebra of knots and BPS states — It is known that knot homologies admit a physical descriptio n as spaces of open BPS states. W e study operators and algebras acting on these spaces.",
- "extended": "**Homological algebra of knots and BPS states**\n\n*Sergei Gukov and Marko Stoˇ sić*\n\n46 pp, 7 sections.\n\n**Abstract.** It is known that knot homologies admit a physical descriptio n as spaces of open BPS states. W e study operators and algebras acting on these spaces. This leads to a very rich story, which involves wall crossing phenomena, algebras of closed BPS states acting on spaces of open BPS states, and deformations of Landau-Ginzburg models. One important application to knot homologies is the existen ce of “colored diﬀerentials” that relate homological invariants of knots colored by diﬀerent representations. Based on this structure, we formulate a li st of properties of the colored HOMFLY homology that categoriﬁes the colored HOMFLY polynomial. By calculating the colored HOMFLY homology for symmetric and anti-symmetric representations, we ﬁnd a remarkable “m irror symmetry” between these triply-graded theories.\n\n**Outline.** 1 Setting the stage; 2 Algebra of BPS states and its representation; 3 B-model and matrix factorizations; 5 Mirror symmetry for knots; Appendix A. Notations; Appendix D. Computation of the unreduced homol; References",
+ "brief": "Homological Algebra of Knots and BPS States — It is known that knot homologies admit a physical description as spaces of open BPS states. We study operators and algebras acting on these spaces.",
+ "extended": "**Homological Algebra of Knots and BPS States**\n\n*Sergei Gukov and Marko Stoˇsić*\n\n46 pp, 12 sections.\n\n**Abstract.** It is known that knot homologies admit a physical description as spaces of open BPS states. We study operators and algebras acting on these spaces. This leads to a very rich story, which involves wall crossing phenomena, algebras of closed BPS states acting on spaces of open BPS states, and deformations of Landau-Ginzburg models. One important application to knot homologies is the existence of “colored diﬀerentials” that relate homological invariants of knots colored by diﬀerent representations. Based on this structure, we formulate a list of properties of the colored HOMFLY homology that categoriﬁes the colored HOMFLY polynomial. By calculating the colored HOMFLY homology for symmetric and anti-symmetric representations, we ﬁnd a remarkable “mirror symmetry” between these triply-graded theories.\n\n**Outline.** Front matter; 1 Setting the stage; 2 Algebra of BPS states and its representation; 3 B-model and matrix factorizations; 4 Colored HOMFLY homology; 5 Mirror symmetry for knots; 6 Unreduced colored HOMFLY homology; Appendix A. Notations; Appendix B. Kauffman and S2 homologies of the ; Appendix C. H3 homology of the figure-eight kn; Appendix D. Computation of the unreduced homol; References",
  "tokens": {
   "brief": 48,
-  "extended": 290
+  "extended": 332
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-setting-the-stage",
    "title": "Setting the stage",
@@ -22,25 +27,45 @@
   {
    "id": "sec-002-3-b-model-and-matrix-factorizations",
    "title": "B-model and matrix factorizations",
-   "pages": "10-25"
+   "pages": "10-15"
   },
   {
-   "id": "sec-003-5-mirror-symmetry-for-knots",
+   "id": "sec-003-4-colored-homfly-homology",
+   "title": "Colored HOMFLY homology",
+   "pages": "15-25"
+  },
+  {
+   "id": "sec-004-5-mirror-symmetry-for-knots",
    "title": "Mirror symmetry for knots",
-   "pages": "25-36"
+   "pages": "25-30"
   },
   {
-   "id": "sec-004-appendix-a-notations",
+   "id": "sec-005-6-unreduced-colored-homfly-homology",
+   "title": "Unreduced colored HOMFLY homology",
+   "pages": "30-36"
+  },
+  {
+   "id": "sec-006-appendix-a-notations",
    "title": "Appendix A. Notations",
-   "pages": "36-42"
+   "pages": "36-37"
   },
   {
-   "id": "sec-005-appendix-d-computation-of-the-unreduced-homology",
+   "id": "sec-007-appendix-b-kauffman-and-s2-homologies-of-the-kno",
+   "title": "Appendix B. Kauffman and S2 homologies of the knots 819 and 942",
+   "pages": "37-41"
+  },
+  {
+   "id": "sec-008-appendix-c-h3-homology-of-the-figure-eight-knot",
+   "title": "Appendix C. H3 homology of the figure-eight knot",
+   "pages": "41-42"
+  },
+  {
+   "id": "sec-009-appendix-d-computation-of-the-unreduced-homology",
    "title": "Appendix D. Computation of the unreduced homology of the unknot",
    "pages": "42-44"
   },
   {
-   "id": "sec-006-references",
+   "id": "sec-010-references",
    "title": "References",
    "pages": "44-46"
   }

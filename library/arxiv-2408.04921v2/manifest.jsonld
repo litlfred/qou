@@ -11,14 +11,17 @@
   ],
   "title": "arxiv-2408.04921v2",
   "contains": [
+    "library/arxiv-2408.04921v2/sections/sec-front-matter",
     "library/arxiv-2408.04921v2/sections/sec-000",
     "library/arxiv-2408.04921v2/sections/sec-001",
     "library/arxiv-2408.04921v2/sections/sec-002",
     "library/arxiv-2408.04921v2/sections/sec-003",
-    "library/arxiv-2408.04921v2/sections/sec-004"
+    "library/arxiv-2408.04921v2/sections/sec-004",
+    "library/arxiv-2408.04921v2/sections/sec-005",
+    "library/arxiv-2408.04921v2/sections/sec-006"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",

@@ -1,0 +1,78 @@
+qed
+qed
+qed
+thus ?thesis
+using assms
+by (metis to-complex-of-complex)
+qed
+
+5.3 Triangle inequality
+
+lemma poincare-distance-formula-zero-sum:
+assumes u € unit-disc and v € unit-disc
+shows poincare-distance u 0; + poincare-distance 0, v =
+(let u’ = cmod (to-complex u); v' = cmod (to-complez v)
+in arcosh (((1 + uw?) * (1 + 0?) + 4 «ul v’) / ((1 — wu?) * (1 — v”))))
+proof—
+obtain wu’ v’ where wu: u’ = to-complex u v' = to-complex v
+by auto
+have uv’: u = of-complex u' v = of-complex v'
+using wv assms inf-or-of-complez|of u] inf-or-of-complez|of v]
+by auto
+
+let ?u' = cmod u' and ?v' = cmod v’
+
+have disc: ?u? < 1 ?v” < 1
+using wnit-disc-cmod-square-lt-1[OF <u € unit-disc>]
+using unit-disc-cmod-square-lt-1[OF <v € unit-discy] uv
+by auto
+thm arcosh-add
+have arcosh (1 + 2 *« ?u? / (1 — ?u)) + arcosh (1 + 2 * ?u? / (1 — %0”)) =
+arcosh (((1 + ?u”) * (1 + ?u?) + 4 * Pu’ * 20’) / ((1 — ?u?) * (1 — ?u”))) (is arcosh 2ll + arcosh ?rr =
+arcosh ?r)
+proof (subst arcosh-add)
+show 71 > 1 ?rr>1
+using disc
+by auto
+next
+show arcosh ((1 + 2 * ?u? / (1 — ?u?)) * (1+ 2% Pu? / (1 — ?u)) +
+sqrt (((1 + 2 * ?u? / (1 — ?u”))? — 1) * ((1 + 2 * Pu? / (1 — %v?))? — 1))) =
+
+arcosh ?r (is arcosh ?l = -)
+proof —
+
+have 1 + 2 * ?u? / (1 — ?u?) = (1 + Pu?) / (1 — 20?)
+using disc
+by (subst add-divide-eq-iff , simp-all)
+
+moreover
+
+have 1 + 2% ?v? / (1 — %”) = (1 + ?u”) / (1 — ?0”)
+using disc
+by (subst add-divide-eq-iff , simp-all)
+
+moreover
+
+have sqrt (((1 + 2 * ?u? / (1 — ?u"))? — 1) * ((1 + 2 * 2? / (1 — %))? — 1)) =
+(4 * ?u!* ?u') / ((1 — ?u") * (1 — ?0”)) (is sqrt ?s = ?t)
+
+proof—
+have ?s = ?t?
+using disc
+
+apply (subst add-divide-eq-iff, simp)+
+apply (subst power-divide)+
+apply simp
+apply (subst divide-diff-eq-iff , simp)+
+apply (simp add: power2-eq-square field-simps)
+done
+thus ?thesis
+
+using disc
+by simp
+
+qed
+
+ultimately
+
+have #1 = ?r

@@ -1,0 +1,62 @@
+A representation theoretic explanation... 1369
+
+above to construct a representation isomorphism between Hom(V (A), V(@)) and V(A Li a)
+(which is a space of polynomials in m + / variables). This will lead us to a natural definition
+for the symbol of an operator.
+
+The significance of this isomorphism will come from the fact that stability results about
+V(A Ue) will transfer to Hom(V(A), V(@)) via the symbol lemma (Lemma 3.7) stated
+below. We will see in Sect. 6.2 that this lemma and Grace’s theorem almost immediately
+imply a characterization of stability-preserving operators which is similar to that of Borcea
+and Brandén.
+
+To this end, consider the standard representation isomorphism Hom(V (A), V(@)) =
+V(A)* & V(q@), given by T Dye y* & T(x"y*-/), where V(A)* is the dual
+representation of V(A). We omit here the details regarding explicit definitions of the action
+of (products of) SL2(C) on Hom and dual representations. Instead, we utilize the fact that
+the apolarity form provides an (SL2(C))”-invariant isomorphism between V (A) and the dual
+representation V(A)*, as stated in the following result.
+
+Proposition 3.5 For any 4 € N’", there is an (SL2(C))"-invariant isomorphism V (A)* >
+V(A) given by (x y*-#)* be A) (HD Ext yt,
+Proof We use the apolarity form to determine the isomorphism. In particular, up to scalar
+(xt yA“ Hy* maps to an element p € V(A) such that (xty*-h)* = D*(p@-). We compute:
+
+5 dh 5
+
+D*(p@x*y*%) =al(a — oo Je Ia 9% p = AN(—1)% 9“ p
+a
+Picking p(x, y) := (al)-? (*) (—1)4x*-# y achieves the desired equality exactly, and there-
+fore (x! y*-H)* ps (J) Dee ye is an (SL2(C))"-invariant isomorphism. oO
+With this, we consider the following string of (SL2 (C))"*! invariant isomorphisms:
+Hom(V (a), V(@)) > VQ)* 2 V(a@) > VA) BV(a) > VA)
+
+The first map is the standard isomorphism discussed above, the second map is induced by the
+previous proposition, and the third map is given by the discussion of outer tensor products
+in Sect. 3.1. This string of maps is explicitly defined on a given linear operator via:
+
+TR Yiehw)* WT (xt y*")
+
+Mesh
+aoe (cone tt ba T(t yy
+4 \u
+Sh
+a Aap bu aA,
+z — T(x" Me
+-D() (—wy Txt y*#)
+
+Here, T acts only on the x and y variables, and z and w are the A variables in V(A La). This
+gives the desired isomorphism between Hom(V (A), V(@)) and V(ALI@), and hence we refer
+to this map as the Symb map.
+
+Definition 3.6 For 4 < Nj anda € Ni. we define the following (SL2(C))"*+!-invariant
+isomorphism:
+
+Symb : Hom(V (A), V(@)) > V(AU a)
+
+4 r\ 4
+TT [(zy —xw)*] = Higa, «) (Te — 2)'1) =O (encour T(t hy
+
+sh
+
+D Springer

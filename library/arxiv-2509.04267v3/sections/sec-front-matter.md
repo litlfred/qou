@@ -8,6 +8,7 @@ pages: 1-3
 source_pdf: 2509.04267v3.pdf
 source_sha256: 9843b9dd71d1ec74
 toc_source: inferred
+doc_brief: "Quantum Cocycle Invariants of Knots from Yang-Baxter Cohomology — Yang-Baxter operators (YBOs) have been employed to construct quantum knot invari- ants."
 ---
 QUANTUM COCYCLE INVARIANTS OF KNOTS FROM YANG-BAXTER
 COHOMOLOGY

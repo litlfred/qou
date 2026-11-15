@@ -2,331 +2,166 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2506.10206v2",
  "source_sha256": "d0631a9abd9b1da3",
- "brief": "Analytic dilogarithm identities — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations",
- "extended": "**Analytic dilogarithm identities**\n\n*Moreover, single-term dilogarithm evaluations are introduced and derived*\n\n40 pp, 64 sections.\n\n**Abstract.** We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations, solving open problems given by both Bytsko and Campbell, and that we further apply to construct and prove new ladder relations with quartic and sextic bases. We also apply our method to introduce and prove two-term Li 2-relations and ladder-like identities with arguments in algebraic number fields such asQ( √ 2), Q( √ 3), Q( √ 5), and Q(√−7). Moreover, single-term dilogarithm evaluations are introduced and derived.\n\n**Outline.** Abstract; 1 Introduction; 2 (7ζ(3) + (3− 2G)π− 12); 1.1 Preliminaries; 2 Li(x) + 2 Li(−x) = Li(x2), (5); 2 Li2(x)− 1; 2 Li2(−x) = 1; 2 Sextic integrals and dilogarithm identities; 2 (1−y)2n+1, (15); 2 Li2; 8 Li2; 3 Li2; 3 Applications; 3.1 A full solution to a problem due to Sun; 3.2 On an identity attributed to Lima; 3.3 Zagier’s four-term identity; 27 Li2; 3.4 Identities related of an evaluation for th\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2: The closed-form evaluation\n- Theorem 1: is used. Consequently, we obtain the equality of\n- Theorem 3: For complex u, letL(u) denote the three-term dilogarithm combination\n- Theorem 4: The three-term dilogarithm combination\n- Theorem 6: For the unique rooth in the interval (0, 1) ofx6−x5−x4−6x3−x2−x+1 = 0,\n- Theorem 7: Let h denote the unique root in the interval (0, 1) of x6− 3x5 + 5x4− 8x3 +",
+ "brief": "Analytic Dilogarithm Identities — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations",
+ "extended": "**Analytic Dilogarithm Identities**\n\n*Cetin Hakimoglu-Brown*\n\n40 pp, 31 sections.\n\n**Abstract.** We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations, solving open problems given by both Bytsko and Campbell, and that we further apply to construct and prove new ladder relations with quartic and sextic bases. We also apply our method to introduce and prove two-term Li2-relations and ladder-like identities with arguments in algebraic number fields such as Q( √ 2), Q( √ 3), Q( √ 5), and Q(√−7). Moreover, single-term dilogarithm evaluations are introduced and derived.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Preliminaries; 2 Sextic integrals and dilogarithm identities; 3 Applications; 3.1 A full solution to a problem due to Sun; 3.2 On an identity attributed to Lima; 3.3 Zagier's four-term identity; 3.4 Identities related of an evaluation for th; 3.5 A series of convergence rate $\\frac{1}{243; 4 Elliptic ${}_{4}F_{3}$-series; 5 Hypergeometric series for $\\pi^2$; 6 A proof of Campbell's conjecture; 6.1 Related dilogarithm identities; 7 Higher-order fields; 7.1 A two-term ladder identity for the Plastic; 8 Applications of Roger's identity; 9 Derivation of the Loxton--Lewin $\\frac{\\pi}{",
  "tokens": {
   "brief": 49,
-  "extended": 403
+  "extended": 329
  },
  "sections": [
   {
-   "id": "sec-000-abstract",
-   "title": "Abstract",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-002-2-7ζ3-3-2gπ-12",
-   "title": "(7ζ(3) + (3− 2G)π− 12)",
    "pages": "1-2"
   },
   {
-   "id": "sec-003-11-preliminaries",
+   "id": "sec-001-11-preliminaries",
    "title": "Preliminaries",
-   "pages": "2-3"
+   "pages": "2-4"
   },
   {
-   "id": "sec-004-2-lix-2-lix-lix2-5",
-   "title": "Li(x) + 2 Li(−x) = Li(x2), (5)",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-005-2-li2x-1",
-   "title": "Li2(x)− 1",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-006-2-li2x-1",
-   "title": "Li2(−x) = 1",
-   "pages": "3-4"
-  },
-  {
-   "id": "sec-007-2-sextic-integrals-and-dilogarithm-identities",
+   "id": "sec-002-2-sextic-integrals-and-dilogarithm-identities",
    "title": "Sextic integrals and dilogarithm identities",
-   "pages": "4-4"
+   "pages": "4-7"
   },
   {
-   "id": "sec-008-2-1y2n1-15",
-   "title": "(1−y)2n+1, (15)",
-   "pages": "4-5"
-  },
-  {
-   "id": "sec-009-2-li2",
-   "title": "Li2",
-   "pages": "5-6"
-  },
-  {
-   "id": "sec-010-8-li2",
-   "title": "Li2",
-   "pages": "6-7"
-  },
-  {
-   "id": "sec-011-3-li2",
-   "title": "Li2",
-   "pages": "7-7"
-  },
-  {
-   "id": "sec-012-3-applications",
+   "id": "sec-003-3-applications",
    "title": "Applications",
    "pages": "7-7"
   },
   {
-   "id": "sec-013-31-a-full-solution-to-a-problem-due-to-sun",
+   "id": "sec-004-31-a-full-solution-to-a-problem-due-to-sun",
    "title": "A full solution to a problem due to Sun",
    "pages": "7-9"
   },
   {
-   "id": "sec-014-32-on-an-identity-attributed-to-lima",
+   "id": "sec-005-32-on-an-identity-attributed-to-lima",
    "title": "On an identity attributed to Lima",
    "pages": "9-9"
   },
   {
-   "id": "sec-015-33-zagiers-four-term-identity",
-   "title": "Zagier’s four-term identity",
-   "pages": "9-10"
+   "id": "sec-006-33-zagiers-four-term-identity",
+   "title": "Zagier's four-term identity",
+   "pages": "9-12"
   },
   {
-   "id": "sec-016-27-li2",
-   "title": "Li2",
-   "pages": "10-12"
-  },
-  {
-   "id": "sec-017-34-identities-related-of-an-evaluation-for-the-i",
-   "title": "Identities related of an evaluation for the inverse tangent in-",
+   "id": "sec-007-34-identities-related-of-an-evaluation-for-the-i",
+   "title": "Identities related of an evaluation for the inverse tangent integral",
    "pages": "12-13"
   },
   {
-   "id": "sec-018-35-a-series-of-convergence-rate-1",
-   "title": "A series of convergence rate 1",
+   "id": "sec-008-35-a-series-of-convergence-rate-frac1243",
+   "title": "A series of convergence rate $\\frac{1}{243}$",
    "pages": "13-13"
   },
   {
-   "id": "sec-019-4-elliptic-4f3-series",
-   "title": "Elliptic 4F3-series",
+   "id": "sec-009-4-elliptic-4f-3-series",
+   "title": "Elliptic ${}_{4}F_{3}$-series",
    "pages": "13-15"
   },
   {
-   "id": "sec-020-5-hypergeometric-series-for-π2",
-   "title": "Hypergeometric series for π2",
+   "id": "sec-010-5-hypergeometric-series-for-pi2",
+   "title": "Hypergeometric series for $\\pi^2$",
    "pages": "15-16"
   },
   {
-   "id": "sec-021-4-π-2-arctanh2-ln2",
-   "title": "(π− 2 arctan(h))2 + ln2",
-   "pages": "16-16"
-  },
-  {
-   "id": "sec-022-6-a-proof-of-campbells-conjecture",
-   "title": "A proof of Campbell’s conjecture",
+   "id": "sec-011-6-a-proof-of-campbells-conjecture",
+   "title": "A proof of Campbell's conjecture",
    "pages": "16-18"
   },
   {
-   "id": "sec-023-61-related-dilogarithm-identities",
+   "id": "sec-012-61-related-dilogarithm-identities",
    "title": "Related dilogarithm identities",
-   "pages": "18-19"
+   "pages": "18-21"
   },
   {
-   "id": "sec-024-4-li2",
-   "title": "Li2",
-   "pages": "19-21"
-  },
-  {
-   "id": "sec-025-7-higher-order-fields",
+   "id": "sec-013-7-higher-order-fields",
    "title": "Higher-order fields",
    "pages": "21-21"
   },
   {
-   "id": "sec-026-71-a-two-term-ladder-identity-for-the-plastic-ra",
+   "id": "sec-014-71-a-two-term-ladder-identity-for-the-plastic-ra",
    "title": "A two-term ladder identity for the Plastic Ratio/Constant",
-   "pages": "21-21"
+   "pages": "21-23"
   },
   {
-   "id": "sec-027-2-li22zz2-π2",
-   "title": "Li2(2z−z2) +π2",
-   "pages": "21-22"
+   "id": "sec-015-8-applications-of-rogers-identity",
+   "title": "Applications of Roger's identity",
+   "pages": "23-26"
   },
   {
-   "id": "sec-028-3-li2z2-6-li2z-ln2zz2-6-lnz-lnz-1-π2",
-   "title": "Li2(z2) + 6 Li2(z) =− ln2(z−z2)− 6 ln(z) ln(z + 1) +π2",
-   "pages": "22-23"
-  },
-  {
-   "id": "sec-029-8-applications-of-rogers-identity",
-   "title": "Applications of Roger’s identity",
-   "pages": "23-23"
-  },
-  {
-   "id": "sec-030-3-li2u-3-li2u-12",
-   "title": "Li2(u) + 3 Li2((u− 1)2)",
-   "pages": "23-24"
-  },
-  {
-   "id": "sec-031-2-u4-3u3-4u2-2u-1",
-   "title": "(u4− 3u3 + 4u2− 2u + 1)",
-   "pages": "24-26"
-  },
-  {
-   "id": "sec-032-9-derivation-of-the-loxtonlewin-π",
-   "title": "Derivation of the Loxton–Lewin π",
+   "id": "sec-016-9-derivation-of-the-loxton--lewin-fracpi9-identi",
+   "title": "Derivation of the Loxton--Lewin $\\frac{\\pi}{9}$-identities",
    "pages": "26-27"
   },
   {
-   "id": "sec-033-3-li2r3-li2",
-   "title": "Li2(r3) = Li2",
-   "pages": "27-27"
-  },
-  {
-   "id": "sec-034-91-derivation-of-the-loxton-lewin-four-term-π",
-   "title": "Derivation of the Loxton-Lewin four-term π",
+   "id": "sec-017-91-derivation-of-the-loxton-lewin-four-term-frac",
+   "title": "Derivation of the Loxton-Lewin four-term $\\frac{\\pi}{9}$-identities",
    "pages": "27-29"
   },
   {
-   "id": "sec-035-10-two-term-complex-identities-of-the-imaginary",
+   "id": "sec-018-10-two-term-complex-identities-of-the-imaginary",
    "title": "Two-term complex identities of the imaginary part",
-   "pages": "29-30"
+   "pages": "29-31"
   },
   {
-   "id": "sec-036-2-li2u2",
-   "title": "Li2(u2)",
-   "pages": "30-30"
-  },
-  {
-   "id": "sec-037-2-li22uu2-li2",
-   "title": "Li2(2u−u2) + Li2",
-   "pages": "30-30"
-  },
-  {
-   "id": "sec-038-2-u4-3u3-4u2-2u-1-z",
-   "title": "(u4− 3u3 + 4u2− 2u + 1) =z",
-   "pages": "30-30"
-  },
-  {
-   "id": "sec-039-2-u4-3u3-4u2-2u-1-1",
-   "title": "(u4− 3u3 + 4u2− 2u + 1) = 1",
-   "pages": "30-31"
-  },
-  {
-   "id": "sec-040-11-miscellaneous-results",
+   "id": "sec-019-11-miscellaneous-results",
    "title": "Miscellaneous results",
    "pages": "31-31"
   },
   {
-   "id": "sec-041-111-a-cubic-single-term-identity",
+   "id": "sec-020-111-a-cubic-single-term-identity",
    "title": "A cubic single-term identity",
    "pages": "31-31"
   },
   {
-   "id": "sec-042-112-a-sextic-two-term-identity",
+   "id": "sec-021-112-a-sextic-two-term-identity",
    "title": "A sextic two-term identity",
-   "pages": "31-32"
+   "pages": "31-33"
   },
   {
-   "id": "sec-043-113-a-two-term-identity-over-q",
-   "title": "A two-term identity over Q(",
-   "pages": "32-32"
-  },
-  {
-   "id": "sec-044-114-a-ladder-related-to-cl2",
-   "title": "A ladder related to Cl2",
-   "pages": "32-33"
-  },
-  {
-   "id": "sec-045-115-a-modified-watson-π",
-   "title": "A modified Watson π",
+   "id": "sec-022-115-a-modified-watson-fracpi7-dilogarithm-identi",
+   "title": "A modified Watson $\\frac{\\pi}{7}$-dilogarithm identity",
    "pages": "33-33"
   },
   {
-   "id": "sec-046-12-new-ladders",
+   "id": "sec-023-116-8th-degree-single-term-identity",
+   "title": "8th-degree single-term identity",
+   "pages": "33-33"
+  },
+  {
+   "id": "sec-024-12-new-ladders",
    "title": "New Ladders",
    "pages": "33-34"
   },
   {
-   "id": "sec-047-121-a-three-term-ladder-relation",
+   "id": "sec-025-121-a-three-term-ladder-relation",
    "title": "A three-term ladder relation",
    "pages": "34-34"
   },
   {
-   "id": "sec-048-122-five-term-ladder-relations-part-1",
+   "id": "sec-026-122-five-term-ladder-relations-part-1",
    "title": "Five-term ladder relations, part 1",
    "pages": "34-35"
   },
   {
-   "id": "sec-049-2-li2h2-4-li2h-3",
-   "title": "Li2(h2) + 4 Li2(h)− 3",
-   "pages": "35-35"
-  },
-  {
-   "id": "sec-050-2-li2h4-4-li2h3-1",
-   "title": "Li2(h4) + 4 Li2(h3)− 1",
-   "pages": "35-35"
-  },
-  {
-   "id": "sec-051-2-li2h6-5π2",
-   "title": "Li2(h6) = 5π2",
-   "pages": "35-35"
-  },
-  {
-   "id": "sec-052-123-a-six-term-ladder-relation",
+   "id": "sec-027-123-a-six-term-ladder-relation",
    "title": "A six-term ladder relation",
-   "pages": "35-36"
+   "pages": "35-37"
   },
   {
-   "id": "sec-053-2-li2h8-3",
-   "title": "Li2(h8)− 3",
-   "pages": "36-36"
-  },
-  {
-   "id": "sec-054-2-li2h6-4-li2h4-4-li2h3-3",
-   "title": "Li2(h6) + 4 Li2(h4) + 4 Li2(h3)− 3",
-   "pages": "36-37"
-  },
-  {
-   "id": "sec-055-124-using-the-radius-method-to-derive-new-ladder",
-   "title": "Using the “radius method” to derive new ladders",
-   "pages": "37-37"
-  },
-  {
-   "id": "sec-056-3-li2r3",
-   "title": "Li2(r3)",
-   "pages": "37-37"
-  },
-  {
-   "id": "sec-057-3-li2r3",
-   "title": "Li2(−r3)",
-   "pages": "37-37"
-  },
-  {
-   "id": "sec-058-2-li2r6-1",
-   "title": "Li2(r6)− 1",
-   "pages": "37-37"
-  },
-  {
-   "id": "sec-059-2-li2r4-4",
-   "title": "Li2(r4) + 4",
-   "pages": "37-37"
-  },
-  {
-   "id": "sec-060-3-li2r3-11",
-   "title": "Li2(r3) + 11",
-   "pages": "37-37"
-  },
-  {
-   "id": "sec-061-2-li2r2-4-li2r-11",
-   "title": "Li2(r2)− 4 Li2(r) + 11",
+   "id": "sec-028-124-using-the-radius-method-to-derive-new-ladder",
+   "title": "Using the ``radius method'' to derive new ladders",
    "pages": "37-38"
   },
   {
-   "id": "sec-062-acknowledgements",
+   "id": "sec-029-acknowledgements",
    "title": "Acknowledgements",
-   "pages": "38-38"
-  },
-  {
-   "id": "sec-063-references",
-   "title": "References",
    "pages": "38-40"
   }
  ],
@@ -334,8 +169,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

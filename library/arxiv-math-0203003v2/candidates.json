@@ -1,0 +1,61 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0203003v2",
+ "source": {
+  "structure_sha256": "7579ae76959396b8dd4a05f6fe3f58a79b25d1b8bc72c21e6fd1ec6ac82819ef",
+  "file": "0203003v2.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:math/0203003v2 [math.QA] 24 Apr 2002",
+  "authors": "Pavel I. Etingof",
+  "arxiv": {
+   "id": "math/0203003",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "24 Apr 2002"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "recommendation": 2
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In fact, it was implicitly suggested already in [@FrRe92] that, since monodromy matrices of the quantized KZ equations are elliptic, the q-deformed KL functor should map the category of representations of the quantum affine algebra to the category of representations of an appropriate elliptic quantum group.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "However, at that time it was not clear what exactly this elliptic quantum group should be.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

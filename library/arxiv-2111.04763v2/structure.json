@@ -6,10 +6,12 @@
   "sha256": "760a7f9794e8baaa78e7288747f5b919cb8c9596c16504f1d17782387fe390da",
   "bytes": 1203153,
   "pages": 59,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,19 +21,35 @@
    "stamp_date": "18 Apr 2026"
   },
   "doi": null,
-  "title": "RESURGENCE OF CHERN\u2013SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION",
-  "authors_raw": "STAVROS GAROUFALIDIS, JIE GU, MARCOS MARI\u00d1O, AND CAMPBELL WHEELER",
-  "abstract": "Some years ago, it was conjectured by the first author that the Chern\u2013Simons perturbation theory of a 3-manifold at the trivial flat connection is a resurgent power series. We describe completely the resurgent structure of the above series (including the location of the singularities and their Stokes constants) in the case of a hyperbolic knot complement in terms of an extended square matrix of(x,q)-series whose rows are indexed by the boundary parabolicSL 2(C)-flat connections, including the trivial one. We use our extended matrix to describe the Stokes constants of the above series, to define explicitly their Borel transform and to identify it with state\u2013integrals. Along the way, we use our matrix to give an analytic extension of the Kashaev invariant and of the colored Jones polynomial and to complete the matrix valued holomorphic quantum modular forms as well as to give an exact version of the refined quantum modularity conjecture of Zagier and the first author. Finally, our matrix provides an extension of the 3D-index in a sector of the trivial flat connection. We illustrate our definitions, theorems, numerical calculations and conjectures with the two simplest hyperbolic knots.",
-  "docinfo": {
-   "Author": "Stavros Garoufalidis; Jie Gu; Marcos Marino; Campbell Wheeler",
-   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)",
-   "Producer": "pikepdf 8.15.1",
-   "Title": "Resurgence of Chern-Simons theory at the trivial flat connection"
-  },
+  "title": "Resurgence of Chern-Simons theory at the trivial flat connection",
+  "authors_raw": "STAVROS GAROUFALIDIS, JIE GU, MARCOS MARIÑO, AND CAMPBELL WHEELER",
   "title_lines": [
-   "RESURGENCE OF CHERN\u2013SIMONS THEORY AT THE TRIVIAL FLAT",
+   "RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT",
    "CONNECTION"
-  ]
+  ],
+  "abstract": "Some years ago, it was conjectured by the first author that the Chern–Simons perturbation theory of a 3-manifold at the trivial flat connection is a resurgent power series. We describe completely the resurgent structure of the above series (including the location of the singularities and their Stokes constants) in the case of a hyperbolic knot complement in terms of an extended square matrix of (x, q)-series whose rows are indexed by the boundary parabolic SL2(C)-flat connections, including the trivial one. We use our extended matrix to describe the Stokes constants of the above series, to define explicitly their Borel transform and to identify it with state–integrals. Along the way, we use our matrix to give an analytic extension of the Kashaev invariant and of the colored Jones polynomial and to complete the matrix valued holomorphic quantum modular forms as well as to give an exact version of the refined quantum modularity conjecture of Zagier and the first author. Finally, our matrix provides an extension of the 3D-index in a sector of the trivial flat connection. We illustrate our definitions, theorems, numerical calculations and conjectures with the two simplest hyperbolic knots.",
+  "docinfo": {
+   "Title": "Resurgence of Chern-Simons theory at the trivial flat connection",
+   "Author": "Stavros Garoufalidis; Jie Gu; Marcos Marino; Campbell Wheeler",
+   "Producer": "pikepdf 8.15.1",
+   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)"
+  },
+  "title_raw": "RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Resurgence of Chern-Simons theory at the trivial flat connection",
+   "heading": "RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION",
+   "outline": "1. Introduction",
+   "text": "RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION"
  },
  "toc": [
   {
@@ -39,240 +57,998 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
-   "title": "Resurgence of Chern\u2013Simons perturbation theory",
+   "title": "Resurgence of Chern–Simons perturbation theory",
    "page": 2,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "A summary of our results",
    "page": 4,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Challenges",
    "page": 5,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Illustration with the two simplest hyperbolic knots",
    "page": 6,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Acknowledgements",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "The 41 knot",
    "page": 7,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "A 2 2 matrix of q-series",
    "page": 7,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "A 3 3 matrix of q-series",
    "page": 8,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "The (0)() asymptotic series",
    "page": 10,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Borel resummation and Stokes constants",
    "page": 12,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
-   "title": "The Andersen\u2013Kashaev state-integral",
+   "title": "The Andersen–Kashaev state-integral",
    "page": 18,
    "source": "outline",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "A new state-integral",
    "page": 19,
    "source": "outline",
-   "number": "2.6"
+   "number": "2.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "A 3 3 matrix of state-integrals",
    "page": 21,
    "source": "outline",
-   "number": "2.7"
+   "number": "2.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 1,
    "title": "The x-variable",
    "page": 23,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "The (0)(x,) series",
    "page": 24,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 2,
    "title": "A 33 matrix of (x,q)-series",
    "page": 25,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 2,
    "title": "Borel resummation and Stokes constants",
    "page": 27,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 2,
    "title": "(u,) state-integrals",
    "page": 33,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 2,
    "title": "An analytic extension of the colored Jones polynomial",
    "page": 35,
    "source": "outline",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "35"
   },
   {
    "level": 1,
    "title": "The 52-knot",
    "page": 36,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   },
   {
    "level": 2,
    "title": "A 3 3 matrix of q-series",
    "page": 36,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   },
   {
    "level": 2,
    "title": "The Habiro polynomials and the descendant Kashaev invariants",
    "page": 37,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "37"
   },
   {
    "level": 2,
    "title": "A 6 6 matrix of q-series",
    "page": 39,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   },
   {
    "level": 2,
    "title": "Borel resummation and Stokes constants",
    "page": 42,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "42"
   },
   {
    "level": 2,
    "title": "(x,q)-series",
    "page": 47,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "47"
   },
   {
    "level": 2,
    "title": "x-version of Borel resummation and Stokes constants",
    "page": 48,
    "source": "outline",
-   "number": "4.6"
+   "number": "4.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "48"
   },
   {
    "level": 2,
    "title": "An analytic extension of the Kashaev invariant and the colored Jones polynomial",
    "page": 52,
    "source": "outline",
-   "number": "4.7"
+   "number": "4.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "52"
   },
   {
    "level": 2,
    "title": "A new state-integral for the 52 knot?",
    "page": 53,
    "source": "outline",
-   "number": "4.8"
+   "number": "4.8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "53"
   },
   {
    "level": 1,
    "title": "Appendix A. q-series identities",
    "page": 54,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "54"
   },
   {
    "level": 1,
    "title": "References",
    "page": 56,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "56"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Singularities of the Borel transforms of φ(σj)(τ) for j = 0, 1, 2 of the knot 41",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Stokes rays and cones in the τ-plane for the 3-vector Φ(τ) of asymptotic series of the knot 41",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The contour AN appears in the integral formula (69) for the",
+   "page": 20,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "20"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Singularities of the Borel transforms of φ(σj)(x, τ) for j = 0, 1, 2 of the knot 41",
+   "page": 28,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "28"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Stokes rays and cones in the τ-plane for the 3-vector Φ(x, τ) of asymptotic series of the knot 41",
+   "page": 29,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "29"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Singularities of Borel transforms of φ(σj)(τ) for j = 0, 1, 2, 3 of the knot 52",
+   "page": 43,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "43"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Stokes rays and cones in the τ-plane for the 4-vector Φ(τ) of asymptotic series of the knot 52",
+   "page": 44,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "44"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Singularities of Borel transforms of φ(σj)(x, τ) for j = 0, 1, 2, 3 of the knot 52",
+   "page": 50,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "50"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3054,
+   "n_words": 479,
+   "label_start": "1",
+   "label_end": "2"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 15,
+   "n_words": 2,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-001-11-resurgence-of-chernsimons-perturbation-theory",
    "number": "1.1",
-   "title": "Resurgence of Chern\u2013Simons perturbation theory",
+   "title": "Resurgence of Chern–Simons perturbation theory",
    "level": 2,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 4,
-   "n_chars": 7885,
-   "n_words": 1114
+   "n_chars": 6328,
+   "n_words": 1010,
+   "label_start": "2",
+   "label_end": "4"
   },
   {
    "id": "sec-002-12-a-summary-of-our-results",
@@ -281,8 +1057,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 4481,
-   "n_words": 721
+   "n_chars": 4630,
+   "n_words": 870,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-003-13-challenges",
@@ -291,8 +1069,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 1312,
-   "n_words": 185
+   "n_chars": 1347,
+   "n_words": 220,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
    "id": "sec-004-14-illustration-with-the-two-simplest-hyperbolic",
@@ -301,8 +1081,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 2486,
-   "n_words": 363
+   "n_chars": 2575,
+   "n_words": 452,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
    "id": "sec-005-acknowledgements",
@@ -310,122 +1092,257 @@
    "title": "Acknowledgements",
    "level": 2,
    "page_start": 6,
-   "page_end": 12,
-   "n_chars": 12083,
-   "n_words": 2024
+   "page_end": 7,
+   "n_chars": 745,
+   "n_words": 114,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-006-24-borel-resummation-and-stokes-constants",
+   "id": "sec-006-2-the-41-knot",
+   "number": "2",
+   "title": "The 41 knot",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 12,
+   "n_chars": 11688,
+   "n_words": 2272,
+   "label_start": "7",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-007-24-borel-resummation-and-stokes-constants",
    "number": "2.4",
    "title": "Borel resummation and Stokes constants",
    "level": 2,
    "page_start": 12,
    "page_end": 18,
-   "n_chars": 9272,
-   "n_words": 1602
+   "n_chars": 9589,
+   "n_words": 1919,
+   "label_start": "12",
+   "label_end": "18"
   },
   {
-   "id": "sec-007-25-the-andersenkashaev-state-integral",
+   "id": "sec-008-25-the-andersenkashaev-state-integral",
    "number": "2.5",
-   "title": "The Andersen\u2013Kashaev state-integral",
+   "title": "The Andersen–Kashaev state-integral",
    "level": 2,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 3120,
-   "n_words": 467
+   "n_chars": 3206,
+   "n_words": 553,
+   "label_start": "18",
+   "label_end": "19"
   },
   {
-   "id": "sec-008-26-a-new-state-integral",
+   "id": "sec-009-26-a-new-state-integral",
    "number": "2.6",
    "title": "A new state-integral",
    "level": 2,
    "page_start": 19,
-   "page_end": 27,
-   "n_chars": 19043,
-   "n_words": 2692
+   "page_end": 23,
+   "n_chars": 8731,
+   "n_words": 1644,
+   "label_start": "19",
+   "label_end": "23"
   },
   {
-   "id": "sec-009-33-borel-resummation-and-stokes-constants",
+   "id": "sec-010-3-the-x-variable",
+   "number": "3",
+   "title": "The x-variable",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 27,
+   "n_chars": 8883,
+   "n_words": 1665,
+   "label_start": "23",
+   "label_end": "27"
+  },
+  {
+   "id": "sec-011-33-borel-resummation-and-stokes-constants",
    "number": "3.3",
    "title": "Borel resummation and Stokes constants",
    "level": 2,
    "page_start": 27,
-   "page_end": 37,
-   "n_chars": 17367,
-   "n_words": 2755
+   "page_end": 33,
+   "n_chars": 10156,
+   "n_words": 2039,
+   "label_start": "27",
+   "label_end": "33"
   },
   {
-   "id": "sec-010-42-the-habiro-polynomials-and-the-descendant-kas",
+   "id": "sec-012-34-u-state-integrals",
+   "number": "3.4",
+   "title": "(u,) state-integrals",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 35,
+   "n_chars": 4190,
+   "n_words": 829,
+   "label_start": "33",
+   "label_end": "35"
+  },
+  {
+   "id": "sec-013-35-an-analytic-extension-of-the-colored-jones-po",
+   "number": "3.5",
+   "title": "An analytic extension of the colored Jones polynomial",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 36,
+   "n_chars": 2239,
+   "n_words": 419,
+   "label_start": "35",
+   "label_end": "36"
+  },
+  {
+   "id": "sec-014-4-the-52-knot",
+   "number": "4",
+   "title": "The 52-knot",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 1629,
+   "n_words": 349,
+   "label_start": "36",
+   "label_end": "37"
+  },
+  {
+   "id": "sec-015-42-the-habiro-polynomials-and-the-descendant-kas",
    "number": "4.2",
    "title": "The Habiro polynomials and the descendant Kashaev invariants",
    "level": 2,
    "page_start": 37,
    "page_end": 42,
-   "n_chars": 11767,
-   "n_words": 1896
+   "n_chars": 12335,
+   "n_words": 2395,
+   "label_start": "37",
+   "label_end": "42"
   },
   {
-   "id": "sec-011-44-borel-resummation-and-stokes-constants",
+   "id": "sec-016-44-borel-resummation-and-stokes-constants",
    "number": "4.4",
    "title": "Borel resummation and Stokes constants",
    "level": 2,
    "page_start": 42,
    "page_end": 47,
-   "n_chars": 9180,
-   "n_words": 1519
+   "n_chars": 9610,
+   "n_words": 1949,
+   "label_start": "42",
+   "label_end": "47"
   },
   {
-   "id": "sec-012-45-xq-series",
+   "id": "sec-017-45-xq-series",
    "number": "4.5",
    "title": "(x,q)-series",
    "level": 2,
    "page_start": 47,
    "page_end": 48,
-   "n_chars": 2181,
-   "n_words": 309
+   "n_chars": 2312,
+   "n_words": 440,
+   "label_start": "47",
+   "label_end": "48"
   },
   {
-   "id": "sec-013-46-x-version-of-borel-resummation-and-stokes-con",
+   "id": "sec-018-46-x-version-of-borel-resummation-and-stokes-con",
    "number": "4.6",
    "title": "x-version of Borel resummation and Stokes constants",
    "level": 2,
    "page_start": 48,
    "page_end": 52,
-   "n_chars": 5885,
-   "n_words": 979
+   "n_chars": 6187,
+   "n_words": 1281,
+   "label_start": "48",
+   "label_end": "52"
   },
   {
-   "id": "sec-014-47-an-analytic-extension-of-the-kashaev-invarian",
+   "id": "sec-019-47-an-analytic-extension-of-the-kashaev-invarian",
    "number": "4.7",
    "title": "An analytic extension of the Kashaev invariant and the colored Jones polynomial",
    "level": 2,
    "page_start": 52,
-   "page_end": 56,
-   "n_chars": 7522,
-   "n_words": 1218
+   "page_end": 53,
+   "n_chars": 1644,
+   "n_words": 317,
+   "label_start": "52",
+   "label_end": "53"
   },
   {
-   "id": "sec-015-references",
+   "id": "sec-020-48-a-new-state-integral-for-the-52-knot",
+   "number": "4.8",
+   "title": "A new state-integral for the 52 knot?",
+   "level": 2,
+   "page_start": 53,
+   "page_end": 54,
+   "n_chars": 2622,
+   "n_words": 498,
+   "label_start": "53",
+   "label_end": "54"
+  },
+  {
+   "id": "sec-021-appendix-a-q-series-identities",
+   "number": null,
+   "title": "Appendix A. q-series identities",
+   "level": 1,
+   "page_start": 54,
+   "page_end": 56,
+   "n_chars": 3335,
+   "n_words": 580,
+   "label_start": "54",
+   "label_end": "56"
+  },
+  {
+   "id": "sec-022-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 56,
    "page_end": 59,
-   "n_chars": 9168,
-   "n_words": 1157
+   "n_chars": 9317,
+   "n_words": 1306,
+   "label_start": "56",
+   "label_end": "59"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 31,
-  "sections": 16,
-  "chars_total": 122752,
+  "toc_inferred_entries": 0,
+  "figure_entries": 8,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 2,
+    "items": [
+     "A summary of our results",
+     "Challenges"
+    ]
+   },
+   "found_not_listed": {
+    "count": 1,
+    "items": [
+     "4.7 An analytic extension of the Kashaev invariant and the colored Jones poly-"
+    ]
+   },
+   "page_mismatch": {
+    "count": 1,
+    "items": [
+     "A new state-integral: listed p19, found p33"
+    ]
+   }
+  },
+  "sections": 24,
+  "chars_total": 126367,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "GGMW21.tex",
    "tex_sections": 29,
-   "overlaid": 10,
+   "overlaid": 13,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -433,16 +1350,22 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.0,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-001-11-resurgence-of-chernsimons-perturbation-theory",
-     "title": "Resurgence of Chern\u2013Simons perturbation theory",
-     "prose_ratio": 0.975,
-     "coverage_ratio": 0.83,
+     "title": "Resurgence of Chern–Simons perturbation theory",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.969,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -450,7 +1373,7 @@
      "id": "sec-002-12-a-summary-of-our-results",
      "title": "A summary of our results",
      "prose_ratio": 0.959,
-     "coverage_ratio": 0.855,
+     "coverage_ratio": 0.964,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -458,7 +1381,7 @@
      "id": "sec-003-13-challenges",
      "title": "Challenges",
      "prose_ratio": 0.959,
-     "coverage_ratio": 0.884,
+     "coverage_ratio": 0.92,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -466,84 +1389,128 @@
      "id": "sec-004-14-illustration-with-the-two-simplest-hyperbolic",
      "title": "Illustration with the two simplest hyperbolic knots",
      "prose_ratio": 0.979,
-     "coverage_ratio": 0.966,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-acknowledgements",
      "title": "Acknowledgements",
-     "prose_ratio": 0.95,
-     "coverage_ratio": 0.874,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.15,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-006-24-borel-resummation-and-stokes-constants",
+     "id": "sec-006-2-the-41-knot",
+     "title": "The 41 knot",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-24-borel-resummation-and-stokes-constants",
      "title": "Borel resummation and Stokes constants",
      "prose_ratio": 0.973,
-     "coverage_ratio": 0.855,
+     "coverage_ratio": 0.945,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-25-the-andersenkashaev-state-integral",
-     "title": "The Andersen\u2013Kashaev state-integral",
+     "id": "sec-008-25-the-andersenkashaev-state-integral",
+     "title": "The Andersen–Kashaev state-integral",
      "prose_ratio": 0.923,
-     "coverage_ratio": 0.854,
+     "coverage_ratio": 0.938,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-26-a-new-state-integral",
+     "id": "sec-009-26-a-new-state-integral",
      "title": "A new state-integral",
-     "prose_ratio": 0.728,
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-3-the-x-variable",
+     "title": "The x-variable",
+     "prose_ratio": 0.595,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-33-borel-resummation-and-stokes-constants",
+     "title": "Borel resummation and Stokes constants",
+     "prose_ratio": 0.763,
      "coverage_ratio": 0.716,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-33-borel-resummation-and-stokes-constants",
-     "title": "Borel resummation and Stokes constants",
-     "prose_ratio": 0.817,
-     "coverage_ratio": 0.466,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "id": "sec-012-34-u-state-integrals",
+     "title": "(u,) state-integrals",
+     "prose_ratio": 0.911,
+     "coverage_ratio": 0.9,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-010-42-the-habiro-polynomials-and-the-descendant-kas",
+     "id": "sec-013-35-an-analytic-extension-of-the-colored-jones-po",
+     "title": "An analytic extension of the colored Jones polynomial",
+     "prose_ratio": 0.64,
+     "coverage_ratio": 0.92,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-4-the-52-knot",
+     "title": "The 52-knot",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-42-the-habiro-polynomials-and-the-descendant-kas",
      "title": "The Habiro polynomials and the descendant Kashaev invariants",
-     "prose_ratio": 0.571,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.574,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-011-44-borel-resummation-and-stokes-constants",
+     "id": "sec-016-44-borel-resummation-and-stokes-constants",
      "title": "Borel resummation and Stokes constants",
      "prose_ratio": 0.553,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-012-45-xq-series",
+     "id": "sec-017-45-xq-series",
      "title": "(x,q)-series",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-013-46-x-version-of-borel-resummation-and-stokes-con",
+     "id": "sec-018-46-x-version-of-borel-resummation-and-stokes-con",
      "title": "x-version of Borel resummation and Stokes constants",
      "prose_ratio": 0.931,
-     "coverage_ratio": 0.799,
+     "coverage_ratio": 0.921,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-47-an-analytic-extension-of-the-kashaev-invarian",
+     "id": "sec-019-47-an-analytic-extension-of-the-kashaev-invarian",
      "title": "An analytic extension of the Kashaev invariant and the colored Jones polynomial",
-     "prose_ratio": 0.955,
-     "coverage_ratio": 0.619,
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.862,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-references",
+     "id": "sec-020-48-a-new-state-integral-for-the-52-knot",
+     "title": "A new state-integral for the 52 knot?",
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.939,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-appendix-a-q-series-identities",
+     "title": "Appendix A. q-series identities",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-references",
      "title": "References",
      "result": "no matching \\section"
     }

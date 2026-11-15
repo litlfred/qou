@@ -1,0 +1,48 @@
+The following theorem guarantees that any complex number in the spectrum of a
+
+compact operator is an eigenvalue.
+
+Theorem 2.23 (Fredholm alternative) Let A be a compact operator. For z # 0,
+(i) either (z% — A)~' exists and is a bijection H + H,
+(ii) or z is an eigenvalue of finite multiplicity.
+
+Therefore, the spectrum of the compact resolvent p(—1) consists of ous U {0}, and its
+
+eigenvalues have firlite multiplicity. Moreover the only accumulation point of its spectrum
+
+is zero.
+
+The upshot of Theorem 2.23 is that we can “invert” the property of a compact resolvent
+p(z) of A to get information about what we are really interested in - the spectrum of
+A. In particular, A has a purely discrete spectrum that has oo as its only accumulation
+
+point. To see this, note that for the eigensystem (J1,, Un) of pz,
+(zo — A)~ lun = UnUn => (1= Zohn) tn = —LnAUn.
+
+Rearranging the right hand sides tells us that the eigenvalues of A are
+Zohln — 1
+
+Mn
+
+dn =
+
+One can see that an accumulation of the resolvent ju, — 0 will correspond to an accu-
+mulation at infinity for the spectrum of A. Returning to A$, we have seen that it has
+a compact resolvent, and therefore a discrete spectrum. We finish the section by stating
+
+the general spectral theorem for self adjoint operators.
+
+Theorem 2.24 Jf A is compact and self-adjoint, then it admits an orthonormal eigen-
+basis (Un, An) with An + 0.
+
+2.2 Hyperbolic geometry
+
+We now want to look at the Laplacian in two specific models of hyperbolic geometry. First,
+we will consider the Poincaré disk model. This is the setting through which we view the
+Riemann surfaces. Next, we will consider the Laplacian in geodesic polar coordinates
+on the Poincaré upper half plane, H. Harmonic analysis on H will give us a method to
+calculate the eigenvalues of hyperbolic disks. As a result, we can then use the Faber-
+
+Krahn inequality as a comparison tool for Dirichlet boundary problems on our surfaces.
+
+32

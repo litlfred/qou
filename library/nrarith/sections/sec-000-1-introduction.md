@@ -8,6 +8,7 @@ pages: 1-4
 source_pdf: nrarith.pdf
 source_sha256: 085ec9541ddc6cd4
 toc_source: inferred
+doc_brief: "Arithmetic of hyperbolic manifolds (Neumann–Reid) — survey of arithmetic Kleinian groups: an arithmetic M = H³/Γ is determined up to commensurability by its invariant trace field and quaternion…"
 ---
 By a hyperbolic 3-manifold we mean a complete orientable hyperbolic 3-manifold of
 ﬁnite volume, that is a quotient H3/Γ with Γ ⊂PSL2C a discrete subgroup of ﬁnite
@@ -44,8 +45,6 @@ parabolic ﬁxed points are at 0, 1, and ∞in C ∪{∞} = ∂H3, then k(Γ) is
 As another example, an arithmetic orbifold with cusps cannot have geodesics shorter
 than 0.431277313 (cf. Theorem 4.6 and Corollary 4.7); a corresponding result for com-
 Topology 90, c⃝Walter de Gruyter & Co., Berlin · New York 1992
-274
-Walter D. Neumann and Alan W. Reid
 pact orbifolds is conjectured (with a bound of 0.09174218) but depends on Lehmer’s
 conjecture of number theory.
 We illustrate the greater tractability of non-compact manifolds also by doing some ex-
@@ -94,8 +93,6 @@ in S3 covers M in at least two inequivalent ways—an embedding of π1B as a nor
 subgroup of PSL2O1 is given in [FN] and a non-normal embedding is given in [Ri]; it
 is not hard to check that an element of Comm PSL2O1 which conjugates one of these
 embeddings to the other cannot generate a discrete group with PSL2O1.
-Arithmetic of Hyperbolic Manifolds
-275
 Note that the question about whether hidden symmetries exist for M = H3/Γ is just
 the question about whether Comm(Γ) (hidden symmetries) equals the normalizer of Γ
 (symmetries), i.e., whether Γ is normal in Comm(Γ).
@@ -125,8 +122,6 @@ traces. Note that the property of having integral traces is a commensurability i
 (since an element γ ∈PSL2C has algebraic integer trace if and only if it has algebraic
 integer eigenvalues, which is true if it is true for some power of γ ). In Theorem 6.3 we
 determine which C(p, s) have non-integral traces, namely those with p + s = ±s and
-276
-Walter D. Neumann and Alan W. Reid
 s equal to ±2 times an odd prime power. These appear to be the ﬁrst examples in the
 literature of hyperbolic manifolds with non-integer traces.
 In Sections 9 and 10 we collect some questions and comments.

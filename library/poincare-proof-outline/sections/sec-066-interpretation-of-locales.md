@@ -1,6 +1,6 @@
 ---
 doc_id: poincare-proof-outline
-doc_title: "Poincaré Disc Model"
+doc_title: "Formalization of the Poincare disc model of hyperbolic geometry"
 section_id: sec-066-interpretation-of-locales
 section_title: "Interpretation of locales"
 section_number: null
@@ -8,245 +8,283 @@ pages: 170-175
 source_pdf: POINCARE-proof-outline.pdf
 source_sha256: 8ac25ddb38d360b4
 toc_source: outline
+doc_brief: "Formalization of the Poincare disc model of hyperbolic geometry — We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant."
 ---
 global-interpretation PoincareTarskiAbsolute: TarskiAbsolute where cong = p-congruent and betw = p-between
-deﬁnes p-on-line = PoincareTarskiAbsolute.on-line and
-p-on-ray = PoincareTarskiAbsolute.on-ray and
+defines p-on-line = Poincare TarskiAbsolute.on-line and
+p-on-ray = Poincare TarskiAbsolute.on-ray and
 p-in-angle = PoincareTarskiAbsolute.in-angle and
-p-ray-meets-line = PoincareTarskiAbsolute.ray-meets-line
-proof−
+p-ray-meets-line = Poincare TarskiAbsolute.ray-meets-line
+proof—
 show TarskiAbsolute p-congruent p-between
 proof
-1. Reﬂexivity of congruence
-ﬁx x y
-show p-congruent x y y x
+
+1. Reflexivity of congruence
+
+fix ry
+show p-congruent © y y ©
 unfolding p-congruent-def
 by transfer (simp add: poincare-distance-sym)
 next
+
 2. Transitivity of congruence
-ﬁx x y z u v w
-show p-congruent x y z u ∧p-congruent x y v w −→p-congruent z u v w
+
+fix ryzuvw
+show p-congruent zy zu A p-congruent x y v w —+ p-congruent zu vw
 by (transfer, simp)
 next
+
 3. Identity of congruence
-ﬁx x y z
-show p-congruent x y z z −→x = y
+
+fix cry z
+show p-congruent ty zz—> x= y
 unfolding p-congruent-def
-by transfer (simp add: poincare-distance-eq-0-iﬀ)
+by transfer (simp add: poincare-distance-eq-0-iff)
 next
+
 4. Segment construction
+
 170
-ﬁx x y a b
-show ∃z. p-between x y z ∧p-congruent y z a b
+fix ryab
+show 4 z. p-between x y z A p-congruent y za b
 using segment-construction
 unfolding p-congruent-def
 by transfer (simp, blast)
 next
+
 5. Five segment
-ﬁx x y z x ′ y ′ z ′ u u ′
-show x̸ = y ∧p-between x y z ∧p-between x ′ y ′ z ′ ∧
-p-congruent x y x ′ y ′ ∧p-congruent y z y ′ z ′ ∧
-p-congruent x u x ′ u ′ ∧p-congruent y u y ′ u ′ −→
-p-congruent z u z ′ u ′
+
+fix cyza' yz’ uu’
+
+show x # y A p-between x y z A p-between x’ y’ z' A
+p-congruent x y x’ y' A p-congruent y zy’ z' A
+p-congruent 2 ux’ u' A p-congruent y uy! u’ —
+p-congruent zu z'u’
 unfolding p-congruent-def
 apply transfer
-using ﬁve-segment-axiom
+using five-segment-axiom
 by meson
+
 next
+
 6. Identity of betweeness
-ﬁx x y
-show p-between x y x −→x = y
-by transfer (simp add: poincare-between-sum-distances poincare-distance-eq-0-iﬀpoincare-distance-sym)
+
+fix ry
+show p-between ryt —-> r=y
+by transfer (simp add: poincare-between-sum-distances poincare-distance-eq-0-iff poincare-distance-sym)
 next
+
 7. Pasch
-ﬁx x y z u v
-show p-between x u z ∧p-between y v z −→(∃a. p-between u a y ∧p-between x a v)
+
+fix ryzuv
+show p-between x u z A p-between y v z —> (A a. p-between ua y A p-between x a v)
 apply transfer
 using Pasch
 by blast
 next
+
 8. Lower dimension
-show ∃a. ∃b. ∃c. ¬ p-between a b c ∧¬ p-between b c a ∧¬ p-between c a b
+
+show J a. 4 6.4 c. 7 p-between a b c A 7 p-between b c a A 7 p-between c a b
 apply (transfer)
 using lower-dimension-axiom
 by simp
 next
+
 9. Upper dimension
-ﬁx x y z u v
-show p-congruent x u x v ∧p-congruent y u y v ∧p-congruent z u z v ∧u̸ = v −→
-p-between x y z ∨p-between y z x ∨p-between z x y
+
+fix ryzuv
+show p-congruent «ux v A p-congruent y uy uv A p-congruent zuzvu A u#v—
+p-between x y z V p-between y zx V p-between zx y
 unfolding p-congruent-def
 by (transfer, simp add: upper-dimension-axiom)
 qed
 qed
-interpretation PoincareTarskiHyperbolic: TarskiHyperbolic
+
+interpretation Poincare TarskiHyperbolic: TarskiHyperbolic
 where cong = p-congruent and betw = p-between
 proof
+
 10. Euclid negation
-show ∃a b c d t. p-between a d t ∧p-between b d c ∧a̸ = d ∧
-(∀x y. p-between a b x ∧p-between a c y −→¬ p-between x t y)
-using negated-euclidean-axiom
+
+show 5 abc dt. p-betweenadt A p-betweenbdc\a#dA
+(V « y. p-between a b x A p-between a c y —+ 7 p-between x t y)
+using negated-euclidean-ariom
 by transfer (auto, blast)
 next
-ﬁx a x1 x2
-assume ¬ TarskiAbsolute.on-line p-between a x1 x2
-hence ¬ p-on-line a x1 x2
-using TarskiAbsolute.on-line-def [OF PoincareTarskiAbsolute.TarskiAbsolute-axioms]
+fix aal «2
+assume 7 TarskiAbsolute.on-line p-between a x1 «2
+hence — p-on-line a x1 £2
+using TarskiAbsolute.on-line-def|OF Poincare TarskiAbsolute. TarskiAbsolute-arioms
+
 171
-using PoincareTarskiAbsolute.on-line-def
+using Poincare TarskiAbsolute.on-line-def
 by simp
+
 11. Limiting parallels
-thus ∃a1 a2.
-¬ TarskiAbsolute.on-line p-between a a1 a2 ∧
-¬ TarskiAbsolute.ray-meets-line p-between a a1 x1 x2 ∧
-¬ TarskiAbsolute.ray-meets-line p-between a a2 x1 x2 ∧
-(∀a ′. TarskiAbsolute.in-angle p-between a ′ a1 a a2 −→TarskiAbsolute.ray-meets-line p-between a a ′ x1 x2)
-unfolding TarskiAbsolute.in-angle-def [OF PoincareTarskiAbsolute.TarskiAbsolute-axioms]
-unfolding TarskiAbsolute.on-ray-def [OF PoincareTarskiAbsolute.TarskiAbsolute-axioms]
-unfolding TarskiAbsolute.ray-meets-line-def [OF PoincareTarskiAbsolute.TarskiAbsolute-axioms]
-unfolding TarskiAbsolute.on-ray-def [OF PoincareTarskiAbsolute.TarskiAbsolute-axioms]
-unfolding TarskiAbsolute.on-line-def [OF PoincareTarskiAbsolute.TarskiAbsolute-axioms]
-unfolding PoincareTarskiAbsolute.on-line-def
+
+thus dal a2.
+— TarskiAbsolute.on-line p-between a al a2 A
+— TarskiAbsolute.ray-meets-line p-between a al «1 x2 A
+— TarskiAbsolute.ray-meets-line p-between a a2 «1 x2 A
+(Va'. TarskiAbsolute.in-angle p-between a’ al a a2 —+ TarskiAbsolute.ray-meets-line p-between a a’ x1 x2)
+unfolding TarskiAbsolute.in-angle-def[OF Poincare TarskiAbsolute. TarskiAbsolute-axioms]
+unfolding TarskiAbsolute.on-ray-def|OF Poincare TarskiAbsolute. TarskiAbsolute-axioms]
+unfolding TarskiAbsolute.ray-meets-line-def|OF Poincare TarskiAbsolute. TarskiAbsolute-axioms]
+unfolding TarskiAbsolute.on-ray-def|OF Poincare TarskiAbsolute. TarskiAbsolute-axioms]
+unfolding TarskiAbsolute.on-line-def[OF Poincare TarskiAbsolute. TarskiAbsolute-axioms|
+unfolding Poincare TarskiAbsolute.on-line-def
 apply transfer
-proof−
-ﬁx a x1 x2
-assume ∗: a ∈unit-disc x1 ∈unit-disc x2 ∈unit-disc
-¬ (poincare-between a x1 x2 ∨poincare-between x1 a x2 ∨poincare-between x1 x2 a)
-hence ¬ poincare-on-line a x1 x2
-using poincare-collinear3-iﬀ[of a x1 x2]
+proof—
+fix a x1 x2
+assume *: a € unit-disc x1 € unit-disc 72 € unit-disc
+7 (poincare-between a x1 x2 V poincare-between x1 a 22 V poincare-between t1 x2 a)
+hence — poincare-on-line a x1 «2
+using poincare-collinear3-iff [of a x1 x2]
 using poincare-between-rev poincare-on-line-def by blast
-hence ∃a1∈unit-disc.
-∃a2∈unit-disc.
-¬ poincare-on-line a a1 a2 ∧
-¬ poincare-ray-meets-line a a1 x1 x2 ∧
-¬ poincare-ray-meets-line a a2 x1 x2 ∧
-(∀a ′∈unit-disc.
-poincare-in-angle a ′ a1 a a2 −→
-poincare-ray-meets-line a a ′ x1 x2)
-using limiting-parallels[of a x1 x2] ∗
+hence 5 al €unit-disc.
+da2€unit-disc.
+— poincare-on-line a al a2 A
+— poincare-ray-meets-line a al x1 72 \
+— poincare-ray-meets-line a a2 x1 «2 A
+(V a'Eunit-disc.
+poincare-in-angle a' al a a2 —+
+poincare-ray-meets-line a a’ x1 x2)
+using limiting-parallels[of a x1 x2] *
 by blast
-then obtain a1 a2 where ∗∗: a1∈unit-disc a2∈unit-disc ¬ poincare-on-line a a1 a2
-¬ poincare-ray-meets-line a a2 x1 x2
-¬ poincare-ray-meets-line a a1 x1 x2
-∀a ′∈unit-disc.
-poincare-in-angle a ′ a1 a a2 −→
-poincare-ray-meets-line a a ′ x1 x2
+then obtain al a2 where **: al €unit-disc a2€unit-disc — poincare-on-line a al a2
+— poincare-ray-meets-line a a2 x1 42
+7 poincare-ray-meets-line a al x1 42
+V a’Eunit-disc.
+poincare-in-angle a’ al a a2 —+
+poincare-ray-meets-line a a’ x1 x2
 by blast
-have ¬ (∃x∈{z. z ∈unit-disc}.
-(poincare-between a x a1 ∨
-poincare-between a a1 x) ∧
-(poincare-between x x1 x2 ∨
-poincare-between x1 x x2 ∨
+have 7 (Ax€{z. z € unit-disc}.
+(poincare-between a x al V
+poincare-between a al x) A
+(poincare-between x x1 42 V
+poincare-between x1 x x2 V
 poincare-between x1 x2 x))
-using ‹¬ poincare-ray-meets-line a a1 x1 x2›
+using (— poincare-ray-meets-line a al «1 «2»
 unfolding poincare-on-line-def poincare-ray-meets-line-def poincare-on-ray-def
-using poincare-collinear3-iﬀ[of - x1 x2] poincare-between-rev ∗(2, 3)
+using poincare-collinear3-iff [of - x1 x2] poincare-between-rev *(2, 3)
 by auto
 moreover
-have ¬ (∃x∈{z. z ∈unit-disc}.
-(poincare-between a x a2 ∨
-poincare-between a a2 x) ∧
-(poincare-between x x1 x2 ∨
-poincare-between x1 x x2 ∨
+have 7 (Ax€{z. z € unit-disc}.
+(poincare-between a x a2 V
+poincare-between a a2 x) \
+(poincare-between x x1 42 V
+poincare-between x1 x x2 V
 poincare-between x1 x2 x))
-using ‹¬ poincare-ray-meets-line a a2 x1 x2›
+using (— poincare-ray-meets-line a a2 «1 x2»
 unfolding poincare-on-line-def poincare-ray-meets-line-def poincare-on-ray-def
-using poincare-collinear3-iﬀ[of - x1 x2] poincare-between-rev ∗(2, 3)
+using poincare-collinear3-iff [of - x1 x2] poincare-between-rev *(2, 3)
 by auto
 moreover
-have ¬ (poincare-between a a1 a2 ∨poincare-between a1 a a2 ∨poincare-between a1 a2 a)
-using ‹¬ poincare-on-line a a1 a2› poincare-collinear3-iﬀ[of a a1 a2]
-using ∗(1) ∗∗(1−2)
+have 7- (poincare-between a al a2 V poincare-between al a a2 V poincare-between al a2 a)
+using ‘~ poincare-on-line a a1 a2) poincare-collinear3-iff [of a al a2]
+using *(1) **(1—2)
 unfolding poincare-on-line-def
+
 172
 by simp
 moreover
-have (∀a ′∈{z. z ∈unit-disc}.
-a̸ = a1 ∧
-a̸ = a2 ∧
-a ′̸ = a ∧
-(∃x∈{z. z ∈unit-disc}.
-poincare-between a1 x a2 ∧
-x̸ = a1 ∧
-x̸ = a2 ∧
-(poincare-between a a ′ x ∨
-poincare-between a x a ′)) −→
-(∃x∈{z. z ∈unit-disc}.
-(poincare-between a x a ′ ∨
-poincare-between a a ′ x) ∧
-(poincare-between x x1 x2 ∨
-poincare-between x1 x x2 ∨
+have (V a'E{z. z € unit-disc}.
+a#ali
+a#a2A
+a’ #an
+(Are{z. z € unit-disc}.
+poincare-between al z a2 A
+cA#al A
+x # aA
+(poincare-between a a' x V
+poincare-between a x a’)) —+
+(Are{z. z € unit-disc}.
+(poincare-between a x a’ V
+poincare-between aa’ x) A
+(poincare-between x x1 x2 V
+poincare-between x1 x x2 V
 poincare-between x1 x2 x)))
-using ∗∗(6)
+using **(6)
 unfolding poincare-on-line-def poincare-in-angle-def poincare-ray-meets-line-def poincare-on-ray-def
-using poincare-collinear3-iﬀ[of - x1 x2] poincare-between-rev ∗(2, 3)
+using poincare-collinear3-iff [of - x1 x2] poincare-between-rev *(2, 3)
 by auto
 ultimately
-show ∃a1∈{z. z ∈unit-disc}.
-∃a2∈{z. z ∈unit-disc}.
-¬ (poincare-between a a1 a2 ∨poincare-between a1 a a2 ∨poincare-between a1 a2 a) ∧
-¬ (∃x∈{z. z ∈unit-disc}.
-(poincare-between a x a1 ∨
-poincare-between a a1 x) ∧
-(poincare-between x x1 x2 ∨
-poincare-between x1 x x2 ∨
-poincare-between x1 x2 x)) ∧
-¬ (∃x∈{z. z ∈unit-disc}.
-(poincare-between a x a2 ∨
-poincare-between a a2 x) ∧
-(poincare-between x x1 x2 ∨
-poincare-between x1 x x2 ∨
-poincare-between x1 x2 x)) ∧
-(∀a ′∈{z. z ∈unit-disc}.
-a̸ = a1 ∧
-a̸ = a2 ∧
-a ′̸ = a ∧
-(∃x∈{z. z ∈unit-disc}.
-poincare-between a1 x a2 ∧
-x̸ = a1 ∧
-x̸ = a2 ∧
-(poincare-between a a ′ x ∨
-poincare-between a x a ′)) −→
-(∃x∈{z. z ∈unit-disc}.
-(poincare-between a x a ′ ∨
-poincare-between a a ′ x) ∧
-(poincare-between x x1 x2 ∨
-poincare-between x1 x x2 ∨
+show Jale{z. z € unit-disc}.
+Fa2e{z. z € unit-disc}.
+w— (poincare-between a al a2 V poincare-between al a a2 V poincare-between al a2 a)
+a (Axe{z. z © unit-disc}.
+(poincare-between a x al V
+poincare-between a al x) A
+(poincare-between x x1 42 V
+poincare-between x1 x x2 V
+poincare-between x1 x2 x)) A
+a (Axe{z. z © unit-disc}.
+(poincare-between a x a2 V
+poincare-between a a2 x) \
+(poincare-between x x1 42 V
+poincare-between x1 x x2 V
+poincare-between x1 x2 x)) A
+(Va'e{z. z € unit-disc}.
+a#ali
+a#a2A
+a’ #an
+(Are{z. z € unit-disc}.
+poincare-between al z a2 A
+cA#al A
+x # aA
+(poincare-between a a' x V
+poincare-between a x a’)) —+
+(Are{z. z € unit-disc}.
+(poincare-between a x a’ V
+poincare-between aa’ x) A
+(poincare-between x x1 x2 V
+poincare-between x1 x x2 V
 poincare-between x1 x2 x)))
-using ∗∗(1, 2)
+using **(1, 2)
 by auto
 qed
 qed
+
 interpretation PoincareElementaryTarskiHyperbolic: ElementaryTarskiHyperbolic p-congruent p-between
 proof
+
 12. Continuity
-ﬁx ϕ ψ
-assume ∃a. ∀x. ∀y. ϕ x ∧ψ y −→p-between a x y
-thus ∃b. ∀x. ∀y. ϕ x ∧ψ y −→p-between x b y
+fix pv
+assume J a.V zc. V y. px Aw y —> p-betweena xy
+thus 4 b.V2.V yprAwd y — p-between x by
+
 173
 apply transfer
 using continuity
 by auto
+
 qed
+
 end
+
 174
 References
-[1] R. Coghetto. Klein-Beltrami Model. Part I. Formalized Mathematics, 26(1):21–32, 2018.
-[2] R. Coghetto. Klein-Beltrami Model. Part II. Formalized Mathematics, 26(1):33–48, 2018.
-[3] N. Lobatschewsky. Geometrische Untersuchungen zur Theorie der Parallellinien, pages 159–223. Springer
+
+{1] R. Coghetto. Klein-Beltrami Model. Part I. Formalized Mathematics, 26(1):21-32, 2018.
+[2] R. Coghetto. Klein-Beltrami Model. Part II. Formalized Mathematics, 26(1):33-48, 2018.
+
+[3] N. Lobatschewsky. Geometrische Untersuchungen zur Theorie der Parallellinien, pages 159-223. Springer
 Vienna, Vienna, 1985.
-[4] T. J. M. Makarios. A Mechanical Veriﬁcation of the Independence of Tarski’s Euclidean Axiom. Master’s
+
+[4] T. J. M. Makarios. A Mechanical Verification of the Independence of Tarski’s Euclidean Axiom. Master’s
 thesis, Victoria University of Wellington, 2012. Master Thesis.
-[5] F. Marić and D. Simić.
-Formalizing Complex Plane Geometry.
-Annals of Mathematics and Artiﬁcial
-Intelligence, 74(3-4):271–308, 2015.
-[6] F. Mari and D. Simi. Complex geometry. Archive of Formal Proofs, Dec. 2019. http://isa-afp.org/entries/
+
+[5] F. Marié and D. Simi¢. Formalizing Complex Plane Geometry. Annals of Mathematics and Artificial
+Intelligence, 74(3-4):271-308, 2015.
+
+{6] F. Mari and D. Simi. Complex geometry. Archive of Formal Proofs, Dec. 2019. http://isa-afp.org/entries/
 Complex_Geometry.html, Formal proof development.
-[7] W. Schwabhäuser, W. Szmielew, and A. Tarski. Metamathematische Methoden in der Geometrie. Springer-
+
+[7] W. Schwabhauser, W. Szmielew, and A. Tarski. Metamathematische Methoden in der Geometrie. Springer-
 Verlag, Berlin, 1983.
-[8] H. Schwerdtfeger.
-Geometry of Complex Numbers:
-Circle Geometry, Moebius Transformation, Non-
+
+{8] H. Schwerdtfeger. Geometry of Complex Numbers: Circle Geometry, Moebius Transformation, Non-
 euclidean Geometry. Courier Corporation, 1979.
+
 175

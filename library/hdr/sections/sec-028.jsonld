@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/hdr/sections/sec-028",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Knot invariants",
+  "pageStart": 57,
+  "pageEnd": 68,
+  "contains": [
+    "library/hdr/blocks/prose-sec-028",
+    "library/hdr/blocks/recommendation-sec-028-01",
+    "library/hdr/blocks/recommendation-sec-028-02",
+    "library/hdr/blocks/recommendation-sec-028-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hdr",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hdr",
+  "provenance": "ingested"
+}

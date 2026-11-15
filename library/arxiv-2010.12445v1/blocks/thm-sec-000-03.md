@@ -1,1 +1,0 @@
-B (5.1). Let X be a quasi-compact ﬁbered category over R and C ⊆ VectX be a full

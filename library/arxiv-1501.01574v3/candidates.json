@@ -1,0 +1,181 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1501.01574v3",
+ "source": {
+  "structure_sha256": "8af5d6264a0ad5e0fce33b41d7502ba25ad1969ad56e661044f387bdfe537ac3",
+  "file": "1501.01574v3.pdf"
+ },
+ "provenance": {
+  "title": "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL",
+  "authors": "EFSTRATIA KALFAGIANNI AND ANH T. TRAN",
+  "arxiv": {
+   "id": "1501.01574",
+   "version": "3",
+   "primary_class": "math.GT",
+   "stamp_date": "5 Sep 2015"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 10,
+  "by_kind": {
+   "recommendation": 10
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We should mention that Motegi-Takata \\cite{MoTa} used Theorem \\ref{period2} to generalize Corollary \\ref{torusi} to all knots of zero Gromov norm (graph knots).",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-12-cable-knots.md",
+   "section_title": "Cable knots",
+   "pages": "2-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Since each component of $\\widetilde {S}\\cut T_{+}$ is incompressible, the intersection $E\\cap T_{+}$ must be non-empty.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-21-preliminaries-and-statement-of-main-result.md",
+   "section_title": "Preliminaries and statement of main result",
+   "pages": "4-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Thus $\\widetilde {S}$ must be incompressible and therefore, by above discussion, essential in $\\M$. \\end{proof}",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-21-preliminaries-and-statement-of-main-result.md",
+   "section_title": "Preliminaries and statement of main result",
+   "pages": "4-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The following lemma should be compared with \\cite[Lemma 2.3]{KS}.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-006-22-boundary-slopes-and-homology-of-cable-spaces.md",
+   "section_title": "Boundary slopes and homology of cable spaces",
+   "pages": "6-9",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "There must be a component $F\\subset S$ such that $\\partial([F])\\neq 0$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-006-22-boundary-slopes-and-homology-of-cable-spaces.md",
+   "section_title": "Boundary slopes and homology of cable spaces",
+   "pages": "6-9",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We claim that $F$ must intersect both components of $\\partial X$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-006-22-boundary-slopes-and-homology-of-cable-spaces.md",
+   "section_title": "Boundary slopes and homology of cable spaces",
+   "pages": "6-9",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We must show that there is an essential surface $S$ in $\\M$ such that the total slope of $S\\cap \\partial \\M$ is $q^2a/b$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-006-22-boundary-slopes-and-homology-of-cable-spaces.md",
+   "section_title": "Boundary slopes and homology of cable spaces",
+   "pages": "6-9",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In particular, we have $a/b=p/q$ and our hypothesis implies that for this to happen $p/q$ must be a boundary slope of $K$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-006-22-boundary-slopes-and-homology-of-cable-spaces.md",
+   "section_title": "Boundary slopes and homology of cable spaces",
+   "pages": "6-9",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "On the other hand we must have $H= pq \\mu + \\lambda$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-006-22-boundary-slopes-and-homology-of-cable-spaces.md",
+   "section_title": "Boundary slopes and homology of cable spaces",
+   "pages": "6-9",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "If $\\chi(S_B)= v_B-c=0$, then (since $\\partial S_B$ has one component) $S_B$ must be a Mobius band.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-010-33-strong-slope-conjecture-for-iterated-cables-o.md",
+   "section_title": "Strong Slope Conjecture for iterated cables of adequate knots",
+   "pages": "14-17",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

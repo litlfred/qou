@@ -1,6 +1,6 @@
 ---
 doc_id: fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh
-doc_title: "Degeneration of hyperbolic structures on the ﬁgure-eight knot complement and points of ﬁnite order on an elliptic curve"
+doc_title: "Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve"
 section_id: sec-001-2-deformation-of-hyperbolic-structures-and-hyper
 section_title: "Deformation of hyperbolic structures and hyperbolic Dehn ﬁlling"
 section_number: 2
@@ -8,7 +8,9 @@ pages: 2-6
 source_pdf: fujii-2005-degeneration-of-hyperbolic-structures-figure-eight.pdf
 source_sha256: bca3996c7a667b18
 toc_source: inferred
+doc_brief: "Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve — 12 sections: Front matter; Introduction; Deformation of hyperbolic structur"
 ---
+Deformation of hyperbolic structures and hyperbolic Dehn ﬁll-
 ing
 In this section, we brieﬂy describe a concrete treatment of the deformation
 of hyperbolic structures on 3-manifolds realized by deforming ideal tetrahe-
@@ -217,4 +219,3 @@ p ∈[−∞, −3]∪[3, +∞], there corresponds a representation ρbτ(p) : �
 PSL2(C). With the Euclidean 3-orbifolds (S3, τ(±3)) are associated represen-
 tations ρτ(±3) : π1(S3 −K) →SO(3). Applying the conjugation operation, it
 is found that the representation ρbτ(p) converges to ρτ(±3) as p →±3.
-3.

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9709040v1
-doc_title: "arXiv:q-alg/9709040v1 29 Sep 1997"
+doc_title: "Deformation quantization of Poisson manifolds"
 section_id: sec-058-734-flat-families-over-x
 section_title: "Flat families over X"
 section_number: 7.3.4
@@ -8,7 +8,9 @@ pages: 35-36
 source_pdf: 9709040v1.pdf
 source_sha256: 8baf650d86c5b8ab
 toc_source: inferred
+doc_brief: "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products"
 ---
+7.3.4. Flat families over X
 Let us choose a section saff of the bundle Xaff−→X. Such section always exists because ﬁbers of this
 bundle are contractible. For example, any torsion-free connection ∇on the tangent bundle to X gives a
 section X−→Xaff. Namely, the exponential map for ∇gives an identiﬁcation of a neighborhood of each

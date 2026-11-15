@@ -1,0 +1,45 @@
+rational function on the character variety. More precisely, we take X to be a one
+dimensional component of the character variety, and the torsion function is seen as
+an element of the function field k(X)*. While it is not usually defined in the way it
+is here, the torsion function has been long established as such. The question of how
+to compute this function and whether it has some zeros is still under investigation.
+It is known to be a constant function on the character varieties of torus knots.
+The first non constant computation was done by Kitano in [Kit94]. Since then,
+because of its proximity with the twisted Alexander polynomial, there has been
+many more studies of this torsion. In [DFJ12], the authors address several questions
+on the twisted Alexander polynomial, and in particular if its evaluation at t = 1,
+namely the standard torsion, can be constant on a component of the character variety
+of a hyperbolic knot that carries the character of the holonomy representation (a
+geometric component). In chapter 3, we partially answer this question, and conclude
+to the negative. See Theorem [3.0.2]
+The first result of this chapter is the following :
+
+and the corollary below.
+
+Theorem (Theorem|3.0.1). Let X be a geometric component of the character variety
+X(M) of a hyperbolic manifold M. Then tor(M, p) is a regular function on X, that
+vanishes at a character y if and only if the vector space H'(M,p) is non trivial,
+
+where p is a representation p :7™(M) — SLo(C) whose character is x.
+
+The fact that the torsion has no poles on X was expected. Yet, to our knowledge,
+there has been no such formal statement to date, and it is interesting in and by itself.
+The characterization in terms of jump of dimension of the vector space H'(M, p)
+is also notalbe, because it relates the torsion with the deformation theory of semi-
+simple representations in SL3(C). We provide more detailed explanations about this
+at the beginning of Chapter 3. Similarly to Chapter 2, we treat separately the case
+of ideal points in X. When saying that a curve 7 € 7(%) has trivial eigenvalue, we
+mean that the representation corresponding to the ideal points py : 7(%) + SL2(C)
+
+maps 7 on a matrix with eigenvalues equal to 1.
+
+Theorem (Theorem [3.0.2). Let x € X be an ideal point in the smooth projective
+model of X, and assume that an associated incompressible surface 4 is a union of
+parallel homeomorphic copies 4; such that M \ d; is a (union of) handlebodie(s).
+If the curve y = 0% € ™(M) has trivial eigenvalues, then the torsion function
+
+tor(M, p) has a pole at x.
+
+We deduce the following corollary :
+
+13

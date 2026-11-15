@@ -1,0 +1,5387 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-2111.06645v3",
+  "pages": [
+    {
+      "page": 2,
+      "rotation": 0,
+      "drawings": 45446,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. The functions log(J(x)) and log(J(x)/J(−1/x)) for the 41 knot."
+      ],
+      "labels": [
+        {
+          "text": "2",
+          "bbox": [
+            86.17,
+            32.85,
+            91.63,
+            43.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "S. Garoufalidis and D. Zagier",
+          "bbox": [
+            399.37,
+            32.85,
+            539.76,
+            43.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "• q-series with integer coefficients, convergent in the unit disk and also thought of via",
+          "bbox": [
+            102.57,
+            60.07,
+            539.75,
+            71.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "SFRM1095"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "q = e2πiτ as holomorphic functions of a variable τ in the upper half-plane.",
+          "bbox": [
+            113.45,
+            69.86,
+            466.41,
+            84.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "The first of these generalizes the Kashaev invariant of the knot, while the second and third",
+          "bbox": [
+            100.35,
+            97.68,
+            539.76,
+            108.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "correspond roughly to the two partition functions Z(h) and bZ(q) that are being studied in the",
+          "bbox": [
+            86.17,
+            111.23,
+            539.74,
+            129.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ongoing program of Gukov et al. [18, 50] for general 3-manifolds. We will study the first two",
+          "bbox": [
+            86.17,
+            124.78,
+            539.8,
+            135.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "types of invariants in the present paper, and the functions of q or τ in [44]. In all three cases,",
+          "bbox": [
+            86.17,
+            138.33,
+            539.72,
+            149.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "we will actually define a whole matrix of functions of the type described above, and in all three",
+          "bbox": [
+            86.17,
+            151.88,
+            539.76,
+            162.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "cases one of the central questions will be the behavior of these functions under the action of",
+          "bbox": [
+            86.17,
+            165.43,
+            539.75,
+            176.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the modular group on the rational numbers or on the upper half-plane. Another key aspect",
+          "bbox": [
+            86.17,
+            178.98,
+            539.81,
+            189.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "is that each of the three types of matrices constructed encodes the same information as the",
+          "bbox": [
+            86.17,
+            192.52,
+            539.71,
+            203.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "other two and that all three can be interpreted as different realizations of the same abstract",
+          "bbox": [
+            86.17,
+            206.07,
+            539.75,
+            216.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "object, a square matrix of “functions-near-Q” that we believe is associated to every hyperbolic",
+          "bbox": [
+            86.17,
+            217.24,
+            539.72,
+            230.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "knot, just as the different types of cohomology groups associated to an algebraic variety over",
+          "bbox": [
+            86.17,
+            233.17,
+            539.75,
+            244.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "a number field, despite their very different properties, are seen as different realizations of the",
+          "bbox": [
+            86.17,
+            246.72,
+            539.75,
+            257.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "same underlying “motive”.",
+          "bbox": [
+            86.17,
+            260.27,
+            213.85,
+            271.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The starting point for our entire investigation is the Kashaev invariant of a knot and the",
+          "bbox": [
+            100.35,
+            274.16,
+            539.8,
+            285.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "“quantum modularity” property for its Galois-equivariant extension that was conjectured in [84].",
+          "bbox": [
+            86.17,
+            287.7,
+            539.81,
+            298.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "We will review these topics in detail in Section 1, but remind the reader briefly of the basic ingre-",
+          "bbox": [
+            86.17,
+            301.25,
+            539.77,
+            312.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "dients here. The Kashaev invariant of a hyperbolic knot K is an element ⟨K⟩N of Z",
+          "bbox": [
+            86.17,
+            312.42,
+            485.69,
+            327.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "e2πi/N\u0003",
+          "bbox": [
+            490.24,
+            313.14,
+            523.2,
+            325.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "\u0002",
+          "bbox": [
+            485.69,
+            313.81,
+            490.24,
+            324.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "for",
+          "bbox": [
+            526.66,
+            314.8,
+            539.73,
+            325.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "every N ∈N whose absolute value is conjectured to grow exponentially like ecN, where c is 1/2π",
+          "bbox": [
+            86.17,
+            325.97,
+            539.33,
+            339.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "times the hyperbolic volume of the knot complement S3 ∖K. This invariant can be extended to",
+          "bbox": [
+            86.17,
+            335.56,
+            539.74,
+            352.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "a function J = J(K) (we will omit the knot from the notation when it is fixed) from Q/Z to Q by",
+          "bbox": [
+            86.17,
+            351.49,
+            539.72,
+            366.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "This means that we write ⟨K⟩N as a polynomial in e2πi/N with rational co-",
+          "bbox": [
+            190.33,
+            365.04,
+            539.73,
+            381.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            185.33,
+            368.01,
+            190.33,
+            378.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Galois equivariance.",
+          "bbox": [
+            86.17,
+            369.0,
+            180.75,
+            379.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "efficients and define J(a/N) for all a prime to N as the same polynomial evaluated at e−2πia/N.",
+          "bbox": [
+            86.17,
+            381.98,
+            534.72,
+            394.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            534.72,
+            382.76,
+            539.71,
+            393.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The quantum modularity conjecture gives a formula for the ratio of the values of J(X) and J(γX)",
+          "bbox": [
+            86.17,
+            397.3,
+            539.72,
+            408.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "as an asymptotic series in 1/X as X tends to infinity through integers, or even through rational",
+          "bbox": [
+            86.17,
+            410.85,
+            539.78,
+            421.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0000 a b",
+          "bbox": [
+            402.99,
+            417.86,
+            421.32,
+            434.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "∈SL2(Z). The quanti-",
+          "bbox": [
+            431.54,
+            422.01,
+            539.73,
+            436.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "numbers with bounded denominator, where γX = aX+b",
+          "bbox": [
+            86.17,
+            422.4,
+            352.38,
+            435.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            423.51,
+            423.41,
+            428.5,
+            434.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "cX+d with γ =",
+          "bbox": [
+            330.13,
+            424.4,
+            399.96,
+            439.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "c d",
+          "bbox": [
+            410.22,
+            430.29,
+            421.69,
+            438.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "tative version of this conjecture is given in equation (1.6) below, via a collection of well-defined",
+          "bbox": [
+            86.17,
+            437.95,
+            539.76,
+            448.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "formal power series {Φα(h)}α∈Q with algebraic coefficients, but the conjecture can also be vi-",
+          "bbox": [
+            86.17,
+            451.35,
+            539.72,
+            464.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "sualized in a weaker qualitative form by comparing the graphs of J(x) and of J(x)/J(γx) as",
+          "bbox": [
+            86.17,
+            465.05,
+            539.71,
+            475.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "functions, as is done in the following figure (taken from [84]), which shows the plots of log(J(x))",
+          "bbox": [
+            86.17,
+            478.59,
+            539.72,
+            489.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "and log(J(x)/J(−1/x)) for K = 41 (“figure 8 knot”), the simplest hyperbolic knot. The for-",
+          "bbox": [
+            86.17,
+            492.0,
+            539.76,
+            504.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "mer consists of a whole “cloud” of points and has no reasonable extension to the real numbers,",
+          "bbox": [
+            86.17,
+            505.69,
+            539.75,
+            516.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "whereas the latter does extend to a well-defined function on R, albeit one with infinitely many",
+          "bbox": [
+            86.17,
+            516.86,
+            539.76,
+            530.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "discontinuities.",
+          "bbox": [
+            86.17,
+            532.79,
+            157.21,
+            543.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "15",
+          "bbox": [
+            133.47,
+            560.99,
+            138.36,
+            568.27
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            5.59
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            334.71,
+            564.29,
+            337.72,
+            572.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            6.01
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            334.71,
+            584.01,
+            337.72,
+            591.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            6.01
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            334.71,
+            603.73,
+            337.72,
+            611.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            6.01
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            132.77,
+            606.06,
+            137.84,
+            613.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            5.59
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            335.27,
+            623.82,
+            338.28,
+            631.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            6.01
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            375.65,
+            639.79,
+            378.66,
+            647.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            6.01
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            409.27,
+            639.79,
+            412.27,
+            647.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            6.01
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            444.2,
+            639.79,
+            447.2,
+            647.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            6.01
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            478.94,
+            639.79,
+            481.95,
+            647.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            6.01
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            134.17,
+            650.6,
+            136.96,
+            657.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            5.59
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            332.27,
+            663.83,
+            338.57,
+            671.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            6.01
+          ]
+        },
+        {
+          "text": "−2",
+          "bbox": [
+            332.27,
+            683.55,
+            338.57,
+            691.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            6.01
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            137.66,
+            701.26,
+            140.46,
+            708.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            5.59
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            256.97,
+            701.26,
+            259.77,
+            708.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            5.59
+          ]
+        },
+        {
+          "text": "−3",
+          "bbox": [
+            332.27,
+            703.26,
+            338.57,
+            711.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            6.01
+          ]
+        },
+        {
+          "text": "Figure 1. The functions log(J(x)) and log(J(x)/J(−1/x)) for the 41 knot.",
+          "bbox": [
+            146.66,
+            727.75,
+            479.24,
+            739.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "rotation": 0,
+      "drawings": 73,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2. Plots of the six nontrivial entries (rescaled) of the matrix W (41)"
+      ],
+      "labels": [
+        {
+          "text": "Knots, Perturbative Series and Quantum Modularity",
+          "bbox": [
+            86.17,
+            32.85,
+            339.36,
+            43.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            534.33,
+            32.85,
+            539.78,
+            43.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2.0",
+          "bbox": [
+            302.42,
+            63.49,
+            310.9,
+            69.59
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CairoFont-1-0"
+          ],
+          "sizes": [
+            6.1
+          ]
+        },
+        {
+          "text": "1.5",
+          "bbox": [
+            302.42,
+            82.43,
+            310.9,
+            88.53
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CairoFont-1-0"
+          ],
+          "sizes": [
+            6.1
+          ]
+        },
+        {
+          "text": "1.0",
+          "bbox": [
+            302.42,
+            101.37,
+            310.9,
+            107.48
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CairoFont-1-0"
+          ],
+          "sizes": [
+            6.1
+          ]
+        },
+        {
+          "text": "0.5",
+          "bbox": [
+            302.42,
+            120.32,
+            310.9,
+            126.42
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CairoFont-1-0"
+          ],
+          "sizes": [
+            6.1
+          ]
+        },
+        {
+          "text": "-2",
+          "bbox": [
+            204.14,
+            144.87,
+            211.49,
+            151.16
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CairoFont-0-0",
+            "CairoFont-1-0"
+          ],
+          "sizes": [
+            6.1
+          ]
+        },
+        {
+          "text": "-1",
+          "bbox": [
+            256.64,
+            144.87,
+            263.99,
+            151.16
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CairoFont-0-0",
+            "CairoFont-1-0"
+          ],
+          "sizes": [
+            6.1
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            363.61,
+            145.06,
+            367.0,
+            151.16
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CairoFont-1-0"
+          ],
+          "sizes": [
+            6.1
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            416.11,
+            145.06,
+            419.5,
+            151.16
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CairoFont-1-0"
+          ],
+          "sizes": [
+            6.1
+          ]
+        },
+        {
+          "text": "-0.5",
+          "bbox": [
+            298.45,
+            158.01,
+            310.9,
+            164.31
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CairoFont-0-0",
+            "CairoFont-1-0"
+          ],
+          "sizes": [
+            6.1
+          ]
+        },
+        {
+          "text": "-1.0",
+          "bbox": [
+            298.45,
+            176.96,
+            310.9,
+            183.25
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CairoFont-0-0",
+            "CairoFont-1-0"
+          ],
+          "sizes": [
+            6.1
+          ]
+        },
+        {
+          "text": "Figure 2. Plots of the six nontrivial entries (rescaled) of the matrix W (41)",
+          "bbox": [
+            139.67,
+            206.79,
+            469.51,
+            219.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMR5",
+            "CMR7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(x).",
+          "bbox": [
+            470.01,
+            209.62,
+            486.22,
+            219.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "S",
+          "bbox": [
+            454.04,
+            214.89,
+            458.94,
+            221.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "The marked improvement of the graph on the right of Figure 1 as opposed to the one on the",
+          "bbox": [
+            100.35,
+            244.22,
+            539.78,
+            255.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "left was already very striking and led to the introduction in [84] of a notion of “quantum modular",
+          "bbox": [
+            86.17,
+            257.77,
+            539.83,
+            268.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "forms” that has proved quite useful and has been exploited and extended by several subsequent",
+          "bbox": [
+            86.17,
+            271.32,
+            539.77,
+            282.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "authors. But it was also somehow unsatisfactory, because the function log J(x) −log J(−1/x)",
+          "bbox": [
+            86.17,
+            284.73,
+            539.72,
+            295.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "still is far from smooth or even continuous, whereas in all the other examples in [84] the dif-",
+          "bbox": [
+            86.17,
+            298.42,
+            539.76,
+            309.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ference f(x) −f(γx) for a quantum modular form f : Q →C extended to an analytic function",
+          "bbox": [
+            86.17,
+            309.58,
+            539.75,
+            322.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "on R minus a finite set. This problem was “solved” in [84] by defining quantum modular forms",
+          "bbox": [
+            86.17,
+            323.13,
+            539.78,
+            336.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "by the weak requirement that the difference f(x) −f(γx) was “analytically better behaved”",
+          "bbox": [
+            86.17,
+            338.92,
+            539.73,
+            349.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "than f itself, rather than demanding that it be analytic on the complement of a finite set. But",
+          "bbox": [
+            86.17,
+            352.61,
+            539.78,
+            363.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "now it turns out that this cop-out is not needed, since the riddle of the missing smoothness is",
+          "bbox": [
+            86.17,
+            366.16,
+            539.75,
+            377.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "solved completely by upgrading J to a matrix of which it is only one entry. Specifically, in the",
+          "bbox": [
+            86.17,
+            379.71,
+            539.77,
+            390.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "new picture, J(X) is replaced by a certain matrix-valued invariant J(X) = J(K)(X) (we use",
+          "bbox": [
+            86.17,
+            391.6,
+            539.71,
+            404.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "boldface letters to indicate matrices) which is defined and studied in the course of this paper",
+          "bbox": [
+            86.17,
+            406.81,
+            539.76,
+            417.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(Sections 2.2, 3.1, and 4.1–4.5). For the figure 8 knot this matrix has the form",
+          "bbox": [
+            86.17,
+            420.36,
+            460.93,
+            431.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            113.45,
+            446.3,
+            122.99,
+            457.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            179.3,
+            446.3,
+            188.85,
+            457.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "∗",
+          "bbox": [
+            173.85,
+            446.67,
+            179.3,
+            457.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            122.99,
+            446.81,
+            128.45,
+            457.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "J(X)",
+          "bbox": [
+            138.41,
+            446.81,
+            163.89,
+            457.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "∗",
+          "bbox": [
+            148.42,
+            460.22,
+            153.87,
+            471.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "∗",
+          "bbox": [
+            173.85,
+            460.22,
+            179.3,
+            471.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            122.99,
+            460.36,
+            128.45,
+            471.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            179.3,
+            460.38,
+            193.7,
+            476.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            113.45,
+            465.93,
+            122.99,
+            476.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "∗",
+          "bbox": [
+            148.42,
+            473.77,
+            153.87,
+            484.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "∗",
+          "bbox": [
+            173.85,
+            473.77,
+            179.3,
+            484.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            122.99,
+            473.91,
+            128.45,
+            484.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "where each of the six nontrivial components has a “cloudlike” graph like the first plot in Figure 1.",
+          "bbox": [
+            86.17,
+            499.79,
+            539.78,
+            510.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "But now instead of dividing the scalar invariant J(X) by J(−1/X) as before, we look at the",
+          "bbox": [
+            86.17,
+            513.2,
+            539.72,
+            524.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "matrix product J(−1/X)−1ejS(X)J(X), where ejγ(X) is the matrix-valued automorphy factor",
+          "bbox": [
+            86.17,
+            525.13,
+            539.74,
+            545.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMEX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "defined in (4.14). Then the graphs of the six nontrivial entries of this product matrix, multiplied",
+          "bbox": [
+            86.17,
+            540.44,
+            539.82,
+            551.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "by suitable elementary factors to make them real and finite at the origin, look as in Figure 2",
+          "bbox": [
+            86.17,
+            553.99,
+            539.76,
+            564.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "and are now smooth functions on the real line!1 The same graph also beautifully illustrates the",
+          "bbox": [
+            86.17,
+            563.58,
+            539.74,
+            578.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "interrelationship of the different matrix invariants of knots which we spoke of above, because the",
+          "bbox": [
+            86.17,
+            581.09,
+            539.77,
+            592.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "six curves that are plotted are at the same time canonical lifts to C∞(R) of the six components",
+          "bbox": [
+            86.17,
+            592.25,
+            539.72,
+            605.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "of the matrix of formal power series Φα(h) that is associated to the knot and to every rational",
+          "bbox": [
+            86.17,
+            608.19,
+            539.75,
+            620.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "number α (here for α = 0). In this way the matrix J of Habiro-like functions determines the",
+          "bbox": [
+            86.17,
+            621.74,
+            539.74,
+            632.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "formal power series Φα(h) (to get values of α other than 0, one would replace −1/X by γ(X) for",
+          "bbox": [
+            86.17,
+            635.14,
+            539.72,
+            647.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "any γ ∈SL2(Z) with γ(∞) = α), and conversely the matrices Φα(h) determines the matrix J",
+          "bbox": [
+            86.17,
+            646.45,
+            539.71,
+            660.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "simply by J(α) = Φα(0).",
+          "bbox": [
+            86.17,
+            662.38,
+            204.74,
+            674.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "1To avoid misconceptions, we note that the other striking property of this picture, its symmetry with respect",
+          "bbox": [
+            98.61,
+            685.84,
+            539.77,
+            696.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6",
+            "CMR9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "to the vertical axis, is due to the accidental fact that the 41 knot is amphicheiral. But already for the next simplest",
+          "bbox": [
+            86.17,
+            698.27,
+            539.76,
+            708.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6",
+            "CMR9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "case of the 52 knot, which will be the second of our three standard examples throughout the paper, the matrix J",
+          "bbox": [
+            86.17,
+            709.23,
+            539.72,
+            719.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX9",
+            "CMR6",
+            "CMR9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "would be have size 4 × 4 with 12 non-trivial entries, all complex, and a graph of their 24 real and imaginary parts",
+          "bbox": [
+            86.17,
+            720.07,
+            539.8,
+            729.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9",
+            "CMSY9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "would be visually unintelligible.",
+          "bbox": [
+            86.17,
+            731.15,
+            214.01,
+            740.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 8,
+      "rotation": 0,
+      "drawings": 20,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3. The Witten cylinder."
+      ],
+      "labels": [
+        {
+          "text": "8",
+          "bbox": [
+            86.17,
+            32.85,
+            91.63,
+            43.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "S. Garoufalidis and D. Zagier",
+          "bbox": [
+            399.37,
+            32.85,
+            539.76,
+            43.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "• Resurgence aspects.",
+          "bbox": [
+            100.35,
+            60.13,
+            223.05,
+            71.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "An important aspect of our paper are the matrices Φα(h) of",
+          "bbox": [
+            233.26,
+            60.27,
+            539.73,
+            72.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "factorially divergent series and their distinguished lift Wγ(x) to a matrix of analytic functions.",
+          "bbox": [
+            86.17,
+            73.82,
+            539.75,
+            85.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "In this connection we find several properties that can be classified under the general heading",
+          "bbox": [
+            86.17,
+            87.37,
+            539.76,
+            98.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of “resurgence.” On the one hand, we find experimentally that the coefficients of each entry",
+          "bbox": [
+            86.17,
+            100.92,
+            539.75,
+            111.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of Φα(h) are given asymptotically as integer linear combinations of certain divergent expansions",
+          "bbox": [
+            86.17,
+            114.47,
+            539.75,
+            126.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "involving the coefficients themselves multiplied by gamma factors. The integrality of the so-",
+          "bbox": [
+            86.17,
+            128.02,
+            539.73,
+            138.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "called Stokes constants is a phenomenon observed in the current paper and further studied",
+          "bbox": [
+            86.17,
+            141.57,
+            539.77,
+            152.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "in [27, 28]. A different connection of our results with the usual resurgence properties of the",
+          "bbox": [
+            86.17,
+            155.12,
+            539.76,
+            166.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "perturbative series Φα(h) is the method of smoothed optimal truncation mentioned just above,",
+          "bbox": [
+            86.17,
+            168.67,
+            539.76,
+            180.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "which can be seen as an alternative approach to lifting these power series to actual functions",
+          "bbox": [
+            86.17,
+            182.21,
+            539.75,
+            193.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "than the standard method via Borel resummation and Pad´e approximation.",
+          "bbox": [
+            86.17,
+            195.76,
+            460.77,
+            206.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Of course, the",
+          "bbox": [
+            469.68,
+            195.76,
+            539.78,
+            206.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "final emergence of a canonical lift coming from the analyticity properties of the cocycle Wγ(x)",
+          "bbox": [
+            86.17,
+            209.31,
+            539.72,
+            221.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "eventually makes both numerical procedures obsolete in our case, but this cocycle could not be",
+          "bbox": [
+            86.17,
+            222.86,
+            539.74,
+            233.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "found without having them first.",
+          "bbox": [
+            86.17,
+            236.41,
+            242.37,
+            247.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "• Equivalence of the various invariants. We observe that all of our invariants, assuming",
+          "bbox": [
+            100.35,
+            249.82,
+            539.75,
+            260.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "their conjectured properties, determine each other and in particular all are determined by the",
+          "bbox": [
+            86.17,
+            263.51,
+            539.78,
+            274.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "colored Jones polynomials and perhaps even by the Kashaev invariant alone.",
+          "bbox": [
+            86.17,
+            277.06,
+            467.84,
+            287.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The point of",
+          "bbox": [
+            477.12,
+            277.06,
+            539.78,
+            287.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the paper is therefore not that our new invariants can distinguish knots, but that they reveal",
+          "bbox": [
+            86.17,
+            290.61,
+            539.8,
+            301.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "new properties and make connection with SL2(C)-representations of the fundamental group,",
+          "bbox": [
+            86.17,
+            301.77,
+            539.75,
+            316.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "hyperbolic geometry and non-trivial number theory.",
+          "bbox": [
+            86.17,
+            317.71,
+            334.56,
+            328.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "• Eighth roots of unity and the Dedekind eta function. A further minor surprise",
+          "bbox": [
+            100.35,
+            331.11,
+            539.74,
+            342.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "was the appearance of Dedekind sums at several places in the calculations, which we had not",
+          "bbox": [
+            86.17,
+            344.8,
+            539.74,
+            355.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "expected.",
+          "bbox": [
+            86.17,
+            358.35,
+            131.02,
+            369.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Notably, this occurred in the construction of state sums for the non-Habiro-like",
+          "bbox": [
+            140.98,
+            358.35,
+            539.76,
+            369.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "elements of our matrix J (see Section 7.2) and in the ubiquitous but mysterious 8th root of",
+          "bbox": [
+            86.17,
+            371.9,
+            539.77,
+            382.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "unity that enters all of our asymptotic formulas and that is related to the 8th root of unity",
+          "bbox": [
+            86.17,
+            385.45,
+            539.81,
+            396.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "occurring in the modular transformation behavior of η3.",
+          "bbox": [
+            86.17,
+            397.34,
+            354.23,
+            409.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "• 3 + 1: a possible alternative interpretation. Finally, we mention a point that will",
+          "bbox": [
+            100.35,
+            412.41,
+            539.76,
+            423.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "not be discussed in the paper at all, but may give a different way of looking at the objects",
+          "bbox": [
+            86.17,
+            426.1,
+            539.76,
+            437.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "studied here. Namely, the (σ, σ′) entry of the matrix J(X) that we have associated to a knot K,",
+          "bbox": [
+            86.17,
+            437.88,
+            539.72,
+            450.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "and hence also to its complement M = S3 ∖K, can be thought of as numbers associated",
+          "bbox": [
+            86.17,
+            446.86,
+            539.73,
+            464.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "to the “Witten cylinder”, which is the 4-manifold M × R equipped with a pair of boundary-",
+          "bbox": [
+            86.17,
+            464.36,
+            539.77,
+            477.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "parabolic SL2(C) connections σ and σ′ on its two ends, together with an integer k, called the",
+          "bbox": [
+            86.17,
+            476.34,
+            539.72,
+            492.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "“level” in complex Chern–Simons theory [80, 81] and related to the rational number X by",
+          "bbox": [
+            86.17,
+            493.85,
+            539.72,
+            504.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "k + 2 = den(X). This suggests a possible interpretation of the entries of J(X) as expectation",
+          "bbox": [
+            86.17,
+            507.39,
+            539.72,
+            518.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "values of some yet-to-be-defined (3 + 1)-dimensional theory on M × R.",
+          "bbox": [
+            86.17,
+            518.56,
+            424.22,
+            531.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 3. The Witten cylinder.",
+          "bbox": [
+            241.08,
+            639.71,
+            384.83,
+            649.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "• Relation with the Kauffman bracket skein module.",
+          "bbox": [
+            100.35,
+            661.74,
+            401.77,
+            672.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The objects that we have",
+          "bbox": [
+            411.83,
+            661.88,
+            539.72,
+            672.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "studied have another connection with a 3+1 dimensional theory that goes though the Kauffman",
+          "bbox": [
+            86.17,
+            675.43,
+            539.77,
+            686.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "bracket skein module and a conjecture of Witten (see, for instance, [79]), now a theorem of",
+          "bbox": [
+            86.17,
+            688.98,
+            539.75,
+            699.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Gunningham–Jordan–Safronov [51]. Recently, Lˆe and the first author defined an explicit map",
+          "bbox": [
+            86.17,
+            702.53,
+            539.82,
+            713.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "from the Kauffman bracket skein module of an integer homology 3-sphere to the Habiro ring [36].",
+          "bbox": [
+            86.17,
+            716.08,
+            539.77,
+            726.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The image of this map (with can be effectively computed, and is naturally a topological invariant)",
+          "bbox": [
+            86.17,
+            729.63,
+            539.77,
+            740.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 34,
+      "rotation": 0,
+      "drawings": 77,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4. Plots of the six nontrivial entries of the matrix WS(x) for the 41 knot."
+      ],
+      "labels": [
+        {
+          "text": "34",
+          "bbox": [
+            86.17,
+            32.85,
+            97.08,
+            43.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "S. Garoufalidis and D. Zagier",
+          "bbox": [
+            399.37,
+            32.85,
+            539.76,
+            43.75
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0000 a b",
+          "bbox": [
+            274.22,
+            53.73,
+            292.55,
+            70.19
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMEX10",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            294.74,
+            59.28,
+            299.74,
+            70.19
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "where j(γ, x) is defined as cx+d for γ =",
+          "bbox": [
+            86.17,
+            60.27,
+            271.19,
+            71.18
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": ". This follows from the (conjectural) unimodularity",
+          "bbox": [
+            299.74,
+            60.27,
+            539.76,
+            71.18
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "c d",
+          "bbox": [
+            281.45,
+            66.17,
+            292.92,
+            74.14
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "of J, the definition of ejγ(x), and the fact that P",
+          "bbox": [
+            86.17,
+            73.48,
+            316.05,
+            92.57
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMBX10",
+            "CMEX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "σ∈PK v(σ) vanishes (“Galois descent”). Finally,",
+          "bbox": [
+            316.04,
+            73.82,
+            539.73,
+            89.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI6",
+            "CMMI8",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "from (5.8) we immediately deduce the corresponding formula for the inverse matrix of W red",
+          "bbox": [
+            86.17,
+            85.71,
+            521.46,
+            98.28
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(x):",
+          "bbox": [
+            521.97,
+            87.37,
+            539.72,
+            98.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "γ",
+          "bbox": [
+            508.19,
+            92.36,
+            512.54,
+            100.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "(x)−1 = BredW red",
+          "bbox": [
+            137.53,
+            105.05,
+            222.79,
+            120.47
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "W red",
+          "bbox": [
+            113.45,
+            107.35,
+            137.03,
+            120.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "εγε(−x)t.",
+          "bbox": [
+            209.51,
+            107.35,
+            253.08,
+            122.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "γ",
+          "bbox": [
+            123.75,
+            114.55,
+            128.11,
+            122.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "In this connection, we note that (5.1) and (5.8) also imply that",
+          "bbox": [
+            86.17,
+            129.18,
+            388.46,
+            140.09
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Bred\u0001−1Jred(−γx)tejred",
+          "bbox": [
+            171.8,
+            146.31,
+            276.57,
+            166.11
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMBX10",
+            "CMEX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "W red",
+          "bbox": [
+            113.45,
+            148.03,
+            137.03,
+            161.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "γ (x)Jred(x).",
+          "bbox": [
+            264.8,
+            148.03,
+            328.29,
+            163.85
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            166.8,
+            149.25,
+            171.79,
+            160.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(x) =",
+          "bbox": [
+            137.53,
+            150.24,
+            163.77,
+            161.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "γ",
+          "bbox": [
+            123.75,
+            155.23,
+            128.11,
+            163.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "In other words, W red is bilinear in the entries of the matrices J, an important property that is",
+          "bbox": [
+            86.17,
+            167.09,
+            539.76,
+            181.96
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "also shared by the functions defined by state integrals.",
+          "bbox": [
+            86.17,
+            184.6,
+            346.57,
+            195.51
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "5.2",
+          "bbox": [
+            86.17,
+            212.23,
+            103.38,
+            224.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Smoothness",
+          "bbox": [
+            116.83,
+            212.23,
+            186.27,
+            224.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "We now come to the really exciting point. The cocycle Wγ(x) is defined in terms of the “Habiro-",
+          "bbox": [
+            86.17,
+            233.64,
+            539.73,
+            245.55
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "like” matrix J by (5.1). The entries of J(41), one of which was shown in Figure 1 of the intro-",
+          "bbox": [
+            86.17,
+            245.53,
+            539.75,
+            258.1
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMBX10",
+            "CMR10",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "duction, would all have a “cloudlike” structure like the one seen there. But when one graphs",
+          "bbox": [
+            86.17,
+            260.74,
+            539.76,
+            271.65
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the entries of the matrix Wγ(x), they are all smooth! For instance, Figure 4 shows the graphs",
+          "bbox": [
+            86.17,
+            274.29,
+            539.74,
+            286.19
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "of the six nontrivial components of the 3 × 3 matrix WS(x) for the figure 8 knot (with three of",
+          "bbox": [
+            86.17,
+            287.7,
+            539.75,
+            299.8
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "\u0000 0 −1",
+          "bbox": [
+            330.65,
+            294.85,
+            355.55,
+            311.31
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMEX10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            357.37,
+            300.4,
+            362.37,
+            311.31
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "them divided by i to make them real), where S =",
+          "bbox": [
+            86.17,
+            301.39,
+            327.1,
+            312.3
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "as usual, plotted in each case for all",
+          "bbox": [
+            366.32,
+            301.39,
+            539.73,
+            312.3
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "1 0",
+          "bbox": [
+            337.47,
+            307.3,
+            352.25,
+            315.27
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "rational numbers in (0, 2] with denominator at most 40 (so for roughly 1000 data points).",
+          "bbox": [
+            86.17,
+            314.94,
+            514.19,
+            325.85
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "1.5",
+          "bbox": [
+            202.12,
+            339.65,
+            211.0,
+            346.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CairoFont-0-0"
+          ],
+          "sizes": [
+            6.39
+          ]
+        },
+        {
+          "text": "1.0",
+          "bbox": [
+            202.12,
+            359.92,
+            211.0,
+            366.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CairoFont-0-0"
+          ],
+          "sizes": [
+            6.39
+          ]
+        },
+        {
+          "text": "0.5",
+          "bbox": [
+            202.12,
+            380.19,
+            211.0,
+            386.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CairoFont-0-0"
+          ],
+          "sizes": [
+            6.39
+          ]
+        },
+        {
+          "text": "0.2",
+          "bbox": [
+            236.5,
+            406.54,
+            245.38,
+            412.92
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CairoFont-0-0"
+          ],
+          "sizes": [
+            6.39
+          ]
+        },
+        {
+          "text": "0.4",
+          "bbox": [
+            264.49,
+            406.54,
+            273.37,
+            412.92
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CairoFont-0-0"
+          ],
+          "sizes": [
+            6.39
+          ]
+        },
+        {
+          "text": "0.6",
+          "bbox": [
+            292.48,
+            406.54,
+            301.36,
+            412.92
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CairoFont-0-0"
+          ],
+          "sizes": [
+            6.39
+          ]
+        },
+        {
+          "text": "0.8",
+          "bbox": [
+            320.47,
+            406.54,
+            329.35,
+            412.92
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CairoFont-0-0"
+          ],
+          "sizes": [
+            6.39
+          ]
+        },
+        {
+          "text": "1.0",
+          "bbox": [
+            348.46,
+            406.54,
+            357.34,
+            412.92
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CairoFont-0-0"
+          ],
+          "sizes": [
+            6.39
+          ]
+        },
+        {
+          "text": "1.2",
+          "bbox": [
+            376.45,
+            406.54,
+            385.33,
+            412.92
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CairoFont-0-0"
+          ],
+          "sizes": [
+            6.39
+          ]
+        },
+        {
+          "text": "1.4",
+          "bbox": [
+            404.44,
+            406.54,
+            413.32,
+            412.92
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CairoFont-0-0"
+          ],
+          "sizes": [
+            6.39
+          ]
+        },
+        {
+          "text": "-0.5",
+          "bbox": [
+            197.97,
+            420.54,
+            210.99,
+            427.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CairoFont-0-0",
+            "CairoFont-1-0"
+          ],
+          "sizes": [
+            6.39
+          ]
+        },
+        {
+          "text": "-1.0",
+          "bbox": [
+            197.97,
+            440.81,
+            210.99,
+            447.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CairoFont-0-0",
+            "CairoFont-1-0"
+          ],
+          "sizes": [
+            6.39
+          ]
+        },
+        {
+          "text": "-1.5",
+          "bbox": [
+            197.97,
+            461.08,
+            210.99,
+            467.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CairoFont-0-0",
+            "CairoFont-1-0"
+          ],
+          "sizes": [
+            6.39
+          ]
+        },
+        {
+          "text": "Figure 4. Plots of the six nontrivial entries of the matrix WS(x) for the 41 knot.",
+          "bbox": [
+            133.43,
+            488.31,
+            492.47,
+            499.76
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "We formalize this by stating the following conjecture:",
+          "bbox": [
+            100.35,
+            511.21,
+            355.71,
+            522.12
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Conjecture 5.1. The function Wγ defined on Q ∖",
+          "bbox": [
+            86.17,
+            527.27,
+            339.38,
+            542.2
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "γ−1(∞)",
+          "bbox": [
+            348.9,
+            527.89,
+            385.87,
+            540.56
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "extends to a C∞function on",
+          "bbox": [
+            397.15,
+            527.89,
+            539.71,
+            540.56
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMSY8",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "\b",
+          "bbox": [
+            342.54,
+            528.66,
+            348.9,
+            539.57
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "R ∖",
+          "bbox": [
+            86.17,
+            540.82,
+            104.96,
+            551.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "γ−1(∞)",
+          "bbox": [
+            113.75,
+            541.44,
+            150.72,
+            554.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "\b",
+          "bbox": [
+            107.39,
+            542.21,
+            113.75,
+            553.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            157.08,
+            543.2,
+            160.43,
+            554.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "A first consequence of this is that the cocycle property (5.3), which held for the restriction",
+          "bbox": [
+            100.35,
+            561.65,
+            539.75,
+            572.56
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of W to P1(Q) by equation (5.1) and the cocycle property of ej, is then automatically true for the",
+          "bbox": [
+            86.17,
+            572.82,
+            539.74,
+            593.95
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMBX10",
+            "CMEX10",
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "extended function on P1(R), even though there is no longer any “coboundary-like formula” of",
+          "bbox": [
+            86.17,
+            586.37,
+            539.78,
+            599.66
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "type (5.1). This new cocycle now takes values in the much smaller space of almost-everywhere-",
+          "bbox": [
+            86.17,
+            602.3,
+            539.7,
+            613.21
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "defined matrix-valued functions on P1(R).",
+          "bbox": [
+            86.17,
+            613.46,
+            286.45,
+            626.76
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "The conjectural smoothness of the function Wγ has another important consequence that was",
+          "bbox": [
+            100.35,
+            629.4,
+            539.72,
+            641.94
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "already mentioned in the introduction to this section, namely that we can invert the asymptotic",
+          "bbox": [
+            86.17,
+            642.95,
+            539.77,
+            653.86
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "statement (5.2) to get a definition of exact matrix-valued functions for all α ∈Q which are",
+          "bbox": [
+            86.17,
+            654.11,
+            539.72,
+            667.4
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "smooth on all of R and whose Taylor expansions (after the “Wick rotation” h 7→ℏ= h/2πi)",
+          "bbox": [
+            86.17,
+            667.66,
+            539.72,
+            680.95
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "agree with the divergent power series Φα(h). To do this, we simply define a new function Φexact",
+          "bbox": [
+            86.17,
+            681.93,
+            539.21,
+            695.5
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "α",
+          "bbox": [
+            519.69,
+            688.59,
+            525.13,
+            696.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "by requiring (5.2) to be an exact rather than just an asymptotic equality, i.e., by defining",
+          "bbox": [
+            86.17,
+            697.14,
+            514.24,
+            708.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0012 1",
+          "bbox": [
+            331.87,
+            709.36,
+            351.67,
+            728.27
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMEX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0013−1",
+          "bbox": [
+            379.39,
+            714.27,
+            398.24,
+            728.11
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMEX10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "c2x −d",
+          "bbox": [
+            341.1,
+            717.36,
+            378.2,
+            743.14
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Φα(2πix)exact := diag",
+          "bbox": [
+            113.45,
+            720.24,
+            218.68,
+            736.65
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "|cx|−κ(σ)e−v(σ)/c2x\u0001",
+          "bbox": [
+            223.86,
+            721.28,
+            314.42,
+            735.65
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR6",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            218.86,
+            723.75,
+            223.85,
+            734.66
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Wγ",
+          "bbox": [
+            314.42,
+            724.74,
+            329.09,
+            736.65
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(5.12)",
+          "bbox": [
+            511.84,
+            724.74,
+            539.72,
+            735.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "c",
+          "bbox": [
+            372.99,
+            732.23,
+            377.71,
+            743.14
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 47,
+      "rotation": 0,
+      "drawings": 32,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 5. A tetrahedron with shape parameters."
+      ],
+      "labels": [
+        {
+          "text": "Knots, Perturbative Series and Quantum Modularity",
+          "bbox": [
+            86.17,
+            32.85,
+            339.36,
+            43.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "47",
+          "bbox": [
+            528.88,
+            32.85,
+            539.78,
+            43.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "with corresponding lifts of the 5-term and of the various other relations. The map from this",
+          "bbox": [
+            86.17,
+            60.27,
+            539.77,
+            71.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "larger group to the extended Bloch group is then the one described in the previous paragraph.",
+          "bbox": [
+            86.17,
+            73.82,
+            539.79,
+            84.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "It is injective because the 5-terms relations defining the extended Bloch group all lift to corre-",
+          "bbox": [
+            86.17,
+            87.37,
+            539.74,
+            98.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "sponding relations at the (half-) symplectic level. It is also surjective, as one can show using",
+          "bbox": [
+            86.17,
+            100.92,
+            539.74,
+            111.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "M ∈MN×N′(Z) | MJ2NMt = J2N′",
+          "bbox": [
+            234.96,
+            110.51,
+            411.49,
+            126.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY6",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "\b",
+          "bbox": [
+            228.6,
+            113.48,
+            234.96,
+            124.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "elements of the set SpN,N′ =",
+          "bbox": [
+            86.17,
+            114.47,
+            224.95,
+            127.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR10",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "of “non-square symplectic",
+          "bbox": [
+            415.5,
+            114.47,
+            539.72,
+            125.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "matrices” (note that this set is just SpN if N = N′ and reduces to 0 if N′ > N) together with",
+          "bbox": [
+            86.17,
+            124.06,
+            539.73,
+            141.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "the obvious composition maps SpN,N′ × SpN′,N′′ →SpN,N′′, in order to eliminate superfluous",
+          "bbox": [
+            86.17,
+            140.99,
+            539.74,
+            154.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "relations. (Roughly speaking, if PN",
+          "bbox": [
+            86.17,
+            152.39,
+            261.43,
+            173.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "j=1[uj, vj] is the Z",
+          "bbox": [
+            254.71,
+            152.73,
+            343.13,
+            168.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "\u0002bC",
+          "bbox": [
+            343.12,
+            152.73,
+            355.55,
+            171.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "-component of an element of bB(C) as",
+          "bbox": [
+            360.09,
+            152.73,
+            539.71,
+            173.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0003",
+          "bbox": [
+            355.55,
+            154.12,
+            360.1,
+            165.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "defined above, then we define N′ ≤N as the rank of the group generated by all uj and vj",
+          "bbox": [
+            86.17,
+            164.56,
+            538.76,
+            181.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "and obtain an element of SpN,N′ by writing the u’s and v’s in terms of these generators, which",
+          "bbox": [
+            86.17,
+            181.78,
+            539.71,
+            194.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "then always satisfy a collection of NZ equations.) A more detailed discussion of this and of the",
+          "bbox": [
+            86.17,
+            195.76,
+            539.75,
+            206.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "whole relationship between half-symplectic matrices and Bloch groups, including our versions of",
+          "bbox": [
+            86.17,
+            209.31,
+            539.76,
+            220.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the 5-term relation lifted to symplectic and half-symplectic matrices, is also given in [43].",
+          "bbox": [
+            86.17,
+            222.86,
+            512.64,
+            233.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "This concludes our discussion of half-symplectic matrices and the equations (6.1). These",
+          "bbox": [
+            100.35,
+            237.18,
+            539.72,
+            248.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "objects arise in (at least) two different contexts, in 3-dimensional topology and in the study of",
+          "bbox": [
+            86.17,
+            250.72,
+            539.76,
+            261.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "special q-hypergeometric series (Nahm sums). The former is of course the one that is of most",
+          "bbox": [
+            86.17,
+            264.27,
+            539.7,
+            275.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "relevance for this paper, and will be discussed in more detail in the next subsection, but after",
+          "bbox": [
+            86.17,
+            277.82,
+            539.77,
+            288.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "that we will also say something about Nahm sums because they will play a role in the sequel [44]",
+          "bbox": [
+            86.17,
+            291.37,
+            539.74,
+            302.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "to this paper and also because they give the most elementary approach to defining the associated",
+          "bbox": [
+            86.17,
+            304.92,
+            539.74,
+            315.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "formal power series that are our main subject of interest.",
+          "bbox": [
+            86.17,
+            318.47,
+            359.04,
+            329.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "6.2",
+          "bbox": [
+            86.17,
+            351.24,
+            103.38,
+            363.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Ideal triangulations and the Neumann–Zagier equations",
+          "bbox": [
+            116.83,
+            351.24,
+            446.08,
+            363.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "In 3-dimensional geometry, the shape of an ideal tetrahedron in H3 is encoded by a complex",
+          "bbox": [
+            86.17,
+            370.18,
+            539.71,
+            385.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "number (“shape parameter”) z ∈C ∖{0, 1}, the tetrahedron being isometric to the convex hull",
+          "bbox": [
+            86.17,
+            385.3,
+            539.75,
+            398.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": ". The shape z has three forms z, z′ = 1/(1 −z)",
+          "bbox": [
+            305.59,
+            397.27,
+            539.72,
+            412.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "of the four points 0, 1, ∞, z ∈P1(C) = ∂",
+          "bbox": [
+            86.17,
+            398.85,
+            281.76,
+            412.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "H3\u0001",
+          "bbox": [
+            287.37,
+            398.85,
+            305.58,
+            411.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            282.37,
+            400.24,
+            287.37,
+            411.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "and z′′ = 1 −1/z, each corresponding to the choice of a pair of opposite edges of the tetrahedron",
+          "bbox": [
+            86.17,
+            410.82,
+            539.75,
+            425.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "as shown in Figure 5.",
+          "bbox": [
+            86.17,
+            428.33,
+            188.3,
+            439.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 5. A tetrahedron with shape parameters.",
+          "bbox": [
+            203.62,
+            581.57,
+            422.28,
+            591.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "An ideal triangulation of a 3-manifold with torus boundary components give rise to an equa-",
+          "bbox": [
+            100.35,
+            607.68,
+            539.8,
+            618.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "tion (6.1), where the variables zi solving the equations (6.1) are the shape parameters of the",
+          "bbox": [
+            86.17,
+            621.23,
+            539.73,
+            633.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "tetrahedra and the equations are the “gluing conditions” relating the shape parameters of the",
+          "bbox": [
+            86.17,
+            634.78,
+            539.77,
+            645.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "tetrahedra incident on the various edges of the triangulation and on the cusp. These gluing equa-",
+          "bbox": [
+            86.17,
+            648.33,
+            539.78,
+            659.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "tions originated in the work of Thurston [72] and further studied in [67], where the key symplectic",
+          "bbox": [
+            86.17,
+            661.88,
+            539.8,
+            672.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "property of the matrices (AB) was found. We explain very briefly how this works for 3-manifolds",
+          "bbox": [
+            86.17,
+            675.43,
+            539.77,
+            686.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "whose boundary component is a torus, equipped with an ideal triangulation with N tetrahedra.",
+          "bbox": [
+            86.17,
+            688.98,
+            539.73,
+            699.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Each edge of the triangulation gives rise to a gluing equation asserting that the product of the",
+          "bbox": [
+            86.17,
+            702.53,
+            539.78,
+            713.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "shape parameters of all tetrahedra incident to that edge equals to 1. Every peripheral curve",
+          "bbox": [
+            86.17,
+            716.08,
+            539.77,
+            726.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(i.e., a curve in the boundary torus of the 3-manifold) also has an equation of this form (often",
+          "bbox": [
+            86.17,
+            729.63,
+            539.81,
+            740.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    }
+  ]
+}

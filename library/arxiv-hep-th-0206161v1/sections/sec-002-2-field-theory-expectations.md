@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-0206161v1
-doc_title: "arXiv:hep-th/0206161v1 18 Jun 2002"
+doc_title: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING"
 section_id: sec-002-2-field-theory-expectations
 section_title: "Field theory expectations"
 section_number: 2
@@ -8,6 +8,7 @@ pages: 7-8
 source_pdf: 0206161v1.pdf
 source_sha256: 9530c40215baa02d
 toc_source: inferred
+doc_brief: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING — 24 sections: Front matter; Jourdain:; Introduction"
 ---
 In this section we explain our approach in the ﬁeld theory language. We exploit the
 fact that the supersymmetric gauge theory on ﬂat space has a large collection of observables

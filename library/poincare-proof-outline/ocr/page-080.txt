@@ -1,0 +1,68 @@
+using inf-or-of-complez|of v]
+using poincare-between-sandwich|[of u On]
+by auto
+next
+case False
+have V u. u € unit-dise \ u # On —> ?P wv (is ?P’ v)
+proof (rule wlog-rotation-to-positive-z-azis)
+fix pv
+let ?M = moebius-pt (moebius-rotation y)
+assume 1: v € unit-disc v # On
+assume 2: ?P’ (?M v)
+show ?P’v
+proof (rule alll, rule impI, (erule conjE)+)
+fix u
+assume 38: u € unit-disc u # On
+have poincare-between (?M u) On (?M v) <> poincare-between u On v
+using <u € unit-disc) <v € unit-disc»
+using unit-disc-fir-moebius-preserve-poincare-between unit-disc-fiz-rotation zero-in-unit-disc
+by fastforce
+thus ?P uv
+using 1 2[rule-format, of ?M u] 3
+using inf-or-of-complez|of u] inf-or-of-complez|of v]
+by auto
+qed
+next
+fix x
+assume 1: is-real t 0 < Rex Rex < 1
+hence z 4 0
+by auto
+show ?P’ (of-complex x)
+proof (rule alll, rule impI, (erule conjE)+)
+fix u
+assume 2: u € unit-disc u # On
+then obtain u’ where u = of-complex u'
+using inf-or-of-complez|of u]
+by auto
+show ?P u (of-complex x)
+using 1 2 «x A 0> <u = of-complez u’>
+using poincare-between-revlof u 0, of-complex x]
+using poincare-between-z-axis-u0v[of x u'| <is-real x»
+apply (auto simp add: cmod-eq-Re)
+apply (rule-tac t=Re u’ / Re x in exl, simp add: divide-neg-pos algebra-split-simps)
+using mult-neg-pos mult-pos-neg
+by blast
+qed
+qed fact+
+thus ?thesis
+using assms
+by auto
+qed
+
+lemma poincare-between-u0v-polar-form:
+assumes z € unit-disc and y © unit-disc and x # 0; and y # 0;, and
+to-complex x = cor rz * cis ~ to-complez y = cor ry * cis p
+shows poincare-between x On y <—> rz x ry < 0 (is ?P vy rz ry)
+proof—
+from assms have rx 4 0 ry 4 0
+using inf-or-of-complez|of x] inf-or-of-complez|of y]
+by auto
+
+have (Ak<0. cor rx = cor k * cor ry ) = (rx * ry < 0)
+proof
+assume Jk<0. cor rx = cor k * cor ry
+then obtain k where k < 0 cor rx = cor k * cor ry
+by auto
+hence rz = k * ry
+
+80

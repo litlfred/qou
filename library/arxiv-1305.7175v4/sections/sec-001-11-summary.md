@@ -4,13 +4,14 @@ doc_title: "NONLINEAR TRACES"
 section_id: sec-001-11-summary
 section_title: "Summary"
 section_number: 1.1
-pages: 1-6
+pages: 2-6
 source_pdf: 1305.7175v4.pdf
 source_sha256: 5a09955f4fb6a57e
-doc_brief: "NONLINEAR TRACES — W e combine the theory of traces in homotopical algebra with s heaf theory in de- rived algebraic geometry to deduce general ﬁxed point and ch aracter formulas."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.99
-latex_coverage_ratio: 0.838
+latex_prose_ratio: 0.987
+latex_coverage_ratio: 0.897
+doc_brief: "NONLINEAR TRACES — We combine the theory of traces in homotopical algebra with sheaf theory in de- rived algebraic geometry to deduce general ﬁxed point and character formulas."
 ---
 []{#summary label="summary"} We now describe the main theorem, extending classical trace and dimension formulas to a very general setting in derived algebraic geometry (including equivariance for arbitrary Lie algebroids or affine algebraic groups) without any smoothness or transversality assumptions, while emphasizing that the main contribution of the paper is the simple geometric formalism underlying these formulas. For our general and formal nonlinear results, we need not assume anything about what classes of derived stacks and morphisms we work with. For applications, we need to be in a setting in which the powerful mechanism of sheaf theory is fully developed [@indcoh; @finiteness; @GR].
 

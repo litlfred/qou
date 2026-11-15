@@ -2,90 +2,34 @@
  "_schema": "library-summary/v1",
  "doc_id": "gn2",
  "source_sha256": "ffe8965c496dbb2f",
- "brief": "SOME RESULTS ABOUT THE KAUFFMAN BRACKET SKEIN MODULE OF THE TWIST KNOT EXTERIOR — In this paper, we list in explicit form the factoring relations of the Kau man bracket skein module (KBSM for short)",
- "extended": "**SOME RESULTS ABOUT THE KAUFFMAN BRACKET SKEIN MODULE OF THE TWIST KNOT EXTERIOR**\n\n*R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO*\n\n11 pp, 14 sections.\n\n**Abstract.** In this paper, we list in explicit form the factoring relations of the Kau man bracket skein module (KBSM for short) of a twist knot exterior. This is done using curves decorated by characters of irreducibleSL(2;C)-representations. In the process, we exhibit a relation which holds in the KBSM of the knot exterior, called the minimal relation. In the nal section we prove that, when specializing the variable of the Kau man bracket att =\u00001, the minimal relation becomes the de ning polynomial of the SL(2;C)-character variety of the twist knot. 1. Motivation and background 1.1. Motivation. The Kau man bracket skein module of a 3-manifold was intro- duced by J. Przyticki as a natural generalization of the Kau man bracket to general 3-manifolds. It was later linked to the character variety ofSL(2;C)-representations of the fundamental group of the manifold [B1], [PS].\n\n**Outline.** 1.2 The Kau; 2 R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO; 1 Motivation and background; 1.1 Motivation. The Kau; 2 The explicit form of the factoring relations; 2.1 The \\minimal relation\" in the KBSM of the ; 4 R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO; 6 R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO; 2.2 The other factorization relations (The act; 8 R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO; 3 Application to the character variety of the ; 10 R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO; Acknowledgements; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2: The KBSM of the genus 2 handlebody is the free\n- Theorem 6: For any compact orientable 3-\n- Theorem 7: Consider the character ring Q(\u00191(EKm)) and the KBSAKQ\n- Lemma 1: The skeinXi, (m+1\u0015i\u0015 0), as an element\n- Lemma 2: The skeins Xi, (0\u0014i\u0014m + 1) can be written in terms\n- Lemma 3: The handle-slide of Xm yields the following re-",
+ "brief": "SOME RESULTS ABOUT THE KAUFFMAN BRACKET SKEIN MODULE OF THE TWIST KNOT EXTERIOR — In this paper, we list in explicit form the factoring relations of the Kauﬀman bracket skein module (KBSM for short)",
+ "extended": "**SOME RESULTS ABOUT THE KAUFFMAN BRACKET SKEIN MODULE OF THE TWIST KNOT EXTERIOR**\n\n*R˘AZVAN GELCA AND FUMIKAZU NAGASATO*\n\n11 pp, 3 sections.\n\n**Abstract.** In this paper, we list in explicit form the factoring relations of the Kauﬀman bracket skein module (KBSM for short) of a twist knot exterior. This is done using curves decorated by characters of irreducible SL(2, C)-representations. In the process, we exhibit a relation which holds in the KBSM of the knot exterior, called the minimal relation. In the ﬁnal section we prove that, when specializing the variable of the Kauﬀman bracket at t = −1, the minimal relation becomes the deﬁning polynomial of the SL(2, C)-character variety of the twist knot. 1. Motivation and background 1.1. Motivation. The Kauﬀman bracket skein module of a 3-manifold was intro- duced by J. Przyticki as a natural generalization of the Kauﬀman bracket to general 3-manifolds. It was later linked to the character variety of SL(2, C)-representations of the fundamental group of the manifold [B1], [PS].\n\n**Outline.** Front matter; 1.2 The Kauﬀman bracket skein module of the m-; 2.1 The “minimal relation” in the KBSM of the ",
  "tokens": {
   "brief": 49,
-  "extended": 479
+  "extended": 290
  },
  "sections": [
   {
-   "id": "sec-000-12-the-kau",
-   "title": "The Kau",
-   "pages": "1-1"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
   },
   {
-   "id": "sec-001-2-razvan-gelca-and-fumikazu-nagasato",
-   "title": "R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO",
-   "pages": "1-1"
+   "id": "sec-000-12-the-kauﬀman-bracket-skein-module-of-the-m-twi",
+   "title": "The Kauﬀman bracket skein module of the m-twist knot exterior.",
+   "pages": "2-3"
   },
   {
-   "id": "sec-002-1-motivation-and-background",
-   "title": "Motivation and background",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-003-11-motivation-the-kau",
-   "title": "Motivation. The Kau",
-   "pages": "1-3"
-  },
-  {
-   "id": "sec-004-2-the-explicit-form-of-the-factoring-relations",
-   "title": "The explicit form of the factoring relations",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-005-21-the-minimal-relation-in-the-kbsm-of-the-twist",
-   "title": "The \\minimal relation\" in the KBSM of the twist knot exterior. There",
-   "pages": "3-4"
-  },
-  {
-   "id": "sec-006-4-razvan-gelca-and-fumikazu-nagasato",
-   "title": "R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO",
-   "pages": "4-6"
-  },
-  {
-   "id": "sec-007-6-razvan-gelca-and-fumikazu-nagasato",
-   "title": "R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-008-22-the-other-factorization-relations-the-action",
-   "title": "The other factorization relations (The action of Sk(y) on Xi). We now",
-   "pages": "6-8"
-  },
-  {
-   "id": "sec-009-8-razvan-gelca-and-fumikazu-nagasato",
-   "title": "R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO",
-   "pages": "8-9"
-  },
-  {
-   "id": "sec-010-3-application-to-the-character-variety-of-the-m",
-   "title": "Application to the character variety of the m-twist knot",
-   "pages": "9-10"
-  },
-  {
-   "id": "sec-011-10-razvan-gelca-and-fumikazu-nagasato",
-   "title": "R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO",
-   "pages": "10-10"
-  },
-  {
-   "id": "sec-012-acknowledgements",
-   "title": "Acknowledgements",
-   "pages": "10-10"
-  },
-  {
-   "id": "sec-013-references",
-   "title": "References",
-   "pages": "10-11"
+   "id": "sec-001-21-the-minimal-relation-in-the-kbsm-of-the-twist",
+   "title": "The “minimal relation” in the KBSM of the twist knot exterior. There",
+   "pages": "3-11"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

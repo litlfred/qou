@@ -1,0 +1,44 @@
+3.3. The thick subcategory of negligible objects 49
+
+It has been shown in [41, prop. 3.6.1] that these quotient constructions
+are compatible with each other in the sense that the perverse f-structure
+on D induces on the triangulated quotient category D a f-structure whose
+core is naturally equivalent to the abelian quotient category P. So we have
+a commutative diagram
+
+pP—- D
+
+| |
+
+pP—— D
+
+where the rows are embeddings of full subcategories and the columns are
+the quotient functors. It turns out that convolution behaves well with respect
+to the above quotient constructions in the following sense.
+
+LEMMA 3.7. Let K,M€ D.
+(a) The cone of the morphism K *|M —+ K «x M lies in T.
+(b) If K or M lies in T, then K *,M and K *, M are also in T.
+(c) If both K and M are perverse, then ?H"(K *;M) and ?H"(K *,M)
+lie in the Serre subcategory § for alln # 0.
+
+Proof. (a) Let C be the cone of the morphism K *;M — K *..M. We want
+to show that H*(X,Cy) = 0 for a generic character y € II(X). Lemma 3.4
+implies that for any character ¥ the twist Cy is isomorphic to the cone of
+the twisted morphism
+
+Ky *|My — Ky*.My,
+so it suffices to check that the induced morphism
+H°(X,Ky*:My) —> H°(X,Ky*«My)
+
+is an isomorphism for generic 7. By corollary 3.3 we can replace the left
+hand side by the compactly supported hypercohomology of Ky *;My. So
+we must see that the forget support map
+
+Sy, HE(X x~X,Ky My) —> H*(X x,X, Ky My)
+
+is an isomorphism for generic 7. For this we go back to the definition
+of compactly supported hypercohomology. For simplicity of notation we
+will suppress the character twist in what follows, replacing K and L by
+their twists Ky and Ly. Let j: X > Xbea compactification, and consider
+the following diagram where all the horizontal arrows are forget support

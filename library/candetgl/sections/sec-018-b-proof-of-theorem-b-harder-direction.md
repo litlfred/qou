@@ -8,6 +8,7 @@ pages: 18-21
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
 toc_source: inferred
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 27 sections: Front matter; INTRODUCTION; PRELIMINARIES"
 ---
 The heart of the argument is the following energy estimate.
 Proposition 2: Let V be a compact domain with smooth boundary in 3-space, and V a smooth
@@ -52,8 +53,6 @@ E
 892
 J. Math. Phys., Vol. 42, No. 2, February 2001
 Cantarella, DeTurck, and Gluck
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 This more clearly displays the relation of the integrand on the right-hand side to the ﬁeld Es8 ; the
 function s is the surface charge distribution along ]V which gives rise to the ﬁeld Es8 , while the
 function c is the electrostatic potential for Es8 , that is, Es852¹c.
@@ -117,8 +116,6 @@ and the lemma is proved.
 893
 J. Math. Phys., Vol. 42, No. 2, February 2001
 The Biot–Savart operator
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 Completion of the proof of Proposition 2: Now we recall Green’s ﬁrst identity.
 Let A5c¹w. Then
 ¹•A5¹•~c¹w!5¹c•¹w1cDw5¹c•¹w,
@@ -182,8 +179,6 @@ above is the electrostatic ﬁeld Es8(y), and write that equation more succinctl
 894
 J. Math. Phys., Vol. 42, No. 2, February 2001
 Cantarella, DeTurck, and Gluck
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 ¹3BS~V!5V1Es8 .
 ~5.27!
 Now if BS(V)50, then Es852V in V.

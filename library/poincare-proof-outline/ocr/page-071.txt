@@ -1,0 +1,70 @@
+unfolding add-divide-distrib diff-divide-distrib
+by auto
+also have ... <—> cmod  < 1 A (a — 2'/k) * enj(x — 2'/k) = (R * cz) / k + (2'/ k) * enj(z' / kb) — 2! * enj 2’
+
+/k
+by (auto simp add: field-simps diff-divide-distrib)
+also have ... <—+ cmod x < 1 A (cmod (a — 2'/k))? = (R * ?cz) / k + (emod 2’)? / k? — (emod z')? / k
+apply (subst complez-mult-cnj-cmod)+
+apply (subst complex-eq-if-Re-eq)
+apply (simp-all add: power-divide)
+done
+also have ... + cmod x < 1 A (emod (a — 2'/k))? = (R* ?cz * k + (emod z')? — (emod z')? * k) / k?
+using **
+unfolding add-divide-distrib diff-divide-distrib
+by (simp add: power2-eq-square)
+also have ... <—+ cmod x < 1 A (emod (a — 2'/k))? = ?cz? x Rx (R+ 1) / k? (is - + - A ?a? = 2b)
+proof —
+have *: R * (1 — (emod z')?) * k + (emod z')? — (emod z’)? * k = (1 — (emod z')?)? * R* (R+ 1)
+by (subst k)+ (simp add: field-simps power2-diff)
+thus ?thesis
+by (subst *, simp)
+qed
+also have ... ~—+ cmod « < 1 A cmod (x — 2'/k) = ?cz * sqrt (R*(R+1))/k
+using (R > 0> *[of z'] ** «k > 1) (z € unit-disc 2’
+using real-sqrt-unique|of ?a ?b, symmetric]
+by (auto simp add: real-sqrt-divide real-sqrt-mult power-divide power-mult-distrib)
+finally
+have of-complex x € poincare-circle zr <—+ cmod z < 1 A « € circle (z'/k) (?cz * sqrt(R * (R+1)) / k)
+unfolding circle-def z' k R
+by simp
+hence of-complex x € poincare-circle z r <—+ (let (Ze, Re) = poincare-circle-euclidean zr in cmod x < 1 Ar €
+circle Ze Re)
+unfolding poincare-circle-euclidean-def Let-def circle-def
+using z’ Rk
+by (simp add: field-simps)
+hence of-complex x € poincare-circle z r <—> (let (Ze, Re) = poincare-circle-euclidean zr in x € circle Ze Re)
+using poincare-circle-in-disc|OF <r > 0» (z € unit-disc»]
+by auto
+} note « = this
+show ?thesis
+unfolding Let-def
+proof safe
+fix Ze Re x
+assume poincare-circle-euclidean zr = (Ze, Re) x € circle Ze Re
+thus of-complex x € poincare-circle zr
+using *[of 2]
+by simp
+next
+fix Ze Re x
+assume *«: poincare-circle-euclidean z r = (Ze, Re) x € poincare-circle zr
+then obtain zx’ where 2’: z = of-complez x’
+unfolding poincare-circle-def
+using inf-or-of-complez|of x]
+by auto
+hence x’ € circle Ze Re
+using *[of z/] **
+by simp
+thus z € of-complex ‘ circle Ze Re
+using x’
+by auto
+qed
+qed
+
+6.1 Intersection of circles in special positions
+
+Two h-circles centered at the x-axis intersect at mutually conjugate points
+
+lemma intersect-poincare-circles-x-axis:
+
+71

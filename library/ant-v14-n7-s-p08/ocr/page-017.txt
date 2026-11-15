@@ -1,0 +1,49 @@
+Burgess bounds for short character sums evaluated at forms 1927
+
+Let x denote a finite field with algebraic closure denoted by k. For each | <i < 2r, let x; :«* — C*
+be a multiplicative character (extended to x by setting x;(0) = 0) and assume that d; := ord(x;)|A > 0.
+Let F; €k(x1,..., Xn) be a dj-th power-free rational function of degree at most D and assume that Tr, as
+defined in (4-3) is finite for each 1 <i < 2r.
+
+Let {M;}"_, be subsets of « such that 1<|M,|<|M2|<-++<|Mn| <0, and define M :=[Ti_; Mi Cx”
+and ||M|| := []j_; |Mi|. Then whenever char k ¢ S, for each 1 < j <n,
+
+#{e, 2 xP) |e M/S)... xO)| > CHT}
+< CMI Bu Gs |Mil,---5|Mnl'. (4-6)
+
+4B. The stratification in our setting. Now we state the new versions of Theorem A and Corollary B
+that we use in this paper.
+
+Theorem 4.1. Let « = Fy, q prime. The result of Theorem A holds if we replace the hypothesis that
+for each | <i < 2r, the form F; is d;-th power-free and Tr, is finite, by the weaker hypothesis that for
+each | <i < 2r, the reduction modulo q of the form F; is (d;, q)-admissible, and for each | <i < 2r,
+
+deg F; <q.
+
+Corollary 4.2. Let « = Fy, q prime. The result of Corollary B holds if we replace the hypothesis that for
+each 1 <i < 2r, the form F; is dj-th power-free and Tr, is finite, by the weaker hypothesis that for each
+1 <i <2r, the reduction modulo q of the form F; is (d;, q)-admissible.
+
+In the above corollary, we are able to omit the condition deg F; < g seen in Theorem 4.1 by possibly
+enlarging C’; see (4-9). Through similar considerations, we can remove consideration of the set S, as we
+record here:
+
+Corollary 4.3. In addition, givenn,r, A, D in either Corollary B or Corollary 4.2, we may take the set
+S = S(n,r, A, D) to be the empty set, at the expense of replacing C' = C'(n,r, A, D) by a possibly
+larger constant C" = C"(n,r, A, D).
+
+Within the Burgess argument, we will consider the sum
+
+2r
+» X(Fixy(m)) = > []xFans x)
+
+m (mod q) m (mod q) i=1
+
+in which we have fixed a multiplicative Dirichlet character x of order A modulo a prime g and then set
+Xi = x if i is odd and x; = X if i is even. This is then clearly of the form S(x, ..., x") as defined
+in (4-4), with the choice that all the F; are equal to our fixed F € F,[x),...,x,] of degree D. For later
+reference, we record the following immediate consequence of Theorem 4.1 and Corollary 4.3 (choosing
+the subset M; of « to be (0, k;] for each 1 <i < 2r).
+
+Theorem 4.4. Let integers n,r, A, D > 1 be fixed. Then there exist constants C = C(n,r, D) and
+Cc” =C"(n,r, A, D) such that the following holds.

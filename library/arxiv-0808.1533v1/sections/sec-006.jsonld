@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0808.1533v1/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Comparison to the known approaches via Massey products.",
+  "pageStart": 27,
+  "pageEnd": 31,
+  "contains": [
+    "library/arxiv-0808.1533v1/blocks/prose-sec-006",
+    "library/arxiv-0808.1533v1/blocks/recommendation-sec-006-01",
+    "library/arxiv-0808.1533v1/blocks/recommendation-sec-006-02",
+    "library/arxiv-0808.1533v1/blocks/recommendation-sec-006-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0808.1533v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0808.1533v1",
+  "provenance": "ingested"
+}

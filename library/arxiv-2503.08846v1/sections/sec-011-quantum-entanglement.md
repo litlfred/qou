@@ -10,6 +10,7 @@ source_sha256: 18321b615ffc968b
 toc_source: outline
 doc_brief: "A Tutorial on Knots and Quantum Mechanics — These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path"
 ---
+Quantum Entanglement
 In the previous section we described an approach in which some quantum states can be understood
 as topological configurations (spaces).
 In this section we will show how this approach can be useful
@@ -26,4 +27,3 @@ other two separable.) Some early mathematical approach to the subject, which can
 “entanglement=topology”, is reviewed in [35]. More recently, a specific program to study different types
 of entanglement using Chern-Simons theory states has been carried out in [59, 69–73, 75, 76, 79, 81–86]
 developing upon the ideas explored in [89].
-4.1

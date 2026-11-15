@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1905.02045v3
-doc_title: "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM"
+doc_title: "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM INVARIANTS OF HYPERBOLIC KNOTS"
 section_id: sec-006-23-sums-of-cotangents
 section_title: "Sums of cotangents"
 section_number: 2.3
 pages: 14-19
 source_pdf: 1905.02045v3.pdf
 source_sha256: 8e7eb17c7d1f4f4e
-doc_brief: "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM — We obtain an exact modularity relation for the q-Pochhammer symbol."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.924
-latex_coverage_ratio: 0.919
+latex_coverage_ratio: 0.968
+doc_brief: "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM INVARIANTS OF HYPERBOLIC KNOTS — We obtain an exact modularity relation for the q-Pochhammer symbol."
 ---
 In this section and the next, we introduce the following extension of the Landau $O$-symbol. Let $D_1\subset D_2\subset \mathbb{C}$ be two sets given by the context, and $g: D_2 \to \mathbb{R}_+$. We will write $$f(z) = \mathcal{O}_{(p_1, p_2, \dotsc)}^z(g(z)) \qquad (z\in D_1)\label{eq:def-Oh}$$ whenever, for any fixed choice of the parameters $p_1, p_2, \dotsc$, there exists a function $\varphi$ holomorphic on $D_2$, which satisfies $\varphi(z) = f(z)$ for $z\in D_1$, and $\mathopen{}\mathclose\bgroup\originalleft|\varphi(z)\aftergroup\egroup\originalright|\ll g(z)$ for $z\in D_2$, the implied constant being *uniform* in the parameters $p_1, p_2, \dotsc$. The additional information is the holomorphic behaviour in $z$, which may become useful when studying knots other than $4_1$. However we stress that, in the present work, a later obstacle (possible cancellation of main terms) imposes the restriction $K = 4_1$, and in this case, we do not require holomorphicity of error terms.
 

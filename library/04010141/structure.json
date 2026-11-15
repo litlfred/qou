@@ -7,9 +7,16 @@
   "bytes": 2267220,
   "pages": 33,
   "text_source": "embedded",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 14,
+    "reason": "12 of 405 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
@@ -19,160 +26,675 @@
   "title_lines": [
    "Advanced Studies in Pure Mathematics 40, 2004"
   ],
-  "abstract": "We discuss a circle of ideas for addressing problems in repre­ sentation theory using the philosophy of cellular algebras, applied to algebras described in terms of diagrams. Cellular algebras are of­ ten generically semisimple, and have non-semisimple specialisations whose representation theory may be discussed by solving problems in linear algebra, which are formulated in the semisimple context, and are therefore tractable in some significant cases. This applies in particular to certain \"Temperley-Lieb\" quotients of Heeke algebras, both finite dimensional and affine, which may be described in terms of bases consisting of diagrams. This leads to the application of cellu­ lar algebra theory to an analysis of their representation theory, with corresponding consequences for the relevant Heeke algebras. A partic­ ular case is the determination of the decomposition numbers of some standard modules for the affine Heeke algebra of GLn. These decom­ position numbers are known (by Kazhdan-Lusztig) to be expressible in terms of the dimensions of the stalks of certain intersection coho­ mology sheaves, and we discuss how our results imply the rational smoothness of some varieties associated with quiver representations. §1. Introduction We discuss a circle of ideas for addressing problems in representa­ tion theory using the philosophy of cellular algebras, applied to algebras described in terms of diagrams. Cellular algebras are often generically semisimple, and have non-semisimple specialisations whose representa­ tion theory may be discussed by solving problems in linear algebra, which are formulated in the semisimple context, and are therefore tractable in Received April 1, 2002. Revised November 6, 2002. Both authors thank the Australian Research Council for support.",
+  "abstract": "We discuss a circle of ideas for addressing problems in repre- sentation theory using the philosophy of cellular algebras, applied to algebras described in terms of diagrams. Cellular algebras are of- ten generically semisimple, and have non-semisimple specialisations whose representation theory may be discussed by solving problems in linear algebra, which are formulated in the semisimple context, and are therefore tractable in some significant cases. This applies in particular to certain \"Temperley-Lieb\" quotients of Heeke algebras, both finite dimensional and affine, which may be described in terms of bases consisting of diagrams. This leads to the application of cellu- lar algebra theory to an analysis of their representation theory, with corresponding consequences for the relevant Heeke algebras. A partic- ular case is the determination of the decomposition numbers of some standard modules for the affine Heeke algebra of GLn. These decom- position numbers are known (by Kazhdan-Lusztig) to be expressible in terms of the dimensions of the stalks of certain intersection coho- mology sheaves, and we discuss how our results imply the rational smoothness of some varieties associated with quiver representations. §1.",
   "docinfo": {
-   "CreationDate": "D:20181204150734+09'00'",
+   "Producer": "Adobe Acrobat 10.1.16 Paper Capture Plug-in",
    "Creator": "Adobe Acrobat 10.1.16",
-   "Producer": "Adobe Acrobat 10.1.16 Paper Capture Plug-in"
+   "CreationDate": "D:20181204150734+09'00'"
+  },
+  "title_raw": "Advanced Studies in Pure Mathematics 40, 2004",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Cellular algebras and diagram algebras m representation theory",
+   "text": "Advanced Studies in Pure Mathematics 40, 2004",
+   "corroborated_by": [],
+   "browser_print": false
   },
   "title_prev": "Advanced Studies in Pure Mathematics 40, 2004"
  },
  "toc": [
   {
-   "level": 2,
-   "title": "(i) If J-L is a diagram and L is a loop with no marks, J-L II L =",
-   "page": 6,
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
    "source": "inferred",
-   "number": "2.5"
+   "number": null,
+   "confidence": 0.7,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Cellular algebras and Temperley-Lieb algebras",
+   "page": 3,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "143"
+  },
+  {
+   "level": 1,
+   "title": "n-1 n i i + 1 fn: n-> n",
+   "page": 10,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "150"
   },
   {
    "level": 2,
-   "title": "Some generalised Artin braid groups",
+   "title": "Let Aa(n)+ be the set",
+   "page": 11,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "151"
+  },
+  {
+   "level": 2,
+   "title": "Define the equivalence relation ~ on A a ( n) + as that which identifies",
+   "page": 11,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "151"
+  },
+  {
+   "level": 1,
+   "title": "Interrelationships among various Heeke and Temperley- Lieb algebras",
    "page": 13,
    "source": "inferred",
-   "number": "4.1"
+   "number": null,
+   "confidence": 0.7,
+   "evidence": [
+    "style",
+    "numbered-style"
+   ],
+   "page_label": "153"
   },
   {
-   "level": 2,
+   "level": 1,
    "title": "Some Heeke algebras",
    "page": 14,
    "source": "inferred",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "154"
   },
   {
    "level": 2,
-   "title": "Temperley-Lieb algebras of various types",
-   "page": 16,
+   "title": "An-1·",
+   "page": 15,
    "source": "inferred",
-   "number": "4.3"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "155"
   },
   {
-   "level": 2,
-   "title": "Commutative diagrams and lifting representations",
+   "level": 3,
+   "title": "HBn(q,Q) ~",
+   "page": 18,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "158"
+  },
+  {
+   "level": 3,
+   "title": "TLBn(q,Q)",
+   "page": 18,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "158"
+  },
+  {
+   "level": 3,
+   "title": "Lifting representations from finite to infinite dimensional algebras",
    "page": 19,
    "source": "inferred",
-   "number": "5.1"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "159"
   },
   {
-   "level": 2,
-   "title": "Standard modules for ~(q)",
-   "page": 20,
-   "source": "inferred",
-   "number": "5.2"
-  },
-  {
-   "level": 2,
-   "title": "Lifting cell modules to standard modules",
-   "page": 21,
-   "source": "inferred",
-   "number": "5.3"
-  },
-  {
-   "level": 1,
+   "level": 3,
    "title": "References",
    "page": 31,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.7,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": "171"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "142",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "143",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "144",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "145",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "146",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "147",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "148",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "149",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "150",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "151",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "152",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "153",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "154",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "155",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "156",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "157",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "158",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "159",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "160",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "161",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "162",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "163",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "164",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "165",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "166",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "167",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "168",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "169",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "170",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "171",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "172",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "173",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-25-i-if-j-l-is-a-diagram-and-l-is-a-loop-with-no",
-   "number": "2.5",
-   "title": "(i) If J-L is a diagram and L is a loop with no marks, J-L II L =",
-   "level": 2,
-   "page_start": 6,
-   "page_end": 13,
-   "n_chars": 13094,
-   "n_words": 2544
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1471,
+   "n_words": 213,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-41-some-generalised-artin-braid-groups",
-   "number": "4.1",
-   "title": "Some generalised Artin braid groups",
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 3295,
+   "n_words": 509,
+   "label_start": null,
+   "label_end": "143"
+  },
+  {
+   "id": "sec-001-cellular-algebras-and-temperley-lieb-algebras",
+   "number": null,
+   "title": "Cellular algebras and Temperley-Lieb algebras",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 11,
+   "n_chars": 15888,
+   "n_words": 3015,
+   "label_start": "143",
+   "label_end": "151"
+  },
+  {
+   "id": "sec-002-let-aan-be-the-set",
+   "number": null,
+   "title": "Let Aa(n)+ be the set",
    "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 92,
+   "n_words": 20,
+   "label_start": "151",
+   "label_end": "151"
+  },
+  {
+   "id": "sec-003-define-the-equivalence-relation-on-a-a-n-as-that",
+   "number": null,
+   "title": "Define the equivalence relation ~ on A a ( n) + as that which identifies",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 3041,
+   "n_words": 579,
+   "label_start": "151",
+   "label_end": "153"
+  },
+  {
+   "id": "sec-004-interrelationships-among-various-heeke-and-tempe",
+   "number": null,
+   "title": "Interrelationships among various Heeke and Temperley- Lieb algebras",
+   "level": 1,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 1428,
-   "n_words": 299
+   "n_chars": 1763,
+   "n_words": 315,
+   "label_start": "153",
+   "label_end": "154"
   },
   {
-   "id": "sec-002-42-some-heeke-algebras",
+   "id": "sec-005-42-some-heeke-algebras",
    "number": "4.2",
    "title": "Some Heeke algebras",
-   "level": 2,
+   "level": 1,
    "page_start": 14,
-   "page_end": 16,
-   "n_chars": 3767,
-   "n_words": 760
+   "page_end": 15,
+   "n_chars": 1280,
+   "n_words": 254,
+   "label_start": "154",
+   "label_end": "155"
   },
   {
-   "id": "sec-003-43-temperley-lieb-algebras-of-various-types",
-   "number": "4.3",
-   "title": "Temperley-Lieb algebras of various types",
+   "id": "sec-006-an-1",
+   "number": null,
+   "title": "An-1·",
    "level": 2,
-   "page_start": 16,
+   "page_start": 15,
+   "page_end": 18,
+   "n_chars": 5219,
+   "n_words": 994,
+   "label_start": "155",
+   "label_end": "158"
+  },
+  {
+   "id": "sec-007-hbnqq",
+   "number": null,
+   "title": "HBn(q,Q) ~",
+   "level": 3,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 1834,
+   "n_words": 350,
+   "label_start": "158",
+   "label_end": "158"
+  },
+  {
+   "id": "sec-008-tlbnqq",
+   "number": null,
+   "title": "TLBn(q,Q)",
+   "level": 3,
+   "page_start": 18,
    "page_end": 19,
-   "n_chars": 5631,
-   "n_words": 1049
+   "n_chars": 944,
+   "n_words": 160,
+   "label_start": "158",
+   "label_end": "159"
   },
   {
-   "id": "sec-004-51-commutative-diagrams-and-lifting-representati",
-   "number": "5.1",
-   "title": "Commutative diagrams and lifting representations",
-   "level": 2,
+   "id": "sec-009-lifting-representations-from-finite-to-infinite",
+   "number": null,
+   "title": "Lifting representations from finite to infinite dimensional algebras",
+   "level": 3,
    "page_start": 19,
-   "page_end": 20,
-   "n_chars": 2690,
-   "n_words": 496
-  },
-  {
-   "id": "sec-005-52-standard-modules-for-q",
-   "number": "5.2",
-   "title": "Standard modules for ~(q)",
-   "level": 2,
-   "page_start": 20,
-   "page_end": 21,
-   "n_chars": 1903,
-   "n_words": 379
-  },
-  {
-   "id": "sec-006-53-lifting-cell-modules-to-standard-modules",
-   "number": "5.3",
-   "title": "Lifting cell modules to standard modules",
-   "level": 2,
-   "page_start": 21,
    "page_end": 31,
-   "n_chars": 20957,
-   "n_words": 3878
+   "n_chars": 25744,
+   "n_words": 4755,
+   "label_start": "159",
+   "label_end": "171"
   },
   {
-   "id": "sec-007-references",
+   "id": "sec-010-references",
    "number": null,
    "title": "References",
-   "level": 1,
+   "level": 3,
    "page_start": 31,
    "page_end": 33,
-   "n_chars": 6330,
-   "n_words": 946
+   "n_chars": 6343,
+   "n_words": 946,
+   "label_start": "171",
+   "label_end": "173"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 8,
-  "sections": 8,
-  "chars_total": 55800
+  "toc_entries": 12,
+  "toc_inferred_entries": 17,
+  "toc_inferred_mean_confidence": 0.635,
+  "toc_inferred_empty_share": 0.059,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 12,
+  "chars_total": 66914,
+  "furniture_lines_stripped": 0,
+  "headings_tidied": [
+   {
+    "title": "fn: n-> n",
+    "page": 10,
+    "action": "rejoined",
+    "as": "n-1 n i i + 1 fn: n-> n",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "lili±di = li",
+    "page": 10,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "{1if(t,z)j(s,y)",
+    "page": 13,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "lind",
+    "page": 18,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "l'IQ",
+    "page": 18,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "'fi{(q)",
+    "page": 19,
+    "action": "dropped",
+    "why": "opens in lower case"
+   }
+  ]
  }
 }

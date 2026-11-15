@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "1-s20-s0097316524000426-main",
  "source_sha256": "76a8ab857163aa09",
- "brief": "Proof of a conjecture of Ballantine and Merca on truncated sums of 6-regular partitions — 7 sections: Proof of a conjecture of Ballantin; Introduction; Proofs of Theorem 1.3 and Corollar",
- "extended": "**Proof of a conjecture of Ballantine and Merca on truncated sums of 6-regular partitions**\n\n*Proof of a conjecture of Ballantine and Merca on*\n\n10 pp, 7 sections.\n\n**Outline.** Proof of a conjecture of Ballantine and Merca ; 1 Introduction; 2 Proofs of Theorem 1.3 and Corollary 1.4; Declaration of competing interest; Data availability; Acknowledgments; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.3: follows from (2.7)a n d (2.9). This completes the proof. /Box\n- Lemma 2.1: Let m0 ≥ 1, k ≥ 1 and n ≥ 6(m0 − 1)2 +6 k(m0 − 1) + 11(m0 − 1) +5 k +5\n- Lemma 2.2: Let k ≥ 1 and n ≥ 0 be integers and deﬁne",
+ "brief": "Proof of a conjecture of Ballantine and Merca on truncated sums of 6-regular partitions — Article history: In 2012, Andrews and Merca proved a truncated theorem on Received 27 December 2023 Euler’s",
+ "extended": "**Proof of a conjecture of Ballantine and Merca on truncated sums of 6-regular partitions**\n\n*Proof of a conjecture of Ballantine and Merca on*\n\n10 pp, 8 sections.\n\n**Abstract.** Article history: In 2012, Andrews and Merca proved a truncated theorem on Received 27 December 2023 Euler’s pentagonal number theorem. Their work has opened Accepted 29 March 2024 . : . up a new study of truncated series. Recently, Ballantine and Available online 15 April 2024 . y Merca posed a conjecture on infinite families of inequalities involving be (n), which counts the number of 6-regular partitions\n\n**Outline.** Front matter; Proof of a conjecture of Ballantine and Merca ; 1 Introduction; 2 Proofs of Theorem 1.3 and Corollary 1.4; Declaration of competing interest; Data availability; Acknowledgments; References",
  "tokens": {
-  "brief": 46,
-  "extended": 157
+  "brief": 49,
+  "extended": 201
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-proof-of-a-conjecture-of-ballantine-and-merca-on",
    "title": "Proof of a conjecture of Ballantine and Merca on truncated sums of 6-regular partitions",
@@ -48,8 +53,8 @@
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "abstract",
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

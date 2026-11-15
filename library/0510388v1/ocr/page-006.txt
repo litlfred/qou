@@ -1,0 +1,32 @@
+Comments.
+
+e For two linked circles in a small ball, the first integral in formula (1) is the
+dominant term. At the other extreme, for orthogonal great circles, say, the first
+integral vanishes and the second integral takes the value +1. In 3-space, the
+analogue of the second integral would be
+
+Sx, dx/ds © dy/dt ds dt = (fx, dx/ds ds) © (fx: dy/dt dt) = 00 =0,
+
+and therefore does not appear in the classical Gauss linking integral.
+
+¢ In formula (2), it makes no difference that parallel transport from x to y on S*
+
+is ambiguous when y is the antipode —x of x, because when a = a we have
+
+V(x y)) = 0.
+
+e The integrand in Gauss's formula, and the integrands in formulas (1), (2) and
+(3), are invariant under orientation-preserving isometries of the ambient space. In
+Gauss's formula, this is clear. In formula (1), this follows from the fact that the
+group of left translations by unit quaternions is a normal subgroup of the group
+SO(4) of all orientation-preserving isometries of S*. In formulas (2) and (3),
+this is again clear.
+
+e The fact that formula (1) on S* has no counterpart in H? is due to the simplicity
+of the group SO(1, 3) of orientation-preserving isometries of H’ .
+
+e Greg Kuperberg, after receiving a copy of the announcement of these results,
+wrote to us, "As it happens, I thought about this question a few years ago and I
+obtained one of your formulas, I think, but I never wrote it up." Subsequent corres-
+pondence shows that he did indeed obtain, by a beautiful geometric argument totally
+different from ours, an expression equivalent to formula (2).

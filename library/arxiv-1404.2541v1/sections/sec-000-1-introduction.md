@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1404.2541v1
-doc_title: "The Stokes phenomenon for the Ramanujan’s q-difference equation and its higher order extension"
+doc_title: "The Stokes phenomenon for the Ramanujan’s q -diﬀerence equation and its higher order extension"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-7
 source_pdf: 1404.2541v1.pdf
 source_sha256: edb7c9b2b1561ac3
-doc_brief: "The Stokes phenomenon for the Ramanujan’s q-difference equation and its higher order extension — We show connection formulae of local solutions of the Ramanu - jan equation between the origin and the"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.992
+latex_prose_ratio: 0.976
+latex_coverage_ratio: 0.935
+doc_brief: "The Stokes phenomenon for the Ramanujan’s q -diﬀerence equation and its higher order extension — We show connection formulae of local solutions of the Ramanu- jan equation between the origin and the"
 ---
 In this papar, we deal with the Ramanujan equation $$qxu(q^2x)-u(qx)+u(x)=0,\qquad \forall x\in\mathbb{C}^*.
 \label{ramanujaneq}$$ We assume that $0<|q|<1$. The Ramanujan equation [\[ramanujaneq\]](#ramanujaneq){reference-type="eqref" reference="ramanujaneq"} has solutions $$\begin{aligned}

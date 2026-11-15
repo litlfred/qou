@@ -1,0 +1,42 @@
+Section 3.3 Examples
+
+Definition 3.3.2 Given a crossed module (H,G,p,a) and an ordered triangulation T of
+
+M, an admissible coloring is a map F = (g,f), 9: T' — G, f : T? — H, such that,
+
+1. for any 2-simplex (012), p(forz) = Go2G01 912;
+2. for any 3-simplex (0123), fosa®™ fore = fois fi23-
+
+An admissible coloring is a C(H,G,p,a)-color in the sense of [26]. The following
+property shows actually the partition function associated with D(H, G, p,a) is exactly
+
+the Yetter’s invariant Yocx,¢,p,a) associated with Cat(H, G, p,a) in [26].
+
+psa
+
+Proposition 3.3.3 Let D = D(H,G,p,a) be the G-BSFC obtained from a crossed mod-
+
+ule, then
+|| IT°|-|T*|
+
+Zp(M;T) = qr
+
+#(H,G, p, a) = Your,Gp,a)(M), (3.7)
+where #(H,G, p,a) is the number of admissible colorings.
+
+Proof: In D, it is clear that the quantum dimension of each simple object is 1,
+and the total dimension square D? = |H|. Then the first equality follows from Equation
+The second equality follows from [26]. a
+
+If H = {e} is the trivial group, there is a unique group morphism pp from H to G,
+and a unique action (the trivial action) aj of G on H. Then according to Definition
+an admissible coloring is simply a map g : 71 —> G, such that for each 2-simplex
+(012), Go2goigi2 = e. In this case our partition function is reduced to the untwisted
+
+Dijkgraaf-Witten invariant DW¢(M) [20}.
+Proposition 3.3.4 Let Dp = D({e}, G, po, ao), then
+
+1 Hom(7,(M/), G
+Zo MiT) = arr Ce} sG, Posto) = OEE) = DWM), (38)
+
+48

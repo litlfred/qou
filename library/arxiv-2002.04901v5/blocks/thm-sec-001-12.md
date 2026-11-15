@@ -1,1 +1,0 @@
-Ifthering 𝐴isnoetherian,theneveryﬁnitesequencein

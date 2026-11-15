@@ -1,0 +1,35 @@
+Section 2.2 G-crossed Braided Spherical Fusion Categories (G-BSFC)
+
+2.2 G-crossed Braided Spherical Fusion Categories
+(G-BSFC)
+
+G-BSFCs are the main ingredients we wish to introduce. In [47], they are called
+G-equivariant fusion categories. Let (C,®,1,a,l,r) be a tensor category and G be a
+finite group. Recall in Section [2.1.1] that Auta(C) is the monoidal category where objects
+are auto tensor equivalences of C, morphisms are natural transformations, and tensor
+product of two tensor equivalences are compositions of functors. Also recall that G is the
+monoidal category where the objects are elements of G’, the only morphism between two
+elements is either the identity map if they are the same or none otherwise, and tensor
+
+product is given by group multiplication.
+Definition 2.2.1 A G-action onC is a monoidal functor (F,6,¢€) : G —+ Autg(C).
+
+The above definition is a highly concise way to describe a G-action. To be more
+clear about it, we unpack the definition as follows. For g € G,X € C°,f € C},
+F(g)(X), F(g)(f) are often written as 2X ,9f, respectively, to indicate F is an action.
+
+For each object g € G°, i.e., g € G, F(g) is an auto monoidal equivalence, and thus
+
+it comes with natural isomorphisms:
+
+qaxy : (X @Y) — 9X @IY, ando,: 91 1
+
+Since (F,6,¢) is a monoidal functor, there is a natural isomorphism 6,,, : F(gh) —>
+
+These natural isomorphisms satisfy the axioms in Equations
+
+F(g)o F(h) and a natural isomorphism ¢ : F'(e) —> Ide. Or more specifically, for each
+
+X €C°, there is an isomorphism dy,n,x : 9"X —+ 9("X) and ex : °X —+ X, such that
+
+23

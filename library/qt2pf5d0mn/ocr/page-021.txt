@@ -1,0 +1,33 @@
+Section 2.1 Ribbon Fusion Categories
+
+many diagrams and equations can be simplified since the a,l,r’s are identity maps.
+By Theorem there is no loss of generality for such an assumption. Thus we will
+assume C is strict. But one should keep in mind that all the extra structures can be
+equally defined in a non-strict category and all commuting diagrams still make sense by
+inserting some canonical isomorphisms involving a,l,r’s at appropriate locations. For
+instance, if b4 : 1 —> A@ A*, da: A* @ A —> 1 are two morphisms, then the following
+diagram in a strict category should be replaced by Diagram in a general category
+instead.
+
+A 42 A@A* QA PY A
+
+A“*31@4 “84 (A@ AN @A MS A@(A*@ A) 24 A@1 45 A
+
+(2.6)
+
+2.1.2 Rigid Monoidal Categories
+
+Given an object A, a right dual of A is an object A* together with two morphisms
+ba: 1 — A®A*, dy : A* ®@ A — 1 such that (I4 @ da) o (b4 ® I4) = I and
+(da ® Ix) 0 (Lax ®@ ba) = I4x. The left hand side of the two identities above can be
+
+written as Diagram [2:7] and [2.8] respectively, if there is no assumption of C being strict.
+
+ba@l QA,A*,A
+—
+
+A“! ,104 4% 8 (A@A)@A A@(At@ A) 4 Awl 454
+
+(2.7)
+
+12

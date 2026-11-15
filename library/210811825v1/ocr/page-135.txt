@@ -1,0 +1,40 @@
+Vh[int] eV(nev);
+
+int k=EigenValue (OP,B,sym=true , sigma=sigma , value=ev , vector=eV, tol=le—10,maxit=0,ncv=0);
+for (int i=0;i<k;i++) {
+
+ul=eV [i];
+
+real gg = int2d(Th)(dx(ul)*dx(ul) + dy(ul)*dy(ul)); real mm= int2d(Th)(ul*ul) ;
+
+ofstream Eva(fnm, append);
+
+Eva << ev[i] << "\n";
+
+}
+12
+13
+18 19
+Side associations:
+2-9,4-11, 6 — 13, 8— 15, 10-17, 12-19,
+14 — 21, 16 — 23, 18 — 1, 20 — 3, 22-5, 24-7
+Figure D.1: Fundamental polygon for the surface M3
+We also include the code for the Fermat quartic:
+int n=30;
+
+int nev=100;
+string fnm="fermat_quartic—Eigenvalues—n30—nev100.txt"; //file name for saving
+real cx = 1.0044;
+
+real cy = 0.2275;
+real r = 0.2463;
+
+real s=0.7881;
+real theta=0.1698;
+real x01=s*cos (theta);
+
+real y0l=s*sin(theta);
+
+real x06=s*cos(3*pi/4—theta);
+
+real y06=s*sin(3*pi/4—theta);

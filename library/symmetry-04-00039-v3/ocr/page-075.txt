@@ -1,0 +1,57 @@
+Symmetry 2012, 4 113
+
+figure signifies that the K, input exists for only an initial sample). Due to the circulation around the
+
+closed loop, the system response at time 7 to an impulsive input occurring at the previous time, m, is
+y"™ (or A""). Furthermore, by time n, there are n such responses to be added up, thus implying the
+
+summation in Equation (F-2). Also, since there is only a single initial impulse, K,, switched on at
+m = 0, the associated response (the result of summation) at time n is just A"K,. Note that the output
+
+shown in the figure is just Equation (F-3).
+
+Figure F1. Operational model of Eqation F-2.
+
+Ky /
+
+K, =AK,, -A’x"
+
+oe
+
+3
+
+Ax? —> eo —— A c
+
+Vv
+
+Delay
+
+The simplest example of what is meant herein by a (2, n) torus knot with composite n is just the
+case of n = n,+n,. We find that
+
+K, =A"APK,—A? pier roy | 4
+m=l m=l
+
+Interchanging subscripts | and 2 in this equation and collecting the four terms that result into two
+convolution groups gives the more symmetrical formulation
+
+onan afore nEer tar angers|a s)
+m=l1 m=l
+or, more concisely,
+K, =A"A"K, -A’(o,C, +.0,C,)/2 (F-6)
+
+Nj
+where o, =x" +y", C= yey, i =1, 2.
+
+m=
+
+The case for three components, n=n,+n,+n,, proceeds in essentially the same way and in
+
+analogy with Equation (F-5) we find
+2 2
+K, =|]A"«, —A?(V,V,C, + ¥3x,C, + x,X,C;) (F-7)
+1
+
+where the coefficients are a, =a", a=x, y, i = 1, 2, and 3, and the convolutions, C,, are as before
+
+but with i = 1, 2, and 3.

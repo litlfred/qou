@@ -1,6 +1,6 @@
 ---
 doc_id: kirbycal
-doc_title: "mathematicae"
+doc_title: "A Calculus for Framed Links in S^3"
 section_id: page-015
 section_title: "Page 15"
 section_number: null
@@ -8,6 +8,7 @@ pages: 15-15
 source_pdf: kirbycal.pdf
 source_sha256: 8dae9487ed32a3bd
 toc_source: undetermined
+doc_brief: "Kirby, A calculus for framed links in S³ (Invent. Math. 45, 35–56, 1978) — the two moves generating equivalence of framed-link surgery presentations of a 3-manifold."
 ---
 A Calculus for Framed Links in S 3 
 49 
@@ -19,8 +20,6 @@ the solution in C 3 of zl 3+ z~ + z~ = 0 and intersect V with the unit 5-sphere 
 then we get a 3-manifold 2;(2, 7, 13) which is ~ML. To prove this, we first resolve the 
 isolated singularity of V at 0, and obtain the 4-manifold Q with 0Q= vc~ S 5 
 =2;(2, 7, 13), gotten by plumbing on 
--2 
--2 
 -2 
 -2 
 -2 
@@ -66,8 +65,5 @@ Fig. 4.10
 We show that A ~L so that I;(2, 7, 13)=0ML. As in the Corollary to Propositions 
 0 
 1 A and 1 B, we can change the left end of A to 
-1 
--1 
 -2 
--2 
-Fig. 4.11
+-2

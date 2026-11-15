@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9910019v1
-doc_title: "arXiv:math/9910019v1 [math.CO] 5 Oct 1999"
+doc_title: "Symmetrized random permutations"
 section_id: sec-001-2-tracy-widom-distribution-functions
 section_title: "Tracy-Widom distribution functions"
 section_number: 2
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.984
 latex_coverage_ratio: 0.977
+doc_brief: "Symmetrized random permutations — 8 sections: Front matter; Introduction; Tracy-Widom distribution functions"
 ---
 \label{sec-dist}
 

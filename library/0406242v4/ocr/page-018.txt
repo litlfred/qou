@@ -1,0 +1,58 @@
+1256 Francois Guéritaud and David Futer
+
+of the following proposition, the only possibility for a critical point is to be an absolute
+maximum.
+
+Proposition 6.6 The volume of an ideal tetrahedron is a concave function of its dihedral
+angles.
+
+Proof This follows from Proposition 6.1, whose notations we use again: x;, yr, Z; are
+
+the dihedral angles. By symmetry we may assume xo, yo < 7/2. Assume further that
+
+X1, Yr, 2 are affine functions of ¢ with first-degree coefficients X, Y,Z. Proposition 6.1
+
+implies —dV/dt = X log sinx, + Y log sin y, + Z log sin z,, and by differentiating we
+
+obtain
+
+—@YV /dt|;-9 = X? cotxo + Y* cot yp + Z? cot zo
+
+=X? cotxo + y? cot yo + (X + yy L = cotxo cot yo
+
+cot xo + cot yo
+
+_ X+YY + (Xcotxo — ¥ cot yo)”
+
+>0. ia
+cot.xo + cot yo
+
+As a consequence, the volume functional V is also concave on P and Theorem 1.1
+holds if the maximum of V is interior. Next we explore the behavior of V near the
+boundary of P.
+
+Proposition 6.7 (Simple degeneracy) If (Q;);>0 is a smooth family of ideal tetrahedra
+with dihedral angles x;, y;,z; such that x9, yo € (0,7); zo = 0 and de, _o > 0, then
+Y | -0 = +00.
+
+Proof Simply check that the right hand side of (5) goes to 0 as t goes to 0. We call
+this situation simple degeneracy because the limiting triangle has only one vanishing
+angle (two of its vertices are therefore collapsed). oO
+
+Proposition 6.8 (Double degeneracy) If (Q;);>0 is a smooth family of ideal tetrahedra
+satisfying (x0, yo,Z0) = (0,0,7) and £ |, -0(%1, Ye 20) = (14+ A,1 —A,-2) with
+
+2d € (-1, 1), then
+1-2 /14+d)\*
+<0 4 1-rA/) ¢
+
+Proof As f goes to 0, one has sinx, ~ (1 + A)t and siny, ~ (1 — A)t and sin z, ~ 2r.
+The right hand side of (5) is thus equivalent to
+
+IBAip yyy l-Arg 9 — L-d? 1+.\*
+(+1) (= At) °Q)? = i (3).
+
+—dV
+exp
+
+Geometry & Topology 10 (2006)

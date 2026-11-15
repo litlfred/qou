@@ -1,1 +1,0 @@
-Theﬁrstshuﬄes,scalingrelations,anddistributionrelationsgenerateacoidealin C(

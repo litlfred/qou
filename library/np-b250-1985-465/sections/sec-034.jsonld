@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/np-b250-1985-465/sections/sec-034",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Gasser, H. Leutwvler / Chiral perturbation theory",
+  "pageStart": 43,
+  "pageEnd": 45,
+  "contains": [
+    "library/np-b250-1985-465/blocks/prose-sec-034",
+    "library/np-b250-1985-465/blocks/recommendation-sec-034-01",
+    "library/np-b250-1985-465/blocks/recommendation-sec-034-02",
+    "library/np-b250-1985-465/blocks/recommendation-sec-034-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/np-b250-1985-465",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/np-b250-1985-465",
+  "provenance": "ingested"
+}

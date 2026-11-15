@@ -7,10 +7,11 @@
   "bytes": 3587244,
   "pages": 47,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,21 +21,29 @@
    "stamp_date": "31 Jan 2017"
   },
   "doi": null,
-  "title": "Gentle introduction to Soergel bimodules I: The basics NICOLAS LIBEDINSKY",
-  "authors_raw": null,
+  "title": "Gentle introduction to Soergel bimodules I: The basics",
+  "authors_raw": "NICOLAS LIBEDINSKY",
   "title_lines": [
    "Gentle introduction to Soergel bimodules I:",
-   "The basics",
-   "NICOLAS LIBEDINSKY"
+   "The basics"
   ],
-  "abstract": "This paper is the \ufb01rst of a series of introductory papers on the fascinating world of Soergel bimodules. It is combinatorial in nature and should be accessible to a broad audience. The objective of this paper is to help the reader feel comfortable calculating with Soergel bimodules and to explain some of the important open problems in the \ufb01eld. The motiva- tions, history and relations to other \ufb01elds will be developed in subsequent papers of this series.",
+  "abstract": "This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules. It is combinatorial in nature and should be accessible to a broad audience. The objective of this paper is to help the reader feel comfortable calculating with Soergel bimodules and to explain some of the important open problems in the ﬁeld. The motiva- tions, history and relations to other ﬁelds will be developed in subsequent papers of this series.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20170202012159Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.12",
-   "Title": ""
-  }
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20170202012159Z"
+  },
+  "title_raw": "Gentle introduction to Soergel bimodules I: The basics",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Gentle introduction to Soergel bimodules I: Introduction",
+   "outline": "1 Introduction",
+   "text": "Gentle introduction to Soergel bimodules I: The basics",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "Gentle introduction to Soergel bimodules I: The basics NICOLAS LIBEDINSKY"
  },
  "toc": [
   {
@@ -42,367 +51,1073 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Declaration of intent",
    "page": 1,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "...Bum! Explosion of the field",
    "page": 2,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Acknowledgements",
    "page": 3,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Classical level: Coxeter systems",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Some definitions",
    "page": 3,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Baby examples",
    "page": 3,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Generalizing the baby examples: (infinite) regular polygons",
    "page": 4,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Generalizing the baby examples: tesselations",
    "page": 7,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Tesselations of the Euclidean plane",
    "page": 7,
    "source": "outline",
-   "number": "2.4.1"
+   "number": "2.4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Tesselations of the hyperbolic plane",
    "page": 8,
    "source": "outline",
-   "number": "2.4.2"
+   "number": "2.4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Generalizing the baby examples: more dimensions",
    "page": 9,
    "source": "outline",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "More examples",
    "page": 10,
    "source": "outline",
-   "number": "2.6"
+   "number": "2.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Bruhat order and an important property",
    "page": 11,
    "source": "outline",
-   "number": "2.7"
+   "number": "2.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Quantum level: Hecke algebras",
    "page": 12,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Kazhdan-Lusztig's theory",
    "page": 12,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Calculations of KL bases in examples",
    "page": 14,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Baby example A",
    "page": 14,
    "source": "outline",
-   "number": "3.2.1"
+   "number": "3.2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Baby example B",
    "page": 14,
    "source": "outline",
-   "number": "3.2.2"
+   "number": "3.2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Example C",
    "page": 15,
    "source": "outline",
-   "number": "3.2.3"
+   "number": "3.2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Example D",
    "page": 17,
    "source": "outline",
-   "number": "3.2.4"
+   "number": "3.2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Proof of Theorem ??",
    "page": 18,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Existence",
    "page": 18,
    "source": "outline",
-   "number": "3.3.1"
+   "number": "3.3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Uniqueness",
    "page": 18,
    "source": "outline",
-   "number": "3.3.2"
+   "number": "3.3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "{bx}xW is a basis",
    "page": 19,
    "source": "outline",
-   "number": "3.3.3"
+   "number": "3.3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Our favorite open questions about Hecke algebras",
    "page": 19,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Categorical level in the baby example A",
    "page": 20,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The objects: Soergel bimodules",
    "page": 20,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Stability of Soergel bimodules",
    "page": 22,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "The crucial phenomena",
    "page": 22,
    "source": "outline",
-   "number": "4.2.1"
+   "number": "4.2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "BsBrBs.5-.5.5-.5.5-.5.5-.5BsrsBs",
    "page": 23,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "im(1-e).5-.5.5-.5.5-.5.5-.5Bsrs.",
    "page": 24,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Step 1",
    "page": 25,
    "source": "outline",
-   "number": "4.4.1"
+   "number": "4.4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Step 2",
    "page": 25,
    "source": "outline",
-   "number": "4.4.2"
+   "number": "4.4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Soergel's categorification Theorem",
    "page": 26,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Indecomposables",
    "page": 26,
    "source": "outline",
-   "number": "4.5.1"
+   "number": "4.5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "How to produce an algebra from Soergel bimodules",
    "page": 26,
    "source": "outline",
-   "number": "4.5.2"
+   "number": "4.5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Recovering the Hecke algebra",
    "page": 27,
    "source": "outline",
-   "number": "4.5.3"
+   "number": "4.5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Soergel bimodules and light leaves in ranks 1 and 2",
    "page": 29,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Soergel category B for any Coxeter system over R",
    "page": 29,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Drawing morphisms: one color",
    "page": 31,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "One color light leaves",
    "page": 34,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Two colors light leaves",
    "page": 35,
    "source": "outline",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Light leaves in general",
    "page": 37,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Adjunction",
    "page": 37,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "A new morphism",
    "page": 38,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "The morphism fsr",
    "page": 38,
    "source": "outline",
-   "number": "6.2.1"
+   "number": "6.2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Examples",
    "page": 39,
    "source": "outline",
-   "number": "6.2.2"
+   "number": "6.2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Path morphisms",
    "page": 40,
    "source": "outline",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The tree Ts",
    "page": 41,
    "source": "outline",
-   "number": "6.4"
+   "number": "6.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Construction of the double leaves basis",
    "page": 43,
    "source": "outline",
-   "number": "6.5"
+   "number": "6.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Final calculations: examples B, C and D",
    "page": 44,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Example with n = 8",
+   "page": 5,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The incorrect mental image",
+   "page": 5,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "A new sequence",
+   "page": 6,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The ﬁgure opens like ﬂower The (pointwise) limit is R with the vertices converging to the set Z. The sym-",
+   "page": 6,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "15",
+   "title": "Important morphisms",
+   "page": 31,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "16",
+   "title": "Tensor product",
+   "page": 31,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "17",
+   "title": "Composition",
+   "page": 32,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "18",
+   "title": "Cup and cap",
+   "page": 32,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "19",
+   "title": "Associativity",
+   "page": 32,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "20",
+   "title": "Hanging birdcage",
+   "page": 33,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "21",
+   "title": "Birdcage",
+   "page": 34,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "22",
+   "title": "Example of a one-color light leaf",
+   "page": 34,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "23",
+   "title": "Another example",
+   "page": 34,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "24",
+   "title": "Full birdcage",
+   "page": 35,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "25",
+   "title": "Third step in our game",
+   "page": 36,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "26",
+   "title": "Fourth step in our game",
+   "page": 36,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "27",
+   "title": "Example of a two-color light leaf",
+   "page": 37,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "28",
+   "title": "Adjunction map",
+   "page": 38,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "29",
+   "title": "The projector",
+   "page": 44,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
    "id": "sec-000-1-introduction",
@@ -412,7 +1127,9 @@
    "page_start": 1,
    "page_end": 1,
    "n_chars": 511,
-   "n_words": 84
+   "n_words": 84,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-11-declaration-of-intent",
@@ -420,432 +1137,619 @@
    "title": "Declaration of intent",
    "level": 2,
    "page_start": 1,
-   "page_end": 3,
-   "n_chars": 3274,
-   "n_words": 504
+   "page_end": 2,
+   "n_chars": 1309,
+   "n_words": 208,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-13-acknowledgements",
+   "id": "sec-002-12-bum-explosion-of-the-field",
+   "number": "1.2",
+   "title": "...Bum! Explosion of the field",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1983,
+   "n_words": 299,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-13-acknowledgements",
    "number": "1.3",
    "title": "Acknowledgements",
    "level": 2,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 338,
-   "n_words": 59
+   "n_chars": 354,
+   "n_words": 59,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-2-classical-level-coxeter-systems",
+   "id": "sec-004-2-classical-level-coxeter-systems",
    "number": "2",
    "title": "Classical level: Coxeter systems",
    "level": 1,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 1057,
-   "n_words": 213
+   "n_chars": 32,
+   "n_words": 4,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-22-baby-examples",
+   "id": "sec-005-21-some-definitions",
+   "number": "2.1",
+   "title": "Some definitions",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1085,
+   "n_words": 244,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-22-baby-examples",
    "number": "2.2",
    "title": "Baby examples",
    "level": 2,
    "page_start": 3,
-   "page_end": 7,
-   "n_chars": 3169,
-   "n_words": 567
+   "page_end": 4,
+   "n_chars": 625,
+   "n_words": 119,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-24-generalizing-the-baby-examples-tesselations",
+   "id": "sec-007-23-generalizing-the-baby-examples-infinite-regul",
+   "number": "2.3",
+   "title": "Generalizing the baby examples: (infinite) regular polygons",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 2608,
+   "n_words": 504,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-24-generalizing-the-baby-examples-tesselations",
    "number": "2.4",
    "title": "Generalizing the baby examples: tesselations",
    "level": 2,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 138,
-   "n_words": 26
+   "n_chars": 191,
+   "n_words": 39,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-241-tesselations-of-the-euclidean-plane",
+   "id": "sec-009-241-tesselations-of-the-euclidean-plane",
    "number": "2.4.1",
    "title": "Tesselations of the Euclidean plane",
    "level": 3,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 596,
-   "n_words": 117
+   "n_chars": 633,
+   "n_words": 125,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-007-242-tesselations-of-the-hyperbolic-plane",
+   "id": "sec-010-242-tesselations-of-the-hyperbolic-plane",
    "number": "2.4.2",
    "title": "Tesselations of the hyperbolic plane",
    "level": 3,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 1320,
-   "n_words": 253
+   "n_chars": 1357,
+   "n_words": 262,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-25-generalizing-the-baby-examples-more-dimension",
+   "id": "sec-011-25-generalizing-the-baby-examples-more-dimension",
    "number": "2.5",
    "title": "Generalizing the baby examples: more dimensions",
    "level": 2,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 829,
-   "n_words": 148
+   "n_chars": 899,
+   "n_words": 176,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-009-26-more-examples",
+   "id": "sec-012-26-more-examples",
    "number": "2.6",
    "title": "More examples",
    "level": 2,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 2299,
-   "n_words": 399
+   "n_chars": 2330,
+   "n_words": 418,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-010-27-bruhat-order-and-an-important-property",
+   "id": "sec-013-27-bruhat-order-and-an-important-property",
    "number": "2.7",
    "title": "Bruhat order and an important property",
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 756,
-   "n_words": 140
+   "n_chars": 809,
+   "n_words": 160,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-011-3-quantum-level-hecke-algebras",
+   "id": "sec-014-3-quantum-level-hecke-algebras",
    "number": "3",
    "title": "Quantum level: Hecke algebras",
    "level": 1,
    "page_start": 12,
-   "page_end": 14,
-   "n_chars": 2177,
-   "n_words": 392
+   "page_end": 12,
+   "n_chars": 33,
+   "n_words": 5,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-012-32-calculations-of-kl-bases-in-examples",
+   "id": "sec-015-31-kazhdan-lusztigs-theory",
+   "number": "3.1",
+   "title": "Kazhdan-Lusztig's theory",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 2205,
+   "n_words": 446,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-016-32-calculations-of-kl-bases-in-examples",
    "number": "3.2",
    "title": "Calculations of KL bases in examples",
    "level": 2,
    "page_start": 14,
    "page_end": 14,
-   "n_chars": 166,
-   "n_words": 31
+   "n_chars": 203,
+   "n_words": 37,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-013-321-baby-example-a",
+   "id": "sec-017-321-baby-example-a",
    "number": "3.2.1",
    "title": "Baby example A",
    "level": 3,
    "page_start": 14,
    "page_end": 14,
-   "n_chars": 827,
-   "n_words": 171
+   "n_chars": 874,
+   "n_words": 206,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-014-322-baby-example-b",
+   "id": "sec-018-322-baby-example-b",
    "number": "3.2.2",
    "title": "Baby example B",
    "level": 3,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 701,
-   "n_words": 130
+   "n_chars": 744,
+   "n_words": 161,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-015-323-example-c",
+   "id": "sec-019-323-example-c",
    "number": "3.2.3",
    "title": "Example C",
    "level": 3,
    "page_start": 15,
    "page_end": 17,
-   "n_chars": 1847,
-   "n_words": 330
+   "n_chars": 1902,
+   "n_words": 377,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-016-324-example-d",
+   "id": "sec-020-324-example-d",
    "number": "3.2.4",
    "title": "Example D",
    "level": 3,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 2030,
-   "n_words": 357
+   "n_chars": 1933,
+   "n_words": 378,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-017-331-existence",
+   "id": "sec-021-33-proof-of-theorem",
+   "number": "3.3",
+   "title": "Proof of Theorem ??",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 130,
+   "n_words": 22,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-022-331-existence",
    "number": "3.3.1",
    "title": "Existence",
    "level": 3,
    "page_start": 18,
    "page_end": 18,
-   "n_chars": 761,
-   "n_words": 151
+   "n_chars": 785,
+   "n_words": 166,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-018-332-uniqueness",
+   "id": "sec-023-332-uniqueness",
    "number": "3.3.2",
    "title": "Uniqueness",
    "level": 3,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 864,
-   "n_words": 155
+   "n_chars": 770,
+   "n_words": 170,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-019-34-our-favorite-open-questions-about-hecke-algeb",
+   "id": "sec-024-333-bxxw-is-a-basis",
+   "number": "3.3.3",
+   "title": "{bx}xW is a basis",
+   "level": 3,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 127,
+   "n_words": 24,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-025-34-our-favorite-open-questions-about-hecke-algeb",
    "number": "3.4",
    "title": "Our favorite open questions about Hecke algebras",
    "level": 2,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 1292,
-   "n_words": 218
+   "n_chars": 1358,
+   "n_words": 242,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-020-4-categorical-level-in-the-baby-example-a",
+   "id": "sec-026-4-categorical-level-in-the-baby-example-a",
    "number": "4",
    "title": "Categorical level in the baby example A",
    "level": 1,
    "page_start": 20,
    "page_end": 20,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 39,
+   "n_words": 7,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-021-41-the-objects-soergel-bimodules",
+   "id": "sec-027-41-the-objects-soergel-bimodules",
    "number": "4.1",
    "title": "The objects: Soergel bimodules",
    "level": 2,
    "page_start": 20,
    "page_end": 22,
-   "n_chars": 2828,
-   "n_words": 511
+   "n_chars": 2908,
+   "n_words": 564,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-022-42-stability-of-soergel-bimodules",
+   "id": "sec-028-42-stability-of-soergel-bimodules",
    "number": "4.2",
    "title": "Stability of Soergel bimodules",
    "level": 2,
    "page_start": 22,
    "page_end": 22,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 30,
+   "n_words": 4,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-023-421-the-crucial-phenomena",
+   "id": "sec-029-421-the-crucial-phenomena",
    "number": "4.2.1",
    "title": "The crucial phenomena",
    "level": 3,
    "page_start": 22,
    "page_end": 25,
-   "n_chars": 3911,
-   "n_words": 681
+   "n_chars": 4090,
+   "n_words": 841,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-024-441-step-1",
+   "id": "sec-030-441-step-1",
    "number": "4.4.1",
    "title": "Step 1",
    "level": 3,
    "page_start": 25,
    "page_end": 25,
-   "n_chars": 760,
-   "n_words": 160
+   "n_chars": 787,
+   "n_words": 182,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-025-442-step-2",
+   "id": "sec-031-442-step-2",
    "number": "4.4.2",
    "title": "Step 2",
    "level": 3,
    "page_start": 25,
    "page_end": 26,
    "n_chars": 711,
-   "n_words": 107
+   "n_words": 133,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-026-451-indecomposables",
+   "id": "sec-032-45-soergels-categorification-theorem",
+   "number": "4.5",
+   "title": "Soergel's categorification Theorem",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-033-451-indecomposables",
    "number": "4.5.1",
    "title": "Indecomposables",
    "level": 3,
    "page_start": 26,
    "page_end": 26,
-   "n_chars": 784,
-   "n_words": 151
+   "n_chars": 805,
+   "n_words": 157,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-027-452-how-to-produce-an-algebra-from-soergel-bimod",
+   "id": "sec-034-452-how-to-produce-an-algebra-from-soergel-bimod",
    "number": "4.5.2",
    "title": "How to produce an algebra from Soergel bimodules",
    "level": 3,
    "page_start": 26,
    "page_end": 27,
-   "n_chars": 1486,
-   "n_words": 258
+   "n_chars": 1554,
+   "n_words": 285,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-028-453-recovering-the-hecke-algebra",
+   "id": "sec-035-453-recovering-the-hecke-algebra",
    "number": "4.5.3",
    "title": "Recovering the Hecke algebra",
    "level": 3,
    "page_start": 27,
    "page_end": 29,
-   "n_chars": 2130,
-   "n_words": 367
+   "n_chars": 2188,
+   "n_words": 400,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-029-5-soergel-bimodules-and-light-leaves-in-ranks-1",
+   "id": "sec-036-5-soergel-bimodules-and-light-leaves-in-ranks-1",
    "number": "5",
    "title": "Soergel bimodules and light leaves in ranks 1 and 2",
    "level": 1,
    "page_start": 29,
    "page_end": 29,
-   "n_chars": 434,
-   "n_words": 71
+   "n_chars": 487,
+   "n_words": 82,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-030-51-soergel-category-b-for-any-coxeter-system-ove",
+   "id": "sec-037-51-soergel-category-b-for-any-coxeter-system-ove",
    "number": "5.1",
    "title": "Soergel category B for any Coxeter system over R",
    "level": 2,
    "page_start": 29,
    "page_end": 31,
-   "n_chars": 3010,
-   "n_words": 528
+   "n_chars": 3135,
+   "n_words": 613,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-031-52-drawing-morphisms-one-color",
+   "id": "sec-038-52-drawing-morphisms-one-color",
    "number": "5.2",
    "title": "Drawing morphisms: one color",
    "level": 2,
    "page_start": 31,
    "page_end": 34,
-   "n_chars": 2229,
-   "n_words": 400
+   "n_chars": 2280,
+   "n_words": 426,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-032-53-one-color-light-leaves",
+   "id": "sec-039-53-one-color-light-leaves",
    "number": "5.3",
    "title": "One color light leaves",
    "level": 2,
    "page_start": 34,
    "page_end": 35,
-   "n_chars": 1094,
-   "n_words": 204
+   "n_chars": 1129,
+   "n_words": 220,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-033-54-two-colors-light-leaves",
+   "id": "sec-040-54-two-colors-light-leaves",
    "number": "5.4",
    "title": "Two colors light leaves",
    "level": 2,
    "page_start": 35,
    "page_end": 37,
-   "n_chars": 3041,
-   "n_words": 559
+   "n_chars": 3086,
+   "n_words": 584,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-034-6-light-leaves-in-general",
+   "id": "sec-041-6-light-leaves-in-general",
    "number": "6",
    "title": "Light leaves in general",
    "level": 1,
    "page_start": 37,
    "page_end": 37,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 23,
+   "n_words": 4,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-035-61-adjunction",
+   "id": "sec-042-61-adjunction",
    "number": "6.1",
    "title": "Adjunction",
    "level": 2,
    "page_start": 37,
    "page_end": 38,
-   "n_chars": 663,
-   "n_words": 119
+   "n_chars": 683,
+   "n_words": 129,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-036-62-a-new-morphism",
+   "id": "sec-043-62-a-new-morphism",
    "number": "6.2",
    "title": "A new morphism",
    "level": 2,
    "page_start": 38,
    "page_end": 38,
-   "n_chars": 74,
-   "n_words": 14
+   "n_chars": 362,
+   "n_words": 69,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-037-622-examples",
-   "number": "6.2.2",
-   "title": "Examples",
-   "level": 3,
-   "page_start": 38,
-   "page_end": 38,
-   "n_chars": 195,
-   "n_words": 35
-  },
-  {
-   "id": "sec-038-621-the-morphism-fsr",
+   "id": "sec-044-621-the-morphism-fsr",
    "number": "6.2.1",
    "title": "The morphism fsr",
    "level": 3,
    "page_start": 38,
-   "page_end": 40,
-   "n_chars": 1989,
-   "n_words": 366
+   "page_end": 39,
+   "n_chars": 1132,
+   "n_words": 227,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-039-63-path-morphisms",
+   "id": "sec-045-622-examples",
+   "number": "6.2.2",
+   "title": "Examples",
+   "level": 3,
+   "page_start": 39,
+   "page_end": 40,
+   "n_chars": 913,
+   "n_words": 187,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-046-63-path-morphisms",
    "number": "6.3",
    "title": "Path morphisms",
    "level": 2,
    "page_start": 40,
    "page_end": 41,
-   "n_chars": 3494,
-   "n_words": 616
+   "n_chars": 3543,
+   "n_words": 652,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-040-64-the-tree-ts",
+   "id": "sec-047-64-the-tree-ts",
    "number": "6.4",
    "title": "The tree Ts",
    "level": 2,
    "page_start": 41,
    "page_end": 43,
-   "n_chars": 2095,
-   "n_words": 378
+   "n_chars": 2185,
+   "n_words": 469,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-041-65-construction-of-the-double-leaves-basis",
+   "id": "sec-048-65-construction-of-the-double-leaves-basis",
    "number": "6.5",
    "title": "Construction of the double leaves basis",
    "level": 2,
    "page_start": 43,
    "page_end": 44,
-   "n_chars": 1821,
-   "n_words": 334
+   "n_chars": 1894,
+   "n_words": 373,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-042-7-final-calculations-examples-b-c-and-d",
+   "id": "sec-049-7-final-calculations-examples-b-c-and-d",
    "number": "7",
    "title": "Final calculations: examples B, C and D",
    "level": 1,
    "page_start": 44,
    "page_end": 47,
-   "n_chars": 4510,
-   "n_words": 708
+   "n_chars": 4547,
+   "n_words": 712,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 52,
-  "sections": 43,
-  "chars_total": 62211,
+  "toc_inferred_entries": 0,
+  "figure_entries": 19,
+  "figure_sequence_gaps": [
+   "figure 5",
+   "figure 6",
+   "figure 7",
+   "figure 8",
+   "figure 9",
+   "figure 10",
+   "figure 11",
+   "figure 12",
+   "figure 13",
+   "figure 14"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 50,
+  "chars_total": 64301,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Gentle.tex",
    "tex_sections": 52,
-   "overlaid": 35,
+   "overlaid": 41,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -856,50 +1760,72 @@
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-001-11-declaration-of-intent",
      "title": "Declaration of intent",
-     "prose_ratio": 0.994,
-     "coverage_ratio": 0.989,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.967,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-13-acknowledgements",
+     "id": "sec-002-12-bum-explosion-of-the-field",
+     "title": "...Bum! Explosion of the field",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-13-acknowledgements",
      "title": "Acknowledgements",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-2-classical-level-coxeter-systems",
+     "title": "Classical level: Coxeter systems",
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-21-some-definitions",
+     "title": "Some definitions",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-2-classical-level-coxeter-systems",
-     "title": "Classical level: Coxeter systems",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.962,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-004-22-baby-examples",
+     "id": "sec-006-22-baby-examples",
      "title": "Baby examples",
-     "prose_ratio": 0.966,
-     "coverage_ratio": 0.948,
+     "prose_ratio": 0.892,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-24-generalizing-the-baby-examples-tesselations",
+     "id": "sec-007-23-generalizing-the-baby-examples-infinite-regul",
+     "title": "Generalizing the baby examples: (infinite) regular polygons",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-24-generalizing-the-baby-examples-tesselations",
      "title": "Generalizing the baby examples: tesselations",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.818,
+     "coverage_ratio": 0.692,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-241-tesselations-of-the-euclidean-plane",
+     "id": "sec-009-241-tesselations-of-the-euclidean-plane",
      "title": "Tesselations of the Euclidean plane",
      "prose_ratio": 0.9,
      "coverage_ratio": 0.971,
@@ -907,278 +1833,309 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-242-tesselations-of-the-hyperbolic-plane",
+     "id": "sec-010-242-tesselations-of-the-hyperbolic-plane",
      "title": "Tesselations of the hyperbolic plane",
      "prose_ratio": 0.892,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-25-generalizing-the-baby-examples-more-dimension",
+     "title": "Generalizing the baby examples: more dimensions",
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.88,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-26-more-examples",
+     "title": "More examples",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-27-bruhat-order-and-an-important-property",
+     "title": "Bruhat order and an important property",
+     "prose_ratio": 0.938,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-3-quantum-level-hecke-algebras",
+     "title": "Quantum level: Hecke algebras",
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-015-31-kazhdan-lusztigs-theory",
+     "title": "Kazhdan-Lusztig's theory",
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-32-calculations-of-kl-bases-in-examples",
+     "title": "Calculations of KL bases in examples",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.875,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-321-baby-example-a",
+     "title": "Baby example A",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.814,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-322-baby-example-b",
+     "title": "Baby example B",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.767,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-019-323-example-c",
+     "title": "Example C",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-324-example-d",
+     "title": "Example D",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.852,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-33-proof-of-theorem",
+     "title": "Proof of Theorem ??",
+     "prose_ratio": 0.833,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-022-331-existence",
+     "title": "Existence",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.935,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-332-uniqueness",
+     "title": "Uniqueness",
+     "prose_ratio": 0.821,
+     "coverage_ratio": 0.914,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-024-333-bxxw-is-a-basis",
+     "title": "{bx}xW is a basis",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-34-our-favorite-open-questions-about-hecke-algeb",
+     "title": "Our favorite open questions about Hecke algebras",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.928,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-026-4-categorical-level-in-the-baby-example-a",
+     "title": "Categorical level in the baby example A",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-027-41-the-objects-soergel-bimodules",
+     "title": "The objects: Soergel bimodules",
+     "prose_ratio": 1.0,
      "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-25-generalizing-the-baby-examples-more-dimension",
-     "title": "Generalizing the baby examples: more dimensions",
-     "prose_ratio": 0.956,
-     "coverage_ratio": 0.808,
+     "id": "sec-028-42-stability-of-soergel-bimodules",
+     "title": "Stability of Soergel bimodules",
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-029-421-the-crucial-phenomena",
+     "title": "The crucial phenomena",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-030-441-step-1",
+     "title": "Step 1",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-26-more-examples",
-     "title": "More examples",
-     "prose_ratio": 0.975,
-     "coverage_ratio": 0.959,
+     "id": "sec-031-442-step-2",
+     "title": "Step 2",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.912,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-032-45-soergels-categorification-theorem",
+     "title": "Soergel's categorification Theorem",
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-033-451-indecomposables",
+     "title": "Indecomposables",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.909,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-27-bruhat-order-and-an-important-property",
-     "title": "Bruhat order and an important property",
+     "id": "sec-034-452-how-to-produce-an-algebra-from-soergel-bimod",
+     "title": "How to produce an algebra from Soergel bimodules",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-035-453-recovering-the-hecke-algebra",
+     "title": "Recovering the Hecke algebra",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-036-5-soergel-bimodules-and-light-leaves-in-ranks-1",
+     "title": "Soergel bimodules and light leaves in ranks 1 and 2",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.921,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-037-51-soergel-category-b-for-any-coxeter-system-ove",
+     "title": "Soergel category B for any Coxeter system over R",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-038-52-drawing-morphisms-one-color",
+     "title": "Drawing morphisms: one color",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-039-53-one-color-light-leaves",
+     "title": "One color light leaves",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-040-54-two-colors-light-leaves",
+     "title": "Two colors light leaves",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-041-6-light-leaves-in-general",
+     "title": "Light leaves in general",
+     "prose_ratio": 0.667,
+     "coverage_ratio": 0.667,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-042-61-adjunction",
+     "title": "Adjunction",
      "prose_ratio": 0.938,
-     "coverage_ratio": 0.898,
+     "coverage_ratio": 0.957,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-3-quantum-level-hecke-algebras",
-     "title": "Quantum level: Hecke algebras",
-     "prose_ratio": 0.959,
-     "coverage_ratio": 0.868,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-012-32-calculations-of-kl-bases-in-examples",
-     "title": "Calculations of KL bases in examples",
+     "id": "sec-043-62-a-new-morphism",
+     "title": "A new morphism",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-321-baby-example-a",
-     "title": "Baby example A",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.627,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-014-322-baby-example-b",
-     "title": "Baby example B",
-     "prose_ratio": 0.97,
-     "coverage_ratio": 0.705,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-015-323-example-c",
-     "title": "Example C",
-     "prose_ratio": 0.952,
-     "coverage_ratio": 0.889,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-016-324-example-d",
-     "title": "Example D",
-     "prose_ratio": 0.953,
-     "coverage_ratio": 0.846,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-017-331-existence",
-     "title": "Existence",
-     "prose_ratio": 0.977,
-     "coverage_ratio": 0.915,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-018-332-uniqueness",
-     "title": "Uniqueness",
-     "prose_ratio": 0.974,
-     "coverage_ratio": 0.766,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-019-34-our-favorite-open-questions-about-hecke-algeb",
-     "title": "Our favorite open questions about Hecke algebras",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.938,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-020-4-categorical-level-in-the-baby-example-a",
-     "title": "Categorical level in the baby example A",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-021-41-the-objects-soergel-bimodules",
-     "title": "The objects: Soergel bimodules",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.893,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-022-42-stability-of-soergel-bimodules",
-     "title": "Stability of Soergel bimodules",
-     "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-023-421-the-crucial-phenomena",
-     "title": "The crucial phenomena",
-     "prose_ratio": 0.976,
-     "coverage_ratio": 0.875,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-024-441-step-1",
-     "title": "Step 1",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.949,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-025-442-step-2",
-     "title": "Step 2",
-     "prose_ratio": 0.971,
-     "coverage_ratio": 0.889,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-026-451-indecomposables",
-     "title": "Indecomposables",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.905,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-027-452-how-to-produce-an-algebra-from-soergel-bimod",
-     "title": "How to produce an algebra from Soergel bimodules",
-     "prose_ratio": 0.962,
-     "coverage_ratio": 0.949,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-028-453-recovering-the-hecke-algebra",
-     "title": "Recovering the Hecke algebra",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.931,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-029-5-soergel-bimodules-and-light-leaves-in-ranks-1",
-     "title": "Soergel bimodules and light leaves in ranks 1 and 2",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.972,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-030-51-soergel-category-b-for-any-coxeter-system-ove",
-     "title": "Soergel category B for any Coxeter system over R",
-     "prose_ratio": 0.994,
-     "coverage_ratio": 0.913,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-031-52-drawing-morphisms-one-color",
-     "title": "Drawing morphisms: one color",
-     "prose_ratio": 0.964,
-     "coverage_ratio": 0.904,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-032-53-one-color-light-leaves",
-     "title": "One color light leaves",
-     "prose_ratio": 0.95,
-     "coverage_ratio": 0.921,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-033-54-two-colors-light-leaves",
-     "title": "Two colors light leaves",
-     "prose_ratio": 0.979,
-     "coverage_ratio": 0.946,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-034-6-light-leaves-in-general",
-     "title": "Light leaves in general",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-035-61-adjunction",
-     "title": "Adjunction",
-     "prose_ratio": 0.938,
-     "coverage_ratio": 0.863,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-036-62-a-new-morphism",
-     "title": "A new morphism",
-     "prose_ratio": 0.32,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-037-622-examples",
-     "title": "Examples",
-     "prose_ratio": 0.088,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-038-621-the-morphism-fsr",
+     "id": "sec-044-621-the-morphism-fsr",
      "title": "The morphism fsr",
      "prose_ratio": 0.982,
-     "coverage_ratio": 0.539,
+     "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-039-63-path-morphisms",
+     "id": "sec-045-622-examples",
+     "title": "Examples",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.872,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-046-63-path-morphisms",
      "title": "Path morphisms",
-     "prose_ratio": 0.782,
-     "coverage_ratio": 0.925,
+     "prose_ratio": 0.786,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-040-64-the-tree-ts",
+     "id": "sec-047-64-the-tree-ts",
      "title": "The tree Ts",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-041-65-construction-of-the-double-leaves-basis",
+     "id": "sec-048-65-construction-of-the-double-leaves-basis",
      "title": "Construction of the double leaves basis",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.858,
+     "coverage_ratio": 0.919,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-042-7-final-calculations-examples-b-c-and-d",
+     "id": "sec-049-7-final-calculations-examples-b-c-and-d",
      "title": "Final calculations: examples B, C and D",
-     "prose_ratio": 0.95,
-     "coverage_ratio": 0.45,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.468,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

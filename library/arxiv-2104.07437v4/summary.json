@@ -3,7 +3,7 @@
  "doc_id": "arxiv-2104.07437v4",
  "source_sha256": "a0f28a6b61618467",
  "brief": "Peacock patterns and new integer invariants in topological string theory — Topological string theory near the conifold point of a Calabi–Yau threefold gives rise to factorially divergent power series",
- "extended": "**Peacock patterns and new integer invariants in topological string theory**\n\n*Jie Gua,b and Marcos Mariñoa*\n\n52 pp, 24 sections.\n\n**Abstract.** Topological string theory near the conifold point of a Calabi–Yau threefold gives rise to factorially divergent power series which encode the all-genus enumerative information. These series lead to inﬁnite towers of singularities in their Borel plane (also known as “peacock patterns”), and we conjecture that the corresponding Stokes constants are integer invariants of the Calabi–Yau threefold. We calculate these Stokes constants in some toric examples, conﬁrming our conjecture and providing in some cases explicit generating functions for the new integer invariants, in the form of q-series. Our calculations in the toric case rely on the TS/ST correspondence, which promotes the asymptotic series near the conifold point to spectral traces of operators, and makes it easier to identify the Stokes data.\n\n**Outline.** Front matter; 1 Introduction; 2 Defining the new invariants; 2.1 Perturbative series in topological string ; 2.2 Resurgence and Stokes constants; 2.3 Stokes constants in topological string the; 3 Examples; 3.1 The TS/ST correspondence; 3.2 Local F0; 3.2.1 The first resurgent structure; 3.2.2 Spectral trace and its factorisation; 3.2.3 Radial asymptotic analysis; 3.2.4 Relation to q-Painlevé; 3.3 Local P2; 3.3.1 The first resurgent structure; 3.3.2 The second resurgent structure; 3.3.3 Second spectral trace and its factorisat; 3.3.4 Radial asymptotic analysis for the secon",
+ "extended": "**Peacock patterns and new integer invariants in topological string theory**\n\n*Jie Gua,b and Marcos Mariñoa*\n\n52 pp, 25 sections.\n\n**Abstract.** Topological string theory near the conifold point of a Calabi–Yau threefold gives rise to factorially divergent power series which encode the all-genus enumerative information. These series lead to inﬁnite towers of singularities in their Borel plane (also known as “peacock patterns”), and we conjecture that the corresponding Stokes constants are integer invariants of the Calabi–Yau threefold. We calculate these Stokes constants in some toric examples, conﬁrming our conjecture and providing in some cases explicit generating functions for the new integer invariants, in the form of q-series. Our calculations in the toric case rely on the TS/ST correspondence, which promotes the asymptotic series near the conifold point to spectral traces of operators, and makes it easier to identify the Stokes data.\n\n**Outline.** Front matter; 1 Introduction; 2 Defining the new invariants; 2.1 Perturbative series in topological string ; 2.2 Resurgence and Stokes constants; 2.3 Stokes constants in topological string the; 3 Examples; 3.1 The TS/ST correspondence; 3.2 Local F0; 3.2.1 The first resurgent structure; 3.2.2 Spectral trace and its factorisation; 3.2.3 Radial asymptotic analysis; 3.2.4 Relation to q-Painlevé; 3.3 Local P2; 3.3.1 The first resurgent structure; 3.3.2 The second resurgent structure; 3.3.3 Second spectral trace and its factorisat; 3.3.4 Radial asymptotic analysis for the secon",
  "tokens": {
   "brief": 49,
   "extended": 386
@@ -37,12 +37,12 @@
   {
    "id": "sec-004-23-stokes-constants-in-topological-string-theory",
    "title": "Stokes constants in topological string theory",
-   "pages": "10-10"
+   "pages": "10-11"
   },
   {
    "id": "sec-005-3-examples",
    "title": "Examples",
-   "pages": "10-11"
+   "pages": "11-11"
   },
   {
    "id": "sec-006-31-the-tsst-correspondence",
@@ -107,25 +107,30 @@
   {
    "id": "sec-018-a-quantum-dilogarithm-and-q-series",
    "title": "A Quantum dilogarithm and q-series",
+   "pages": "41-41"
+  },
+  {
+   "id": "sec-019-a1-faddeevs-non-compact-quantum-dilogarithm",
+   "title": "A.1 Faddeev's non-compact quantum dilogarithm",
    "pages": "41-43"
   },
   {
-   "id": "sec-019-a2-compact-quantum-dilogarithm",
+   "id": "sec-020-a2-compact-quantum-dilogarithm",
    "title": "A.2 Compact quantum dilogarithm",
    "pages": "43-43"
   },
   {
-   "id": "sec-020-a3-q-series",
+   "id": "sec-021-a3-q-series",
    "title": "A.3 q-series",
    "pages": "43-44"
   },
   {
-   "id": "sec-021-b-fast-algorithm-for-the-second-resurgent-struct",
+   "id": "sec-022-b-fast-algorithm-for-the-second-resurgent-struct",
    "title": "B Fast algorithm for the second resurgent structure of local P2",
    "pages": "44-45"
   },
   {
-   "id": "sec-022-c-hunter-guerrieri-algorithm",
+   "id": "sec-023-c-hunter-guerrieri-algorithm",
    "title": "C Hunter-Guerrieri algorithm",
    "pages": "45-52"
   }

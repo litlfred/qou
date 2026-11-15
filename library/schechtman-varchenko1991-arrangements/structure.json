@@ -1,35 +1,24 @@
 {
- "_schema": "pdf-structure/v1",
- "doc_id": "schechtman-varchenko1991-arrangements",
  "source": {
   "file": "schechtman-varchenko1991-arrangements.pdf",
   "sha256": "0100fd32438740f03e9fb686d8b3687161e9bbe93b8a2ed9a540d869d6d00970",
   "bytes": 4012585,
+  "mtime": "2026-11-15T11:07:55Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "pages": 56,
   "text_source": "ocr",
-  "extractor": "pymupdf",
-  "mtime": "2026-10-10T19:16:48Z",
-  "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "runContext": {
+   "sha256": "e3c04d7db5b55ebee8d4caed88a2b9b3f3bde5eac5f32e932240a219a46d22b2"
+  }
  },
  "metadata": {
-  "arxiv": null,
-  "doi": null,
   "title": "Arrangements of hyperplanes and Lie algebra homology",
-  "authors_raw": "Vadim V. Schechtman and Alexander N. Varchenko",
-  "title_lines": [
-   "Invent. Math. 106, 139-194 (1991)",
-   "Inventiones",
-   "mathematicae",
-   "C Springer-Verlag 1991"
-  ],
-  "abstract": null,
   "docinfo": {},
-  "title_raw": "Invent. Math. 106, 139-194 (1991) Inventiones mathematicae C Springer-Verlag 1991",
-  "title_source": "text",
+  "title_raw": null,
+  "title_source": "filename",
   "title_verified": false,
   "title_evidence": {
-   "text": "Invent. Math. 106, 139-194 (1991) Inventiones mathematicae C Springer-Verlag 1991",
    "corroborated_by": [],
    "browser_print": false
   },
@@ -37,183 +26,574 @@
   "rights_note": "Cut from the Göttingen State and University Library (SUB/GDZ) digitisation of Inventiones Mathematicae vol. 106 (1991), WerkId PPN356556735_0106. The GDZ Terms and Conditions on page 1 of that volume file state that access is provided 'strictly for noncommercial educational, research and private purposes', that 'each copy of any part of this document must contain these Terms and Conditions', and that 'Reproductions of material on the web site may not be made for or donated to other repositories, nor may be further reproduced without written permission from the Goettingen State- and University Library.' The volume file itself is NOT held in this repository; this per-article cut does not carry the GDZ cover page. Owner decision whether to keep this copy.",
   "journal_ref": "Invent. Math. 106 (1991) 139-194",
   "volume_pdf_pages": "146-201",
-  "journal_page_offset": 138
+  "journal_page_offset": 138,
+  "title_prev": "Arrangements of hyperplanes and Lie algebra homology"
  },
- "toc": [
-  {
-   "level": 1,
-   "title": "Introduction",
-   "page": 1,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "Orlik-Solomon algebra (Part I. Cohomology of local systems over complements of hyperplanes)",
-   "page": 5,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Flag complex",
-   "page": 10,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Contravariant form",
-   "page": 13,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Topology",
-   "page": 19,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "Free Lie algebras (Part II. Discriminantal arrangements and Lie algebra homology)",
-   "page": 25,
-   "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "Contravariant form, II",
-   "page": 32,
-   "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "Knizhnik-Zamolodchikov equations",
-   "page": 44,
-   "source": "inferred",
-   "number": "7"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 55,
-   "source": "inferred",
-   "number": null
-  }
- ],
- "toc_source": "inferred",
+ "_schema": "pdf-structure/v1",
+ "doc_id": "schechtman-varchenko1991-arrangements",
+ "toc_source": "none",
+ "granularity": "page",
  "sections": [
   {
-   "id": "sec-front-matter",
+   "id": "page-001",
    "number": null,
-   "title": "Front matter",
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 810,
-   "n_words": 121
+   "n_chars": 1938,
+   "n_words": 286
   },
   {
-   "id": "sec-000-0-introduction",
-   "number": "0",
-   "title": "Introduction",
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
    "level": 1,
-   "page_start": 1,
-   "page_end": 5,
-   "n_chars": 10619,
-   "n_words": 1861
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 2943,
+   "n_words": 514
   },
   {
-   "id": "sec-001-1-orlik-solomon-algebra-part-i-cohomology-of",
-   "number": "1",
-   "title": "Orlik-Solomon algebra (Part I. Cohomology of local systems over complements of hyperplanes)",
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 2645,
+   "n_words": 454
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 2302,
+   "n_words": 389
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
    "level": 1,
    "page_start": 5,
-   "page_end": 10,
-   "n_chars": 8500,
-   "n_words": 1624
+   "page_end": 5,
+   "n_chars": 2687,
+   "n_words": 447
   },
   {
-   "id": "sec-002-2-flag-complex",
-   "number": "2",
-   "title": "Flag complex",
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1809,
+   "n_words": 323
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1815,
+   "n_words": 309
+  },
+  {
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1771,
+   "n_words": 316
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 2067,
+   "n_words": 378
+  },
+  {
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
    "level": 1,
    "page_start": 10,
-   "page_end": 13,
-   "n_chars": 3249,
-   "n_words": 614
+   "page_end": 10,
+   "n_chars": 1203,
+   "n_words": 229
   },
   {
-   "id": "sec-003-3-contravariant-form",
-   "number": "3",
-   "title": "Contravariant form",
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 1408,
+   "n_words": 251
+  },
+  {
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1540,
+   "n_words": 278
+  },
+  {
+   "id": "page-013",
+   "number": null,
+   "title": "Page 13",
    "level": 1,
    "page_start": 13,
-   "page_end": 19,
-   "n_chars": 9093,
-   "n_words": 1668
+   "page_end": 13,
+   "n_chars": 1398,
+   "n_words": 247
   },
   {
-   "id": "sec-004-4-topology",
-   "number": "4",
-   "title": "Topology",
+   "id": "page-014",
+   "number": null,
+   "title": "Page 14",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 1441,
+   "n_words": 263
+  },
+  {
+   "id": "page-015",
+   "number": null,
+   "title": "Page 15",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 1752,
+   "n_words": 308
+  },
+  {
+   "id": "page-016",
+   "number": null,
+   "title": "Page 16",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 1340,
+   "n_words": 233
+  },
+  {
+   "id": "page-017",
+   "number": null,
+   "title": "Page 17",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 1629,
+   "n_words": 273
+  },
+  {
+   "id": "page-018",
+   "number": null,
+   "title": "Page 18",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 1502,
+   "n_words": 251
+  },
+  {
+   "id": "page-019",
+   "number": null,
+   "title": "Page 19",
    "level": 1,
    "page_start": 19,
-   "page_end": 25,
-   "n_chars": 11242,
-   "n_words": 2042
+   "page_end": 19,
+   "n_chars": 1613,
+   "n_words": 266
   },
   {
-   "id": "sec-005-5-free-lie-algebras-part-ii-discriminantal-a",
-   "number": "5",
-   "title": "Free Lie algebras (Part II. Discriminantal arrangements and Lie algebra homology)",
+   "id": "page-020",
+   "number": null,
+   "title": "Page 20",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 1768,
+   "n_words": 310
+  },
+  {
+   "id": "page-021",
+   "number": null,
+   "title": "Page 21",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 2384,
+   "n_words": 402
+  },
+  {
+   "id": "page-022",
+   "number": null,
+   "title": "Page 22",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 1714,
+   "n_words": 296
+  },
+  {
+   "id": "page-023",
+   "number": null,
+   "title": "Page 23",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 1327,
+   "n_words": 250
+  },
+  {
+   "id": "page-024",
+   "number": null,
+   "title": "Page 24",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 1873,
+   "n_words": 350
+  },
+  {
+   "id": "page-025",
+   "number": null,
+   "title": "Page 25",
    "level": 1,
    "page_start": 25,
-   "page_end": 32,
-   "n_chars": 10631,
-   "n_words": 1891
+   "page_end": 25,
+   "n_chars": 1930,
+   "n_words": 328
   },
   {
-   "id": "sec-006-6-contravariant-form-ii",
-   "number": "6",
-   "title": "Contravariant form, II",
+   "id": "page-026",
+   "number": null,
+   "title": "Page 26",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 1612,
+   "n_words": 276
+  },
+  {
+   "id": "page-027",
+   "number": null,
+   "title": "Page 27",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 1462,
+   "n_words": 268
+  },
+  {
+   "id": "page-028",
+   "number": null,
+   "title": "Page 28",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 1670,
+   "n_words": 321
+  },
+  {
+   "id": "page-029",
+   "number": null,
+   "title": "Page 29",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 1799,
+   "n_words": 312
+  },
+  {
+   "id": "page-030",
+   "number": null,
+   "title": "Page 30",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 30,
+   "n_chars": 1780,
+   "n_words": 310
+  },
+  {
+   "id": "page-031",
+   "number": null,
+   "title": "Page 31",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 1530,
+   "n_words": 275
+  },
+  {
+   "id": "page-032",
+   "number": null,
+   "title": "Page 32",
    "level": 1,
    "page_start": 32,
-   "page_end": 44,
-   "n_chars": 18147,
-   "n_words": 3503
+   "page_end": 32,
+   "n_chars": 1475,
+   "n_words": 269
   },
   {
-   "id": "sec-007-7-knizhnik-zamolodchikov-equations",
-   "number": "7",
-   "title": "Knizhnik-Zamolodchikov equations",
+   "id": "page-033",
+   "number": null,
+   "title": "Page 33",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 1605,
+   "n_words": 292
+  },
+  {
+   "id": "page-034",
+   "number": null,
+   "title": "Page 34",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 2083,
+   "n_words": 364
+  },
+  {
+   "id": "page-035",
+   "number": null,
+   "title": "Page 35",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 1746,
+   "n_words": 327
+  },
+  {
+   "id": "page-036",
+   "number": null,
+   "title": "Page 36",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 1436,
+   "n_words": 273
+  },
+  {
+   "id": "page-037",
+   "number": null,
+   "title": "Page 37",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 1331,
+   "n_words": 265
+  },
+  {
+   "id": "page-038",
+   "number": null,
+   "title": "Page 38",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 1954,
+   "n_words": 371
+  },
+  {
+   "id": "page-039",
+   "number": null,
+   "title": "Page 39",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 944,
+   "n_words": 168
+  },
+  {
+   "id": "page-040",
+   "number": null,
+   "title": "Page 40",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 40,
+   "n_chars": 1748,
+   "n_words": 311
+  },
+  {
+   "id": "page-041",
+   "number": null,
+   "title": "Page 41",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 1645,
+   "n_words": 300
+  },
+  {
+   "id": "page-042",
+   "number": null,
+   "title": "Page 42",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 42,
+   "n_chars": 1359,
+   "n_words": 261
+  },
+  {
+   "id": "page-043",
+   "number": null,
+   "title": "Page 43",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 43,
+   "n_chars": 1963,
+   "n_words": 368
+  },
+  {
+   "id": "page-044",
+   "number": null,
+   "title": "Page 44",
    "level": 1,
    "page_start": 44,
-   "page_end": 55,
-   "n_chars": 15976,
-   "n_words": 2964
+   "page_end": 44,
+   "n_chars": 2190,
+   "n_words": 359
   },
   {
-   "id": "sec-008-references",
+   "id": "page-045",
    "number": null,
-   "title": "References",
+   "title": "Page 45",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 1809,
+   "n_words": 316
+  },
+  {
+   "id": "page-046",
+   "number": null,
+   "title": "Page 46",
+   "level": 1,
+   "page_start": 46,
+   "page_end": 46,
+   "n_chars": 1694,
+   "n_words": 295
+  },
+  {
+   "id": "page-047",
+   "number": null,
+   "title": "Page 47",
+   "level": 1,
+   "page_start": 47,
+   "page_end": 47,
+   "n_chars": 1532,
+   "n_words": 265
+  },
+  {
+   "id": "page-048",
+   "number": null,
+   "title": "Page 48",
+   "level": 1,
+   "page_start": 48,
+   "page_end": 48,
+   "n_chars": 2215,
+   "n_words": 403
+  },
+  {
+   "id": "page-049",
+   "number": null,
+   "title": "Page 49",
+   "level": 1,
+   "page_start": 49,
+   "page_end": 49,
+   "n_chars": 1006,
+   "n_words": 215
+  },
+  {
+   "id": "page-050",
+   "number": null,
+   "title": "Page 50",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 937,
+   "n_words": 175
+  },
+  {
+   "id": "page-051",
+   "number": null,
+   "title": "Page 51",
+   "level": 1,
+   "page_start": 51,
+   "page_end": 51,
+   "n_chars": 1535,
+   "n_words": 284
+  },
+  {
+   "id": "page-052",
+   "number": null,
+   "title": "Page 52",
+   "level": 1,
+   "page_start": 52,
+   "page_end": 52,
+   "n_chars": 1283,
+   "n_words": 252
+  },
+  {
+   "id": "page-053",
+   "number": null,
+   "title": "Page 53",
+   "level": 1,
+   "page_start": 53,
+   "page_end": 53,
+   "n_chars": 1708,
+   "n_words": 315
+  },
+  {
+   "id": "page-054",
+   "number": null,
+   "title": "Page 54",
+   "level": 1,
+   "page_start": 54,
+   "page_end": 54,
+   "n_chars": 1375,
+   "n_words": 262
+  },
+  {
+   "id": "page-055",
+   "number": null,
+   "title": "Page 55",
    "level": 1,
    "page_start": 55,
+   "page_end": 55,
+   "n_chars": 2993,
+   "n_words": 431
+  },
+  {
+   "id": "page-056",
+   "number": null,
+   "title": "Page 56",
+   "level": 1,
+   "page_start": 56,
    "page_end": 56,
-   "n_chars": 4491,
-   "n_words": 674
+   "n_chars": 1921,
+   "n_words": 306
   }
  ],
- "diagnostics": {
-  "pages_without_text": 0,
-  "likely_scanned": true,
-  "toc_entries": 9,
-  "toc_inferred_entries": 9,
-  "sections": 10,
-  "chars_total": 92758
- },
- "structure_note": "Sectioning: split by hand at the OCR'd numbered section headings (journal pages from the printed contents / running heads)."
+ "structure_note": "Ingested at PAGE granularity by scripts/pdf-pages.py. This PDF carries no embedded outline and its inferred chapter structure was measurably wrong (bean 6xaz), so no chapter tree is claimed. A page is a determined division; an inferred chapter was not."
 }

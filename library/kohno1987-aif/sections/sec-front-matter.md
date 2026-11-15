@@ -8,7 +8,7 @@ pages: 1-2
 source_pdf: kohno1987-aif.pdf
 source_sha256: 88c5119985dfe878
 toc_source: inferred
-doc_brief: "Monodromy representations of braid groups and Yang-Baxter equations — 8 sections: Front matter; Introduction; MONODROMY OF INTEGRABLE CONNECTION"
+doc_brief: "Monodromy representations of braid groups and Yang-Baxter equations — 6 sections: Front matter; MONODROMY REPRESENTATIONS OF BRAID; INTRODUCTION"
 ---
 ANNALES DE L’INSTITUT FOURIER
 TOSHITAKE KOHNO
@@ -28,7 +28,3 @@ Numérisation de documents anciens mathématiques
 http://www.numdam.org/
 Ann. Inst. P'ourier, Grenoble
 37, 4 (1987), 139-160
-MONODROMY REPRESENTATIONS
-OF BRAID GROUPS
-AND YANG-BAXTER EQUATIONS
-by Toshitake KOHNO

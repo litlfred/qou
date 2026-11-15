@@ -1,0 +1,1 @@
+It should be noted that this method corresponds to the one employed by Kakehi, Masuda and Ueno [11], 2 [12] giving the Plancherel measure for the little q-Jacobi functions from its interpretation as matrix elements of irreducible representations of SUq(1, 1).

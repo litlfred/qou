@@ -8,7 +8,7 @@
   "pages": 30,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,12 +21,12 @@
    "stamp_date": "20 Apr 2000"
   },
   "doi": null,
-  "title": "arXiv:math/0004133v1 [math.QA] 20 Apr 2000",
+  "title": "From Finite Sets to Feynman Diagrams",
   "authors_raw": "John C. Baez and James Dolan",
   "title_lines": [
    "From Finite Sets to Feynman Diagrams"
   ],
-  "abstract": "\u2018Categori\ufb01cation\u2019 is the process of replacing equations by isomor- phisms. We describe some of the ways a thoroughgoing emphasis on categori\ufb01cation can simplify and unify mathematics. We begin with elementary arithmetic, where the category of \ufb01nite sets serves as a categori\ufb01ed version of the set of natural numbers, with disjoint union and Cartesian product playing the role of addition and multiplication. We sketch how categorifying the integers leads naturally to the in\ufb01- nite loop space \u2126\u221eS\u221e, and how categorifying the positive rationals leads naturally to a notion of the \u2018homotopy cardinality\u2019 of a tame space. Then we show how categorifying formal power series leads to Joyal\u2019s esp`eces des structures, or \u2018structure types\u2019. We also describe a useful generalization of structure types called \u2018stu\ufb00types\u2019. There is an inner product of stu\ufb00types that makes the category of stu\ufb00types into a categori\ufb01ed version of the Hilbert space of the quantized har- monic oscillator. We conclude by sketching how this idea gives a nice explanation of the combinatorics of Feynman diagrams.",
+  "abstract": "‘Categoriﬁcation’ is the process of replacing equations by isomor- phisms. We describe some of the ways a thoroughgoing emphasis on categoriﬁcation can simplify and unify mathematics. We begin with elementary arithmetic, where the category of ﬁnite sets serves as a categoriﬁed version of the set of natural numbers, with disjoint union and Cartesian product playing the role of addition and multiplication. We sketch how categorifying the integers leads naturally to the inﬁ- nite loop space Ω∞S∞, and how categorifying the positive rationals leads naturally to a notion of the ‘homotopy cardinality’ of a tame space. Then we show how categorifying formal power series leads to Joyal’s esp`eces des structures, or ‘structure types’. We also describe a useful generalization of structure types called ‘stuﬀtypes’. There is an inner product of stuﬀtypes that makes the category of stuﬀtypes into a categoriﬁed version of the Hilbert space of the quantized har- monic oscillator. We conclude by sketching how this idea gives a nice explanation of the combinatorics of Feynman diagrams.",
   "docinfo": {
    "Title": "arXiv:math/0004133v1  [math.QA]  20 Apr 2000",
    "Producer": "GPL Ghostscript 10.01.2",
@@ -44,7 +44,8 @@
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:math/0004133v1 [math.QA] 20 Apr 2000"
  },
  "toc": [
   {
@@ -349,8 +350,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1445,
-   "n_words": 217,
+   "n_chars": 1443,
+   "n_words": 216,
    "label_start": null,
    "label_end": null
   },
@@ -361,7 +362,7 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 3399,
+   "n_chars": 3410,
    "n_words": 555,
    "label_start": null,
    "label_end": null
@@ -373,8 +374,8 @@
    "level": 1,
    "page_start": 3,
    "page_end": 7,
-   "n_chars": 9424,
-   "n_words": 1600,
+   "n_chars": 9447,
+   "n_words": 1602,
    "label_start": null,
    "label_end": null
   },
@@ -385,8 +386,8 @@
    "level": 1,
    "page_start": 7,
    "page_end": 17,
-   "n_chars": 18503,
-   "n_words": 3406,
+   "n_chars": 18533,
+   "n_words": 3410,
    "label_start": null,
    "label_end": null
   },
@@ -396,14 +397,26 @@
    "title": "Power Series and Structure Types",
    "level": 1,
    "page_start": 17,
-   "page_end": 28,
-   "n_chars": 20141,
-   "n_words": 3745,
+   "page_end": 22,
+   "n_chars": 9190,
+   "n_words": 1726,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-004-acknowledgements",
+   "id": "sec-004-5-feynman-diagrams-and-stuff-operators",
+   "number": "5",
+   "title": "Feynman Diagrams and Stuff Operators",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 28,
+   "n_chars": 10981,
+   "n_words": 2023,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
    "level": 2,
@@ -429,13 +442,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 6,
-  "chars_total": 56877,
+  "sections": 7,
+  "chars_total": 56969,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "2000.tex",
    "tex_sections": 6,
-   "overlaid": 4,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -451,7 +465,7 @@
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -474,17 +488,25 @@
     {
      "id": "sec-003-4-power-series-and-structure-types",
      "title": "Power Series and Structure Types",
-     "prose_ratio": 0.995,
-     "coverage_ratio": 0.997,
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-acknowledgements",
+     "id": "sec-004-5-feynman-diagrams-and-stuff-operators",
+     "title": "Feynman Diagrams and Stuff Operators",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-acknowledgements",
      "title": "Acknowledgements",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.04,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

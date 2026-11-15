@@ -1,0 +1,420 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-0806.4741v1",
+  "figures": [
+    {
+      "id": "vfig-p008",
+      "file": "figures/vfig-p008.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 8
+      },
+      "page": 8,
+      "rotation": 0,
+      "captionLabels": [
+        "1"
+      ],
+      "region": [
+        127.13,
+        229.34,
+        392.03,
+        326.82
+      ],
+      "assembly": {
+        "drawings": 16,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              127.13,
+              229.34,
+              392.03,
+              326.82
+            ],
+            "drawings": 11,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "contraction"
+            ]
+          }
+        ],
+        "boxes": [],
+        "unlabelledClosedShapes": 9,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              397.71,
+              237.6,
+              583.67,
+              327.2
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              439.67,
+              285.27,
+              470.8,
+              326.9
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              127.13,
+              229.34,
+              254.69,
+              326.52
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              219.5,
+              237.23,
+              306.62,
+              322.15
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              75.2,
+              282.4,
+              114.2,
+              322.15
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              298.25,
+              270.34,
+              386.0,
+              270.34
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              302.03,
+              658.7,
+              305.42,
+              658.7
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 37
+      }
+    },
+    {
+      "id": "vfig-p009",
+      "file": "figures/vfig-p009.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 9
+      },
+      "page": 9,
+      "rotation": 0,
+      "captionLabels": [
+        "2"
+      ],
+      "region": [
+        127.24,
+        185.11,
+        485.23,
+        424.36
+      ],
+      "assembly": {
+        "drawings": 21,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              127.24,
+              185.11,
+              485.23,
+              424.36
+            ],
+            "drawings": 16,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "o",
+              "x",
+              "y",
+              "∏(x)",
+              "∏(y)",
+              "∏",
+              "s  (o,x,y)",
+              "can",
+              "O",
+              "P *"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              230.41,
+              185.11,
+              436.85,
+              260.3
+            ],
+            "parent": null,
+            "labels": [
+              "y"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 7,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              408.29,
+              91.43,
+              412.8,
+              91.43
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              209.52,
+              105.62,
+              213.47,
+              105.62
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              321.18,
+              126.21,
+              325.12,
+              126.21
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              368.64,
+              126.21,
+              372.59,
+              126.21
+            ]
+          },
+          {
+            "from": "b0",
+            "to": null,
+            "bbox": [
+              127.24,
+              185.11,
+              485.23,
+              424.36
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              296.57,
+              279.36,
+              296.57,
+              382.03
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              296.57,
+              364.2,
+              390.9,
+              391.7
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              390.9,
+              263.36,
+              390.9,
+              391.7
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              333.4,
+              364.2,
+              390.9,
+              391.7
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              333.4,
+              297.36,
+              333.4,
+              364.2
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              467.23,
+              276.7,
+              467.23,
+              366.36
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              311.85,
+              377.38,
+              377.79,
+              406.26
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              72.0,
+              710.54,
+              259.2,
+              710.54
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 31
+      }
+    },
+    {
+      "id": "vfig-p010",
+      "file": "figures/vfig-p010.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 10
+      },
+      "page": 10,
+      "rotation": 0,
+      "captionLabels": [
+        "3"
+      ],
+      "region": [
+        232.99,
+        96.92,
+        421.88,
+        285.83
+      ],
+      "assembly": {
+        "drawings": 19,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              232.99,
+              96.92,
+              421.88,
+              285.83
+            ],
+            "drawings": 16,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "x",
+              "z"
+            ]
+          }
+        ],
+        "boxes": [],
+        "unlabelledClosedShapes": 15,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              232.99,
+              96.92,
+              419.22,
+              285.83
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              305.45,
+              416.95,
+              310.43,
+              416.95
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              363.04,
+              416.95,
+              368.02,
+              416.95
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              258.66,
+              533.8,
+              268.63,
+              533.8
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 50
+      }
+    }
+  ]
+}

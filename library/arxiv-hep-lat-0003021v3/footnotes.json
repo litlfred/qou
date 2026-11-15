@@ -1,0 +1,605 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-hep-lat-0003021v3",
+ "status": "determined",
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "1",
+   "text": "Inparticular,thisbehaviorisonlycompatiblewithacontinuousphasetransition. But at a more fundamental level, there is simply no longer any relation between the chiral Random Matrix Theory ensemble and the eﬀective QCD partition function for temperatures T that do not satisfy T ≪ΛQCD.",
+   "marks": [
+    {
+     "page": 1,
+     "context": "(λ −λ0)"
+    },
+    {
+     "page": 2,
+     "context": "hattheseresultsarerelevantfortheDiracoperatorspectrumatT=Tc."
+    }
+   ],
+   "block": "library/arxiv-hep-lat-0003021v3/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p015-1",
+   "page": 15,
+   "mark": "0",
+   "text": "2",
+   "marks": [
+    {
+     "page": 14,
+     "context": "(a"
+    }
+   ],
+   "block": "library/arxiv-hep-lat-0003021v3/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p017-1",
+   "page": 17,
+   "mark": "2",
+   "text": "Manyotherdetailsdonotmatchatall.Forinstancethe“phasetransition”inthemodel(15)iscontinuous,in contrast to the ﬁnite-temperature phase transition in the massless Nf = 4 theory, which is believed to be of ﬁrst order.",
+   "marks": [
+    {
+     "page": 17,
+     "context": "gapinthedensityforT> Tc."
+    },
+    {
+     "page": 17,
+     "context": "4 −λ"
+    }
+   ],
+   "block": "library/arxiv-hep-lat-0003021v3/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p017-2",
+   "page": 17,
+   "mark": "3",
+   "text": "Similarnumericalstudieshave beenperformedbyK.Splittorﬀ,M.Sc.thesis,TheNielsBohrInstitute 1999(unpub- lished). Simulations of the macroscopic spectral density in this model can also be found in the original paper by Jackson and Verbaarschot [14].",
+   "marks": [
+    {
+     "page": 17,
+     "context": "separateasthegapdevelops)."
+    }
+   ],
+   "block": "library/arxiv-hep-lat-0003021v3/blocks/prose-sec-003"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p015-2",
+   "page": 15,
+   "mark": "0",
+   "text": "8 s4 s6",
+   "block": "library/arxiv-hep-lat-0003021v3/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p015-3",
+   "page": 15,
+   "mark": "0",
+   "text": "6",
+   "block": "library/arxiv-hep-lat-0003021v3/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p015-4",
+   "page": 15,
+   "mark": "0",
+   "text": "4",
+   "block": "library/arxiv-hep-lat-0003021v3/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p015-5",
+   "page": 15,
+   "mark": "0",
+   "text": "2",
+   "block": "library/arxiv-hep-lat-0003021v3/blocks/prose-sec-003"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "a",
+   "context": "P.H.Damgaard"
+  },
+  {
+   "page": 1,
+   "mark": "b",
+   "context": "P.H.Damgaarda,U.M.Heller"
+  },
+  {
+   "page": 1,
+   "mark": "a",
+   "context": "P.H.Damgaarda,U.M.Hellerb,R.Niclasen"
+  },
+  {
+   "page": 1,
+   "mark": "c",
+   "context": "aTheNielsBohrInstituteand"
+  },
+  {
+   "page": 2,
+   "mark": "4",
+   "context": "eﬀectiveQCDpartitionfunctioninthelarge-volumelimitwhereV≪1/m"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "(as,for example,in the free theory where ρ(λ) ∼λ"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "ρ(λ)∼λ"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "ρ(λ)∼λ2"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "[14].It gives a diﬀerent behavior at T= Tc:ρ(λ) ∼λ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "ρ(λ)∝(λ −λ0)"
+  },
+  {
+   "page": 3,
+   "mark": "m",
+   "context": "ρ(λ)∝(λ −λ0)2"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "withλ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "ρ(λ)∝(λ −λ0)"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "up of the eigenvalue density function around the soft edge λ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "whereX∝(λ−λ0)N"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "thematrix,andtherescalingbyN"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "extentNt= 4anduptothreespatialvolumes:8"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "extentNt= 4anduptothreespatialvolumes:83,12"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "extentNt= 4anduptothreespatialvolumes:83,123and16"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "8"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "8"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "8"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "8"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "8"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "8"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "8"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "12"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "16"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "8"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "8"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "8"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "12"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "16"
+  },
+  {
+   "page": 5,
+   "mark": "x",
+   "context": "Uµ(x)δ"
+  },
+  {
+   "page": 5,
+   "mark": "†",
+   "context": "Uµ(x)δx+µ,y −U"
+  },
+  {
+   "page": 5,
+   "mark": "x",
+   "context": "ν<µ"
+  },
+  {
+   "page": 5,
+   "mark": "x",
+   "context": "ν"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "D"
+  },
+  {
+   "page": 5,
+   "mark": "5",
+   "context": "deﬁnite.Thesignfunctionǫ(x)deﬁnedaboveplaystheroleofγ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "D"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "D"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "D2witheigenvalueλ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "D"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "D2witheigenvalueλ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "D"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "ture for severalβ’s on8"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "β=5.9,forspatialvolumes8"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "β=5.9,forspatialvolumes83,12"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "β=5.9,forspatialvolumes83,123and16"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "InFig.1weshowthedensityoflowlyingeigenvalueson8"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "onan8"
+  },
+  {
+   "page": 8,
+   "mark": "s",
+   "context": "π"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "πs"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "π"
+  },
+  {
+   "page": 8,
+   "mark": "s",
+   "context": "π2"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "π2 s"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "π2 s2"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "correlations.Butaswemoveintothebulk,sayfori>5inthecaseofthe8"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "re 4:The lowesteigenvalue,averagedover5 conﬁgurations,onan 8"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "lowesteigenvalueona8"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "8"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "8"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "8"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "8"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "8"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "8"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "12"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "8"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "12"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "8"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "8"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "8"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "8"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "8"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "ofthetailwechoosetocutoﬀ.ThisﬁttinghasbeendoneforV= 8"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "ρ(λ) →λ"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "where we determine λ"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "bothonan8"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "from8"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "amq= 0.025forspatialvolumes8"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "amq= 0.025forspatialvolumes83and12"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "0.1, 0.05, 0.025, 0.002on8"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "ure8:Powerﬁttothespectraldensityforβ= 5.2withamq= 0.025onan8"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "isshownforadynamicalsimulationwithβ=5.2,amq=0.025ona8"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "spacings,s"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "spacings,s1,s"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "spacings,s1,s2ands"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "ω=4m"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(λ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(λ2+ m"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(λ2+ m2)"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "Figure9:Comparisonofthespectraldensityforβ=5.2,amq=0.025ona8"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "intheapparentcut-oﬀeigenvalueλ"
+  },
+  {
+   "page": 16,
+   "mark": "†",
+   "context": "−NTr(WW"
+  },
+  {
+   "page": 16,
+   "mark": "†",
+   "context": "W"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "T=1correspondingtoamacroscopicpower-lawbehavioroftypeρ(λ)∼λ"
+  },
+  {
+   "page": 18,
+   "mark": "f",
+   "context": "JN"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "JNf (ζ(T))"
+  },
+  {
+   "page": 18,
+   "mark": "f",
+   "context": "JNf (ζ(T))2−JN"
+  },
+  {
+   "page": 18,
+   "mark": "f",
+   "context": "JNf (ζ(T))2−JNf −1(ζ(T))JN"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "1 −T"
+  }
+ ]
+}

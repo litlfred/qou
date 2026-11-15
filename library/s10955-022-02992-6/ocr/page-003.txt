@@ -1,0 +1,58 @@
+Cluster Expansions: Necessary... Page30f47 33
+
+weighted combinatorial species of multi-rooted graphs with a fixed set of roots. The set of all
+multi-rooted graphs has an essential structural property—it is invariant under the operation
+of removal of a root. Taking a multi-rooted graph and removing an arbitrary root (as well as
+all edges incident to it), one gets again a multi-rooted graph on a smaller vertex set, where
+every neighbour of the removed root becomes a root vertex itself. The weight of the original
+graph is equal to the weight of the resulting graph times the weight of the edges removed. The
+corresponding property of the generating functions is expressed by the Kirkwood—Salsburg
+equations. Every possible rule for the choice of the root to remove induces a different combi-
+natorial operation and therefore a different system of Kirkwood-Salsburg equations for the
+generating functions.
+
+In this work we provide a condition for absolute convergence of the activity expansions p in
+terms of the existence of a measurable function solving a system of Kirkwood-—Salsburg type
+inequalities (in the case of repulsive interactions, that condition is also a necessary one). Our
+main result, Theorem 2.1, is inspired by [1]; it is a slightly modified, strongly generalized
+version of Claim 1 therein. The goal, however, is not only to obtain abstract conditions
+which are both necessary and sufficient for convergence of the cluster expansions—but also
+to demonstrate how these characterizations provide a universal approach to prove model-
+specific sufficient conditions on different levels of generality, both in discrete and continuous
+setups with repulsive interactions. A two-lane mechanism arises: On the one hand, for a
+candidate family of ansatz functions & (given, for example, as approximations of p) one
+can search for conditions that ensure that these functions & satisfy the Kirkwood—Salsburg
+inequalities; on the other hand, given candidate sufficient conditions, one can construct a
+suitable family of ansatz functions & tailored to satisfy the Kirkwood-—Salsburg inequalities
+under these conditions.
+
+This approach provides a unifying framework for the known conditions, but it also allows
+to prove stronger results. To emphasize this possibility, we derive a new sufficient condition
+for absolute convergence of the activity expansions p in the setup of abstract polymers. In
+that general setup, our condition improves on any known condition that we are aware of.
+
+A more detailed outline of the main ideas intoduced above can be found in [16] (for the
+case of non-negative pairwise interactions and without rigorous proofs).
+
+In the further course of the paper, we investigate two particular hard-core setups as
+examples—the subset polymers in Z4 and hard objects in R“. There, the sets of roots of
+the multi-rooted graphs correspond to configurations of geometric objects. By breaking the
+geometric objects into smaller “pieces” to which we refer as snippets, we can identify these
+configurations with configurations of snippets (e.g., in the case of subset polymers we can
+identify a configuration of polymers with the disjoint union of monomers covering this con-
+figuration). Picking a root of a multi-rooted graph—the combinatorial operation underlying
+the Kirkwood-Salsburg equations—corresponds to picking a snippet. Different rules to pick
+a snippet in general give rise to characterizations of absolute convergence in terms of dif-
+ferent Kirkwood-Salsburg inequalities. This way the latter can be tailored to a candidate
+sufficient condition. Thus different sufficient conditions can be derived by playing both with
+the choice of different systems of Kirkwood—Salsburg inequalities and the choice of different
+ansatz functions satisfying these inequalities. We illustrate this mechanism by deriving some
+sufficient conditions for a class of hard-core interaction models, in particular for multi-type
+systems of hard spheres in R¢.
+
+The paper is organized as follows: In Sect. 2.1 we introduce the basic notation and present
+the general framework. Furthermore, in Theorem 2.1 we state our main result, a character-
+ization of the domain of absolute convergence for the activity expansions p, and use it to
+recreate the classical sufficient conditions by Kotecky and Preiss as well as the sufficient
+
+D Springer

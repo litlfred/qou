@@ -1,0 +1,46 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2210.09583v1",
+ "source": {
+  "structure_sha256": "38fc6fa465a06a7bc25954bfd34baccc888bd93a4e20522c26eae7d1c04af841",
+  "file": "2210.09583v1.pdf"
+ },
+ "provenance": {
+  "title": "A NEW PRESENTATION OF THE osp(1|2)-POLYNOMIAL LINK INVARIANT",
+  "authors": "AND CATEGORIFICATION",
+  "arxiv": {
+   "id": "2210.09583",
+   "version": "1",
+   "primary_class": "math.QA",
+   "stamp_date": "18 Oct 2022"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "recommendation": 1
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Now that we have this Kauffman-bracket type definition of $\\hat{J}$, it should not come as much of a surprise that one can categorify this invariant using a homology theory that is practically identical to Khovanov homology.",
+   "strength": "should-not",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-008-4-two-categorifications.md",
+   "section_title": "Two Categorifications",
+   "pages": "12-13",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

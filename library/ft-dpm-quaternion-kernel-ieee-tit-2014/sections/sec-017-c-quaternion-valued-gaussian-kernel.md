@@ -8,6 +8,7 @@ pages: 8-9
 source_pdf: FT_DPM_Quaternion_Kernel_IEEE_TIT_2014.pdf
 source_sha256: aa2f1eb73610a81b
 toc_source: inferred
+doc_brief: "Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions — The existence and uniqueness conditions of quater- nion reproducing kernel Hilbert spaces (QRKHS) are established"
 ---
 Recent complex-valued extensions of kernel estimation
 algorithms [17], [18] consider a complex-valued positive def-
@@ -94,5 +95,3 @@ we only plot the region (xr, xi, x j, xk)
 ∈
 [−15, 15] ×
 [−15, 15] × {0} × {0} where AQ = 0.05.
-5744
-IEEE TRANSACTIONS ON INFORMATION THEORY, VOL. 60, NO. 9, SEPTEMBER 2014

@@ -1,0 +1,161 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "download-1",
+ "source": {
+  "structure_sha256": "bbb001c909958e8a2c281846eeab29e5bb49e1d1f4645f51221afb88ac641e3f",
+  "file": "Download (1).pdf"
+ },
+ "provenance": {
+  "title": "Central and L p -concentration of 1-Lipschitz maps into R -trees",
+  "authors": "By Kei FUNANO",
+  "arxiv": null,
+  "doi": "10.2969/jmsj/06120483"
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 9,
+  "by_kind": {
+   "recommendation": 9
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall prove that \u0003\u00f0Rn n BRn\u00f0c\u00f0\u0003\u00de; \b0\u00de\u00de \u0006 \u0002 for \b0 :\u00bc Vp\u00f0\u0003\u00de= \u00f0m\u0002\u00de1=p.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-008-232-observable-central-radius.md",
+   "section_title": "Observable central radius.",
+   "pages": "9-11",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "1 and z0 2 T\u00f0\u0005z0;z\u00f0tn\u00de\u00de for any n 2 N, we shall show that T1 n\u00bc1 T\u00f0\u0005z0;z\u00f0tn\u00de\u00de \u0005 \u00f0T n T\u00f0z0\u00de\u00de [ fz0g.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-3-existence-of-a-median-in-an-r-tree.md",
+   "section_title": "Existence of a median in an R-tree.",
+   "pages": "11-13",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This completes the proof of the claim. \u0001 Putting :\u00bc supfL\u00f0\u0006\u00de j \u0006 2 \u0001g, we shall show that < \u00fe1.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-3-existence-of-a-median-in-an-r-tree.md",
+   "section_title": "Existence of a median in an R-tree.",
+   "pages": "11-13",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall approximate the measure \u0003 by a measure whose support lies on a simplicial tree in T.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-010-4-the-necessity-in-proposition-212-for-r-trees.md",
+   "section_title": "The necessity in Proposition 2.12 for R-trees.",
+   "pages": "13-16",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall show that lim n!1 Z T dT\u00f0c\u00f0\u0003\u00de; w\u00ded\u0003n\u00f0w\u00de \u00bc Z T dT\u00f0c\u00f0\u0003\u00de; w\u00ded\u0003\u00f0w\u00de: \u00f04:1\u00de Since Z T dT\u00f0c\u00f0\u0003\u00de; w\u00ded\u0003n\u00f0w\u00de \u00bc X ln i\u00bc1 dT\u00f0c\u00f0\u0003\u00de; zn i \u00de\u0003\u00f0An i \u00de \u00fe dT\u00f0c\u00f0\u0003\u00de; zn 1\u00de\u0003\u00f0T n Kn\u00de; we have Z T dT\u00f0c\u00f0\u0003\u00de; w\u00ded\u0003n\u00f0w\u00de \u0004 X ln i\u00bc1 dT\u00f0c\u00f0\u0003\u00de; zn i \u00de\u0003\u00f0An i \u00de \u0004\u0004\u0004\u0004\u0004 \u0004\u0004\u0004\u0004\u0004 < 1 n2 : \u00f04:2\u00de By An i \u0005 BT\u00f0zn i ; 1=n\u00de, we get X ln i\u00bc1 dT\u00f0c\u00f0\u0003\u00de; zn i \u00de\u0003\u00f0An i \u00de \u0004 Z Kn dT\u00f0c\u00f0\u0003\u00de; w\u00ded\u0003\u00f0w\u00de \u0004\u0004\u0004\u0004\u0004 \u0004\u0004\u0004\u0004\u0004 \u00f04:3\u00de \u00bc X ln i\u00bc1 Z An i fdT\u00f0c\u00f0\u0003\u00de; w\u00de \u0004 dT\u00f0c\u00f0\u0003\u00de; zn i \u00degd\u0003\u00f0w\u00de \u0004\u0004\u0004\u0004\u0004 \u0004\u0004\u0004\u0004\u0004 \u0006 X ln i\u00bc1 Z An i dT\u00f0w; zn i \u00ded\u0003\u00f0w\u00de \u0006 1 n : Hence, combining (4.2) with (4.3) and Z Kn dT\u00f0c\u00f0\u0003\u00de; w\u00ded\u0003\u00f0w\u00de \u0004 Z T dT\u00f0c\u00f0\u0003\u00de; w\u00ded\u0003\u00f0w\u00de \u0004\u0004\u0004\u0004 \u0004\u0004\u0004\u0004 \u0006 Z TnKn dT\u00f0c\u00f0\u0003\u00de; w\u00ded\u0003\u00f0w\u00de < 1 n ; 496 K.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-010-4-the-necessity-in-proposition-212-for-r-trees.md",
+   "section_title": "The necessity in Proposition 2.12 for R-trees.",
+   "pages": "13-16",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Fixing a point z0 2 T, we shall consider the function g : T !",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-011-5-proof-of-the-main-theorems.md",
+   "section_title": "Proof of the main theorems.",
+   "pages": "16-23",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Given any z1; z2 2 T 0, we shall show that \u0005z0;z1\u00f0s\u00de \u00bc \u0005z0;z2\u00f0s\u00de.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-011-5-proof-of-the-main-theorems.md",
+   "section_title": "Proof of the main theorems.",
+   "pages": "16-23",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Therefore, by the property (2) of R-trees, we get \u00bdz1; z2\bT \u00bc \u00bd\u0005z0;z1\u00f0s0\u00de; z1\bT [ \u00bd\u0005z0;z2\u00f0s0\u00de; z2\bT: Hence, since T 0 is convex by virtue of Proposition 2.9, the points z1 and z2 must be included in di\ufb00erent components in C T\u00f0\u0005z0;z1\u00f0s0\u00de\u00de.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-011-5-proof-of-the-main-theorems.md",
+   "section_title": "Proof of the main theorems.",
+   "pages": "16-23",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Consequently, we obtain dT\u00f0z1; z2\u00de \u0006 dT\u00f0z1; \u0005z0;z1\u00f0s\u00de\u00de \u00fe dT\u00f0\u0005z0;z2\u00f0s\u00de; z2\u00de \u0006 2\u00f0t \u0004 s\u00de \u0006 2 ObsDiamR\u00f0X; \u0004\u0002\u00de: This completes the proof of the claim. \u0001 We shall consider the relation on C de\ufb01ned by T 0 T 00 if and only if dT\u00f0T 0; T 00\u00de \u0006 Sep\u00f0X; \u0002=3; \u0002=3\u00de.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-011-5-proof-of-the-main-theorems.md",
+   "section_title": "Proof of the main theorems.",
+   "pages": "16-23",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

@@ -1,0 +1,1469 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1801.04409v4",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p005-1",
+   "page": 5,
+   "mark": "1",
+   "text": "Notethatthisconditionisnotnecessarilysatisﬁed:e.g.ifchar(k)=p,t∈k, and Rep",
+   "marks": [
+    {
+     "page": 5,
+     "context": "an abeliantensorcategory."
+    }
+   ],
+   "block": "library/arxiv-1801.04409v4/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "2",
+   "text": "NotethatanyKaroubianlinearcategorywithﬁnitedimensionalmorphism spaces satisﬁes the Krull-Schmidt theorem, which says that any object has a unique decomposition into a direct sum of indecomposables (up to a non-unique iso- morphism); for this reason, such categories are sometimes called Krull-Schmidt categories.",
+   "marks": [
+    {
+     "page": 6,
+     "context": "suchthatallmorphismsspacesareﬁnitedimensional."
+    }
+   ],
+   "block": "library/arxiv-1801.04409v4/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p029-1",
+   "page": 29,
+   "mark": "2",
+   "text": "r",
+   "marks": [
+    {
+     "page": 29,
+     "context": "2k"
+    },
+    {
+     "page": 29,
+     "context": "itiseasytosee(e.g.,bypickingabasisofV )thatP"
+    }
+   ],
+   "block": "library/arxiv-1801.04409v4/blocks/prose-sec-019"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p005-2",
+   "page": 5,
+   "mark": "k",
+   "text": "(St)istheKaroubian Delignecategory ofrepresentations of St([EGNO],",
+   "block": "library/arxiv-1801.04409v4/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p034-1",
+   "page": 34,
+   "mark": "107",
+   "text": "(1992), 447–452. [J] J. C. Jantzen, Representations of algebraic groups, 2nd edition, American Mathematical Society, Providence, RI, 2003.",
+   "block": "library/arxiv-1801.04409v4/blocks/prose-sec-023"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "alreadyforC=Repk((Z/p)"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "i,jTr(fij◦gji).Ifeitherdim Y"
+  },
+  {
+   "page": 4,
+   "mark": "f",
+   "context": "i,jTr(fij◦gji).Ifeitherdim Yj=0or"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "licpermutationonX⊗p,whereXisthetautologicalobject,then(1 −σ)"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "butTr(1 −σ) = t"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "4.LetG=(Z/2Z)"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "odd)dimensionarepreciselyΩ"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Ω"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "Ωn(1) ⊗Ω"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Ωn(1) ⊗Ωm(1) ≃Ω"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "fact,thisisalreadysoforRepk(Z/p)"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "gxg−1= S"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "that a pivotalstructure on Cis deﬁnedby the elementK= q"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "are positiveroots.ThendimLX= 2q"
+  },
+  {
+   "page": 7,
+   "mark": "4",
+   "context": "are positiveroots.ThendimLX= 2q2+ q"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Soifq"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 9,
+   "mark": "e",
+   "context": "φ(g) =eφ(ψG(g))forallg∈G,where"
+  },
+  {
+   "page": 9,
+   "mark": "e",
+   "context": "Finally,letusshowthatthehomomorphism"
+  },
+  {
+   "page": 9,
+   "mark": "e",
+   "context": "commutingwithφ(G)).Tothisend,let"
+  },
+  {
+   "page": 9,
+   "mark": "e",
+   "context": "functordeﬁnedby"
+  },
+  {
+   "page": 9,
+   "mark": "e",
+   "context": "S,weget"
+  },
+  {
+   "page": 9,
+   "mark": "e",
+   "context": "S,wegeteΦ=S ◦Φ.Thus,"
+  },
+  {
+   "page": 9,
+   "mark": "e",
+   "context": "S,wegeteΦ=S ◦Φ.Thus,eΦisuniquelydeterminedandhence"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "thisisalreadysowhenG=G"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "V.LetGV:=Aut(FV ).ThenGV⊂GL(V )is"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "V.Moreover,GVis"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "G).ThismeansthattheconnectedcomponentoftheidentityG"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "V/C,whereCis"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "Vis"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "Vis"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "givenbytheelementq"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "LV(ρ⊗X)is"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "algebraically closed ﬁeld k (i.e., S"
+  },
+  {
+   "page": 17,
+   "mark": "s",
+   "context": "P ∩sHs−1"
+  },
+  {
+   "page": 17,
+   "mark": "s",
+   "context": "P ∩sHs−1"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "Repk G = (Ver"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "Repk G = (Verp)L,whereVer"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "p⊠Supervec,andVer"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "Z/2.Hence, actions of L on Supervec correspond to elements H"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "Letc∈H"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "canonicalelement¯c ∈H"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "cationofRepk D"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "cationofRepk Dp,whereD"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "Repk D"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "Let"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "p⊠Rep"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "whereRep"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "whereRepk(eL, z)isthecategoryofrepresentations of"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "Repk S"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "Repk S"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "Repk S3=Vec"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "Repk S"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "Repk Sp+n∼= Repk S"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "Res : Repk S"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "Res : Repk Sn+p→Repk(S"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "Res : Repk Sn+p→Repk(Sn × S"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "Repk S"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "Repk S"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "n=0,i.e.,C=Repk S"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "Lp−2 ⊗χ"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "Lp−2 ⊗χm, where m is evenas dim χ = −1.Moreover,S"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "p−2Vp−2= sign is the signrepresentationof Sp, so∧p−2(Lp−2 ⊗χ"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "χ"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "S(Vp−2) = Lp−2 ⊗χ"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "S(∧iVp−2) = Lp−1−i ⊗χ"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "the form χ"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "weseethatχmi̸=1, χ"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "weseethatχmi̸=1, χp−1forany0 < i < p −1.Alsoχ"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "weseethatχmi̸=1, χp−1forany0 < i < p −1.Alsoχm(p−1)= χ"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "Thisimpliesthattheorderofχ"
+  },
+  {
+   "page": 20,
+   "mark": "p",
+   "context": "Thesuitablechoiceofχiswelldeﬁnedonlyuptothechangeχ →χ"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "question is to determine χ"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "χ"
+  },
+  {
+   "page": 20,
+   "mark": "p",
+   "context": "Repk S"
+  },
+  {
+   "page": 20,
+   "mark": "p",
+   "context": "Repk S"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "numberofsimpleobjectsis(p −1)"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "Sn/I=Repk S"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "indecomposable objects of dimension zero), and Repk S"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "SncoincideswithRepk S"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "abS"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "abSn→Repk S"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "Repk S"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "FpS"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "FpS"
+  },
+  {
+   "page": 21,
+   "mark": "p",
+   "context": "FpS"
+  },
+  {
+   "page": 21,
+   "mark": "p",
+   "context": "Vp−2= Lp−2 ⊗χ"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "goryRepk S"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "S(E)=−Eg−1,soS"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "gv= q"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "gv= qm"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "gv= qm1v, Ev= 0.Thendim V"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "gv= qm1v, Ev= 0.Thendim Vm"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "gv= qm1v, Ev= 0.Thendim Vm1,m"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "gv= qm1v, Ev= 0.Thendim Vm1,m2= q"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "gv= qm1v, Ev= 0.Thendim Vm1,m2= qm"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "gv= qm1v, Ev= 0.Thendim Vm1,m2= qm2+ ... + q"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "gv= qm1v, Ev= 0.Thendim Vm1,m2= qm2+ ... + qm"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "tensor product of V"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "tensor product of Vm"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "tensor product of Vm1,m"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "ofGLq(2)withhighestweights(m1, m2),whereq"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "[e, f] =g"
+  },
+  {
+   "page": 22,
+   "mark": "g",
+   "context": "[e, f] =g1"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "q−rswheng1v= q"
+  },
+  {
+   "page": 22,
+   "mark": "s",
+   "context": "q−rswheng1v= qrvandg2w= q"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "∆J(¯e) =¯e ⊗g"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "givenby ψ(g) = g"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "Inthiscase,bydeﬁnition,Cq=Rep Hq/(g"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "thatq"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "algebraHq/(g"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "longerneedstobenilpotent.Namely,E"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "canactonasimplemodulebyanarbitraryscalar.However,ifE"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "ofgwitheigenvalueγ,theelementsv, Ev, ..., E"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "V ,soVhasdimensionγ(1+q+q"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "V ,soVhasdimensionγ(1+q+q2+...+q"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "Kq⊂Hqgenerated by g and E"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "cocommutative,as E"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "Kq/(g"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "Kq/(gn−1)withnilpotentactionofE"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "Kq/(gn−1)withnilpotentactionofEnisR[Z/n]=R[χ]/(χ"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "negligible indecomposablemodule overHq/(g"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "to Kq/(g"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "Kq/(gn−1) lies in the ideal of R[Z/n] generated by 1+χ+...+χ"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "Cq) →R[χ]/(1 + χ + ... + χ"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "χ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "extendtoGLq(2),wheretheorderofqis2n,andq"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "extendtoGLq(2),wheretheorderofqis2n,andq2"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "extendtoGLq(2),wheretheorderofqis2n,andq2m−d+1=q"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "extendtoGLq(2),wheretheorderofqis2n,andq2m−d+1=qm"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "extendtoGLq(2),wheretheorderofqis2n,andq2m−d+1=qm1+m"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "subcategoryC"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "qspannedbyV (m, d)with"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "qspannedbyV (m, d)with2"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "qspannedbyV (m, d)with2m −d + 1=0modulo"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "qspannedbyV (m, d)with2m −d + 1=0modulo2"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "C"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "C0q) →R[χ]/(1 + χ + ... + χ"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "C"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "V (m, 2m + 1)) = χ"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "V (m, 2m + 1)) = χm+ χ"
+  },
+  {
+   "page": 24,
+   "mark": "q",
+   "context": "q,theevenpartofthecategoryVer"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "V (0, 2rn + 1) 7→x"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "V (0, 2rn + 1) 7→x2"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "V (0, 2rn + 1) 7→x2r+1+x"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "V (0, 2rn + 1) 7→x2r+1+x2"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "V (0, 2rn + 1) 7→x2r+1+x2r...+x−2"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "V (−1, 2rn −1) 7→x"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "V (−1, 2rn −1) 7→x2"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "V (−1, 2rn −1) 7→x2r+x"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "V (−1, 2rn −1) 7→x2r+x2"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "V (−1, 2rn −1) 7→x2r+x2r−1....+x−2"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "(e.g.C= Repk(Z/2)"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "H=Un,themaximalunipotentsubgroupofSL(n)andV=k"
+  },
+  {
+   "page": 27,
+   "mark": "r",
+   "context": "haveψ(R)=Fq,whereq=p"
+  },
+  {
+   "page": 27,
+   "mark": "q",
+   "context": "FpH(F"
+  },
+  {
+   "page": 27,
+   "mark": "q",
+   "context": "FpH(F"
+  },
+  {
+   "page": 27,
+   "mark": "q",
+   "context": "FpH(F"
+  },
+  {
+   "page": 27,
+   "mark": "p",
+   "context": "eF:Ver"
+  },
+  {
+   "page": 27,
+   "mark": "q",
+   "context": "FpH(F"
+  },
+  {
+   "page": 27,
+   "mark": "e",
+   "context": "nce the source category is semisimple).Moreover, the functor"
+  },
+  {
+   "page": 27,
+   "mark": "a",
+   "context": "Vψ,soweget"
+  },
+  {
+   "page": 27,
+   "mark": "p",
+   "context": "Vψ,sowegetasurjectivetensorfunctorF:Ver"
+  },
+  {
+   "page": 27,
+   "mark": "a",
+   "context": "Vψis"
+  },
+  {
+   "page": 27,
+   "mark": "p",
+   "context": "VψisaquotientofVer"
+  },
+  {
+   "page": 27,
+   "mark": "a",
+   "context": "VψisaquotientofVerp(HV ),thus"
+  },
+  {
+   "page": 28,
+   "mark": "p",
+   "context": "X→Ver"
+  },
+  {
+   "page": 28,
+   "mark": "a",
+   "context": "X→Verp(thisisactually"
+  },
+  {
+   "page": 28,
+   "mark": "a",
+   "context": "i"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "ia"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "iai(X)L"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "aip"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "bip"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "\u0012a"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "Let V= k"
+  },
+  {
+   "page": 29,
+   "mark": "k",
+   "context": "powersof2.Indeed,ifℓ=2"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "powersof2.Indeed,ifℓ=2k"
+  },
+  {
+   "page": 29,
+   "mark": "k",
+   "context": "powersof2.Indeed,ifℓ=2k1+ · · · + 2"
+  },
+  {
+   "page": 29,
+   "mark": "r",
+   "context": "powersof2.Indeed,ifℓ=2k1+ · · · + 2k"
+  },
+  {
+   "page": 29,
+   "mark": "k",
+   "context": "\u0013\u0012ℓ−2"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "\u0013\u0012ℓ−2k"
+  },
+  {
+   "page": 29,
+   "mark": "k",
+   "context": "2"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "2k"
+  },
+  {
+   "page": 29,
+   "mark": "k",
+   "context": "2k1! . . . 2"
+  },
+  {
+   "page": 29,
+   "mark": "r",
+   "context": "2k1! . . . 2k"
+  },
+  {
+   "page": 29,
+   "mark": "k",
+   "context": "2"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "2k"
+  },
+  {
+   "page": 29,
+   "mark": "k",
+   "context": "2"
+  },
+  {
+   "page": 29,
+   "mark": "k",
+   "context": "bijectivelyontothequotientSℓ/(S2"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "bijectivelyontothequotientSℓ/(S2k"
+  },
+  {
+   "page": 29,
+   "mark": "g",
+   "context": "g∈C"
+  },
+  {
+   "page": 29,
+   "mark": "k",
+   "context": "g∈Cgonthespace∧2"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "g∈Cgonthespace∧2k"
+  },
+  {
+   "page": 29,
+   "mark": "k",
+   "context": "∧2"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "∧2k"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "∧2"
+  },
+  {
+   "page": 29,
+   "mark": "k",
+   "context": "∧2mV ,with0≤m≤log2 n.Notethatdim"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "∧2mV ,with0≤m≤log2 n.Notethatdimk X"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "∧n"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "∧njV⊗(∧n"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "i=0∧n"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "∧n"
+  },
+  {
+   "page": 30,
+   "mark": "m",
+   "context": "Notethatn −njisdivisibleby2"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "Notethatn −njisdivisibleby2m"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "∧n"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "∧njV⊗(∧n"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "∧njV⊗(∧njV )∗is∧n"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "∧njV⊗(∧njV )∗is∧njV′⊗(∧n"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "Now,Y"
+  },
+  {
+   "page": 30,
+   "mark": "m",
+   "context": "Now,YjisadirectsummandinX"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "Now,YjisadirectsummandinXmj⊗Y"
+  },
+  {
+   "page": 30,
+   "mark": "m",
+   "context": "Now,YjisadirectsummandinXmj⊗Yj−1.SinceX"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "andY"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "andYj−1isinvertible,wegetY"
+  },
+  {
+   "page": 30,
+   "mark": "m",
+   "context": "andYj−1isinvertible,wegetYj= X"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "andYj−1isinvertible,wegetYj= Xmj ⊗Y"
+  },
+  {
+   "page": 30,
+   "mark": "m",
+   "context": "andYj−1isinvertible,wegetYj= Xmj ⊗Yj−1,i.e.,X"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "andYj−1isinvertible,wegetYj= Xmj ⊗Yj−1,i.e.,Xmj= Y"
+  },
+  {
+   "page": 30,
+   "mark": "s",
+   "context": "C=Veck(Z"
+  },
+  {
+   "page": 30,
+   "mark": "s",
+   "context": "Z"
+  },
+  {
+   "page": 30,
+   "mark": "m",
+   "context": "ZsisgeneratedbytheisomorphismclassesoftheobjectsX"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "ZsisgeneratedbytheisomorphismclassesoftheobjectsXmj(orY"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "mℓ∼= X⊗q"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "X⊗p"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "m"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "m"
+  },
+  {
+   "page": 30,
+   "mark": "m",
+   "context": "qℓ=0).Letr=2"
+  },
+  {
+   "page": 30,
+   "mark": "m",
+   "context": "qℓ=0).Letr=2mℓ+ · · · + 2"
+  },
+  {
+   "page": 30,
+   "mark": "s",
+   "context": "qℓ=0).Letr=2mℓ+ · · · + 2m"
+  },
+  {
+   "page": 30,
+   "mark": "m",
+   "context": "qℓ=0).Letr=2mℓ+ · · · + 2ms,sothatn −r=2"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "qℓ=0).Letr=2mℓ+ · · · + 2ms,sothatn −r=2m"
+  },
+  {
+   "page": 30,
+   "mark": "m",
+   "context": "qℓ=0).Letr=2mℓ+ · · · + 2ms,sothatn −r=2m1+ · · · + 2"
+  },
+  {
+   "page": 30,
+   "mark": "m",
+   "context": "Sincerisdivisibleby2"
+  },
+  {
+   "page": 30,
+   "mark": "m",
+   "context": "Sincerisdivisibleby2mℓandn −r<2"
+  },
+  {
+   "page": 30,
+   "mark": "m",
+   "context": "j<landi=2"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "sideof(1)butbydet"
+  },
+  {
+   "page": 30,
+   "mark": "s",
+   "context": "Tilt(SLn)=Veck(Z"
+  },
+  {
+   "page": 30,
+   "mark": "s",
+   "context": "Tilt(SLn)=Veck(Zs−1)whereZ"
+  },
+  {
+   "page": 30,
+   "mark": "m",
+   "context": "eratedbytheisomorphismclassesofX"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "eratedbytheisomorphismclassesofXm"
+  },
+  {
+   "page": 30,
+   "mark": "m",
+   "context": "eratedbytheisomorphismclassesofXm1, . . . , X"
+  },
+  {
+   "page": 31,
+   "mark": "s",
+   "context": "Tilt(PGLn)=Veck(Z"
+  },
+  {
+   "page": 31,
+   "mark": "s",
+   "context": "Tilt(PGLn)=Veck(Zs−1)whereZ"
+  },
+  {
+   "page": 31,
+   "mark": "m",
+   "context": "X"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "Xm"
+  },
+  {
+   "page": 31,
+   "mark": "m",
+   "context": "Xm1 . . . X"
+  },
+  {
+   "page": 31,
+   "mark": "s",
+   "context": "m"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "ms,"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "ms,n"
+  },
+  {
+   "page": 31,
+   "mark": "s",
+   "context": "ms,n1 . . . , n"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "groupofX⊗n"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "m"
+  },
+  {
+   "page": 31,
+   "mark": "s",
+   "context": "m1. . . X⊗n"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "i"
+  },
+  {
+   "page": 31,
+   "mark": "m",
+   "context": "i2"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "i2m"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "i2mi"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "i2min"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "dimensionofX.Thereexistsq ∈ksuchthatd = [3]q= q"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "TheoremA.1.(i)Assumethatq"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "TheoremA.1.(i)Assumethatq2=1orthatq"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "(ii) Assume q"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 32,
+   "mark": "q",
+   "context": "q,where"
+  },
+  {
+   "page": 32,
+   "mark": "a",
+   "context": "q,whereqis"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "q2+ 1 + q−2thenφq(Xi)=[2i + 1]q=q"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "q2+ 1 + q−2thenφq(Xi)=[2i + 1]q=q2"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "q2+ 1 + q−2thenφq(Xi)=[2i + 1]q=q2i+1−q−2"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "[3]q[2l + 1]q= [2l −1]q⇐⇒q2(l+1)= ±1,q"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "Clearlyφq=φq′ifandonlyifq"
+  },
+  {
+   "page": 33,
+   "mark": "q",
+   "context": "formalcodegreefφq(seee.g.[O1,Section2.3])ofφ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "if q"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "if q"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "(q−q−1)"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "byq"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "byq2+ q−2,whereq"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "q"
+  }
+ ]
+}

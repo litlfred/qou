@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2205.01282v2
-doc_title: "Witten-Reshetikhin-Turaev invariants and homological blocks for plumbed homology spheres"
+doc_title: "WITTEN–RESHETIKHIN–TURAEV INVARIANTS AND HOMOLOGICAL BLOCKS FOR PLUMBED HOMOLOGY SPHERES"
 section_id: sec-014-62-a-proof-of-the-main-result
 section_title: "A proof of the main result"
 section_number: 6.2
 pages: 16-17
 source_pdf: 2205.01282v2.pdf
 source_sha256: 00f656afa60db838
-doc_brief: "Witten-Reshetikhin-Turaev invariants and homological blocks for plumbed homology spheres — In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed 3-manifolds."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.88
-latex_coverage_ratio: 0.845
+latex_coverage_ratio: 0.959
+doc_brief: "WITTEN–RESHETIKHIN–TURAEV INVARIANTS AND HOMOLOGICAL BLOCKS FOR PLUMBED HOMOLOGY SPHERES — In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed 3-manifolds."
 ---
 []{#subsec:Gauss_vanish_proof label="subsec:Gauss_vanish_proof"}
 

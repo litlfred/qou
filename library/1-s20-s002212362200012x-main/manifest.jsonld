@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "1-s20-s002212362200012x-main",
+  "title": "Journal of Functional Analysis Log concavity and concentration of Lipschitz functions on the Boolean hypercube",
   "contains": [
+    "library/1-s20-s002212362200012x-main/sections/sec-front-matter",
     "library/1-s20-s002212362200012x-main/sections/sec-000",
     "library/1-s20-s002212362200012x-main/sections/sec-001",
     "library/1-s20-s002212362200012x-main/sections/sec-002",
@@ -23,13 +24,16 @@
     "library/1-s20-s002212362200012x-main/sections/sec-009",
     "library/1-s20-s002212362200012x-main/sections/sec-010",
     "library/1-s20-s002212362200012x-main/sections/sec-011",
-    "library/1-s20-s002212362200012x-main/sections/sec-012"
+    "library/1-s20-s002212362200012x-main/sections/sec-012",
+    "library/1-s20-s002212362200012x-main/sections/sec-013"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "1-s20-s002212362200012x-main",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1-s2.0-S002212362200012X-main.pdf",
     "source_sha256": "6fc7d28c8d40bf423dd361a7a83ce95503ca8e54248b5c67d2bd80b6b9692453",
     "pages": 22,

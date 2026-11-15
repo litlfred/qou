@@ -1,0 +1,116 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-2607.29018v1",
+  "figures": [
+    {
+      "id": "vfig-p013",
+      "file": "figures/vfig-p013.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 13
+      },
+      "page": 13,
+      "rotation": 0,
+      "captionLabels": [
+        "1"
+      ],
+      "region": [
+        104.91,
+        306.88,
+        229.04,
+        379.98
+      ],
+      "assembly": {
+        "drawings": 15,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              104.91,
+              306.88,
+              229.04,
+              379.98
+            ],
+            "drawings": 8,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "τ2"
+            ]
+          }
+        ],
+        "boxes": [],
+        "unlabelledClosedShapes": 9,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              158.48,
+              311.89,
+              174.25,
+              374.97
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              109.75,
+              310.95,
+              172.71,
+              375.91
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              160.96,
+              310.65,
+              224.04,
+              376.21
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              401.32,
+              322.81,
+              447.74,
+              353.75
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              401.79,
+              355.29,
+              447.27,
+              355.29
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              401.32,
+              356.83,
+              447.74,
+              387.77
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 40
+      }
+    }
+  ]
+}

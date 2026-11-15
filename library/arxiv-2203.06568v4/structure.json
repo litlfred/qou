@@ -7,11 +7,11 @@
   "bytes": 257290,
   "pages": 15,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,20 +21,31 @@
    "stamp_date": "10 Jun 2023"
   },
   "doi": null,
-  "title": "Semidefinite programming bounds for binary codes from a split Terwilliger algebra",
-  "authors_raw": "Pin-Chieh Tseng, Ching-Yi Lai, and Wei-Hsuan Y u",
+  "title": "Semideﬁnite programming bounds for binary codes from a split Terwilliger algebra",
+  "authors_raw": "Pin-Chieh Tseng, Ching-Yi Lai, and Wei-Hsuan Yu",
   "title_lines": [
    "Semidefinite programming bounds for binary codes",
    "from a split Terwilliger algebra"
   ],
-  "abstract": "We study the upper bounds for A(n, d), the maximum size of codewords with length n and Hamming distance at least d. Schrijver studied the Terwilliger algebra of the Hamming sc heme and proposed a semide\ufb01nite program to bound A(n, d). We derive more sophisticated matrix inequalities based on a sp lit Terwilliger algebra to improve Schrijver\u2019s semide\ufb01nit e programming bounds on A(n, d). In particular, we improve the semide\ufb01nite programming bou nds on A(18,4) to 6551. I. I NTRODUCTION In coding theory, one of the classical problems is to determi ne A(n, d), the maximum size of a binary (n, d) code with length n and minimum distance at least d. The (Hamming) distance distribution of a code is considere d since the MacWilliams identities provide a linear relation between the distance d istribution and its transform [MS77]. With this linear rela tion, the maximum possible size of a code can be formulated as a linear p rogramming problem. Delsarte showed that the transform of the distance distribution is nonnegative and used linear pr ogramming techniques to derive upper bounds on A(n, d) [Del73]. Schrijver considered the distance relations among triplet s of codewords and derived positive-semide\ufb01nite relations based on the Terwilliger algebra of Hamming scheme [Sch05]. Thus one can formulate a semide\ufb01nite program (SDP) on the maximum possible size of a code and derive a semide\ufb01nite programming bound on the size of a binary code. Several linear programmin g upper bounds on A(n, d) are improved since Schrijver\u2019s semide\ufb01nite constraints im ply Delsarte\u2019s linear inequalities [Sch05] by diagonalizing certain positive semide\ufb01nite matrices de rived from Schrijver\u2019s semide\ufb01nite constraints in the Bose -Mesner algebra. This method was later extended to nonbinary codes by Gijswij t, Schrijver, and Tanaka [GST06]. Gijswijt, Mittelmann, an d Schrijver further studied the distance relations among qua druples of codewords and generalized Schrijver\u2019s SDP [GMS1 2], called quadruple SDP ,",
+  "abstract": "We study the upper bounds for A(n, d), the maximum size of codewords with length n and Hamming distance at least d. Schrijver studied the Terwilliger algebra of the Hamming scheme and proposed a semideﬁnite program to bound A(n, d). We derive more sophisticated matrix inequalities based on a split Terwilliger algebra to improve Schrijver’s semideﬁnite programming bounds on A(n, d). In particular, we improve the semideﬁnite programming bounds on A(18, 4) to 6551. I. INTRODUCTION In coding theory, one of the classical problems is to determine A(n, d), the maximum size of a binary (n, d) code with length n and minimum distance at least d. The (Hamming) distance distribution of a code is considered since the MacWilliams identities provide a linear relation between the distance distribution and its transform [MS77]. With this linear relation, the maximum possible size of a code can be formulated as a linear programming problem. Delsarte showed that the transform of the distance distribution is nonnegative and used linear programming techniques to derive upper bounds on A(n, d) [Del73]. Schrijver considered the distance relations among triplets of codewords and derived positive-semideﬁnite relations based on the Terwilliger algebra of Hamming scheme [Sch05]. Thus one can formulate a semideﬁnite program (SDP) on the maximum possible size of a code and derive a semideﬁnite programming bound on the size of a binary code. Several linear programming upper bounds on A(n, d) are improved since Schrijver’s semideﬁnite constraints imply Delsarte’s linear inequalities [Sch05] by diagonalizing certain positive semideﬁnite matrices derived from Schrijver’s semideﬁnite constraints in the Bose-Mesner algebra. This method was later extended to nonbinary codes by Gijswijt, Schrijver, and Tanaka [GST06]. Gijswijt, Mittelmann, and Schrijver further studied the distance relations among quadruples of codewords and generalized Schrijver’s SDP [GMS12], called quadruple SDP, which improved many",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20230612223849-04'00'",
    "Creator": "LaTeX with hyperref",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20230612223849-04'00'"
+  },
+  "title_raw": "Semidefinite programming bounds for binary codes from a split Terwilliger algebra",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Semideﬁnite programming bounds for binary codes from a split Terwilliger algebra",
+   "outline": "Introduction",
+   "text": "Semidefinite programming bounds for binary codes from a split Terwilliger algebra",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Semidefinite programming bounds for binary codes from a split Terwilliger algebra"
  },
  "toc": [
   {
@@ -42,157 +53,461 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Terwilliger algebra and Schrijver's SDP",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Split Terwilliger algebra of the Hamming scheme",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "Semidefinite program",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "linear constraints",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Semidefinite program for binary codes",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "The correctness of computer computational results",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "computational results",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "Generalization",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
-   "title": "Semidefinite constraints from \u2013split Terwilliger algebras",
+   "title": "Semidefinite constraints from –split Terwilliger algebras",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Underlying structure",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "Conclusion",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "References",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-split-terwilliger-algebra-of-the-hamming-scheme",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 645,
+   "n_words": 98,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 7754,
+   "n_words": 1194,
+   "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-001-terwilliger-algebra-and-schrijvers-sdp",
+   "number": null,
+   "title": "Terwilliger algebra and Schrijver's SDP",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 4980,
+   "n_words": 1127,
+   "label_start": "2",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-002-split-terwilliger-algebra-of-the-hamming-scheme",
    "number": null,
    "title": "Split Terwilliger algebra of the Hamming scheme",
    "level": 1,
-   "page_start": 5,
-   "page_end": 8,
-   "n_chars": 6355,
-   "n_words": 1421
+   "page_start": 4,
+   "page_end": 9,
+   "n_chars": 11711,
+   "n_words": 2368,
+   "label_start": "4",
+   "label_end": "9"
   },
   {
-   "id": "sec-001-linear-constraints",
+   "id": "sec-003-semidefinite-program",
+   "number": null,
+   "title": "Semidefinite program",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1363,
+   "n_words": 258,
+   "label_start": "9",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-004-linear-constraints",
    "number": null,
    "title": "linear constraints",
    "level": 2,
-   "page_start": 8,
+   "page_start": 9,
    "page_end": 10,
-   "n_chars": 6957,
-   "n_words": 1519
+   "n_chars": 1471,
+   "n_words": 350,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
-   "id": "sec-002-the-correctness-of-computer-computational-result",
+   "id": "sec-005-semidefinite-program-for-binary-codes",
+   "number": null,
+   "title": "Semidefinite program for binary codes",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 434,
+   "n_words": 71,
+   "label_start": "10",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-006-the-correctness-of-computer-computational-result",
    "number": null,
    "title": "The correctness of computer computational results",
    "level": 2,
    "page_start": 10,
-   "page_end": 14,
-   "n_chars": 7035,
-   "n_words": 1624
+   "page_end": 11,
+   "n_chars": 1579,
+   "n_words": 345,
+   "label_start": "10",
+   "label_end": "11"
   },
   {
-   "id": "sec-003-underlying-structure",
+   "id": "sec-007-computational-results",
+   "number": null,
+   "title": "computational results",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 800,
+   "n_words": 147,
+   "label_start": "11",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-008-generalization",
+   "number": null,
+   "title": "Generalization",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 429,
+   "n_words": 80,
+   "label_start": "11",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-009-semidefinite-constraints-from-split-terwilliger",
+   "number": null,
+   "title": "Semidefinite constraints from –split Terwilliger algebras",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 3906,
+   "n_words": 910,
+   "label_start": "12",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-010-underlying-structure",
    "number": null,
    "title": "Underlying structure",
    "level": 2,
    "page_start": 14,
-   "page_end": 15,
-   "n_chars": 4837,
-   "n_words": 883
+   "page_end": 14,
+   "n_chars": 1765,
+   "n_words": 337,
+   "label_start": "14",
+   "label_end": "14"
   },
   {
-   "id": "sec-004-references",
+   "id": "sec-011-conclusion",
+   "number": null,
+   "title": "Conclusion",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 2999,
+   "n_words": 489,
+   "label_start": "14",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-012-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 15,
    "page_end": 15,
-   "n_chars": 6153,
-   "n_words": 876
+   "n_chars": 6048,
+   "n_words": 771,
+   "label_start": "15",
+   "label_end": "15"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 13,
-  "sections": 5,
-  "chars_total": 31337,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 14,
+  "chars_total": 45884,
+  "furniture_lines_stripped": 16,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "revision.tex",
    "tex_sections": 13,
-   "overlaid": 2,
+   "overlaid": 12,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -200,36 +515,108 @@
    },
    "sections": [
     {
-     "id": "sec-000-split-terwilliger-algebra-of-the-hamming-scheme",
-     "title": "Split Terwilliger algebra of the Hamming scheme",
-     "prose_ratio": 0.46,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
     },
     {
-     "id": "sec-001-linear-constraints",
-     "title": "linear constraints",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.441,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.899,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-002-the-correctness-of-computer-computational-result",
-     "title": "The correctness of computer computational results",
+     "id": "sec-001-terwilliger-algebra-and-schrijvers-sdp",
+     "title": "Terwilliger algebra and Schrijver's SDP",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.98,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-underlying-structure",
+     "id": "sec-002-split-terwilliger-algebra-of-the-hamming-scheme",
+     "title": "Split Terwilliger algebra of the Hamming scheme",
+     "prose_ratio": 0.947,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-semidefinite-program",
+     "title": "Semidefinite program",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.609,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-linear-constraints",
+     "title": "linear constraints",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-semidefinite-program-for-binary-codes",
+     "title": "Semidefinite program for binary codes",
+     "prose_ratio": 0.941,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-the-correctness-of-computer-computational-result",
+     "title": "The correctness of computer computational results",
+     "prose_ratio": 0.905,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-computational-results",
+     "title": "computational results",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-generalization",
+     "title": "Generalization",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-semidefinite-constraints-from-split-terwilliger",
+     "title": "Semidefinite constraints from –split Terwilliger algebras",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-underlying-structure",
      "title": "Underlying structure",
-     "prose_ratio": 0.818,
-     "coverage_ratio": 0.996,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-references",
+     "id": "sec-011-conclusion",
+     "title": "Conclusion",
+     "prose_ratio": 0.769,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-references",
      "title": "References",
      "result": "no matching \\section"
     }

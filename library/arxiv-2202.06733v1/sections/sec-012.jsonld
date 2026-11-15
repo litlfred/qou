@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2202.06733v1/sections/sec-012",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Octonions, the STA and particle physics",
+  "pageStart": 12,
+  "pageEnd": 14,
+  "contains": [
+    "library/arxiv-2202.06733v1/blocks/prose-sec-012",
+    "library/arxiv-2202.06733v1/blocks/recommendation-sec-012-01",
+    "library/arxiv-2202.06733v1/blocks/recommendation-sec-012-02",
+    "library/arxiv-2202.06733v1/blocks/recommendation-sec-012-03",
+    "library/arxiv-2202.06733v1/blocks/recommendation-sec-012-04"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2202.06733v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2202.06733v1",
+  "provenance": "ingested"
+}

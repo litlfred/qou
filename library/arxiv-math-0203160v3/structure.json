@@ -8,9 +8,31 @@
   "pages": 13,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 5,
+    "reason": "14 of 411 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 10,
+    "reason": "12 of 312 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 11,
+    "reason": "17 of 369 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 12,
+    "reason": "13 of 281 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 13,
+    "reason": "10 of 381 words are a stray single letter: the text layer splits words"
+   }
+  ],
   "math_source": "latex"
  },
  "metadata": {
@@ -39,7 +61,7 @@
   "title_verified": true,
   "title_evidence": {
    "metadata": "arXiv:math/0203160v3 [math.QA] 28 Oct 2002",
-   "heading": "Di\ufb00erential and complex geometry of two-dimensional noncommutative tori",
+   "heading": "Diﬀerential and complex geometry of two-dimensional noncommutative tori",
    "text": "Differential and complex geometry of two-dimensional noncommutative tori",
    "corroborated_by": [
     "page"
@@ -217,8 +239,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 3383,
-   "n_words": 541,
+   "n_chars": 3381,
+   "n_words": 540,
    "label_start": null,
    "label_end": null
   },
@@ -229,8 +251,8 @@
    "level": 1,
    "page_start": 2,
    "page_end": 6,
-   "n_chars": 6045,
-   "n_words": 1443,
+   "n_chars": 5791,
+   "n_words": 1246,
    "label_start": null,
    "label_end": null
   },
@@ -241,8 +263,8 @@
    "level": 1,
    "page_start": 6,
    "page_end": 8,
-   "n_chars": 4820,
-   "n_words": 999,
+   "n_chars": 4856,
+   "n_words": 1003,
    "label_start": null,
    "label_end": null
   },
@@ -253,8 +275,8 @@
    "level": 2,
    "page_start": 8,
    "page_end": 13,
-   "n_chars": 7063,
-   "n_words": 1666,
+   "n_chars": 6349,
+   "n_words": 1153,
    "label_start": null,
    "label_end": null
   }
@@ -274,7 +296,8 @@
    "items": []
   },
   "sections": 5,
-  "chars_total": 21817,
+  "chars_total": 20883,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -303,7 +326,7 @@
      "id": "sec-001-2-projective-modules-and-their-tensor-products",
      "title": "Projective modules and their tensor products.",
      "prose_ratio": 0.994,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.92,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -319,8 +342,8 @@
      "id": "sec-003-acknowledgments",
      "title": "Acknowledgments",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.129,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.116,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

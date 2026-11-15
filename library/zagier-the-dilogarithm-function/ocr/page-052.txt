@@ -1,0 +1,62 @@
+K
+
+54 Don Zagier
+
+with A = A+ Q-— AQ as before. If we write this as logy(v) where ¢ is
+a smooth function of rapid decay, then F'4,e(q) equals >°,—,,, (mod 1) lv),
+
+which by the Poisson summation formula can be written as }7,.<7 P(r)e Prirvo
+where ¢ is the Fourier transform of y. The smoothness of ~ implies that all
+terms except r = 0 give contributions which are O(e%) for all N > 0 as
+€ — 0. We therefore obtain the asymptotic expansion
+
+Qe L(1)~L(Q) _1+Q
+va (S03)
+
+tlexo((B + 7 ous - 52 Be(u) Lis (Q) —)] (52)
+
+r=3
+
+Fa,p(e*) =
+
+where I[ ] is the functional defined formally by the integral transform
+
+I[H(u)] (t) = * eo Fu) du , (39)
+
+1
+V2rt
+
+and explicitly at the level of power series by
+
+oo oo
+|>> Cn «| (t) ~ > (2n —1)!! cant” , (40)
+
+n=0 n=0
+where (2n—1)!! = (2n)!/2"n! as usual. It is not immediately obvious why this
+
+expansion makes sense, since the argument of the functional grows like 1/e as
+¢ — 0, but the power series to which it is applied has the property that the
+coefficient of u” is O(e?"/9) for every n > 0, and since the functional I[ | has
+the scaling property I[H(\u)](t) = I[H(u)] (A*#), the final expression does
+indeed involve only positive powers of ¢. (Choose A = €° with § <c < 3.)
+
+(c) The third method, which is based on a clever application of Cauchy’s
+theorem going back originally to an old paper of Meinardus [26], was first
+used in this context by Nahm, Recknagel and Terhoeven [31] and is also the
+one used in Nahm’s paper [30] in this volume, so that we will only indicate
+the main idea of the method here. We write Fy,(q) as
+
+Fa,p(q) = Cro (> Dat Beg -") (Sas @n 2)
+
+n=—0o n=0
+
+where C,,0[-] denotes the constant term of a Laurent series. The first factor is
+a theta series with a well-understood asymptotic behavior as g — 1 and the
+second equals (x; q) 5} by equation (8) and hence also has known asymptotics.
+Specifically, the Poisson summation formula (or the Jacobi transformation
+formula for theta series) shows that
+
+al n2+Bn pn Been
+94,8 (2,U) 1= > gan te =a ye As —):
+
+n=—00

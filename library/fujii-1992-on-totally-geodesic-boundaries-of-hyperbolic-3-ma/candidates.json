@@ -1,23 +1,56 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "d3d3bf68955ad7758d80d069b510192d95ca7e5a05882a2a03ebff5d25f90694",
   "file": "fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf"
  },
  "provenance": {
-  "title": "M. FUJJI KODAI MATH. J. 15 (1992), 244-257 ON TOTALLY GEODESIC BOUNDARIES OF HYPERBOLIC 3-MANIFOLDS By MICHIHIKO FUJII Introduction",
-  "authors": "By a hyperbolic manifold, we will mean a Riemannian manifold with con-",
+  "title": "M. FUJJI",
+  "authors": "KODAI MATH. J",
   "arxiv": null,
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
+  "candidates": 2,
+  "by_kind": {
+   "recommendation": 2
+  },
   "formalization_candidates": 0
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The three numbers z, z' :=(z-l)/z and z\" : = l/(l-z) give the same tetrahedron: to specify z uniquely, we must pick an edge of 5 (the dihedral angle at this edge will be arg(z)).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-an-ideal-tetrahedral-decomposition-of-a-hyperb.md",
+   "section_title": "An ideal tetrahedral decomposition of a hyperbolic 3-manifold with two torus cusps.",
+   "pages": "2-10",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "It is homotopic 256 MICHIHIKO FUJ\u03a0 to the closed surface invariant by K and must be totally geodesic.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-f-udc.md",
+   "section_title": "UdC",
+   "pages": "10-14",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
 }

@@ -1,0 +1,1 @@
+In other words, we may (and shall) assume here that $A$ and $B$ are block diagonal, each block $A_{\alpha}$ (resp. $B_{\beta}$) have the unique eigenvalue $\alpha$ (resp. $\beta$), this lying in the fundamental annulus.

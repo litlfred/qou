@@ -1,0 +1,1 @@
+As we shall see, the shape coordinates are most conveniently expressed in terms of \emph{oriented triangulations}, whereas the Ptolemy coordinates are most conveniently expressed in terms of \emph{ordered triangulations}.

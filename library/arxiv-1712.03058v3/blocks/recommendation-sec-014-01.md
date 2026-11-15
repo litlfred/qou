@@ -1,0 +1,1 @@
+This procedure might seem overly complicated at first sight because, intuitively, the parameter swarm we obtain as an output from the iterated filtering algorithm should contain some measure of uncertainty.

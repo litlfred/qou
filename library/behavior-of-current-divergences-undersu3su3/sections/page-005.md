@@ -1,0 +1,147 @@
+---
+doc_id: behavior-of-current-divergences-undersu3su3
+doc_title: "Behavior_of_Current_Divergences_underSU3SU3"
+section_id: page-005
+section_title: "Page 5"
+pages: 5-5
+pdf_page: 5
+source_pdf: Behavior_of_Current_Divergences_underSU3SU3.pdf
+source_sha256: c199da203bf156ec
+text_source: ocr
+granularity: page
+doc_brief: "Behavior of Current Divergences under SU(3)xSU(3) — Gell-Mann, Oakes & Renner, Phys. Rev. 175, 2195 (1968). The GMOR paper: chiral SU(3)xSU(3) is broken by H' = -u_0 - c u_8, and the pseudoscalar octet masses are pseudo-Goldstone, vanishing with the breaking. m_i^2 = 2 f_i <0|d_mu F_i,mu^5|P_i> (3.4); the per-channel strength W_i(c) (2.10) vanishes for the pion at c = -sqrt(2) but not for kaon or eta, so m_pi -> 0 while m_K, m_eta stay finite. Fitted c ~ -1.25."
+---
+175
+
+broken in two chains!?:
+SU;
+\
+SUsXSU; SU2.
+\
+SU2XSU2
+
+At least for the low-lying multiplets, chiral sym-
+metry appears realized by strong coupling to massless
+pseudoscalar mesons, rather than by parity doubling.
+Fubini!* has recently emphasized that this is a quanti-
+tative matter in the real world; if a resonant state of
+opposite parity and the same spin lies closer in mass
+than m, from a given state, then approximate chiral
+symmetry can manifest itself more in the manner of
+degenerate multiplets than in the Nambu-Goldstone
+manner.
+
+The vacuum state should be expected to be approxi-
+mately invariant under SU; but not SU;XSU3. That
+is consistent with Eq. (3.11), as we shall show when
+estimating the vacuum expectation values (0|10|0)
+and (0| 0). The limit p—> 0 in Eq. (3.11) gives
+
+(O|vs| Pi) = —m2/(2f)W ic) = —B/2f
+= —(2fi)(diio(O| 0] 0)-+diie(0|s|0)). (3.14)
+
+To the accuracy of Eq. (3.14), we find (0|u.|0)~0,
+which indeed corresponds to an SU;-invariant vacuum,
+and (0|10|0)~3(m*)av/(2f)*.
+
+At this point, we want to argue that the effects of a
+possible (1,8)-+ (8,1) admixture in 3C’ on our deductions
+are in fact small. We denote the scalar and pseudoscalar
+members of the multiplet by g;(0) and 4;(0), respec-
+tively. They transform as follows:
+
+[Pings ]=ifsnge,
+[Fi hy]=ifiehe,
+[FSg1=ifiale,
+LPS hi] =i figege-
+We note that the , behave oppositely under charge
+conjugation to the »,. Making an ansatz similar to
+(3.6) for a possible contribution g; in 5C’(0), we have
+(Pi| g;| Px) =dizxy@
+~— fidO|h*|P)/2f:. (3.16)
+We see that, to the accuracy of low-energy limits,
+(0) ~0 and (0|h*| P*)~0. Roughly speaking, we would
+find effects of a possible (1,8)+ (8,1) admixture only in
+the order or corrections to PCAC in our results.
+
+This possibility should be kept in mind when trying
+to use the commutators of currents and divergences in
+
+(3.13)
+
+(3.15)
+
+12 Compare G. S. Guralnik, V. S. Mathur, and L. K. Pandit,
+Phys. Letters 20, 64 (1966).
+
+43S. Fubini and G. Furlan, Massachusetts Institute of Tech-
+nology Report, 1968 (unpublished).
+
+CURRENT DIVERGENCES UNDER SU;XSUs3
+
+2199
+
+connection with multiplets other than the pseudoscalar
+octet. Such tests are very desirable for confirming the
+universality of c. An obvious possibility is the study of
+the so-called ¢ terms in the scattering of pseudoscalar
+mesons at low energies.4 In wl scattering, the low-
+energy value of the isospin-symmetric amplitude is
+given by the formula!®
+
+(tN |T|2W)| ano=4(V2+6)(4f2")
+X(N | (V2u0-+4s) |).
+
+Aprecise estimate is made difficult for three reasons.
+The first is the occurrence of the factor (V2+-c). The
+second is the lack of knowledge about (N ||); it is
+not possible to decide @ priori how much of the nucleon
+mass should be attributed to chiral symmetry violation.
+The third reason is that the application of PCAC to a
+four-point function is a delicate problem. The extreme
+smallness of the sum of x*p and rp scattering lengths
+tends to suggest that in fact the quantity (W|w| WV)
+is not a large fraction of the nucleon mass. In Ktp
+scattering, we find
+
+(K+ p|T| K+p)| ogn0= §(V2—30) (4fx*)
+X (p|V2tot+-$V3t2—$us|p) (3.18)
+
+and two of these difficulties are still present, with the
+PCAC trouble aggravated. Attempts at numerical
+estimates may be considered elsewhere.
+
+Within the meson system, further applications can be
+made to K,3 decays. We found the low-energy theorems
+emerging from the commutators (2.7) compatible with
+and, to our accuracy, hardly distinguishable from the
+Callan-Treiman relation.’* The details will be given
+elsewhere, along with applications to hard-meson
+calculations of the K,3 vertex.
+
+In conclusion, let us reemphasize that we have so far
+investigated the compatibility of the formula 5C’=— 1
+—cus (with c¢ near —V2) only with certain data about
+hadrons and that further tests are desirable to establish
+whether a single (3,3*) and (3*,3) representation is
+indeed what is involved and also to decide whether
+there is an additional term of the form g, belonging to
+(1,8) and (8,1).
+
+(3.17)
+
+ACKNOWLEDGMENT
+
+We wish to thank Professor R. P. Feynman for
+interesting discussions on the subject of this paper.
+
+4K. Kawarabayashi and W. W. Wada, Phys. Rev. 146,
+1209 (1966); K. T. Mahanthappa and Riazuddin, Nuovo Cimento
+45A, 252 (1966); R. W. Griffith (to be published), has also em-
+phasized the connections between o terms and the fraction of the
+nucleon mass arising from chiral symmetry violation.
+
+16 We use the notation S=1-+7(2x)46(p'—p/)T and covariant
+normalization for the states; see Footnote 5.
+
+(1966). G. Callan and S. B. Treiman, Phys. Rev. Letters 16, 153

@@ -1,0 +1,1262 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1608.02961v3",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "1",
+   "text": "Moreprecisely:theholonomiescansimultaneouslybeputinJordannormalform.",
+   "marks": [
+    {
+     "page": 5,
+     "context": "P[Σ] = Mﬂat(SL(2, C), Σ) ≃Hom(π"
+    },
+    {
+     "page": 5,
+     "context": "Famously,thespaceP[Σ]ishyperk¨ahler.ItadmitsanentireCP"
+    },
+    {
+     "page": 5,
+     "context": "P[Σ] admits a CP"
+    },
+    {
+     "page": 6,
+     "context": "diagonalized."
+    },
+    {
+     "page": 6,
+     "context": "2πωk,sonthecompact(S"
+    },
+    {
+     "page": 6,
+     "context": "2πωk,sonthecompact(S1 × S"
+    }
+   ],
+   "block": "library/arxiv-1608.02961v3/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p006-2",
+   "page": 6,
+   "mark": "2",
+   "text": "Thenewvariablesabsorbsomepowersofthecouplingconstantsk, b,whichobfuscatestheeﬀectofthe classical limit k →∞, e.g. in (2.11). It is important to keep in mind that the natural functions on the phase space are still x, ¯x, y, ¯y.",
+   "marks": [
+    {
+     "page": 5,
+     "context": "following [50] (see also [51]).In the case of Σ = T"
+    },
+    {
+     "page": 6,
+     "context": "4π"
+    },
+    {
+     "page": 6,
+     "context": "inH"
+    },
+    {
+     "page": 6,
+     "context": "NowletusspecializetoΣ=T"
+    },
+    {
+     "page": 6,
+     "context": "mentalgroupπ1(T"
+    },
+    {
+     "page": 6,
+     "context": "mentalgroupπ1(T2)=Z"
+    },
+    {
+     "page": 6,
+     "context": "P[T"
+    },
+    {
+     "page": 6,
+     "context": "P[T2] = (C∗× C∗)/Z"
+    },
+    {
+     "page": 6,
+     "context": "P[T2] = (C∗× C∗)/Z2≃{(x, y) ∈(C∗)"
+    },
+    {
+     "page": 6,
+     "context": "reﬂectingthenontrivialintersectionofAandBcyclesonT"
+    },
+    {
+     "page": 6,
+     "context": "2πωk,sonthecompact(S1 × S1)/Z"
+    },
+    {
+     "page": 6,
+     "context": "2πωk,sonthecompact(S1 × S1)/Z2cycleinP[T"
+    },
+    {
+     "page": 6,
+     "context": "b"
+    },
+    {
+     "page": 6,
+     "context": "andmakeachangeofvariables"
+    },
+    {
+     "page": 6,
+     "context": "andmakeachangeofvariables2from(x, y) ∈(C∗)"
+    },
+    {
+     "page": 6,
+     "context": "andmakeachangeofvariables2from(x, y) ∈(C∗)2to(µ, ν; m, n) ∈R"
+    },
+    {
+     "page": 6,
+     "context": "angeofvariables2from(x, y) ∈(C∗)2to(µ, ν; m, n) ∈R2× (R/2kZ)"
+    }
+   ],
+   "block": "library/arxiv-1608.02961v3/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p010-1",
+   "page": 10,
+   "mark": "3",
+   "text": "In general, there could be a nontrivial matrix nαβconnecting holomorphic and anti-holomorphic sectors. However, when one considers unitary Chern-Simons theory with an integration contour Γ along which A is honestly the conjugate of A, the matrix is just the identity.",
+   "marks": [
+    {
+     "page": 9,
+     "context": "= |k| + 1 + 2|k|(t + t2+ t"
+    },
+    {
+     "page": 10,
+     "context": "totheChern-Simonsaction.TheΓαcanfurtherbewrittenasproducts"
+    }
+   ],
+   "block": "library/arxiv-1608.02961v3/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p010-2",
+   "page": 10,
+   "mark": "4",
+   "text": "The3d-3dcorrespondencerelatesholomorphic-antiholomorphicfactorizationincomplexChern-Simons theory to a rather nontrivial statement about lens-space partition functions of 3d N = 2 theories T[M] [57].",
+   "marks": [
+    {
+     "page": 10,
+     "context": "2)."
+    }
+   ],
+   "block": "library/arxiv-1608.02961v3/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p011-1",
+   "page": 11,
+   "mark": "5",
+   "text": "OnhyperbolicM,oneparticularﬂatSL(2, C)connection—theonecorrespondingtotheglobalhyper- bolic metric — is well known to be isolated [58, 59]. Computational experiments suggest that in fact all ﬂat connections SL(2, C) are isolated, but there exists no general proof of this statement.",
+   "marks": [
+    {
+     "page": 11,
+     "context": "SL(2, C)areisolated."
+    }
+   ],
+   "block": "library/arxiv-1608.02961v3/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p012-1",
+   "page": 12,
+   "mark": "6",
+   "text": "Wewillnotreviewthe3d-3dcorrespondencehere.Forrecentreviewsanddiscussions,especiallyinthe context of Chern-Simons theory and TQFT, see [60, 44, 23, 24] as well as the related [61].",
+   "marks": [
+    {
+     "page": 12,
+     "context": "andgluingincomplexChern-Simonstheory."
+    }
+   ],
+   "block": "library/arxiv-1608.02961v3/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p013-1",
+   "page": 13,
+   "mark": "7",
+   "text": "Thisverysamesymmetryplayedacentralroleindeﬁningreﬁned(compact)Chern-Simonstheoryon Seifert-ﬁbered manifolds [66].",
+   "marks": [
+    {
+     "page": 13,
+     "context": "nthiscase,itcanultimatelybetracedbacktoanexceptionalisometry"
+    }
+   ],
+   "block": "library/arxiv-1608.02961v3/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p016-1",
+   "page": 16,
+   "mark": "8",
+   "text": "The Hilbert space canbe factorized by introducing some redundant degrees of freedom [19], in a manner directly analogous to Kashaev’s quantization of Teichm¨uller space [40].",
+   "marks": [
+    {
+     "page": 16,
+     "context": "intocontributionsfromthetetrahedron’sfourlargefaces."
+    }
+   ],
+   "block": "library/arxiv-1608.02961v3/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p018-1",
+   "page": 18,
+   "mark": "9",
+   "text": "Technically, only N−1 out of the Ncomponents of(4.7) correspond to internal edges; the last component of (4.7) relates to a boundary condition at ∂M = T 2, and can be removed from the angle-structure analysis. We are bypassing such subtleties in this heuristic discussion.",
+   "marks": [
+    {
+     "page": 18,
+     "context": "ingdatum(4.5)foraknotcomplement,thelastconditiontranslatesto"
+    }
+   ],
+   "block": "library/arxiv-1608.02961v3/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p019-1",
+   "page": 19,
+   "mark": "10",
+   "text": "Onedoesnotusuallytalkabout“ﬂavor”monopoleoperatorslikeV±",
+   "marks": [
+    {
+     "page": 19,
+     "context": " a monopole background for the ﬂavor symmetry of the theory."
+    }
+   ],
+   "block": "library/arxiv-1608.02961v3/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p019-2",
+   "page": 19,
+   "mark": "i",
+   "text": ",buttheyareessentialinthe construction of theories T[M], and the relation between these theories and geometry. They can easily be seen in the generalized index of a free chiral multiplet [87], and can also be understood as ordinary monopole operators if the ﬂavor symmetry of T[∆i] were weakly gauged.",
+   "marks": [
+    {
+     "page": 18,
+     "context": "Z[∆]k,s(µ"
+    },
+    {
+     "page": 18,
+     "context": "Z[∆]k,s(µi, m"
+    },
+    {
+     "page": 19,
+     "context": "charges(ρ"
+    },
+    {
+     "page": 19,
+     "context": "charges(ρi, ρ"
+    },
+    {
+     "page": 19,
+     "context": "charges(ρi, ρi −1)forsome(undetermined)ρ"
+    },
+    {
+     "page": 19,
+     "context": "(ρi, ρi −1)forsome(undetermined)ρi∈R.OneusuallyjustsaysthatΦ"
+    },
+    {
+     "page": 19,
+     "context": "ﬁelds Φ"
+    },
+    {
+     "page": 19,
+     "context": "iΦ"
+    },
+    {
+     "page": 19,
+     "context": "that the R-charge of OEis a sum of the R-charges ρ"
+    }
+   ],
+   "block": "library/arxiv-1608.02961v3/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p019-3",
+   "page": 19,
+   "mark": "11",
+   "text": "Thisisaglobalsymmetrythatdoesnotcommutewithsupersymmetry,andisrelatedtoanSO(2) automorphism of the 3d N = 2 SUSY algebra.",
+   "marks": [
+    {
+     "page": 19,
+     "context": "RHSofFigure4.2.Moreover,T[∆i]hasanR-symmetry"
+    }
+   ],
+   "block": "library/arxiv-1608.02961v3/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p021-1",
+   "page": 21,
+   "mark": "2",
+   "text": "n m",
+   "marks": [
+    {
+     "page": 20,
+     "context": "Z[M]k=0,s= Z[T[M]onS"
+    },
+    {
+     "page": 20,
+     "context": "Z[M]k=0,s= Z[T[M]onS2×qS1] = TrH[T[M]onS"
+    },
+    {
+     "page": 20,
+     "context": "2asusual.HereS"
+    },
+    {
+     "page": 20,
+     "context": "suchawaythatS"
+    },
+    {
+     "page": 20,
+     "context": "spaceofT[M]onS"
+    },
+    {
+     "page": 21,
+     "context": "correspondingoperatorsOΣandalloftheirpowersO"
+    }
+   ],
+   "block": "library/arxiv-1608.02961v3/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p021-2",
+   "page": 21,
+   "mark": "12",
+   "text": "Similar behavior appears in certain stable limits of the Jones polynomial [99].In both cases, the behavior can partially be explained by observing that 1) one is studying q-series that are solutions to recursion relations coming from the A-polynomial of a knot [25, 100, 20]; and 2) boundary slopes of the A-polynomial are related to boundary slopes of incompressible surfaces [101]. See [20, App. D] for further remarks.",
+   "marks": [
+    {
+     "page": 21,
+     "context": "(m, n),thegrowthofZ[M]k=0,s(dm, dn)asd→∞isquadratic."
+    }
+   ],
+   "block": "library/arxiv-1608.02961v3/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p023-1",
+   "page": 23,
+   "mark": "2",
+   "text": "πia",
+   "marks": [
+    {
+     "page": 22,
+     "context": "exp"
+    },
+    {
+     "page": 23,
+     "context": "HilbertspaceH[T"
+    }
+   ],
+   "block": "library/arxiv-1608.02961v3/blocks/prose-sec-010"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p004-1",
+   "page": 4,
+   "mark": "4",
+   "text": "π",
+   "block": "library/arxiv-1608.02961v3/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p023-2",
+   "page": 23,
+   "mark": "13",
+   "text": "Thenumber-theoreticpropertiesoftheasymptoticexpansionintheVolumeConjecturewereexplored from a physical perspective in [49], leading to the notion of an Arithmetic Quantum Field Theory.",
+   "block": "library/arxiv-1608.02961v3/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p023-3",
+   "page": 23,
+   "mark": "14",
+   "text": "TheremaybeotherwaystoembedtheQMCintocomplexChern-Simonstheory.Itwasproposedin [106] that setting (k +is, k −is) →(a, c) to ﬁnite integer values, which is a perfectly regular limit in complex Chern-Simons, may also be related to the QMC.",
+   "block": "library/arxiv-1608.02961v3/blocks/prose-sec-010"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "Warmup:quantizationofH(T"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "b/Z"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "b/Zkand"
+  },
+  {
+   "page": 2,
+   "mark": "b",
+   "context": "anellipsoidallydeformedlensspaceL(k, 1)"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "anellipsoidallydeformedlensspaceL(k, 1)b≃S"
+  },
+  {
+   "page": 2,
+   "mark": "d",
+   "context": "M"
+  },
+  {
+   "page": 2,
+   "mark": "4",
+   "context": "relatingVafa-WittenpartitionfunctionsonM"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "analytictorsion.InthecasethatM= S"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "analytictorsion.InthecasethatM= S3\\KisaknotcomplementinS"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "the torus Hilbert space H[T"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "suchasS"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "suchasS3orS"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Warmup:quantizationofH(T"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "4π2ωIrepresents"
+  },
+  {
+   "page": 6,
+   "mark": "y",
+   "context": "π(d log |y|∧d log |x|−d arg"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "π(d log |y|∧d log |x|−d arg y∧d arg"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "π(d log |y|∧d arg"
+  },
+  {
+   "page": 6,
+   "mark": "y",
+   "context": "π(d log |y|∧d arg x+d arg"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "k(b"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "H[T"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "H[T"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "H[T2]k,s= L"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "H[T2]k,s= L2(R) ⊗C"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "c"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "X"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "X2+ Y"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "2T"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "ω"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "T∗(S"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "T∗(S1× S"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "T∗(S1× S1).WeexpectquantizationtoproduceH[T"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "T∗(S1× S1).WeexpectquantizationtoproduceH[T2]0,s=L"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "s"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "s"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "ω"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "phase space.One may also recognize the C"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "phase space.One may also recognize the C2"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "[23].ThegradedcomponentsofH[Σ](i.e.thesubspacesofﬁxedU(1)"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "TheextraU(1)"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "rotatestheCP"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "sinceitpreservesωk,s=0,andleadstothedesiredsymmetryofH[Σ]k,"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "InthecaseΣ=T"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "InthecaseΣ=T2,itiseasytodescribetheU(1)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "thecaseΣ=T2,itiseasytodescribetheU(1)tsymmetry:whenweviewP[T"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "T∗(S"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "T∗(S1× S"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "T∗(S1× S1)/Z"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "T∗(S1× S1)/Z2≈T∗Mﬂat(SU(2), T"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "H[T"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "¯x = zη"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "inz,theU(1)"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "(1)tsymmetryjustactsasrotationsz→eiθz.ThesubspacesofﬁxedU(1)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "= |k| + 1 + 2|k|(t + t"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "w∈Z"
+  },
+  {
+   "page": 9,
+   "mark": "w",
+   "context": "w∈Zt"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "w∈ZtwdimH[T"
+  },
+  {
+   "page": 9,
+   "mark": "w",
+   "context": "w∈ZtwdimH[T 2]weight"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "dimU(1)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "dimU(1)tH[T"
+  },
+  {
+   "page": 9,
+   "mark": "z",
+   "context": ".If we write a complex connection and its conjugate as A = A"
+  },
+  {
+   "page": 10,
+   "mark": "z",
+   "context": "A = A"
+  },
+  {
+   "page": 10,
+   "mark": "z",
+   "context": "A"
+  },
+  {
+   "page": 10,
+   "mark": "z",
+   "context": "A"
+  },
+  {
+   "page": 10,
+   "mark": "e",
+   "context": "2)"
+  },
+  {
+   "page": 10,
+   "mark": "e",
+   "context": "Chern-Simons path integral; and Bα,"
+  },
+  {
+   "page": 10,
+   "mark": "e",
+   "context": "2)"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "mmand becomes a wavefunction in H[Σ]k,s.For example if Σ = T"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "2)"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "thefundamentalgroupπ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "ntalgroupπ1(M)issuﬃcientlycomplicatedthattherepresentationsπ"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "ple,ifMisalensspaceL(p, r)≃S"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "ple,ifMisalensspaceL(p, r)≃S3/Z"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "ple,ifMisalensspaceL(p, r)≃S3/Zp,thefundamentalgroupisZ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "thiscase,weexpectthatZ[M]diverges.Forexample,considerM=Σ × S"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "= GCChern-SimonspartitionfunctionZ[M]k,swithis = k"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "= GCChern-SimonspartitionfunctionZ[M]k,swithis = k1−b"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "1+b"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "worldvolumetheoryofNM5branescompactiﬁedonM;thebraneswrapM× R"
+  },
+  {
+   "page": 12,
+   "mark": "5",
+   "context": "M-theorygeometryT∗M× R"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "rules.Gluing M= N"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "rules.Gluing M= N1∪ΣN"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "produceaneweﬀectivetheoryTG[N"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "produceaneweﬀectivetheoryTG[N1∪ΣN"
+  },
+  {
+   "page": 13,
+   "mark": "b",
+   "context": "edtotheBPSHilbertspaceofthe4dclass-StheoryTG[Σ]onR × L(k, 1)"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "Similarly,thethree-dimensionaltheoryTG[Σ × S"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "the N= 4 theory contains U(1)"
+  },
+  {
+   "page": 13,
+   "mark": "5",
+   "context": "M-theorygeometryT∗M×R"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "terms of the “holomorphic blocks” Bα,"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "4π"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "τ(α)"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "4π"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "4π"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "theanti-holomorphicblocks,"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "4π"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "ℏ= 2πi"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "τ(α)"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "Jones polynomials of a knot K⊂S"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "volumeoftheknotcomplementVol(S"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "in(4.2)isscalesasN"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": ") →SL(N, C), and the Chern-Simons functional evaluates to ∼N"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "ispredictsthatthelogarithmofthetorsionτ(ρN(αhyp))willgrowasN"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "WhenM=S"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "i=1∆i.Thisis"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "L"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "L2(R) ⊗C"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "@M' T"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "Z[∆i]k,s(µ"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "Z[∆i]k,s(µi, m"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "kµ"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "k"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "km"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "k"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "km"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "i=1Z[∆i]k,s(µ"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "i=1Z[∆i]k,s(µi, m"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "Asanexample,takeM=S"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "canonical“A-cycle”ontheboundarytorus∂M=T"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "knotKinS"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "SL(2, C)thereareparabolicmatrices(1"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "eboundaryconditionsetsx=¯x=1,orrestrictsfunctionsf(µ, m)∈H[T"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "2)"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "2)mB−1A"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "Z[∆]k,s(µ"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "Z[∆]k,s(µi, m"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "4"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "4k(b"
+  },
+  {
+   "page": 17,
+   "mark": "f",
+   "context": "4k(b2−b−2)"
+  },
+  {
+   "page": 17,
+   "mark": "f",
+   "context": "4"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(f, f′′) ∈Z"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "m"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "mi∈Z/kZandµ"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "12"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "12k(a′b"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "2"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2k(b+b−1)"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "functionofT[M]onthelensspaceS"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "i,subjectto"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "2+J"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "Z[M]k=0,s= Z[T[M]onS2×qS"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "2asusual.HereS2 ×q S"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "2asusual.HereS2 ×q S1denotes"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "2asusual.HereS2 ×q S1denotesageometrythatisﬁberedoverS"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "withq=exp"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "suchawaythatS2rotatesaroundanaxis(byanamountπ/s)asS"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "M5braneswrappedonM × R"
+  },
+  {
+   "page": 20,
+   "mark": "5",
+   "context": "swrappedonM × R3insidetheeleven-dimensionalbackgroundT∗M × R"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "onthestackofM5branes,suchthattheirboundary∂(M2)=Σ × {0}⊂M× R"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "They investigated the index for knot complements M= S"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "∂Σ=S"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "Σ,O"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "theotherhand,thesechargeslabelhomologyclasses(m, n)∈H"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "2+ J"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": "e index in some charge sector (mΣ, nΣ),then the d-th power O"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "2+ J"
+  },
+  {
+   "page": 21,
+   "mark": "q",
+   "context": "2+ J3= dQΣandcontributes"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "Z[∆]k=0,s(m, n) ζ"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "1 −q"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "2+ J"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "limitsofcoloredJonespolynomialsofknotsinS"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "JK(N, q)ofaknotK⊂S"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "kencodes the renormalized level"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "variable q.For any k-th root of unity q"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "SU(2)Chern-SimonsatrenormalizedlevelkontheknotcomplementM=S"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "wavefunctionZ[M]kisthusavectorinC"
+  },
+  {
+   "page": 23,
+   "mark": "d",
+   "context": "c"
+  },
+  {
+   "page": 23,
+   "mark": "c",
+   "context": "cd)∈SL(2, Z)with"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "bolicvolumeofM=S"
+  },
+  {
+   "page": 23,
+   "mark": "b",
+   "context": "bolicvolumeofM=S3\\K.Speciﬁcally,let(a"
+  },
+  {
+   "page": 23,
+   "mark": "7",
+   "context": "4,"
+  },
+  {
+   "page": 23,
+   "mark": "11",
+   "context": "4,"
+  },
+  {
+   "page": 23,
+   "mark": "e",
+   "context": "leading coeﬃcient to make"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "ℏ= 2πi"
+  },
+  {
+   "page": 24,
+   "mark": "e",
+   "context": "thatcoeﬃcientsof"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "thatcoeﬃcientsofeφK,"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "b/Z"
+  },
+  {
+   "page": 24,
+   "mark": "b",
+   "context": "thepartitionfunctionofT[M]onasquashedlensspaceL(k, 1)"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "thepartitionfunctionofT[M]onasquashedlensspaceL(k, 1)b≃S"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "zero the squashing parameter b"
+  }
+ ]
+}

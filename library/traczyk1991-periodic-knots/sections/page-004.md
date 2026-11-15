@@ -1,0 +1,66 @@
+---
+doc_id: traczyk1991-periodic-knots
+doc_title: "Periodic knots and the skein polynomial"
+section_id: page-004
+section_title: "Page 4"
+pages: 4-4
+pdf_page: 4
+source_pdf: traczyk1991-periodic-knots.pdf
+source_sha256: 2e9236877cec4604
+text_source: ocr
+granularity: page
+doc_brief: "Periodic knots and the skein polynomial — 12 sections: Page 1; Page 2; Page 3"
+---
+716 P. Traczyk
+
+one orbit of the considered periodic diagram. Under a suitable inductive assump-
+tion the PR, polynomial of the periodic knot obtained after such an operation
+is a linear combination (with coefficients in Q) of Ry polynomials of torus knots
+of type (p, ps+k), Lemma 2.5 guarantees that the invariant component of the
+periodic link obtained by smoothing all the crossings in the considered orbit
+has the same (mod p) linking number with the axis as the original knot, which
+again enables us to use the inductive assumption. Then we use Lemma 2.2 in
+the indicated way. The inductive proof of Proposition 2.1 is actually done in
+two steps. First we show the PR polynomial of an arbitrary p-periodic knot
+with linking number with the axis congruent to +k modulo p may be written
+as a linear combination (with coefficients in Q) of R, polynomials of p-periodic
+braids with the number of strings congruent to +k modulo p. In the second
+step the final reduction to torus knots is made. This two-step reduction is entirely
+analogous to the similar reduction for p=3 (see [T 2]), so we omit the details.
+In the next section we will need the following consequence of Lemma 2.2.
+
+Lemma 2.6 P, polynomials of torus knots of type (p,ps+k) are related by the
+following formula.
+
+(2.7) T= (PGP HED Tg (1 4 P27) (— 2)P&— 10+ pst 1/2
+s-t s
+5 Y (— ype t vi2 T+(14+P?) Y (— Pye st )- 2y2 Th-i
+i=0 i=1
+
+where T; and T; denote the Py) polynomials of the torus knot of type (p, pi+k)
+and its mirror image.
+
+Proof. We use (2.3) and (2.4) repeatedly. We start with the standard
+(5, ..-0,5+x-1)” braid representing the torus knot of type (p,ps+k). Then we
+consider the diagrams obtained by reversing all 5s or smoothing all 5/5, in
+the next stage we reverse or smooth all 6,s, and we proceed like this until
+all the crossings are reversed (which means that the mirror image is obtained).
+This procedure produces a binary tree for computing T,. A typical leaf of this
+tree is of the form (6;'...6; 1 6;42-.-Ops+x—1)?, and the leftmost leaf is
+(5; 1...55.+%-1)? (the mirror image of T,). Whenever an orbit of crossings is
+smoothed we obtain a split link whose contribution to T, is non-trivial only
+if the number of components is equal to p+1. This happens when 6;s are
+smoothed, where i is congruent modulo p to 0 or k. The first case is responsible
+for T,_;’s in our formula, while the second accounts for T;’s. The single leftmost
+leaf gives the T, terms.
+
+3 BP, polynomial for torus knots
+
+We are now interested to study the Ry polynomial for (p, ps+k) torus knots,
+
+where p is a prime number, and 0<k<p. We still consider the coefficients
+
+reduced modulo p. To simplify the formulae to be considered let us denote
+
+the R, polynomial of t(p, ps + k) by T, (p and k are fixed throughout this section).
+Let us begin with the following observation.

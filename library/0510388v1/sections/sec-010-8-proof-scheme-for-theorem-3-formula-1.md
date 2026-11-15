@@ -1,6 +1,6 @@
 ---
 doc_id: 0510388v1
-doc_title: "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck"
+doc_title: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space"
 section_id: sec-010-8-proof-scheme-for-theorem-3-formula-1
 section_title: "Proof scheme for Theorem 3, formula (1)."
 section_number: 8
@@ -8,6 +8,7 @@ pages: 22-24
 source_pdf: 0510388v1.pdf
 source_sha256: c83c0f6a2eaa74f3
 toc_source: inferred
+doc_brief: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space — 64 sections: Front matter; ORGANIZATION; STATEMENTS OF RESULTS"
 ---
 When working on  S3  in left-translation format, our first order of business will 
 be to derive formula (1) of Theorem 3 for the vector-valued Green's operator. 
@@ -40,7 +41,6 @@ G(V, ϕ)(y)  =  ∇y ∫S3  Lyx—1 V(x) ∙ ∇y ϕ(x, y)  dx .
  
  
  
-23 
  
  
  
@@ -77,8 +77,4 @@ A(V, ϕ0)  =  Gr(V)  there.
  
 Once we have Proposition 2 in hand, we will then get formula (1) of Theorem 3 
 for the Green's operator on  S3  by adding one copy of line A to two copies of line B 
-and four copies of line G,  each with a different choice of kernel function  ϕ . 
- 
- 
- 
-24
+and four copies of line G,  each with a different choice of kernel function  ϕ .

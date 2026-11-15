@@ -8,6 +8,7 @@ pages: 6-6
 source_pdf: 0006111v2.pdf
 source_sha256: e024febd3d0886a3
 toc_source: undetermined
+doc_brief: "arXiv:hep-th/0006111v2 14 Jul 2003 — 6 sections: Page 1; Page 2; Page 3"
 ---
 [3] E.V. Shuryak and J.J.M. Verbaarschot, Nucl. Phys.
 A560, 306 (1993).

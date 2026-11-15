@@ -8,7 +8,9 @@ pages: 6-7
 source_pdf: Download (1).pdf
 source_sha256: bbb001c909958e8a
 toc_source: inferred
+doc_brief: "Central and L p -concentration of 1-Lipschitz maps into R -trees — In this paper, we study the Le´vy-Milman concentration phenomenon of 1-Lipschitz maps from mm-spaces to R-trees."
 ---
+Basics of R-trees.
 Before reviewing the deﬁnition of R-trees, we recall some standard
 terminologies in metric geometry. Let ðX; dXÞ be a metric space. A rectiﬁable
 curve  : ½0; 1 ! X is called a geodesic if its arclength coincides with the distance
@@ -55,4 +57,3 @@ connectivity of T 0, there is C0 2 C TðezÞ such that T 0  C0. Since C0 is con
 Lemma 2.8, we get ez 2 ½z; wT  C0. This is a contradiction since ez =2 C0. This
 completes the proof.
 
-2.3.

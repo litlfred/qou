@@ -2,162 +2,72 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-nucl-th-0103005v2",
  "source_sha256": "c2aaa21b51d7bc10",
- "brief": "Quantum Monte Carlo Calculations of Light Nuclei — Accurate quantum Monte Carlo calculations of ground and low-lying excited states of light p-shell nuclei are now possible for realistic nuclear",
- "extended": "**Quantum Monte Carlo Calculations of Light Nuclei**\n\n*Steven C. Pieper and R. B. Wiringa*\n\n43 pp, 30 sections.\n\n**Abstract.** Accurate quantum Monte Carlo calculations of ground and low-lying excited states of light p-shell nuclei are now possible for realistic nuclear Hamiltonians that ﬁt nucleon-nucleon scattering data. At present, results for more than 30 diﬀerent ( J π ; T ) states, plus isobaric analogs, in A ≤ 8 nuclei have been obtained with an excellent reproduction of the exp erimental energy spectrum. These microscopic calculations show that nuclear structure, including both single-particle and clustering aspects, can be explained starting from elementary two- and three-nucleon interactions. Various density and momentum distributions, electromagnetic formfactors, and spectroscopic factors have also been computed, as well as electroweak capture reaction s of astrophysical interest. With permission from the Annual Review of Nuclear and Partic le Science.\n\n**Outline.** Front matter; 1 INTRODUCTION; 4 Steven C. Pieper and R. B. Wiringa; 2 HAMILTONIAN AND CURRENTS; 4 ( 1; 6 Steven C. Pieper and R. B. Wiringa; 3 (τ i · τ j + τ j · τ k + τ k · τ i) = 4PT =3; 8 Steven C. Pieper and R. B. Wiringa; 3 V ARIATIONAL MONTE CARLO; 10 Steven C. Pieper and R. B. Wiringa; 14 Steven C. Pieper and R. B. Wiringa; 4 GREEN’S FUNCTION MONTE CARLO; 16 Steven C. Pieper and R. B. Wiringa; 18 Steven C. Pieper and R. B. Wiringa; 1.5 MeV below these. The GFMC very rapidly mak; 8 MeV. This rapid improvement corresponds to t; 20 Steven C. Pieper and R. B. Wiringa; 5 ENERGY RESULTS",
+ "brief": "arXiv:nucl-th/0103005v2 6 Mar 2001 — Accurate quantum Monte Carlo calculations of ground and low-lying excited states of light p-shell nuclei are now possible for realistic nuclear Hamiltonians that",
+ "extended": "**arXiv:nucl-th/0103005v2 6 Mar 2001**\n\n*Steven C. Pieper and R. B. Wiringa*\n\n43 pp, 12 sections.\n\n**Abstract.** Accurate quantum Monte Carlo calculations of ground and low-lying excited states of light p-shell nuclei are now possible for realistic nuclear Hamiltonians that ﬁt nucleon-nucleon scattering data. At present, results for more than 30 diﬀerent (Jπ; T ) states, plus isobaric analogs, in A ≤8 nuclei have been obtained with an excellent reproduction of the experimental energy spectrum. These microscopic calculations show that nuclear structure, including both single-particle and clustering aspects, can be explained starting from elementary two- and three-nucleon interactions. Various density and momentum distributions, electromagnetic form factors, and spectroscopic factors have also been computed, as well as electroweak capture reactions of astrophysical interest. With permission from the Annual Review of Nuclear and Particle Science.\n\n**Outline.** Front matter; 1 INTRODUCTION; 2 HAMILTONIAN AND CURRENTS; 3 VARIATIONAL MONTE CARLO; 4 GREEN'S FUNCTION MONTE CARLO; 5 ENERGY RESULTS; 6 DENSITY AND MOMENTUM DISTRIBUTIONS; 7 LOW-ENERGY NUCLEON-NUCLEUS SCATTERING; 8 ASTROPHYSICAL ELECTROWEAK REACTIONS; 9 NEUTRON DROPS; 10 CONCLUSIONS AND OUTLOOK; Acknowledgments",
  "tokens": {
-  "brief": 48,
-  "extended": 396
+  "brief": 49,
+  "extended": 321
  },
  "sections": [
   {
    "id": "sec-front-matter",
    "title": "Front matter",
-   "pages": "1-1"
+   "pages": "1-2"
   },
   {
    "id": "sec-000-1-introduction",
    "title": "INTRODUCTION",
-   "pages": "1-4"
+   "pages": "2-4"
   },
   {
-   "id": "sec-001-4-steven-c-pieper-and-r-b-wiringa",
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-002-2-hamiltonian-and-currents",
+   "id": "sec-001-2-hamiltonian-and-currents",
    "title": "HAMILTONIAN AND CURRENTS",
-   "pages": "4-5"
+   "pages": "4-8"
   },
   {
-   "id": "sec-003-4-1",
-   "title": "( 1",
-   "pages": "5-6"
+   "id": "sec-002-3-variational-monte-carlo",
+   "title": "VARIATIONAL MONTE CARLO",
+   "pages": "8-15"
   },
   {
-   "id": "sec-004-6-steven-c-pieper-and-r-b-wiringa",
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "pages": "6-7"
+   "id": "sec-003-4-greens-function-monte-carlo",
+   "title": "GREEN'S FUNCTION MONTE CARLO",
+   "pages": "15-20"
   },
   {
-   "id": "sec-005-3-τ-i-τ-j-τ-j-τ-k-τ-k-τ-i-4pt-32-17",
-   "title": "(τ i · τ j + τ j · τ k + τ k · τ i) = 4PT =3/2 . (17)",
-   "pages": "7-8"
-  },
-  {
-   "id": "sec-006-8-steven-c-pieper-and-r-b-wiringa",
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-007-3-v-ariational-monte-carlo",
-   "title": "V ARIATIONAL MONTE CARLO",
-   "pages": "8-10"
-  },
-  {
-   "id": "sec-008-10-steven-c-pieper-and-r-b-wiringa",
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "pages": "10-14"
-  },
-  {
-   "id": "sec-009-14-steven-c-pieper-and-r-b-wiringa",
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "pages": "14-15"
-  },
-  {
-   "id": "sec-010-4-greens-function-monte-carlo",
-   "title": "GREEN’S FUNCTION MONTE CARLO",
-   "pages": "15-16"
-  },
-  {
-   "id": "sec-011-16-steven-c-pieper-and-r-b-wiringa",
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "pages": "16-18"
-  },
-  {
-   "id": "sec-012-18-steven-c-pieper-and-r-b-wiringa",
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "pages": "18-19"
-  },
-  {
-   "id": "sec-013-15-mev-below-these-the-gfmc-very-rapidly-makes-a",
-   "title": "MeV below these. The GFMC very rapidly makes a large impro vement on",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-014-8-mev-this-rapid-improvement-corresponds-to-the",
-   "title": "MeV. This rapid improvement corresponds to the removal of s mall admixtures of",
-   "pages": "19-20"
-  },
-  {
-   "id": "sec-015-20-steven-c-pieper-and-r-b-wiringa",
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "pages": "20-20"
-  },
-  {
-   "id": "sec-016-5-energy-results",
+   "id": "sec-004-5-energy-results",
    "title": "ENERGY RESULTS",
-   "pages": "20-22"
+   "pages": "20-27"
   },
   {
-   "id": "sec-017-22-steven-c-pieper-and-r-b-wiringa",
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "pages": "22-24"
-  },
-  {
-   "id": "sec-018-24-steven-c-pieper-and-r-b-wiringa",
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "pages": "24-26"
-  },
-  {
-   "id": "sec-019-26-steven-c-pieper-and-r-b-wiringa",
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "pages": "26-27"
-  },
-  {
-   "id": "sec-020-6-density-and-momentum-distributions",
+   "id": "sec-005-6-density-and-momentum-distributions",
    "title": "DENSITY AND MOMENTUM DISTRIBUTIONS",
-   "pages": "27-28"
+   "pages": "27-35"
   },
   {
-   "id": "sec-021-28-steven-c-pieper-and-r-b-wiringa",
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "pages": "28-30"
-  },
-  {
-   "id": "sec-022-30-steven-c-pieper-and-r-b-wiringa",
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "pages": "30-35"
-  },
-  {
-   "id": "sec-023-7-low-energy-nucleon-nucleus-scattering",
+   "id": "sec-006-7-low-energy-nucleon-nucleus-scattering",
    "title": "LOW-ENERGY NUCLEON-NUCLEUS SCATTERING",
    "pages": "35-36"
   },
   {
-   "id": "sec-024-8-astrophysical-electroweak-reactions",
+   "id": "sec-007-8-astrophysical-electroweak-reactions",
    "title": "ASTROPHYSICAL ELECTROWEAK REACTIONS",
    "pages": "36-39"
   },
   {
-   "id": "sec-025-9-neutron-drops",
+   "id": "sec-008-9-neutron-drops",
    "title": "NEUTRON DROPS",
    "pages": "39-39"
   },
   {
-   "id": "sec-026-10-conclusions-and-outlook",
+   "id": "sec-009-10-conclusions-and-outlook",
    "title": "CONCLUSIONS AND OUTLOOK",
    "pages": "39-40"
   },
   {
-   "id": "sec-027-acknowledgments",
+   "id": "sec-010-acknowledgments",
    "title": "Acknowledgments",
-   "pages": "40-41"
-  },
-  {
-   "id": "sec-028-16-nollett-km-nucl-th0102022-submitted-to-phys-r",
-   "title": "Nollett KM. nucl-th/0102022, submitted to Phys. Rev. C",
-   "pages": "41-43"
+   "pages": "40-43"
   }
  ],
  "provenance": {

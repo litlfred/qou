@@ -8,6 +8,7 @@ pages: 1-4
 source_pdf: 1705.01853v2.pdf
 source_sha256: 895e0b22c93bca1b
 toc_source: inferred
+doc_brief: "Line Operators in the Standard Model — There is an ambiguity in the gauge group of the Standard Model."
 ---
 arXiv:1705.01853v2  [hep-th]  12 Jun 2017
 Preprint typeset in JHEP style - HYPER VERSION

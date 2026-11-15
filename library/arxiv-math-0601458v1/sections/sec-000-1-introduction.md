@@ -1,62 +1,32 @@
 ---
 doc_id: arxiv-math-0601458v1
-doc_title: "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS JEFFREY MORTON"
+doc_title: "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
-pages: 2-3
+pages: 3-4
 source_pdf: 0601458v1.pdf
 source_sha256: ef34611620cfd0bd
-doc_brief: "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS JEFFREY MORTON — Interest in combinatorial interpretations of mathematica l entities stems from the convenience of the concrete models they provi de."
+toc_source: outline
+text_source: latex
+latex_prose_ratio: 0.986
+latex_coverage_ratio: 0.989
+doc_brief: "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS — Interest in combinatorial interpretations of mathematical entities stems from the convenience of the concrete models they provide."
 ---
-2. Structure Types 4
-2.1. Categoriﬁcation of /C6 and /C6 [ [z] ] 4
-3. Structure Types and the Harmonic Oscillator 8
-3.1. The Quantum Harmonic Oscillator 9
-3.2. Structure Types and the Weyl Algebra 11
-4. Stuﬀ Types 14
-4.1. Groupoids 14
-4.2. Stuﬀ Types as a Generalization of Structure Types 20
-4.3. Stuﬀ Types As Power Series 24
-4.4. Forgetful Functors: Properties, Structure, and Stuﬀ 27
-5. Stuﬀ Types And Quantum Mechanics 30
-5.1. Inner Product of Stuﬀ Types 30
-5.2. Stuﬀ Operators 34
-5.3. Feynman Diagrams and Stuﬀ Operators 38
-6. M -Stuﬀ Types And Quantum Mechanics 43
-6.1. M -Stuﬀ Types 44
-6.2. Quantum Mechanics: M =U (1) 50
-7. Conclusions 56
-7.1. Categoriﬁed Quantum Mechanics 56
-7.2. Other Generalizations 58
-8. Acknowledgements 60
-Appendix A. A Little Higher-Dimensional Algebra 61
-Appendix B. Slice Categories and 2-Categories 62
-B.1. 2-Categories of Stuﬀ Types and Stuﬀ Operators 62
-Appendix C. Categorical Approaches to Generalizing Species 66
-C.1. Generalized Species 66
-References 68
-CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS 3
-1. Introduction
-One reason for the success of category theory has been its ability to describe rela-
-tions between seemingly separate areas of mathematics. Here, we will describe how
-category theory can be used to see relationships between enumer ative combinatorics
-and quantum mechanics. Speciﬁcally, we examine an approach to und erstanding
-the quantum harmonic oscillator by “categorifying” the Fock repre sentation of the
-Weyl algebra - which is the algebra of operators on states of the os cillator. This
-builds on work described by Baez and Dolan[1]. Since we do not expect r eaders to
-be expert in both quantum mechanics and category theory, we hav e tried to make
-this paper as self-contained as possible. Many deﬁnitions and explan ations will be
-well-known to the experts in each ﬁeld, and are arranged by section as much as
-possible to allow readers to skip familiar material.
-Categoriﬁcation is best understood as the reverse of “decatego riﬁcation”. This
-is a process which begins with some category, and produces a struc ture for which
-isomorphisms in the original category appear as equations between objects instead.
-Categoriﬁcation is the reverse process, replacing equations in som e mathematical
-setting with isomorphisms in some category in a consistent - but poss ibly non-
-unique - way. One example is the way we can treat the category of ﬁn ite sets
-as a categoriﬁcation of the natural numbers /C6 . The set /C6 can be seen as a set of
-cardinalities indexing isomorphism classes of ﬁnite sets, and which get their addition
-and multiplication from the categorical coproduct and product on t he category of
-ﬁnite sets. We will see further examples of a connection between de categoriﬁcation
-and cardinality.
+One reason for the success of category theory has been its ability to describe relations between seemingly separate areas of mathematics. Here, we will describe how category theory can be used to see relationships between enumerative combinatorics and quantum mechanics. Specifically, we examine an approach to understanding the quantum harmonic oscillator by "categorifying" the Fock representation of the Weyl algebra - which is the algebra of operators on states of the oscillator. This builds on work described by Baez and Dolan[@finfeyn]. Since we do not expect readers to be expert in both quantum mechanics and category theory, we have tried to make this paper as self-contained as possible. Many definitions and explanations will be well-known to the experts in each field, and are arranged by section as much as possible to allow readers to skip familiar material.
+
+Categorification is best understood as the reverse of "decategorification". This is a process which begins with some category, and produces a structure for which isomorphisms in the original category appear as equations between objects instead. Categorification is the reverse process, replacing equations in some mathematical setting with isomorphisms in some category in a consistent - but possibly non-unique - way. One example is the way we can treat the category of finite sets as a categorification of the natural numbers $\mathbbm{N}$. The set $\mathbbm{N}$ can be seen as a set of cardinalities indexing isomorphism classes of finite sets, and which get their addition and multiplication from the categorical coproduct and product on the category of finite sets. We will see further examples of a connection between decategorification and cardinality.
+
+Joyal [@joyal2] has described the category of *structure types*, which can be seen as the categorification of a certain ring of power series. These structure types play an important role in enumerative combinatorics, in which "generating functions" of given types of structures can be used in a purely algebraic way to count the number of such structures of various sizes. These generating functions are "decategorified" versions of structure types - or, equivalently, cardinalities of them. In section [\[struct-type-sec\]](#struct-type-sec){reference-type="ref" reference="struct-type-sec"}, we describe how this works in more detail, and give some examples.
+
+This leads, in section [\[harmoscsec\]](#harmoscsec){reference-type="ref" reference="harmoscsec"}, to the application to quantum mechanics. In that section, we describe briefly the quantum harmonic oscillator. It has a Hilbert space of states, and the Weyl algebra is the algebra of operators on this space. The Weyl algebra has a representation as operators on Fock space - the space of formal power series in one variable with a certain inner product. Here, it is generated by two operators - the creation and annihilation operators. We show how this algebra can be categorified using the category of structure types as a replacement for Fock space, and a certain class of functors as the operators.
+
+In section [\[stuff-types-sec\]](#stuff-types-sec){reference-type="ref" reference="stuff-types-sec"}, we find that structure types do not have a rich enough structure to capture all properties of power series. In particular, they do not provide a natural way to treat power series as functions which can be evaluated or composed in a way which is compatible with the idea of cardinality for structure types. To properly categorify these ideas, one can extend the notion of structure type to a so-called "stuff type". This makes use of the fact that there are two ways of seeing structure types as functors. One is as a functor taking each finite set to the set of structures of a certain type which can be placed on them - the functor gives "coefficients" associated to finite sets. The other point of view treats structure types as "bundles" over the category of finite sets, whose projections take structured sets to their underlying sets. The latter point of view allows a larger class of "total spaces" for the bundle - in fact, it can be any groupoid. We describe a classification of functors, and show how dropping the requirement of faithfulness on the projection functor for the bundle leads to stuff types. In appendix [\[sec:slicecategory\]](#sec:slicecategory){reference-type="ref" reference="sec:slicecategory"} we provide more details, showing how stuff types form a category of "groupoids over finite sets".
+
+Section [\[stuff-quantum-sec\]](#stuff-quantum-sec){reference-type="ref" reference="stuff-quantum-sec"} examines operations on stuff types which are useful to the program of categorifying quantum mechanics. The category of stuff types naturally gets an "inner product" on objects by means of a pullback construction. We then show this is a categorification of the usual inner product on Fock space. Then we describe the equivalent of linear operators on Fock space - "stuff operators", and show how they can be seen directly as categorified matrices. These can act on stuff types by a construction similar to the inner product, as one might expect. We then develop some particular examples of stuff operators, namely the equvalent of the creation and annihilation operators. These provide a connection to Feynman diagrams.
+
+Then, in [\[mstuff\]](#mstuff){reference-type="ref" reference="mstuff"}, we introduce the idea of $M$-sets, labelled with elements of a general monoid $M$, extend this from sets to general groupoids, and describe an idea of cardinality for these. Of special interest for quantum mechanics is the group $U(1)$, the group of phases. We see that it is possible, by "colouring" sets (interpreted as sets of quanta) with these phases, to recover more features of the quantum harmonic oscillator. In particular, we describe an $M$-stuff operator which corresponds to time evolution of a state without interactions. We also demonstrate a connection between stuff operators and Feynman diagrams.
+
+Finally, we summarize the results, and suggest directions in which this work could be extended.
+
+# Structure Types[]{#struct-type-sec label="struct-type-sec"}

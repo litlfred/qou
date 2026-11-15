@@ -2,30 +2,45 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2011.13340v1",
  "source_sha256": "e73876ed2c923608",
- "brief": "A Matrix Bernstein Inequality for Strong Rayleigh Distributions* — The Entropy method provides a powerful framework for provin g scalar concentration in- equalities by establishing functional",
- "extended": "**A Matrix Bernstein Inequality for Strong Rayleigh Distributions***\n\n*Tarun Kathuria*\n\n17 pp, 4 sections.\n\n**Abstract.** The Entropy method provides a powerful framework for provin g scalar concentration in- equalities by establishing functional inequalities like P oincare and log-Sobolev inequalities. These inequalities are especially useful for deriving conc entration for dependent distributions coming from stationary distributions of Markov chains. In c ontrast to the scalar case, the study of matrix concentration inequalities is fairly recent and t here does not seem to be a general framework for proving matrix concentration inequalities u sing the Entropy method. In this paper, we initiate the study of Matrix valued functional ine qualities and show how matrix valued functional inequalities can be used to establish a ki nd of iterative variance comparison argument to prove Matrix Bernstein like inequalities.\n\n**Outline.** 1 Introduction; 3 A Bernstein Inequality from Matrix valued Po; 5 Conclusion and Open Questions; References",
+ "brief": "A Matrix Bernstein Inequality for Strong Rayleigh Distributions * — The Entropy method provides a powerful framework for proving scalar concentration in- equalities by establishing functional",
+ "extended": "**A Matrix Bernstein Inequality for Strong Rayleigh Distributions ***\n\n*Tarun Kathuria*\n\n17 pp, 7 sections.\n\n**Abstract.** The Entropy method provides a powerful framework for proving scalar concentration in- equalities by establishing functional inequalities like Poincare and log-Sobolev inequalities. These inequalities are especially useful for deriving concentration for dependent distributions coming from stationary distributions of Markov chains. In contrast to the scalar case, the study of matrix concentration inequalities is fairly recent and there does not seem to be a general framework for proving matrix concentration inequalities using the Entropy method. In this paper, we initiate the study of Matrix valued functional inequalities and show how matrix valued functional inequalities can be used to establish a kind of iterative variance comparison argument to prove Matrix Bernstein like inequalities.\n\n**Outline.** Front matter; 1 Introduction; 2 Matrix Valued Poincare Inequality for Strong; 3 A Bernstein Inequality from Matrix valued Po; 4 Comparison with KyngSong18; 5 Conclusion and Open Questions; References",
  "tokens": {
   "brief": 47,
-  "extended": 262
+  "extended": 283
  },
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "title": "Introduction",
-   "pages": "1-10"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
   },
   {
-   "id": "sec-001-3-a-bernstein-inequality-from-matrix-valued-poin",
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-2-matrix-valued-poincare-inequality-for-strong-r",
+   "title": "Matrix Valued Poincare Inequality for Strong Rayleigh measures",
+   "pages": "4-10"
+  },
+  {
+   "id": "sec-002-3-a-bernstein-inequality-from-matrix-valued-poin",
    "title": "A Bernstein Inequality from Matrix valued Poincare inequalities",
    "pages": "10-15"
   },
   {
-   "id": "sec-002-5-conclusion-and-open-questions",
+   "id": "sec-003-4-comparison-with-kyngsong18",
+   "title": "Comparison with KyngSong18",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-004-5-conclusion-and-open-questions",
    "title": "Conclusion and Open Questions",
    "pages": "15-16"
   },
   {
-   "id": "sec-003-references",
+   "id": "sec-005-references",
    "title": "References",
    "pages": "16-17"
   }

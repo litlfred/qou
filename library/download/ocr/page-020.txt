@@ -1,0 +1,54 @@
+1404 S.G. Bobkov and F. Gétze
+
+Corollary 6.5. Let G be a distribution function with density g(x) bounded by a number M.
+Under LSI(o”), for any 6 > 0 and any interval I of length |I| > 4||F — G\\/5,
+
+3
+> noir] <4exp{e( “) |
+
+where B = (Mo)?/3n-"/3 and c > 0 is an absolute constant.
+
+{|v feeds
+I
+
+Hence, if
+Cc
+[I] = 5 maxtB, ||F — Gil}
+
+and C > 0 is large, then, with high probability, we have that jAe - tr g(x) dx| <d|J|.
+
+7. Bounds on the Kolmogorov distance. Proof of Theorem 1.2
+
+As before, let F;, denote the empirical measure associated with observations x;,...,, and F =
+EF, their mean with respect to a given probability measure jz on R”. In this section, we derive
+uniform bounds on F,(x) — F(x), based on Proposition 6.3, and thus prove Theorem 1.2. For
+applications to the matrix scheme, we shall also replace F,, which may be difficult to determine,
+by the well-behaving limit law G (with the argument relying on Proposition 6.4).
+
+Let the random variables X,..., X, have joint distribution jz, satisfying LSI(c2), and assume
+that F has a finite Lipschitz seminorm M = || F'||Lip. Define
+
+(Moy2/3
+p= nie”
+
+Proof of Theorem 1.2. We use the inequalities (6.5) and (6.6) to derive an upper bound on
+||Fn — Fill = sup, |F, (x) — F(x)|. (For the sake of extension of Theorem 1.2 to Theorem 7.1
+below, we relax the argument and do not assume that F is continuous.)
+
+So, fix r > 0 and an integer N > 2. One can always pick up points -oo = x9 <x) S++: <
+Xy—1 < xn = +00 with the property that
+
+1
+F@i-) — F@i-) SF i=l,...,N. (7.1)
+
+Note that Fy, (x0) = Fn(xo) = 0 and Fy, (xv) = Fy (xn) = 1. It then follows from (6.5) that
+
+1<i<N
+
+P{ max [Fa (xi-) — Fri-)] = Br} <= e277
+
+and, similarly, by (6.6),
+
+P| max [F(i-1) — Fni-1)] = rl <(N— e227,
+
+1<i<N

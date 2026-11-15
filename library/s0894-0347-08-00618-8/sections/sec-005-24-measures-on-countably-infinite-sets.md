@@ -8,6 +8,7 @@ pages: 10-11
 source_pdf: S0894-0347-08-00618-8.pdf
 source_sha256: 7c0b2ca41992b21c
 toc_source: outline
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY S 0894-0347(08)00618-8 — 24 sections: Front matter; Introduction; A plethora of negative dependence"
 ---
 of the notions of negative dependence to probability measures on 2E, where E is a
 countably inﬁnite set. This is canonically done as follows.

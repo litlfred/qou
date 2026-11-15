@@ -1,0 +1,911 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2601.05136v2",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p003-1",
+   "page": 3,
+   "mark": "3",
+   "text": "As discussed in Remark 4.5 the choice of k (along with β) determines a ﬂattening of the",
+   "marks": [
+    {
+     "page": 2,
+     "context": "let K be a hyperbolic knot in S"
+    },
+    {
+     "page": 2,
+     "context": "on S"
+    },
+    {
+     "page": 2,
+     "context": "it is usually a version of the SL2(C) character variety of S"
+    },
+    {
+     "page": 2,
+     "context": "In more detail, given a combinatorial description Tof S"
+    },
+    {
+     "page": 2,
+     "context": "at combine together to give a coherent structure on all of S"
+    },
+    {
+     "page": 3,
+     "context": "LetKbeanoriented,framedknotinS"
+    },
+    {
+     "page": 3,
+     "context": "representation ρ:π1(S"
+    },
+    {
+     "page": 3,
+     "context": "encodes (ρ, u). For a vector k∈ZEwith integer entries"
+    }
+   ],
+   "block": "library/arxiv-2601.05136v2/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p004-1",
+   "page": 4,
+   "mark": "2",
+   "text": "π√−1",
+   "marks": [
+    {
+     "page": 3,
+     "context": "meridians of K.A log-meridian is a complex number µ with e"
+    },
+    {
+     "page": 3,
+     "context": "[McP25a] is the deﬁnition of a sequence of invariants"
+    }
+   ],
+   "block": "library/arxiv-2601.05136v2/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p014-1",
+   "page": 14,
+   "mark": "8",
+   "text": "For example, when ℓ=1 the orientation",
+   "marks": [
+    {
+     "page": 14,
+     "context": "hen t=0 and it satisﬁes an additional orientation condition."
+    }
+   ],
+   "block": "library/arxiv-2601.05136v2/blocks/prose-sec-014"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p004-2",
+   "page": 4,
+   "mark": "2",
+   "text": "π√−1",
+   "block": "library/arxiv-2601.05136v2/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p005-1",
+   "page": 5,
+   "mark": "4",
+   "text": "Our invariant is deﬁned in terms of the octa-",
+   "block": "library/arxiv-2601.05136v2/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "6",
+   "text": "More formally the associated octahedral de-",
+   "block": "library/arxiv-2601.05136v2/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p015-1",
+   "page": 15,
+   "mark": "9",
+   "text": "If the integrand were periodic the boundary",
+   "block": "library/arxiv-2601.05136v2/blocks/prose-sec-015"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "N(K, ρ, µ) of a knot K,a representation ρ:π"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "N(K, ρ, µ) of a knot K,a representation ρ:π1(S"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "N(K, ρ, µ) of a knot K,a representation ρ:π1(S3\\ K)→SL"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "me typical features of a candidate mathematical realization."
+  },
+  {
+   "page": 2,
+   "mark": "d",
+   "context": "Γ′ eNS(t)"
+  },
+  {
+   "page": 2,
+   "mark": "t",
+   "context": "Γ′ eNS(t) d"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "meridians of K.A log-meridian is a complex number µ with e2π"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "orated representation of a knot K is a representation ρ:π1(S"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "More formally, given a choice of peripheral subgroup Π⊂π1(S"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "eigenspace L⊂C"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "Deﬁnition 2.2. Let Kbe an oriented, framed knot in S"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "ition 2.3. A decorated matrix is a pair (g, [v])∈SL2(C) × CP"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "The Wirtinger presentation of π1(S"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "o make an additional choice of diagram-dependent gauge data."
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "along with an assignment u:j7→ujof column vectors uj∈C"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": " a shadow coloring is determined uniquely by the vector u0∈C"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "bi:= −v"
+  },
+  {
+   "page": 6,
+   "mark": "e",
+   "context": "bi:= −vi"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "bi:= −vie"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "viui↑for each segment"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "The diagram D determines a semi-ideal triangulation TD of S"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "vertices in CP"
+  },
+  {
+   "page": 7,
+   "mark": "5",
+   "context": "0 or ∞."
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "z"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "assigned z"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "assigned z1= 1/(1−z"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "assigned z1= 1/(1−z0) and z"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "assigned z1= 1/(1−z0) and z2= 1−1/z"
+  },
+  {
+   "page": 8,
+   "mark": "7",
+   "context": "of m and bi determine parameters ai for each segment"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "a1= mϵ"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "a4= m−ϵ"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "a2= m−ϵ"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "a3= mϵ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1 −e"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "1 −e2π"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "1 −e2πi"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "N(µ|t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "N(µ|t1, t"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "N(µ|t1, t2, t"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "N(µ|t1, t2, t3, t"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "N(µ|t1, t2, t3, t4) := ϕN(t"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "N(µ|t1, t2, t3, t4) := ϕN(t4 −t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "N(µ|t1, t2, t3, t4) := ϕN(t4 −t1) + ϕN(t"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "N(µ|t1, t2, t3, t4) := ϕN(t4 −t1) + ϕN(t2 −t"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "N(µ|t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "N(µ|t1, t"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "N(µ|t1, t2, t"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "N(µ|t1, t2, t3, t"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "N(µ|t1, t2, t3, t4) := −ϕN(t"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "N(µ|t1, t2, t3, t4) := −ϕN(t1 −t"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "N(µ|t1, t2, t3, t4) := −ϕN(t1 −t4 + 1 −1/N) −ϕN(t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "N(µ|t1, t2, t3, t4) := −ϕN(t1 −t4 + 1 −1/N) −ϕN(t3 −t"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "N(µ|t) is a quasi-periodic function of each"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "N(µ|t) is a quasi-periodic function of each t"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "N(µ|t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "N(µ|t1, t"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "N(µ|t1, t2, t"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "N(µ|t1, t2, t3, t"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "N(µ|t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "N(µ|t1, t"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "N(µ|t1, t2, t"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "N(µ|t1, t2, t3, t"
+  },
+  {
+   "page": 10,
+   "mark": "5",
+   "context": "N(µ|0, t"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "N(µ|0, t5, t"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "N(µ|0, t5, t1, t"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "t"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "N−1, t"
+  },
+  {
+   "page": 10,
+   "mark": "5",
+   "context": "N−1, t1, t"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "N−1, t"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "t"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "N−1, t"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "N−1, t6, t"
+  },
+  {
+   "page": 10,
+   "mark": "7",
+   "context": "N−1, t"
+  },
+  {
+   "page": 10,
+   "mark": "7",
+   "context": "N(µ|t"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "N(µ|t7, t"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "N(µ|t7, t2,"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "N(µ|t7, t2, 0, t"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "Choose logarithms βi of the segment parameters bi with e"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "Choose logarithms βi of the segment parameters bi with e2π"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "Choose logarithms βi of the segment parameters bi with e2πiβ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "(1 −e"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "(1 −e2π"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "(1 −e2πi(ζ+1)/N) · · · (1 −e"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "(1 −e2πi(ζ+1)/N) · · · (1 −e2π"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "1 −e"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "1 −e2π"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "N+ 1, β"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "N , β"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "N, β"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "N , β"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "N , β"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "N, β"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "N , β"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "N , β"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "N, β"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "N , β"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "N , β"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "N+ 1, β"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "N , β"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "N , β"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "N, β"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "these factors cancel: the ai match because the bi= e"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "these factors cancel: the ai match because the bi= e2π"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "these factors cancel: the ai match because the bi= e2πiβ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "equations (3.5) and (3.6) are of the form ζ/N + ti −tjwith e"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "uations (3.5) and (3.6) are of the form ζ/N + ti −tjwith e2π"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "[0,1]E exp N (SN(D, µ|t + β/N) −2π"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "[0,1]E exp N (SN(D, µ|t + β/N) −2πi"
+  },
+  {
+   "page": 11,
+   "mark": "d",
+   "context": "[0,1]E exp N (SN(D, µ|t + β/N) −2πik · t)"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "[0,1]E exp N (SN(D, µ|t + β/N) −2πik · t)d"
+  },
+  {
+   "page": 12,
+   "mark": "f",
+   "context": "[0,1]E"
+  },
+  {
+   "page": 12,
+   "mark": "e",
+   "context": "[0,1]E f(t)"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "[0,1]E f(t)e−2π"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "[0,1]E f(t)e−2πi"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "[0,1]E f(t)e−2πik·t"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "[0,1]E f(t)e−2πik·t d"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "k∈ZE"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "k∈ZE a"
+  },
+  {
+   "page": 12,
+   "mark": "e",
+   "context": "k∈ZE ak"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "k∈ZE ake"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "k∈ZE ake2π"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "k∈ZE ake2πi"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "ake"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "ake2π"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "ake2πi"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "e2π"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "e2πi"
+  },
+  {
+   "page": 12,
+   "mark": "e",
+   "context": "n∈[N]E"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "n∈[N]E e"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "n∈[N]E e2π"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "n∈[N]E e2πi"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "n∈[N]E e2πik·n/Nis N |E|if every component of"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "e2πik·n/Nis N |E|if every component of kis divisible by Nand"
+  },
+  {
+   "page": 12,
+   "mark": "z",
+   "context": "Z"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "continuation of eLi"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "Li2(e"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "Li2(e2π"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "−Li"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "−Li2(e−2π"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "−πiζ(ζ −1) −π"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "1 −e"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "1 −e2π"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "t ∈CEt"
+  },
+  {
+   "page": 13,
+   "mark": "j",
+   "context": "t ∈CEti −t"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "λ(ζ) = L(ζ) + ζ log(1 −e"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "λ(ζ) = L(ζ) + ζ log(1 −e2π"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "In general the extra terms ζ log(1 −e"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "In general the extra terms ζ log(1 −e2π"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "N|E|/2−1/2"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "N|E|/2−1/2 eJN(D|k"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "overall power of N"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "N(K, ρ, µ) = N"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "N(K, ρ, µ) = N 3/2"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "[0,1]E exp N (SN(D, µ|t + β/N) −2π"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "[0,1]E exp N (SN(D, µ|t + β/N) −2πi"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "[0,1]E exp N (SN(D, µ|t + β/N) −2πik · t)"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "[0,1]E exp N (SN(D, µ|t + β/N) −2πik · t)d"
+  },
+  {
+   "page": 16,
+   "mark": "9",
+   "context": "can move only the interior of the contour, not the boundary."
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "N(K, ρ, µ) vanishes unless"
+  }
+ ]
+}

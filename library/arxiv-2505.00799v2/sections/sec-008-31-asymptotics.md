@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2505.00799v2
-doc_title: "QUANTUM MODULAR FORMS AND RESURGENCE"
+doc_title: "Quantum Modular Forms and Resurgence"
 section_id: sec-008-31-asymptotics
 section_title: "Asymptotics"
 section_number: 3.1
 pages: 15-19
 source_pdf: 2505.00799v2.pdf
 source_sha256: cc9d2ab4c6c79b50
-doc_brief: "QUANTUM MODULAR FORMS AND RESURGENCE — In 2010, Zagier described a new phenomenon which he called quantum mod- ularity."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.935
-latex_coverage_ratio: 0.941
+latex_coverage_ratio: 0.956
+doc_brief: "Quantum Modular Forms and Resurgence — In 2010, Zagier described a new phenomenon which he called quantum mod- ularity."
 ---
 []{#subsec: asymptotics label="subsec: asymptotics"}
 

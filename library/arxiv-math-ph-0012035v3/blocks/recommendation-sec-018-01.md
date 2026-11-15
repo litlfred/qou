@@ -1,0 +1,1 @@
+We shall sketch an application of the non-Abelian Stokes theorem to a genuinely three-dimensional, non-perturbative, covariant path-integral approach to *polynomial invariants* of knots and links in the framework of (topological) quantum Chern-Simons gauge field theory.

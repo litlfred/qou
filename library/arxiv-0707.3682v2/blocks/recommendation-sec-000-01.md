@@ -1,0 +1,1 @@
+For this one finds $\dim_{\R} \hd^i(X_{/\R},\R(n))$ elements of $\hm^i(X_{/\Z},\Q(n))$, checks that their images under [\[regmap\]](#regmap){reference-type="eqref" reference="regmap"} are independent, hence should form a basis of $\hm^i(X_{/\Z},\Q(n))$ according to the first part of the conjecture, and verifies the second part using these elements.

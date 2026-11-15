@@ -2,185 +2,120 @@
  "_schema": "library-summary/v1",
  "doc_id": "s0894-0347-00-00337-4",
  "source_sha256": "1c6848281fc2804c",
- "brief": "AMERICAN MATHEMATICAL SOCIETY S 0894-0347(00)00337-4 — 35 sections: Introduction; Plancherel measures. Given a ﬁnite; Poissonization and correlation fun",
- "extended": "**AMERICAN MATHEMATICAL SOCIETY S 0894-0347(00)00337-4**\n\n*Article electronically published on April 13, 2000*\n\n35 pp, 35 sections.\n\n**Outline.** 1 Introduction; 1.1 Plancherel measures. Given a ﬁnite group G; 1.2 Poissonization and correlation functions. ; 2 Jy+ 1; 2 Jy−1; 1.3 Asymptotics in the bulk of the spectrum. G; 1.4 Behavior near the edge of the spectrum and; 1.5 Poissonization and depoissonization. We ob; 1.6 Organization of the paper. Section 2 conta; 2 Correlation functions of the measures M θ; 2.1 Proof of Theorem 1. As noted above, Theore; 2 Introduce the following kernel L:; 2 J|y|+ 1; 2 J|y|−1; 2.2 Proof of Theorem 2. Recall that by constru; 2.3 Various formulas for the kernel J. Recall ; 2.4 Commuting diﬀerence operator. Consider the; 3 Correlation functions in the bulk of the spe",
+ "brief": "AMERICAN MATHEMATICAL SOCIETY S 0894-0347(00)00337-4 — 22 sections: Front matter; Plancherel measures; Introduction",
+ "extended": "**AMERICAN MATHEMATICAL SOCIETY S 0894-0347(00)00337-4**\n\n*Article electronically published on April 13, 2000*\n\n35 pp, 22 sections.\n\n**Outline.** Front matter; 1.1 Plancherel measures; 1 Introduction; 1.2 Poissonization and correlation functions; 1.3 Asymptotics in the bulk of the spectrum; 1.4 Behavior near the edge of the spectrum and; 1.5 Poissonization and depoissonization; 1.6 Organization of the paper; 2 Correlation functions of the measures M; 2.3 Various formulas for the kernel J; 2.4 Commuting difference operator; 3 Correlation functions in the bulk of the spe; 4 Edge of the spectrum: Convergence to the Air; 4.1 Results and strategy of proof; 4.3 Depoissonization and proof of Theorem ??; Appendix A. General properties of determinanta; A.1. Fredholm determinants and determinantal p; A.2. Correlation functions of determinantal pr",
  "tokens": {
-  "brief": 38,
-  "extended": 202
+  "brief": 28,
+  "extended": 212
  },
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "title": "Introduction",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-11-plancherel-measures-given-a-ﬁnite-group-g-by",
-   "title": "Plancherel measures. Given a ﬁnite group G, by the corresponding Plan-",
+   "id": "sec-000-11-plancherel-measures",
+   "title": "Plancherel measures",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
    "pages": "1-3"
   },
   {
-   "id": "sec-002-12-poissonization-and-correlation-functions-for",
-   "title": "Poissonization and correlation functions. For θ > 0, consider the pois-",
+   "id": "sec-002-12-poissonization-and-correlation-functions",
+   "title": "Poissonization and correlation functions",
    "pages": "3-4"
   },
   {
-   "id": "sec-003-2-jy-1",
-   "title": "Jy+ 1",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-004-2-jy1",
-   "title": "Jy−1",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-005-13-asymptotics-in-the-bulk-of-the-spectrum-given",
-   "title": "Asymptotics in the bulk of the spectrum. Given a sequence of subsets",
+   "id": "sec-003-13-asymptotics-in-the-bulk-of-the-spectrum",
+   "title": "Asymptotics in the bulk of the spectrum",
    "pages": "4-6"
   },
   {
-   "id": "sec-006-14-behavior-near-the-edge-of-the-spectrum-and-th",
-   "title": "Behavior near the edge of the spectrum and the Airy ensemble. The",
+   "id": "sec-004-14-behavior-near-the-edge-of-the-spectrum-and-th",
+   "title": "Behavior near the edge of the spectrum and the Airy ensemble",
    "pages": "6-7"
   },
   {
-   "id": "sec-007-15-poissonization-and-depoissonization-we-obtain",
-   "title": "Poissonization and depoissonization. We obtain Theorems 3 and 4 from",
+   "id": "sec-005-15-poissonization-and-depoissonization",
+   "title": "Poissonization and depoissonization",
    "pages": "7-8"
   },
   {
-   "id": "sec-008-16-organization-of-the-paper-section-2-contains",
-   "title": "Organization of the paper. Section 2 contains the proof of Theorems 1 and",
+   "id": "sec-006-16-organization-of-the-paper",
+   "title": "Organization of the paper",
    "pages": "8-9"
   },
   {
-   "id": "sec-009-2-correlation-functions-of-the-measures-m-θ",
-   "title": "Correlation functions of the measures M θ",
-   "pages": "9-9"
+   "id": "sec-007-2-correlation-functions-of-the-measures-m",
+   "title": "Correlation functions of the measures M",
+   "pages": "9-12"
   },
   {
-   "id": "sec-010-21-proof-of-theorem-1-as-noted-above-theorem-1-i",
-   "title": "Proof of Theorem 1. As noted above, Theorem 1 is a limit case of Theorem",
-   "pages": "9-9"
-  },
-  {
-   "id": "sec-011-2-introduce-the-following-kernel-l",
-   "title": "Introduce the following kernel L:",
-   "pages": "9-11"
-  },
-  {
-   "id": "sec-012-2-jy-1",
-   "title": "J|y|+ 1",
-   "pages": "11-11"
-  },
-  {
-   "id": "sec-013-2-jy1",
-   "title": "J|y|−1",
-   "pages": "11-11"
-  },
-  {
-   "id": "sec-014-22-proof-of-theorem-2-recall-that-by-constructio",
-   "title": "Proof of Theorem 2. Recall that by construction",
-   "pages": "11-12"
-  },
-  {
-   "id": "sec-015-23-various-formulas-for-the-kernel-j-recall-that",
-   "title": "Various formulas for the kernel J. Recall that since Jx is an entire func-",
+   "id": "sec-008-23-various-formulas-for-the-kernel-j",
+   "title": "Various formulas for the kernel J",
    "pages": "12-14"
   },
   {
-   "id": "sec-016-24-commuting-diﬀerence-operator-consider-the-diﬀ",
-   "title": "Commuting diﬀerence operator. Consider the diﬀerence operators ∆and",
+   "id": "sec-009-24-commuting-difference-operator",
+   "title": "Commuting difference operator",
    "pages": "14-14"
   },
   {
-   "id": "sec-017-3-correlation-functions-in-the-bulk-of-the-spect",
+   "id": "sec-010-3-correlation-functions-in-the-bulk-of-the-spect",
    "title": "Correlation functions in the bulk of the spectrum",
-   "pages": "14-14"
+   "pages": "14-19"
   },
   {
-   "id": "sec-018-31-proof-of-theorem-3-we-refer-the-reader-to-sec",
-   "title": "Proof of Theorem 3. We refer the reader to Section 1.3 of the Introduction",
-   "pages": "14-16"
-  },
-  {
-   "id": "sec-019-2-u-ωu",
-   "title": "(u −Ω(u)) ,",
-   "pages": "16-18"
-  },
-  {
-   "id": "sec-020-32-asymptotics-of-ρn-x-recall-that-the-correlati",
-   "title": "Asymptotics of ρ(n, X). Recall that the correlation functions ρ(n, X) were",
-   "pages": "18-19"
-  },
-  {
-   "id": "sec-021-2-x-y",
-   "title": "(x + y)",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-022-4-edge-of-the-spectrum-convergence-to-the-airy-e",
+   "id": "sec-011-4-edge-of-the-spectrum-convergence-to-the-airy-e",
    "title": "Edge of the spectrum: Convergence to the Airy ensemble",
    "pages": "19-19"
   },
   {
-   "id": "sec-023-41-results-and-strategy-of-proof-in-this-section",
-   "title": "Results and strategy of proof. In this section we prove Theorem 4 which",
-   "pages": "19-20"
+   "id": "sec-012-41-results-and-strategy-of-proof",
+   "title": "Results and strategy of proof",
+   "pages": "19-26"
   },
   {
-   "id": "sec-024-42-proof-of-theorem-5-suppose-we-have-a-point-pr",
-   "title": "Proof of Theorem 5. Suppose we have a point process on R with determi-",
-   "pages": "20-22"
+   "id": "sec-013-43-depoissonization-and-proof-of-theorem",
+   "title": "Depoissonization and proof of Theorem ??",
+   "pages": "26-28"
   },
   {
-   "id": "sec-025-3-k-1",
-   "title": "K 1",
-   "pages": "22-22"
+   "id": "sec-014-appendix-a-general-properties-of-determinantal-p",
+   "title": "Appendix A. General properties of determinantal point processes",
+   "pages": "28-28"
   },
   {
-   "id": "sec-026-3-j2rxr",
-   "title": "J2r+xr",
-   "pages": "22-22"
+   "id": "sec-015-a1-fredholm-determinants-and-determinantal-proce",
+   "title": "A.1. Fredholm determinants and determinantal processes",
+   "pages": "28-30"
   },
   {
-   "id": "sec-027-3-2r-ax",
-   "title": "(2r) −A(x)",
-   "pages": "22-22"
+   "id": "sec-016-a2-correlation-functions-of-determinantal-proces",
+   "title": "A.2. Correlation functions of determinantal processes",
+   "pages": "30-31"
   },
   {
-   "id": "sec-028-3-q-3γ1",
-   "title": "(Q) + 3γ1",
-   "pages": "22-22"
+   "id": "sec-017-a3-complementation-principle",
+   "title": "A.3. Complementation principle",
+   "pages": "31-32"
   },
   {
-   "id": "sec-029-3-q-k-1",
-   "title": "(Q) = K 1",
-   "pages": "22-23"
+   "id": "sec-018-a4-convergence-of-trace-class-operators",
+   "title": "A.4. Convergence of trace class operators",
+   "pages": "32-33"
   },
   {
-   "id": "sec-030-3-x-const-x1",
-   "title": "(x) ≤const x−1",
-   "pages": "23-23"
-  },
-  {
-   "id": "sec-031-3-q-const",
-   "title": "(Q) ≤const",
-   "pages": "23-26"
-  },
-  {
-   "id": "sec-032-43-depoissonization-and-proof-of-theorem-4-fix-s",
-   "title": "Depoissonization and proof of Theorem 4. Fix some m = 1, 2, . . . and",
-   "pages": "26-33"
-  },
-  {
-   "id": "sec-033-acknowledgments",
+   "id": "sec-019-acknowledgments",
    "title": "Acknowledgments",
    "pages": "33-33"
   },
   {
-   "id": "sec-034-references",
+   "id": "sec-020-references",
    "title": "References",
    "pages": "33-35"
   }

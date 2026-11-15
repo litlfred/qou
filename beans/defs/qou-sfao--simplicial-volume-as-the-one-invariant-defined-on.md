@@ -10,7 +10,7 @@ updated_at: 2026-09-07T07:02:02Z
 
 ## Context (2026-09-06)
 
-From the Bring/CS/Lawson dialog assessment (docs/audits/2026-09-06-bring-cs-lawson-dialog-assessment.md, C2-B). The dialog claimed the Gromov norm is "trivially zero on a 2-manifold"; it is not — `‖Σ_g‖ = 2|χ| = 4g − 4` for `g ≥ 2` (Gromov 1982, registered `gromov1982`), so `‖Σ₄‖ = 12` for Bring. Held positivity: Martelli `library/arxiv-1610.02592v3/sections/sec-058-132-simplicial-volume.md` Def 13.2.3 (:44), Cor 13.2.7 (:71), genus ≥ 2 positive (:76-77), Prop 13.2.13 `Vol ≤ v₃‖M‖` (:208). Task: write the surface case beside the 3-manifold one (`‖S³∖K‖ = Vol/v₃`) in the open Bring-leg item, as framing and citation only. Any numerical reading of 12 against a framework quantity is fit-risk and is NOT part of this bean.
+From the Bring/CS/Lawson dialog assessment (docs/audits/2026-09-06-bring-cs-lawson-dialog-assessment.md, C2-B). The dialog claimed the Gromov norm is "trivially zero on a 2-manifold"; it is not — `‖Σ_g‖ = 2|χ| = 4g − 4` for `g ≥ 2` (Gromov 1982, registered `gromov1982`), so `‖Σ₄‖ = 12` for Bring. Held positivity: Martelli `library/arxiv-1610.02592v3/sections/sec-073-132-simplicial-volume.md` Def 13.2.3 (:44), Cor 13.2.7 (:71), genus ≥ 2 positive (:76-77), Prop 13.2.13 `Vol ≤ v₃‖M‖` (:208). Task: write the surface case beside the 3-manifold one (`‖S³∖K‖ = Vol/v₃`) in the open Bring-leg item, as framing and citation only. Any numerical reading of 12 against a framework quantity is fit-risk and is NOT part of this bean.
 
 
 

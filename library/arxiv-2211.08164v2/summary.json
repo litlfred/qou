@@ -3,12 +3,17 @@
  "doc_id": "arxiv-2211.08164v2",
  "source_sha256": "aff9ff3ef5ac28be",
  "brief": "INFINITELY MANY RIEMANN SURFACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS — In this short note, we prove the existence of inﬁnitely many pairwise non-isomorphic, non-hyperelliptic Riemann",
- "extended": "**INFINITELY MANY RIEMANN SURFACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS**\n\n*SEBASTI ÁN REYES-CAROCCA AND PIETRO SPEZIALI*\n\n10 pp, 11 sections.\n\n**Abstract.** In this short note, we prove the existence of inﬁnitely many pairwise non-isomorphic, non-hyperelliptic Riemann surfaces with automorp hism group act- ing transitively on the Weierstrass points. We also ﬁnd all compact Rie mann sur- faces with automorphism group acting transitively on the Weierstra ss points, under the assumption that they are simple.\n\n**Outline.** 1 Introduction and statement of the result; 2 A family of Riemann surfaces; 3 Proof of the main theorem; 4 Simple Weierstrass points; 5 Future directions and final comments; The action on C3; The Jacobian variety; New examples; The case of positive characteristic; Acknowledgement; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem: There are inﬁnitely many pairwise non-isomorphic, non-hyp erelliptic com-\n- Theorem 1: A non-hyperelliptic compact Riemann surface X of genus three has\n- Theorem 2: There is a transitive action on the Weierstrass points on a co mpact\n- Corollary: For every prime number p /greaterorequalslant5, there are inﬁnitely many pairwise non-",
+ "extended": "**INFINITELY MANY RIEMANN SURFACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS**\n\n*SEBASTIÁN REYES-CAROCCA AND PIETRO SPEZIALI*\n\n10 pp, 12 sections.\n\n**Abstract.** In this short note, we prove the existence of inﬁnitely many pairwise non-isomorphic, non-hyperelliptic Riemann surfaces with automorphism group act- ing transitively on the Weierstrass points. We also ﬁnd all compact Riemann sur- faces with automorphism group acting transitively on the Weierstrass points, under the assumption that they are simple.\n\n**Outline.** Front matter; 1 Introduction and statement of the result; 2 A family of Riemann surfaces; 3 Proof of the main theorem; 4 Simple Weierstrass points; 5 Future directions and final comments; The action on C3; The Jacobian variety; New examples; The case of positive characteristic; Acknowledgement; References",
  "tokens": {
   "brief": 49,
-  "extended": 306
+  "extended": 210
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction-and-statement-of-the-result",
    "title": "Introduction and statement of the result",
@@ -69,8 +74,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

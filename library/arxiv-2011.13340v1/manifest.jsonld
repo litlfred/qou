@@ -9,15 +9,18 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-2011.13340v1",
+  "title": "A Matrix Bernstein Inequality for Strong Rayleigh Distributions *",
   "contains": [
+    "library/arxiv-2011.13340v1/sections/sec-front-matter",
     "library/arxiv-2011.13340v1/sections/sec-000",
     "library/arxiv-2011.13340v1/sections/sec-001",
     "library/arxiv-2011.13340v1/sections/sec-002",
-    "library/arxiv-2011.13340v1/sections/sec-003"
+    "library/arxiv-2011.13340v1/sections/sec-003",
+    "library/arxiv-2011.13340v1/sections/sec-004",
+    "library/arxiv-2011.13340v1/sections/sec-005"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -27,7 +30,9 @@
   },
   "meta": {
     "doc_id": "arxiv-2011.13340v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "2011.13340v1.pdf",
     "source_sha256": "e73876ed2c923608a5efcf6053a7d21c0148bfd9c3b1d63bc32fe6ba91179480",
     "pages": 17,

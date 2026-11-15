@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-123",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Twisted Calabi-Yau Rings",
+  "pageStart": 440,
+  "pageEnd": 447,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-123",
+    "library/arxiv-1610.09640v4/blocks/recommendation-sec-123-01",
+    "library/arxiv-1610.09640v4/blocks/recommendation-sec-123-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "provenance": "ingested"
+}

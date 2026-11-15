@@ -8,7 +8,7 @@
   "pages": 23,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -20,26 +20,26 @@
   "title_lines": [
    "Mathematical and",
    "Theoretical",
-   "PAPER \u2022 OPEN ACCESS",
+   "PAPER • OPEN ACCESS",
    "The discrete analogue of the Gaussian",
    "To cite this article: Gautam Chinta et al 2025 J. Phys. A: Math. Theor. 58 035203"
   ],
   "abstract": null,
   "docinfo": {
    "Title": "The discrete analogue of the Gaussian",
-   "Author": "Gautam Chinta,Jay Jorgenson,Anders Karlsson,Lejla Smajlovi\u0107",
-   "Producer": "XeLaTeX; modified using iText\u00ae 5.5.13.5 \u00a92000-2026 iText Group NV (IOP Publishing Ltd; licensed version)",
+   "Author": "Gautam Chinta,Jay Jorgenson,Anders Karlsson,Lejla Smajlović",
+   "Producer": "XeLaTeX; modified using iText® 5.5.13.5 ©2000-2026 iText Group NV (IOP Publishing Ltd; licensed version)",
    "Creator": "IOPP",
    "CreationDate": "D:20250111125900Z"
   },
-  "title_raw": "Mathematical and Theoretical PAPER \u2022 OPEN ACCESS The discrete analogue of the Gaussian To cite this article: Gautam Chinta et al 2025 J. Phys. A: Math. Theor. 58 035203",
+  "title_raw": "Mathematical and Theoretical PAPER • OPEN ACCESS The discrete analogue of the Gaussian To cite this article: Gautam Chinta et al 2025 J. Phys. A: Math. Theor. 58 035203",
   "title_source": "metadata",
   "title_verified": true,
   "title_evidence": {
    "metadata": "The discrete analogue of the Gaussian",
    "heading": "The discrete analogue of the Gaussian",
    "outline": "The discrete analogue of the Gaussian",
-   "text": "Mathematical and Theoretical PAPER \u2022 OPEN ACCESS The discrete analogue of the Gaussian To cite this article: Gautam Chinta et al 2025 J. Phys. A: Math. Theor. 58 035203",
+   "text": "Mathematical and Theoretical PAPER • OPEN ACCESS The discrete analogue of the Gaussian To cite this article: Gautam Chinta et al 2025 J. Phys. A: Math. Theor. 58 035203",
    "corroborated_by": [
     "heading",
     "outline",
@@ -132,7 +132,7 @@
   },
   {
    "level": 3,
-   "title": "Spectral zeta function of  Z",
+   "title": "Spectral zeta function of Z",
    "page": 16,
    "source": "outline",
    "number": "7.1",
@@ -371,9 +371,9 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 76,
-   "n_words": 11,
+   "page_end": 2,
+   "n_chars": 804,
+   "n_words": 120,
    "label_start": null,
    "label_end": null
   },
@@ -382,10 +382,10 @@
    "number": null,
    "title": "The discrete analogue of the Gaussian",
    "level": 1,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 3,
-   "n_chars": 3333,
-   "n_words": 494,
+   "n_chars": 2605,
+   "n_words": 385,
    "label_start": null,
    "label_end": null
   },
@@ -467,14 +467,26 @@
    "title": "Spectral zeta functions",
    "level": 2,
    "page_start": 16,
-   "page_end": 17,
-   "n_chars": 2340,
-   "n_words": 409,
+   "page_end": 16,
+   "n_chars": 0,
+   "n_words": 0,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-008-72-application-4-spectral-zeta-function-of-regul",
+   "id": "sec-008-71-spectral-zeta-function-of-z",
+   "number": "7.1",
+   "title": "Spectral zeta function of Z",
+   "level": 3,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 2307,
+   "n_words": 403,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-72-application-4-spectral-zeta-function-of-regul",
    "number": "7.2",
    "title": "Application 4: spectral zeta function of regular trees and hypergeometric identities",
    "level": 3,
@@ -486,26 +498,26 @@
    "label_end": null
   },
   {
-   "id": "sec-009-8-potential-applications-to-differential-privacy",
+   "id": "sec-010-8-potential-applications-to-differential-privacy",
    "number": "8",
    "title": "Potential applications to differential privacy",
    "level": 2,
    "page_start": 20,
-   "page_end": 20,
-   "n_chars": 94,
-   "n_words": 14,
+   "page_end": 21,
+   "n_chars": 3621,
+   "n_words": 566,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-010-references",
+   "id": "sec-011-references",
    "number": null,
    "title": "References",
    "level": 2,
-   "page_start": 20,
+   "page_start": 21,
    "page_end": 23,
-   "n_chars": 10952,
-   "n_words": 1770,
+   "n_chars": 7510,
+   "n_words": 1234,
    "label_start": null,
    "label_end": null
   }
@@ -521,7 +533,8 @@
    "count": 0,
    "items": []
   },
-  "sections": 12,
-  "chars_total": 52348
+  "sections": 13,
+  "chars_total": 52400,
+  "furniture_lines_stripped": 0
  }
 }

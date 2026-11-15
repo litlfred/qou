@@ -7,10 +7,11 @@ section_number: null
 pages: 44-45
 source_pdf: 2603.12136v1.pdf
 source_sha256: e9c50616344b24e0
-doc_brief: "Folding Mixed-Integer Linear Programs and Reflection Symmetries — For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.958
-latex_coverage_ratio: 0.718
+latex_coverage_ratio: 0.967
+doc_brief: "Folding Mixed-Integer Linear Programs and Reflection Symmetries — For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the"
 ---
 We consider a mixed-integer linear program with variables $(x,y,z,\omega) \in \Z^{W^1} \times \Z^{W^2} \times \R^{W^3} \times \M^{W^4_I}$, where $W^4_I\subseteq W^4$ are the integer variables in $W^4$. We use $W_I = W^1 \cup W^2 \cup W^4_I$ to denote the integer variables and $W = W^1\cup W^2 \cup W^3 \cup W^4$ to denote all variables. The linear relaxation of the integer program is of the form: $$\begin{aligned}
     P \coloneqq \{A x + B y + C z = b,~ D x + E y + F \omega = g,~ \ell \leq \transpose{\begin{bmatrix}

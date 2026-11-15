@@ -1,0 +1,652 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-0812.2426v1",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "1",
+   "text": "Aframedlinkwithncomponentsisalwaystheclosureofsomeribbonn-stringlink.",
+   "marks": [
+    {
+     "page": 5,
+     "context": "X:X→Vi)"
+    },
+    {
+     "page": 5,
+     "context": "X:Vi→X)"
+    },
+    {
+     "page": 6,
+     "context": "transformationξ={ξY"
+    },
+    {
+     "page": 6,
+     "context": "transformationξ={ξY1,...,Yn :Y"
+    },
+    {
+     "page": 6,
+     "context": "transformationξ={ξY1,...,Yn :Y1⊗· · · ⊗Yn→Y"
+    },
+    {
+     "page": 6,
+     "context": "transformationξ={ξY1,...,Yn :Y1⊗· · · ⊗Yn→Y1⊗· · · ⊗Yn⊗M}Y"
+    },
+    {
+     "page": 6,
+     "context": "Y"
+    },
+    {
+     "page": 6,
+     "context": "Y1, . . . , YnofByieldsamorphism TY"
+    },
+    {
+     "page": 6,
+     "context": "Y1, . . . , YnofByieldsamorphism TY1,··· ,Yn :Y"
+    },
+    {
+     "page": 6,
+     "context": "1, . . . , YnofByieldsamorphism TY1,··· ,Yn :Y1 ⊗· · · ⊗Yn→Y"
+    },
+    {
+     "page": 6,
+     "context": "TY"
+    },
+    {
+     "page": 6,
+     "context": "MoreoverTY"
+    },
+    {
+     "page": 6,
+     "context": "TY"
+    },
+    {
+     "page": 6,
+     "context": "ow to evaluate the forms φTto get invariants of framed links"
+    }
+   ],
+   "block": "library/arxiv-0812.2426v1/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p009-1",
+   "page": 9,
+   "mark": "2",
+   "text": "Ribbonhandlesarecalledbottomtanglesin[Hab06].",
+   "marks": [
+    {
+     "page": 9,
+     "context": "efollowingway:usingtherulesofFigure5,weobtainaribbonn-handle"
+    }
+   ],
+   "block": "library/arxiv-0812.2426v1/blocks/prose-sec-013"
+  },
+  {
+   "id": "fn-p012-1",
+   "page": 12,
+   "mark": "3",
+   "text": "Thisisnotstandardterminology:pairs(M, r)areusuallycalledT-algebrasintheliterature. However pairs (M, r) are considered here as the analogues of modules over an algebra, and so the term ‘algebra’ would be awkward in this context.",
+   "marks": [
+    {
+     "page": 11,
+     "context": "M≃S"
+    },
+    {
+     "page": 12,
+     "context": "Thepair(M, r)isthencalledaT -moduleinC,orjustaT -module"
+    }
+   ],
+   "block": "library/arxiv-0812.2426v1/blocks/prose-sec-014"
+  },
+  {
+   "id": "fn-p012-2",
+   "page": 12,
+   "mark": "4",
+   "text": "Thisnotionofbimonadcoincidesexactlywiththenotionof‘Hopfmonad’introducedin [Moe02]. However, by analogy with the notions of bialgebra and Hopf algebra, we prefer to reserve the term ‘Hopf monad’ for bimonads with antipodes (see Section 3.6)",
+   "marks": [
+    {
+     "page": 12,
+     "context": "3.4.Bimonads.Abimonad"
+    }
+   ],
+   "block": "library/arxiv-0812.2426v1/blocks/prose-sec-014"
+  },
+  {
+   "id": "fn-p015-1",
+   "page": 15,
+   "mark": "5",
+   "text": "AcomonoidaldistributivelawbetweentwoHopfmonadsmakestheircompositionaHopf monad.",
+   "marks": [
+    {
+     "page": 15,
+     "context": "law"
+    }
+   ],
+   "block": "library/arxiv-0812.2426v1/blocks/prose-sec-025"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "is a modular fusion category of dimension dim Z(C) = (dim C)"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "Moreover Z(C) iscentralizable anddim Z(C) = (dim C)"
+  },
+  {
+   "page": 4,
+   "mark": "r",
+   "context": "tr"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "N"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "X= rank"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "X= rankkHomC(V"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "X= rankkHomC(Vi, X) = rank"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "X= rankkHomC(Vi, X) = rankkHomC(X, V"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "X:X→V"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "X:X→Vi)1≤α≤N"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "X:V"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "X:Vi→X)1≤α≤N"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "X"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "X"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "X= δi,jδα,β idV"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "1≤α≤N"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "1≤α≤N"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "transformationξ={ξY1,...,Yn :Y1⊗· · · ⊗Y"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "transformationξ={ξY1,...,Yn :Y1⊗· · · ⊗Yn→Y1⊗· · · ⊗Y"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Y1, . . . , Y"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Y1, . . . , YnofByieldsamorphism TY1,··· ,Yn :Y1 ⊗· · · ⊗Y"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "YnofByieldsamorphism TY1,··· ,Yn :Y1 ⊗· · · ⊗Yn→Y1 ⊗· · · ⊗Y"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "MoreoverTY1,··· ,YnisnaturalineachvariableY"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "LetLbeaframedlinkinS"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "Cαareinvertiblein"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "obtainedfromS"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "obtainedfromS3bysurgeryalongaframedlinkL⊂S"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "inS"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "inS3,wewilldenotebyMLthe3-manifoldobtainedfromS"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "Cα)"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "dim(V"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i∈Idim(V"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "i∈Idim(Vi)"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "i∈Idim(Vi)2has"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "\u0011b"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "(T, µ, η),whereT :C→Cisafunctor,µ:T"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "s"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "sl= {s"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "T (X)T (∨µX) ⊗idT (X))T"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "T0T (evX)T (∨ηX⊗idX) = evT (X)(s"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "X)T"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "(ηX⊗id∨X)coevXT0= (µX⊗s"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "transformations"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "transformationsr= {s"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "X))T"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "T"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "X) =eevT (X)(idT (X)⊗s"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "X⊗µX)T"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "coevXT0= (s"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "whentheyexist,theleftantipodes"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "whentheyexist,theleftantipodeslandtherightantipodes"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "∨)=s"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "T (X)∨T (∨(s"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "eachotherinthesensethatidT (X)=s"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "∨T (X)T ((s"
+  },
+  {
+   "page": 13,
+   "mark": "l",
+   "context": "∨θX= s"
+  },
+  {
+   "page": 13,
+   "mark": "r",
+   "context": "X= s"
+  },
+  {
+   "page": 14,
+   "mark": "l",
+   "context": "(b)LetTbeabimonadonaleftautonomousC.ThenThasaleftantipodes"
+  },
+  {
+   "page": 14,
+   "mark": "l",
+   "context": "ofaleftantipodes"
+  },
+  {
+   "page": 14,
+   "mark": "l",
+   "context": "∨(M, r) = (∨M, s"
+  },
+  {
+   "page": 14,
+   "mark": "l",
+   "context": "s"
+  },
+  {
+   "page": 14,
+   "mark": "r",
+   "context": "termsofarightantipodes"
+  },
+  {
+   "page": 14,
+   "mark": "r",
+   "context": "(M, r)∨= (M∨, s"
+  },
+  {
+   "page": 15,
+   "mark": "l",
+   "context": "\u0000∨µY s"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "T (Y )T (∨µY ) ⊗T"
+  },
+  {
+   "page": 15,
+   "mark": "l",
+   "context": "whereηandutheunitsofTandZTrespectively,ands"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "andthedoubleD"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "HopfmonadT=? ⊗k Honvect"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "Furthermore,sinceT -vect"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "Furthermore,sinceT -vectk=repHandDT - vect"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "centralizable.ItscentralizerZ= Z"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "1≤α≤N"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "The double of 1Cis D"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "linesintheﬁgurerepresentidV"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "concerned.To simplify the reading, we denote AV"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "concerned.To simplify the reading, we denote AVi"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "ncerned.To simplify the reading, we denote AVi1 ⊗···⊗Vinby A"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "cerned.To simplify the reading, we denote AVi1 ⊗···⊗Vinby Ai"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "To simplify the reading, we denote AVi1 ⊗···⊗Vinby Ai1,...,i"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "qi,α,orN"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "1≤α≤N"
+  },
+  {
+   "page": 17,
+   "mark": "l",
+   "context": "s"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "s"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "q"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "q"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "p"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "p"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "1≤α≤N"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "1≤α≤N"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "Notethatanimmediateconsequenceofthisis:dim Z(C) = (dim C)"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "1≤α≤N"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "1≤β≤N"
+  },
+  {
+   "page": 18,
+   "mark": "l",
+   "context": "1≤β≤N"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "1≤β≤N"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "1≤α≤N"
+  },
+  {
+   "page": 18,
+   "mark": "b",
+   "context": "1≤β≤N"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "1≤γ≤N"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "5.3.ComputingRTZ(C)(M"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "CΛ=1"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "CΛ = 1"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "τZ(C)(S"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "τZ(C)(S2× S"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "τZ(C)(S"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "R.Kirby,AcalculusofframedlinksinS"
+  }
+ ]
+}

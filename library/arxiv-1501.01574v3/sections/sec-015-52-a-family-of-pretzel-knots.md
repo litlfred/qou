@@ -7,10 +7,11 @@ section_number: 5.2
 pages: 25-25
 source_pdf: 1501.01574v3.pdf
 source_sha256: 8af5d6264a0ad5e0
-doc_brief: "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL — We study the behavior of the degree of the colored Jones polyn omial and the boundary slopes of knots under the operation of cabling."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.906
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.943
+latex_coverage_ratio: 0.98
+doc_brief: "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL — We study the behavior of the degree of the colored Jones polynomial and the boundary slopes of knots under the operation of cabling."
 ---
 Consider the pretzel knot $K_p=(-2,3,p)$, where $p$ is an odd integer. It is known that $K_p$ is $A$-adequate if $p>0$, and $B$-adequate if $p<0$. Moreover, $K_p$ is a torus knot if $p \in \{1,3,5\}$. 
 

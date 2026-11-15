@@ -1,0 +1,44 @@
+402 T. Ohtsuki (Editor)
+
+Remark ((220, Remark on Problem 1.89]) The first oriented knot which is
+different from its reverse is 817. It is known that no Vassiliev invariants of
+degree < 9 can distinguish a knot from its reverse.
+
+Remark This conjecture is reduced to the problem to find D € A(S') with
+D # —D, where —D is D with the opposite orientation of S'. If such a D
+existed, the conjecture would fail. Such a D has not been known so far.
+
+Remark Kuperberg [235] showed that all Vassiliev invariants either distin-
+guish all oriented knots, or there exist prime, unoriented knots which they do
+not distinguish.
+
+2.3 Can Vassiliev invariants detect other invariants?
+
+(T. Stanford) Let hg(K) be the number of homomorphisms from the funda-
+mental group of the complement of a knot K to a finite group G. This is not a
+Vassiliev invariant [114]. he,(K) of the 3rd symmetric group 63 is presented
+by the number of 3-colorings of K, and hp,(K) of the dihedral group Ds of
+order 10 is presented by the number of 5-colorings of kK. These are determined
+by the Jones and Kauffman polynomials, respectively (see the remark of Prob-
+lem 4.16), and therefore are determined by invariants of finite type. In fact,
+by the usual power-series expansions of the Jones and Kauffman polynomials,
+we see that he, and hp, are the (pointwise) limits of respective sequences of
+finite-type invariants.
+
+Question 2.8 (T. Stanford) Can we approximate hg by Vassiliev invariants
+for other G than dihedral groups?
+
+Remark (T. Stanford) It is known (due to W. Thurston) that knot groups
+are residually finite. So if hg can be approximated by finite-type invariants for
+all finite groups G, then Vassiliev invariants would distinguish the unknot.
+
+Remark (T. Stanford) If p is a prime, then there exists a nontrivial p-
+coloring of a knot K,, and hence a nontrivial representation of the fundamental
+group of AK’ into the dihedral group Dp of order 2p, if and only if Ax (—1)
+is divisible by p. Thus the Alexander polynomial contains information about
+hp,, though it may not determine hp, completely. Suppose that G is a fi-
+nite, non-abelian group, not isomorphic to D,. Even if we cannot approximate
+ha by finite-type invariants, it would at least be interesting to know whether
+finite-type invariants provide any information at all about hg.
+
+Geometry & Topology Monographs, Volume 4 (2002)

@@ -1,0 +1,50 @@
+90 Chapter 4 — The Tannaka group of the theta divisor
+
+Furthermore, by purity we can write
+Rp.(d7) = dy Ge
+
+where € is a skyscraper complex supported on e and self-dual with respect
+to Verdier duality up to a Tate twist. We now distinguish two cases.
+
+If k = 1, the above calculations show that the exceptional divisor of the
+blowup ¥ is the smooth quadric Q, = {uw € P” | uj tut +---+u2 = 0}. The
+cohomology of such a quadric has been computed in [32, exp. XIE, th. 3.3],
+
+Hi(Qn,A) = ¢ A2(—4) ifi=n—1 and nis odd,
+0 otherwise.
+
+A(-i) if ie {0,2,...,2n—2}\ {n— 1},
+5
+
+Since by base change #'—"(dy © €)o = 4H" (Rp.(5y))o = H"(Qn, A),
+one then easily concludes the proof of the lemma by an application of the
+hard Lefschetz theorem to the skyscraper summand €.
+
+If k > 1, the above calculations show that the exceptional divisor of the
+blowup ¥ is the singular quadric Q* = {uw € P" | wu} +u5+---+u2 = 0}. In
+this case we will see below that
+
+(-4) ifi€ {0,2,...,2n—2}\ {n},
+5) if i=n and nis even,
+
+H'(Qy,A) = MC
+
+0 otherwise.
+
+Now by base change #'—"(Rp.(Ay[n]) )o = H"(Q%, A), and combining this
+with the distinguished triangle
+
+Rps (ik) —> Rpx(Ap[n]) — Rpx(b7) — =
+—SSS——"”
+= by Ge
+one concludes the proof of the lemma as before by checking that the only
+two possibly non-zero cohomology sheaves of Sy are #—! (Sy) = Rps(Knk)
+and #~"(dy) = Ay in this case.
+
+It remains to check that the cohomology of the singular quadric Q* has
+the form given above. Consider the singular point p = [1 : 0: --- : 0] of this
+quadric, with smooth complement E = Q* \ {p}. By the excision sequence
+for compactly supported cohomology we have Hi(E,A) = H'(Q*,A) for
+alli > 1, and in low degrees we have an exact sequence
+
+0 > HY8(E,A) > H°(Q%,A) 3 A> HI(E,A) > H'(Q*,A) +0

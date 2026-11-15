@@ -1,0 +1,69 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 169
+From Eq. (70) in integral form,
+t
+Y(t; e¢) =I+ ef A(s)Yds,
+0
+
+one gets ||Y|| < 1+ |e| ty |A(s)|| IY ||ds, and application of Gronwall’s lemma [73] leads to
+
+t
+Y(t: e)Il < exp (ie [ \ACyids)
+i)
+
+An analogous reasoning for the inverse operator also proves that
+
+IY"(t; 6)I| < exp (ie | IA(ies)
+0
+
+In consequence,
+IT <e” and |T~'| <e”.
+IfA £0 € o(T), then |A| < ||T|| [74] and therefore |A| < e”. In addition, i € o(T~'), so that |A| > e~”. Equivalently,
+
+o(T)c {zeC:e” <|z| <e"}=G,. (72)
+Putting together (71) and (72), one has
+o(T) CG,N Ay = Ay.
+
+Now choose any value y’ such that y < y’ < m (e.g.,y’ = (vy +7)/2) and consider the closed curve P = 0.A,. Notice that
+the curve I” encloses o (T) in its interior, so that it is possible to define [75] the function g(e) = log Y(t; e) by the equation
+
+ve) = mal logz (zl — Y(t; €))~' dz, (73)
+vr
+
+where the integration along I” is performed in the counterclockwise direction. As is well known, (73) defines an analytic
+function of ¢ in B,, [75] and the result of the theorem follows.
+
+Theorem 9. Let us consider the differential equation Y’ = A(t)Y defined in a Hilbert space #€ with Y(0) = I, and let A(t) bea
+bounded operator in #. Then, the Magnus series 2(t) = ran Q2x(t), with 2, given by (51) converges in the interval t € [0, T)
+such that
+
+T
+il |A(s)||ds < 2
+0
+
+and the sum Q(t) satisfies exp 2(t) = Y(t). The statement also holds when # is infinite-dimensional if Y is a normal operator
+(in particular, if Y is unitary).
+Proof. Theorem 6 shows that log Y(t; ¢) = g(e) is a well defined and analytic function of e for
+
+t
+if |A(s)||ds < x.
+0
+
+It has also been shown that the Magnus series Q(t; €) = aa e* 2, (t), with 2, given by (51), is absolutely convergent
+when |e| to \|A(s) lds < € = 1.0868... and its sum satisfies exp 2(t; ©) = Y(t; €). Hence, the Magnus series is the power
+series of the analytic function g(e) in the disk |e| < &/ ty |A(s)||ds. But g(e) is analytic in B, > Bz and the power series
+
+has to be unique. In consequence, the power series of g(e) in B, has to be the same as the power series of y(e) in Bz, which
+is precisely the Magnus series. Finally, by taking « = 1 we get the desired result. ©
+
+2.7.4, Further discussion
+
+Theorem 9 provides sufficient conditions for the convergence of the Magnus series based on an estimate by the norm
+of the operator A. In particular, it guarantees that the operator 2(t) in Y(t) = exp &2(t) can safely be obtained with the
+convergent series Mer y(t) for 0 < t < T when the terms §2;(t) are computed with (51). A natural question at this stage
+is — what is the optimal convergence domain? In other words, is the bound estimate r, = 7 given by Theorem 9 sharp or
+is there still room for improvement? In order to clarify this issue, we next analyze two simple examples involving 2 x 2
+matrices.
+
+Example 1. Moan and Niesen [71] consider the coefficient matrix
+
+A(t) = (5 ‘) (74)

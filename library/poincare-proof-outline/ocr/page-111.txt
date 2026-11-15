@@ -1,0 +1,74 @@
+using mult-less-cancel-left-pos[of x2 — a1 1 («2 + a1) / (sgrt(a1? — 1) + sqrt(x2? — 1))|
+by (simp add: power2-eq-square field-simps)
+
+moreover
+
+have (x2? — x1”) = (sqrt(x1? — 1) + sgrt(a2? — 1)) * ((sqrt(a2? — 1) — sqrt(x1? — 1)))
+using (rl > 1) «2 > al»
+by (simp add: field-simps)
+
+ultimately
+
+have sqrt(x2? — 1) — sqrt(x1? — 1) > 22 — xl
+using *
+by simp
+
+thus ?thesis
+by simp
+
+qed
+
+lemma calc-2z-axis-intersection-mono:
+fixes al b1 a2 b2 :: real
+assumes —b1/al > 1 and al # 0 and —b2/a2 > —b1/al and a2 4 0
+shows (—b1 + sgn b1 * sqrt(b1? — al?)) / al > (—b2 + sgn b2 * sqrt(b2? — a2?)) / a2 (is ?lhs > ?rhs)
+proof—
+have ?lhs = —b1/a1 — sqrt((—b1/al)? — 1)
+proof (cases b1 > 0)
+case True
+hence al < 0
+using assms
+by (smt divide-neg-pos)
+thus ?thesis
+using <(b1 > 0) «al < 0»
+by (simp add: real-sqrt-divide field-simps)
+next
+case False
+hence bi < 0
+using assms
+by (cases b1 = 0) auto
+hence al > 0
+using assms
+by (smt divide-pos-neg)
+thus ?thesis
+using (bl < 0) ‘al > 0»
+by (simp add: real-sqrt-divide field-simps)
+qed
+
+moreover
+
+have ?rhs = —b2/a2 — sqrt((—b2/a2)? — 1)
+proof (cases b2 > 0)
+case True
+hence a2 < 0
+using assms
+by (smt divide-neg-pos)
+thus ?thesis
+using (b2 > 0) «a2 < 0»
+by (simp add: real-sqrt-divide field-simps)
+next
+case False
+hence b2 < 0
+using assms
+by (cases b2 = 0) auto
+hence a2 > 0
+using assms
+by (smt divide-pos-neg)
+thus ?thesis
+using <(b2 < 0) «a2 > 0»
+by (simp add: real-sqrt-divide field-simps)
+qed
+
+ultimately
+
+111

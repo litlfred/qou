@@ -1,0 +1,572 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-1907.00949v2",
+  "figures": [
+    {
+      "id": "vfig-p024",
+      "file": "figures/vfig-p024.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 24
+      },
+      "page": 24,
+      "rotation": 0,
+      "captionLabels": [
+        "1"
+      ],
+      "region": [
+        62.98,
+        41.0,
+        545.38,
+        474.86
+      ],
+      "assembly": {
+        "drawings": 861,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              62.98,
+              41.0,
+              545.38,
+              474.86
+            ],
+            "drawings": 849,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "24",
+              "K. YE, K. S.-W. WONG, AND L.-H. LIM",
+              "0",
+              "20",
+              "40",
+              "60",
+              "80",
+              "100",
+              "0",
+              "10",
+              "20",
+              "30",
+              "40",
+              "50",
+              "60",
+              "70",
+              "80",
+              "90",
+              "100",
+              "function value",
+              "0",
+              "20",
+              "40",
+              "60",
+              "80",
+              "100",
+              "−12",
+              "−10",
+              "−8",
+              "−6",
+              "−4",
+              "−2",
+              "0",
+              "2",
+              "log(distance between iterates)",
+              "0",
+              "20",
+              "40",
+              "60",
+              "80",
+              "100",
+              "−10",
+              "−8",
+              "−6",
+              "−4",
+              "−2",
+              "0",
+              "2",
+              "log(distance to solution)",
+              "Iteration",
+              "0",
+              "20",
+              "40",
+              "60",
+              "80",
+              "100",
+              "−10",
+              "−8",
+              "−6",
+              "−4",
+              "−2",
+              "0",
+              "2",
+              "4",
+              "log(Riemannian gradient norm)",
+              "Iteration",
+              "Figure 1. Convergence trajectories for (52) on Flag(3, 7, 12; 60)."
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              62.98,
+              41.0,
+              545.38,
+              474.86
+            ],
+            "parent": null,
+            "labels": [
+              "24",
+              "K. YE, K. S.-W. WONG, AND L.-H. LIM",
+              "0",
+              "20",
+              "40",
+              "60",
+              "80",
+              "100",
+              "0",
+              "10",
+              "20",
+              "30",
+              "40",
+              "50",
+              "60",
+              "70",
+              "80",
+              "90",
+              "100",
+              "function value",
+              "0",
+              "20",
+              "40",
+              "60",
+              "80",
+              "100",
+              "−12",
+              "−10",
+              "−8",
+              "−6",
+              "−4",
+              "−2",
+              "0",
+              "2",
+              "log(distance between iterates)",
+              "0",
+              "20",
+              "40",
+              "60",
+              "80",
+              "100",
+              "−10",
+              "−8",
+              "−6",
+              "−4",
+              "−2",
+              "0",
+              "2",
+              "log(distance to solution)",
+              "Iteration",
+              "0",
+              "20",
+              "40",
+              "60",
+              "80",
+              "100",
+              "−10",
+              "−8",
+              "−6",
+              "−4",
+              "−2",
+              "0",
+              "2",
+              "4",
+              "log(Riemannian gradient norm)",
+              "Iteration",
+              "Figure 1. Convergence trajectories for (52) on Flag(3, 7, 12; 60)."
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 8,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              266.5,
+              516.56,
+              266.5,
+              533.4
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              169.43,
+              533.6,
+              438.93,
+              533.6
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              169.43,
+              535.59,
+              438.93,
+              535.59
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              266.5,
+              535.79,
+              266.5,
+              552.63
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              224.57,
+              588.36,
+              224.57,
+              605.2
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              148.94,
+              605.4,
+              459.42,
+              605.4
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              148.94,
+              607.39,
+              459.42,
+              607.39
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              224.57,
+              607.59,
+              224.57,
+              624.43
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              237.75,
+              660.16,
+              237.75,
+              677.0
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              140.68,
+              677.2,
+              467.68,
+              677.2
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              140.68,
+              679.19,
+              467.68,
+              679.19
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              237.75,
+              679.39,
+              237.75,
+              696.23
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 63
+      }
+    },
+    {
+      "id": "vfig-p025",
+      "file": "figures/vfig-p025.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 25
+      },
+      "page": 25,
+      "rotation": 0,
+      "captionLabels": [
+        "2"
+      ],
+      "region": [
+        105.0,
+        317.29,
+        507.0,
+        734.95
+      ],
+      "assembly": {
+        "drawings": 147,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              105.0,
+              317.29,
+              507.0,
+              734.95
+            ],
+            "drawings": 139,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "optimization problem in Euclidean space.",
+              "0",
+              "50",
+              "100",
+              "150",
+              "200",
+              "250",
+              "300",
+              "350",
+              "400",
+              "0",
+              "1000",
+              "2000",
+              "3000",
+              "4000",
+              "5000",
+              "function value",
+              "0",
+              "50",
+              "100",
+              "150",
+              "200",
+              "250",
+              "300",
+              "350",
+              "400",
+              "−4",
+              "−2",
+              "0",
+              "2",
+              "4",
+              "6",
+              "8",
+              "log(Riemannian gradient norm)",
+              "0",
+              "50",
+              "100",
+              "150",
+              "200",
+              "250",
+              "300",
+              "350",
+              "400",
+              "−12",
+              "−10",
+              "−8",
+              "−6",
+              "−4",
+              "−2",
+              "0",
+              "2",
+              "log(distance between iterates)",
+              "Iteration",
+              "Figure 2. Convergence trajectories for (53) on Flag(3, 7, 12; 60)."
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              105.0,
+              317.29,
+              507.0,
+              734.95
+            ],
+            "parent": null,
+            "labels": [
+              "optimization problem in Euclidean space.",
+              "0",
+              "50",
+              "100",
+              "150",
+              "200",
+              "250",
+              "300",
+              "350",
+              "400",
+              "0",
+              "1000",
+              "2000",
+              "3000",
+              "4000",
+              "5000",
+              "function value",
+              "0",
+              "50",
+              "100",
+              "150",
+              "200",
+              "250",
+              "300",
+              "350",
+              "400",
+              "−4",
+              "−2",
+              "0",
+              "2",
+              "4",
+              "6",
+              "8",
+              "log(Riemannian gradient norm)",
+              "0",
+              "50",
+              "100",
+              "150",
+              "200",
+              "250",
+              "300",
+              "350",
+              "400",
+              "−12",
+              "−10",
+              "−8",
+              "−6",
+              "−4",
+              "−2",
+              "0",
+              "2",
+              "log(distance between iterates)",
+              "Iteration",
+              "Figure 2. Convergence trajectories for (53) on Flag(3, 7, 12; 60)."
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 6,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              195.21,
+              72.0,
+              195.21,
+              88.84
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              119.58,
+              89.04,
+              488.78,
+              89.04
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              119.58,
+              91.03,
+              488.78,
+              91.03
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              195.21,
+              91.23,
+              195.21,
+              108.07
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              237.75,
+              132.66,
+              237.75,
+              149.5
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              140.68,
+              149.7,
+              467.68,
+              149.7
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              140.68,
+              151.69,
+              467.68,
+              151.69
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              237.75,
+              151.89,
+              237.75,
+              168.73
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 68
+      }
+    }
+  ]
+}

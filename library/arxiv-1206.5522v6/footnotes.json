@@ -1,0 +1,2013 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1206.5522v6",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "1",
+   "text": "Thereisthestandardfunctor| MapCh \u0000C∗(∆•), −\u0001|: Ch →Top to topological spaces given by the Dold–Kan correspondence. While this functor does not send tensor product to Cartesian product, it does so up to a coherent natural transformation. The internal hom-objects of Ch thus give a topological enrichment.",
+   "marks": [
+    {
+     "page": 2,
+     "context": "Wcomplexestothetopologicalcategoryofprojectivechaincomplexes"
+    }
+   ],
+   "block": "library/arxiv-1206.5522v6/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p004-1",
+   "page": 4,
+   "mark": "2",
+   "text": "Thereisaslight,butinteresting,diﬀerenceinthatthehomologytheorycharacterizationappliessuccessfully to topological manifolds (as well as piecewise linear or smooth), whereas the cobordism hypothesis requires that the manifolds involved have at least a piecewise linear structure; the absence of triangulations for nonsmoothable topological 4-manifolds appears as a genuine obstruction.",
+   "marks": [
+    {
+     "page": 4,
+     "context": "yprinciplebywhichlocalobservablesdetermineglobalobservables."
+    }
+   ],
+   "block": "library/arxiv-1206.5522v6/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "3",
+   "text": "Thus,anyM∈Mﬂdnhasﬁnitelymanyconnectedcomponents,eachofwhichistheinteriorofacompact manifold with (possibly empty) boundary. This size restriction is not an essential requirement; since all noncompact manifolds are built as sequential colimits of such smaller manifolds, this smallness condition could be removed and one could instead add to Deﬁnition 3.15 the requirement that a homology theory preserves sequential colimits.",
+   "marks": [
+    {
+     "page": 6,
+     "context": "t-opentopology.Thesymmetricmonoidalstructureisdisjointunion."
+    }
+   ],
+   "block": "library/arxiv-1206.5522v6/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p009-1",
+   "page": 9,
+   "mark": "4",
+   "text": "Bysmoothingtheory,framedtopologicalmanifoldsareessentiallyequivalenttoframedsmoothmanifoldsexcept in dimension 4.",
+   "marks": [
+    {
+     "page": 9,
+     "context": "alent toatopological framingof thetangent microbundleτMof M,"
+    }
+   ],
+   "block": "library/arxiv-1206.5522v6/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p009-2",
+   "page": 9,
+   "mark": "5",
+   "text": "Thehistoricaluseof“framed”hereispotentiallymisleading,sinceinthe“framed”Enoperadtheembeddings do not preserve the framing, while in the usual En operad the embeddings do preserve the framing (up to scale). It might lead to less confusion to replace the term “framed En operad” with “unoriented En operad.”",
+   "marks": [
+    {
+     "page": 9,
+     "context": "“framed,” Enoperad; see [SW] for a treatment of this operad."
+    }
+   ],
+   "block": "library/arxiv-1206.5522v6/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p010-1",
+   "page": 10,
+   "mark": "i",
+   "text": "φǫ)∗ (⊔ f",
+   "marks": [
+    {
+     "page": 9,
+     "context": "ological space Xand a ﬁnite cardinality i,we let Confi(X) ⊂X"
+    },
+    {
+     "page": 9,
+     "context": "iRn֒→Mforsome"
+    },
+    {
+     "page": 9,
+     "context": "B"
+    },
+    {
+     "page": 9,
+     "context": "Conf"
+    },
+    {
+     "page": 10,
+     "context": "Top0(n)"
+    },
+    {
+     "page": 10,
+     "context": "Top0(n)i−→Conf"
+    },
+    {
+     "page": 10,
+     "context": "iRn, M) −→Conf"
+    },
+    {
+     "page": 10,
+     "context": "isweaklyhomotopyequivalenttoTop0(n)"
+    },
+    {
+     "page": 10,
+     "context": "Top0(n)"
+    },
+    {
+     "page": 10,
+     "context": "Top0(n)i֒→Emb((0 ∈Rn), (0 ∈Rn))"
+    }
+   ],
+   "block": "library/arxiv-1206.5522v6/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p035-1",
+   "page": 35,
+   "mark": "6",
+   "text": "See [AF2] for a complete account, where nonabelian Poincar´e duality is an instance of a version of Poincar´e/Koszul duality for Cartesian-presentable ∞-categories.",
+   "marks": [
+    {
+     "page": 35,
+     "context": "ity(Corollary4.6),onlyhereweapplyitintheusualabeliansetting."
+    }
+   ],
+   "block": "library/arxiv-1206.5522v6/blocks/prose-sec-015"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "H(Mﬂdn, V) : evR"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "onR"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "han extra compatibleaction of thegroup of automorphisms of R"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "reasons, each of substance.For one, the object R"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "automorphismsofR"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "ivalenttojustchaincomplexeswithanactionoftheautomorphismsofR"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "Alg"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "onthebordismcategory sendingak-manifoldMwithcornerstoF(M◦× R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "•Top(n) is thetopological group of homeomorphisms of R"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "of R"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "−−−−→Aut∗(S"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "continuous homomorphism of topological monoids Top(n) →Emb(R"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "inuous homomorphism of topological monoids Top(n) →Emb(Rn, R"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "rilyconsiderthefull∞-subcategoryEucn⊂MﬂdnconsistingsolelyofR"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "categoryisthatassociatedtothetopologicalmonoidEmb(R"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "categoryisthatassociatedtothetopologicalmonoidEmb(Rn, R"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "ociatedtothetopologicalmonoidEmb(Rn, Rn)ofself-embeddingsofR"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Observation2.6.BecauseR"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "servation2.6.BecauseRnisconnected,thistangentclassiﬁerτ :Mﬂd"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "nofB-framedtopological"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Lemma2.8.AB-framinggofR"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Lemma2.8.AB-framinggofRndeterminesahomotopyequivalenceEmbB(R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "a2.8.AB-framinggofRndeterminesahomotopyequivalenceEmbB(Rn, R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "monoids,whereΩgBistheloopspaceofBbasedatthehomotopypointg: R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Proof.Bydeﬁnition,thespaceEmbB(R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Proof.Bydeﬁnition,thespaceEmbB(Rn, R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "EmbB(R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "EmbB(Rn, R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Map/B(R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Map/B(Rn, R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Emb(R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Emb(Rn, R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Map/ BTop(n)(R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Map/ BTop(n)(Rn, R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "ThereareevidentequivalencesofspacesMap/ BTop(n)(R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "ThereareevidentequivalencesofspacesMap/ BTop(n)(Rn, R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Map/B(R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Map/B(Rn, R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Top(n) −→Emb(R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Top(n) −→Emb(Rn, R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Top(n) −→Emb(Rn, Rn) −→Map/ BTop(n)(R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Top(n) −→Emb(Rn, Rn) −→Map/ BTop(n)(Rn, R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "–Mazur, Theorem 2.3,the ﬁrst map including Top(n) into Emb(R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "ur, Theorem 2.3,the ﬁrst map including Top(n) into Emb(Rn, R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "n/M,B-framed"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "n/M,B-framedn-disksembeddinginto"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "n/M,B-framedn-disksembeddingintoaB-framed"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "IR"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "IRn, R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "IRn, Rn)fromtheI-aryspaceoftheE"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "encesitisenoughtoexplainwhyeachofthenaturalmapsO(n) →Embsm(R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "sitisenoughtoexplainwhyeachofthenaturalmapsO(n) →Embsm(Rn, R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "EmbBO(n)(R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "EmbBO(n)(Rn, R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "−→GL(R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "−→Embsm(R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "−→Embsm(Rn, R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "GL(R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "iR"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "iR"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "iR"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "iR"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "iR"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "iR"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "iR"
+  },
+  {
+   "page": 10,
+   "mark": "c",
+   "context": "iRn, M)ofembeddingsunder"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "iR"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "Top0(n)i֒→Emb((0 ∈R"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "Top0(n)i֒→Emb((0 ∈Rn), (0 ∈R"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "iR"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "iR"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "iR"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "S"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "iR"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "iR"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "D"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "iR"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "mapφ:(0, 1] × R"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "mapφ:(0, 1] × Rn→R"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "hthatφtisan origin preserving openembeddingforeach t,φ1= idR"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "φs(R"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "φs(Rn) ⊂φt(R"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "φs(Rn) ⊂φt(Rn)whenevers < t,andthecollectionofimages{φt(R"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "basis for thetopology about 0 ∈R"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "basis for thetopology about 0 ∈Rn.Choose a continuous map D"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "ǫ|S"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "iR"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "iR"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "iRn).Deﬁne"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "iRn).Deﬁnee"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "tion"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "tionef|S"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "tionef|Sk−1=f"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "tionef|Sk−1=f0.Themap[0, 1] × D"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "tionef|Sk−1=f0.Themap[0, 1] × Dk→Emb"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "iR"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "M≃Eucn/M≃Emb(R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "classiﬁerinthecaseM= R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "s the symmetric monoidal topological category of topological"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "boundary, which have ﬁnite good covers by Euclidean spaces R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "R≥0 × R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "nconsistingofﬁnitedisjointunionsofR"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "R≥0 × R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "n.Inparticular,theclosed"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "n.Inparticular,theclosedn-diskD"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "theAlexandertrickorthecontractibilityoffoliationsonR"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "\u001a(s, g"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "Top(n −1)֒→Emb(R≥0 × R"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "Top(n −1)֒→Emb(R≥0 × Rn−1, R≥0 × R"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "n/Mis"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "n/Mwitness"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": " 2.12, ﬁx a cardinality i ≥0.Consider the full subcategory I"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "toshowthattheresultingfunctorI"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "M→Conf"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "M→Confi(M)Σ"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "BI"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "(R"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "(Rn)"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "(U֒ →M)∈I"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "(R"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "(Rn)"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "(U֒ →M)∈I"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "inthehomotopycolimitiscontractible.Byinspection,thecategoryI"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "follows.BecauseConf"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "iX"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "n−1:= Mﬂd"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "S"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "R∼=S"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "S"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "S"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "n/M⊔M.Asso,thereis"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "k/Nis"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "1(U) −→(Disk"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "n, V) : evR"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "n-algebrasinVandhomologytheoriesofB-framed"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "evaluationonR"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "A →F,whereA = F|R"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "gebradeﬁnedbythevaluesofFondisjointunionsofB-framedEuclidean"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "AaresymmetricmonoidalandagreeonR"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "IR"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "A agree on thickenedspheres S"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "A agree on thickenedspheres Sk× R"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": " 0justhavingbeenshown.Intheinductivestep,assumetheresultforS"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "havingbeenshown.Intheinductivestep,assumetheresultforSi−1× R"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "f−→[−1, 1]withS"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "f−→[−1, 1]withSi−1=f −1(0)⊂S"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "astandardcollar-gluingS"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "gluing of S"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "gluing of Si×R"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "S"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "Si×R"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "Si×Rn−i A ≃F(S"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "Si×Rn−i A ≃F(Si ×R"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "−1× R"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "+1× R"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "+1× Rn−i) ≃F(S"
+  },
+  {
+   "page": 23,
+   "mark": "j",
+   "context": "+1× Rn−i) ≃F(Si × R"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "A≃F(R"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "F(R"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "F(S"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "F(Si−1×R"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "S"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "Si×R"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "R"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "−1×R"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "R"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "+1×R"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "S"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "Si−1×R"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "S"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "Sq×R"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "Sq×Rn−qR"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "Sq×Rn−qRn,whereR"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "MA.ThereforeeveryhomologytheoryFfor"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "factorizationhomologywithcoeﬃcientsinF(R"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": ", V) : evR"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": ", V) : evRn,R"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "n.For"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "n(V⊕) ≃V.Thefactorizationhomologyof"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "n(V⊕) ≃V.Thefactorizationhomologyofaframed"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "−→kEmbfr(M × R"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "−→kEmbfr(M × Rk, N × R"
+  },
+  {
+   "page": 25,
+   "mark": "m",
+   "context": "surjectivesinceeveryﬁniteCWcomplexXcanbeembeddedintoR"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "n,orpiecewiselinear"
+  },
+  {
+   "page": 25,
+   "mark": "4",
+   "context": "othstructureindimension4(e.g.,thereisasingleBO(4)-framingofR"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "sheafofthisstack.Inthecaseofthecircle,M=S"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "O(XS"
+  },
+  {
+   "page": 26,
+   "mark": "c",
+   "context": "Deﬁnition4.2.ForX∈SpacesBandM→BaspaceoverB,thespaceΓ"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "n→Spaces isthedata of an E"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "n→Spaces isthedata of an En-algebra, andthis E"
+  },
+  {
+   "page": 26,
+   "mark": "c",
+   "context": "Theorem4.4.ThefunctorΓ"
+  },
+  {
+   "page": 26,
+   "mark": "a",
+   "context": "n, Spaces)restrictsas"
+  },
+  {
+   "page": 27,
+   "mark": "c",
+   "context": "Γc(M0×R,X)Γ"
+  },
+  {
+   "page": 27,
+   "mark": "c",
+   "context": "Γc(M0×R,X)Γc(M ′′, X)≃Γ"
+  },
+  {
+   "page": 27,
+   "mark": "c",
+   "context": "ΩΓc(M0,X)Γ"
+  },
+  {
+   "page": 27,
+   "mark": "c",
+   "context": "ΩΓc(M0,X)Γc(M ′′, X) −→Γ"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "algebraΩ"
+  },
+  {
+   "page": 27,
+   "mark": "a",
+   "context": "n(Spaces),thereis"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "Ω"
+  },
+  {
+   "page": 27,
+   "mark": "c",
+   "context": "BX≃Γ"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "factorizationhomologyofaB-framedn-manifoldMwithcoeﬃcientsinΩ"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "homologywithcoeﬃcientsinΓc(R"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "themapX→B,Γc(R"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "themapX→B,Γc(Rn, X) ≃Ω"
+  },
+  {
+   "page": 28,
+   "mark": "c",
+   "context": "BTop(n)X≃Map"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "BTop(n)X≃Mapc(R"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "BTop(n)X≃Mapc(Rn, K(A, i)) ≃K(A, i −n)isan"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "MacLanespace,thenΩ"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "Mapc(R"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "MΩ"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "Ω"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "faithful,soitremainstoarguethatΩ"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "n→Disk"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "MAhas"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "MAhasanaturalstructureof"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "osidesareevidentlyequivalentinthecasewhereMishomeomorphictoR"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "S"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "Sk×R"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "Sk×Rn−kR"
+  },
+  {
+   "page": 30,
+   "mark": "a",
+   "context": "Sk×Rn−kRn∼= M,wehave"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "XR"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "XS"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "XSk×R"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "C∗(XR"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "C∗(XSk×R"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "C∗(XR"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "C∗(XRn, R)overthecoalgebraC∗(XS"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "C∗(XRn, R)overthecoalgebraC∗(XSk×R"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "assuredifthebaseXS"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "assuredifthebaseXSk×R"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "ﬁberf(XR"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "ﬁberf(XRn→XS"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "ﬁberf(XRn→XSk×R"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "XS"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "XSk×R"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "isnilpotentforachoiceofbasepointf∈XS"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "isnilpotentforachoiceofbasepointf∈XSk×R"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "f:S"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "f:Sk→Xisnullhomotopic,andthereforethebaseXS"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "f:Sk→Xisnullhomotopic,andthereforethebaseXSk×R"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "f:Sk→Xisnullhomotopic,andthereforethebaseXSk×Rn−k≃XS"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "etheconstantmapvaluedatthebasepointofX,andsoidentifyﬁberf(XR"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "XS"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "XS"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "XSk×R"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "XSk×Rn−k) ≃Ω"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "onπ∗Ω"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "ﬁbersequenceΩ"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "ﬁbersequenceΩk+1X→XS"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "XS"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "XSk\u0001 ∼= π"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "XSk\u0001 ∼= π1X⋉π"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "XSk\u0001 ∼= π1X⋉π1Ω"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "XSk\u0001 ∼= π1X⋉π1ΩkX∼= π"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "XSk\u0001 ∼= π1X⋉π1ΩkX∼= π1X⋉π"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "XSk\u0001 ∼= π1X⋉π1ΩkX∼= π1X⋉π0Ω"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "XS"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "onπ∗Ω"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "thestandardactionsofπ1Xandofπ0Ω"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "thestandardactionsofπ1Xandofπ0Ωk+1Xonπ∗Ω"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "π∗+k+1X∼=π∗Ω"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "actionofπ0Ω"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "actionofπ0Ωk+1Xonπ∗Ω"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "fπ0Ωk+1Xonπ∗Ωk+1Xisnilpotent.Inthecasethatk>0,theactionofπ0Ω"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "XS"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "π∗Ω"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "π∗Ω"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "C∗(XR"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "C∗(XSk×R"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "ﬁniteCWcomplexK.Becausethesourcespaces,M,N,S"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "ﬁniteCWcomplexK.Becausethesourcespaces,M,N,Sk× R"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "ﬁniteCWcomplexK.Becausethesourcespaces,M,N,Sk× Rn−k,andR"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "C∗(XR"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "C∗(XR"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "C∗(XSk×R"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "C∗(XSk×R"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "C∗(XR"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "C∗(XSk×R"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "U∈Diskn/MConf"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "U∈Diskn/MConfi(U) −→Conf"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "U∈Diskn/MConf"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "U∈Diskn/MConfi(U) −→Conf"
+  },
+  {
+   "page": 32,
+   "mark": "m",
+   "context": "S"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "Sm×R"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "Sm×Rn−m Free"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "Sm×Rn−m Freen(V )≃Free"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "Sm×Rn−m Freen(V )≃Freen(V ) ⊗Free"
+  },
+  {
+   "page": 32,
+   "mark": "m",
+   "context": "Sm×Rn−m Freen(V )≃Freen(V ) ⊗Freen−m(Σ"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "(Ω"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "(Ωn−mΣ"
+  },
+  {
+   "page": 32,
+   "mark": "m",
+   "context": "(Ωn−mΣnX)S"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "(Ωn−mΣnX)Sm≃Ω"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "(Ωn−mΣnX)Sm≃ΩnΣ"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "(Ωn−mΣnX)Sm≃ΩnΣnX× Ω"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "(Ωn−mΣnX)Sm≃ΩnΣnX× Ωn−mΣ"
+  },
+  {
+   "page": 32,
+   "mark": "m",
+   "context": "S"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "Sm×R"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "Sm×Rn−m Ω"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "Sm×Rn−m ΩnΣ"
+  },
+  {
+   "page": 32,
+   "mark": "m",
+   "context": "Σ∞(Σ"
+  },
+  {
+   "page": 32,
+   "mark": "m",
+   "context": "Confk(S"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "Confk(Sm×R"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "Confi(R"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "Confj(R"
+  },
+  {
+   "page": 33,
+   "mark": "k",
+   "context": "∗Conf"
+  },
+  {
+   "page": 33,
+   "mark": "m",
+   "context": "∗Confk(S"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "∗Confk(Sm × R"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "∗Conf"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "∗Confi(R"
+  },
+  {
+   "page": 33,
+   "mark": "j",
+   "context": "+Conf"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "+Confj(R"
+  },
+  {
+   "page": 33,
+   "mark": "m",
+   "context": "(Σ"
+  },
+  {
+   "page": 33,
+   "mark": "m",
+   "context": "Confk(S"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "Confk(Sm× R"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "Confi(R"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "Confj(R"
+  },
+  {
+   "page": 33,
+   "mark": "m",
+   "context": "Freen−m(Σ"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "D"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "Confi(D"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "Confi(D1× R"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "Confi(D1× Rn−1, ∂D"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "Confi(D1× Rn−1, ∂D1× R"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "D"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "D1×R"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "Σ"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "ΣiConfi(R"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "Confi(R"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "Confi(D"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "Confi(D1× M, ∂D"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "Confi(D1× M, ∂D1× M) ≃D"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "∂D"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "∂Di× Confi(M) ≃Σ"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "inthecaseM=R"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "Σ"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "ΣiX⊗V⊗i≃X⊗Σ"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "Remark5.10.In[Fra2],itwasprovedthatBar"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "1 ⊕Σ"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "≃BΩ"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "≃BΩnΣ"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "≃BΩnΣnV≃Ω"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "≃BΩnΣnV≃Ωn−1Σ"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "D"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "D1×R"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "D1×Rn−1istheobjectinVunderlyingtheaugmentedE"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "D"
+  },
+  {
+   "page": 34,
+   "mark": "a",
+   "context": "n(V)be"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "n(V)beadiagramofaugmentedE"
+  },
+  {
+   "page": 34,
+   "mark": "a",
+   "context": "n(V)beadiagramofaugmentedEn-algebrasinV,indexedby"
+  },
+  {
+   "page": 34,
+   "mark": "j",
+   "context": "j∈JA"
+  },
+  {
+   "page": 34,
+   "mark": "a",
+   "context": "j∈JAj)inVis"
+  },
+  {
+   "page": 34,
+   "mark": "j",
+   "context": "j∈JA"
+  },
+  {
+   "page": 34,
+   "mark": "j",
+   "context": "j∈JA"
+  },
+  {
+   "page": 34,
+   "mark": "j",
+   "context": "j∈JA"
+  },
+  {
+   "page": 34,
+   "mark": "j",
+   "context": "j∈JA"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "caseprovidedtheforgetfulfunctorevR"
+  },
+  {
+   "page": 35,
+   "mark": "g",
+   "context": "c(M,"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "Mapc(R"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "betweenthefactorizationhomologyoftheLiealgebrachainsofΩ"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "Mapc(R"
+  },
+  {
+   "page": 35,
+   "mark": "c",
+   "context": "MMap"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "MMapc(R"
+  },
+  {
+   "page": 35,
+   "mark": "g",
+   "context": "MMapc(Rn,"
+  },
+  {
+   "page": 35,
+   "mark": "c",
+   "context": "MMap"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "MMapc(R"
+  },
+  {
+   "page": 35,
+   "mark": "g",
+   "context": "MMapc(Rn,"
+  },
+  {
+   "page": 35,
+   "mark": "c",
+   "context": "MMapc(Rn, g)≃Map"
+  },
+  {
+   "page": 35,
+   "mark": "g",
+   "context": "MMapc(Rn, g)≃Mapc(M,"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "Mapc(R"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "n(Mod"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "Mapc(R"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "[DI]Dugger,Daniel;Isaksen,Daniel.TopologicalhypercoversandA"
+  }
+ ]
+}

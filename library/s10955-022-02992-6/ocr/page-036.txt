@@ -1,0 +1,61 @@
+33 Page 36 of 47 S. Jansen, L. Kolesnikov
+
+By Proposition 3.12, for every D C Z \ {1}, we have
+
+y z( Xela) < ga(DUIN)—a(D) 4, (4.24)
+
+Yol,
+YND=@
+
+Let us choose D C ZN (—o0, 0] with 0 € D. Then for every given ¢ € N, the unique rod of
+
+length ¢ that contains 1 but does not intersect D is the rod {1,..., £}, and we obtain
+0
+doze et Ol! fesse £)-a(D) < ga(DU{1})—a(D) _ 4, (4.25)
+
+é=1
+
+Let Do := D and for m > 1 set Dy, := DU {1,...,m}. The exponent on the left-hand side
+in (4.25) may be written as
+
+£
+a(DU{l,..., &) = a(D) = Y° (a(n) = @(Dn-1))- (4.26)
+
+m=1
+
+Now
+a(Dm) — a(Dm—1)
+
+00
+1
+= > H > (aisynD,421 - ai: ¥,nd,141) [VE pees Y«)|z(¥1) «++ 2(Ye)-
+
+kal” (¥1,...,¥p)eX*
+The only clusters (Y;, ..., Y,) that contribute to the sum are those that intersect D,, but do
+not intersect D,,—1. This is only possible if one of the Y;’s contains m and all of them are
+
+contained in ZN [m, oo). Thus
+a(Dm) — a(Dn—1)
+al
+= > i > Iai: ¥;5my Hv: ¥;ctm.00)}|¥E 1, sees Yq) |e(V1) +++ (Ye).
+k=1  (%,..., Ye) EX*
+
+Because of the translational invariance, the value of the sum does not depend on m. Thus
+a(Dm) — a(Dm—1) = a@ > 0 for all m > 1 and some a > 0. Turning back to (4.26), we
+obtain
+
+a(DU {1,..., €}) — a(D) = la
+
+and then (4.25) yields yaa zeexp(at) < exp(a@) — 1. o
+
+4.5 Tonks Gas on R
+
+Next, we want to consider the continuous version of the one-dimensional Tonks gas. Let
+(Le)een be sequence of strictly positive numbers and X the space of compact intervals
+I C Rwith lengths |/| € {Le | € € N}. The map R x N, (x, €) [x — Le/2, x + Le/2] is
+a bijection between R x N and X. The reference measure A is defined by the equality
+
+[ A(X)A(AX) = yf. A([x — Sex + 44])dx
+x @=1 2-0
+
+D Springer

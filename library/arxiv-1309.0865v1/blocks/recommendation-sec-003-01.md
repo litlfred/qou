@@ -1,0 +1,1 @@
+(One should not categorify the Iwahori presentation given above, but a presentation using the Kazhdan-Lusztig generators which we will describe below.) Heuristically speaking, this is the categorical analogue of Iwahori's algebraization of $\HB$, on the level of objects.

@@ -1,0 +1,1 @@
+In II, we shall see that the theory of $p$-adic period mappings is a privileged field where this semantic splitting process integrates into an harmonious picture, where the complementarity between the $p$-adic counterparts is restored at a deeper level.

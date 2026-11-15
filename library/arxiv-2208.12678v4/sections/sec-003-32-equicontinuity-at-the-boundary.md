@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.974
 latex_coverage_ratio: 0.95
+doc_brief: "STATIONARY CURVES UNDER THE MÖBIUS-PLATEAU ENERGY — Plateau problems with elastic boundary energies have been of recent theoretical and applied interest."
 ---
 We first prove the following simple lemma,
 \begin{lemma}\label{lemma:diameter-convergence}

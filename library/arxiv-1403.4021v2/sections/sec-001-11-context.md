@@ -4,13 +4,14 @@ doc_title: "MARKOV TRACES ON THE BIRMAN-WENZL-MURAKAMI ALGEBRAS"
 section_id: sec-001-11-context
 section_title: "Context"
 section_number: 1.1
-pages: 1-3
+pages: 2-3
 source_pdf: 1403.4021v2.pdf
 source_sha256: 046d02411e0dc086
-doc_brief: "MARKOV TRACES ON THE BIRMAN-WENZL-MURAKAMI ALGEBRAS — We classify the Markov traces factoring through the Birman-Wenzl-Murakami (BMW) algebras."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.837
+latex_prose_ratio: 0.976
+latex_coverage_ratio: 0.995
+doc_brief: "MARKOV TRACES ON THE BIRMAN-WENZL-MURAKAMI ALGEBRAS — We classify the Markov traces factoring through the Birman-Wenzl-Murakami (BMW) algebras."
 ---
 When the Jones and Homfly polynomial appeared, they were first  described as Markov traces on the
 group algebra of the braid group, and therefore as invariants of oriented links produced

@@ -1,0 +1,507 @@
+---
+doc_id: huang-2021-chinese-phys-c-45-030002
+doc_title: "The AME 2020 atomic mass evaluation (I). Evaluation of input data, and adjustment procedures"
+section_id: page-177
+section_title: "Page 177"
+section_number: null
+pages: 177-177
+source_pdf: Huang_2021_Chinese_Phys._C_45_030002.pdf
+source_sha256: 1dd3329ed87476c8
+toc_source: undetermined
+doc_brief: "The AME 2020 atomic mass evaluation (I). Evaluation of input data, and adjustment procedures — 343 sections: Page 1; Page 2; Page 3"
+---
+Chinese Physics C Vol. 45, No. 3 (2021) 030002
+Table I. Comparison of input data and adjusted values (continued, Explanation of Table on page 030002-30)
+Item
+Input value
+Adjusted value
+vi
+Dg
+Signf.
+Main inﬂ.
+Lab
+F
+Reference
+123Cd−133Cs.925
+4491
+52
+4349.4
+2.9
+−2.7
+U
+MA8
+1.0
+10Br02
+∗
+C8 H13 N−123Sb
+200580.0
+3.3
+200584.1
+1.5
+0.5
+U
+M16
+2.5
+63Da10
+200615
+8
+−2.6
+U
+R13
+1.5
+83De51
+C8 H13 N−123Te
+200538
+16
+200528.4
+1.5
+−0.2
+U
+M16
+2.5
+63Da10
+200515
+8
+1.1
+U
+R13
+1.5
+83De51
+123Te−u
+−95615
+83
+−95729.0
+1.5
+−1.4
+U
+GS2
+1.0
+05Li24
+∗
+123I−u
+−94444
+30
+−94410
+4
+1.1
+U
+GS2
+1.0
+05Li24
+123Xe−133Cs.925
+−4048
+13
+−4061
+10
+−1.0
+1
+62
+62
+123Xe
+MA6
+1.0
+04Di18
+123Cs−u
+−87007
+57
+−87004
+13
+0.1
+U
+GS2
+1.0
+05Li24
+∗
+123Cs−133Cs.925
+447
+17
+453
+13
+0.4
+o
+MA1
+1.0
+90St25
+453
+13
+2
+MA1
+1.0
+99Am05
+123Ba−133Cs.925
+6238
+13
+2
+MA5
+1.0
+00Be42
+123Ba−u
+−81327
+30
+−81219
+13
+3.6
+C
+GS2
+1.0
+05Li24
+123Cd−130Xe.946
+8172.5
+2.9
+8172.6
+2.9
+0.0
+1
+100
+100 123Cd
+JY1
+1.0
+12Ha25
+123Cdm−130Xe.946
+8326.5
+3.3
+2
+JY1
+1.0
+13Ka08
+123Sb 35Cl−121Sb 37Cl
+3343
+2
+3354.1
+2.3
+1.4
+U
+H14
+4.0
+62Ba24
+123Te−123Sb
+55.729
+0.071
+55.73
+0.07
+0.0
+1
+100
+98
+123Sb
+SH2
+1.0
+16Fi07
+119Csx−123Csx
+.193
+118Csx
+.807
+−1480
+60
+−1447
+13
+0.2
+U
+P32
+2.5
+86Au02
+123Te(n,α)120Sn
+7564
+30
+7573.2
+1.4
+0.3
+U
+ILL
+75Em04
+121Sb(t,p)123Sb
+7295
+20
+7284.6
+2.1
+−0.5
+U
+Ald
+67Hi01
+122Sn(n,γ)123Sn
+5948
+3
+5946.0
+1.2
+−0.7
+–
+75Bh01
+5945.8
+1.5
+0.2
+–
+77Ca09
+122Sn(d,p)123Sn
+3726
+12
+3721.5
+1.2
+−0.4
+U
+Tal
+64Ne10
+3716
+11
+0.5
+U
+72Ca33
+3721.8
+2.6
+−0.1
+–
+SPa
+75Be09
+122Sn(n,γ)123Sn
+ave.
+5946.3
+1.2
+5946.0
+1.2
+−0.2
+1
+94
+52
+123Sn
+average
+123Sb(γ,n)122Sb
+−8980
+50
+−8960.0
+2.1
+0.4
+U
+Phi
+60Ge01
+−8966
+4
+1.5
+1
+28
+28
+122Sb
+McM
+79Ba06
+122Te(n,γ)123Te
+6937
+5
+6929.01
+0.08
+−1.6
+U
+68Ch.A
+6929.1
+0.5
+−0.2
+U
+91Ho08
+6928.97
+0.09
+0.5
+–
+00Bo24
+6929.16
+0.17
+−0.9
+–
+Bdn
+06Fi.A
+122Te(d,p)123Te
+4706
+6
+4704.45
+0.08
+−0.3
+U
+MIT
+75Li22
+122Te(n,γ)123Te
+ave.
+6929.01
+0.08
+6929.01
+0.08
+0.0
+1
+100
+99
+122Te
+average
+122Te(3He,d)123I
+−574.2
+3.5
+−575
+3
+−0.3
+1
+97
+96
+123I
+Hei
+78Sz04
+123Cd(β −)123In
+6033
+35
+6015
+20
+−0.5
+1
+32
+32
+123In
+Stu
+87Sp09
+∗
+123In(β −)123Sn
+4400
+30
+4386
+20
+−0.5
+1
+44
+43
+123In
+Stu
+87Sp09
+∗
+123Sn(β −)123Sb
+1395
+10
+1408.2
+2.4
+1.3
+–
+49Du15
+∗
+1420
+10
+−1.2
+–
+50Ke11
+1399
+20
+0.5
+U
+66Au04
+∗
+ave.
+1408
+7
+0.1
+1
+12
+10
+123Sn
+average
+123I(β +)123Te
+1260
+7
+1228
+3
+−4.5
+C
+86Ag.A
+123Xe(β +)123I
+2720
+100
+2694
+10
+−0.3
+U
+54Ma75
+2676
+15
+1.2
+1
+42
+38
+123Xe
+60Mo.A
+∗
+123Cs(β +)123Xe
+4110
+310
+4205
+15
+0.3
+U
+75We23
+∗
+4000
+140
+1.5
+U
+81So06
+∗
+4050
+180
+0.9
+U
+83Pa.A
+∗
+4200
+100
+0.0
+U
+IRS
+93Al03
+4110
+30
+3.2
+B
+JAE
+96Os04
+123Csx(IT)123Cs
+7
+4
+3
+82Au01
+∗
+123Ba(β +)123Cs
+5330
+100
+5389
+17
+0.6
+U
+JAE
+96Os04
+∗123Ag−u
+Isomer should be expected, but 123Agm at 20#(20#) keV, correction negligible
+GAu
+∗∗
+∗123Ag−133Cs.925
+DM=12805(30) µu for mixture gs+m at 59.5(0.5) keV; M −A=–69538(28)
+Nub211 ∗∗
+∗123Cd−133Cs.925
+DM=4568(26) µu for mixture gs+m at 143(4) keV; M −A=–77210(25)
+Nub211 ∗∗
+∗123Te−u
+M −A=–88941(30) keV for mixture gs+m at 247.47 keV
+Nub211 ∗∗
+∗123Cs−u
+M −A=–80968(28) keV for mixture gs+m at 156.27 keV
+Nub211 ∗∗
+∗123Cd(β −)123In
+Q =3590(51) 3464(41) 3547(36) from ground state to 2393 2529 2541 levels
+89Hu03 ∗∗
+∗123In(β −)123Sn
+Qβ−=4410(31); and 4645(72) from 123Inm at 327.21 keV
+Nub211 ∗∗
+∗123Sn(β −)123Sb
+Eβ−=1260(10) from 123Snm at 24.6 to 5/2+ level at 160.33 keV
+Ens04a
+∗∗
+∗123Sn(β −)123Sb
+Eβ−=310(20) to 9/2+ level at 1088.64 keV
+Ens04a
+∗∗
+∗123Xe(β +)123I
+Eβ+=1505(15) to 1/2+ level at 148.92 keV
+Ens04a
+∗∗
+∗123Cs(β +)123Xe
+Eβ+=2990(310) to 3/2+ level at 97.30 keV
+Ens04a
+∗∗
+030002-176

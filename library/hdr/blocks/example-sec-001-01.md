@@ -1,1 +1,0 @@
-Let G be a ﬁnite group. The group algebra Z[G] has only one block, which contains all

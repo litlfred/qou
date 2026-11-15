@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2301.00125v3",
  "source_sha256": "7ecd0cff7d6c2ec4",
- "brief": "Generating Function for Pinsky’s Combinatorial Second Mom ent Formula for the Generalized Ulam Problem Samen Hossein The Bronx High School of Science 75 Bronx Science Bvd — Given a uniform random",
- "extended": "**Generating Function for Pinsky’s Combinatorial Second Mom ent Formula for the Generalized Ulam Problem Samen Hossein The Bronx High School of Science 75 Bronx Science Bvd**\n\n*Bronx, NY 10468*\n\n35 pp, 16 sections.\n\n**Abstract.** Given a uniform random permutation π∈Sn, let Zn,k be equal to the number of increasing subsequences of length k: so Zn,k =|{(i1,...,i k)∈ Zk : 1 ≤i1 <··· <i k≤n, πi1 <··· <π ik}|. In an important paper, Ross Pinsky proved E [ Z 2 n,k ] is equal to ∑ iA(k−i,i )B(n, 2k−i), where for any nonnegative integers N and j, we have B(N,j ) = (N j ) /j! and A(N,j ) is a particular nonnegative integer, which Pinsky characterized in two diﬀerent ways. One characterization of A(N,j ) involves the occupation time of the x-axis prior to a ﬁrst return to the origin. Using this, he proved a law of large numbers for the sequence Zn,kn when kn =o(n2/5) asn→∞ . In a follow-up paper, he also proved the sequence Zn,kn fails to obey a law of large numbers when 1/kn = o(1/n4/9) as n→∞ .\n\n**Outline.** 1 Introduction; 1.1 Extended abstract; 1.2 Set-up; 1.4 Motivation for exact solutions; 1.5 Outline for the remainder of the paper; 3 The diagonal (contour integral) method; 4 Main result; 5 Summary and outlook; A Bonferroni inequalities and Bell polynomials; B.1 Mathematical physics and probability devel; C Roots of a class of quadratic equations; D Contour integral alternative derivation of L; F Elementary proofs from the quadratic formula; G Elementary proofs from contour deformations; H Proof of lemmas related to the residue theor; I Elliptic integrals and linear fractional tra",
+ "brief": "Generating Function for Pinsky’s Combinatorial Second Moment Formula for the Generalized Ulam Problem — Given a uniform random permutation π ∈Sn, let Zn,k be equal to the number of increasing",
+ "extended": "**Generating Function for Pinsky’s Combinatorial Second Moment Formula for the Generalized Ulam Problem**\n\n*Samen Hossein*\n\n35 pp, 21 sections.\n\n**Abstract.** Given a uniform random permutation π ∈Sn, let Zn,k be equal to the number of increasing subsequences of length k: so Zn,k = |{(i1, . . . , ik) ∈Zk : 1 ≤i1 < · · · < ik ≤n , πi1 < · · · < πik}|. In an important paper, Ross Pinsky proved E \u0002 Z2 n,k \u0003 is equal to P i A(k −i, i)B(n, 2k −i), where for any nonnegative integers N and j, we have B(N, j) = \u0000N j \u0001 /j! and A(N, j) is a particular nonnegative integer, which Pinsky characterized in two diﬀerent ways. One characterization of A(N, j) involves the occupation time of the x-axis prior to a ﬁrst return to the origin. Using this, he proved a law of large numbers for the sequence Zn,kn when kn = o(n2/5) as n →∞. In a follow-up paper, he also proved the sequence Zn,kn fails to obey a law of large numbers when 1/kn = o(1/n4/9) as n →∞.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Extended abstract; 1.2 Set-up; 1.3 Higher moments for the generalized Ulam's ; 1.4 Motivation for exact solutions; 1.5 Outline for the remainder of the paper; 2 Pinsky's combinatorial second moment formula; 3 The diagonal (contour integral) method; 4 Main result; 5 Summary and outlook; A Bonferroni inequalities and Bell polynomials; B Review of the physicists' replica approach t; B.1 Mathematical physics and probability devel; C Roots of a class of quadratic equations; D Contour integral alternative derivation of L; E Pochhamer identities for -1/2 and negative i; F Elementary proofs from the quadratic formula",
  "tokens": {
-  "brief": 48,
-  "extended": 401
+  "brief": 47,
+  "extended": 403
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -22,70 +27,90 @@
   {
    "id": "sec-002-12-set-up",
    "title": "Set-up",
-   "pages": "2-4"
+   "pages": "2-3"
   },
   {
-   "id": "sec-003-14-motivation-for-exact-solutions",
+   "id": "sec-003-13-higher-moments-for-the-generalized-ulams-prob",
+   "title": "Higher moments for the generalized Ulam's problem",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-004-14-motivation-for-exact-solutions",
    "title": "Motivation for exact solutions",
    "pages": "4-4"
   },
   {
-   "id": "sec-004-15-outline-for-the-remainder-of-the-paper",
+   "id": "sec-005-15-outline-for-the-remainder-of-the-paper",
    "title": "Outline for the remainder of the paper",
-   "pages": "4-8"
+   "pages": "4-5"
   },
   {
-   "id": "sec-005-3-the-diagonal-contour-integral-method",
+   "id": "sec-006-2-pinskys-combinatorial-second-moment-formula",
+   "title": "Pinsky's combinatorial second moment formula",
+   "pages": "5-8"
+  },
+  {
+   "id": "sec-007-3-the-diagonal-contour-integral-method",
    "title": "The diagonal (contour integral) method",
    "pages": "8-12"
   },
   {
-   "id": "sec-006-4-main-result",
+   "id": "sec-008-4-main-result",
    "title": "Main result",
    "pages": "12-16"
   },
   {
-   "id": "sec-007-5-summary-and-outlook",
+   "id": "sec-009-5-summary-and-outlook",
    "title": "Summary and outlook",
    "pages": "16-16"
   },
   {
-   "id": "sec-008-a-bonferroni-inequalities-and-bell-polynomials",
+   "id": "sec-010-a-bonferroni-inequalities-and-bell-polynomials",
    "title": "A Bonferroni inequalities and Bell polynomials",
-   "pages": "16-21"
+   "pages": "16-20"
   },
   {
-   "id": "sec-009-b1-mathematical-physics-and-probability-developm",
+   "id": "sec-011-b-review-of-the-physicists-replica-approach-to-t",
+   "title": "B Review of the physicists' replica approach to the SK model",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-012-b1-mathematical-physics-and-probability-developm",
    "title": "B.1 Mathematical physics and probability developments",
    "pages": "21-22"
   },
   {
-   "id": "sec-010-c-roots-of-a-class-of-quadratic-equations",
+   "id": "sec-013-c-roots-of-a-class-of-quadratic-equations",
    "title": "C Roots of a class of quadratic equations",
    "pages": "22-23"
   },
   {
-   "id": "sec-011-d-contour-integral-alternative-derivation-of-lem",
+   "id": "sec-014-d-contour-integral-alternative-derivation-of-lem",
    "title": "D Contour integral alternative derivation of Lemma 2.2",
-   "pages": "23-25"
+   "pages": "23-24"
   },
   {
-   "id": "sec-012-f-elementary-proofs-from-the-quadratic-formula",
+   "id": "sec-015-e-pochhamer-identities-for--12-and-negative-inte",
+   "title": "E Pochhamer identities for -1/2 and negative integers",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-016-f-elementary-proofs-from-the-quadratic-formula",
    "title": "F Elementary proofs from the quadratic formula",
    "pages": "25-28"
   },
   {
-   "id": "sec-013-g-elementary-proofs-from-contour-deformations",
+   "id": "sec-017-g-elementary-proofs-from-contour-deformations",
    "title": "G Elementary proofs from contour deformations",
    "pages": "28-29"
   },
   {
-   "id": "sec-014-h-proof-of-lemmas-related-to-the-residue-theorem",
+   "id": "sec-018-h-proof-of-lemmas-related-to-the-residue-theorem",
    "title": "H Proof of lemmas related to the residue theorem",
    "pages": "29-31"
   },
   {
-   "id": "sec-015-i-elliptic-integrals-and-linear-fractional-trans",
+   "id": "sec-019-i-elliptic-integrals-and-linear-fractional-trans",
    "title": "I Elliptic integrals and linear fractional transformations",
    "pages": "31-35"
   }

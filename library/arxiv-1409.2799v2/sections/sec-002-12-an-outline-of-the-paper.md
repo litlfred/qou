@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1409.2799v2
-doc_title: "DIAGRAM CATEGORIES FOR Uq-TILTING MODULES AT ROOTS OF UNITY"
+doc_title: "DIAGRAM CATEGORIES FOR Uq-TILTING MODULES"
 section_id: sec-002-12-an-outline-of-the-paper
 section_title: "An outline of the paper"
 section_number: 1.2
 pages: 5-5
 source_pdf: 1409.2799v2.pdf
 source_sha256: 2f2067b7b583e731
-doc_brief: "DIAGRAM CATEGORIES FOR Uq-TILTING MODULES AT ROOTS OF UNITY — We give a diagrammatic presentation of the category of Uq(sl2)-tilting modules T for q being a root of unity and introduce a grading on"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.925
-latex_coverage_ratio: 0.981
+latex_prose_ratio: 0.817
+latex_coverage_ratio: 0.99
+doc_brief: "DIAGRAM CATEGORIES FOR Uq-TILTING MODULES — We give a diagrammatic presentation of the category of Uq(sl2)-tilting modules T for q being a root of unity and introduce a grading on T."
 ---
 \label{sub-intropart2}
 The paper is organized as follows.
@@ -55,22 +56,3 @@ anti-spherical quotient of Elias' dihedral cathedral. We are also
 grateful to the anonymous referees for many careful comments and corrections.
 D.T. thanks the Danish summer for, 
 positively formulated, not distracting him from typing this paper.
-
-
-\section{The tilting category \texorpdfstring{$\T$}{T}}\label{sec-tilting}
-
-In this section we describe the category $\T$ of 
-$\Uq=\Uq(\mathfrak{sl}_2)$-tilting modules for the quantum enveloping 
-algebra\footnote{We like to work over the cyclotomic field $\bC$, but any field of characteristic zero containing $q$ would work.} of $\mathfrak{sl}_2$ at a fixed root of unity $q$.
-We give a hopefully self-contained summary of the results in the $\mathfrak{sl}_2$ case 
-since most results are either spread out over the 
-literature or only mentioned implicitly. But 
-we have also included some new observations related to our context.
-
-
-
-We mostly follow~\cite[Chapters~1,~2,~3]{ja} with our 
-notation, $v$ denotes an indeterminate, $q\in\bC$ denotes a 
-fixed root of unity and all module categories 
-in this section are categories of \textit{left} 
-modules.

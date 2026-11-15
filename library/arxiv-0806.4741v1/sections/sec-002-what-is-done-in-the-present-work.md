@@ -10,7 +10,8 @@ source_sha256: 5e7ad85a99fb3552
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.845
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.995
+doc_brief: "The deformation quantizations of the hyperbolic plane — We describe the space of (all) invariant deformation quantizations on the hyperbolic plane D as solutions of the evolution of a second order"
 ---
 We now summarize what is done in the present article as well as the method used. Given the geometric data
 of an affine space (i.e. a manifold endowed with an affine connection), one defines the notion of {\sl contracted}

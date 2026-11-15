@@ -1,0 +1,196 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-0707.2052v1",
+ "source": {
+  "structure_sha256": "0a1d1cca848706bef76372a2fed96571fae1dd49b6e75e41ec98d86115ff5ed9",
+  "file": "0707.2052v1.pdf"
+ },
+ "provenance": {
+  "title": "The Mukai pairing, I: a categorical approach",
+  "authors": "Andrei C\u02d8ald\u02d8araru\u2217and Simon Willerton\u2020",
+  "arxiv": {
+   "id": "0707.2052",
+   "version": "1",
+   "primary_class": "math.AG",
+   "stamp_date": "13 Jul 2007"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 11,
+  "by_kind": {
+   "recommendation": 11
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall see in the sequel that $\\mathsf {Id}_X$ can be regarded as the identity 1-morphism of $X$ in a certain 2-category ${\\mathscr{V}\\textsf{ar}}$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The reader unfamiliar with these ideas should be aware that the pictures scattered through this paper form rigorous notation and are not just mnemonics.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We fix for the remainder of the paper a geometric category, whose objects we shall call *spaces*.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This should be compared with the fact that if $M$ is an $A$-$B$-bimodule then $M^{\\scriptscriptstyle\\vee}$ is naturally a $B$-$A$-bimodule.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-left-and-right-adjoints-of-kernels.md",
+   "section_title": "Left and right adjoints of kernels.",
+   "pages": "14-16",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall see that the two adjunctions above are related in some very useful ways.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-left-and-right-adjoints-of-kernels.md",
+   "section_title": "Left and right adjoints of kernels.",
+   "pages": "14-16",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In terms of diagrams, we can thus denote an element $\\varphi\\in \\mathop{\\mathrm{HH}}^\\bullet(X)$ as $$\\raisebox{-.45\\height}{}.$$ Note that the grading is not indicated in the picture, but this should not give rise to confusion.",
+   "strength": "should-not",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-013-hochschild-cohomology.md",
+   "section_title": "Hochschild cohomology.",
+   "pages": "17-18",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The final relation that these must satisfy is the *Cardy Condition*.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-023-open-closed-2d-tqfts.md",
+   "section_title": "Open-closed 2d TQFTs.",
+   "pages": "26-27",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Moreover, the category $2\\textsf{Cob}_{\\text{oc}}^\\Lambda$ is similarly generated by morphisms as listed above, but now they must all be labelled, and the relations are just labelled versions of the previous relations.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-024-open-closed-2d-tqfts-with-d-branes.md",
+   "section_title": "Open-closed 2d TQFTs with D-branes.",
+   "pages": "27-28",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "According to the physics, the closed string state space $\\textsf{C}$ should be $\\mathop{\\mathrm{Hom}}^\\bullet_{\\mathbf{D}(X\\times X)}({\\mathscr O}_\\Delta,{\\mathscr O}_\\Delta)$, in other words, the Hochschild cohomology algebra $\\mathop{\\mathrm{HH}}^\\bullet(X)$.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-025-the-open-closed-2d-tqft-from-a-calabi-yau-manifo.md",
+   "section_title": "The open-closed 2d TQFT from a Calabi-Yau manifold.",
+   "pages": "28-29",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "At this point it should be noted that $\\textsf{C}$ is to be thought of as the centre of the category $\\textsf{O}$.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-025-the-open-closed-2d-tqft-from-a-calabi-yau-manifo.md",
+   "section_title": "The open-closed 2d TQFT from a Calabi-Yau manifold.",
+   "pages": "28-29",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall say that \u03a6 is re\ufb02exively polite if the two dualities above are equal.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-029-reflexively-polite-kernels.md",
+   "section_title": "Reflexively polite kernels.",
+   "pages": "35-38",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

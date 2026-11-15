@@ -8,6 +8,7 @@ pages: 52-53
 source_pdf: symmetry-04-00039-v3.pdf
 source_sha256: 1aa8a81916887f8e
 toc_source: inferred
+doc_brief: "Knots on a Torus: A Model of the Elementary Particles — Two knots; just two rudimentary knots, the unknot and the trefoil."
 ---
 The model described herein is based on quite a small set of basic notions:  
 1. The particles of the model are localized distortions in and of an otherwise undistorted spacetime. 

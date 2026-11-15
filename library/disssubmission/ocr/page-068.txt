@@ -1,0 +1,52 @@
+60 Chapter 3 — Perverse sheaves on semiabelian varieties
+
+there exists an isogeny g : X, —> Y such that go f and hence also fo g is
+the multiplication by n = 1” for some v. Thus it suffices to treat the case
+where Y = X, and where f = [n] : X; —> X; is the multiplication by n.
+
+If we were dealing with an abelian scheme, we could now take Z = X
+and define h = {n] : X —> X to be the multiplication by n. However, for a
+semiabelian scheme the multiplication by n is in general not a finite étale
+cover. To get around this problem we consider the Néron model of the
+generic fibre Xj, which will allow to find a finite étale cover h : Z —> X
+whose base change under § —> S gives the desired h. But before we can
+carry out this idea, we need to perform a base change to make sure that the
+Néron model does what we want.
+
+Note that X and the special fibre X, do not change if we replace the
+given semiabelian scheme X —> S by a base change X’ = X x S’ —> S'
+where S’ denotes the normalization of S in a finite extension of the quotient
+field k(7). After such a base change we can assume that all n-torsion points
+of the generic fibre X, are defined over (7). Then the universal property
+of the Néron model
+
+N—S
+
+of X, implies that the multiplication morphism [n] : N —> N has constant
+fibre degree over its image and thus restricts to a finite étale cover over
+the image. This image contains the connected component N° which by
+prop. 7.4.3 of loc. cit. is isomorphic to X. Hence if we define h : Z —> X
+via the fibre product in the Cartesian diagram
+
+Z——>N
+
+| js
+
+X —+N
+
+then / will be a finite étale cover of X. The special fibre Z, will in general
+not be connected, but on the connected component
+
+Z) = ZN) = NO = X,
+
+the cover / restricts to the multiplication morphism f = {n] : X; —> Xs. So
+we can put Z = Z xs S and take h to be the base change of h.
+
+Summing up, this shows that the homomorphism i, : 1 (Xs); — ™(X),
+is an embedding. With the same arguments as above one also checks that
+the homomorphism j, : 7 (Xq); —> ™(X), is an isomorphism (surjectivity
+is in this case clear because a finite étale cover of X is connected iff it
+restricts to a connected cover of Xq). From this one deduces that the induced
+homomorphisms
+
+U(X); —> (X,), and T1(X),; —> T1(Xq)s

@@ -1,0 +1,56 @@
+33 Page 16 of 47 S. Jansen, L. Kolesnikov
+
+Corollary 3.3 For non-negative potentials, we have
+k
+Vnngk 1s 0s nth) = (Dangers... Xn40)|
+
+foralln €N, allk € No, and all (x1, ..., Xn+k) € xrtk,
+
+Proof Each forest F € Fy.n+44 has exactly k edges. Indeed, the forest F consists of trees
+Ti, ..-5 T,. Let m; be the number of vertices of the tree 7;; thus mj + --- +m, =n+k.
+Each tree 7; has exactly m; — 1 edges, therefore the number of edges of the forest is given
+by a (mj; — 1) =k. Since f < 0 and 1+ f > 0 for non-negative potentials, it follows
+that
+
+VrntkQts ange = (DE YO TT fei xp
+
+FeFnntk {i,jJEE(F)
+
+Il (1+ fu. x;)).
+
+(i, JEERnk(F)\E(P)
+hence (—1) Wa ngk (41, +++. Xngk) = 0. ia]
+
+We will use the alternating sign property to establish that—in the case of non-negative
+potentials—condition (i) in Theorem 2.1 is not only sufficient but also necessary for absolute
+convergence of p.
+
+We conclude this section with a lemma that is not needed for the proof of Theorem 2.1
+but enters the analysis of hard-core models, see the proof of Lemma 3.8 below.
+
+Lemma 3.4 For alln € N, all k € No, and all (x1, ...,Xn4n) € X"**, we have
+Vnntk@s Xan) = PT] (1+ £0, x)
+I<i<j<n
+
+x
+{Vives V,} €=1 Sl<i<n,
+(3.2)
+
+where the sum runs over all set partitions {V,, ... , V-} ofnon-root vertices {n+1,...,n+k}.
+
+Remark 3.1 The lemma allows for an alternative proof of the alternating sign property from
+Corollary 3.3, starting from the well-known alternating sign property of the Ursell function
+instead of the forest-graph equality. Indeed, the sign of every summand in the right-hand side
+of (3.2) is
+
+(-1yrthinViIHD = (4k,
+
+Proof of Lemma 3.4 For n = 1, the lemma reduces to a well-known equality for the Ursell
+functions, see e.g. [11, Eq. (5.13)]. For n > 2, the proof is similar, we provide the details for
+the reader’s convenience. Every multi-rooted graph G € Dy n+ can be constructed in the
+following way. On the root set {1, ...,} pick an arbitrary graph Go. On the complement of
+the root set do the following construction: Partition the set of the non-root vertices into r sets
+Vi, ..., Vr, 7 < k. For every block Ve, pick a connected graph Ge with vertex set Ve, and in
+addition a non-empty set of edges Ey C {ti, J} | ie {l,...,a}, 7 © Ve}. Then the graph
+
+D Springer

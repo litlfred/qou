@@ -1,0 +1,63 @@
+---
+doc_id: lect-mathematical-ideas-notions-qft-2002
+doc_title: "Mathematical ideas and notions of quantum field theory"
+section_id: page-046
+section_title: "Page 46"
+pages: 46-46
+pdf_page: 46
+source_pdf: lect-mathematical-ideas-notions-qft-2002.pdf
+source_sha256: 95cac1ccd6c80226
+text_source: ocr
+granularity: page
+doc_brief: "Mathematical ideas and notions of quantum field theory — 78 sections: Page 1; Page 2; Page 3"
+---
+46 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY
+
+7.4, Connected Green’s functions. Let G¢(t1,...,tn) be the connected Green’s
+functions, defined by the sum of the same amplitudes as Gn(t1,...,tn) but taken
+over connected Feynman diagrams only. It is clear that
+
+Gn(ti, stn) = YS [1 Sis, (tis € Si).
+{1,...n}J=SiU...US,
+For example, Go (ti, t2) = GS(t1, to) + Gf (ti) Gf (t2), etc. Thus, to know the correla-
+tion functions, it is sufficient to know the connected correlation functions.
+Example 1. In a free theory (U = m?q’/2), all connected Green’s functions
+except Gy vanish.
+
+ty
+tr ts
+
+ta
+
+FIGURE 25
+
+Example 2. Let us compute the connected 4-point function in the theory
+associated to quartic potential U as above, modulo g?. This means, we should
+compute the contribution of connected Feynman diagrams with one internal vertex
+and 4 external edges. Such diagram T is unique —it is the cross (with one internal
+vertex), Fig.25. This diagram no nontrivial automorphisms. Thus,
+
+Giltsstastasts) = —9 [ lta ~ s)Glte~ 8)G(ta ~ (ta ~ s)ds + O19").
+R
+It is elementary to compute this integral; we leave it as an exercise.
+
+7.5. The clustering property. Note that the Green’s function G(t) goes to zero
+at infinity. This implies the following clustering property of the correlation functions
+of the free theory:
+
+Him Gn (ts ver trs trp + 2c tn +2) = Gr (tas os tr) Gn—r (trp ietn)-
+
+Moreover, it is easy to show that the same is true in the interacting theory (i.e.
+with potential) in each degree with respect to h (check it!). The clustering property
+can be more simply expressed by the equation
+
+lim GE(t1,-..trytrq1 +2, -5tn +2) = 0.
+ZOO
+
+This property has a physical interpretation: processes distant from each other are
+almost statistically independent. Thus it can be viewed as a necessary condition of
+a quantum field theory to be “physically meaningful” .
+
+Remark. Nevertheless, there exist theories (e.g. so called topological quantum
+field theories) which do not satisfy the clustering property but are interesting both
+form a physical and mathematical point of view.

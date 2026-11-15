@@ -8,7 +8,9 @@ pages: 13-16
 source_pdf: Download (1).pdf
 source_sha256: bbb001c909958e8a
 toc_source: inferred
+doc_brief: "Central and L p -concentration of 1-Lipschitz maps into R -trees — In this paper, we study the Le´vy-Milman concentration phenomenon of 1-Lipschitz maps from mm-spaces to R-trees."
 ---
+The necessity in Proposition 2.12 for R-trees.
 In order to prove the main theorems, we extend the necessity in Proposition
 2.12 to R-trees:
 PROPOSITION 4.1.
@@ -209,4 +211,3 @@ Central and Lp-concentration of 1-Lipschitz maps into R-trees
 497
 The author does not know whether the converse of Proposition 4.1 holds or
 not.
-5.

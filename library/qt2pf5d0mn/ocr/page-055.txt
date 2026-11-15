@@ -1,0 +1,43 @@
+Section 3.3 Examples
+
+group, all the structural isomorphisms a,/,r are identity maps and A* @ A= A® A* =
+1, f@(f-')* =I, (f7!)* @ f =I for any object A and morphism f.
+
+There is a one-to-one correspondence between categorical groups and crossed modules
+which are defined below.
+
+Let G,H be two finite groups. A crossed module is a quad (H,G,p,a), where p :
+H — Gis a group morphism, and a: G x H —> H is a group action of G on H, such
+
+that the following two conditions are satisfied.
+
+1. p commutes with the G-action, i.e., for any g € G,h € H, p(a(g,h)) = %p(h), where
+
+the right hand side is the conjugation action.
+
+2. The action a extends the conjugation action of H on itself, i.e., for any h,h’ € H,
+
+a(p(h’),h) ="h.
+
+We will usually write the action a(g,h) = %h.
+
+Given a categorical group G, let G = G° and H = U,geq Hom(1,q). It is clear that
+G is a group with the product ®, the unit e = 1, and the inverse (-) = (.)*. Define
+p: H — G by p(h) = t(h), and define the G-action by a(g,h) = I, ®h ® Jj. It is an
+exercise to check that H is also a group, and (H,G,,a) is a crossed module, which we
+denote by Mod(G).
+
+For the converse direction, given a crossed module (H, G, p, a), define the categorical
+
+group Cat(H, G, p,a) as follows.
+
+1. Objects are elements of G. For gi, g2 € G, Hom(q, 92) := p~'(Gig2) C H. The
+
+composition of morphisms are the product in H.
+
+2. For h € Hom(g:,92),h’ € Hom(g/, 95), 91 @ gf = gig, and h@h! = “hh'. The
+
+unit 1 is the unit in G. The a,l,r’s are identity maps.
+
+3. For g € G, the dual g* := g, and the by, d,‘s are identities.
+46

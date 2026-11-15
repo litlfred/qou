@@ -8,6 +8,7 @@ pages: 1-5
 source_pdf: 1508.01458v1.pdf
 source_sha256: 37cfb89f419c9eab
 toc_source: inferred
+doc_brief: "Knotty inﬂation and the dimensionality of spacetime — 2 sections: Front matter; Acknowledgments"
 ---
 arXiv:1508.01458v1  [hep-ph]  6 Aug 2015
 Knotty inﬂation and the dimensionality of spacetime
@@ -107,7 +108,6 @@ why our universe has only three large spatial dimensions
 in the absence of other sources of vacuum energy.
 It is the purpose of this Letter to outline the main fea-
 tures of this mechanism and discuss the necessary prop-
-2
 erties that a ﬂux tube network must exhibit in order to
 yield a successful inﬂationary model in three dimensions.
 While leaving a detailed modeling of the network’s evo-
@@ -230,7 +230,6 @@ as we describe below, can be suﬃciently long-lived to
 drive a period of inﬂation in the early Universe.
 Inﬂation: After the phase transition, Hubble expan-
 sion will tend to stretch the ﬂux tubes, while maintaining
-3
 their radius (set by the strong non-perturbative dynam-
 ics), and increase the size of the gaps in between them.
 However, as argued above, the presence of knots and links
@@ -358,7 +357,6 @@ is supported by surface currents and one can expect the
 repulsion between currents in adjacent tube sections to
 eﬀectively provide a ‘hard’ boundary for the ﬂux tubes,
 making tunneling more diﬃcult.
-4
 If tunneling is indeed suppressed, ﬂux tubes will pri-
 marily break, and hence unknot or unlink, through the
 well-known Schwinger eﬀect [16], where Q ¯Q pairs are pro-
@@ -485,6 +483,5 @@ used instead. Although exact solutions in such models
 are unavailable, appropriate approximations should be
 enough to establish quantitative features to support the
 rest of our calculations. We will present the detailed anal-
-5
 ysis based on the abelian Nielsen-Olesen model elsewhere
 [21].

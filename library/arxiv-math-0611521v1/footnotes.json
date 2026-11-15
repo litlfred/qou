@@ -1,0 +1,1376 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-math-0611521v1",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "†",
+   "text": "Laboratoire Emile Picard, CNRS UMR 5580, U.F.R. M.I.G., 118, route de Narbonne, 31062 Toulouse CEDEX 4",
+   "marks": [
+    {
+     "page": 1,
+     "context": "J.-P. Ramis∗,J. Sauloy"
+    }
+   ],
+   "block": "library/arxiv-math-0611521v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p009-1",
+   "page": 9,
+   "mark": "1",
+   "text": "It should be noted that the slopes deﬁned and used in the present paper are the opposites of the slopes deﬁned in previous papers.",
+   "marks": [
+    {
+     "page": 9,
+     "context": "N(M)at0,or,equivalently,aNewtonfunctionrMsendingtheslope"
+    }
+   ],
+   "block": "library/arxiv-math-0611521v1/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p010-1",
+   "page": 10,
+   "mark": "2",
+   "text": "Itshouldbenotedthatwecallinthepresentpaperapureisoclinic(resp.pure)modulewhatwascalledapure(resp.tamely irregular) module in previous papers.",
+   "marks": [
+    {
+     "page": 9,
+     "context": "For instance, the q-difference operator L = qzσ"
+    },
+    {
+     "page": 9,
+     "context": "qzσ"
+    },
+    {
+     "page": 9,
+     "context": "ˆL = σ"
+    },
+    {
+     "page": 10,
+     "context": "modules"
+    }
+   ],
+   "block": "library/arxiv-math-0611521v1/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p012-1",
+   "page": 12,
+   "mark": "j",
+   "text": ",A′ p∈Z p∈Z i<k< j",
+   "marks": [
+    {
+     "page": 11,
+     "context": "U= (Ui,"
+    },
+    {
+     "page": 11,
+     "context": "∀(Ui,"
+    },
+    {
+     "page": 11,
+     "context": "σqˆFi,"
+    },
+    {
+     "page": 11,
+     "context": "σqˆFi,jzµ"
+    },
+    {
+     "page": 11,
+     "context": "σqˆFi,jzµjA"
+    },
+    {
+     "page": 11,
+     "context": "σqˆFi,jzµjA j −zµiAiˆFi,"
+    },
+    {
+     "page": 12,
+     "context": "the matrix described by (2): the Fi,j block is sent to αµi−µ"
+    },
+    {
+     "page": 12,
+     "context": "u,iFi,"
+    }
+   ],
+   "block": "library/arxiv-math-0611521v1/blocks/prose-sec-002"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p003-1",
+   "page": 3,
+   "mark": "z",
+   "text": "C[ 1",
+   "block": "library/arxiv-math-0611521v1/blocks/prose-sec-000"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "he gauge-equivalence:∆A ∼∆Bif and only if there exists P ∈Gl"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "and weget anisomorphism Z →π1(D∗,d),n 7→γ"
+  },
+  {
+   "page": 2,
+   "mark": "d",
+   "context": "1(D∗,"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "1(D∗,d)of π"
+  },
+  {
+   "page": 2,
+   "mark": "d",
+   "context": "1(D∗,d)of π1(D∗,"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "1(D∗,d)of π1(D∗,d):"
+  },
+  {
+   "page": 2,
+   "mark": "d",
+   "context": "1(D∗,"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": ",d).The “small fundamental group” is the topological group π"
+  },
+  {
+   "page": 2,
+   "mark": "d",
+   "context": "he “small fundamental group” is the topological group π1(D∗,"
+  },
+  {
+   "page": 2,
+   "mark": "d",
+   "context": "1(D∗,"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "group) and ιal: Z →Zalis deﬁned by 1 7→(idC∗,1) (n 7→((z 7→z"
+  },
+  {
+   "page": 3,
+   "mark": "x",
+   "context": "surface of the logarithm: logx and xα= eαlog"
+  },
+  {
+   "page": 3,
+   "mark": "f",
+   "context": "f, the algebra U"
+  },
+  {
+   "page": 3,
+   "mark": "f",
+   "context": "dx= AYusingU"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "an element of Gf(γ(xα) = e"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "an element of Gf(γ(xα) = e2"
+  },
+  {
+   "page": 3,
+   "mark": "x",
+   "context": "z].Toαlog"
+  },
+  {
+   "page": 3,
+   "mark": "x",
+   "context": "z].Toαlogx ∈C/Zlog"
+  },
+  {
+   "page": 3,
+   "mark": "e",
+   "context": "z].Toαlogx ∈C/Zlogxcorresponds"
+  },
+  {
+   "page": 3,
+   "mark": "x",
+   "context": "z].Toαlogx ∈C/Zlogxcorresponds eαlog"
+  },
+  {
+   "page": 3,
+   "mark": "e",
+   "context": "z]corresponds"
+  },
+  {
+   "page": 3,
+   "mark": "q",
+   "context": "z]corresponds e"
+  },
+  {
+   "page": 3,
+   "mark": "q",
+   "context": "(xα)α∈C,(e"
+  },
+  {
+   "page": 3,
+   "mark": "x",
+   "context": "z],log"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "braic group isomorphic to some (C∗)µ), therefore the dual of"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": " algebra (replacing the variable x by all its ramiﬁcations t"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "x"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "x"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "1,form= Texp ⋊(Homgr(C∗,C∗)× C) and π"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "1,form= Texp ⋊(Homgr(C∗,C∗)× C) and π1,form = Texp ⋊π"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "1,form= Texp ⋊(Homgr(C∗,C∗)× C) and π1,form = Texp ⋊π1(D∗,"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "←−n∈N∗µ"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "←−n∈N∗µn(µ"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "←−n∈N∗µn(µnis the group of complex"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "thepaths.Weremark thattheinﬁnitedimensional lattice"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "exponential torus:if τ ∈Texp,int, τ(e"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "exponential torus:if τ ∈Texp,int, τ(eq) = q(τ)e"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "dissued from the origin is parametrized by the unit circle S"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "(r,θ)).Weshallcalldegreeofqitsdegreein1/x.Ifa/x"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "degree of q, then it controls the growth or the decay of e"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "2k “oscillating lines”:ℜ(a/x"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "k open sectors of exponential decay (of order k) of e"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "z]×S"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "z]×S1 such that the direction"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "z]×S1 such that the direction d bisects a sector of decay of"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "×S1 such that the direction d bisects a sector of decay of e"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "of e"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "z] =ˇTexp,intthe ﬁltration by the degree"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "introduce on"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "d)d∈S"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "d)d∈S1(−isfor“before"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "d)d∈S1(−isfor“befored”and+isfor“after"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "oneturnsonS"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "d: K→O"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "d: K→Od(where O"
+  },
+  {
+   "page": 5,
+   "mark": "f",
+   "context": "d( ˆ"
+  },
+  {
+   "page": 5,
+   "mark": "f",
+   "context": "d( ˆ"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "(xα)α∈C,(e"
+  },
+  {
+   "page": 5,
+   "mark": "x",
+   "context": "z],log"
+  },
+  {
+   "page": 5,
+   "mark": "x",
+   "context": "d(log"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "d(xα).Inordertodothatweneedtochoose"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "d(xα).Inordertodothatweneedtochooseabranch ofthelogarithm in"
+  },
+  {
+   "page": 5,
+   "mark": "x",
+   "context": "d(xα= eαlog"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "logarithm (d ∈(R,0), which is the universal covering of (S"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "d)"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "d)d∈R : Uan →O"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "fundamental matrix solutionˆF:"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "dC"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "dCd,wheretheconstantmatrix C"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "dCd,wheretheconstantmatrix Cd∈Gl"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "dCd,wheretheconstantmatrix Cd∈Gln(C)is"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "z] admitting"
+  },
+  {
+   "page": 6,
+   "mark": "e",
+   "context": "z] admitting das a line of maximal decay for"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "z] admitting das a line of maximal decay for e"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": " line of maximal decay for eq(we shall say in that case that"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "ecay for eq(we shall say in that case that q is supported by"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "tion of our wild fundamental group, we can suppose that V= C"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "f= Homgr(C∗,C∗) × C,and,usingtheexponential,wegetanactionofπ"
+  },
+  {
+   "page": 7,
+   "mark": "f",
+   "context": " Homgr(C∗,C∗) × C,and,usingtheexponential,wegetanactionofπ1,"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "h q and −q, which exchange the sectors of growth and decay:e"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "Weﬁxq ∈Csuchthat|q| > 1and writeq = e−2"
+  },
+  {
+   "page": 7,
+   "mark": "y",
+   "context": "thecontinuous group homomorphisms deﬁned respectively byuq"
+  },
+  {
+   "page": 7,
+   "mark": "y",
+   "context": "inuous group homomorphisms deﬁned respectively byuqy7→uanduq"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "us group homomorphisms deﬁned respectively byuqy7→uanduqy7→e"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "s group homomorphisms deﬁned respectively byuqy7→uanduqy7→e2"
+  },
+  {
+   "page": 7,
+   "mark": "y",
+   "context": "group homomorphisms deﬁned respectively byuqy7→uanduqy7→e2iπ"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "valent if and only if a−1b ∈σq,log C((z)), where σq,logˆf= σ"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "er one equations are classiﬁed by the abelian group C∗/qZ×(z"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "fuchsian equations, (z"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "subﬁeld) Rσ"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "{(K"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "For instance, a morphism from MA = (K"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "For instance, a morphism from MA = (Kn,ΦA) to MB = (K"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "(z,X) ∼(qz,A(z)X)→(C∗,"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "(C∗,0)× C"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "z ∼qz= E"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "˜FA=π∗(FA)overtheopenRiemannsurfaceC∗isthetrivialbundleC∗× C"
+  },
+  {
+   "page": 9,
+   "mark": "f",
+   "context": "q"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "qf −(1+z)σ"
+  },
+  {
+   "page": 9,
+   "mark": "f",
+   "context": "qf −(1+z)σq"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": ")σq f + f= 0, of which the so-called Tschakaloff series ∑n≥0"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "σq f + f= 0, of which the so-called Tschakaloff series ∑n≥0q"
+  },
+  {
+   "page": 9,
+   "mark": "z",
+   "context": "= 0, of which the so-called Tschakaloff series ∑n≥0qn(n−1)/2"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": " 0, of which the so-called Tschakaloff series ∑n≥0qn(n−1)/2z"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "F<µ(M)ispureofslopeµ(thusofrank"
+  },
+  {
+   "page": 10,
+   "mark": "q",
+   "context": "Dif fMod(K,σ"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "M may be given the shape M = (C({z})"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "zµ"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "zµ"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "U= (U"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "U= (Ui,j)"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "P"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "Piispure of rank r"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "Piispure of rank riandslope µ"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "Piispure of rank riandslope µiandcan beputinto theform P"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "re of rank riandslope µiandcan beputinto theform Pi= (C({z})"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "e of rank riandslope µiandcan beputinto theform Pi= (C({z})r"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "M0 = (C({z})"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "∀(U"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "∀(Ui,j)"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "σ"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "σqˆF"
+  },
+  {
+   "page": 11,
+   "mark": "z",
+   "context": "σqˆFi,j"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "σqˆFi,jzµjA j −zµ"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "σqˆFi,jzµjA j −zµiA"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "σqˆFi,jzµjA j −zµiAiˆF"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "a(A0) = C"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "αµ"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "αµ"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "p,1(A) ⊂GL"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "on the matrix described by (2): the Fi,j block is sent to αµ"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "u,iF"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "function of Jacobi: θq(z) = ∑n∈Z q−n(n+1)/2z"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "cθ"
+  },
+  {
+   "page": 12,
+   "mark": "c",
+   "context": "cθq,"
+  },
+  {
+   "page": 12,
+   "mark": "c",
+   "context": "the matrix T"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "the matrix Tc,A0∈Mat"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "x Tc,A0∈Matn(M (C∗)) which is block-diagonal with blocks θ−µ"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "Cz"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i= cµ"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i= cµiA"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "i= cµiAi ∈GL"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i,j= (z/c)−µ"
+  },
+  {
+   "page": 12,
+   "mark": "c",
+   "context": "defT"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "defTc,A"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "V"
+  },
+  {
+   "page": 12,
+   "mark": "z",
+   "context": "Vp"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "Vpz"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "i(V"
+  },
+  {
+   "page": 12,
+   "mark": "z",
+   "context": "i(Vp)"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "i(Vp)z"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "q"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "c̸ ∈ΣA0, where ΣA0is some explicit ﬁnite subset of E"
+  },
+  {
+   "page": 13,
+   "mark": "c",
+   "context": "U′= T"
+  },
+  {
+   "page": 13,
+   "mark": "c",
+   "context": "0= T"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "0= Tc,A0[A"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "U′,wegetatlastF[A"
+  },
+  {
+   "page": 13,
+   "mark": "c",
+   "context": "c,A0F′T"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "F′Tc,A0can be easily computed: it belongs to G(M (C∗)) and F"
+  },
+  {
+   "page": 13,
+   "mark": "j",
+   "context": "Tc,A0can be easily computed: it belongs to G(M (C∗)) and Fi,"
+  },
+  {
+   "page": 13,
+   "mark": "r",
+   "context": "\u0012I"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "∀n ∈Z ,q"
+  },
+  {
+   "page": 13,
+   "mark": "r",
+   "context": "\u0012I"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "∀n ∈Z ,cδq"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "setting.Then we can take Gn = (cδq"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "∀i < i′, j <j′,qZcµ"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "∀i < i′, j <j′,qZcµi+ν"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "∀i < i′, j <j′,qZcµi+νjSp(Ai)Sp(B j)∩qZcµ"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "∀i < i′, j <j′,qZcµi+νjSp(Ai)Sp(B j)∩qZcµi′+ν"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "∀i, j such that µi < νj,qZcµ"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "∀i, j such that µi < νj,qZcµiSp(Ai)∩qZcν"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "arethezµ"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "arethezµi+ν"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "cˆFAis"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "cˆFBareinG)andwith"
+  },
+  {
+   "page": 14,
+   "mark": "c",
+   "context": "i,j"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "i,jcµ"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "i,jcµjA"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "i,jcµjA j= cµ"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "i,jcµjA j= cµiA"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "cˆFAis well deﬁned at"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": " θc and resolution of recursive equations by inversion of Φq"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "c(A) ∈stδ(A) has only non null blocks for µ"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "c(A) ∈stδ(A) has only non null blocks for µ j −µ"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "(3), we ﬁnd the following equation for µ j −µi < δ:σqˆFi,jzµ"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "ﬁnd the following equation for µ j −µi < δ:σqˆFi,jzµjA j −zµ"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "σqFi,jzµ"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "σqFi,jzµjA j −zµ"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "tnz"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "∀n ∈Z ,tn−δ = q"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "tn ≈|q|−n"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "un ≈vn ⇐⇒∃R > 0:un = O(R"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "un ≈vn ⇐⇒∃R > 0:un = O(Rnvn) and vn = O(R"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Now, for any Laurent series F(z) = ∑Fnz"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "qF(ξ) = ∑t−nF"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "qF(ξ) = ∑t−nFnξ"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "G := ∑Gnξ"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "G := ∑Gnξn∈E ⊗C({ξ})q,δif ∥Gn ∥= O(R"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "G := ∑Gnξn∈E ⊗C({ξ})q,δif ∥Gn ∥= O(Rnq−n"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "G := ∑Gnξn∈E ⊗C({ξ})q,δif ∥Gn ∥= O(Rnq−n2/2"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "if∥Gn∥= O(R"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "if∥Gn∥= O(Rnq−n"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "if∥Gn∥= O(Rnq−n2/2"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "qF=∑Gnξ"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "qU=∑Gnξ"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "−nUn).Then, multiplying relation (9) by t−nand noting that q"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "Multiplying by ξ"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "qU(ξ)isanentirefunction.ForFtobe"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": " AsAuandB = BsButhemultiplicativeDunforddecompositions.ThenA"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "andB"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": ", it is enough to choose a mapping x 7→x"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "deﬁned. In order to deﬁne A"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "and B"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "the eigenvalues. We then put A"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "the eigenvalues. We then put A1/δ= A"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "A"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "u, B"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "u, B1/δ = B"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "B"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "and get a linear map L : F 7→A"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "and get a linear map L : F 7→A1/δF(B"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "V(jA) = ∑(jA)"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "V(jA) = ∑(jA)nV"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "V(jA) = ∑(jA)nVn ∈E,(where V= ∑V"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "V(jA) = ∑(jA)nVn ∈E,(where V= ∑Vnξ"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "(jA)"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "(ja)"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "j∈µδ∈Mat"
+  },
+  {
+   "page": 18,
+   "mark": "s",
+   "context": "j∈µδ∈Matr,"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "j∈µδ∈Matr,s(C)µδ≃Mat"
+  },
+  {
+   "page": 18,
+   "mark": "s",
+   "context": "j∈µδ∈Matr,s(C)µδ≃Matr,"
+  },
+  {
+   "page": 18,
+   "mark": "j",
+   "context": "qU(jL) = 0 for all"
+  },
+  {
+   "page": 18,
+   "mark": "c",
+   "context": "θδ"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "(cδq"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "(cδqnId−Λ)−1Vnz"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "A short computation shows that V= ∑tpc−pUnz"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": " computation shows that V= ∑tpc−pUnzn+p, so that, V0 = ∑t−nc"
+  },
+  {
+   "page": 18,
+   "mark": "c",
+   "context": "ξ(M).Let ξ ∈C∗be a prohibited (polar) value of"
+  },
+  {
+   "page": 18,
+   "mark": "q",
+   "context": "d (polar) value of c.This means that one of the matrices (ξδ"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": " (polar) value of c.This means that one of the matrices (ξδq"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "is singular, so that ξδq"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "ξα,β).Then Φ"
+  },
+  {
+   "page": 19,
+   "mark": "u",
+   "context": "q"
+  },
+  {
+   "page": 19,
+   "mark": "u",
+   "context": "q"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "θc∑n∈Z(cq"
+  },
+  {
+   "page": 19,
+   "mark": "v",
+   "context": "θc∑n∈Z(cqn −αβ−1)−1"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "θc∑n∈Z(cqn −αβ−1)−1 v"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "θc∑n∈Z(cqn −αβ−1)−1 vn"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "θc∑n∈Z(cqn −αβ−1)−1 vn z"
+  },
+  {
+   "page": 19,
+   "mark": "u",
+   "context": "q"
+  },
+  {
+   "page": 19,
+   "mark": "u",
+   "context": "q"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "in S"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "e.We remark that to consider locally constant functions on S"
+  }
+ ]
+}

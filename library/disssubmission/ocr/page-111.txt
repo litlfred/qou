@@ -1,0 +1,51 @@
+5.2. Variations of Hodge structures 103
+
+this we consider the commutative diagram
+
+Yy —1+ UxX
+
+SN. |e
+
+U
+
+where py denotes the projection onto the first factor and where the closed
+immersion i is defined by i(x,y) = (x+y,y), recalling that Yy C @ x © by
+construction. The adjunction morphism Qy xx — ix(Qy,) defines in each
+degree n > 0 a morphism
+
+A"(X,Q) ®g Qu = R"pux(Quxx) —> R" fux(Qu)
+
+of polarized variations of pure Hodge structures, and this morphism induces
+on each fibre the restriction morphism that occurs in the weak Lefschetz
+theorem. Furthermore, the involution
+
+o: UxX —+UxX, (x,y) (x,x—-y)
+
+preserves Yy and restricts on each fibre Y, to the involution o,. This being
+said, we can perform the constructions from section 5.1 fibre by fibre to
+obtain the subvariations V4. C H~? with the desired property. oO
+
+As we mentioned in the introduction, one of the principal goals of this
+chapter will be the proof of theorem 5.1. We now explain how this will
+follow from the results to be discussed in the next sections. Let us for
+convenience first recall the statement of the theorem.
+
+THEOREM 5.1. For a general complex ppav X of dimension g = 4 the
+monodromy group G of the local system V , is either the Weyl group W(E6)
+or its unique simple subgroup of index two which is the kernel of the sign
+homomorphism sgn : W(E5) —> {+1}.
+
+Plan of the proof. To begin with, in sections 5.3 and 5.4 we give a
+detailed study of the integral cohomology and the Néron-Severi lattices of
+the smooth surfaces Y, = ON ©, and Y,* = ¥,/0, for x € U(C). Asa result
+of the lattice computations it will in particular follow that if we view Vas
+a polarized variation of Z-Hodge structures, then its stalks can be identified
+with the E¢-lattice up to a rescaling of the bilinear form. Coming back to
+the monodromy group G of the underlying local system, we then deduce in
+proposition 5.18 that
+
+G < W(E6)
+is a subgroup of the Weyl group. Once we have this upper bound, we can
+
+proceed as follows. If equality holds, then we are done. If not, then G must
+be contained in some maximal proper subgroup M < W(Eg). Now the table

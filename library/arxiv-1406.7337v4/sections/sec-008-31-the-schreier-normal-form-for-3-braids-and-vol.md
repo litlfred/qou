@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1406.7337v4
-doc_title: "Semi-Adequate Closed Braids and Volume Adam Giambrone Alma College giambroneaj@alma.edu"
+doc_title: "Semi-Adequate Closed Braids and Volume"
 section_id: sec-008-31-the-schreier-normal-form-for-3-braids-and-vol
 section_title: "The Schreier normal form for 3-braids and volume"
 section_number: 3.1
 pages: 12-13
-source_pdf: 1406.7337v4 (1).pdf
+source_pdf: 1406.7337v4.pdf
 source_sha256: 5bae8237742733b9
-doc_brief: "Semi-Adequate Closed Braids and Volume Adam Giambrone Alma College giambroneaj@alma.edu — In this paper, we show that the volumes for a family of A-adequate closed braids can be bounded above and"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.946
-latex_coverage_ratio: 0.991
+latex_coverage_ratio: 1.0
+doc_brief: "Semi-Adequate Closed Braids and Volume — In this paper, we show that the volumes for a family of A-adequate closed braids can be bounded above and below in terms of the twist number, the number of"
 ---
 \label{normformsec}
 

@@ -1,0 +1,33 @@
+It is easy to further rescale and concentrate the flow V in Nr, toa flow f, V that
+is supported in thinner and thinner tubular neighborhoods N, of K, yet always
+has unit flux through the cross-sectional disks.
+
+As ¢> 0, we regard the fields f, V supported inside the neighborhoods N,
+of K as closer and closer approximations to the unit tangent field X'(s) = T(s)
+along K.
+
+We now change notation slightly for convenience.
+
+Let K = {x(s)} be a smooth simple closed curve in R*, S* or H’, and let
+V = dx/ds be the unit tangent vector field along K. Let BS(V) denote the
+field defined in the complement of K_ by using any of the Biot-Savart formulas
+in R°, S° or H® and by carrying out the required integrations with respect to
+arc length along K,, rather than with respect to volume in the ambient space.
+
+Let V, denote a divergence-free field supported inside the tubular neighborhood
+
+N, of K and having unit flux through the cross-sectional disks, as constructed
+above. In particular, all the vector fields V, are rescalings of a single vector field.
+Let BS(V,) denote the corresponding magnetic field defined throughout the ambient
+space by using the same Biot-Savart formula as for V .
+
+LEMMA. As « > 0, the magnetic fields BS(V,) converge uniformly to the
+field BS(V) on any compact subset of the complement of K .
+
+Again, the proof of this is straightforward, and we leave the details to the reader.
+
+As a consequence, Ampere's law for the field BS(V) is the limit of Ampere's Laws
+for the fields BS(V,) as ¢ > 0. In particular, it can and will be applied to a loop
+in the complement of K which bounds a surface cutting through K .
+
+103

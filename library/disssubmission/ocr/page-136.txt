@@ -1,0 +1,46 @@
+128 Chapter 5 — A family of surfaces
+
+LEMMA 5.26. If C is a hyperelliptic curve of genus g = 2n, then the
+above monodromy group G(d,) is isomorphic to the symmetric group ©2n,
+and its action on the N points of a general fibre of dy can be identified with
+the action of G2, on the set of all n-element subsets of {1,2,...,2n}.
+
+Proof. If g} denotes the hyperelliptic linear series on C, then for every
+effective divisor D € C, the linear series n -gh —D contains an effective
+divisor. Hence W, is a translate of its negative —W,,, and it follows that
+up to a translation the difference morphism d,, coincides with the addition
+morphism C, x C, — X. The latter factors as Cp x Cy —> Con — X where
+the Abel-Jacobi morphism C2, — X is birational. So we must determine
+the monodromy group H of the finite branched cover Cy; x Cy > Cry. This
+cover is not Galois, but it is dominated by the Galois cover with group G2n,
+in the following diagram.
+
+cn cnc"
+| GnxGn
+Cn X Cn
+Son |
+Con
+
+Take a point pj +--+: + pan € Coy with the p; € C all distinct. Via the first
+projection C, x C, — Cy, the fibre F of the cover C, x C, > Cry over this
+point is identified with the set of all n-element subsets of {p1,...,p2,}, and
+the monodromy group H is the image of the homomorphism
+
+Q: Gon, — Aut(F)
+
+which is given by the action of the Galois group G2, of C?” + Coy, on
+the fibre F via permutation of p1,...,P2n. Note that @ is injective: The
+identity is the only permutation in G2, that fixes all n-element subsets of
+the set {p1,..., Pan}. Hence the claim of the lemma follows. Oo
+
+We can now also deal with a general curve, proving theorem 5.2 from
+the introduction. Here the monodromy group G(d,,) turns out to be almost
+as large as possible — with the only drawback that we do not know whether
+it contains an odd permutation.
+
+THEOREM 5.2. If C is a general curve of genus g = 2n, then G(d,) is
+either the alternating group Ay or the full symmetric group Gn.
+
+Proof. By lemma 5.26 we can assume that g > 2. In particular then a
+general curve C of genus g is non-hyperelliptic. Hence lemma 5.25 shows
+that the monodromy representation of G(d,) splits into a direct sum of the

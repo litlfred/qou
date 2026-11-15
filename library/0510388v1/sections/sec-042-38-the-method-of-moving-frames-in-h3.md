@@ -1,6 +1,6 @@
 ---
 doc_id: 0510388v1
-doc_title: "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck"
+doc_title: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space"
 section_id: sec-042-38-the-method-of-moving-frames-in-h3
 section_title: "The method of moving frames in H3 ."
 section_number: 38
@@ -8,6 +8,7 @@ pages: 78-80
 source_pdf: 0510388v1.pdf
 source_sha256: c83c0f6a2eaa74f3
 toc_source: inferred
+doc_brief: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space — 64 sections: Front matter; ORGANIZATION; STATEMENTS OF RESULTS"
 ---
 The computations which lead to the various integral formulas in  H3  in parallel 
 transport format will be carried out using "moving frames" which are obtained  
@@ -54,7 +55,6 @@ We can write
 where we understand the right hand sides as restricted to  H3 . 
  
  
-79 
  
  
  
@@ -94,8 +94,4 @@ With these equations in hand, we easily obtain
  
     dθ2  =  — y3/(1 + y0)  θ2 ∧ θ3  +  y1/(1 + y0)  θ1 ∧ θ2 
  
-    dθ3  =  — y1/(1 + y0)  θ3 ∧ θ1  +  y2/(1 + y0)  θ2 ∧ θ3 . 
- 
- 
- 
-80
+    dθ3  =  — y1/(1 + y0)  θ3 ∧ θ1  +  y2/(1 + y0)  θ2 ∧ θ3 .

@@ -8,7 +8,7 @@
   "pages": 43,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:20Z",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -22,12 +22,12 @@
   },
   "doi": null,
   "title": "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS",
-  "authors_raw": "MACIEJ DO\u0141 \u02dbEGA AND PIOTR \u015aNIADY",
+  "authors_raw": "MACIEJ DOŁ ˛EGA AND PIOTR ŚNIADY",
   "title_lines": [
    "GAUSSIAN FLUCTUATIONS",
    "OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS"
   ],
-  "abstract": "We introduce a large class of random Young diagrams which can be regarded as a natural one-parameter deformation of some classi- cal Young diagram ensembles; a deformation which is related to Jack polynomials and Jack characters. We show that each such a random Young diagram converges asymptotically to some limit shape and that the \ufb02uctuations around the limit are asymptotically Gaussian.",
+  "abstract": "We introduce a large class of random Young diagrams which can be regarded as a natural one-parameter deformation of some classi- cal Young diagram ensembles; a deformation which is related to Jack polynomials and Jack characters. We show that each such a random Young diagram converges asymptotically to some limit shape and that the ﬂuctuations around the limit are asymptotically Gaussian.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "LaTeX with hyperref package",
@@ -37,7 +37,7 @@
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS 1. I NTRODUCTION 1.1. Random partitions. . . An integer partition , called also a Young diagram , is a weakly decreasing \ufb01nite sequence \u03bb = ( \u03bb 1 , . . . , \u03bb l ) of positive integers \u03bb 1 \u2265\u00b7 \u00b7 \u00b7 \u2265 \u03bb l > 0 . We also say that \u03bb is a partition",
+   "heading": "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS 1. I NTRODUCTION 1.1. Random partitions. . . An integer partition , called also a Young diagram , is a weakly decreasing ﬁnite sequence λ = ( λ 1 , . . . , λ l ) of positive integers λ 1 ≥· · · ≥ λ l > 0 . We also say that λ is a partition",
    "outline": "1. Introduction",
    "text": "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS",
    "corroborated_by": [],
@@ -57,7 +57,7 @@
   },
   {
    "level": 2,
-   "title": "Random partitions\u2026",
+   "title": "Random partitions…",
    "page": 1,
    "source": "outline",
    "number": "1.1",
@@ -67,7 +67,7 @@
   },
   {
    "level": 2,
-   "title": "\u2026and random matrices",
+   "title": "…and random matrices",
    "page": 1,
    "source": "outline",
    "number": "1.2",
@@ -572,7 +572,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "A Young diagram \u03bb = (4, 3, 1) shown in the French convention (left) and a generalized Young diagram T 1",
+   "title": "A Young diagram λ = (4, 3, 1) shown in the French convention (left) and a generalized Young diagram T 1",
    "page": 7,
    "confidence": 0.9,
    "evidence": [
@@ -585,7 +585,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "The anisotropic Young diagram from Figure 1 shown in the French and Russian conventions. The solid line represents the pro\ufb01le of the Young diagram. The coordinate system (u, v) corresponding to the Russian convention and the coordinate system (x, y) corresponding to the French convention are shown",
+   "title": "The anisotropic Young diagram from Figure 1 shown in the French and Russian conventions. The solid line represents the proﬁle of the Young diagram. The coordinate system (u, v) corresponding to the Russian convention and the coordinate system (x, y) corresponding to the French convention are shown",
    "page": 8,
    "confidence": 0.9,
    "evidence": [
@@ -598,7 +598,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "The green square S depicts the anisotropic Young diagram T(i\u03b1i) in the Russian coordinate system",
+   "title": "The green square S depicts the anisotropic Young diagram T(iαi) in the Russian coordinate system",
    "page": 11,
    "confidence": 0.9,
    "evidence": [
@@ -611,7 +611,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "Diagonal gray lines form a heatmap showing probabilities that a given segment belongs to the pro\ufb01le of the random Young diagram \u039bn (the intensity of color corresponds to the probability). The rectangular grid of anisotropically stretched boxes is clearly visible. The blue dashed line depicts the lim",
+   "title": "Diagonal gray lines form a heatmap showing probabilities that a given segment belongs to the proﬁle of the random Young diagram Λn (the intensity of color corresponds to the probability). The rectangular grid of anisotropically stretched boxes is clearly visible. The blue dashed line depicts the lim",
    "page": 12,
    "confidence": 0.9,
    "evidence": [
@@ -624,7 +624,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "The analogue of Figure 4 for \u03b1 = 4, i = 10, n = 200. The increased number of boxes is compensated by a decrease of the size of the individual boxes. With this choice of scaling, the \ufb02uctuations of random Young diagrams \u039bn around \u039b\u221etend to zero as n \u2192\u221e",
+   "title": "The analogue of Figure 4 for α = 4, i = 10, n = 200. The increased number of boxes is compensated by a decrease of the size of the individual boxes. With this choice of scaling, the ﬂuctuations of random Young diagrams Λn around Λ∞tend to zero as n →∞",
    "page": 12,
    "confidence": 0.7,
    "evidence": [
@@ -636,7 +636,7 @@
   {
    "kind": "figure",
    "number": "6",
-   "title": "The analogue of Figure 4 for the pro\ufb01les",
+   "title": "The analogue of Figure 4 for the proﬁles",
    "page": 13,
    "confidence": 0.9,
    "evidence": [
@@ -649,7 +649,7 @@
   {
    "kind": "figure",
    "number": "7",
-   "title": "The analogue of Figure 6 for \u03b1 = 4, i = 10,",
+   "title": "The analogue of Figure 6 for α = 4, i = 10,",
    "page": 14,
    "confidence": 0.7,
    "evidence": [
@@ -661,7 +661,7 @@
   {
    "kind": "figure",
    "number": "8",
-   "title": "The analogue of Figure 6 for \u03b1 = 4, i = 20, n = 800. As n \u2192\u221e, the amplitude of the oscillations",
+   "title": "The analogue of Figure 6 for α = 4, i = 20, n = 800. As n →∞, the amplitude of the oscillations",
    "page": 15,
    "confidence": 0.7,
    "evidence": [
@@ -673,7 +673,7 @@
   {
    "kind": "figure",
    "number": "9",
-   "title": "A sample pro\ufb01le \u221a",
+   "title": "A sample proﬁle √",
    "page": 16,
    "confidence": 0.9,
    "evidence": [
@@ -1006,14 +1006,38 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 2,
-   "n_chars": 1540,
-   "n_words": 261,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-001-13-random-young-diagrams-related-to-log-gases",
+   "id": "sec-001-11-random-partitions",
+   "number": "1.1",
+   "title": "Random partitions…",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 381,
+   "n_words": 75,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-12-and-random-matrices",
+   "number": "1.2",
+   "title": "…and random matrices",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1010,
+   "n_words": 160,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-13-random-young-diagrams-related-to-log-gases",
    "number": "1.3",
    "title": "Random Young diagrams related to log-gases",
    "level": 2,
@@ -1025,43 +1049,67 @@
    "label_end": null
   },
   {
-   "id": "sec-002-14-random-young-diagrams-and-characters",
+   "id": "sec-004-14-random-young-diagrams-and-characters",
    "number": "1.4",
    "title": "Random Young diagrams and characters",
    "level": 2,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 1194,
-   "n_words": 229,
+   "n_chars": 1192,
+   "n_words": 228,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-003-15-irreducible-characters-of-symmetric-groups-pl",
+   "id": "sec-005-15-irreducible-characters-of-symmetric-groups-pl",
    "number": "1.5",
    "title": "Irreducible characters of symmetric groups. Plancherel measure",
    "level": 2,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 1027,
-   "n_words": 178,
+   "n_chars": 1096,
+   "n_words": 186,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-004-16-irreducible-jack-characters",
+   "id": "sec-006-16-irreducible-jack-characters",
    "number": "1.6",
    "title": "Irreducible Jack characters",
    "level": 2,
    "page_start": 3,
-   "page_end": 5,
-   "n_chars": 3426,
-   "n_words": 596,
+   "page_end": 4,
+   "n_chars": 1196,
+   "n_words": 232,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-005-19-cumulants",
+   "id": "sec-007-17-probability-measures-p",
+   "number": "1.7",
+   "title": "Probability measures P()",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 592,
+   "n_words": 107,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-18-random-young-diagrams-related-to-thomas-chara",
+   "number": "1.8",
+   "title": "Random Young diagrams related to Thoma's characters",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1540,
+   "n_words": 243,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-19-cumulants",
    "number": "1.9",
    "title": "Cumulants",
    "level": 2,
@@ -1073,7 +1121,7 @@
    "label_end": null
   },
   {
-   "id": "sec-006-110-asymptotics",
+   "id": "sec-010-110-asymptotics",
    "number": "1.10",
    "title": "Asymptotics",
    "level": 2,
@@ -1085,7 +1133,7 @@
    "label_end": null
   },
   {
-   "id": "sec-007-111-hypothesis-asymptotics-of",
+   "id": "sec-011-111-hypothesis-asymptotics-of",
    "number": "1.11",
    "title": "Hypothesis: asymptotics of",
    "level": 2,
@@ -1097,7 +1145,7 @@
    "label_end": null
   },
   {
-   "id": "sec-008-112-hypothesis-approximate-factorization-of-char",
+   "id": "sec-012-112-hypothesis-approximate-factorization-of-char",
    "number": "1.12",
    "title": "Hypothesis: approximate factorization of characters",
    "level": 2,
@@ -1109,7 +1157,7 @@
    "label_end": null
   },
   {
-   "id": "sec-009-113-drawing-young-diagrams",
+   "id": "sec-013-113-drawing-young-diagrams",
    "number": "1.13",
    "title": "Drawing Young diagrams",
    "level": 2,
@@ -1121,43 +1169,43 @@
    "label_end": null
   },
   {
-   "id": "sec-010-114-the-first-main-result-law-of-large-numbers",
+   "id": "sec-014-114-the-first-main-result-law-of-large-numbers",
    "number": "1.14",
    "title": "The first main result: Law of Large Numbers",
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 982,
-   "n_words": 170,
+   "n_chars": 1047,
+   "n_words": 181,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-011-116-example",
-   "number": "1.16",
-   "title": "Example",
-   "level": 2,
-   "page_start": 9,
-   "page_end": 9,
-   "n_chars": 36,
-   "n_words": 7,
-   "label_start": null,
-   "label_end": null
-  },
-  {
-   "id": "sec-012-115-the-second-main-result-central-limit-theorem",
+   "id": "sec-015-115-the-second-main-result-central-limit-theorem",
    "number": "1.15",
    "title": "The second main result: Central Limit Theorem",
    "level": 2,
    "page_start": 9,
-   "page_end": 13,
-   "n_chars": 7217,
-   "n_words": 1303,
+   "page_end": 10,
+   "n_chars": 2252,
+   "n_words": 394,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-013-117-content-of-the-paper",
+   "id": "sec-016-116-example",
+   "number": "1.16",
+   "title": "Example",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 13,
+   "n_chars": 4891,
+   "n_words": 894,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-017-117-content-of-the-paper",
    "number": "1.17",
    "title": "Content of the paper",
    "level": 2,
@@ -1169,7 +1217,7 @@
    "label_end": null
   },
   {
-   "id": "sec-014-2-approximate-factorization-of-characters",
+   "id": "sec-018-2-approximate-factorization-of-characters",
    "number": "2",
    "title": "Approximate factorization of characters",
    "level": 1,
@@ -1181,7 +1229,7 @@
    "label_end": null
   },
   {
-   "id": "sec-015-21-conditional-cumulants",
+   "id": "sec-019-21-conditional-cumulants",
    "number": "2.1",
    "title": "Conditional cumulants",
    "level": 2,
@@ -1193,7 +1241,7 @@
    "label_end": null
   },
   {
-   "id": "sec-016-22-normalized-jack-characters",
+   "id": "sec-020-22-normalized-jack-characters",
    "number": "2.2",
    "title": "Normalized Jack characters",
    "level": 2,
@@ -1205,43 +1253,91 @@
    "label_end": null
   },
   {
-   "id": "sec-017-23-the-deformation-parameters",
+   "id": "sec-021-23-the-deformation-parameters",
    "number": "2.3",
    "title": "The deformation parameters",
    "level": 2,
    "page_start": 17,
+   "page_end": 17,
+   "n_chars": 361,
+   "n_words": 72,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-022-24-the-linear-space-of--polynomial-functions",
+   "number": "2.4",
+   "title": "The linear space of -polynomial functions",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 784,
+   "n_words": 141,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-023-25-algebras-p-and-p-of--polynomial-functions",
+   "number": "2.5",
+   "title": "Algebras P and P of -polynomial functions",
+   "level": 2,
+   "page_start": 17,
    "page_end": 18,
-   "n_chars": 3316,
+   "n_chars": 758,
+   "n_words": 134,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-024-26-two-probabilistic-structures-on--polynomial-f",
+   "number": "2.6",
+   "title": "Two probabilistic structures on -polynomial functions",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 1202,
+   "n_words": 223,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-025-27-equivalent-characterizations-of-approximate-f",
+   "number": "2.7",
+   "title": "Equivalent characterizations of approximate factorization of characters",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 3351,
    "n_words": 601,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-018-27-equivalent-characterizations-of-approximate-f",
-   "number": "2.7",
-   "title": "Equivalent characterizations of approximate factorization of characters",
+   "id": "sec-026-31-approximate-factorization-property-for--polyn",
+   "number": "3.1",
+   "title": "Approximate factorization property for -polynomial functions",
    "level": 2,
-   "page_start": 18,
+   "page_start": 20,
    "page_end": 23,
-   "n_chars": 8847,
-   "n_words": 1630,
+   "n_chars": 5424,
+   "n_words": 1021,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-019-34-functionals-sk",
+   "id": "sec-027-34-functionals-sk",
    "number": "3.4",
    "title": "Functionals Sk",
    "level": 2,
    "page_start": 23,
    "page_end": 23,
-   "n_chars": 461,
-   "n_words": 91,
+   "n_chars": 532,
+   "n_words": 107,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-020-35-free-cumulants-rk",
+   "id": "sec-028-35-free-cumulants-rk",
    "number": "3.5",
    "title": "Free cumulants Rk",
    "level": 2,
@@ -1253,7 +1349,7 @@
    "label_end": null
   },
   {
-   "id": "sec-021-38-refined-asymptotics-of-characters",
+   "id": "sec-029-38-refined-asymptotics-of-characters",
    "number": "3.8",
    "title": "Refined asymptotics of characters",
    "level": 2,
@@ -1265,7 +1361,7 @@
    "label_end": null
   },
   {
-   "id": "sec-022-4-technical-results",
+   "id": "sec-030-4-technical-results",
    "number": "4",
    "title": "Technical results",
    "level": 1,
@@ -1277,7 +1373,7 @@
    "label_end": null
   },
   {
-   "id": "sec-023-41-slowly-growing-sequence-of-moments-determines",
+   "id": "sec-031-41-slowly-growing-sequence-of-moments-determines",
    "number": "4.1",
    "title": "Slowly growing sequence of moments determines the measure",
    "level": 2,
@@ -1289,7 +1385,7 @@
    "label_end": null
   },
   {
-   "id": "sec-024-42-slow-growth-of-rn-implies-slow-growth-of-sn",
+   "id": "sec-032-42-slow-growth-of-rn-implies-slow-growth-of-sn",
    "number": "4.2",
    "title": "Slow growth of (Rn) implies slow growth of (Sn)",
    "level": 2,
@@ -1301,7 +1397,7 @@
    "label_end": null
   },
   {
-   "id": "sec-025-43-estimates-on-some-classes-of-permutations",
+   "id": "sec-033-43-estimates-on-some-classes-of-permutations",
    "number": "4.3",
    "title": "Estimates on some classes of permutations",
    "level": 2,
@@ -1313,43 +1409,79 @@
    "label_end": null
   },
   {
-   "id": "sec-026-44-growth-of-free-cumulants",
+   "id": "sec-034-44-growth-of-free-cumulants",
    "number": "4.4",
    "title": "Growth of free cumulants",
    "level": 2,
    "page_start": 32,
-   "page_end": 36,
-   "n_chars": 5799,
-   "n_words": 1148,
+   "page_end": 35,
+   "n_chars": 5594,
+   "n_words": 1114,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-027-51-measure-associated-with-a-young-diagram",
+   "id": "sec-035-5-law-of-large-numbers-proof-of-theolln",
+   "number": "5",
+   "title": "Law of large numbers. Proof of theo:lln",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 36,
+   "n_chars": 158,
+   "n_words": 25,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-036-51-measure-associated-with-a-young-diagram",
    "number": "5.1",
    "title": "Measure associated with a Young diagram",
    "level": 2,
    "page_start": 36,
-   "page_end": 37,
-   "n_chars": 2210,
-   "n_words": 436,
+   "page_end": 36,
+   "n_chars": 1457,
+   "n_words": 280,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-028-53-the-limiting-probability-measure-p",
+   "id": "sec-037-52-random-variables-snk-and-their-convergence-in",
+   "number": "5.2",
+   "title": "Random variables S[n]k and their convergence in probability.",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 725,
+   "n_words": 152,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-038-53-the-limiting-probability-measure-p",
    "number": "5.3",
    "title": "The limiting probability measure P",
    "level": 2,
    "page_start": 37,
-   "page_end": 38,
-   "n_chars": 2278,
-   "n_words": 428,
+   "page_end": 37,
+   "n_chars": 850,
+   "n_words": 151,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-029-55-weak-convergence-of-probability-measures-impl",
+   "id": "sec-039-54-the-measure-p-is-determined-by-its-moments",
+   "number": "5.4",
+   "title": "The measure P is determined by its moments",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 1361,
+   "n_words": 265,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-040-55-weak-convergence-of-probability-measures-impl",
    "number": "5.5",
    "title": "Weak convergence of probability measures implies uniform convergence of densities",
    "level": 2,
@@ -1361,7 +1493,7 @@
    "label_end": null
   },
   {
-   "id": "sec-030-56-convergence-of-densities-in-probability",
+   "id": "sec-041-56-convergence-of-densities-in-probability",
    "number": "5.6",
    "title": "Convergence of densities, in probability.",
    "level": 2,
@@ -1373,19 +1505,31 @@
    "label_end": null
   },
   {
-   "id": "sec-031-57-back-to-young-diagrams",
+   "id": "sec-042-57-back-to-young-diagrams",
    "number": "5.7",
    "title": "Back to Young diagrams.",
    "level": 2,
    "page_start": 40,
-   "page_end": 41,
-   "n_chars": 2381,
-   "n_words": 481,
+   "page_end": 40,
+   "n_chars": 294,
+   "n_words": 55,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-032-acknowledgments",
+   "id": "sec-043-6-central-limit-theorem-proof-of-theoclt",
+   "number": "6",
+   "title": "Central Limit Theorem. Proof of theo:clt",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 41,
+   "n_chars": 2039,
+   "n_words": 418,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-044-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 1,
@@ -1397,7 +1541,7 @@
    "label_end": null
   },
   {
-   "id": "sec-033-references",
+   "id": "sec-045-references",
    "number": null,
    "title": "References",
    "level": 1,
@@ -1420,13 +1564,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 35,
-  "chars_total": 77095,
+  "sections": 47,
+  "chars_total": 76468,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "approximate-factorization-Jack.tex",
    "tex_sections": 62,
-   "overlaid": 31,
+   "overlaid": 44,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1441,13 +1586,27 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.977,
-     "coverage_ratio": 0.88,
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-random-partitions",
+     "title": "Random partitions…",
+     "prose_ratio": 0.871,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-13-random-young-diagrams-related-to-log-gases",
+     "id": "sec-002-12-and-random-matrices",
+     "title": "…and random matrices",
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.806,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-13-random-young-diagrams-related-to-log-gases",
      "title": "Random Young diagrams related to log-gases",
      "prose_ratio": 0.956,
      "coverage_ratio": 1.0,
@@ -1455,7 +1614,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-14-random-young-diagrams-and-characters",
+     "id": "sec-004-14-random-young-diagrams-and-characters",
      "title": "Random Young diagrams and characters",
      "prose_ratio": 0.985,
      "coverage_ratio": 0.957,
@@ -1463,23 +1622,39 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-15-irreducible-characters-of-symmetric-groups-pl",
+     "id": "sec-005-15-irreducible-characters-of-symmetric-groups-pl",
      "title": "Irreducible characters of symmetric groups. Plancherel measure",
      "prose_ratio": 0.862,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-16-irreducible-jack-characters",
+     "title": "Irreducible Jack characters",
+     "prose_ratio": 0.848,
+     "coverage_ratio": 0.952,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-17-probability-measures-p",
+     "title": "Probability measures P()",
+     "prose_ratio": 0.8,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-16-irreducible-jack-characters",
-     "title": "Irreducible Jack characters",
-     "prose_ratio": 0.901,
-     "coverage_ratio": 0.981,
+     "id": "sec-008-18-random-young-diagrams-related-to-thomas-chara",
+     "title": "Random Young diagrams related to Thoma's characters",
+     "prose_ratio": 0.923,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-19-cumulants",
+     "id": "sec-009-19-cumulants",
      "title": "Cumulants",
      "prose_ratio": 0.984,
      "coverage_ratio": 1.0,
@@ -1487,7 +1662,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-110-asymptotics",
+     "id": "sec-010-110-asymptotics",
      "title": "Asymptotics",
      "prose_ratio": 0.9,
      "coverage_ratio": 1.0,
@@ -1495,7 +1670,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-111-hypothesis-asymptotics-of",
+     "id": "sec-011-111-hypothesis-asymptotics-of",
      "title": "Hypothesis: asymptotics of",
      "prose_ratio": 0.875,
      "coverage_ratio": 0.906,
@@ -1503,7 +1678,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-112-hypothesis-approximate-factorization-of-char",
+     "id": "sec-012-112-hypothesis-approximate-factorization-of-char",
      "title": "Hypothesis: approximate factorization of characters",
      "prose_ratio": 0.904,
      "coverage_ratio": 0.776,
@@ -1511,7 +1686,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-113-drawing-young-diagrams",
+     "id": "sec-013-113-drawing-young-diagrams",
      "title": "Drawing Young diagrams",
      "prose_ratio": 0.696,
      "coverage_ratio": 0.967,
@@ -1519,28 +1694,31 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-114-the-first-main-result-law-of-large-numbers",
+     "id": "sec-014-114-the-first-main-result-law-of-large-numbers",
      "title": "The first main result: Law of Large Numbers",
-     "prose_ratio": 0.884,
-     "coverage_ratio": 0.968,
+     "prose_ratio": 0.928,
+     "coverage_ratio": 0.955,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-116-example",
-     "title": "Example",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-012-115-the-second-main-result-central-limit-theorem",
+     "id": "sec-015-115-the-second-main-result-central-limit-theorem",
      "title": "The second main result: Central Limit Theorem",
      "prose_ratio": 0.968,
-     "coverage_ratio": 0.452,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-013-117-content-of-the-paper",
+     "id": "sec-016-116-example",
+     "title": "Example",
+     "prose_ratio": 0.848,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-117-content-of-the-paper",
      "title": "Content of the paper",
      "prose_ratio": 0.848,
      "coverage_ratio": 0.565,
@@ -1548,7 +1726,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-2-approximate-factorization-of-characters",
+     "id": "sec-018-2-approximate-factorization-of-characters",
      "title": "Approximate factorization of characters",
      "prose_ratio": 0.846,
      "coverage_ratio": 0.952,
@@ -1556,7 +1734,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-21-conditional-cumulants",
+     "id": "sec-019-21-conditional-cumulants",
      "title": "Conditional cumulants",
      "prose_ratio": 0.944,
      "coverage_ratio": 0.703,
@@ -1564,7 +1742,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-22-normalized-jack-characters",
+     "id": "sec-020-22-normalized-jack-characters",
      "title": "Normalized Jack characters",
      "prose_ratio": 0.923,
      "coverage_ratio": 0.905,
@@ -1572,31 +1750,63 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-23-the-deformation-parameters",
+     "id": "sec-021-23-the-deformation-parameters",
      "title": "The deformation parameters",
-     "prose_ratio": 0.904,
-     "coverage_ratio": 0.986,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-018-27-equivalent-characterizations-of-approximate-f",
-     "title": "Equivalent characterizations of approximate factorization of characters",
-     "prose_ratio": 0.903,
-     "coverage_ratio": 0.984,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-019-34-functionals-sk",
-     "title": "Functionals Sk",
-     "prose_ratio": 0.9,
+     "prose_ratio": 0.75,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-020-35-free-cumulants-rk",
+     "id": "sec-022-24-the-linear-space-of--polynomial-functions",
+     "title": "The linear space of -polynomial functions",
+     "prose_ratio": 0.942,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-25-algebras-p-and-p-of--polynomial-functions",
+     "title": "Algebras P and P of -polynomial functions",
+     "prose_ratio": 0.898,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-024-26-two-probabilistic-structures-on--polynomial-f",
+     "title": "Two probabilistic structures on -polynomial functions",
+     "prose_ratio": 0.873,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-025-27-equivalent-characterizations-of-approximate-f",
+     "title": "Equivalent characterizations of approximate factorization of characters",
+     "prose_ratio": 0.869,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-026-31-approximate-factorization-property-for--polyn",
+     "title": "Approximate factorization property for -polynomial functions",
+     "prose_ratio": 0.904,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-027-34-functionals-sk",
+     "title": "Functionals Sk",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-028-35-free-cumulants-rk",
      "title": "Free cumulants Rk",
      "prose_ratio": 0.911,
      "coverage_ratio": 0.988,
@@ -1604,7 +1814,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-021-38-refined-asymptotics-of-characters",
+     "id": "sec-029-38-refined-asymptotics-of-characters",
      "title": "Refined asymptotics of characters",
      "prose_ratio": 0.857,
      "coverage_ratio": 0.973,
@@ -1612,7 +1822,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-022-4-technical-results",
+     "id": "sec-030-4-technical-results",
      "title": "Technical results",
      "prose_ratio": 0.75,
      "coverage_ratio": 0.889,
@@ -1620,7 +1830,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-023-41-slowly-growing-sequence-of-moments-determines",
+     "id": "sec-031-41-slowly-growing-sequence-of-moments-determines",
      "title": "Slowly growing sequence of moments determines the measure",
      "prose_ratio": 0.983,
      "coverage_ratio": 0.952,
@@ -1628,7 +1838,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-024-42-slow-growth-of-rn-implies-slow-growth-of-sn",
+     "id": "sec-032-42-slow-growth-of-rn-implies-slow-growth-of-sn",
      "title": "Slow growth of (Rn) implies slow growth of (Sn)",
      "prose_ratio": 0.947,
      "coverage_ratio": 0.837,
@@ -1636,7 +1846,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-025-43-estimates-on-some-classes-of-permutations",
+     "id": "sec-033-43-estimates-on-some-classes-of-permutations",
      "title": "Estimates on some classes of permutations",
      "prose_ratio": 0.96,
      "coverage_ratio": 0.962,
@@ -1644,31 +1854,55 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-026-44-growth-of-free-cumulants",
+     "id": "sec-034-44-growth-of-free-cumulants",
      "title": "Growth of free cumulants",
-     "prose_ratio": 0.925,
-     "coverage_ratio": 0.959,
+     "prose_ratio": 0.921,
+     "coverage_ratio": 0.956,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-027-51-measure-associated-with-a-young-diagram",
+     "id": "sec-035-5-law-of-large-numbers-proof-of-theolln",
+     "title": "Law of large numbers. Proof of theo:lln",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.733,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-036-51-measure-associated-with-a-young-diagram",
      "title": "Measure associated with a Young diagram",
-     "prose_ratio": 0.907,
-     "coverage_ratio": 0.969,
+     "prose_ratio": 0.947,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-028-53-the-limiting-probability-measure-p",
+     "id": "sec-037-52-random-variables-snk-and-their-convergence-in",
+     "title": "Random variables S[n]k and their convergence in probability.",
+     "prose_ratio": 0.829,
+     "coverage_ratio": 0.8,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-038-53-the-limiting-probability-measure-p",
      "title": "The limiting probability measure P",
-     "prose_ratio": 0.894,
-     "coverage_ratio": 0.935,
+     "prose_ratio": 0.941,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-029-55-weak-convergence-of-probability-measures-impl",
+     "id": "sec-039-54-the-measure-p-is-determined-by-its-moments",
+     "title": "The measure P is determined by its moments",
+     "prose_ratio": 0.84,
+     "coverage_ratio": 0.893,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-040-55-weak-convergence-of-probability-measures-impl",
      "title": "Weak convergence of probability measures implies uniform convergence of densities",
      "prose_ratio": 0.953,
      "coverage_ratio": 0.966,
@@ -1676,7 +1910,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-030-56-convergence-of-densities-in-probability",
+     "id": "sec-041-56-convergence-of-densities-in-probability",
      "title": "Convergence of densities, in probability.",
      "prose_ratio": 0.897,
      "coverage_ratio": 0.94,
@@ -1684,15 +1918,23 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-031-57-back-to-young-diagrams",
+     "id": "sec-042-57-back-to-young-diagrams",
      "title": "Back to Young diagrams.",
-     "prose_ratio": 0.881,
-     "coverage_ratio": 0.962,
+     "prose_ratio": 0.826,
+     "coverage_ratio": 0.947,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-032-acknowledgments",
+     "id": "sec-043-6-central-limit-theorem-proof-of-theoclt",
+     "title": "Central Limit Theorem. Proof of theo:clt",
+     "prose_ratio": 0.891,
+     "coverage_ratio": 0.945,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-044-acknowledgments",
      "title": "Acknowledgments",
      "prose_ratio": 0.875,
      "coverage_ratio": 0.7,
@@ -1700,7 +1942,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-033-references",
+     "id": "sec-045-references",
      "title": "References",
      "result": "no matching \\section"
     }

@@ -1,0 +1,49 @@
+4.5. Proof of the main theorem 87
+
+where W is some irreducible representation of the group H. Then via the
+commutative diagram
+
+4
+
+6 GI(Vi) x GI(V2)
+| |
+G
+
+¢ GV) —= GI(V; @V2)
+
+=<— &
+
+we can consider the restrictions of V; and V2 to the covering group Hy, and
+by construction we have
+
+Vilg@Velq = Vig = Wipe 161 if gis even,
+
+Uae ln la = MAY) 4 if g is odd,
+where W|, is irreducible by the general remarks from the beginning of the
+proof. This implies that both V;|q are irreducible because otherwise more
+than one non-trivial direct summand would occur. But then, since
+
+Homa (1, Vilq ®V2\q) 4 9,
+
+adjunction shows Vj|q is isomorphic to the dual of V2| 4. In particular V
+and V> have the same dimension. This is impossible since dim(V) = g! is
+not the square of a natural number for g > 1.
+
+For g = 4 we can alternatively argue as follows, using only part (3) of
+proposition 4.12. Here both V; and Vz have dimension at most 12 since
+their dimensions must be non-trivial divisors of dim(V) = 24. So if instead
+of our previous choice we now take the subgroup H <> G to be isogenous
+to Slog-2(C) = Si6(C) with the property in part (3) of the proposition, then
+by the classification of small representations in [3] each V,| 4 can contain
+only trivial representations and 6-dimensional standard representations as
+irreducible constituents. In particular, looking at Vi|q ® V2|q one sees that
+the third fundamental representation of Sig(C) cannot occur as a constituent
+of V|x, and this contradicts our choice of the subgroup H. Oo
+
+Now recall that the Tannaka group G = G(dg) of a general ppav is in
+any case a subgroup of the symplectic or special orthogonal group G(g),
+hence to prove theorem 4.2 it will be enough to show that the connected
+component G° must be the full group G(g). Note that by lemma 4.13 this
+connected component is an irreducible subgroup of G(g) in the sense that
+for the standard representation V € Repc(G(g)), the restriction V|¢o is still
+irreducible. So we are in the situation of the following general lemma.

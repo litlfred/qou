@@ -1,15 +1,13 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2306.13098v2",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "edeb214d587bfca4222762a184a20dfb181ee0cb6e2d1c999bdc8e92f47efef4",
   "file": "2306.13098v2.pdf"
  },
  "provenance": {
-  "title": "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions",
-  "authors": "Niels G. Gresnigt 1\u22c6, Liam Gourlay 1 and Abhinav Varma1",
+  "title": "Three generations of colored fermions with S 3 family symmetry from Cayley-Dickson sedenions",
+  "authors": "Niels G. Gresnigt1\u22c6, Liam Gourlay1 and Abhinav Varma1",
   "arxiv": {
    "id": "2306.13098",
    "version": "2",
@@ -18,11 +16,31 @@
   },
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
+  "candidates": 1,
+  "by_kind": {
+   "recommendation": 1
+  },
   "formalization_candidates": 0
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "By complementing the present model sedenion model with a factor of $\\mathbb{H}$, it should be possible to include the Lorentz (spacetime) symmetries into the model.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-013-outlook.md",
+   "section_title": "Outlook",
+   "pages": "13-14",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
 }

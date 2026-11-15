@@ -4,13 +4,14 @@ doc_title: "DERIVED HIGHER HOCHSCHILD HOMOLOGY, TOPOLOGICAL CHIRAL HOMOLOGY AND 
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
-pages: 1-6
+pages: 2-6
 source_pdf: 1011.6483v3.pdf
 source_sha256: 7a425e51860c37a4
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.982
-latex_coverage_ratio: 0.977
+latex_coverage_ratio: 0.989
+doc_brief: "DERIVED HIGHER HOCHSCHILD HOMOLOGY, TOPOLOGICAL CHIRAL HOMOLOGY AND FACTORIZATION ALGEBRAS — We study the higher Hochschild chain functor, factorization alge- bras and their relationship with"
 ---
 In this paper, we study the higher Hochschild chain[^1] complex $CH^{{\scriptstyle\bullet}}_{X_\bullet}(A)$, functorially assigned to a simplicial set $X_\bullet$ (or a topological space), and a commutative differential graded algebra (CDGA) $A$, from an axiomatic point of view. Recently, motivated by topological quantum field theories, several concepts integrating (higher) categories of spaces or manifolds with those of algebras of different types have arisen. We also study the relationship between higher Hochschild chains, factorization algebras [@CG; @Co], topological chiral homology [@L-TFT; @L-VI] and the blob complex [@MW]. Higher Hochschild homology was first introduced by Pirashvili in [@P]. The higher Hochschild complexes (as well as other aforementioned concepts) are a generalization of the well-known and classical Hochschild complex. In fact, for the case of the standard simplicial set model $X_\bullet=S^1_\bullet$ for the circle, $CH^{{\scriptstyle\bullet}}_{S^1_\bullet}(A)$ reduces to the standard Hochschild complex $CH_{{\scriptstyle\bullet}}(A)= A^{\otimes {\scriptstyle\bullet}+1}$, see [@H; @H2].
 

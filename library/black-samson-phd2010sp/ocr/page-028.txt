@@ -1,0 +1,35 @@
+20
+
+The calcuation that Ja41 (aoy') = Ja(a) is completely analogous, replacing v by v~!. It remains to
+
+check that Jy = (v+ ve) Jy(a). Working in C(v) Ba, where we may take C(v)-linear combinations
+
+Peo ween) (am
+
+Upon closing the resulting are diagrams, we recover the skein relation for the Jones polynomial
+
+of braids,
+
+vw Ja(aoi8) — v7? Ja(aoz'B) = (u ~ v7!) Ta(ap) (11.34)
+
+This shows that Jy is a scalar multiple of Ta, and so we compare the value of each function on the
+
+unknot to complete the proof: Jg(1) =v +7! = (u+ wo) Ja(1). QO
+
+Perhaps the most important consequence of Theorem II.4.7 is that the Jones polynomial
+can be calculated as a state-sum. This observation, as well as the diagrammatic expansion of
+crossings (as in formulas II.29 and II.30) are due to Kauffman ([26]). By opening parentheses, a
+braid diagram with m crossings yields 2” terms in TLg. Starting from these states, Khovanov was
+able to construct a link homology theory, categorifying the Jones polynomial ([36]).
+
+Fix a braid a and an explicit diagram for it with exponent sum e. A state is a diagram
+of unlinked circles that results from smoothing each crossing in the closure of the braid. For each
+state s, let c = c(s) be the number of circles in the state, and let r = r(s) be the number of
+
+crossings that are smoothed horizontally to form a cap-cup pair in the diagram s. Then,
+
+Theorem II.4.8 (Kauffman),
+
+Jala) = Yo(-1)'v OF (yp vB) (11.35)
+
+8

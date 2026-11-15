@@ -1,0 +1,33 @@
+50. The divergence of A(V, 62).
+We begin as follows.
+Vy © A(V, b2)(y) = Jus Vy © (Pyx V(x) 2(x, y)) dx
+= Jus (Vy © Py VOX) bax y) dx + Sis Py VOX) © Vyb2(x, y) dx.
+The second integral on the RHS above is simply g(V, $2)(y), so we put that aside.
+
+Turning to the first integral and using formula (3) and the fact that <x, V(x)> = 0,
+we follow the pattern set in section 29 for $ , and get
+
+fis (Vy © PyV0x)) a(x, y) dx = Sus PyxV(x) © Vyy(a) dx
+
+a(V, py),
+
+where the new kernel function w satisfies
+wa) = [2 sinh a/ (1+ cosh @)] 62(a)
+= [2 sinh a / (1 + cosh a)] [(—1/4m) csch a + (1/4x) a /(1 + cosh a)]
+= (-1/2m)/(1+cosha) + (1/2m) a sinha /(1 + cosh ay 5
+
+and hence
+wa) = (-1/2n) a /(1 + cosh a).
+
+We have set the constant of integration to zero, so that w(a) > 0 asa > oa.
+Collecting information, we have
+Vy © A(V, $2)(y)
+
+= Juv (Vy # Py Vx) b2(x, y) dx + Jin PyxV(x) © Vybo(x, y) dx
+
+g(V, wy) + g(V, 2)(y),
+
+and hence
+Vy (Vy © ACV, $2)(y)) = GCV, Wy) + GLY, b2)(y).
+
+94

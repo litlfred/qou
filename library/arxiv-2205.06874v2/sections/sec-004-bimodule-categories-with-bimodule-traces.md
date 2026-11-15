@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2205.06874v2
-doc_title: "State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg"
+doc_title: "State sum models with defects based on spherical fusion categories"
 section_id: sec-004-bimodule-categories-with-bimodule-traces
 section_title: "Bimodule categories with bimodule traces"
 section_number: null
 pages: 9-11
 source_pdf: 2205.06874v2.pdf
 source_sha256: 9b41365160c17ab4
-doc_brief: "State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg — We define a"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.924
-latex_coverage_ratio: 0.811
+latex_coverage_ratio: 0.961
+doc_brief: "State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects."
 ---
 (Bi)module traces on (bi)module categories over fusion categories were first  introduced by Schaumann in \cite{G12} and investigated further in  \cite{G14}.
 We summarise (bi)module traces for finite semisimple (bi)module categories over pivotal fusion categories from \cite{G12,G14}. 

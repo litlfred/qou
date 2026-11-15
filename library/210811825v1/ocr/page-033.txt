@@ -1,0 +1,38 @@
+Figure 1.9: The Klein quartic
+
+5 4
+
+11 12
+
+Side associations:
+1—6,3-—8,5-10,7-12,9- 1411, 11-2,13-4
+
+L
+
+Theorem 1.30 (Hurwitz’s automorphism theorem, [36]) The number of automor-
+
+phisms (not including reflections) of a compact Riemann surface of genus g > 1 cannot
+eaceed 84(g — 1).
+
+We see that for genus 3, this bound is 168. The symmetry group of the Klein quartic
+is therefore maximal. Any surface that achieves this bound is referred to as a Hurwitz
+surface. A Hurwitz surface does not occur for every single genus g > 1; the next Hur-
+witz surface lis |the Macbeath surface of genus 7, which has 504 orientation reserving
+isometries [55]. The group is isomorphic to the simple group PSL2(Zg) [55] and is further
+investigated in [83]. This surface is also khown as Fricke’s surface, as Fricke investigated
+the corresponding isometry group in [25]. The fundamental polygon is shown in [25],
+along with the relevant side associations.
+
+The Klein quartic, as its name suggests, can be obtained as the locus of a projective
+quartic curve, namely
+
+ey t+yrz+ 22 =0. (1.7)
+
+The study of this equation accounts for much of the interest in Klein’s curve in number
+theory. Stating the key results would involve introducing many terms that are irrelevant
+to the rest of this work - the interested reader can find a thorough exposition in [23]
+instead.
+
+The Fermat quartic is a similar surface that also comes from a projective equation; in
+
+23

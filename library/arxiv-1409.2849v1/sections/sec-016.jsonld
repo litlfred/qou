@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1409.2849v1/sections/sec-016",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Joint cumulants of the spins",
+  "pageStart": 32,
+  "pageEnd": 41,
+  "contains": [
+    "library/arxiv-1409.2849v1/blocks/prose-sec-016",
+    "library/arxiv-1409.2849v1/blocks/recommendation-sec-016-01",
+    "library/arxiv-1409.2849v1/blocks/recommendation-sec-016-02",
+    "library/arxiv-1409.2849v1/blocks/recommendation-sec-016-03",
+    "library/arxiv-1409.2849v1/blocks/recommendation-sec-016-04",
+    "library/arxiv-1409.2849v1/blocks/recommendation-sec-016-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1409.2849v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1409.2849v1",
+  "provenance": "ingested"
+}

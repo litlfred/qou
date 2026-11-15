@@ -1,0 +1,211 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-9807106v2",
+ "source": {
+  "structure_sha256": "e3cd089e3df5d71fe07d4530c6ed45bc90f8d23175714155ac39e9a297268c66",
+  "file": "9807106v2.pdf"
+ },
+ "provenance": {
+  "title": "An Extension of the Character Ring of sl(3) and Its Quantisation P. Furlan\u2217,\u2020",
+  "authors": "A.Ch. Ganchev\u2217\u2217",
+  "arxiv": {
+   "id": "math/9807106",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "26 Nov 1998"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 12,
+  "by_kind": {
+   "recommendation": 12
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In this and the following two sections we shall assume that the level k is generic, k\u0338 \u2208Q, which in particular ensures that if y \u00b7 k\u039b0 = k\u039b0 then y \u22611.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-2-preliminaries.md",
+   "section_title": "Preliminaries.",
+   "pages": "5-10",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall refer to these groups as (horizontal) KW (Weyl) groups.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-2-preliminaries.md",
+   "section_title": "Preliminaries.",
+   "pages": "5-10",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The uniqueness of the above splitting proves also the disjointness. \u25a1 We shall refer to \u02dc W(+) (or, equivalently, P+) as a \u2018dominant chamber\u2019.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-2-preliminaries.md",
+   "section_title": "Preliminaries.",
+   "pages": "5-10",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Now we shall introduce another class of \u2018Verma modules\u2019 Vy (of yet unknown \ufb01nite dimensional algebra) described through its supports, i.e., weights and their multiplicities.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-3-characters.md",
+   "section_title": "Characters.",
+   "pages": "10-17",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Motivated by the intertwining property (2.10) we shall call such a module reducible if its \u03b9 image is a reducible Verma module.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-3-characters.md",
+   "section_title": "Characters.",
+   "pages": "10-17",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Furthermore in full analogy with the representation theory of g we shall introduce \u2018\ufb01nite dimensional modules\u2019 obtained factorising maximal \u2018Verma submodules\u2019 of reducible \u2018Verma modules\u2019 by an analog of the BGG resolution in which the role of W is replaced by the action of the KW group, equivalent according to (2.3) to the right action of W on \u02dcW.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-3-characters.md",
+   "section_title": "Characters.",
+   "pages": "10-17",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "(We shall use the same notation for both interpretations denoting as before sometimes the a\ufb03ne 11 translations by formal exponentials.)1 Unlike the formal exponentials these generating elements do not commute any more (rather satisfy the multiplication rules of \u02dcW in (2.2), but nevertheless the \u2018\ufb01nite dimensional module\u2019 characters we obtain, do commute and multiply according to the rules conjectured in our previous paper.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-3-characters.md",
+   "section_title": "Characters.",
+   "pages": "10-17",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall now prove that this formula indeed holds for the multiplication of the characters constructed in the previous section.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-004-4-character-ring-and-its-structure-constants.md",
+   "section_title": "Character ring and its structure constants",
+   "pages": "17-25",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "2 Strictly speaking the summation over W in the \ufb01rst line of (4.7), which is rather a summation over orbits, should contain an additional factor for weights \u00b5 with nontrivial stationary subgroup of W; the same remark applies to the summation in the last line before (4.5).",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-004-4-character-ring-and-its-structure-constants.md",
+   "section_title": "Character ring and its structure constants",
+   "pages": "17-25",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In what follows we shall also need \u03c7(h) \u03bb (\u00b5) for \u00b5 belonging to some of the shifted hyperplanes H(lh) \u03b1 := {\u00b5 \u2208\u00afh\u2217| \u27e8\u00b5 + \u03c1 , \u03b1\u27e9= l h}, \u03b1 \u2208\u2206+ , l \u2208Z.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-6-quantised-q-characters.md",
+   "section_title": "Quantised \u2018q\u2019-characters",
+   "pages": "25-32",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "(6.3) This set, which can be also looked as P p\u22121 + \u222a{w\u03b8(P p+1 ++ ) + p \u03b8} , contains p2 weights, |Ep| \u2261|P+,p| , and we shall argue below that it is the analog for k = 3/p \u22123 of the integrable \u2018dual\u2019 set {\u00b5 \u2208P h\u22123 + }, see \ufb01gs.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-6-quantised-q-characters.md",
+   "section_title": "Quantised \u2018q\u2019-characters",
+   "pages": "25-32",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "To simplify notation we shall omit the explicit dependence on \u00b5 denoting the overall phase in (6.19) by \u03b5y.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-6-quantised-q-characters.md",
+   "section_title": "Quantised \u2018q\u2019-characters",
+   "pages": "25-32",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

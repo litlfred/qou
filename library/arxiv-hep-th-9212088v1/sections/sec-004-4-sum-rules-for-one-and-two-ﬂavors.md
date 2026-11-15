@@ -8,6 +8,7 @@ pages: 9-12
 source_pdf: 9212088v1.pdf
 source_sha256: ecb2c02ec6fe11bd
 toc_source: inferred
+doc_brief: "arXiv:hep-th/9212088v1 14 Dec 1992 — We construct a random matrix model that, in the large N limit, reduces to the low energy limit of the QCD partition function put forward by Leutwyler and Smilga."
 ---
 Sum rules for moments of the inverse squares of the eigenvalues of the Dirac operator
 can be derived for an arbitrary number of ﬂavors and for any value of the total topological
@@ -49,7 +50,6 @@ n
 λ2n
 ) >Z(m=0),
 (4.4)
-9
 where the average is with respect to the partition function Z with m = 0, which also
 includes the weight factor
 Q ′λ2
@@ -124,7 +124,6 @@ n
 λ2n
 )2 >ν=0 .
 (4.11)
-10
 The expansion of both sides of this equation in powers of mN yields sum rules for moments
 of the inverse eigenvalues of the Dirac operator. The ﬁrst two sum rules are
 <
@@ -205,7 +204,6 @@ dx < ρS(x)|mN ﬁxed >ν=0
 mN
 x2 + m2N2,
 (4.16)
-11
 where x0n is the n’th zero of the Bessel function J0. One is tempted to invert this equality
 in order to obtain an analytical answer for the microscopic spectral density. Since ρS
 depends on mN there is no unique solution, but a trivial solution can be written down

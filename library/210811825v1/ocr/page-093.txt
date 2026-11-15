@@ -1,0 +1,35 @@
+2.2
+
+2.0
+
+0.5 1.0 15
+
+Figure 3.19: Comparing the nodal line of the test function w, as a function of t (blue curve), to the
+
+boundary of (2 (red, lilac, green curves)
+
+Now on Ms; we can construct a function ws that is equal to w on Ms, and cut it off
+smoothly in the region M \ Ms by multiplying by a cut off function x € C§°(M), such
+that ws is zero on OM. On Msg, ws is strletly- positive ai sub-harmonic, so there is no
+Dirichlet eigenvalue in {0, \] on Ms by Corollary 3.17. Then we can create a sequence of
+domains M; getting progressively closer to M such that the first eigenvalues of M5 will
+converge to the first eigenvalue of M as 6 goes to zero. In particular, we use the sequence
+of corresponding functions wsx in the Rayleigh quotient to bound the first Dirichlet
+eigenvalue of M from above (recall that by domain monotonicity, \1(1Z) < Ai(Ms;)). The
+gradient of wsy only differs from that of w in an increasingly smaller area, and we can
+make its contribution to the Rayleigh quotient arbitrarily small (that is, such that there
+is no Dirichlet eigenvalue on M in the interval [0, 4+ €] for € > 0). We obtain that there
+is no eigenvalue in [0, A). oO
+
+Now for our annulus 2, numerical experiments show that if we take a certain com-
+
+first three odd eigenfunctions of the cylinder with core geodesic a (see
+
+alue A = 5, we can find a test function that satisfies the condi-
+tions of Corollary on 2. Note that along a, such functions are zero by construction
+but the test function we create will be positive everywhere else on 2. Thus we show that
+there is no Dirichlet eigenvalue in the interval (0, 5). In particular, the eigenfunctions are
+
+o(p) =sinh(p)2F1 (; +4 va 5 VA : +4 va 5 MA. S - a) ;
+
+83

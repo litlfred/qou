@@ -1,0 +1,2775 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-math-0701051v4",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p017-1",
+   "page": 17,
+   "mark": "1",
+   "text": "+···+k2",
+   "marks": [
+    {
+     "page": 16,
+     "context": "\u0013o(σ"
+    },
+    {
+     "page": 16,
+     "context": "σ"
+    },
+    {
+     "page": 16,
+     "context": "k"
+    },
+    {
+     "page": 16,
+     "context": "(−1)|σ"
+    },
+    {
+     "page": 16,
+     "context": "(−1)|σ1|Nλ(σ"
+    },
+    {
+     "page": 16,
+     "context": "σ"
+    },
+    {
+     "page": 16,
+     "context": "|σ"
+    },
+    {
+     "page": 17,
+     "context": "1| = 1. Then orbits(σ"
+    },
+    {
+     "page": 17,
+     "context": "Nλ(σ"
+    },
+    {
+     "page": 17,
+     "context": "Nλ(σ1, σ2) ≤A|C(σ"
+    },
+    {
+     "page": 17,
+     "context": "Nλ(σ"
+    }
+   ],
+   "block": "library/arxiv-math-0701051v4/blocks/prose-sec-020"
+  },
+  {
+   "id": "fn-p017-2",
+   "page": 17,
+   "mark": "r",
+   "text": ")n",
+   "marks": [
+    {
+     "page": 16,
+     "context": "Al−rn"
+    },
+    {
+     "page": 16,
+     "context": "Al−rn"
+    },
+    {
+     "page": 16,
+     "context": "≤4lAl−rn"
+    },
+    {
+     "page": 16,
+     "context": "≤4lAl−rn"
+    },
+    {
+     "page": 16,
+     "context": "|Σλ(π)| ≤4lAl−rn"
+    },
+    {
+     "page": 16,
+     "context": "A≤(4e)lAl−rn"
+    },
+    {
+     "page": 16,
+     "context": "k1, . . . , k"
+    },
+    {
+     "page": 17,
+     "context": "≤4lAl−rn"
+    }
+   ],
+   "block": "library/arxiv-math-0701051v4/blocks/prose-sec-020"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "ere |π| is the minimal number of factors needed to write π∈S"
+  },
+  {
+   "page": 1,
+   "mark": "l",
+   "context": "a permutation π∈S"
+  },
+  {
+   "page": 1,
+   "mark": "l",
+   "context": "where (n)"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "the permutation π∈S"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "< O(n"
+  },
+  {
+   "page": 3,
+   "mark": "r",
+   "context": "gives better estimates than (2) if"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "n,"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "λwiththesetofitsboxeswhichweregardasasubsetofN"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "{1, 2, . . . , λ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "{1, 2, . . . , λi} × {i} = {(p, q) ∈N"
+  },
+  {
+   "page": 3,
+   "mark": "q",
+   "context": "{1, 2, . . . , λi} × {i} = {(p, q) ∈N2: 1 ≤p ≤λ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "permutations σ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "permutations σ1, σ"
+  },
+  {
+   "page": 3,
+   "mark": "l",
+   "context": "permutations σ1, σ2∈S"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "ns σ1, σ2∈Slwe shall consider colorings h of the cycles of σ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "rmally, each such coloring can be viewed as a function h:C(σ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "C(σ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "λ if for all c"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "λ if for all c1∈C(σ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "λ if for all c1∈C(σ1) and c"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "λ if for all c1∈C(σ1) and c2∈C(σ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "λ if for all c1∈C(σ1) and c2∈C(σ2) if c"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "λ if for all c1∈C(σ1) and c2∈C(σ2) if c1∩c"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "λ if for all c1∈C(σ1) and c2∈C(σ2) if c1∩c2̸= ∅then (h(c"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "f for all c1∈C(σ1) and c2∈C(σ2) if c1∩c2̸= ∅then (h(c1), h(c"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "0 < h(c"
+  },
+  {
+   "page": 3,
+   "mark": "h",
+   "context": "0 < h(c1) ≤λ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "0 < h(c1) ≤λh(c"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "holds true for all c"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "holds true for all c1∈C(σ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "holds true for all c1∈C(σ1), c"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "holds true for all c1∈C(σ1), c2∈C(σ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "holds true for all c1∈C(σ1), c2∈C(σ2) such that c"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "holds true for all c1∈C(σ1), c2∈C(σ2) such that c1 ∩c"
+  },
+  {
+   "page": 3,
+   "mark": "l",
+   "context": "Young diagram λ and a permutation π∈S"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "(−1)|σ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "(−1)|σ1|Nλ(σ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "(−1)|σ1|Nλ(σ1, σ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "σ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "σ1,σ"
+  },
+  {
+   "page": 3,
+   "mark": "l",
+   "context": "σ1,σ2∈S"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "Nλ(σ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "Nλ(σ1, σ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "Nλ(σ1, σ2) = #{h : h is a coloring of the cycles of σ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "Nλ(σ1, σ2) = #{h : h is a coloring of the cycles of σ1 and σ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "a bipartite graphwith thesetof verticesC(σ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "a bipartite graphwith thesetof verticesC(σ1) ⊔C(σ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "betweenverticesc"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "betweenverticesc1∈C(σ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "betweenverticesc1∈C(σ1)andc"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "betweenverticesc1∈C(σ1)andc2∈C(σ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "betweenverticesc1∈C(σ1)andc2∈C(σ2)ifandonlyifc"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "betweenverticesc1∈C(σ1)andc2∈C(σ2)ifandonlyifc1∩c"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(λi)"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "i)"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "(λ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(λi)"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "i)"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "mutes the elements {1, . . . , n} and the symmetric group˜S"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Ifσ∈˜S"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "and r(σ(□1))>r(σ(□2)).If σ∈˜S"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Theorem 4.Let a Young diagram λ having n boxes and π∈S"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Letˆπ∈˜S"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Pλ={σ∈˜S"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Qλ={σ∈˜S"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "σ∈C[ ˜S"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "(−1)|σ|σ∈C[ ˜S"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": ".It follows that for ˜π∈˜S"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "µ∈˜S"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "(−1)|˜σ"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "(−1)|˜σ1|[µ =˜π−1µ˜σ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "(−1)|˜σ1|[µ =˜π−1µ˜σ1˜σ"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "µ∈˜S"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "˜σ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "˜σ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "(−1)|σ"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "µ∈˜S"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "For permutations σ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "For permutations σ1, σ"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "For permutations σ1, σ2∈S"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "For permutations σ1, σ2∈Sl we deﬁne˜Nλ(σ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "For permutations σ1, σ2∈Sl we deﬁne˜Nλ(σ1, σ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "that r ◦fis constant on each cycle of σ"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "tation π∈S"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "(−1)|σ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "(−1)|σ1|˜Nλ(σ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "(−1)|σ1|˜Nλ(σ1, σ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "σ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "σ1,σ"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "σ1,σ2∈S"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Proof.Let us consider the case l= n.Let˜π∈˜S"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "the same cycle structure as π∈S"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Noticethatthemultlisetofthevaluesofµ−1˜πµ(overµ∈˜S"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "σ"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "σi= f−1◦˜σ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "σi= f−1◦˜σi ◦f; then condition µ =˜π−1µ˜σ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "σi= f−1◦˜σi ◦f; then condition µ =˜π−1µ˜σ1˜σ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "◦˜σi ◦f; then condition µ =˜π−1µ˜σ1˜σ2 is equivalent to π= σ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "σi ◦f; then condition µ =˜π−1µ˜σ1˜σ2 is equivalent to π= σ1σ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "It is easy to check that ˜σ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "of σ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "of σ1 and˜σ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": " and˜σ2∈Pλ if and only if r ◦fis constant on each cycle of σ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "(−1)|σ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "(−1)|σ1|˜Nλ(σ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "(−1)|σ1|˜Nλ(σ1, σ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "σ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "σ1,σ"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "σ1,σ2∈S"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "For a permutation σ∈S"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "π=σ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "π=σ1σ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "π=σ1σ2hasanon-zerocontributionto(9)onlyifsupp σ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "π=σ1σ2hasanon-zerocontributionto(9)onlyifsupp σ1, supp σ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "supp π.Indeed, if m∈supp σ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "supp π.Indeed, if m∈supp σ1 \\ supp π=supp σ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "r(f(σ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "r(f(σ2(m)))(inthiscaser◦fisnotconstantonthecyclesofσ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "c(f(m))̸=c(f(σ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "c(f(m))̸=c(f(σ2(m)))(inthiscasec(f(σ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "c(f(m))̸=c(f(σ2(m)))(inthiscasec(f(σ1(σ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "c(f(m))̸=c(f(σ2(m)))(inthiscasec(f(σ1(σ2(m))))̸=c(f(σ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "hence c ◦fis not constant on the cycles of σ"
+  },
+  {
+   "page": 7,
+   "mark": "l",
+   "context": "It follows that if π∈S"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "tions π= σ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "tions π= σ1σ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "tions π= σ1σ2, where σ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "tions π= σ1σ2, where σ1, σ"
+  },
+  {
+   "page": 7,
+   "mark": "l",
+   "context": "tions π= σ1σ2, where σ1, σ2∈S"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "Sn(σ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Sn(σ1, σ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "Sl(σ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Sl(σ1, σ"
+  },
+  {
+   "page": 7,
+   "mark": "l",
+   "context": "S"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "SlandthattheanalogousrelationholdsbetweenΣλ(π)forπ∈S"
+  },
+  {
+   "page": 7,
+   "mark": "l",
+   "context": "π∈S"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "2.2.Forgetting injectivity.For a pair of permutations σ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "2.2.Forgetting injectivity.For a pair of permutations σ1, σ"
+  },
+  {
+   "page": 7,
+   "mark": "l",
+   "context": "2.Forgetting injectivity.For a pair of permutations σ1, σ2∈S"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "ﬁneˆNλ(σ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "ﬁneˆNλ(σ1, σ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "cycle of σ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "cycle of σ2 and c ◦fis constant on each cycle of σ"
+  },
+  {
+   "page": 7,
+   "mark": "l",
+   "context": "Lemma 6.For any Young diagram λ and a permutation π∈S"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "(−1)|σ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "(−1)|σ1|˜Nλ(σ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "(−1)|σ1|˜Nλ(σ1, σ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "(−1)|σ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "(−1)|σ1|ˆNλ(σ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "(−1)|σ1|ˆNλ(σ1, σ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "σ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "σ1,σ"
+  },
+  {
+   "page": 7,
+   "mark": "l",
+   "context": "σ1,σ2∈S"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "σ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "σ1,σ"
+  },
+  {
+   "page": 7,
+   "mark": "l",
+   "context": "σ1,σ2∈S"
+  },
+  {
+   "page": 7,
+   "mark": "l",
+   "context": "followsthatthereexistsatranspositionµ∈S"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "(−1)|σ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "σ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "σ1,σ"
+  },
+  {
+   "page": 7,
+   "mark": "l",
+   "context": "σ1,σ2∈S"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "c ◦fis constant on each cycle of σ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "σ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "σ2.Map(σ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "σ2.Map(σ1, σ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "1=σ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "2=µσ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "Since (−1)|σ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "(−1)|σ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "(−1)|σ1|ˆNλ(σ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "(−1)|σ1|ˆNλ(σ1, σ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "σ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "σ1,σ"
+  },
+  {
+   "page": 7,
+   "mark": "l",
+   "context": "σ1,σ2∈S"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "jectionisdeﬁnedasfollows:ifm∈{1, . . . , l}fulﬁllsm∈c"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "jectionisdeﬁnedasfollows:ifm∈{1, . . . , l}fulﬁllsm∈c1∩c"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "c"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "ci∈C(σ"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "ci∈C(σi) we set f(m) = (h(c"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "ci∈C(σi) we set f(m) = (h(c1), h(c"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "2.3.Generalization to Young diagrams on R"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "diagramwithasubsetofR"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "[0, λ"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "numberingofthecyclesinC=C(σ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "numberingofthecyclesinC=C(σ1)⊔C(σ"
+  },
+  {
+   "page": 8,
+   "mark": "h",
+   "context": "+:"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "Nλ(σ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Nλ(σ1, σ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Noticethatinthecasewhenλ⊂R"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "+compatiblewithλis"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "for any bounded set λ∈R"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "gram and N≥r(λ), c(λ). We consider a random matrix Tλ= (tij)"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "E(t"
+  },
+  {
+   "page": 9,
+   "mark": "l",
+   "context": "Theorem 7.With the deﬁnitions above and π∈S"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "λ)"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "λ)k"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "λ)"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "λ)k"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "σ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "σ1,σ"
+  },
+  {
+   "page": 9,
+   "mark": "l",
+   "context": "σ1,σ2∈S"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "λ)"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "λ)k"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "λ)"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "λ)k"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "ti"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "ti"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "1. . . t"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "1. . . ti"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "ti"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "1"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "1j"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "2"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "2j"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "k1"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "k1j"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "1"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "1j"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "i"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "1,j"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "1,...,i"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "k1,j"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "ti"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "ti"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "1. . . t"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "1. . . ti"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "ti"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "1"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "1j"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "2"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "2j"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "kr"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "krj"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "1"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "1j"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "i"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "1,j"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "1,...,i"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "kr,j"
+  },
+  {
+   "page": 9,
+   "mark": "l",
+   "context": "be identiﬁed with a permutation σ∈S"
+  },
+  {
+   "page": 9,
+   "mark": "l",
+   "context": "σ∈S"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "[iσ(m)= iπ(m)] [jσ(m)= j"
+  },
+  {
+   "page": 9,
+   "mark": "l",
+   "context": "σ∈S"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "[iσ(m)= iπ(m)] [jσ(m)= j"
+  },
+  {
+   "page": 9,
+   "mark": "l",
+   "context": "σ∈S"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "2,σ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "asumoverallσ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "asumoverallσ1, σ"
+  },
+  {
+   "page": 9,
+   "mark": "l",
+   "context": "asumoverallσ1, σ2∈S"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "asumoverallσ1, σ2∈Slsuchthatσ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "asumoverallσ1, σ2∈Slsuchthatσ1σ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "asumoverallσ1, σ2∈Slsuchthatσ1σ2=π.Ifasequencei"
+  },
+  {
+   "page": 9,
+   "mark": "l",
+   "context": "asumoverallσ1, σ2∈Slsuchthatσ1σ2=π.Ifasequencei1, . . . , i"
+  },
+  {
+   "page": 10,
+   "mark": "l",
+   "context": "lary 8.Let λ be a Young diagram.Then for any permutation π∈S"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "λ)"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "λ)k"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "λ)"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "λ)k"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "m:= R"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "(−1)|σ"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "(−1)|σ1|Nλ(σ"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(−1)|σ1|Nλ(σ1, σ"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "σ"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "σ1,σ"
+  },
+  {
+   "page": 10,
+   "mark": "l",
+   "context": "σ1,σ2∈S"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "|σ"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "|σ1|+|σ"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "f(cλ) = c"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "m:"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "m: m ∈{2,"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "l+1is the homogeneous part of Σλ(1,"
+  },
+  {
+   "page": 11,
+   "mark": "l",
+   "context": "+1is the homogeneous part of Σλ(1, 2, . . . , l) with degree"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "on the right-hand side is homogeneous of degree |C(σ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": " the right-hand side is homogeneous of degree |C(σ1)| + |C(σ"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "0"
+  },
+  {
+   "page": 11,
+   "mark": "l",
+   "context": "(T∗T)"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "freecumulantsthereforeNλ(σ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "freecumulantsthereforeNλ(σ1, σ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "kσ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "(−1)|σ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "(−1)|σ1|Nλ(σ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "(−1)|σ1|Nλ(σ1, σ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "kσ"
+  },
+  {
+   "page": 11,
+   "mark": "l",
+   "context": "(T∗T)"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "σ∈NC"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "graph C(σ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "graph C(σ1) ⊔C(σ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "graph C(σ1) ⊔C(σ2) with an edge between c"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "graph C(σ1) ⊔C(σ2) with an edge between c1∈C(σ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "graph C(σ1) ⊔C(σ2) with an edge between c1∈C(σ1) and c"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "graph C(σ1) ⊔C(σ2) with an edge between c1∈C(σ1) and c2∈C(σ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "c"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "c1 ∩c"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "ForabipartitegraphG=C"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "ForabipartitegraphG=C1⊔C"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "ofcoloringshoftheverticesofC"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "ofcoloringshoftheverticesofC1⊔C"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "extensionoftheoldone,i.e.werequirethatifc"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "extensionoftheoldone,i.e.werequirethatifc1∈C"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "extensionoftheoldone,i.e.werequirethatifc1∈C1andc"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "extensionoftheoldone,i.e.werequirethatifc1∈C1andc2∈C"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "We denote by Gp,q a full bipartite graph for which |C"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "ote by Gp,q a full bipartite graph for which |C1| = p and |C"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "A"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "{G"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "{G1,"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "{G1,1, Gk,"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "{G1,1, Gk,1, G"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "λiA"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "λiAk−1= nA"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "λ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "Proposition12.Supposethatr(λ), c(λ)≤A≤nandσ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "Proposition12.Supposethatr(λ), c(λ)≤A≤nandσ1, σ"
+  },
+  {
+   "page": 13,
+   "mark": "l",
+   "context": "Proposition12.Supposethatr(λ), c(λ)≤A≤nandσ1, σ2∈S"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "Nλ(σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "Nλ(σ1, σ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "Nλ(σ1, σ2) ≤A|C(σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "Nλ(σ1, σ2) ≤A|C(σ1)|+|C(σ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "\u0011orbits(σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "\u0011orbits(σ1,σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "A"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "\u0013o(σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "\u0013o(σ1,σ"
+  },
+  {
+   "page": 13,
+   "mark": "l",
+   "context": "≤A"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "where orbits(σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "where orbits(σ1, σ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "its(σ1, σ2) denotes the number of orbits in the action of ⟨σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "σ1, σ2) denotes the number of orbits in the action of ⟨σ1, σ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "o(σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "o(σ1, σ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "o(σ1, σ2) = l −|C(σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "o(σ1, σ2) = l −|C(σ1)| −|C(σ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "o(σ1, σ2) = l −|C(σ1)| −|C(σ2)| + orbits(σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "o(σ1, σ2) = l −|C(σ1)| −|C(σ2)| + orbits(σ1, σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": " ﬁrst inequality is a simple corollary from Lemma 11 since A"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "\u0011|C(π)|−orbits(σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "\u0011|C(π)|−orbits(σ1,σ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "Lemma13.Letπ, σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "Lemma13.Letπ, σ1, σ"
+  },
+  {
+   "page": 13,
+   "mark": "l",
+   "context": "Lemma13.Letπ, σ1, σ2∈S"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "Lemma13.Letπ, σ1, σ2∈Slbesuchthatπ=σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "Lemma13.Letπ, σ1, σ2∈Slbesuchthatπ=σ1σ"
+  },
+  {
+   "page": 13,
+   "mark": "l",
+   "context": "2∈S"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "2|=|σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2|=|σ1|+|σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2|+|σ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "1| = o(σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "1| = o(σ1, σ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "1=σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2= σ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "1=σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2=(a, b)σ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "1|=|σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2|=|σ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "under the action of the subgroups ⟨σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "under the action of the subgroups ⟨σ1, σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2| + |σ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2| −|σ"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "2| −|σ2| is equal to"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "2| −|σ2| is equal to k(where"
+  },
+  {
+   "page": 14,
+   "mark": "l",
+   "context": "Lemma 14.For any integers l≥1 and i ≥0 and for any π∈S"
+  },
+  {
+   "page": 14,
+   "mark": "l",
+   "context": "#{σ∈S"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "#{σ∈Sl: |σ| = i} ≤l"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "#{σ∈Sl: |σ| = i} ≤l2"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "x"
+  },
+  {
+   "page": 14,
+   "mark": "l",
+   "context": "σ∈S"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "Each of the coefﬁcients of x"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "by the corresponding coefﬁcient of e"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "by the corresponding coefﬁcient of exe"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "by the corresponding coefﬁcient of exe2"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "by the corresponding coefﬁcient of exe2x· · · e(l−1)"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "numberofminimalfactorisations σ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "numberofminimalfactorisations σ1σ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "numberofminimalfactorisations σ1σ2=π,|σ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "numberofminimalfactorisations σ1σ2=π,|σ1| + |σ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(C0k)"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "(C0k)2"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "< 4"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "\u00002"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "consecutive edges of G′; it follows that we have (at most) 3"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "edgeswhichaccountsforatmost2"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "edgeswhichaccountsforatmost22"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "to see that this is equivalent to specifying a partition l=a"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "his is equivalent to specifying a partition l=a1 + · · · + a"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "is is equivalent to specifying a partition l=a1 + · · · + a2"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "where a"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "where a1, . . . , a"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "where a1, . . . , a2"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "\u00012"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "\u00012"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "2 · 3"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "2 · 3s−1· 2"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "2 · 3s−1· 22"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "2 · 3s−1· 22s−1· 4"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Proof of Theorem 1.Letk"
+  },
+  {
+   "page": 15,
+   "mark": "r",
+   "context": "Proof of Theorem 1.Letk1, . . . , k"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "cycles in the cycle decomposition of π∈S"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "les in the cycle decomposition of π∈Sn.It follows that l:= k"
+  },
+  {
+   "page": 15,
+   "mark": "r",
+   "context": "k"
+  },
+  {
+   "page": 15,
+   "mark": "l",
+   "context": "kr=| supp π|andinthefollowing wewill regardπasanelementof S"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "2the permutations σ"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "2| + |σ"
+  },
+  {
+   "page": 15,
+   "mark": "l",
+   "context": "hence, this product is bounded from above by 4"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "\u0013o(σ1,σ"
+  },
+  {
+   "page": 16,
+   "mark": "l",
+   "context": "A"
+  },
+  {
+   "page": 16,
+   "mark": "l",
+   "context": "≤4"
+  },
+  {
+   "page": 16,
+   "mark": "l",
+   "context": "A"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "σ1,σ"
+  },
+  {
+   "page": 16,
+   "mark": "l",
+   "context": "σ1,σ2∈S"
+  },
+  {
+   "page": 16,
+   "mark": "l",
+   "context": "2∈S"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "l"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "l2"
+  },
+  {
+   "page": 16,
+   "mark": "l",
+   "context": "≤4"
+  },
+  {
+   "page": 16,
+   "mark": "l",
+   "context": "≤4lA"
+  },
+  {
+   "page": 16,
+   "mark": "l",
+   "context": "≤4"
+  },
+  {
+   "page": 16,
+   "mark": "l",
+   "context": "≤4lA"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "A"
+  },
+  {
+   "page": 16,
+   "mark": "l",
+   "context": "1∈S"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "l"
+  },
+  {
+   "page": 16,
+   "mark": "l",
+   "context": "|Σλ(π)| ≤4"
+  },
+  {
+   "page": 16,
+   "mark": "l",
+   "context": "|Σλ(π)| ≤4lA"
+  },
+  {
+   "page": 16,
+   "mark": "l",
+   "context": "A≤(4e)"
+  },
+  {
+   "page": 16,
+   "mark": "l",
+   "context": "A≤(4e)lA"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "\u0001l, we obtain |χλ(π)| ≤(4e"
+  },
+  {
+   "page": 16,
+   "mark": "l",
+   "context": "\u0001l, we obtain |χλ(π)| ≤(4e2)"
+  },
+  {
+   "page": 16,
+   "mark": "l",
+   "context": "\u0001l, we obtain |χλ(π)| ≤(4e2)l(A/n)"
+  },
+  {
+   "page": 16,
+   "mark": "l",
+   "context": "After dividing by (n)"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "anyYoungdiagramλofsizenandanypermutationπ∈S"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "ε"
+  },
+  {
+   "page": 16,
+   "mark": "l",
+   "context": "Proof.We can assume that π∈S"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(−1)|σ1|Nλ(σ1, σ"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "σ1,σ"
+  },
+  {
+   "page": 16,
+   "mark": "l",
+   "context": "σ1,σ2∈S"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "|σ1|+|σ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "1| = 1. Then orbits(σ1, σ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "Nλ(σ1, σ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "Nλ(σ1, σ2) ≤A|C(σ1)|+|C(σ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "A"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "Nλ(σ1, σ"
+  },
+  {
+   "page": 17,
+   "mark": "l",
+   "context": "Nλ(σ1, σ2) ≤A"
+  },
+  {
+   "page": 17,
+   "mark": "l",
+   "context": "≤4"
+  },
+  {
+   "page": 17,
+   "mark": "l",
+   "context": "≤4lA"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "l"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "l"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "l2"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "A"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "and the inequality exp(z) −1 −z≤z"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "α"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "αk"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "(−β"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "(−βj)"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "(−βj)k"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "where αj=λ"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "n,β"
+  },
+  {
+   "page": 17,
+   "mark": "l",
+   "context": "χλ(π) =n"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "α"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "αk"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "(−β"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "(−βj)"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "(−βj)k"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "(nαj)"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "(nβj)"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "(−1)|σ"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "(−1)|σ1|Nλ(σ"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "(−1)|σ1|Nλ(σ1, σ"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "n"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "σ"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "σ1,σ"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "σ1,σ2∈S"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "|σ"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "|σ1|+|σ"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "α"
+  },
+  {
+   "page": 18,
+   "mark": "j",
+   "context": "j−(−β"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "j−(−βj)"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "n"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "(C0k)"
+  },
+  {
+   "page": 18,
+   "mark": "s",
+   "context": "(C0k)2"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "≤2C"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "0"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "0k"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "0k2"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "= 2C"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "A"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "A"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "where the last inequality holds true if"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "where the last inequality holds true if2C"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "0"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "0k"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "0k2"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "=2C"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "A"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "For the general case, we put ǫi=k"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "A"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "i"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "\u0011k"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "n"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "nk"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "\u0011k"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "α"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "αk"
+  },
+  {
+   "page": 18,
+   "mark": "j",
+   "context": "j−(−β"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "j−(−βj)"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "j−(−βj)k"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "Let us ﬁx a >2.Clearly, |Y"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "a<1 hence (23) shows that |X"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "X"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "X1 · · ·X"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "X1 · · ·Xr −Y"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "X1 · · ·Xr −Y1 · · · Y"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "X1 · · ·Xr −Y1 · · · Yr= X"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "X1 · · ·Xr −Y1 · · · Yr= X1 · · · X"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "X1 · · ·Xr −Y1 · · · Yr= X1 · · · Xr−1(X"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "X1 · · ·Xr −Y1 · · · Yr= X1 · · · Xr−1(Xr −Y"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "X"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "X1 · · · X"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "X1 · · · Xr−2(X"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "X1 · · · Xr−2(Xr−1 −Y"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "X1 · · · Xr−2(Xr−1 −Yr−1)Y"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "X1 · · · Xr−2(Xr−1 −Yr−1)Yr + · · · + (X"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "X1 · · · Xr−2(Xr−1 −Yr−1)Yr + · · · + (X1 −Y"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "X1 · · · Xr−2(Xr−1 −Yr−1)Yr + · · · + (X1 −Y1)Y"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "X1 · · · Xr−2(Xr−1 −Yr−1)Yr + · · · + (X1 −Y1)Y2 · · · Y"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "Q"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "α"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "αk"
+  },
+  {
+   "page": 18,
+   "mark": "j",
+   "context": "(−β"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "(−βj)"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "(−βj)k"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "a"
+  },
+  {
+   "page": 18,
+   "mark": "l",
+   "context": "n"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "2C"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "2C0(ǫ"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "2C0(ǫ1 + · · · + ǫ"
+  }
+ ]
+}

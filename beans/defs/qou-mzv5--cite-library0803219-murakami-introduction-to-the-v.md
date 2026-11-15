@@ -1,13 +1,13 @@
 ---
 # qou-mzv5
 title: 'CITE: library/0803219 (Murakami, Introduction to the Volume Conjecture) is held but unregistered — M — qou-ic22 has no key to cite'
-status: todo
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T09:04:09Z
-updated_at: 2026-10-04T15:14:44Z
+updated_at: 2026-11-15T13:27:18Z
 parent: qou-1qhv
 ---
 
@@ -46,3 +46,5 @@ library directories** — the residual is unmeasured and includes duplicates, so
 gap is not simply 182.
 
 Found by the citation-gap sweep, `docs/audits/2026-09-04-citation-gap-inventory.md`.
+
+Done 2026-11-15 on branch claude/library-reingest-kg-2026-11-15: key `murakami2008-acta-vietnam` (Acta Math. Vietnam. 33(3), 219-253, 2008) registered against library/0803219/, metadata from the PDF's page 1. qou-ic22 can now cite it.

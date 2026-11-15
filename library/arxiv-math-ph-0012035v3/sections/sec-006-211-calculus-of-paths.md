@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-ph-0012035v3
-doc_title: "arXiv:math-ph/0012035v3 16 Jan 2002"
+doc_title: "Non-Abelian Stokes theorem in action"
 section_id: sec-006-211-calculus-of-paths
 section_title: "Calculus of paths"
 section_number: 2.1.1
@@ -9,8 +9,9 @@ source_pdf: 0012035v3.pdf
 source_sha256: 06a4c8096c8ebb10
 toc_source: inferred
 text_source: latex
-latex_prose_ratio: 0.953
+latex_prose_ratio: 0.965
 latex_coverage_ratio: 1.0
+doc_brief: "Non-Abelian Stokes theorem in action — In this short review main issues related to the non-Abelian Stokes theorem have been addressed."
 ---
 []{#SECTION:calculusofPaths label="SECTION:calculusofPaths"}
 

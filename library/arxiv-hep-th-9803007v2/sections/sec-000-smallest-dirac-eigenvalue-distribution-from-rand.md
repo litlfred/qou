@@ -8,6 +8,7 @@ pages: 1-4
 source_pdf: 9803007v2.pdf
 source_sha256: 75f6484941ecbca0
 toc_source: inferred
+doc_brief: "arXiv:hep-th/9803007v2 17 Jun 1998 — 2 sections: Front matter; Smallest Dirac Eigenvalue Distribu"
 ---
 Shinsuke M. Nishigaki1,∗, Poul H. Damgaard2,†, and Tilo Wettig3,‡
 1Institute for Theoretical Physics, University of California, Santa Barbara, CA 93106-4030, USA

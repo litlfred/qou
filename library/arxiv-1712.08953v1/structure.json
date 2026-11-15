@@ -8,9 +8,15 @@
   "pages": 57,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:21Z",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 42,
+    "reason": "12 of 594 words are a stray single letter: the text layer splits words"
+   }
+  ],
   "math_source": "latex"
  },
  "metadata": {
@@ -26,7 +32,7 @@
   "title_lines": [
    "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY"
   ],
-  "abstract": "The oriented skein category OS(z, t) is a ribbon category which un- derpins the de\ufb01nition of the HOMFLY-PT invariant of an oriented link, in the same way that the Temperley-Lieb category underpins the Jones polynomial. In this article, we develop its representation theory using a highest weight theory ap- proach. This allows us to determine the Grothendieck ring of its additive Karoubi envelope for all possible choices of parameters, including the (already well-known) semisimple case, and all non-semisimple situations. Then we construct a graded lift of OS(z, t) by realizing it as a 2-representation of a Kac-Moody 2-category. We also discuss the degenerate analog of OS(z, t), which is the oriented Brauer category OB(\u03b4).",
+  "abstract": "The oriented skein category OS(z, t) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an oriented link, in the same way that the Temperley-Lieb category underpins the Jones polynomial. In this article, we develop its representation theory using a highest weight theory ap- proach. This allows us to determine the Grothendieck ring of its additive Karoubi envelope for all possible choices of parameters, including the (already well-known) semisimple case, and all non-semisimple situations. Then we construct a graded lift of OS(z, t) by realizing it as a 2-representation of a Kac-Moody 2-category. We also discuss the degenerate analog of OS(z, t), which is the oriented Brauer category OB(δ).",
   "docinfo": {
    "Title": "arXiv:1712.08953v1  [math.RT]  24 Dec 2017",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
@@ -38,7 +44,7 @@
   "title_verified": false,
   "title_evidence": {
    "metadata": "arXiv:1712.08953v1 [math.RT] 24 Dec 2017",
-   "heading": "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY 1. Introduction 1.1. We begin by recalling brie\ufb02y the de\ufb01nition of the category FOT of framed oriented tangles ; this is the framed analog of the oriented tangle category OT introduced by Turaev in [T2] and also appears in [EGNO, Remark 8.10.3] where it",
+   "heading": "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY 1. Introduction 1.1. We begin by recalling brieﬂy the deﬁnition of the category FOT of framed oriented tangles ; this is the framed analog of the oriented tangle category OT introduced by Turaev in [T2] and also appears in [EGNO, Remark 8.10.3] where it",
    "text": "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY",
    "corroborated_by": [],
    "browser_print": false
@@ -625,8 +631,8 @@
    "level": 1,
    "page_start": 21,
    "page_end": 25,
-   "n_chars": 6333,
-   "n_words": 1376,
+   "n_chars": 6330,
+   "n_words": 1375,
    "label_start": null,
    "label_end": null
   },
@@ -637,8 +643,8 @@
    "level": 1,
    "page_start": 25,
    "page_end": 36,
-   "n_chars": 31720,
-   "n_words": 5630,
+   "n_chars": 31744,
+   "n_words": 5634,
    "label_start": null,
    "label_end": null
   },
@@ -649,8 +655,8 @@
    "level": 1,
    "page_start": 36,
    "page_end": 46,
-   "n_chars": 26625,
-   "n_words": 4964,
+   "n_chars": 26607,
+   "n_words": 4970,
    "label_start": null,
    "label_end": null
   },
@@ -694,7 +700,8 @@
    "items": []
   },
   "sections": 8,
-  "chars_total": 158798,
+  "chars_total": 158801,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -747,7 +754,7 @@
      "id": "sec-004-6-branching-rules-and-characters",
      "title": "Branching rules and characters",
      "prose_ratio": 0.962,
-     "coverage_ratio": 0.982,
+     "coverage_ratio": 0.961,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -764,7 +771,7 @@
      "title": "Modifications in the degenerate case",
      "prose_ratio": 0.944,
      "coverage_ratio": 0.44,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

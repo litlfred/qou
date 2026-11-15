@@ -1,0 +1,1 @@
+This interpretation permits to rescale the Young diagrams, and in particular, we shall denote by $\lambda^{*}$ the Young diagram $\lambda$ rescaled by a factor $1/\sqrt{|\lambda|}$ in both directions: $$\lambda^{*}(s)=\lambda(s\sqrt{n})/\sqrt{n}$$ Then, P.

@@ -1,0 +1,32 @@
+---
+doc_id: arxiv-nucl-th-0610105v2
+doc_title: "Universal Properties of the Four-Body System with Large Scattering Length"
+section_id: sec-008-summary-and-outlook
+section_title: "Summary and Outlook"
+section_number: null
+pages: 12-13
+source_pdf: 0610105v2.pdf
+source_sha256: 5f3bd6d31a419d4d
+toc_source: outline
+text_source: latex
+latex_prose_ratio: 0.925
+latex_coverage_ratio: 0.993
+doc_brief: "Universal Properties of the Four-Body System with Large Scattering Length — Few-body systems with large scattering length have universal properties that do not depend on the details of their"
+---
+[]{#sec:conc label="sec:conc"}
+
+In this paper, we have studied the universal properties of the four-body system with large scattering length. These properties are useful for understanding the cluster structure of nuclei [@Mar06] as part of the planned experimental program at FAIR and experiments on the creation of weakly-bound tetramers with cold atoms close to a Feshbach resonance. We have concentrated on the bound state problem of four bosons starting from the Yakubovsky equations. We have constructed an effective interaction potential including both a two- and three-body contact interaction. This is the minimal set of contact interactions required for renormalization of the three-body problem. The two parameters of the effective potential were determined from matching to the binding energy of the dimer ($a>0$) or the two-body scattering length ($a<0$) and the excited state of the trimer. We have then solved the four-body bound state problem and obtained the scattering length dependence of the four-body bound state spectrum. This dependence was presented in a generalized Efimov plot. For all considered values of $a$, we have found two four-body states. The tetramer excited state stays close to the trimer-particle threshold, while the ground state is considerably deeper. We have conjectured, that there are always two four-body resonances between any two three-body states. As the cutoff is increased, these states come to life as stable bound states, but turn into resonances as additional deep three-body states appear when the cutoff is increased beyond a critical value.
+
+An important consequence of the large scattering length is the emergence of universal scaling functions. Since there are only two parameters at leading order, $a$ and $L_3$, few-body observables normalized to the scattering length $a$ must be correlated and follow a line parameterized by $L_3$. We have calculated the universal scaling functions relating the tetramer energies to the trimer ground state energy. A similar correlation between the triton and alpha particle energies is known from nuclear physics as the Tjon line [@Tjo75; @Platter:2004zs; @Nogga:2004ab]. Close to the three-body thresholds, these correlations have positive curvature for $a>0$ and negative curvature for $a<0$. Away from the thresholds, they are linear to very high accuracy. This linearity can be understood from the discrete scaling symmetry. Similar linear correlations between the binding energies of $N$- and $(N-1)$-body systems with $N>4$ were recently found from exact Monte Carlo calculations using two-body van der Waals potentials [@Hanna06]. This observation suggests the absence of $N$-body parameters for $N>4$, which would allow to predict $N$-body observables from two- and three-body input alone.
+
+The limits of universal behavior in real systems are determined by the values of $a$ and $l$ in those systems. With momenta of order $1/l$ (or energies of order $1/(ml^2)$) one is able to probe details of the short-distance mechanism leading to the large scattering length and our effective theory does no longer apply. As a consequence, only states with $Kl \ll 1$ and systems with $l/|a| \ll 1$ will show the universal behavior discussed in this paper. Corrections are suppressed by powers of $l/|a|$ and $\kappa l$ where $\kappa$ is the typical momentum scale in the process considered (e.g. the binding momentum for bound states). In Ref. [@Platter04], we have shown that our results can be applied to the $^4$He tetramer. We are not aware of any data on four-body systems with large negative scattering length.
+
+We also stress that the universality of our results relies on the validity of the renormalization group analysis in Ref. [@Platter04]. In this work, renormalization of the four-body equations was achieved without the introduction of a four-body interaction. If this result would not hold, the properties of the four-body system with large scattering length would also depend on a four-body parameter (cf. Ref. [@Yama06]).
+
+There are a number of directions that should be pursued in future work. First, it would be interesting to extend the calculation to smaller positive values of $a$, where the relevant decay threshold for the tetramer states is the dimer-dimer threshold. This would complete the generalized Efimov plot. Our conjecture of two four-body resonances between any two trimer states could be tested by extending the calculation to complex values of the energy. The widths of such states are currently unknown. Moreover, the application of our results to cluster structures in nuclei requires the inclusion of the long-range Coulomb force. Work in this direction is in progress. The general power counting for four-body forces is still not understood. At which order does the leading four-body interaction enter? In the three-body system, e.g., the first and second order correction are due to the two-body effective range [@Platter:2006ev]. If a similar situation holds in the four-body system, it would be possible to predict low-energy four-body observables up to corrections of order $(l/|a|)^3$ from two- and three-body information alone. The extension of the effective theory to calculate four-body scattering observables would be very valuable. The knowledge of the dimer-dimer scattering length, for example, is important for experiments with ultracold atoms. For the simpler problem of fermions with two spin states (where the three-body parameter $L_3$ does not contribute), the dimer-dimer scattering length was recently calculated exactly [@Petrov04] and using a perturbative $\epsilon$-expansion around $d=4$ [@Rupak06].
+
+::: acknowledgments
+We thank Eric Braaten for discussions.
+
+This research was supported by the U.S. Department of Energy under grant DE-FG02-93ER40756, by the DFG through funds provided to the SFB/TR 16 ''Subnuclear structure of matter", and by the BMBF under contract number 06BN411.
+:::

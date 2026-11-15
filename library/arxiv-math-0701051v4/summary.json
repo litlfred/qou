@@ -2,27 +2,32 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0701051v4",
  "source_sha256": "4592a048c3b84a8d",
- "brief": "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS RELATED TO STANLEY CHARACTER FORMULA — We prove an upper bound for characters of the symmetric groups.",
- "extended": "**ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS RELATED TO STANLEY CHARACTER FORMULA**\n\n*VALENTIN FÉRAY AND PIOTRŚNIADY*\n\n20 pp, 19 sections.\n\n**Abstract.** We prove an upper bound for characters of the symmetric groups. Namely, we show that there exists a constant a > 0 with a property that for every Young diagram λ with n boxes, r(λ) rows and c(λ) columns ⏐ ⏐ ⏐ ⏐ Trρλ (π ) Trρλ (e) ⏐ ⏐ ⏐ ⏐ ≤ [ a max ( r(λ) n , c(λ) n , |π | n )] |π | , where |π | is the minimal number of factors needed to write π ∈ Sn as a product of transpositions. We also give uniform estimates f or the error term in the Vershik-Kerov’s and Biane’s character formulas and give a new formula for free cumulants of the transition measure. 1. I NTRODUCTION 1.1. Normalized characters. For a Young diagram λ having n boxes and a permutation π ∈ Sl (where l ≤ n) we deﬁne the normalized character (1) Σ λ(π) = ( n)l χλ(π), where (n)l = n(n − 1) · · ·(n − l + 1) denotes the falling power and where χλ(π) = Trρλ(π) Trρλ(e) is the character rescaled in such a way that χλ(e) = 1 . 1.2.\n\n**Outline.** 1.1 Normalized characters; 1.2 Short history of the problem; 1.4 Young diagrams; 1.3 The main result; 1.5 The main tool: reformulation of Stanley ch; 1.6 Overview of the paper; 2.1 Young symmetrizer; 2.2 Forgetting injectivity; 3.1 Stanley character formula and random matri; 3.2 Free cumulants of the transition measure; 3.3 Generalized circular operators; 4.2 Estimates for the number of factorizations; 5 Asymptotics of characters; 5.1 Upper bound for characters: proof of Theor; 5.2 Error term for balanced Young diagrams; 5.3 Characters of symmetric groups related to ; 5.4 Concluding remarks; Acknowledgments",
+ "brief": "VALENTIN FÉRAY AND PIOTR ŚNIADY Tr ρλ(π) a max Tr ρλ(e) — We prove an upper bound for characters of the symmetric groups.",
+ "extended": "**VALENTIN FÉRAY AND PIOTR ŚNIADY Tr ρλ(π) a max Tr ρλ(e)**\n\n20 pp, 26 sections.\n\n**Abstract.** We prove an upper bound for characters of the symmetric groups. Namely, we show that there exists a constant a > 0 with a property that for every Young diagram λ with n boxes, r(λ) rows and c(λ) columns \u0013\u0015|π| \u0012r(λ) n , |π| n , c(λ) , n where |π| is the minimal number of factors needed to write π ∈Sn as a product of transpositions. We also give uniform estimates for the error term in the Vershik-Kerov’s and Biane’s character formulas and give a new formula for free cumulants of the transition measure. 1.1. Normalized characters. For a Young diagram λ having n boxes and a permutation π ∈Sl (where l ≤n) we deﬁne the normalized character where (n)l = n(n −1) · · ·(n −l + 1) denotes the falling power and where Tr ρλ(e) 1.2. Short history of the problem.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Normalized characters; 1.2 Short history of the problem; 1.3 The main result; 1.4 Young diagrams; 1.5 The main tool: reformulation of Stanley ch; 1.6 Overview of the paper; 2 Stanley character formula; 2.1 Young symmetrizer; 2.2 Forgetting injectivity; 2.3 Generalization to Young diagrams on R+2; 3 Characters of symmetric groups, random matri; 3.1 Stanley character formula and random matri; 3.2 Free cumulants of the transition measure; 3.3 Generalized circular operators; 4 Technical estimates; 4.1 Estimates for the number of colorings N(1,",
  "tokens": {
-  "brief": 37,
-  "extended": 421
+  "brief": 30,
+  "extended": 362
  },
  "sections": [
   {
-   "id": "sec-000-11-normalized-characters",
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-11-normalized-characters",
    "title": "Normalized characters",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-12-short-history-of-the-problem",
+   "id": "sec-002-12-short-history-of-the-problem",
    "title": "Short history of the problem",
    "pages": "1-2"
-  },
-  {
-   "id": "sec-002-14-young-diagrams",
-   "title": "Young diagrams",
-   "pages": "2-2"
   },
   {
    "id": "sec-003-13-the-main-result",
@@ -30,77 +35,107 @@
    "pages": "2-3"
   },
   {
-   "id": "sec-004-15-the-main-tool-reformulation-of-stanley-charac",
+   "id": "sec-004-14-young-diagrams",
+   "title": "Young diagrams",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-005-15-the-main-tool-reformulation-of-stanley-charac",
    "title": "The main tool: reformulation of Stanley character formula",
    "pages": "3-4"
   },
   {
-   "id": "sec-005-16-overview-of-the-paper",
+   "id": "sec-006-16-overview-of-the-paper",
    "title": "Overview of the paper",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-007-2-stanley-character-formula",
+   "title": "Stanley character formula",
    "pages": "4-5"
   },
   {
-   "id": "sec-006-21-young-symmetrizer",
+   "id": "sec-008-21-young-symmetrizer",
    "title": "Young symmetrizer",
    "pages": "5-7"
   },
   {
-   "id": "sec-007-22-forgetting-injectivity",
+   "id": "sec-009-22-forgetting-injectivity",
    "title": "Forgetting injectivity",
    "pages": "7-8"
   },
   {
-   "id": "sec-008-31-stanley-character-formula-and-random-matrices",
+   "id": "sec-010-23-generalization-to-young-diagrams-on-r2",
+   "title": "Generalization to Young diagrams on R+2",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-011-3-characters-of-symmetric-groups-random-matrices",
+   "title": "Characters of symmetric groups, random matrices and free probability",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-012-31-stanley-character-formula-and-random-matrices",
    "title": "Stanley character formula and random matrices",
    "pages": "8-10"
   },
   {
-   "id": "sec-009-32-free-cumulants-of-the-transition-measure",
+   "id": "sec-013-32-free-cumulants-of-the-transition-measure",
    "title": "Free cumulants of the transition measure",
    "pages": "10-11"
   },
   {
-   "id": "sec-010-33-generalized-circular-operators",
+   "id": "sec-014-33-generalized-circular-operators",
    "title": "Generalized circular operators",
-   "pages": "11-13"
+   "pages": "11-12"
   },
   {
-   "id": "sec-011-42-estimates-for-the-number-of-factorizations",
+   "id": "sec-015-4-technical-estimates",
+   "title": "Technical estimates",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-016-41-estimates-for-the-number-of-colorings-n12",
+   "title": "Estimates for the number of colorings N(1,2)",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-017-42-estimates-for-the-number-of-factorizations",
    "title": "Estimates for the number of factorizations",
    "pages": "13-15"
   },
   {
-   "id": "sec-012-5-asymptotics-of-characters",
+   "id": "sec-018-5-asymptotics-of-characters",
    "title": "Asymptotics of characters",
    "pages": "15-15"
   },
   {
-   "id": "sec-013-51-upper-bound-for-characters-proof-of-theorem",
+   "id": "sec-019-51-upper-bound-for-characters-proof-of-theorem",
    "title": "Upper bound for characters: proof of Theorem ??",
    "pages": "15-16"
   },
   {
-   "id": "sec-014-52-error-term-for-balanced-young-diagrams",
+   "id": "sec-020-52-error-term-for-balanced-young-diagrams",
    "title": "Error term for balanced Young diagrams",
    "pages": "16-17"
   },
   {
-   "id": "sec-015-53-characters-of-symmetric-groups-related-to-tho",
+   "id": "sec-021-53-characters-of-symmetric-groups-related-to-tho",
    "title": "Characters of symmetric groups related to Thoma characters",
    "pages": "17-19"
   },
   {
-   "id": "sec-016-54-concluding-remarks",
+   "id": "sec-022-54-concluding-remarks",
    "title": "Concluding remarks",
    "pages": "19-19"
   },
   {
-   "id": "sec-017-acknowledgments",
+   "id": "sec-023-acknowledgments",
    "title": "Acknowledgments",
    "pages": "19-19"
   },
   {
-   "id": "sec-018-references",
+   "id": "sec-024-references",
    "title": "References",
    "pages": "19-20"
   }

@@ -9,13 +9,14 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-0505056v2",
+  "title": "Matrix factorizations and link homology II",
   "contains": [
+    "library/arxiv-math-0505056v2/sections/sec-front-matter",
     "library/arxiv-math-0505056v2/sections/sec-000",
     "library/arxiv-math-0505056v2/sections/sec-001"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
     "searched": [
@@ -30,7 +31,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-0505056v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0505056v2.pdf",
     "source_sha256": "1b6580406c3d35b59f8fb18e5fba40460fe574cab85d94edf705c6c4bb2d0cbe",
     "pages": 37,
@@ -41,8 +44,8 @@
       "stamp_date": "31 Jan 2006"
     },
     "doi": null,
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

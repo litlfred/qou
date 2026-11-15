@@ -1,0 +1,58 @@
+Algorithmica (2026) 88:21 PageSof19 21
+
+ables yield the Chernoff-Hoeffding concentration inequalities, just like independent
+random variables. In the context of our paper, these results are somewhat specialized
+since they focus on linear combinations of random variables.
+
+For non-linear functions of the random variables, the majority of work has focused
+on the concentration of Lipschitz functions under various notions of negative depen-
+dence. [27] showed that for strong Rayleigh measures, one has Gaussian concentration
+for any Lipschitz function. Later on, [14] corrected an earlier proof of [22], showing
+that McDiarmid-like concentration results hold for Lipschitz functions of random vari-
+ables satisfying negative regression. These results are complementary to ours since
+we are trying to give dimension-free concentration results.
+
+2 Preliminaries
+2.1 Notions of Negative Dependence
+
+We begin by defining the notion of negative dependence commonly found in the
+literature.
+
+Negative Cylinder Dependence.
+
+A collection of Boolean random variables X1,..., X,, is said to be negative cylinder
+dependent if for every S C [n],
+
+E[[ies Xi] < Mies E(Xs]
+
+and
+E[[Ties (1 — Xi)] < Ties EU - Xi.
+
+Negative cylinder dependence is the weaker notion considered here. It is known to
+
+imply Chernoff bounds for linear combinations of X;,..., Xp but it is insufficient to
+show our submodular concentration results.
+
+Negative Association.
+
+A collection of random variables X1,..., Xp is said to be negatively associated if for
+
+any I, J C [n], 1M J = and any pair of non-decreasing functions f : R! > R, g:
+ROR
+Elf (X71) g (Xp) SELf ADIELs (Xs)1-
+
+Here and in the following, Xs refers to those random variables that are indexed by the
+elements in S, Xs = {X; : i € S}. Negative association is a significant strengthening
+of negative cylinder dependence, and has many additional useful closure properties.
+This will be one of the focuses of the paper.
+Negative Regression.
+A collection of random variables X1,..., Xp is said to satisfy negative regression,
+if for any J, J C [n], 1 J = Q, any non-decreasing function f : R! — Rand
+a<beR’,
+
+E[f (X)) |X; =a) 2 Elf (xX) | Xy =].
+
+Negative regression is a strengthening of negative cylinder dependence, but its rela-
+tionship with negative association is not yet well understood. It is known that negative
+
+cay Springer

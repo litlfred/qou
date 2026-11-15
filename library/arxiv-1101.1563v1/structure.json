@@ -8,7 +8,7 @@
   "pages": 20,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:19Z",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,28 +21,29 @@
    "stamp_date": "8 Jan 2011"
   },
   "doi": null,
-  "title": "Gr\u00f6bner-Shirshov bases for categories\u2217 L. A. Bokut\u2020",
+  "title": "Gröbner-Shirshov bases for categories",
   "authors_raw": "School of Mathematical Sciences, South China Normal University",
   "title_lines": [
-   "Gr\u00f6bner-Shirshov bases for categories\u2217",
-   "L. A. Bokut\u2020"
+   "Gröbner-Shirshov bases for categories∗",
+   "L. A. Bokut†"
   ],
-  "abstract": "In this paper we establish Composition-Diamond lemma for small categories. We give Gr\u00a8obner-Shirshov bases for simplicial category and cyclic category.",
+  "abstract": "In this paper we establish Composition-Diamond lemma for small categories. We give Gr¨obner-Shirshov bases for simplicial category and cyclic category.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "LaTeX with hyperref package",
    "CreationDate": "D:20220429045604-04'00'"
   },
-  "title_raw": "Gr\u00f6bner-Shirshov bases for categories\u2217 L. A. Bokut\u2020",
+  "title_raw": "Gröbner-Shirshov bases for categories∗ L. A. Bokut†",
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "Gr\u00a8obner-Shirshov bases for categories \u2217",
+   "heading": "Gr¨obner-Shirshov bases for categories ∗",
    "outline": "1 Introduction",
-   "text": "Gr\u00f6bner-Shirshov bases for categories\u2217 L. A. Bokut\u2020",
+   "text": "Gröbner-Shirshov bases for categories∗ L. A. Bokut†",
    "corroborated_by": [],
    "browser_print": false
-  }
+  },
+  "title_prev": "Gröbner-Shirshov bases for categories∗ L. A. Bokut†"
  },
  "toc": [
   {
@@ -57,7 +58,7 @@
   },
   {
    "level": 1,
-   "title": "A short survey on Gr\u00f6bner-Shirshov bases",
+   "title": "A short survey on Gröbner-Shirshov bases",
    "page": 2,
    "source": "outline",
    "number": "2",
@@ -87,7 +88,7 @@
   },
   {
    "level": 1,
-   "title": "Gr\u00f6bner-Shirshov bases for the simplicial category and the cyclic category",
+   "title": "Gröbner-Shirshov bases for the simplicial category and the cyclic category",
    "page": 11,
    "source": "outline",
    "number": "5",
@@ -289,8 +290,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 760,
-   "n_words": 97,
+   "n_chars": 758,
+   "n_words": 96,
    "label_start": "1",
    "label_end": "1"
   },
@@ -301,20 +302,20 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 2187,
+   "n_chars": 2198,
    "n_words": 348,
    "label_start": "1",
    "label_end": "2"
   },
   {
-   "id": "sec-001-2-a-short-survey-on-gr\u00f6bner-shirshov-bases",
+   "id": "sec-001-2-a-short-survey-on-gröbner-shirshov-bases",
    "number": "2",
-   "title": "A short survey on Gr\u00f6bner-Shirshov bases",
+   "title": "A short survey on Gröbner-Shirshov bases",
    "level": 1,
    "page_start": 2,
    "page_end": 7,
-   "n_chars": 17443,
-   "n_words": 2977,
+   "n_chars": 17483,
+   "n_words": 2982,
    "label_start": "2",
    "label_end": "7"
   },
@@ -325,8 +326,8 @@
    "level": 1,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 1645,
-   "n_words": 355,
+   "n_chars": 1694,
+   "n_words": 361,
    "label_start": "7",
    "label_end": "8"
   },
@@ -337,20 +338,20 @@
    "level": 1,
    "page_start": 8,
    "page_end": 11,
-   "n_chars": 6138,
-   "n_words": 1330,
+   "n_chars": 6177,
+   "n_words": 1333,
    "label_start": "8",
    "label_end": "11"
   },
   {
-   "id": "sec-004-5-gr\u00f6bner-shirshov-bases-for-the-simplicial-cate",
+   "id": "sec-004-5-gröbner-shirshov-bases-for-the-simplicial-cate",
    "number": "5",
-   "title": "Gr\u00f6bner-Shirshov bases for the simplicial category and the cyclic category",
+   "title": "Gröbner-Shirshov bases for the simplicial category and the cyclic category",
    "level": 1,
    "page_start": 11,
    "page_end": 20,
-   "n_chars": 18338,
-   "n_words": 3443,
+   "n_chars": 18390,
+   "n_words": 3449,
    "label_start": "11",
    "label_end": "20"
   }
@@ -367,7 +368,8 @@
    "items": []
   },
   "sections": 6,
-  "chars_total": 46511,
+  "chars_total": 46700,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -388,15 +390,15 @@
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.905,
+     "coverage_ratio": 0.897,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-2-a-short-survey-on-gr\u00f6bner-shirshov-bases",
-     "title": "A short survey on Gr\u00f6bner-Shirshov bases",
+     "id": "sec-001-2-a-short-survey-on-gröbner-shirshov-bases",
+     "title": "A short survey on Gröbner-Shirshov bases",
      "prose_ratio": 0.965,
-     "coverage_ratio": 0.993,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -404,7 +406,7 @@
      "id": "sec-002-3-free-categories-and-free-category-partial-alge",
      "title": "Free categories and free category partial algebras",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -417,11 +419,11 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-5-gr\u00f6bner-shirshov-bases-for-the-simplicial-cate",
-     "title": "Gr\u00f6bner-Shirshov bases for the simplicial category and the cyclic category",
+     "id": "sec-004-5-gröbner-shirshov-bases-for-the-simplicial-cate",
+     "title": "Gröbner-Shirshov bases for the simplicial category and the cyclic category",
      "prose_ratio": 0.992,
      "coverage_ratio": 0.297,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

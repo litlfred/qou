@@ -8,7 +8,7 @@
   "pages": 18,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -73,32 +73,6 @@
     "body"
    ],
    "page_label": "2"
-  },
-  {
-   "level": 1,
-   "title": "$q^2$-derivatives and $q^2$-integral",
-   "page": 5,
-   "source": "inferred",
-   "number": "3",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": "5"
-  },
-  {
-   "level": 1,
-   "title": "$q^2$-distributions",
-   "page": 6,
-   "source": "inferred",
-   "number": "4",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": "6"
   },
   {
    "level": 1,
@@ -302,8 +276,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 445,
-   "n_words": 63,
+   "n_chars": 443,
+   "n_words": 62,
    "label_start": "1",
    "label_end": "1"
   },
@@ -314,8 +288,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 1752,
-   "n_words": 277,
+   "n_chars": 1750,
+   "n_words": 276,
    "label_start": "1",
    "label_end": "2"
   },
@@ -325,17 +299,41 @@
    "title": "Preliminary relations",
    "level": 1,
    "page_start": 2,
-   "page_end": 18,
-   "n_chars": 22002,
-   "n_words": 4257,
+   "page_end": 10,
+   "n_chars": 10457,
+   "n_words": 2103,
    "label_start": "2",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-002-5-the-q2-fourier-transform",
+   "number": "5",
+   "title": "The $q^2$-Fourier transform",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 13,
+   "n_chars": 4258,
+   "n_words": 787,
+   "label_start": "10",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-003-6-the-q2-fourier-transform-of-q2-distributions",
+   "number": "6",
+   "title": "The $q^2$-Fourier transform of $q^2$-distributions",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 18,
+   "n_chars": 7174,
+   "n_words": 1343,
+   "label_start": "13",
    "label_end": "18"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 6,
+  "toc_entries": 4,
   "toc_inferred_entries": 6,
   "toc_inferred_mean_confidence": 1.0,
   "toc_inferred_empty_share": 0.0,
@@ -346,13 +344,28 @@
    "count": 0,
    "items": []
   },
-  "sections": 3,
-  "chars_total": 24199,
+  "sections": 5,
+  "chars_total": 24082,
+  "furniture_lines_stripped": 18,
+  "headings_tidied": [
+   {
+    "title": "$q^2$-derivatives and $q^2$-integral",
+    "page": 5,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$q^2$-distributions",
+    "page": 6,
+    "action": "dropped",
+    "why": "opens in lower case"
+   }
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 6,
-   "overlaid": 2,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -375,8 +388,24 @@
     {
      "id": "sec-001-2-preliminary-relations",
      "title": "Preliminary relations",
-     "prose_ratio": 0.993,
-     "coverage_ratio": 0.803,
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.948,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-5-the-q2-fourier-transform",
+     "title": "The $q^2$-Fourier transform",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-6-the-q2-fourier-transform-of-q2-distributions",
+     "title": "The $q^2$-Fourier transform of $q^2$-distributions",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.584,
      "result": "overlaid",
      "converter": "latex"
     }

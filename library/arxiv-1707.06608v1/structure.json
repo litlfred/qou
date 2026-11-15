@@ -7,10 +7,11 @@
   "bytes": 20252884,
   "pages": 22,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,31 @@
    "stamp_date": "20 Jul 2017"
   },
   "doi": null,
-  "title": "Fractional Hopfions in the Faddeev-Skyrme model with a symmetry breaking potential",
-  "authors_raw": "A. Samoilenka\u2020 and Ya. Shnir\u2020\u22c6",
+  "title": "Fractional Hopﬁons in the Faddeev-Skyrme model with a symmetry breaking potential",
+  "authors_raw": "A. Samoilenka† and Ya. Shnir†⋆",
   "title_lines": [
    "Fractional Hopfions in the Faddeev-Skyrme model with a",
    "symmetry breaking potential"
   ],
-  "abstract": "We construct new solutions of the Faddeev-Skyrme model with a symmetry breaking potential admittingS1 vacuum. It includes, as a limiting case, the usualSO(3) symmetry breaking mass term, another limit corresponds to the potentialm2\u03c62 1, which gives a mass to the corresponding component of the scalar \ufb01eld. However we \ufb01nd that the spacial distribution of the energy density of these solutions has more complicated structure, than in the case of the usual Hop\ufb01ons, typically it represents two separate linked tubes with di\ufb00erent thicknesses and positions. In order to classify these con\ufb01gurations we de\ufb01ne a counterpart of the usual position curve, which represents a collection of loopsC1,C\u22121 corresponding to the preimages of the points\u20d7\u03c6 = (\u00b11\u2213\u00b5, 0, 0), respectively. Then the Hopf invariant can be de\ufb01ned asQ = link(C1,C\u22121). In this model, in the sectors of degrees Q = 5, 6, 7 we found solutions of new type, for which one or both of these tubes represent trefoil knots. Further, some of these solutions possess di\ufb00erent types of curvesC1 andC\u22121.",
+  "abstract": "We construct new solutions of the Faddeev-Skyrme model with a symmetry breaking potential admitting S1 vacuum. It includes, as a limiting case, the usual SO(3) symmetry breaking mass term, another limit corresponds to the potential m2φ2 1, which gives a mass to the corresponding component of the scalar ﬁeld. However we ﬁnd that the spacial distribution of the energy density of these solutions has more complicated structure, than in the case of the usual Hopﬁons, typically it represents two separate linked tubes with diﬀerent thicknesses and positions. In order to classify these conﬁgurations we deﬁne a counterpart of the usual position curve, which represents a collection of loops C1, C−1 corresponding to the preimages of the points⃗φ = (±1 ∓µ, 0, 0), respectively. Then the Hopf invariant can be deﬁned as Q = link(C1, C−1). In this model, in the sectors of degrees Q = 5, 6, 7 we found solutions of new type, for which one or both of these tubes represent trefoil knots. Further, some of these solutions possess diﬀerent types of curves C1 and C−1.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20210617085538Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.17",
-   "Title": ""
-  }
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20210617085538Z"
+  },
+  "title_raw": "Fractional Hopfions in the Faddeev-Skyrme model with a symmetry breaking potential",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Fractional Hopﬁons in the Faddeev-Skyrme model with a symmetry breaking potential",
+   "outline": "1 Introduction",
+   "text": "Fractional Hopfions in the Faddeev-Skyrme model with a symmetry breaking potential",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Fractional Hopfions in the Faddeev-Skyrme model with a symmetry breaking potential"
  },
  "toc": [
   {
@@ -41,81 +53,469 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "The model",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Initial approximation",
    "page": 5,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Numerical results",
    "page": 6,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Q=1",
    "page": 6,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Q=2",
    "page": 10,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Multisoliton configurations",
    "page": 11,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 3,
    "title": "Degrees 3 and 4",
    "page": 11,
    "source": "outline",
-   "number": "4.3.1"
+   "number": "4.3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 3,
    "title": "Degrees 5,6 and 7",
    "page": 18,
    "source": "outline",
-   "number": "4.3.2"
+   "number": "4.3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 1,
    "title": "Compact solutions",
    "page": 19,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "Summary",
    "page": 20,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Isosurfaces showing the energy density distributions (ﬁrst column), φ1 = ±0.9 (second column) and φ3 = −0.9 of the Q = 1 Hopﬁon solutions in the model (1) with potential",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Proﬁles of the ﬁeld components of the Q = 1 Hopﬁons in the model (1) with potential V = m2φ2",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Q = 1 Hopﬁon solution at c2 = 0.5, c4 = 1, m = 4. Top row: location curves of the preimages of the points⃗φ = (±0.9, 0, 0) together with the energy isosurface at E = 45 (left) and E = 100 (right). Bottom row: location curves of the vector⃗φ = (0, ±0.9, 0) (left) and φ = (0, 0, −0.9) together with th",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Isosurfaces showing the energy density of the (A1 ≬A1)A1,1 Hopﬁon of degree one in the Faddeev-Skyrme model (4) with the potential V = m2 \u0000",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Isosurfaces showing the energy density of the 2( e",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Isosurfaces showing the energy density of the Q = 2 Hopﬁon in the Faddeev-Skyrme model (4) with the potential V = m2 \u0000",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "11",
+   "page": 11,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "table",
+   "number": "3",
+   "title": "However, as the parameter α in (6) varies, this conﬁguration becomes a saddle point, our algorithm is unable to ﬁnd this solution in the model with potential (15) (see Table 3)",
+   "page": 11,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Isosurface of the energy density of the 3( e",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "ρE = 15 isosurface, φ1 = ±0.9 and φ3 = −0.9 for Q = 1 −7 Hopﬁons in model with",
+   "page": 16,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "16"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Isosurfaces showing the energy density distributions E = 40 (ﬁrst column), φ1 = ±0.9 (second column) and φ3 = −0.8 of the Q = 1, 2, 3 \"compact\" Hopﬁons (ﬁrst, second and third",
+   "page": 19,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "19"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1326,
+   "n_words": 214,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -123,8 +523,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 2332,
-   "n_words": 353
+   "n_chars": 2349,
+   "n_words": 370,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-001-2-the-model",
@@ -133,8 +535,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 5,
-   "n_chars": 9515,
-   "n_words": 1604
+   "n_chars": 9602,
+   "n_words": 1694,
+   "label_start": "2",
+   "label_end": "5"
   },
   {
    "id": "sec-002-3-initial-approximation",
@@ -143,8 +547,10 @@
    "level": 1,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 5142,
-   "n_words": 884
+   "n_chars": 5212,
+   "n_words": 935,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
    "id": "sec-003-4-numerical-results",
@@ -153,8 +559,10 @@
    "level": 1,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 866,
-   "n_words": 139
+   "n_chars": 891,
+   "n_words": 148,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
    "id": "sec-004-41-q1",
@@ -163,8 +571,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 10,
-   "n_chars": 6645,
-   "n_words": 1202
+   "n_chars": 6715,
+   "n_words": 1273,
+   "label_start": "6",
+   "label_end": "10"
   },
   {
    "id": "sec-005-42-q2",
@@ -173,56 +583,86 @@
    "level": 2,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 3666,
-   "n_words": 619
+   "n_chars": 3686,
+   "n_words": 666,
+   "label_start": "10",
+   "label_end": "11"
   },
   {
-   "id": "sec-006-431-degrees-3-and-4",
+   "id": "sec-006-43-multisoliton-configurations",
+   "number": "4.3",
+   "title": "Multisoliton configurations",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 26,
+   "n_words": 2,
+   "label_start": "11",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-007-431-degrees-3-and-4",
    "number": "4.3.1",
    "title": "Degrees 3 and 4",
    "level": 3,
    "page_start": 11,
    "page_end": 18,
-   "n_chars": 6920,
-   "n_words": 1156
+   "n_chars": 7059,
+   "n_words": 1297,
+   "label_start": "11",
+   "label_end": "18"
   },
   {
-   "id": "sec-007-432-degrees-56-and-7",
+   "id": "sec-008-432-degrees-56-and-7",
    "number": "4.3.2",
    "title": "Degrees 5,6 and 7",
    "level": 3,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 3530,
-   "n_words": 577
+   "n_chars": 3587,
+   "n_words": 622,
+   "label_start": "18",
+   "label_end": "19"
   },
   {
-   "id": "sec-008-5-compact-solutions",
+   "id": "sec-009-5-compact-solutions",
    "number": "5",
    "title": "Compact solutions",
    "level": 1,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 2094,
-   "n_words": 347
+   "n_chars": 2128,
+   "n_words": 367,
+   "label_start": "19",
+   "label_end": "20"
   },
   {
-   "id": "sec-009-6-summary",
+   "id": "sec-010-6-summary",
    "number": "6",
    "title": "Summary",
    "level": 1,
    "page_start": 20,
    "page_end": 22,
-   "n_chars": 6488,
-   "n_words": 1077
+   "n_chars": 6551,
+   "n_words": 1139,
+   "label_start": "20",
+   "label_end": "22"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 11,
-  "sections": 10,
-  "chars_total": 47198,
+  "toc_inferred_entries": 0,
+  "figure_entries": 11,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 12,
+  "chars_total": 49132,
+  "furniture_lines_stripped": 22,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "paper.tex",
@@ -235,26 +675,31 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.631,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-the-model",
      "title": "The model",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.988,
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.849,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-3-initial-approximation",
      "title": "Initial approximation",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.992,
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -262,7 +707,7 @@
      "id": "sec-003-4-numerical-results",
      "title": "Numerical results",
      "prose_ratio": 0.97,
-     "coverage_ratio": 0.985,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -270,47 +715,53 @@
      "id": "sec-004-41-q1",
      "title": "Q=1",
      "prose_ratio": 0.97,
-     "coverage_ratio": 0.939,
+     "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-42-q2",
      "title": "Q=2",
-     "prose_ratio": 0.929,
-     "coverage_ratio": 0.914,
+     "prose_ratio": 0.928,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-431-degrees-3-and-4",
+     "id": "sec-006-43-multisoliton-configurations",
+     "title": "Multisoliton configurations",
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-431-degrees-3-and-4",
      "title": "Degrees 3 and 4",
      "prose_ratio": 0.886,
-     "coverage_ratio": 0.929,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-432-degrees-56-and-7",
+     "id": "sec-008-432-degrees-56-and-7",
      "title": "Degrees 5,6 and 7",
      "prose_ratio": 0.972,
-     "coverage_ratio": 0.935,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-5-compact-solutions",
+     "id": "sec-009-5-compact-solutions",
      "title": "Compact solutions",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.924,
+     "prose_ratio": 0.962,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-6-summary",
+     "id": "sec-010-6-summary",
      "title": "Summary",
-     "prose_ratio": 0.855,
-     "coverage_ratio": 0.993,
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.686,
      "result": "overlaid",
      "converter": "latex"
     }

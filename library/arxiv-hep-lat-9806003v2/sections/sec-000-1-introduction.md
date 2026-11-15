@@ -9,8 +9,9 @@ source_pdf: 9806003v2.pdf
 source_sha256: e34739e703aae6db
 toc_source: inferred
 text_source: latex
-latex_prose_ratio: 0.93
-latex_coverage_ratio: 0.996
+latex_prose_ratio: 0.966
+latex_coverage_ratio: 0.997
+doc_brief: "Statistical analysis and the equivalent of a Thouless energy in lattice QCD Dirac spectra — 14 sections: Front matter; Introduction; Complete Dirac spectra in SU(2) ga"
 ---
 \label{sec1}
 It is now well established that Random Matrix Theory (RMT) accurately

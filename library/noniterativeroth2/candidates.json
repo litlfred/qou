@@ -1,8 +1,6 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "noniterativeroth2",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "83bbcdf45da069e5275d2e268fb5915d0adc361a35c167dac98bb919a2fbe4d6",
   "file": "noniterativeroth2.pdf"
@@ -13,41 +11,91 @@
   "arxiv": null,
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 2,
+  "candidates": 5,
   "by_kind": {
-   "theorem": 1,
-   "lemma": 1
+   "recommendation": 5
   },
-  "formalization_candidates": 2
+  "formalization_candidates": 0
  },
  "candidates": [
   {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1.1",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
    "name": null,
-   "statement": "We have that r3(N) = o(N).",
-   "section_file": "sections/sec-001-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-2",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "statement": "Notation We shall require a modicum of notation: given a function f : Fp \u2192[0, 1], we write \u039b(f) := Ex,d\u2208Fpf(x)f(x + d)f(x + 2d) (where E represents an averaged sum; thus the E above represents p\u22122 P).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-002.md",
+   "section_title": "Page 2",
+   "pages": "2-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   },
   {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "3.1",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
    "name": null,
-   "statement": "[2] For any 1 6 M 6 N , and for any set T 0 \u0012 [N], we have",
-   "section_file": "sections/sec-004-4-ernie-croot-and-olof-sisask.md",
-   "section_title": "ERNIE CROOT AND OLOF SISASK",
+   "statement": "We shall make use of the Fourier transform bf : Fp \u2192C of a function f, given by bf(r) := Ex\u2208Fpf(x)e2\u03c0irx/p, as well as the easily-veri\ufb01ed Parseval\u2019s identity X r\u2208Fp | bf(r)|2 = Ex|f(x)|2.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-002.md",
+   "section_title": "Page 2",
+   "pages": "2-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall show that \u03ba = 0, which will prove the theorem.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-002.md",
+   "section_title": "Page 2",
+   "pages": "2-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Thinking of S as a subset of Fp in the obvious way, we shall write f = 1S : Fp \u2192{0, 1} for the indicator function of S.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-003.md",
+   "section_title": "Page 3",
+   "pages": "3-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "It must therefore be the case that |T \u2032| \u2a7e4|S|/3, from which it follows that 4|S|/3N \u2212r3(M)/M \u2a7d|T \u2032|/N \u2212r3(M)/M \u226a M 2\u039b(T \u2032) \u226a (log log p/ log p)1/4.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-004.md",
+   "section_title": "Page 4",
    "pages": "4-4",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   }
  ]
 }

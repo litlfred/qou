@@ -1,0 +1,1 @@
+We shall usually refer to the cosimplicial object as $C = \set{C^p}_{p \in \mbb{N}}$, and for any $\alpha \in \bsym{\Delta}_p^q$ the corresponding morphism in $\cat{C}$ will be denoted by $\alpha^* : C^p \to C^q$.

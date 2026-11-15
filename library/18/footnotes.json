@@ -1,0 +1,394 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "18",
+ "status": "determined",
+ "pages_unread": [
+  10
+ ],
+ "body_size": 11.0,
+ "footnotes": [
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "1",
+   "text": "Accordingtothetranslator’snoteintheEnglishtranslationofKovalev’spaper, Theorem 4.3 was already known to Coxeter in the thirties.",
+   "marks": [
+    {
+     "page": 7,
+     "context": "forarbitrarydimension,recentlyobtained"
+    },
+    {
+     "page": 7,
+     "context": "Proof.ConsiderthesectionC"
+    },
+    {
+     "page": 7,
+     "context": "Proof.ConsiderthesectionC1,"
+    },
+    {
+     "page": 7,
+     "context": "thinkofC"
+    },
+    {
+     "page": 7,
+     "context": "thinkofC1,"
+    },
+    {
+     "page": 7,
+     "context": "∂1oftheboundaryofC"
+    },
+    {
+     "page": 7,
+     "context": "∂1oftheboundaryofC1,"
+    },
+    {
+     "page": 7,
+     "context": "mutually-tangentcirclesintheplane,ofradii1, 1, r3, r4–C"
+    },
+    {
+     "page": 7,
+     "context": "mutually-tangentcirclesintheplane,ofradii1, 1, r3, r4–C1,"
+    }
+   ],
+   "block": "library/18/blocks/prose-sec-004"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "LetM"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "wedeﬁneacombinatorialanalogueofscalarcurvatureforM"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "ciselytometricsofconstantcombinatorialscalarcurvatureonM"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "conformalsimplicesinE"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "H"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "LetTbeasimplexinE"
+  },
+  {
+   "page": 1,
+   "mark": "4",
+   "context": "ical space, if we require that the map of Cto R"
+  },
+  {
+   "page": 1,
+   "mark": "4",
+   "context": "lection of vectors (r1, . . . , r4) ∈R"
+  },
+  {
+   "page": 2,
+   "mark": "r",
+   "context": "is an open set.Denote this set by C"
+  },
+  {
+   "page": 2,
+   "mark": "6",
+   "context": "EuclideansimplicesisanopensetinR"
+  },
+  {
+   "page": 2,
+   "mark": "r",
+   "context": "viewedasfunctionsofr = (r1, r2, r3, r4) ∈C"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "varies smoothly in one of the spaces of constant curvature H"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "SnorE"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "i>1H"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "i>1H1"
+  },
+  {
+   "page": 3,
+   "mark": "v",
+   "context": "i>1H1i"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "i>1H1iv"
+  },
+  {
+   "page": 3,
+   "mark": "r",
+   "context": "Proof.ByLemma1.2,thefunctionSisstrictlyconcaveonthesliceofC"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "showthetheorem,wemodifythefunctionSasfollows:LetS"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "S +\u0002a"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "S +\u0002air"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "S +\u0002airi. Now S"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "S"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "Sa1,...,a4occurswhenS"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "Sa1,...,a4occurswhenSi+ a"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "Sa1,...,a4occurswhenSi+ ai=S"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "Sa1,...,a4occurswhenSi+ ai=Sj+ a"
+  },
+  {
+   "page": 4,
+   "mark": "4",
+   "context": "Using this parametrization embeds CTas an open set in R"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "κ"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "Hij=∂S"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "=∂S"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "r"
+  },
+  {
+   "page": 4,
+   "mark": "r",
+   "context": "i"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "ir"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "inhyperbolic3-spaceH"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "inhyperbolic3-spaceH3,ratherthaninE"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "clepackingsC1andC2ofthesphereS"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "plicesCTcanbenaturallyidentiﬁedwiththehyperbolicspaceH"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "ticular,CTishomeomorphictotheballB"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "ticular,CTishomeomorphictotheballB4= H"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "ofthemid-spherest,andsoCH≃H"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "dinates,inparticular,whattheboundaryofCT(asasubsetofR"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "spheresinthen-dimensionalEuclideanspaceE"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "K"
+  },
+  {
+   "page": 7,
+   "mark": "4",
+   "context": "Theorem4.4.ThespaceCT⊂R"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "Consider a closed three-dimensional manifold M"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "sothattheyareisometrictogeodesicsimplicesinE"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "areEuclideanisometries),M"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "plementofthe1-skeletonofT .WedeﬁnethesolidangleSvof(M"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "onehand,thegrowthrateofasmallballcenteredatvinM"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "WesaythatasingularEuclideanstructureon(M"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "inR|V (T )|.Asbefore,wewillthinkofgeometricinvariantsof(M"
+  },
+  {
+   "page": 8,
+   "mark": "v",
+   "context": "v∈V (T )S"
+  },
+  {
+   "page": 8,
+   "mark": "r",
+   "context": "v∈V (T )Sv"
+  },
+  {
+   "page": 8,
+   "mark": "v",
+   "context": "v∈V (T )Svr"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "Theorem5.1.A conformal structure on (M"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "ofhyperbolicconformalstructuresonM"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "Theorem6.1.LetM"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "isapolyhedroninR"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "sphereS"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "sphereSnontoR"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "Theorem6.2.Thegeometryofball-packingofthesphereS"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "theauthorsthatthereisaninﬁnitefamilyofball-packingsofS"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "tothetorusT"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": " above indicate that only a countable family of metrics on T"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "Thehypothesisinsections5and6requiringM"
+  }
+ ]
+}

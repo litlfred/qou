@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9506138v1
-doc_title: "arXiv:hep-th/9506138v1 21 Jun 1995"
+doc_title: "Black Hole Complementarity vs. Locality"
 section_id: sec-004-41-comparing-commutators
 section_title: "Comparing Commutators"
 section_number: 4.1
@@ -8,6 +8,7 @@ pages: 13-15
 source_pdf: 9506138v1.pdf
 source_sha256: bb85afba0530402c
 toc_source: inferred
+doc_brief: "Black Hole Complementarity vs. Locality — 18 sections: Front matter; Introduction; The Nice-Slice Argument"
 ---
 Let us begin our comparison by examining the commutators of local ﬁelds more closely.
 For the moment, let us ignore gravity, and focus on quantum ﬁeld theory on a ﬁxed
@@ -34,7 +35,6 @@ that gravitational ﬂuctuations can be neglected. Since gravity enters open str
 only at one-loop level, the calculations of commutators of nice-slice ﬁelds obtained from
 open string ﬁeld theory can be directly compared to their counterparts obtained from
 quantum ﬁeld theory in a ﬁxed background.
-12
 Consider ﬁrst the commutator of two uncharged tachyon ﬁelds. In ordinary quantum
 ﬁeld theory, the transformation properties of scalar ﬁelds (tachyonic or not) guarantee that
 if a scalar ﬁeld commutes with itself on one spacelike surface, then it commutes with itself
@@ -69,4 +69,3 @@ to be highly suppressed. This is to be expected, otherwise an observer crossing 
 horizon would necessarily experience a large scale violation of the equivalence principle. It
 is an important open question whether an interpolating ﬁeld could be constructed which
 is “more local” than the light-front string ﬁelds.
-13

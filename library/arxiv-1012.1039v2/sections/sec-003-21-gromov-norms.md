@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1012.1039v2
-doc_title: "where vn is the volume of a regular ideal hyperbolic n–simplex. This result gener- alizes the fact that hyperbolic Dehn ﬁlling of a 3–manifold d oes not increase hyperbolic volume"
+doc_title: "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS"
 section_id: sec-003-21-gromov-norms
 section_title: "Gromov norms"
 section_number: 2.1
 pages: 4-6
 source_pdf: 1012.1039v2.pdf
 source_sha256: acb2575050db419d
-doc_brief: "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS — Let M be a hyperbolic n–manifold whose cusps have torus cross- sections."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.971
-latex_coverage_ratio: 0.969
+latex_coverage_ratio: 0.99
+doc_brief: "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS — Let M be a hyperbolic n–manifold whose cusps have torus cross- sections."
 ---
 []{#ss:norms label="ss:norms"} Let $X$ be any space, and let $\omega \in H_*(X;\mathbb{R})$ or $\omega \in
 H_*(X,Y;\mathbb{R})$ for some $Y\subset X$. The *Gromov norm of $\omega$* is the smallest $l^1$--norm of a real singular chain representing $\omega$, $$\|\omega\| = \inf\left\{\sum_{i=1}^k

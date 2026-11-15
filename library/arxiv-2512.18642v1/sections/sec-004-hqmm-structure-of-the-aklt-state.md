@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2512.18642v1
-doc_title: "A Hidden Quantum Markov model framework for"
+doc_title: "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain"
 section_id: sec-004-hqmm-structure-of-the-aklt-state
 section_title: "HQMM Structure of the AKLT State"
 section_number: null
 pages: 6-12
 source_pdf: 2512.18642v1.pdf
 source_sha256: c4c7f8b0a719aa2d
-doc_brief: "A Hidden Quantum Markov model framework for — This paper introduces a hidden quantum Markov models (HQMMs) framework to the Af- fleck–Kennedy–Lieb–Tasaki (AKLT) state—a cornerstone example of a"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.921
-latex_coverage_ratio: 0.995
+latex_prose_ratio: 0.898
+latex_coverage_ratio: 0.99
+doc_brief: "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain — This paper introduces a hidden quantum Markov models (HQMMs) framework to the Af"
 ---
 []{#Sect_HQMM_AKLT label="Sect_HQMM_AKLT"} The AKLT state's unique structure can be naturally formulated as a HQMM, revealing a profound connection between topological quantum matter and quantum stochastic processes. This framework cleanly separates the system into hidden virtual degrees of freedom that encode topological information and observable physical degrees accessible to measurement.
 

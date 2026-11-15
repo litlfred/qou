@@ -2,37 +2,57 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2311.15631v3",
  "source_sha256": "a3cc6d51cd04fc07",
- "brief": "Classification of connected étale algebras in pre-modular fusion categories up to rank three Ken KIKUCHI — We classify connected ´ etale algebras A’s in pre-modular fusion categories B with rank(B) ≤",
- "extended": "**Classification of connected étale algebras in pre-modular fusion categories up to rank three Ken KIKUCHI**\n\n*Department of Physics, National Taiwan University, Taipei 10617, Taiwan*\n\n30 pp, 5 sections.\n\n**Abstract.** We classify connected ´ etale algebras A’s in pre-modular fusion categories B with rank(B) ≤ 3 including degenerate and non-(pseudo-)unitary ones. We c omment on Lagrangian algebras and physical applications to ground st ate degeneracy and proof of spontaneous B-symmetry breaking.\n\n**Outline.** Introduction; Rank one; Rank two; Rank three; Physical applications",
+ "brief": "Classification of connected étale algebras in pre-modular fusion categories up to rank three — We classify connected ´etale algebras A’s in pre-modular fusion categories B with rank(B) ≤3 including",
+ "extended": "**Classification of connected étale algebras in pre-modular fusion categories up to rank three**\n\n*Ken KIKUCHI*\n\n30 pp, 9 sections.\n\n**Abstract.** We classify connected ´etale algebras A’s in pre-modular fusion categories B with rank(B) ≤3 including degenerate and non-(pseudo-)unitary ones. We comment on Lagrangian algebras and physical applications to ground state degeneracy and proof of spontaneous B-symmetry breaking.\n\n**Outline.** Front matter; Introduction; Classification; Rank one; Rank two; Rank three; Physical applications; Conformal dimensions of BRep(S3); Conformal dimensions of Bpsu(2)5",
  "tokens": {
   "brief": 49,
-  "extended": 145
+  "extended": 151
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
    "pages": "1-5"
   },
   {
-   "id": "sec-001-rank-one",
+   "id": "sec-001-classification",
+   "title": "Classification",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-002-rank-one",
    "title": "Rank one",
    "pages": "5-6"
   },
   {
-   "id": "sec-002-rank-two",
+   "id": "sec-003-rank-two",
    "title": "Rank two",
    "pages": "6-11"
   },
   {
-   "id": "sec-003-rank-three",
+   "id": "sec-004-rank-three",
    "title": "Rank three",
    "pages": "11-23"
   },
   {
-   "id": "sec-004-physical-applications",
+   "id": "sec-005-physical-applications",
    "title": "Physical applications",
-   "pages": "23-30"
+   "pages": "23-25"
+  },
+  {
+   "id": "sec-006-conformal-dimensions-of-breps3",
+   "title": "Conformal dimensions of BRep(S3)",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-007-conformal-dimensions-of-bpsu25",
+   "title": "Conformal dimensions of Bpsu(2)5",
+   "pages": "26-30"
   }
  ],
  "provenance": {

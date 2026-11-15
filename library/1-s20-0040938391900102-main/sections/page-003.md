@@ -1,6 +1,6 @@
 ---
 doc_id: 1-s20-0040938391900102-main
-doc_title: "ENERGY"
+doc_title: "Energy of a knot"
 section_id: page-003
 section_title: "Page 3"
 section_number: null
@@ -8,6 +8,7 @@ pages: 3-3
 source_pdf: 1-s2.0-0040938391900102-main.pdf
 source_sha256: 8b4169e83aeeff39
 toc_source: undetermined
+doc_brief: "Energy of a knot — 7 sections: Page 1; Page 2; Page 3"
 ---
 243 
 ENERGY OF A KNOT 

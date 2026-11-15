@@ -2,90 +2,150 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2509.02354v2",
  "source_sha256": "14680221e597fe61",
- "brief": "The holonomy braiding for U_xi(sl2) in terms of geometric quantum dilogarithms — We derive an explicit formula for the holonomyR-matrix of quantumsl2 at a root of unity.",
- "extended": "**The holonomy braiding for U_xi(sl2) in terms of geometric quantum dilogarithms**\n\n*CALVIN MCPHAIL-SNYDER AND NICOLAI RESHETIKHIN*\n\n41 pp, 16 sections.\n\n**Abstract.** We derive an explicit formula for the holonomyR-matrix of quantumsl2 at a root of unity. We show it factorizes into a product of four quantum dilogarithms and satisfies a holonomy Yang-Baxter equation. This factorization extends previously known results and we collect many existing results needed for our computation.\n\n**Outline.** 1 Introduction; 2 Quantum sl2 and Weyl algebras; 2.3 Representation into the Weyl algebra; 3 Specialization to a root of unity; 3.1 Central subalgebras at roots of unity; 3.2 Uξ-modules.; 3.3 The braiding on characters; 3.6 Wξ-modules; 4.4 The holonomy Yang-Baxter equation; 5 R-matrix computations; 5.1 Log-parameter dependence; Appendix A. Quantum dilogarithms; A.1. Basic definitions; A.2. Fusion identities; A.3. Fourier transform identities; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3.8: For any admissible characters(ˆχ1, ˆχ2) an invertible linear operator\n- Theorem 4.3: At a positive crossing that is not pinched the matrix coefficients satisfy\n- Theorem 4.5: At a positive, non-pinched, log-colored crossing the brading matrix factors as\n- Theorem 4.7: Fix anyR3-admissibleχ-colorings and compatible log-colorings of the diagrams\n- Theorem 5.6: (a) The R-matrices (4.16) are well-defined in the pinched limit where\n- Theorem 5.9: At a positive crossing which is pinched,E-nilpotent, and has a standard",
+ "brief": "The holonomy braiding for U_xi(sl2) in terms of geometric quantum dilogarithms — We derive an explicit formula for the holonomy R-matrix of quantum sl2 at a root of unity.",
+ "extended": "**The holonomy braiding for U_xi(sl2) in terms of geometric quantum dilogarithms**\n\n*CALVIN MCPHAIL-SNYDER AND NICOLAI RESHETIKHIN*\n\n41 pp, 28 sections.\n\n**Abstract.** We derive an explicit formula for the holonomy R-matrix of quantum sl2 at a root of unity. We show it factorizes into a product of four quantum dilogarithms and satisfies a holonomy Yang-Baxter equation. This factorization extends previously known results and we collect many existing results needed for our computation.\n\n**Outline.** Front matter; 1 Introduction; 2 Quantum sl2 and Weyl algebras; 2.1 The braiding for quantum sl2; 2.2 The braiding for Uq(sl2); 2.3 Representation into the Weyl algebra; 3 Specialization to a root of unity; 3.1 Central subalgebras at roots of unity; 3.2 Uξ-modules.; 3.3 The braiding on characters; 3.4 The homomorphism from Uq to the Weyl algeb; 3.5 Braiding of Uξ-modules.; 3.6 Wξ-modules; 4 The R-matrix in the Fourier dual basis; 4.1 Recursions for the R-matrix coefficients; 4.2 The normalized R-matrix; 4.3 Factorization of the R-matrix; 4.4 The holonomy Yang-Baxter equation",
  "tokens": {
   "brief": 42,
-  "extended": 385
+  "extended": 270
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-3"
+   "pages": "2-3"
   },
   {
    "id": "sec-001-2-quantum-sl2-and-weyl-algebras",
    "title": "Quantum sl2 and Weyl algebras",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-002-21-the-braiding-for-quantum-sl2",
+   "title": "The braiding for quantum sl2",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-003-22-the-braiding-for-uqsl2",
+   "title": "The braiding for Uq(sl2)",
    "pages": "3-4"
   },
   {
-   "id": "sec-002-23-representation-into-the-weyl-algebra",
+   "id": "sec-004-23-representation-into-the-weyl-algebra",
    "title": "Representation into the Weyl algebra",
    "pages": "4-5"
   },
   {
-   "id": "sec-003-3-specialization-to-a-root-of-unity",
+   "id": "sec-005-3-specialization-to-a-root-of-unity",
    "title": "Specialization to a root of unity",
    "pages": "5-5"
   },
   {
-   "id": "sec-004-31-central-subalgebras-at-roots-of-unity",
+   "id": "sec-006-31-central-subalgebras-at-roots-of-unity",
    "title": "Central subalgebras at roots of unity",
    "pages": "5-6"
   },
   {
-   "id": "sec-005-32-uξ-modules",
+   "id": "sec-007-32-uξ-modules",
    "title": "Uξ-modules.",
    "pages": "6-6"
   },
   {
-   "id": "sec-006-33-the-braiding-on-characters",
+   "id": "sec-008-33-the-braiding-on-characters",
    "title": "The braiding on characters",
-   "pages": "6-11"
+   "pages": "6-7"
   },
   {
-   "id": "sec-007-36-wξ-modules",
+   "id": "sec-009-34-the-homomorphism-from-uq-to-the-weyl-algebra",
+   "title": "The homomorphism from Uq to the Weyl algebra at root of unity",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-010-35-braiding-of-uξ-modules",
+   "title": "Braiding of Uξ-modules.",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-011-36-wξ-modules",
    "title": "Wξ-modules",
-   "pages": "11-17"
+   "pages": "11-12"
   },
   {
-   "id": "sec-008-44-the-holonomy-yang-baxter-equation",
+   "id": "sec-012-4-the-r-matrix-in-the-fourier-dual-basis",
+   "title": "The R-matrix in the Fourier dual basis",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-013-41-recursions-for-the-r-matrix-coefficients",
+   "title": "Recursions for the R-matrix coefficients",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-014-42-the-normalized-r-matrix",
+   "title": "The normalized R-matrix",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-015-43-factorization-of-the-r-matrix",
+   "title": "Factorization of the R-matrix",
+   "pages": "15-17"
+  },
+  {
+   "id": "sec-016-44-the-holonomy-yang-baxter-equation",
    "title": "The holonomy Yang-Baxter equation",
    "pages": "17-23"
   },
   {
-   "id": "sec-009-5-r-matrix-computations",
+   "id": "sec-017-5-r-matrix-computations",
    "title": "R-matrix computations",
    "pages": "23-23"
   },
   {
-   "id": "sec-010-51-log-parameter-dependence",
+   "id": "sec-018-51-log-parameter-dependence",
    "title": "Log-parameter dependence",
-   "pages": "23-33"
+   "pages": "23-25"
   },
   {
-   "id": "sec-011-appendix-a-quantum-dilogarithms",
+   "id": "sec-019-52-the-pinched-limit-of-the-r-matrix",
+   "title": "The pinched limit of the R-matrix",
+   "pages": "25-28"
+  },
+  {
+   "id": "sec-020-53-the-determinant-of-the-r-matrix",
+   "title": "The determinant of the R-matrix",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-021-54-the-fourier-transform-of-the-r-matrix",
+   "title": "The Fourier transform of the R-matrix",
+   "pages": "29-33"
+  },
+  {
+   "id": "sec-022-appendix-a-quantum-dilogarithms",
    "title": "Appendix A. Quantum dilogarithms",
    "pages": "33-33"
   },
   {
-   "id": "sec-012-a1-basic-definitions",
+   "id": "sec-023-a1-basic-definitions",
    "title": "A.1. Basic definitions",
    "pages": "33-36"
   },
   {
-   "id": "sec-013-a2-fusion-identities",
+   "id": "sec-024-a2-fusion-identities",
    "title": "A.2. Fusion identities",
    "pages": "36-37"
   },
   {
-   "id": "sec-014-a3-fourier-transform-identities",
+   "id": "sec-025-a3-fourier-transform-identities",
    "title": "A.3. Fourier transform identities",
    "pages": "37-39"
   },
   {
-   "id": "sec-015-references",
+   "id": "sec-026-references",
    "title": "References",
    "pages": "39-41"
   }
@@ -94,8 +154,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

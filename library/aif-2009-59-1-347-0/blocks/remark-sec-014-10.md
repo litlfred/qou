@@ -1,1 +1,0 @@
-— The functional space Hd

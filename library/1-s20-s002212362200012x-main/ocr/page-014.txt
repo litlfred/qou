@@ -1,0 +1,60 @@
+14 R. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392
+
+Equation (12) can be written
+d[Q\: > S?dt. (19)
+By It6’s formula,
+AS = —2QidQr — dQ],
+
+and
+
+—= — va.
+25, Bs ~ Ve 8
+
+Since the first term on the right hand side is a martingale, we have almost surely, for all
+s,t>0,
+
+avi = =2Q:dQi - dQ): 1 dQ ou -Q:dQ, VS,
+
+d 1
+qelv St4r|Fr] S ~gElv St4rlFr]-
+By integrating (using Growall’s inequality), we finally get
+E[Si4+|Fr] < E[VSi4r|Frl < JS,e7/8 < et/8
+
+(where we used the fact that $; < 1 almost surely for all t). The proof is completed by
+summing over coordinates. O
+
+Finally, combining equations (16), (17), (18) and Fact 12, we have for all T > 0,
+
+2
+dt +n%e—T/8
+
+. 1
+sup limsup,_,o4 = W(t, Teo”)
+
+T
+@ | sup
+\o|=1
+
+0
+
+Remark 14. Up to this point, the semi-log-concavity of the measure v has not been used,
+meaning that the bound (20) holds true for general measures. Semi-log-concavity will
+play a role when bounding the integrand on the right hand side of the above equation.
+
+T
+Var, [y] < | sup
+0
+
+2
+dt +n?e"T/®, (20)
+
+. 1
+limsup,_,94 ow (Tw.Y; Tw, +20V)
+
+In light of the above bound, the proof boils down to the following estimate on the
+transportation distance between two close tilts.
+
+Proposition 15. Let v be a B-semi-log-concave measure on Cy. Let v € R” and let 6 €
+S"-1. Then, for all 0 < € < 0.1, we have
+
+Wi (tov, Toca) S deh! 12°),

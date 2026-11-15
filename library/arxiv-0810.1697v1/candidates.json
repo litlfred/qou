@@ -1,0 +1,46 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-0810.1697v1",
+ "source": {
+  "structure_sha256": "1aef66179da3c154d15e54acfef9b7bfafc086ecbf7e51de146503faff1bcf60",
+  "file": "0810.1697v1.pdf"
+ },
+ "provenance": {
+  "title": "ON THE CABLE EXPANSION FORMULA",
+  "authors": "QIHOU LIU",
+  "arxiv": {
+   "id": "0810.1697",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "9 Oct 2008"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "recommendation": 1
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Since (-p,-q) represents the same cable as (p,q) does, we shall always assume $p>0$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-004-3-expansion-of-cables-in-the-skein-module.md",
+   "section_title": "Expansion of cables in the skein module",
+   "pages": "5-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

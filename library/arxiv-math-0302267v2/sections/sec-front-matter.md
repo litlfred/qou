@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0302267v2
-doc_title: "arXiv:math/0302267v2 [math.NT] 27 Feb 2003"
+doc_title: "Groupes fondamentaux motiviques de Tate mixte"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 0302267v2.pdf
 source_sha256: c09c8cabd5f9d8e6
 toc_source: inferred
+doc_brief: "Groupes fondamentaux motiviques de Tate mixte — We deﬁne the category of mixed Tate motives over the ring of S-integers of a number ﬁeld."
 ---
 arXiv:math/0302267v2  [math.NT]  27 Feb 2003
 Groupes fondamentaux motiviques de Tate mixte
@@ -43,4 +44,3 @@ dans P1, de 0, ∞et µN
 6. Profondeur
 67
 Appendice. Rappels sur les groupes alg´ebriques unipotents
-76

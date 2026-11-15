@@ -1,0 +1,53 @@
+B_ Convergence of V(t,s) to V(t, s)
+
+When we apply the saddle point method and the Poisson summation formula to V(t, s),
+it is necessary to note how V(t, s) converges to V(t,s) as N + oo. In this appendix, we
+verify that this convergence is suitable in those applications.
+
+We recall that in Section 2.2 we put V(t, s) and V(t, s) by
+
+V(tes) = 4(-ya-#—2y1-s))-—t™
+ey SNAP? PS )) ot 6
+l\e2 1, 1 1 3rV-1 arV-l1
+~2nv-1(5 (t+ 5-55)" +58 —5t-8+5)- an + EN
+and
+) _ 1 _T; —2n/—-Ity _ : —2n/-Is _@
+Vis) = 5 rail Lig(e ) — 2Lig(e ) *)
+
+1 1
+— Inv (5 sts? +ts—st—s+z).
+Lemma B.1. Let m be any non-negative integer. Then, in the domain A" of (12), V(t, s)
+is presented by the following form
+
+- 1 1
+Vit,s) = V(t,s)+M(t, 8)y + Valt, 8) 3 treet Vin(ts 8) Fm Nari
+
+where V;(t, 8)’s are holomorphic functions independent of N, and |Rm(t, s)| is bounded by
+a constant which is independent of N. .
+In particular, V(t,s) uniformly converges to V(t,s) in the domain A”.
+
++4+Rn(t,s)
+
+Proof. We obtain the required presentation by applying Proposition A.1 to V(t,s). In
+particular, by Proposition A.1, + y(t) uniformly converges to on Sa hin(erv") as N>
+oo in the domain A”. Hence, we obtain the lemma. im
+
+Lemma B.2. Let i and j be any non-negative integers. Then, in the domain A”,
+
+|eon V(t. s)| is bounded by a constant which ts independent of N.
+
+Proof. By Proposition A.1, 2. Vit, s)| uniformly converges to 2. _V( t,s )| as N > oo
+in the domain A”. Since A” is compact, | 5; ion V(t, s)| is bounded in A”. Hence, we obtain
+the lemma. O
+
+When we apply the saddle point method, we need to show that V(t, s) satisfies the
+condition of Remark 3.6, noting that V(t, S) satisfies the assumption of the saddle point
+method as shown in Section 5.3. In fact, we can show the condition of Remark 3.6 for
+V(t, s) by Lemma B.1.
+
+When we apply the Poisson summation formula, we need to show that V(t, s) satisfies
+the condition of Remark 4.8, noting that V(t, 8) satisfies the assumption of the Poisson
+summation formula as shown in Section 5.4. In fact, we can show the condition of Remark
+4.8 for V(t, s) by Lemmas B.1 and B.2.
+
+46

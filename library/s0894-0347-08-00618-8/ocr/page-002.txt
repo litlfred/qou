@@ -1,0 +1,56 @@
+522 J. BORCEA, P. BRANDEN, AND T. M. LIGGETT
+
+condition [30] [65] if
+(PLC) w(S)u(T) < w(S UT) (SOT)
+
+for all $,T C [n]. The corresponding probability measure (also denoted by jz) on
+al" defined by pu(A) = Visca lS) is said to be positively associated if
+
+[ru [eis | red
+
+for any pair of increasing functions F,G on 2!"!. The latter is a strong correlation
+inequality that yields many others as well as distributional limit theorems for models
+of statistical mechanics such as the ferromagnetic Ising model or certain urn models
+(63). A fundamental result in the theory of positively associated random variables,
+namely the FKG theorem [30], asserts that PLC implies positive association. This
+is a powerful tool that allows verification of (global) correlation inequalities from
+the PLC property, which is a local condition and therefore often easier to check.
+There are many important examples of negatively dependent “repelling” random
+variables in probability theory, combinatorics, stochastic processes and statistical
+
+cesses ;
+Rayleigh matroids 3 [72], competing urns models , etc; see, e.g.,
+and the references therein for a discussion of some of these examples and
+several others. To add to this list, in §3] we show that both the inequalities char-
+acterizing multi-affine real stable polynomials [8] and Hadamard-Fischer-
+Kotelyansky type inequalities in matrix theory [28] may in fact be viewed
+as natural manifestations of negative dependence properties.
+
+The reverse of the PLC inequality gives the so-called negative lattice condition
+
+(NLC) p(S)p(D) > pS UT) (SAT)
+
+for all S,T C [n], while the usual definition of negative association for a probability
+measure pi on 2") is the “negative” analog of positive association [65], namely the
+
+inequality
+[ru [eine | red
+
+for any pair of increasing functions F,G on 2!"] depending on disjoint sets of coor-
+dinates (note that the latter condition is important since by the Cauchy-Schwarz
+inequality F and F are always positively correlated). However, negative dependence
+is not nearly as robust as positive dependence. In particular, the NLC inequality
+fails to imply negative association (see Example [2.1), and there is no known local-
+to-global tool comparable to the FKG theorem in the theory of positive association.
+Thus, no corresponding theory of negatively dependent events exists as yet, but,
+as explained in [65], there certainly is a need for such a theory. In op. cit. Peman-
+tle made a systematic study of measures on Boolean lattices with various negative
+dependence properties. He proved certain relations between them and conjectured
+numerous others, so as to pave the way for a theory of negative dependence. How-
+ever, most open problems and conjectures are unresolved to this day, and the scope
+of the positive results so far is quite restricted.
+
+In this paper we introduce the class of strongly Rayleigh probability measures by
+means of purely geometric conditions on the zero sets of their generating polyno-
+mials that amount to the real stability of the latter (Definitions 2.9}2.10). As we
+

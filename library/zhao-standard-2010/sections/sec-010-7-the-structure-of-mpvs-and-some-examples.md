@@ -8,7 +8,9 @@ pages: 17-17
 source_pdf: Zhao_standard_2010.pdf
 source_sha256: 94a70847c2937ba7
 toc_source: inferred
+doc_brief: "Standard Relations of Multiple Polylogarithm Values at Roots of Unity — Let N be a positive integer."
 ---
+The structure of MPVs and some examples
 In this section we concentrate on RDS between MPVs of small weights. Most of
 the computations in this section are carried out by MAPLE. We have checked
 the consistency of these relations with many known ones and veriﬁed our results
@@ -34,4 +36,3 @@ N 2(N +1)w−4.
 If w = 2 (resp. w = 3) then the number of FDS is (N −1)2 (resp. N 2(N −1)).
 Therefore, it is not hard to see that the number of standard relations grow
 polynomially with the level N but exponentially with the weight w.
-7.1

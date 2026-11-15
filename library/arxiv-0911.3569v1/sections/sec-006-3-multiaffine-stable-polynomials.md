@@ -7,10 +7,11 @@ section_number: 3
 pages: 8-8
 source_pdf: 0911.3569v1.pdf
 source_sha256: 4e7c15c9724fb453
-doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.84
+latex_coverage_ratio: 0.955
+doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
 ---
 A polynomial $f$ is \emph{multiaffine} if each indeterminate occurs
 at most to the first power in $f$.  For a set $\EuScript{S}$ of polynomials,

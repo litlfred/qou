@@ -7,10 +7,11 @@ section_number: 3.1
 pages: 8-10
 source_pdf: 2305.07425v1.pdf
 source_sha256: 2f7d2ac5818b6af4
-doc_brief: "LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS — The set of equivalence classes of cobounded actions of a grou p G on diﬀerent hyperbolic metric spaces carries a natural partial order."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.962
-latex_coverage_ratio: 0.962
+latex_coverage_ratio: 0.985
+doc_brief: "LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS — The set of equivalence classes of cobounded actions of a group G on diﬀerent hyperbolic metric spaces carries a natural partial order."
 ---
 For notational simplicity, we replace $G$ by its index $\leq 2$ subgroup $G'$. For each vertex $v$ in the Bass-Serre tree $T$, let $L_v$ be the quasi-line from Definition [\[defn:quasilineL_v\]](#defn:quasilineL_v){reference-type="ref" reference="defn:quasilineL_v"}. Recall that $gL_v = L_{gv}$ for any group element $g$ in $G$.
 

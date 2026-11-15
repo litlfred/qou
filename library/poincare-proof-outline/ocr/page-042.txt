@@ -1,0 +1,75 @@
+fix A BC D i11 i12 i21 i22k
+
+assume H:hermitean (A, B, C, D) (A, B, C, D) # mat-zero
+
+assume line: is-poincare-line-cmat (A, B, C, D)
+
+assume if: (i11, i12) € calc-ideal-points-cmat-cvec (A, B, C, D)
+
+assume 72:(i21, 122) € calc-ideal-points-cmat-cvec (A, B, C, D)
+
+assume 7 (i11, i12) %, (i21, i22)
+
+assume opposite: to-complez-cvec (i11, i12) = — to-complex-cvec (i21, i22)
+
+let ?discr = sqrt ((emod B)? — (Re D)?)
+let ?den = (cmod B)?
+
+let 7:1 = Bx (— D —i x ?discr)
+
+let 712 = Bx (— D+i * ?discr)
+
+have i11 = ?i1 V i11 = 712 i12 = ?den
+i21 = ?i1 V i21 = ?i2 i122 = ?den
+using i1 i2 H line
+by (auto split: if-split-asm)
+hence 7: i11 = ?i1 A i21 = ?i2 V ill = 712 A i21 = Pil
+using (7 (i11, i112) %y (i21, i22)>
+by auto
+
+have ?den 4 0
+using line
+by auto
+
+hence i11 = — i21
+using opposite <i12 = ?den) <i22 = ?den»
+by (simp add: nonzero-neg-divide-eq-eq2)
+
+hence ?i1 = — ?i2
+using i
+by (metis add.inverse-inverse)
+
+hence D = 0
+using <?den # 0>
+by (simp add: field-simps)
+
+thus on-circline-cmat-cvec (A, B, C, D) 0,
+by (simp add: vec-cnj-def)
+qed
+
+thus ?thesis
+using assms «k = —1>
+using calc-ideal-points-different ideal-points-unique
+by fastforce
+qed
+
+Transformations of ideal points
+Mobius transformations that fix the unit disc when acting on h-lines map their ideal points to ideal points.
+
+lemma ideal-points-moebius-circline [simp]:
+assumes unit-circle-fix M is-poincare-line H
+shows ideal-points (moebius-circline M H) = (moebius-pt M) ‘ (ideal-points H) (is ?I' = ?M ‘ ?1)
+proof—
+obtain if i2 where «: if 4 i2 ?J = {i1, i2}
+using assms(2)
+by (rule obtain-ideal-points)
+let ?Mil = ?M il and ?Mi2 = ?M i2
+have ?Mil € ?M ‘ (circline-set H)
+?Mi2 € ?M ‘ (circline-set H)
+?Mil € ?M ‘ (circline-set unit-circle)
+?Mi2 € ?M ‘ (circline-set unit-circle)
+using *
+unfolding ideal-points-def circline-intersection-def circline-set-def
+by blast+
+
+42

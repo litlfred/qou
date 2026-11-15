@@ -1,0 +1,73 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 183
+
+Strichartz [53]. In the context of Hamiltonian dynamical systems, the expansion was first proposed in [109] and subsequently
+applied in a more general context in [110] with the aim of designing new numerical integration algorithms.
+
+By introducing nonstationary vector fields and flows, it turns out that one gets a linear differential equation in terms of
+operators which can be analyzed in exactly the same way as in Section 2. Thus it is in principle possible to build approximate
+solutions of the differential equation which preserve some geometric properties of the exact solution. The corresponding
+Magnus series expansion allows us to write the formal solution, and then different approximations can be obtained by
+truncating the series. Obviously, this formal expansion presents two difficulties in order to render a useful algorithm in
+practice: (i) it is not evident what the domain of convergence is, and (ii) some device has to be designed to compute the
+exponential map once the series is truncated.
+
+Next we briefly summarize the main ideas involved in the procedure. To begin with, let us consider the autonomous
+equation
+
+x’ = f(x), x(0) = Xp) € R". (150)
+If gy! denotes the exact flow of (150), i.e. x(t) = y' (Xo), then for each infinitely differentiable map g : R” —> R, g(g'(y))
+admits the representation
+
+g(y'(y)) = O'[gl(y) (151)
+
+where the operator @' acts on differentiable functions [111]. To be more specific, let us introduce the Lie derivative (or Lie
+operator) associated with f,
+
+n
+a
+[p= _—. 152
+It acts on differentiable functions F : R" —> R™ (see [112, Chap. 8] for more details) as
+
+LpF (y) = F'(y)fy),
+where F’(y) denotes the Jacobian matrix of F. It follows from the chain rule that, for the solution ¢' (xo) of (150),
+
+d
+art ox) = (L4F)(g" (Xo)), (153)
+
+and applying the operator iteratively one gets
+
+dé
+ah Yo) = (LEF)(g" (Xo), k= 1.
+
+Therefore, the Taylor series of F(y' (xo)) at t = 0 is given by
+
+tk
+F(G' (Xo) = D7 75 HEF) 0) = exp (tLe) FI (%o). (154)
+k>0
+
+Now, putting F(y) = Id(y) = y, the identity map, this is just the Taylor series of the solution itself
+
+k
+(Ko) = JF (Uf) (Ko) = exp (th [IA] 0%).
+
+k>0
+
+If we substitute F by g in (154) and compare with (151), then it is clear that &‘[g](y) = exp(tL,)[g](y). The object exp(tL,)
+is called the Lie transform associated with f.
+At this point, let us suppose that f(x) can be split as f(x) = f;(x) + f2(x), in such a way that the systems
+
+x =f(x), x = f,(x)
+have flows gj and 5, respectively, so that
+&(g; (y)) = exp(tl, )[gl(y) i= 1, 2.
+Then, for their composition one has
+
+&(Y5,0 vi (y)) = exp(sLe,) exp(tLe, Ig] (y). (155)
+
+This is precisely formula (154) with f = f;, t replaced with s and with F(y) = exp(tLe, )[g](y). Notice that the indices 1 and
+2, as well as s and t to the left and right of Eq. (155), are permuted. In other words, the Lie transforms appear in the reverse
+order to their corresponding maps [79].
+
+The Lie derivative L¢ satisfies some remarkable properties. Given two functions y1, yo, it can be easily verified that
+
+Leary + a2 Wo) = ale + ale, o1,0,2€R
+Lei W2) = (Lei) va + Wi Lee

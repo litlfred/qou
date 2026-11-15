@@ -1,0 +1,227 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-1806.09450v1",
+  "figures": [
+    {
+      "id": "vfig-p014",
+      "file": null,
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 14
+      },
+      "page": 14,
+      "rotation": 0,
+      "captionLabels": [
+        "1"
+      ],
+      "region": null,
+      "assembly": {
+        "drawings": 40,
+        "background": 0,
+        "groups": [],
+        "boxes": [],
+        "unlabelledClosedShapes": 21,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              287.49,
+              254.38,
+              330.12,
+              254.38
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              279.35,
+              233.41,
+              319.18,
+              254.26
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              315.98,
+              203.83,
+              331.52,
+              248.12
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              278.77,
+              201.51,
+              312.62,
+              229.87
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              258.14,
+              234.84,
+              283.91,
+              254.38
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              333.7,
+              234.72,
+              352.15,
+              254.38
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              317.12,
+              196.52,
+              338.39,
+              231.66
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              293.93,
+              176.73,
+              315.27,
+              195.26
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              271.82,
+              198.32,
+              292.07,
+              231.78
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              305.13,
+              239.08,
+              305.13,
+              254.38
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              305.13,
+              212.09,
+              305.13,
+              235.51
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              305.13,
+              176.73,
+              305.13,
+              208.52
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              304.32,
+              227.16,
+              305.97,
+              228.81
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              322.29,
+              237.62,
+              352.15,
+              254.38
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              295.0,
+              222.29,
+              319.18,
+              235.86
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              282.1,
+              215.04,
+              291.88,
+              220.54
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              315.98,
+              215.04,
+              328.09,
+              221.85
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              288.77,
+              223.61,
+              312.86,
+              237.16
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              258.14,
+              238.91,
+              285.65,
+              254.38
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 0
+      },
+      "unrendered_reason": "no drawing component on this page contains a text line, so there is no labelled region to render -- the caption candidates are recorded and nothing is claimed about what the page draws"
+    }
+  ]
+}

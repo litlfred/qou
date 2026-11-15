@@ -1,0 +1,76 @@
+show ?thesis
+by (transfer, transfer, auto simp add: Let-def)
+qed
+
+lemma intersects-x-axis-positive-intersects-z-axis [simp]:
+assumes intersects-z-axis-positive H
+shows intersects-x-axis H
+proof—
+have /\ a aa. [ Re a # 0; Re aa / Rea < — 1; 4 (Re a)? < (Re aa)? ] = aa=O0Aa=0
+by (smt less-divide-eq-1-pos one-less-power pos2 power2-minus power-divide zero-less-power2)
+thus ?thesis
+using assms
+apply transfer
+apply transfer
+apply (auto simp add: hermitean-def mat-adj-def mat-cnj-def)
+done
+qed
+
+lemma add-less-abs-positive-iff:
+fixes a b :: real
+assumes abs b < abs a
+showsa+b>0+—>+a>0
+using assms
+by auto
+
+lemma calc-x-azis-intersection-positive-abs’:
+fixes A B :: real
+assumes B? > A? and A # 0
+shows abs (sgn(B) * sqrt(B? — A) / A) < abs(—B/A)
+proof—
+from assms have B 4 0
+by auto
+
+have B? — A? < B?
+using <A # 0>
+by auto
+hence sqrt (B? — A?) < abs B
+using real-sqrt-less-iff [of B? — A? B?]
+by simp
+thus ?thesis
+using assms (B # 0»
+by (simp add: abs-mult divide-strict-right-mono)
+qed
+
+lemma calc-intersect-x-axis-positive-lemma:
+assumes B? > A? and A # 0
+shows (—B + sgn B « sqrt(B? — A*))/A>0+¢>+-B/A>1
+proof—
+
+have (—B + sgn B * sqrt(B? — A?)) / A= —B/ A+ (sgn B * sqrt(B? — A*)) / A
+using assms
+by (simp add: field-simps)
+
+moreover
+
+have —B / A + (sgn B * sqrt(B? — A*))/A>0¢>-B/A>0
+using add-less-abs-positive-iff|OF calc-x-axis-intersection-positive-abs'|OF assms]]
+by simp
+
+moreover
+
+hence (B/A)? > 1
+using assms
+by (simp add: power-divide)
+
+hence B/A>1V B/A<-1
+by (smt one-power2 pos2 power2-minus power-0 power-strict-decreasing zero-power2)
+
+hence -B/A>0++-B/A>1
+by auto
+
+ultimately
+
+show ?thesis
+
+106

@@ -7,10 +7,11 @@ section_number: 5.2
 pages: 22-30
 source_pdf: 2403.00360v2.pdf
 source_sha256: b0764ca18a83a84f
-doc_brief: "CAUSAL FERMION SYSTEMS AND OCTONIONS — We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.968
-latex_coverage_ratio: 0.961
+latex_coverage_ratio: 0.976
+doc_brief: "CAUSAL FERMION SYSTEMS AND OCTONIONS — We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular"
 ---
 []{#secchiralsymm label="secchiralsymm"} As explained in Section [\[seccfssm\]](#seccfssm){reference-type="ref" reference="seccfssm"}, in the causal fermion system description of the standard model, the chiral symmetry is broken by hand via the ansatz [\[asymmetry\]](#asymmetry){reference-type="eqref" reference="asymmetry"}. This procedure is not quite satisfying. Instead, within the context of causal fermion systems, it would be desirable to explain the chiral symmetry breaking from the interactions as described by the causal action principle. This should be achieved in a manner consistent with octonionic theories where it has recently been proposed that algebraic symmetry breaking on a physical system described by a tensor product of division algebras can be induced via the identification of certain complex structures within the (tensor product of) division algebras [@furey231].
 

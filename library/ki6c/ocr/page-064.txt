@@ -1,0 +1,47 @@
+where we obtain the second equality by 2A’(f) = A’(s—t). Since g(t) is monotonically
+increasing, g'(¢) > 0. Further, since A’(v) is monotonically decreasing in 0 < v < 0.5 and
+0<s—t <s< 0.5, we have that A’(s—f) — A’(s) > 0 for 0 < t < g (0.5). Therefore,
+P'(t) > 0, and P(#) is monotonically increasing. Since
+
+P(0) = —0.453036... < 0 and P(0.22) = —0.00453122... < 0,
+we obtain that P(t) < 0 for 0 < ¢ < g~1(0.5). This implies (99), completing the proof of
+the lemma. O
+Lemma C.4. Let (t,5,u) € A. Then, t <0.5 oru<0.5.
+
+Proof. We suppose that 0.5 <<t<1and0.5<u< 1. Then, the function of the defining
+inequality of A is calculated as
+
+2 A(t) + A(s — t) — 2A(s) + A(s — u) +2 A(u) —¢
+1
+< A(s—t)—2A(s)+A(s—u)—¢ < 4A(-) —<¢ = —0.25994... < 0,
+and this contradicts the defining inequality of A, which implies the assumption of the
+lemma.
+Hence, t < 0.5 or u < 0.5, as required. Oo
+Lemma C.5. Let (t,s,u) € A. Then, t < 0.5 and u < 0.5.
+
+Proof. By Lemma C.4, we have that t < 0.5 or u < 0.5. We consider each of these two
+cases in the following of this proof.
+
+We suppose that t < 0.5. Then, we show that u < 0.5, as follows. We consider the
+maximal value of 2A(¢) + A(s — t) — 2A(s) for 0 < t < 0.5 and 0.5 < s < 1. As we showed
+
+in Section 4.2 (exchanging t and s), when (t,s) = (+, ?), this maximal value is given by
+
+4A(4). Hence, by the defining inequality of A,
+0 < (2A(t) + A(s—t) — 2A(s)) + A(s — u) + 2A(u) — 5
+1
+< 4A(5) +A(s—u)+2A(u)—s.
+
+Therefore,
+
+1 1 1
+
+2A(u) > ¢- 4\(3) —A(s—u) > s- 4\(5) - ACG) = 0.161417... > 0.
+Hence, u < 0.5, and we obtain the conclusion of the lemma in this case.
+We suppose that u < 0.5. Then, it is shown that t < 0.5 from the above argument by
+
+exchanging t and wu. Hence, we also obtain the conclusion of the lemma in this case. OO
+
+We now show a proof of Lemma C.1 by using above lemmas.
+
+64

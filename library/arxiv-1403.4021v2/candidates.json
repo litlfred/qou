@@ -1,0 +1,91 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1403.4021v2",
+ "source": {
+  "structure_sha256": "046d02411e0dc0866f8355713ab3ba0038d5652e8724a0331e3cad45322761a4",
+  "file": "1403.4021v2.pdf"
+ },
+ "provenance": {
+  "title": "MARKOV TRACES ON THE BIRMAN-WENZL-MURAKAMI ALGEBRAS",
+  "authors": "Ivan Marin & Emmanuel Wagner",
+  "arxiv": {
+   "id": "1403.4021",
+   "version": "2",
+   "primary_class": "math.GT",
+   "stamp_date": "20 Jul 2014"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 4,
+  "by_kind": {
+   "recommendation": 4
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We guess that an algebraic proof of the existence of the Kauffman trace similar to the one that Jones provided for the Ocneanu trace should be easy to generalize to our central extension.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-12-presentation.md",
+   "section_title": "Presentation",
+   "pages": "3-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Assuming that these coe\ufb03cients should be rational fractions in x whose denominators have low degree, we get these rational fractions by interpolation.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-014-63-the-algebra-fn-as-a-specialization-of-bmw0365.md",
+   "section_title": "The algebra Fn as a specialization of BMW'0365BMWn",
+   "pages": "27-32",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "If the BMR freeness conjecture (see e.g. \\cite{CYCLO}) holds true for the complex reflection group of Shephard-Todd type $G_{20}$, then the quotient of the group algebra of the braid group by the relations $(s-a)^3 = 0$ is again finite dimensional (of dimenion $360$) and therefore it should be computationally doable to compare the dimensions of the two ideals.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-018-67-a-central-extension-of-the--1-hecke-algebras.md",
+   "section_title": "A central extension of the (-1)-Hecke algebras",
+   "pages": "36-42",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This should be doable by computing inside $H_5$, which is still finite-dimensional.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-018-67-a-central-extension-of-the--1-hecke-algebras.md",
+   "section_title": "A central extension of the (-1)-Hecke algebras",
+   "pages": "36-42",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

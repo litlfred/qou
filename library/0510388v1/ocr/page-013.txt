@@ -1,0 +1,37 @@
+For example, if
+
+X= Xo + Xi + Xj + xX3k,
+we will use
+V(x) = xi = (Xo + X1i + X2j + xX3k)i
+
+= —X, + Xol + X3 J _ Xk.
+
+Furthermore, V itself is invariant under a transitive group of orientation-preserving
+rigid motions of S*, so it is enough to show that V XV = —2 V atasingle point.
+Choose the point x = 1, where V(x) = i. Orient S° as usual, so that i,j,k
+
+is an ordered basis for the tangent space at the point x = 1. Now we find the
+component of V XV atthe point x = 1 in the i-direction, as follows.
+
+To get a small disk through x orthogonal to this direction, use the spherical cap
+of geodesic radius a on the great 2-sphere in the 1jk-subspace. The typical point
+along the boundary of this disk is
+
+y = cosa + (sinacos )j + (sinasing)k.
+Note that
+dy/dp = (—sinasing)j + (sinacoso)k,
+
+and
+V(y) = yi = (cosa)i + (sina sing)j — (sinacoso)k.
+
+The circulation of V around the boundary of this disk is given by
+Jo" Vy) © dy/dp db = Jo" —sin’a dp = —2msin’a.
+The area of this disk is given by
+Jo" 2nsina da = 2n(1 — cosa).
+Dividing circulation by area, we get
+—sin’a /(1—cos a) = —(1—cos’a) /(1—cos a) = —(1+cos a).
+
+As we let a > 0, this approaches —2. Hence at the point x = 1, the
+component of V XV in the i-direction is —2. So far, so good, since V(x) = 1.
+
+13

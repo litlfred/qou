@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1809.08419v1
-doc_title: "GR ¨OBNER-SHIRSHOV BASES FOR NON-CRYST ALLOGRAPHIC COXETER GROUPS"
+doc_title: "GRÖBNER-SHIRSHOV BASES FOR NON-CRYSTALLOGRAPHIC COXETER GROUPS"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-2
 source_pdf: 1809.08419v1.pdf
 source_sha256: 7ebca632544a6ea4
-doc_brief: "GRÖBNER-SHIRSHOV BASES FOR NON-CRYSTALLOGRAPHIC COXETER GROUPS — For the noncrystallographic Coxeter groups of type H, we construct their Gr¨ obner- Shirshov bases and the corresponding standard"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.993
+latex_prose_ratio: 0.94
+latex_coverage_ratio: 0.94
+doc_brief: "GRÖBNER-SHIRSHOV BASES FOR NON-CRYSTALLOGRAPHIC COXETER GROUPS — For the noncrystallographic Coxeter groups of type H, we construct their Gr¨obner- Shirshov bases and the corresponding standard"
 ---
 The object in this paper is the symmetry group of a four-dimensional regular polytope, the 120-cell or its dual, the 600-cell. We note that this is among a general class of groups, so called, the Coxeter groups. They appear naturally in geometry and algebra. In 1935, the finite Coxeter groups were classified by Coxeter in terms of Coxeter-Dynkin diagrams [@Coxeter35]. Contrary to the crystallographic Coxeter groups,
 

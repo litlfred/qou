@@ -1,0 +1,46 @@
+Galois action on the principal block and cyclic Sylow subgroups 1971
+
+1982]). For n > 5 or for (n, e) = (4, 2), the unipotent characters described in Table 3 are Aut(S)-invariant
+members of Irr3(Bo(S)).
+
+Now assume n = 4 and e = 1. Then the unipotent character in the last line of Table 3 is an Aut(S)-
+invariant member of Irr3(Bo(S))*!. In this case, 1s, Sts, and the character listed are the only unipotent
+characters in Irr3(S). However, since e = 1, we see that every unipotent character is a member of the
+principal block of G, which means that €3(G, 1) is comprised of only one block. Let ¢ € Fe with order 3.
+Then taking s to be the element diag(¢, ¢, ¢, 1) of G* =GLS 4(q), the semisimple character Xs EE (G, s)
+lies in the principal block of G and is trivial on Z(G) since s € SLi(q) = [G*, G* ]. Further, we see using
+Lemma 3.1 that x, is fixed by o1.
+
+Since C¢.(s) = GL} (q) x GL§(q), we see
+
+xsl) = (q +€)(q? + 1.
+
+Further, since the semisimple classes of G are determined by their eigenvalues and Z(G) is comprised of
+scalar matrices, we see that s is not conjugate to sz for any nontrivial z € Z (G). Hence Xslg is irreducible,
+by the second-to-last paragraph of Section 3A, and is therefore a member of Irr3(Bo(G)), since the
+principal block of G is the only block covered by the principal block of G. But since Z(G) < Z(G) is
+in the kernel of x;, this character is therefore a member of Irr3(Bo(G/Z(G)))™! = Irry(Bo(S))*!, again
+using [Cabanes and Enguehard 2004, Lemma 17.2]. Note that this character is not Aut(S)-conjugate to
+1s, Sts, nor the unipotent character labeled by (2, 2), which completes the proof for S = PSL;,(q) with
+
+n>4.
+
+Types By, and Cy, n = 2. When S is type By, or C, with n > 2 defined in characteristic different than 3,
+Table 4 exhibits at least two distinct unipotent characters in Irr3(Bo(S))7 that are Aut(S)-invariant, with
+the exception of the case S = PSp,(2°) with a odd. In the latter situation, we may instead consider the
+characters indexed by (o ) and (°° | *) with degrees $(q? + 1) and 4(q — 1)”, respectively. (Note that we
+do not consider PSp,(2) = G6.) These characters lie in Irr3(Bo(S))”' and the latter character extends to
+Aut(S). (However, we remark that the first character is not Aut($)-invariant, as in this case it is switched
+with (°') under the action of the graph automorphism, by [Malle 2008, Theorem 2.5]).
+
+Type D, and7D,, n= 4. In this case, if S is not D4(q), Tables 5 and 6 list at least two distinct unipotent
+characters that are Aut(S)-invariant members of Irry(Bo(S))*!. If S is D4(q) and 3| (¢ — 1), we may
+instead take the unipotent characters labeled by symbols G 3) and ( ) with x (Ig = 3(q +1(¢ +1)
+and (q? + 1)?, respectively. When 3 | (q+ 1), we may take the characters index by (}) and (° 1,73), the
+latter of which satisfies x (1)q’ = 3(q —13(q?- 1). oO
+
+We next establish Theorem 3.7 for the case that S has cyclic Sylow 3-subgroups, which we recall from
+Proposition 3.6 occurs when S = PSL (q) for 3g and when S = PSLS(q) for 3| (q +€).
+
+Proposition 3.10. Let S = PSL2(q) with 3{q or PSLS(q) with 3| (q+). Then there exist nontrivial
+X1> X2 € Irrzy(Bo(S))™ such that x; extends to Aut(S).

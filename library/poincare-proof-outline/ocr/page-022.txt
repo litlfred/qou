@@ -1,0 +1,79 @@
+using eq-cnj-iff-real
+by fastforce
+
+hence cor (Re (i « ?den)) =i * ?den
+using complex-of-real-Re
+by blast
+
+ultimately
+
+show ?thesis
+using ‘cor (Re ?k) = ?k»
+by (simp add: field-simps)
+
+qed
+
+moreover
+have i « ?nom = Re ?k * ?B
+using ‘cor (Re ?k) = ?k» (u2 # 0» «v2 # 0» complex-mult-cnj-cmod|{symmetric]
+by (auto simp add: field-simps)
+
+moreover
+have ?k 4 0
+
+using <u2 # 0» «v2 # 0>
+
+by simp
+hence Re ?k # 0
+
+using <is-real ?k»
+
+by (metis «cor (Re ?k) = ?k» of-real-0)
+
+ultimately
+show ?thesis
+by simp (rule-tac z=Re ?k in exI, simp add: mult.commute)
+qed
+
+moreover
+
+have poincare-line-cvec-cmat (ul, u2) (v1, v2) = ?H’
+using <?den # 0>
+unfolding poincare-line-cvec-cmat-def
+by (simp add: Let-def)
+
+moreover
+
+hence hermitean ?H' A ?H’ # mat-zero
+by (metis mk-poincare-line-cmat-hermitean poincare-line-cvec-cmat-nonzero uv(1) uv(2))
+
+hence hermitean ?H \ ?H # mat-zero
+using <circline-eq-cmat ?H ?H'
+using circline-eq-cmat-hermitean-nonzero|of ?H' ?H] symp-circline-eq-cmat
+unfolding symp-def
+by metis
+
+hence mk-circline-cmat ?A ?B ?C ?D = ?H
+by simp
+
+ultimately
+
+have circline-eq-cmat (mk-circline-cmat ?A ?B ?C' ?D)
+(poincare-line-cvec-cmat (ul, u2) (v1, v2))
+
+by simp
+
+thus ?thesis
+using symp-circline-eq-cmat
+unfolding symp-def
+by blast
+
+next
+case False
+
+let ?d = v1 * (ul * cnj ul / (u2 * enj u2) + 1) / v2 — ul * (vl * enj v1 / (v2 * enj v2) + 1) / u2
+
+let ?cd = cnj v1 * (ul * cnj ul / (u2 * enj u2) + 1) / enj v2 — cnj ul * (v1 * cnj v1 / (v2 * cnj v2) + 1) / enj
+ue
+
+22

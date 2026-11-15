@@ -444,7 +444,7 @@ every query this session — likely firewalled — so these need fetching by han
 
 The bean's 'what I actually want first' — Milnor Ch.7 full text for the
 obtuse-triangle sign convention, thought firewalled — is HELD:
-`library/milnor-1982-hyperbolic-geometry-the-first-150-years/sections/sec-004-18-john-milnor.md`
+`library/milnor-1982-hyperbolic-geometry-the-first-150-years/sections/sec-000-h-upsl2c-which-is-uniquely-determined-up-to-inne.md`
 (pp. 10-12), found via corpus-grep path 5. Milnor's *Hyperbolic geometry: the
 first 150 years*, Lemma 2 = exactly our target: ideal 3-simplex with dihedral
 angles α,β,γ at a vertex, α+β+γ=π, volume = Ji(α)+Ji(β)+Ji(γ) (Ji = our Lob).
@@ -613,7 +613,7 @@ Note also that `IdealTetObtuseReduction.lean`'s header is stale — it still nam
 
 ### What Milnor actually says (library path 5)
 
-Milnor 1982 is held (`library/milnor-1982-hyperbolic-geometry-the-first-150-years/sections/sec-004-18-john-milnor.md`, pp. 10–12; second copy correctly `duplicate_of`-marked). The obtuse handling is **one parenthesis**, verbatim: *"(The case of an obtuse angle can be handled by a similar argument, or by analytic continuation.)"* He does not say in what variable he continues, over what domain, or what the LHS is as an analytic function. **This bean's three-step route is a reconstruction of that parenthesis, not something Milnor states** — and step 2 is where the reconstruction meets the corpus's formulation and does not fit.
+Milnor 1982 is held (`library/milnor-1982-hyperbolic-geometry-the-first-150-years/sections/sec-000-h-upsl2c-which-is-uniquely-determined-up-to-inne.md`, pp. 10–12; second copy correctly `duplicate_of`-marked). The obtuse handling is **one parenthesis**, verbatim: *"(The case of an obtuse angle can be handled by a similar argument, or by analytic continuation.)"* He does not say in what variable he continues, over what domain, or what the LHS is as an analytic function. **This bean's three-step route is a reconstruction of that parenthesis, not something Milnor states** — and step 2 is where the reconstruction meets the corpus's formulation and does not fit.
 
 **Thurston Ch. 7 is NOT held** — the held copy is Chapters 1–2 (22 sections); `Chapter 7. Computation of volume` appears only as a table-of-contents line in `sec-000-introduction.md:81-82`. Ratcliffe is in neither `library/` nor `uploads/`.
 

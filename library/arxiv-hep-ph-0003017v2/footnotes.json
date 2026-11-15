@@ -1,0 +1,3104 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-hep-ph-0003017v2",
+ "status": "determined",
+ "pages_unread": [
+  6
+ ],
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p011-1",
+   "page": 11,
+   "mark": "1",
+   "text": "Actually, the symmetry group is Gl(Nf)×Gl(Nf).The restriction to U(Nf) is a consequence of the Riemannian nature of the integration manifold (see Sec. 4.3).",
+   "marks": [
+    {
+     "page": 10,
+     "context": "γ"
+    },
+    {
+     "page": 11,
+     "context": "symmetryisthus"
+    }
+   ],
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p020-1",
+   "page": 20,
+   "mark": "2",
+   "text": "ThereasonforthisnomenclatureisthatinaFermi-gasformulationofRMT,wherethe eigenvalues are interpreted as the positions of particles, this symmetry corresponds to choosing a potential that is inﬁnite for negative values of the eigenvalues. In this picture, the soft edge corresponds to a potential with a ﬁnite slope.",
+   "marks": [
+    {
+     "page": 19,
+     "context": "⟨ν"
+    },
+    {
+     "page": 19,
+     "context": "∂θ"
+    },
+    {
+     "page": 20,
+     "context": "“hardedge”ofthespectrum."
+    },
+    {
+     "page": 20,
+     "context": "correlationsarecharacterizedbythelevel-numbervarianceΣ"
+    },
+    {
+     "page": 20,
+     "context": "(n(L) −L)"
+    },
+    {
+     "page": 20,
+     "context": "Σ"
+    },
+    {
+     "page": 20,
+     "context": "rigidity∆3(L)[44],whichisdeﬁnedasanintegraltransformofΣ"
+    },
+    {
+     "page": 20,
+     "context": "du (L −u)(L"
+    },
+    {
+     "page": 20,
+     "context": "du (L −u)(L2−Lu −u"
+    },
+    {
+     "page": 20,
+     "context": "du (L −u)(L2−Lu −u2)Σ"
+    }
+   ],
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-007"
+  },
+  {
+   "id": "fn-p048-1",
+   "page": 48,
+   "mark": "3",
+   "text": "Forβ=4andµ=0,theDiracoperatorsatisﬁestherelation(CD)T=−CDwhereas (Cµγ0)T = Cµγ0 (with C the charge conjugation matrix). Therefore, for β = 4 and µ̸ = 0, the Pfaﬃan of the Dirac operator is not deﬁned and the fermion determinant detNf /2(D + µγ0) cannot be expressed as an integral over Nf Majorana fermions with ﬂavor symmetry U(Nf), as discussed in Sec. 2.2.3. Instead, we write detNf (D + µγ0) as an integral over Nf Dirac fermions with ﬂavor symmetry U(2Nf).",
+   "marks": [
+    {
+     "page": 48,
+     "context": "theﬂavorsymmetrygroupisenhancedtoU(2Nf)inbothcases(forν=0)."
+    }
+   ],
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-034"
+  },
+  {
+   "id": "fn-p052-1",
+   "page": 52,
+   "mark": "4",
+   "text": "Thereisanelaborateliteratureontheclassicaldynamicsofgaugeﬁelds.Foradiscussion of this topic, see Ref. [242].",
+   "marks": [
+    {
+     "page": 52,
+     "context": "wethusconcludethattheclassicalmotionofthequarksischaotic"
+    }
+   ],
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-039"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p050-1",
+   "page": 50,
+   "mark": "x",
+   "text": "Tr H2(x)+P",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-035"
+  },
+  {
+   "id": "fn-p055-1",
+   "page": 55,
+   "mark": "1",
+   "text": "M. Gell-Mann and M. L´evy, Nuovo Cim. 16 (1960) 705.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p055-2",
+   "page": 55,
+   "mark": "2",
+   "text": "B.W. Lee, Chiral Dynamics (Gordon and Breach, New York, 1972).",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p055-3",
+   "page": 55,
+   "mark": "3",
+   "text": "J. Goldstone, Nuovo Cim. 19 (1961) 154.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p055-4",
+   "page": 55,
+   "mark": "4",
+   "text": "C. DeTar, Quark-gluon plasma in numerical simulations of QCD, in Quark gluon plasma 2, R. Hwa ed. (World Scientiﬁc, Singapore, 1995) p. 1.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p055-5",
+   "page": 55,
+   "mark": "5",
+   "text": "E.V. Shuryak, Nucl. Phys. B 203 (1982) 93; E.V. Shuryak and J.J.M. Verbaarschot, Nucl. Phys. B 341 (1990) 1; D.I. Diakonov and V.Y. Petrov, Nucl. Phys. B 272 (1986) 457; T. Sch¨afer and E. Shuryak, Rev. Mod. Phys. 70 (1998) 323.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p055-6",
+   "page": 55,
+   "mark": "6",
+   "text": "S. Weinberg, Phys. Rev. Lett. 18 (1967) 188; Phys. Rev. 166 (1968) 1568; Physica A 96 (1979) 327.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p055-7",
+   "page": 55,
+   "mark": "7",
+   "text": "J. Gasser and H. Leutwyler, Ann. Phys. 158 (1984) 142; Nucl. Phys. B 250 (1985) 465; H. Leutwyler, Ann. Phys. 235 (1994) 165.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p055-8",
+   "page": 55,
+   "mark": "8",
+   "text": "E.V. Shuryak, Nucl. Phys. B 302 (1988) 599; D.I. Diakonov and V.Y. Petrov, Sov. Phys. JETP 62 (1985) 204; D.I. Diakonov, hep-ph/9602375.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p055-9",
+   "page": 55,
+   "mark": "9",
+   "text": "A.V. Smilga, Phys. Rep. 291 (1997) 1.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p055-10",
+   "page": 55,
+   "mark": "10",
+   "text": "F. Karsch, Nucl. Phys. B (Proc. Suppl.) 83-84 (2000) 14.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p055-11",
+   "page": 55,
+   "mark": "11",
+   "text": "D.T. Son, Phys. Rev. D 59 (1999) 094019.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p055-12",
+   "page": 55,
+   "mark": "12",
+   "text": "M. Alford, K. Rajagopal, and F. Wilczek, Phys. Lett. B 422 (1998) 247; Nucl. Phys. B 537 (1999) 443.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p056-1",
+   "page": 56,
+   "mark": "43",
+   "text": "T. Nagao and M. Wadati, J. Phys. Soc. Jap. 60 (1991) 3298; J. Phys. Soc. Jap. 61 (1992) 78, 1910.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p056-2",
+   "page": 56,
+   "mark": "44",
+   "text": "F.J. Dyson and M. Mehta, J. Math. Phys. 4 (1963) 701.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p056-3",
+   "page": 56,
+   "mark": "45",
+   "text": "J.J.M. Verbaarschot and I. Zahed, Phys. Rev. Lett. 70 (1993) 3852.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p056-4",
+   "page": 56,
+   "mark": "46",
+   "text": "C.A. Tracy and H. Widom, Commun. Math. Phys. 161 (1994) 289.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p056-5",
+   "page": 56,
+   "mark": "47",
+   "text": "J.J.M. Verbaarschot, Nucl. Phys. B 426 (1994) 559.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p056-6",
+   "page": 56,
+   "mark": "48",
+   "text": "T. Nagao and P.J. Forrester, Nucl. Phys. B 435 (1995) 401.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p056-7",
+   "page": 56,
+   "mark": "49",
+   "text": "E. Br´ezin, S. Hikami, and A. Zee, Nucl. Phys. B 464 (1996) 411.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p056-8",
+   "page": 56,
+   "mark": "50",
+   "text": "J.J.M. Verbaarschot, Nucl. Phys. B 427 (1994) 534.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p056-9",
+   "page": 56,
+   "mark": "51",
+   "text": "J.C. Osborn, D. Toublan and J.J.M. Verbaarschot, Nucl. Phys. B 540 (1999) 317.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p056-10",
+   "page": 56,
+   "mark": "52",
+   "text": "P.H. Damgaard, J.C. Osborn, D. Toublan, and J.J.M. Verbaarschot, Nucl. Phys. B 547 (1999) 305.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p056-11",
+   "page": 56,
+   "mark": "53",
+   "text": "A.V. Andreev, B.D. Simons, and N. Taniguchi, Nucl. Phys. B 432 (1994) 487.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p056-12",
+   "page": 56,
+   "mark": "54",
+   "text": "P.H. Damgaard, Phys. Lett. B 424 (1998) 322; G. Akemann and P.H. Damgaard, Nucl. Phys. B 528 (1998) 411; Nucl. Phys. B 576 (2000) 597. P.H. Damgaard, hep-th/9807026.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p056-13",
+   "page": 56,
+   "mark": "55",
+   "text": "G. Akemann and P.H. Damgaard, Phys. Lett. B 432 (1998) 390.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p056-14",
+   "page": 56,
+   "mark": "56",
+   "text": "G. Akemann, P.H. Damgaard, U. Magnea, and S. Nishigaki, Nucl. Phys. B 487 (1997) 721.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p056-15",
+   "page": 56,
+   "mark": "57",
+   "text": "E. Kanzieper and V. Freilikher, Phys. Rev. Lett. 78 (1997) 3806; Phys. Rev. E 55 (1997) 3712; Diﬀuse Waves in Complex Media, ed. J. P. Fouque, NATO ASI, Series C (Kluwer, Dordrecht, 1999) p. 165 (cond-mat/9809365).",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p056-16",
+   "page": 56,
+   "mark": "58",
+   "text": "S.M. Nishigaki, P.H. Damgaard, and T. Wettig, Phys. Rev. D 58 (1998) 087704.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p056-17",
+   "page": 56,
+   "mark": "59",
+   "text": "P.H. Damgaard and S.M. Nishigaki, Phys. Rev. D 57 (1998) 5299.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p056-18",
+   "page": 56,
+   "mark": "60",
+   "text": "J. Feinberg and A. Zee, J. Stat. Phys. 87 (1997) 473.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p057-1",
+   "page": 57,
+   "mark": "93",
+   "text": "A.D. Jackson, M.K. S¸ener and J.J.M. Verbaarschot, Phys. Lett. B 387 (1996) 355.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p057-2",
+   "page": 57,
+   "mark": "94",
+   "text": "J.J.M. Verbaarschot, Phys. Lett. B 329 (1994) 351.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p057-3",
+   "page": 57,
+   "mark": "95",
+   "text": "P.H. Damgaard, Phys. Lett. B 425 (1998) 151.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p057-4",
+   "page": 57,
+   "mark": "96",
+   "text": "K. Zyablyuk, JHEP 6 (2000) 025.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p057-5",
+   "page": 57,
+   "mark": "97",
+   "text": "F. Farchioni, hep-lat/9902029.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p057-6",
+   "page": 57,
+   "mark": "98",
+   "text": "S. Descotes and J. Stern, hep-ph/9912234.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p057-7",
+   "page": 57,
+   "mark": "99",
+   "text": "J.J.M. Verbaarschot, in Continuous Advances in QCD, Minneapolis 1994, A.V. Smilga ed. (World Scientiﬁc, Singapore, 1994) sp. 195 (hep-th/9405006).",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p057-8",
+   "page": 57,
+   "mark": "100",
+   "text": "A. Morel, J. Phys. France I 48 (1987) 1111.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p057-9",
+   "page": 57,
+   "mark": "101",
+   "text": "E. Br´ezin, Lec. Notes Phys. 216 (1984) 115.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p057-10",
+   "page": 57,
+   "mark": "102",
+   "text": "K.B. Efetov, Adv. Phys. 32 (1983) 53; Supersymmetry in disorder and chaos (Cambridge University Press, Cambridge, 1997).",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p057-11",
+   "page": 57,
+   "mark": "103",
+   "text": "J.J.M. Verbaarschot, H.A. Weidenm¨uller, and M.R. Zirnbauer, Phys. Rep. 129 (1985) 367.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p057-12",
+   "page": 57,
+   "mark": "104",
+   "text": "C.W. Bernard and M.F.L. Golterman, Phys. Rev. D49 (1994) 486; Nucl. Phys. B (Proc. Suppl.) 34 (1994) 331; M.F.L. Golterman, Acta Phys. Polon. B 25 (1994) 1731.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p057-13",
+   "page": 57,
+   "mark": "105",
+   "text": "S. Sharpe, Phys. Rev. D 46 (1992) 3146.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p057-14",
+   "page": 57,
+   "mark": "106",
+   "text": "M.F.L. Golterman and K.C. Leung, Phys. Rev. D 57 (1998) 5703.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p057-15",
+   "page": 57,
+   "mark": "107",
+   "text": "S.F. Edwards and P.W. Anderson, J. Phys. F5 (1975) 965.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p057-16",
+   "page": 57,
+   "mark": "108",
+   "text": "J.J.M. Verbaarschot and M.R. Zirnbauer, Ann. Phys. 158 (1984) 78.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p057-17",
+   "page": 57,
+   "mark": "109",
+   "text": "P.H. Damgaard and K. Splittorﬀ, Nucl. Phys. B 572 (2000) 478. P.H. Damgaard, Phys. Lett. B 476 (2000) 465. P.H. Damgaard and K. Splittorﬀ, hep-lat/0003017.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p057-18",
+   "page": 57,
+   "mark": "110",
+   "text": "A. Kamenev and M. Mezard, J. Phys. A 32 (1999) 4373; Phys. Rev. B 60 (1999) 3944.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p057-19",
+   "page": 57,
+   "mark": "111",
+   "text": "I.V. Yurkevich and I.V. Lerner, Phys. Rev. B 60 (1999) 3955.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p058-1",
+   "page": 58,
+   "mark": "141",
+   "text": "P.H. Ginsparg and K.G. Wilson, Phys. Rev. D 25 (1982) 2649.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p058-2",
+   "page": 58,
+   "mark": "142",
+   "text": "H. Neuberger, Phys. Lett. B 417 (1998) 141; Phys. Lett. B 427 (1998) 353; R. Narayanan and H. Neuberger, Phys. Rev. Lett. 71 (1993) 3251; Nucl. Phys. B 412 (1994) 574; Nucl. Phys. B 443 (1995) 305.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p058-3",
+   "page": 58,
+   "mark": "143",
+   "text": "D.B. Kaplan, Phys. Lett. B 288 (1992) 342; Y. Shamir, Nucl. Phys. B 406 (1993) 90; V. Furman and Y. Shamir, Nucl. Phys. B 439 (1995) 54.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p058-4",
+   "page": 58,
+   "mark": "144",
+   "text": "P. Hasenfratz, Nucl. Phys. B 525 (1998) 401; P. Hasenfratz and F. Niedermeyer, Nucl. Phys. B 414 (1994) 785.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p058-5",
+   "page": 58,
+   "mark": "145",
+   "text": "H. Hehl and A. Sch¨afer, Phys. Rev. D 59 (1999) 117504.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p058-6",
+   "page": 58,
+   "mark": "146",
+   "text": "J. Cullum and R.A. Willoughby, J. Comp. Phys. 44 (1981) 329.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p058-7",
+   "page": 58,
+   "mark": "147",
+   "text": "T. Kalkreuter, Phys. Rev. D 51 (1995) 1305; Comput. Phys. Commun. 95 (1996) 1.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p058-8",
+   "page": 58,
+   "mark": "148",
+   "text": "M.´A. Hal´asz and J.J.M. Verbaarschot, Phys. Rev. Lett. 74 (1995) 3920; M.´A. Hal´asz, T. Kalkreuter, and J.J.M. Verbaarschot, Nucl. Phys. B (Proc. Suppl.) 53 (1997) 266.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p058-9",
+   "page": 58,
+   "mark": "149",
+   "text": "J.J.M. Verbaarschot, Nucl. Phys. B (Proc. Suppl.) 53 (1997) 88.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p058-10",
+   "page": 58,
+   "mark": "150",
+   "text": "R. Pullirsch, K. Rabitsch, T. Wettig, and H. Markum, Phys. Lett. B 427 (1998) 119.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p058-11",
+   "page": 58,
+   "mark": "151",
+   "text": "B.A. Berg, H. Markum, and R. Pullirsch, Phys. Rev. D 59 (1999) 097504.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p058-12",
+   "page": 58,
+   "mark": "152",
+   "text": "R.G. Edwards, U.M. Heller, J. Kiskis, and R. Narayanan, Phys. Rev. Lett. 82 (1999) 4188.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p058-13",
+   "page": 58,
+   "mark": "153",
+   "text": "S. Chandrasekharan and N. Christ, Nucl. Phys. B (Proc. Suppl.) 47 (1996) 527.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p058-14",
+   "page": 58,
+   "mark": "154",
+   "text": "P.H. Damgaard, R.G. Edwards, U.M. Heller, and R. Narayanan, Phys. Rev. D 61 (2000) 094503; Nucl. Phys. B (Proc. Suppl.) 83-84 (2000) 434.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p058-15",
+   "page": 58,
+   "mark": "155",
+   "text": "M.E. Berbenni-Bitsch, S. Meyer, A. Sch¨afer, J.J.M. Verbaarschot, and T. Wettig, Phys. Rev. Lett. 80 (1998) 1146.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p058-16",
+   "page": 58,
+   "mark": "156",
+   "text": "J.-Z. Ma, T. Guhr, and T. Wettig, Eur. Phys. J. A 2 (1998) 87, 425.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p059-1",
+   "page": 59,
+   "mark": "180",
+   "text": "T. Wettig, A. Sch¨afer, and H.A. Weidenm¨uller, Phys. Lett. B 367 (1996) 28.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p059-2",
+   "page": 59,
+   "mark": "181",
+   "text": "M.A. Stephanov, Phys. Lett. B 375 (1996) 249.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p059-3",
+   "page": 59,
+   "mark": "182",
+   "text": "A. Zee, Nucl. Phys. B 474 (1996) 726.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p059-4",
+   "page": 59,
+   "mark": "183",
+   "text": "M.´A. Hal´asz, A.D. Jackson, R.S. Shrock, M.A. Stephanov, and J.J.M. Verbaarschot, Phys. Rev. D 58 (1998) 096007.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p059-5",
+   "page": 59,
+   "mark": "184",
+   "text": "I.M. Barbour, N.E. Behilil, E. Dagotto, F. Karsch, A. Moreo, M. Stone, and H.W. Wyld, Nucl. Phys. B 275 (1986) 296; M.-P. Lombardo, J.B. Kogut, and D.K. Sinclair, Phys. Rev. D 54 (1996) 2303.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p059-6",
+   "page": 59,
+   "mark": "185",
+   "text": "I.M. Barbour, S.E. Morrison, E.G. Klepﬁsh, J.B. Kogut, and M.-P. Lombardo, Nucl. Phys. (Proc. Suppl.) A 60 (1998) 220.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p059-7",
+   "page": 59,
+   "mark": "186",
+   "text": "M.A. Stephanov, Phys. Rev. Lett. 76 (1996) 4472.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p059-8",
+   "page": 59,
+   "mark": "187",
+   "text": "B. Vanderheyden and A.D. Jackson, Phys. Rev. D 61 (2000) 076004.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p059-9",
+   "page": 59,
+   "mark": "188",
+   "text": "B. Vanderheyden and A.D. Jackson, hep-ph/0003150.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p059-10",
+   "page": 59,
+   "mark": "189",
+   "text": "M.´A. Hal´asz, A.D. Jackson, and J.J.M. Verbaarschot, Phys. Lett. B 395 (1997) 293; Phys. Rev. D 56 (1997) 5140.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p059-11",
+   "page": 59,
+   "mark": "190",
+   "text": "I.M. Barbour, A.J. Bell, M. Bernaschi, G. Salina, and A. Vladikas, Nucl. Phys. B 386 (1992) 683.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p059-12",
+   "page": 59,
+   "mark": "191",
+   "text": "M.´A. Hal´asz, J.C. Osborn, M.A. Stephanov, and J.J.M. Verbaarschot, Phys. Rev. D 61 (2000) 076005.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p059-13",
+   "page": 59,
+   "mark": "192",
+   "text": "J. Feinberg and A. Zee, Nucl. Phys. B 504 (1997) 579; Nucl. Phys. B 501 (1997) 643.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p059-14",
+   "page": 59,
+   "mark": "193",
+   "text": "M.´A. Hal´asz, J.C. Osborn, and J.J.M. Verbaarschot, Phys. Rev. D 56 (1997) 7059.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p059-15",
+   "page": 59,
+   "mark": "194",
+   "text": "R.A. Janik, M.A. Nowak, G. Papp, J. Wambach, and I. Zahed, Phys. Rev. E 55 (1997) 4100; R.A. Janik, M.A. Nowak, G. Papp and I. Zahed, Nucl. Phys. B 501 (1997) 603.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p060-1",
+   "page": 60,
+   "mark": "222",
+   "text": "A. Mironov, A. Morozov, and G. Semenoﬀ, Int. J. Mod. Phys. A 11 (1996) 5031.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p060-2",
+   "page": 60,
+   "mark": "223",
+   "text": "D. Gross and E. Witten, Phys. Rev. D 21 (1980) 446; E. Br´ezin and D. Gross, Phys. Lett. B 97 (1980) 120.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p060-3",
+   "page": 60,
+   "mark": "224",
+   "text": "S. Chandrasekharan, Phys. Lett. B 395 (1997) 83.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p060-4",
+   "page": 60,
+   "mark": "225",
+   "text": "T. Eguchi and H. Kawai, Phys. Rev. Lett. 48 (1982) 1063.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p060-5",
+   "page": 60,
+   "mark": "226",
+   "text": "S.R. Das, Rev. Mod. Phys. 59 (1987) 235.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p060-6",
+   "page": 60,
+   "mark": "227",
+   "text": "R. Dijkgraaf, hep-th/9201003.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p060-7",
+   "page": 60,
+   "mark": "228",
+   "text": "I.K. Kostov, hep-th/9907060.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p060-8",
+   "page": 60,
+   "mark": "229",
+   "text": "V.A. Kazakov and A.A. Migdal, Nucl. Phys. B 397 (1993) 214.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p060-9",
+   "page": 60,
+   "mark": "230",
+   "text": "M. Moshe, H. Neuberger, and B. Shapiro, Phys. Rev. Lett. 73 (1994) 1497.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p060-10",
+   "page": 60,
+   "mark": "231",
+   "text": "D.J. Thouless, Phys. Rep. 13 (1974) 93.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p060-11",
+   "page": 60,
+   "mark": "232",
+   "text": "B.L. Altshuler and B.I. Shklovskii, Zh. Exp. Teor. Fiz. 91 (1986) 220 (Sov. Phys. JETP 64 (1986) 127).",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p060-12",
+   "page": 60,
+   "mark": "233",
+   "text": "S. Washburn and R.A. Webb, Adv. Phys. 35 (1986) 375.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p060-13",
+   "page": 60,
+   "mark": "234",
+   "text": "D.R. Hofstadter, Phys. Rev. B 14 (1976) 2239.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p060-14",
+   "page": 60,
+   "mark": "235",
+   "text": "K. Slevin and T. Nagao, Phys. Rev. Lett. 70 (1993) 635.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p060-15",
+   "page": 60,
+   "mark": "236",
+   "text": "G. Parisi, J. Phys. A 14 (1981) 735.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p060-16",
+   "page": 60,
+   "mark": "237",
+   "text": "M.E. Berbenni-Bitsch, private communication.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p060-17",
+   "page": 60,
+   "mark": "238",
+   "text": "B.L. Altshuler, I.K. Zharekeshev, S.A. Kotochigova, and B.I. Shklovskii, Sov. Phys. JETP",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p060-18",
+   "page": 60,
+   "mark": "67",
+   "text": "(1988) 625.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p060-19",
+   "page": 60,
+   "mark": "239",
+   "text": "A.J. McKane and M. Stone, Ann. Phys. (NY) 131 (1981) 36.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  },
+  {
+   "id": "fn-p060-20",
+   "page": 60,
+   "mark": "240",
+   "text": "O. Bohigas, M. Giannoni, and C. Schmit, Phys. Rev. Lett. 52 (1984) 1.",
+   "block": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 4,
+   "mark": "f",
+   "context": "det(D + m"
+  },
+  {
+   "page": 5,
+   "mark": "f",
+   "context": "action,theproductisoverquarkﬂavorsofmassm"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "toλ"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "WenowconsiderQCDinaﬁniteEuclideanvolumeV4=L"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "ofvolumeV3=L"
+  },
+  {
+   "page": 9,
+   "mark": "f",
+   "context": "det(D + m"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "Aµ= A"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "Thisoperatorisanti-Hermitian,D"
+  },
+  {
+   "page": 10,
+   "mark": "5",
+   "context": "Weusethechiralrepresentationinwhichγ"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "γ1γ"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "γ1γ2γ"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "γ1γ2γ3γ"
+  },
+  {
+   "page": 10,
+   "mark": "5",
+   "context": "{γ"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "Dψ"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "Dψn= iλ"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "Dψn= iλnψ"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "an show that the nonzero eigenvalues of D occur in pairs ±iλ"
+  },
+  {
+   "page": 10,
+   "mark": "5",
+   "context": "eigenfunctionsofγ"
+  },
+  {
+   "page": 10,
+   "mark": "5",
+   "context": "Inachiralbasiswithγ"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "n⟩forall"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "n⟩forallmand"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "n⟩forallmandn,where¯ψ=ψ"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "n⟩forallmandn,where¯ψ=ψ†γ"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "iW"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "(λ"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "n+ m"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "n+ mf"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "f"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "fm"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "f"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "fm"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "f"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "fm"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "¯ψ"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "¯ψf(D + m"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "¯ψf(D + mf)ψ"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "det(D + m"
+  },
+  {
+   "page": 11,
+   "mark": "5",
+   "context": "Againgoingtoachiralbasiswithγ"
+  },
+  {
+   "page": 11,
+   "mark": "†",
+   "context": "where¯ψ=ψ"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 11,
+   "mark": "†",
+   "context": "fiW"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "f"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "fm"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "f"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "fm"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "symmetryisthus1U(N"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "symmetryisthus1U(Nf) ×U(N"
+  },
+  {
+   "page": 12,
+   "mark": "f",
+   "context": " symmetry group in the chiral limit is thus givenby G = SU(N"
+  },
+  {
+   "page": 12,
+   "mark": "f",
+   "context": "Ifthequarkmassesarenonzero,theaxialSU(N"
+  },
+  {
+   "page": 12,
+   "mark": "f",
+   "context": "fordiﬀerentquarkmasses(m"
+  },
+  {
+   "page": 12,
+   "mark": "f",
+   "context": "fordiﬀerentquarkmasses(mf̸= m"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "cate that ⟨¯ψψ⟩≈−(240 MeV)"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "andsothereareN"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "Diracoperator,thenthesymmetryoperatorA"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "Diracoperator,thenthesymmetryoperatorA2= (UK)"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "classiﬁed according to the sign of A"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "symmetries(denotedbytheDysonindexβ=2);(b)ifA"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "β=1);(c)ifA"
+  },
+  {
+   "page": 12,
+   "mark": "c",
+   "context": "ForQCDwithN"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "Diracoperatoris givenby Eq. (7)with Aµ= A"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "µτ"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "µτa/2,where the τ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "[Cτ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "operatoris(Cτ2K)"
+  },
+  {
+   "page": 13,
+   "mark": "c",
+   "context": "alU(1)isbrokenexplicitlybyinstantonsortheaxialanomaly,asforN"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "dictsapatternofspontaneouschiralsymmetrybreakinggivenbySU(2N"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "setofantisymmetricunitarymatrices.Wethushave2N"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "f−N"
+  },
+  {
+   "page": 13,
+   "mark": "c",
+   "context": "ofcolors,theDiracoperatorisDab=γµ(∂µδab+fabcA"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "µ),where"
+  },
+  {
+   "page": 13,
+   "mark": "b",
+   "context": "µ),whereaand"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "Becauseof(CK)"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "→O(N"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "→O(Nf),withtheGoldstonemanifoldgivenbythecosetSU(N"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "→O(Nf),withtheGoldstonemanifoldgivenbythecosetSU(Nf)/O(N"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "Wethushave(N"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "Wethushave(Nf+2)(N"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "δ(λ −λ"
+  },
+  {
+   "page": 14,
+   "mark": "m",
+   "context": "Tobeprecise,weshouldhavewrittenΣ=limε→0 lim"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "Sincethenonzeroeigenvaluesoccurinpairs±iλ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "canbe writtenas2m/(λ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "n+ m"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "n+ m2)(withλ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "Assuming⟨ν"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "2m/(λ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "2m/(λ2+ m"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "dλ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "λ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "λ2+ m"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "lculation.Asymptotically,thespectraldensitybehavesasρ(λ)∼V λ"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "dλ"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "dλ2"
+  },
+  {
+   "page": 15,
+   "mark": "v",
+   "context": "dλ2m"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "λ"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "λ2+ m"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "ubjecttoultravioletdivergences.Usingagainthefactthatρ(λ)∼V λ"
+  },
+  {
+   "page": 15,
+   "mark": "v",
+   "context": "largeλ,weﬁndthattheleadingdivergenceis∼m"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "largeλ,weﬁndthattheleadingdivergenceis∼mvΛ"
+  },
+  {
+   "page": 15,
+   "mark": "v",
+   "context": "massesonthemicroscopicscale(24)wehavem"
+  },
+  {
+   "page": 15,
+   "mark": "f",
+   "context": "det(D + m"
+  },
+  {
+   "page": 15,
+   "mark": "v",
+   "context": "4Tr"
+  },
+  {
+   "page": 15,
+   "mark": "†",
+   "context": "4Tr v(W"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Nf ,ν(m"
+  },
+  {
+   "page": 15,
+   "mark": "f",
+   "context": "Nf ,ν(m1, . . . , mN"
+  },
+  {
+   "page": 15,
+   "mark": "†",
+   "context": "iW"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "akφ"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "ThesimplestcaseistheGaussiancase,wherev(φ) = Σ"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "occurinpairs±iλ"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "•Theﬂavorsymmetry,whichisthesameasinQCD.Forβ= 2itisSU(N"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "breakingpatternis[25]SU(N"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "breakingpatternis[25]SU(Nf) × SU(N"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "breakingpatternis[25]SU(Nf) × SU(Nf)→SU(N"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "breakingpatternis[25]SU(Nf) × SU(Nf)→SU(Nf),SU(2N"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "breakingpatternis[25]SU(Nf) × SU(Nf)→SU(Nf),SU(2Nf)→Sp(2N"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "and SU(N"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "and SU(Nf) →O(N"
+  },
+  {
+   "page": 16,
+   "mark": "†",
+   "context": "W→U"
+  },
+  {
+   "page": 16,
+   "mark": "†",
+   "context": "W= U"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": ",Λ is a diagonal matrix with real diagonal matrix elements λ"
+  },
+  {
+   "page": 17,
+   "mark": "v",
+   "context": "4"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "4v(λ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "dλ|∆(λ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "f(λ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "k+ m"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "Nf ,ν(m"
+  },
+  {
+   "page": 17,
+   "mark": "f",
+   "context": "Nf ,ν(m1, . . . , mN"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "∆(λ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(λ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "k−λ"
+  },
+  {
+   "page": 17,
+   "mark": "f",
+   "context": "only appearininvariantcombinationsof the form σfg∼¯ψ"
+  },
+  {
+   "page": 17,
+   "mark": "g",
+   "context": "iψ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "Dσ e−nΣ"
+  },
+  {
+   "page": 17,
+   "mark": "†",
+   "context": "Dσ e−nΣ2Tr σσ"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "Dσ e−nΣ2Tr σσ†detν(σ + m1)det"
+  },
+  {
+   "page": 17,
+   "mark": "†",
+   "context": "Dσ e−nΣ2Tr σσ†detν(σ + m1)detn[(σ + m1)(σ"
+  },
+  {
+   "page": 17,
+   "mark": "f",
+   "context": "integrationis over the real and imaginary parts of the N"
+  },
+  {
+   "page": 17,
+   "mark": "f",
+   "context": "integrationis over the real and imaginary parts of the Nf ×N"
+  },
+  {
+   "page": 17,
+   "mark": "f",
+   "context": "V∈SU(N"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "Σ"
+  },
+  {
+   "page": 17,
+   "mark": "†",
+   "context": "Σ2(σ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "∂m log Z=Σ"
+  },
+  {
+   "page": 17,
+   "mark": "†",
+   "context": "⟨Tr(σ + σ"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "DUdetνUe"
+  },
+  {
+   "page": 18,
+   "mark": "†",
+   "context": "DUdetνUenΣTr (MU+M"
+  },
+  {
+   "page": 18,
+   "mark": "f",
+   "context": "U∈U(N"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "⟨ν"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "ν"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "2⟨ν"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "2π⟨ν"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "⟨ν"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "(θ−iTrlog U)"
+  },
+  {
+   "page": 18,
+   "mark": "†",
+   "context": "2ΣV Tr (MU+M"
+  },
+  {
+   "page": 18,
+   "mark": "f",
+   "context": "U∈U(N"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "⟨ν"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "(θ−φ)"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "δ(λ"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "δ(λ1 −E"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "δ(λ1 −Ej"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "δ(λ1 −Ej1) · · · δ(λ"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "δ(λ1 −Ej1) · · · δ(λk −E"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "δ(λ1 −Ej1) · · · δ(λk −Ej"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "j"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "j1 · · · j"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "j"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "jp̸=j"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "where the E"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "ρ(λ).By“local”wemeanthattheenergydiﬀerences|λ"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "ρ(λ).By“local”wemeanthattheenergydiﬀerences|λp −λ"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "±iλ"
+  },
+  {
+   "page": 20,
+   "mark": "p",
+   "context": "characterizedbyλ"
+  },
+  {
+   "page": 20,
+   "mark": "p",
+   "context": "characterizedbyλp∼O(1)and|λ"
+  },
+  {
+   "page": 20,
+   "mark": "q",
+   "context": "characterizedbyλp∼O(1)and|λp−λ"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "L"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "muchsmallerthanthoseoftheΣ"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "muchsmallerthanthoseoftheΣ2-statistic.ThequantitiesΣ"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "isgivenbyΣ"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "isgivenbyΣ2(L) ∼(ln L)/π"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "isgivenbyΣ2(L) ∼(ln L)/π2and∆3(L) ∼(ln L)/2π"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "eigenvaluesoneﬁndsΣ"
+  },
+  {
+   "page": 21,
+   "mark": "p",
+   "context": "edge of the spectrum are characterizedby λ"
+  },
+  {
+   "page": 21,
+   "mark": "p",
+   "context": "edge of the spectrum are characterizedby λp∼O(1/N)and |λ"
+  },
+  {
+   "page": 21,
+   "mark": "q",
+   "context": "edge of the spectrum are characterizedby λp∼O(1/N)and |λp −λ"
+  },
+  {
+   "page": 21,
+   "mark": "p",
+   "context": "Thus,intheunfoldedvariableswehavex"
+  },
+  {
+   "page": 21,
+   "mark": "p",
+   "context": "|x"
+  },
+  {
+   "page": 21,
+   "mark": "q",
+   "context": "|xp −x"
+  },
+  {
+   "page": 21,
+   "mark": "k",
+   "context": "|xp −xq| ∼O(1).Asadvertisedabove,thefunctionalformoftheR"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "x2−y"
+  },
+  {
+   "page": 21,
+   "mark": "f",
+   "context": "whereJαdenotesBesselfunctionsandα=N"
+  },
+  {
+   "page": 21,
+   "mark": "f",
+   "context": "whereJαdenotesBesselfunctionsandα=Nf+ |ν|,withN"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "J"
+  },
+  {
+   "page": 21,
+   "mark": "f",
+   "context": "N"
+  },
+  {
+   "page": 21,
+   "mark": "f",
+   "context": "Nf +|ν|(z) −JN"
+  },
+  {
+   "page": 21,
+   "mark": "f",
+   "context": "Nf +|ν|(z) −JNf+|ν|+1(z)JN"
+  },
+  {
+   "page": 21,
+   "mark": "f",
+   "context": "correlationfunctionforthecaseN"
+  },
+  {
+   "page": 21,
+   "mark": "f",
+   "context": "InadditiontothepartitionfunctionZ(N"
+  },
+  {
+   "page": 21,
+   "mark": "f",
+   "context": "masslessseaquarks,onecanalsocomputethepartitionfunctionZ(N"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "2(xy)N"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "2(xy)Nf +1/2Z(N"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "Z(N"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "siandistributionP(W)∝exp(−Na"
+  },
+  {
+   "page": 22,
+   "mark": "†",
+   "context": "siandistributionP(W)∝exp(−Na1 Tr WW"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "k=1"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "k=1a"
+  },
+  {
+   "page": 22,
+   "mark": "†",
+   "context": "k=1akTr (WW"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "k=1akTr (WW †)"
+  },
+  {
+   "page": 22,
+   "mark": "†",
+   "context": "valuesofWW"
+  },
+  {
+   "page": 23,
+   "mark": "f",
+   "context": "modescorrespondingtothesymmetry-breakingpatternSUR(N"
+  },
+  {
+   "page": 23,
+   "mark": "f",
+   "context": "descorrespondingtothesymmetry-breakingpatternSUR(Nf) × SUL(N"
+  },
+  {
+   "page": 23,
+   "mark": "f",
+   "context": "withUR∈SUR(N"
+  },
+  {
+   "page": 23,
+   "mark": "f",
+   "context": "withUR∈SUR(Nf)andUL∈SUL(N"
+  },
+  {
+   "page": 23,
+   "mark": "f",
+   "context": "LorentzinvariantandinvariantunderSUR(N"
+  },
+  {
+   "page": 23,
+   "mark": "f",
+   "context": "LorentzinvariantandinvariantunderSUR(Nf)×SUL(N"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "Lkin=F"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "L"
+  },
+  {
+   "page": 24,
+   "mark": "†",
+   "context": "2Σ Tr (MU+ M"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "WewillstudytheeﬀectiveLagrangianatﬁnitevolumeinaboxofvolumeL"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "F"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "L"
+  },
+  {
+   "page": 24,
+   "mark": "f",
+   "context": "U∈SU(N"
+  },
+  {
+   "page": 24,
+   "mark": "f",
+   "context": "stitutionm →m exp(iθ/N"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "ΛL"
+  },
+  {
+   "page": 24,
+   "mark": "f",
+   "context": "U∈U(N"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "k(m + iλ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "1 + m"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "λ"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "kiλ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "= m|ν|(a0 + a1m"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "and(69)andequatingthecoeﬃcientsoftheO(m"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "Σ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "λ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "V"
+  },
+  {
+   "page": 25,
+   "mark": "†",
+   "context": "DUUijU"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "=Σ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "V"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "λ"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "asymptoticallyforlargeλthespectraldensityisproportionaltoV λ"
+  },
+  {
+   "page": 26,
+   "mark": "f",
+   "context": "detN"
+  },
+  {
+   "page": 27,
+   "mark": "f",
+   "context": "z′= 0thepartitionfunctionisinvariantunderthesupergroupGlR(N"
+  },
+  {
+   "page": 27,
+   "mark": "f",
+   "context": "GlL(N"
+  },
+  {
+   "page": 27,
+   "mark": "f",
+   "context": "subgroupGlV(N"
+  },
+  {
+   "page": 27,
+   "mark": "f",
+   "context": "thengivenby themaximumRiemanniansubmanifoldofGlA(N"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "F"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "F2m"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "−F"
+  },
+  {
+   "page": 27,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 27,
+   "mark": "†",
+   "context": "2Str (MU+M"
+  },
+  {
+   "page": 27,
+   "mark": "f",
+   "context": "Gl(N"
+  },
+  {
+   "page": 27,
+   "mark": "f",
+   "context": "themaximumRiemanniansubmanifoldofGl(N"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "nextsubsection.Theparameterm"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "thetwodeterminantsbydet"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "U= e"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "(k"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "(k2+ M"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "a)Π"
+  },
+  {
+   "page": 28,
+   "mark": "m",
+   "context": "mm=2"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "M"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "F"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "M"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "F"
+  },
+  {
+   "page": 28,
+   "mark": "z",
+   "context": "zz=2"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "M"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "F"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "momentum modes is of order 1/(k"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "momentum modes is of order 1/(k2+M"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "tionsofthezero-momentummodesisoforder1/M"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "M"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "L"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "sizeofthebox.FornonzeroquarkmassesoforderO(L"
+  },
+  {
+   "page": 28,
+   "mark": "c",
+   "context": "z≪E"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "z≪Ec≡F"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "ΣL"
+  },
+  {
+   "page": 28,
+   "mark": "†",
+   "context": "2V Σ Str (MU+M"
+  },
+  {
+   "page": 28,
+   "mark": "f",
+   "context": "Gl(N"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "e"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "= u [I"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "= u [Ia(u)K"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "= u [Ia(u)Ka(u) + I"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "= u [Ia(u)Ka(u) + Ia+1(u)K"
+  },
+  {
+   "page": 29,
+   "mark": "f",
+   "context": "wherea=N"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "ζ"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "ζ2+ u"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "ζ2+ u2 ρ"
+  },
+  {
+   "page": 29,
+   "mark": "c",
+   "context": "E"
+  },
+  {
+   "page": 29,
+   "mark": "f",
+   "context": "= 4.Theresultfortheslopeofthespectraldensityatzero,validforN"
+  },
+  {
+   "page": 29,
+   "mark": "f",
+   "context": "ρ(0)=(N"
+  },
+  {
+   "page": 29,
+   "mark": "f",
+   "context": "ρ(0)=(Nf−2)(N"
+  },
+  {
+   "page": 29,
+   "mark": "4",
+   "context": "F"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "Σ"
+  },
+  {
+   "page": 30,
+   "mark": "4",
+   "context": "F"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "(q"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "(q2+ M"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "(q2+ M2)"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "4π"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "wherethemesonmassisgivenbyM"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "z′2)Σ/F"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "z"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "(λ −λ′)"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "2π"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "(λ + λ′)"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "foldedspectrum,{x"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "ZE"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "where{E"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "thesequence{x"
+  },
+  {
+   "page": 33,
+   "mark": "d",
+   "context": "theBrillouinzone,whichgivesrisetoatotalof2"
+  },
+  {
+   "page": 33,
+   "mark": "d",
+   "context": "unwanted2"
+  },
+  {
+   "page": 33,
+   "mark": "5",
+   "context": "Dγ"
+  },
+  {
+   "page": 33,
+   "mark": "5",
+   "context": "Dγ5 + γ"
+  },
+  {
+   "page": 33,
+   "mark": "5",
+   "context": "Dγ5 + γ5D= 2aDγ"
+  },
+  {
+   "page": 33,
+   "mark": "5",
+   "context": "{D, γ"
+  },
+  {
+   "page": 33,
+   "mark": "5",
+   "context": "Wilson Dirac operator DWdoes not anticommute with γ"
+  },
+  {
+   "page": 33,
+   "mark": "5",
+   "context": "ribedbyanyofthechiralensembles.However,theHermitianoperatorγ"
+  },
+  {
+   "page": 33,
+   "mark": "4",
+   "context": "Forexample,inSU(3)ona10"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "Figure3:NumbervarianceΣ"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "Top:Wilsonfermions,V=8"
+  },
+  {
+   "page": 34,
+   "mark": "f",
+   "context": "Top:Wilsonfermions,V=83×12,N"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "V=12"
+  },
+  {
+   "page": 35,
+   "mark": "v",
+   "context": "resultforΣ(m"
+  },
+  {
+   "page": 35,
+   "mark": "f",
+   "context": "resultforΣ(mv)forN"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "shiftedatﬁnitelatticespacingabyanamountproportionaltoa"
+  },
+  {
+   "page": 37,
+   "mark": "4",
+   "context": "operatorona4"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "F"
+  },
+  {
+   "page": 37,
+   "mark": "c",
+   "context": "E"
+  },
+  {
+   "page": 38,
+   "mark": "4",
+   "context": "thelatticeinquenchedSU(3)withstaggeredfermions(V=10"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "D= γ"
+  },
+  {
+   "page": 39,
+   "mark": "n",
+   "context": "sumofMatsubarafrequenciesω"
+  },
+  {
+   "page": 39,
+   "mark": "f",
+   "context": "DWdetN"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "2NΣ"
+  },
+  {
+   "page": 39,
+   "mark": "†",
+   "context": "2NΣ2Tr (W"
+  },
+  {
+   "page": 39,
+   "mark": "†",
+   "context": "iW"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "inageometricseriesoftherandommatrix,itcanbeshownthatg=G/Σ"
+  },
+  {
+   "page": 40,
+   "mark": "3",
+   "context": "g"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "g3−2zg"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "g3−2zg2+ g(z"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "g3−2zg2+ g(z2−t"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "g3−2zg2+ g(z2−t2+ 1/Σ"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "g3−2zg2+ g(z2−t2+ 1/Σ2) −z/Σ"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "1 −(Σt)"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "G ∝z"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "π λ"
+  },
+  {
+   "page": 40,
+   "mark": "4",
+   "context": "4π λ"
+  },
+  {
+   "page": 40,
+   "mark": "3",
+   "context": "z= λN"
+  },
+  {
+   "page": 41,
+   "mark": "c",
+   "context": "baryonmassperunitquarknumber.Therefore,forµ < µ"
+  },
+  {
+   "page": 41,
+   "mark": "†",
+   "context": "ThequarkchemicalpotentialappearsintheLagrangianintheformµψ"
+  },
+  {
+   "page": 41,
+   "mark": "0",
+   "context": "D(µ) = µγ"
+  },
+  {
+   "page": 42,
+   "mark": "f",
+   "context": "DWdetN"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "2NΣ"
+  },
+  {
+   "page": 42,
+   "mark": "†",
+   "context": "2NΣ2Tr (W"
+  },
+  {
+   "page": 42,
+   "mark": "†",
+   "context": "iW"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "dσdσ∗[(σ + m)(σ∗+ m) −µ"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "Z= µ"
+  },
+  {
+   "page": 42,
+   "mark": "n",
+   "context": "Z= µ2"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "Z= e−n(µ"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "1 + µ"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "µcgivenbythepointwherethetwopartitionfunctionsareequal,i.e.µ"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "exp(−1−µ"
+  },
+  {
+   "page": 42,
+   "mark": "c",
+   "context": "c),whichissolvedbyµ"
+  },
+  {
+   "page": 42,
+   "mark": "c",
+   "context": "partitionfunctiondependonµforµ ≤µ"
+  },
+  {
+   "page": 43,
+   "mark": "0",
+   "context": "D(µ) = γ"
+  },
+  {
+   "page": 43,
+   "mark": "†",
+   "context": "Dkl= δk,l−1Ukleµ−δk,l+1U"
+  },
+  {
+   "page": 43,
+   "mark": "e",
+   "context": "kl"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "ions result in an extra minus sign for the matrix elements D"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "ult in an extra minus sign for the matrix elements D1Nand DN"
+  },
+  {
+   "page": 44,
+   "mark": "c",
+   "context": "ZN= 2 cosh(NcNµ) +sinh[(N"
+  },
+  {
+   "page": 44,
+   "mark": "m",
+   "context": "ZN= 2 cosh(NcNµ) +sinh[(Nc + 1)N sinh−1"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "1 + m"
+  },
+  {
+   "page": 44,
+   "mark": "f",
+   "context": "thequenchedlimitisthelimitN"
+  },
+  {
+   "page": 44,
+   "mark": "f",
+   "context": "| det(D(µ) + m)|N"
+  },
+  {
+   "page": 44,
+   "mark": "f",
+   "context": "[det(D(µ) + m)]N"
+  },
+  {
+   "page": 44,
+   "mark": "†",
+   "context": "\u0012 iW"
+  },
+  {
+   "page": 44,
+   "mark": "†",
+   "context": "det(D + m) det(D"
+  },
+  {
+   "page": 44,
+   "mark": "†",
+   "context": "iW"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "z= πδ"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "wherethecomplexdeltafunctionisdeﬁnedasδ"
+  },
+  {
+   "page": 45,
+   "mark": "f",
+   "context": "detN"
+  },
+  {
+   "page": 45,
+   "mark": "f",
+   "context": "detNf(D(µ) + z)detN"
+  },
+  {
+   "page": 45,
+   "mark": "†",
+   "context": "detNf(D(µ) + z)detNf(D"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "iW1"
+  },
+  {
+   "page": 45,
+   "mark": "f",
+   "context": "detN"
+  },
+  {
+   "page": 45,
+   "mark": "f",
+   "context": "detNf(D(µ) + z)detN"
+  },
+  {
+   "page": 45,
+   "mark": "†",
+   "context": "detNf(D(µ) + z)detNf(D"
+  },
+  {
+   "page": 45,
+   "mark": "†",
+   "context": "iW"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "iW†1"
+  },
+  {
+   "page": 45,
+   "mark": "f",
+   "context": "iW†12N"
+  },
+  {
+   "page": 45,
+   "mark": "f",
+   "context": "−µ1N"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "matrices1"
+  },
+  {
+   "page": 45,
+   "mark": "f",
+   "context": "invariantunder SUR(2N"
+  },
+  {
+   "page": 45,
+   "mark": "f",
+   "context": "invariantunder SUR(2Nf) × SUL(2N"
+  },
+  {
+   "page": 45,
+   "mark": "f",
+   "context": "terizedbymatricesU∈SU(2N"
+  },
+  {
+   "page": 45,
+   "mark": "f",
+   "context": "chemicalpotentialtermremainsinvariantunderSU(2N"
+  },
+  {
+   "page": 45,
+   "mark": "f",
+   "context": "chemicalpotentialtermremainsinvariantunderSU(2Nf) × SU(2N"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "DUe−F"
+  },
+  {
+   "page": 46,
+   "mark": "†",
+   "context": "2ΣV Tr (MU+M"
+  },
+  {
+   "page": 46,
+   "mark": "f",
+   "context": "U∈SU(2N"
+  },
+  {
+   "page": 46,
+   "mark": "†",
+   "context": "relationdet(D"
+  },
+  {
+   "page": 46,
+   "mark": "f",
+   "context": "Z= eΣV N"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "densityiszerointheregionwhere(139)holds.Becausem"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "π= (z + z∗)Σ/F"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "|Re z| <2µ"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "|Re z| <2µ2F"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "2NΣ"
+  },
+  {
+   "page": 46,
+   "mark": "†",
+   "context": "2NΣ2Tr W W"
+  },
+  {
+   "page": 46,
+   "mark": "f",
+   "context": "DWdetN"
+  },
+  {
+   "page": 46,
+   "mark": "†",
+   "context": "iW"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "2 log[(σ + m)(σ∗+ m) −(µ + it)"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "2 log[(σ + m)(σ∗+ m) −(µ −it)"
+  },
+  {
+   "page": 47,
+   "mark": "4",
+   "context": "σ[σ"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "σ[σ4−2(µ"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "σ[σ4−2(µ2−t"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "2)σ"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "2)σ2 + (µ"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "2)σ2 + (µ2 + t"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "2)σ2 + (µ2 + t2)"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "2)σ2 + (µ2 + t2)2 + µ"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "2)σ2 + (µ2 + t2)2 + µ2 −t"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "withthesolutionσ=0,i.e.alongthecurve(µ"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "withthesolutionσ=0,i.e.alongthecurve(µ2+ t"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "withthesolutionσ=0,i.e.alongthecurve(µ2+ t2)"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "withthesolutionσ=0,i.e.alongthecurve(µ2+ t2)2+ µ"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "withthesolutionσ=0,i.e.alongthecurve(µ2+ t2)2+ µ2−t"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "l point, three solutions merge.This happens if in addition µ"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "oint, three solutions merge.This happens if in addition µ2−t"
+  },
+  {
+   "page": 48,
+   "mark": "6",
+   "context": "ertiesoftherandommatrixmodel(141)areverysimilartothoseofaφ"
+  },
+  {
+   "page": 48,
+   "mark": "†",
+   "context": "−W"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "kl=σ"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "kl=σ2Wklσ"
+  },
+  {
+   "page": 48,
+   "mark": "f",
+   "context": "detN"
+  },
+  {
+   "page": 48,
+   "mark": "f",
+   "context": "detNfWdetN"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "detNfWdetNfWT= det"
+  },
+  {
+   "page": 48,
+   "mark": "f",
+   "context": "detNfWdetNfWT= det2N"
+  },
+  {
+   "page": 48,
+   "mark": "f",
+   "context": "detN"
+  },
+  {
+   "page": 48,
+   "mark": "f",
+   "context": "detNfW detN"
+  },
+  {
+   "page": 48,
+   "mark": "†",
+   "context": "detNfW detNfW"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "detNfW detNfW†= det"
+  },
+  {
+   "page": 48,
+   "mark": "f",
+   "context": "detNfW detNfW†= det2N"
+  },
+  {
+   "page": 48,
+   "mark": "f",
+   "context": "potentialbreaksthesymmetryaccordingtoU(2N"
+  },
+  {
+   "page": 48,
+   "mark": "f",
+   "context": "potentialbreaksthesymmetryaccordingtoU(2Nf)→U(N"
+  },
+  {
+   "page": 48,
+   "mark": "f",
+   "context": "potentialbreaksthesymmetryaccordingtoU(2Nf)→U(Nf) × U(N"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "partitionfunctionvalidtolowestorderinmandµ"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "classofmatrixmodelsforQCDarelatticeQCDpartitionfunctionsona2"
+  },
+  {
+   "page": 50,
+   "mark": "†",
+   "context": "DUeTr (JU"
+  },
+  {
+   "page": 50,
+   "mark": "†",
+   "context": "DUeTr (JU†+J"
+  },
+  {
+   "page": 50,
+   "mark": "†",
+   "context": "Z(J, J"
+  },
+  {
+   "page": 50,
+   "mark": "2",
+   "context": "identity(withtheinterpretationofJ∼1/g"
+  },
+  {
+   "page": 50,
+   "mark": "†",
+   "context": "x,µTr [U(x)H(x)U"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "Thusthevariance,⟨δg"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "conductanceisrelatedtothenumbervariance,Σ"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "observedﬂuctuationsingareoftheorderofe"
+  },
+  {
+   "page": 51,
+   "mark": "c",
+   "context": "ψ(r) ∼e−r/L"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "byL"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "L"
+  },
+  {
+   "page": 52,
+   "mark": "i",
+   "context": "of eigenfunctions φ"
+  },
+  {
+   "page": 52,
+   "mark": "i",
+   "context": "of eigenfunctions φi(t = 0), many of the overlaps ⟨ψ(t)|φ"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "withtheThoulessenergy,andisgivenbyD∼F"
+  },
+  {
+   "page": 52,
+   "mark": "h",
+   "context": "2m(p + i"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "2m(p + ih)"
+  },
+  {
+   "page": 53,
+   "mark": "†",
+   "context": "B"
+  }
+ ]
+}

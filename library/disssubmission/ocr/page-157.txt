@@ -1,0 +1,58 @@
+6.6. Some numerical values 149
+
+The tables listed above have been obtained with the computer algebra
+system SAGE [101], using for each table the function GenusList (d) which
+is defined by the following source code.
+
+def Initial(g, alpha):
+
+n = len(alpha)
+
+sum = 0
+
+for c in IntegerVectors(g, n, outer = alpha):
+product = [binomial (2*(g-1-c[k]), alpha(k]-c[k]) for k in range(n)]
+product .append (multinomial (c)-1)
+sum = sum + mul(product)
+
+return sum
+
+def GenericRank(g, d):
+P = Partitions(d)
+N = P.cardinality()
+R = [Initial(g, beta) for beta in P]
+for a in range(N):
+for b in range(a):
+Kostka = (SemistandardTableaux(P[b] ,P[a])).cardinality()
+R[a] = R[a] - Kostka*R[b]
+return R
+
+def GenusList(d):
+GR = [GenericRank(g,d) for g in range(2,d+1)]
+P = Partitions(d) .list()
+N = len(P)
+print ’%30s’ %’alpha \ g’,
+for g in range(2,d+1):
+print 48s’ hg,
+print "\n"
+for a in range(N):
+print 7%30s’ %Plal,
+for i in range(0,d-1):
+print °%8s’ %GR[iJ [al,
+print "\n"
+
+Here the function Initial(g, alpha) computes the leading term in the
+recursion formula, i.e. the value
+
+f— 1] J] C82).
+
+k=1
+
+mul (product)
+
+The function GenericRank(g,d) then does the main work: It starts with
+an array R consisting of the above initial values for all partitions @ of the
+given degree d, and using the recursion in theorem 6.1 it then step by step
+transforms this array into an array of the generic ranks rg. Finally, the
+function GenusList (d) prints out the obtained values on the screen in a
+convenient form like in the above tables.

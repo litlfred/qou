@@ -2,20 +2,20 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0005296v1",
  "source_sha256": "1714653ecfdf01bc",
- "brief": "An example concerning Ohtsuki’s invariant and the full SO(3) quautum invariant ∗ — Two lens spaces are given to show that Ohtsuki’s τ for rational homology spheres does not determine Kirby-Melvin’s",
- "extended": "**An example concerning Ohtsuki’s invariant and the full SO(3) quautum invariant ∗**\n\n*Bang-He Li & Tian-Jun Li*\n\n4 pp, 2 sections.\n\n**Abstract.** Two lens spaces are given to show that Ohtsuki’s τ for rational homology spheres does not determine Kirby-Melvin’s {τ ′ r, r odd ≥ 3} By using partial Kirby-Melvin’s quautum SO(3) invariants {τ ′ r(M ), r odd prime > |H1(M, Z)|} [KM], Ohtsuki [O] deﬁned a topological invariant τ (M ) = ∞∑ n=0 λn(M )(t − 1)n ∈ Q[[t − 1]] for rational homology 3-sphere M . R.Lawrence [La] conjectured that λn(M ) ∈ { Z, if |H1(M, Z)| = 1 Z[ 1 2 , 1 |H1(M,Z )| ], if |H1(M, Z)| > 1 and if r is an odd prime which does not divide |H1(M, Z)|, then {|H1(M, Z)|}rτ ′ r(M ) is the r−adic limit of the series ∞∑ n=0 λ √ n (M )hn where {·}r stands for the Jacobi symbol, and h = e 2πi r − 1. Rozansky [R] has proved that this conjecture is true. So τ (M ) and {τ ′ r, r odd prime not dividing |H1(M, Z)|} determine each other. A natural question arises: Does τ determine all {τ ′ r, r odd ≥ 3}?\n\n**Outline.** Abstract; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem: s(6, 25) = s(11, 25), while ξr(L(25, 11)) = ξr(L(25, 6)) if and only if",
+ "brief": "An example concerning Ohtsuki’s invariant and the full SO(3) quautum invariant — Two lens spaces are given to show that Ohtsuki’s τ for rational homology spheres does not determine Kirby-Melvin’s {τ",
+ "extended": "**An example concerning Ohtsuki’s invariant and the full SO(3) quautum invariant**\n\n*Bang-He Li & Tian-Jun Li*\n\n4 pp, 2 sections.\n\n**Abstract.** Two lens spaces are given to show that Ohtsuki’s τ for rational homology spheres does not determine Kirby-Melvin’s {τ ′ r, r odd ≥3} By using partial Kirby-Melvin’s quautum SO(3) invariants {τ ′ r(M), r odd prime > |H1(M, Z)|} [KM], Ohtsuki [O] deﬁned a topological invariant τ(M) = ∞ X n=0 λn(M)(t −1)n ∈Q[[t −1]] for rational homology 3-sphere M. R.Lawrence [La] conjectured that λn(M) ∈ ( Z, if |H1(M, Z)| = 1 Z[1 2, 1 |H1(M,Z)|], if |H1(M, Z)| > 1 and if r is an odd prime which does not divide |H1(M, Z)|, then {|H1(M, Z)|}rτ ′ r(M) is the r−adic limit of the series ∞ X n=0 λ √ n (M)hn where {·}r stands for the Jacobi symbol, and h = e 2πi r −1. Rozansky [R] has proved that this conjecture is true. So τ(M) and {τ ′ r, r odd prime not dividing |H1(M, Z)|} determine each other. A natural question arises: Does τ determine all {τ ′ r, r odd ≥3}?\n\n**Outline.** Front matter; References",
  "tokens": {
   "brief": 49,
-  "extended": 296
+  "extended": 259
  },
  "sections": [
   {
-   "id": "sec-000-abstract",
-   "title": "Abstract",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-3"
   },
   {
-   "id": "sec-001-references",
+   "id": "sec-000-references",
    "title": "References",
    "pages": "3-4"
   }
@@ -24,8 +24,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

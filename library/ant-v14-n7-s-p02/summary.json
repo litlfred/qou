@@ -2,184 +2,68 @@
  "_schema": "library-summary/v1",
  "doc_id": "ant-v14-n7-s-p02",
  "source_sha256": "fd2121feb180b282",
- "brief": "Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values — 33 sections: Introduction 1711; Preliminaries 1716; Iteration of the harmonic Frobeniu",
- "extended": "**Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values**\n\n36 pp, 33 sections.\n\n**Outline.** 0 Introduction 1711; 1 Preliminaries 1716; 2 Iteration of the harmonic Frobenius of integ; 3 Iteration of the harmonic Frobenius of serie; 4 Comparison between equations on integrals an; 5 Iteration of the Frobenius on P1\\⋃; 1 (P1\\{ 0,µ pα N,∞}); 1 (P1\\{ 0,µ N,∞}) iteratedα times. Considering; 1 Preliminaries; 1 (X), in the sense of [Deligne; 1 (X K, z, y)×π un,dR; 1 (X K, y, x)→π un,dR; 1 (X K, z, x) for any base-points x, y, z. By; 1 (X, y, x) is canonically isomorphic to the s; 1 (X,⃗1ξ,⃗10). Let f↦→ f(ξ) be the isomorphism; 1 (P1\\{ 0,µ N,∞}) is constructed; 1 (X(p)) ∼−→; 1 (X(pα)) ∼−→π un,dR\n\n**Extracted claims (proposals, not verified).**\n- Theorem: Let˜α0,˜α∈ N∗ such that˜α0|˜α:\n- Proposition 1: B.4. (i) Let(λ, g)∈ Gm(K)×51,0(K) such that|λ|p < 1. The map (λ, g)◦∫1,0 is a\n- Proposition: –Deﬁnition 4.3.1] is a counterpart of◦∫\n- Proposition 2: A.1. (a) For all˜α∈ N∗, we have8q,−∞= ﬁxq˜α0,8q,−˜α i.e.,\n- Proposition 2: B.1. For all˜α0,˜α∈ N∗ such that˜α0|˜α, we have\n- Proposition 2: B.1 considering the coefﬁcients of these noncommutative formal power series series,",
+ "brief": "Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values — 10 sections: Front matter; Introduction; Preliminaries",
+ "extended": "**Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values**\n\n*David Jarossay*\n\n36 pp, 10 sections.\n\n**Outline.** Front matter; 0 Introduction; 1 Preliminaries; 2 Iteration of the harmonic Frobenius of integ; 3 Iteration of the harmonic Frobenius of serie; 4 Comparison between equations on integrals an; 5 Iteration of the Frobenius on P1 \\ S; Appendix: A Poisson bracket corresponding to t; Acknowledgments; References",
  "tokens": {
-  "brief": 46,
-  "extended": 305
+  "brief": 38,
+  "extended": 115
  },
  "sections": [
   {
-   "id": "sec-000-0-introduction-1711",
-   "title": "Introduction 1711",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-1-preliminaries-1716",
-   "title": "Preliminaries 1716",
-   "pages": "1-1"
+   "id": "sec-000-0-introduction",
+   "title": "Introduction",
+   "pages": "1-6"
+  },
+  {
+   "id": "sec-001-1-preliminaries",
+   "title": "Preliminaries",
+   "pages": "6-14"
   },
   {
    "id": "sec-002-2-iteration-of-the-harmonic-frobenius-of-integra",
-   "title": "Iteration of the harmonic Frobenius of integrals at (1, 0) 1724",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-003-3-iteration-of-the-harmonic-frobenius-of-series",
-   "title": "Iteration of the harmonic Frobenius of series 1731",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-004-4-comparison-between-equations-on-integrals-and",
-   "title": "Comparison between equations on integrals and equations on series 1739",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-005-5-iteration-of-the-frobenius-on-p1",
-   "title": "Iteration of the Frobenius on P1\\⋃",
-   "pages": "1-5"
-  },
-  {
-   "id": "sec-006-1-p1-0µ-pα-n",
-   "title": "(P1\\{ 0,µ pα N,∞})",
-   "pages": "5-6"
-  },
-  {
-   "id": "sec-007-1-p1-0µ-n-iteratedα-times-considering",
-   "title": "(P1\\{ 0,µ N,∞}) iteratedα times. Considering",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-008-1-preliminaries",
-   "title": "Preliminaries",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-009-1-x-in-the-sense-of-deligne",
-   "title": "(X), in the sense of [Deligne",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-010-1-x-k-z-yπ-undr",
-   "title": "(X K, z, y)×π un,dR",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-011-1-x-k-y-xπ-undr",
-   "title": "(X K, y, x)→π un,dR",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-012-1-x-k-z-x-for-any-base-points-x-y-z-by",
-   "title": "(X K, z, x) for any base-points x, y, z. By",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-013-1-x-y-x-is-canonically-isomorphic-to-the-spectru",
-   "title": "(X, y, x) is canonically isomorphic to the spectrum of the shufﬂe",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-014-1-x1ξ10-let-f-fξ-be-the-isomorphism5105ξ0-induce",
-   "title": "(X,⃗1ξ,⃗10). Let f↦→ f(ξ) be the isomorphism51,0→5ξ,0 induced by the automorphism",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-015-1-p1-0µ-n-is-constructed",
-   "title": "(P1\\{ 0,µ N,∞}) is constructed",
-   "pages": "6-7"
-  },
-  {
-   "id": "sec-016-1-xp",
-   "title": "(X(p)) ∼−→",
-   "pages": "7-7"
-  },
-  {
-   "id": "sec-017-1-xpα-π-undr",
-   "title": "(X(pα)) ∼−→π un,dR",
-   "pages": "7-7"
-  },
-  {
-   "id": "sec-018-1-x-whenα-is-divisible-by-o-logplogq",
-   "title": "(X). Whenα is divisible by o= log(p)/log(q),",
-   "pages": "7-8"
-  },
-  {
-   "id": "sec-019-1-p1-0µ-n-y-x-is-an-afﬁne-scheme-over-k-and",
-   "title": "(P1\\{ 0,µ N,∞}, y, x) is an afﬁne scheme over K , and",
-   "pages": "8-11"
-  },
-  {
-   "id": "sec-020-1-p1",
-   "title": "(P1\\",
-   "pages": "11-14"
-  },
-  {
-   "id": "sec-021-2-iteration-of-the-harmonic-frobenius-of-integra",
    "title": "Iteration of the harmonic Frobenius of integrals at (1, 0)",
    "pages": "14-21"
   },
   {
-   "id": "sec-022-3-iteration-of-the-harmonic-frobenius-of-series",
+   "id": "sec-003-3-iteration-of-the-harmonic-frobenius-of-series",
    "title": "Iteration of the harmonic Frobenius of series",
    "pages": "21-29"
   },
   {
-   "id": "sec-023-4-comparison-between-equations-on-integrals-and",
+   "id": "sec-004-4-comparison-between-equations-on-integrals-and",
    "title": "Comparison between equations on integrals and equations on series",
    "pages": "29-31"
   },
   {
-   "id": "sec-024-5-iteration-of-the-frobenius-on-p1",
-   "title": "Iteration of the Frobenius on P1 \\ ⋃",
-   "pages": "31-31"
+   "id": "sec-005-5-iteration-of-the-frobenius-on-p1-s",
+   "title": "Iteration of the Frobenius on P1 \\ S",
+   "pages": "31-34"
   },
   {
-   "id": "sec-025-1-p1-0µ-n-at-base-points1-0",
-   "title": "(P1\\{ 0,µ N,∞}) at base-points(1, 0)",
-   "pages": "31-31"
+   "id": "sec-006-appendix-a-poisson-bracket-corresponding-to-the",
+   "title": "Appendix: A Poisson bracket corresponding to the pro-unipotent harmonic action of integrals at (1, 0)",
+   "pages": "34-35"
   },
   {
-   "id": "sec-026-1-p1-0µ-n-on-the-afﬁnoid",
-   "title": "(P1\\{ 0,µ N,∞}) on the afﬁnoid",
-   "pages": "31-33"
-  },
-  {
-   "id": "sec-027-1-p1-0µ-n-restricted-to-the-rigid-analytic-secti",
-   "title": "(P1\\{ 0,µ N,∞}), restricted to the rigid analytic sections on",
-   "pages": "33-35"
-  },
-  {
-   "id": "sec-028-acknowledgments",
+   "id": "sec-007-acknowledgments",
    "title": "Acknowledgments",
    "pages": "35-36"
   },
   {
-   "id": "sec-029-references",
+   "id": "sec-008-references",
    "title": "References",
-   "pages": "36-36"
-  },
-  {
-   "id": "sec-030-1-p1-0µ-n-ii-2-from-standard-algebraic-relations",
-   "title": "(P1−{ 0,µ N,∞}), II-2: From standard algebraic relations of",
-   "pages": "36-36"
-  },
-  {
-   "id": "sec-031-1-p1-0µ-n-ii-3-sequences-of-multiple-harmonic-su",
-   "title": "(P1−{ 0,µ N,∞}), II-3: Sequences of multiple harmonic sums",
-   "pages": "36-36"
-  },
-  {
-   "id": "sec-032-1-p1-0µ-n-v-1-the-frobenius-extended-toπundr",
-   "title": "(P1−{ 0,µ N,∞}), V-1: The Frobenius extended toπun,DR",
    "pages": "36-36"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

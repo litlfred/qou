@@ -1,0 +1,1 @@
+However, the action on τ should not aﬀect the qualitative structure of the moduli space: the number of singular- ities and the values of the kl up to permutation are independent of τ at least for generic τ.

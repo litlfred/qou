@@ -1,0 +1,34 @@
+Section 4.4 Invariance under Pachner Moves
+
+4.4.2 Invariance under 2-4 move
+
+Proposition 4.4.4 Let T,T’ be two ordered triangulations which differ by a typical 2-4
+pachner move, see Table [4.9 for their comparison. Then the identity in Equation [4.27
+holds, assuming all simplices which do not present among the summation variables have
+
+been assigned a fixed coloring.
+Proof: LHS:
+@ By definition.
+@ Use the result of the LHS in the proof of Equation [4.26]
+@) Apply Lemma [4.4.1] to the two diagrams.
+
+@ Move the morphism involving 2345 and the braiding above it from the top to the
+
+bottom.
+©) Isotope the diagram.
+
+© Apply Lemma Note that after summing over the variables 245, 234, 2345, the
+
+1
+
+factor remained is ia which is cancelled with the variable 24.
+
+RHS:
+@ By definition.
+@) Move the morphism involving 0123 in the first diagram from the top to the bottom.
+@) Apply Lemma [4.4.1] to the two diagrams.
+@® Isotope the diagram.
+
+©®) Isotope the diagram.
+
+84

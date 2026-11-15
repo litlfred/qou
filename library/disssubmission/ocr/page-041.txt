@@ -1,0 +1,52 @@
+2.4. The André-Kahn quotient 33
+
+For any ideal one has the notion of the corresponding quotient category. By
+definition, the quotient
+
+D = D/Np
+has the same objects as D, but the morphisms in D between two objects K,L
+are defined by
+
+Homp(K,L) = Homp(K,L)/Np(K,L).
+
+We have a natural quotient functor g: D —> D that is given by the identity
+on objects and by the quotient map on morphisms, and in what follows we
+denote by P the essential image of P under this quotient functor. Recall that
+ultimately we want to construct a semisimple abelian category; as a first
+
+step towards this goal we have
+
+LEMMA 2.6. The quotient functor q: D —+ D preserves direct sums,
+and the category P is pseudo-abelian in the sense that every idempotent
+morphism in it splits as the projection onto a direct summand.
+
+Proof. The functor g preserves direct sums since it is A-linear. To see
+that idempotents in P split, let P be an object of P. Since P is an abelian
+category and hence in particular pseudo-abelian, it suffices to show that
+every idempotent in
+
+Endp(P) = Endp(P)/Np(P,P)
+
+lifts to an idempotent in Endp(P). Since P is semisimple by axiom (D4),
+passing to isotypic components we can assume P = Q®" for some simple
+object Q of P andr € N. Then Endp(P) is the ring of r x r matrices over the
+skew field Endp(Q). Since matrix rings over skew fields do not have proper
+two-sided ideals, it follows that either Np(P, P) = 0 or Np(P, P) = Endp(P),
+and in both cases the lifting of idempotents is obvious. Oo
+
+It turns out that this is already enough to conclude that the quotient
+category D has the desired properties:
+
+PROPOSITION 2.7. The quotient category D is a semisimple abelian
+A-linear rigid symmetric monoidal category.
+
+Proof. By [1, lemma 7.1.1] the André-Kahn radical Np is a monoidal
+ideal in the sense that idy *Np(K,L) C Np(M*K,M«L) forall K,L,M €D,
+hence by sorite 6.1.4 of loc. cit. the quotient D = D/Np inherits from D
+the structure of a A-linear rigid symmetric monoidal category whose unit
+element satisfies Endp(1) = A.
+
+The main part of the proof is to check that the category D is semisimple
+abelian. For this we first claim that
+
+(x) Homp(P\m],Q[n]) = 0 for all objects P,Q in P and m £n.

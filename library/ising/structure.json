@@ -8,7 +8,7 @@
   "pages": 24,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:25Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -16,7 +16,7 @@
   "arxiv": null,
   "doi": null,
   "title": "WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL",
-  "authors_raw": "JEHANNE DOUSSE AND VALENTIN F\u00c9RAY",
+  "authors_raw": "JEHANNE DOUSSE AND VALENTIN FÉRAY",
   "title_lines": [
    "WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL"
   ],
@@ -39,7 +39,7 @@
  "toc": [
   {
    "level": 1,
-   "title": "At very high temperature, with a weak magnetic \ufb01eld.",
+   "title": "At very high temperature, with a weak magnetic ﬁeld.",
    "page": 8,
    "source": "inferred",
    "number": "3.1",
@@ -53,7 +53,7 @@
   },
   {
    "level": 1,
-   "title": "At very low temperature, without magnetic \ufb01eld.",
+   "title": "At very low temperature, without magnetic ﬁeld.",
    "page": 12,
    "source": "inferred",
    "number": "3.2",
@@ -67,7 +67,7 @@
   },
   {
    "level": 1,
-   "title": "Weighted dependency graph for the \u03c3i\u2019s and central limit theorem for the magnetization.",
+   "title": "Weighted dependency graph for the σi’s and central limit theorem for the magnetization.",
    "page": 16,
    "source": "inferred",
    "number": "4.1",
@@ -345,7 +345,7 @@
   {
    "id": "sec-000-31-at-very-high-temperature-with-a-weak-magnetic",
    "number": "3.1",
-   "title": "At very high temperature, with a weak magnetic \ufb01eld.",
+   "title": "At very high temperature, with a weak magnetic ﬁeld.",
    "level": 1,
    "page_start": 8,
    "page_end": 12,
@@ -355,26 +355,26 @@
    "label_end": "12"
   },
   {
-   "id": "sec-001-32-at-very-low-temperature-without-magnetic-\ufb01eld",
+   "id": "sec-001-32-at-very-low-temperature-without-magnetic-ﬁeld",
    "number": "3.2",
-   "title": "At very low temperature, without magnetic \ufb01eld.",
+   "title": "At very low temperature, without magnetic ﬁeld.",
    "level": 1,
    "page_start": 12,
    "page_end": 16,
-   "n_chars": 10909,
-   "n_words": 2147,
+   "n_chars": 7931,
+   "n_words": 1592,
    "label_start": "12",
    "label_end": "16"
   },
   {
-   "id": "sec-002-41-weighted-dependency-graph-for-the-\u03c3is-and-cen",
+   "id": "sec-002-41-weighted-dependency-graph-for-the-σis-and-cen",
    "number": "4.1",
-   "title": "Weighted dependency graph for the \u03c3i\u2019s and central limit theorem for the magnetization.",
+   "title": "Weighted dependency graph for the σi’s and central limit theorem for the magnetization.",
    "level": 1,
    "page_start": 16,
    "page_end": 19,
-   "n_chars": 4585,
-   "n_words": 937,
+   "n_chars": 7647,
+   "n_words": 1505,
    "label_start": "16",
    "label_end": "19"
   },
@@ -406,6 +406,7 @@
    "items": []
   },
   "sections": 5,
-  "chars_total": 67624
+  "chars_total": 67708,
+  "furniture_lines_stripped": 0
  }
 }

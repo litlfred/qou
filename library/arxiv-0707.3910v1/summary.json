@@ -3,12 +3,17 @@
  "doc_id": "arxiv-0707.3910v1",
  "source_sha256": "ad31f3cba16c4ea4",
  "brief": "LANDEN TRANSFORMATIONS AND THE INTEGRATION OF RATIONAL FUNCTIONS — We present a rational version of the classical Landen transfor- mation for elliptic integrals.",
- "extended": "**LANDEN TRANSFORMATIONS AND THE INTEGRATION OF RATIONAL FUNCTIONS**\n\n*GEORGE BOROS AND VICTOR H. MOLL*\n\n20 pp, 9 sections.\n\n**Abstract.** We present a rational version of the classical Landen transfor- mation for elliptic integrals. This is employed to obtain explicit closed-form expressions for a large class of integrals of even rational functions and to de- velop an algorithm for numerical integration of these functions.\n\n**Outline.** 1 Introduction; 2 The reduction formula; 3 The quartic case; 4 The symmetric case of degree 8; 5 A sequence of Landen transformations; 6 The sixth degree case; 7 Examples; Appendix A. Two binomial sums; References",
+ "extended": "**LANDEN TRANSFORMATIONS AND THE INTEGRATION OF RATIONAL FUNCTIONS**\n\n*GEORGE BOROS AND VICTOR H. MOLL*\n\n20 pp, 10 sections.\n\n**Abstract.** We present a rational version of the classical Landen transfor- mation for elliptic integrals. This is employed to obtain explicit closed-form expressions for a large class of integrals of even rational functions and to de- velop an algorithm for numerical integration of these functions.\n\n**Outline.** Front matter; 1 Introduction; 2 The reduction formula; 3 The quartic case; 4 The symmetric case of degree 8; 5 A sequence of Landen transformations; 6 The sixth degree case; 7 Examples; Appendix A. Two binomial sums; References",
  "tokens": {
   "brief": 40,
-  "extended": 163
+  "extended": 167
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",

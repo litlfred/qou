@@ -1,0 +1,25 @@
+Section 4.4 Invariance under Pachner Moves
+
+4.4.3 Invariance under 1-5 move
+
+Proposition 4.4.5 Let 7,7’ be two ordered triangulations which differ by a typical 1-5
+pachner move, see Table [4.4 for their comparison. Then the identity in Equation [4.28
+holds, assuming all simplices which do not present among the summation variables have
+
+been assigned a fixed coloring.
+
+Proof:
+LHS:
+
+@ By definition.
+@) Use the result of the LHS in the proof of Equation [4.27|
+@) Apply Lemma to the two diagrams.
+
+@® Apply Lemma [4.4.2|
+
+©) The strand labeled by 345 can be isotoped to an isolated loop, and thus it con-
+tributes a factor d34;. Note that the resulting diagram is equal to the RHS of
+
+Equation after a cyclic shift of morphisms.
+
+88

@@ -1,0 +1,615 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2106.01332v4",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "†",
+   "text": "Electronicaddress:marciano@fudan.edu.cn",
+   "marks": [
+    {
+     "page": 1,
+     "context": "NielsGresnigt,1, ∗AntoninoMarcian`o,2, 3,"
+    }
+   ],
+   "block": "library/arxiv-2106.01332v4/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p001-2",
+   "page": 1,
+   "mark": "‡",
+   "text": "Electronicaddress:zae@usf.edu,emanuele.amedeo.zappala@ut.ee",
+   "marks": [
+    {
+     "page": 1,
+     "context": "lsGresnigt,1, ∗AntoninoMarcian`o,2, 3, †andEmanueleZappala4,"
+    }
+   ],
+   "block": "library/arxiv-2106.01332v4/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "1",
+   "text": "Braids,as sub-graphs of extended 1-complexes,require at least four trivalent nodes to be connected to the embedding graph.Diﬀerently, isolated tangles can be achieved by interconnecting two trivalent nodes.",
+   "marks": [
+    {
+     "page": 2,
+     "context": "r,andthenjointotherestofthenetworkatthreeothertrivalentnodes"
+    }
+   ],
+   "block": "library/arxiv-2106.01332v4/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p003-1",
+   "page": 3,
+   "mark": "2",
+   "text": "Somerecentworksbyoneofthepresentauthorsdemonstratesthatthetopologicalstructuresofthehelonmodelcanbegenerated from the minimal ideals of the two complex Cliﬀord algebras Cℓ(6) and Cℓ(4), by establishing a map between the basis states of these ideals, and products of braid generators in the circular Artin braid group Bc",
+   "marks": [
+    {
+     "page": 3,
+     "context": "leptons and quarks is still lacking"
+    }
+   ],
+   "block": "library/arxiv-2106.01332v4/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "3",
+   "text": "AsappearedinBilson-Thompson’swork,fulltwistsarecompositionsoftwohalf-twists,eitherpositiveornegative.Inthepresent context, what is meant by a full twist is a loop with (positive or negative) self-crossing (also called kink), as in Matsuzaki’s moves.",
+   "marks": [
+    {
+     "page": 7,
+     "context": "icle,asaconsequenceofrestrictingourselvestoorientedsurfaces."
+    },
+    {
+     "page": 7,
+     "context": "manifoldarisesfromsurgeryonaframedlinkembeddedinthe3-sphereS"
+    },
+    {
+     "page": 7,
+     "context": "M"
+    },
+    {
+     "page": 7,
+     "context": "M3byaframedlinkLwhoseS"
+    },
+    {
+     "page": 7,
+     "context": "M3byaframedlinkLwhoseS3-surgeryproducesM"
+    }
+   ],
+   "block": "library/arxiv-2106.01332v4/blocks/prose-sec-006"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p003-2",
+   "page": 3,
+   "mark": "3",
+   "text": "(forCℓ(6))andB3(forCℓ(4)).Insuchaconstruction,the ﬁnite-dimensionality of the minimal ideals provides a natural limitation for the complexity of twisting of ribbons, as well as the braiding of ribbons [5–7].",
+   "block": "library/arxiv-2106.01332v4/blocks/prose-sec-000"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "cts,correspondingtoframedbraidsinthecircularArtinbraidgroupB"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "3,arecalled3-belts.With"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "familyof“annuli”,i.e.embeddingsofthecylinderS"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "L.Usingthedeﬁnitionofbraidednetwork,"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "braidednetworksasthedisjointunionofaframedlinkLrepresentingM"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "andmatterembeddedinM"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "linksurgery)thebase3-spaceM"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "L,andΓgivesthebraidedmatterembeddedinM"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "andletψbeanembeddingof∂B"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "andletψbeanembeddingof∂Bp× B"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "andletψbeanembeddingof∂Bp× Bn−pin∂X,whereB"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "saythatweattachap-handletoXwhenweattachacopyofB"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "saythatweattachap-handletoXwhenweattachacopyofBp× B"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "tachap-handletoXwhenweattachacopyofBp× Bn−palongtheimageψ(∂B"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "ap-handletoXwhenweattachacopyofBp× Bn−palongtheimageψ(∂Bp× B"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "ofthek-dimensionalsphereφ : S"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "lsphereφ : Sk−→M,intothen-dimensionalmanifoldM.Aframingofφ(S"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "sectionofthenormalbundleofφ(S"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "ψ: S"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "ψ: Sk× B"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "ψ: Sk× Bn−k−→Muptoisotopy.Ak-surgryonψconsistsofremovingψ(S"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Sk× Bn−k−→Muptoisotopy.Ak-surgryonψconsistsofremovingψ(Sk× B"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "acopyofB"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "acopyofBk+1× S"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "X× Ialongacopyof∂B"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "X× Ialongacopyof∂Bp× B"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "1}wherewehave"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "compatibleorientationsintheorientablesetting),wecanconstruct"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "ainedbygluingYandY′alongtheir(diﬀeomorphic)commonboundaryfor"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "{X"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "forelementarycobordismsCi= {X"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "0, Y"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "0, Yi, X"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "1},"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "∂B"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "∂Bp× B"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "∂Bp× B4−p=∂B"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "∂Bp× B4−p=∂B1× B"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "M × Ifollowingtheproceduredescribedabove,isacopyofB"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "M × Ifollowingtheproceduredescribedabove,isacopyofB1× B"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "andleattachmentissaidtobeadmissibleifthetwoembedded3-balls∂B"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "leattachmentissaidtobeadmissibleifthetwoembedded3-balls∂B1×B"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "sentingparticlesasintheBilson-Thompsonmodel,insuchawaythat∂B"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "ingparticlesasintheBilson-Thompsonmodel,insuchawaythat∂B1×∂B"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "fdisksand,moreover,theportionsofb1andb2containedinsideint(∂B"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "sksand,moreover,theportionsofb1andb2containedinsideint(∂B1×B"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "Z"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "conditiononbraidednetworksΓ⊂N.FortrivialcobordismsM"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "L× Ithismeansthatforeach"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "Γt,→M"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "L× tattheinstant"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "L× tattheinstanttisembeddedanditisisotopictotheinitialΓ=Γ"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "R"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "R3,oritscompactiﬁcationS"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "nrelationfortheJonespolynomialatarootofunityA(relatedtoqviaA"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "theframedbraidgroup)isindicatedby|2"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "referto.Usingtherenormalizationvaluefor◦= −A"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "to.Usingtherenormalizationvaluefor◦= −A2−A−2,weﬁndthevalue−A"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "leintocompositionsofgeneratorsofthetanglecategory.Usingθ= −A"
+  },
+  {
+   "page": 11,
+   "mark": "6",
+   "context": "movesIIandIII,thepreviousexpressionbecomes−A"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "movesIIandIII,thepreviousexpressionbecomes−A6· R"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "θm= (−1)"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "θm= (−1)3"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "θm= (−1)3mA±3"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "tnoisotopyinvariantofbraidednetworksissuitabletodistinguishZ"
+  },
+  {
+   "page": 12,
+   "mark": "18",
+   "context": "triple{2, 2, 2}isq-admissible),givesusanoverallfactorofA"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "e),givesusanoverallfactorofA18andthebraidsofW+arereplacedbyR"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "givesusanoverallfactorofA18andthebraidsofW+arereplacedbyR2⊗R"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "esusanoverallfactorofA18andthebraidsofW+arereplacedbyR2⊗R2⊗R"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "twodiagrams,onewithastraightribbonandanextrafactorofA"
+  },
+  {
+   "page": 12,
+   "mark": "24",
+   "context": "W+= −A"
+  },
+  {
+   "page": 12,
+   "mark": "18",
+   "context": "W+= −A24·|6−A"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "W+= −A24·|6−A18·[A"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "W+= −A24·|6−A18·[A2(1−A−4)+2A"
+  },
+  {
+   "page": 12,
+   "mark": "18",
+   "context": "W+= −A24·|6−A18·[A2(1−A−4)+2A4(1−A−4)]·|4−A"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "W+= −A24·|6−A18·[A2(1−A−4)+2A4(1−A−4)]·|4−A18[(1−A−4)+2A"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "−A24·|6−A18·[A2(1−A−4)+2A4(1−A−4)]·|4−A18[(1−A−4)+2A2(1−A−4)"
+  },
+  {
+   "page": 12,
+   "mark": "18",
+   "context": "−A18·[A2(1−A−4)+2A4(1−A−4)]·|4−A18[(1−A−4)+2A2(1−A−4)2]·|2−A"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "1−A−4)+2A4(1−A−4)]·|4−A18[(1−A−4)+2A2(1−A−4)2]·|2−A18(1−A−4)"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "esameway).LetusindicatethevalueassociatedtothiscolouringbyKL"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "tron, and A−1refers to the electron.Therefore, to compute KL"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "sitron and an electron, we can perform the computation of KL"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "ionforthecompositionoftwonegativecrossingsR−2=A−2· |2+ (1 −A"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "4(e−) = −A−24 · KL"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "KL"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "4(|6) + A−18Q(A) · KL"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "4(|4) + A−18P(A)(1 −A"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "4(|4) + A−18P(A)(1 −A4) · KL"
+  },
+  {
+   "page": 13,
+   "mark": "4",
+   "context": "P(A) := A−18[2A−2(1 −A"
+  },
+  {
+   "page": 13,
+   "mark": "4",
+   "context": "P(A) := A−18[2A−2(1 −A4) −(1 −A"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "P(A) := A−18[2A−2(1 −A4) −(1 −A4)(−A"
+  },
+  {
+   "page": 13,
+   "mark": "4",
+   "context": "Q(A) := A−22(1 −A"
+  },
+  {
+   "page": 13,
+   "mark": "24",
+   "context": "4(e+) = −A"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "4(e+) = −A24 · KL"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "KL"
+  },
+  {
+   "page": 13,
+   "mark": "18",
+   "context": "4(|6) + A"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "4(|6) + A18Q(A−1) · KL"
+  },
+  {
+   "page": 13,
+   "mark": "18",
+   "context": "4(|4) + A"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "4(|4) + A18P(A−1)(1 −A−4) · KL"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "KL"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "4(N) = KL"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "N) + KL"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "[21]Kirby,Robion.AcalculusforframedlinksinS"
+  }
+ ]
+}

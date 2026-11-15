@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2512.02998v1",
  "source_sha256": "146ff93cd70baad4",
- "brief": "STABILITY OFKNOT EQUIVALENCE AT LOW REGULARITY, AND SYMMETRIC CRITICAL KNOTS FOR THEMÖBIUS ENERGY — We present sufficient criteria for the equivalence of tame knots at low regularity.",
- "extended": "**STABILITY OFKNOT EQUIVALENCE AT LOW REGULARITY, AND SYMMETRIC CRITICAL KNOTS FOR THEMÖBIUS ENERGY**\n\n*SIMON BLATT, ALEXANDRA GILSBACH, PHILIPP REITER, AND HEIKO VON DER MOSEL*\n\n32 pp, 16 sections.\n\n**Abstract.** We present sufficient criteria for the equivalence of tame knots at low regularity. To this end, we introduce a localized version of Gromov’s distortion for any closed path-connected subset ofR n. If two such sets have local Gromov distortion below a universal dimension- dependent constantg n at some scale, and if their Hausdorff-distance is less than one quarter of that scale, we can show that the fundamental groups of their complements are isomorphic. In addition, we construct this isomorphism so that it restricts to the corresponding peripheral subgroups as an isomorphism as well. Applied to the images of one-dimensional knots it follows that two knots are equivalent if their Hausdorff-distance is bounded in terms of the scale under which their local Gromov distortion is controlled.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Motivation; 1.2 Isomorphic fundamental groups via localize; 1.3 Stability of knot equivalence; 1.4 Symmetric critical points for scale-invari; 1.5 Strategy and outline of the paper; 2 Sets with local distortion below a quarter c; 3 Pseudo-gradient flow for the distance functi; 4 Isomorphisms of fundamental groups; 5 Stability of knot equivalence; 6 Harmonic substitution; 7 Weak fractional compactness; 8 Symmetric critical knots; Acknowledgements; References",
+ "brief": "Stability of knot equivalence at low regularity, and symmetric critical knots for the M\\\"obius energy — We present sufficient criteria for the equivalence of tame knots at low regularity.",
+ "extended": "**Stability of knot equivalence at low regularity, and symmetric critical knots for the M\\\"obius energy**\n\n*SIMON BLATT, ALEXANDRA GILSBACH, PHILIPP REITER, AND HEIKO VON DER MOSEL*\n\n32 pp, 16 sections.\n\n**Abstract.** We present sufficient criteria for the equivalence of tame knots at low regularity. To this end, we introduce a localized version of Gromov’s distortion for any closed path-connected subset of Rn. If two such sets have local Gromov distortion below a universal dimension- dependent constant gn at some scale, and if their Hausdorff-distance is less than one quarter of that scale, we can show that the fundamental groups of their complements are isomorphic. In addition, we construct this isomorphism so that it restricts to the corresponding peripheral subgroups as an isomorphism as well. Applied to the images of one-dimensional knots it follows that two knots are equivalent if their Hausdorff-distance is bounded in terms of the scale under which their local Gromov distortion is controlled.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Motivation; 1.2 Isomorphic fundamental groups via localize; 1.3 Stability of knot equivalence; 1.4 Symmetric critical points for scale-invari; 1.5 Strategy and outline of the paper; 2 Sets with local distortion below a quarter c; 3 Pseudo-gradient flow for the distance functi; 4 Isomorphisms of fundamental groups; 5 Stability of knot equivalence; 6 Harmonic substitution; 7 Weak fractional compactness; 8 Symmetric critical knots; Acknowledgements; References",
  "tokens": {
-  "brief": 45,
-  "extended": 380
+  "brief": 46,
+  "extended": 381
  },
  "sections": [
   {
@@ -22,12 +22,12 @@
   {
    "id": "sec-001-11-motivation",
    "title": "Motivation",
-   "pages": "1-1"
+   "pages": "1-2"
   },
   {
    "id": "sec-002-12-isomorphic-fundamental-groups-via-localized-d",
    "title": "Isomorphic fundamental groups via localized distortion",
-   "pages": "1-3"
+   "pages": "2-3"
   },
   {
    "id": "sec-003-13-stability-of-knot-equivalence",

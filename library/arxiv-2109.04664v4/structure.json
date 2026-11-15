@@ -8,7 +8,7 @@
   "pages": 27,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:21Z",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -28,7 +28,7 @@
    "POLYNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIATED",
    "WITH A REAL NUMBER"
   ],
-  "abstract": "We study the asymptotic behavior of the N-dimensional colored Jones polynomial evaluated at exp(\u03be/N) for a real number \u03be greater than a certain constant. We prove that, from the asymptotic behavior, we can extract the SL(2; C) Chern\u2013Simons invariant and the Reidemeister torsion twisted by the adjoint action both associated with a representation determined by \u03be.",
+  "abstract": "We study the asymptotic behavior of the N-dimensional colored Jones polynomial evaluated at exp(ξ/N) for a real number ξ greater than a certain constant. We prove that, from the asymptotic behavior, we can extract the SL(2; C) Chern–Simons invariant and the Reidemeister torsion twisted by the adjoint action both associated with a representation determined by ξ.",
   "docinfo": {
    "Title": "arXiv:2109.04664v4  [math.GT]  16 Aug 2022",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
@@ -40,7 +40,7 @@
   "title_verified": false,
   "title_evidence": {
    "metadata": "arXiv:2109.04664v4 [math.GT] 16 Aug 2022",
-   "heading": "ON THE ASYMPTOTIC BEHAVIOR OF THE COLORED JONES POLYNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIATED WITH A REAL NUMBER 1. Introduction Let N \u2265 2 be an integer. In [10], R. Kashaev introduced a link invariant \u27e8 K \u27e9 N for a knot K in the threesphere S 3 by using the so-called quantum dilogarithm. In [11]",
+   "heading": "ON THE ASYMPTOTIC BEHAVIOR OF THE COLORED JONES POLYNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIATED WITH A REAL NUMBER 1. Introduction Let N ≥ 2 be an integer. In [10], R. Kashaev introduced a link invariant ⟨ K ⟩ N for a knot K in the threesphere S 3 by using the so-called quantum dilogarithm. In [11]",
    "text": "ON THE ASYMPTOTIC BEHAVIOR OF THE COLORED JONES POLYNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIATED WITH A REAL NUMBER",
    "corroborated_by": [],
    "browser_print": false
@@ -170,7 +170,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "The parallelogram is the boundary of P, the circle is the boundary of N\u03b40, the red region is D\u2212, and the green region is",
+   "title": "The parallelogram is the boundary of P, the circle is the boundary of Nδ0, the red region is D−, and the green region is",
    "page": 12,
    "confidence": 0.9,
    "evidence": [
@@ -451,14 +451,26 @@
    "title": "Representations",
    "level": 2,
    "page_start": 14,
-   "page_end": 16,
-   "n_chars": 2634,
-   "n_words": 533,
+   "page_end": 15,
+   "n_chars": 559,
+   "n_words": 124,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-006-6-proofs-of-lemmas",
+   "id": "sec-006-52-adjoint-reidemeister-torsion",
+   "number": "5.2",
+   "title": "Adjoint Reidemeister torsion",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 2061,
+   "n_words": 407,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-6-proofs-of-lemmas",
    "number": "6",
    "title": "Proofs of lemmas",
    "level": 1,
@@ -484,13 +496,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 8,
-  "chars_total": 49215,
+  "sections": 9,
+  "chars_total": 49201,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "fig8.tex",
    "tex_sections": 9,
-   "overlaid": 6,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -545,17 +558,25 @@
     {
      "id": "sec-005-51-representations",
      "title": "Representations",
-     "prose_ratio": 0.878,
-     "coverage_ratio": 0.958,
+     "prose_ratio": 0.778,
+     "coverage_ratio": 0.762,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-6-proofs-of-lemmas",
+     "id": "sec-006-52-adjoint-reidemeister-torsion",
+     "title": "Adjoint Reidemeister torsion",
+     "prose_ratio": 0.907,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-6-proofs-of-lemmas",
      "title": "Proofs of lemmas",
      "prose_ratio": 0.978,
      "coverage_ratio": 0.433,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

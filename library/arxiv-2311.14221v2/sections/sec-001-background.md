@@ -4,13 +4,14 @@ doc_title: "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS"
 section_id: sec-001-background
 section_title: "Background"
 section_number: null
-pages: 1-3
+pages: 2-3
 source_pdf: 2311.14221v2.pdf
 source_sha256: 5aa4126bbb6df6eb
-doc_brief: "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS — The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B → C is an exact"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.705
+latex_prose_ratio: 0.961
+latex_coverage_ratio: 0.971
+doc_brief: "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS — The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B →C is an exact"
 ---
 The main objective of the present paper is to present a version of the Tannaka-Krein type reconstruction theorems. It is known that if $\Bc$ is a $\ku$-linear abelian locally finite category, $F:\Bc\to \vect_\ku$ is a fibre functor, that is an exact faithful functor, then the coend
 $$ C=\int^{B\in \Bc} F(B)\otk F(B)^*,$$

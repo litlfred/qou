@@ -1,0 +1,42 @@
+Figure 3.18: Cylinder from gluing a to a’
+
+On the other hand, the boundary of Q, after gluing, has length
+
+2cos (4 a se (2
+2 arccosh (A2) + 2 arccosh (“2) + 4 arccosh (2) & 5.50559.
+
+V3 2
+
+The annulus 2 does not satisfy the hypothesis of the Faber-Krahn inequality. In order
+to rule out the 4 dimensional irreducible representations, we need to make use of the
+
+following conjecture about the first Dirichlet eigenvalue of Q.
+
+Conjecture 3.12 Let Q be the annulus deleribed abou (alternatively, the right angled
+pentagon with boundary conditions as in Figure 3.16). Then \4(Q) > 4.15. CL. _]
+
+Remark 3.13 There is strong numerical evidence to support this conjecturd. Table C.2
+shows the eigenvalues of Q with boundary conditions as ih Figure 3.1| , calculated using
+FreeFEM++ (the corresponding code is also given in Appendix C). One can see that the
+first positive eigenvalue is| approximately 5.35, and can compare this with the spectrum
+of B given in Table C.1, where the same eigenvalue appears with multiplicity 4 Unfor-_ |
+
+tunately, we were not able to prove this conjecture rigorously, but in Section 3.4.1, we
+
+outline a method that could be used to produce the relevant bound.
+
+The truth of this conjecture would imply that A(x11) htxizy; amd A(x13) do not
+
+appear in €,. Assuming this, we continue our proof of Theorem 3.9 by ruling out the
+
+trivial represen \t-] We require the following corollary to Courant’s nodal domain
+
+theorem (
+
+Proposition 3.14 (14-Proposition 1.1] For Neumann boundary problems, the number of
+nodal domains of the eigenfunction corresponding to the first positive eigenvalue is 2. For
+Dirichlet boundary problem problems, the number of nodal domains of the eigenfunction
+
+corresponding to the second positive eigenvalue is 2.
+
+76
