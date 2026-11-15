@@ -30,45 +30,29 @@ $$
   \frac{(q - q^{-1}) \pm \sqrt{(q - q^{-1})^2 + 4}}{2}
 $$
 
-> **The square root is spurious and the decimals below were wrong.** Corrected
-> 2026-08-09. The discriminant is a perfect square:
-> $(q-q^{-1})^2 + 4 = q^2 + 2 + q^{-2} = (q+q^{-1})^2$, so
-> $\sqrt{h^2+4} = [2]_q$ exactly — the Temperley–Lieb loop parameter — and the
-> eigenvalues are *exact*, with no radical and no decimal expansion:
->
-> $$
->   \lambda_\pm = \frac{h \pm [2]_q}{2}
->   = \frac{(q-q^{-1}) \pm (q+q^{-1})}{2}
->   \;\Longrightarrow\;
->   \lambda_+ = q, \qquad \lambda_- = -q^{-1}.
-> $$
->
-> These are of course the Hecke generator's eigenvalues — $\lambda$ satisfies
-> $\lambda^2 = h\lambda + 1$, i.e. $(\lambda-q)(\lambda+q^{-1}) = 0$ — which is
-> what identifies this operator as $\sigma_i$ rather than merely resembling it.
-> See `JonesNormalisation.tl_generator_sq`.
->
-> The published numerics were also arithmetically wrong, independently of any
-> convention: $\sqrt{0.2091^2+4} = 2.01090$, not $2.0054$, and the eigenvalues
-> follow the error.
->
-> | | published | correct |
-> |---|---|---|
-> | $\sqrt{h^2+4}$ | $2.0054$ | $2.010897$ ($= [2]_q$) |
-> | $\lambda_+$ | $1.1073$ | $1.109979$ ($= q$) |
-> | $\lambda_-$ | $-0.9027$ | $-0.900918$ ($= -q^{-1}$) |
-
-**At the substrate parameter $q$** (retained as published; see the correction
-above):
+The discriminant is a perfect square,
+$(q-q^{-1})^2 + 4 = q^2 + 2 + q^{-2} = (q+q^{-1})^2$, so
+$\sqrt{h^2+4} = [2]_q$, the Temperley–Lieb loop parameter, and the
+eigenvalues are exact:
 
 $$
-  q - q^{-1} = 0.2091, \quad
-  \sqrt{0.2091^2 + 4} = 2.0054
+  \lambda_\pm = \frac{h \pm [2]_q}{2}
+  = \frac{(q-q^{-1}) \pm (q+q^{-1})}{2},
+  \qquad
+  \lambda_+ = q, \qquad \lambda_- = -q^{-1}.
 $$
 
+These are the Hecke generator's eigenvalues: $\lambda^2 = h\lambda + 1$,
+i.e. $(\lambda-q)(\lambda+q^{-1}) = 0$, which identifies this operator as
+$\sigma_i$ (`JonesNormalisation.tl_generator_sq`).
+
+**At the substrate parameter $q_0$:**
+
 $$
-  \lambda_+ = 1.1073, \quad
-  \lambda_- = -0.9027
+  q - q^{-1} \approx 0.2091, \quad
+  [2]_q \approx 2.010897, \quad
+  \lambda_+ \approx 1.109979, \quad
+  \lambda_- \approx -0.900918 .
 $$
 
 ## Shell $n$ from the $n$-th power

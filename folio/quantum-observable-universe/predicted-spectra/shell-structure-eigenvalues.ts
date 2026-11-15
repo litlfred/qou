@@ -2,6 +2,11 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   authorNotes: [
+    {
+      kind: "refined-framing",
+      date: "2026-08-09",
+      body: "Corrected 2026-08-09. The block carried a spurious square root and wrong decimals: √(h²+4) was published as 2.0054 (correct 2.010897 = [2]_q), λ₊ as 1.1073 (correct 1.109979 = q), λ₋ as −0.9027 (correct −0.900918 = −q⁻¹). The wrong figures were then retained in prose under a correction banner; they are now replaced by the correct values.",
+    },
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
   ],
   label: "prop:shell-structure-eigenvalues",

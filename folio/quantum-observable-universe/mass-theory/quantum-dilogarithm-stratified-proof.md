@@ -19,44 +19,24 @@ $$
   \qquad \text{whenever } k \neq \ell .
 $$
 
-> **Corrected, and the correction *repairs* Step 4 rather than breaking
-> it.** This displayed condition read
-> "whenever $k + \ell \neq N$", followed by *"the self-dual pairing
-> $Z^{(k)} \times Z^{(N-k)} \to R$ is the **Poincaré duality of
-> curvature-rank strata**"* — an **anti-diagonal** duality, imported
-> from [`prf:spectral-sequence-collapse`](#prf:spectral-sequence-collapse)
-> "§Frobenius duality of strata", where the same claim has now been
-> refuted in place.
->
-> The strata here are spans of central primitive idempotents, and
-> distinct idempotents **annihilate each other**: for any linear
-> functional $\varphi$,
+> **The pairing of strata is diagonal.** The strata are spans of central
+> primitive idempotents, and distinct idempotents annihilate each other: for
+> any linear functional $\varphi$,
 > $\varphi(e_\lambda e_\mu) = \varphi(\delta_{\lambda\mu} e_\lambda)$.
-> So the pairing on that basis is $\mathrm{diag}(\tau(e_\lambda))$ —
-> **diagonal**, with every stratum self-dual and every *distinct* pair
-> annihilating. Measured exactly in $\mathbb{Q}(q)$ at $n = 3$ on the
-> corpus's own idempotents: all six off-diagonal entries identically
-> $0$, diagonal nonzero, completeness self-test
-> $\sum_\lambda \tau(e_\lambda) = 1$
-> ([`centre_frobenius_pairing_is_diagonal_probe.py`](../../../computations/probes/centre_frobenius_pairing_is_diagonal_probe.py)).
+> So the pairing on that basis is $\mathrm{diag}(\tau(e_\lambda))$, with every
+> stratum self-dual and every distinct pair annihilating; at $n = 3$ this holds
+> exactly in $\mathbb{Q}(q)$ (all six off-diagonal entries vanish, the diagonal
+> is nonzero, and $\sum_\lambda \tau(e_\lambda) = 1$). This is the form Step 4
+> needs: it uses $\langle Z^{(k)}, Z^{(\ell)}\rangle = 0$ for $k \neq \ell$, which
+> an anti-diagonal (Poincaré-type) duality $Z^{(k)} \times Z^{(N-k)} \to R$ would
+> not supply.
 >
-> **Step 4 needs the diagonal form and does not follow from the
-> anti-diagonal one.** It argues that $\phi_q^{(k)}(z_i) \in Z^{(k)}(A)$
-> pairs to zero with any $T_w$ whose $Z^{(k)}$-projection vanishes. That
-> is precisely $\langle Z^{(k)}, Z^{(\ell)}\rangle = 0$ for
-> $k \neq \ell$. Under the old anti-diagonal condition the pairing was
-> licensed to be **non**-zero at $\ell = N - k$, so Step 4's truncation
-> did not follow from Step 1 as written whenever $N - k \leq
-> k_\star(T_w)$. The correction closes that hole.
->
-> **Still open, and not repaired here:** Step 4 pairs a central
-> $\phi_q^{(k)}$ against a general $T_w \in A$, not against a central
-> element, so "$T_w$ has zero projection on $Z^{(k)}$" has to be read as
-> a statement about $T_w$'s Wedderburn *blocks*. That reading is
-> plausible — $e_\lambda$ central idempotent gives
-> $\tau(e_\lambda a) = \tau(e_\lambda a e_\lambda)$ — but it is not
-> stated in the block, and it is a different question from the one
-> corrected here.
+> **Open:** Step 4 pairs a central $\phi_q^{(k)}$ against a general
+> $T_w \in A$, not against a central element, so "$T_w$ has zero projection
+> on $Z^{(k)}$" has to be read as a statement about $T_w$'s Wedderburn
+> blocks. That reading is plausible, since for a central idempotent
+> $\tau(e_\lambda a) = \tau(e_\lambda a e_\lambda)$, but it is not stated in the
+> block.
 
 where $N$ is the maximal GB-depth in $Z(A)$, retained below only as the
 top of the depth range. The pairing $Z^{(k)} \times Z^{(k)} \to R$ is
