@@ -1686,6 +1686,7 @@ import QOU.MassTheory.SegmentCollisionDatum
 import QOU.MassTheory.ConvolutionFlowParity
 import QOU.MassTheory.ConvolutionFlowFibre
 import QOU.MassTheory.BringResidueEnergy
+import QOU.MassTheory.DeuteronKappaThreeSixteenthsReconciliation
 import QOU.Brings.BringConjugationChirality
 import QOU.Brings.BringCoverTower
 import QOU.Brings.BringDescendingTower
