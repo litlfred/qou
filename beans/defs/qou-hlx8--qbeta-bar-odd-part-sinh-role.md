@@ -9,7 +9,7 @@ tags:
     - bar-involution
     - calibration
 created_at: 2026-11-15T09:50:00Z
-updated_at: 2026-11-15T10:00:28Z
+updated_at: 2026-11-15T18:40:00Z
 parent: qou-qs0e
 ---
 
@@ -43,3 +43,11 @@ needs a statement of which factor carries the parity.
 
 ## 2026-11-15 gap-routes sibling (session_01Qmmkt8pE46F2YNM5QTVpHa)
 Route-4 derived: tr_z intertwines bar with q->1/q iff z(q)-z(1/q)=h (z_D yes, z_C no). Exactly f = h*g, so f_odd = h*g_even and f_even = h*g_odd with g_odd = -h[2]_q(q^2+q^-2)/8. f_odd(q0)*E0 = 0.556939460557 MeV (-28.811 %), reported, not proposed. Audit docs/audits/2026-11-15-bar-parity-split-gap-routes.md. Stays todo: the conjecture is open (qou-2djn, qou-z08b).
+
+## 2026-11-15 the motivating premise is contested (weak-vertex thread)
+The structural motivation above, "the bar involution is the flavour flip", is exactly the reading
+qou-hlxt flags as contested. PR #7952 found that two of three corpus sources (the Breit–Wheeler block and
+the colour-tube sign rule) read σ⁻¹ as the antiparticle contact, not as d. PR #7960 adds that the bar flip
+is the only letter map preserving the D trace exactly (z_D is bar-fixed, n = 2, 3, 4). So a bar-odd
+projection of the ruled cell has no settled flavour meaning until hlxt is decided. No value is proposed.
+Status stays todo.
