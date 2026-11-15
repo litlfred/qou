@@ -25,6 +25,15 @@ values, and their product lives in the quantum Bloch group.
 The regulator map $\mathfrak{B}(q) \to \mathbb{R}$ sends
 the algebraic volume to the hyperbolic volume, recovering
 $\mathrm{Vol}(S^3 \setminus K)$ from the algebraic data.
+The classical counterpart of this sentence is proved for the
+A-polynomial curve $Y$ of a knot rather than for $\mathfrak{B}(q)$:
+the regulator 1-form $\eta(l,m) = \log|l|\,d\arg m - \log|m|\,d\arg l$
+is exact on the hyperbolic component, and its loop integrals,
+divided by $4\pi^2$, lie in $\tfrac{1}{N}\mathbb{Z}$, where $N$ is the order
+of the symbol $\{l,m\}$ in $K_2(\mathbb{C}(Y))$
+\cite[Thm.~3.3]{li-wang2006}. That theorem does not treat the quantum
+Bloch group, so the passage from $\mathfrak{B}(q)$ to the regulator
+above is not covered by it.
 
 The **Kashaev invariant** is the state sum version:
 $\langle K \rangle = \sum_j \prod_{\text{tetrahedra}}
