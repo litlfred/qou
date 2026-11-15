@@ -1,13 +1,13 @@
 ---
 # qou-078y
 title: 'RESEARCH: is there a crossing-additive energy derived from the framed Markov trace?'
-status: todo
+status: in-progress
 type: task
 tags:
     - mass-energy
     - research
 created_at: 2026-11-15T20:26:03Z
-updated_at: 2026-11-15T20:32:23Z
+updated_at: 2026-11-15T21:10:00Z
 parent: qou-6qbv
 ---
 
@@ -61,3 +61,19 @@ as stated: threading through no crossings takes 0 Hecke steps, while 𝔪 ≠ 0.
 yet (owner decision). Its Lean is a context class (`PhotonThreadingMassContext`).
 This is the cleanest form of the owner's "crossing energy ~ computational cost" lead:
 the cost side is well defined (confluent GS reduction), the open part is its relation to 𝔈.
+
+## Result 2026-11-15 (thread "Find a trace-derived crossing energy")
+Pre-registered checks C1-C4 all held (exact Q(q), sympy; files in project folder qou-crossing-energy/).
+- C1 (structural, scope b, invariant = abelianisation of B_n is Z): a letter-additive function invariant
+  under free cancellation and the braid relation is c*w. E_cross(sigma sigma^-1) = q - q^-1 != 0, so
+  E_cross is not a braid function. In E_cross = w cosh(lambda) + l sinh(lambda) (prop:crossing-energy-decomposition)
+  only the w part can come from any trace; l sinh(lambda) is word length (gate count) times sinh(lambda),
+  i.e. computational cost, vanishing at q = 1. The trace-fixed writhe coefficient is -2 ln q in log m, not cosh(lambda).
+- C2: m = [2]^n q^(-2w) tr_D; q^(2k) m(sigma^k) = [3] q^k + (-q^-1)^k (k <= 8): log m not additive.
+- C3/C4: tr is linear in the GS normal-form coefficients, so m <= [2]^n q^(-2w) M_n(q) heckeCost(beta),
+  equality on the identity (cost 1, mass [2]^n). M_n = 1 only below q*_n = 1.4656, 1.2414, 1.1712, 1.1344
+  (n = 2..5), argmax the transposition (1 n): z_D((q^4+1)/(q^2+1))^(n-2); q*_n -> 1.
+- Lean defects in HeckeGS.lean section 5 (not fixed): embedNegativeGen inverse is wrong (should be sigma - h),
+  braidToAlg never reduces to normal form, and -0 = +0 in augmentedBraidElement.
+- Info reading: m(unlink_n) = (2 cosh lambda)^n = partition function of n two-state systems (2^n at q=1).
+Owner choice 2026-11-15: record (this note) + Lean the exclusion (PR) + then the info-theory route.
