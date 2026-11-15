@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-12T18:48:36Z
-updated_at: 2026-11-15T13:45:00Z
+updated_at: 2026-11-15T14:23:29Z
 ---
 
 Owner 2026-10-12: explore two types of towers. Parent context: qou-jfx8 (segment collision datum, PR #7741). Prior-work grep in progress.
@@ -78,3 +78,14 @@ Pre-registered e1e22ebfb1d. Nucleon V³/V⁶, electron V^k, k = 0…7, 224 rows.
 ## 2026-11-15 — level-6 trefoil failure derived (owner request)
 
 Closed form, PR #7741 `h2_gg_atom/level6_trefoil_derivation.py` (7/7). χ_(3,3)(p⊗e) = χ_(3)(p)χ_(3)(e) + χ_(2,1)(p)χ_(2,1)(e); χ_(2,1)(σ₀³σ₁) = −1 exactly, χ_(2,1)(σ₀σ₁σ₀) = 0, χ_(2,1)(V³) ≈ 1.99419 > q⁴ ≈ 1.51795 ⇒ negative; matches witness to 1e-18. Negative for 1 ≤ q < 1.18313. The T_w0 "pass" holds only because its (2,1) character vanishes (Hopf link). Bare word only.
+
+## 2026-11-15 — electron generator: (b) weak vertex, then (a) torus knots (owner: "b, then a as fall back")
+
+- (b) `computations/probes/h2_weak_vertex_electron/`: W = (σ+σ⁻¹)/(q[2]) and W′ = q²W, so it is
+  mirror-symmetric. The passing set is unchanged from plain γγ: the electron must be V³ or V⁶, and the
+  passing H₂ cells are bare and V³@4,5. Outcome (i), with no new information.
+- (a) `computations/probes/h2_torus_electron/`: e = σ₀^m σ₁^t, with m odd in [−9, 9] and t = ±1. The atom
+  passes level 6 only for m ∈ {7, 9} with t = +1, a q₀-dependent threshold predicted before the run. Those
+  H₂ cells pass every level (bare and several bonds), and every mirror fails, so the rule is chiral on this
+  family. The electron fails reading 3 on its own three strands. **OPEN (owner):** must an electron pass
+  on its own? If yes, no torus electron survives. The passing set is a tail m ≥ 7, not a choice.
