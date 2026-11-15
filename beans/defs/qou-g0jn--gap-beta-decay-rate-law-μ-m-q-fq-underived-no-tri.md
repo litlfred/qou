@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-15T19:00:22Z
-updated_at: 2026-11-15T19:52:31Z
+updated_at: 2026-11-15T19:53:35Z
 ---
 
 Opened 2026-11-15 from owner question on a decay trigger and translating ILP/SDP likelihood into a rate; owner chose 'bean both gaps, then probe'. prop:hadron-half-life: Γ_β = |W|²μ₀/(2π³)·[2]_q·|M_q|²·f(Q). W(q) has a D closed form (qou-egvf); μ₀, |M_q|² (prop:trace-ratio-observable, proportionality only) and f(Q) do not. def:beta-decay-skein says WHAT, not WHEN. LP/SDP shadow prices are used only for shell binding from measured Q-values. Candidate to test, pre-registered: per-step probability = trace weight of the channel where the insertion reduces to the daughter. half-life-as-q-probe states environmental predictions (neutron-star q ≫ q₀; 1e-9 per metre) with no derivation — scope (a). Neutron lifetime not derived.
@@ -37,3 +37,9 @@ RESULT 2 (PR #7977, a6c632fc1f): the prediction held. The W⁻ amplitude b is +1
 Owner choice: both, leptons first. Leptons are taken as a second copy of the same doublet V (ν = the K = q vector, e = the other); this is an ASSUMPTION about how leptons carry T³.
 Q3a: dim End_{U_q}(V⊗V*), and the action of each equivariant endomorphism on the W⁻ line (weight −1). Prediction: dimension 2, spanned by id and coev∘ev, and coev∘ev kills the W⁻ line, so any quark-pair → lepton-pair transfer acts on W⁻ as a single scalar.
 Q3b: the full chain amplitude n → p e⁻ ν̄ = b_q · c · b_ℓ, for the four left/right choices of the quark and lepton vertices (b = ±1/[2] from PR #7977). Prediction: |amplitude|² is the same for all four (chirality-blind). Only the sign differs: LL = RR = +, LR = RL = −. So the sign can matter only through interference, which is test 4.
+
+
+## RESULT 3 (Q3a/Q3b; pushed with test 4)
+Both predictions held. End(V⊗V*) has dimension 2. The W⁻ line has K eigenvalue q⁻², and each generator acts on it as a scalar (1 and −q⁻²). The chain amplitude is c·q²/(q²+1)² × (+1 for LL and RR, −1 for LR and RL), with the same magnitude for all four. Caveat: Q3b is almost arithmetic once b = ±1/[2] is known.
+## PRE-REGISTRATION 4 (2026-11-15 20:00Z), multi-crossing interference, written before computing
+At each letter of a word, the vertex's deviation from the bare letter is δ = W(letter) − letter. On σ this is −hP_L. On σ⁻¹ it is hP_R, from W(σ⁻¹) = W(σ) (#7975). The local W⁻ amplitude per site is the Ř-coefficient of δ. Q4: compute the site amplitudes, and their sum, for words of mixed sign: s1 s2⁻¹ (γγ letter), (s1 s2⁻¹)³, s1⁴, (s1 s2)⁵. Do the same for the mirror vertex (P_L ↔ P_R). Prediction: every site gives the same amplitude −h/[2] whatever the letter's sign, so the sum is −len(w)·h/[2] (constructive interference), and the mirror vertex gives +len·h/[2], the same magnitude. LIMITATION, stated in advance: these are local site amplitudes; dressing by the rest of the word acting on the state is not included.
