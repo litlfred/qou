@@ -1061,6 +1061,7 @@ import QOU.Archimedean.BorromeanQuark
 import QOU.Archimedean.EmCouplingBringZeroMode
 import QOU.Archimedean.BringZeroModeClausenWitness
 import QOU.Archimedean.ArchimedeanLimitDomain
+import QOU.Archimedean.BlochSuslinComplex
 import QOU.Archimedean.BringEllipticFactor
 import QOU.Archimedean.SigmaJGeometricCarrier
 import QOU.Archimedean.HodgeWeilRealStructure

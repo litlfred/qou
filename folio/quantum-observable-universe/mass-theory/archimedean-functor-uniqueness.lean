@@ -172,7 +172,9 @@ Consequences, all proved below:
 
 The class therefore has an instance, but only the trivial one.  The intended
 statement needs complex arguments and Suslin's orientation of the five-term
-relation; see issue #7942. -/
+relation; that corrected statement is
+`QOU/Archimedean/BlochSuslinComplex.lean` (`BlochWignerFiveTerm`,
+`BlochSuslinRigidity`, `figure8_from_rigidity`).  See issue #7942. -/
 
 /-- Real-slice pentagon at `y = x⁻¹`: `f (x²) = 2 f x - 2 f (-x)`. -/
 theorem pentagon_at_inv (f : ℝ → ℝ)
