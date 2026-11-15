@@ -1,0 +1,1 @@
+However the generalization with Wilson lines \eqref{eq:generalized connected sum} as implemented by (\ref{eq:VTQFT generalized connected sum}) does (under certain conditions) lead to hyperbolic manifolds, as we shall see below.}

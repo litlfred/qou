@@ -1,0 +1,47 @@
+1.3 Culler-Shalen theory, group acting on trees and
+
+incompressible surfaces
+
+In this section we partially describe the so-called Culler-Shalen theory. In seminal
+articles {CS84], Marc Culler and Peter Shalen managed to use both tree-
+theoretical techniques introduced by Hyman Bass and Jean-Pierre Serre in [SB77
+and character varieties to study the topology of 3-manifolds. In Subsections 1,2,3
+we describe the Bass-Serre tree together with its natural SL» action, in Subsection
+
+4 we explain how to use this theory in the context of character varieties.
+
+1.3.1 The tree
+
+Let K be an extension of k, we define a k-discrete valuation as a surjective map
+uv: K— ZU {oo} such that
+
+— v(0) = +00
+
+— v(a+y) > min(v(z), v(y))
+
+— v(ay) = v(e) + oly)
+
+— Vz € k,v(z) = 0 and & is maximal for this property.
+We call O, = {x € K: u(x) > 0} the valuation ring, and we pick t € O, an element of
+valuation 1, that we call a uniformizing parameter. The group of invertible elements
+O% is the group of elements whose valuation is zero, (¢) is the unique maximal ideal
+of O,, O,/(t) ~ k is the residual field. Remark that every ideal is of the form (¢”),
+for some n € N. The main exemple to have in mind here is the valuation ring C[[t]]
+of formal series in t, with the valuation v : C((t))* + Z, P + ord;(P) given by the
+vanishing order at t = 0. The uniformizing element is t and the residual field is C.
+A lattice L in a two dimensional K-vector space V is a free O,-module of rank two
+that spans V as a vector space. The group K* acts on the set of lattices in V by
+homothety . We denote by T the set of equivalence classes, that is L ~ L’ iff there
+exists x € K* such that L’ = xL.
+We are going to define an integer-valued distance on T. We fix a lattice L together
+with a basis of L, say {e, f}. For any class [L’] € T one can express a basis of L’ € [L’]
+as {ae + bf, ce + df} with a,b,c,d € K; and up to homothety, we can pick in fact
+a,b,c,d € Oy, that is L’ C L. Assume a has minimal valuation among {a, b,c, d},
+then the matrix (75) can be transformed into (i ats) by SL2(O,) right and left
+multiplication that preserves the standard lattice O?. Hence L’ ~ a0, @(d—)O, &
+
+a
+
+tO, tO, for some n,m € N. We define d([L], [L’]) = |n — m|, and one can check
+
+29

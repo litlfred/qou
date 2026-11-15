@@ -1,0 +1,72 @@
+---
+doc_id: cherednik1991-kz-dunkl
+doc_title: "A unification of Knizhnik-Zamolodchikov and Dunkl operators via affine Hecke algebras"
+section_id: page-021
+section_title: "Page 21"
+pages: 21-21
+pdf_page: 21
+source_pdf: cherednik1991-kz-dunkl.pdf
+source_sha256: cae9cf747bb98a46
+text_source: ocr
+granularity: page
+doc_brief: "A unification of Knizhnik-Zamolodchikov and Dunkl operators via affine Hecke algebras — 21 sections: Page 1; Page 2; Page 3"
+---
+Affine Hecke algebras 431
+
+(Du]
+[Hel]
+[He2]
+[HO]
+[Ka]
+[KL]
+[LS1]
+[LS2]
+[Lut]
+{Lu2]
+[Lu3]
+[Ma]
+[Mu]
+[Ro]
+[Ze]
+
+Dunkl, C.F.: Differential-difference operators associated to reflection groups. Trans.
+Am. Math. Soc. 311, 167-183 (1989)
+
+Heckman, G.J.: An elementary approach to the hypergeometric shift operators of
+Opdam. Invent. Math. (Submitted)
+
+Heckman, G.J.: A remark on the Dunkl differential-difference operators. Proceedings
+of Bowdoin Conference on harmonic analysis in reductive groups, 1989. (To appear)
+Heckman, G.J., Opdam, E.M.: Root systems and hypergeometric functions I. Com-
+pos. Math. 64, 329-352 (1987)
+
+Kato, S.: Irreducibility of principal series representations for Hecke algebras of affine
+type. J. Fac. Sci., Univ. Tokyo, IA, 28:3, 929-943 (1983)
+
+Kazhdan, D., Lusztig, G. Proof of Deligne-Langlands conjecture for Hecke algebras.
+Invent. Math. 87, 153-215 (1987)
+
+Lascoux A., Schiitzenberger M.-P.: Non-commutative Schubert polynomials. Funct.
+Anal. Appl. 23:3, 63-64 (1989)
+
+Lascoux A., Schiitzenberger M.-P.: Symmetrization operators in polynomial rings.
+Funct. Anal. Appl. 21:4, 77-78 (1987)
+
+Lusztig, G.: Affine Hecke algebras and their graded version. J. Am. Math. Soc. 2:3,
+599-685 (1989)
+
+Lusztig, G.: Cuspidal local systems and graded Hecke algebras I. Publ. Math., Inst.
+Hautes Etud. Sci. 67, 145-202 (1988)
+
+Lusztig, G.: Equivariant K-theory and representations of Hecke algebras. Proc. Am.
+Math. Soc. 94:2, 337-342 (1985)
+
+Matsumoto, H.: Analyse harmonique dans les systems de Tits bornologiques de type
+affine. (Lect. Notes Math. vol. 590) Berlin Heidelberg New York: Springer 1979
+Murphy, G.E.: A new construction of Young’s seminormal representation of the
+symmetric group. J. Algebra 69, 287-297 (1981)
+
+Rogawski, J.D.: On modules over the Hecke algebra of a p-adic group. Invent. Math.
+79, 443-465 (1985) .
+Zelevinsky, A.V.: Induced representations of reductive p-adic groups II. Ann. Sci. Ec.
+Norm. Supér. Sér. IV. Sér. 13, 165-210 (1980)

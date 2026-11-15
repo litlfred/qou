@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "download",
  "source_sha256": "ca9639465b08d34c",
- "brief": "Concentration of empirical distribution functions with applications to non-i.i.d. models — 11 sections: Introduction; Empirical Poincaré inequalities; Proof of Theorem 1.1",
- "extended": "**Concentration of empirical distribution functions with applications to non-i.i.d. models**\n\n*S.G. BOBKOV 1 and F. GÖTZE 2*\n\n30 pp, 11 sections.\n\n**Outline.** Introduction; Empirical Poincaré inequalities; Proof of Theorem 1.1; Large deviations above the mean; Empirical log-Sobolev inequalities; Local behavior of empirical distributions; Bounds on the Kolmogorov distance. Proof of Th; High-dimensional random matrices; Appendix; Acknowledgements; References",
+ "brief": "Concentration of empirical distribution functions with applications to non-i.i.d. models — 12 sections: Front matter; Introduction; Empirical Poincaré inequalities",
+ "extended": "**Concentration of empirical distribution functions with applications to non-i.i.d. models**\n\n*S.G. BOBKOV1 and F. GÖTZE2*\n\n30 pp, 12 sections.\n\n**Outline.** Front matter; Introduction; Empirical Poincaré inequalities; Proof of Theorem 1.1; Large deviations above the mean; Empirical log-Sobolev inequalities; Local behavior of empirical distributions; Bounds on the Kolmogorov distance. Proof of Th; High-dimensional random matrices; Appendix; Acknowledgements; References",
  "tokens": {
-  "brief": 42,
-  "extended": 115
+  "brief": 40,
+  "extended": 118
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",

@@ -1,6 +1,6 @@
 ---
 doc_id: 022201-1-online
-doc_title: "Online  Export Citation RESEARCH ARTICLE | FEBRUARY 01 2021 Efficient algorithms for approximating quantum partition functions Ryan L. Mann  ; Tyler Helmuth"
+doc_title: "Efficient algorithms for approximating quantum partition functions"
 section_id: sec-004-iii-the-quantum-cluster-expansion
 section_title: "THE QUANTUM CLUSTER EXPANSION"
 section_number: III
@@ -8,6 +8,7 @@ pages: 3-4
 source_pdf: 022201_1_online.pdf
 source_sha256: 50331bf18a2bd4d5
 toc_source: inferred
+doc_brief: "Efficient algorithms for approximating quantum partition functions — 13 sections: Front matter; AFFILIATIONS; ABSTRACT"
 ---
 In this section, we shall show how the partition function of a quantum spin system admits an abstract polymer representation and hence
 an abstract cluster expansion. We return to the more general setting of hypergraphs for the remainder of this section.
@@ -22,8 +23,6 @@ J. Math. Phys. 62, 022201 (2021); doi: 10.1063/5.0013689
  30 August 2026 09:11:26
 Journal of
 Mathematical Physics
-ARTICLE
-scitation.org/journal/jmp
 write γ = {γi}∥γ∥
 i=1. With these definitions, the partition function ZG(β) admits an abstract polymer model representation3,22,23 as formalized
 by the following lemma:

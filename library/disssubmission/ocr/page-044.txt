@@ -1,0 +1,50 @@
+36 Chapter 2 — Proof of the vanishing theorem(s)
+
+by Rep,(G,€) the category of all super representations V = Vo @V, of G
+over A such that € acts by (—1)* on V, for a = 0,1. Categories of this form
+will be called super Tannakian, with Tannaka super group G.
+
+THEOREM 2.10. Any finitely generated full tensor subcategory (K) CD
+is super Tannakian, and its Tannaka super group G = G(K) is reductive.
+
+Proof. Since D is a catégorie A-tensorielle, for the first claim it suffices
+by [30, th. 0.6] to see that for any object K € D and all n € N the number of
+simple constituents of (K @ KY )*” in the semisimple abelian category D is
+at most N” for some constant N = N(K) depending only on K. In the case
+at hand one can take
+
+N(K) = Y dima (H'(X,M))
+icZ
+for any object M € D that becomes isomorphic to K @ KY in D, using the
+
+argument given in [110, top of p. 5]. Concerning reductivity, note that a
+category Rep,(G, €) is semisimple iff G is reductive [108]. Oo
+
+2.6. Perverse multiplier
+
+We now introduce the notion of a multiplier. This will play an important
+role in our proof of theorem 1.1, indeed the theorem essentially amounts
+to the statement that any perverse sheaf on a complex abelian variety is a
+multiplier. In this section A need not be algebraically closed, but we assume
+as always that axioms (D1) — (D4) from section 2.3 hold.
+
+Let N be a full subcategory of D satisfying the stability axiom (N1). We
+then define an N-multiplier to be an object K € D such that for all r € No and
+all n £0 the subquotients of ?H"((K @ K”)*”) all lie in N. The relevance of
+this notion for theorem 1.1 is clear from
+
+LEMMA 2.11. For P € P the following holds.
+
+(a) If the subcategory N satisfies the twisting axiom (N2) and if P is
+an N-multiplier, then H*(X , Py) is concentrated in degree zero for
+most characters x.
+
+(b) Conversely, suppose that N satisfies the acyclicity axiom (N3) and
+that the hard Lefschetz axiom (D5) holds. Then P is an N-multiplier
+if H°(X,P) is concentrated in degree zero.
+
+Proof. (a) Put g = dim(X). The perverse decomposition axiom (D3)
+shows that
+
+pst) = @ P,|m] for suitable P,, € P.
+meZ

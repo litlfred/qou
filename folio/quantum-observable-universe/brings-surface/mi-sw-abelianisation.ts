@@ -70,6 +70,7 @@ export default proposition({
         "`validation: \"stub\"` is unchanged and still accurate.",
     },
   ],
+  cites: ["seiberg-witten1994b", "donagi1997"],
   uses: [
     "rem:brings-smoothness",
     "def:mass-identity",

@@ -4,13 +4,14 @@ doc_title: "Fricke S-duality in CHL models"
 section_id: sec-001-11-fricke-s-duality
 section_title: "Fricke S-duality"
 section_number: 1.1
-pages: 2-8
+pages: 3-8
 source_pdf: 1504.07260v3.pdf
 source_sha256: 707cb014400a3f05
-doc_brief: "Fricke S-duality in CHL models — We consider four dimensional CHL models with sixteen spacetime supersym- metries obtained from orbifolds of type IIA superstring on K3×T 2 by aZN symmetry acting"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.981
-latex_coverage_ratio: 0.781
+latex_coverage_ratio: 0.92
+doc_brief: "Fricke S-duality in CHL models — We consider four dimensional CHL models with sixteen spacetime supersym- metries obtained from orbifolds of type IIA superstring on K3×T 2 by a ZN symmetry acting"
 ---
 Consider heterotic string theory on $T^6$ and decompose the torus according to $T^6=T^4 \times S^1\times \tilde{S}^1$. We want to take the orbifold of this by a cyclic group $G$ of symmetries that preserve all the spacetime supersymmetries. This implies, in particular, that $G$ must act trivially on the left-moving (supersymmetric) sector. From the type IIA perspective, the target space is $K3\times S^1\times \tilde{S}^1$ and the orbifold group must be a symmetry of the $\mathcal{N}=(4,4)$ superconformal sigma model $\mathcal{C}$ on $K3$. All such symmetries were classified in [@K3symm] and shown to correspond to elements of the Conway group $Co_0$. The group $G$ acts by an automorphism $g\in O(\Gamma^{4,20})$ of order $N$ on the $K3$-sigma model and by a shift on the circle $S^1$.
 

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2401.04019v1
-doc_title: "TRUNCA TED THET A SERIES RELA TED TO THE JACOBI TRIPLE PRODUCT IDENTITY"
+doc_title: "TRUNCATED THETA SERIES RELATED TO THE JACOBI TRIPLE PRODUCT IDENTITY"
 section_id: sec-009-7-concluding-remarks
 section_title: "Concluding remarks"
 section_number: 7
 pages: 18-20
 source_pdf: 2401.04019v1.pdf
 source_sha256: 1a29e52a81639640
-doc_brief: "TRUNCATED THETA SERIES RELATED TO THE JACOBI TRIPLE PRODUCT IDENTITY — The work of Andrews and Merca on the truncated Euler’s pen- tagonal number theorem led to a resurgence in research on tru ncated"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.991
-latex_coverage_ratio: 0.984
+latex_prose_ratio: 0.972
+latex_coverage_ratio: 0.955
+doc_brief: "TRUNCATED THETA SERIES RELATED TO THE JACOBI TRIPLE PRODUCT IDENTITY — The work of Andrews and Merca on the truncated Euler’s pen- tagonal number theorem led to a resurgence in research on truncated"
 ---
 []{#concluding label="concluding"}
 

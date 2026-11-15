@@ -1,0 +1,934 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p005-1",
+   "page": 5,
+   "mark": "2",
+   "text": "π",
+   "marks": [
+    {
+     "page": 4,
+     "context": "andµ(l)=z"
+    },
+    {
+     "page": 4,
+     "context": "andµ(l)=z2(1 −z)"
+    },
+    {
+     "page": 4,
+     "context": "Dehnﬁllingcoeﬃcient(p, q) ∈R"
+    },
+    {
+     "page": 4,
+     "context": "p log {(1 −z)w} + q log {z"
+    },
+    {
+     "page": 4,
+     "context": "p log {(1 −z)w} + q log {z2(1 −z)"
+    },
+    {
+     "page": 4,
+     "context": "becauselog {(1 −z)w}isnotarealmultipleoflog {z"
+    },
+    {
+     "page": 4,
+     "context": "becauselog {(1 −z)w}isnotarealmultipleoflog {z2(1 −z)"
+    },
+    {
+     "page": 4,
+     "context": "ψ: U→R"
+    },
+    {
+     "page": 5,
+     "context": "R"
+    }
+   ],
+   "block": "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "x",
+   "text": "0,y= x2 x0",
+   "marks": [
+    {
+     "page": 6,
+     "context": "1+ x0"
+    },
+    {
+     "page": 6,
+     "context": "1+ x0x1"
+    },
+    {
+     "page": 6,
+     "context": "1+ x0x1x2+ x0"
+    },
+    {
+     "page": 6,
+     "context": "0"
+    }
+   ],
+   "block": "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/blocks/prose-sec-001"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p005-2",
+   "page": 5,
+   "mark": "2",
+   "text": "π",
+   "block": "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/blocks/prose-sec-001"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "inthe3-dimensionalsphereS"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "ureσ∞.By Mostow-Prasadrigidity,suchahyperbolicstructure on S"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "Thurston[8]analyzedtheﬂexibilityofhyperbolicstructuresonS"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "deformations of σ∞on S"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "enters C−U, degeneration of hyperbolic structures on S"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "ﬁllingsofS"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "AnidealtetrahedronSisanoriented3-dimensionalsimplexinH"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "AnidealtetrahedronSisanoriented3-dimensionalsimplexinH3∪∂H"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "whoseverticesarelocatedon∂H"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "Consideranoriented 3-dimensionalsimplexin H"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "Consideranoriented 3-dimensionalsimplexin H3∪∂H"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "∂H"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "ofH"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "∞intheupperhalf-spacemodelofH"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "containedwithina2-dimensionalhyperbolicsubspaceofH"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "S3byK.Itiswellknownthatitscomplement,S"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": " volume hyperbolic structure σ∞.The hyperbolic 3-manifold (S"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "wherez∞=w∞=−ω"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "wherez∞=w∞=−ω2andω=e"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "Thus,wewrite(S"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "acomplexS(z) ∪S(w)(≈S"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "C= {(z, w) ∈C"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "U:= {(z, w) ∈C"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "hyperbolicstructureσonS"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "hyperbolicstructureσonS3−K.Wedenotethehyperbolic3-manifold(S"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "K, σ)by(S"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "K, σ)by(S3−K)(z, w)andcallitadeformationof(S"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "ﬁgure-eightknotcomplementS"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "Associatedwitheachpoint(z, w)∈Uisarepresentationρ:π1(S"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "theimageρ∞(π1(S"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "H"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "H3/ρ∞(π1(S"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "manifold(S"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "ofKinS"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "closed3-manifold(S"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "•If(p, q) =(±1, 0),then(S"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "fact,bothof(S"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "fact,bothof(S3−K)(±1,0)arehomeomorphictoS"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "π1(S"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "anditisnotoneoftheseexceptions,thentheclosed3-manifold(S"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "σon(S"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "isidenticallythecompletionofthehyperbolicstructureσof(S"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "example,for(p, q)=(±1, 0),(S"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "appearson(S"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "•If (p, q) = (0, ±1), then (S"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "ofthecorrespondingrepresentationρ(p,q): π1(S"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "•If(p, q)=(±1, ±1), (±2, ±1)or(±3, ±1),then(S"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "π1(S"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "•If (p, q) = (±4, ±1), then (S"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "thatsplits(S"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "ofintegers(p, q),exceptfor(±4, ±1)and(0, ±1),the3-manifold(S"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "tions,insomecasesaclosed3-manifold(S"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "Notethat(S"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "Notethat(S3−K)(±1,0)arebothhomeomorphictoS"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "The3-cone-manifold(S"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "withthehyperbolic3-manifold(S"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "withthehyperbolic3-manifold(S3, σ∞).The3-cone-manifold(S"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "p∈(3, +∞),appropriatelyrescalingtheRiemannianmetricof(S"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "obtainahyperbolic3-cone-manifold(S"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "itcanbeconcludedthatthehyperbolic3-cone-manifold(S"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "toconvergetotheEuclidean3-orbifold(S"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "by(S"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "−3]∪[3, +∞], there corresponds a representation ρbτ(p): π1(S"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "PSL2(C).WiththeEuclidean3-orbifolds(S"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "tationsρτ(±3):π1(S"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "ThenV= {(x0: x1: x2) ∈CP"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "ThenV= {(x0: x1: x2) ∈CP2|x1(x1 −x0)x2(x2 −x0) = x"
+  },
+  {
+   "page": 6,
+   "mark": "w",
+   "context": "\b\t\nz=u,"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "u"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "u2v + v"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "u2v + v2−uv −u"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "\b\t\nu= X"
+  },
+  {
+   "page": 6,
+   "mark": "v",
+   "context": "X0,"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "X0,v= X"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "X"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1X"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "1X2+ X"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1X2+ X0X"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "2−X"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "2−X0X"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "2−X0X1X"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "2−X0X1X2−X"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "2−X0X1X2−X0X"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1+ X"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "0X"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "−x0x"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "1−x"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "1+ x"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "1+ x0x"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1+ x0x1x"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "1+ x0x1x2+ x"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1+ x0x1x2+ x0x"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "2+ x"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "0x"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "\b\t\nx= x"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "fore,onhyperbolicstructuresoftheﬁgure-eightknotcomplementS"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "3-manifolds (S"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "non-trivialsplittingsofπ1(S"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "t1and the originalpoint(z∞, w∞) (= (−ω"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "t1and the originalpoint(z∞, w∞) (= (−ω2, −ω"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "structuresonS"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "structuresonS3−KandappearanceoftheSolstructureon(S"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "correspondingtothe3-manifold(S"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "throughthedegenerationofhyperbolicstructuresonS"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": ","
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": ","
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": ","
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "5TcanberegardedascorrespondingtotheSolstructureon(S"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "ﬁllingofthehyperbolic3-manifold(S"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Theoriginalpoint(z∞, w∞)(=(−ω"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Theoriginalpoint(z∞, w∞)(=(−ω2, −ω"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "CcorrespondstothepointR:=(ω"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "canregardS(−ω)∪S(−ω)asahyperbolic3-manifoldthatoverlaps(S"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "K, σ∞)=S(−ω"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "K, σ∞)=S(−ω2)∪S(−ω"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "deformationsofthehyperbolicstructureσ∞thatconnects(S"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "and(S"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "thehyperbolic3-manifold(S"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "Dehnﬁllingoftheoriginalhyperbolic3-manifold(S"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "ThepointonCcorrespondingtothepoint7R=(ω"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "ThepointonCcorrespondingtothepoint7R=(ω2, −ω"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(−ω, −ω"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(−ω, −ω2).NotethatbecauseIm(−ω)<0,thepoint(−ω, −ω"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "ofC,wecanchooseapathconnectingthetwopoints(z∞, w∞)and(−ω, ω"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "alongwhichthedegenerationofhyperbolicstructuresonS"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "the endpoint of this path, (−ω, ω"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "endpoint of this path, (−ω, ω2), the Euclidean 3-orbifold (S"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "Euclidean 3-orbifold (S"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "regard3R=(ω, −ω)ascorrespondingtotheEuclidean3-orbifold(S"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "plementS"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "(S"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "(S3−K)(p,q)aclosed3-manifoldobtainedfromS"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "andlarethestandardmeridianandlongitudeofKinS"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "E: y"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "E: y2+ xy + y= x"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "E: y2+ xy + y= x3+ x"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(iii)The two points R := (ω"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "and8R = 8T= B4= O.Here,ωdenotesthecomplexnumbere"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "manifolds(S"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "structures,where(S"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "structures,where(S3−K)∞representstheunsurgeredmanifoldS"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "⇐⇒S"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "⇐⇒(S"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "⇐⇒(S"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "⇐⇒(S"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "⇐⇒(S"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "⇐⇒(S"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "8R = 8T= B4= O ⇐⇒(S"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "⇐⇒(S"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "⇐⇒(S"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "E:y"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "E:y2+ xy + y=x"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "E:y2+ xy + y=x3+ x"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "3x"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "3x"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "1+ 2"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "1+ 2x"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "1+ 2x1−y"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "1+ 2"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "1+ 2x"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "1+ 2x1−y"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "3x"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "−x"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "1+ 2"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "1+ 2x"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "1+ 2x1−y"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "1−y"
+  }
+ ]
+}

@@ -1,0 +1,1 @@
+In the current section we shall prove the key tool, [\[def:approx-factorization-charactersB\]](#def:approx-factorization-charactersB){reference-type="ref" reference="def:approx-factorization-charactersB"}.

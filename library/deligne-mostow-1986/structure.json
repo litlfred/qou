@@ -6,7 +6,9 @@
   "sha256": "d9850f70ab2fecbd5f7294497ccaeb89c8f1dfe641be8ed762a2c2118ceadd3b",
   "bytes": 9316377,
   "pages": 86,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -14,498 +16,1402 @@
   "arxiv": null,
   "doi": null,
   "title": "Monodromy of hypergeometric functions and non-lattice integral monodromy",
-  "authors_raw": "Monodromy of hypergeometric functions and non-",
+  "authors_raw": "PIERRE DELIGNE",
+  "title_lines": [
+   "PUBLICATIONS MATHÉMATIQUES DE L’I.H.É.S"
+  ],
   "abstract": null,
   "docinfo": {
+   "Title": "Monodromy of hypergeometric functions and non-lattice integral monodromy",
    "Author": "Pierre Deligne G. D. Mostow",
-   "CreationDate": "D:20260116164831+01'00'",
-   "Creator": "NUMDAM",
    "Producer": "pdfTeX-1.40.16",
-   "Title": "Monodromy of hypergeometric functions and non-lattice integral monodromy"
+   "Creator": "NUMDAM",
+   "CreationDate": "D:20260116164831+01'00'"
   },
-  "title_lines": [
-   "PUBLICATIONS MATHÉMATIQUES DE L ’I.H.É.S",
-   "PIERRE DELIGNE",
-   "G. D. MOSTOW"
-  ],
-  "title_prev": "PUBLICATIONS MATHÉMATIQUES DE L ’I.H.É.S. PIERRE DELIGNE G. D. MOSTOW"
+  "title_raw": "PUBLICATIONS MATHÉMATIQUES DE L’I.H.É.S",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Monodromy of hypergeometric functions and non-lattice integral monodromy",
+   "heading": "P UBLICATIONS MATHÉMATIQUES DE L ’I.H.É.S",
+   "text": "PUBLICATIONS MATHÉMATIQUES DE L’I.H.É.S",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
    "level": 1,
-   "title": "P. DELIGNE AND G. D. MOSTOW",
-   "page": 3,
+   "title": "AND NON-LATTICE INTEGRAL MONODROMY",
+   "page": 2,
    "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "P. DELIGNE AND G. D. MOSTOW",
-   "page": 5,
-   "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "Cohomology of a rank one local system on a punctured complex line",
-   "page": 6,
-   "source": "inferred",
-   "number": "2"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Cohomology of a rank one local system on a punctured projective line",
    "page": 7,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "10"
   },
   {
-   "level": 1,
-   "title": "P. DELIGNE AND G. D. MOSTOW",
+   "level": 2,
+   "title": "-^H^P-p^UT,),^)-^",
    "page": 9,
    "source": "inferred",
-   "number": "12"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "12"
   },
   {
-   "level": 1,
-   "title": "P.DELIGNEANDG.D.MOSTOW",
-   "page": 11,
-   "source": "inferred",
-   "number": "14"
-  },
-  {
-   "level": 1,
-   "title": "P. DELIGNE AND G. D. MOSTOW",
-   "page": 13,
-   "source": "inferred",
-   "number": "16"
-  },
-  {
-   "level": 1,
-   "title": "P.DELIGNEANDG.D.MOSTOW",
+   "level": 2,
+   "title": "^: Hi(P-S.L) XcH^P-S.L) ->H^(P-S,C) == C",
    "page": 15,
    "source": "inferred",
-   "number": "18"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "18"
   },
   {
-   "level": 1,
-   "title": "P.DELIGNEANDG.D.MOSTOW",
-   "page": 17,
+   "level": 2,
+   "title": "^P-UD^^+^L/^",
+   "page": 16,
    "source": "inferred",
-   "number": "20"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "19"
   },
   {
-   "level": 1,
-   "title": "Reformulation of PicarcTs theorem",
-   "page": 18,
+   "level": 2,
+   "title": "= Idet^nt^-SLieH)!",
+   "page": 32,
    "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "P. DELIGNE AND G. D. MOSTOW",
-   "page": 19,
-   "source": "inferred",
-   "number": "22"
-  },
-  {
-   "level": 1,
-   "title": "P.DELIGNE AND G. D. MOSTOW",
-   "page": 21,
-   "source": "inferred",
-   "number": "24"
-  },
-  {
-   "level": 1,
-   "title": "P.DELIGNEANDG.D.MOSTOW",
-   "page": 23,
-   "source": "inferred",
-   "number": "26"
-  },
-  {
-   "level": 1,
-   "title": "(AJ / \\tc z-z{m{s)) •",
-   "page": 24,
-   "source": "inferred",
-   "number": "7"
-  },
-  {
-   "level": 1,
-   "title": "The compactified quotient space Qgst",
-   "page": 25,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "The complex ball",
-   "page": 31,
-   "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "Stable points",
-   "page": 33,
-   "source": "inferred",
-   "number": "6"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "35"
   },
   {
    "level": 1,
    "title": "Semi-stable points",
    "page": 36,
    "source": "inferred",
-   "number": "7"
+   "number": "7",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "39"
   },
   {
-   "level": 1,
-   "title": "Extending S^ by continuity",
-   "page": 38,
+   "level": 2,
+   "title": "We want",
+   "page": 36,
    "source": "inferred",
-   "number": "8"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "39"
+  },
+  {
+   "level": 2,
+   "title": "^D^JO^",
+   "page": 42,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "45"
   },
   {
    "level": 1,
    "title": "Codimension i etaleness",
    "page": 42,
    "source": "inferred",
-   "number": "9"
+   "number": "9",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "45"
   },
   {
-   "level": 1,
-   "title": "For any Her, if we put k :== K(H), any y eH admits a neighborhood V",
-   "page": 46,
+   "level": 2,
+   "title": "D E L I G N E AND G. D. M O S T O W",
+   "page": 47,
    "source": "inferred",
-   "number": "2"
+   "number": "P",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "50"
   },
   {
-   "level": 1,
-   "title": "Oo(S). Nearj/o, we then have the following system of local coordinates, depending",
-   "page": 50,
+   "level": 2,
+   "title": "Q.-UQ.T",
+   "page": 52,
    "source": "inferred",
-   "number": "00"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "55"
   },
   {
-   "level": 1,
-   "title": "AHthmeticity and Integral Monodromy",
+   "level": 2,
+   "title": "PU(V),/N = U(V\")",
+   "page": 62,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "65"
+  },
+  {
+   "level": 2,
+   "title": "Define",
    "page": 64,
    "source": "inferred",
-   "number": "12"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "67"
+  },
+  {
+   "level": 2,
+   "title": "%[Trr,]==F",
+   "page": 70,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "73"
+  },
+  {
+   "level": 2,
+   "title": "Tr^...^=.^(-2)^n^^ ^.^",
+   "page": 72,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "75"
   },
   {
    "level": 1,
    "title": "Elliptic and Euclidean Cases",
    "page": 76,
    "source": "inferred",
-   "number": "13"
+   "number": "13",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "79"
   },
   {
    "level": 1,
-   "title": "Rfu U",
+   "title": "^((-^KH^))",
    "page": 78,
    "source": "inferred",
-   "number": "2"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "81"
   },
   {
-   "level": 1,
-   "title": "I I I I 00",
-   "page": 83,
+   "level": 2,
+   "title": "Euclidean",
+   "page": 79,
    "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "I I I I I 00",
-   "page": 83,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Bibliography",
-   "page": 85,
-   "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "82"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "9",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "10",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "11",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "28",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "30",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "64",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "65",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "68",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "69",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "70",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "71",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "72",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "73",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "74",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "75",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "76",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": "77",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": "78",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 76,
+   "label": "79",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 77,
+   "label": "80",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 78,
+   "label": "81",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 79,
+   "label": "82",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 80,
+   "label": "83",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 81,
+   "label": "84",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 82,
+   "label": "85",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 83,
+   "label": "86",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 84,
+   "label": "87",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 85,
+   "label": "88",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 86,
+   "label": "89",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-6-p-deligne-and-g-d-mostow",
-   "number": "6",
-   "title": "P. DELIGNE AND G. D. MOSTOW",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 910,
+   "n_words": 103,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-and-non-lattice-integral-monodromy",
+   "number": null,
+   "title": "AND NON-LATTICE INTEGRAL MONODROMY",
    "level": 1,
    "page_start": 2,
-   "page_end": 5,
-   "n_chars": 6876,
-   "n_words": 1297
+   "page_end": 7,
+   "n_chars": 11126,
+   "n_words": 2031,
+   "label_start": null,
+   "label_end": "10"
   },
   {
-   "id": "sec-001-8-p-deligne-and-g-d-mostow",
-   "number": "8",
-   "title": "P. DELIGNE AND G. D. MOSTOW",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 6,
-   "n_chars": 2722,
-   "n_words": 490
-  },
-  {
-   "id": "sec-002-2-cohomology-of-a-rank-one-local-system-on-a-pun",
+   "id": "sec-001-2-cohomology-of-a-rank-one-local-system-on-a-pun",
    "number": "2",
-   "title": "Cohomology of a rank one local system on a punctured complex line",
+   "title": "Cohomology of a rank one local system on a punctured projective line",
    "level": 1,
-   "page_start": 6,
+   "page_start": 7,
    "page_end": 9,
-   "n_chars": 6244,
-   "n_words": 1142
+   "n_chars": 4908,
+   "n_words": 998,
+   "label_start": "10",
+   "label_end": "12"
   },
   {
-   "id": "sec-003-12-p-deligne-and-g-d-mostow",
-   "number": "12",
-   "title": "P. DELIGNE AND G. D. MOSTOW",
-   "level": 1,
+   "id": "sec-002--hp-put",
+   "number": null,
+   "title": "-^H^P-p^UT,),^)-^",
+   "level": 2,
    "page_start": 9,
-   "page_end": 11,
-   "n_chars": 4362,
-   "n_words": 947
-  },
-  {
-   "id": "sec-004-14-pdeligneandgdmostow",
-   "number": "14",
-   "title": "P.DELIGNEANDG.D.MOSTOW",
-   "level": 1,
-   "page_start": 11,
-   "page_end": 13,
-   "n_chars": 4844,
-   "n_words": 962
-  },
-  {
-   "id": "sec-005-16-p-deligne-and-g-d-mostow",
-   "number": "16",
-   "title": "P. DELIGNE AND G. D. MOSTOW",
-   "level": 1,
-   "page_start": 13,
    "page_end": 15,
-   "n_chars": 4440,
-   "n_words": 938
+   "n_chars": 15209,
+   "n_words": 3225,
+   "label_start": "12",
+   "label_end": "18"
   },
   {
-   "id": "sec-006-18-pdeligneandgdmostow",
-   "number": "18",
-   "title": "P.DELIGNEANDG.D.MOSTOW",
-   "level": 1,
+   "id": "sec-003-hip-sl-xchp-sl--hp-sc-c",
+   "number": null,
+   "title": "^: Hi(P-S.L) XcH^P-S.L) ->H^(P-S,C) == C",
+   "level": 2,
    "page_start": 15,
-   "page_end": 17,
-   "n_chars": 4230,
-   "n_words": 881
+   "page_end": 16,
+   "n_chars": 1520,
+   "n_words": 301,
+   "label_start": "18",
+   "label_end": "19"
   },
   {
-   "id": "sec-007-20-pdeligneandgdmostow",
-   "number": "20",
-   "title": "P.DELIGNEANDG.D.MOSTOW",
-   "level": 1,
-   "page_start": 17,
-   "page_end": 18,
-   "n_chars": 3408,
-   "n_words": 721
+   "id": "sec-004-p-udl",
+   "number": null,
+   "title": "^P-UD^^+^L/^",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 32,
+   "n_chars": 37618,
+   "n_words": 7969,
+   "label_start": "19",
+   "label_end": "35"
   },
   {
-   "id": "sec-008-3-reformulation-of-picarcts-theorem",
-   "number": "3",
-   "title": "Reformulation of PicarcTs theorem",
-   "level": 1,
-   "page_start": 18,
-   "page_end": 19,
-   "n_chars": 854,
-   "n_words": 179
-  },
-  {
-   "id": "sec-009-22-p-deligne-and-g-d-mostow",
-   "number": "22",
-   "title": "P. DELIGNE AND G. D. MOSTOW",
-   "level": 1,
-   "page_start": 19,
-   "page_end": 21,
-   "n_chars": 5114,
-   "n_words": 998
-  },
-  {
-   "id": "sec-010-24-pdeligne-and-g-d-mostow",
-   "number": "24",
-   "title": "P.DELIGNE AND G. D. MOSTOW",
-   "level": 1,
-   "page_start": 21,
-   "page_end": 23,
-   "n_chars": 4523,
-   "n_words": 929
-  },
-  {
-   "id": "sec-011-26-pdeligneandgdmostow",
-   "number": "26",
-   "title": "P.DELIGNEANDG.D.MOSTOW",
-   "level": 1,
-   "page_start": 23,
-   "page_end": 24,
-   "n_chars": 3607,
-   "n_words": 755
-  },
-  {
-   "id": "sec-012-7-aj-tc-z-zms",
-   "number": "7",
-   "title": "(AJ / \\tc z-z{m{s)) •",
-   "level": 1,
-   "page_start": 24,
-   "page_end": 25,
-   "n_chars": 2102,
-   "n_words": 425
-  },
-  {
-   "id": "sec-013-4-the-compactified-quotient-space-qgst",
-   "number": "4",
-   "title": "The compactified quotient space Qgst",
-   "level": 1,
-   "page_start": 25,
-   "page_end": 31,
-   "n_chars": 12502,
-   "n_words": 2660
-  },
-  {
-   "id": "sec-014-5-the-complex-ball",
-   "number": "5",
-   "title": "The complex ball",
-   "level": 1,
-   "page_start": 31,
-   "page_end": 33,
-   "n_chars": 3948,
-   "n_words": 813
-  },
-  {
-   "id": "sec-015-6-stable-points",
-   "number": "6",
-   "title": "Stable points",
-   "level": 1,
-   "page_start": 33,
+   "id": "sec-005-idetnt-slieh",
+   "number": null,
+   "title": "= Idet^nt^-SLieH)!",
+   "level": 2,
+   "page_start": 32,
    "page_end": 36,
-   "n_chars": 8418,
-   "n_words": 1773
+   "n_chars": 8982,
+   "n_words": 1965,
+   "label_start": "35",
+   "label_end": "39"
   },
   {
-   "id": "sec-016-7-semi-stable-points",
+   "id": "sec-006-7-semi-stable-points",
    "number": "7",
    "title": "Semi-stable points",
    "level": 1,
    "page_start": 36,
-   "page_end": 38,
-   "n_chars": 3024,
-   "n_words": 591
+   "page_end": 36,
+   "n_chars": 149,
+   "n_words": 30,
+   "label_start": "39",
+   "label_end": "39"
   },
   {
-   "id": "sec-017-8-extending-s-by-continuity",
-   "number": "8",
-   "title": "Extending S^ by continuity",
-   "level": 1,
-   "page_start": 38,
+   "id": "sec-007-we-want",
+   "number": null,
+   "title": "We want",
+   "level": 2,
+   "page_start": 36,
    "page_end": 42,
-   "n_chars": 9469,
-   "n_words": 1865
+   "n_chars": 12384,
+   "n_words": 2504,
+   "label_start": "39",
+   "label_end": "45"
   },
   {
-   "id": "sec-018-9-codimension-i-etaleness",
+   "id": "sec-008-djo",
+   "number": null,
+   "title": "^D^JO^",
+   "level": 2,
+   "page_start": 42,
+   "page_end": 42,
+   "n_chars": 127,
+   "n_words": 26,
+   "label_start": "45",
+   "label_end": "45"
+  },
+  {
+   "id": "sec-009-9-codimension-i-etaleness",
    "number": "9",
    "title": "Codimension i etaleness",
    "level": 1,
    "page_start": 42,
-   "page_end": 46,
-   "n_chars": 8979,
-   "n_words": 1852
+   "page_end": 47,
+   "n_chars": 10089,
+   "n_words": 2152,
+   "label_start": "45",
+   "label_end": "50"
   },
   {
-   "id": "sec-019-2-for-any-her-if-we-put-k-kh-any-y-eh-admits-a-n",
-   "number": "2",
-   "title": "For any Her, if we put k :== K(H), any y eH admits a neighborhood V",
-   "level": 1,
-   "page_start": 46,
-   "page_end": 50,
-   "n_chars": 9186,
-   "n_words": 1866
+   "id": "sec-010-p-d-e-l-i-g-n-e-and-g-d-m-o-s-t-o-w",
+   "number": "P",
+   "title": "D E L I G N E AND G. D. M O S T O W",
+   "level": 2,
+   "page_start": 47,
+   "page_end": 52,
+   "n_chars": 11737,
+   "n_words": 2439,
+   "label_start": "50",
+   "label_end": "55"
   },
   {
-   "id": "sec-020-00-oos-nearjo-we-then-have-the-following-system",
-   "number": "00",
-   "title": "Oo(S). Nearj/o, we then have the following system of local coordinates, depending",
-   "level": 1,
-   "page_start": 50,
+   "id": "sec-011-q-uqt",
+   "number": null,
+   "title": "Q.-UQ.T",
+   "level": 2,
+   "page_start": 52,
+   "page_end": 62,
+   "n_chars": 26628,
+   "n_words": 5629,
+   "label_start": "55",
+   "label_end": "65"
+  },
+  {
+   "id": "sec-012-puvn-uv",
+   "number": null,
+   "title": "PU(V),/N = U(V\")",
+   "level": 2,
+   "page_start": 62,
    "page_end": 64,
-   "n_chars": 32675,
-   "n_words": 6693
+   "n_chars": 3314,
+   "n_words": 657,
+   "label_start": "65",
+   "label_end": "67"
   },
   {
-   "id": "sec-021-12-ahthmeticity-and-integral-monodromy",
-   "number": "12",
-   "title": "AHthmeticity and Integral Monodromy",
-   "level": 1,
+   "id": "sec-013-define",
+   "number": null,
+   "title": "Define",
+   "level": 2,
    "page_start": 64,
-   "page_end": 76,
-   "n_chars": 26134,
-   "n_words": 5381
+   "page_end": 70,
+   "n_chars": 12524,
+   "n_words": 2656,
+   "label_start": "67",
+   "label_end": "73"
   },
   {
-   "id": "sec-022-13-elliptic-and-euclidean-cases",
+   "id": "sec-014-trrf",
+   "number": null,
+   "title": "%[Trr,]==F",
+   "level": 2,
+   "page_start": 70,
+   "page_end": 72,
+   "n_chars": 4966,
+   "n_words": 1099,
+   "label_start": "73",
+   "label_end": "75"
+  },
+  {
+   "id": "sec-015-tr-2n",
+   "number": null,
+   "title": "Tr^...^=.^(-2)^n^^ ^.^",
+   "level": 2,
+   "page_start": 72,
+   "page_end": 76,
+   "n_chars": 8626,
+   "n_words": 1779,
+   "label_start": "75",
+   "label_end": "79"
+  },
+  {
+   "id": "sec-016-13-elliptic-and-euclidean-cases",
    "number": "13",
    "title": "Elliptic and Euclidean Cases",
    "level": 1,
    "page_start": 76,
    "page_end": 78,
-   "n_chars": 4284,
-   "n_words": 890
+   "n_chars": 4325,
+   "n_words": 942,
+   "label_start": "79",
+   "label_end": "81"
   },
   {
-   "id": "sec-023-2-rfu-u",
-   "number": "2",
-   "title": "Rfu U",
+   "id": "sec-017--kh",
+   "number": null,
+   "title": "^((-^KH^))",
    "level": 1,
    "page_start": 78,
-   "page_end": 83,
-   "n_chars": 8155,
-   "n_words": 1753
+   "page_end": 79,
+   "n_chars": 433,
+   "n_words": 118,
+   "label_start": "81",
+   "label_end": "82"
   },
   {
-   "id": "sec-024-2-i-i-i-i-00",
-   "number": "2",
-   "title": "I I I I 00",
-   "level": 1,
-   "page_start": 83,
-   "page_end": 83,
-   "n_chars": 238,
-   "n_words": 72
-  },
-  {
-   "id": "sec-025-1-i-i-i-i-i-00",
-   "number": "1",
-   "title": "I I I I I 00",
-   "level": 1,
-   "page_start": 83,
-   "page_end": 85,
-   "n_chars": 3513,
-   "n_words": 685
-  },
-  {
-   "id": "sec-026-bibliography",
+   "id": "sec-018-euclidean",
    "number": null,
-   "title": "Bibliography",
-   "level": 1,
-   "page_start": 85,
+   "title": "Euclidean",
+   "level": 2,
+   "page_start": 79,
    "page_end": 86,
-   "n_chars": 3739,
-   "n_words": 547
+   "n_chars": 15678,
+   "n_words": 3240,
+   "label_start": "82",
+   "label_end": "89"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 28,
-  "sections": 27,
-  "chars_total": 187590
+  "toc_entries": 19,
+  "toc_inferred_entries": 35,
+  "toc_inferred_mean_confidence": 0.657,
+  "toc_inferred_empty_share": 0.029,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 20,
+  "chars_total": 191253,
+  "furniture_lines_stripped": 0,
+  "headings_tidied": [
+   {
+    "title": "i. Introduction",
+    "page": 2,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "seS:",
+    "page": 12,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "7r,(Q,.)^Pu(Hi(P,,L,),^^",
+    "page": 24,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "6': 7ri(X,.)^GL(Hi(P,,LJ)",
+    "page": 24,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "da.dh^{",
+    "page": 32,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "n\\z-a,\\-^dxdy<}",
+    "page": 34,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "n^-^l-^'^^II",
+    "page": 35,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "i^Arfzi",
+    "page": 38,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "a,=Qu^ft,,^",
+    "page": 47,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "INT",
+    "page": 47,
+    "action": "dropped",
+    "why": "a single short word"
+   },
+   {
+    "title": "xo. Proof of discreteness",
+    "page": 47,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "One",
+    "page": 56,
+    "action": "dropped",
+    "why": "a single short word"
+   },
+   {
+    "title": "onCLf",
+    "page": 60,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "^-ii1-^,-^'",
+    "page": 80,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "ii",
+    "page": 83,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "NA",
+    "page": 83,
+    "action": "dropped",
+    "why": "a single short word"
+   }
+  ]
  }
 }

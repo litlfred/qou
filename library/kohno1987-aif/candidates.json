@@ -1,8 +1,6 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "kohno1987-aif",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "88c5119985dfe878f41c40936d3df957ea2f48e9afb04c1f3f0712e2baa78d6a",
   "file": "kohno1987-aif.pdf"
@@ -13,41 +11,106 @@
   "arxiv": null,
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 2,
+  "candidates": 6,
   "by_kind": {
-   "definition": 1,
-   "corollary": 1
+   "recommendation": 6
   },
-  "formalization_candidates": 2
+  "formalization_candidates": 0
  },
  "candidates": [
   {
-   "kind": "definition",
-   "source_kind": "definition",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
    "number": null,
    "name": null,
-   "statement": "of primary fields. - We are interested in operators on the",
-   "section_file": "sections/sec-004-2-monodromy-of-i-point-functions.md",
-   "section_title": "MONODROMY OF /i-POINT FUNCTIONS",
-   "pages": "13-18",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "statement": "We shall extend this unitarity result to higher representations of sI(2,C).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-introduction.md",
+   "section_title": "INTRODUCTION",
+   "pages": "2-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   },
   {
-   "kind": "corollary",
-   "source_kind": "corollary",
-   "number": "2.2.6",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
    "name": null,
-   "statement": "to our situation (see also",
-   "section_file": "sections/sec-005-22-monodromy-associated-with-higher-representati.md",
-   "section_title": "Monodromy associated with higher representations",
-   "pages": "18-22",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "statement": "We shall call (1.1.4) the infinitesimal pure braid relations.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-11-construction-of-connections.md",
+   "section_title": "Construction of connections.",
+   "pages": "4-13",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Although in their situation the parameter X is given by (/+^)~1 where f is a positive integer and g is the corresponding dual Coxeter number, we shall deal with the monodromy by considering \\ as a parameter.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-11-construction-of-connections.md",
+   "section_title": "Construction of connections.",
+   "pages": "4-13",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "3^ Here c' == -\u2014\u2014^ id, which we shall call the central charge.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-004-2-monodromy-of-i-point-functions-in-two-dimensio.md",
+   "section_title": "MONODROMY OF /i-POINT FUNCTIONS IN TWO DIMENSIONAL CONFORMAL FIELD THEORY",
+   "pages": "13-23",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The basic operators are so called primary fields. j=o A primary field of spin j is defined to be a bilinear form ^{u,z}: ^ x ^f -> C parametrized by u e \\j and z e C\\{0} in such a way that (i) (()(\u00ab, z) is linear with respect to M (ii) <i;|(j)(^,z)|w> is a multivalued holomorphic function of z for any v e ^ and w e J^', satisfying the following conditions : (2.1.8) [X \u00ae ^, (()(M,Z)] = z'cKX^z) (gauge condition) (2.1.9) [L,,(t)(\u00ab,z)] == z4z^ + (m+ l)A,L(i.,z) ^ + J where A^ == \u00bb which we shall call the conformal dimension of (().",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-004-2-monodromy-of-i-point-functions-in-two-dimensio.md",
+   "section_title": "MONODROMY OF /i-POINT FUNCTIONS IN TWO DIMENSIONAL CONFORMAL FIELD THEORY",
+   "pages": "13-23",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This gives a 9 invariant trilinear form (p: V^ \u00ae V^ \u00ae V^ -> C defined by (p(M,y,w) = <M|(t)o(^)[w>, which we shall call the initial form.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-004-2-monodromy-of-i-point-functions-in-two-dimensio.md",
+   "section_title": "MONODROMY OF /i-POINT FUNCTIONS IN TWO DIMENSIONAL CONFORMAL FIELD THEORY",
+   "pages": "13-23",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   }
  ]
 }

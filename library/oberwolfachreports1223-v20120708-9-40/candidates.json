@@ -1,0 +1,191 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "oberwolfachreports1223-v20120708-9-40",
+ "source": {
+  "structure_sha256": "94f82cfc185955bab2b3bcba5a9d73e3db549ed14f8a9c075b77557ca80f0b82",
+  "file": "OberwolfachReports1223_v20120708_9_40.pdf"
+ },
+ "provenance": {
+  "title": "Mathematisches Forschungsinstitut Oberwolfach Report No. 28/2012 Invariants in Low-Dimensional Topology and Knot Theory Organised by",
+  "authors": "Selman Akbulut, East Lansing",
+  "arxiv": null,
+  "doi": "10.4171/OWR/2012/28"
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 11,
+  "by_kind": {
+   "recommendation": 11
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall prove that the Laurent polynomial PK is a highly non-trivial invariant of virtual knots.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-virtual-knot-theory---problems-and-ideas.md",
+   "section_title": "Virtual Knot Theory - Problems and Ideas",
+   "pages": "9-12",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Intuitively, one should think of ( HF as assigning a Z2-vector space to every based diagram (\u03a3, \u03b1, \u03b2, z) with \u03a3 \u2282Y .",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-naturality-of-heegaard-floer-homology.md",
+   "section_title": "Naturality of Heegaard Floer homology",
+   "pages": "16-19",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In fact, we provide a set of axioms for arbitrary invariants of Heegaard diagrams that should be satis\ufb01ed in order to give rise to a functorial invariant of 3-manifolds.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-naturality-of-heegaard-floer-homology.md",
+   "section_title": "Naturality of Heegaard Floer homology",
+   "pages": "16-19",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Probably, there should be some parity for singular knots in 3-space.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-006-free-knots-and-parity-in-low-dimensional-topolog.md",
+   "section_title": "Free Knots and Parity in Low-Dimensional Topology",
+   "pages": "19-23",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Conjecturally, this should be isomorphic to the 0-level \ufb01ltration of the embedded contact homology of Hutchings (see the appendix of [3]), and should give some indication of how the grading on the embedded contact homology di\ufb00erential carries over to the various homology theories (Heegaard Floer and Monopole Floer in particular) to which it is isomorphic.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-012-detecting-tightness-through-open-book-decomposit.md",
+   "section_title": "Detecting tightness through open book decompositions",
+   "pages": "27-28",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We should also acknowledge stimulating observations by Ivan Dynnikov. i Figure 1; Various interpretation of the graphical face map di References [1] A.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-017-distributivity-versus-associativity-in-the-homol.md",
+   "section_title": "Distributivity versus associativity in the homology theory of algebraic structures",
+   "pages": "33-36",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We require additionally that the boundary of every page should be a disjoint union of \ufb01bers of the spine.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-018-spinal-open-books-and-algebraic-torsion-in-conta.md",
+   "section_title": "Spinal open books and algebraic torsion in contact 3-manifolds",
+   "pages": "36-39",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Morevoer, we require that there must be the same number of incoming edges as outgoing edges at each vertex.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-026-combinatorial-spatial-graph-floer-homology.md",
+   "section_title": "Combinatorial Spatial Graph Floer Homology",
+   "pages": "54-58",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "However, there may be many Xs in each row and column but they must be grouped around a single O and be in L-formation.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-026-combinatorial-spatial-graph-floer-homology.md",
+   "section_title": "Combinatorial Spatial Graph Floer Homology",
+   "pages": "54-58",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We also prove that all irreducibly odd graphs must contain a particular minor called the 3-morningstar.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-027-floer-theoretically-essential-tori-in-rational-b.md",
+   "section_title": "Floer theoretically essential tori in rational blowdowns",
+   "pages": "58-67",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Even more, if we forget about the writhe number information and only have the structure of opposite edges, we shall get non-trivial objects (modulo Reidemeister\u2019s moves).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-027-floer-theoretically-essential-tori-in-rational-b.md",
+   "section_title": "Floer theoretically essential tori in rational blowdowns",
+   "pages": "58-67",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 9212088v1.pdf
 source_sha256: ecb2c02ec6fe11bd
 toc_source: inferred
+doc_brief: "arXiv:hep-th/9212088v1 14 Dec 1992 — We construct a random matrix model that, in the large N limit, reduces to the low energy limit of the QCD partition function put forward by Leutwyler and Smilga."
 ---
 We construct a random matrix model that, in the large N limit, reduces to the low
 energy limit of the QCD partition function put forward by Leutwyler and Smilga. This

@@ -100,7 +100,7 @@ $$
   4P_S^3 + 27Q_S^2 = \frac{4p^2(54c^3p^2 + 729)}{27},
 $$
 
-so $J_S < 0$ whenever $c > 0$ and $p \neq 0$. Therefore no substitution $X \mapsto \alpha X + \beta$ carries (S) to (C) at any real $z$; equality of $J$ requires complex $z$. Matching "up to a Möbius transformation" would add nothing, since any three distinct points of $\mathbb{P}^1$ map to any other three. The isogeny in item 2 is therefore the whole content of that item. The obstruction is proved sorry-free in the Lean sibling (`no_affine_match`).
+so $J_S < 0$ whenever $c > 0$ and $p \neq 0$. Therefore no substitution $X \mapsto \alpha X + \beta$ carries (S) to (C) at any real $z$; equality of $J$ requires complex $z$. Matching "up to a Möbius transformation" would add nothing, since any three distinct points of $\mathbb{P}^1$ map to any other three. The isogeny in item 2 is therefore the whole content of that item. The obstruction is proved in the Lean sibling (`no_affine_match`).
 
 **Physical interpretation.**
 
@@ -145,4 +145,4 @@ The genus-$0$ stability cubic accounts for all stable nuclei via lattice-point e
 - No substitution $X \mapsto \alpha X + \beta$ carries (S) to (C) at real $z$, since $J_C > 0 > J_S$ (proved in Lean, `no_affine_match`).
 - The golden ratio degeneration at $q = 1/\varphi^2$ holds (exact, from the $(s^2 + s - 1)$ factor).
 
-**Witness data**: See `computations/elliptic-stability.json` for the full numerical computation at 100-digit precision.
+The full numerical computation is carried out at 100-digit precision.

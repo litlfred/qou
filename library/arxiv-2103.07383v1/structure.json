@@ -8,7 +8,7 @@
   "pages": 31,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": null,
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -22,12 +22,12 @@
   },
   "doi": null,
   "title": "On the Analyticity of Critical Points of the Generalized Integral Menger Curvature in the Hilbert Case",
-  "authors_raw": "Daniel Steenebr\u00fcgge",
+  "authors_raw": "Daniel Steenebrügge",
   "title_lines": [
    "On the Analyticity of Critical Points of the Generalized",
    "Integral Menger Curvature in the Hilbert Case"
   ],
-  "abstract": "We prove the analyticity of smooth critical points for generalized integral Menger cur- vature energies intM(p,2), with p \u2208( 7 3, 8 3), subject to a \ufb01xed length constraint. This implies, together with already well-known regularity results, that \ufb01nite-energy, critical C1-curves \u03b3 : R/Z \u2192Rn of generalized integral Menger curvature intM(p,2) subject to a \ufb01xed length constraint are not only C\u221ebut also analytic. Our approach is inspired by analyticity results on critical points for O\u2019Hara\u2019s knot energies based on Cauchy\u2019s method of majorants and a decomposition of the \ufb01rst variation. The main new idea is an additional iteration in the recursive estimate of the derivatives to obtain a su\ufb03cient di\ufb00erence in the order of regularity.",
+  "abstract": "We prove the analyticity of smooth critical points for generalized integral Menger cur- vature energies intM(p,2), with p ∈( 7 3, 8 3), subject to a ﬁxed length constraint. This implies, together with already well-known regularity results, that ﬁnite-energy, critical C1-curves γ : R/Z →Rn of generalized integral Menger curvature intM(p,2) subject to a ﬁxed length constraint are not only C∞but also analytic. Our approach is inspired by analyticity results on critical points for O’Hara’s knot energies based on Cauchy’s method of majorants and a decomposition of the ﬁrst variation. The main new idea is an additional iteration in the recursive estimate of the derivatives to obtain a suﬃcient diﬀerence in the order of regularity.",
   "docinfo": {
    "Producer": "pdfTeX-1.40.21",
    "Creator": "LaTeX with hyperref",
@@ -169,7 +169,7 @@
   },
   {
    "level": 1,
-   "title": "B Fa\u00e0 di Bruno's formula",
+   "title": "B Faà di Bruno's formula",
    "page": 26,
    "source": "outline",
    "number": null,
@@ -429,9 +429,9 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 4,
-   "n_chars": 9783,
-   "n_words": 1659,
+   "page_end": 5,
+   "n_chars": 12955,
+   "n_words": 2229,
    "label_start": null,
    "label_end": null
   },
@@ -440,10 +440,10 @@
    "number": "2",
    "title": "Decomposition of the first variation",
    "level": 1,
-   "page_start": 4,
+   "page_start": 5,
    "page_end": 7,
-   "n_chars": 6247,
-   "n_words": 1165,
+   "n_chars": 3174,
+   "n_words": 611,
    "label_start": null,
    "label_end": null
   },
@@ -489,14 +489,26 @@
    "title": "A fractional Leibniz rule",
    "level": 2,
    "page_start": 10,
-   "page_end": 18,
-   "n_chars": 12004,
-   "n_words": 2704,
+   "page_end": 15,
+   "n_chars": 7265,
+   "n_words": 1630,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-006-5-proof-of-the-main-statement",
+   "id": "sec-006-43-estimate-of-the-remainder-term-rp",
+   "number": "4.3",
+   "title": "Estimate of the remainder term R(p)",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 18,
+   "n_chars": 4701,
+   "n_words": 1068,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-5-proof-of-the-main-statement",
    "number": "5",
    "title": "Proof of the main statement",
    "level": 1,
@@ -508,7 +520,7 @@
    "label_end": null
   },
   {
-   "id": "sec-007-51-recursive-estimate-and-iteration",
+   "id": "sec-008-51-recursive-estimate-and-iteration",
    "number": "5.1",
    "title": "Recursive estimate and iteration",
    "level": 2,
@@ -520,7 +532,7 @@
    "label_end": null
   },
   {
-   "id": "sec-008-52-proof-of-theorem-12",
+   "id": "sec-009-52-proof-of-theorem-12",
    "number": "5.2",
    "title": "Proof of Theorem 1.2",
    "level": 2,
@@ -532,7 +544,7 @@
    "label_end": null
   },
   {
-   "id": "sec-009-6-a-few-simple-consequences-concerning-critical",
+   "id": "sec-010-6-a-few-simple-consequences-concerning-critical",
    "number": "6",
    "title": "A few simple consequences concerning critical knots",
    "level": 1,
@@ -544,19 +556,31 @@
    "label_end": null
   },
   {
-   "id": "sec-010-a-properties-of-analytic-functions",
+   "id": "sec-011-a-properties-of-analytic-functions",
    "number": null,
    "title": "A Properties of analytic functions",
    "level": 1,
    "page_start": 25,
-   "page_end": 27,
-   "n_chars": 4844,
-   "n_words": 986,
+   "page_end": 26,
+   "n_chars": 1605,
+   "n_words": 296,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-011-c-an-inequality-for-sobolev-norms",
+   "id": "sec-012-b-faà-di-brunos-formula",
+   "number": null,
+   "title": "B Faà di Bruno's formula",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 3215,
+   "n_words": 686,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-013-c-an-inequality-for-sobolev-norms",
    "number": null,
    "title": "C An inequality for Sobolev Norms",
    "level": 1,
@@ -579,13 +603,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 13,
-  "chars_total": 65476,
+  "sections": 15,
+  "chars_total": 65513,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Analyticity-Menger.tex",
    "tex_sections": 14,
-   "overlaid": 8,
+   "overlaid": 9,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -600,8 +625,8 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.745,
-     "coverage_ratio": 0.969,
+     "prose_ratio": 0.884,
+     "coverage_ratio": 0.97,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -609,7 +634,7 @@
      "id": "sec-001-2-decomposition-of-the-first-variation",
      "title": "Decomposition of the first variation",
      "prose_ratio": 0.974,
-     "coverage_ratio": 0.55,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -640,13 +665,21 @@
     {
      "id": "sec-005-42-a-fractional-leibniz-rule",
      "title": "A fractional Leibniz rule",
-     "prose_ratio": 0.928,
-     "coverage_ratio": 0.995,
+     "prose_ratio": 0.938,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-006-5-proof-of-the-main-statement",
+     "id": "sec-006-43-estimate-of-the-remainder-term-rp",
+     "title": "Estimate of the remainder term R(p)",
+     "prose_ratio": 0.917,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-5-proof-of-the-main-statement",
      "title": "Proof of the main statement",
      "prose_ratio": 0.96,
      "coverage_ratio": 0.926,
@@ -654,18 +687,18 @@
      "converter": "latex"
     },
     {
-     "id": "sec-007-51-recursive-estimate-and-iteration",
+     "id": "sec-008-51-recursive-estimate-and-iteration",
      "title": "Recursive estimate and iteration",
      "prose_ratio": 0.475,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-008-52-proof-of-theorem-12",
+     "id": "sec-009-52-proof-of-theorem-12",
      "title": "Proof of Theorem 1.2",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-009-6-a-few-simple-consequences-concerning-critical",
+     "id": "sec-010-6-a-few-simple-consequences-concerning-critical",
      "title": "A few simple consequences concerning critical knots",
      "prose_ratio": 0.943,
      "coverage_ratio": 0.993,
@@ -673,12 +706,17 @@
      "converter": "latex"
     },
     {
-     "id": "sec-010-a-properties-of-analytic-functions",
+     "id": "sec-011-a-properties-of-analytic-functions",
      "title": "A Properties of analytic functions",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-011-c-an-inequality-for-sobolev-norms",
+     "id": "sec-012-b-faà-di-brunos-formula",
+     "title": "B Faà di Bruno's formula",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-c-an-inequality-for-sobolev-norms",
      "title": "C An inequality for Sobolev Norms",
      "result": "no matching \\section"
     }

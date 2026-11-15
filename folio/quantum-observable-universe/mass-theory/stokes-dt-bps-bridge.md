@@ -13,6 +13,8 @@ Donaldson--Thomas / Kontsevich--Soibelman invariant of the $q$-difference
 structure, and $\mathcal{H}_{\mathrm{BPS}}(T[K])$ the space of BPS states whose
 graded dimension categorifies the $3$d index.
 
+For the general setting of the middle term: a BPS structure $(Z, \Gamma, \Omega)$ carries Donaldson--Thomas invariants $\Omega(\gamma)$, and to it is attached a Riemann--Hilbert problem \cite[\S2, \S4]{bridgeland2016}. For finite, uncoupled, integral BPS structures that problem has an explicit solution in products of gamma functions \cite[\S3.2]{bridgeland2016}. The knot BPS structures in this conjecture are not shown to be uncoupled, so that result is context, not a case of the conjecture. On the state-integral side, one-dimensional state integrals of products of Faddeev quantum dilogarithms, including those of $4_1$ and $5_2$, are finite sums of products of a $q$-series and a $\tilde q$-series, and the generating $q$-series is admissible in the sense of Kontsevich--Soibelman \cite[\S1.1, \S1.3--1.4]{garoufalidis2013}.
+
 The first equality is
 [`garoufalidis-gu-marino2023peacock`] Conjecture 3(d) — *"the Stokes
 constants are integers corresponding to the Donaldson--Thomas invariants and the

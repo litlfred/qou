@@ -1,0 +1,55 @@
+40 Don Zagier
+
+Y [oi] gives an identity D(M, 4) := > D(o;) = 0 among values of the Bloch-
+Wigner dilogarithm. This identity can be written explicitly as a combination
+of five-term equations by the calculation above (just replace each simplex
+o = [a,b,c,d] of M by [o, 00] := [a,b, c,d, 00]). We can also perform the same
+construction over R, starting from a triangulated near-3-manifold M and a
+map ¢ from its 0-skeleton to P!(R); then the element L(M, ¢) defined as the
+sum over the 3-simplices o of M of the value of L at the cross-ratio of the
+images of the vertices of o under ¢ will be an integral multiple of 1?/2 by
+virtue of the functional equation of the Rogers dilogarithm.
+
+Here is an example. Let M be the join of an m-gon and an n-gon,
+where m and n are two positive integers. If we write these two polygons
+as {xj}; (mod m) and {yx }e (mod n); then this means that M is the union of
+3-simplices [7 ;,0 541, Ye, Yr+1) (J € Z/mZ, k € Z/nZ). Then
+
+AM) = SO (ay 41, 98 941] — fergie Mesa] + Ley, e541, Yes — bey, 2541, 4a)
+
+vanishes because the first two terms in the parentheses cancel when we sum
+over all j with k fixed and the last two when we sum over all & with j fixed. If
+we map the m+n vertices of M to points x;, yx, € C (which we simply denote
+by the same letters, omitting the map @), then we get a functional equation
+
+3 p( wats @j~ Tj41 ) = 0,
+
+j (mod m), k (mod n) Yk ~ Pj Uh ~ Pi+1
+
+valid for any complex numbers xj, y,. Specializing to xj = e?'*7, y, = e?"Y*
+
+with Xj, Y;, € R gives real cross-ratios and a Rogers dilogarithm identity
+
+2 > Lo sin(X; — Xj41) ) ce Z,
+
+2 33 _ . 3] _
+j (mod m), & (mod n) sin(¥, — X;) sin(¥.41 — Xj41)
+
+where the value of the resulting integer depends on the ordering of the points
+X; and Y; on the circle R/7Z. In particular, if they are equally spaced we
+find
+
+1 sin(“) sin(*)
+™ » (oe in t) water —U=0E,)
+
+j (mod m)
+
+k (mod n) m
+
+=min(m,n) — 1.
+If also m = n, then each term occurs n times, so the equation reduces to
+
+1 sin?(7) 1
+a > (—) =1-— (neN, teR).
+
+k (mod n) sin?( +t)

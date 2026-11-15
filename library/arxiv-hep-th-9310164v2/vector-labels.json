@@ -1,0 +1,1122 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-hep-th-9310164v2",
+  "pages": [
+    {
+      "page": 10,
+      "rotation": 0,
+      "drawings": 6,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1"
+      ],
+      "labels": [
+        {
+          "text": "10",
+          "bbox": [
+            72.0,
+            70.83,
+            82.12,
+            80.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "JOHN W. BARRETT & BRUCE W. WESTBURY",
+          "bbox": [
+            166.92,
+            70.83,
+            403.01,
+            80.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "M",
+          "bbox": [
+            273.12,
+            136.94,
+            280.8,
+            148.47
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.64
+          ]
+        },
+        {
+          "text": "Figure 1",
+          "bbox": [
+            261.12,
+            211.74,
+            313.2,
+            223.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Deﬁnition 2.4. Let a be any object in a pivotal category.",
+          "bbox": [
+            72.0,
+            234.0,
+            398.03,
+            246.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Then the monoid",
+          "bbox": [
+            408.51,
+            234.39,
+            502.53,
+            246.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "End(a) has two trace maps, trL, trR: End(a) →End(e).",
+          "bbox": [
+            72.0,
+            248.79,
+            377.0,
+            261.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "In a pivotal category",
+          "bbox": [
+            387.84,
+            248.79,
+            502.41,
+            260.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "trL(f) is deﬁned to be the composite",
+          "bbox": [
+            72.0,
+            263.07,
+            265.84,
+            275.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "1⊗τ −1(a)",
+          "bbox": [
+            176.52,
+            280.58,
+            217.93,
+            292.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR5",
+            "CMR7",
+            "CMSY5",
+            "CMSY7"
+          ],
+          "sizes": [
+            5.98,
+            8.37
+          ]
+        },
+        {
+          "text": "ǫ(a∗)",
+          "bbox": [
+            96.96,
+            281.78,
+            118.57,
+            292.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY5"
+          ],
+          "sizes": [
+            5.98,
+            8.37
+          ]
+        },
+        {
+          "text": "τ(a∗)⊗τ(a)",
+          "bbox": [
+            330.84,
+            281.78,
+            379.33,
+            292.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY5",
+            "CMSY7"
+          ],
+          "sizes": [
+            5.98,
+            8.37
+          ]
+        },
+        {
+          "text": "1⊗f",
+          "bbox": [
+            265.44,
+            283.34,
+            282.34,
+            292.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "−−−→a∗⊗a∗∗",
+          "bbox": [
+            92.88,
+            285.86,
+            168.57,
+            300.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "−−−−−−→a∗⊗a",
+          "bbox": [
+            172.44,
+            285.86,
+            258.08,
+            300.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "−−→a∗⊗a",
+          "bbox": [
+            261.36,
+            285.86,
+            323.48,
+            300.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "e",
+          "bbox": [
+            84.0,
+            288.99,
+            89.57,
+            300.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "−−−−−−−→",
+          "bbox": [
+            326.76,
+            288.99,
+            383.49,
+            300.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "γ(a∗∗,a∗)",
+          "bbox": [
+            306.24,
+            306.74,
+            346.81,
+            317.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY5"
+          ],
+          "sizes": [
+            5.98,
+            8.37
+          ]
+        },
+        {
+          "text": "ǫ∗(a∗)",
+          "bbox": [
+            419.64,
+            306.74,
+            446.29,
+            317.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY5"
+          ],
+          "sizes": [
+            5.98,
+            8.37
+          ]
+        },
+        {
+          "text": "ν−→e",
+          "bbox": [
+            468.0,
+            309.64,
+            490.49,
+            325.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMSY10"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "a∗∗∗⊗a∗∗",
+          "bbox": [
+            245.88,
+            310.82,
+            298.29,
+            325.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "−−−−−−→(a∗⊗a∗∗)∗",
+          "bbox": [
+            302.16,
+            310.82,
+            411.58,
+            325.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "−−−−→e∗",
+          "bbox": [
+            415.56,
+            310.82,
+            464.02,
+            325.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "and trR(f) is deﬁned to be the composite",
+          "bbox": [
+            72.0,
+            333.87,
+            289.72,
+            346.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "γ(a∗,a)",
+          "bbox": [
+            324.84,
+            351.38,
+            356.05,
+            361.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY5"
+          ],
+          "sizes": [
+            5.98,
+            8.37
+          ]
+        },
+        {
+          "text": "ǫ∗(a)",
+          "bbox": [
+            421.44,
+            351.38,
+            442.93,
+            361.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY5"
+          ],
+          "sizes": [
+            5.98,
+            8.37
+          ]
+        },
+        {
+          "text": "τ(a)⊗1",
+          "bbox": [
+            233.64,
+            352.58,
+            263.84,
+            361.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "f⊗1",
+          "bbox": [
+            165.24,
+            353.06,
+            183.08,
+            362.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "ǫ(a)",
+          "bbox": [
+            98.04,
+            353.32,
+            114.61,
+            361.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "ν−→e",
+          "bbox": [
+            466.92,
+            354.28,
+            490.49,
+            370.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMSY10"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "−−→a ⊗a∗",
+          "bbox": [
+            93.96,
+            355.46,
+            156.22,
+            370.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "−−→a ⊗a∗",
+          "bbox": [
+            161.16,
+            355.46,
+            224.5,
+            370.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "−−−−→a∗∗⊗a∗",
+          "bbox": [
+            229.56,
+            355.46,
+            315.82,
+            370.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "−−−−→(a ⊗a∗)∗",
+          "bbox": [
+            320.76,
+            355.46,
+            412.3,
+            370.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "−−−→e∗",
+          "bbox": [
+            417.36,
+            355.46,
+            461.86,
+            370.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "e",
+          "bbox": [
+            84.0,
+            358.59,
+            89.57,
+            370.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "In a strict pivotal category these deﬁnitions simplify to:",
+          "bbox": [
+            72.0,
+            377.91,
+            363.96,
+            389.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "trL(f) = ǫ(a∗)(1 ⊗f)ǫ(a∗)∗",
+          "bbox": [
+            215.88,
+            394.22,
+            358.66,
+            410.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "trR(f) = ǫ(a)(f ⊗1)ǫ(a)∗",
+          "bbox": [
+            215.16,
+            412.82,
+            347.74,
+            428.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "These are called trace maps because they satisfy trL(fg) = trL(gf) and trR(fg) =",
+          "bbox": [
+            72.0,
+            435.87,
+            502.38,
+            448.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "trR(gf).",
+          "bbox": [
+            72.0,
+            450.27,
+            115.28,
+            462.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "Deﬁnition 2.5. A pivotal category is spherical if, for all objects a and all mor-",
+          "bbox": [
+            72.0,
+            469.32,
+            502.36,
+            481.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "phisms f: a →a,",
+          "bbox": [
+            72.0,
+            484.11,
+            159.08,
+            496.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "trL(f) = trR(f).",
+          "bbox": [
+            244.32,
+            498.39,
+            330.2,
+            511.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "An equivalent condition is that trL(f) = trL(f ∗), for all f: a →a. Also, in a",
+          "bbox": [
+            86.4,
+            519.62,
+            502.43,
+            534.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "spherical category, trL(f ⊗g) = trL(f). trL(g) (where the product is in End(e)) for",
+          "bbox": [
+            72.0,
+            536.43,
+            502.34,
+            549.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "all f: a →a and all g: b →b.",
+          "bbox": [
+            72.0,
+            550.83,
+            219.81,
+            562.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "In the rest of this paper we study additive spherical categories. This means that",
+          "bbox": [
+            86.4,
+            565.11,
+            502.41,
+            577.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "each Hom set is a ﬁnitely generated abelian group; and that the data deﬁning the",
+          "bbox": [
+            72.0,
+            579.51,
+            502.38,
+            591.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "spherical structure is compatible with the additive structure. This means that ⊗is",
+          "bbox": [
+            72.0,
+            593.79,
+            502.48,
+            605.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Z-bilinear, that ∗is Z-linear and all components of all the natural transformations",
+          "bbox": [
+            72.0,
+            605.52,
+            502.36,
+            620.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "in the pivotal data are multilinear over Z.",
+          "bbox": [
+            72.0,
+            619.92,
+            291.2,
+            634.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "In any additive monoidal category End(e) is a commutative ring (see [Kelly and",
+          "bbox": [
+            86.4,
+            636.87,
+            502.37,
+            648.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Laplaza 1980]) and we denote this ring by F. In particular the trace map, trL,",
+          "bbox": [
+            72.0,
+            648.6,
+            502.41,
+            663.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "takes values in this ring. It follows that an additive monoidal category is F-linear,",
+          "bbox": [
+            72.0,
+            662.88,
+            502.41,
+            677.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "by using the structure maps of λ and ρ, and that if the category is pivotal then the",
+          "bbox": [
+            72.0,
+            679.95,
+            502.41,
+            691.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "data deﬁning the pivotal structure is F-linear.",
+          "bbox": [
+            72.0,
+            691.56,
+            311.97,
+            706.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The main examples of additive spherical categories arise as the category of rep-",
+          "bbox": [
+            86.4,
+            708.63,
+            502.35,
+            720.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "resentations of a Hopf algebra with some additional structure. This is discussed in",
+          "bbox": [
+            72.0,
+            722.91,
+            502.48,
+            734.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "detail in the next section.",
+          "bbox": [
+            72.0,
+            737.31,
+            205.9,
+            749.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    }
+  ]
+}

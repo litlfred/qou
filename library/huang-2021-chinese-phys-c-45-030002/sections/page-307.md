@@ -1,0 +1,407 @@
+---
+doc_id: huang-2021-chinese-phys-c-45-030002
+doc_title: "The AME 2020 atomic mass evaluation (I). Evaluation of input data, and adjustment procedures"
+section_id: page-307
+section_title: "Page 307"
+section_number: null
+pages: 307-307
+source_pdf: Huang_2021_Chinese_Phys._C_45_030002.pdf
+source_sha256: 1dd3329ed87476c8
+toc_source: undetermined
+doc_brief: "The AME 2020 atomic mass evaluation (I). Evaluation of input data, and adjustment procedures — 343 sections: Page 1; Page 2; Page 3"
+---
+Chinese Physics C Vol. 45, No. 3 (2021) 030002
+Table I. Comparison of input data and adjusted values (continued, Explanation of Table on page 030002-30)
+Item
+Input value
+Adjusted value
+vi
+Dg
+Signf.
+Main inﬂ.
+Lab
+F
+Reference
+217Th(α)213Ra
+9431.0
+15.3
+9435
+4
+0.3
+U
+Lza
+19Zh54
+217Pa(α)213Ac
+8486.7
+10.
+8489
+4
+0.2
+2
+68Va18
+8489.8
+15.
+−0.1
+U
+79Sc09
+8486.7
+50.
+0.0
+U
+JAa
+98Ik01
+8490.8
+15.
+−0.1
+U
+GSa
+00He17
+8489.3
+5.
+−0.1
+2
+GSa
+02He29
+∗
+217Pam(α)213Ac
+10351
+20
+10349
+5
+−0.1
+U
+79Sc09
+10330.8
+50.
+0.4
+U
+JAa
+98Ik01
+10346.1
+15.
+0.2
+o
+GSa
+00He17
+10349.1
+5.
+2
+GSa
+02He29
+∗
+217U(α)213Thp
+8155.6
+20.
+8170
+60
+0.2
+5
+00Ma65
+8175.0
+14.3
+−0.2
+5
+Jya
+05Le42
+∗
+∗217Th(α)213Ra
+Eα=9268(15), 8731(15), 8459(15) to ground state, 546.35, 822.7 levels
+00He17 ∗∗
+∗217Th(α)213Ra
+Eα=9261(5), 8725(5), 8455(5) to ground state, 546.35, 822.7 levels
+02He29 ∗∗
+∗217Pa(α)213Ac
+Eα=8337(5), 7873(5), 7728(5), 7710(5) to ground state,466.1,612.5,634.3 levels
+02He29 ∗∗
+∗217Pam(α)213Ac
+Average of 5 Eα’s to known levels
+02He29 ∗∗
+∗217U(α)213Thp
+Only one event.
+Not reported in later publication 07Le14
+WgM115∗∗
+218Bi−u
+14178
+34
+14188
+29
+0.3
+o
+GS3
+1.0
+08Ch.A
+14188
+29
+2
+GS3
+1.0
+12Ch19
+218Rn−u
+5463
+58
+5601.1
+2.5
+2.4
+U
+GR1
+1.0
+19An10
+218Po(α)214Pb
+6114.76
+0.09
+6114.75
+0.09
+−0.0
+1
+100
+99 214Pb
+71Gr17
+Z
+218At(α)214Bi
+6874
+3
+6876.1
+2.6
+0.7
+2
+Orm
+58Wa.A
+∗
+6882.1
+5.1
+−1.2
+2
+19Cu02
+∗
+218Rn(α)214Po
+7265.0
+5.
+7262.5
+1.9
+−0.5
+–
+56As38
+Z
+7262.4
+2.
+0.0
+–
+Bka
+82Bo04
+Z
+ave.
+7262.8
+1.9
+−0.2
+1
+96
+93 218Rn
+average
+218Fr(α)214At
+8014.0
+2.
+8013.7
+1.4
+−0.2
+2
+Bka
+82Bo04
+Z
+8013.3
+2.
+0.2
+2
+99Sh03
+218Frm(α)214At
+8099.9
+5.
+8101
+3
+0.2
+–
+82Ew01
+Z
+8100.9
+5.
+−0.0
+–
+99Sh03
+ave.
+8100
+4
+0.1
+1
+88
+72 218Frm
+average
+218Frm(α)214Atn
+7870.7
+7.1
+7869
+5
+−0.3
+1
+52
+28 218Frm
+99Sh03
+218Ra(α)214Rn
+8549.1
+8.
+8540
+3
+−1.1
+3
+70To07
+8541.0
+10.
+−0.1
+3
+70Va13
+8577.7
+51.
+−0.7
+U
+GSa
+18Mi11
+8537.9
+4.1
+0.6
+3
+Jya
+19Pa45
+218Ac(α)214Fr
+9377.4
+15.3
+9380
+60
+0.1
+5
+70Bo13
+9391.3
+15.
+−0.1
+5
+Lza
+17Su18
+9392.6
+30.6
+−0.1
+5
+GSa
+19Mi08
+9376.3
+26.
+0.1
+5
+Lza
+19Ya04
+218Th(α)214Ra
+9861.3
+20.4
+9849
+9
+−0.6
+5
+73Ha32
+9846.1
+10.
+0.3
+5
+73No09
+9851.0
+81.5
+−0.0
+U
+GSa
+15Kh09
+218Pa(α)214Ac
+9794.1
+20.
+9791
+12
+−0.1
+2
+79Sc09
+∗
+9815
+10
+−2.4
+F
+GSa
+00He17
+∗
+9790.0
+14.2
+0.1
+2
+Lza
+20Zh01
+∗
+9781.8
+17.3
+0.6
+o
+Lza
+20Ma27
+218Pam(α)214Ac
+9872.4
+15.0
+2
+Lza
+20Zh01
+218U(α)214Th
+8786.6
+25.
+8775
+9
+−0.5
+4
+Dbb
+92An04
+8773.2
+9.
+0.2
+4
+Jya
+07Le14
+8780.4
+35.7
+−0.2
+U
+Lza
+18Ya01
+218Um(α)214Th
+10878.1
+17.
+10884
+15
+0.3
+4
+Jya
+07Le14
+10901.4
+30.6
+−0.6
+4
+Lza
+15Ma37
+∗218At(α)214Bi
+Eα=6696.3(3.0,Z) to (2)−level at 53.2282 keV
+Ens092
+∗∗
+∗218At(α)214Bi
+Eα=6694(5) to 3−level at 63 keV
+19Cu02 ∗∗
+∗218At(α)214Bi
+also Eα=6655(7) to 4−level at 100 keV
+19Cu02 ∗∗
+∗218Pa(α)214Ac
+Eα=9614(20)
+00He17 ∗∗
+∗218Pa(α)214Ac
+Eα=9544(10) to 91.8 level; F : from single α-spectra
+00He17 ∗∗
+∗218Pa(α)214Ac
+Also Eα=9524(16) to 91.8(0.8)
+20Zh01 ∗∗
+030002-306

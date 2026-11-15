@@ -7,10 +7,11 @@
   "bytes": 600856,
   "pages": 37,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,21 +21,33 @@
    "stamp_date": "16 Aug 2018"
   },
   "doi": null,
-  "title": "CONCENTRATION OF 1-LIPSCHITZ FUNCTIONS ON MANIFOLDS WITH BOUNDARY WITH DIRICHLET BOUNDARY CONDITION",
+  "title": "1. Introduction",
   "authors_raw": "YOHEI SAKURAI",
   "title_lines": [
+   "1. Introduction",
    "CONCENTRATION OF 1-LIPSCHITZ FUNCTIONS",
    "ON MANIFOLDS WITH BOUNDARY",
    "WITH DIRICHLET BOUNDARY CONDITION"
   ],
-  "abstract": "In this paper, we consider a concentration of measure problem on Riemannian manifolds with boundary. We study con- centration phenomena of non-negative 1-Lipschitz functions with Dirichlet boundary condition around zero, which is called bound- ary concentration phenomena. We \ufb01rst examine relation between boundary concentration phenomena and large spectral gap phe- nomena of Dirichlet eigenvalues of Laplacian. We will obtain ana- logue of the Gromov-V. D. Milman theorem and the Funano-Shioya theorem for closed manifolds. Furthermore, to capture boundary concentration phenomena, we introduce a new invariant called the observable inscribed radius. We will formulate comparison theo- rems for such invariant under a lower Ricci curvature bound, and a lower mean curvature bound for the boundary. Based on such com- parison theorems, we investigate various boundary concentration phenomena of sequences of manifolds with boundary.",
+  "abstract": "In this paper, we consider a concentration of measure problem on Riemannian manifolds with boundary. We study con- centration phenomena of non-negative 1-Lipschitz functions with Dirichlet boundary condition around zero, which is called bound- ary concentration phenomena. We ﬁrst examine relation between boundary concentration phenomena and large spectral gap phe- nomena of Dirichlet eigenvalues of Laplacian. We will obtain ana- logue of the Gromov-V. D. Milman theorem and the Funano-Shioya theorem for closed manifolds. Furthermore, to capture boundary concentration phenomena, we introduce a new invariant called the observable inscribed radius. We will formulate comparison theo- rems for such invariant under a lower Ricci curvature bound, and a lower mean curvature bound for the boundary. Based on such com- parison theorems, we investigate various boundary concentration phenomena of sequences of manifolds with boundary. In the present paper, we consider a concentration of measure problem on manifolds with boundary. We study concentration phenomena of non-negative 1-Lipschitz functions with Dirichlet boundary condition. 1.1. Motivations. Let us recall the following well-known fact: The normalized volume measure on the n-dimensional unit sphere concen- trates around the equator when n is large. One can rephrase this fact as follows: The normalized volume measure on the n-dimensional unit hemisphere concentrates around the boundary when n is large. We call a triple X = (X, dX, µX) a (smooth) metric measure space with boundary when X is a connected complete Riemannian manifold Date: August 16, 2018.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20180817003542Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.17",
-   "Title": ""
-  }
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20180817003542Z"
+  },
+  "title_raw": "1. Introduction CONCENTRATION OF 1-LIPSCHITZ FUNCTIONS ON MANIFOLDS WITH BOUNDARY WITH DIRICHLET BOUNDARY CONDITION",
+  "title_source": "outline",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "CONCENTRATION OF 1 -LIPSCHITZ FUNCTIONS ON MANIFOLDS WITH BOUNDARY WITH DIRICHLET BOUNDARY CONDITION 1. Introduction In the present paper, we consider a concentration of measure problem on manifolds with boundary. We study concentration phenomena of non-negative 1-Lipschitz functions with Dirichlet",
+   "outline": "1. Introduction",
+   "text": "1. Introduction CONCENTRATION OF 1-LIPSCHITZ FUNCTIONS ON MANIFOLDS WITH BOUNDARY WITH DIRICHLET BOUNDARY CONDITION",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "CONCENTRATION OF 1-LIPSCHITZ FUNCTIONS ON MANIFOLDS WITH BOUNDARY WITH DIRICHLET BOUNDARY CONDITION"
  },
  "toc": [
   {
@@ -42,60 +55,359 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Preliminaries",
    "page": 8,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Invariants",
    "page": 14,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Dirichlet eigenvalues",
    "page": 19,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Finite dimensional comparisons",
    "page": 22,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Infinite dimensional comparisons",
    "page": 26,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Boundary concentration phenomena",
    "page": 30,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 35,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 42,
+   "n_words": 5,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -103,8 +415,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 8,
-   "n_chars": 14071,
-   "n_words": 2361
+   "n_chars": 15210,
+   "n_words": 2626,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-preliminaries",
@@ -113,8 +427,10 @@
    "level": 1,
    "page_start": 8,
    "page_end": 14,
-   "n_chars": 12519,
-   "n_words": 2289
+   "n_chars": 12660,
+   "n_words": 2430,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-3-invariants",
@@ -123,8 +439,10 @@
    "level": 1,
    "page_start": 14,
    "page_end": 19,
-   "n_chars": 9389,
-   "n_words": 1614
+   "n_chars": 9657,
+   "n_words": 1883,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-4-dirichlet-eigenvalues",
@@ -133,8 +451,10 @@
    "level": 1,
    "page_start": 19,
    "page_end": 22,
-   "n_chars": 5624,
-   "n_words": 1011
+   "n_chars": 5778,
+   "n_words": 1142,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-5-finite-dimensional-comparisons",
@@ -143,8 +463,10 @@
    "level": 1,
    "page_start": 22,
    "page_end": 26,
-   "n_chars": 5620,
-   "n_words": 1034
+   "n_chars": 5729,
+   "n_words": 1143,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-6-infinite-dimensional-comparisons",
@@ -153,8 +475,10 @@
    "level": 1,
    "page_start": 26,
    "page_end": 30,
-   "n_chars": 6309,
-   "n_words": 1239
+   "n_chars": 6454,
+   "n_words": 1385,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-7-boundary-concentration-phenomena",
@@ -163,8 +487,10 @@
    "level": 1,
    "page_start": 30,
    "page_end": 35,
-   "n_chars": 9157,
-   "n_words": 1676
+   "n_chars": 9387,
+   "n_words": 1874,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-007-references",
@@ -173,16 +499,29 @@
    "level": 1,
    "page_start": 35,
    "page_end": 37,
-   "n_chars": 8286,
-   "n_words": 1286
+   "n_chars": 8234,
+   "n_words": 1234,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 8,
-  "sections": 8,
-  "chars_total": 70975,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 9,
+  "chars_total": 73151,
+  "furniture_lines_stripped": 0,
+  "pages_read_in_print_order": [
+   1
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "input.tex",
@@ -195,58 +534,63 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.934,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-3-invariants",
      "title": "Invariants",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.951,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-003-4-dirichlet-eigenvalues",
      "title": "Dirichlet eigenvalues",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.89,
+     "coverage_ratio": 0.959,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-004-5-finite-dimensional-comparisons",
      "title": "Finite dimensional comparisons",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.896,
+     "coverage_ratio": 0.91,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-005-6-infinite-dimensional-comparisons",
      "title": "Infinite dimensional comparisons",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.894,
+     "coverage_ratio": 0.951,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-006-7-boundary-concentration-phenomena",
      "title": "Boundary concentration phenomena",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.912,
+     "coverage_ratio": 0.942,
      "result": "overlaid",
      "converter": "latex"
     },

@@ -1,0 +1,1 @@
+Now $M$ is prime and its geometric decomposition must contain some hyperbolic block, otherwise $M$ would be a graph manifold and no Dehn filling of $M$ would be hyperbolic (it would be a graph manifold again).

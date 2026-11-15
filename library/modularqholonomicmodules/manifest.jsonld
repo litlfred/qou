@@ -11,6 +11,7 @@
   ],
   "title": "modularqholonomicmodules",
   "contains": [
+    "library/modularqholonomicmodules/sections/sec-front-matter",
     "library/modularqholonomicmodules/sections/sec-000",
     "library/modularqholonomicmodules/sections/sec-001",
     "library/modularqholonomicmodules/sections/sec-002",
@@ -40,10 +41,13 @@
     "library/modularqholonomicmodules/sections/sec-026",
     "library/modularqholonomicmodules/sections/sec-027",
     "library/modularqholonomicmodules/sections/sec-028",
-    "library/modularqholonomicmodules/sections/sec-029"
+    "library/modularqholonomicmodules/sections/sec-029",
+    "library/modularqholonomicmodules/sections/sec-030",
+    "library/modularqholonomicmodules/sections/sec-031",
+    "library/modularqholonomicmodules/sections/sec-032"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "modularqholonomicmodules",
     "title_source": "slug",
@@ -52,8 +56,8 @@
     "pages": 66,
     "arxiv": null,
     "doi": null,
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

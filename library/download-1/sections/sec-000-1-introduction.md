@@ -8,7 +8,9 @@ pages: 1-4
 source_pdf: Download (1).pdf
 source_sha256: bbb001c909958e8a
 toc_source: inferred
+doc_brief: "Central and L p -concentration of 1-Lipschitz maps into R -trees — In this paper, we study the Le´vy-Milman concentration phenomenon of 1-Lipschitz maps from mm-spaces to R-trees."
 ---
+Introduction.
 This paper is devoted to investigating the Le´vy-Milman concentration
 phenomenon of 1-Lipschitz maps from mm-spaces (metric measure spaces) to
 R-trees. Here, an mm-space is a triple ðX; dX; XÞ of a set X, a complete separable
@@ -120,4 +122,3 @@ by Gromov (see [5, Section 13]). Our theorems are thought of as a 1-dimensional
 analogue to these works.
 Central and Lp-concentration of 1-Lipschitz maps into R-trees
 485
-2.

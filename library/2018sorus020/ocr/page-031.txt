@@ -1,0 +1,48 @@
+that it defines a distance that does depend only on [L] and [L’].
+
+This distance turns T into a graph whose vertices are classes of lattices [L] such
+that vertices at distance 1 are linked by an edge. This graph is connected since
+any two vertices admit representatives L, L’ such that L = O, © O, and L/ =
+O, etMUIZDO,, hence a path joining L to L’ can be constructed as L, = O, @t*O,
+with k =0,...,d({LZ], [L’]). In fact it can be shown that T is a tree, see [SB77].
+
+1.3.2 Link of a vertex and ends of the tree
+
+Given a vertex [L] € T, one can describe the set of vertices at distance 1 of [L] as
+follows : for each such [L’] there is a basis of V such that 0? is a representative of
+[L] and that there is an unique representative L’ of [L’] isomorphic to O, © tO, in
+this basis. Since tL c L’ c L, it defines a map {[L’] : d([Z], [L’]) = 1} > kP? that
+sends L’ to the line L’/tL in L/tL ~ k?, which turns out to be a bijection.
+
+In general, there is a bijection between the set of vertices at distance n of [L] and the
+lines in (O,/(t"))?, that is the points in the projective plane P((O,/(t"))?), hence
+a bijection between "half-lines" in T starting from [L] and the projective space
+P(O?) ~ P'(O,) ~ KP! (here O, = lim O,/(t") denotes the completion of O,).
+
+n—-0o
+
+1.3.3 The SL», action : stabilizers of vertices, fixed points and
+
+translation length
+
+There is a natural isometric and transitive action of GL(V) on T, induced by the
+action of GL(V) on V.
+
+Definition 1.3.1. The action of a subgroup G C GL(V) on T will be said trivial if
+
+a vertex is fixed by the whole group.
+
+Lemma 1.3.2. For any g € GLo(K), [LZ] € T, fix a basis {e, f} of L € [L], and
+n,m € Z such that {t"e,t™f} is a basis of g- L. Then v(det(g)) =n +m.
+
+Proof. In this basis, L ~ O?, and g can be written as the matrix A(‘} 2) B with
+A, B € GL,(O,). The result follows. Oo
+
+Now we restrict to the SL(V) action. We say that an element g € SL(V) stabilizes
+
+a vertex [L] € T if for any representative L we have g: L = xL for some x € K*.
+
+Lemma 1.3.3. An element g € SL(V) stabilizes a vertex [L] iff for any representa-
+tveg:- L=L.
+
+30

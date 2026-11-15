@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2605.15740v1
-doc_title: "BAILEY P AIRS, EICHLER INTEGRALS AND UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANTS"
+doc_title: "Bailey pairs, Eichler integrals and unified Witten-Reshetikhin-Turaev invariants"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-6
 source_pdf: 2605.15740v1.pdf
 source_sha256: aa7f99d6633113c6
-doc_brief: "BAILEY PAIRS, EICHLER INTEGRALS AND UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANTS — In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT) invariant of the Poincar´ e homology"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.993
+latex_prose_ratio: 0.957
+latex_coverage_ratio: 0.946
+doc_brief: "Bailey pairs, Eichler integrals and unified Witten-Reshetikhin-Turaev invariants — In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT) invariant of the Poincar´e homology"
 ---
 In 1999, Lawrence and Zagier made a prescient observation connecting quantum invariants and modular forms [@lz]. To state their result, let $Z_{\zeta}(\mathcal{M})$ denote the Witten-Reshetikhin-Turaev (WRT) invariant of a closed and oriented 3-manifold $\mathcal{M}$ at the root of unity $\zeta$. Next let $\bm{p} = (p_1, p_2, p_3)$ be a triple of pairwise coprime positive integers and $P:=p_1 p_2 p_3$. For any triple $\bm{\ell} = (\ell_1, \ell_2, \ell_3) \in \mathbb{Z}^3$ satisfying $0 < \ell_j < p_j$, define the odd periodic function $$\begin{aligned}
 \chi_{\bm{p}}^{\bm{\ell}}(n) = 

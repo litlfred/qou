@@ -1,0 +1,51 @@
+Chapter 5 The Tjon band in Nuclear Lattice Effective Field Theory
+
+be aware of an additional effect that needs proper treatment. The configurations with four nucleons on
+one lattice site require smearing to prevent a strong overbinding [32]. In the chiral EFT action used for
+most investigations, this smearing was adjusted to get the proper neutron-proton effective range. This
+procedure might, however, not be sufficient in larger systems, as evidenced by the highly successful
+non-locally smeared leading order action proposed in Ref. [129].
+
+Different to lattice QCD, we do not consider the continuum limit a > 0. This is related to the fact that
+we are dealing with an effective field theory (EFT) that is only valid for a certain energy range. In fact,
+m/a serves as the ultraviolet cut-off of this EFT. Letting a tend to zero would generate large momenta that
+probe the inner structure of the nucleons, which is outside the realm of the EFT considered. Therefore, a
+must be chosen between | and 2 fm. This was explained e.g. in Ref. [82].
+
+The EFT provides a counting scheme for the expansion of the effective potential [14] systematically up
+to any given order O(Q/A), where Q is a small expansion parameter with respect to the nuclear hard scale
+A = 500 MeV. Note that this hard scale is smaller than the usual chiral perturbation theory scale because
+of the non-perturbative nature of the nuclear interactions. For a detailed discussion, see e.g. Ref. [22].
+The pertinent small expansion parameter in our case is the nucleon momentum p or the pion mass M, or
+the electromagnetic charge e x M,/A. Within this counting scheme, the two-body contact interactions
+start at leading order (LO), O(Q/A)°], while momentum-dependent and electromagnetic interactions
+are at next-to-leading order (NLO), OW(O/A)] and do not have any additional contribution at N2LO,
+OW(Q/Ay'}. Additional contact terms would arise at N3LO, OU(Q/A)*], which is beyond the accuracy of
+our calculations in the three- and four-body sector performed here. The two-pion-exchange potential
+(TPEP) has contributions at NLO and N2LO. A detailed analysis of the lattice spacing dependence of
+the two-body sector can be found in Ref. [116], where higher-order corrections were included both
+perturbatively and non-perturbatively. In the following we will include and extend the two-body analysis,
+but we will focus on the perturbative approach as we want to be in agreement with former three- and four-
+body calculations in which all corrections beyond LO have been included perturbatively. In the three-body
+sector, 3NF corrections only start at N2LO as NLO contributions only consist of reducible topologies
+which do not produce any non-vanishing contributions. Concerning the 4NF, it was conjectured that they
+are not necessary due to the same argument of vanishing contributions for 3NF. However, it was shown
+by Ref. [130] that these forces matter at N3LO and a rough estimation of some of their contribution
+gives to the binding energy of 4He is about 100 keV [131]. Hence, since they are beyond the order we
+include in our analysis and their actual contribution is beyond the accuracy of our work as well, we can
+safely neglect them. We remark that these chiral 4NFs are not the effective 4NFs that were included in
+Ref. [108].
+
+The chapter is organized as follows. In Sec. 5.2 we introduce the method of NLEFT with an emphasis
+on the two-body sector. We calculate phase shifts up to N2LO for neutron-proton scattering, and we
+consider electromagnetic corrections for neutron-neutron and proton-proton scattering. Then in Sec. 5.3,
+we extend the method to three-body systems and calculate the properties of triton at each order in the
+framework of NLEFT. When describing the four-body system in Sec. 5.4, we also give a brief introduction
+into Monte Carlo method which is necessary for the calculation of the ‘He properties. All calculations are
+done for lattice spacings of a = 1.97 fm, a = 1.64 fm and a = 1.32 fm, which means that the respective
+cutoff A, = 2/a remains below the breakdown scale of the theory. The respective temporal lattice spacing
+is chosen as a, = 1.32 fm, a, = 0.91 fm and a, = 0.59 fm, such that the ratio a’ /a, is kept fixed. Finally,
+we investigate the 3H-“He correlation in Sec. 5.5. In Sec. 5.6 we conclude and give an outlook on further
+improvements.
+
+50

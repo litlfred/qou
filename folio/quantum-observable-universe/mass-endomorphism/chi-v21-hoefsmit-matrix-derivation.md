@@ -42,7 +42,6 @@ $$
 | `hoefsmit_v21_braid_relation` | $\sigma_0\sigma_1\sigma_0 = \sigma_1\sigma_0\sigma_1$, generic $b$ with $b^2 = d_1d_2+1$ | `fin_cases` + `field_simp` + `nlinarith` |
 | `chi_v21_matrix_trace_identity` | **the 11-crossing matrix-product trace difference** | `simp only` + `Matrix.trace_fin_two_of` + `ring_nf` + `field_simp` |
 
-All theorems sorry-free.
 
 ## Laurent decomposition and the ε^k growth
 
@@ -55,7 +54,7 @@ for the V_(2,1) coefficients.
 ## Not yet formalised
 
 ~~The **full Lean matrix-product trace derivation**~~ **is now formalised
-and proved sorry-free** (`chi_v21_matrix_trace_identity`, 2026-09-04). The
+and proved** (`chi_v21_matrix_trace_identity`, 2026-09-04). The
 three obstacles listed below are recorded as history; items 2 and 3 are
 resolved, and item 1 turned out not to be needed — the $\sigma_0, \sigma_1$
 matrices are declared locally rather than imported.

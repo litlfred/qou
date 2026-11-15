@@ -1,0 +1,39 @@
+CHAPTER 5
+
+The Tjon band in Nuclear Lattice Effective Field
+Theory ~*
+
+5.1 Introduction
+
+Nuclear Lattice Effective Field Theory (NLEFT) has become a powerful tool in the last years to study the
+formation of nuclei from nucleons in an ab initio way. Using this method it was possible to calculate
+the binding energies of medium mass nuclei with good accuracy [108, 115] and postdict the Hoyle
+state [34, 35], which is an excited state in carbon-12 indispensable for nucleosynthesis in stars. Besides
+binding energies, also scattering processes like nucleon-nucleon [61, 116] or alpha-alpha-scattering [36]
+were investigated. NLEFT combines two powerful concepts. First, we have chiral nuclear effective
+field theory [39, 52], which gives a systematic description of low-energy hadron physics based on
+the symmetries (and their breaking) of the underlying gauge field theory, Quantum Chromodynamics.
+This continuum approach can be combined with well established many-body continuum schemes to go
+beyond light nuclei, such as the shell model, the no-core-shell model, coupled cluster theory, variational
+Monte Carlo methods, and so on, see e.g. Refs. [117-127]. Second, we discretize Euclidean space
+time with spatial lattice spacing a and temporal lattice spacing a,, and use Monte Carlo methods for
+the numerical evaluation of few- and many-body problems. While many interesting and precise results
+could be obtained in this scheme, a problem due to the discretization of space had never been resolved
+in a satisfactory fashion. In Ref. [115] an overbinding of the ground state of 4He was observed which
+was traced back to the appearance of implicit multi-particle interactions which have significant effect on
+few-body physics on coarse lattices. In Ref. [128], this effect was demonstrated explicitly for an N-boson
+system in two dimensions with short-range interaction. This effect becomes even stronger in larger nuclei.
+In Ref. [108] this discretization artefact was cured by adding an effective four-nucleon force (4NF), that,
+however, is not related to the chiral expansion. Here, we want to reconsider this issue and prove the
+conjecture of the appearance of the implicit multi-particle interactions, and show that with decreasing
+lattice spacing their effect is diminished more and more. Consequently, the effective 4NF is not necessary
+any more once the lattice spacing is chosen small enough, and one should also confirm the correlation
+between 3N and 4N systems, known as the Tjon band [24, 72]. Note that historically, this correlation was
+called the Tjon line, but as theory has an inherent uncertainty, it really is a band as stressed in Ref. [72].
+While the aforementioned overbinding of ‘He on coarse lattices results in correlation points relatively far
+off the Tjon band, the binding energies for triton and helium-4 should get closer to this band or already
+be on top of it once the lattice spacing is chosen small enough. Furthermore, note that one also has to
+
+* The following chapter has been published in [114].
+
+49

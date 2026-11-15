@@ -8,7 +8,7 @@
   "pages": 18,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -22,12 +22,12 @@
   },
   "doi": null,
   "title": "arXiv:hep-th/9609174v2 23 Sep 1996",
-  "authors_raw": "G. Akemann\u2217, P. H. Damgaard\u2020, U. Magnea\u2021 and S. Nishigaki\u00a7",
+  "authors_raw": "G. Akemann∗, P. H. Damgaard†, U. Magnea‡ and S. Nishigaki§",
   "title_lines": [
    "Universality of random matrices in the microscopic limit",
    "and the Dirac operator spectrum"
   ],
-  "abstract": "We prove the universality of correlation functions of chiral unitary and unitary ensembles of ran- dom matrices in the microscopic limit. The essence of the proof consists in reducing the three-term recursion relation for the relevant orthogonal polynomials into a Bessel equation governing the local asymptotics around the origin. The possible physical interpretation as the universality of soft spectrum of the Dirac operator is brie\ufb02y discussed. PACS: 05.45.+b, 11.15.Pg, 11.30.Rd e-mail addresses: \u2217akemann@itp.uni-hannover.de, \u2020 phdamg, \u2021 umagnea, \u00a7 shinsuke@alf.nbi.dk",
+  "abstract": "We prove the universality of correlation functions of chiral unitary and unitary ensembles of ran- dom matrices in the microscopic limit. The essence of the proof consists in reducing the three-term recursion relation for the relevant orthogonal polynomials into a Bessel equation governing the local asymptotics around the origin. The possible physical interpretation as the universality of soft spectrum of the Dirac operator is brieﬂy discussed. PACS: 05.45.+b, 11.15.Pg, 11.30.Rd e-mail addresses: ∗akemann@itp.uni-hannover.de, † phdamg, ‡ umagnea, § shinsuke@alf.nbi.dk",
   "docinfo": {
    "Title": "arXiv:hep-th/9609174v2  23 Sep 1996",
    "Producer": "GPL Ghostscript 10.01.2",
@@ -326,8 +326,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 1008,
-   "n_words": 136,
+   "n_chars": 1006,
+   "n_words": 135,
    "label_start": null,
    "label_end": "1"
   },
@@ -338,7 +338,7 @@
    "level": 1,
    "page_start": 2,
    "page_end": 4,
-   "n_chars": 6099,
+   "n_chars": 6110,
    "n_words": 1001,
    "label_start": "1",
    "label_end": "3"
@@ -350,8 +350,8 @@
    "level": 1,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 2856,
-   "n_words": 593,
+   "n_chars": 2877,
+   "n_words": 595,
    "label_start": "3",
    "label_end": "4"
   },
@@ -362,8 +362,8 @@
    "level": 2,
    "page_start": 5,
    "page_end": 8,
-   "n_chars": 5510,
-   "n_words": 1189,
+   "n_chars": 5544,
+   "n_words": 1192,
    "label_start": "4",
    "label_end": "7"
   },
@@ -374,8 +374,8 @@
    "level": 2,
    "page_start": 8,
    "page_end": 11,
-   "n_chars": 4411,
-   "n_words": 896,
+   "n_chars": 4432,
+   "n_words": 897,
    "label_start": "7",
    "label_end": "10"
   },
@@ -386,8 +386,8 @@
    "level": 1,
    "page_start": 11,
    "page_end": 11,
-   "n_chars": 795,
-   "n_words": 159,
+   "n_chars": 809,
+   "n_words": 160,
    "label_start": "10",
    "label_end": "10"
   },
@@ -398,8 +398,8 @@
    "level": 2,
    "page_start": 11,
    "page_end": 14,
-   "n_chars": 4878,
-   "n_words": 1023,
+   "n_chars": 4912,
+   "n_words": 1026,
    "label_start": "10",
    "label_end": "13"
   },
@@ -410,8 +410,8 @@
    "level": 2,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 1903,
-   "n_words": 424,
+   "n_chars": 1924,
+   "n_words": 425,
    "label_start": "13",
    "label_end": "14"
   },
@@ -422,8 +422,8 @@
    "level": 1,
    "page_start": 15,
    "page_end": 18,
-   "n_chars": 5641,
-   "n_words": 966,
+   "n_chars": 5668,
+   "n_words": 969,
    "label_start": "14",
    "label_end": "17"
   }
@@ -443,7 +443,8 @@
    "items": []
   },
   "sections": 9,
-  "chars_total": 33101,
+  "chars_total": 33282,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -472,7 +473,7 @@
      "id": "sec-001-2-chiral-unitary-ensembles",
      "title": "Chiral unitary ensembles",
      "prose_ratio": 0.956,
-     "coverage_ratio": 0.981,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -480,7 +481,7 @@
      "id": "sec-002-21-asymptotics-of-orthogonal-polynomials",
      "title": "Asymptotics of orthogonal polynomials",
      "prose_ratio": 0.984,
-     "coverage_ratio": 0.974,
+     "coverage_ratio": 0.97,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -488,7 +489,7 @@
      "id": "sec-003-22-universal-correlations",
      "title": "Universal correlations",
      "prose_ratio": 0.976,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -496,25 +497,25 @@
      "id": "sec-004-3-unitary-ensembles",
      "title": "Unitary ensembles",
      "prose_ratio": 0.251,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-005-31-asymptotics-of-orthogonal-polynomials",
      "title": "Asymptotics of orthogonal polynomials",
      "prose_ratio": 0.508,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-006-32-universal-correlations",
      "title": "Universal correlations",
      "prose_ratio": 0.266,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-007-4-conclusion-and-speculation",
      "title": "Conclusion and speculation",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.865,
+     "coverage_ratio": 0.859,
      "result": "overlaid",
      "converter": "latex"
     }

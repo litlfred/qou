@@ -1,8 +1,6 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "0406276v1",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "8fdf4b5950e8b5f5ef32355780c77e8ef297dae078fa8d2bd6742e5550472741",
   "file": "0406276v1.pdf"
@@ -13,11 +11,91 @@
   "arxiv": null,
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
+  "candidates": 5,
+  "by_kind": {
+   "recommendation": 5
+  },
   "formalization_candidates": 0
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The integral formulas below contain vectors lying in different tangent spaces; in non-Euclidean settings we must move them to a common location to be combined.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-linking-integrals-in-s3-and-h3.md",
+   "section_title": "Linking integrals in S3 and H3 .",
+   "pages": "2-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We follow Calugareanu's lead and replace the two closed curves K1 and K2 in our linking integrals by a single closed curve K , which we must assume to be simple.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-10-link-twist-and-writhe-on-s3-and-h3.md",
+   "section_title": "Link, twist and writhe on S3 and H3 .",
+   "pages": "24-28",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "then the vectors V(s + h) and V(s) lie in different tangent spaces, and we must move them together in order to subtract.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-10-link-twist-and-writhe-on-s3-and-h3.md",
+   "section_title": "Link, twist and writhe on S3 and H3 .",
+   "pages": "24-28",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The crucial thing, recognized by Calugareanu, is that the width of the neighborhood of the diagonal in K \u00d7 K must go to zero much more slowly than the width \u03b5 of the ribbon.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-010-11-proof-scheme-for-theorem-5.md",
+   "section_title": "Proof scheme for Theorem 5.",
+   "pages": "28-30",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "And clearly, any eigenfield of the curl operator in K(\u2126) must actually lie in CK(\u2126) .",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-013-14-spectral-geometry-of-the-curl-operator-in-r3.md",
+   "section_title": "Spectral geometry of the curl operator in R3 , S3 and H3 .",
+   "pages": "34-38",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
 }

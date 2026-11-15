@@ -1,0 +1,1 @@
+This emergent quantum hyperbolic disk geometry should be viewed as a $q$-deformation of the effective AdS$_2$ geometry that governed semi-classical physics [\[eq:weylliou\]](#eq:weylliou){reference-type="eqref" reference="eq:weylliou"}.

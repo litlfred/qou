@@ -8,7 +8,7 @@
   "pages": 42,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:18Z",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -66,7 +66,7 @@
   },
   {
    "level": 1,
-   "title": "Siegel units and weight 2 Asai\u2013Eisenstein elements",
+   "title": "Siegel units and weight 2 Asai–Eisenstein elements",
    "page": 14,
    "source": "inferred",
    "number": "3",
@@ -94,7 +94,7 @@
   },
   {
    "level": 1,
-   "title": "Asai\u2013Eisenstein elements in higher weights",
+   "title": "Asai–Eisenstein elements in higher weights",
    "page": 24,
    "source": "inferred",
    "number": "5",
@@ -580,8 +580,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 10610,
-   "n_words": 1804,
+   "n_chars": 10605,
+   "n_words": 1803,
    "label_start": "1669",
    "label_end": "1672"
   },
@@ -600,7 +600,7 @@
   {
    "id": "sec-002-3-siegel-units-and-weight-2-asaieisenstein-eleme",
    "number": "3",
-   "title": "Siegel units and weight 2 Asai\u2013Eisenstein elements",
+   "title": "Siegel units and weight 2 Asai–Eisenstein elements",
    "level": 1,
    "page_start": 14,
    "page_end": 19,
@@ -624,7 +624,7 @@
   {
    "id": "sec-004-5-asaieisenstein-elements-in-higher-weights",
    "number": "5",
-   "title": "Asai\u2013Eisenstein elements in higher weights",
+   "title": "Asai–Eisenstein elements in higher weights",
    "level": 1,
    "page_start": 24,
    "page_end": 27,
@@ -709,6 +709,7 @@
    "items": []
   },
   "sections": 11,
-  "chars_total": 98264
+  "chars_total": 98259,
+  "furniture_lines_stripped": 1
  }
 }

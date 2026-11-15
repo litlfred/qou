@@ -1,0 +1,106 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1202.0461v1",
+ "source": {
+  "structure_sha256": "656a2ea80ef2e25ce2795cb06f644c6cb11cf0ba5bc55c356f2db32c105f0486",
+  "file": "1202.0461v1.pdf"
+ },
+ "provenance": {
+  "title": "Draft version October 11, 2018 DOUBLE DEGENERATE MERGERS AS PROGENITORS OF HIGH-FIELD MAGNETIC WHITE DWARFS",
+  "authors": "Enrique Garc\u00b4\u0131a\u2013Berro1,2, Pablo Lor\u00e9n\u2013Aguilar1,2, Gabriela Aznar\u2013Sigu\u00e1n1,2, Santiago Torres1,2",
+  "arxiv": {
+   "id": "1202.0461",
+   "version": "1",
+   "primary_class": "astro-ph.SR",
+   "stamp_date": "2 Feb 2012"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 5,
+  "by_kind": {
+   "recommendation": 5
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "For this mechanism to be efficient at producing the observed magnetic fields, the dynamo must work for several convective turnovers before the energy of the hot corona is radiated away.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-2-the-stellar-dynamo.md",
+   "section_title": "The stellar dynamo",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Our model naturally predicts that the masses of high-field magnetic white dwarfs should be larger than average and that they should be observed as single white dwarfs, as observationally found --- see, for instance, Valyavin & Fabrika (1999).",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-2-the-stellar-dynamo.md",
+   "section_title": "The stellar dynamo",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This means that the toroidal component of the magnetic field must be stable, and that a poloidal component should also be present.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-2-the-stellar-dynamo.md",
+   "section_title": "The stellar dynamo",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Consequently, the expected number of massive white dwarfs in the local sample should be $\\sim 12$.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-3-magnetic-white-dwarfs-in-the-solar-neighborhoo.md",
+   "section_title": "Magnetic white dwarfs in the solar neighborhood",
+   "pages": "3-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Our model naturally predicts that high-\ufb01eld magnetic white dwarfs should preferen- tially have high masses, and should be observed as sin- gle white dwarfs, as observationally found.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-4-summary-and-conclusions.md",
+   "section_title": "Summary and conclusions",
+   "pages": "5-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

@@ -8,6 +8,7 @@ pages: 4-6
 source_pdf: 0406276v1.pdf
 source_sha256: 8fdf4b5950e8b5f5
 toc_source: inferred
+doc_brief: "The GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE — 16 sections: Front matter; Linking integrals in S3 and H3 .; Historical background."
 ---
 Carl Friedrich Gauss, in a half-page paper dated January 22, 1833, gave an 
 integral formula for the linking number of two disjoint smooth closed curves in 
@@ -47,7 +48,6 @@ Calugareanu's formula without this restriction was proved by James White (1969) 
 his thesis, using a totally different approach based on ideas of William Pohl (1968a, b). 
  
  
-5
  
  
 Lodewijk Woltjer introduced in 1958 the notion of "helicity" of a vector field  V  
@@ -65,7 +65,4 @@ The formulas of Gauss and Calugareanu serve as cornerstones of geometric knot
 theory in Euclidean space, with rich connections to molecular biology, especially in 
 the study of knotted duplex DNA and of the enzymes which affect it, and, through 
 the related formula of Woltjer and Moffatt, to fluid dynamics, electrodynamics and 
-plasma and solar physics. 
- 
- 
-6
+plasma and solar physics.

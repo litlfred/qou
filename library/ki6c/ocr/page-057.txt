@@ -1,0 +1,51 @@
+We put t = w-—s—u = w-— 2s. Since 0.03 < t < 0.4 as shown in Section 3.2,
+
+sin(w — 2s) > 0. Therefore,
+. 1.
+sina(w— 2s) = 3 sints,
+1 . 1.
+w = 28+ —aresin;/=sin7s.
+T 2
+
+We put the right-hand side of this formula to be f(s), that is, w = f(s).
+In order to transform a range of s to a range of w later, we show that f(s) is mono-
+tonically increasing in an area where we consider a solution, as follows. We put
+
+and
+
+F(w,s) = 2sin? (w — 2s) —sinzs.
+Since F'(w,s) = 0,
+d OF OF
+—F(f(s),s) = f'( =~ = 0.
+ds (f(s), 8) Ow PMs) + Os
+Hence, since
+OF . .
+ao 7 4dr sin t(w—2s) cosa(w—2s) = 27 sin27(w—2s),
+w
+OF
+a7 —4nr sin 27(w—2s) — 7sinzs,
+we have that
+a
+) Ba cos 78 cos 7s
+s) = - = 2 = 2 > 0
+Ps) oe * Osin 27(w—2s) * Osin Qn ,
+
+where we obtain the last inequality since 0.001 < s < 0.5 and 0.03 < t < 0.4 as shown in
+Section 3.2. Therefore, f(s) is monotonically increasing in the area of such s and t.
+
+We estimate a solution of (36) by rewriting it as a 1-variable equation, as follows. We
+put
+
+P(s) = A(f(s) — 2s) + M(s) — in
+Then, (36) is rewritten as P(s) = 0. Since
+P(0.346) = 0.0003872... > 0, P(0.347) = —0.0002516... < 0,
+a solution of P(s) = 0 is in the following range,
+0.346 < s < 0.347.
+
+Further, since f(s) is monotonically increasing, w of a solution of (36) is in the following
+range
+f (0.346) < Wmax < f (0.347).
+Therefore,
+Wmax < (0.347) = 0.925927... < 0.94,
+
+as required. Oo

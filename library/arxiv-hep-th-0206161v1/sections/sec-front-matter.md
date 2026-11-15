@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-0206161v1
-doc_title: "arXiv:hep-th/0206161v1 18 Jun 2002"
+doc_title: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 0206161v1.pdf
 source_sha256: 9530c40215baa02d
 toc_source: inferred
+doc_brief: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING — 24 sections: Front matter; Jourdain:; Introduction"
 ---
 arXiv:hep-th/0206161v1  18 Jun 2002
 ITEP-TH-22/02

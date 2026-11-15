@@ -1,0 +1,45 @@
+Canonical triangulations 1241
+
+Section 2 is standard and recalls the classification of conjugacy classes in SL2(Z) in
+order to define the triangulation #1. The latter is studied in greater detail in Section 3
+and Section 4. Positive angles for 7 (a “linear hyperbolic structure”) are provided
+in Section 5. Section 6 explains the role played by hyperbolic volume maximization,
+allowing us to deal with the easy cases in Section 7. Section 8 presents the essential
+geometric lemma for the final attack, carried out in Section 9. Section 10 is devoted
+to a numerical example. In Section 11, we quickly recall the connection between
+once-punctured tori and 4—punctured spheres. In the Appendix, David Futer builds on
+that connection to prove an analogue of Theorem 1.1 for the complements of two-bridge
+links and computes geometric estimates.
+
+The symbol “=” is preceded (resp. followed) by a colon (:=, resp. =:) when the
+equality serves as a definition for its left (resp. right) member.
+
+I would like to thank Francis Bonahon and Frédéric Paulin for numerous insights and
+the great improvements this paper owes to them. Exciting discussions with David Futer
+and with Makoto Sakuma also gave invaluable input. This paper reached its pre-final
+form during a stay at the Institut Bernoulli (EPFL, Lausanne) for whose kind hospitality
+I express my deep gratitude. Finally, thanks are due to the referee for many helpful
+comments. This work was partially supported by NSF grant DMS-0103511.
+
+2 Conjugacy in SL,(Z) and the Farey tesselation
+
+Proposition 2.1 Let p be an element of SL2(Z) with two distinct eigenvalues in R*, .
+Then the conjugacy class of ~ in SL2(Z) contains an element of the form
+
+_ 1 a\f1 0 1 a\/1 0 1 an\f{1 0
+Aya! =
+° ( OG, ') ( ales ') ( “G. ')
+where n > 0 and the a; and bj are positive integers. Moreover, the right hand side is
+
+unique up to cyclic permutation of the factors ( }, 4')( 4,9). Conversely, any nonempty
+
+product of such factors is an element of SL2(Z) with two distinct eigenvalues in R’*, .
+
+We sketch a proof of this popular fact, mainly in order to introduce the cyclic word Q
+associated to y. The converse implication is easy (just check that the trace is larger
+than 2), so we focus on the direct statement.
+
+Consider the upper half-plane model of the hyperbolic plane H”, endowed with the
+Farey tessellation F (the ideal triangle 0100 iteratedly reflected in its sides). We identify
+
+Geometry & Topology 10 (2006)

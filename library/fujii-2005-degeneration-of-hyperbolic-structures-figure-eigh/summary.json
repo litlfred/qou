@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh",
  "source_sha256": "bca3996c7a667b18",
- "brief": "Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve — 12 sections: Introduction; Deformation of hyperbolic structur; A birational",
- "extended": "**Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve**\n\n*In this paper, we consider a hyperbolic structure on a manifold to be a*\n\n12 pp, 12 sections.\n\n**Outline.** 1 Introduction; 2 Deformation of hyperbolic structures and hyp; 3 A birational map from the deformation curve ; 1 X2 + X0X2; 0 X1 =0⇑/arrowvertexdbl⇓X0 =−x0 −x1,X 1 =x2,X ; 4 Points of ﬁnite order on the elliptic curve ; 4.1 Rational points on E and Haken manifolds; 4.2 Points of ﬁnite order on E and Sol manifol; 4.3 Points of ﬁnite order on E and Euclidean o; 4.4 Theorem; Appendix; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem: Let K be the ﬁgure-eight knot in the 3-dimensional sphere",
+ "brief": "Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve — 12 sections: Front matter; Introduction; Deformation of hyperbolic structur",
+ "extended": "**Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve**\n\n*Michihiko Fujii*\n\n12 pp, 12 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Deformation of hyperbolic structures and hyp; 3 A birational map from the deformation curve ; 4 Points of ﬁnite order on the elliptic curve ; 4.1 Rational points on E and Haken manifolds; 4.2 Points of ﬁnite order on E and Sol manifol; 4.3 Points of ﬁnite order on E and Euclidean o; 4.4 Theorem; Appendix; References; M Fujii, Deformations of hyperbolic structures",
  "tokens": {
   "brief": 49,
-  "extended": 187
+  "extended": 144
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -16,65 +21,59 @@
   },
   {
    "id": "sec-001-2-deformation-of-hyperbolic-structures-and-hyper",
-   "title": "Deformation of hyperbolic structures and hyperbolic Dehn ﬁll-",
+   "title": "Deformation of hyperbolic structures and hyperbolic Dehn ﬁlling",
    "pages": "2-6"
   },
   {
    "id": "sec-002-3-a-birational-map-from-the-deformation-curve-c",
-   "title": "A birational map from the deformation curve C to an elliptic",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-003-1-x2-x0x2",
-   "title": "X2 + X0X2",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-004-0-x1-0arrowvertexdblx0-x0-x1x-1-x2x-2-x1",
-   "title": "X1 =0⇑/arrowvertexdbl⇓X0 =−x0 −x1,X 1 =x2,X 2 =−x1",
+   "title": "A birational map from the deformation curve C to an elliptic curve in Weierstrass form",
    "pages": "6-7"
   },
   {
-   "id": "sec-005-4-points-of-ﬁnite-order-on-the-elliptic-curve-e",
-   "title": "Points of ﬁnite order on the elliptic curve E and Dehn ﬁlling on",
+   "id": "sec-003-4-points-of-ﬁnite-order-on-the-elliptic-curve-e",
+   "title": "Points of ﬁnite order on the elliptic curve E and Dehn ﬁlling on the ﬁgure-eight knot",
    "pages": "7-7"
   },
   {
-   "id": "sec-006-41-rational-points-on-e-and-haken-manifolds",
+   "id": "sec-004-41-rational-points-on-e-and-haken-manifolds",
    "title": "Rational points on E and Haken manifolds",
    "pages": "7-8"
   },
   {
-   "id": "sec-007-42-points-of-ﬁnite-order-on-e-and-sol-manifolds",
+   "id": "sec-005-42-points-of-ﬁnite-order-on-e-and-sol-manifolds",
    "title": "Points of ﬁnite order on E and Sol manifolds",
    "pages": "8-8"
   },
   {
-   "id": "sec-008-43-points-of-ﬁnite-order-on-e-and-euclidean-orbi",
+   "id": "sec-006-43-points-of-ﬁnite-order-on-e-and-euclidean-orbi",
    "title": "Points of ﬁnite order on E and Euclidean orbifolds",
    "pages": "8-9"
   },
   {
-   "id": "sec-009-44-theorem",
+   "id": "sec-007-44-theorem",
    "title": "Theorem",
    "pages": "9-10"
   },
   {
-   "id": "sec-010-appendix",
+   "id": "sec-008-appendix",
    "title": "Appendix",
    "pages": "10-12"
   },
   {
-   "id": "sec-011-references",
+   "id": "sec-009-references",
    "title": "References",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-010-m-fujii-deformations-of-hyperbolic-structures-on",
+   "title": "Fujii, Deformations of hyperbolic structures on the ﬁgure eight knot complement and an elliptic curve associated to them, in Perspectives of",
    "pages": "12-12"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

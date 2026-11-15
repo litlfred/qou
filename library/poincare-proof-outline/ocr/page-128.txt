@@ -1,0 +1,66 @@
+qed
+Pasch axiom, non-degenerative case.
+
+lemma Pasch-nondeg:
+assumes « € unit-disc and y € unit-disc and z € unit-disc and u € unit-disc and v € unit-disc
+assumes distinct [x, y, z, u, v]
+assumes — poincare-collinear {x, y, z}
+assumes poincare-between xz u z and poincare-between y v z
+shows J a. a € unit-disc \ poincare-between u ay A poincare-between © av
+proof—
+have V yz u. distinct [z, y, z, u, uv] A 7 poincare-collinear {x, y, z} \ y € unit-disc \ z € unit-disc A u € unit-disc A
+poincare-between x u z A poincare-between y v z —> (4 a. a € unit-disc A poincare-between ua y A
+poincare-between x av) (is ?P x v)
+proof (rule wlog-positive-x-azis[;where P=?P])
+fix v
+assume uv: is-real v 0 < Rev Rev < 1
+hence of-complez v € unit-disc
+by (auto simp add: cmod-eq-Re)
+show ?P 0;, (of-complex v)
+proof safe
+fix yzu
+assume distinct: distinct [On, y, 2, u, of-complex v|
+assume in-disc: y € unit-disc z € unit-disc u € unit-disc
+then obtain y’ 2’ u’
+where «: y = of-complex y’ z = of-complex z' u = of-complex u'
+using inf-or-of-complex inf-notin-unit-disc
+by metis
+
+have y'4A0z'A Ou AOVA OY Fz y Au 2 Aw yAzyAuzsu
+using of-complez-inj distinct *
+by auto
+
+note distinct = distinct this
+assume 7~ poincare-collinear {On, y, z}
+
+hence nondeg-yz: y’*cnj z' # cnj y’ * 2’
+using * poincare-collinear-zero-iff|of y' z'| in-disc distinct
+by auto
+
+assume poincare-between On uz
+
+hence Arg u’ = Arg z' cmod u' < cmod z'
+using * poincare-between-Ouvlof u z] distinct in-disc
+by auto
+
+then obtain y ru rz where
+uz-polar: u' = cor ru * cis p z' = corrz * cise 0 < ruru<rz0 <rzand
+y = Arg u! p = Arg z'
+using « <u’ A 0) «z' A 0»
+by (smt cmod-cis norm-le-zero-iff)
+
+obtain 0 ry where
+y-polar: y’ = cor ry * cis 0 ry > 0 and J = Arg y'
+using «y’ 4 0»
+by (smt cmod-cis norm-le-zero-iff)
+
+from in-disc * <u’ = cor ru * cis yp» (z' = cor rz * cis p> <y’ = cor ry * cis 9)
+have ru<1lrz<1lry<1
+by (auto simp: norm-mult)
+note polar = this y-polar uz-polar
+have nondeg: cis 0 « cis (— vy) # cis (— V) * cis p
+
+using nondeg-yz polar
+by simp
+
+128

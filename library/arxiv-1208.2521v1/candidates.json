@@ -1,15 +1,13 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1208.2521v1",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "8d0281aa84043865a2268ae04a97c395a9e97d630c05f973c6a43a0d850ddae8",
   "file": "1208.2521v1.pdf"
  },
  "provenance": {
-  "title": "1. Introduction Several possible q-analogues of the Bessel function (1.1) J\u03b1 (x) := (\u22121)k (x/ 2)\u03b1 +2k k! \u0393( \u03b1 + k + 1) have been considered in the literature. Best known are two re lated q-Bessel func-",
-  "authors": null,
+  "title": "ON q-ANALOGUES OF THE FOURIER AND HANKEL TRANSFORMS",
+  "authors": "TOM H. KOORNWINDER and REN\u00c9 F. SWARTTOUW",
   "arxiv": {
    "id": "1208.2521",
    "version": "1",
@@ -18,159 +16,91 @@
   },
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 11,
+  "candidates": 5,
   "by_kind": {
-   "proposition": 5,
-   "remark": 5,
-   "lemma": 1
+   "recommendation": 5
   },
-  "formalization_candidates": 6
+  "formalization_candidates": 0
  },
  "candidates": [
   {
-   "kind": "proposition",
-   "source_kind": "proposition",
-   "number": "2.1",
-   "name": null,
-   "statement": "The series in (2.2) de\ufb01nes an entire analytic function in z, w ,",
-   "section_file": "sections/sec-003-2-symmetry-and-orthogonality-for-q-bessel-functi.md",
-   "section_title": "Symmetry and orthogonality for q-Bessel functions",
-   "pages": "4-6",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "2.2",
-   "name": null,
-   "statement": "Formula (2.3) is a limit case of Heine\u2019s transformation form ula",
-   "section_file": "sections/sec-003-2-symmetry-and-orthogonality-for-q-bessel-functi.md",
-   "section_title": "Symmetry and orthogonality for q-Bessel functions",
-   "pages": "4-6",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "2.3",
-   "name": null,
-   "statement": "For w := q1\u2212 n (n = 1, 2, . . . ) we interpret the left-hand side of (2.2)",
-   "section_file": "sections/sec-003-2-symmetry-and-orthogonality-for-q-bessel-functi.md",
-   "section_title": "Symmetry and orthogonality for q-Bessel functions",
-   "pages": "4-6",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "2.4",
-   "name": null,
-   "statement": "Because of (2.6), the behaviour of the two equal sides of (2.3 ) as",
-   "section_file": "sections/sec-004-6-tom-h-koornwinder-and-ren-e-f-sw-arttouw.md",
-   "section_title": "TOM H. KOORNWINDER AND REN \u00b4E F. SW ARTTOUW",
-   "pages": "6-8",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "proposition",
-   "source_kind": "proposition",
-   "number": "2.5",
-   "name": null,
-   "statement": "For z, t \u2208 C such that 0 < |t| < |z|\u2212 1 there is the absolutely",
-   "section_file": "sections/sec-004-6-tom-h-koornwinder-and-ren-e-f-sw-arttouw.md",
-   "section_title": "TOM H. KOORNWINDER AND REN \u00b4E F. SW ARTTOUW",
-   "pages": "6-8",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "proposition",
-   "source_kind": "proposition",
-   "number": "2.6",
-   "name": null,
-   "statement": "For |z| < 1 and n, m \u2208 Z we have",
-   "section_file": "sections/sec-004-6-tom-h-koornwinder-and-ren-e-f-sw-arttouw.md",
-   "section_title": "TOM H. KOORNWINDER AND REN \u00b4E F. SW ARTTOUW",
-   "pages": "6-8",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "2.7",
-   "name": null,
-   "statement": "Analogous to Proposition 2.5 there are the two generating fu nctions",
-   "section_file": "sections/sec-004-6-tom-h-koornwinder-and-ren-e-f-sw-arttouw.md",
-   "section_title": "TOM H. KOORNWINDER AND REN \u00b4E F. SW ARTTOUW",
-   "pages": "6-8",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "proposition",
-   "source_kind": "proposition",
-   "number": "4.2",
-   "name": null,
-   "statement": "For |sxy| < 1 and x2, y 2 \u2044= q\u2212 l (l = 0, 1, 2, . . . ), we have",
-   "section_file": "sections/sec-009-12-tom-h-koornwinder-and-ren-e-f-sw-arttouw.md",
-   "section_title": "TOM H. KOORNWINDER AND REN \u00b4E F. SW ARTTOUW",
-   "pages": "12-14",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "4.3",
-   "name": null,
-   "statement": "Analogous to (4.2) we have",
-   "section_file": "sections/sec-010-14-tom-h-koornwinder-and-ren-e-f-sw-arttouw.md",
-   "section_title": "TOM H. KOORNWINDER AND REN \u00b4E F. SW ARTTOUW",
-   "pages": "14-16",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "proposition",
-   "source_kind": "proposition",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
    "number": null,
    "name": null,
-   "statement": "A.1. For 0 < a < q \u2212 1, 0 \u2264 b < q \u2212 1 we have",
-   "section_file": "sections/sec-011-16-tom-h-koornwinder-and-ren-e-f-sw-arttouw.md",
-   "section_title": "TOM H. KOORNWINDER AND REN \u00b4E F. SW ARTTOUW",
-   "pages": "16-18",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "statement": "SWARTTOUW Our motivation is that (i) the r\u03c6s notation is fairly well known nowadays and clari- \ufb01es the position of these q-Bessel functions among other q-hypergeometric functions; (ii) q-analysis should not depend too much on the q = 1 case, so scaling factors making the limit transition q \u21911 easy should not be hidden in the de\ufb01nitions of q-special functions; and (iii) the classical de\ufb01nition (1.1) of Bessel functions is very natural in the context of the generating function (1.4) and for analysis concentrat- ing on J0, but it is less fortunate when the focus is on another Bessel function of \ufb01xed order (cf.",
+   "strength": "should-not",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-004.md",
+   "section_title": "Page 4",
+   "pages": "4-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   },
   {
-   "kind": "lemma",
-   "source_kind": "lemma",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
    "number": null,
    "name": null,
-   "statement": "B.1. Formula (B.3) is valid for integer n if c, qb/a, q/a, q n+1/a, q \u2212 nc/b, c/b",
-   "section_file": "sections/sec-012-18-tom-h-koornwinder-and-ren-e-f-sw-arttouw.md",
-   "section_title": "TOM H. KOORNWINDER AND REN \u00b4E F. SW ARTTOUW",
-   "pages": "18-19",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "statement": "J\u22121/2(x) versus cos x), so one should be very careful before \ufb01xing the de\ufb01nition and notation of a q-Bessel function.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-004.md",
+   "section_title": "Page 4",
+   "pages": "4-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Therefore, the notations for q- Bessel functions, q-cosines and q-sines in \u00a7\u00a73 and 5 should be considered as ad hoc notations, which are only used locally in this paper for clarifying the analogy of the functions with the q = 1 case.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-004.md",
+   "section_title": "Page 4",
+   "pages": "4-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Here we should exclude the case that both 1 + n and n + q log(s\u22121xy\u22121) are non- positive integers, or that both 1 \u2212n and \u2212n + q log(s\u22121yx\u22121) are non-positive integers.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-011.md",
+   "section_title": "Page 11",
+   "pages": "11-11",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "(The functions introduced above should not be confused with the functions cosq and sinq considered in [6, Exercise 1.14].) Clearly we have the formal (termwise) limits cos((1 \u2212q)z; q2) \u2212\u2192cos z and sin((1 \u2212q)z; q2) \u2212\u2192sin z as q \u21911.",
+   "strength": "should-not",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-015.md",
+   "section_title": "Page 15",
+   "pages": "15-15",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   }
  ]
 }

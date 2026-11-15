@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1406.7337v4
-doc_title: "Semi-Adequate Closed Braids and Volume Adam Giambrone Alma College giambroneaj@alma.edu"
+doc_title: "Semi-Adequate Closed Braids and Volume"
 section_id: sec-004-23-a-lemma-for-closed-braids
 section_title: "A lemma for closed braids"
 section_number: 2.3
 pages: 5-9
-source_pdf: 1406.7337v4 (1).pdf
+source_pdf: 1406.7337v4.pdf
 source_sha256: 5bae8237742733b9
-doc_brief: "Semi-Adequate Closed Braids and Volume Adam Giambrone Alma College giambroneaj@alma.edu — In this paper, we show that the volumes for a family of A-adequate closed braids can be bounded above and"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.972
-latex_coverage_ratio: 0.956
+latex_coverage_ratio: 0.996
+doc_brief: "Semi-Adequate Closed Braids and Volume — In this paper, we show that the volumes for a family of A-adequate closed braids can be bounded above and below in terms of the twist number, the number of"
 ---
 The main goal of this section is to produce a family of closed $n$-braids that satisfies the hypotheses of Theorem~\ref{Cor}. We will work within this family of braids throughout the rest of this paper. We begin with necessary definitions.  
 

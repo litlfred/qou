@@ -1,0 +1,35 @@
+Section 3.3 Examples
+
+where m(M) is the set of connected components of M and Hom(7(M),G) is the set of
+
+maps from m(M) to G.
+
+Proof: The first equality is by Proposition [3.3.3
+Note that both of the two sides of the second equality is multiplicative with respect
+to disjoint union of connected components. Thus it suffices to prove the equality for a
+connected manifold M, namely, |7o(/)| = 1.
+Choose a maximal spanning tree K’, which is a sub complex of T' with |T°|—1 edges.
+Then it is easy to see that there is a |G 01 to one correspondence between the set of
+
+admissible colorings and Hom(7(/), G). a
+
+3.3.3 Trivial G-grading with trivial G-action
+
+Given a ribbon fusion category C and a finite group G, we can construct a G-BSFC
+D= @C,, where C, =C if g = e, and C, = 0 otherwise, and G acts on D by identity.
+We consider the partition function associated to D.
+
+Since the nontrivial part of D is constrained in the trivial sector, the coloring g
+on 1-simplices needs to satisfy the Dijkgraaf-Witten coloring, namely, go2goigi2 = e for
+each 2-simplex (012). The colorings on 2- and 3-simplices are independent of those on
+l-simplices, and they are the same as the colorings of Crane-Yetter model. Moreover,
+
+the partition function corresponding to each colored 4-simplex is the same as that of
+
+Crane-Yetter since the group action here is trivial.
+
+Proposition 3.3.5 [fD has a trivial G-grading and a trivial G-action where the trivial
+
+sector of D is C, then Zp(M;T) = CYe(M)DWe(M).
+
+49

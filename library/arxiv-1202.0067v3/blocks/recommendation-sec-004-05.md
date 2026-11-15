@@ -1,0 +1,1 @@
+The character value $\chi(g_{n\alpha})$ in part (i) is the subject of Theorem~\ref{thm:ind}; we shall see that combining this theorem with part (ii) gives Equation~\eqref{eq:omegares} in \S\ref{sec:proof} below.

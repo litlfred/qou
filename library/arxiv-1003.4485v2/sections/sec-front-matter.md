@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1003.4485v2.pdf
 source_sha256: 714d73873cecd73a
 toc_source: outline
+doc_brief: "An Invitation to Higher Gauge Theory — In this easy introduction to higher gauge theory, we describe parallel trans- port for particles and strings in terms of 2-connections on 2-bundles."
 ---
 arXiv:1003.4485v2  [hep-th]  18 Feb 2015
 An Invitation to Higher Gauge Theory

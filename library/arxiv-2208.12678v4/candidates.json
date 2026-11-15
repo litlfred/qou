@@ -1,0 +1,121 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2208.12678v4",
+ "source": {
+  "structure_sha256": "406d36ff4968091de99ee1cef3a6caeac57654099ecc6515a86c80bf9e97b7fa",
+  "file": "2208.12678v4.pdf"
+ },
+ "provenance": {
+  "title": "STATIONARY CURVES UNDER THE M\u00d6BIUS-PLATEAU ENERGY",
+  "authors": "MAX LIPTON AND GOKUL G. NAIR",
+  "arxiv": {
+   "id": "2208.12678",
+   "version": "4",
+   "primary_class": "math.DG",
+   "stamp_date": "9 Mar 2025"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 6,
+  "by_kind": {
+   "recommendation": 6
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "By working directly with the oscillatory variational integrals to derive nontrivial necessary conditions, we will see that while screw-like critical points are abundant, ribbon-like solutions are strongly constrained: they must have high-frequency (low pitch), thin width and remain close to the axis.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We must still show Length(\u03b3\u221e) \u22652\u03c0.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-2-problem-formulation.md",
+   "section_title": "Problem Formulation",
+   "pages": "2-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "(6) The issue we must address is that the Plateau solutions uk might not converge to u\u221eas maps in any sense.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-2-problem-formulation.md",
+   "section_title": "Problem Formulation",
+   "pages": "2-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "\\begin{theorem} A stationary helicoidal ribbon must have high frequency (equivalently, low pitch), very small width in comparison to the frequency, and remain close to the axis.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-4-necessary-conditions-of-m\u00f6bius-plateau-critica.md",
+   "section_title": "Necessary Conditions of M\u00f6bius-Plateau Critical Helix Pairs",
+   "pages": "6-11",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "That is, the following conditions on the parameters must hold: \\begin{enumerate} \\item $\\omega > 1$ \\item $|B - A|^2 < C(\\alpha,\\beta) \\omega$ \\item $|A + B| < 2$. \\end{enumerate} \\end{theorem} \\begin{remark} We only prove the case when $\\alpha = \\beta = 1$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-4-necessary-conditions-of-m\u00f6bius-plateau-critica.md",
+   "section_title": "Necessary Conditions of M\u00f6bius-Plateau Critical Helix Pairs",
+   "pages": "6-11",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "By analyzing the Euler-Lagrange equations, we show that screw-like solutions are plentiful, whilst ribbon-like solutions impose strong constraints on their parameters: they must have high frequency (equivalently, low pitch), thin width in comparison to the frequency, and remain close to the axis.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-1",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

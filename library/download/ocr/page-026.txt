@@ -1,0 +1,57 @@
+1410 S.G. Bobkov and F. Gétze
+
+of eigenvalues X; inside it. Again, Corollary 6.5 may be applied to the standard semicircle law G
+with density g(x), in which case B = cg. This gives that, under LSI(o?), imposed on the
+entries &;,, for any 5 > 0 and any interval J of length || > 4|| F — G||/5, we have that
+
+Ni [eas
+I
+
+n
+
+<4|/| (8.6)
+
+with probability at least 1 — 4exp{— =P [113}, As we have already mentioned, under PI(7),
+
+one can show that || F — G|| < Cn~?/3 ([8], Theorem 1.1). Therefore, (8.6) holds true with high
+probability, provided that
+
+|] = Cn 8 (8.7)
+
+with large C (of order, say, log* n).
+
+Such properties have been intensively studied in recent years in connection with the universal-
+ity problem. In particular, it is shown in [18] and [41] that the restriction (8.7) may be weakened
+to |J| = C,(log® n)/n under the assumption that the intervals J are contained in [—2 — ¢,2+ e],
+€ > 0, that is, ‘in the bulk’.
+
+Appendix
+
+Here we recall some facts about Poincaré-type and log-Sobolev inequalities. While Lemmas 2.2
+and 5.3 list some of their consequences, one might wonder which measures actually satisfy these
+analytic inequalities. Many interesting examples can be constructed with the help of the following
+elementary proposition.
+
+Proposition Al. Let 1,...,4N be probability measures on R satisfying Pl(o) (resp.,
+LSI(o7)). The image j of the product measure 41 ® --- ® jy under any map T:RN — R"
+with finite Lipschitz seminorm satisfies PI(o?||T Iip) (resp., LSI(o7|| Tlitip)):
+
+On the real line, disregarding the problem of optimal constants, Poincaré-type inequalities
+may be reduced to Hardy-type inequalities with weights. Necessary and sufficient conditions for
+a measure on the positive half-axis to satisfy a Hardy-type inequality with general weights were
+found in the late 1950s in the work of Kac and Krein [27]. We refer the interested reader to [35]
+and [34] for a full characterization and an account of the history; here, we just recall the principal
+result (see also [7]).
+
+Let yx be a probability measure on the line with median m, that is, ~(—oo,m) < 3 and
+
+pu(m, +00) < 3 Define the quantities
+
+~ di
+Ao(h) = sup nto.) [ : |
+x<m co Pult)
+
++00 dt
+Ai(u) = sup ute. +90) [ |
+x>m x Put)
+

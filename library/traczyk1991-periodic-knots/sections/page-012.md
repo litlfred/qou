@@ -1,0 +1,65 @@
+---
+doc_id: traczyk1991-periodic-knots
+doc_title: "Periodic knots and the skein polynomial"
+section_id: page-012
+section_title: "Page 12"
+pages: 12-12
+pdf_page: 12
+source_pdf: traczyk1991-periodic-knots.pdf
+source_sha256: 2e9236877cec4604
+text_source: ocr
+granularity: page
+doc_brief: "Periodic knots and the skein polynomial — 12 sections: Page 1; Page 2; Page 3"
+---
+84
+
+P. Traczyk
+
+References
+
+[B-Z]
+[F-M]
+
+0]
+[L-M]
+[K-S]
+[M]
+
+[Ms]
+[P]
+
+[R]
+(T1]
+
+(T2]
+[Y]
+
+Burde, G., Zieschang, H.: Knots. Berlin New York: Walter de Gruyter 1985
+
+Frank, J., Williams, R.F.: Braids and the Jones polynomial. Trans. Am. Math. Soc.
+303, 97-108 (1987)
+
+Jones, V.F.R.: Hecke algebra representations of braid groups and link polynomials.
+Ann. Math. 126, 335-388 (1987)
+
+Lickorish, W.B.R., Millett, K.C.: A polynomial invariant of oriented links. Topology
+26, 107-141 (1987)
+
+Kodama, K., Sakuma, M.: Symmetry groups of prime knots up to 10 crossings. (to
+appear)
+
+Morton, H.R.: Seifert circles and knot polynomials. Math. Proc. Camb. Philos. Soc.
+99, 107-109 (1986)
+
+Murasugi, K.: Jones polynomials of periodic links. Pac. J. Math. 131, 319-329 (1988)
+Przytycki, J.: On Murasugi’s and Traczyk’s criteria for periodic links. Math. Ann.
+283, 465-478 (1989)
+
+Rolfsen, D.: Knots and links. Berkeley: Publish or Perish Inc. 1976
+
+Traczyk, P.: 10,9, has no period 7: a criterion for periodic links. Proc. Am. Math.
+Soe. (to appear)
+
+Traczyk, P.: A criterion for knots of period 3. Topology Appl. (to appear)
+
+Yokota, Y.: The Jones polynomial of periodic knots. (to appear)

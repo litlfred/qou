@@ -1,0 +1,55 @@
+---
+doc_id: schechtman-varchenko1991-arrangements
+doc_title: "Arrangements of hyperplanes and Lie algebra homology"
+section_id: page-050
+section_title: "Page 50"
+pages: 50-50
+pdf_page: 50
+source_pdf: schechtman-varchenko1991-arrangements.pdf
+source_sha256: 0100fd32438740f0
+text_source: ocr
+granularity: page
+doc_brief: "Arrangements of hyperplanes and Lie algebra homology — 56 sections: Page 1; Page 2; Page 3"
+---
+188 V.V. Schechtman and A.N. Varchenko
+
+(7.5.1) n=
+
+—O<—_@_®<-©
+Nv O<——_®—_®<-®
+= O<——®—®<--@®
+
+Let us call connected components of it branches (they are similar to islands
+of § 5). The m-th branch has the form
+
+e e ore fo) °
+va) y(a+1) y(b) m
+
+if e~'(m)=[a, b]. Sometimes we'll draw it without marking internal black ver-
+tices: © 1c
+(a) m
+
+For an arrow xa x let us call its weight the number w(a)=(w(s), w(t))/K,
+where w(@)= — th, w(e .)- Aj. For i, jé[n], i+ let us introduce differential form
+
+Vjn as follows. Its aemenah is the sum of all diagrams obtained from (7.5.1)
+by adding one arrow connecting a point in i-th branch with a point in j-th
+branch, multiplied by the weight of an arrow:
+
+(7.5.2) Vjn=d - w(a)
+
+a
+
+7.5.3 Example.
+
+1 2
+FF) FOF Gad PK FP Con, Aa)
+w() QP Tees
+
+So we get linear operators
+(7.5.4) Vij: Qs(La) > WBs(Lr)-
+For n=9-6,dt, A ... AdtyeQ'(G) put
+
+finan -tzdtyn we Adt A... Adty.
+
+Here is the first key point.

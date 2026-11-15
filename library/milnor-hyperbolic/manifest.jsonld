@@ -11,18 +11,12 @@
   ],
   "title": "milnor-hyperbolic",
   "contains": [
+    "library/milnor-hyperbolic/sections/sec-front-matter",
     "library/milnor-hyperbolic/sections/sec-000",
-    "library/milnor-hyperbolic/sections/sec-001",
-    "library/milnor-hyperbolic/sections/sec-002",
-    "library/milnor-hyperbolic/sections/sec-003",
-    "library/milnor-hyperbolic/sections/sec-004",
-    "library/milnor-hyperbolic/sections/sec-005",
-    "library/milnor-hyperbolic/sections/sec-006",
-    "library/milnor-hyperbolic/sections/sec-007",
-    "library/milnor-hyperbolic/sections/sec-008"
+    "library/milnor-hyperbolic/sections/sec-001"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "milnor-hyperbolic",
     "title_source": "slug",
@@ -31,8 +25,8 @@
     "pages": 16,
     "arxiv": null,
     "doi": null,
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

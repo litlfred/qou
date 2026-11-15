@@ -1,0 +1,3351 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "s00209-021-02825-4",
+ "status": "determined",
+ "pages_unread": [
+  16,
+  40
+ ],
+ "body_size": 9.5,
+ "footnotes": [],
+ "uncalled_notes": [
+  {
+   "id": "fn-p041-1",
+   "page": 41,
+   "mark": "5",
+   "text": "Ehrenborg, R., Rota, G.-C.: Apolarity and canonical forms for homogeneous polynomials. Eur. J. Comb. 14(3), 157–181 (1993)",
+   "block": "library/s00209-021-02825-4/blocks/prose-sec-030"
+  },
+  {
+   "id": "fn-p041-2",
+   "page": 41,
+   "mark": "6",
+   "text": "Fulton, W., Harris, J.: Representation Theory: A First Course, vol. 129. Springer Science and Business Media, Berlin (2013)",
+   "block": "library/s00209-021-02825-4/blocks/prose-sec-030"
+  },
+  {
+   "id": "fn-p041-3",
+   "page": 41,
+   "mark": "7",
+   "text": "Fisk, S.: Polynomials, roots, and interlacing. arXiv preprint arXiv:math/0612833 (2006)",
+   "block": "library/s00209-021-02825-4/blocks/prose-sec-030"
+  },
+  {
+   "id": "fn-p041-4",
+   "page": 41,
+   "mark": "8",
+   "text": "Grace, J.H.: The zeros of a polynomial. In: Proc. Cambridge Philos. Soc., vol. 11, pp. 352–357 (1902)",
+   "block": "library/s00209-021-02825-4/blocks/prose-sec-030"
+  },
+  {
+   "id": "fn-p041-5",
+   "page": 41,
+   "mark": "9",
+   "text": "Grace, J.H., Young, A.: The Algebra of Invariants. Chelsea Pub. Co., New York (1903)",
+   "block": "library/s00209-021-02825-4/blocks/prose-sec-030"
+  },
+  {
+   "id": "fn-p041-6",
+   "page": 41,
+   "mark": "10",
+   "text": "Humphreys, J.: Introduction to Lie Algebras and Representation Theory, vol. 9. Springer Science and Business Media, Berlin (2012)",
+   "block": "library/s00209-021-02825-4/blocks/prose-sec-030"
+  },
+  {
+   "id": "fn-p041-7",
+   "page": 41,
+   "mark": "11",
+   "text": "Kowalski, E.: An Introduction to the Representation Theory of Groups, vol. 155. American Mathematical Society, Providence (2014)",
+   "block": "library/s00209-021-02825-4/blocks/prose-sec-030"
+  },
+  {
+   "id": "fn-p041-8",
+   "page": 41,
+   "mark": "12",
+   "text": "Melamud, E.: Linear operators on polynomials preserving roots in open circular domains. Proc. Am. Math. Soc. 143(12), 5213–5218 (2015)",
+   "block": "library/s00209-021-02825-4/blocks/prose-sec-030"
+  },
+  {
+   "id": "fn-p041-9",
+   "page": 41,
+   "mark": "13",
+   "text": "Olver, P.J.: Classical Invariant Theory, vol. 44. Cambridge University Press, Cambridge (1999)",
+   "block": "library/s00209-021-02825-4/blocks/prose-sec-030"
+  },
+  {
+   "id": "fn-p041-10",
+   "page": 41,
+   "mark": "14",
+   "text": "Pólya, G., Schur, J.: Über zwei arten von faktorenfolgen in der theorie der algebraischen gleichungen. Journal für die Reine und Angewandte Mathematik 144, 89–113 (1914)",
+   "block": "library/s00209-021-02825-4/blocks/prose-sec-030"
+  },
+  {
+   "id": "fn-p041-11",
+   "page": 41,
+   "mark": "15",
+   "text": "Rahman, Q.I., Schmeisser, G.: Analytic Theory of Polynomials, vol. 26. Oxford University Press, Oxford (2002)",
+   "block": "library/s00209-021-02825-4/blocks/prose-sec-030"
+  },
+  {
+   "id": "fn-p041-12",
+   "page": 41,
+   "mark": "16",
+   "text": "Wagner, D.: Multivariate stable polynomials: theory and applications. Bull. Am. Math. Soc. 48(1), 53–84 (2011)",
+   "block": "library/s00209-021-02825-4/blocks/prose-sec-030"
+  },
+  {
+   "id": "fn-p041-13",
+   "page": 41,
+   "mark": "17",
+   "text": "Zaheer, N.: On polar relations of abstract homogeneous polynomials. Trans. Am. Math. Soc. 218, 115–131 (1976)",
+   "block": "library/s00209-021-02825-4/blocks/prose-sec-030"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "JonathanLeake"
+  },
+  {
+   "page": 1,
+   "mark": "m",
+   "context": "resultpertainingtostablepolynomials.Given\u0002⊂C"
+  },
+  {
+   "page": 1,
+   "mark": "m",
+   "context": "realcoefﬁcientsandisH"
+  },
+  {
+   "page": 2,
+   "mark": "m",
+   "context": "they solved both problems for K=R and \u0002=H"
+  },
+  {
+   "page": 2,
+   "mark": "m",
+   "context": "+, where"
+  },
+  {
+   "page": 2,
+   "mark": "m",
+   "context": "whichhasimageofdimensiongreaterthanone.Then,TmapsH"
+  },
+  {
+   "page": 2,
+   "mark": "m",
+   "context": "weakly H"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "+-stable polynomials if and only if SymbBB(T ) is H"
+  },
+  {
+   "page": 2,
+   "mark": "m",
+   "context": "+-stable polynomials if and only if SymbBB(T ) is H2"
+  },
+  {
+   "page": 2,
+   "mark": "l",
+   "context": "m× H"
+  },
+  {
+   "page": 2,
+   "mark": "l",
+   "context": "m× H"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "and representation theoretic concepts. We view C"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "standard action, given as follows. For φ∈SL2(C) andf∈C"
+  },
+  {
+   "page": 3,
+   "mark": "m",
+   "context": "1, . . . , xm] can be viewed as a representation of (SL2(C))"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "1⊠W"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "1⊠W"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "1⊠W2∼=W"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "1⊠W2∼=W1 ⊠W"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "Let’sseehowthisworksintheunivariatecase.ConsiderC"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "form is an SL2(C)-invariant bilinear form on C"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "variant bilinear form on Cn[x]. This form, applied tof , g∈C"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "(−1)"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "Withthis,weobtaintheidentiﬁcationdescribedabove:Hom(C"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "Withthis,weobtaintheidentiﬁcationdescribedabove:Hom(Cn[x], C"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": ",weobtaintheidentiﬁcationdescribedabove:Hom(Cn[x], Cm[x])∼=C"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "C"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "Cm[x] ∼= C(n,"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "Theorem[8] Letf , g∈C"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "about polynomials in C(n,"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "operatorsinHom(C"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "operatorsinHom(Cn[x], C"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "Theorem 5.1 Fix λ ∈N"
+  },
+  {
+   "page": 5,
+   "mark": "f",
+   "context": "0and"
+  },
+  {
+   "page": 5,
+   "mark": "g",
+   "context": "0andf ,"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "0andf , g∈Cλ[x"
+  },
+  {
+   "page": 5,
+   "mark": "x",
+   "context": "0andf , g∈Cλ[x1, . . . ,"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "0andf , g∈Cλ[x1, . . . , x"
+  },
+  {
+   "page": 5,
+   "mark": "f",
+   "context": "0andf , g∈Cλ[x1, . . . , xm] such that"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "C:= H−∪R−. Iffis C"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "C"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Theorem7.8FixalinearoperatorT:R"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "Theorem7.8FixalinearoperatorT:Rn[x]→R"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "reference is made to CP"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "isomorphismV (n)∼=Sym"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "Let[n]:={1, 2, . . . , n}and(1"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "Let[n]:={1, 2, . . . , n}and(1m):=(1, . . . , 1)∈N"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "0.Forλ=(λ"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "0.Forλ=(λ1, . . . , λ"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "0.Forλ=(λ1, . . . , λm)∈N"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "f∈C[x"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "f∈C[x1, . . . , x"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "f∈C[x1, . . . , xm] : degxk( f ) ≤λ"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "we call polynomials in C(1"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "1, . . . , xm] multi-afﬁne. We will also use the shorthand C"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "spaces deﬁned above. For λ = (λ1, . . . , λm) ∈N"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "e shorthandV (λ)=VC(λ). As above, we call polynomials inV (1"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "We let CP"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "We let CP1denote the projective space of lines in C"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "with the Riemann sphere. Note that CP"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "withoneextrapointaddedatinﬁnity.WewilloftenidentifyCP"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "projections into CP"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "losed half-planes and complements of discs projected into CP"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "of) the setS in CP"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "There is also a natural ordering structure on N"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "usedthroughout.Fixλ=(λ1, . . . , λm)andα=(α1, . . . , αm)inN"
+  },
+  {
+   "page": 7,
+   "mark": "l",
+   "context": "β= (β1, . . . , βn) in N"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "0. We say α≤λ whenever α"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "0. We say α≤λ whenever αk≤λ"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "0. We say α≤λ whenever αk≤λk for all"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "= λ1+· · ·+λm, and λ⊔β:= (λ1, . . . , λm, β1, . . . , βl) ∈N"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "We also make use of a number of shorthands. Fix μ, λ ∈N"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "xμ∈Cλ[x1, . . . , xm] via xμ:=xμ"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "1"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "1xμ"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "2· · · xμ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "x:= ∂μ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "x1∂μ"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "x2· · · ∂μ"
+  },
+  {
+   "page": 7,
+   "mark": "y",
+   "context": "∂x. When considering V (λ), we deﬁne"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "(−1)μ"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "(−1)μ1· · · (−1)μ"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "The usual degree-n homogenization of a polynomialf∈C"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Hmgn: C"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "x"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "xk\u0011→x"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "xk\u0011→xky"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "More generally, for λ ∈N"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "C"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "ynomials in V (n) over the usual univariate polynomials in C"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "polynomialsinC"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "hisisthatweconsiderpolynomialsinV (n)tohaveexactlynrootsinCP"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "p(x1, y1, . . . , xm, ym) ∈V (λ) to have zeros in (CP"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "p(x1, y1, . . . , xm, ym) ∈V (λ) to have zeros in (CP1)"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "to a single factor of CP"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "to a single factor of CP1in (CP"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "to a single factor of CP1in (CP1)"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "We use the notation (a: b) ∈CP"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "∈(CP"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "∈(CP1)"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "polynomials to be in (CP"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "polynomials to be in (CP1)"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "k·f (x"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "k·f (x1/y"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "k·f (x1/y1, . . . ,"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "k·f (x1/y1, . . . , x"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "k·f (x1/y1, . . . , xm/y"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "yλ"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "Given(α: β) ∈CP"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "iven(α: β) ∈CP1andφ∈SL2(C),wedeﬁnetheusualactionofSL2(C)onCP"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "its corresponding Möbius transformation on CP"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "SL2(C) acts transitively on circular regions in CP"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "ThistheninducesanactiononV (n)byactingontheroots(inCP"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "Wecandeﬁneasimilaractionof(SL2(C))"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "Wecandeﬁneasimilaractionof(SL2(C))monV (λ),forλ∈N"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "p∈V (λ) and (φ1, . . . , φm) ∈SL2(C)"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "rnV (n) andV (λ) into representations of SL2(C) and (SL2(C))"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "(SL2(C))"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "(SL2(C))"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "of different groups ((SL2(C))"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "D"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "D"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "want to extend this deﬁnition to act on V (λ) ⊗V (λ) for λ∈N"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "(∂xi⊗∂yi−∂yi⊗∂xi )λ"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "−→V (0"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "−→V (0m) ⊗V (0"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "formofV (λ).Thisistheunique(uptoscalar)nondegenerate(SL2(C))"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "SinceV (0) ⊗V (0)∼=CandV (0"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "SinceV (0) ⊗V (0)∼=CandV (0m) ⊗V (0"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "D"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "0)of(SL"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "0)of(SL2(C))"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "GivenrepresentationsV (λ)andV (α)(forλ∈N"
+  },
+  {
+   "page": 10,
+   "mark": "l",
+   "context": "0andα∈N"
+  },
+  {
+   "page": 10,
+   "mark": "l",
+   "context": "(SL2(C))"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "as a representation of (SL2(C))"
+  },
+  {
+   "page": 11,
+   "mark": "y",
+   "context": "μ≤λ(xμ"
+  },
+  {
+   "page": 11,
+   "mark": "y",
+   "context": "μ≤λ(xμyλ−μ)∗⊠T (xμ"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "the apolarity form provides an (SL2(C))"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "Proposition 3.5For any λ∈N"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "0, there is an (SL"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "0, there is an (SL2(C))"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "y"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "y"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "(−1)μxλ−μyμis an (SL2(C))"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "With this, we consider the following string of (SL2(C))"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "Deﬁnition 3.6Forλ∈N"
+  },
+  {
+   "page": 11,
+   "mark": "l",
+   "context": "0andα∈N"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "0,wedeﬁnethefollowing(SL"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "0,wedeﬁnethefollowing(SL2(C))"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "Lemma 3.7(SymbolLemma)Fixλ∈N"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "∈N"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "0,and"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "Dλ(Symb(T ) ⊗q · r) = (λ!)"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "= (λ!)"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "= (λ!)"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "Given λ ∈N"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "0, a polynomial"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "0, a polynomialp(x"
+  },
+  {
+   "page": 12,
+   "mark": "y",
+   "context": "0, a polynomialp(x1,"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "0, a polynomialp(x1, y"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "0, a polynomialp(x1, y1, . . . ,"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "0, a polynomialp(x1, y1, . . . , x"
+  },
+  {
+   "page": 12,
+   "mark": "y",
+   "context": "0, a polynomialp(x1, y1, . . . , xm,"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "0, a polynomialp(x1, y1, . . . , xm, y"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "vanish in H"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "+⊂(CP"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "+⊂(CP1)"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "+⊂(CP1)m. More generally,"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "Givensome“pole”x0∈C,thepolarderivativewithrespecttox0off∈C"
+  },
+  {
+   "page": 13,
+   "mark": "x",
+   "context": "(d"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "(dx0f )(x) := nf (x) −(x−x"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "0"
+  },
+  {
+   "page": 13,
+   "mark": "x",
+   "context": "0d"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "0dx0"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "∈SL2(C). Deﬁne the pole of φ to be (−d: c) ∈CP"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "as the element of CP"
+  },
+  {
+   "page": 13,
+   "mark": "x",
+   "context": "d"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "dx0on C"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "CP"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "se φ∈SL2(C) to be a rotation of the Riemann sphere (i.e., CP"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "CP"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "CP1is the obvious one. A circular region in CP"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": " one. A circular region in CP1is deﬁned to be the sets in CP"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "the set of all circular regions in C or in CP"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "Lemma 4.3Let C⊆CP"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "et (x0:y0)/∈C be the pole of φ. Then, φ maps (x0:y0) to ∞∈CP"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "Deﬁnition 4.4Given C⊆CP"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "We now classify all projectively convex sets in CP"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "Proposition 4.5(Zervos)Let C⊆CP"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "Proposition 4.6(Laguerre) Let C⊆CP"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "ProofGauss–Lucas and the fact that CP"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "Corollary 4.7Let Ck⊆CP"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "weakly H"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "+-stable (equivalently, if"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "+-stable (equivalently, ifp + iqis weakly H"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "Lemma 4.10Fix λ ∈N"
+  },
+  {
+   "page": 15,
+   "mark": "l",
+   "context": "0, α∈N"
+  },
+  {
+   "page": 15,
+   "mark": "l",
+   "context": "is stable, then T (p) is either H"
+  },
+  {
+   "page": 15,
+   "mark": "l",
+   "context": "+-stable, H"
+  },
+  {
+   "page": 15,
+   "mark": "l",
+   "context": " By Hermite-Biehler again, T (p) =T (q) + iT (r) is either H"
+  },
+  {
+   "page": 15,
+   "mark": "l",
+   "context": "+-stable, H"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "Lemma 4.11[1, Proposition 4.1]Let p∈VC(λ)be both H"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "+-stable and H"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "f∈C"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "Theorem 5.1Fix λ ∈N"
+  },
+  {
+   "page": 17,
+   "mark": "q",
+   "context": "0and p,"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "where the closures are considered to be in CP"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "where the closures are considered to be in CP1. Ifpis C"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "C"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "(1, 0, 0, . . . , 0) ∈N"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "Careprojectivelyconvex,Corollary4.7implies(a∂x1+b∂y1)pisC"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "C"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "Dλ−δ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "= α"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "= α2Dλ−δ"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "= α2Dλ−δ1(∂x1 p ⊗∂x1q) −Dλ−δ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "−αDλ(p ⊗q) = α"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "−αDλ(p ⊗q) = α2Dλ−δ"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "−αDλ(p ⊗q) = α2Dλ−δ1(∂x1 p ⊗∂x1q) −Dλ−δ"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "n and the stability properties discussed above, we have Dλ−δ"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "Dλ−δ"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "Dλ−δ1(∂y1 p ⊗∂y1q)̸= 0, andDλ−δ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "α"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "α2Dλ−δ"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "α2Dλ−δ1(∂x1 p ⊗∂x1q) −Dλ−δ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "α2Dλ−δ1(∂x1 p ⊗∂x1q) −Dλ−δ1(∂y1 p ⊗∂y1q)̸= 0 \u0018⇒α"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "α2Dλ−δ1(∂x1 p ⊗∂x1q) −Dλ−δ1(∂y1 p ⊗∂y1q)̸= 0 \u0018⇒α2̸=Dλ−δ"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "α2Dλ−δ1(∂x1 p ⊗∂x1q) −Dλ−δ1(∂y1 p ⊗∂y1q)̸= 0 \u0018⇒α2̸=Dλ−δ1(∂y"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "α2Dλ−δ1(∂x1 p ⊗∂x1q) −Dλ−δ1(∂y1 p ⊗∂y1q)̸= 0 \u0018⇒α2̸=Dλ−δ1(∂y1"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "1(∂x1 p ⊗∂x1q) −Dλ−δ1(∂y1 p ⊗∂y1q)̸= 0 \u0018⇒α2̸=Dλ−δ1(∂y1 p ⊗∂y"
+  },
+  {
+   "page": 17,
+   "mark": "q",
+   "context": "(∂x1 p ⊗∂x1q) −Dλ−δ1(∂y1 p ⊗∂y1q)̸= 0 \u0018⇒α2̸=Dλ−δ1(∂y1 p ⊗∂y1"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "Dλ−δ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "However, we can pick α∈H+ ∪R+ such that α"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "Dλ−δ"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "Dλ−δ"
+  },
+  {
+   "page": 17,
+   "mark": "q",
+   "context": "Dλ−δ1(∂x1 p⊗∂x1"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "Deﬁnition 5.2Fix m∈N0and any setsS1, S2⊆(CP"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "Deﬁnition 5.2Fix m∈N0and any setsS1, S2⊆(CP1)"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "forallλ∈N"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "0and"
+  },
+  {
+   "page": 17,
+   "mark": "q",
+   "context": "0andp,"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "0andp, q∈V (λ)suchthat"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "0andp, q∈V (λ)suchthatpisS"
+  },
+  {
+   "page": 17,
+   "mark": "q",
+   "context": "0andp, q∈V (λ)suchthatpisS1-stableand"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "0andp, q∈V (λ)suchthatpisS1-stableandqisS"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "Corollary 5.4For any m∈N0, ((H+ ∪R+)"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "Corollary 5.4For any m∈N0, ((H+ ∪R+)m, (H−∪R−)"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "Lemma 5.5Fix λ ∈N"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "0and any closed circular regions C"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "0and any closed circular regions C1, . . . , C"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "0and any closed circular regions C1, . . . , Cm⊂CP"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "0and any closed circular regions C1, . . . , Cm⊂CP1. Let"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "ProofFollows from compactness of CP"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "Lemma 5.6Fixn∈N0andanyprojectivelyconvexC≡C◦∪γ⊂CP"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": " ∂C◦denote the boundary of (the closure of) C◦, and let S⊆CP"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "Theorem 5.7For m∈N0and C1, . . . , Cm, B1, . . . , Bm⊆CP"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "(i)Forallk∈[m],CkandBkareprojectivelyconvex,Ck∪Bk=CP"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "Ck∪Bk= CP"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "Ck∪Bk= CP"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "(iv)For m= 1, C1andB1are projectively convex and C1 ∪B1= CP"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "Proof(i).ByProposition4.5,everyprojectivelyconvexregioninCP"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "opencircularregionandaportionofitsboundary.SinceCk∪Bk=CP"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "for some φk∈SL2(C). SinceDλis (SL2(C))"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "such that Ck⊂Ukfor all k∈[m]. Since Ck ∪Bk= CP"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "k= CP"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "k= CP"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "k⊂U"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "k⊂B"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "k⊂Bk, we have that"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "CP"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "1-stable. So WLOG we may assume that B"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "1; that is, the boundaries coincide. If C"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "then so isB1, and thereforeD"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "1∪γ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "1.Analogouslywehave B"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "1∪ψ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "1∪ψ1 with∅̸= ψ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "1, such that γ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "1, such that γ1⊆1, ψ"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "1, such that γ1⊆1, ψ1⊆1,"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "1∪1)-stable, and"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "1and′ ∩′ is exactly two points. ThereforeD"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "Example 5.8Letλ=(1, 1, 1),denoteE:=CP"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "3-stable nor E"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "is D"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "is D3-stable and E"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "stability, where {(a: b)} is a subset of CP"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "bset of CP1consisting of a single point. Further, given λ ∈N"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "and(a, b)=(a1, b1, . . . , am, bm)∈C"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "and(a, b)=(a1, b1, . . . , am, bm)∈C2"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "0and (a,"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "0and (a, b)=(a"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "0and (a, b)=(a1,"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "0and (a, b)=(a1, b"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "0and (a, b)=(a1, b1, . . . ,"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "0and (a, b)=(a1, b1, . . . , a"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "0and (a, b)=(a1, b1, . . . , am,"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "0and (a, b)=(a1, b1, . . . , am, b"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "0and (a, b)=(a1, b1, . . . , am, bm)∈C"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "0and (a, b)=(a1, b1, . . . , am, bm)∈C2"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "0and (a, b)=(a1, b1, . . . , am, bm)∈C2msuch that (a"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "0and (a, b)=(a1, b1, . . . , am, bm)∈C2msuch that (a j,"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "0and (a, b)=(a1, b1, . . . , am, bm)∈C2msuch that (a j, b"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "Deﬁnition 5.9Fix λ∈N"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "(b j x j−a j y j)λ"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": "Lemma 5.10(EvaluationSymbolLemma)Fixλ∈N"
+  },
+  {
+   "page": 20,
+   "mark": "p",
+   "context": "0,"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "(a1, b1, . . . , am, bm)∈C"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": "(a1, b1, . . . , am, bm)∈C2"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "Dλ((bx−ay)λ⊗p) = (λ!)"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "Dλ((bx−ay)λ⊗p) = (λ!)2p(a, b) ⊗1 = (λ!)"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": "Corollary 5.11Fix λ∈N"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "0, q∈V (λ), and any disjoint Grace pair (C"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": "0, q∈V (λ), and any disjoint Grace pair (C1 × · · · × C"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "0, q∈V (λ), and any disjoint Grace pair (C1 × · · · × Cm, B"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "(ii) ⇒(iii) Fix any (a, b) = (a1, b1, . . . , am, bm) ∈C"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": "(ii) ⇒(iii) Fix any (a, b) = (a1, b1, . . . , am, bm) ∈C2"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "0̸=Dλ(Symb(ev(a:b)) ⊗q) = (λ!)"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "0̸=Dλ(Symb(ev(a:b)) ⊗q) = (λ!)2q(a, b) ⊗1 = (λ!)"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "That is, q(a, b)̸= 0 for any (a, b) ∈C"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": "That is, q(a, b)̸= 0 for any (a, b) ∈C2"
+  },
+  {
+   "page": 21,
+   "mark": "m",
+   "context": "Theorem 1.1 (Borcea–Brändén) Fix λ ∈N"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "0and any linear operator T: Cλ[x"
+  },
+  {
+   "page": 21,
+   "mark": "x",
+   "context": "0and any linear operator T: Cλ[x1, . . . ,"
+  },
+  {
+   "page": 21,
+   "mark": "m",
+   "context": "0and any linear operator T: Cλ[x1, . . . , x"
+  },
+  {
+   "page": 21,
+   "mark": "m",
+   "context": "(i)Tmaps H"
+  },
+  {
+   "page": 21,
+   "mark": "m",
+   "context": "+-stable polynomials to weakly H"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "(a)SymbBB(T ) is H"
+  },
+  {
+   "page": 21,
+   "mark": "m",
+   "context": "(a)SymbBB(T ) is H2"
+  },
+  {
+   "page": 21,
+   "mark": "m",
+   "context": "where q∈C[x1, . . . , xm] is H"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "Example 6.1Deﬁne T: C"
+  },
+  {
+   "page": 21,
+   "mark": "k",
+   "context": "akx"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "akxk\u0011→(an+ an−2)x"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "(z"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "(z2+ 1)x"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "(z2+ 1)xn, which is not H"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "stability,itonlypreservesweakH+-stability.Speciﬁcally,1∈C"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "Theorem 6.2Fix λ∈N"
+  },
+  {
+   "page": 22,
+   "mark": "l",
+   "context": "0, α∈N"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "· · · × Cm, B1 × · · · × Bm), and any sets S1, . . . , Sl⊆CP"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "xample 6.3Fixp, q∈V (n), so that (z j:1) are the roots in CP"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "x"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "Let C⊂CP"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "j(C +z"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "isC× (CP"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "(−1)"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "(−1)kpkqkx"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "(−1)kpkqkxky"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "Let C⊂CP"
+  },
+  {
+   "page": 23,
+   "mark": "j",
+   "context": "j(z"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "C ×(CP"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "Proposition 6.5Fix λ ∈N"
+  },
+  {
+   "page": 23,
+   "mark": "l",
+   "context": "0, α∈N"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "pair(C1×· · ·×Cm, B1×· · ·×Bm),andanysetsS1, . . . , Sl⊆CP"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "-stable q∈V (λ) and any (c, d) = (c1, d1, . . . , cl, dl) ∈C"
+  },
+  {
+   "page": 23,
+   "mark": "l",
+   "context": "stable q∈V (λ) and any (c, d) = (c1, d1, . . . , cl, dl) ∈C2"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "suchthat(c j:d j)∈Sjforallj∈[l].Letkλ,α:=(−1)α(λ!)"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "suchthat(c j:d j)∈Sjforallj∈[l].Letkλ,α:=(−1)α(λ!)2(α!)"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "(ii)⇒(iii).Fix(a, b)=(a1, b1, . . . , am, bm)∈C"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "(ii)⇒(iii).Fix(a, b)=(a1, b1, . . . , am, bm)∈C2"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "j∈[m], and ﬁx (c, d)=(c1, d1, . . . , cl, dl)∈C"
+  },
+  {
+   "page": 23,
+   "mark": "l",
+   "context": "j∈[m], and ﬁx (c, d)=(c1, d1, . . . , cl, dl)∈C2"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "Let kλ,α:= (−1)α(λ!)"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "Let kλ,α:= (−1)α(λ!)2(α!)"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "(x−(z + t))"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "= (xws −(zs + tw)y)"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "+as an element of Hom(V (n,"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "+on elements"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "(zy −xw)"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "(zy −xw)n⊠(ty −xs)"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "= (xws −(zs + tw)y)"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "+is the operator that has our desired symbol. Fixing any"
+  },
+  {
+   "page": 24,
+   "mark": "b",
+   "context": "+is the operator that has our desired symbol. Fixing any a,"
+  },
+  {
+   "page": 24,
+   "mark": "c",
+   "context": "s the operator that has our desired symbol. Fixing any a, b,"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "he operator that has our desired symbol. Fixing any a, b, c,"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "j"
+  },
+  {
+   "page": 24,
+   "mark": "j",
+   "context": "jp"
+  },
+  {
+   "page": 24,
+   "mark": "j",
+   "context": "jp j⊠q"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "×asanelementofHom(V (n,"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "(zy −xw)"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "(zy −xw)n⊠(ty −xs)"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "(x−zt)"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "= (xws −zty)"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "×qhas all its real roots in [ac, bd] whenever"
+  },
+  {
+   "page": 24,
+   "mark": "q",
+   "context": "×qhas all its real roots in [ac, bd] wheneverp,"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "−n(z −x)"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "Symb(∂x) = ∂x[(zy −xw)"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "Symb(∂x) = ∂x[(zy −xw)n] = −nw(zy −xw)"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "Withthis,letf∈C"
+  },
+  {
+   "page": 25,
+   "mark": "c",
+   "context": "Let C"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "Let Ccdenote the complement of Cin CP"
+  },
+  {
+   "page": 25,
+   "mark": "m",
+   "context": "Corollary 6.9Fix λ, α∈N"
+  },
+  {
+   "page": 25,
+   "mark": "c",
+   "context": "the form (C1 × · · · × Cm, C"
+  },
+  {
+   "page": 25,
+   "mark": "c",
+   "context": "1× · · · × C"
+  },
+  {
+   "page": 25,
+   "mark": "c",
+   "context": "(ii)Symb(T ) is (C"
+  },
+  {
+   "page": 25,
+   "mark": "c",
+   "context": "1× · · · × C"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "m) × (C"
+  },
+  {
+   "page": 25,
+   "mark": "m",
+   "context": "m) × (C1 × · · · × C"
+  },
+  {
+   "page": 25,
+   "mark": "m",
+   "context": "Corollary 6.10Fixλ, α∈N"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "0and"
+  },
+  {
+   "page": 25,
+   "mark": "m",
+   "context": "m× H"
+  },
+  {
+   "page": 26,
+   "mark": "m",
+   "context": "Lemma 6.11Fix λ, α∈N"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "lar regions C1, . . . , Cm, B1, . . . , Bm⊆CP"
+  },
+  {
+   "page": 26,
+   "mark": "m",
+   "context": "m-stable polynomials to (possibly identically zero) D"
+  },
+  {
+   "page": 26,
+   "mark": "m",
+   "context": " in the image of Tcontaining 0 and otherwise consisting of D"
+  },
+  {
+   "page": 26,
+   "mark": "m",
+   "context": "Therefore,theimageofTisavectorspaceconsistingofD"
+  },
+  {
+   "page": 26,
+   "mark": "m",
+   "context": "D"
+  },
+  {
+   "page": 26,
+   "mark": "m",
+   "context": "or all n, and limn→∞pn=pcoefﬁcient-wise. By (ii),T (pn) is D"
+  },
+  {
+   "page": 26,
+   "mark": "m",
+   "context": "T (p) is either identically zero or D"
+  },
+  {
+   "page": 26,
+   "mark": "m",
+   "context": "Corollary 6.12Fixλ, α∈N"
+  },
+  {
+   "page": 26,
+   "mark": "a",
+   "context": "0,"
+  },
+  {
+   "page": 26,
+   "mark": "m",
+   "context": "Corollary 6.13Fixλ, α∈N"
+  },
+  {
+   "page": 26,
+   "mark": "a",
+   "context": "0and"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "(a)Symb(T ) is (H"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "−× H"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "rcular stability regions Ck, so that their complements in CP"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "Theorem 1.2 (Borcea–Brändén) Fix λ ∈N"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "0and any linear operator T: Rλ[x"
+  },
+  {
+   "page": 27,
+   "mark": "x",
+   "context": "0and any linear operator T: Rλ[x1, . . . ,"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "0and any linear operator T: Rλ[x1, . . . , x"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "(a)SymbBB(T ) is H"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "(a)SymbBB(T ) is H2"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "(b)SymbBB(T ) is (H"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "−× H"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "akx"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "akxk\u0011→anx"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "akxk\u0011→anxn+ an−2x"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "akxk\u0011→anxn+ an−2xn−1= (anx+ an−2)x"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "(z"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "(z2+ x)x"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "(z2+ x)xn−1, which is not H"
+  },
+  {
+   "page": 28,
+   "mark": "m",
+   "context": "Theorem 7.2Fix λ ∈N"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "0, α∈N"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "m× H"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "m× H"
+  },
+  {
+   "page": 28,
+   "mark": "m",
+   "context": "m,wehavethat(w0x−z0y)λisH"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "Symb(T )(z0, w0, x, y) = (−1)λT [(w0x−z0y)λ] is both H"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "+-stable and H"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "iseitherH"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "+-stable,H"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "−-stable,orzero.Nowsupposethereare(z"
+  },
+  {
+   "page": 28,
+   "mark": "w",
+   "context": "−-stable,orzero.Nowsupposethereare(z0:"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "−-stable,orzero.Nowsupposethereare(z0:w"
+  },
+  {
+   "page": 28,
+   "mark": "w",
+   "context": "0:"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "msuch that T [(w0x−z0y)λ] is H"
+  },
+  {
+   "page": 28,
+   "mark": "x",
+   "context": "0"
+  },
+  {
+   "page": 28,
+   "mark": "y",
+   "context": "0"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "0y)λ] is H"
+  },
+  {
+   "page": 28,
+   "mark": "w",
+   "context": "0:"
+  },
+  {
+   "page": 28,
+   "mark": "x",
+   "context": "0"
+  },
+  {
+   "page": 28,
+   "mark": "y",
+   "context": "0"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "−)-stable or zero. By Lemma 4.11, T [c"
+  },
+  {
+   "page": 28,
+   "mark": "x",
+   "context": "0"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "(H"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "+∪H"
+  },
+  {
+   "page": 28,
+   "mark": "y",
+   "context": "0"
+  },
+  {
+   "page": 28,
+   "mark": "y",
+   "context": "0"
+  },
+  {
+   "page": 28,
+   "mark": "y",
+   "context": "0y)λ= q(x,"
+  },
+  {
+   "page": 28,
+   "mark": "y",
+   "context": "0y)λ= q(x, y) + ir(x,"
+  },
+  {
+   "page": 28,
+   "mark": "q",
+   "context": "0y)λ= q(x, y) + ir(x, y) for"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "0y)λ= q(x, y) + ir(x, y) for q,"
+  },
+  {
+   "page": 28,
+   "mark": "x",
+   "context": "0"
+  },
+  {
+   "page": 28,
+   "mark": "w",
+   "context": "0:"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "So,Symb(T )(z0, w0, x, y)=(−1)λT [(w0x−z0y)λ]iseitherH"
+  },
+  {
+   "page": 28,
+   "mark": "x",
+   "context": "+-stable(inthe"
+  },
+  {
+   "page": 28,
+   "mark": "y",
+   "context": "+-stable(inthex,"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "m,orH"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "−-stableforall(z"
+  },
+  {
+   "page": 28,
+   "mark": "w",
+   "context": "−-stableforall(z0:"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "−-stableforall(z0:w"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "m ×H"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "m× H"
+  },
+  {
+   "page": 28,
+   "mark": "m",
+   "context": "(i).Bythecomplexstabilitycharacterization(Theorem6.2),TmapsH"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "polynomialstoeithernonzeroH"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "+-stablepolynomialsornonzeroH"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "Lemma 7.3Fixλ, α∈N"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "0and"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "m-stable polynomials to nonzero H"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "m-stable polynomials to nonzero H"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "evaluationsymbolswhendemonstrating(a)or(b).Forany(z0:w0)∈H"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "then impliesT [(w0x−z0y)λ] is either H"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "+-stable, H"
+  },
+  {
+   "page": 29,
+   "mark": "w",
+   "context": "0:"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "H"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "−such that T [(w"
+  },
+  {
+   "page": 29,
+   "mark": "x",
+   "context": "−such that T [(w0"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "−such that T [(w0x−z"
+  },
+  {
+   "page": 29,
+   "mark": "y",
+   "context": "−such that T [(w0x−z0"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "−such that T [(w0x−z0y)λ] is H"
+  },
+  {
+   "page": 29,
+   "mark": "x",
+   "context": "0"
+  },
+  {
+   "page": 29,
+   "mark": "y",
+   "context": "0"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "0y)λ] is H"
+  },
+  {
+   "page": 29,
+   "mark": "w",
+   "context": "0:"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "0)∈H"
+  },
+  {
+   "page": 29,
+   "mark": "x",
+   "context": "0"
+  },
+  {
+   "page": 29,
+   "mark": "y",
+   "context": "0"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "0y)λ] is (H"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "+∪H"
+  },
+  {
+   "page": 29,
+   "mark": "x",
+   "context": "0"
+  },
+  {
+   "page": 29,
+   "mark": "y",
+   "context": "0"
+  },
+  {
+   "page": 29,
+   "mark": "x",
+   "context": "0"
+  },
+  {
+   "page": 29,
+   "mark": "y",
+   "context": "0"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "any r0∈B(0), Lemma 4.10 implies T (q0) + iT (r0) is either H"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "+-stable, H"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "that Tmaps H"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "+-stable polynomials to weakly H"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "Corollary 7.4Fixλ, α∈N"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "0and"
+  },
+  {
+   "page": 30,
+   "mark": "m",
+   "context": "(a)Symb(T ) is (H"
+  },
+  {
+   "page": 30,
+   "mark": "m",
+   "context": "−× H"
+  },
+  {
+   "page": 30,
+   "mark": "m",
+   "context": "(b)Symb(T ) is (H"
+  },
+  {
+   "page": 30,
+   "mark": "m",
+   "context": "−× H"
+  },
+  {
+   "page": 30,
+   "mark": "c",
+   "context": "ove results to projectively convex regions of the form H+ ∪J"
+  },
+  {
+   "page": 30,
+   "mark": "m",
+   "context": "Deﬁnition 7.5Fixλ, α∈N"
+  },
+  {
+   "page": 30,
+   "mark": "a",
+   "context": "0and"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "R:=d"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "nomials. If for some (z0: w0) ∈H−we have that T [(w0x −z0y)"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "lemma. If condition (a) of the lemma holds, thenT [(w0x−z0y)"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "T [(w0x−z0y)"
+  },
+  {
+   "page": 32,
+   "mark": "k",
+   "context": "Tn:x"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "Tn:xky"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "T2(x"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "T2(x2+ 2xy + y"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "T2(x2+ 2xy + y2) =x(x−y) + 2xy + y"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "T2(x2+ 2xy + y2) =x(x−y) + 2xy + y2=x"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "T2(x2+ 2xy + y2) =x(x−y) + 2xy + y2=x2+ xy + y"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "Symb(T2) =T2[(xw −zy)"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "Symb(T2) =T2[(xw −zy)2] =x(x−y)w"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "Symb(T2) =T2[(xw −zy)2] =x(x−y)w2−2xzyw + z"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "Symb(T2) =T2[(xw −zy)2] =x(x−y)w2−2xzyw + z2y"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "mb(T2) =T2[(xw −zy)2] =x(x−y)w2−2xzyw + z2y2= Hmg(2,2)[(x−z)"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "Notice that for x= −1, we have that (−1 −z)"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "Symb(y∂x−α j) = (y∂x−α j)(zy −xw)"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "= −(α j(zy −xw) + nwy)(zy −xw)"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "−(α j(z −x) + n)(z −x)"
+  },
+  {
+   "page": 33,
+   "mark": "c",
+   "context": "α j,"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "root preservation property off (∂x):C"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "root preservation property off (∂x):Cn[x]→C"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "Otherwise,f (∂x) is invertible on C"
+  },
+  {
+   "page": 34,
+   "mark": "m",
+   "context": "and(SL2(C))"
+  },
+  {
+   "page": 34,
+   "mark": "m",
+   "context": "representationsofSL2(C)and(SL2(C))"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "0, we have that V (λ) ∼=V (λ"
+  },
+  {
+   "page": 34,
+   "mark": "m",
+   "context": "0, we have that V (λ) ∼=V (λ1)⊠· · ·⊠V (λ"
+  },
+  {
+   "page": 34,
+   "mark": "m",
+   "context": "Proposition A.2For all λ ∈N"
+  },
+  {
+   "page": 34,
+   "mark": "m",
+   "context": "representation of (SL2(C))"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "i(λ"
+  },
+  {
+   "page": 34,
+   "mark": "m",
+   "context": "representations of (SL2(C))"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "We then use this Umap to show thatD"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "Lemma A.4For k≤m≤n, consider the map DU"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "DU"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "DUk= U"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "DUk= UkD + k(n + m −k + 1)U"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "Corollary A.5Fork≤m≤n,considerthemapD"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "Corollary A.5Fork≤m≤n,considerthemapDkU"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "D"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "DkU"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "DkUk(x"
+  },
+  {
+   "page": 35,
+   "mark": "m",
+   "context": "DkUk(xn−k⊗x"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "(n + m −2k + 1)!(x"
+  },
+  {
+   "page": 35,
+   "mark": "m",
+   "context": "(n + m −2k + 1)!(xn−k⊗x"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "In particular, x"
+  },
+  {
+   "page": 35,
+   "mark": "m",
+   "context": "In particular, xn−k⊗x"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "In particular, xn−k⊗xm−kis in the image ofD"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "oofApply the previous lemma ktimes, and use the fact thatD(x"
+  },
+  {
+   "page": 35,
+   "mark": "m",
+   "context": "ply the previous lemma ktimes, and use the fact thatD(xn−k⊗x"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "We willuse this factaboutthe image of D"
+  },
+  {
+   "page": 35,
+   "mark": "r",
+   "context": "D"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "By Corollary A.5, this map is not the zero map, as x"
+  },
+  {
+   "page": 35,
+   "mark": "m",
+   "context": "By Corollary A.5, this map is not the zero map, as xn−r· x"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "Corollary A.5, this map is not the zero map, as xn−r· xm−r=x"
+  },
+  {
+   "page": 35,
+   "mark": "r",
+   "context": "lary A.5, this map is not the zero map, as xn−r· xm−r=xn+m−2"
+  },
+  {
+   "page": 36,
+   "mark": "r",
+   "context": "ective follows from the fact that the transvectant maps × ◦D"
+  },
+  {
+   "page": 36,
+   "mark": "j",
+   "context": "ordering the basis {x"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "ordering the basis {xjy"
+  },
+  {
+   "page": 36,
+   "mark": "k",
+   "context": "ordering the basis {xjyn−j⊗x"
+  },
+  {
+   "page": 36,
+   "mark": "m",
+   "context": "ordering the basis {xjyn−j⊗xky"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "× ◦D"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "D"
+  },
+  {
+   "page": 37,
+   "mark": "m",
+   "context": "Fix λ, μ ∈N"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": " (λ) and V (μ) denote the irreducible representations of (SL"
+  },
+  {
+   "page": 37,
+   "mark": "m",
+   "context": "and V (μ) denote the irreducible representations of (SL2(C))"
+  },
+  {
+   "page": 37,
+   "mark": "m",
+   "context": "V (λ) ⊗V (μ), as a representation of (SL2(C))"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "0, deﬁne U β:= U β"
+  },
+  {
+   "page": 37,
+   "mark": "m",
+   "context": "0, deﬁne U β:= U β1⊠· · · ⊠U β"
+  },
+  {
+   "page": 37,
+   "mark": "m",
+   "context": "Theorem A.11(c.f. Theorem A.8) For any β∈N"
+  },
+  {
+   "page": 37,
+   "mark": "m",
+   "context": "Dβsimilarly. For any μ ≤λ ∈N"
+  },
+  {
+   "page": 37,
+   "mark": "m",
+   "context": "−→V (0"
+  },
+  {
+   "page": 37,
+   "mark": "m",
+   "context": "−→V (0"
+  },
+  {
+   "page": 37,
+   "mark": "m",
+   "context": "−→V (0m) ⊗V (0"
+  },
+  {
+   "page": 37,
+   "mark": "m",
+   "context": "erate (SL2(C))"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "representation theory of SL2(C) is the fact that V (n)∼= Sym"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "Here, Sym"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "symmetric elements in V (1"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "n: C"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "n: Cn[x] →C(1"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "n: Cn[x] →C(1n)[x"
+  },
+  {
+   "page": 38,
+   "mark": "x",
+   "context": "n: Cn[x] →C(1n)[x1, . . . ,"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "n: Cn[x] →C(1n)[x1, . . . , x"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "x"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "and Hmg(1"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "n: C(1"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "n: C(1n)[x"
+  },
+  {
+   "page": 38,
+   "mark": "x",
+   "context": "n: C(1n)[x1, . . . ,"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "n: C(1n)[x1, . . . , x"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "n: C(1n)[x1, . . . , xn] →C"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "(1"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "(1n)and Hmg"
+  },
+  {
+   "page": 38,
+   "mark": "m",
+   "context": "Proposition B.1Fixλ ∈N"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "0,andview V (λ) ∼=V (λ"
+  },
+  {
+   "page": 38,
+   "mark": "m",
+   "context": "0,andview V (λ) ∼=V (λ1)⊠· · ·⊠V (λ"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "0,andview V (λ) ∼=V (λ1)⊠· · ·⊠V (λm)and V (1λ) ∼=V (1)⊗λ"
+  },
+  {
+   "page": 38,
+   "mark": "m",
+   "context": "· · ·⊠V (1)⊗λ"
+  },
+  {
+   "page": 38,
+   "mark": "m",
+   "context": "· · ·⊠V (1)⊗λmasrepresentationsof(SL2(C))"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "λ:V (1λ) →V (λ) are (SL"
+  },
+  {
+   "page": 38,
+   "mark": "m",
+   "context": "λ:V (1λ) →V (λ) are (SL2(C))"
+  },
+  {
+   "page": 38,
+   "mark": "m",
+   "context": "nwith"
+  },
+  {
+   "page": 38,
+   "mark": "m",
+   "context": "λare compositions of such maps. To prove it for"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "symmetric elements inV (1)⊗n∼=V (1"
+  },
+  {
+   "page": 39,
+   "mark": "m",
+   "context": "Lemma B.2Fix λ∈N"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "λ) :V (λ) ⊗V (λ) →C is an (SL"
+  },
+  {
+   "page": 39,
+   "mark": "m",
+   "context": "λ) :V (λ) ⊗V (λ) →C is an (SL2(C))"
+  },
+  {
+   "page": 39,
+   "mark": "m",
+   "context": "(SL2(C))|λ|instead of (SL2(C))"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "involvedareinjective(SL2(C))"
+  },
+  {
+   "page": 39,
+   "mark": "m",
+   "context": "involvedareinjective(SL2(C))2"
+  },
+  {
+   "page": 39,
+   "mark": "n",
+   "context": "D"
+  },
+  {
+   "page": 39,
+   "mark": "q",
+   "context": "np at the roots of"
+  },
+  {
+   "page": 41,
+   "mark": "m",
+   "context": "Corollary B.5(Grace–Walsh–Szeg˝o)Fixλ∈N"
+  },
+  {
+   "page": 41,
+   "mark": "p",
+   "context": "0,"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "λp is (Cλ"
+  },
+  {
+   "page": 41,
+   "mark": "m",
+   "context": "1×· · ·×Cλ"
+  },
+  {
+   "page": 41,
+   "mark": "p",
+   "context": "λ"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "λp is not (Cλ"
+  },
+  {
+   "page": 41,
+   "mark": "m",
+   "context": "1× · · · × Cλ"
+  },
+  {
+   "page": 41,
+   "mark": "p",
+   "context": "λ"
+  },
+  {
+   "page": 41,
+   "mark": "b",
+   "context": "λp)(a,"
+  },
+  {
+   "page": 41,
+   "mark": "b",
+   "context": "λp)(a, b) = 0 for some (a,"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "λp)(a, b) = 0 for some (a, b) = (a"
+  },
+  {
+   "page": 41,
+   "mark": "b",
+   "context": "λp)(a, b) = 0 for some (a, b) = (a1,"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "λp)(a, b) = 0 for some (a, b) = (a1, b"
+  },
+  {
+   "page": 41,
+   "mark": "a",
+   "context": "λp)(a, b) = 0 for some (a, b) = (a1, b1, . . . ,"
+  },
+  {
+   "page": 41,
+   "mark": "m",
+   "context": "λp)(a, b) = 0 for some (a, b) = (a1, b1, . . . , a"
+  },
+  {
+   "page": 41,
+   "mark": "b",
+   "context": "λp)(a, b) = 0 for some (a, b) = (a1, b1, . . . , am,λm,"
+  },
+  {
+   "page": 41,
+   "mark": "m",
+   "context": "λp)(a, b) = 0 for some (a, b) = (a1, b1, . . . , am,λm, b"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": ", b) = 0 for some (a, b) = (a1, b1, . . . , am,λm, bm,λm) ∈C"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "j, k. Therefore Symb(ev(a,b)) is (Bλ"
+  },
+  {
+   "page": 41,
+   "mark": "m",
+   "context": "1× · · · × Bλ"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "zeros as lying in CP"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "zeros as lying in CP1and (CP"
+  },
+  {
+   "page": 41,
+   "mark": "m",
+   "context": "zeros as lying in CP1and (CP1)"
+  }
+ ]
+}

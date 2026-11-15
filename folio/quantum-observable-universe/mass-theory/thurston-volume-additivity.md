@@ -13,6 +13,8 @@ $$
 
 *where $D(z_i)$ is the Bloch-Wigner dilogarithm evaluated at the shape parameter. Flat tetrahedra ($z_i \in \mathbb{R}$) contribute zero volume.*
 
+The sum does not depend on the ideal triangulation chosen. More generally, for any representation $\rho\colon \pi_1(M) \to \mathrm{Isom}^+(\mathbb{H}^3)$ of a cusped orientable 3-manifold $M$, the volume of $\rho$ is well defined and equals the volume obtained by straightening any ideal triangulation of $M$ \cite[\S2]{francaviglia2003}.
+
 ## Braid-theoretic consequence
 
 A knot diagram induces an ideal triangulation containing one tetrahedron per crossing. Consequently, the volume sums additively over crossings:

@@ -3,10 +3,10 @@
  "doc_id": "arxiv-2101.05931v3",
  "source_sha256": "41eaa81b97ede8e9",
  "brief": "CATEGORICAL BRAID GROUP ACTIONS — Let g be a semisimple simply-laced Lie algebra of ﬁnite type.",
- "extended": "**CATEGORICAL BRAID GROUP ACTIONS**\n\n*AND CACTUS GROUPS*\n\n26 pp, 20 sections.\n\n**Abstract.** Let g be a semisimple simply-laced Lie algebra of ﬁnite type. Let C be an abelian categorical representation of the quantum group Uq(g) categorifying an integrable representation V . The Artin braid group B of g acts on Db(C) by Rickard complexes, providing a triangulated equivalence Θ w0 : Db(Cµ) → Db(Cw0(µ)) where µ is a weight of V , and Θ w0 is a positive lift of the longest element of the Weyl group. We prove that this equivalence is t-exact up to shift when V is isotypic, generalising a funda- mental result of Chuang and Rouquier in the case g = sl2. For general V , we prove that Θ w0 is a perverse equivalence with respect to a Jordan-H¨ older ﬁltr ation of C. Using these results we construct, from the action of B on V , an action of the cactus group on the crystal of V .\n\n**Outline.** Front matter; 1 Introduction; 2.1 The quantum group; Acknowledgement; 2 Background on quantum groups; 2.2 Braid group actions on integrable represen; 3.1 Notation; 3.3 Crystals; 3.5 The categorical braid group action; 4 Perverse equivalences; 4.2 Derived categories of graded abelian categ; 5 Some commutation relations; 5.2 Marked words; 7.1 Cactus groups; 7 Crystalising the braid group action; 7.2 The cactus group action arising from Ricka; 7.3 Reconciling the two cactus group actions; 8 Examples and Applications\n\n**Extracted claims (proposals, not verified).**\n- Theorem: A. [Theorem 6.4 & Corollary 6.7] Let C be a categorical representation of Uq(g) cate-\n- Theorem: B. [Theorem 6.8] Let C be a categorical representation of Uq(g), and let µ be any weight.\n- Theorem: C. [Theorem 7.7 & Theorem 7.12] Let C be a categorical representation of Uq(g), cat-\n- Theorem 3.6: Let C be a categorical representation of Uq(g). Then there exists a ﬁltration by\n- Theorem 3.11: [16, Theorem 6.4] For any µ,i , Θ i\n- Theorem 3.12: [11, Theorem 6.3] The Rickard complexes satisfy the braid relations:",
+ "extended": "**CATEGORICAL BRAID GROUP ACTIONS**\n\n*AND CACTUS GROUPS*\n\n26 pp, 27 sections.\n\n**Abstract.** Let g be a semisimple simply-laced Lie algebra of ﬁnite type. Let C be an abelian categorical representation of the quantum group Uq(g) categorifying an integrable representation V . The Artin braid group B of g acts on Db(C) by Rickard complexes, providing a triangulated equivalence Θw0 : Db(Cµ) →Db(Cw0(µ)) where µ is a weight of V , and Θw0 is a positive lift of the longest element of the Weyl group. We prove that this equivalence is t-exact up to shift when V is isotypic, generalising a funda- mental result of Chuang and Rouquier in the case g = sl2. For general V , we prove that Θw0 is a perverse equivalence with respect to a Jordan-H¨older ﬁltration of C. Using these results we construct, from the action of B on V , an action of the cactus group on the crystal of V .\n\n**Outline.** Front matter; 1 Introduction; Acknowledgement; 2 Background on quantum groups; 2.1 The quantum group; 2.2 Braid group actions on integrable represen; 3.1 Notation; 3 Categorical representations of U_q(g); 3.2 Definition; 3.3 Crystals; 3.4 Jordan-Hölder series; 3.5 The categorical braid group action; 4 Perverse equivalences; 4.1 General definition; 4.2 Derived categories of graded abelian categ; 5 Some commutation relations; 5.2 Marked words; 5.3 The relation between _w_0 and Chevalley fu",
  "tokens": {
   "brief": 23,
-  "extended": 497
+  "extended": 345
  },
  "sections": [
   {
@@ -17,21 +17,21 @@
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-3"
+   "pages": "1-4"
   },
   {
-   "id": "sec-001-21-the-quantum-group",
-   "title": "The quantum group",
-   "pages": "3-4"
-  },
-  {
-   "id": "sec-002-acknowledgement",
+   "id": "sec-001-acknowledgement",
    "title": "Acknowledgement",
    "pages": "4-4"
   },
   {
-   "id": "sec-003-2-background-on-quantum-groups",
+   "id": "sec-002-2-background-on-quantum-groups",
    "title": "Background on quantum groups",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-003-21-the-quantum-group",
+   "title": "The quantum group",
    "pages": "4-5"
   },
   {
@@ -42,70 +42,105 @@
   {
    "id": "sec-005-31-notation",
    "title": "Notation",
-   "pages": "5-7"
+   "pages": "5-5"
   },
   {
-   "id": "sec-006-33-crystals",
+   "id": "sec-006-3-categorical-representations-of-u-qg",
+   "title": "Categorical representations of U_q(g)",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-007-32-definition",
+   "title": "Definition",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-008-33-crystals",
    "title": "Crystals",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-009-34-jordan-hölder-series",
+   "title": "Jordan-Hölder series",
    "pages": "7-9"
   },
   {
-   "id": "sec-007-35-the-categorical-braid-group-action",
+   "id": "sec-010-35-the-categorical-braid-group-action",
    "title": "The categorical braid group action",
    "pages": "9-10"
   },
   {
-   "id": "sec-008-4-perverse-equivalences",
+   "id": "sec-011-4-perverse-equivalences",
    "title": "Perverse equivalences",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-012-41-general-definition",
+   "title": "General definition",
    "pages": "10-11"
   },
   {
-   "id": "sec-009-42-derived-categories-of-graded-abelian-categori",
+   "id": "sec-013-42-derived-categories-of-graded-abelian-categori",
    "title": "Derived categories of graded abelian categories",
    "pages": "11-12"
   },
   {
-   "id": "sec-010-5-some-commutation-relations",
+   "id": "sec-014-5-some-commutation-relations",
    "title": "Some commutation relations",
    "pages": "12-13"
   },
   {
-   "id": "sec-011-52-marked-words",
+   "id": "sec-015-52-marked-words",
    "title": "Marked words",
-   "pages": "13-17"
+   "pages": "13-14"
   },
   {
-   "id": "sec-012-71-cactus-groups",
+   "id": "sec-016-53-the-relation-between-w-0-and-chevalley-functo",
+   "title": "The relation between _w_0 and Chevalley functors",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-017-6-on-t-exactness-and-perversity-of-w-0",
+   "title": "On t-exactness and perversity of _w_0",
+   "pages": "15-17"
+  },
+  {
+   "id": "sec-018-71-cactus-groups",
    "title": "Cactus groups",
    "pages": "17-17"
   },
   {
-   "id": "sec-013-7-crystalising-the-braid-group-action",
+   "id": "sec-019-62-w-0-on-general-categorical-representations",
+   "title": "_w_0 on general categorical representations",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-020-7-crystalising-the-braid-group-action",
    "title": "Crystalising the braid group action",
    "pages": "17-18"
   },
   {
-   "id": "sec-014-72-the-cactus-group-action-arising-from-rickard",
+   "id": "sec-021-72-the-cactus-group-action-arising-from-rickard",
    "title": "The cactus group action arising from Rickard complexes",
    "pages": "18-20"
   },
   {
-   "id": "sec-015-73-reconciling-the-two-cactus-group-actions",
+   "id": "sec-022-73-reconciling-the-two-cactus-group-actions",
    "title": "Reconciling the two cactus group actions",
    "pages": "20-21"
   },
   {
-   "id": "sec-016-8-examples-and-applications",
+   "id": "sec-023-8-examples-and-applications",
    "title": "Examples and Applications",
    "pages": "21-23"
   },
   {
-   "id": "sec-017-82-type-a-combinatorics",
+   "id": "sec-024-82-type-a-combinatorics",
    "title": "Type A combinatorics",
    "pages": "23-24"
   },
   {
-   "id": "sec-018-references",
+   "id": "sec-025-references",
    "title": "References",
    "pages": "24-26"
   }
@@ -114,8 +149,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

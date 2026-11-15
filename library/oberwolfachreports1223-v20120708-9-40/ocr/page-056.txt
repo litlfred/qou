@@ -1,0 +1,41 @@
+56 Oberwolfach Report 28/2012
+
+O|x|x
+
+FIGURE 2. Associating a spatial graph to a graph grid diagram
+
+f then the grid diagrams are related by a finite sequence of the following moves:
+cyclic permutation, commutation’, and stabilization.
+
+We remark that the only move that differs from that of links is commutation’.
+
+Next, we define the chain complex (C~ (gr(f)),07) associate to a graph grid
+diagram gr(f). The chain groups consist of free modules over F[U1,...,Uy] where
+F & Z/2Z is the ring with two elements and V is the number of vertices in
+the graph. Like in link Floer homology, the generators of the chain groups are
+unordered tuples of intersections between the horizontal and vertical curves in the
+grid. The Maslov grading is defined exactly as in [3]. Note that this is possible
+since it only depends on the set of Os on the grid. For links, the Alexander
+grading lives in Z™. For spatial graphs, we define an Alexander grading that has
+values in H,(S° \ f(G)) which can be identified with Z™ after choosing a ba:
+To define this, for each point in the lattice of the grid, we define an element of
+H,(S? \ f(G)), called the generalized winding number. It is defined so that if
+you can get from one point to another by passing under an edge of f(G) then
+the difference between their values is the homology class of the meridian of that
+edge. The Alexander grading of a generator is defined by taking the sum of the
+generalized winding numbers of the elements in the set. Each U; is associated
+with a vertex O and we define the Alexander grading so that multiplication by
+U; correspond to lowering the Alexander grading by the element of H,(S* \ f(G))
+represented by a meridian of the vertex corresponding to U;. The 0~ map is
+defined by counting empty rectangles in the (toroidal) grid that do not contain
+an X. We show that 07 o 0 = 0 and hence this gives a well-defined bigraded
+homology group for each graph grid diagram. Moreover, one can show that the
+homology is independent of the choice of grid.
+
+Theorem 2. If gr(f) and gr’(f) are two graph grid diagrams representing
+f:G— S° then (C~(gr(f)),07) and (C~(gr'(f)),0~) are quasi-isomorphic as
+F(U,,...,Uy]-modules.
+
+To prove this, we show that the quasi-isomorphism type of the chain complex
+is preserved under the three graph grid moves. This gives a bigraded homology
+module over F[U,,...,Uy] associated to each balanced spatial graph.

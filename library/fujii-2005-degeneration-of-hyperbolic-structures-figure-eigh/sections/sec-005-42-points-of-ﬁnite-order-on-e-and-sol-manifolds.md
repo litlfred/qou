@@ -1,6 +1,6 @@
 ---
 doc_id: fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh
-doc_title: "Degeneration of hyperbolic structures on the ﬁgure-eight knot complement and points of ﬁnite order on an elliptic curve"
+doc_title: "Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve"
 section_id: sec-005-42-points-of-ﬁnite-order-on-e-and-sol-manifolds
 section_title: "Points of ﬁnite order on E and Sol manifolds"
 section_number: 4.2
@@ -8,7 +8,9 @@ pages: 8-8
 source_pdf: fujii-2005-degeneration-of-hyperbolic-structures-figure-eight.pdf
 source_sha256: bca3996c7a667b18
 toc_source: inferred
+doc_brief: "Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve — 12 sections: Front matter; Introduction; Deformation of hyperbolic structur"
 ---
+Points of ﬁnite order on E and Sol manifolds
 Let us consider the point t1 := ( 1−
 √
 5
@@ -103,4 +105,3 @@ proposed to construct hyperbolic structures along a path connecting the points
 (z∞, w∞) and t3 or t7. Therefore, at the present time, we cannot regard the
 points 3T and 7T as corresponding to geometric 3-manifolds obtained by Dehn
 ﬁlling of the hyperbolic 3-manifold (S3 −K, σ∞).
-4.3.

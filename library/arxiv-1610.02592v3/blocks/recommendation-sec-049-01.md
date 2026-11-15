@@ -1,0 +1,1 @@
+After compressing it a finite number of times it transforms into a disjoint union of spheres, discs, and incompressible surfaces. \end{cor} \begin{proof} We compress $S$ as much as we can; after finitely many steps we must stop because of Proposition \ref{S':simpler:prop}. \end{proof}

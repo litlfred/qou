@@ -1,0 +1,69 @@
+assumes is-poincare-line | and 0), € circline-set |
+
+shows is-line |
+
+using assms
+
+using inf-in-circline-set is-poincare-line-trough-zero-trough-infty
+by blast
+
+If an h-line does not contain zero, than it also does not contain infinity (the inverse point of zero) and is by
+definition an Euclidean circle.
+
+lemma is-poincare-line-not-trough-zero-not-trough-infty [simp]:
+assumes is-poincare-line |
+assumes 0), ¢ circline-set |
+shows co, ¢ circline-set |
+using assms
+using is-poincare-line-inverse-point|OF assms(1), of oon]
+by auto
+
+lemma is-poincare-line-not-trough-zero-is-circle:
+assumes is-poincare-line | 0, ¢ circline-set |
+shows is-circle |
+using assms
+using inf-in-circline-set is-poincare-line-not-trough-zero-not-trough-infty
+by auto
+
+4.1.4 Points on h-line
+Each h-line in the Poincaré model contains at least two different points within the unit disc.
+
+First we prove an auxiliary lemma.
+
+lemma ex-is-poincare-line-points’:
+assumes 112: il € circline-set H  unit-circle-set
+i2 € circline-set H M unit-circle-set
+il # i2
+assumes a: a € circline-set H a ¢ unit-circle-set
+shows 3 b.b 4 i1 ADA i2 Ab fad bF inversion a A b € circline-set H
+proof—
+have inversion a ¢ unit-circle-set
+using <a ¢ unit-circle-set»
+unfolding unit-circle-set-def circline-set-def
+by (metis inversion-id-iff-on-unit-circle inversion-involution mem-Collect-eq)
+
+have a # inversion a
+using <a ¢ unit-circle-sety inversion-id-iff-on-unit-circle[ of a]
+unfolding unit-circle-set-def circline-set-def
+by auto
+
+have a F il a F i2 inversion a F il inversion a F i2
+using assms <inversion a ¢ unit-circle-sety
+by auto
+
+then obtain 6 where cr2: cross-ratio b i1 a i2 = of-complex 2
+using <i1 4 i2>
+using ex-cross-ratio[of il a i2]
+by blast
+
+have distinct-b: b A i1b #i2b#a
+using <i1 4 i2) «a FZ il) (a F 12)
+using ex1-cross-ratio|of il a i2]
+using cross-ratio-O|of i1 a i2] cross-ratio-1[of i1 a i2] cross-ratio-inf|of i1 i2 a]
+using cr2
+by auto
+
+hence 6 € circline-set H
+using assms four-points-on-circline-iff-cross-ratio-reallof b i1 a i2| cr2
+using unique-circline-set{of i1 i2 a]
+by auto

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2302.08363v2
-doc_title: "Prepared for submission to JHEP On the structure of trans-series in quantum field theory"
+doc_title: "On the structure of trans-series in quantum field theory"
 section_id: sec-003-complex-chernsimons-theory
 section_title: "Complex Chern–Simons theory"
 section_number: null
 pages: 9-11
 source_pdf: 2302.08363v2.pdf
 source_sha256: c2244e03b17048fb
-doc_brief: "On the structure of trans-series in quantum field theory — Many observables in quantum field theory can be expressed in terms of trans-series, in which one adds to the perturbative series a typically"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.967
+latex_coverage_ratio: 0.995
+doc_brief: "On the structure of trans-series in quantum field theory — Many observables in quantum field theory can be expressed in terms of trans-series, in which one adds to the perturbative series a typically"
 ---
 \label{sec-cs}
 

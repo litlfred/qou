@@ -11,6 +11,7 @@
   ],
   "title": "q-variational Hörmander functional calculus and Schrödinger and wave maximal estimates",
   "contains": [
+    "library/maximal-hoermander-q-var-revised-v03/sections/sec-front-matter",
     "library/maximal-hoermander-q-var-revised-v03/sections/sec-000",
     "library/maximal-hoermander-q-var-revised-v03/sections/sec-001",
     "library/maximal-hoermander-q-var-revised-v03/sections/sec-002",
@@ -20,10 +21,11 @@
     "library/maximal-hoermander-q-var-revised-v03/sections/sec-006",
     "library/maximal-hoermander-q-var-revised-v03/sections/sec-007",
     "library/maximal-hoermander-q-var-revised-v03/sections/sec-008",
-    "library/maximal-hoermander-q-var-revised-v03/sections/sec-009"
+    "library/maximal-hoermander-q-var-revised-v03/sections/sec-009",
+    "library/maximal-hoermander-q-var-revised-v03/sections/sec-010"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "maximal-hoermander-q-var-revised-v03",
     "title_source": "pdf-info",
@@ -33,8 +35,8 @@
     "pages": 43,
     "arxiv": null,
     "doi": null,
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

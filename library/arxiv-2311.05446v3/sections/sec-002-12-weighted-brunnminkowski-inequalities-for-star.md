@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2311.05446v3
-doc_title: "NEW BRUNN–MINKOWSKI AND FUNCTIONAL INEQUALITIES VIA CONVEXITY OF ENTROPY"
+doc_title: "New Brunn--Minkowski and functional inequalities via convexity of entropy"
 section_id: sec-002-12-weighted-brunnminkowski-inequalities-for-star
 section_title: "Weighted Brunn–Minkowski inequalities for star bodies"
 section_number: 1.2
 pages: 3-5
 source_pdf: 2311.05446v3.pdf
 source_sha256: c5809730f598a56d
-doc_brief: "NEW BRUNN–MINKOWSKI AND FUNCTIONAL INEQUALITIES VIA CONVEXITY OF ENTROPY — We study the connection between the concavity properties of a measureνand the convexity properties of the associated"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.911
-latex_coverage_ratio: 0.908
+latex_prose_ratio: 0.967
+latex_coverage_ratio: 0.968
+doc_brief: "New Brunn--Minkowski and functional inequalities via convexity of entropy — We study the connection between the concavity properties of a measure ν and the convexity properties of the associated"
 ---
 Despite the difficulties mentioned above when dealing with non-convex sets, in this paper we prove the following theorem:
 

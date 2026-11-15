@@ -1,0 +1,1 @@
+HIGH-DIMENSIONAL KERNELS We shall now revisit existing approaches to high- dimensional kernels in order to highlight the differences between our proposed quaternion kernel framework and those based upon existing high-dimensional kernels.

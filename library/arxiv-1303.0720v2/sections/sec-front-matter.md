@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1303.0720v2.pdf
 source_sha256: 389ab465e81a0667
 toc_source: outline
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 arXiv:1303.0720v2  [math.CV]  9 Mar 2013
 ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS

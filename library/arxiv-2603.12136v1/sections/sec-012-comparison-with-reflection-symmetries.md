@@ -7,10 +7,11 @@ section_number: null
 pages: 32-34
 source_pdf: 2603.12136v1.pdf
 source_sha256: e9c50616344b24e0
-doc_brief: "Folding Mixed-Integer Linear Programs and Reflection Symmetries — For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.949
-latex_coverage_ratio: 0.86
+latex_coverage_ratio: 0.987
+doc_brief: "Folding Mixed-Integer Linear Programs and Reflection Symmetries — For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the"
 ---
 Next, we will show that reflection reductions generalize reflection symmetries. First let us define reflection symmetries more formally. A *permutation matrix* $B$ is a square binary matrix with exactly one nonzero element with value $1$ in each row and column. It is well known that the inverse $B^{-1}$ is again a permutation matrix, which corresponds to the inverse permutation of the permutation given by $B$. A *signed permutation matrix* is a square $\{-1,0,1\}$-matrix with exactly one nonzero element in each row and column. Note that each signed permutation matrix $B$ can be decomposed as $\mathrm{diag}(s) C$ or $C \mathrm{diag}(s')$ where $C$ is the nonzero support of $B$, which is a permutation matrix, and $s$ and $s'$ are suitably chosen $\{-1,1\}$ vectors. In this section, we do not allow for arbitrary reordering of matrix columns and rows. In order to clarify the effect of the permutation symmetries, we denote each permutation explicitly using a permutation matrix.
 

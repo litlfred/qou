@@ -1,0 +1,63 @@
+20
+
+Oberwolfach Report 28/2012
+
+()
+
+(5)
+
+Counterexample to Turaev’s conjecture. In [11], Turaev conjectured
+all free knots to be trivial. In [3], infinitely many examples of non-trivial
+free knots were constructed.
+
+Cobordisms. It was proved [4] that free knots admit non-trivial cobor-
+dism classes: there are free knots not spannable by discs with typical
+3-dimensional singularities.
+
+Reducing problems about knots to problems about representa-
+tives. In [6], it was first proved that the minimal virtual crossing number
+of virtual knots can grow quadratically with respect to the minimal classi-
+cal crossing number. This result was obtained by applying parity argument
+and the fact that the minimal crossing number of 4-valent graphs grows
+quadratically with respect to the number of vertices.
+
+By using the bracket [-], one easily shows that free knots are generally
+not invertible and that long free knots generally do not commute.
+Projection. For every virtual knot diagram AK whose underlying genus
+is not minimal in the given knot class, there exists a diagram K’ obtained
+from K by making some classical crossings virtual and having the same
+knot type as K.
+
+There exists a projection from the set of virtual knots to the set of
+classical knots: for every virtual knot diagram K there exists a classical
+knot diagram K” obtained by making some classical crossings of K virtual.
+
+As a consequence, we see that minimal classical crossing number of a
+virtual knot can be achieved only on classical diagrams (for virtual dia-
+grams which are not detour-equivalent to any classical one, it is strictly
+greater).
+
+By using free knots, one constructs a virtual knot with the unit Jones
+polynomial which can not be undone by Reidemeister moves and virtual-
+izations. This disproves the corresponding conjecture from [8].
+
+Questions for further research:
+
+()
+
+Categorification of the bracket. The bracket [K] of a 4-valent graph
+with an opposite half-edge structure is a sum of graphs which correspond
+to states at even crossings of the initial graph. For each crossings, the two
+local states A and B are not ordered, so, it there is no straightforward
+way to generalize Khovanov’s construction. How to construct a complex
+whose Euler characteristic is the parity bracket (with all graphs treated,
+say, as gradings)?
+
+Higher dimensions. How to construct the parity theory for higher-
+dimensional objects? For example, for 2-surfaces in 4-space and which
+analogs of properties listed above can be obtained in this case? Is there
+any analog of the bracket in higher dimensions? A hint can be taken from
+[4].
+
+Singular knots. It is well known [10] that there is no non-trivial parity
+for classical knots. The main reason behind that is that the plane has no

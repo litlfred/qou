@@ -1,0 +1,44 @@
+components of any surface ;, hence those eigenvalues are equal to 1, and it achieves
+
+the proof. oO
+
+1.4 Alexander module and character varieties
+
+In this section we prove a theorem due independently to Burde and DeRham ({Bur671
+{deR67]), that relies the so-called Alexander module of a 3-manifold M, and in parti-
+cular roots of its Alexander polynomial, with some particular point in the character
+varieties X(M).
+
+1.4.1 Reducible character in components of irreducible type
+
+of the character variety
+
+Definition 1.4.1. Let X be a one dimensional component of irreducible type of
+the character variety X(M), v € X a finite point in the smooth projective model
+of X, and p: 7(1/) — SL2(O,) a convergent representative of the tautological re-
+presentation. We will say the representation p is residually reducible (resp. residualy
+abelian, irreducible, central) if the residual representation p : ™(M) — SLo(k) is
+reducible (resp. abelian, irreducible, central). Recall in addition that a character x
+is said central if y(Y,)? = 4 for all Y, € k[X].
+
+Since X is of irreducible type, irreducible characters are dense in X hence for a
+generic v € x , the tautological representation p will be residually irreducible. Ne-
+vertheless, there may exists a finite set of points where it is residually reducible,
+they correspond to characters that are intersection points of X with a component
+of reducible type of X(M).
+
+Proposition 1.4.2. Let x € X a reducible character, v € X the associated va-
+luation, and p : T —> SLo(O,) a choice of convergent tautological representation.
+Then the character xp is not central, and in particular the representation p is not
+residually central. Moreover, one can choose the tautological representation p such
+
+that it is not residually abelian.
+
+Proof. In Lemma 3.9], it is proved that a reducible character yj in a com-
+ponent of irreducible type X cannot be central, because there exists a non abelian
+representation o : T — SL(k) with character >. It proves the first claim. It remains
+to show that such a non abelian representation is realized as p, for some choice of
+
+tautological representation p. We give a tree-theoretical argument.
+
+38

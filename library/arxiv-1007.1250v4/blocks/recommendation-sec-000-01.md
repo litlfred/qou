@@ -1,0 +1,1 @@
+Speaking of conjectures, we should mention Conjecture \ref{conj:520} regarding the rationality of the $2$-dimensional multiplicative integral when the Lie groups $G$ and $H$ are unipotent algebraic groups.

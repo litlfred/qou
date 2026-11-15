@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2601.07906v2
-doc_title: "March 2026 A universal sum over topologies in 3d gravity"
+doc_title: "A universal sum over topologies in 3d gravity"
 section_id: sec-007-the-mapping-class-group
 section_title: "The mapping class group"
 section_number: null
 pages: 22-24
 source_pdf: 2601.07906v2.pdf
 source_sha256: e69b1bf37f2c75b0
-doc_brief: "March 2026 A universal sum over topologies in 3d gravity — We explore the sum over topologies in AdS 3 quantum gravity and its relationship with the statistical interpretation of the boundary theory."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.864
-latex_coverage_ratio: 0.902
+latex_coverage_ratio: 1.0
+doc_brief: "A universal sum over topologies in 3d gravity — We explore the sum over topologies in AdS3 quantum gravity and its relationship with the statistical interpretation of the boundary theory."
 ---
 In general, a 3-dimensional handlebody $M$ of genus $g$ is defined by gluing $g$ 1-handles to a 3-ball. Its boundary is a genus-$g$ Riemann surface $\Sigma_g$, with a collection of $3g-3$ non-intersecting closed curves that bound disks in $M$. These essential curves are also called contractible cycles, or meridians. An example at genus 2 is shown below:
 \begin{equation}\label{eq:genus2handlebody}

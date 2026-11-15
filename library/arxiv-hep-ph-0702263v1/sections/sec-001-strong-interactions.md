@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-hep-ph-0702263v1
-doc_title: "Chiral Low-Energy Constants ∗ Gerhard Ecker Faculty of Physics, Univ. of Vienna"
+doc_title: "Chiral Low-Energy Constants ∗"
 section_id: sec-001-strong-interactions
 section_title: "Strong interactions"
 section_number: null
 pages: 3-7
 source_pdf: 0702263v1.pdf
 source_sha256: 8ae381b4eba60286
-doc_brief: "Chiral Low-Energy Constants ∗ Gerhard Ecker Faculty of Physics, Univ. of Vienna — The progress in determining the coupling constants of meson ic chi- ral Lagrangians is reviewed, with emphasis on the"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.938
+latex_coverage_ratio: 0.994
+doc_brief: "Chiral Low-Energy Constants ∗ — The progress in determining the coupling constants of mesonic chi- ral Lagrangians is reviewed, with emphasis on the work performed in three successive European"
 ---
 At lowest order in the chiral expansion, there are only two LECs $B$
 and $F$. $B$ depends on the QCD renormalization scale

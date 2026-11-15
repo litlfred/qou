@@ -7,10 +7,11 @@
   "bytes": 353392,
   "pages": 26,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,21 +21,29 @@
    "stamp_date": "21 Sep 2004"
   },
   "doi": null,
-  "title": "ALGEBRAIC CONSTRUCTION OF THE STOKES SHEAF FOR IRREGULAR LINEAR q-DIFFERENCE EQUATIONS Jacques Sauloy",
-  "authors_raw": null,
+  "title": "ALGEBRAIC CONSTRUCTION OF THE STOKES SHEAF FOR IRREGULAR LINEAR q-DIFFERENCE EQUATIONS",
+  "authors_raw": "Jacques Sauloy",
   "title_lines": [
    "ALGEBRAIC CONSTRUCTION OF THE STOKES SHEAF",
-   "FOR IRREGULAR LINEAR q-DIFFERENCE EQUATIONS",
-   "Jacques Sauloy"
+   "FOR IRREGULAR LINEAR q-DIFFERENCE EQUATIONS"
   ],
-  "abstract": "\u2014 The local analytic classi\ufb01cation of irregular linear q-di\ufb00erence equa- tions has recently been obtained by J.-P. Ramis, J. Sauloy an d C. Zhang. Their description involves a q-analog of the Stokes sheaf and theorems of Malgrange-Sibuy a type and is based on a discrete summation process due to C. Zha ng. W e show here another road to some of these results by algebraic means and w e describe the q-Gevrey devissage of the q-Stokes sheaf by holomorphic vector bundles over an ellipti c curve. R\u00b4 esum\u00b4 e(Construction alg\u00b4 ebrique du faisceau de Stokes pour les \u00b4 equations aux q-di\ufb00\u00b4 erences lin\u00b4 eaires irr\u00b4 eguli` eres) La classi\ufb01cation analytique locale des \u00b4 equations aux q-di\ufb00\u00b4 erences lin\u00b4 eaires irr\u00b4 eguli` eres a \u00b4 et\u00b4 e r\u00b4 ecemment r\u00b4 ealis\u00b4 ee par J.-P. Ramis, J. Sauloy et C. Zhang. Leur description fait intervenir un q-analogue du faisceau de Stokes et des th\u00b4 eor` emes de type Malgrange-Sibuya et elle s\u2019appuie sur la sommation dis cr` ete de C. Zhang. Nous montrons ici comment retrouver une partie de ces r\u00b4 esultats par voie alg\u00b4 ebrique et nous d\u00b4 ecrivons le d\u00b4 evissageq-Gevrey du q-faisceau de Stokes par des \ufb01br\u00b4 es vectoriels holomorphes sur une courbe elliptique. Je laisse aux nombreux avenirs (non ` a tous) mon jardin aux sentiers qui bifurquent (Jorge Luis Borges, Fictions).",
+  "abstract": "— The local analytic classiﬁcation of irregular linear q-diﬀerence equa- tions has recently been obtained by J.-P. Ramis, J. Sauloy and C. Zhang. Their description involves a q-analog of the Stokes sheaf and theorems of Malgrange-Sibuya type and is based on a discrete summation process due to C. Zhang. We show here another road to some of these results by algebraic means and we describe the q-Gevrey devissage of the q-Stokes sheaf by holomorphic vector bundles over an elliptic curve. R´esum´e (Construction alg´ebrique du faisceau de Stokes pour les ´equations aux q-diﬀ´erences lin´eaires irr´eguli`eres) La classiﬁcation analytique locale des ´equations aux q-diﬀ´erences lin´eaires irr´eguli`eres a ´et´e r´ecemment r´ealis´ee par J.-P. Ramis, J. Sauloy et C. Zhang. Leur description fait intervenir un q-analogue du faisceau de Stokes et des th´eor`emes de type Malgrange-Sibuya et elle s’appuie sur la sommation discr`ete de C. Zhang. Nous montrons ici comment retrouver une partie de ces r´esultats par voie alg´ebrique et nous d´ecrivons le d´evissage q-Gevrey du q-faisceau de Stokes par des ﬁbr´es vectoriels holomorphes sur une courbe elliptique. Je laisse aux nombreux avenirs (non `a tous) mon jardin aux sentiers qui bifurquent (Jorge Luis Borges, Fictions).",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20210414075618-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20210414075618-04'00'"
+  },
+  "title_raw": "ALGEBRAIC CONSTRUCTION OF THE STOKES SHEAF FOR IRREGULAR LINEAR q-DIFFERENCE EQUATIONS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "ALGEBRAIC CONSTRUCTION OF THE STOKES SHEAF FOR IRREGULAR LINEAR q -DIFFERENCE EQUATIONS by Jacques Sauloy Je laisse aux nombreux avenirs (non `a tous) mon jardin aux sentiers qui bifurquent (Jorge Luis Borges, Fictions ). Contents 1. Introduction and general conventions",
+   "outline": "1. Introduction and general conventions",
+   "text": "ALGEBRAIC CONSTRUCTION OF THE STOKES SHEAF FOR IRREGULAR LINEAR q-DIFFERENCE EQUATIONS",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "ALGEBRAIC CONSTRUCTION OF THE STOKES SHEAF FOR IRREGULAR LINEAR q-DIFFERENCE EQUATIONS Jacques Sauloy"
  },
  "toc": [
   {
@@ -42,81 +51,332 @@
    "title": "Introduction and general conventions",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Local analytic classification",
    "page": 6,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Algebraic summation",
    "page": 15,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The q-Gevrey filtration on the Stokes sheaf",
    "page": 22,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 25,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1992,
+   "n_words": 422,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction-and-general-conventions",
    "number": "1",
    "title": "Introduction and general conventions",
    "level": 1,
-   "page_start": 1,
-   "page_end": 15,
-   "n_chars": 33627,
-   "n_words": 6737
+   "page_start": 2,
+   "page_end": 6,
+   "n_chars": 11152,
+   "n_words": 1843,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-3-algebraic-summation",
+   "id": "sec-001-2-local-analytic-classification",
+   "number": "2",
+   "title": "Local analytic classification",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 15,
+   "n_chars": 21369,
+   "n_words": 4161,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-3-algebraic-summation",
    "number": "3",
    "title": "Algebraic summation",
    "level": 1,
    "page_start": 15,
-   "page_end": 25,
-   "n_chars": 21471,
-   "n_words": 4673
+   "page_end": 22,
+   "n_chars": 15686,
+   "n_words": 3167,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-references",
+   "id": "sec-003-4-the-q-gevrey-filtration-on-the-stokes-sheaf",
+   "number": "4",
+   "title": "The q-Gevrey filtration on the Stokes sheaf",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 25,
+   "n_chars": 5180,
+   "n_words": 949,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 25,
    "page_end": 26,
-   "n_chars": 4674,
-   "n_words": 746
+   "n_chars": 4603,
+   "n_words": 675,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 5,
-  "sections": 3,
-  "chars_total": 59772,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 6,
+  "chars_total": 59982,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "preprint.tex",
    "tex_sections": 24,
-   "overlaid": 2,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -124,23 +384,44 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction-and-general-conventions",
      "title": "Introduction and general conventions",
-     "prose_ratio": 0.652,
-     "coverage_ratio": 0.996,
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-3-algebraic-summation",
+     "id": "sec-001-2-local-analytic-classification",
+     "title": "Local analytic classification",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-algebraic-summation",
      "title": "Algebraic summation",
-     "prose_ratio": 0.808,
-     "coverage_ratio": 0.989,
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-references",
+     "id": "sec-003-4-the-q-gevrey-filtration-on-the-stokes-sheaf",
+     "title": "The q-Gevrey filtration on the Stokes sheaf",
+     "prose_ratio": 0.852,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-references",
      "title": "References",
      "result": "no matching \\section"
     }

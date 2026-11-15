@@ -8,6 +8,7 @@ pages: 4-9
 source_pdf: S0894-0347-08-00618-8.pdf
 source_sha256: 7c0b2ca41992b21c
 toc_source: outline
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY S 0894-0347(08)00618-8 — 24 sections: Front matter; Introduction; A plethora of negative dependence"
 ---
 ate polynomial is said to be multi-aﬃne if it has degree at most one in each variable.
 Denote by Pn, n ∈N, the set of all probability measures on the Boolean algebra

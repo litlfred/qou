@@ -1,0 +1,46 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2501.03424v1",
+ "source": {
+  "structure_sha256": "53e00a30fd850a5b978c0bc2fb204d7e987c23b469a6321cc6cbe9834f0566b6",
+  "file": "2501.03424v1.pdf"
+ },
+ "provenance": {
+  "title": "Soergel bimodules and Kazhdan-Lusztig polynomials",
+  "authors": "University of California, Berkeley",
+  "arxiv": {
+   "id": "2501.03424",
+   "version": "1",
+   "primary_class": "math.RT",
+   "stamp_date": "6 Jan 2025"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "recommendation": 1
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This paper should be viewed as a (very) condensed exposition following the work of primarily Elias, Makisumi, Thiel, and Williamson in their lovely book Intro- duction to Soergel Bimodules2.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

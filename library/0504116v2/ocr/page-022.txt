@@ -1,0 +1,48 @@
+456 Roberto Frigerio
+
+where Ad: G — GL(g) is the usual adjoint representation.
+
+Consider now a trivial deformation of po, ie, let t+ g, be a smooth path in G starting
+at the identity and set p;(y) = sipolyg; | for all y € [. Then differentiation shows
+that
+
+A) = & — Ad(po())(8)
+
+for any y € I’, where g € g is the tangent vector to f +> g; at t = 0. We now set:
+
+Z'Cs93p0) = {e: Pg: cy) =) + Ad(po(y)(e2))}
+
+B\(L 939) = {b: Pq: by) =m— Ad(po(7))(m) for some m € g}
+
+ANC; 93 0) = Z'(3 9; p0)/B'( 9; po)
+The above discussion shows that Z!([; g; Po) corresponds in some sense to the tangent
+space of R(T, G) at po. Under this identification the module BI; g; po) should
+represent the tangent space to trivial deformations of py, so H!(T; g; po) should give
+
+the tangent space of R(I’, G)/G at [po] (however, this holds true only in the setting of
+algebraic schemes).
+
+Let c € Z!(L; g; p), and suppose that I’ is a normal subgroup of I such that p(y) = le,
+c(y) = 0 for all y € [. Let also #: ['/'9 — G be the representation induced by p.
+
+Lemma A.1 The map ¢: T/T’ — M defined by @([y]) = c(y) is well-defined and
+gives a cocycle é € Z/To; g; P). Moreover, we have ¢ € BM /To: g: p) if and only
+ifce B'(T3 g; p).
+
+A.2 Classical rigidity results
+
+Let N be a smooth 3—manifold without boundary and suppose po: 71(N) — PSL(2, C)
+is the holonomy representation for a complete finite-volume hyperbolic structure on NV.
+The following result is due to Weil [16], and can be considered as a local version of
+Mostow’s rigidity Theorem for compact hyperbolic 3—manifolds.
+
+Theorem A.2 Suppose N is compact. Then H!(7(N); sl(2, C); po) = 0.
+
+Suppose now that N compactifies to a manifold N with non-empty boundary ON =
+T; U...U Ty. In this case po admits non-trivial deformations, so we cannot expect
+H!(77(N); sl(2, C); po) to be trivial. If K isa subgroup of 7(N), the natural injection
+ix: K — 17(N) induces a map on cohomology
+
+ix: H'(m(N);81(2, C); po) > H'(K; sl(2, C); po 0 ix).
+
+Algebraic & Geometric Topology 6 (2006)

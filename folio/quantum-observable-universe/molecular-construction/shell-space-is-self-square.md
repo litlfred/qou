@@ -21,7 +21,7 @@ $$
   [n]_q^2 \;=\; \sum_{\ell=0}^{n-1} [2\ell+1]_q ,
 $$
 
-which is [`prop:shell-capacity-self-square`](#prop:shell-capacity-self-square) and, at $q = 1$, the periodic-table capacities $2n^2 = 2,8,18,32,\ldots$. Clearing the common denominator $(q - q^{-1})$ turns this into a polynomial identity over $\mathbb{Z}[q,q^{-1}]$, proved for every $n$ in the Lean sibling as `qCG_self_square`. Previously only the $q = 1$ integer specialisation $\sum_{\ell<n}(2\ell+1) = n^2$ was formalised; the $q$-deformed statement had been checked symbolically for $n = 1,\ldots,8$ in `computations/shell_capacity_chebyshev_bridge.py`.
+which is [`prop:shell-capacity-self-square`](#prop:shell-capacity-self-square) and, at $q = 1$, the periodic-table capacities $2n^2 = 2,8,18,32,\ldots$. Clearing the common denominator $(q - q^{-1})$ turns this into a polynomial identity over $\mathbb{Z}[q,q^{-1}]$, proved for every $n$ in the Lean sibling as `qCG_self_square`.
 
 **Falsifiable content.** The conjecture asserts more than a coincidence of counts. It fixes the sub-shell multiplicities as the $q$-integers $[2\ell+1]_q$, and not only their $q \to 1$ values $2\ell+1$; a resolved sub-shell structure departing from $[2\ell+1]_q$ at $q \neq 1$ would refute it. The Lean sibling records this as `subshell_decomposition_of_self_square`, derived from the conjectural hypothesis rather than assumed alongside it, together with a concrete refuting witness `not_selfSquare_linear` showing that the class is not satisfied by an arbitrary dimension function.
 

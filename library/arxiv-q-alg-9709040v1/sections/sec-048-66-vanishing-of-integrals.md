@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9709040v1
-doc_title: "arXiv:q-alg/9709040v1 29 Sep 1997"
+doc_title: "Deformation quantization of Poisson manifolds"
 section_id: sec-048-66-vanishing-of-integrals
 section_title: "Vanishing of integrals"
 section_number: 6.6
@@ -8,6 +8,7 @@ pages: 28-29
 source_pdf: 9709040v1.pdf
 source_sha256: 8baf650d86c5b8ab
 toc_source: inferred
+doc_brief: "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products"
 ---
 In this subsection we consider the space Cn of G(2)-equivalence classes of conﬁgurations of points on
 the Euclidean plane. Every two indices i, j, i̸ = j, 1 ≤i, j ≤n give a forgetting map Cn−→C2 ≃S1. We
@@ -49,4 +50,3 @@ dArg(Zα)
 where Zα are holomorphic invertible functions on C′′
 n (diﬀerences between complex coordinates of points of
 the conﬁguration). We claim that it is zero, because of the general result proven in 6.6.1.
-Q.E.D.

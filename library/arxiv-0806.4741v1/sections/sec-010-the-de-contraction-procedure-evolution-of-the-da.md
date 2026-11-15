@@ -10,7 +10,8 @@ source_sha256: 5e7ad85a99fb3552
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.98
+latex_coverage_ratio: 0.96
+doc_brief: "The deformation quantizations of the hyperbolic plane — We describe the space of (all) invariant deformation quantizations on the hyperbolic plane D as solutions of the evolution of a second order"
 ---
 Let us now consider an invariant formal star product $\sharp$ on the hyperbolic plane $\DD$.
 This star product is in particular $\SS$-invariant. One knows from \cite{BBG}, that the set 

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408099v1
-doc_title: "arXiv:hep-th/9408099v1 17 Aug 1994"
+doc_title: "Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD"
 section_id: sec-016-16-structure-of-the-scale-invariant-theories
 section_title: "Structure of the scale invariant theories"
 section_number: 16
@@ -8,6 +8,7 @@ pages: 56-57
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
 toc_source: inferred
+doc_brief: "Seiberg–Witten, Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD (1994) — exact metric on the moduli space of quantum vacua and exact stable-state spectrum for SU(2) with…"
 ---
 In this section, we will analyze the Nf = 4 and N = 4 theories. In the absence of bare
 masses, those theories are conformally invariant. In the presence of N = 2-invariant bare

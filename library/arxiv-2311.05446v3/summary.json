@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2311.05446v3",
  "source_sha256": "c5809730f598a56d",
- "brief": "NEW BRUNN–MINKOWSKI AND FUNCTIONAL INEQUALITIES VIA CONVEXITY OF ENTROPY — We study the connection between the concavity properties of a measureνand the convexity properties of the associated",
- "extended": "**NEW BRUNN–MINKOWSKI AND FUNCTIONAL INEQUALITIES VIA CONVEXITY OF ENTROPY**\n\n*GAUTAM AISHWARYA AND LIRAN ROTEM*\n\n32 pp, 12 sections.\n\n**Abstract.** We study the connection between the concavity properties of a measureνand the convexity properties of the associated relative entropyD(·∥ν) along optimal transport. As a corollary we prove a new dimensional Brunn–Minkowski inequality for centered star-shaped bod- ies, when the measureνis log-concave with a p-homogeneous potential (such as the Gaussian measure). Our method allows us to go beyond the usual convexity assumption on the sets that is fundamentally essential for the standard differential-geometric technique in this area. We then take a finer look at the convexity properties of the Gauss- ian relative entropy, which yields new functional inequalities. First we obtain curvature and dimensional reinforcements to Otto–Villani’s HWI inequality in Gauss space, when restricted to even strongly log-concave measures.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Improved Brunn–Minkowski inequalities; 1.2 Weighted Brunn–Minkowski inequalities for ; 1.4 Functional Inequalities; 1.3 Towards the best possible exponent in the ; Some notation and conventions:; 2 Optimal transport, entropy, and an overview ; 3 Dimensional convexity properties of relative; 4 Dimensional convexity properties of the Gaus; 5 Applications to functional inequalities; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: Letνbe a Borel measure onR n with densityϕwith respect\n- Theorem 1.3: LetV:R n→[0,∞)be ap-homogeneous convex function\n- Theorem 1.4: LetV:R n→[0,∞)be ap-homogeneous convex function\n- Theorem 1.5: Suppose{µ t}t∈[0,1] is a displacement interpolation such that\n- Theorem 1.7: Letµbe an even strongly log-concave\n- Theorem 2.2: [47, Theorem 2.12 (ii)]Letµ 0,µ 1 ∈ P2(Rn). Ifµ 0 ∈",
+ "brief": "New Brunn--Minkowski and functional inequalities via convexity of entropy — We study the connection between the concavity properties of a measure ν and the convexity properties of the associated",
+ "extended": "**New Brunn--Minkowski and functional inequalities via convexity of entropy**\n\n*GAUTAM AISHWARYA AND LIRAN ROTEM*\n\n32 pp, 12 sections.\n\n**Abstract.** We study the connection between the concavity properties of a measure ν and the convexity properties of the associated relative entropy D(·∥ν) along optimal transport. As a corollary we prove a new dimensional Brunn–Minkowski inequality for centered star-shaped bod- ies, when the measure ν is log-concave with a p-homogeneous potential (such as the Gaussian measure). Our method allows us to go beyond the usual convexity assumption on the sets that is fundamentally essential for the standard differential-geometric technique in this area. We then take a finer look at the convexity properties of the Gauss- ian relative entropy, which yields new functional inequalities. First we obtain curvature and dimensional reinforcements to Otto–Villani’s HWI inequality in Gauss space, when restricted to even strongly log-concave measures.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Improved Brunn–Minkowski inequalities; 1.2 Weighted Brunn–Minkowski inequalities for ; 1.3 Towards the best possible exponent in the ; 1.4 Functional Inequalities; Some notation and conventions:; 2 Optimal transport, entropy, and an overview ; 3 Dimensional convexity properties of relative; 4 Dimensional convexity properties of the Gaus; 5 Applications to functional inequalities; References",
  "tokens": {
-  "brief": 47,
-  "extended": 465
+  "brief": 48,
+  "extended": 356
  },
  "sections": [
   {
@@ -30,14 +30,14 @@
    "pages": "3-5"
   },
   {
-   "id": "sec-003-14-functional-inequalities",
-   "title": "Functional Inequalities",
-   "pages": "5-5"
+   "id": "sec-003-13-towards-the-best-possible-exponent-in-the-ent",
+   "title": "Towards the best possible exponent in the entropy inequality",
+   "pages": "5-6"
   },
   {
-   "id": "sec-004-13-towards-the-best-possible-exponent-in-the-ent",
-   "title": "Towards the best possible exponent in the entropy inequality",
-   "pages": "5-8"
+   "id": "sec-004-14-functional-inequalities",
+   "title": "Functional Inequalities",
+   "pages": "6-8"
   },
   {
    "id": "sec-005-some-notation-and-conventions",
@@ -74,8 +74,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

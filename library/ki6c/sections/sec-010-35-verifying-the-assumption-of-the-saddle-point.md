@@ -1,6 +1,6 @@
 ---
 doc_id: ki6c
-doc_title: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings Tomotada Ohtsuki and Yoshiyuki Yokota Introduction"
+doc_title: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings"
 section_id: sec-010-35-verifying-the-assumption-of-the-saddle-point
 section_title: "Verifying the assumption of the saddle point method"
 section_number: 3.5
@@ -8,7 +8,9 @@ pages: 22-26
 source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
 toc_source: inferred
+doc_brief: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings — We give presentations of the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings."
 ---
+Verifying the assumption of the saddle point method
 In this section, we verify the assumption of the saddle point method in Lemma 3.9. In
 order to show this lemma, we show Lemmas 3.5–3.8 in advance. As we mentioned in
 Remark 2.7, we verify the assumption for ˆV (t, s, u) instead of V (t, s, u), since V (t, s, u)
@@ -480,4 +482,3 @@ Therefore, (48) and (49) hold.
 The 62 knot
 In this section, we show Theorem 1.1 for the 62 knot. We give a proof of the theorem in
 Section 4.1, using lemmas shown in Section 4.2–4.5.
-4.1

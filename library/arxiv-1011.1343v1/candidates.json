@@ -1,15 +1,13 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1011.1343v1",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "7d50e5e28e695191d428fcf590d6efd7a20aca17255c1eac85ea41aacd4fe8b9",
   "file": "1011.1343v1.pdf"
  },
  "provenance": {
-  "title": "Institut f\u00fcr Kernphysik, Institute for Advanced Simulatio n and JCHP",
-  "authors": "Forschungszentrum J\u00fclich, D-52425 J\u00fclich, Germany",
+  "title": "Chiral symmetry, nuclear forces and all that",
+  "authors": "Ulf-G. Mei\u00dfner",
   "arxiv": {
    "id": "1011.1343",
    "version": "1",
@@ -18,11 +16,46 @@
   },
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
+  "candidates": 2,
+  "by_kind": {
+   "recommendation": 2
+  },
   "formalization_candidates": 0
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "It is worth quoting from Ref. [@Rho:1981zi]: \"\\... that there must exist an intimate connection between what makes up a hadron and what induces a rich variety of interactions between hadrons. \\..., it will be rather unlikely one will gain a full understanding of one without the other.\" Only then too much emphasis was put onto the quark structure of the nucleon - as we understand now, low-energy QCD is well approximated by an hadronic effective Lagrangian.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-the-early-days-at-stony-brook.md",
+   "section_title": "The early days at Stony Brook",
+   "pages": "1-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "He immediately realized that these must be related to the much discussed mechanism for the short-range repulsion of the nuclear forces.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-3-flashback-the-texas-revolution.md",
+   "section_title": "Flashback: The Texas revolution",
+   "pages": "4-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
 }

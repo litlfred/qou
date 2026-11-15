@@ -16,7 +16,7 @@ $$
 
 The Borromean link $\mathcal{B}_3$ requires that no two components link, yet all three together remain inseparable. Removing any one component frees the other two. This enforces color confinement. No isolated quark (a single unknot removed from $\mathcal{B}_3$) can exist. No two-quark bound state (a diquark) is stable. Only the three-quark composite remains confined. 
 
-The Hopf link $\mathcal{L}_H$, by contrast, links any two components pairwise. A Hopf chain of three unknots permits diquark states (remove one, and the other two remain linked), contradicting confinement.
+The Hopf link $\mathcal{L}_H$, by contrast, links any two components pairwise. A Hopf chain of three unknots permits diquark states (remove one, and the other two remain linked), contradicting confinement. The two cases are told apart by link-homotopy invariants: three-component links in $S^3$ are classified up to link homotopy by their pairwise linking numbers and Milnor's triple linking number, and the Borromean rings have all pairwise numbers zero and triple number $\pm 1$ \cite{dgkmsv2013}.
 
 **Mass from linking, not from constituents.**
 

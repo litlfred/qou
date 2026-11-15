@@ -1,0 +1,2314 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-0807.2679v1",
+  "pages": [
+    {
+      "page": 2,
+      "rotation": 0,
+      "drawings": 35,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1: We have drawn the link L4"
+      ],
+      "labels": [
+        {
+          "text": "Figure 1: We have drawn the link L4",
+          "bbox": [
+            133.8,
+            371.92,
+            302.65,
+            383.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1;3, the (1; 3, 4)-cabling of L = (L1, L2),",
+          "bbox": [
+            298.68,
+            373.29,
+            477.48,
+            384.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "where L1 is the ﬁgure eight knot and L2 is an unknot. We have indicated the",
+          "bbox": [
+            133.8,
+            385.17,
+            477.46,
+            396.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "torus braid B4",
+          "bbox": [
+            133.8,
+            395.8,
+            197.41,
+            407.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "3 and the opened tangle T1;3 mentioned in section 2.",
+          "bbox": [
+            192.96,
+            397.17,
+            422.64,
+            409.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "In the statement of the theorem we have used the notation |N| = N0+. . .+Ng−1",
+          "bbox": [
+            133.8,
+            438.06,
+            477.01,
+            448.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and the convention that JM1,...,Mi−1,−j,...,Mc(L)(q) = −JM1,...,Mi−1,j,...,Mc(L)(q).",
+          "bbox": [
+            133.8,
+            450.33,
+            477.36,
+            461.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMSY10",
+            "CMSY5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "In the case where g = 1 and L is the unknot the above cabling formula agrees",
+          "bbox": [
+            133.8,
+            462.21,
+            477.68,
+            472.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "with Morton’s formula for the (r, s)-torus knot [14], where his variables are",
+          "bbox": [
+            133.8,
+            474.21,
+            477.58,
+            484.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "related to ours as s2 = q, m = r, p = s. The case of a (r, 2)-cabling is also",
+          "bbox": [
+            133.8,
+            482.61,
+            477.54,
+            496.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "known [20]. In all other cases our formula seems to be new.",
+          "bbox": [
+            133.8,
+            498.09,
+            393.6,
+            508.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Our main motivation for proving such a formula is to verify the volume",
+          "bbox": [
+            148.68,
+            510.09,
+            477.58,
+            520.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "conjecture [10],[16] in the cases where cabling is involved. The volume conjecture",
+          "bbox": [
+            133.8,
+            522.09,
+            477.46,
+            532.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "states that the normalized colored Jones polynomial J′(L) of a link L determines",
+          "bbox": [
+            133.8,
+            532.61,
+            477.44,
+            543.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the simplicial volume of the link complement as follows:",
+          "bbox": [
+            133.8,
+            545.97,
+            377.88,
+            555.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2π",
+          "bbox": [
+            237.12,
+            563.37,
+            247.84,
+            573.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "N )| = Vol(S3 −L)",
+          "bbox": [
+            319.08,
+            566.01,
+            399.99,
+            580.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2πi",
+          "bbox": [
+            316.92,
+            567.1,
+            327.25,
+            572.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "N |J′",
+          "bbox": [
+            238.08,
+            568.25,
+            260.89,
+            586.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "lim",
+          "bbox": [
+            215.88,
+            570.09,
+            229.7,
+            580.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "N,N,...,N(L)(e",
+          "bbox": [
+            257.64,
+            570.09,
+            315.67,
+            581.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "N→∞",
+          "bbox": [
+            211.32,
+            578.81,
+            234.26,
+            585.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "As an immediate corollary to our cabling formula we will ﬁnd a proof of the",
+          "bbox": [
+            133.8,
+            593.49,
+            477.46,
+            603.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "volume conjecture for all knots and links whose complement has zero simplicial",
+          "bbox": [
+            133.8,
+            605.49,
+            477.48,
+            615.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "volume. This is because it is shown in [5] that all such links can be obtained",
+          "bbox": [
+            133.8,
+            617.49,
+            477.49,
+            627.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "from the unknot by repeated cabling and connected sum. Using the cabling",
+          "bbox": [
+            133.8,
+            629.37,
+            477.54,
+            639.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "formula we can therefore in principle write down the colored Jones polynomial",
+          "bbox": [
+            133.8,
+            641.37,
+            477.6,
+            651.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of any such link. A simple estimate is enough to prove that there cannot be",
+          "bbox": [
+            133.8,
+            653.37,
+            477.46,
+            663.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "exponential growth, see also section 3.",
+          "bbox": [
+            133.8,
+            665.25,
+            300.6,
+            675.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            303.12,
+            695.13,
+            308.1,
+            705.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "rotation": 0,
+      "drawings": 42,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2: Sliding the coupon α up through the tangle Ti;s."
+      ],
+      "labels": [
+        {
+          "text": "Now we can slide the coupon α up along the (1, 1)-tangle Ti. We obtain",
+          "bbox": [
+            148.68,
+            127.29,
+            477.49,
+            137.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "α on top of Ti, where Ti is now colored with Vj. Since Vj is irreducible, the",
+          "bbox": [
+            133.8,
+            139.29,
+            477.46,
+            150.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "operator represented by Ti is multiplication by a scalar.",
+          "bbox": [
+            133.8,
+            151.17,
+            388.8,
+            162.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "By closing Ti one",
+          "bbox": [
+            397.44,
+            151.17,
+            477.46,
+            162.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "sees that this scalar is exactly [j]−1JM1,...,Mi−1,j,...,Mc(L).",
+          "bbox": [
+            133.8,
+            161.8,
+            390.6,
+            174.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "We conclude that",
+          "bbox": [
+            398.64,
+            163.17,
+            477.5,
+            173.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Ti;s ◦α = [j]−1JM1,...,Mi−1,j,...,Mc(L)α.",
+          "bbox": [
+            133.8,
+            173.68,
+            300.24,
+            186.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY10",
+            "CMSY5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 2: Sliding the coupon α up through the tangle Ti;s.",
+          "bbox": [
+            177.96,
+            354.09,
+            433.32,
+            364.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "s ◦Ti;s◦α = [j]−1JM1,...,Mi−1,j,...,Mc(L)Br",
+          "bbox": [
+            281.88,
+            386.08,
+            460.54,
+            399.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY10",
+            "CMSY5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The above argument shows that Br",
+          "bbox": [
+            133.8,
+            386.09,
+            286.06,
+            397.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "s ◦α.",
+          "bbox": [
+            456.36,
+            387.45,
+            477.48,
+            399.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Therefore equation (3) becomes:",
+          "bbox": [
+            133.8,
+            399.45,
+            274.8,
+            409.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "p|N|−s+1",
+          "bbox": [
+            207.72,
+            419.63,
+            243.61,
+            428.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX7",
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            218.4,
+            429.94,
+            232.79,
+            453.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Tr(Br",
+          "bbox": [
+            245.28,
+            430.49,
+            271.06,
+            442.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "J =",
+          "bbox": [
+            187.92,
+            432.45,
+            204.9,
+            442.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "s, Hom(Vj, V ))JM1,...,Mi−1,j,...,Mc(L)",
+          "bbox": [
+            266.88,
+            432.45,
+            423.38,
+            444.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(4)",
+          "bbox": [
+            464.76,
+            432.45,
+            477.5,
+            442.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "j=1",
+          "bbox": [
+            218.76,
+            446.32,
+            232.45,
+            453.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Note that an equation such as (4) remains valid when one replaces Br",
+          "bbox": [
+            133.8,
+            463.61,
+            443.49,
+            474.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "s by any",
+          "bbox": [
+            439.32,
+            464.97,
+            477.57,
+            477.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "braid B. Such a satellite formula also appears in [13].",
+          "bbox": [
+            133.8,
+            476.85,
+            367.92,
+            486.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We now concentrate on calculating the trace Tr(Br",
+          "bbox": [
+            148.68,
+            487.49,
+            368.61,
+            498.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "s, Hom(Vj, V )). Note that",
+          "bbox": [
+            364.44,
+            488.85,
+            477.5,
+            500.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "s)s = ((σ1 · · · σs−1)s)r is a central element of the braid group. The element",
+          "bbox": [
+            145.2,
+            497.13,
+            477.5,
+            512.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(Br",
+          "bbox": [
+            133.8,
+            499.37,
+            149.37,
+            510.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "C = (σ1 · · · σs−1)s can also be thought of as a curl in s parallel strands (hence",
+          "bbox": [
+            133.8,
+            509.13,
+            477.46,
+            524.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "j2−1",
+          "bbox": [
+            425.28,
+            523.18,
+            441.15,
+            530.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMR5",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "the extra curls in the deﬁnition of Br",
+          "bbox": [
+            133.8,
+            526.97,
+            295.29,
+            538.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "4 α. If we",
+          "bbox": [
+            431.52,
+            527.13,
+            477.46,
+            538.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            9.96
+          ]
+        },
+        {
+          "text": "s), so it acts on α as C ◦α = q",
+          "bbox": [
+            291.12,
+            528.33,
+            423.72,
+            539.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "j2−1",
+          "bbox": [
+            189.0,
+            538.66,
+            204.87,
+            545.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMR5",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "s, then Ds acts as the identity on Hom(Vj, V ). An argument",
+          "bbox": [
+            214.08,
+            540.21,
+            477.62,
+            555.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "set D = q−r",
+          "bbox": [
+            133.8,
+            541.3,
+            186.34,
+            553.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "4 Br",
+          "bbox": [
+            195.24,
+            542.45,
+            218.26,
+            553.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "s",
+          "bbox": [
+            183.12,
+            546.34,
+            186.46,
+            551.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "by Jones and Rosso [9] shows that its trace does not depend on q. For the record",
+          "bbox": [
+            133.8,
+            555.81,
+            477.73,
+            565.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "we express the trace we were looking for in terms of D:",
+          "bbox": [
+            133.8,
+            567.69,
+            375.0,
+            577.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "j2−1",
+          "bbox": [
+            311.4,
+            587.62,
+            327.27,
+            594.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMR5",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "r",
+          "bbox": [
+            305.52,
+            590.14,
+            308.86,
+            595.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "Tr(Br",
+          "bbox": [
+            200.28,
+            591.29,
+            226.18,
+            603.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "s, Hom(Vj, V )) = q",
+          "bbox": [
+            222.0,
+            593.25,
+            303.96,
+            604.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Tr(D, Hom(Vj, V ))",
+          "bbox": [
+            329.04,
+            593.25,
+            410.91,
+            603.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(5)",
+          "bbox": [
+            464.76,
+            593.25,
+            477.51,
+            603.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "s",
+          "bbox": [
+            305.64,
+            595.18,
+            308.98,
+            600.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            317.64,
+            595.18,
+            321.03,
+            600.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "Since the trace of D does not depend on q we can calculate it at q = 1. In",
+          "bbox": [
+            133.8,
+            615.09,
+            477.49,
+            625.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "s = D equals the permutation (σ1 · · · σs−1)r and the representation",
+          "bbox": [
+            182.16,
+            623.49,
+            477.73,
+            639.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "this case Br",
+          "bbox": [
+            133.8,
+            625.73,
+            186.34,
+            637.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "V can be viewed as an SL(2) representation. By collecting common factors in",
+          "bbox": [
+            133.8,
+            638.97,
+            477.49,
+            648.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Ng−1",
+          "bbox": [
+            293.64,
+            649.24,
+            319.09,
+            675.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the tensor product we see that V ∼=",
+          "bbox": [
+            133.8,
+            649.41,
+            290.58,
+            662.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "k=0 V ⊗p",
+          "bbox": [
+            304.8,
+            649.49,
+            339.74,
+            665.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Nk , where p = s/g. Note that our",
+          "bbox": [
+            327.12,
+            652.05,
+            477.53,
+            665.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "permutation D acts on V by permuting the factors inside each tensor power.",
+          "bbox": [
+            133.8,
+            663.93,
+            477.6,
+            673.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            303.12,
+            695.13,
+            308.1,
+            705.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 9,
+      "rotation": 0,
+      "drawings": 309,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3: The Pascal-like triangle of all two part partitions that can be glued from 5 or less border strips of length p = 4."
+      ],
+      "labels": [
+        {
+          "text": "We proceed with the calculation of Kµ. By [12] p.72 we can expand the Schur",
+          "bbox": [
+            148.68,
+            127.29,
+            477.53,
+            137.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "function sµ(y0, ωy0, . . . , ωp−1yg−1) in terms of skew Schur functions making it",
+          "bbox": [
+            133.8,
+            137.92,
+            477.5,
+            149.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "possible to extract the powers of yj.",
+          "bbox": [
+            133.8,
+            151.17,
+            290.88,
+            161.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "X g−1",
+          "bbox": [
+            269.04,
+            171.04,
+            299.41,
+            203.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "y|ν(j)−ν(j−1)|",
+          "bbox": [
+            301.08,
+            177.22,
+            353.24,
+            191.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR5",
+            "CMSY5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Y",
+          "bbox": [
+            285.96,
+            179.26,
+            298.68,
+            203.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "sµ(y0, ωy0, . . . , ωp−1yg−1) =",
+          "bbox": [
+            145.08,
+            179.8,
+            266.22,
+            192.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "sν(j)/ν(j−1)(1, ω, . . . , ωp−1)",
+          "bbox": [
+            353.76,
+            179.8,
+            466.11,
+            193.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "j",
+          "bbox": [
+            306.0,
+            186.77,
+            309.29,
+            193.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "j=0",
+          "bbox": [
+            285.36,
+            195.64,
+            299.05,
+            202.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "The sum ranges over all sequences of partitions 0 = ν(0) ⊂ν(1) . . . ⊂ν(g) = µ.",
+          "bbox": [
+            133.8,
+            210.33,
+            477.48,
+            223.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Only the sequences of partitions satisfying |ν(j) −ν(j−1)| = p(Nj −1) contribute",
+          "bbox": [
+            133.8,
+            222.21,
+            477.46,
+            237.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "to the coeﬃcient of yp(N−1) in this sum. The contribution of such a sequence is",
+          "bbox": [
+            133.8,
+            234.21,
+            477.44,
+            247.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMBX7",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Qg−1",
+          "bbox": [
+            133.8,
+            247.0,
+            157.45,
+            273.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "j=0 sν(j)/ν(j−1)(1, ω, . . . , ωp−1). In the cases we are interested in µ has length",
+          "bbox": [
+            143.16,
+            248.44,
+            477.49,
+            262.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 and it follows from [12] p.91 that this contribution is zero unless ν(j) can",
+          "bbox": [
+            133.8,
+            260.37,
+            477.49,
+            273.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "be obtained from ν(j−1) by attaching Nj −1 border strips of length p.",
+          "bbox": [
+            133.8,
+            272.25,
+            460.68,
+            287.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            470.04,
+            275.85,
+            477.51,
+            285.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "set theoretical diﬀerence between two nested partitions is called a border strip",
+          "bbox": [
+            133.8,
+            287.85,
+            477.49,
+            297.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of length p if it is connected, does not contain any 2 × 2 squares and has p",
+          "bbox": [
+            133.8,
+            299.85,
+            477.45,
+            309.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "elements. If this is the case for all j, then the contribution is σp(µ) = (−1)r2,",
+          "bbox": [
+            133.8,
+            310.37,
+            477.48,
+            322.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "where 0 ≤r2 < p is the residue of µ2 modulo p.",
+          "bbox": [
+            133.8,
+            323.73,
+            341.04,
+            335.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The above argument shows that Kµ = σp(µ)|Kµ|, and that |Kµ| is the",
+          "bbox": [
+            148.68,
+            335.73,
+            477.46,
+            347.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "number of sequences of partitions 0 = ν(0) ⊂ν(1) . . . ⊂ν(g) = µ satisfying the",
+          "bbox": [
+            133.8,
+            344.01,
+            477.46,
+            357.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "condition that ν(j) is obtained from ν(j−1) by attaching Nj −1 border strips of",
+          "bbox": [
+            133.8,
+            356.01,
+            477.52,
+            371.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "length p.",
+          "bbox": [
+            133.8,
+            371.49,
+            171.96,
+            381.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "To count the number of such sequences we ﬁrst look a all ways of constructing",
+          "bbox": [
+            148.68,
+            383.49,
+            477.54,
+            393.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "two part partitions by attaching length p-border strips, starting with the empty",
+          "bbox": [
+            133.8,
+            395.49,
+            477.45,
+            405.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "partition. One notices that the lower leftmost corner of a new border strip can",
+          "bbox": [
+            133.8,
+            407.37,
+            477.49,
+            417.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "be attached at exactly two places: either the end of the ﬁrst row or the end",
+          "bbox": [
+            133.8,
+            419.37,
+            477.49,
+            429.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of the second row. It follows that we can list all possibilities in a Pascal-like",
+          "bbox": [
+            133.8,
+            431.37,
+            477.82,
+            441.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "triangle, see ﬁgure 3.",
+          "bbox": [
+            133.8,
+            443.25,
+            224.76,
+            453.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 3: The Pascal-like triangle of all two part partitions that can be glued",
+          "bbox": [
+            133.8,
+            620.13,
+            477.49,
+            630.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "from 5 or less border strips of length p = 4.",
+          "bbox": [
+            133.8,
+            632.13,
+            323.28,
+            642.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The k-th row of our Pascal triangle contains k + 1 partitions that we index by",
+          "bbox": [
+            133.8,
+            665.25,
+            477.45,
+            675.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "9",
+          "bbox": [
+            303.12,
+            695.13,
+            308.1,
+            705.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -3,12 +3,17 @@
  "doc_id": "arxiv-1210.5756v1",
  "source_sha256": "c7546a79a85b8dd5",
  "brief": "Contact Graphs of Unit Sphere Packings Revisited ∗ — The contact graph of an arbitrary ﬁnite packing of unit balls in Euclidean 3-space is the (simple) graph whose vertices correspond to the packing",
- "extended": "**Contact Graphs of Unit Sphere Packings Revisited ∗**\n\n*Károly Bezdek†and Samuel Reid ‡*\n\n19 pp, 13 sections.\n\n**Abstract.** The contact graph of an arbitrary ﬁnite packing of unit balls in Euclidean 3-space is the (simple) graph whose vertices correspond to the packing elements and whose two vertices are connected by an edge if the corresponding two packing elements touch each other. One of the most basic questions on contact graphs is to ﬁnd the maximum number of edges that a contact graph of a packing of n unit balls can have. In this paper, improving earlier estimates, we prove that the number of touching pairs in an arbitrary packing of n unit balls in E3 is always less than 6n −0.926n 2 3 . Moreover, as a natural extension of the above problem, we propose to study the maximum number of touching triplets (resp., quadruples) in an arbitrary packing of n unit balls in Euclidean 3-space.\n\n**Outline.** 1 Introduction; 2 Proof of (i) in Theorem 1; 3 Upper bounds for Lattice Packings; 3.1 Proof of (ii) in Theorem 1; 3.2 Proof of (ii) in Theorem 2; 4 Proof of (i) in Theorem 2 using Theorem 3; 5 The Polygon Lemmas on S2 for Theorem 3; 6 Proof of Theorem 3; 6.1 An upper bound on touching triplets on S2; 6.2 An upper bound on touching pairs on S2; 7 Explicit Constructions; 7.1 The Octahedral Construction; 7.2 Tightness of the estimates in Problem 2\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: (i) The number of touching pairs in an arbitrary packing of n≥ 2 unit balls in E3 is always less than\n- Theorem 2: (i) The number of touching triplets (resp., quadruples) in an arbitrary packing of n≥ 3 (resp., n≥ 4) unit\n- Theorem 3: The number of touching pairs (resp., triplets) in an arbitrary packing of spherical caps of\n- Theorem 3: Sections 5 and 6 present our elementary and somewhat computational proof of Theorem 3.\n- Theorem 4: Let B1, B2,..., B13 be 13 diﬀerent members of a packing of unit balls in E3. Assume that each\n- Theorem 5: Let B1, B2,..., B14 be 14 diﬀerent members of a packing of unit balls in E3. Assume that",
+ "extended": "**Contact Graphs of Unit Sphere Packings Revisited ∗**\n\n*Károly Bezdek†and Samuel Reid‡*\n\n19 pp, 14 sections.\n\n**Abstract.** The contact graph of an arbitrary ﬁnite packing of unit balls in Euclidean 3-space is the (simple) graph whose vertices correspond to the packing elements and whose two vertices are connected by an edge if the corresponding two packing elements touch each other. One of the most basic questions on contact graphs is to ﬁnd the maximum number of edges that a contact graph of a packing of n unit balls can have. In this paper, improving earlier estimates, we prove that the number of touching pairs in an arbitrary packing of n unit balls in E3 is always less than 6n−0.926n 2 3 . Moreover, as a natural extension of the above problem, we propose to study the maximum number of touching triplets (resp., quadruples) in an arbitrary packing of n unit balls in Euclidean 3-space.\n\n**Outline.** Front matter; 1 Introduction; 2 Proof of (i) in Theorem 1; 3 Upper bounds for Lattice Packings; 3.1 Proof of (ii) in Theorem 1; 3.2 Proof of (ii) in Theorem 2; 4 Proof of (i) in Theorem 2 using Theorem 3; 5 The Polygon Lemmas on S2 for Theorem 3; 6 Proof of Theorem 3; 6.1 An upper bound on touching triplets on S2; 6.2 An upper bound on touching pairs on S2; 7 Explicit Constructions; 7.1 The Octahedral Construction; 7.2 Tightness of the estimates in Problem 2",
  "tokens": {
   "brief": 49,
-  "extended": 516
+  "extended": 344
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -79,8 +84,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

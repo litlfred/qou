@@ -1,0 +1,57 @@
+1408 S.G. Bobkov and F. Gétze
+
+where C is an absolute constant and A, = a max;, ; |EX; — EX j|. Since max; |EX;| is of order
+
+at most o, A, is at most ./n and we arrive at the bound (1.7) in Theorem 1.3:
+
++00 Cc.
+Ef Fats) ~ Fooide < Si.
+oo n
+
+Now, let us explain the second statement of Theorem 1.3 for the case where the &;,’s satisfy
+a logarithmic Sobolev inequality with a common constant o7, in addition to the normalizing
+conditions E& j, = 0, Var(&jx) = 1 (which implies that o > 1). Let G denote the standard semi-
+circle law with variance 1, that is, with density g(x) = uv4 —x?,—2 <x <2. In this case, the
+
+Lipschitz seminorm is M = ||G|lLip = 4. Also,
+
+- (Mon? _ oe)
+a ni/3 ~ n
+
+for some absolute C’. Therefore, applying Theorem 7.1 and using o > 1, we arrive at the
+bound (1.8):
+
+log'Pn
+
+E sup |F,(x) — G(x)| < Co?
+n /3
+
+xeR"
+
++ sup | F(x) — G(x). (8.1)
+xeR
+
+Thus, Theorem 1.3 is proved. For individual points that are close to the end-points x = +2
+of the supporting interval of the semicircle law, we may get improved bounds in comparison
+with (8.1). Namely, by Proposition 6.1 (and repeating the argument from the proof of the in-
+equality of Corollary 6.2), for all t > 0,
+
+Ee! lFn@) GO) < Fret Fr@)-GO)) 4 Bet (Ful) G(x)
+< ef Fth)—GX) 4 gt (GO)—-Fa—h))
+
+<< Jel (Gth)—G(x—h)) +1] F-Gll
+
+where h = J deat = dot Taking the logarithm and applying Jensen’s inequality, we arrive at
+
+log2
+E|Fn(x) — G@)| SF — Gll + (Ge +h) — Ge — hy) + ——. (8.2)
+
+Using the Lipschitz property of G only (that is, G(x +h) — G(x —h) < ua) would yield the
+previous bound, such as the one in the estimate (6.7) of Proposition 6.4,
+
+2/3
+ElF,(x) - G@)I< iF-ci+c(2) ; (8.3)
+
+However, the real size of increments G(x + h) — G(x — h) with respect to the parameter h
+essentially depends on the point x. To be more careful in the analysis of the right-hand side
+of (8.2), we may use the following elementary calculus bound, whose proof we omit.

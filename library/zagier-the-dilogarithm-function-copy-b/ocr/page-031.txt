@@ -1,0 +1,50 @@
+The Dilogarithm Function 33
+
+true as an identity between polynomials in F,[2, y] and not merely as an equal-
+ity between functions from F, x F, to F,. Finally, by passing via the p-adics
+and using a recent result of Besser [4] expressing the polyanalogs (now again
+considered as functions rather than polynomials) as the mod p reductions
+of certain derivatives of modified p-adic polylogarithm functions, the authors
+show how functional equations of the mth classical complex polylogarithm
+induce by a process of differentiation corresponding functional equations of
+the (m — 1)-st polyanalog. The whole story is intimately related to Cathelin-
+eau’s theory of infinitesimal polylogarithms (infinitesimal or Lie version of the
+Bloch group), which is yet another and even more subtle manifestation of the
+world of polylogarithms.
+
+We do not give any further details, referring the reader to the original
+papers [8] and [14].
+
+2 Dilogarithm identities
+
+In Chapter I of this paper we discussed both functional equations of the dilog-
+arithm function and numerical identities involving the values of dilogarithms
+at algebraic arguments. Here we discuss both topics in more detail. In subsec-
+tion A we give the algebraic characterization of arbitrary functional equations
+of the dilogarithm and prove Wojtkowiak’s theorem that all functional equa-
+tions whose arguments are rational functions of one variable are consequences
+of the five-term functional equation. In subsections B and C we discuss specific
+examples of identities of the form )> D(a;) = 0 or > L(a;) € Q7”, where the
+a; are complex or real algebraic numbers, respectively, and describe a general
+method for producing such examples.
+
+A key role in all these considerations is played by the five-term relation.
+We recall its statement from Chapter I. A sequence of {x;}iez of real or com-
+plex numbers such that 1 — x; = 2;~12;41 for all 7 automatically satisfies
+Xit5 = x;,. By a 5-cycle we mean any (cyclically ordered) 5-tuple of numbers
+obtained in this way. Equivalently, a 5-cycle can be defined as the set of cross-
+ratios of the five (appropriately ordered) sub-4-tuples of a set of 5 distinct
+points in the projective line, or—in a different ordering—simply as any set of
+
+l-« -
+* y ) with x, y ¢ {0,1, co}, zy # 1. The
+— zy
+
+Bloch-Wigner dilogarithm D at arguments belonging to a 5-cycle of complex
+numbers, or of the Rogers dilogarithm L (mod 7?/2) at the numbers of a real
+5-cycle, vanishes. This fact and related algebraic properties of 5-cycles turn
+up in a surprising number of contexts in quite different parts of mathemat-
+ics: in the theory of webs (Bol’s counterexample and correction to a theorem
+of Blaschke, later generalized by Chern and Griffiths [9]), in the study of
+the torsion in the group of birational transformations (Cremona transforma-
+tions) of P?(C) [1], in the study of the 1-dimensional Schrédinger equation for

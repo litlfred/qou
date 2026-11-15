@@ -1,0 +1,1 @@
+The long-distance degrees of freedom must be included dynamically in the effective theory, while short-distance physics enters only through the values of a few coupling constants, often called low-energy constants.

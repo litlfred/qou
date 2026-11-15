@@ -8,7 +8,9 @@ pages: 18-19
 source_pdf: Zhao_standard_2010.pdf
 source_sha256: 94a70847c2937ba7
 toc_source: inferred
+doc_brief: "Standard Relations of Multiple Polylogarithm Values at Roots of Unity — Let N be a positive integer."
 ---
+Weight two
 There are N 2 MPVs of weight two and level N:
 LN(1, 1|i, j),
 LN(2|j),
@@ -74,4 +76,3 @@ Computation shows that the following conjecture should hold.
 Conjecture 7.1. The RDT (25) follows from the combination of the following
 relations: the weight one relations, the RDS (21) and (22), and the FDT (23)
 and (24).
-7.3

@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/springer-1976-invent-36-173/sections/page-028",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 28",
+  "pageStart": 28,
+  "pageEnd": 28,
+  "contains": [
+    "library/springer-1976-invent-36-173/blocks/prose-page-028",
+    "library/springer-1976-invent-36-173/blocks/recommendation-page-028-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/springer-1976-invent-36-173",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/springer-1976-invent-36-173",
+  "provenance": "ingested"
+}

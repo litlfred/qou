@@ -7,10 +7,11 @@ section_number: null
 pages: 22-25
 source_pdf: 0811.2435v1.pdf
 source_sha256: 615b04eca83bcade
-doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.996
-latex_coverage_ratio: 0.973
+latex_coverage_ratio: 0.992
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 51 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 In what follows we will consider various cones in $\Gamma_{\R}$ and in $\R^2$ i.e. subsets, which are closed under addition and multiplication by a positive real number. We assume that the vertex of the cone (i.e. the zero of the vector space) does not belong to the cone. We will call a cone *strict* if it is non-empty and does not contain a straight line. In particular, all strict cones on the plane (we will call them strict sectors) are sectors, which are smaller than 180 degrees (not necessarily closed or open). We allow the sector to be degenerate (which means that it is a ray with the vertex at the origin). We orient the plane (and hence all sectors) in the clockwise direction. We write $l_1\le l_2$ if the rays $l_1,l_2$ bound a strict closed sector and $l_1$ precedes $l_2$ in the clockwise order (we allow $l_1=l_2$).
 

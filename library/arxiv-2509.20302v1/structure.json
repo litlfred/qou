@@ -8,7 +8,7 @@
   "pages": 7,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:22Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -26,7 +26,7 @@
   "title_lines": [
    "Universality in the resurgence of generalized Tracy-Widom distributions"
   ],
-  "abstract": "We analyze determinants associated with Bessel kernels and generic symbol functions, which govern a class of ob- servables across all values of the \u2019t Hooft coupling in supersymmetric gauge theories. Previous approaches, based on integro-differential equations, have provided systematic strong-coupling expansions for the logarithms of these determinants, expressed through the moments of the symbol. The resulting asymptotic series, once completed with non-perturbative terms, allowed the leading resurgence relations to be tested. In this Letter we focus directly on the determinants themselves, and we uncover a strikingly simple non-perturbative structure: all trans-series correc- tions share a universal form, while the moments transform in a direct and intuitive way. This simplicity points to an underlying organizing principle for the non-perturbative dynamics of gauge theory observables.",
+  "abstract": "We analyze determinants associated with Bessel kernels and generic symbol functions, which govern a class of ob- servables across all values of the ’t Hooft coupling in supersymmetric gauge theories. Previous approaches, based on integro-differential equations, have provided systematic strong-coupling expansions for the logarithms of these determinants, expressed through the moments of the symbol. The resulting asymptotic series, once completed with non-perturbative terms, allowed the leading resurgence relations to be tested. In this Letter we focus directly on the determinants themselves, and we uncover a strikingly simple non-perturbative structure: all trans-series correc- tions share a universal form, while the moments transform in a direct and intuitive way. This simplicity points to an underlying organizing principle for the non-perturbative dynamics of gauge theory observables.",
   "docinfo": {
    "Title": "Universality in the resurgence of generalized Tracy-Widom distributions",
    "Author": "Zoltan Bajnok; Bercel Boldis; Dennis le Plat",
@@ -160,7 +160,7 @@
   {
    "kind": "table",
    "number": "1",
-   "title": "The determinant (1) corresponds to various observables in four dimensional supersymmetric gauge theories [21]. The octagon form factor is related to the four-point function of infinitely heavy half BPS operators and the parameters y,\u03be are the parametrizations of the conformal cross-ratios",
+   "title": "The determinant (1) corresponds to various observables in four dimensional supersymmetric gauge theories [21]. The octagon form factor is related to the four-point function of infinitely heavy half BPS operators and the parameters y,ξ are the parametrizations of the conformal cross-ratios",
    "page": 2,
    "confidence": 0.8,
    "evidence": [
@@ -326,14 +326,26 @@
    "title": "Trans-series expansion",
    "level": 1,
    "page_start": 2,
-   "page_end": 4,
-   "n_chars": 6528,
-   "n_words": 1162,
+   "page_end": 3,
+   "n_chars": 3939,
+   "n_words": 709,
    "label_start": "2",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-003-31-resurgence-relations-between-cal-d-and-cal-d1",
+   "number": "3.1",
+   "title": "Resurgence relations between ${\\cal D}^{\\{\\}}$ and ${\\cal D}^{\\{1\\}}$",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2541,
+   "n_words": 446,
+   "label_start": "3",
    "label_end": "4"
   },
   {
-   "id": "sec-003-32-generic-relations",
+   "id": "sec-004-32-generic-relations",
    "number": "3.2",
    "title": "Generic relations",
    "level": 2,
@@ -345,7 +357,7 @@
    "label_end": "5"
   },
   {
-   "id": "sec-004-33-example",
+   "id": "sec-005-33-example",
    "number": "3.3",
    "title": "Example",
    "level": 2,
@@ -357,7 +369,7 @@
    "label_end": "5"
   },
   {
-   "id": "sec-005-4-conclusions",
+   "id": "sec-006-4-conclusions",
    "number": "4",
    "title": "Conclusions",
    "level": 1,
@@ -369,7 +381,7 @@
    "label_end": "5"
   },
   {
-   "id": "sec-006-5-acknowledgements",
+   "id": "sec-007-5-acknowledgements",
    "number": "5",
    "title": "Acknowledgements",
    "level": 1,
@@ -387,7 +399,7 @@
   "toc_entries": 8,
   "toc_inferred_entries": 8,
   "toc_inferred_mean_confidence": 1.0,
-  "toc_inferred_empty_share": 0.143,
+  "toc_inferred_empty_share": 0.125,
   "toc_inferred_method": "latex",
   "figure_entries": 5,
   "figure_sequence_gaps": [],
@@ -395,13 +407,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 8,
-  "chars_total": 24790,
+  "sections": 9,
+  "chars_total": 24742,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "paper.tex",
    "tex_sections": 8,
-   "overlaid": 5,
+   "overlaid": 6,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -417,7 +430,7 @@
      "id": "sec-000-2-observables",
      "title": "Observables",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-001-1-introduction",
@@ -430,13 +443,21 @@
     {
      "id": "sec-002-3-trans-series-expansion",
      "title": "Trans-series expansion",
-     "prose_ratio": 0.963,
-     "coverage_ratio": 0.996,
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.901,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-32-generic-relations",
+     "id": "sec-003-31-resurgence-relations-between-cal-d-and-cal-d1",
+     "title": "Resurgence relations between ${\\cal D}^{\\{\\}}$ and ${\\cal D}^{\\{1\\}}$",
+     "prose_ratio": 0.831,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-32-generic-relations",
      "title": "Generic relations",
      "prose_ratio": 0.992,
      "coverage_ratio": 0.977,
@@ -444,7 +465,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-33-example",
+     "id": "sec-005-33-example",
      "title": "Example",
      "prose_ratio": 0.941,
      "coverage_ratio": 1.0,
@@ -452,7 +473,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-4-conclusions",
+     "id": "sec-006-4-conclusions",
      "title": "Conclusions",
      "prose_ratio": 0.974,
      "coverage_ratio": 1.0,
@@ -460,11 +481,11 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-5-acknowledgements",
+     "id": "sec-007-5-acknowledgements",
      "title": "Acknowledgements",
      "prose_ratio": 0.966,
      "coverage_ratio": 0.116,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

@@ -1,0 +1,68 @@
+hence cemod (1 — enjk * v') = 0
+using (dv = 1 — cnjk * vy
+by auto
+
+hence emod (cnj k * v’) = 1
+by auto
+
+thus False
+using <cmod k < 1» «cmod v' < 1»
+using mult-strict-mono|of cmod k 1 cmod v' 1]
+by (simp add: norm-mult)
+
+qed
+
+have kk # 0
+proof (rule ccontr)
+assume — ?thesis
+hence cmod (1 — k « cnj k) = 0
+using «kk = 1 — k x cnj ky
+by auto
+hence cmod (k * cnj k) = 1
+by auto
+thus False
+using (cmod k < 1)
+using mult-strict-mono|of cmod k 1 cmod k 1]
+using complez-mod-sqrt-Re-mult-cnj by auto
+qed
+
+note nz = (du # 0» «du # 0» ‘kk F O»
+
+have nu / du — nv / dv = (nuxdv — nuxdu) / (du « dv)
+using nz
+by (simp add: field-simps)
+hence (cmod (nu/du — nv/dv))? = cemod ((d*kk) / (duxdu) * (enj ((d*kk) / (duxdv)))) (is 2lhs = -)
+unfolding complez-mod-mult-cnj[symmetric]
+by (subst (asm) d) simp
+also have ... = cmod ((d«cnj dxkkxkk) / (duxcnj duxduxcnj dv))
+by (simp add: field-simps norm-mult norm-divide)
+finally have 1: ?lhs = cmod ((dxenj dxkkxkk) / (duxcnj duxduxcnj dv)) .
+
+have (1 — ((emod nu) / (cmod du))?)*(1 — ((emod nv) / (emod dv))?) =
+(1 — cmod((nu * cnj nu) / (du * enj du)))*(1 — emod((nv * enj nv) / (du * cnj dv))) (is ?rhs = -)
+by (metis norm-divide complex-mod-mult-cnj power-divide)
+also have ... = cmod(((duxcnj du — nuxcnj nu) / (du * cnj du)) * ((duxenj dv — nuxenj nv) / (du * cnj dv)))
+proof—
+have u’ 4 1 / enjkv' A 1 / cnjk
+using <cmod u' < 1» «cmod v' < 1» «emod k < 1
+by (auto simp add: False norm-divide)
+moreover
+have cmod k # 1
+using (cmod k < 1)
+by linarith
+ultimately
+have cmod (nu/du) < 1 cmod (nu/dv) < 1
+using **(1—4)
+using unit-disc-fir-discI[OF blaschke-unit-disc-fit[OF <cmod k < 1>| «u € unit-disc»] <u’ = to-complex wu
+using unit-disc-fir-discl[OF blaschke-unit-disc-fix[|OF «cmod k < 1%] «v € unit-disc»] <v' = to-complez v»
+using inf-or-of-complez[of u] <u € unit-discy inf-or-of-complex|of v] «v € unit-discr
+using mocbius-pt-blaschke[of k u’| using moebius-pt-blaschke[of k v']
+by auto
+hence (cmod (nu/du))? < 1 (emod (nv/dv))? < 1
+by (simp-all add: cmod-def)
+hence cmod (nu * cnj nu / (du * enj du)) < 1 cmod (nv * cnj nv / (dv * cnj dv)) < 1
+by (metis complex-mod-mult-cnj norm-divide power-divide)+
+moreover
+have is-real (nu « cnj nu / (du * enj du)) is-real (nv * cnj nv / (dv * cnj dv))
+using eq-cnj-iff-real[of nu * cnj nu / (du * cnj du)|
+using eq-cnj-iff-reallof nv * cnj nv / (du * enj dv)]

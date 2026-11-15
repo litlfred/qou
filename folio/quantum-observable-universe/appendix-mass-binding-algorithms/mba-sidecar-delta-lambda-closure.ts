@@ -15,6 +15,7 @@ export default algorithm({
   ],
   label: "alg:delta-lambda-closure",
   title: "$\\Delta_\\lambda$ per-partition value (PROVED $(-1)^{n(\\lambda)}\\dim V_\\lambda$); many-body magnitude open",
+  cites: ["shoji2019", "springer1976"],
   uses: [
     // The per-partition VALUE this algorithm computes is proved:
     // Δ_λ = (−1)^{n(λ)}·dim V_λ, identified as a DT/3d-index Euler characteristic

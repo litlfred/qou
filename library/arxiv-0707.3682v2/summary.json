@@ -3,29 +3,49 @@
  "doc_id": "arxiv-0707.3682v2",
  "source_sha256": "609a6f67a0cd5fc8",
  "brief": "ON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER FIELDS — We formulate a conjectural p-adic analogue of Borel’s theorem re- lating regulators for higher K-groups of number ﬁelds to special values of the",
- "extended": "**ON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER FIELDS**\n\n*AMNON BESSER, PAUL BUCKINGHAM, ROB DE JEU*\n\n44 pp, 4 sections.\n\n**Abstract.** We formulate a conjectural p-adic analogue of Borel’s theorem re- lating regulators for higher K-groups of number ﬁelds to special values of the corresponding ζ-functions, using syntomic regulators and p-adic L-functions. We also formulate a corresponding conjecture for Artin moti ves, and state a conjecture about the precise relation between the p-adic and classical situa- tions. Parts of the conjectures are proved when the number ﬁe ld (or Artin motive) is Abelian over the rationals, and all conjectures a re veriﬁed numeri- cally in some other cases.\n\n**Outline.** 1 Introduction; 3 A motivic version of the conjecture; 7 Examples; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.2: (Borel) Letk be a number ﬁeld of degree d, with r1 real embeddings\n- Theorem 2.9: Forp prime, let B in Cp be the open ball with centre 0 and radius\n- Theorem 4.7: Letk be a number ﬁeld and let n ≥ 2 be an integer. Then there is\n- Theorem 4.7: and (4.2) that for odd n ≥ 2 the element 2Ψ([ −1]n) is non-zero.\n- Theorem 4.14: Letk be a number ﬁeld, and let F ⊂\n- Proposition 3.8: If k/Q is a ﬁnite Galois extension with Galois group G and π",
+ "extended": "**ON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER FIELDS**\n\n*AMNON BESSER, PAUL BUCKINGHAM, ROB DE JEU*\n\n44 pp, 8 sections.\n\n**Abstract.** We formulate a conjectural p-adic analogue of Borel’s theorem re- lating regulators for higher K-groups of number ﬁelds to special values of the corresponding ζ-functions, using syntomic regulators and p-adic L-functions. We also formulate a corresponding conjecture for Artin motives, and state a conjecture about the precise relation between the p-adic and classical situa- tions. Parts of the conjectures are proved when the number ﬁeld (or Artin motive) is Abelian over the rationals, and all conjectures are veriﬁed numeri- cally in some other cases.\n\n**Outline.** Front matter; 1 Introduction; 2 The p-adiccomingchar Beilinson conjecture fo; 3 A motivic version of the conjecture; 4 More explicit K -groups and regulators; 5 Computing K -groups in practice; 7 Examples; References",
  "tokens": {
   "brief": 49,
-  "extended": 322
+  "extended": 230
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-9"
+   "pages": "1-4"
   },
   {
-   "id": "sec-001-3-a-motivic-version-of-the-conjecture",
+   "id": "sec-001-2-the-p-adiccomingchar-beilinson-conjecture-for",
+   "title": "The p-adiccomingchar Beilinson conjecture for totally real fields",
+   "pages": "4-9"
+  },
+  {
+   "id": "sec-002-3-a-motivic-version-of-the-conjecture",
    "title": "A motivic version of the conjecture",
-   "pages": "9-29"
+   "pages": "9-17"
   },
   {
-   "id": "sec-002-7-examples",
+   "id": "sec-003-4-more-explicit-k--groups-and-regulators",
+   "title": "More explicit K -groups and regulators",
+   "pages": "17-23"
+  },
+  {
+   "id": "sec-004-5-computing-k--groups-in-practice",
+   "title": "Computing K -groups in practice",
+   "pages": "23-30"
+  },
+  {
+   "id": "sec-005-7-examples",
    "title": "Examples",
-   "pages": "29-34"
+   "pages": "30-34"
   },
   {
-   "id": "sec-003-references",
+   "id": "sec-006-references",
    "title": "References",
    "pages": "34-44"
   }
@@ -34,8 +54,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

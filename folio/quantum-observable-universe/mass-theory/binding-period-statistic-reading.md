@@ -15,8 +15,7 @@ Two structural consequences follow, both verified exactly.
    operator.** Splitting the involutions by the fate of the largest letter,
    the fixed-point-insertion weight ratio is non-monomial with growing
    polynomial spread, so the statistic is not Markovian under RSK insertion
-   on any fixed finite basis
-   (`computations/lever1-kernel-maj-involution-identification.witness.json`).
+   on any fixed finite basis.
 
 2. **The exact kernel object is a descent-set transfer operator.** The
    statistic *is* Markovian on the lifted state space of pairs
@@ -26,5 +25,4 @@ Two structural consequences follow, both verified exactly.
    the added cell, the sole level dependence being the scalar $q^{2k}$ on
    $B$. The operator reconstructs the right-hand side exactly, while its
    state space grows without bound (like the corner-marked Young lattice), so
-   no fixed-depth $q$-difference projection closes
-   (`computations/lever1-descent-transfer-operator.witness.json`).
+   no fixed-depth $q$-difference projection closes.

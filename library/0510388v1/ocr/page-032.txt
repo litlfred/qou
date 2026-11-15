@@ -1,0 +1,26 @@
+12. Proof of Theorem 2, formula (1).
+
+Let V bea smooth vector field on S*. Thinking of V asa steady current flow,
+we define the corresponding magnetic field BS(V) by the formula
+
+BS(V) = —V xGr(V).
+
+It is easy to check that BS(V) satisfies the two properties required of it in
+section 4, as follows.
+
+(1) V ¢ BS(V) = 0 because the divergence of a curl is always zero.
+(2) To get Maxwell's equation, we compute:
+
+V XBS(V)\(y) = — V XV XGr(V)(y)
+
+Gr(V)(y) — V(V © Gr(V)(y)
+
+V(y) — V(Gr(V * Vy)
+= V(y) — Vy fs3 (Vx V(x) ox, y) dx
+= V(y) + Vy Js3 V(x) ¢ Vi@o(x, y) dx.
+where (o is the fundamental solution of the scalar Laplacian on S*. Note that
+
+we used the fact, mentioned in section 6, that the Green's operator on Ss
+commutes with divergence.
+
+32

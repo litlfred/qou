@@ -3,55 +3,140 @@
  "doc_id": "ft-dpm-quaternion-kernel-ieee-tit-2014",
  "source_sha256": "aa2f1eb73610a81b",
  "brief": "Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions — The existence and uniqueness conditions of quater- nion reproducing kernel Hilbert spaces (QRKHS) are established",
- "extended": "**Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions**\n\n*Existence and Uniqueness Conditions*\n\n14 pp, 9 sections.\n\n**Abstract.** The existence and uniqueness conditions of quater- nion reproducing kernel Hilbert spaces (QRKHS) are established in order to provide a mathematical foundation for the develop- ment of quaternion-valued kernel learning algorithms. This is achieved through a rigorous account of left quaternion Hilbert spaces, which makes it possible to generalise standard RKHS to quaternion RKHS. Quaternion versions of the Riesz repre- sentation and Moore–Aronszajn theorems are next introduced, thus underpinning kernel estimation algorithms operating on quaternion-valued feature spaces. The difference between the proposed quaternion kernel concept and the existing real and vector approaches is also established in terms of both theoretical advantages and computational complexity.\n\n**Outline.** C Quaternion Kernels; 1 (x)φ1(y) + φH; 2 (x)φ2(y),; 1 (x)φ T; 2 (x)]T we arrive at; C Quaternion-Valued Gaussian Kernel; C Nonlinear Channel Equalisation: Real and Qua; C Model Comparison for Nonlinear Channel Equal; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3: Let K and −→K be arbitrary quaternion- and\n- Theorem 2: gives the justiﬁcation for the design and imple-\n- Lemma 2: Let K = Kr +iK i + jK j +kK k be a quaternion",
+ "extended": "**Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions**\n\n*Felipe A. Tobar and Danilo P. Mandic, Fellow, IEEE*\n\n14 pp, 26 sections.\n\n**Abstract.** The existence and uniqueness conditions of quater- nion reproducing kernel Hilbert spaces (QRKHS) are established in order to provide a mathematical foundation for the develop- ment of quaternion-valued kernel learning algorithms. This is achieved through a rigorous account of left quaternion Hilbert spaces, which makes it possible to generalise standard RKHS to quaternion RKHS. Quaternion versions of the Riesz repre- sentation and Moore–Aronszajn theorems are next introduced, thus underpinning kernel estimation algorithms operating on quaternion-valued feature spaces. The difference between the proposed quaternion kernel concept and the existing real and vector approaches is also established in terms of both theoretical advantages and computational complexity.\n\n**Outline.** Front matter; I INTRODUCTION; S INCE; II QUATERNION VECTOR SPACES; A The Quaternion Division Ring; B Quaternion-Valued Hilbert Spaces; III QUATERNION REPRODUCING KERNEL; A Riesz Representation Theorem; B Moore-Aronszajn Theorem; IV COMPARISON TO OTHER; A Vector-Valued RKHS (Matrix-Valued Kernels); B Multikernel Learning; C Quaternion Kernels; D Connections Between High-Dimensional Kernels; E Computational Complexity; V DESIGN OF QUATERNION-VALUED MERCER KERNELS; A Polynomial Kernel: The Quaternion Cubic Exam; B Real-Valued Gaussian Kernel",
  "tokens": {
   "brief": 49,
-  "extended": 349
+  "extended": 376
  },
  "sections": [
   {
-   "id": "sec-000-c-quaternion-kernels",
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-i-introduction",
+   "title": "INTRODUCTION",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-s-ince",
+   "title": "INCE",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-ii-quaternion-vector-spaces",
+   "title": "QUATERNION VECTOR SPACES",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-003-a-the-quaternion-division-ring",
+   "title": "The Quaternion Division Ring",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-004-b-quaternion-valued-hilbert-spaces",
+   "title": "Quaternion-Valued Hilbert Spaces",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-005-iii-quaternion-reproducing-kernel",
+   "title": "QUATERNION REPRODUCING KERNEL",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-006-a-riesz-representation-theorem",
+   "title": "Riesz Representation Theorem",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-007-b-moore-aronszajn-theorem",
+   "title": "Moore-Aronszajn Theorem",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-008-iv-comparison-to-other",
+   "title": "COMPARISON TO OTHER",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-009-a-vector-valued-rkhs-matrix-valued-kernels",
+   "title": "Vector-Valued RKHS (Matrix-Valued Kernels)",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-010-b-multikernel-learning",
+   "title": "Multikernel Learning",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-011-c-quaternion-kernels",
    "title": "Quaternion Kernels",
-   "pages": "5-7"
+   "pages": "5-6"
   },
   {
-   "id": "sec-001-1-xφ1y-φh",
-   "title": "(x)φ1(y) + φH",
+   "id": "sec-012-d-connections-between-high-dimensional-kernels",
+   "title": "Connections Between High-Dimensional Kernels",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-013-e-computational-complexity",
+   "title": "Computational Complexity",
    "pages": "7-7"
   },
   {
-   "id": "sec-002-2-xφ2y",
-   "title": "(x)φ2(y),",
+   "id": "sec-014-v-design-of-quaternion-valued-mercer-kernels",
+   "title": "DESIGN OF QUATERNION-VALUED MERCER KERNELS",
    "pages": "7-7"
   },
   {
-   "id": "sec-003-1-xφ-t",
-   "title": "(x)φ T",
-   "pages": "7-7"
-  },
-  {
-   "id": "sec-004-2-xt-we-arrive-at",
-   "title": "(x)]T we arrive at",
+   "id": "sec-015-a-polynomial-kernel-the-quaternion-cubic-example",
+   "title": "Polynomial Kernel: The Quaternion Cubic Example",
    "pages": "7-8"
   },
   {
-   "id": "sec-005-c-quaternion-valued-gaussian-kernel",
+   "id": "sec-016-b-real-valued-gaussian-kernel",
+   "title": "Real-Valued Gaussian Kernel",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-017-c-quaternion-valued-gaussian-kernel",
    "title": "Quaternion-Valued Gaussian Kernel",
-   "pages": "8-10"
+   "pages": "8-9"
   },
   {
-   "id": "sec-006-c-nonlinear-channel-equalisation-real-and-quater",
+   "id": "sec-018-vi-kernel-ridge-regression-in-quaternion-rkhs",
+   "title": "KERNEL RIDGE REGRESSION IN QUATERNION RKHS",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-019-a-introduction-to-kernel-ridge-regression",
+   "title": "Introduction to Kernel Ridge Regression",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-020-b-multivariate-body-motion-tracking-cubic-kernel",
+   "title": "Multivariate Body Motion Tracking: Cubic Kernels",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-021-c-nonlinear-channel-equalisation-real-and-quater",
    "title": "Nonlinear Channel Equalisation: Real and Quaternion",
-   "pages": "10-13"
+   "pages": "10-12"
   },
   {
-   "id": "sec-007-c-model-comparison-for-nonlinear-channel-equalis",
+   "id": "sec-022-vii-conclusions",
+   "title": "CONCLUSIONS",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-023-b-quaternion-widely-linear-ridge-regression",
+   "title": "Quaternion Widely-Linear Ridge Regression",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-024-c-model-comparison-for-nonlinear-channel-equalis",
    "title": "Model Comparison for Nonlinear Channel Equalisation",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-008-references",
-   "title": "References",
    "pages": "13-14"
   }
  ],
@@ -59,8 +144,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

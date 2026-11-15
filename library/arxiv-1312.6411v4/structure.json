@@ -7,10 +7,11 @@
   "bytes": 756140,
   "pages": 52,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,28 @@
    "stamp_date": "22 Mar 2016"
   },
   "doi": null,
-  "title": "DUALITY AND TILTING FOR COMMUTATIVE DG RINGS AMNON YEKUTIELI",
-  "authors_raw": null,
+  "title": "DUALITY AND TILTING FOR COMMUTATIVE DG RINGS",
+  "authors_raw": "AMNON YEKUTIELI",
   "title_lines": [
-   "DUALITY AND TILTING FOR COMMUTATIVE DG RINGS",
-   "AMNON YEKUTIELI"
+   "DUALITY AND TILTING FOR COMMUTATIVE DG RINGS"
   ],
-  "abstract": "We consider commutative DG rings (better known as nonpositive stronglycommutativeassociativeunitalDGalgebras). ForsuchaDGring Awede- \ufb01nethenotionsof perfect,tilting,dualizing,Cohen-MacaulayandrigidDG A-modules. Geometricallyperfect DGmodulesarede\ufb01nedbyalocalconditionon Spec \u00afA,where \u00afA is the commutative ringH0(A). Algebraically perfectDG modules are those that can be obtained fromA by \ufb01nitely many shifts, direct summands and cones. Tilt- ingDGmodulesarethosethathaveinversesw.r.t.thederivedtensorproduct;their isomorphismclassesformthederivedPicardgroup DPic(A). DualizingDGmod- ules are a generalization of Grothendieck\u2019s original de\ufb01nition (and hereA has to be cohomologically pseudo-noetherian). Cohen-Macaulay DG modules are the duals (w.r.t. a given dualizing DG module) of \ufb01nite\u00afA-modules. Rigid DG A-modules, relativetoacommutativebasering K,arede\ufb01nedusingthe squaringoperation,and this is a generalization of Van den Bergh\u2019s original de\ufb01nition. The techniques we use are the standard ones of derived categories, with a few improvements. We introduce a new method for studying DGA-modules: \u010cech resolutions of DGA-modules corresponding to open coverings ofSpec \u00afA. Here are some of the new results obtained in this paper: \u2022 A DGA-module is geometrically perfect i\ufb00 it is algebraically perfect. \u2022 The canonical group homomorphismDPic(A)\u2192 DPic( \u00afA) is bijective. \u2022 Thegroup DPic(A)actssimplytransitivelyonthesetofisomorphismclasses of dualizing DGA-modules. \u2022 Cohen-Macaulay DG modules are insensitive to cohomologically surjective DG ring homomorphisms. \u2022 RigiddualizingDG A-modulesareuniqueuptouniquerigidisomorphisms. The functorial properties of Cohen-Macaulay DG modules that we establish hereareneededforourworkonrigiddualizingcomplexesovercommutativerings, schemes and Deligne-Mumford stacks. We pose several conjectures regarding existence and uniqueness of rigid DG modules over commutative DG rings.",
+  "abstract": "We consider commutative DG rings (better known as nonpositive strongly commutative associative unital DG algebras). For such a DG ring A we de- ﬁne the notions of perfect, tilting, dualizing, Cohen-Macaulay and rigid DG A-modules. Geometrically perfect DG modules are deﬁned by a local condition on Spec ¯A, where ¯A is the commutative ring H0(A). Algebraically perfect DG modules are those that can be obtained from A by ﬁnitely many shifts, direct summands and cones. Tilt- ing DG modules are those that have inverses w.r.t. the derived tensor product; their isomorphism classes form the derived Picard group DPic(A). Dualizing DG mod- ules are a generalization of Grothendieck’s original deﬁnition (and here A has to be cohomologically pseudo-noetherian). Cohen-Macaulay DG modules are the duals (w.r.t. a given dualizing DG module) of ﬁnite ¯A-modules. Rigid DG A-modules, relative to a commutative base ring K, are deﬁned using the squaring operation, and this is a generalization of Van den Bergh’s original deﬁnition. The techniques we use are the standard ones of derived categories, with a few improvements. We introduce a new method for studying DG A-modules: Čech resolutions of DG A-modules corresponding to open coverings of Spec ¯A. Here are some of the new results obtained in this paper: • A DG A-module is geometrically perfect iﬀit is algebraically perfect. • The canonical group homomorphism DPic(A) →DPic( ¯A) is bijective. • The group DPic(A) acts simply transitively on the set of isomorphism classes of dualizing DG A-modules. • Cohen-Macaulay DG modules are insensitive to cohomologically surjective DG ring homomorphisms. • Rigid dualizing DG A-modules are unique up to unique rigid isomorphisms. The functorial properties of Cohen-Macaulay DG modules that we establish here are needed for our work on rigid dualizing complexes over commutative rings, schemes and Deligne-Mumford stacks. We pose several conjectures regarding existence and uniqueness of rigid DG modules over",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20210806082203Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.12",
-   "Title": ""
-  }
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20210806082203Z"
+  },
+  "title_raw": "DUALITY AND TILTING FOR COMMUTATIVE DG RINGS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "DUALITY AND TILTING FOR COMMUTATIVE DG RINGS Contents Introduction DG Modules and their Resolutions Cohomological Dimension Reduction and Lifting Localization of Commutative DG Rings Perfect DG Modules Tilting DG Modules Dualizing DG Modules Cohen-Macaulay DG Modules",
+   "outline": "0. Introduction",
+   "text": "DUALITY AND TILTING FOR COMMUTATIVE DG RINGS",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "DUALITY AND TILTING FOR COMMUTATIVE DG RINGS AMNON YEKUTIELI"
  },
  "toc": [
   {
@@ -41,90 +50,505 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "0"
+   "number": "0",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "DG Modules and their Resolutions",
    "page": 7,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Cohomological Dimension",
    "page": 11,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Reduction and Lifting",
    "page": 16,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Localization of Commutative DG Rings",
    "page": 19,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Perfect DG Modules",
    "page": 24,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Tilting DG Modules",
    "page": 30,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Dualizing DG Modules",
    "page": 35,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Cohen-Macaulay DG Modules",
    "page": 43,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Rigid DG Modules",
    "page": 47,
    "source": "outline",
-   "number": "9"
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 51,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 48,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 49,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 50,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 51,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 52,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2918,
+   "n_words": 449,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-0-introduction",
    "number": "0",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 7,
-   "n_chars": 17369,
-   "n_words": 2685
+   "n_chars": 17093,
+   "n_words": 3085,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-1-dg-modules-and-their-resolutions",
@@ -133,8 +557,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 11,
-   "n_chars": 11397,
-   "n_words": 1722
+   "n_chars": 11897,
+   "n_words": 2222,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-2-cohomological-dimension",
@@ -143,8 +569,10 @@
    "level": 1,
    "page_start": 11,
    "page_end": 16,
-   "n_chars": 13389,
-   "n_words": 2147
+   "n_chars": 13794,
+   "n_words": 2585,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-3-reduction-and-lifting",
@@ -153,8 +581,10 @@
    "level": 1,
    "page_start": 16,
    "page_end": 19,
-   "n_chars": 6802,
-   "n_words": 1217
+   "n_chars": 6995,
+   "n_words": 1420,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-4-localization-of-commutative-dg-rings",
@@ -163,8 +593,10 @@
    "level": 1,
    "page_start": 19,
    "page_end": 24,
-   "n_chars": 13290,
-   "n_words": 2260
+   "n_chars": 13793,
+   "n_words": 2767,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-5-perfect-dg-modules",
@@ -173,8 +605,10 @@
    "level": 1,
    "page_start": 24,
    "page_end": 30,
-   "n_chars": 16218,
-   "n_words": 2766
+   "n_chars": 16695,
+   "n_words": 3249,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-6-tilting-dg-modules",
@@ -183,8 +617,10 @@
    "level": 1,
    "page_start": 30,
    "page_end": 35,
-   "n_chars": 13594,
-   "n_words": 2232
+   "n_chars": 14234,
+   "n_words": 2875,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-007-7-dualizing-dg-modules",
@@ -193,8 +629,10 @@
    "level": 1,
    "page_start": 35,
    "page_end": 43,
-   "n_chars": 22867,
-   "n_words": 3551
+   "n_chars": 23677,
+   "n_words": 4367,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-008-8-cohen-macaulay-dg-modules",
@@ -203,8 +641,10 @@
    "level": 1,
    "page_start": 43,
    "page_end": 47,
-   "n_chars": 9392,
-   "n_words": 1630
+   "n_chars": 9688,
+   "n_words": 1926,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-009-9-rigid-dg-modules",
@@ -213,8 +653,10 @@
    "level": 1,
    "page_start": 47,
    "page_end": 51,
-   "n_chars": 10154,
-   "n_words": 1731
+   "n_chars": 10503,
+   "n_words": 2097,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-010-references",
@@ -223,16 +665,26 @@
    "level": 1,
    "page_start": 51,
    "page_end": 52,
-   "n_chars": 6132,
-   "n_words": 683
+   "n_chars": 6330,
+   "n_words": 881,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 11,
-  "sections": 11,
-  "chars_total": 140604,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 12,
+  "chars_total": 147617,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -245,82 +697,87 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-0-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-1-dg-modules-and-their-resolutions",
      "title": "DG Modules and their Resolutions",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.963,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-2-cohomological-dimension",
      "title": "Cohomological Dimension",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.964,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-003-3-reduction-and-lifting",
      "title": "Reduction and Lifting",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-004-4-localization-of-commutative-dg-rings",
      "title": "Localization of Commutative DG Rings",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.96,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-005-5-perfect-dg-modules",
      "title": "Perfect DG Modules",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-006-6-tilting-dg-modules",
      "title": "Tilting DG Modules",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-007-7-dualizing-dg-modules",
      "title": "Dualizing DG Modules",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-008-8-cohen-macaulay-dg-modules",
      "title": "Cohen-Macaulay DG Modules",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.958,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-009-9-rigid-dg-modules",
      "title": "Rigid DG Modules",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.966,
      "result": "overlaid",
      "converter": "latex"
     },

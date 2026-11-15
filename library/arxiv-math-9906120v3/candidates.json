@@ -1,0 +1,151 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-9906120v3",
+ "source": {
+  "structure_sha256": "436982ef45e940bd6b66fa812f8bc38804cabe34d274584de05fe4d6cfeb8bfd",
+  "file": "9906120v3.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:math/9906120v3 [math.CO] 24 Feb 2004",
+  "authors": "By Kurt Johansson",
+  "arxiv": {
+   "id": "math/9906120",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "24 Feb 2004"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 8,
+  "by_kind": {
+   "recommendation": 8
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Before stating our results precisely we must introduce some notation.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-1-introduction-and-results.md",
+   "section_title": "Introduction and results",
+   "pages": "1-9",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Note that we must have \u2113(\u03bb) \u2264M, so \u2113\u2208P(N) M which we can identify with \u2126(N) M .",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-1-introduction-and-results.md",
+   "section_title": "Introduction and results",
+   "pages": "1-9",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In light of Theorem 1.1 we see that it is reasonable to expect that the Poissonized Plancherel measure should be the limit of the Charlier ensemble as M \u2192\u221e.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-3-the-plancherel-measure-as-a-limit-of-the-charl.md",
+   "section_title": "The Plancherel measure as a limit of the Charlier ensemble",
+   "pages": "12-27",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Thus in order to prove (3.2) we must show that Y \u2113(\u03bb)<i<j\u2264M (j \u2212i) = M Y i=\u2113(\u03bb)+1 (\u03bbi + M \u2212i)!, but this is immediate since \u03bbi = 0 if i > \u2113(\u03bb).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-3-the-plancherel-measure-as-a-limit-of-the-charl.md",
+   "section_title": "The Plancherel measure as a limit of the Charlier ensemble",
+   "pages": "12-27",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "When M is large, we expect that F \u03b1 M[g] and E\u03b1 Plan[g] should be close.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-3-the-plancherel-measure-as-a-limit-of-the-charl.md",
+   "section_title": "The Plancherel measure as a limit of the Charlier ensemble",
+   "pages": "12-27",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "274 KURT JOHANSSON We want to show that, with high probability, the \ufb01rst hole must be fairly close to M.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-3-the-plancherel-measure-as-a-limit-of-the-charl.md",
+   "section_title": "The Plancherel measure as a limit of the Charlier ensemble",
+   "pages": "12-27",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The result should be compared with Remark 1.8 and Conjecture 1.9 in [Jo3].",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-5-applications-of-the-krawtchouk-ensemble.md",
+   "section_title": "Applications of the Krawtchouk ensemble",
+   "pages": "29-38",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The orthogonal polynomials for this weight are the Hahn polynomials, [NSU], so (5.18) should be called the Hahn ensemble.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-5-applications-of-the-krawtchouk-ensemble.md",
+   "section_title": "Applications of the Krawtchouk ensemble",
+   "pages": "29-38",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

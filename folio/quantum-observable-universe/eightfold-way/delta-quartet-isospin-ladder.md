@@ -51,7 +51,7 @@ third flavour, the quartet lives entirely at $N = 2$.  The oddness of $2I_3$
 depends on the degree: at even degree the same construction gives even
 values.
 
-**Lean.**  `QOU.EightfoldWay.SymmetricChannelDimension`, sorry-free:
+**Lean.**  `QOU.EightfoldWay.SymmetricChannelDimension`:
 `quadruplet_dim` (the dimension, as a consequence of the general
 `finrank_homogeneousSubmodule`), `twoI3_quartetPoint` (attained),
 `twoI3_mem_ladder` (closed), `twoI3_odd` (odd) and `twoI3_injOn` (faithful).

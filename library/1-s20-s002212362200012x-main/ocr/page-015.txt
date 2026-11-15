@@ -1,0 +1,42 @@
+R. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392 15
+
+Proof of Theorem 2. Use equation (20) with T = 16logn. Invoke the above proposition
+and attain
+
+Var[y] < 16TB2n2-1/ 068) 4 n2—-2!08" < C1g% 2-078),
+
+for a universal constant C>0. O
+3.2. Proof of Proposition 15: the stochastic coupling
+
+Proposition 15 will be proven via a coupling argument laid out below, which is a
+variant of the standard reflection coupling of Brownian motions. Let v € R” and consider
+the process
+
+wo=v, dw, = dB; + a,(w;)dt. (21)
+
+According to Proposition 11, we have that lim;_,.. a,(w:) ~ Tv. This gives rise to
+the following coupling. Let U; be a process adapted to F; such that for all t, U; is an
+orthogonal matrix. Let ¢ > 0 and @ € S"!, and consider the additional process defined
+by the equation
+
+up =v+e0, dup = UpdBy + a, (up)dt. (22)
+
+The existence and uniqueness of the solution will be justified at the end of the section.
+Similarly to the above, we have lim;_,.. ay (uz) ~ Tv+e9V, and therefore
+
+Wilt, Tvteo/) = sup |e E (Jim a,(wy)) —-E E (Jim, a,(w)) ||
+
+SELip(C,) 7
+<E [I tim aC) ~ fim ato
+«men
+Consider the stopping time
+7 :=inf{t; us = wr}
+
+and the event E := {r < 1}. By setting U, =I, for all t > 7, we get that a,(w:) = a, (ue)
+for all t > 7 almost surely, and therefore
+
+Eholds => lim |a,(w;) — a,(uz)| = 0.
+too
+
+Moreover, since a,(w;) is a martingale (as follows from part 2 of Proposition 10), we
+have

@@ -1,0 +1,46 @@
+22 Don Zagier
+
+Chapter II. Further aspects of the dilogarithm
+
+As explained in the preface to this paper, in this chapter we give a more
+detailed discussion of some of the topics treated in Chapter I and describe
+some of the developments of the intervening seventeen years. In Section 1 we
+discuss six further functions which are related to the classical dilogarithm Li,
+and the Bloch-Wigner function D: the Rogers dilogarithm, the “enhanced”
+dilogarithm, the double logarithm, the quantum dilogarithm, the p-adic dilog-
+arith, and the finite dilogarithm. Section 2 treats the functional equations of
+the dilogarithm function in more detail than was done in Chapter I and de-
+scribes a general method for producing such functional equations, as well as
+presenting Wojtkowiak’s proof of the fact that all functional equations of the
+dilogarithm whose arguments are rational functions of one variable are con-
+sequences of the 5-term relation. In §3 we discuss Nahm’s conjecture relating
+certain theta-series-like qg-series with modular properties to torsion elements in
+the Bloch group (as explained in more detail in his paper in this volume) and
+show how to get some information about this conjecture by using the asymp-
+totic properties of these q-series. The last section contains a brief description
+of the (mostly conjectural) theory of the relationships between special values
+of higher polylogarithm functions and special values of Dedekind zeta func-
+tions of fields, a topic which was brought up at the very end of Chapter I
+but which had not been fully developed at the time when that chapter was
+written.
+
+1 Variants of the dilogarithm function
+
+As explained in Chapter I, one of the disadvantages of the classical dilogarithm
+function Lig(z) is that, although it has a holomorphic extension beyond the
+region of convergence |z| < 1 of the defining power series )7*°_, 2"/n?, this
+extension is many-valued. This complicates all aspects of the analysis of the
+dilogarithm function. One way to circumvent the difficulty, discussed in detail
+in §§3-4 of Chapter I, is to introduce the Bloch-Wigner dilogarithm function
+D(z) = S[Lie(z) — log |z| Li:(z)], which extends from the original region of
+definition 0 < |z| < 1 to a continuous function D : P!(C) > R which is (real-)
+analytic on P!(C) < {0, 1, 00}; this function has an appealing interpretation as
+the volume of an ideal hyperbolic tetrahedron and satisfies “clean” functional
+equations which do not involve products of ordinary logarithms.
+
+It turns out, however, that there are other natural dilogarithm functions
+besides Lig and D which have interesting properties. In this section we shall
+discuss six of these: the Rogers dilogarithm L, which is similar to D but is
+defined on P1(R) (where D vanishes); the “enhanced” dilogarithm D, which
+takes values in C/z?Q and is in some sense a combination of the Rogers
+and Bloch-Wigner dilogarithms, but is only defined on the Bloch group of

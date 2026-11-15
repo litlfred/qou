@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1901.08945v2
-doc_title: "DECOMPOSITIONS OF DERIVED CATEGORIES OF GERBES"
+doc_title: "Decompositions of derived categories of gerbes and families of Brauer–Severi varieties"
 section_id: sec-004-5-the-derived-category-of-a-gerbe
 section_title: "The derived category of a gerbe"
 section_number: 5
 pages: 20-24
 source_pdf: 1901.08945v2.pdf
 source_sha256: df222d76e597057f
-doc_brief: "DECOMPOSITIONS OF DERIVED CATEGORIES OF GERBES — It is well known that the category of quasi-coherent sheaves on a gerbe banded by a diagonalizable group decomposes accordi ng to the char- acters of"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.997
-latex_coverage_ratio: 0.978
+latex_prose_ratio: 0.97
+latex_coverage_ratio: 0.963
+doc_brief: "Decompositions of derived categories of gerbes and families of Brauer–Severi varieties — It is well known that the category of quasi-coherent sheaves on a gerbe banded by a diagonalizable group"
 ---
 []{#sec:decomp-deriv-categ label="sec:decomp-deriv-categ"} In this section we generalize some of the results by Căldăraru [@caldararu2000 Chapter 2] and Lieblich [@lieblich2004 Section 2.2.4] on the basic structure of derived categories of gerbes and twisted sheaves. Throughout the section, we let $\alpha\colon X \to S$ be a gerbe banded by a diagonalizable group $\Delta$ with character group $A$.
 

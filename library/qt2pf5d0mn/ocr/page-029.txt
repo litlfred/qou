@@ -1,0 +1,33 @@
+Section 2.1 Ribbon Fusion Categories
+
+represent the same morphism.
+
+Proposition 2.1.16 [14/ IfC is a spherical category, then
+
+1. If the direction of an arc is reversed and the label attached to that arc is changed
+
+to its dual, then the new picture represents the same morphism as the old picture.
+
+2. Let S? = R?U {oo} be the oriented sphere and naturally embed R? into S?. IfRi,R2
+
+are pictures in R? that are isotopic in S?, then they represent the same morphism.
+
+2.1.5 Braided Monoidal (Tensor) Categories
+
+A braided monoidal (tensor) category is a monoidal category C, together with a
+natural isomorphism c : ® — ®o Swap, where Swap is the functor which swaps the
+two components of C x C, such that Diagram and commute. For A,B € C°,
+
+denote by cag the natural isomorphism, namely,
+
+cap: A®B—-+ BBA.
+
+(A@B)ac
+ee oe
+(Be A)aC A®(B@C)
+en.ac| [canoe (2.10)
+Be(A@C) (B@C)@A
+lone <7
+B@(C@A)
+
+20

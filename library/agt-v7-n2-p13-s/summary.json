@@ -2,22 +2,27 @@
  "_schema": "library-summary/v1",
  "doc_id": "agt-v7-n2-p13-s",
  "source_sha256": "affd571adbaac3fc",
- "brief": "Quantum hyperbolic geometry — 19 sections: Introduction; Universal QHG; Building blocks",
- "extended": "**Quantum hyperbolic geometry**\n\n*We construct a new family, indexed by odd integers N\u0015 1, of.2C 1/–dimensional*\n\n73 pp, 19 sections.\n\n**Outline.** 1 Introduction; 2 Universal QHG; 2.1 Building blocks; 2.2 QHG triangulated pseudomanifolds; 2.3 QHG universal functor; 2.4 Towards geometric specializations; 3.2 Cocycle parameters; 3.3 Cross-ratio parameters; 4 The QHFT bordism category; 4.1 Marked topological bordisms; 4.2 Boundary structures; 5 The QHFT functor; 5.1 From QHFT bordisms to QHG-triangulated pse; 5.2 Amplitudes; 5.3 QHFT variants; 5.4 Mapping class group representations; 6 Partition functions; 6.2 Invariants of cusped manifolds and surgery\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.20: [23, Theorem 5.1] The sequence\n- Theorem 2.4: in [23]. For each ﬁxed weight .h; k/ they form an afﬁne space over\n- Theorem 5.3: For every BD.zY;zLF;\u001a;˛˙/ and every .h; k/2 H 1.zYI Z=2Z/2\u0002\n- Theorem 5.4: The morphism HN.B; h; k/D HN.T.B// does not depend on the\n- Theorem 6.4: Let.W; L/ be obtained by com-\n- Theorem 14.5: in [24], which describe surgery formulas for the volume, V ol(W ), and",
+ "brief": "Quantum hyperbolic geometry — 25 sections: Front matter; Introduction; Universal QHG",
+ "extended": "**Quantum hyperbolic geometry**\n\n*STEPHANE BASEILHAC*\n\n73 pp, 25 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Universal QHG; 2.1 Building blocks; 2.2 QHG triangulated pseudomanifolds; 2.3 QHG universal functor; 2.4 Towards geometric specializations; 3 Parameters for PSL(2,C)-characters of surfac; 3.1 Efficient triangulations; 3.2 Cocycle parameters; 3.3 Cross-ratio parameters; 4 The QHFT bordism category; 4.1 Marked topological bordisms; 4.2 Boundary structures; 5 The QHFT functor; 5.1 From QHFT bordisms to QHG-triangulated pse; 5.2 Amplitudes; 5.3 QHFT variants",
  "tokens": {
   "brief": 21,
-  "extended": 279
+  "extended": 144
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-4"
+   "pages": "1-5"
   },
   {
    "id": "sec-001-2-universal-qhg",
    "title": "Universal QHG",
-   "pages": "4-5"
+   "pages": "5-5"
   },
   {
    "id": "sec-002-21-building-blocks",
@@ -37,70 +42,95 @@
   {
    "id": "sec-005-24-towards-geometric-specializations",
    "title": "Towards geometric specializations",
-   "pages": "18-27"
+   "pages": "18-24"
   },
   {
-   "id": "sec-006-32-cocycle-parameters",
+   "id": "sec-006-3-parameters-for-psl2c-characters-of-surfaces",
+   "title": "Parameters for PSL(2,C)-characters of surfaces",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-007-31-efficient-triangulations",
+   "title": "Efficient triangulations",
+   "pages": "25-27"
+  },
+  {
+   "id": "sec-008-32-cocycle-parameters",
    "title": "Cocycle parameters",
    "pages": "27-30"
   },
   {
-   "id": "sec-007-33-cross-ratio-parameters",
+   "id": "sec-009-33-cross-ratio-parameters",
    "title": "Cross-ratio parameters",
    "pages": "30-37"
   },
   {
-   "id": "sec-008-4-the-qhft-bordism-category",
+   "id": "sec-010-4-the-qhft-bordism-category",
    "title": "The QHFT bordism category",
    "pages": "37-37"
   },
   {
-   "id": "sec-009-41-marked-topological-bordisms",
+   "id": "sec-011-41-marked-topological-bordisms",
    "title": "Marked topological bordisms",
    "pages": "37-39"
   },
   {
-   "id": "sec-010-42-boundary-structures",
+   "id": "sec-012-42-boundary-structures",
    "title": "Boundary structures",
    "pages": "39-41"
   },
   {
-   "id": "sec-011-5-the-qhft-functor",
+   "id": "sec-013-5-the-qhft-functor",
    "title": "The QHFT functor",
    "pages": "41-41"
   },
   {
-   "id": "sec-012-51-from-qhft-bordisms-to-qhg-triangulated-pseudo",
+   "id": "sec-014-51-from-qhft-bordisms-to-qhg-triangulated-pseudo",
    "title": "From QHFT bordisms to QHG-triangulated pseudomanifolds",
    "pages": "41-43"
   },
   {
-   "id": "sec-013-52-amplitudes",
+   "id": "sec-015-52-amplitudes",
    "title": "Amplitudes",
    "pages": "43-46"
   },
   {
-   "id": "sec-014-53-qhft-variants",
+   "id": "sec-016-53-qhft-variants",
    "title": "QHFT variants",
    "pages": "46-47"
   },
   {
-   "id": "sec-015-54-mapping-class-group-representations",
+   "id": "sec-017-54-mapping-class-group-representations",
    "title": "Mapping class group representations",
-   "pages": "47-50"
+   "pages": "47-48"
   },
   {
-   "id": "sec-016-6-partition-functions",
+   "id": "sec-018-55-tunneling-the---states",
+   "title": "Tunneling the (+)/(-) states",
+   "pages": "48-50"
+  },
+  {
+   "id": "sec-019-6-partition-functions",
    "title": "Partition functions",
-   "pages": "50-52"
+   "pages": "50-51"
   },
   {
-   "id": "sec-017-62-invariants-of-cusped-manifolds-and-surgery-fo",
+   "id": "sec-020-61-qhft-vs-qhft-0-partition-functions",
+   "title": "QHFT vs QHFT-0 partition functions",
+   "pages": "51-52"
+  },
+  {
+   "id": "sec-021-62-invariants-of-cusped-manifolds-and-surgery-fo",
    "title": "Invariants of cusped manifolds and surgery formulas",
-   "pages": "52-71"
+   "pages": "52-64"
   },
   {
-   "id": "sec-018-references",
+   "id": "sec-022-64-example-the-figure-eight-knot-complement",
+   "title": "Example: the figure-eight knot complement",
+   "pages": "64-71"
+  },
+  {
+   "id": "sec-023-references",
    "title": "References",
    "pages": "71-73"
   }
@@ -108,8 +138,7 @@
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

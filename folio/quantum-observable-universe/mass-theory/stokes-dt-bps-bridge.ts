@@ -16,6 +16,8 @@ export default conjecture({
   },
   uses: ["conj:im-q-physical-role"],
   cites: [
+    "garoufalidis2013",
+    "bridgeland2016",
     "garoufalidis-gu-marino2023peacock",
     "gukov-pei-putrov-vafa2017",
     "dimofte-gaiotto-gukov2013",

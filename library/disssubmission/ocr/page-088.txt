@@ -1,0 +1,50 @@
+80 Chapter 4 — The Tannaka group of the theta divisor
+
+the corresponding abelian scheme resp. its relative theta divisor. For the
+construction of families of ppav’s with degenerating theta divisors we will
+use the following general observation.
+
+LEMMA 4.11. For every point s € &%n(C) there is a smooth complex
+quasi-projective curve S —+ yn, passing through the point s in a general
+tangent direction, such that
+
+(a) the generic fibre of the family Os > S is smooth,
+
+(b) the singular loci of the total space and of the special fibre of this
+family satisfy
+
+Sing(®s) © Sing(®,).
+
+If the theta divisor ©, contains a singular point of precise multiplicity two,
+then the inclusion in part (b) is strict for a suitable choice of S.
+
+Proof. Since the moduli space .2/,,, is smooth and quasi-projective, for
+any s € &%»(C) we can find a smooth quasi-projective curve S &%n
+passing through the point s in a general tangent direction. We can assume
+that our general curve S is not contained in the locus of ppav’s with singular
+theta divisor, indeed by [4] this locus is itself a divisor in %,. So after
+shrinking S we can assume that for all t € S(C) \ {s} the theta divisor ©,
+is smooth. Then property (a) is clearly satisfied, and property (b) easily
+follows from the fact that the total space Os is given locally in the smooth
+variety Xs as the zero locus of a single analytic function.
+
+Explicitly, let A C S be an analytic coordinate disk with coordinate w
+centered at the given point s, and consider a local lift h: A— % of the
+embedding A> S > .&%,,. On the universal covering the divisor Os is
+described as the locus
+
+{(w,z) €Ax C8 | F(w,z) =0} C Ax C8
+
+where the analytic function F(w,z) = 0(h(w),z) vanishes. If a point (w,z)
+on this locus defines a singular point of the relative theta divisor Os, then
+the gradient of F must vanish at this point. For the gradient in the variable z
+this implies
+
+0 = (V.F)(w,z) = (V,8)(t,z) for t = h(w).
+
+Hence (T,z) defines a singular point of the fibre ©, where t € S(C) denotes
+the image of the point t. By our choice of the curve S the only singular
+fibre ©, is the one over the point t = s, hence claim (b) follows.
+
+This being said, if some point (t,z) € H% x C8 defines a singular point
+of the theta divisor ©, with precise multiplicity two, then by definition the

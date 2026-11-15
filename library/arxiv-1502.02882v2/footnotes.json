@@ -1,0 +1,2124 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1502.02882v2",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p008-1",
+   "page": 8,
+   "mark": "1",
+   "text": "ThenotionofapaireddimensionisduetoM¨uger[18,Prop2.4],whereitiswrittenas d2(X), but not named explicitly. The terminology and notation is our own.",
+   "marks": [
+    {
+     "page": 8,
+     "context": "Todeﬁnethefusiondimensions,weﬁrstneedtodeﬁnepaireddimensions"
+    }
+   ],
+   "block": "library/arxiv-1502.02882v2/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p024-2",
+   "page": 24,
+   "mark": "2",
+   "text": "Thustheyformasharpanglediagrammatically,hencethename.",
+   "marks": [
+    {
+     "page": 23,
+     "context": "i∗= λiηi∗where λi is a root of λ"
+    },
+    {
+     "page": 24,
+     "context": "thetopstrandistheidentity"
+    }
+   ],
+   "block": "library/arxiv-1502.02882v2/blocks/prose-sec-014"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p024-1",
+   "page": 24,
+   "mark": "7",
+   "text": "πi",
+   "block": "library/arxiv-1502.02882v2/blocks/prose-sec-014"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "(F"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "whereaistheassociatorofthefusioncategory.Wecallthescalars(F"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "(drawnasadottedline)andτ(drawnasasolidline)withτ"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "2"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "2"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "ianditsfusiondimension"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "ianditsfusiondimensiond"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "j"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "N"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "jk"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "whereN"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "jk=dim Hom(X"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "jk=dim Hom(Xi, X"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "jk=dim Hom(Xi, Xj⊗X"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "j∗forall"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "ias"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "x;similarly"
+  },
+  {
+   "page": 8,
+   "mark": "y",
+   "context": "x;similarlyd"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "i∈I"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "i∈Id{i,i∗}.TheFrobenius-PerrondimensionFPCof"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "i)"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "i= d{i,i∗}and"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "i= d{i,i∗}andd"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "i= d{i,i∗}anddi= d"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "i= d{i,i∗}anddi= di∗forall"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "ias"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "iasarightdualofX"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "ias"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "iasaleftdualofX"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "T"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "jk:Hom(X"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "jk:Hom(Xi, X"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "jk:Hom(Xi, Xj⊗X"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "jk:Hom(Xi, Xj⊗Xk) →Hom(X"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "jk:Hom(Xi, Xj⊗Xk) →Hom(Xi, X"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "jk:Hom(Xi, Xj⊗Xk) →Hom(Xi, Xj⊗X"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i, η"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i, ηi, ϵ"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "j, η"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "j, ηj, η"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "k, η"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "k, ηk, ϵ"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "k, ηk, ϵk)forX"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "k, ηk, ϵk)forXi,X"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "k, ηk, ϵk)forXi,XjandX"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "toT"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "jk7→x"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "jk7→xi"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "jk7→xix"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "jk7→xixj"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "jk7→xixjx"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "jk7→xixjxkT"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "ofT"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "⟨ˆeβT"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "Proof.Wecancomputethescalar⟨ˆeβT"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "ˆeβT"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "jk"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "Theorem3.10(cf.[10,Thm3]).TheoperatorT"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "jk)"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "(T"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "Proof.TheoperatorT"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "haveexpandedT"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "wehaveshownthatT"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "jk)"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "jk)2=idcorrespondstotheLarson-RadfordformulaS"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "(T"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "Since T"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "jkis an involution,the vector space Hom(X"
+  },
+  {
+   "page": 13,
+   "mark": "j",
+   "context": "jkis an involution,the vector space Hom(Xi, X"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "jkis an involution,the vector space Hom(Xi, Xj ⊗X"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "Deﬁnition3.14.Thepivotalsymbolsϵ"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "pivotaloperators,T"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "jk"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "jkeα= ϵ"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "jk,p"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "intothepositiveandnegativeeigenspacesofT"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "ϵ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "Lemma3.16.ThepivotaloperatorsT"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "11andT"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "Tr(T"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "jk)"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "jk) d"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "ϵ"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "jk,α"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "jk,αd"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "Tr(T"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "jk)"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "jk) d"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "Lemma3.18(cf.[9,pg594]).ThenumbersTr(T"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "jk) = Tr(T"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "(i)Tr(T"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "jk) = Tr(T"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "(ii)Tr(T"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "ofT"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "jk,sothatT"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "jk"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "jkeα=ϵ"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "jk,α"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "i, η"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "i, ηi, ϵ"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "k, η"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "k, ηk, ϵ"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "k, ηk, ϵk)forX"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "k, ηk, ϵk)forXiandX"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "i, X"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "arealsoeigenvectorsofT"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "i∗,jwiththesameeigenvaluesasthe"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "T"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "= ϵ"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "= ϵ"
+  },
+  {
+   "page": 15,
+   "mark": "f",
+   "context": "jk,α"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "A similar string diagram argument then establishes that T"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "k∗j∗gα= ϵ"
+  },
+  {
+   "page": 15,
+   "mark": "g",
+   "context": "jk,α"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "DeﬁnethematricesAjvia[Aj]ik= Tr(T"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "ji).ThenProposition3.17saysthat"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "[Aj∗]ik= Tr(T"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "= Tr(T"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "= Tr(T"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "d"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "i= d"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "i= diforall"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "iforall"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "k"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "k|x"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "Tr(T"
+  },
+  {
+   "page": 16,
+   "mark": "x",
+   "context": "jk)"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "jk)x"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "kN"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "jk|x"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "kN"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "ji∗|x"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "i∗|x"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "InthesecondlineweusedTr(T"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "jk)≤N"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "N"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "jk=N"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "ary3.22.Inapseudo-unitaryfusioncategory,thepivotaloperatorsT"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "Tr(T"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "N"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "jk)"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "jk)d"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "jk"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "jkd"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "jkdi= d"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "jkdi= dj"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "jkdi= djd"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "andhencewemusthaveT"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "naturaltransformationθ: F⇒GsuchthatθXi= θ"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "with corresponding dual basis {eβ: A →X"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "i,αG(eα)◦θ"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "ThisallowsustoextendthepivotaloperatorsT"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "Corollary3.24.ThepivotaloperatorsT"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "jkextenduniquelyto"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "Proof.ThepivotaloperatorsT"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "jk:Hom(X"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "jk:Hom(Xi, X"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "jk:Hom(Xi, Xj⊗X"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "jk:Hom(Xi, Xj⊗Xk)→Hom(X"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "jk:Hom(Xi, Xj⊗Xk)→Hom(Xi, X"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "jk:Hom(Xi, Xj⊗Xk)→Hom(Xi, Xj⊗X"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "isequaltoT"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "Thatis,werequirepost(Tj,k)=T"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "Proposition 3.25.The pivotal operators T"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "simpleobjects.TheunitcoherenceequationsareT"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "i,1= T"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "(F"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "ϵ"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "jk,αϵ"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "kl,β= ϵ"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "nl,γϵ"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "whenever(F"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "Remark 3.27.The equation (22) satisﬁed by the ϵ"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "equationsatisﬁedbythe2ndStiefel-Whitney2-cocyclew2(M) ∈H"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "speciﬁed by the pivotal operators T"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "•T"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "Combining this with Theorem 3.28, which says that T"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "In this section we express the pivotal operators T"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "monodromyandthepivotalindicators,andinTheorem4.17weexpressT"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "WecanwritethepivotaloperatorsT"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "jkastheconjugateof"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "i⊗X"
+  },
+  {
+   "page": 21,
+   "mark": "k",
+   "context": "i⊗Xj⊗X"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "Lemma4.2.ThepivotaloperatorT"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "T"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "jk= Y−1T"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "3(X"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "3(X"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "3(X"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "3(Xi) = γ"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i=η"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i=a"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i∗= λ"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i∗= λiη"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i∗= λiηi∗where λ"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "ai∗.In this new basis we have"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i=−η"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i∗=η"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i= d"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "i= di.Wecallsuch"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i= di.Wecallsuchabasischoiceη"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i= di.Wecallsuchabasischoiceηi∈Hom(1, X"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i= di.Wecallsuchabasischoiceηi∈Hom(1, Xi∗⊗X"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "2(X"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "2(X"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "2(Xi) = γ"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "2(Xi) = γi"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "2(Xi) = γip(X"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "ijk)η"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "ijk)ηk"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "Thatis,(Sijk)βα=(F"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "pivotaloperatorsT"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "Theorem4.17.Inafairbasis,thepivotaloperatorT"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "jk= p"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "jk= pi"
+  },
+  {
+   "page": 25,
+   "mark": "j",
+   "context": "jk= pip"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "jk= pipj"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "jk= pipjp"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "jk= pipjpkY−1A"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "T"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "Example4.19.IntheYang-Leecategory,Tτττ= (−1)"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "thepivotaloperatorsT"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "γjγk id = γiT"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "wheretheT"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "andhenceγi∈U(1).SinceT"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "11=idfromLemma3.16,wehaveγ"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "similarlysinceT"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "ii∗=id,wehaveγ"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "ii∗=id,wehaveγi=γ"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "ii∗=id,wehaveγi=γi∗forall"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "pivotalsymbolsϵ"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "jk,αdonotdependonα,thatis,T"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "jk=ϵ"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "ϵ"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "T"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "jk= p"
+  },
+  {
+   "page": 27,
+   "mark": "p",
+   "context": "jk= pi"
+  },
+  {
+   "page": 27,
+   "mark": "j",
+   "context": "jk= pip"
+  },
+  {
+   "page": 27,
+   "mark": "p",
+   "context": "jk= pipj"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "jk= pipjp"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "i] = d{i,i∗}forallsimpleobjectsX"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "just dim(Vi)"
+  },
+  {
+   "page": 29,
+   "mark": "y",
+   "context": "g= s"
+  },
+  {
+   "page": 29,
+   "mark": "g",
+   "context": "g◦F"
+  },
+  {
+   "page": 29,
+   "mark": "g",
+   "context": "(T"
+  },
+  {
+   "page": 29,
+   "mark": "g",
+   "context": "where T"
+  },
+  {
+   "page": 29,
+   "mark": "g",
+   "context": "X,Y: F"
+  },
+  {
+   "page": 29,
+   "mark": "g",
+   "context": "X,Y: Fg(X)⊗F"
+  },
+  {
+   "page": 29,
+   "mark": "g",
+   "context": "X,Y: Fg(X)⊗Fg(Y ) →F"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "phismsencodedinthepivotaloperatorsT"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "Lemma5.14.Thesphericalization˜CofChassimpleobjectsX"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "Lemma5.14.Thesphericalization˜CofChassimpleobjectsXs"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "i, X"
+  },
+  {
+   "page": 29,
+   "mark": "j",
+   "context": "i, Xs"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "C(X"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "C(Xs"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "j⊗X"
+  },
+  {
+   "page": 29,
+   "mark": "k",
+   "context": "j⊗Xs"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "k) = HomC(X"
+  },
+  {
+   "page": 29,
+   "mark": "j",
+   "context": "k) = HomC(Xi, X"
+  },
+  {
+   "page": 29,
+   "mark": "k",
+   "context": "k) = HomC(Xi, Xj⊗X"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "k) = HomC(Xi, Xj⊗Xk)"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "k) = HomC(Xi, Xj⊗Xk)s"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "k) = HomC(Xi, Xj⊗Xk)si"
+  },
+  {
+   "page": 29,
+   "mark": "j",
+   "context": "k) = HomC(Xi, Xj⊗Xk)sis"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "k) = HomC(Xi, Xj⊗Xk)sisj"
+  },
+  {
+   "page": 29,
+   "mark": "k",
+   "context": "k) = HomC(Xi, Xj⊗Xk)sisjs"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "i7→X"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "˜ϵ(i,s"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "(j,sj)(k,sk)= s"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "(j,sj)(k,sk)= si"
+  },
+  {
+   "page": 29,
+   "mark": "j",
+   "context": "(j,sj)(k,sk)= sis"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "(j,sj)(k,sk)= sisj"
+  },
+  {
+   "page": 29,
+   "mark": "k",
+   "context": "(j,sj)(k,sk)= sisjs"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "action,soγ=idin(33).ForasimpleobjectXi,writesi=sX"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "becomess"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "i=1so"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "i=1sos"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "i=1sosi=±1.Let"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "i=1sosi=±1.Leteα:X"
+  },
+  {
+   "page": 29,
+   "mark": "j",
+   "context": "i=1sosi=±1.Leteα:Xi→X"
+  },
+  {
+   "page": 29,
+   "mark": "k",
+   "context": "i=1sosi=±1.Leteα:Xi→Xj⊗X"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "i=1sosi=±1.Leteα:Xi→Xj⊗Xkbe"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "i,X"
+  },
+  {
+   "page": 29,
+   "mark": "j",
+   "context": "i,Xs"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "(34),eα∈Hom(X"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "(34),eα∈Hom(Xs"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "j⊗X"
+  },
+  {
+   "page": 29,
+   "mark": "k",
+   "context": "j⊗Xs"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "commutes.By deﬁnition (see Corollary 3.24), TXjXk ◦eα= ϵ"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "jk,α"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "simpleobjectX"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "simpleobjectXs"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "dim(X"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "dim(Xs"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "i) = s"
+  },
+  {
+   "page": 29,
+   "mark": "d",
+   "context": "i) = si"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "i) = sid"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "wheneverHom(X"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "wheneverHom(Xi, X"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "wheneverHom(Xi, Xj⊗X"
+  },
+  {
+   "page": 30,
+   "mark": "s",
+   "context": "wheneverHom(Xi, Xj⊗Xk)"
+  },
+  {
+   "page": 30,
+   "mark": "s",
+   "context": "wheneverHom(Xi, Xj⊗Xk)si"
+  },
+  {
+   "page": 30,
+   "mark": "s",
+   "context": "wheneverHom(Xi, Xj⊗Xk)sisj"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "neverHom(Xi, Xj⊗Xk)sisjskisnonzero.Clearlythechoicet(i,si)=s"
+  },
+  {
+   "page": 30,
+   "mark": "d",
+   "context": "Xiand"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "Xiandd(X"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "Xiandd(Xi,s"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "Xiandd(Xi,si)= d"
+  },
+  {
+   "page": 30,
+   "mark": "d",
+   "context": "(Xj,sj)"
+  },
+  {
+   "page": 30,
+   "mark": "d",
+   "context": "j"
+  },
+  {
+   "page": 30,
+   "mark": "d",
+   "context": "jk"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "N"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "(N"
+  },
+  {
+   "page": 30,
+   "mark": "s",
+   "context": "jk)"
+  },
+  {
+   "page": 30,
+   "mark": "s",
+   "context": "jk)sj"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "jk)sjsk++ (N"
+  },
+  {
+   "page": 30,
+   "mark": "s",
+   "context": "jk)"
+  },
+  {
+   "page": 30,
+   "mark": "s",
+   "context": "jk)sj"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "(N"
+  },
+  {
+   "page": 30,
+   "mark": "s",
+   "context": "jk)"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "jk)s"
+  },
+  {
+   "page": 30,
+   "mark": "s",
+   "context": "jk)sj"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "jk)sjs"
+  },
+  {
+   "page": 30,
+   "mark": "s",
+   "context": "jk)sjsk"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "jk)sjsks"
+  },
+  {
+   "page": 30,
+   "mark": "d",
+   "context": "jk)sjsksi"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "i,s"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "ness,anddeﬁneC"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "Tn.Forn = 0,setC"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "C"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "Instringdiagrams,wecanwritethecomponentsofc ∈C"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "Forinstance,a1-cochainc∈C"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "A2-cochainA ∈C"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "A"
+  },
+  {
+   "page": 31,
+   "mark": "k",
+   "context": "jk: Hom(X"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "jk: Hom(Xk, X"
+  },
+  {
+   "page": 31,
+   "mark": "j",
+   "context": "jk: Hom(Xk, Xi⊗X"
+  },
+  {
+   "page": 31,
+   "mark": "k",
+   "context": "jk: Hom(Xk, Xi⊗Xj) →Hom(X"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "jk: Hom(Xk, Xi⊗Xj) →Hom(Xk, X"
+  },
+  {
+   "page": 31,
+   "mark": "j",
+   "context": "jk: Hom(Xk, Xi⊗Xj) →Hom(Xk, Xi⊗X"
+  },
+  {
+   "page": 31,
+   "mark": "0",
+   "context": "d"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "d"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "−→C"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "d"
+  },
+  {
+   "page": 31,
+   "mark": "0",
+   "context": "C"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "−→C"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "−→C"
+  },
+  {
+   "page": 31,
+   "mark": "k",
+   "context": "(−1)"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "(−1)kf"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "k: C"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "k: Cn→C"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "wherethemapsf"
+  },
+  {
+   "page": 31,
+   "mark": "0",
+   "context": "(Notethatforc ∈C"
+  },
+  {
+   "page": 31,
+   "mark": "0",
+   "context": "(Notethatforc ∈C0= C,(f"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "1(c))"
+  },
+  {
+   "page": 31,
+   "mark": "d",
+   "context": "1(c))isothat"
+  },
+  {
+   "page": 31,
+   "mark": "0",
+   "context": "1(c))isothatd"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "0(c))"
+  },
+  {
+   "page": 31,
+   "mark": "0",
+   "context": "0(c))i= idXi= (f"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "Lemma6.2.Thetangentcomplexisacomplex,i.e.d"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "Lemma6.2.Thetangentcomplexisacomplex,i.e.dn+1d"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "f"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "f"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "m= f"
+  },
+  {
+   "page": 31,
+   "mark": "f",
+   "context": "m+1"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "m+1f"
+  },
+  {
+   "page": 32,
+   "mark": "s",
+   "context": "(F"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "Example6.3.A1-cocyclec∈Z"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "ck= ci + cjwheneverXkisasummandofXi ⊗Xj.A2-cocycleA ∈Z"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "acollectionoflinearoperatorsA"
+  },
+  {
+   "page": 32,
+   "mark": "s",
+   "context": "(F"
+  },
+  {
+   "page": 32,
+   "mark": "t",
+   "context": "(A"
+  },
+  {
+   "page": 32,
+   "mark": "s",
+   "context": "(A"
+  },
+  {
+   "page": 32,
+   "mark": "s",
+   "context": "(A"
+  },
+  {
+   "page": 32,
+   "mark": "m",
+   "context": "(A"
+  },
+  {
+   "page": 32,
+   "mark": "s",
+   "context": "forallvaluesofthefreeindices,whereF≡F"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "Deﬁnition6.4.TheYetter-DavydovcohomologyH"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "[28, 29, 6, 16].The group H"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "H"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "H"
+  },
+  {
+   "page": 33,
+   "mark": "p",
+   "context": ":=d"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "=d"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "Theorem6.6(cf.[9,Thm2.27]).H"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "Proof.Wedeﬁneanoperatorχ"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "Proof.Wedeﬁneanoperatorχn: C"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "Proof.Wedeﬁneanoperatorχn: Cn→C"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "idC"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "χ"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "χn+1f"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "f"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "k−1χ"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "p"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "pd"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "Example6.7.Fora2-cocycleA ∈Z"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "torsA"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "jksatisfying(43),thevanishingofH"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "jksatisfying(43),thevanishingofH2(C)meansthatA"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "A"
+  },
+  {
+   "page": 34,
+   "mark": "j",
+   "context": "jk= (c"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "jk= (cj−c"
+  },
+  {
+   "page": 34,
+   "mark": "k",
+   "context": "jk= (cj−ci+ c"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "from(43).EvenifweassumethattheA"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "not immediately clear from dA = 0) i.e.(A"
+  },
+  {
+   "page": 34,
+   "mark": "a",
+   "context": "jk)αβ= δαβ"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "jk)αβ= δαβ a"
+  },
+  {
+   "page": 34,
+   "mark": "t",
+   "context": "a"
+  },
+  {
+   "page": 34,
+   "mark": "s",
+   "context": "jk,ω−a"
+  },
+  {
+   "page": 34,
+   "mark": "s",
+   "context": "it,θ+ a"
+  },
+  {
+   "page": 34,
+   "mark": "m",
+   "context": "mk,γ−a"
+  },
+  {
+   "page": 34,
+   "mark": "s",
+   "context": "whenever(F"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "ThevanishingofH"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "ThevanishingofH2(C)meansthattheequations(48)mustforcethea"
+  }
+ ]
+}

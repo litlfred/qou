@@ -2,22 +2,27 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2210.09583v1",
  "source_sha256": "38fc6fa465a06a7b",
- "brief": "A NEW PRESENTATION OF THE osp(1|2)-POL YNOMIAL LINK INVARIANT — There is a known connection between the osp(1|2n) polynomial knot invariant J n K and the so(2n + 1) knot invariant soJ n K studied by",
- "extended": "**A NEW PRESENTATION OF THE osp(1|2)-POL YNOMIAL LINK INVARIANT**\n\n*AND CATEGORIFICATION*\n\n17 pp, 13 sections.\n\n**Abstract.** There is a known connection between the osp(1|2n) polynomial knot invariant J n K and the so(2n + 1) knot invariant soJ n K studied by Clark [ 10] and Blumen [ 4]. In the rank one case, the uncolored Uq(osp(1|2)) link invariant is equal to the Ut−1q(sl2) link invariant where t2 = − 1. W e deﬁne a skein relation similar to the Kauﬀman bracket, and use that to recover an oriented link invariant which coincides with Clark’s uncolored osp(1|2)-link invariant. This deﬁnition also comes from the representation theory of Uq,π (sl2), but using diﬀerent methods from Clark. W e show that our invariant is easily categoriﬁed by a slightly modiﬁed ve rsion of Khovanov homology equipped with an extra /CI 4-grading. W e also construct a similarly modiﬁed version of P utyra’s covering Khovanov homology [ 28].\n\n**Outline.** 1 Introduction; 1.1 Results; 1.2 Acknowledgements; 2 osp(1|2) braid invariant; 3 Explanation using representation theory; 3.2 Quantum covering group; 3.1 Parameters; 4 Two Categorifications; 4.1 Normal Khovanov Homology; 4.2 e-graded Khovanov Homology; 4.2.1 R1; 4.3 e-graded Covering Khovanov Homology; References",
+ "brief": "A NEW PRESENTATION OF THE osp(1|2)-POLYNOMIAL LINK INVARIANT — There is a known connection between the osp(1|2n) polynomial knot invariant Jn K and the so(2n + 1) knot invariant soJn K studied by",
+ "extended": "**A NEW PRESENTATION OF THE osp(1|2)-POLYNOMIAL LINK INVARIANT**\n\n*AND CATEGORIFICATION*\n\n17 pp, 16 sections.\n\n**Abstract.** There is a known connection between the osp(1|2n) polynomial knot invariant Jn K and the so(2n + 1) knot invariant soJn K studied by Clark [10] and Blumen [4]. In the rank one case, the uncolored Uq(osp(1|2)) link invariant is equal to the Ut−1q(sl2) link invariant where t2 = −1. We deﬁne a skein relation similar to the Kauﬀman bracket, and use that to recover an oriented link invariant which coincides with Clark’s uncolored osp(1|2)-link invariant. This deﬁnition also comes from the representation theory of Uq,π(sl2), but using diﬀerent methods from Clark. We show that our invariant is easily categoriﬁed by a slightly modiﬁed version of Khovanov homology equipped with an extra Z4-grading. We also construct a similarly modiﬁed version of Putyra’s covering Khovanov homology [28]. This suggests that the similarity between the two invariants holds at the categoriﬁed level as well.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Results; 1.2 Acknowledgements; 2 osp(1|2) braid invariant; 3 Explanation using representation theory; 3.1 Parameters; 3.2 Quantum covering group; 3.5 Representation theoretic definiton of J\"03; 4 Two Categorifications; 4.1 Normal Khovanov Homology; 4.2 e-graded Khovanov Homology; 4.2.1 R1; 4.2.2 Categorification of J\"0362J; 4.3 e-graded Covering Khovanov Homology; References",
  "tokens": {
-  "brief": 49,
-  "extended": 314
+  "brief": 48,
+  "extended": 360
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-1"
+   "pages": "1-2"
   },
   {
    "id": "sec-001-11-results",
    "title": "Results",
-   "pages": "1-2"
+   "pages": "2-2"
   },
   {
    "id": "sec-002-12-acknowledgements",
@@ -35,42 +40,52 @@
    "pages": "6-6"
   },
   {
-   "id": "sec-005-32-quantum-covering-group",
-   "title": "Quantum covering group",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-006-31-parameters",
+   "id": "sec-005-31-parameters",
    "title": "Parameters",
-   "pages": "6-12"
+   "pages": "6-7"
   },
   {
-   "id": "sec-007-4-two-categorifications",
+   "id": "sec-006-32-quantum-covering-group",
+   "title": "Quantum covering group",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-007-35-representation-theoretic-definiton-of-j0362j",
+   "title": "Representation theoretic definiton of J\"0362J",
+   "pages": "9-12"
+  },
+  {
+   "id": "sec-008-4-two-categorifications",
    "title": "Two Categorifications",
    "pages": "12-13"
   },
   {
-   "id": "sec-008-41-normal-khovanov-homology",
+   "id": "sec-009-41-normal-khovanov-homology",
    "title": "Normal Khovanov Homology",
    "pages": "13-13"
   },
   {
-   "id": "sec-009-42-e-graded-khovanov-homology",
+   "id": "sec-010-42-e-graded-khovanov-homology",
    "title": "e-graded Khovanov Homology",
    "pages": "13-14"
   },
   {
-   "id": "sec-010-421-r1",
+   "id": "sec-011-421-r1",
    "title": "R1",
    "pages": "14-15"
   },
   {
-   "id": "sec-011-43-e-graded-covering-khovanov-homology",
+   "id": "sec-012-422-categorification-of-j0362j",
+   "title": "Categorification of J\"0362J",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-013-43-e-graded-covering-khovanov-homology",
    "title": "e-graded Covering Khovanov Homology",
    "pages": "15-16"
   },
   {
-   "id": "sec-012-references",
+   "id": "sec-014-references",
    "title": "References",
    "pages": "16-17"
   }

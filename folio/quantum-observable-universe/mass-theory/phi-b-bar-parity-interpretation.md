@@ -32,5 +32,4 @@ real-$q$ and **anchor-stable**, bar-odd coefficients are root-of-unity and
 $c_2=-1$ (bar-even) is Taylor-exact, $c_3$ (bar-odd) swings $\approx 2.375\%$
 between the proton and muon anchors — so the ladder element factors as
 $F(q)=F_{\text{even}}(q)\cdot F_{\text{odd}}(q)$ with $F_{\text{odd}}$ the
-modular-double ($\Phi_b$) factor. (Scan:
-`computations/qbeta/qbeta_fmap_parity_stability_probe.py`.)
+modular-double ($\Phi_b$) factor.

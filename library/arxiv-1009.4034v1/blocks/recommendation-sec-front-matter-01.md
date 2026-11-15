@@ -1,0 +1,1 @@
+The proof is inspired by the one given in [IO02] for the Plancherel measure, and it relies on the combinatorics of the algebra of observables of diagrams; we shall also use Śniady’s theory of cumulants of observables (cf. [Ś06]).

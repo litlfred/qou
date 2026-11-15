@@ -1,14 +1,16 @@
 ---
 doc_id: arxiv-1712.03058v3
-doc_title: "Iterated filtering methods for Markov process epidemic models Theresa Stocks1 1Department of Mathematics, Stockholm University, Sweden This manuscript is a preprint of a Chapter to"
+doc_title: "Iterated ﬁltering methods for Markov process epidemic models"
 section_id: sec-000-11-introduction
 section_title: "Introduction"
 section_number: 1.1
 pages: 2-3
 source_pdf: 1712.03058v3.pdf
 source_sha256: ba48c5bbb2467374
-doc_brief: "Iterated filtering methods for Markov process epidemic models Theresa Stocks1 1Department of Mathematics, Stockholm University, Sweden This manuscript is a preprint of a Chapter to appear in the Handb"
+toc_source: outline
+doc_brief: "Iterated ﬁltering methods for Markov process epidemic models — Dynamic epidemic models have proven valuable for public health decision makers as they provide useful insights into the understanding"
 ---
+Introduction
 In this chapter we describe how iterated ﬁltering methods (Ionides et al.,
 2006, 2015) can be used to analyze available infectious disease outbreak data
 in the form of time series. The centerpiece of these methods is the assump-

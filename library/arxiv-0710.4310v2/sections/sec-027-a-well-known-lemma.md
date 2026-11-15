@@ -10,7 +10,8 @@ source_sha256: 9a7757f998b7f680
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.944
+doc_brief: "On Two-Dimensional Holonomy — We deﬁne the thin fundamental categorical group P2(M, ∗) of a based smooth manifold (M, ∗) as the categorical group whose objects are rank-1 homotopy classes of based"
 ---
 []{#wkl label="wkl"} Let $G$ be a Lie group. Consider a $\lg$-valued smooth function $V(s,x)$ defined on $[0,1]^2$. Consider the following differential equation in $G$: $$\frac{\d}{\d s} a(s,x)=a(s,x)V(s,x),$$ with initial condition $a(0,x)=1_G, \forall x \in [0,1]$. We want to know $\frac{\d}{\d x} a(s,x)$.
 

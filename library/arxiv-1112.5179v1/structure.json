@@ -6,10 +6,18 @@
   "sha256": "b58af08336c409942719db3c4e209817a0e76451983f7b84e9fbc1da15f0a4f8",
   "bytes": 1824365,
   "pages": 79,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 70,
+    "reason": "19 of 607 words are a stray single letter: the text layer splits words"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,21 +29,30 @@
   "doi": null,
   "title": "3-Manifolds and 3d Indices",
   "authors_raw": null,
-  "abstract": "We identify a large classR of three-dimensionalN = 2 superconformal \ufb01eld the- ories. This class includes the e\ufb00ective theories TM of M5-branes wrapped on 3-manifolds M, discussed in previous work by the authors, and more generally comprises theories that admit a UV description as abelian Chern-Simons-matter theories with (possibly non-perturbative) superpotential. Mathematically, class R might be viewed as an extreme quantum general- ization of the Bloch group; in particular, the equivalence relation among theories in class R is a quantum-\ufb01eld-theoretic \u201c2\u20133 move.\u201d We proceed to study the supersymmetric index of theories in classR, uncovering its physical and mathematical properties, including relations to algebras of line operators and to 4d indices. For 3-manifold theories TM, the index is a new topological invariant, which turns out to be equivalent to non-holomorphic SL(2, C) Chern-Simons theory on M with a previously unexplored \u201cintegration cycle.\u201d arXiv:1112.5179v1 [hep-th] 21 Dec 2011",
-  "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20241127014543Z",
-   "Creator": "LaTeX with hyperref package",
-   "Producer": "medialab",
-   "Title": ""
-  },
-  "title_prev": "3-Manifolds and 3d Indices Tudor Dimofte1,2 Davide Gaiotto 1 Sergei Gukov 3,4 1Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA 2Trinity College, Cambridge CB2 1TQ, UK",
   "title_lines": [
    "3-Manifolds and 3d Indices",
-   "Tudor Dimofte1,2 Davide Gaiotto 1 Sergei Gukov 3,4",
+   "Tudor Dimofte1,2 Davide Gaiotto1 Sergei Gukov3,4",
    "1Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA",
    "2Trinity College, Cambridge CB2 1TQ, UK"
-  ]
+  ],
+  "abstract": "We identify a large class R of three-dimensional N = 2 superconformal ﬁeld the- ories. This class includes the eﬀective theories TM of M5-branes wrapped on 3-manifolds M, discussed in previous work by the authors, and more generally comprises theories that admit a UV description as abelian Chern-Simons-matter theories with (possibly non-perturbative) superpotential. Mathematically, class R might be viewed as an extreme quantum general- ization of the Bloch group; in particular, the equivalence relation among theories in class R is a quantum-ﬁeld-theoretic “2–3 move.” We proceed to study the supersymmetric index of theories in class R, uncovering its physical and mathematical properties, including relations to algebras of line operators and to 4d indices. For 3-manifold theories TM, the index is a new topological invariant, which turns out to be equivalent to non-holomorphic SL(2, C) Chern-Simons theory on M with a previously unexplored “integration cycle.” arXiv:1112.5179v1 [hep-th] 21 Dec 2011",
+  "docinfo": {
+   "Producer": "medialab",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20241127014543Z"
+  },
+  "title_raw": "3-Manifolds and 3d Indices Tudor Dimofte1,2 Davide Gaiotto1 Sergei Gukov3,4 1Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA 2Trinity College, Cambridge CB2 1TQ, UK",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "3-Manifolds and 3d Indices",
+   "outline": "1 Introduction",
+   "text": "3-Manifolds and 3d Indices Tudor Dimofte1,2 Davide Gaiotto1 Sergei Gukov3,4 1Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA 2Trinity College, Cambridge CB2 1TQ, UK",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -43,230 +60,1353 @@
    "title": "Introduction",
    "page": 3,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Actions on the 3d index",
    "page": 7,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "The Sp(2N,Z) action",
    "page": 8,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Affine shifts",
    "page": 10,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Adding a superpotential",
    "page": 11,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "A discrete symmetry",
    "page": 12,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "An operator algebra",
    "page": 13,
    "source": "outline",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "The tetrahedron index",
    "page": 16,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
-   "title": "Parity and  symmetry",
+   "title": "Parity and symmetry",
    "page": 17,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Triality",
    "page": 18,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Difference equations",
    "page": 19,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 1,
    "title": "The index of TM",
    "page": 21,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "Gluing rules",
    "page": 22,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "The bipyramid",
    "page": 25,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 2,
    "title": "Some knot complements",
    "page": 28,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 2,
    "title": "Mapping tori and T[SU(2)]",
    "page": 31,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   },
   {
    "level": 2,
    "title": "Quantum Lagrangian operators",
    "page": 34,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 2,
    "title": "Tentacles and vacua",
    "page": 37,
    "source": "outline",
-   "number": "4.6"
+   "number": "4.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   },
   {
    "level": 2,
    "title": "Mutation invariance from gauge theory",
    "page": 42,
    "source": "outline",
-   "number": "4.7"
+   "number": "4.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
   },
   {
    "level": 1,
    "title": "The index from four dimensions and line operators",
    "page": 46,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "45"
   },
   {
    "level": 2,
    "title": "Line operator algebra",
    "page": 50,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "49"
   },
   {
    "level": 2,
    "title": "Boundary conditions for hypermultiplets",
    "page": 51,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "50"
   },
   {
    "level": 2,
    "title": "Non-abelian line defects",
    "page": 52,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "51"
   },
   {
    "level": 1,
    "title": "The index as SL(2,C) Chern-Simons theory",
    "page": 56,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "55"
   },
   {
    "level": 2,
    "title": "Quantization at k=0",
    "page": 58,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "57"
   },
   {
    "level": 2,
    "title": "Symplectic action",
    "page": 62,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "61"
   },
   {
    "level": 2,
    "title": "Chern-Simons theory from 6d",
    "page": 65,
    "source": "outline",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "64"
   },
   {
    "level": 1,
    "title": "A Proof of triality for the tetrahedron index",
    "page": 68,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "67"
   },
   {
    "level": 1,
    "title": "B Figure-eight index from six tetrahedra",
    "page": 70,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "69"
   },
   {
    "level": 1,
    "title": "C Quantum Lagrangian calculations",
    "page": 71,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "70"
   },
   {
    "level": 1,
    "title": "D Tentacles and difference equations",
    "page": 73,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "72"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Leading powers of q in the index. The graph interpolates smoothly between integer points",
+   "page": 19,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "18"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "An ideal tetrahedron, with edge parameters",
+   "page": 20,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "19"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The bipyramid, in its two triangulations. The equatorial polarization Π = (X1, X2; P1, P2) has positions X1 and X2 corresponding to the two equatorial edges in the front",
+   "page": 25,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "24"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Meridian and longitude cycles on the boundary of a knot complement",
+   "page": 28,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "27"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "The standard triangulation of the ﬁgure-eight knot complement",
+   "page": 29,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "28"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "A mapping cylinder for an element ϕ acting on the punctured torus C = T 2\\{p}",
+   "page": 32,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "31"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Amoebas for the tetrahedron, trefoil, and ﬁgure-eight knot Lagrangians",
+   "page": 38,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "37"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Graph of the leading exponent lead(m, e) for the ﬁgure-eight index",
+   "page": 40,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "39"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "The Kinoshita-Terasaka (left) and Conway (right) knots, related by a nontrivial mutation operation",
+   "page": 42,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "41"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "Stretching M along C. Compactiﬁcation on C gives a 4d theory T[C]",
+   "page": 43,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "42"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "Splitting M = M1 ∪C M2 along a 2-sphere C to form two new geodesic boundaries,",
+   "page": 45,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "44"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "3d theory TM can be put on the equator S2",
+   "page": 48,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "47"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Real polarizations and Hilbert spaces at k = 0. All Hilbert spaces are isomorphic, and related by compact Fourier transform",
+   "page": 60,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "59"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "Upon reduction on a circle ﬁber of S2, a conﬁguration of M5-branes wrapped on S2 becomes a system of D4-branes stretched between two D6-branes in type IIA string theory",
+   "page": 66,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "65"
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "Map of the torus boundary for the reﬁned triangulation of the ﬁgure-eight knot",
+   "page": 70,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "69"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "6",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "7",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "9",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "10",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "11",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "12",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "15",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "16",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "17",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "18",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "20",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "21",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "24",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "27",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "30",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "33",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "36",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "41",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "45",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "49",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "50",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "51",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "55",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "61",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "64",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "65",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "67",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "68",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "69",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "70",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "71",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "72",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": "73",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": "74",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 76,
+   "label": "75",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 77,
+   "label": "76",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 78,
+   "label": "77",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 79,
+   "label": "78",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 2366,
+   "n_words": 376,
+   "label_start": "1",
+   "label_end": "2"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 2,
+   "page_start": 3,
    "page_end": 7,
-   "n_chars": 16121,
-   "n_words": 2739
+   "n_chars": 15176,
+   "n_words": 2585,
+   "label_start": "2",
+   "label_end": "6"
   },
   {
    "id": "sec-001-2-actions-on-the-3d-index",
@@ -274,232 +1414,394 @@
    "title": "Actions on the 3d index",
    "level": 1,
    "page_start": 7,
-   "page_end": 11,
-   "n_chars": 9036,
-   "n_words": 1664
+   "page_end": 8,
+   "n_chars": 3269,
+   "n_words": 637,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-002-23-adding-a-superpotential",
+   "id": "sec-002-21-the-sp2nz-action",
+   "number": "2.1",
+   "title": "The Sp(2N,Z) action",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 2761,
+   "n_words": 535,
+   "label_start": "7",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-003-22-affine-shifts",
+   "number": "2.2",
+   "title": "Affine shifts",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 3114,
+   "n_words": 589,
+   "label_start": "9",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-004-23-adding-a-superpotential",
    "number": "2.3",
    "title": "Adding a superpotential",
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 2111,
-   "n_words": 391
+   "n_chars": 2164,
+   "n_words": 425,
+   "label_start": "10",
+   "label_end": "11"
   },
   {
-   "id": "sec-003-24-a-discrete-symmetry",
+   "id": "sec-005-24-a-discrete-symmetry",
    "number": "2.4",
    "title": "A discrete symmetry",
    "level": 2,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 4083,
-   "n_words": 697
+   "n_chars": 4143,
+   "n_words": 739,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
-   "id": "sec-004-25-an-operator-algebra",
+   "id": "sec-006-25-an-operator-algebra",
    "number": "2.5",
    "title": "An operator algebra",
    "level": 2,
    "page_start": 13,
    "page_end": 16,
-   "n_chars": 5917,
-   "n_words": 1088
+   "n_chars": 5994,
+   "n_words": 1148,
+   "label_start": "12",
+   "label_end": "15"
   },
   {
-   "id": "sec-005-3-the-tetrahedron-index",
+   "id": "sec-007-3-the-tetrahedron-index",
    "number": "3",
    "title": "The tetrahedron index",
    "level": 1,
    "page_start": 16,
-   "page_end": 18,
-   "n_chars": 6109,
-   "n_words": 1133
+   "page_end": 17,
+   "n_chars": 4456,
+   "n_words": 865,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
-   "id": "sec-006-32-triality",
+   "id": "sec-008-31-parity-and-symmetry",
+   "number": "3.1",
+   "title": "Parity and symmetry",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 1726,
+   "n_words": 341,
+   "label_start": "16",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-009-32-triality",
    "number": "3.2",
    "title": "Triality",
    "level": 2,
    "page_start": 18,
-   "page_end": 21,
-   "n_chars": 6348,
-   "n_words": 1156
+   "page_end": 19,
+   "n_chars": 1839,
+   "n_words": 372,
+   "label_start": "17",
+   "label_end": "18"
   },
   {
-   "id": "sec-007-4-the-index-of-tm",
+   "id": "sec-010-33-difference-equations",
+   "number": "3.3",
+   "title": "Difference equations",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 21,
+   "n_chars": 4562,
+   "n_words": 832,
+   "label_start": "18",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-011-4-the-index-of-tm",
    "number": "4",
    "title": "The index of TM",
    "level": 1,
    "page_start": 21,
-   "page_end": 21,
-   "n_chars": 179,
-   "n_words": 29
+   "page_end": 22,
+   "n_chars": 2729,
+   "n_words": 453,
+   "label_start": "20",
+   "label_end": "21"
   },
   {
-   "id": "sec-008-41-gluing-rules",
+   "id": "sec-012-41-gluing-rules",
    "number": "4.1",
    "title": "Gluing rules",
    "level": 2,
-   "page_start": 21,
+   "page_start": 22,
    "page_end": 25,
-   "n_chars": 10546,
-   "n_words": 1808
+   "n_chars": 8172,
+   "n_words": 1469,
+   "label_start": "21",
+   "label_end": "24"
   },
   {
-   "id": "sec-009-42-the-bipyramid",
+   "id": "sec-013-42-the-bipyramid",
    "number": "4.2",
    "title": "The bipyramid",
    "level": 2,
    "page_start": 25,
    "page_end": 28,
-   "n_chars": 7027,
-   "n_words": 1309
+   "n_chars": 7204,
+   "n_words": 1474,
+   "label_start": "24",
+   "label_end": "27"
   },
   {
-   "id": "sec-010-43-some-knot-complements",
+   "id": "sec-014-43-some-knot-complements",
    "number": "4.3",
    "title": "Some knot complements",
    "level": 2,
    "page_start": 28,
-   "page_end": 34,
-   "n_chars": 13475,
-   "n_words": 2464
+   "page_end": 31,
+   "n_chars": 8375,
+   "n_words": 1650,
+   "label_start": "27",
+   "label_end": "30"
   },
   {
-   "id": "sec-011-45-quantum-lagrangian-operators",
+   "id": "sec-015-44-mapping-tori-and-tsu2",
+   "number": "4.4",
+   "title": "Mapping tori and T[SU(2)]",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 34,
+   "n_chars": 5321,
+   "n_words": 1020,
+   "label_start": "30",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-016-45-quantum-lagrangian-operators",
    "number": "4.5",
    "title": "Quantum Lagrangian operators",
    "level": 2,
    "page_start": 34,
    "page_end": 37,
-   "n_chars": 7383,
-   "n_words": 1354
+   "n_chars": 7495,
+   "n_words": 1440,
+   "label_start": "33",
+   "label_end": "36"
   },
   {
-   "id": "sec-012-46-tentacles-and-vacua",
+   "id": "sec-017-46-tentacles-and-vacua",
    "number": "4.6",
    "title": "Tentacles and vacua",
    "level": 2,
    "page_start": 37,
    "page_end": 42,
-   "n_chars": 13581,
-   "n_words": 2416
+   "n_chars": 13672,
+   "n_words": 2489,
+   "label_start": "36",
+   "label_end": "41"
   },
   {
-   "id": "sec-013-47-mutation-invariance-from-gauge-theory",
+   "id": "sec-018-47-mutation-invariance-from-gauge-theory",
    "number": "4.7",
    "title": "Mutation invariance from gauge theory",
    "level": 2,
    "page_start": 42,
    "page_end": 46,
-   "n_chars": 11876,
-   "n_words": 2046
+   "n_chars": 11949,
+   "n_words": 2086,
+   "label_start": "41",
+   "label_end": "45"
   },
   {
-   "id": "sec-014-5-the-index-from-four-dimensions-and-line-operat",
+   "id": "sec-019-5-the-index-from-four-dimensions-and-line-operat",
    "number": "5",
    "title": "The index from four dimensions and line operators",
    "level": 1,
    "page_start": 46,
    "page_end": 50,
-   "n_chars": 12323,
-   "n_words": 2148
+   "n_chars": 12438,
+   "n_words": 2221,
+   "label_start": "45",
+   "label_end": "49"
   },
   {
-   "id": "sec-015-51-line-operator-algebra",
+   "id": "sec-020-51-line-operator-algebra",
    "number": "5.1",
    "title": "Line operator algebra",
    "level": 2,
    "page_start": 50,
    "page_end": 51,
-   "n_chars": 3137,
-   "n_words": 556
+   "n_chars": 3181,
+   "n_words": 581,
+   "label_start": "49",
+   "label_end": "50"
   },
   {
-   "id": "sec-016-52-boundary-conditions-for-hypermultiplets",
+   "id": "sec-021-52-boundary-conditions-for-hypermultiplets",
    "number": "5.2",
    "title": "Boundary conditions for hypermultiplets",
    "level": 2,
    "page_start": 51,
    "page_end": 52,
-   "n_chars": 2135,
-   "n_words": 367
+   "n_chars": 2194,
+   "n_words": 390,
+   "label_start": "50",
+   "label_end": "51"
   },
   {
-   "id": "sec-017-53-non-abelian-line-defects",
+   "id": "sec-022-53-non-abelian-line-defects",
    "number": "5.3",
    "title": "Non-abelian line defects",
    "level": 2,
    "page_start": 52,
-   "page_end": 62,
-   "n_chars": 24595,
-   "n_words": 4336
+   "page_end": 56,
+   "n_chars": 9658,
+   "n_words": 1743,
+   "label_start": "51",
+   "label_end": "55"
   },
   {
-   "id": "sec-018-62-symplectic-action",
+   "id": "sec-023-6-the-index-as-sl2c-chern-simons-theory",
+   "number": "6",
+   "title": "The index as SL(2,C) Chern-Simons theory",
+   "level": 1,
+   "page_start": 56,
+   "page_end": 58,
+   "n_chars": 3481,
+   "n_words": 628,
+   "label_start": "55",
+   "label_end": "57"
+  },
+  {
+   "id": "sec-024-61-quantization-at-k0",
+   "number": "6.1",
+   "title": "Quantization at k=0",
+   "level": 2,
+   "page_start": 58,
+   "page_end": 62,
+   "n_chars": 11743,
+   "n_words": 2235,
+   "label_start": "57",
+   "label_end": "61"
+  },
+  {
+   "id": "sec-025-62-symplectic-action",
    "number": "6.2",
    "title": "Symplectic action",
    "level": 2,
    "page_start": 62,
    "page_end": 65,
-   "n_chars": 8280,
-   "n_words": 1474
+   "n_chars": 8378,
+   "n_words": 1556,
+   "label_start": "61",
+   "label_end": "64"
   },
   {
-   "id": "sec-019-63-chern-simons-theory-from-6d",
+   "id": "sec-026-63-chern-simons-theory-from-6d",
    "number": "6.3",
    "title": "Chern-Simons theory from 6d",
    "level": 2,
    "page_start": 65,
    "page_end": 68,
-   "n_chars": 7195,
-   "n_words": 1238
+   "n_chars": 7271,
+   "n_words": 1290,
+   "label_start": "64",
+   "label_end": "67"
   },
   {
-   "id": "sec-020-a-proof-of-triality-for-the-tetrahedron-index",
+   "id": "sec-027-a-proof-of-triality-for-the-tetrahedron-index",
    "number": null,
    "title": "A Proof of triality for the tetrahedron index",
    "level": 1,
    "page_start": 68,
    "page_end": 70,
-   "n_chars": 3283,
-   "n_words": 637
+   "n_chars": 3383,
+   "n_words": 700,
+   "label_start": "67",
+   "label_end": "69"
   },
   {
-   "id": "sec-021-b-figure-eight-index-from-six-tetrahedra",
+   "id": "sec-028-b-figure-eight-index-from-six-tetrahedra",
    "number": null,
    "title": "B Figure-eight index from six tetrahedra",
    "level": 1,
    "page_start": 70,
    "page_end": 71,
-   "n_chars": 1660,
-   "n_words": 396
+   "n_chars": 1377,
+   "n_words": 331,
+   "label_start": "69",
+   "label_end": "70"
   },
   {
-   "id": "sec-022-c-quantum-lagrangian-calculations",
+   "id": "sec-029-c-quantum-lagrangian-calculations",
    "number": null,
    "title": "C Quantum Lagrangian calculations",
    "level": 1,
    "page_start": 71,
+   "page_end": 73,
+   "n_chars": 4798,
+   "n_words": 984,
+   "label_start": "70",
+   "label_end": "72"
+  },
+  {
+   "id": "sec-030-d-tentacles-and-difference-equations",
+   "number": null,
+   "title": "D Tentacles and difference equations",
+   "level": 1,
+   "page_start": 73,
    "page_end": 79,
-   "n_chars": 21766,
-   "n_words": 3733
+   "n_chars": 17071,
+   "n_words": 2825,
+   "label_start": "72",
+   "label_end": "78"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 31,
-  "sections": 23,
-  "chars_total": 198166,
+  "toc_inferred_entries": 0,
+  "figure_entries": 15,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 0,
+    "items": []
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 32,
+  "chars_total": 201460,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "indexbox.tex",
    "tex_sections": 30,
-   "overlaid": 18,
+   "overlaid": 25,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -507,176 +1809,239 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.993,
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.998,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-actions-on-the-3d-index",
      "title": "Actions on the 3d index",
-     "prose_ratio": 0.925,
-     "coverage_ratio": 0.974,
+     "prose_ratio": 0.672,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-23-adding-a-superpotential",
+     "id": "sec-002-21-the-sp2nz-action",
+     "title": "The Sp(2N,Z) action",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-22-affine-shifts",
+     "title": "Affine shifts",
+     "prose_ratio": 0.901,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-23-adding-a-superpotential",
      "title": "Adding a superpotential",
      "prose_ratio": 0.989,
-     "coverage_ratio": 0.795,
+     "coverage_ratio": 0.832,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-24-a-discrete-symmetry",
+     "id": "sec-005-24-a-discrete-symmetry",
      "title": "A discrete symmetry",
      "prose_ratio": 0.958,
-     "coverage_ratio": 0.97,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-25-an-operator-algebra",
+     "id": "sec-006-25-an-operator-algebra",
      "title": "An operator algebra",
      "prose_ratio": 0.973,
-     "coverage_ratio": 0.961,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-3-the-tetrahedron-index",
+     "id": "sec-007-3-the-tetrahedron-index",
      "title": "The tetrahedron index",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.624,
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-32-triality",
+     "id": "sec-008-31-parity-and-symmetry",
+     "title": "Parity and symmetry",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-32-triality",
      "title": "Triality",
-     "prose_ratio": 0.908,
-     "coverage_ratio": 0.973,
+     "prose_ratio": 0.767,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-4-the-index-of-tm",
-     "title": "The index of TM",
-     "prose_ratio": 0.094,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-010-33-difference-equations",
+     "title": "Difference equations",
+     "prose_ratio": 0.905,
+     "coverage_ratio": 0.907,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-008-41-gluing-rules",
+     "id": "sec-011-4-the-index-of-tm",
+     "title": "The index of TM",
+     "prose_ratio": 0.956,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-41-gluing-rules",
      "title": "Gluing rules",
      "prose_ratio": 0.963,
-     "coverage_ratio": 0.764,
+     "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-42-the-bipyramid",
+     "id": "sec-013-42-the-bipyramid",
      "title": "The bipyramid",
      "prose_ratio": 0.914,
-     "coverage_ratio": 0.977,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-43-some-knot-complements",
+     "id": "sec-014-43-some-knot-complements",
      "title": "Some knot complements",
-     "prose_ratio": 0.958,
-     "coverage_ratio": 0.468,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.674,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-011-45-quantum-lagrangian-operators",
+     "id": "sec-015-44-mapping-tori-and-tsu2",
+     "title": "Mapping tori and T[SU(2)]",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-45-quantum-lagrangian-operators",
      "title": "Quantum Lagrangian operators",
      "prose_ratio": 0.94,
-     "coverage_ratio": 0.978,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-46-tentacles-and-vacua",
+     "id": "sec-017-46-tentacles-and-vacua",
      "title": "Tentacles and vacua",
      "prose_ratio": 0.969,
-     "coverage_ratio": 0.959,
+     "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-47-mutation-invariance-from-gauge-theory",
+     "id": "sec-018-47-mutation-invariance-from-gauge-theory",
      "title": "Mutation invariance from gauge theory",
      "prose_ratio": 0.964,
-     "coverage_ratio": 0.961,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-5-the-index-from-four-dimensions-and-line-operat",
+     "id": "sec-019-5-the-index-from-four-dimensions-and-line-operat",
      "title": "The index from four dimensions and line operators",
-     "prose_ratio": 0.995,
-     "coverage_ratio": 0.611,
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.998,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-51-line-operator-algebra",
+     "id": "sec-020-51-line-operator-algebra",
      "title": "Line operator algebra",
      "prose_ratio": 0.982,
-     "coverage_ratio": 0.976,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-52-boundary-conditions-for-hypermultiplets",
+     "id": "sec-021-52-boundary-conditions-for-hypermultiplets",
      "title": "Boundary conditions for hypermultiplets",
      "prose_ratio": 0.764,
-     "coverage_ratio": 0.956,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-53-non-abelian-line-defects",
+     "id": "sec-022-53-non-abelian-line-defects",
      "title": "Non-abelian line defects",
-     "prose_ratio": 0.951,
-     "coverage_ratio": 0.958,
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.951,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-018-62-symplectic-action",
+     "id": "sec-023-6-the-index-as-sl2c-chern-simons-theory",
+     "title": "The index as SL(2,C) Chern-Simons theory",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-024-61-quantization-at-k0",
+     "title": "Quantization at k=0",
+     "prose_ratio": 0.936,
+     "coverage_ratio": 0.998,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-025-62-symplectic-action",
      "title": "Symplectic action",
      "prose_ratio": 0.958,
-     "coverage_ratio": 0.933,
+     "coverage_ratio": 0.968,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-019-63-chern-simons-theory-from-6d",
+     "id": "sec-026-63-chern-simons-theory-from-6d",
      "title": "Chern-Simons theory from 6d",
      "prose_ratio": 0.985,
-     "coverage_ratio": 0.979,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-020-a-proof-of-triality-for-the-tetrahedron-index",
+     "id": "sec-027-a-proof-of-triality-for-the-tetrahedron-index",
      "title": "A Proof of triality for the tetrahedron index",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-021-b-figure-eight-index-from-six-tetrahedra",
+     "id": "sec-028-b-figure-eight-index-from-six-tetrahedra",
      "title": "B Figure-eight index from six tetrahedra",
      "prose_ratio": 0.103,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-022-c-quantum-lagrangian-calculations",
+     "id": "sec-029-c-quantum-lagrangian-calculations",
      "title": "C Quantum Lagrangian calculations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-d-tentacles-and-difference-equations",
+     "title": "D Tentacles and difference equations",
      "result": "no matching \\section"
     }
    ]

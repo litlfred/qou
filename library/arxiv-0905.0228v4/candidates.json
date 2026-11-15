@@ -1,14 +1,12 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-0905.0228v4",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "1744545d0f21094990dbcd087d38a50947a3ee737f2c10f89264512848d8b721",
   "file": "0905.0228v4.pdf"
  },
  "provenance": {
-  "title": "A CURIOUS q-ANALOGUE OF HERMITE POL YNOMIALS",
+  "title": "A CURIOUS q-ANALOGUE OF HERMITE POLYNOMIALS",
   "authors": "JOHANN CIGLER AND JIANG ZENG",
   "arxiv": {
    "id": "0905.0228",
@@ -18,160 +16,121 @@
   },
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 11,
+  "candidates": 7,
   "by_kind": {
-   "lemma": 2,
-   "theorem": 5,
-   "remark": 3,
-   "proposition": 1
+   "recommendation": 7
   },
-  "formalization_candidates": 8
+  "formalization_candidates": 0
  },
  "candidates": [
   {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "3",
-   "name": null,
-   "statement": "The moments of the measure of the orthogonal polynomials {Pn(x)} are the gen-",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "4",
-   "name": null,
-   "statement": "The q-Hermite polynomials Hn(x, s |q), de\ufb01ned as moments Fx, 0, \u2212s(zn), have the",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
    "number": null,
    "name": null,
-   "statement": "It should be noted that the method of Varvak [16] (see also [10 ]) can also be applied",
+   "statement": "In Section~4 we shall establish the connection of our new $q$-Hermite polynomials with the $q$-Fibonacci and $q$-Lucas polynomials.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
    "section_file": "sections/sec-000-1-introduction.md",
    "section_title": "Introduction",
-   "pages": "1-7",
+   "pages": "1-4",
    "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   },
   {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "5",
-   "name": null,
-   "statement": "The matrices (c(i, j, q ))n\u22121",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
    "number": null,
    "name": null,
-   "statement": "If we set q = 0 then (2.9) reduces to the well-known Catalan triangle (se e [2, Chap.",
+   "statement": "\\noindent{\\bf Remark.} It should be noted that the method of Varvak \\cite{Va} (see also \\cite{JV}) can also be applied to prove Theorem~\\ref{thm:main}.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
    "section_file": "sections/sec-000-1-introduction.md",
    "section_title": "Introduction",
-   "pages": "1-7",
+   "pages": "1-4",
    "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   },
   {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "6",
-   "name": null,
-   "statement": "The generating function of hn(x, s ; q) has the continued fraction expansion:",
-   "section_file": "sections/sec-001-3-the-rescaled-discrete-q-hermite-polynomials-ii.md",
-   "section_title": "The rescaled discrete q-Hermite polynomials II",
-   "pages": "7-12",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "7",
-   "name": null,
-   "statement": "Let Ln(x) := hn(x, (1 \u2212 q)s; q). Then",
-   "section_file": "sections/sec-001-3-the-rescaled-discrete-q-hermite-polynomials-ii.md",
-   "section_title": "The rescaled discrete q-Hermite polynomials II",
-   "pages": "7-12",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "8",
-   "name": null,
-   "statement": "Let Tn(x, s ) = ( x + (1 \u2212 q)sDq)n \u00b7 1. Then",
-   "section_file": "sections/sec-001-3-the-rescaled-discrete-q-hermite-polynomials-ii.md",
-   "section_title": "The rescaled discrete q-Hermite polynomials II",
-   "pages": "7-12",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
    "number": null,
    "name": null,
-   "statement": "Instead of the contraction formula (3.22), we can also proce ed as follows. De\ufb01ne a",
-   "section_file": "sections/sec-001-3-the-rescaled-discrete-q-hermite-polynomials-ii.md",
+   "statement": "We shall use the standard $q$-notations in \\cite{GR}.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "It should be noted that the method of Varvak [16] (see also [10]) can also be applied to prove Theorem 4.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-2-the-q-hermite-polynomials-hnxsq.md",
+   "section_title": "The q-Hermite polynomials Hn(x,s|q)",
+   "pages": "4-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "6 We shall use the standard q-notations in [6].",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-2-the-q-hermite-polynomials-hnxsq.md",
+   "section_title": "The q-Hermite polynomials Hn(x,s|q)",
+   "pages": "4-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall prove the following Jacobi continued fraction expansion for the generating function of $(x+(1-q)s{\\D}_q)^n\\cdot 1$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-3-the-rescaled-discrete-q-hermite-polynomials-ii.md",
    "section_title": "The rescaled discrete q-Hermite polynomials II",
    "pages": "7-12",
    "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   },
   {
-   "kind": "proposition",
-   "source_kind": "proposition",
-   "number": "16",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
    "name": null,
-   "statement": "The continuous q-Hermite polynomials \u02dcHn(x, s |q) de\ufb01ned by (1.9), i.e.,",
-   "section_file": "sections/sec-004-51-some-well-known-facts.md",
-   "section_title": "Some well-known facts",
-   "pages": "16-17",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "5",
-   "name": null,
-   "statement": "and the orthogonality of the continuous q-Hermite polynomials. Clearly Theorem 5",
-   "section_file": "sections/sec-005-52-a-second-proof-of-proposition-14.md",
-   "section_title": "A second proof of Proposition 14",
-   "pages": "17-19",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "statement": "\\begin{prop}\\label{prop:mathieu} If $k\\equiv n\\pmod{2}$ then \\begin{align} c(n,k,q)&=\\sum_{m\\in M(n,k)}q^{c(m)+\\cro(m)} \\nonumber\\\\ &=(1-q)^{-\\frac{n-k}{2}}\\sum_{j\\geq 0}{n\\choose \\frac{n-k-2j}{2}} (-1)^j q^{j\\choose 2} \\frac{[k+2j]}{[k+j]}{k+j\\brack j}\\label{eq:lucasformula}\\\\ &=(1-q)^{-\\frac{n-k}{2}}\\sum_{j\\geq 0} \\left({n\\choose \\frac{n-k-2j}{2}}-{n\\choose \\frac{n-k-2j-2}{2}}\\right) (-1)^j q^{{j+1\\choose 2}}{k+j\\brack k}.\\label{eq:cn} \\end{align} \\end{prop} In the next section we shall give another proof by using the orthogonality of the continuous $q$-Hermite polynomials.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-4-connection-with-q-fibonacci-polynomials-and-q.md",
+   "section_title": "Connection with q-Fibonacci polynomials and q-Lucas polynomials",
+   "pages": "12-16",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   }
  ]
 }

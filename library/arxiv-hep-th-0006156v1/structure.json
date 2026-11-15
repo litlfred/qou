@@ -8,7 +8,7 @@
   "pages": 20,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,12 +21,12 @@
    "stamp_date": "20 Jun 2000"
   },
   "doi": null,
-  "title": "arXiv:hep-th/0006156v1 20 Jun 2000",
+  "title": "Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality",
   "authors_raw": "THEORY. I: ALGEBRAIC APPROACH AND DUALITY",
   "title_lines": [
    "STRONGLY COUPLED QUANTUM DISCRETE LIOUVILLE"
   ],
-  "abstract": "The quantum discrete Liouville model in the strongly cou- pled regime, 1 < c < 25, is formulated as a well de\ufb01ned quantum me- chanical problem with unitary evolution operator. The theory is self- dual: there are two exponential \ufb01elds related by Hermitean conjugation, satisfying two discrete quantum Liouville equations, and living in mu- tually commuting subalgebras of the quantum algebra of observables.",
+  "abstract": "The quantum discrete Liouville model in the strongly cou- pled regime, 1 < c < 25, is formulated as a well deﬁned quantum me- chanical problem with unitary evolution operator. The theory is self- dual: there are two exponential ﬁelds related by Hermitean conjugation, satisfying two discrete quantum Liouville equations, and living in mu- tually commuting subalgebras of the quantum algebra of observables.",
   "docinfo": {
    "Title": "arXiv:hep-th/0006156v1  20 Jun 2000",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
@@ -38,13 +38,14 @@
   "title_verified": true,
   "title_evidence": {
    "metadata": "arXiv:hep-th/0006156v1 20 Jun 2000",
-   "heading": "STRONGLY COUPLED QUANTUM DISCRETE LIOUVILLE THEORY. I: ALGEBRAIC APPROACH AND DUALITY Introduction The Liouville equation[33] \u03c6 tt \u2212 \u03c6 xx \u2212 4 e \u2212 2 \u03c6 = 0 has plenty of important applications in Mathematics and Physics. In particular, it describes the surfaces of constant negative curvature and plays",
+   "heading": "STRONGLY COUPLED QUANTUM DISCRETE LIOUVILLE THEORY. I: ALGEBRAIC APPROACH AND DUALITY Introduction The Liouville equation[33] φ tt − φ xx − 4 e − 2 φ = 0 has plenty of important applications in Mathematics and Physics. In particular, it describes the surfaces of constant negative curvature and plays",
    "text": "STRONGLY COUPLED QUANTUM DISCRETE LIOUVILLE",
    "corroborated_by": [
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:hep-th/0006156v1 20 Jun 2000"
  },
  "toc": [
   {
@@ -655,8 +656,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 3833,
-   "n_words": 632,
+   "n_chars": 3831,
+   "n_words": 631,
    "label_start": null,
    "label_end": null
   },
@@ -666,14 +667,26 @@
    "title": "Recollecting the facts",
    "level": 1,
    "page_start": 2,
-   "page_end": 3,
-   "n_chars": 1353,
-   "n_words": 239,
+   "page_end": 2,
+   "n_chars": 125,
+   "n_words": 21,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-002-12-magri-bracket",
+   "id": "sec-002-11-liouville-formula-and-mobius-invariance",
+   "number": "1.1",
+   "title": "Liouville formula and M\"obius-invariance",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1156,
+   "n_words": 210,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-12-magri-bracket",
    "number": "1.2",
    "title": "Magri bracket",
    "level": 2,
@@ -685,7 +698,7 @@
    "label_end": null
   },
   {
-   "id": "sec-003-13-volterra-model",
+   "id": "sec-004-13-volterra-model",
    "number": "1.3",
    "title": "Volterra model",
    "level": 2,
@@ -697,31 +710,31 @@
    "label_end": null
   },
   {
-   "id": "sec-004-14-bi-hamiltonity",
+   "id": "sec-005-14-bi-hamiltonity",
    "number": "1.4",
    "title": "Bi-hamiltonity",
    "level": 2,
    "page_start": 4,
-   "page_end": 4,
-   "n_chars": 583,
-   "n_words": 112,
+   "page_end": 5,
+   "n_chars": 1001,
+   "n_words": 182,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-005-15-quantization",
+   "id": "sec-006-15-quantization",
    "number": "1.5",
    "title": "Quantization",
    "level": 2,
-   "page_start": 4,
+   "page_start": 5,
    "page_end": 5,
-   "n_chars": 1400,
-   "n_words": 262,
+   "n_chars": 1026,
+   "n_words": 196,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-006-16-proof",
+   "id": "sec-007-16-proof",
    "number": "1.6",
    "title": "Proof",
    "level": 2,
@@ -733,7 +746,7 @@
    "label_end": null
   },
   {
-   "id": "sec-007-17-it-has-to-do-with-braids",
+   "id": "sec-008-17-it-has-to-do-with-braids",
    "number": "1.7",
    "title": "It has to do with braids",
    "level": 2,
@@ -745,7 +758,7 @@
    "label_end": null
   },
   {
-   "id": "sec-008-18-lattice-virasoro-algebra",
+   "id": "sec-009-18-lattice-virasoro-algebra",
    "number": "1.8",
    "title": "Lattice Virasoro algebra",
    "level": 2,
@@ -757,7 +770,7 @@
    "label_end": null
   },
   {
-   "id": "sec-009-2-difference-difference-liouville-equation",
+   "id": "sec-010-2-difference-difference-liouville-equation",
    "number": "2",
    "title": "Difference-difference Liouville equation",
    "level": 1,
@@ -769,7 +782,7 @@
    "label_end": null
   },
   {
-   "id": "sec-010-21-liouville-formula",
+   "id": "sec-011-21-liouville-formula",
    "number": "2.1",
    "title": "Liouville formula",
    "level": 2,
@@ -781,7 +794,7 @@
    "label_end": null
   },
   {
-   "id": "sec-011-22-discrete-liouville-equation",
+   "id": "sec-012-22-discrete-liouville-equation",
    "number": "2.2",
    "title": "Discrete Liouville equation",
    "level": 2,
@@ -793,7 +806,7 @@
    "label_end": null
   },
   {
-   "id": "sec-012-23-poisson-bracket",
+   "id": "sec-013-23-poisson-bracket",
    "number": "2.3",
    "title": "Poisson bracket",
    "level": 2,
@@ -805,7 +818,7 @@
    "label_end": null
   },
   {
-   "id": "sec-013-3-formal-quantization",
+   "id": "sec-014-3-formal-quantization",
    "number": "3",
    "title": "Formal quantization",
    "level": 1,
@@ -817,43 +830,43 @@
    "label_end": null
   },
   {
-   "id": "sec-014-31-algebra-of-observables",
+   "id": "sec-015-31-algebra-of-observables",
    "number": "3.1",
    "title": "Algebra of observables",
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 377,
-   "n_words": 68,
+   "n_chars": 375,
+   "n_words": 67,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-015-32-quantum-lattice-liouville-equation",
+   "id": "sec-016-32-quantum-lattice-liouville-equation",
    "number": "3.2",
    "title": "Quantum lattice Liouville equation",
    "level": 2,
    "page_start": 9,
    "page_end": 9,
-   "n_chars": 483,
-   "n_words": 83,
+   "n_chars": 552,
+   "n_words": 94,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-016-33-shift-and-evolution-operators",
+   "id": "sec-017-33-shift-and-evolution-operators",
    "number": "3.3",
    "title": "Shift and evolution operators",
    "level": 2,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 2113,
-   "n_words": 394,
+   "n_chars": 2111,
+   "n_words": 393,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-017-35-chiral-evolution-operator",
+   "id": "sec-018-35-chiral-evolution-operator",
    "number": "3.5",
    "title": "Chiral evolution operator",
    "level": 2,
@@ -865,7 +878,7 @@
    "label_end": null
   },
   {
-   "id": "sec-018-4-dualization",
+   "id": "sec-019-4-dualization",
    "number": "4",
    "title": "Dualization",
    "level": 1,
@@ -877,7 +890,7 @@
    "label_end": null
   },
   {
-   "id": "sec-019-41-involution",
+   "id": "sec-020-41-involution",
    "number": "4.1",
    "title": "Involution",
    "level": 2,
@@ -889,7 +902,7 @@
    "label_end": null
   },
   {
-   "id": "sec-020-43-unitarity",
+   "id": "sec-021-43-unitarity",
    "number": "4.3",
    "title": "Unitarity",
    "level": 2,
@@ -901,7 +914,7 @@
    "label_end": null
   },
   {
-   "id": "sec-021-44-dual-liouville-equation",
+   "id": "sec-022-44-dual-liouville-equation",
    "number": "4.4",
    "title": "Dual Liouville equation",
    "level": 2,
@@ -913,7 +926,7 @@
    "label_end": null
   },
   {
-   "id": "sec-022-45-baxter-equation",
+   "id": "sec-023-45-baxter-equation",
    "number": "4.5",
    "title": "Baxter equation",
    "level": 2,
@@ -925,7 +938,7 @@
    "label_end": null
   },
   {
-   "id": "sec-023-5-conclusions-and-comments",
+   "id": "sec-024-5-conclusions-and-comments",
    "number": "5",
    "title": "Conclusions and comments",
    "level": 1,
@@ -937,7 +950,7 @@
    "label_end": null
   },
   {
-   "id": "sec-024-6-appendix-the-non-compact-quantum-dilogarithm",
+   "id": "sec-025-6-appendix-the-non-compact-quantum-dilogarithm",
    "number": "6",
    "title": "Appendix: the non-compact quantum dilogarithm",
    "level": 1,
@@ -949,7 +962,7 @@
    "label_end": null
   },
   {
-   "id": "sec-025-61-functional-relations",
+   "id": "sec-026-61-functional-relations",
    "number": "6.1",
    "title": "Functional relations",
    "level": 2,
@@ -961,7 +974,7 @@
    "label_end": null
   },
   {
-   "id": "sec-026-62-analytic-properties",
+   "id": "sec-027-62-analytic-properties",
    "number": "6.2",
    "title": "Analytic properties",
    "level": 2,
@@ -973,7 +986,7 @@
    "label_end": null
   },
   {
-   "id": "sec-027-63-integral-ramanujan-identity",
+   "id": "sec-028-63-integral-ramanujan-identity",
    "number": "6.3",
    "title": "Integral Ramanujan identity",
    "level": 2,
@@ -985,7 +998,7 @@
    "label_end": null
   },
   {
-   "id": "sec-028-64-fourier-transformation-of-the-qdl",
+   "id": "sec-029-64-fourier-transformation-of-the-qdl",
    "number": "6.4",
    "title": "Fourier transformation of the QDL",
    "level": 2,
@@ -997,7 +1010,7 @@
    "label_end": null
   },
   {
-   "id": "sec-029-65-proof-of-the-pentagon-identity",
+   "id": "sec-030-65-proof-of-the-pentagon-identity",
    "number": "6.5",
    "title": "Proof of the Pentagon identity",
    "level": 2,
@@ -1015,7 +1028,7 @@
   "toc_entries": 34,
   "toc_inferred_entries": 34,
   "toc_inferred_mean_confidence": 1.0,
-  "toc_inferred_empty_share": 0.1,
+  "toc_inferred_empty_share": 0.097,
   "toc_inferred_method": "latex",
   "figure_entries": 0,
   "figure_sequence_gaps": [],
@@ -1023,13 +1036,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 31,
-  "chars_total": 41447,
+  "sections": 32,
+  "chars_total": 41482,
+  "furniture_lines_stripped": 2,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 34,
-   "overlaid": 26,
+   "overlaid": 27,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1053,12 +1067,20 @@
      "id": "sec-001-1-recollecting-the-facts",
      "title": "Recollecting the facts",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.946,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-12-magri-bracket",
+     "id": "sec-002-11-liouville-formula-and-mobius-invariance",
+     "title": "Liouville formula and M\"obius-invariance",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.935,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-12-magri-bracket",
      "title": "Magri bracket",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.952,
@@ -1066,7 +1088,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-13-volterra-model",
+     "id": "sec-004-13-volterra-model",
      "title": "Volterra model",
      "prose_ratio": 0.908,
      "coverage_ratio": 0.983,
@@ -1074,23 +1096,23 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-14-bi-hamiltonity",
+     "id": "sec-005-14-bi-hamiltonity",
      "title": "Bi-hamiltonity",
-     "prose_ratio": 0.621,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.939,
+     "coverage_ratio": 0.939,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-15-quantization",
+     "id": "sec-006-15-quantization",
      "title": "Quantization",
      "prose_ratio": 0.973,
-     "coverage_ratio": 0.77,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-16-proof",
+     "id": "sec-007-16-proof",
      "title": "Proof",
      "prose_ratio": 0.975,
      "coverage_ratio": 0.951,
@@ -1098,7 +1120,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-17-it-has-to-do-with-braids",
+     "id": "sec-008-17-it-has-to-do-with-braids",
      "title": "It has to do with braids",
      "prose_ratio": 0.962,
      "coverage_ratio": 0.963,
@@ -1106,7 +1128,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-18-lattice-virasoro-algebra",
+     "id": "sec-009-18-lattice-virasoro-algebra",
      "title": "Lattice Virasoro algebra",
      "prose_ratio": 0.95,
      "coverage_ratio": 0.879,
@@ -1114,13 +1136,13 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-2-difference-difference-liouville-equation",
+     "id": "sec-010-2-difference-difference-liouville-equation",
      "title": "Difference-difference Liouville equation",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-010-21-liouville-formula",
+     "id": "sec-011-21-liouville-formula",
      "title": "Liouville formula",
      "prose_ratio": 0.939,
      "coverage_ratio": 0.955,
@@ -1128,7 +1150,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-22-discrete-liouville-equation",
+     "id": "sec-012-22-discrete-liouville-equation",
      "title": "Discrete Liouville equation",
      "prose_ratio": 0.955,
      "coverage_ratio": 1.0,
@@ -1136,7 +1158,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-23-poisson-bracket",
+     "id": "sec-013-23-poisson-bracket",
      "title": "Poisson bracket",
      "prose_ratio": 0.769,
      "coverage_ratio": 1.0,
@@ -1144,13 +1166,13 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-3-formal-quantization",
+     "id": "sec-014-3-formal-quantization",
      "title": "Formal quantization",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-014-31-algebra-of-observables",
+     "id": "sec-015-31-algebra-of-observables",
      "title": "Algebra of observables",
      "prose_ratio": 0.75,
      "coverage_ratio": 0.76,
@@ -1158,15 +1180,15 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-32-quantum-lattice-liouville-equation",
+     "id": "sec-016-32-quantum-lattice-liouville-equation",
      "title": "Quantum lattice Liouville equation",
-     "prose_ratio": 0.906,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-33-shift-and-evolution-operators",
+     "id": "sec-017-33-shift-and-evolution-operators",
      "title": "Shift and evolution operators",
      "prose_ratio": 0.945,
      "coverage_ratio": 0.973,
@@ -1174,7 +1196,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-35-chiral-evolution-operator",
+     "id": "sec-018-35-chiral-evolution-operator",
      "title": "Chiral evolution operator",
      "prose_ratio": 0.949,
      "coverage_ratio": 0.937,
@@ -1182,13 +1204,13 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-018-4-dualization",
+     "id": "sec-019-4-dualization",
      "title": "Dualization",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-019-41-involution",
+     "id": "sec-020-41-involution",
      "title": "Involution",
      "prose_ratio": 0.981,
      "coverage_ratio": 0.981,
@@ -1196,7 +1218,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-020-43-unitarity",
+     "id": "sec-021-43-unitarity",
      "title": "Unitarity",
      "prose_ratio": 0.945,
      "coverage_ratio": 1.0,
@@ -1204,7 +1226,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-021-44-dual-liouville-equation",
+     "id": "sec-022-44-dual-liouville-equation",
      "title": "Dual Liouville equation",
      "prose_ratio": 0.986,
      "coverage_ratio": 0.935,
@@ -1212,7 +1234,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-022-45-baxter-equation",
+     "id": "sec-023-45-baxter-equation",
      "title": "Baxter equation",
      "prose_ratio": 0.98,
      "coverage_ratio": 0.941,
@@ -1220,7 +1242,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-023-5-conclusions-and-comments",
+     "id": "sec-024-5-conclusions-and-comments",
      "title": "Conclusions and comments",
      "prose_ratio": 0.963,
      "coverage_ratio": 1.0,
@@ -1228,7 +1250,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-024-6-appendix-the-non-compact-quantum-dilogarithm",
+     "id": "sec-025-6-appendix-the-non-compact-quantum-dilogarithm",
      "title": "Appendix: the non-compact quantum dilogarithm",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.842,
@@ -1236,7 +1258,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-025-61-functional-relations",
+     "id": "sec-026-61-functional-relations",
      "title": "Functional relations",
      "prose_ratio": 0.872,
      "coverage_ratio": 1.0,
@@ -1244,7 +1266,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-026-62-analytic-properties",
+     "id": "sec-027-62-analytic-properties",
      "title": "Analytic properties",
      "prose_ratio": 0.891,
      "coverage_ratio": 0.897,
@@ -1252,7 +1274,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-027-63-integral-ramanujan-identity",
+     "id": "sec-028-63-integral-ramanujan-identity",
      "title": "Integral Ramanujan identity",
      "prose_ratio": 0.938,
      "coverage_ratio": 0.928,
@@ -1260,7 +1282,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-028-64-fourier-transformation-of-the-qdl",
+     "id": "sec-029-64-fourier-transformation-of-the-qdl",
      "title": "Fourier transformation of the QDL",
      "prose_ratio": 0.875,
      "coverage_ratio": 0.875,
@@ -1268,11 +1290,11 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-029-65-proof-of-the-pentagon-identity",
+     "id": "sec-030-65-proof-of-the-pentagon-identity",
      "title": "Proof of the Pentagon identity",
      "prose_ratio": 0.889,
      "coverage_ratio": 0.105,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

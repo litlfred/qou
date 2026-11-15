@@ -1,0 +1,1 @@
+In the works mentioned here, almost exclusively analytical methods are used and, in general, one must recognize that in most, if not all, cases listed, only the first two orders of the expansion have been considered.

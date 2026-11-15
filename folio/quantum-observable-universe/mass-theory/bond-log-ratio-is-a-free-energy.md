@@ -42,7 +42,7 @@ three constants are closed forms:
 | $pn$ | $d_{pn}$ | $0.508229789377$ | $0.676821592386$ |
 
 with $L_{pp} = -\log z$, $L_{nn} = \log\bigl(q(q^2+1)\bigr)$ and
-$L_{pp} + L_{nn} = 2\log[2]_q$ (all in `QOU.Mass.ChainTraceFactor`, sorry-free).
+$L_{pp} + L_{nn} = 2\log[2]_q$ (all in `QOU.Mass.ChainTraceFactor`).
 
 One caveat belongs with the identification: the observable is **signed**, since
 the $(1,1)$ eigenvalue $-q^{-1}$ is negative. So this is the free energy of a
@@ -80,9 +80,9 @@ $\mathrm{D}$, $\mathrm{T}$, $^3$He and $^4$He).
 
 ## Scope
 
-Nothing is retracted and no number moves. Every computation of $L$ in the
-corpus stands as a correct free-energy difference; only the sentence "and this
-is the binding energy" is marked open. The all-pairs extension is a separate
+No number changes. Every computation of $L$ stands as a correct free-energy
+difference; only the identification of that difference with the binding energy
+is open. The all-pairs extension is a separate
 matter and is retired for a separate reason: its bond multiset does not
 determine a braid word at all
 ([the ordering ambiguity](#prop:canonical-closure-torus-chain)).
@@ -122,8 +122,7 @@ So there is no $U$ and no $S$ for $\alpha L$ to be, or to differ from. **The
 free-energy reading does not supply the step to a binding energy, and could not
 have.** The three misses are downstream of that, not independent of it.
 
-Nothing is retracted and no number moves — which is the other half of the same
-algebra. The total $z + d$ stays positive because the $(2)$ block outweighs the
+The same algebra shows that $L$ itself stands. The total $z + d$ stays positive because the $(2)$ block outweighs the
 $(1,1)$ block, so $L$ is real, exact and canonical wherever it appears, and the
 free-energy *description* is correct as this block states it: a free energy of a
 signed observable over a quasi-probability. What goes is the sentence after it.
@@ -136,7 +135,7 @@ $(\lambda_+ + d_{pn}) + (\lambda_- + d_{pn}) = h + 2d_{pn} = h\delta/2 =
 the near-null vector of the unweighted block sum, and survives in $z+d$ only
 because $w_+ \neq w_-$.
 
-`QOU.Mass.FreeEnergyReadingIsSigned` (sorry-free) proves the general statements:
+`QOU.Mass.FreeEnergyReadingIsSigned` proves the general statements:
 `minusSummand_neg`, `no_real_energy_for_minus_block`,
 `positivity_would_need_d_gt_inv_q`, `admissible_letters_nonpos`, the
 positive-but-signed pairing at each of the three letters, and

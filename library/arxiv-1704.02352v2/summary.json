@@ -2,135 +2,245 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1704.02352v2",
  "source_sha256": "9a14dd6ee33248d3",
- "brief": "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Y oung diagrams which can be regarded as a natural one-parameter deformation of so me classi- cal Y",
- "extended": "**GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS**\n\n*MACIEJ DOŁ ˛ EGA AND PIOTR ŚNIADY*\n\n43 pp, 25 sections.\n\n**Abstract.** We introduce a large class of random Y oung diagrams which can be regarded as a natural one-parameter deformation of so me classi- cal Y oung diagram ensembles; a deformation which is related to Jack polynomials and Jack characters. We show that each such a random Y oung diagram converges asymptotically to some limit shape and that the ﬂuctuations around the limit are asymptotically Gaussi an. 1. I NTRODUCTION 1.1. Random partitions. . . An integer partition , called also a Young di- agram, is a weakly decreasing ﬁnite sequence λ = ( λ1, . . . , λl) of posi- tive integers λ1 ≥ · · · ≥ λl > 0. We also say that λ is a partition of |λ| := λ1 + · · · + λl. Random partitions occur in mathematics and physics in a wide variety of contexts, in particular in the Gromov–Witten and Seiberg–W itten theories, see the overview articles of Okounkov [Oko03] and V ershik [Ver95]. 1.2. . . .\n\n**Outline.** 1.5 Irreducible characters of symmetric groups; 1.6 Irreducible Jack characters; 1.9 Cumulants; 1.10 Asymptotics; 1.11 Hypothesis: asymptotics of; 1.12 Hypothesis: approximate factorization of ; 1.16 Example; 1.15 The second main result: Central Limit The; 1.17 Content of the paper; 2.1 Conditional cumulants; 2.2 Normalized Jack characters; 2.3 The deformation parameters; 2.7 Equivalent characterizations of approximat; 3.4 Functionals Sk; 3.5 Free cumulants Rk; 4 Technical results; 4.1 Slowly growing sequence of moments determi; 4.2 Slow growth of (Rn) implies slow growth of\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.3: Assume that α = α(n) is such that\n- Theorem 1.5: We keep the assumptions and the\n- Theorem 1.3: as well as Theorem 1.5 are applicable. Thus the se quence of\n- Theorem 1.5: implies in particular that the limit\n- Theorem: 2. A PPROXIMATE FACTORIZATION OF CHARACTERS\n- Theorem 2.3: Assume that α = α(n) is such as in Sec-",
+ "brief": "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Young diagrams which can be regarded as a natural one-parameter deformation of some classi- cal",
+ "extended": "**GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS**\n\n*MACIEJ DOŁ ˛EGA AND PIOTR ŚNIADY*\n\n43 pp, 47 sections.\n\n**Abstract.** We introduce a large class of random Young diagrams which can be regarded as a natural one-parameter deformation of some classi- cal Young diagram ensembles; a deformation which is related to Jack polynomials and Jack characters. We show that each such a random Young diagram converges asymptotically to some limit shape and that the ﬂuctuations around the limit are asymptotically Gaussian.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Random partitions…; 1.2 …and random matrices; 1.3 Random Young diagrams related to log-gases; 1.4 Random Young diagrams and characters; 1.5 Irreducible characters of symmetric groups; 1.6 Irreducible Jack characters; 1.7 Probability measures P(); 1.8 Random Young diagrams related to Thoma's c; 1.9 Cumulants; 1.10 Asymptotics; 1.11 Hypothesis: asymptotics of; 1.12 Hypothesis: approximate factorization of ; 1.13 Drawing Young diagrams; 1.14 The first main result: Law of Large Numbe; 1.15 The second main result: Central Limit The; 1.16 Example",
  "tokens": {
-  "brief": 49,
-  "extended": 500
+  "brief": 48,
+  "extended": 280
  },
  "sections": [
   {
-   "id": "sec-000-15-irreducible-characters-of-symmetric-groups-pl",
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-11-random-partitions",
+   "title": "Random partitions…",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-002-12-and-random-matrices",
+   "title": "…and random matrices",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-003-13-random-young-diagrams-related-to-log-gases",
+   "title": "Random Young diagrams related to log-gases",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-004-14-random-young-diagrams-and-characters",
+   "title": "Random Young diagrams and characters",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-005-15-irreducible-characters-of-symmetric-groups-pl",
    "title": "Irreducible characters of symmetric groups. Plancherel measure",
    "pages": "3-3"
   },
   {
-   "id": "sec-001-16-irreducible-jack-characters",
+   "id": "sec-006-16-irreducible-jack-characters",
    "title": "Irreducible Jack characters",
-   "pages": "3-5"
+   "pages": "3-4"
   },
   {
-   "id": "sec-002-19-cumulants",
+   "id": "sec-007-17-probability-measures-p",
+   "title": "Probability measures P()",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-008-18-random-young-diagrams-related-to-thomas-chara",
+   "title": "Random Young diagrams related to Thoma's characters",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-009-19-cumulants",
    "title": "Cumulants",
    "pages": "5-5"
   },
   {
-   "id": "sec-003-110-asymptotics",
+   "id": "sec-010-110-asymptotics",
    "title": "Asymptotics",
    "pages": "5-5"
   },
   {
-   "id": "sec-004-111-hypothesis-asymptotics-of",
+   "id": "sec-011-111-hypothesis-asymptotics-of",
    "title": "Hypothesis: asymptotics of",
    "pages": "5-6"
   },
   {
-   "id": "sec-005-112-hypothesis-approximate-factorization-of-char",
+   "id": "sec-012-112-hypothesis-approximate-factorization-of-char",
    "title": "Hypothesis: approximate factorization of characters",
-   "pages": "6-9"
+   "pages": "6-7"
   },
   {
-   "id": "sec-006-116-example",
-   "title": "Example",
-   "pages": "9-9"
+   "id": "sec-013-113-drawing-young-diagrams",
+   "title": "Drawing Young diagrams",
+   "pages": "7-8"
   },
   {
-   "id": "sec-007-115-the-second-main-result-central-limit-theorem",
+   "id": "sec-014-114-the-first-main-result-law-of-large-numbers",
+   "title": "The first main result: Law of Large Numbers",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-015-115-the-second-main-result-central-limit-theorem",
    "title": "The second main result: Central Limit Theorem",
-   "pages": "9-13"
+   "pages": "9-10"
   },
   {
-   "id": "sec-008-117-content-of-the-paper",
+   "id": "sec-016-116-example",
+   "title": "Example",
+   "pages": "10-13"
+  },
+  {
+   "id": "sec-017-117-content-of-the-paper",
    "title": "Content of the paper",
    "pages": "13-14"
   },
   {
-   "id": "sec-009-21-conditional-cumulants",
+   "id": "sec-018-2-approximate-factorization-of-characters",
+   "title": "Approximate factorization of characters",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-019-21-conditional-cumulants",
    "title": "Conditional cumulants",
    "pages": "14-15"
   },
   {
-   "id": "sec-010-22-normalized-jack-characters",
+   "id": "sec-020-22-normalized-jack-characters",
    "title": "Normalized Jack characters",
    "pages": "15-17"
   },
   {
-   "id": "sec-011-23-the-deformation-parameters",
+   "id": "sec-021-23-the-deformation-parameters",
    "title": "The deformation parameters",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-022-24-the-linear-space-of--polynomial-functions",
+   "title": "The linear space of -polynomial functions",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-023-25-algebras-p-and-p-of--polynomial-functions",
+   "title": "Algebras P and P of -polynomial functions",
    "pages": "17-18"
   },
   {
-   "id": "sec-012-27-equivalent-characterizations-of-approximate-f",
-   "title": "Equivalent characterizations of approximate factorization of characters",
-   "pages": "18-23"
+   "id": "sec-024-26-two-probabilistic-structures-on--polynomial-f",
+   "title": "Two probabilistic structures on -polynomial functions",
+   "pages": "18-18"
   },
   {
-   "id": "sec-013-34-functionals-sk",
+   "id": "sec-025-27-equivalent-characterizations-of-approximate-f",
+   "title": "Equivalent characterizations of approximate factorization of characters",
+   "pages": "18-20"
+  },
+  {
+   "id": "sec-026-31-approximate-factorization-property-for--polyn",
+   "title": "Approximate factorization property for -polynomial functions",
+   "pages": "20-23"
+  },
+  {
+   "id": "sec-027-34-functionals-sk",
    "title": "Functionals Sk",
    "pages": "23-23"
   },
   {
-   "id": "sec-014-35-free-cumulants-rk",
+   "id": "sec-028-35-free-cumulants-rk",
    "title": "Free cumulants Rk",
-   "pages": "23-29"
+   "pages": "23-26"
   },
   {
-   "id": "sec-015-4-technical-results",
+   "id": "sec-029-38-refined-asymptotics-of-characters",
+   "title": "Refined asymptotics of characters",
+   "pages": "26-29"
+  },
+  {
+   "id": "sec-030-4-technical-results",
    "title": "Technical results",
    "pages": "29-29"
   },
   {
-   "id": "sec-016-41-slowly-growing-sequence-of-moments-determines",
+   "id": "sec-031-41-slowly-growing-sequence-of-moments-determines",
    "title": "Slowly growing sequence of moments determines the measure",
    "pages": "29-30"
   },
   {
-   "id": "sec-017-42-slow-growth-of-rn-implies-slow-growth-of-sn",
+   "id": "sec-032-42-slow-growth-of-rn-implies-slow-growth-of-sn",
    "title": "Slow growth of (Rn) implies slow growth of (Sn)",
    "pages": "30-31"
   },
   {
-   "id": "sec-018-43-estimates-on-some-classes-of-permutations",
+   "id": "sec-033-43-estimates-on-some-classes-of-permutations",
    "title": "Estimates on some classes of permutations",
    "pages": "31-32"
   },
   {
-   "id": "sec-019-44-growth-of-free-cumulants",
+   "id": "sec-034-44-growth-of-free-cumulants",
    "title": "Growth of free cumulants",
-   "pages": "32-37"
+   "pages": "32-35"
   },
   {
-   "id": "sec-020-53-the-limiting-probability-measure-p",
+   "id": "sec-035-5-law-of-large-numbers-proof-of-theolln",
+   "title": "Law of large numbers. Proof of theo:lln",
+   "pages": "35-36"
+  },
+  {
+   "id": "sec-036-51-measure-associated-with-a-young-diagram",
+   "title": "Measure associated with a Young diagram",
+   "pages": "36-36"
+  },
+  {
+   "id": "sec-037-52-random-variables-snk-and-their-convergence-in",
+   "title": "Random variables S[n]k and their convergence in probability.",
+   "pages": "36-37"
+  },
+  {
+   "id": "sec-038-53-the-limiting-probability-measure-p",
    "title": "The limiting probability measure P",
+   "pages": "37-37"
+  },
+  {
+   "id": "sec-039-54-the-measure-p-is-determined-by-its-moments",
+   "title": "The measure P is determined by its moments",
    "pages": "37-38"
   },
   {
-   "id": "sec-021-55-weak-convergence-of-probability-measures-impl",
+   "id": "sec-040-55-weak-convergence-of-probability-measures-impl",
    "title": "Weak convergence of probability measures implies uniform convergence of densities",
    "pages": "38-39"
   },
   {
-   "id": "sec-022-56-convergence-of-densities-in-probability",
+   "id": "sec-041-56-convergence-of-densities-in-probability",
    "title": "Convergence of densities, in probability.",
-   "pages": "39-41"
+   "pages": "39-40"
   },
   {
-   "id": "sec-023-acknowledgments",
+   "id": "sec-042-57-back-to-young-diagrams",
+   "title": "Back to Young diagrams.",
+   "pages": "40-40"
+  },
+  {
+   "id": "sec-043-6-central-limit-theorem-proof-of-theoclt",
+   "title": "Central Limit Theorem. Proof of theo:clt",
+   "pages": "40-41"
+  },
+  {
+   "id": "sec-044-acknowledgments",
    "title": "Acknowledgments",
    "pages": "41-42"
   },
   {
-   "id": "sec-024-references",
+   "id": "sec-045-references",
    "title": "References",
    "pages": "42-43"
   }
@@ -139,8 +249,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

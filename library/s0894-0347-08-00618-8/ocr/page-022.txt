@@ -1,0 +1,55 @@
+542 J. BORCEA, P. BRANDEN, AND T. M. LIGGETT
+
+Let e € R". A homogeneous polynomial p € R[z1,..., Zn] is said to be (Garding)
+hyperbolic with respect to e if p(e) 4 0 and for all « € R” the univariate polynomial
+t+ p(a + te) has only real zeros. Recall that the homogenization of a polynomial
+f(21y+++52n) = Vaenn a(a)z* € Clz,.-., 2n] of degree d is given by
+
+H(21, ++ +5 2n41) = ZngiF (41/2n415 ++ +5 %n/Zn41)-
+fu( ) = haat (aa/ /2n+1)
+
+Recall the characterization of real stable polynomials given in Proposition
+(1). The relationship between real stable polynomials and hyperbolic polynomials
+is made explicit by the following result; see Proposition 1].
+
+Proposition 4.3. Let f € R[a,...,2n]. Then f is real stable if and only if fx is
+hyperbolic with respect to all vectors e € R"+! of the forme = (e1,.--,€n,0), where
+e, >0 forl<i<n.
+
+Let p be hyperbolic with respect to e € R”. The cone
+Ce(p) = {x € R" : p(x + te) 0, t > OF
+
+is called the hyperbolicity cone of p. The following fundamental properties of the
+hyperbolicity cone are due to Garding [37]; see also [3] [36] [43] .
+Proposition 4.4. Let p € R[z,..., 2n] be hyperbolic with respect toe € R". Then
+(a) Ce(p) is convex;
+(b) Ce(p) is equal to the connected component of the set {x € R" : p(x) 4 0}
+that contains e;
+
+(c) (s,t) — p(x + su+ te) is real stable for any x € R" and u € C.(p);
+(d) p is hyperbolic with respect to any u € C.(p) and C,,(p) = C.(p).
+
+Below are examples of hyperbolic polynomials and their hyperbolicity cones:
+(1) The polynomial p(z1,..., Zn) = 2122+++ Zn is hyperbolic with respect to the
+direction e = (1,...,1) € R", and the hyperbolicity cone is the positive
+orthant C.(p) = R.
+(II) The (principal) symbol of the hyperbolic wave equation, i.e., the polynomial
+
+:
+Part) = 8-4,
+j=2
+
+is hyperbolic with respect to the direction e = (1,0,...,0) € R”, and the
+hyperbolicity cone is the Lorentz cone
+
+ci) = {eer Varo4a sah.
+
+(III) Let zj;, 1 <i < j <n, be n(n + 1)/2 different variables and let X =
+(xij)? j21 be the matrix with entries
+
+xij i<j,
+4 zi if i> j.
+
+The polynomial (in n(n + 1)/2 variables) p(z11,...,Znn) = det(X) is hy-
+perbolic with respect to the n x n identity matrix J, and the hyperbolicity
+cone is the cone of positive definite n x n matrices.

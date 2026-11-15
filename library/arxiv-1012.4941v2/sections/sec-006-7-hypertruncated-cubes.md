@@ -7,10 +7,11 @@ section_number: 7
 pages: 16-18
 source_pdf: 1012.4941v2.pdf
 source_sha256: 1932a359f3bafb83
-doc_brief: "ALGORITHMS FOR HIGHLY SYMMETRIC LINEAR AND INTEGER PROGRAMS — This paper deals with exploiting symmetry for solving linea r and integer programming problems."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.994
-latex_coverage_ratio: 0.97
+latex_prose_ratio: 0.937
+latex_coverage_ratio: 0.959
+doc_brief: "ALGORITHMS FOR HIGHLY SYMMETRIC LINEAR AND INTEGER PROGRAMS — This paper deals with exploiting symmetry for solving linear and integer programming problems."
 ---
 []{#sec:hypertruncated label="sec:hypertruncated"} In this section we will construct a specific class of highly symmetric convex polytopes among which one can find examples of rather high Gomory-Chvátal rank. The motivation for this construction is rooted in the systematic study of Gomory-Chvátal cuts and cutting-plane proof systems. Pokutta and Stauffer [@PokuttaStauffer10] propose a new method for computing lower bounds on the Gomory-Chvátal rank for polytopes contained in the $0/1$-cube, and the polytopes constructed here provide examples which asymptotically almost attain the bounds obtained. The subsequent section on computational experiments also contains results about these polytopes.
 

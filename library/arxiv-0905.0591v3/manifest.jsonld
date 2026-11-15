@@ -11,6 +11,7 @@
   ],
   "title": "arxiv-0905.0591v3",
   "contains": [
+    "library/arxiv-0905.0591v3/sections/sec-front-matter",
     "library/arxiv-0905.0591v3/sections/sec-000",
     "library/arxiv-0905.0591v3/sections/sec-001",
     "library/arxiv-0905.0591v3/sections/sec-002",
@@ -50,10 +51,17 @@
     "library/arxiv-0905.0591v3/sections/sec-036",
     "library/arxiv-0905.0591v3/sections/sec-037",
     "library/arxiv-0905.0591v3/sections/sec-038",
-    "library/arxiv-0905.0591v3/sections/sec-039"
+    "library/arxiv-0905.0591v3/sections/sec-039",
+    "library/arxiv-0905.0591v3/sections/sec-040",
+    "library/arxiv-0905.0591v3/sections/sec-041",
+    "library/arxiv-0905.0591v3/sections/sec-042",
+    "library/arxiv-0905.0591v3/sections/sec-043",
+    "library/arxiv-0905.0591v3/sections/sec-044",
+    "library/arxiv-0905.0591v3/sections/sec-045",
+    "library/arxiv-0905.0591v3/sections/sec-046"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -74,8 +82,8 @@
       "stamp_date": "5 Feb 2010"
     },
     "doi": null,
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

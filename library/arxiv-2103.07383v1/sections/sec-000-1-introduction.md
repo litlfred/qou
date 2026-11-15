@@ -4,13 +4,13 @@ doc_title: "On the Analyticity of Critical Points of the Generalized Integral Me
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
-pages: 1-4
+pages: 1-5
 source_pdf: 2103.07383v1.pdf
 source_sha256: 9dca35ea16490ad8
 toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.745
-latex_coverage_ratio: 0.969
+latex_prose_ratio: 0.884
+latex_coverage_ratio: 0.97
 doc_brief: "On the Analyticity of Critical Points of the Generalized Integral Menger Curvature in the Hilbert Case — We prove the analyticity of smooth critical points for generalized integral Menger cur- vature"
 ---
 An easy way to produce a knot is to tie a piece of string and glue the ends together. This motivates the mathematical definition of a knot as a continuous embedding of a circle into three-dimensional Euclidean space. Depending on the initial knotting, different knot types arise. We say that two knots are of the same knot class if there exists an ambient isotopy \cite[p.~4f.]{Cromwell:2004} that deforms one knot to the other avoiding any sort of self-intersections or ``cutting and glueing'' phenomena. 

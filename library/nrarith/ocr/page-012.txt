@@ -1,0 +1,53 @@
+284 — Walter D. Neumann and Alan W. Reid
+
+Note that, with 7 as above, try = +2 cosh sy), so
+
+|tr7| = EF!) 4 24M) < Je2)
+
++ Je]
+
+= e207) + e207)
+
+= 2cosh 0),
+
+Hence, if | try| > 2,
+
+lo(7) > 2arccosh [eral
+so that for y with |try| > 3 we have (+) > 2arccosh 3.
+
+Now suppose I contains an element y with ¢o(7) < 2 arccosh 3. Then | try| <3.
+But by Proposition 4.4 (a), try € Oy. Thus if try where real, it would be in Z, and
+y would be parabolic or elliptic, contrary to assumption. The existence of a non-real
+7 € Og with |r| < 3 imposes strong conditions on d and 7, as we now describe.
+
+If d # —1 (mod 4) then r = a+ bV¥—d with a,b € Z and b £ 0. Then
+|r)? = a? + db?, whence d < 9. If d = —1 (mod 4) then r = (a + bV—d)/2 with
+a = b (mod 2) and b 4 0. In this case |r|? = (a? + db*)/4, and it follows that
+d < 35. We thus get a finite list of possible d and for each such d there is a short
+finite list of 7 € Og with |r| < 3. It is thus a simple matter to list the d and 7 with
+Re(2 arccosh $) < 2 arccosh 3, giving Table 1. oO
+
+4.4. For closed hyperbolic 3-orbifolds we conjecture a similar result to Corollary 4.7:
+
+Conjecture 4.8. There is a universal lower bound for the lengths of geodesics in closed
+arithmetic hyperbolic orbifolds. (The current guess is approximately 0.09174218, or
+twice this, 0.18348436, if the orbifold is derived from a quaternion algebra, see Sect. 4.5
+below.)
+
+This conjecture would be a consequence of a classical conjecture of number theory
+due to D.H. Lehmer [Le] (see also [Boy] for a discussion). Suppose P(x) is a monic
+integral polynomial of degree n with roots 6;,...,0,. The Mahler measure of P is
+
+M(P) = [[ max(1, |6i)).
+i=1
+
+Lehmer’s Conjecture. There exists m > 1 suchthat M(P) > m for allnon-cyclotomic
+P. The currently conjectured value of m is approximately 1.176780821 (see Sect. 4.5
+below).
+
+That Lehmer’s conjecture implies Conjecture 4.8 follows from the following lemma,
+part of which is implicit in [R1] and [Tak].
+
+Lemma 4.9. Let I’ be a Kleinian (or Fuchsian) group derived from a quaternion algebra.
+Let 7 € T bea loxodromic or hyperbolic element, and write tr-y = ut+u~! with |u| > 1.
+Then wu is an algebraic integer and u~! is a conjugate of u. Moreover,

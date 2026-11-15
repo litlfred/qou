@@ -1,0 +1,1 @@
+We should point out that while Gr\"obner basis computations are feasible for the Ptolemy varieties even for many simplices, they are usually impractical for the gluing equations even when the cusp equations are added.

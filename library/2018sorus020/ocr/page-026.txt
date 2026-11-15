@@ -1,0 +1,49 @@
+p defined below is the tautological representation in SLo(k(X, Y, Z)) and there is no
+reason that it exists in SLo(k(X, Y,Z+Z~1)), because the Brauer group of this field
+
+is not trivial.
+
+The trefoil knot
+
+Here M is the exterior of the trefoil knot in S*, 7(M) = (a,b| a? = b*). Denote
+by z = a? = b°, it generates the center of I. Hence any irreducible representation p
+needs to map z onto 1d. If p(z) = Id, then p(a) = — Id and necessarily p becomes
+abelian, thus we fix p(z) = —Id. Up to conjugacy, we fix p(b) = ( a ). One can
+still conjugate p by diagonals matrices without modifying p(b), thus one can fix the
+right-upper entry of p(a) to be equal to 1; and as p(a)? = — Id, the Cayley-Hamilton
+theorem implies that Tr p(a) = 0, hence p(a) = (cea) 4), for some t € k. As
+(j — j?)t = Tr(ab7!), the function field of the component of irreducible type X is
+k(t); and X ~ k. The latter representation p is the tautological representation.
+
+The augmented character variety is obtained by picking an eigenvalue of any boun-
+dary curve. Consider the meridian ab!, its trace is (j—j”)t, hence the field extension
+
+1
+
+u+u-! = (j —j?)t provides a double covering X — X, that ramifies twice, when
+
+(j — j?)?t? = 4. Note that X is isomorphic to k*.
+
+The figure-eight knot
+
+Here M denotes the exterior of the figure-ecight knot in S*, 7,(M) = (u,v| vw = wu)
+with w = [u,v—']. Note that the meridians u and v are conjugated, hence they
+define the same trace functions. Denote by « = Y, = Y,, and by y = Yww, then
+Bir,(M)] = k[x, y]/(P) where P(x, y) = (x? -y—2) (2a? +y?—2?y—y-—1) is obtained
+
+by expanding the relation Tr vwu7tw7!
+
+= 2 with the help of the trace relation. The
+first factor of P is the equation of the component of reducible type, and we denote
+by X the curve defined by the second factor of P. It is a smooth plane curve of
+degree 3, and the Pliicker formula implies that its compactification has genus 1. The
+augmented variety X > X is described as follows : add the equation a + a7! = 2,
+one obtain a curve in k®, that ramifies at four points {x? = 4, y? — 5y + 7 = O} on
+X, hence the compactification of X has genus 3 by the Riemann-Hurwitz formula.
+
+The tautological representation p : T — k(X) can be defined by
+
+a l a 0
+p(u) = (; 2) pv) = (, _—@—a 2)
+
+25

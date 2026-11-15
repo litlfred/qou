@@ -6,7 +6,9 @@
   "sha256": "1e146ee4ebc157f2b803d0fef8081f145c3a467c899ab705d32e88eebd8f9e38",
   "bytes": 345723,
   "pages": 28,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -14,23 +16,30 @@
   "arxiv": null,
   "doi": "10.2140/gt.2006.10.1425",
   "title": "Stabilization in the braid groups II: Transversal simplicity of knots",
-  "authors_raw": null,
-  "abstract": null,
-  "docinfo": {
-   "Author": "",
-   "Title": "",
-   "Creator": "LaTeX with hyperref package",
-   "Producer": "pdfTeX-1.40.4",
-   "CreationDate": "D:20210731161919Z"
-  },
+  "authors_raw": "JOAN S BIRMAN",
   "title_lines": [
    "Stabilization in the braid groups II:",
-   "Transversal simplicity of knots",
-   "JOAN S BIRMAN",
-   "WILLIAM W MENASCO",
-   "The main result of this paper is a negative answer to the question: are all transversal"
+   "Transversal simplicity of knots"
   ],
-  "title_prev": "Stabilization in the braid groups II: Transversal simplicity of knots JOAN S BIRMAN WILLIAM W MENASCO The main result of this paper is a negative answer to the question: are all transversal"
+  "abstract": null,
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.4",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20210731161919Z"
+  },
+  "title_raw": "Stabilization in the braid groups II: Transversal simplicity of knots",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Stabilization in the braid groups II: Transversal simplicity of knots Introduction and description of results",
+   "outline": "1 Introduction and description of results",
+   "text": "Stabilization in the braid groups II: Transversal simplicity of knots",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Stabilization in the braid groups II: Transversal simplicity of knots Introduction and description of results"
  },
  "toc": [
   {
@@ -38,74 +47,472 @@
    "title": "Introduction and description of results",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1425"
   },
   {
    "level": 1,
    "title": "The MTWS and transversal isotopies",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1428"
   },
   {
    "level": 2,
    "title": "Block-strand diagrams, templates and the MTWS",
    "page": 4,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1428"
   },
   {
    "level": 2,
    "title": "The construction of transversal clasp annuli",
    "page": 8,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1432"
   },
   {
    "level": 2,
    "title": "Braid foliations on transversal clasp annuli",
    "page": 13,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1437"
   },
   {
    "level": 2,
    "title": "A weak transversal MTWS",
    "page": 20,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1444"
   },
   {
    "level": 1,
    "title": "Transversal simplicity and its failure",
    "page": 24,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1448"
   },
   {
    "level": 2,
    "title": "The failure of transversal simplicity for certain closed 3–braids",
    "page": 24,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1448"
   },
   {
    "level": 2,
    "title": "Future work and some open problems",
    "page": 26,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1450"
   },
   {
    "level": 1,
    "title": "Bibliography",
    "page": 27,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1451"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "(a) Braid structure on R3; (b) 2–planes in the standard contact structure on R3. Note that these 2–planes are invariant under rotation about z–axis and translation along the z–axis (which we use as the braid axis A)",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "1426"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The two destabilization templates. Each template is a pair of block-strand diagrams",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "1429"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The exchange move template, w ≥2, braid index m ≥4",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "1430"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The two ﬂype templates. The weights must satisfy k′ −w ≥0. Note that the device of weighted strands may conceal half-twists introduced during the ﬂype. See Figure 4 of [6]",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "1431"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "The left sketch illustrates the types of non-singular leaves in the foliation of CA. The right sketch illustrates a foliated neighborhood of a type bb–singularity",
+   "page": 13,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "1437"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Possible tile types in the foliation of CA. The black (resp. gray) arcs represent subarcs of X+ (resp. X−)",
+   "page": 14,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "1438"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "The graph Gϵ,δ includes all singular leaves through vertices of sign ϵ and singularities of sign δ. The thick edges illustrate the passage of G+,+, G−,−, G+,−, G−,+ through a bb–tile",
+   "page": 16,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "1440"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "The graph G, as it appears in the annulus PA",
+   "page": 18,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": "1442"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1425",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "1426",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "1427",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "1428",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "1429",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "1430",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "1431",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "1432",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "1433",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "1434",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "1435",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "1436",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "1437",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "1438",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "1439",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "1440",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "1441",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "1442",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "1443",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "1444",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "1445",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "1446",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "1447",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "1448",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "1449",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "1450",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "1451",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "1452",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 551,
+   "n_words": 87,
+   "label_start": "1425",
+   "label_end": "1425"
+  },
   {
    "id": "sec-000-1-introduction-and-description-of-results",
    "number": "1",
@@ -113,8 +520,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 7755,
-   "n_words": 1361
+   "n_chars": 7821,
+   "n_words": 1392,
+   "label_start": "1425",
+   "label_end": "1428"
   },
   {
    "id": "sec-001-2-the-mtws-and-transversal-isotopies",
@@ -123,8 +532,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 1278,
-   "n_words": 232
+   "n_chars": 1313,
+   "n_words": 237,
+   "label_start": "1428",
+   "label_end": "1428"
   },
   {
    "id": "sec-002-21-block-strand-diagrams-templates-and-the-mtws",
@@ -133,8 +544,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 8,
-   "n_chars": 7307,
-   "n_words": 1382
+   "n_chars": 7401,
+   "n_words": 1436,
+   "label_start": "1428",
+   "label_end": "1432"
   },
   {
    "id": "sec-003-22-the-construction-of-transversal-clasp-annuli",
@@ -143,8 +556,10 @@
    "level": 2,
    "page_start": 8,
    "page_end": 13,
-   "n_chars": 12080,
-   "n_words": 2224
+   "n_chars": 12187,
+   "n_words": 2292,
+   "label_start": "1432",
+   "label_end": "1437"
   },
   {
    "id": "sec-004-23-braid-foliations-on-transversal-clasp-annuli",
@@ -153,8 +568,10 @@
    "level": 2,
    "page_start": 13,
    "page_end": 20,
-   "n_chars": 18342,
-   "n_words": 3398
+   "n_chars": 18435,
+   "n_words": 3452,
+   "label_start": "1437",
+   "label_end": "1444"
   },
   {
    "id": "sec-005-24-a-weak-transversal-mtws",
@@ -163,8 +580,10 @@
    "level": 2,
    "page_start": 20,
    "page_end": 24,
-   "n_chars": 9785,
-   "n_words": 1700
+   "n_chars": 9818,
+   "n_words": 1713,
+   "label_start": "1444",
+   "label_end": "1448"
   },
   {
    "id": "sec-006-3-transversal-simplicity-and-its-failure",
@@ -173,8 +592,10 @@
    "level": 1,
    "page_start": 24,
    "page_end": 24,
-   "n_chars": 1038,
-   "n_words": 177
+   "n_chars": 1075,
+   "n_words": 180,
+   "label_start": "1448",
+   "label_end": "1448"
   },
   {
    "id": "sec-007-31-the-failure-of-transversal-simplicity-for-cer",
@@ -183,8 +604,10 @@
    "level": 2,
    "page_start": 24,
    "page_end": 26,
-   "n_chars": 6008,
-   "n_words": 1072
+   "n_chars": 6108,
+   "n_words": 1115,
+   "label_start": "1448",
+   "label_end": "1450"
   },
   {
    "id": "sec-008-32-future-work-and-some-open-problems",
@@ -193,16 +616,28 @@
    "level": 2,
    "page_start": 26,
    "page_end": 28,
-   "n_chars": 5042,
-   "n_words": 798
+   "n_chars": 5069,
+   "n_words": 796,
+   "label_start": "1450",
+   "label_end": "1452"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 10,
-  "sections": 9,
-  "chars_total": 68635
+  "toc_inferred_entries": 0,
+  "figure_entries": 8,
+  "figure_sequence_gaps": [
+   "figure 5"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 10,
+  "chars_total": 69778,
+  "furniture_lines_stripped": 0
  },
  "duplicate_copies": [
   "gt-v10-n3-p07-p"

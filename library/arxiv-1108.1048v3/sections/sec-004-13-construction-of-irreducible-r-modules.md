@@ -7,10 +7,11 @@ section_number: 1.3
 pages: 10-14
 source_pdf: 1108.1048v3.pdf
 source_sha256: 6f2b83450ba923d0
-doc_brief: "CONSTRUCTION OF IRREDUCIBLE REPRESENTATIONS OVER KHOVANOV-LAUDA-ROUQUIER ALGEBRAS — We give an explicit construction of irreducible modules ove r Khovanov-Lauda- Rouquier algebras R and their"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.974
-latex_coverage_ratio: 0.866
+latex_coverage_ratio: 0.884
+doc_brief: "CONSTRUCTION OF IRREDUCIBLE REPRESENTATIONS OVER KHOVANOV-LAUDA-ROUQUIER ALGEBRAS — We give an explicit construction of irreducible modules over Khovanov-Lauda- Rouquier algebras R and their"
 ---
 In this subsection, we give a construction of irreducible graded $R$-modules as the irreducible heads of certain induced modules, which is compatible with the Kashiwara operators. More precisely, set $I_{(n+1)} = I$ and let $I_{(k)} \subset I\ (k=1, \ldots,n)$ be subsets of $I$ such that $I_{(k)} \subseteq I_{(k+1)}$ and $|I_{(k)}| = k$. Let $\mathfrak{B}_k$ be the crystal obtained from $B(\infty)$ by forgetting the $i$-arrows for $i \notin  I_{(k)}$. Using highest weight vectors of connected components of $\mathfrak{B}_k$, we define irreducible $R$-modules $\mathcal{N}_k(v)$ for $k=1,\ldots,n$ and $v \in B(\infty)$. Then, we construct a crystal isomorphism $\Phi: B(\infty) \rightarrow \mathbb{B}(\infty)$ defined by $\Phi(v) = \mathsf{ hd}\,\mathsf {Ind}(\mathcal{N}_1(v) \boxtimes \cdots \boxtimes \mathcal{N}_n(v))$ (Proposition [\[Prop: crystal iso\]](#Prop: crystal iso){reference-type="ref" reference="Prop: crystal iso"}). We emphasize that this crystal isomorphism $\Phi$ exists for an arbitrary symmetrizable Cartan datum.
 

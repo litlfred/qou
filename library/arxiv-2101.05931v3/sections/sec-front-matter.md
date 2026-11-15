@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2101.05931v3.pdf
 source_sha256: 41eaa81b97ede8e9
 toc_source: outline
+doc_brief: "CATEGORICAL BRAID GROUP ACTIONS — Let g be a semisimple simply-laced Lie algebra of ﬁnite type."
 ---
 arXiv:2101.05931v3  [math.RT]  15 Jun 2023
 CATEGORICAL BRAID GROUP ACTIONS

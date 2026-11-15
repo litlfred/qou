@@ -1,0 +1,66 @@
+IOP Publishing
+
+J. Phys. Commun. 6 (2022) 015002 LDiCairano
+
+The time-derivative of the a(X) vector can be rewritten in terms of the W matrix, i.e.
+Faxtt — 1) = —Wh(X(t — 7))X(t — 7). (6)
+By replacing equation (5) into the first equation in (4) and by making use of equation (6), one gets
+a0) =V(X(t) + f A W(X(t) K exp(BK 7) W? (X(t — 7) X(t — 7) dr
+— A W(X(t)) K exp(BK t)[Y(0) — a(X(0))]. (7)
+At this point, Zwanzig defined the noise vector
+F(t) = —K exp(BK t)[Y (0) — a(X(0))], (8)
+and the kernel matrix
+L(t) = K exp(BK 1), (9)
+
+and, introducing the canonical partition function
+
+P(Ps q|Q) = exp(—B Hy(p, gq, Q)), (10)
+he formulates the fluctuation-dissipation relation (FDR)
+(F(t) - F(t)), = kgT C(t — 7), (11)
+
+where kg and T, respectively, are the Boltzmann constant and the temperature whereas ¢ := Tr[L]and Tr
+denotes the trace ofa matrix.
+
+1.2.1. Criticism
+
+We now explain our main criticism to the Zwanzig’s derivation showing that the definitions (8) and (9) provided
+by Zwanzig yield a FDR which is inconsistent with the standard definition [3]. The main reason of this
+inconsistency can be better explained by means of the following argument. In writing the Hamiltonian for two
+interacting systems, all the information about the nature of the interaction is contained in the potential function
+which gives a fully microscopic and detailed description of system. Conversely, in the (generalized) Langevin
+equation, one just takes into account a coarse-grained representation of these interactions encoded into two
+terms: the stochastic noise vector and the friction matrix or function. The role of the FDR is somehow to balance
+the energy dissipated by the friction with that supplied by the random noise. Consequently, the friction and
+noise term have to contain the information about the strength of the interactions. For example, in the easiest case
+ofa standard Langevin equation (LE), ie., U(t) = —yU(t) + F(t), the second term on the right-hand side can
+be interpreted as a convolution between a kernel function ¢(t — T) ~ y6(t — 7) (61s the Dirac delta distribution)
+and the velocity vector of the heavy particle, U(t). In this case, it is also evident that the strength of the interaction
+is represented by the friction constant y which is a coarse-grained description of the heavy particle-environment
+interactions. This feature must hold also in case of a GLE, that is, we expect that, in the Zwanzig’s derivation, all
+the microscopic information contained in the potential function are condensed within the friction matrix L.
+
+By inspection, we immediately realize that L and F, respectively, in equation (8) and (9) do not show this
+feature. In fact, (up to two constants kz and T) L depends on Band K. Now, Bis a constant antisymmetric matrix
+whereas K is the matrix associated to the oscillation frequencies of the heat bath particles when they do not
+interact with the heavy one’.
+
+Therefore, the FDR formulated by Zwanzig in (11) does not provide any balance.
+
+Based on this observation, we now explicitly show that, introducing the same Hamiltonian considered by
+Zwanzig, that is: [31]
+
+Pp? ~ i wij Vi ,
+H=T+tVQ+d 5 tala Set p (12)
+I= J
+
+where we recall that capital letters represent the heavy particle variables.
+By comparing (12) and (3), we note that the first two terms in the Hamiltonian above correspond to H,(X)
+
+whereas the terms in the square brackets correspond to H;(X, Y). Therefore, the Hamiltonian (12) can be
+deduced from that in equation (3) making explicit in the latter the position and momentum variables, i.e.:
+
+T Wecan convince about it just observing the Hamiltonian H,,(X, Y) in equation (3). By switching the heat bath-heavy particles interactions
+off means that a(X) = 0 for any X + 0 and this leads to Hy(X, Y) = H,(X) + Y'KY/2. This is the Hamiltonian of two non-interacting
+subsystems where the latter is nothing but a set of (non-interacting) harmonic oscillators.
+
+3

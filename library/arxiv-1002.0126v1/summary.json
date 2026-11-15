@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1002.0126v1",
  "source_sha256": "ea218a0586a13490",
- "brief": "An introduction to the volume conjecture — This is an introduction to the Volume Conjecture and its gene r- alizations for nonexperts.",
- "extended": "**An introduction to the volume conjecture**\n\n39 pp, 13 sections.\n\n**Abstract.** This is an introduction to the Volume Conjecture and its gene r- alizations for nonexperts. The Volume Conjecture states that a certain limit of the colo red Jones polynomial of a knot would give the volume of its complement. If we deform the parameter of the colored Jones polynomial we also conjectur e that it would also give the volume and the Chern–Simons invariant of a three-ma nifold obtained by Dehn surgery determined by the parameter. I start with a deﬁnition of the colored Jones polynomial and i nclude ele- mentary examples and short description of elementary hyper bolic geometry.\n\n**Outline.** 1 Introduction; 2 Link invariant from a Yang–Baxter operator; 2.1 Braid presentation of a link; 2.3 Invariant; 2.2 Yang–Baxter operator; 2.5 Example of calculation; 3 Volume conjecture; 4 Supporting evidence for the Volume Conjectur; 4.1 Approximation of the colored Jones polynom; 4.2 Geometric interpretation of the limit; 5 Generalizations of the Volume Conjecture; 5.2 Deformation of the parameter; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.1: Any knot or link can be presented as the closure of\n- Theorem 2.2: If two braids β and β′ give equivalent links, then they\n- Theorem 2.8: If β and β′ present the same link, then TR,µ,a,b(β) =\n- Theorem 3.6: The complement of the ﬁgure-eight knot can be\n- Theorem 4.2: Under certain conditions for the func-\n- Theorem 5.3: Let E be the ﬁgure-eight knot. There exists a neighborhood",
+ "brief": "AN INTRODUCTION TO THE VOLUME CONJECTURE — This is an introduction to the Volume Conjecture and its gener- alizations for nonexperts.",
+ "extended": "**AN INTRODUCTION TO THE VOLUME CONJECTURE**\n\n*HITOSHI MURAKAMI*\n\n39 pp, 19 sections.\n\n**Abstract.** This is an introduction to the Volume Conjecture and its gener- alizations for nonexperts. The Volume Conjecture states that a certain limit of the colored Jones polynomial of a knot would give the volume of its complement. If we deform the parameter of the colored Jones polynomial we also conjecture that it would also give the volume and the Chern–Simons invariant of a three-manifold obtained by Dehn surgery determined by the parameter. I start with a deﬁnition of the colored Jones polynomial and include ele- mentary examples and short description of elementary hyperbolic geometry.\n\n**Outline.** Front matter; 1 Introduction; 2 Link invariant from a Yang–Baxter operator; 2.1 Braid presentation of a link; 2.2 Yang–Baxter operator; 2.3 Invariant; 2.4 Quantum (g,V) invariant; 2.5 Example of calculation; 3 Volume conjecture; 3.1 Statement of the Volume Conjecture; 3.2 Proof of the Volume Conjecture for the fig; 3.3 Knots and links for which the Volume Conje; 4 Supporting evidence for the Volume Conjectur; 4.1 Approximation of the colored Jones polynom; 4.2 Geometric interpretation of the limit; 5 Generalizations of the Volume Conjecture; 5.1 Complexification; 5.2 Deformation of the parameter",
  "tokens": {
   "brief": 33,
-  "extended": 387
+  "extended": 326
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -25,52 +30,77 @@
    "pages": "2-4"
   },
   {
-   "id": "sec-003-23-invariant",
-   "title": "Invariant",
+   "id": "sec-003-22-yangbaxter-operator",
+   "title": "Yang–Baxter operator",
    "pages": "4-5"
   },
   {
-   "id": "sec-004-22-yangbaxter-operator",
-   "title": "Yang–Baxter operator",
-   "pages": "5-10"
+   "id": "sec-004-23-invariant",
+   "title": "Invariant",
+   "pages": "5-8"
   },
   {
-   "id": "sec-005-25-example-of-calculation",
+   "id": "sec-005-24-quantum-gv-invariant",
+   "title": "Quantum (g,V) invariant",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-006-25-example-of-calculation",
    "title": "Example of calculation",
-   "pages": "10-15"
+   "pages": "10-16"
   },
   {
-   "id": "sec-006-3-volume-conjecture",
+   "id": "sec-007-3-volume-conjecture",
    "title": "Volume conjecture",
-   "pages": "15-22"
+   "pages": "16-16"
   },
   {
-   "id": "sec-007-4-supporting-evidence-for-the-volume-conjecture",
+   "id": "sec-008-31-statement-of-the-volume-conjecture",
+   "title": "Statement of the Volume Conjecture",
+   "pages": "16-18"
+  },
+  {
+   "id": "sec-009-32-proof-of-the-volume-conjecture-for-the-figure",
+   "title": "Proof of the Volume Conjecture for the figure-eight knot",
+   "pages": "18-22"
+  },
+  {
+   "id": "sec-010-33-knots-and-links-for-which-the-volume-conjectu",
+   "title": "Knots and links for which the Volume Conjecture is proved",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-011-4-supporting-evidence-for-the-volume-conjecture",
    "title": "Supporting evidence for the Volume Conjecture",
    "pages": "22-22"
   },
   {
-   "id": "sec-008-41-approximation-of-the-colored-jones-polynomial",
+   "id": "sec-012-41-approximation-of-the-colored-jones-polynomial",
    "title": "Approximation of the colored Jones polynomial",
    "pages": "22-26"
   },
   {
-   "id": "sec-009-42-geometric-interpretation-of-the-limit",
+   "id": "sec-013-42-geometric-interpretation-of-the-limit",
    "title": "Geometric interpretation of the limit",
    "pages": "26-29"
   },
   {
-   "id": "sec-010-5-generalizations-of-the-volume-conjecture",
+   "id": "sec-014-5-generalizations-of-the-volume-conjecture",
    "title": "Generalizations of the Volume Conjecture",
    "pages": "29-29"
   },
   {
-   "id": "sec-011-52-deformation-of-the-parameter",
+   "id": "sec-015-51-complexification",
+   "title": "Complexification",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-016-52-deformation-of-the-parameter",
    "title": "Deformation of the parameter",
    "pages": "29-38"
   },
   {
-   "id": "sec-012-references",
+   "id": "sec-017-references",
    "title": "References",
    "pages": "38-39"
   }
@@ -79,8 +109,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

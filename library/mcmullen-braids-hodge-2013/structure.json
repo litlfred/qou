@@ -6,8 +6,9 @@
   "sha256": "b859c9ad6f621baa3df0dd613a18cde08192b115277ca0e39fe538ff6a6a4f7a",
   "bytes": 1197071,
   "pages": 14,
-  "text_source": "ocr",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -15,49 +16,316 @@
   "arxiv": null,
   "doi": null,
   "title": "Braiding of the attractor and the failure of iterative algorithms",
-  "authors_raw": "Braiding of the attractor and the failure",
+  "authors_raw": null,
+  "title_lines": null,
   "abstract": null,
   "docinfo": {
-   "CreationDate": "D:20061209222539+01'00'",
-   "Author": "",
-   "Creator": "GDZ Contentserver",
+   "Title": "Inventiones Mathematicae",
    "Producer": "iText1.1 by lowagie.com (based on itext-paulo-142)",
-   "Title": "Inventiones Mathematicae"
+   "Creator": "GDZ Contentserver",
+   "CreationDate": "D:20061209222539+01'00'"
   },
-  "title_lines": [
-   "Invent. math, 91, 259-272 (1988) Inventiones",
-   "mathematicae",
-   "© Springer-Verlag 1988"
-  ],
-  "title_prev": "Invent. math, 91, 259-272 (1988) Inventiones mathematicae © Springer-Verlag 1988"
+  "title_raw": null,
+  "title_source": "filename",
+  "title_verified": false,
+  "title_evidence": {
+   "metadata": "Inventiones Mathematicae",
+   "outline": "McMullen, Curt: Braiding of the attractor and the failure of iterative algorithms",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "Braiding of the attractor and the failure of iterative algorithms"
  },
- "toc": [
+ "toc": [],
+ "toc_source": "none",
+ "toc_undetermined_reason": null,
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted: one section per page.",
+ "figures": [],
+ "pages": [
   {
-   "level": 1,
-   "title": "McMullen, Curt: Braiding of the attractor and the failure of iterative algorithms.",
-   "page": 1,
-   "source": "outline",
-   "number": null
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   }
  ],
- "toc_source": "outline",
  "sections": [
   {
-   "id": "sec-000-document",
+   "id": "page-001",
    "number": null,
-   "title": "Document",
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
+   "page_end": 1,
+   "n_chars": 24,
+   "n_words": 5,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 24,
+   "n_words": 5,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 24,
+   "n_words": 5,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 24,
+   "n_words": 5,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 24,
+   "n_words": 5,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 24,
+   "n_words": 5,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 24,
+   "n_words": 5,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 24,
+   "n_words": 5,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 24,
+   "n_words": 5,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 24,
+   "n_words": 5,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 24,
+   "n_words": 5,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 24,
+   "n_words": 5,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-013",
+   "number": null,
+   "title": "Page 13",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 24,
+   "n_words": 5,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-014",
+   "number": null,
+   "title": "Page 14",
+   "level": 1,
+   "page_start": 14,
    "page_end": 14,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 24,
+   "n_words": 5,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 14,
   "likely_scanned": true,
-  "toc_entries": 1,
-  "sections": 1,
-  "chars_total": 0
+  "toc_entries": 0,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 14,
+  "chars_total": 336,
+  "furniture_lines_stripped": 0,
+  "outline_rejected": "0 of 1 outline entries name a heading the pages print (< 50%), e.g. \"McMullen, Curt: Braiding of the attractor and the failure of iterative algorithms.\""
  }
 }

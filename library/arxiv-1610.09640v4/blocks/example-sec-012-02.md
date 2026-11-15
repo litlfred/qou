@@ -1,1 +1,0 @@
-In Setthecoproductisthedisjointunion. In ModAthecoproduct

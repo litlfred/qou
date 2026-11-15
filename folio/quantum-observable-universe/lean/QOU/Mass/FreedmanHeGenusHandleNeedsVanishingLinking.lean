@@ -5,7 +5,7 @@ is the opposite of Borromean: every one of its components is linked.
 
 Arc context (carrier derivation; beans `qou-768r`, `qou-o6ml`). The Freedman–He
 link bound as Komendarczyk states it (arXiv:0808.1533v1 eq. (43), p. 26; held at
-`library/arxiv-0808.1533v1/sections/sec-001-energy-bound.md:203-216`) is
+`library/arxiv-0808.1533v1/sections/sec-005-energy-bound.md:203-216`) is
 
   `E_{3/2}(X) ≥ (π/16)^{1/4} · (Σ_k ac(L_k, L)|Flux(X_k)|) · min_k |Flux(X_k)|`
 

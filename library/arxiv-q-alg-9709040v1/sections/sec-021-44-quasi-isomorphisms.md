@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9709040v1
-doc_title: "arXiv:q-alg/9709040v1 29 Sep 1997"
+doc_title: "Deformation quantization of Poisson manifolds"
 section_id: sec-021-44-quasi-isomorphisms
 section_title: "Quasi-isomorphisms"
 section_number: 4.4
@@ -8,6 +8,7 @@ pages: 13-13
 source_pdf: 9709040v1.pdf
 source_sha256: 8baf650d86c5b8ab
 toc_source: inferred
+doc_brief: "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products"
 ---
 L∞-morphisms generalize usual morphisms of diﬀerential graded Lie algebras. In particular, the ﬁrst
 Taylor coeﬃcient of an L∞-morphism from g1 to g2 is a morphism of complexes (g1, Q(g1)

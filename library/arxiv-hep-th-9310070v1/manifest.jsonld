@@ -11,14 +11,18 @@
   ],
   "title": "arxiv-hep-th-9310070v1",
   "contains": [
-    "library/arxiv-hep-th-9310070v1/sections/sec-000",
-    "library/arxiv-hep-th-9310070v1/sections/sec-001",
-    "library/arxiv-hep-th-9310070v1/sections/sec-002",
-    "library/arxiv-hep-th-9310070v1/sections/sec-003",
-    "library/arxiv-hep-th-9310070v1/sections/sec-004"
+    "library/arxiv-hep-th-9310070v1/sections/page-001",
+    "library/arxiv-hep-th-9310070v1/sections/page-002",
+    "library/arxiv-hep-th-9310070v1/sections/page-003",
+    "library/arxiv-hep-th-9310070v1/sections/page-004",
+    "library/arxiv-hep-th-9310070v1/sections/page-005",
+    "library/arxiv-hep-th-9310070v1/sections/page-006",
+    "library/arxiv-hep-th-9310070v1/sections/page-007",
+    "library/arxiv-hep-th-9310070v1/sections/page-008",
+    "library/arxiv-hep-th-9310070v1/sections/page-009"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
     "status": "stated",
@@ -39,8 +43,8 @@
       "stamp_date": "13 Oct 1993"
     },
     "doi": null,
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

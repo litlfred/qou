@@ -3,12 +3,17 @@
  "doc_id": "arxiv-1303.0720v2",
  "source_sha256": "389ab465e81a0667",
  "brief": "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight.",
- "extended": "**ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS**\n\n*ANTTI HAIMI AND HAAKAN HEDENMALM*\n\n41 pp, 47 sections.\n\n**Abstract.** We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight. This gives us a q-analytic Bergman kernel, which we use to extend the Bergman metric to this context. We recall that f is q-analytic if ¯∂q f = 0 for the given positive integer q. We also obtain asymptotic formulae for the q-analytic Bergman kernel in the setting of de- generating power weights e−2mQ, as the positive real parameter m tends to inﬁnity. This is only known for q = 1 in view of the work of Tian, Yau, Zelditch, and Catlin. We remark here that since a q-analytic function may be identiﬁed with a vector-valued holomorphic function, the Bergman space of q-analytic functions may be understood as a vector-valued holomorphic Bergman space supplied with a certain singular local metric on the vectors.\n\n**Outline.** 1 Overview; 2 Weighted polyanalytic Bergman spaces and ker; 2.1 Basic notation. We let C denote the comple; 2.2 The weighted Bergman spaces and kernels. L; 3 Musings on polyanalytic Bergman metrics; 3.1 Bergman’s ﬁrst metric. Stefan Bergman [5] ; 3.2 Bergman’s second metric. The second metric; 3.3 The ﬁrst polyanalytic Bergman metric. We c; 3.4 The second polyanalytic Bergman metric. We; 3.5 The two polyanalytic Bergman metrics in th; 4 Interlude: a priori control on point evaluat; 4.1 Introductory comments. Let us consider the; 4.2 The basic estimate. We begin with a lemma.; 5 Asymptotic expansion of polyanalytic Bergman; 4.4 The eﬀective estimate of the point evaluat; 5.1 The weighted polyanalytic Bergman space an; 5.2 Weighted Bergman kernel expansions for pow; 5.3 The connection with random normal matrix t",
+ "extended": "**ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS**\n\n*ANTTI HAIMI AND HAAKAN HEDENMALM*\n\n41 pp, 53 sections.\n\n**Abstract.** We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight. This gives us a q-analytic Bergman kernel, which we use to extend the Bergman metric to this context. We recall that f is q-analytic if ¯∂q f = 0 for the given positive integer q. We also obtain asymptotic formulae for the q-analytic Bergman kernel in the setting of de- generating power weights e−2mQ, as the positive real parameter m tends to inﬁnity. This is only known for q = 1 in view of the work of Tian, Yau, Zelditch, and Catlin. We remark here that since a q-analytic function may be identiﬁed with a vector-valued holomorphic function, the Bergman space of q-analytic functions may be understood as a vector-valued holomorphic Bergman space supplied with a certain singular local metric on the vectors.\n\n**Outline.** Front matter; 1 Overview; 2 Weighted polyanalytic Bergman spaces and ker; 2.1 Basic notation; 2.2 The weighted Bergman spaces and kernels; 2.3 The weighted polyanalytic Bergman spaces a; 2.4 The polyanalytic Bergman space in the mode; 3 Musings on polyanalytic Bergman metrics; 3.3 The first polyanalytic Bergman metric; 3.4 The second polyanalytic Bergman metric; 3.5 The two polyanalytic Bergman metrics in th; 4 Interlude: a priori control on point evaluat; 4.1 Introductory comments; 4.2 The basic estimate; 4.3 Applications of the basic estimate; 4.4 The effective estimate of the point evalua; 5 Asymptotic expansion of polyanalytic Bergman; 5.1 The weighted polyanalytic Bergman space an",
  "tokens": {
   "brief": 40,
-  "extended": 446
+  "extended": 415
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-overview",
    "title": "Overview",
@@ -20,43 +25,43 @@
    "pages": "1-1"
   },
   {
-   "id": "sec-002-21-basic-notation-we-let-c-denote-the-complex-pl",
-   "title": "Basic notation. We let C denote the complex plane and R the real line. For z0 ∈C and",
+   "id": "sec-002-21-basic-notation",
+   "title": "Basic notation",
    "pages": "1-2"
   },
   {
-   "id": "sec-003-22-the-weighted-bergman-spaces-and-kernels-let-ω",
-   "title": "The weighted Bergman spaces and kernels. Let Ωbe a domain in C, and let ω : Ω→R+",
+   "id": "sec-003-22-the-weighted-bergman-spaces-and-kernels",
+   "title": "The weighted Bergman spaces and kernels",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-004-23-the-weighted-polyanalytic-bergman-spaces-and",
+   "title": "The weighted polyanalytic Bergman spaces and kernels",
    "pages": "2-4"
   },
   {
-   "id": "sec-004-3-musings-on-polyanalytic-bergman-metrics",
-   "title": "Musings on polyanalytic Bergman metrics",
+   "id": "sec-005-24-the-polyanalytic-bergman-space-in-the-model-c",
+   "title": "The polyanalytic Bergman space in the model case of the unit disk with constant weight",
    "pages": "4-4"
   },
   {
-   "id": "sec-005-31-bergmans-ﬁrst-metric-stefan-bergman-5-conside",
-   "title": "Bergman’s ﬁrst metric. Stefan Bergman [5] considered the Bergman kernel for the weight",
+   "id": "sec-006-3-musings-on-polyanalytic-bergman-metrics",
+   "title": "Musings on polyanalytic Bergman metrics",
    "pages": "4-5"
   },
   {
-   "id": "sec-006-32-bergmans-second-metric-the-second-metric-is-r",
-   "title": "Bergman’s second metric. The second metric is related to the Gaussian curvature. The",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-007-33-the-ﬁrst-polyanalytic-bergman-metric-we-conti",
-   "title": "The ﬁrst polyanalytic Bergman metric. We continue the setting of the preceding subsec-",
+   "id": "sec-007-33-the-first-polyanalytic-bergman-metric",
+   "title": "The first polyanalytic Bergman metric",
    "pages": "5-6"
   },
   {
-   "id": "sec-008-34-the-second-polyanalytic-bergman-metric-we-tur",
-   "title": "The second polyanalytic Bergman metric. We turn to Bergman’s second metric. The",
+   "id": "sec-008-34-the-second-polyanalytic-bergman-metric",
+   "title": "The second polyanalytic Bergman metric",
    "pages": "6-6"
   },
   {
    "id": "sec-009-35-the-two-polyanalytic-bergman-metrics-in-the-m",
-   "title": "The two polyanalytic Bergman metrics in the model case of the unit disk with constant",
+   "title": "The two polyanalytic Bergman metrics in the model case of the unit disk with constant weight",
    "pages": "6-7"
   },
   {
@@ -65,88 +70,88 @@
    "pages": "7-7"
   },
   {
-   "id": "sec-011-41-introductory-comments-let-us-consider-the-uni",
-   "title": "Introductory comments. Let us consider the unit disk D, and a given subharmonic func-",
+   "id": "sec-011-41-introductory-comments",
+   "title": "Introductory comments",
    "pages": "7-7"
   },
   {
-   "id": "sec-012-42-the-basic-estimate-we-begin-with-a-lemma-we-d",
-   "title": "The basic estimate. We begin with a lemma. We decompose the given bianalytic function",
-   "pages": "7-9"
+   "id": "sec-012-42-the-basic-estimate",
+   "title": "The basic estimate",
+   "pages": "7-8"
   },
   {
-   "id": "sec-013-5-asymptotic-expansion-of-polyanalytic-bergman-k",
-   "title": "Asymptotic expansion of polyanalytic Bergman kernels",
-   "pages": "9-9"
+   "id": "sec-013-43-applications-of-the-basic-estimate",
+   "title": "Applications of the basic estimate",
+   "pages": "8-9"
   },
   {
-   "id": "sec-014-44-the-eﬀective-estimate-of-the-point-evaluation",
-   "title": "The eﬀective estimate of the point evaluation. The problem with Proposition 4.3 as it",
+   "id": "sec-014-44-the-effective-estimate-of-the-point-evaluatio",
+   "title": "The effective estimate of the point evaluation",
    "pages": "9-10"
   },
   {
-   "id": "sec-015-51-the-weighted-polyanalytic-bergman-space-and-k",
-   "title": "The weighted polyanalytic Bergman space and kernel for power weights. As before, Ω",
+   "id": "sec-015-5-asymptotic-expansion-of-polyanalytic-bergman-k",
+   "title": "Asymptotic expansion of polyanalytic Bergman kernels",
    "pages": "10-10"
   },
   {
-   "id": "sec-016-52-weighted-bergman-kernel-expansions-for-power",
-   "title": "Weighted Bergman kernel expansions for power weights. We should observe ﬁrst that",
+   "id": "sec-016-51-the-weighted-polyanalytic-bergman-space-and-k",
+   "title": "The weighted polyanalytic Bergman space and kernel for power weights",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-017-52-weighted-bergman-kernel-expansions-for-power",
+   "title": "Weighted Bergman kernel expansions for power weights",
    "pages": "10-11"
   },
   {
-   "id": "sec-017-53-the-connection-with-random-normal-matrix-theo",
-   "title": "The connection with random normal matrix theory. Apart from to the connection with to",
+   "id": "sec-018-53-the-connection-with-random-normal-matrix-theo",
+   "title": "The connection with random normal matrix theory",
    "pages": "11-11"
   },
   {
-   "id": "sec-018-54-the-polyanalytic-bergman-spaces-and-landau-le",
-   "title": "The polyanalytic Bergman spaces and Landau levels. The polyanalytic spaces PA2",
-   "pages": "11-13"
+   "id": "sec-019-54-the-polyanalytic-bergman-spaces-and-landau-le",
+   "title": "The polyanalytic Bergman spaces and Landau levels",
+   "pages": "11-12"
   },
   {
-   "id": "sec-019-6-tools-from-the-approach-of-berman-berndtsson-s",
-   "title": "Tools from the approach of Berman-Berndtsson-Sj¨ostrand",
+   "id": "sec-020-55-asymptotic-analysis-of-weighted-polyanalytic",
+   "title": "Asymptotic analysis of weighted polyanalytic Bergman kernels",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-021-6-tools-from-the-approach-of-berman-berndtsson-s",
+   "title": "Tools from the approach of Berman-Berndtsson-Sjöstrand",
    "pages": "13-13"
   },
   {
-   "id": "sec-020-61-assumptions-on-the-potential-we-ﬁx-a-c-smooth",
-   "title": "Assumptions on the potential. We ﬁx a C∞-smooth simply connected bounded domain",
+   "id": "sec-022-61-assumptions-on-the-potential",
+   "title": "Assumptions on the potential",
    "pages": "13-14"
   },
   {
-   "id": "sec-021-2-re-qz-w-qw-qz-1",
-   "title": "Re Q(z, w) −Q(w) −Q(z) ≤−1",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-022-62-the-phase-function-we-now-introduce-the-phase",
-   "title": "The phase function. We now introduce the phase function:",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-023-2-rez-wθz-w-2-re-qz-w-2qw",
-   "title": "Re[(z −w)θ(z, w)] = 2 Re Q(z, w) −2Q(w)",
+   "id": "sec-023-62-the-phase-function",
+   "title": "The phase function",
    "pages": "14-14"
   },
   {
    "id": "sec-024-63-approximate-local-reproducing-and-bergman-ker",
-   "title": "Approximate local reproducing and Bergman kernels. In [8], the point of departure is",
+   "title": "Approximate local reproducing and Bergman kernels",
    "pages": "14-16"
   },
   {
-   "id": "sec-025-64-a-diﬀerentialoperator-and-negligible-amplitud",
-   "title": "A diﬀerentialoperator and negligible amplitudes. The corrective algorithm involves the",
+   "id": "sec-025-64-a-differential-operator-and-negligible-amplit",
+   "title": "A differential operator and negligible amplitudes",
    "pages": "16-16"
   },
   {
-   "id": "sec-026-65-a-formal-diﬀusion-operator-and-the-characteri",
-   "title": "A formal diﬀusion operator and the characterization of negligible amplitudes. Next, to",
+   "id": "sec-026-65-a-formal-diffusion-operator-and-the-character",
+   "title": "A formal diffusion operator and the characterization of negligible amplitudes",
    "pages": "16-18"
   },
   {
    "id": "sec-027-66-the-local-asymptotics-for-the-weighted-bergma",
-   "title": "The local asymptotics for the weighted Bergman kernel: the corrective algorithm. We",
+   "title": "The local asymptotics for the weighted Bergman kernel: the corrective algorithm",
    "pages": "18-20"
   },
   {
@@ -155,92 +160,117 @@
    "pages": "20-20"
   },
   {
-   "id": "sec-029-72-the-initial-approximate-local-bi-reproducing",
-   "title": "The initial approximate local bi-reproducing kernel. We now turn our attention to the",
-   "pages": "20-23"
+   "id": "sec-029-71-the-local-ring-and-module",
+   "title": "The local ring and module",
+   "pages": "20-20"
   },
   {
-   "id": "sec-030-75-the-characterization-of-bi-negligible-amplitu",
-   "title": "The characterization of bi-negligible amplitudes. We need to ﬁnd the bianalytic ana-",
-   "pages": "23-25"
+   "id": "sec-030-72-the-initial-approximate-local-bi-reproducing",
+   "title": "The initial approximate local bi-reproducing kernel",
+   "pages": "20-22"
   },
   {
-   "id": "sec-031-77-the-local-asymptotics-for-the-weighted-bianal",
-   "title": "The local asymptotics for the weighted bianalytic Bergman kernel: the corrective algo-",
+   "id": "sec-031-73-approximate-local-kernels",
+   "title": "Approximate local kernels",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-032-74-bi-negligible-amplitudes",
+   "title": "Bi-negligible amplitudes",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-033-75-the-characterization-of-bi-negligible-amplitu",
+   "title": "The characterization of bi-negligible amplitudes",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-034-76-the-local-uniqueness-criterion-for-bianalytic",
+   "title": "The local uniqueness criterion for bianalytic kernels",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-035-77-the-local-asymptotics-for-the-weighted-bianal",
+   "title": "The local asymptotics for the weighted bianalytic Bergman kernel: the corrective algorithm I",
    "pages": "25-28"
   },
   {
-   "id": "sec-032-78-the-local-asymptotics-for-the-weighted-bianal",
-   "title": "The local asymptotics for the weighted bianalytic Bergman kernel: the corrective al-",
+   "id": "sec-036-78-the-local-asymptotics-for-the-weighted-bianal",
+   "title": "The local asymptotics for the weighted bianalytic Bergman kernel: the corrective algorithm II",
    "pages": "28-29"
   },
   {
-   "id": "sec-033-0-a-more-precise-calculation",
-   "title": "A more precise calculation",
+   "id": "sec-037-79-the-local-asymptotics-for-the-weighted-bianal",
+   "title": "The local asymptotics for the weighted bianalytic Bergman kernel: the corrective algorithm III",
    "pages": "29-31"
   },
   {
-   "id": "sec-034-8-a-priori-diagonal-estimates-of-weighted-bergma",
+   "id": "sec-038-8-a-priori-diagonal-estimates-of-weighted-bergma",
    "title": "A priori diagonal estimates of weighted Bergman kernels",
    "pages": "31-31"
   },
   {
-   "id": "sec-035-81-estimation-of-point-evaluations-for-local-wei",
-   "title": "Estimation of point evaluations for local weighted Bergman spaces. The spaces PA2",
+   "id": "sec-039-81-estimation-of-point-evaluations-for-local-wei",
+   "title": "Estimation of point evaluations for local weighted Bergman spaces",
    "pages": "31-33"
   },
   {
-   "id": "sec-036-82-estimation-of-the-weighted-bergman-kernel-on",
-   "title": "Estimation of the weighted Bergman kernel on the diagonal. We recall that PA2",
+   "id": "sec-040-82-estimation-of-the-weighted-bergman-kernel-on",
+   "title": "Estimation of the weighted Bergman kernel on the diagonal",
    "pages": "33-33"
   },
   {
-   "id": "sec-037-9-bergman-kernels-from-local-to-global",
+   "id": "sec-041-9-bergman-kernels-from-local-to-global",
    "title": "Bergman kernels: from local to global",
    "pages": "33-33"
   },
   {
-   "id": "sec-038-91-purpose-of-the-section-in-this-section-we-sho",
-   "title": "Purpose of the section. In this section we show how the approximate local Bergman",
-   "pages": "33-35"
+   "id": "sec-042-91-purpose-of-the-section",
+   "title": "Purpose of the section",
+   "pages": "33-33"
   },
   {
-   "id": "sec-039-94-analysis-of-the-second-term-in-the-pointwise",
-   "title": "Analysis of the second term in the pointwise estimate I. We proceed to estimate the",
+   "id": "sec-043-92-the-basic-pointwise-estimate",
+   "title": "The basic pointwise estimate",
+   "pages": "33-34"
+  },
+  {
+   "id": "sec-044-93-analysis-of-the-first-term-in-the-pointwise-e",
+   "title": "Analysis of the first term in the pointwise estimate",
+   "pages": "34-35"
+  },
+  {
+   "id": "sec-045-94-analysis-of-the-second-term-in-the-pointwise",
+   "title": "Analysis of the second term in the pointwise estimate I",
    "pages": "35-35"
   },
   {
-   "id": "sec-040-95-digression-on-hörmander-type-estimates-and-an",
-   "title": "Digression on Hörmander-type estimates and an obstacle problem. We should like to",
-   "pages": "35-37"
+   "id": "sec-046-95-digression-on-hörmander-type-estimates-and-an",
+   "title": "Digression on Hörmander-type estimates and an obstacle problem",
+   "pages": "35-36"
   },
   {
-   "id": "sec-041-97-the-pointwise-distance-to-the-weighted-bergma",
-   "title": "The pointwise distance to the weighted Bergman kernel. Here, we apply the estimates",
+   "id": "sec-047-96-analysis-of-the-second-term-in-the-pointwise",
+   "title": "Analysis of the second term in the pointwise estimate II",
+   "pages": "36-37"
+  },
+  {
+   "id": "sec-048-97-the-pointwise-distance-to-the-weighted-bergma",
+   "title": "The pointwise distance to the weighted Bergman kernel",
    "pages": "37-37"
   },
   {
-   "id": "sec-042-10-bianalytic-extensions-of-bergmans-metrics-and",
-   "title": "Bianalytic extensions of Bergman’s metrics and asymptotic analysis",
+   "id": "sec-049-10-bianalytic-extensions-of-bergmans-metrics-and",
+   "title": "Bianalytic extensions of Bergman's metrics and asymptotic analysis",
    "pages": "37-37"
   },
   {
-   "id": "sec-043-101-purpose-of-the-section-in-this-section-we-ap",
-   "title": "Purpose of the section. In this section, we apply the asymptotic formulae obtained in",
-   "pages": "37-38"
+   "id": "sec-050-101-purpose-of-the-section",
+   "title": "Purpose of the section",
+   "pages": "37-40"
   },
   {
-   "id": "sec-044-102-bergmans-ﬁrst-metric-our-starting-point-is-t",
-   "title": "Bergman’s ﬁrst metric. Our starting point is the abschnitt b⟨2,k⟩with k = 0:",
-   "pages": "38-39"
-  },
-  {
-   "id": "sec-045-103-bergmans-second-metric-given-that-theorem-93",
-   "title": "Bergman’s second metric. Given that Theorem 9.3 extends to apply to the lifted kernel,",
-   "pages": "39-40"
-  },
-  {
-   "id": "sec-046-references",
+   "id": "sec-051-references",
    "title": "References",
    "pages": "40-41"
   }

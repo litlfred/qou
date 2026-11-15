@@ -8,7 +8,7 @@
   "pages": 44,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,31 +21,32 @@
    "stamp_date": "11 Feb 1993"
   },
   "doi": null,
-  "title": "arXiv:hep-ph/9302246v1 11 Feb 1993",
+  "title": "Massive Spin-1 Field Chiral Lagrangian from an Extended Nambu-Jona-Lasinio Model of QCD",
   "authors_raw": "Joaquim Prades",
   "title_lines": [
    "Massive Spin-1 Field Chiral Lagrangian from",
-   "an Extended Nambu\u2013Jona-Lasinio Model of QCD"
+   "an Extended Nambu–Jona-Lasinio Model of QCD"
   ],
-  "abstract": "We present a calculation of the coupling constants in the massive spin-1 \ufb01eld chiral Lagrangian to chiral O(p3) in the context of the extended Nambu\u2013Jona-Lasinio model described in Ref. [1]. Phenomenological applications of this Lagrangian to anomalous and non-anomalous low-energy hadronic transitions involving spin-1 particles are also discussed. January 1993 CPT-93/P.2871",
+  "abstract": "We present a calculation of the coupling constants in the massive spin-1 ﬁeld chiral Lagrangian to chiral O(p3) in the context of the extended Nambu–Jona-Lasinio model described in Ref. [1]. Phenomenological applications of this Lagrangian to anomalous and non-anomalous low-energy hadronic transitions involving spin-1 particles are also discussed. January 1993 CPT-93/P.2871",
   "docinfo": {
    "Title": "arXiv:hep-ph/9302246v1  11 Feb 1993",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "CreationDate": "D:20210728002952-04'00'"
   },
-  "title_raw": "Massive Spin-1 Field Chiral Lagrangian from an Extended Nambu\u2013Jona-Lasinio Model of QCD",
+  "title_raw": "Massive Spin-1 Field Chiral Lagrangian from an Extended Nambu–Jona-Lasinio Model of QCD",
   "title_source": "metadata",
   "title_verified": true,
   "title_evidence": {
    "metadata": "arXiv:hep-ph/9302246v1 11 Feb 1993",
-   "heading": "Massive Spin-1 Field Chiral Lagrangian from an Extended Nambu\u2013Jona-Lasinio Model of QCD",
-   "text": "Massive Spin-1 Field Chiral Lagrangian from an Extended Nambu\u2013Jona-Lasinio Model of QCD",
+   "heading": "Massive Spin-1 Field Chiral Lagrangian from an Extended Nambu–Jona-Lasinio Model of QCD",
+   "text": "Massive Spin-1 Field Chiral Lagrangian from an Extended Nambu–Jona-Lasinio Model of QCD",
    "corroborated_by": [
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:hep-ph/9302246v1 11 Feb 1993"
  },
  "toc": [
   {
@@ -154,19 +155,6 @@
   },
   {
    "level": 2,
-   "title": "$a_1$-decays",
-   "page": 30,
-   "source": "inferred",
-   "number": "6.3",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": "29"
-  },
-  {
-   "level": 2,
    "title": "$K_L \\to \\pi^0 \\gamma^* \\gamma^* \\to \\pi^0 e^+ e^-$",
    "page": 33,
    "source": "inferred",
@@ -211,7 +199,7 @@
   {
    "kind": "table",
    "number": "1",
-   "title": "SU(3)-symmetry factors (CV P \u03b3) and intermediate resonance (V \u2032) for the V \u2192P\u03b3 (P \u2192V \u03b3) decays",
+   "title": "SU(3)-symmetry factors (CV P γ) and intermediate resonance (V ′) for the V →Pγ (P →V γ) decays",
    "page": 21,
    "confidence": 0.8,
    "evidence": [
@@ -223,7 +211,7 @@
   {
    "kind": "table",
    "number": "2",
-   "title": "Partial widths in keV corresponding to V \u2192P\u03b3 and P \u2192V \u03b3 decays. Process",
+   "title": "Partial widths in keV corresponding to V →Pγ and P →V γ decays. Process",
    "page": 22,
    "confidence": 0.8,
    "evidence": [
@@ -235,7 +223,7 @@
   {
    "kind": "table",
    "number": "3",
-   "title": "Partial widths in keV corresponding to V \u2192\u03c0\u03c0\u03c0, V \u2192P1P2\u03b3, V \u2192V \u2032\u03b3",
+   "title": "Partial widths in keV corresponding to V →πππ, V →P1P2γ, V →V ′γ",
    "page": 24,
    "confidence": 0.8,
    "evidence": [
@@ -247,7 +235,7 @@
   {
    "kind": "table",
    "number": "4",
-   "title": "SU(3)-symmetry factors (CV P P \u03b3) and intermediate resonances (V \u2032, V \u2032\u2032) for the V 0 \u2192P 0P 0\u03b3 decays",
+   "title": "SU(3)-symmetry factors (CV P P γ) and intermediate resonances (V ′, V ′′) for the V 0 →P 0P 0γ decays",
    "page": 26,
    "confidence": 0.8,
    "evidence": [
@@ -259,7 +247,7 @@
   {
    "kind": "table",
    "number": "5",
-   "title": "Partial widths in keV corresponding to \u03c6-decays assuming non-ideal \u03c9 \u2212\u03c6",
+   "title": "Partial widths in keV corresponding to φ-decays assuming non-ideal ω −φ",
    "page": 28,
    "confidence": 0.8,
    "evidence": [
@@ -283,7 +271,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "Diagrams contributing to the process V \u2192P\u03b3 (P \u2192V \u03b3)",
+   "title": "Diagrams contributing to the process V →Pγ (P →V γ)",
    "page": 39,
    "confidence": 0.8,
    "evidence": [
@@ -295,7 +283,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "Pion and kaon chiral loops contribution to the process \u03c1 \u2192\u03c0\u03b3",
+   "title": "Pion and kaon chiral loops contribution to the process ρ →πγ",
    "page": 39,
    "confidence": 0.8,
    "evidence": [
@@ -307,7 +295,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "Diagrams contributing to the process V \u2192\u03c0\u03c0\u03c0",
+   "title": "Diagrams contributing to the process V →πππ",
    "page": 39,
    "confidence": 0.8,
    "evidence": [
@@ -319,7 +307,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "Diagrams contributing to the process V \u2192P1P2\u03b3",
+   "title": "Diagrams contributing to the process V →P1P2γ",
    "page": 39,
    "confidence": 0.8,
    "evidence": [
@@ -331,7 +319,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "Pion and kaon chiral loops contribution to the process P 0 \u2192\u03b3\u03b3\u2217",
+   "title": "Pion and kaon chiral loops contribution to the process P 0 →γγ∗",
    "page": 39,
    "confidence": 0.8,
    "evidence": [
@@ -343,7 +331,7 @@
   {
    "kind": "figure",
    "number": "6",
-   "title": "Vector-exchange contribution to the process P 0 \u2192\u03b3\u03b3\u2217",
+   "title": "Vector-exchange contribution to the process P 0 →γγ∗",
    "page": 39,
    "confidence": 0.8,
    "evidence": [
@@ -367,7 +355,7 @@
   {
    "kind": "figure",
    "number": "8",
-   "title": "Vector-exchange contribution to the KL \u2192\u03c00\u03b3\u2217\u03b3\u2217\u2192\u03c00e+e\u2212transition",
+   "title": "Vector-exchange contribution to the KL →π0γ∗γ∗→π0e+e−transition",
    "page": 39,
    "confidence": 0.8,
    "evidence": [
@@ -769,8 +757,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 633,
-   "n_words": 86,
+   "n_chars": 631,
+   "n_words": 85,
    "label_start": null,
    "label_end": "1"
   },
@@ -781,8 +769,8 @@
    "level": 1,
    "page_start": 2,
    "page_end": 2,
-   "n_chars": 1858,
-   "n_words": 304,
+   "n_chars": 1856,
+   "n_words": 303,
    "label_start": "1",
    "label_end": "1"
   },
@@ -792,81 +780,93 @@
    "title": "The low-energy chiral Lagrangians",
    "level": 1,
    "page_start": 2,
-   "page_end": 12,
-   "n_chars": 12987,
-   "n_words": 2776,
+   "page_end": 8,
+   "n_chars": 7358,
+   "n_words": 1589,
    "label_start": "1",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-002-3-the-enjl-cut-off-model-of-qcd",
+   "number": "3",
+   "title": "The ENJL cut-off model of QCD",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 12,
+   "n_chars": 5633,
+   "n_words": 1178,
+   "label_start": "7",
    "label_end": "11"
   },
   {
-   "id": "sec-002-4-the-anomalous-sector",
+   "id": "sec-003-4-the-anomalous-sector",
    "number": "4",
    "title": "The anomalous sector",
    "level": 1,
    "page_start": 12,
    "page_end": 16,
-   "n_chars": 7211,
-   "n_words": 1447,
+   "n_chars": 7218,
+   "n_words": 1445,
    "label_start": "11",
    "label_end": "15"
   },
   {
-   "id": "sec-003-5-the-non-anomalous-sector",
+   "id": "sec-004-5-the-non-anomalous-sector",
    "number": "5",
    "title": "The non-anomalous sector",
    "level": 1,
    "page_start": 16,
    "page_end": 19,
-   "n_chars": 2992,
-   "n_words": 683,
+   "n_chars": 3006,
+   "n_words": 682,
    "label_start": "15",
    "label_end": "18"
   },
   {
-   "id": "sec-004-6-phenomenological-applications",
+   "id": "sec-005-6-phenomenological-applications",
    "number": "6",
    "title": "Phenomenological applications",
    "level": 1,
    "page_start": 19,
    "page_end": 19,
-   "n_chars": 1074,
-   "n_words": 165,
+   "n_chars": 1100,
+   "n_words": 166,
    "label_start": "18",
    "label_end": "18"
   },
   {
-   "id": "sec-005-61-vector-resonance-decays",
+   "id": "sec-006-61-vector-resonance-decays",
    "number": "6.1",
    "title": "Vector resonance decays",
    "level": 2,
    "page_start": 19,
    "page_end": 35,
-   "n_chars": 22372,
-   "n_words": 4770,
+   "n_chars": 22344,
+   "n_words": 4755,
    "label_start": "18",
    "label_end": "34"
   },
   {
-   "id": "sec-006-7-conclusions",
+   "id": "sec-007-7-conclusions",
    "number": "7",
    "title": "Conclusions",
    "level": 1,
    "page_start": 35,
    "page_end": 36,
-   "n_chars": 2262,
+   "n_chars": 2271,
    "n_words": 382,
    "label_start": "34",
    "label_end": "35"
   },
   {
-   "id": "sec-007-acknowledgements",
+   "id": "sec-008-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
    "level": 1,
    "page_start": 36,
    "page_end": 44,
-   "n_chars": 5117,
-   "n_words": 1058,
+   "n_chars": 5108,
+   "n_words": 1055,
    "label_start": "35",
    "label_end": null
   }
@@ -874,7 +874,7 @@
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 12,
+  "toc_entries": 11,
   "toc_inferred_entries": 12,
   "toc_inferred_mean_confidence": 1.0,
   "toc_inferred_empty_share": 0.0,
@@ -885,13 +885,22 @@
    "count": 0,
    "items": []
   },
-  "sections": 9,
-  "chars_total": 56506,
+  "sections": 10,
+  "chars_total": 56525,
+  "furniture_lines_stripped": 40,
+  "headings_tidied": [
+   {
+    "title": "$a_1$-decays",
+    "page": 30,
+    "action": "dropped",
+    "why": "opens in lower case"
+   }
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 12,
-   "overlaid": 7,
+   "overlaid": 8,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -914,13 +923,21 @@
     {
      "id": "sec-001-2-the-low-energy-chiral-lagrangians",
      "title": "The low-energy chiral Lagrangians",
-     "prose_ratio": 0.973,
-     "coverage_ratio": 0.98,
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.97,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-4-the-anomalous-sector",
+     "id": "sec-002-3-the-enjl-cut-off-model-of-qcd",
+     "title": "The ENJL cut-off model of QCD",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-4-the-anomalous-sector",
      "title": "The anomalous sector",
      "prose_ratio": 0.962,
      "coverage_ratio": 1.0,
@@ -928,7 +945,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-5-the-non-anomalous-sector",
+     "id": "sec-004-5-the-non-anomalous-sector",
      "title": "The non-anomalous sector",
      "prose_ratio": 0.95,
      "coverage_ratio": 0.988,
@@ -936,7 +953,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-6-phenomenological-applications",
+     "id": "sec-005-6-phenomenological-applications",
      "title": "Phenomenological applications",
      "prose_ratio": 0.977,
      "coverage_ratio": 1.0,
@@ -944,7 +961,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-61-vector-resonance-decays",
+     "id": "sec-006-61-vector-resonance-decays",
      "title": "Vector resonance decays",
      "prose_ratio": 0.937,
      "coverage_ratio": 1.0,
@@ -952,19 +969,19 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-7-conclusions",
+     "id": "sec-007-7-conclusions",
      "title": "Conclusions",
      "prose_ratio": 0.992,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-acknowledgements",
+     "id": "sec-008-acknowledgements",
      "title": "Acknowledgements",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.273,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

@@ -1,0 +1,1 @@
+However, one should use a system of tangent vectors stable (up to multiplication by roots of unity) by the octahedral group to use this symmetry: one should use the straight line path from 10 to (−2)1.

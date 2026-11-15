@@ -1,0 +1,75 @@
+---
+doc_id: lect-mathematical-ideas-notions-qft-2002
+doc_title: "Mathematical ideas and notions of quantum field theory"
+section_id: page-067
+section_title: "Page 67"
+pages: 67-67
+pdf_page: 67
+source_pdf: lect-mathematical-ideas-notions-qft-2002.pdf
+source_sha256: 95cac1ccd6c80226
+text_source: ocr
+granularity: page
+doc_brief: "Mathematical ideas and notions of quantum field theory — 78 sections: Page 1; Page 2; Page 3"
+---
+MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 67
+
+Proof. The integral equals 478, which is Pf(B). oO
+
+midé ?
+
+Example. Let V is a finite dimensional odd vector space, and Y = V @ V*.
+The space Y has a canonical volume element dudv*, defined as follows: if e1,...,e€m
+be a basis of V and e?, ...,e% is the dual basis of V* then dudu* = e; Aej... Aen Aen.
+Let dy = (dvdv*)~' be the corresponding supervolume element.
+
+Let A : V > V be a linear operator. Then we can define an even smooth
+function S on the odd space Y as follows: S(v,v*) = (Av,v*). More explicitly, if
+& be coordinates on V corresponding to the basis e;, and 7; the dual system of
+
+coordinates on V*, then
+
+S (Ex Sms Ms 3m) = Dain;
+where (a;;) is the matrix of A in the basis ¢;.
+
+Proposition 9.8.
+[ eS dy = det A
+Yy
+
+Proof. We have S(v, vs) = $B((v, v«), (v,vs)), where B is the skew form on IIY,
+
+which is given by the formula B((v,v*), (w, w*)) = (Av, w*) — (Aw,v*). It is easy
+
+to see that Pf£(B) = det(A), so Proposition 9.8 follows from Proposition 9.7.
+Another proof can be obtained by direct evaluation of the top coefficient. in|
+
+9.10. The Wick formula in the odd case. Let V be a 2m-dimensional odd
+space with a volume form dé, and B € S?V a nondegenerate form (symmetric
+in the supersense and antisymmetric in the usual sense). Let \1,...,An be linear
+functions on V (regarded as the usual space). Then Aj,...,An can be regarded as
+odd smooth functions on the superspace V.
+
+Theorem 9.9.
+| Ar (€).--An(€)e7 229 (de)7! = Pf(—B)P£(B7! (Aj, ;))-
+v
+
+(By definition, this is zero if n is odd). In other words, we have:
+
+[Grn QeFPEM AG) = PKB) Dee TP (BO Ano))
+
+oem  i€{1,...,2m},i<e(i)
+
+Proof. We prove the second formula. Choose a basis e; of V with respect to which
+the form B is standard: B(e;,e;) = 1 if 7 = 2 — 1,1 = 2i, and B(e;,e) = 0
+for other pairs j <1. Since both sides of the formula are polylinear with respect
+to A1,..,An, it suffices to check it if Ar = e7,,..., An = e7,. This is easily done
+by direct computation (in the sum on the right hand side, only one term may be
+nonzero). Oo
+
+10. QUANTUM MECHANICS FOR FERMIONS
+
+10.1. Feynman calculus in the supercase. Wick’s theorem allows us to extend
+Feynman calculus to the supercase. Namely, let V = Vo @V, be a finite dimensional
+real superspace with a supervolume element du, equipped with a symmetric nonde-
+generate form B = Bo ® B, (Bo > 0). Let S(v) = $B(v,v) + Dy s3 Bolo) be
+
+an even function on V (the action). Note that B,, r > 3 can contain mixed terms

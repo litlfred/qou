@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.995
 latex_coverage_ratio: 0.955
+doc_brief: "arXiv:math-ph/0010012v1 10 Oct 2000 — We review some recent results on random polynomials and their generalizations in complex and symplectic geometry."
 ---
 This is a short survey of some results of P. Bleher, J. Neuheisel, B. Shiffman and the author on random polynomials and their generalizations to holomorphic (and almost-holomorphic) sections of ample line bundles, mainly following [@BSZ1; @BSZ2; @BSZ3; @N; @SZ1; @SZ2; @SZ3; @SZ4; @Ze1; @Ze2]. Motivation to study random polynomials and their generalizations in geometry comes from several sources:
 

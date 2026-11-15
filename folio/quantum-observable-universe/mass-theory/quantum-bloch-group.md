@@ -17,4 +17,4 @@ exponential form**.
 The connection to the QOU framework — why $\Phi_1$ is a quantum
 dilogarithm, the Kashaev invariant, and the pre-archimedean
 refinement of $\mathfrak{B}(q)$ over the Habiro ring — is developed
-in [the follow-on remark](#rem:quantum-bloch-group-framework-connection).
+in [the follow-on remark](#rem:quantum-bloch-group-framework-connection). A functorial setting for state-sum invariants built from quantum dilogarithms is quantum hyperbolic field theory: for each odd $N$ it assigns to a $3$-manifold with a framed tangle and a $PSL(2,\mathbb{C})$-character a tensor built from matrix dilogarithms \cite[\S1, \S2.1]{baseilhac-benedetti2007}.

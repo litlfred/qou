@@ -7,10 +7,11 @@ section_number: 2.3
 pages: 6-7
 source_pdf: 2311.02632v2.pdf
 source_sha256: 0da5ba097b79340d
-doc_brief: "SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE — The Fricke-Macbeath surface is the unique Hurwitz surface of genus 7 with 504 conformal automorphisms."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.972
-latex_coverage_ratio: 0.939
+latex_coverage_ratio: 0.964
+doc_brief: "SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE — The Fricke-Macbeath surface is the unique Hurwitz surface of genus 7 with 504 conformal automorphisms."
 ---
 Let $X=\Gamma\backslash \uhp$ be a compact Riemann surface of genus $g\geq 2$, where $\Gamma$ is discrete, torsion-free subgroup of $\PSL_2(\R)$. Hence, every non-trivial element of $\Gamma$ is hyperbolic.
 

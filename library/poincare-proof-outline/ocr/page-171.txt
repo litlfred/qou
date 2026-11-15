@@ -1,0 +1,73 @@
+fix ryab
+show 4 z. p-between x y z A p-congruent y za b
+using segment-construction
+unfolding p-congruent-def
+by transfer (simp, blast)
+next
+
+5. Five segment
+
+fix cyza' yz’ uu’
+
+show x # y A p-between x y z A p-between x’ y’ z' A
+p-congruent x y x’ y' A p-congruent y zy’ z' A
+p-congruent 2 ux’ u' A p-congruent y uy! u’ —
+p-congruent zu z'u’
+unfolding p-congruent-def
+apply transfer
+using five-segment-axiom
+by meson
+
+next
+
+6. Identity of betweeness
+
+fix ry
+show p-between ryt —-> r=y
+by transfer (simp add: poincare-between-sum-distances poincare-distance-eq-0-iff poincare-distance-sym)
+next
+
+7. Pasch
+
+fix ryzuv
+show p-between x u z A p-between y v z —> (A a. p-between ua y A p-between x a v)
+apply transfer
+using Pasch
+by blast
+next
+
+8. Lower dimension
+
+show J a. 4 6.4 c. 7 p-between a b c A 7 p-between b c a A 7 p-between c a b
+apply (transfer)
+using lower-dimension-axiom
+by simp
+next
+
+9. Upper dimension
+
+fix ryzuv
+show p-congruent «ux v A p-congruent y uy uv A p-congruent zuzvu A u#v—
+p-between x y z V p-between y zx V p-between zx y
+unfolding p-congruent-def
+by (transfer, simp add: upper-dimension-axiom)
+qed
+qed
+
+interpretation Poincare TarskiHyperbolic: TarskiHyperbolic
+where cong = p-congruent and betw = p-between
+proof
+
+10. Euclid negation
+
+show 5 abc dt. p-betweenadt A p-betweenbdc\a#dA
+(V « y. p-between a b x A p-between a c y —+ 7 p-between x t y)
+using negated-euclidean-ariom
+by transfer (auto, blast)
+next
+fix aal «2
+assume 7 TarskiAbsolute.on-line p-between a x1 «2
+hence — p-on-line a x1 £2
+using TarskiAbsolute.on-line-def|OF Poincare TarskiAbsolute. TarskiAbsolute-arioms
+
+171

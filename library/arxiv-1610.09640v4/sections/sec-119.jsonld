@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-119",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Rigid NC DC: Definition and Uniqueness",
+  "pageStart": 418,
+  "pageEnd": 425,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-119",
+    "library/arxiv-1610.09640v4/blocks/recommendation-sec-119-01",
+    "library/arxiv-1610.09640v4/blocks/recommendation-sec-119-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "provenance": "ingested"
+}

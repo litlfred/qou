@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1006.1099v3
-doc_title: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS IV AN SMITH"
+doc_title: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS"
 section_id: sec-007-18-another-birational-motivation
 section_title: "Another birational motivation"
 section_number: 1.8
 pages: 7-7
 source_pdf: 1006.1099v3.pdf
 source_sha256: 76c1c4173cdee9d8
-doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS IV AN SMITH — There is a classical relationship in algebraic geometry bet ween a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.963
-latex_coverage_ratio: 0.99
+latex_coverage_ratio: 1.0
+doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS — There is a classical relationship in algebraic geometry between a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
 ---
 []{#Sec:BirModel label="Sec:BirModel"} There is another description of $\EuScript{M}(\Sigma_2) = Q_0 \cap Q_1 \subset {\mathbb P}^5$ which, whilst not used in this paper, is undoubtedly related to the $g=2$ case of Theorem [\[Thm:Embed\]](#Thm:Embed){reference-type="ref" reference="Thm:Embed"}, and provided motivation for the result. Let's say that a line $l \subset Q_0\cap Q_1$ is *generic* if its normal bundle is holomorphically trivial $\mathcal{O} \oplus \mathcal{O}$ (rather than $\mathcal{O}(i) \oplus \mathcal{O}(-i)$. Recall that a genus 2 curve, whilst not a complete intersection, admits an embedding as a $(2,3)$-curve on a quadric hypersurface ${\mathbb P}^1\times {\mathbb P}^1 \subset {\mathbb P}^3$.
 

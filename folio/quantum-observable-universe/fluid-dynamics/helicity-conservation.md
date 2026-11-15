@@ -34,7 +34,7 @@ Then:
 
    where $\mathrm{Wr}_q$ and $\mathrm{Tw}_q$ denote the $q$-deformed writhe and twist obeying the Călugăreanu--White--Fuller relation $\mathrm{Wr}_q + \mathrm{Tw}_q = \mathrm{Lk}_q$.
 
-3. **Jones polynomial refinement.** Classical helicity $\mathcal{H}$ assigns zero to both the unknot and the trefoil, failing to separate them. The Jones polynomial $J_L(q) = \mathrm{tr}_M(\rho(\beta_L))$, computed via the [Markov trace](#thm:jones-markov-trace) on the Iwahori--Hecke algebra, acts as a **finer invariant**. In the brane fluid, it evaluates to:
+3. **Jones polynomial refinement.** Classical helicity does not separate knot types. For a single thin tube of flux $\Gamma$ it equals $\Gamma^2(\mathrm{Wr} + \mathrm{Tw}) = \Gamma^2\,\mathrm{Lk}$, the flux squared times the framing number \cite{moffatt-ricca-helicity}. The value therefore depends on the framing of the tube, not on its knot type: it vanishes exactly for a zero-framed tube, and the unknot and the trefoil both admit zero-framed and non-zero-framed tubes. The Jones polynomial $J_L(q) = \mathrm{tr}_M(\rho(\beta_L))$, computed via the [Markov trace](#thm:jones-markov-trace) on the Iwahori--Hecke algebra, acts as a **finer invariant**. In the brane fluid, it evaluates to:
 
    $$
      J_L(q) =  \exp\!\Bigl(

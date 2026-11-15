@@ -8,7 +8,9 @@ pages: 3-8
 source_pdf: 1804.03926v3.pdf
 source_sha256: 8ad8e2d5a8881a5b
 toc_source: outline
+doc_brief: "Weighted Poincaré inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one — We investigate links between the so-called Stein’s density approach in dimension"
 ---
+On covariance identities and the Stein kernel
 Take a real random variable X of distribution ν with density p with respect to the Lebesgue measure
 on R and cumulative distribution function F. Assume that the mean of the distribution ν exists and
 denote it by µ = E [X]. Denote also Supp (ν) = {x ∈R : p (x) > 0} ⊂¯R( := R∪{−∞, +∞}) the
@@ -468,4 +470,3 @@ h2 (y)
 dy
 
 .
-3

@@ -1,0 +1,1 @@
+The ǫ-twisting of the four dimensional part of the ﬁvebrane worldvolume reduces the dynamical degrees of freedom down to those of the chiral boson on the curve, which after fermionization should lead to (4.11).

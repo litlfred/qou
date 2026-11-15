@@ -1,0 +1,49 @@
+6.2. A formula for the generic rank 137
+
+6.2. A formula for the generic rank
+
+The main goal of the present chapter is to obtain a recursive formula
+for the generic rank rg of the perverse sheaves ?6q, by which we more
+precisely mean the rank
+
+rq = dime (-*(?5q)n)
+
+of the lowest degree cohomology sheaf at the generic point 7 € X. Note
+that rq = 0 if and only if the perverse sheaf ?5q is supported on a proper
+closed subset of X (indeed any simple perverse sheaf arises via intermediate
+extension from a local system on an open dense subset of its support).
+
+THEOREM 6.1. For partitions a = (d1,...,dn) of degree d = deg(a)
+the generic rank rg, is given by the recursion
+
+To = y [ate 1 Il Pe he) _ y Kga‘Tp-
+
+epteten=8 k=1 Boa
+Ose; Sd; deg(B)=d
+
+where the Kgq are the Kostka numbers defined combinatorially below.
+
+Here we use the following conventions: For any integers a,m € Z the
+binomial coefficient (”) is defined as the coefficient of ¢“ in the expansion
+of (1+1)” as a power series, hence it vanishes for a < 0 and is given for
+exponents m < 0 by the formula (™) = (—1)*- (-""!). For partitions a
+and f the notation B > a refers to the lexicographic ordering. Finally, we
+recall that the Kostka numbers Kp are non-negative integers which can be
+defined combinatorially in the following way.
+
+By a Young diagram of shape B = (e1,...,@m) we mean a diagram of m
+left-aligned rows such that for each i the i" row consists of e; cells. If the
+cells of the diagram are filled with the entries 1,2,...,1 and each entry j
+occurs precisely d; times, the resulting array is called a Young tableau of
+content @ = (d},...,d,). A Young tableau is said to be semistandard if the
+entries of the rows are weakly increasing from left to right and those of the
+columns are strictly increasing from top to bottom; by definition the Kostka
+number Kgq, is the number of such tableaux of shape B and content a. For
+example, we have K(3 9) (22,1) = 2 since
+
+T]1]2] T1)3]
+2B 2/2
+
+are the only semistandard tableaux of shape (3,2) and content (2,2, 1). The
+above definition also easily implies that the Kostka numbers satisfy Kqq = 1
+and Kgq = 0 for all partitions B < a.

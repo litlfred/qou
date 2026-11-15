@@ -8,7 +8,7 @@
   "pages": 33,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "text-layer"
@@ -21,31 +21,32 @@
    "stamp_date": "24 Apr 1995"
   },
   "doi": null,
-  "title": "arXiv:q-alg/9504015v2 24 Apr 1995",
+  "title": "Witten's invariants of rational homology spheres at prime values of K and trivial connection contribution",
   "authors_raw": "L. Rozansky1",
   "title_lines": [
-   "Witten\u2019s Invariants of Rational Homology Spheres at Prime",
+   "Witten’s Invariants of Rational Homology Spheres at Prime",
    "Values of K and Trivial Connection Contribution"
   ],
-  "abstract": "We establish a relation between the coe\ufb03cients of asymptotic expansion of the trivial connection contribution to Witten\u2019s invariant of rational homology spheres and the invariants that T. Ohtsuki extracted from Witten\u2019s invariant at prime values of K. We also rederive the properties of prime K invariants discovered by H. Murakami and T. Ohtsuki. We do this by using the bounds on Taylor series expansion of the Jones polynomial of algebraically split links, studied in our previous paper. These bounds are enough to prove that Ohtsuki\u2019s invariants are of \ufb01nite type. The relation between Ohtsuki\u2019s invariants and trivial connection contribution is veri\ufb01ed explicitly for lens spaces and Seifert manifolds. 1Work supported by the National Science Foundation under Grant No. PHY-92 09978.",
+  "abstract": "We establish a relation between the coeﬃcients of asymptotic expansion of the trivial connection contribution to Witten’s invariant of rational homology spheres and the invariants that T. Ohtsuki extracted from Witten’s invariant at prime values of K. We also rederive the properties of prime K invariants discovered by H. Murakami and T. Ohtsuki. We do this by using the bounds on Taylor series expansion of the Jones polynomial of algebraically split links, studied in our previous paper. These bounds are enough to prove that Ohtsuki’s invariants are of ﬁnite type. The relation between Ohtsuki’s invariants and trivial connection contribution is veriﬁed explicitly for lens spaces and Seifert manifolds. 1Work supported by the National Science Foundation under Grant No. PHY-92 09978.",
   "docinfo": {
    "Title": "arXiv:q-alg/9504015v2  24 Apr 1995",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "CreationDate": "D:20210809025023-04'00'"
   },
-  "title_raw": "Witten\u2019s Invariants of Rational Homology Spheres at Prime Values of K and Trivial Connection Contribution",
+  "title_raw": "Witten’s Invariants of Rational Homology Spheres at Prime Values of K and Trivial Connection Contribution",
   "title_source": "metadata",
   "title_verified": true,
   "title_evidence": {
    "metadata": "arXiv:q-alg/9504015v2 24 Apr 1995",
-   "heading": "Witten\u2019s Invariants of Rational Homology Spheres at Prime Values of K and Trivial Connection Contribution",
-   "text": "Witten\u2019s Invariants of Rational Homology Spheres at Prime Values of K and Trivial Connection Contribution",
+   "heading": "Witten’s Invariants of Rational Homology Spheres at Prime Values of K and Trivial Connection Contribution",
+   "text": "Witten’s Invariants of Rational Homology Spheres at Prime Values of K and Trivial Connection Contribution",
    "corroborated_by": [
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:q-alg/9504015v2 24 Apr 1995"
  },
  "toc": [
   {
@@ -364,26 +365,398 @@
  ],
  "sections": [
   {
-   "id": "sec-front-matter",
+   "id": "sec-000-front-matter-page-1",
    "number": null,
-   "title": "Front matter",
-   "level": 1,
+   "title": "Front matter (page 1)",
+   "level": 2,
    "page_start": 1,
-   "page_end": 32,
-   "n_chars": 47119,
-   "n_words": 9762,
+   "page_end": 1,
+   "n_chars": 1112,
+   "n_words": 161,
    "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-front-matter-page-2",
+   "number": null,
+   "title": "Front matter (page 2)",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1790,
+   "n_words": 363,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-002-front-matter-page-3",
+   "number": null,
+   "title": "Front matter (page 3)",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1627,
+   "n_words": 360,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-003-front-matter-page-4",
+   "number": null,
+   "title": "Front matter (page 4)",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1375,
+   "n_words": 266,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-004-front-matter-page-5",
+   "number": null,
+   "title": "Front matter (page 5)",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1754,
+   "n_words": 354,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-005-front-matter-page-6",
+   "number": null,
+   "title": "Front matter (page 6)",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1815,
+   "n_words": 343,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-006-front-matter-page-7",
+   "number": null,
+   "title": "Front matter (page 7)",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1451,
+   "n_words": 321,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-007-front-matter-page-8",
+   "number": null,
+   "title": "Front matter (page 8)",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1985,
+   "n_words": 387,
+   "label_start": "7",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-008-front-matter-page-9",
+   "number": null,
+   "title": "Front matter (page 9)",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1266,
+   "n_words": 260,
+   "label_start": "8",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-009-front-matter-page-10",
+   "number": null,
+   "title": "Front matter (page 10)",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1364,
+   "n_words": 277,
+   "label_start": "9",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-010-front-matter-page-11",
+   "number": null,
+   "title": "Front matter (page 11)",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 1448,
+   "n_words": 301,
+   "label_start": "10",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-011-front-matter-page-12",
+   "number": null,
+   "title": "Front matter (page 12)",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1649,
+   "n_words": 327,
+   "label_start": "11",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-012-front-matter-page-13",
+   "number": null,
+   "title": "Front matter (page 13)",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 1571,
+   "n_words": 337,
+   "label_start": "12",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-013-front-matter-page-14",
+   "number": null,
+   "title": "Front matter (page 14)",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 1393,
+   "n_words": 289,
+   "label_start": "13",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-014-front-matter-page-15",
+   "number": null,
+   "title": "Front matter (page 15)",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 1322,
+   "n_words": 287,
+   "label_start": "14",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-015-front-matter-page-16",
+   "number": null,
+   "title": "Front matter (page 16)",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 1413,
+   "n_words": 281,
+   "label_start": "15",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-016-front-matter-page-17",
+   "number": null,
+   "title": "Front matter (page 17)",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 1756,
+   "n_words": 393,
+   "label_start": "16",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-017-front-matter-page-18",
+   "number": null,
+   "title": "Front matter (page 18)",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 1550,
+   "n_words": 360,
+   "label_start": "17",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-018-front-matter-page-19",
+   "number": null,
+   "title": "Front matter (page 19)",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 1568,
+   "n_words": 386,
+   "label_start": "18",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-019-front-matter-page-20",
+   "number": null,
+   "title": "Front matter (page 20)",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 1435,
+   "n_words": 303,
+   "label_start": "19",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-020-front-matter-page-21",
+   "number": null,
+   "title": "Front matter (page 21)",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 1165,
+   "n_words": 254,
+   "label_start": "20",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-021-front-matter-page-22",
+   "number": null,
+   "title": "Front matter (page 22)",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 1467,
+   "n_words": 326,
+   "label_start": "21",
+   "label_end": "21"
+  },
+  {
+   "id": "sec-022-front-matter-page-23",
+   "number": null,
+   "title": "Front matter (page 23)",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 1251,
+   "n_words": 249,
+   "label_start": "22",
+   "label_end": "22"
+  },
+  {
+   "id": "sec-023-front-matter-page-24",
+   "number": null,
+   "title": "Front matter (page 24)",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 1460,
+   "n_words": 315,
+   "label_start": "23",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-024-front-matter-page-25",
+   "number": null,
+   "title": "Front matter (page 25)",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 1728,
+   "n_words": 346,
+   "label_start": "24",
+   "label_end": "24"
+  },
+  {
+   "id": "sec-025-front-matter-page-26",
+   "number": null,
+   "title": "Front matter (page 26)",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 1216,
+   "n_words": 293,
+   "label_start": "25",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-026-front-matter-page-27",
+   "number": null,
+   "title": "Front matter (page 27)",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 1583,
+   "n_words": 310,
+   "label_start": "26",
+   "label_end": "26"
+  },
+  {
+   "id": "sec-027-front-matter-page-28",
+   "number": null,
+   "title": "Front matter (page 28)",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 1514,
+   "n_words": 304,
+   "label_start": "27",
+   "label_end": "27"
+  },
+  {
+   "id": "sec-028-front-matter-page-29",
+   "number": null,
+   "title": "Front matter (page 29)",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 1646,
+   "n_words": 351,
+   "label_start": "28",
+   "label_end": "28"
+  },
+  {
+   "id": "sec-029-front-matter-page-30",
+   "number": null,
+   "title": "Front matter (page 30)",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 30,
+   "n_chars": 1525,
+   "n_words": 284,
+   "label_start": "29",
+   "label_end": "29"
+  },
+  {
+   "id": "sec-030-front-matter-page-31",
+   "number": null,
+   "title": "Front matter (page 31)",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 1914,
+   "n_words": 343,
+   "label_start": "30",
+   "label_end": "30"
+  },
+  {
+   "id": "sec-031-front-matter-page-32",
+   "number": null,
+   "title": "Front matter (page 32)",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 1303,
+   "n_words": 207,
+   "label_start": "31",
    "label_end": "31"
   },
   {
-   "id": "sec-000-acknowledgements",
+   "id": "sec-032-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
    "level": 1,
    "page_start": 32,
    "page_end": 33,
-   "n_chars": 2781,
-   "n_words": 418,
+   "n_chars": 2775,
+   "n_words": 416,
    "label_start": "31",
    "label_end": "32"
   }
@@ -402,8 +775,19 @@
    "count": 0,
    "items": []
   },
-  "sections": 2,
-  "chars_total": 49900,
+  "sections": 33,
+  "chars_total": 51191,
+  "furniture_lines_stripped": 33,
+  "oversized_split": [
+   {
+    "title": "Front matter",
+    "page_start": 1,
+    "page_end": 32,
+    "words": 9731,
+    "by": "pages",
+    "into": 32
+   }
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -416,16 +800,171 @@
    },
    "sections": [
     {
-     "id": "sec-front-matter",
-     "title": "Front matter",
+     "id": "sec-000-front-matter-page-1",
+     "title": "Front matter (page 1)",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-000-acknowledgements",
+     "id": "sec-001-front-matter-page-2",
+     "title": "Front matter (page 2)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-front-matter-page-3",
+     "title": "Front matter (page 3)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-front-matter-page-4",
+     "title": "Front matter (page 4)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-front-matter-page-5",
+     "title": "Front matter (page 5)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-front-matter-page-6",
+     "title": "Front matter (page 6)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-front-matter-page-7",
+     "title": "Front matter (page 7)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-front-matter-page-8",
+     "title": "Front matter (page 8)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-front-matter-page-9",
+     "title": "Front matter (page 9)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-front-matter-page-10",
+     "title": "Front matter (page 10)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-front-matter-page-11",
+     "title": "Front matter (page 11)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-front-matter-page-12",
+     "title": "Front matter (page 12)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-front-matter-page-13",
+     "title": "Front matter (page 13)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-front-matter-page-14",
+     "title": "Front matter (page 14)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-front-matter-page-15",
+     "title": "Front matter (page 15)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-front-matter-page-16",
+     "title": "Front matter (page 16)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-front-matter-page-17",
+     "title": "Front matter (page 17)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-front-matter-page-18",
+     "title": "Front matter (page 18)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-front-matter-page-19",
+     "title": "Front matter (page 19)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-front-matter-page-20",
+     "title": "Front matter (page 20)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-front-matter-page-21",
+     "title": "Front matter (page 21)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-front-matter-page-22",
+     "title": "Front matter (page 22)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-front-matter-page-23",
+     "title": "Front matter (page 23)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-front-matter-page-24",
+     "title": "Front matter (page 24)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-front-matter-page-25",
+     "title": "Front matter (page 25)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-front-matter-page-26",
+     "title": "Front matter (page 26)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-front-matter-page-27",
+     "title": "Front matter (page 27)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-front-matter-page-28",
+     "title": "Front matter (page 28)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-front-matter-page-29",
+     "title": "Front matter (page 29)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-front-matter-page-30",
+     "title": "Front matter (page 30)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-front-matter-page-31",
+     "title": "Front matter (page 31)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-front-matter-page-32",
+     "title": "Front matter (page 32)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-032-acknowledgements",
      "title": "Acknowledgements",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.328,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

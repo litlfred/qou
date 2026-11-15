@@ -8,5 +8,6 @@ export default remark({
     "prop:helicity-conservation",
     "rem:trefoil-vortex-chirality-flip",
   ],
+  cites: ["enciso2017", "scheeler2014"],
   tags: ["vortex", "reconnection", "divisor", "topology-change", "pair-creation"],
 });

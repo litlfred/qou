@@ -1,0 +1,1 @@
+Since the monodromy action for any smooth proper family of varieties preserves the intersection form on the cohomology of the ﬁbres, it follows from the above that G must be contained in the automorphism 116 Chapter 5 – A family of surfaces group Aut(E6) of the E6-lattice.

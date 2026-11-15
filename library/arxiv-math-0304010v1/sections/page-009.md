@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0304010v1
-doc_title: "arXiv:math/0304010v1 [math.CO] 1 Apr 2003"
+doc_title: "Kerov's central limit theorem for the Plancherel measure on Young diagrams"
 section_id: page-009
 section_title: "Page 9"
 section_number: null
@@ -8,6 +8,7 @@ pages: 9-9
 source_pdf: 0304010v1.pdf
 source_sha256: fc2296c027b3feb0
 toc_source: undetermined
+doc_brief: "Kerov's central limit theorem for the Plancherel measure on Young diagrams — Consider random Young diagrams with ﬁxed number n of boxes, dis- tributed according to the Plancherel measure Mn."
 ---
 of a polynomial, and the morphism Λ∗(n) →Λ∗(n −1) is deﬁned as above, i.e.,
 as specializing xn = 0. The graded algebra associated to the ﬁltered algebra Λ∗

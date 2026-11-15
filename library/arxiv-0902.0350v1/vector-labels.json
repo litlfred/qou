@@ -1,0 +1,3994 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-0902.0350v1",
+  "pages": [
+    {
+      "page": 20,
+      "rotation": 0,
+      "drawings": 153,
+      "rasterImagesOnPage": 40,
+      "captionCandidates": [
+        "Figure 1. A hypermap is a combinatorial structure at- tached to a planar graph. A dart, represented as a small triangle, is place at each face angle of the graph. In the sec- ond frame, the face permutation f cycles through the darts in each face. In the third frame, the node permutation n cy- cles through the darts at each node. The edge permutation e (not shown) is an involution exchanging darts from opposite ends of the edge of a graph. (This figure has ben reproduced from [23].)",
+        "Figure 2 summarizes how we generate and solve the linear programs. We apply the axioms of a graph system to each tame graph. This results in a large Isabelle theorem which is a conjunction of linear equalities and in- equalities. We then normalize this conjunction to bring it into the form of a matrix inequality"
+      ],
+      "labels": [
+        {
+          "text": "20",
+          "bbox": [
+            126.67,
+            95.88,
+            135.14,
+            103.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "HALES, HARRISON, MCLAUGHLIN, NIPKOW, OBUA, AND ZUMKELLER",
+          "bbox": [
+            157.23,
+            95.88,
+            454.78,
+            103.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Figure 1. A hypermap is a combinatorial structure at-",
+          "bbox": [
+            162.54,
+            229.23,
+            449.46,
+            242.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNCSC10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "tached to a planar graph.",
+          "bbox": [
+            162.54,
+            244.56,
+            289.52,
+            255.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "A dart, represented as a small",
+          "bbox": [
+            298.44,
+            244.56,
+            449.45,
+            255.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "triangle, is place at each face angle of the graph. In the sec-",
+          "bbox": [
+            162.54,
+            257.52,
+            449.44,
+            268.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ond frame, the face permutation f cycles through the darts",
+          "bbox": [
+            162.54,
+            270.47,
+            449.45,
+            281.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "in each face. In the third frame, the node permutation n cy-",
+          "bbox": [
+            162.54,
+            283.42,
+            449.46,
+            294.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "cles through the darts at each node. The edge permutation e",
+          "bbox": [
+            162.54,
+            296.37,
+            449.47,
+            307.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(not shown) is an involution exchanging darts from opposite",
+          "bbox": [
+            162.54,
+            309.32,
+            449.45,
+            320.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ends of the edge of a graph. (This figure has ben reproduced",
+          "bbox": [
+            162.54,
+            322.27,
+            449.41,
+            333.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "from [23].)",
+          "bbox": [
+            162.54,
+            335.22,
+            212.58,
+            346.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "A structure, which we call a graph system, makes this precise in a formal",
+          "bbox": [
+            126.67,
+            369.94,
+            485.33,
+            380.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10",
+            "VNTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "environment. An instance of a graph system is a tame graph which obeys",
+          "bbox": [
+            126.67,
+            382.9,
+            485.3,
+            393.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the constraints listed in the definition of a graph system. The current for-",
+          "bbox": [
+            126.67,
+            395.85,
+            485.31,
+            406.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "malization does not use all of the constraints of the original proof but only",
+          "bbox": [
+            126.67,
+            408.8,
+            485.34,
+            419.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "those that do not require branch and bound strategies. Our current notion",
+          "bbox": [
+            126.67,
+            421.75,
+            485.29,
+            432.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of graph system can be viewed as a detailed formalization of what is called",
+          "bbox": [
+            126.67,
+            434.7,
+            485.32,
+            445.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "basic linear programs in [22, §23.3]. Because the current formalization does",
+          "bbox": [
+            126.67,
+            447.51,
+            485.32,
+            458.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "VNR10",
+            "VNTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "not capture not all constraints of the original proof, we cannot hope to re-",
+          "bbox": [
+            126.67,
+            460.6,
+            485.33,
+            471.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "fute all potential counterexamples. Nevertheless we manage to refute most",
+          "bbox": [
+            126.67,
+            473.56,
+            485.31,
+            484.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of them.",
+          "bbox": [
+            126.67,
+            486.51,
+            166.36,
+            497.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "We represent tame graphs as hypermaps [7], [18]. As mentioned in Section 2,",
+          "bbox": [
+            126.67,
+            512.41,
+            485.33,
+            523.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10",
+            "VNTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "a hypermap is just a finite set D of darts together with three permutations",
+          "bbox": [
+            126.67,
+            525.36,
+            485.32,
+            536.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNR10",
+            "VNTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "on D: the edge, the face, and the node permutation that compose to the",
+          "bbox": [
+            126.67,
+            538.31,
+            485.27,
+            549.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "identity e ◦n ◦f = I. See Figure 1. This representation greatly simplifies",
+          "bbox": [
+            126.67,
+            551.12,
+            485.34,
+            562.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the axiomatization of a graph system. For a detailed description of how we",
+          "bbox": [
+            126.67,
+            564.22,
+            485.34,
+            575.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "represent hypermaps and for a complete list of all of the axioms of a graph",
+          "bbox": [
+            126.67,
+            577.17,
+            485.33,
+            588.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "system see [38, §4].",
+          "bbox": [
+            126.67,
+            589.98,
+            217.45,
+            601.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 2 summarizes how we generate and solve the linear programs. We",
+          "bbox": [
+            126.67,
+            616.02,
+            485.31,
+            626.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "apply the axioms of a graph system to each tame graph. This results in",
+          "bbox": [
+            126.67,
+            628.97,
+            485.31,
+            639.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "a large Isabelle theorem which is a conjunction of linear equalities and in-",
+          "bbox": [
+            126.67,
+            641.92,
+            485.31,
+            652.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "equalities. We then normalize this conjunction to bring it into the form of",
+          "bbox": [
+            126.67,
+            654.88,
+            485.34,
+            665.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "a matrix inequality",
+          "bbox": [
+            126.67,
+            667.83,
+            218.22,
+            678.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Ax ≤b.",
+          "bbox": [
+            287.66,
+            689.2,
+            324.34,
+            700.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(5)",
+          "bbox": [
+            126.67,
+            689.34,
+            140.61,
+            700.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 21,
+      "rotation": 0,
+      "drawings": 25,
+      "rasterImagesOnPage": 22,
+      "captionCandidates": [
+        "Figure 2. Refuting a potential counterexample to the Ke- pler conjecture"
+      ],
+      "labels": [
+        {
+          "text": "A REVISION OF THE PROOF OF THE KEPLER CONJECTURE",
+          "bbox": [
+            174.05,
+            95.88,
+            437.91,
+            103.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "21",
+          "bbox": [
+            476.83,
+            95.88,
+            485.29,
+            103.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Graph System",
+          "bbox": [
+            193.96,
+            134.93,
+            261.7,
+            147.95
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "GillSans"
+          ],
+          "sizes": [
+            11.34
+          ]
+        },
+        {
+          "text": "Tame Graph",
+          "bbox": [
+            331.51,
+            144.05,
+            388.08,
+            157.07
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "GillSans"
+          ],
+          "sizes": [
+            11.34
+          ]
+        },
+        {
+          "text": "Axioms",
+          "bbox": [
+            208.7,
+            147.69,
+            243.79,
+            160.71
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "GillSans"
+          ],
+          "sizes": [
+            11.34
+          ]
+        },
+        {
+          "text": "Large Conjunction of (In)equalities",
+          "bbox": [
+            220.7,
+            195.07,
+            379.8,
+            208.09
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "GillSans"
+          ],
+          "sizes": [
+            11.34
+          ]
+        },
+        {
+          "text": "A’ ! A ! A’’",
+          "bbox": [
+            266.0,
+            233.81,
+            324.52,
+            247.38
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "GillSans",
+            "LucidaGrande"
+          ],
+          "sizes": [
+            11.34
+          ]
+        },
+        {
+          "text": "Certiﬁcate from",
+          "bbox": [
+            360.89,
+            243.97,
+            435.22,
+            256.99
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "GillSans"
+          ],
+          "sizes": [
+            11.34
+          ]
+        },
+        {
+          "text": "A ! x ! b",
+          "bbox": [
+            182.41,
+            249.8,
+            228.87,
+            263.85
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "AppleSymbols",
+            "GillSans",
+            "LucidaGrande"
+          ],
+          "sizes": [
+            11.34
+          ]
+        },
+        {
+          "text": "b ! b’",
+          "bbox": [
+            279.37,
+            250.5,
+            308.51,
+            264.08
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "GillSans",
+            "LucidaGrande"
+          ],
+          "sizes": [
+            11.34
+          ]
+        },
+        {
+          "text": "external LP solver",
+          "bbox": [
+            356.45,
+            256.73,
+            439.66,
+            269.75
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "GillSans"
+          ],
+          "sizes": [
+            11.34
+          ]
+        },
+        {
+          "text": "x’ ! x ! x’’",
+          "bbox": [
+            267.74,
+            265.21,
+            322.84,
+            278.78
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "GillSans",
+            "LucidaGrande"
+          ],
+          "sizes": [
+            11.34
+          ]
+        },
+        {
+          "text": "False",
+          "bbox": [
+            289.03,
+            309.88,
+            311.47,
+            322.9
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "GillSans"
+          ],
+          "sizes": [
+            11.34
+          ]
+        },
+        {
+          "text": "Figure 2. Refuting a potential counterexample to the Ke-",
+          "bbox": [
+            162.54,
+            342.8,
+            449.45,
+            356.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNCSC10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "pler conjecture",
+          "bbox": [
+            162.54,
+            358.14,
+            233.17,
+            369.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The entries of A and b are symbolic expressions which contain various real",
+          "bbox": [
+            126.67,
+            389.46,
+            485.32,
+            400.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "constants (such as π) that are needed to define the axioms of a graph system.",
+          "bbox": [
+            126.67,
+            402.41,
+            485.32,
+            413.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "In order to apply linear programming, we need to replace A and b with",
+          "bbox": [
+            126.67,
+            415.36,
+            485.33,
+            426.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "numerical approximations. We achieve this via a formalization of interval",
+          "bbox": [
+            126.67,
+            428.31,
+            485.37,
+            439.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "arithmetic in Isabelle, and arrive at numerical matrices A′, A′′ and b′ for",
+          "bbox": [
+            126.67,
+            437.31,
+            485.34,
+            452.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY8",
+            "VNR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "which we have the formally proven Isabelle theorems",
+          "bbox": [
+            126.67,
+            454.22,
+            378.93,
+            465.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "A′ ≤A ≤A′′,",
+          "bbox": [
+            252.49,
+            469.5,
+            317.05,
+            485.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "b ≤b′.",
+          "bbox": [
+            329.77,
+            471.83,
+            359.51,
+            485.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(6)",
+          "bbox": [
+            126.67,
+            474.14,
+            140.61,
+            485.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "We then apply a simple preprocessing step which gives us formally proven",
+          "bbox": [
+            126.67,
+            494.07,
+            485.3,
+            504.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "a-priori bounds x′ and x′′ for x such that",
+          "bbox": [
+            126.67,
+            503.06,
+            323.42,
+            517.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY8",
+            "VNR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "x′ ≤x ≤x′′.",
+          "bbox": [
+            276.64,
+            522.3,
+            335.36,
+            537.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(7)",
+          "bbox": [
+            126.67,
+            526.95,
+            140.61,
+            537.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "It is then possible to obtain a certificate from an external linear programming",
+          "bbox": [
+            126.67,
+            546.88,
+            485.34,
+            557.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "solver like GLPK (Gnu Linear Programming Kit) that allows us to formally",
+          "bbox": [
+            126.67,
+            559.83,
+            485.4,
+            570.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "reach a contradiction from Ax ≤b. The beauty of a certificate is that we",
+          "bbox": [
+            126.67,
+            572.64,
+            485.33,
+            583.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "can use results obtained from an untrusted source (in our case this untrusted",
+          "bbox": [
+            126.67,
+            585.73,
+            485.25,
+            596.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "source is a heavily optimized linear program solver programmed in C) in a",
+          "bbox": [
+            126.67,
+            598.68,
+            485.34,
+            609.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "trusted and completely mechanically verifiable way.",
+          "bbox": [
+            126.67,
+            611.63,
+            372.8,
+            622.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "In this way, we proved the inconsistency of 2565 of the graph systems but",
+          "bbox": [
+            126.67,
+            637.54,
+            485.3,
+            648.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "failed to prove the inconsistency of the remaining 206. This yields a success",
+          "bbox": [
+            126.67,
+            650.49,
+            485.3,
+            661.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "rate of about 92.5%. Future work will extend the notion of graph system",
+          "bbox": [
+            126.67,
+            663.44,
+            485.34,
+            674.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "and generate linear programs that take all the constraints of the original",
+          "bbox": [
+            126.67,
+            676.39,
+            485.34,
+            687.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "proof into account.",
+          "bbox": [
+            126.67,
+            689.34,
+            216.99,
+            700.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 23,
+      "rotation": 0,
+      "drawings": 4,
+      "rasterImagesOnPage": 3,
+      "captionCandidates": [
+        "Figure 3. In this figure (not to scale), segments represent geodesic arcs on the unit sphere. The shaded region is a sub- region whose boundary is not a simple polygon. We wish to rigidly slide the triangle containing the vertex w until a new visible distinguished edge forms (say from w to u). We will show that this rigid motion does not decrease the distance between two vertices (say w and v) to the minimum distance 2."
+      ],
+      "labels": [
+        {
+          "text": "A REVISION OF THE PROOF OF THE KEPLER CONJECTURE",
+          "bbox": [
+            174.05,
+            95.88,
+            437.91,
+            103.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "23",
+          "bbox": [
+            476.83,
+            95.88,
+            485.29,
+            103.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "v",
+          "bbox": [
+            272.02,
+            167.13,
+            275.88,
+            174.86
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            7.73
+          ]
+        },
+        {
+          "text": "u",
+          "bbox": [
+            338.97,
+            167.13,
+            343.27,
+            174.86
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            7.73
+          ]
+        },
+        {
+          "text": "w",
+          "bbox": [
+            296.45,
+            197.41,
+            302.03,
+            205.14
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            7.73
+          ]
+        },
+        {
+          "text": "Figure 3. In this figure (not to scale), segments represent",
+          "bbox": [
+            162.54,
+            271.26,
+            449.44,
+            284.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNCSC10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "geodesic arcs on the unit sphere. The shaded region is a sub-",
+          "bbox": [
+            162.54,
+            286.59,
+            449.39,
+            297.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "region whose boundary is not a simple polygon. We wish to",
+          "bbox": [
+            162.54,
+            299.54,
+            449.45,
+            310.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "rigidly slide the triangle containing the vertex w until a new",
+          "bbox": [
+            162.54,
+            312.49,
+            449.46,
+            323.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "visible distinguished edge forms (say from w to u). We will",
+          "bbox": [
+            162.54,
+            325.45,
+            449.48,
+            336.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "show that this rigid motion does not decrease the distance",
+          "bbox": [
+            162.54,
+            338.4,
+            449.43,
+            349.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "between two vertices (say w and v) to the minimum distance",
+          "bbox": [
+            162.54,
+            351.35,
+            449.45,
+            362.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2.",
+          "bbox": [
+            162.54,
+            364.3,
+            171.03,
+            375.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "graph, we achieve our objective. In the original proof of the Kepler conjec-",
+          "bbox": [
+            126.67,
+            393.29,
+            485.33,
+            404.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ture, biconnected graphs are not mentioned by name. Nevertheless, most of",
+          "bbox": [
+            126.67,
+            406.24,
+            485.29,
+            417.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the graphs that occur in the late stages of the original proof are biconnected.",
+          "bbox": [
+            126.67,
+            419.19,
+            485.31,
+            430.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "In more detail, the proof in this section will produce a sequence of admissible",
+          "bbox": [
+            126.67,
+            445.1,
+            485.3,
+            456.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "deformations of a decomposition star D in such a way that the individual",
+          "bbox": [
+            126.67,
+            458.05,
+            485.32,
+            468.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "standard regions R are preserved in number and identity (but not in shape)",
+          "bbox": [
+            126.67,
+            471.0,
+            485.28,
+            481.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "by the deformations. The deformations will preserve the values of vor0,R(D)",
+          "bbox": [
+            126.67,
+            483.95,
+            485.33,
+            495.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "VNR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "and τ0,R(D), for each standard region R. The deformations will change the",
+          "bbox": [
+            126.67,
+            496.9,
+            485.31,
+            508.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "VNR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "combinatorial structure of the graph formed by all the subregions of the",
+          "bbox": [
+            126.67,
+            509.85,
+            485.32,
+            520.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "decomposition star. At the conclusion of the deformation, the decomposition",
+          "bbox": [
+            126.67,
+            522.8,
+            485.3,
+            533.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "star D will have a graph (formed by all the subregions of the decomposition",
+          "bbox": [
+            126.67,
+            535.76,
+            485.32,
+            546.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "star) that is biconnected. As in the original proof, the decomposition star",
+          "bbox": [
+            126.67,
+            548.71,
+            485.32,
+            559.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "is first simplified by a process of erasure, before the deformations begin.",
+          "bbox": [
+            126.67,
+            561.66,
+            470.83,
+            572.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "In the remainder of this section, we adopt notation, definitions, and conven-",
+          "bbox": [
+            126.67,
+            587.56,
+            485.3,
+            598.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "tions without further comment from [14].",
+          "bbox": [
+            126.67,
+            600.51,
+            323.46,
+            611.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "8.1. Context. We work in the following restrictive context for Theorem 3",
+          "bbox": [
+            126.67,
+            637.54,
+            485.37,
+            648.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNBX10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "and its proof.",
+          "bbox": [
+            126.67,
+            650.49,
+            194.03,
+            661.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "We fix a packing centered at a vertex at the origin.",
+          "bbox": [
+            203.42,
+            650.49,
+            463.48,
+            661.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "As",
+          "bbox": [
+            472.87,
+            650.49,
+            485.35,
+            661.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "described in Section 12.6 of the original proof, we assume that all upright",
+          "bbox": [
+            126.67,
+            663.44,
+            485.32,
+            674.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "quarters are erased, except loops (that is, those surrounded by anchored",
+          "bbox": [
+            126.67,
+            676.39,
+            485.29,
+            687.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "simplices). Let U be the set of (non null) vertices of of height at most 2.51.",
+          "bbox": [
+            126.67,
+            689.34,
+            485.33,
+            700.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 25,
+      "rotation": 0,
+      "drawings": 42,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4. Theorem 3 breaks into various cases: (a) two edges with distinct endpoints, (b) three or more edges, (c) two edges, or (d) a single edge passing through the triangle {0, v, w}."
+      ],
+      "labels": [
+        {
+          "text": "A REVISION OF THE PROOF OF THE KEPLER CONJECTURE",
+          "bbox": [
+            174.05,
+            95.88,
+            437.91,
+            103.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "25",
+          "bbox": [
+            476.83,
+            95.88,
+            485.29,
+            103.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Figure 4. Theorem 3 breaks into various cases: (a) two",
+          "bbox": [
+            162.54,
+            195.23,
+            449.47,
+            208.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNCSC10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "edges with distinct endpoints, (b) three or more edges, (c)",
+          "bbox": [
+            162.54,
+            210.56,
+            449.43,
+            221.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "two edges, or (d) a single edge passing through the triangle",
+          "bbox": [
+            162.54,
+            223.51,
+            449.44,
+            234.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "{0, v, w}.",
+          "bbox": [
+            162.54,
+            236.32,
+            205.41,
+            247.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "• If the graph Γ is connected, but not biconnected, with a chosen",
+          "bbox": [
+            152.56,
+            265.55,
+            485.26,
+            276.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "articulation vertex a, then the deformation acts by a rotation about",
+          "bbox": [
+            163.0,
+            278.65,
+            485.32,
+            289.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the axis {0, a} on the vertices of a single component of Γ\\{a}, leaving",
+          "bbox": [
+            163.0,
+            291.46,
+            485.33,
+            302.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "all other vertices of U fixed.",
+          "bbox": [
+            163.0,
+            304.55,
+            296.88,
+            315.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "• The distance between v, w remains at least 2, for all v, w ∈U.",
+          "bbox": [
+            152.56,
+            317.36,
+            459.39,
+            328.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The deformation stops when either of the following halting conditions are",
+          "bbox": [
+            126.67,
+            346.13,
+            485.33,
+            357.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10",
+            "VNTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "met:",
+          "bbox": [
+            126.67,
+            359.08,
+            147.88,
+            369.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            219.06,
+            378.53,
+            228.15,
+            389.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "8, where the edge {v, w}̸ ∈E′, with {v, w} ⊆U, does",
+          "bbox": [
+            228.15,
+            385.93,
+            485.32,
+            398.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY8",
+            "VNR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(H1) ||v −w|| ≤",
+          "bbox": [
+            135.9,
+            387.56,
+            215.62,
+            398.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "not cross any edge in E′, or",
+          "bbox": [
+            163.0,
+            398.89,
+            295.24,
+            411.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY8",
+            "VNR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(H2) ||v−w|| decreases to 2 for some v, w ∈U, and {v, w} crosses an edge",
+          "bbox": [
+            135.9,
+            413.46,
+            485.31,
+            424.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "in E′.",
+          "bbox": [
+            163.0,
+            424.79,
+            190.23,
+            437.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY8",
+            "VNR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "We warn that the deformation is allowed to assume configurations in which",
+          "bbox": [
+            126.67,
+            455.18,
+            485.32,
+            466.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the distance between some u ∈U and the upper endpoint of an unerased",
+          "bbox": [
+            126.67,
+            467.99,
+            485.27,
+            479.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "upright diagonal d is less than 2. This is not a problem because the vertex",
+          "bbox": [
+            126.67,
+            481.08,
+            485.3,
+            491.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "u does not end up as a corner of the loop subregion to which the upright",
+          "bbox": [
+            126.67,
+            494.03,
+            485.27,
+            504.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "diagonal d belongs. (In particular, the halting condition (H1) prevents a new",
+          "bbox": [
+            126.67,
+            506.98,
+            485.32,
+            517.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "special vertex from being added to a loop subregion.) Thus, when a single",
+          "bbox": [
+            126.67,
+            519.94,
+            485.3,
+            530.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "subregion is considered in isolation, all distances between pairs of vertices",
+          "bbox": [
+            126.67,
+            532.89,
+            485.3,
+            543.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "in that subregion are at least 2.",
+          "bbox": [
+            126.67,
+            545.84,
+            277.73,
+            556.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "In the restrictive context that has been described in this section, we have",
+          "bbox": [
+            126.67,
+            571.74,
+            485.28,
+            582.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the following result.",
+          "bbox": [
+            126.67,
+            584.69,
+            221.3,
+            595.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Theorem 3. If the graph Γ = (U, E) is not biconnected, then a nontriv-",
+          "bbox": [
+            126.67,
+            604.64,
+            485.35,
+            615.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "VNBX10",
+            "VNTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ial admissible deformation of U exists. The halting condition (H2) never",
+          "bbox": [
+            126.67,
+            617.59,
+            485.37,
+            628.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "holds. The admissible deformation can always be continued until the halting",
+          "bbox": [
+            126.67,
+            630.55,
+            485.41,
+            641.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "condition (H1) holds.",
+          "bbox": [
+            126.67,
+            643.51,
+            228.17,
+            654.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "We break the proof of Theorem 3 into cases (a), (b), (c), (d) according to the",
+          "bbox": [
+            126.67,
+            676.39,
+            485.33,
+            687.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "number and combinatorial structure of the edges {u1, u2} that pass through",
+          "bbox": [
+            126.67,
+            689.2,
+            485.32,
+            701.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR8",
+            "CMSY10",
+            "VNR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 28,
+      "rotation": 0,
+      "drawings": 5,
+      "rasterImagesOnPage": 4,
+      "captionCandidates": [
+        "Figure 5. In this figure (not to scale), segments represent geodesic arcs on the unit sphere. The two shaded regions represent subregions. There are possibly other subregions partitioning the unshaded portions of the figure. These other subregions are not represented in this figure. The shaded re- gion marked L represents a loop subregion. The other shaded region represents a subregion with two boundary components that is undergoing a deformation, by the motion of the tri- angle with vertex v. The situation of Fig. 3 does not exist (as will be shown). The intervening loop subregion L forces v and w to be more than the minimum distance apart."
+      ],
+      "labels": [
+        {
+          "text": "28",
+          "bbox": [
+            126.67,
+            95.88,
+            135.14,
+            103.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "HALES, HARRISON, MCLAUGHLIN, NIPKOW, OBUA, AND ZUMKELLER",
+          "bbox": [
+            157.23,
+            95.88,
+            454.78,
+            103.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "v",
+          "bbox": [
+            251.24,
+            172.28,
+            255.11,
+            180.01
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            7.73
+          ]
+        },
+        {
+          "text": "L",
+          "bbox": [
+            287.51,
+            189.59,
+            291.8,
+            197.33
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            7.73
+          ]
+        },
+        {
+          "text": "u",
+          "bbox": [
+            334.78,
+            194.83,
+            339.08,
+            202.56
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            7.73
+          ]
+        },
+        {
+          "text": "w",
+          "bbox": [
+            291.29,
+            222.21,
+            296.88,
+            229.94
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            7.73
+          ]
+        },
+        {
+          "text": "Figure 5. In this figure (not to scale), segments represent",
+          "bbox": [
+            162.54,
+            300.25,
+            449.44,
+            313.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNCSC10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "geodesic arcs on the unit sphere. The two shaded regions",
+          "bbox": [
+            162.54,
+            315.58,
+            449.4,
+            326.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "represent subregions.",
+          "bbox": [
+            162.54,
+            328.53,
+            263.98,
+            339.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "There are possibly other subregions",
+          "bbox": [
+            273.36,
+            328.53,
+            449.43,
+            339.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "partitioning the unshaded portions of the figure. These other",
+          "bbox": [
+            162.54,
+            341.49,
+            449.44,
+            352.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "subregions are not represented in this figure. The shaded re-",
+          "bbox": [
+            162.54,
+            354.44,
+            449.41,
+            365.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "gion marked L represents a loop subregion. The other shaded",
+          "bbox": [
+            162.54,
+            367.39,
+            449.42,
+            378.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "region represents a subregion with two boundary components",
+          "bbox": [
+            162.54,
+            380.34,
+            449.41,
+            391.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "that is undergoing a deformation, by the motion of the tri-",
+          "bbox": [
+            162.54,
+            393.29,
+            449.47,
+            404.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "angle with vertex v. The situation of Fig. 3 does not exist",
+          "bbox": [
+            162.54,
+            406.24,
+            449.47,
+            417.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(as will be shown). The intervening loop subregion L forces",
+          "bbox": [
+            162.54,
+            419.19,
+            449.46,
+            430.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "v and w to be more than the minimum distance apart.",
+          "bbox": [
+            162.54,
+            432.15,
+            424.24,
+            443.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "□",
+          "bbox": [
+            476.84,
+            458.46,
+            485.33,
+            469.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Proof. This will follow as a direct consequence of Lemmas 6 and 8 below.",
+          "bbox": [
+            126.67,
+            460.85,
+            465.93,
+            471.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10",
+            "VNTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Lemma 5. Let S = {u, v, w} be a triangle such that each side has length at",
+          "bbox": [
+            126.67,
+            480.68,
+            485.36,
+            491.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "VNBX10",
+            "VNTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "least 2, and such that ||u −v|| ≤2.51, ||u −w|| ≤2.51, ||v −w|| = 2. Let",
+          "bbox": [
+            126.67,
+            493.63,
+            485.34,
+            504.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "VNTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "X be the set of points in the convex hull of S that have distance at least 1.2",
+          "bbox": [
+            126.67,
+            506.72,
+            485.33,
+            517.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "VNTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "from each vertex of S. Then the diameter of X is less than 1.044.",
+          "bbox": [
+            126.67,
+            519.67,
+            441.79,
+            530.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "VNTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Proof. Let x = ||u −v|| and y = ||u −w||. Assume x ≥y. As u moves",
+          "bbox": [
+            126.67,
+            552.67,
+            485.33,
+            563.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "VNR10",
+            "VNTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "away from v, along a fixed line through v and an initial position u0, the",
+          "bbox": [
+            126.67,
+            565.76,
+            485.32,
+            577.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR8",
+            "VNR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "region X expands. Thus, we may assume that x = 2.51. The boundary",
+          "bbox": [
+            126.67,
+            578.71,
+            485.31,
+            589.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of X is a polygonal curve consisting of line segments and concave arcs of",
+          "bbox": [
+            126.67,
+            591.66,
+            485.31,
+            602.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "circles. The diameter is realized by the distance between two vertices pi(y)",
+          "bbox": [
+            126.67,
+            604.61,
+            485.33,
+            616.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "VNR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "of the polygonal curve. We consider two cases according to y ≤2.4 and",
+          "bbox": [
+            126.67,
+            617.42,
+            485.32,
+            628.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "y ≥2.4 because the structure of the polygonal curve changes at y = 2.4. We",
+          "bbox": [
+            126.67,
+            630.38,
+            485.33,
+            641.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "calculate ||pi(y) −pj(y)|| directly, checking for each (i, j) that the distances",
+          "bbox": [
+            126.67,
+            643.33,
+            485.31,
+            655.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "VNR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "□",
+          "bbox": [
+            476.84,
+            654.04,
+            485.33,
+            664.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "are less than 1.044.",
+          "bbox": [
+            126.67,
+            656.42,
+            218.33,
+            667.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2} ⊆R3 be a configuration of seven",
+          "bbox": [
+            321.47,
+            672.45,
+            485.36,
+            689.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8",
+            "CMSY10",
+            "MSBM10",
+            "VNTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Lemma 6. Let S = {0, , v, w, u1, u2, u′",
+          "bbox": [
+            126.67,
+            674.63,
+            307.94,
+            688.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "VNBX10",
+            "VNTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "1, u′",
+          "bbox": [
+            305.65,
+            674.63,
+            323.77,
+            689.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "points that satisfies the conditions of Lemma 4. Then there exist a point p",
+          "bbox": [
+            126.67,
+            689.34,
+            485.33,
+            700.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 32,
+      "rotation": 0,
+      "drawings": 5,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 6. The upright diagonal u cannot be placed over any of the regions A, B, C, D. The lines (not to scale) repre- sent geodesic arcs on the sphere passing through the pairs of points in {p(u1), p(u2), p(v)}, where p denotes projection to the unit sphere."
+      ],
+      "labels": [
+        {
+          "text": "32",
+          "bbox": [
+            126.67,
+            95.88,
+            135.14,
+            103.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "HALES, HARRISON, MCLAUGHLIN, NIPKOW, OBUA, AND ZUMKELLER",
+          "bbox": [
+            157.23,
+            95.88,
+            454.78,
+            103.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "B",
+          "bbox": [
+            303.96,
+            124.82,
+            308.04,
+            130.94
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            6.12
+          ]
+        },
+        {
+          "text": "D",
+          "bbox": [
+            269.38,
+            148.28,
+            273.8,
+            154.39
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            6.12
+          ]
+        },
+        {
+          "text": "v",
+          "bbox": [
+            316.71,
+            148.28,
+            319.77,
+            154.39
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            6.12
+          ]
+        },
+        {
+          "text": "D",
+          "bbox": [
+            354.52,
+            148.28,
+            358.94,
+            154.39
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            6.12
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            305.81,
+            171.22,
+            309.89,
+            177.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            6.12
+          ]
+        },
+        {
+          "text": "u1",
+          "bbox": [
+            268.18,
+            188.81,
+            274.99,
+            194.93
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            6.12
+          ]
+        },
+        {
+          "text": "u2",
+          "bbox": [
+            345.97,
+            188.81,
+            352.77,
+            194.93
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            6.12
+          ]
+        },
+        {
+          "text": "C",
+          "bbox": [
+            242.93,
+            194.16,
+            247.35,
+            200.28
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            6.12
+          ]
+        },
+        {
+          "text": "B",
+          "bbox": [
+            305.81,
+            194.16,
+            309.89,
+            200.28
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            6.12
+          ]
+        },
+        {
+          "text": "C",
+          "bbox": [
+            364.72,
+            194.16,
+            369.14,
+            200.28
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            6.12
+          ]
+        },
+        {
+          "text": "Figure 6. The upright diagonal u cannot be placed over",
+          "bbox": [
+            162.54,
+            228.6,
+            449.44,
+            241.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNCSC10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "any of the regions A, B, C, D. The lines (not to scale) repre-",
+          "bbox": [
+            162.54,
+            243.93,
+            449.45,
+            254.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "sent geodesic arcs on the sphere passing through the pairs of",
+          "bbox": [
+            162.54,
+            256.88,
+            449.4,
+            267.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "points in {p(u1), p(u2), p(v)}, where p denotes projection to",
+          "bbox": [
+            162.54,
+            269.69,
+            449.45,
+            281.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "VNR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "the unit sphere.",
+          "bbox": [
+            162.54,
+            282.79,
+            237.75,
+            293.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "lying over the region B. Also, the upright diagonal of any unerased loop",
+          "bbox": [
+            126.67,
+            313.45,
+            485.32,
+            324.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "has at least four anchors (say v, u1, u2, w). Moreover, some anchored sim-",
+          "bbox": [
+            126.67,
+            326.41,
+            485.32,
+            338.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR8",
+            "VNR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "plex around the upright diagonal is not an upright quarter (because of the",
+          "bbox": [
+            126.67,
+            339.36,
+            485.3,
+            350.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "edge {u1, u2}). Geometric considerations based on these constraints (say",
+          "bbox": [
+            126.67,
+            352.17,
+            485.3,
+            364.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR8",
+            "CMSY10",
+            "VNR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "||w −u1|| ≥2.51) show that the fourth anchor w is not in A. This prevents",
+          "bbox": [
+            127.76,
+            365.12,
+            485.32,
+            377.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "VNR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "u from being located over the region A. A vertex uj cannot be enclosed over",
+          "bbox": [
+            126.67,
+            378.21,
+            485.3,
+            390.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "VNR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "an upright quarter {0, u, v, ui}. This excludes region C. Finally, an edge",
+          "bbox": [
+            126.67,
+            391.02,
+            485.33,
+            403.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "VNR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "{v, ui} of length at most 2.51 cannot pass through a triangle {0, u, uj} of",
+          "bbox": [
+            126.67,
+            403.97,
+            485.33,
+            416.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "VNR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            241.38,
+            409.03,
+            250.47,
+            419.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "□",
+          "bbox": [
+            476.84,
+            415.81,
+            485.33,
+            426.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "sides at most 2.51, 2.51,",
+          "bbox": [
+            126.67,
+            418.19,
+            239.57,
+            429.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "8 (excluding D).",
+          "bbox": [
+            250.47,
+            418.19,
+            329.19,
+            429.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Lemma 11. Let {u1, u2, w, v} be a set of four distinct points in R3 (in the",
+          "bbox": [
+            126.67,
+            443.56,
+            485.34,
+            459.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10",
+            "VNBX10",
+            "VNTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "given context). Assume that ||v −ui|| ≤2.51, for i = 1, 2. Assume that",
+          "bbox": [
+            126.67,
+            460.32,
+            485.34,
+            472.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "VNTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "no edge of E crosses {v, w} in the open half-space A containing v bounded",
+          "bbox": [
+            126.67,
+            473.27,
+            485.34,
+            484.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "VNTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "by the plane {0, u1, u2}. (That is, {u1, u2} is the first edge to cross {v, w},",
+          "bbox": [
+            126.67,
+            486.22,
+            485.33,
+            498.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "VNTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "moving from v toward w.) Then both edges {u1, v} and {u2, v} belong to E.",
+          "bbox": [
+            126.67,
+            499.17,
+            485.33,
+            511.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR8",
+            "CMSY10",
+            "VNTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "In particular, there is a circuit of the graph Γ through v, u1, u2.",
+          "bbox": [
+            126.67,
+            512.27,
+            427.83,
+            524.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "VNTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Proof. If there is a loop subregion L along {u1, u2} on the A-side of {u1, u2},",
+          "bbox": [
+            126.67,
+            546.73,
+            485.33,
+            558.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR8",
+            "CMSY10",
+            "VNR10",
+            "VNTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Lemma 10 implies that {u1, u2} is a special edge of E′ with corner v. In",
+          "bbox": [
+            126.67,
+            555.87,
+            485.33,
+            571.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "VNR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "particular, {u1, v} and {u2, v} are edges of E. The conclusion follows in this",
+          "bbox": [
+            126.67,
+            572.64,
+            485.32,
+            584.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR8",
+            "CMSY10",
+            "VNR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "case.",
+          "bbox": [
+            126.67,
+            585.73,
+            149.14,
+            596.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Now assume that there is no loop subregion along {u1, u2} on the A side of",
+          "bbox": [
+            126.67,
+            611.49,
+            485.33,
+            623.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR8",
+            "CMSY10",
+            "VNR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "{u1, u2}.",
+          "bbox": [
+            126.67,
+            624.44,
+            167.42,
+            636.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR8",
+            "CMSY10",
+            "VNR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Let S be the finite set of points of U enclosed over the simplex {0, u1, u2, v}.",
+          "bbox": [
+            126.67,
+            650.35,
+            485.33,
+            662.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "VNR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "We show by contradiction that S is empty. The plane {0, v, w} separates",
+          "bbox": [
+            126.67,
+            663.3,
+            485.32,
+            674.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "VNR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "S into a disjoint union S = S1 ∪S2, according to those in the same half-",
+          "bbox": [
+            126.67,
+            676.25,
+            485.31,
+            688.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "VNR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "space as ui, i = 1, 2. We form the convex hull of the projection p to the",
+          "bbox": [
+            126.67,
+            689.34,
+            485.32,
+            701.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "VNR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        }
+      ]
+    }
+  ]
+}

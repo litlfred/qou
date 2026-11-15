@@ -1,0 +1,69 @@
+have ?r1 = ?r2
+proof (cases Re u' > 0)
+case True
+hence Re v' < 0
+using «Re u’ « Rev’ < 0>
+by (smt zero-le-mult-iff)
+show ?thesis
+using disc <is-real u’) <is-real v'»
+using (Re u’ > 0) «Re v' < 0»
+unfolding cmod-power2 cmod-def
+by simp (simp add: power2-eq-square field-simps)
+next
+case False
+hence Re u’ < 0
+using (Re u’ 4 0>
+by simp
+hence Re v' > 0
+using «Re u’ « Rev’ < 0>
+by (smt zero-le-mult-iff)
+show ?thesis
+using disc <is-real u’> <is-real vy
+using (Re u’ < 0> (Re v' > 0>
+unfolding cmod-power2 cmod-def
+by simp (simp add: power2-eq-square field-simps)
+qed
+thus arcosh ?r1 = arcosh ?r2
+by metis
+qed
+ultimately
+show ?thesis
+by simp
+qed
+
+Different proof of the previous theorem relying on the cross-ratio definition, and not the distance formula. We
+suppose that this could be also used to prove the triangle inequality.
+
+lemma poincare-between-sum-distances-x-axis-u0v-different-proof :
+assumes of-complez u' € unit-disc of-complex v' € unit-disc
+assumes is-real u' u' £ 0 v' # 0 is-real v’
+shows poincare-distance (of-complex u') 0; + poincare-distance 0; (of-complex v') = poincare-distance (of-complex
+u’) (of-complex v') <>
+Reu'* Rev’ < 0 (is ?P u! v' <> ?Qu'v’)
+proof—
+have —1 < Reu’ Reu'< 1 Reu' 40
+using assms
+by (auto simp add: cmod-eq-Re complex-eq-if-Re-eq)
+have —1 < Rev’ Rev’ < 1Rev' £0
+using assms
+by (auto simp add: cmod-eq-Re complex-eq-if-Re-eq)
+
+have |In (Re ((1 — u’) / (1 + w)))| + [In (Re (1 — 0’) / (1 + 0)))| =
+[ln (Re ((1 + uw’) * (1 — v’) / ((1 — wu’) * (1 + 0’))))| —O Re u' * Rev’ < 0 (is |In Pal| + |In ?a2| = [In ?a3|
+>)
+proof—
+have 1: 0 < fal In ?al > 0 +> Reu' < 0
+using (Re u’ < 1) «Re u’ > —1)> ¢is-real u’>
+using complex-is-Real-iff
+by auto
+have 2: 0 < ?a2 In ?a2 > 0 ++ Rev'< 0
+using (Re v’ < 1) «Rev! > —1)> ¢is-real v’»
+using complex-is-Real-iff
+by auto
+have 3: 0 < ?a3 In ?a3 > 0 ++ Rev'< Reu’
+using ‘Re u’ < 1) «Re u’ > —1> ¢is-real wu’
+using (Re v’ < 1) «Rev! > —1)> ¢is-real v’»
+using complex-is-Real-iff
+by auto (simp add: field-simps)+
+
+91

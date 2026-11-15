@@ -4,13 +4,14 @@ doc_title: "SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
-pages: 1-3
+pages: 1-4
 source_pdf: 2311.02632v2.pdf
 source_sha256: 0da5ba097b79340d
-doc_brief: "SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE — The Fricke-Macbeath surface is the unique Hurwitz surface of genus 7 with 504 conformal automorphisms."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.987
-latex_coverage_ratio: 0.995
+latex_prose_ratio: 0.982
+latex_coverage_ratio: 0.99
+doc_brief: "SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE — The Fricke-Macbeath surface is the unique Hurwitz surface of genus 7 with 504 conformal automorphisms."
 ---
 In 1893, Hurwitz proved that a compact Riemann surface $X$ of genus $g \geq 2$ has at most $84(g - 1)$ conformal automorphisms [@hurwitz1893]. This upper bound is now known as the Hurwitz bound, and a Riemann surface attaining this bound is called a Hurwitz surface.
 

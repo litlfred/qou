@@ -49,9 +49,7 @@ automorphism group.  That $S_4$ embeds in $\mathrm{PSL}(2,7)$ as a point
 stabilizer shows the enhancement is *available*, not that it
 *occurs*: nothing here rules out the normalization being a genus-3
 curve whose automorphism group is exactly $S_4$, or any other group
-containing $S_4$.  An earlier draft called the enhancement "the unique
-maximal option" and treated maximality as selection; that inference is
-withdrawn.
+containing $S_4$.  Maximality of the enhancement does not select it.
 
 **The $S_4$ bridge cannot select the Klein quartic.**
 A stronger negative than the Hurwitz error: the $S_4$ datum has no

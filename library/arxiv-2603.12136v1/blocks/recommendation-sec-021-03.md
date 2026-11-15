@@ -1,0 +1,1 @@
+However, this complicates the algorithm and requires a way to decide how equitable parts must refined in case they can not be augmented to the network matrix.\ Our detection algorithm may benefit from detecting and exploiting additional substructures.

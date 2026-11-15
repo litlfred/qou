@@ -76,8 +76,7 @@ $\geq 2$) is self-dual under combined S-reversal and rank inversion.*
 > untouched here; and the *Practical consequence* below, which uses the
 > Wedderburn sum and not this duality. Same defect as
 > [`prf:quantum-dilogarithm-stratified`](#prf:quantum-dilogarithm-stratified)
-> Step 1 (bean `qou-xsv8`); analysis in
-> [`docs/audits/2026-08-26-frobenius-duality-of-strata-is-diagonal.md`](../../../docs/audits/2026-08-26-frobenius-duality-of-strata-is-diagonal.md).
+> Step 1.
 
 **Practical consequence.**
 *categorical derivation steps need only enumerate central idempotents $e_\lambda$,
@@ -95,8 +94,7 @@ $d_r$ ($r \geq 1$) need ever be computed — they all vanish.*
 > (`QOU.BraidKnot.WordFiltration.map_pow_eq_bot`); the Coxeter-length reading
 > fails a dimension count at $n \leq 3$; and the rewrite-depth reading is
 > identically zero once `def:hecke-normal-form` fixes $T_w$ as the unique
-> normal-form basis indexed by $S_n$. Analysis:
-> [`docs/audits/2026-08-16-three-gb-filtrations-one-name.md`](../../../docs/audits/2026-08-16-three-gb-filtrations-one-name.md).
+> normal-form basis indexed by $S_n$.
 > **Not claimed:** that this block's conclusion is false — only that the step
 > it rests on is unestablished, and that the obvious ways to establish it do
 > not work.

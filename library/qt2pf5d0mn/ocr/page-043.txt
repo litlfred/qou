@@ -1,0 +1,37 @@
+Section 3.1 Partition Function
+
+invariant reduces to the twisted Dijkgraaf-Witten invariant as a special case.
+
+3.1 Partition Function
+
+An ordered triangulation of a manifold is a triangulation with an ordering of its
+vertices by 0,1,2,---. Let T be an ordered triangulation of a closed oriented 4-manifold
+M, and for k = 0,1,2,3,4, let T* be the set of k-simplicies of the triangulation. The
+restriction of the ordering on each k-simplex o € T* induces a relative ordering of the
+vertices of o. Under this relative ordering, we write o as (0 1 --- k—1). For each
+a € T*, we define the sign, ¢(c), of o to be + if the orientation on o induced from that
+of M coincides with that coming from the ordering of its vertices; «(a) is defined to be
+— otherwise.
+
+Let D=CG = D C, be a G-BSFC, and let L(D) be the set of isomorphism classes
+of simple objects. “
+
+Definition 3.1.1 A D-coloring of T is a pair of maps F = (g,f), 9: T' 2G, f:
+T? + L(D), such that for any simplex 8 = (012) € T? with the induced ordering on its
+
+vertices,
+
+f(012) € Cyco2)-1 (01) 9(12)-
+
+Given a D-coloring F = (g, f), for each 8 = (012) € T?, we arbitrarily choose a
+representative in the class f(012) and denote it by foi or just 012 when no confusion
+1
+
+arises. For an edge (ij), we also write g(ij) as gi; or ij, g(ij)~! as gi or 77.
+
+Remark 3.1.2 Since the representative for each triangle color is chosen arbitrarily, tt is
+possible that even if two triangles are assigned the same color, their representatives could
+still be different. Our approach is thus more general than the common one, where a rep-
+
+resentative for each isomorphism class is fixed at the beginning and these representatives
+34

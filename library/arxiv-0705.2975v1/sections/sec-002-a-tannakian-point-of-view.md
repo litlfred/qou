@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0705.2975v1
-doc_title: "On the Definitions of Difference Galois Groups"
+doc_title: "On the Deﬁnitions of Diﬀerence Galois Groups"
 section_id: sec-002-a-tannakian-point-of-view
 section_title: "A Tannakian Point of View"
 section_number: null
 pages: 9-13
 source_pdf: 0705.2975v1.pdf
 source_sha256: 683d6bd44cea6704
-doc_brief: "On the Definitions of Difference Galois Groups — We compare several deﬁnitions of the Galois group of a linear diﬀerence equation that have arisen in algebra, analysis and model theory and sh ow"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.996
-latex_coverage_ratio: 0.802
+latex_prose_ratio: 0.952
+latex_coverage_ratio: 0.949
+doc_brief: "On the Deﬁnitions of Diﬀerence Galois Groups — We compare several deﬁnitions of the Galois group of a linear diﬀerence equation that have arisen in algebra, analysis and model theory and show, that"
 ---
 []{#tannaka label="tannaka"}
 

@@ -3,10 +3,10 @@
  "doc_id": "arxiv-2004.04939v1",
  "source_sha256": "59a06f9f7d97cad2",
  "brief": "BRAID GROUP ACTION ON THE MODULE CATEGORY OF — Let g0 be a simple Lie algebra of type ADE and let U ′ q(g) be the corre- sponding untwisted quantum aﬃne algebra.",
- "extended": "**BRAID GROUP ACTION ON THE MODULE CATEGORY OF**\n\n*QUANTUM AFFINE ALGEBRAS*\n\n10 pp, 7 sections.\n\n**Abstract.** Let g0 be a simple Lie algebra of type ADE and let U ′ q(g) be the corre- sponding untwisted quantum aﬃne algebra. We show that there exis ts an action of the braid group B(g0) on the quantum Grothendieck ring Kt(g) of Hernandez-Leclerc’s category C 0 g . Focused on the case of type AN −1, we construct a family of monoidal autofunctors {Si}i∈Z on a localization TN of the category of ﬁnite-dimensional graded modules over the quiver Hecke algebra of type A∞. Under an isomorphism between the Grothendieck ring K(TN ) of TN and the quantum Grothendieck ring Kt(A(1) N −1), the functors {Si}1≤i≤N −1 recover the action of the braid group B(AN −1). We inves- tigate further properties of these functors.\n\n**Outline.** Front matter; 1 Introduction; 2 Braid group action on the quantum Grothendie; 3 The category TN and reflection functors; 4 Reflections by root modules; 5 Conjectures; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.2: Let Q be a Q-data. Then there is an isomorphism\n- Theorem 2.3: The Braid group B(g0) acts on Kt(g0) by the following formulas:\n- Theorem 2.4: Let i be a sink of a Q-data Q. Then the following diagrams commute:\n- Theorem 3.1: For i ∈ Z, there exists a monoidal functor Si : TN → T N satisfying\n- Theorem 3.3: For each 1 ≤ i ≤ N − 1 the Z[t±1/ 2]-algebra automorphism on K(TN )\n- Theorem 4.1: Let X be a simple object in TN . For i ∈ Z, if",
+ "extended": "**BRAID GROUP ACTION ON THE MODULE CATEGORY OF**\n\n*QUANTUM AFFINE ALGEBRAS*\n\n10 pp, 7 sections.\n\n**Abstract.** Let g0 be a simple Lie algebra of type ADE and let U ′ q(g) be the corre- sponding untwisted quantum aﬃne algebra. We show that there exists an action of the braid group B(g0) on the quantum Grothendieck ring Kt(g) of Hernandez-Leclerc’s category C 0 g . Focused on the case of type AN−1, we construct a family of monoidal autofunctors {Si}i∈Z on a localization TN of the category of ﬁnite-dimensional graded modules over the quiver Hecke algebra of type A∞. Under an isomorphism between the Grothendieck ring K(TN) of TN and the quantum Grothendieck ring Kt(A(1) N−1), the functors {Si}1≤i≤N−1 recover the action of the braid group B(AN−1). We inves- tigate further properties of these functors.\n\n**Outline.** Front matter; 1 Introduction; 2 Braid group action on the quantum Grothendie; 3 The category TN and reflection functors; 4 Reflections by root modules; 5 Conjectures; References",
  "tokens": {
   "brief": 40,
-  "extended": 376
+  "extended": 249
  },
  "sections": [
   {
@@ -49,8 +49,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

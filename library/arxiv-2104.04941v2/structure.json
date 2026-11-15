@@ -8,9 +8,15 @@
   "pages": 55,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:21Z",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 4,
+    "reason": "13 of 432 words are a stray single letter: the text layer splits words"
+   }
+  ],
   "math_source": "latex"
  },
  "metadata": {
@@ -21,27 +27,27 @@
    "stamp_date": "21 Jan 2022"
   },
   "doi": null,
-  "title": "Fock\u2013Goncharov Coordinates for Semisimple Lie Groups",
+  "title": "Fock–Goncharov Coordinates for Semisimple Lie Groups",
   "authors_raw": "S. GILLES",
   "title_lines": [
-   "FOCK\u2013GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS"
+   "FOCK–GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS"
   ],
-  "abstract": "Fock and Goncharov [FG06b] introduced cluster ensembles, providing a framework for coordi- nates on varieties of surface representations into Lie groups, as well as a complete construction for groups of type An. Later, Zickert [Zic19], Le [Le16b], [Le16a], and Ip [Ip18] described, using di\ufb00ering methods, how to apply this framework for other Lie group types. Zickert also showed that this framework applies to triangulated 3-manifolds. We present a complete, general construction, based on work of Fomin and Zelevinsky. In particular, we complete the picture for the remaining cases: Lie groups of types F4, E6, E7, and E8.",
+  "abstract": "Fock and Goncharov [FG06b] introduced cluster ensembles, providing a framework for coordi- nates on varieties of surface representations into Lie groups, as well as a complete construction for groups of type An. Later, Zickert [Zic19], Le [Le16b], [Le16a], and Ip [Ip18] described, using diﬀering methods, how to apply this framework for other Lie group types. Zickert also showed that this framework applies to triangulated 3-manifolds. We present a complete, general construction, based on work of Fomin and Zelevinsky. In particular, we complete the picture for the remaining cases: Lie groups of types F4, E6, E7, and E8.",
   "docinfo": {
-   "Title": "Fock\u2013Goncharov Coordinates for Semisimple Lie Groups",
+   "Title": "Fock–Goncharov Coordinates for Semisimple Lie Groups",
    "Author": "S. Gilles",
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "LaTeX with hyperref",
    "CreationDate": "D:20220124212347-05'00'"
   },
-  "title_raw": "FOCK\u2013GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS",
+  "title_raw": "FOCK–GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS",
   "title_source": "metadata",
   "title_verified": true,
   "title_evidence": {
-   "metadata": "Fock\u2013Goncharov Coordinates for Semisimple Lie Groups",
-   "heading": "FOCK\u2013GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS Contents Acknowledgements Introduction Classical Teichm\u00fcller space Cluster ensemble structures Higher Teichm\u00fcller spaces Results Historical context Ingredients Root spaces and Weyl groups Unipotent subgroups Coxeter elements Generalized minors Fac",
+   "metadata": "Fock–Goncharov Coordinates for Semisimple Lie Groups",
+   "heading": "FOCK–GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS Contents Acknowledgements Introduction Classical Teichmüller space Cluster ensemble structures Higher Teichmüller spaces Results Historical context Ingredients Root spaces and Weyl groups Unipotent subgroups Coxeter elements Generalized minors Fac",
    "outline": "Acknowledgements",
-   "text": "FOCK\u2013GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS",
+   "text": "FOCK–GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS",
    "corroborated_by": [
     "text",
     "page"
@@ -72,7 +78,7 @@
   },
   {
    "level": 2,
-   "title": "Classical Teichm\u00fcller space",
+   "title": "Classical Teichmüller space",
    "page": 3,
    "source": "outline",
    "number": "1.1",
@@ -92,7 +98,7 @@
   },
   {
    "level": 2,
-   "title": "Higher Teichm\u00fcller spaces",
+   "title": "Higher Teichmüller spaces",
    "page": 5,
    "source": "outline",
    "number": "1.3",
@@ -252,7 +258,7 @@
   },
   {
    "level": 2,
-   "title": "Triangular quivers and Fock\u2013Goncharov coordinate structures",
+   "title": "Triangular quivers and Fock–Goncharov coordinate structures",
    "page": 17,
    "source": "outline",
    "number": "4.2",
@@ -282,7 +288,7 @@
   },
   {
    "level": 1,
-   "title": "Main Result: Fock\u2013Goncharov coordinate structures for non-A_n",
+   "title": "Main Result: Fock–Goncharov coordinate structures for non-A_n",
    "page": 23,
    "source": "outline",
    "number": "5",
@@ -547,7 +553,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "Putting a hyperbolic structure on \u03a3",
+   "title": "Putting a hyperbolic structure on Σ",
    "page": 2,
    "confidence": 0.9,
    "evidence": [
@@ -560,7 +566,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "Representations of \u03a3 by cosets",
+   "title": "Representations of Σ by cosets",
    "page": 3,
    "confidence": 0.7,
    "evidence": [
@@ -584,7 +590,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "Ptolemy\u2019s theorem: ac + bd = ef",
+   "title": "Ptolemy’s theorem: ac + bd = ef",
    "page": 4,
    "confidence": 0.7,
    "evidence": [
@@ -596,7 +602,7 @@
   {
    "kind": "figure",
    "number": "4b",
-   "title": "For our example, taking identi\ufb01cations into account, ef = a2 + b2",
+   "title": "For our example, taking identiﬁcations into account, ef = a2 + b2",
    "page": 4,
    "confidence": 0.6,
    "evidence": [
@@ -659,7 +665,7 @@
   {
    "kind": "figure",
    "number": "9",
-   "title": "After applying \u00b5 { v11, v21, v31, v41, v12 } to QC4. The next mutation in \u00b5rot is at v22",
+   "title": "After applying µ { v11, v21, v31, v41, v12 } to QC4. The next mutation in µrot is at v22",
    "page": 15,
    "confidence": 0.9,
    "evidence": [
@@ -707,7 +713,7 @@
   {
    "kind": "figure",
    "number": "14",
-   "title": "Quiver for type C2, illustrating \u00b5\u2217",
+   "title": "Quiver for type C2, illustrating µ∗",
    "page": 20,
    "confidence": 0.8,
    "evidence": [
@@ -719,7 +725,7 @@
   {
    "kind": "figure",
    "number": "15",
-   "title": "Quiver for type C2, illustrating \u00b5\u2217",
+   "title": "Quiver for type C2, illustrating µ∗",
    "page": 20,
    "confidence": 0.8,
    "evidence": [
@@ -742,7 +748,7 @@
   {
    "kind": "figure",
    "number": "17",
-   "title": "Two tetrahedra with a face identi\ufb01cation. The quivers QC2 on the front two",
+   "title": "Two tetrahedra with a face identiﬁcation. The quivers QC2 on the front two",
    "page": 23,
    "confidence": 0.8,
    "evidence": [
@@ -766,7 +772,7 @@
   {
    "kind": "figure",
    "number": "19",
-   "title": "Completed Q0 for F4. Example 5.6. The Dynkin-type quiver for G = F4 in Example 5.2, with c = { 1, 2, 3, 4} and \u2113= 6 gives w0 = { 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4}",
+   "title": "Completed Q0 for F4. Example 5.6. The Dynkin-type quiver for G = F4 in Example 5.2, with c = { 1, 2, 3, 4} and ℓ= 6 gives w0 = { 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4}",
    "page": 25,
    "confidence": 0.6,
    "evidence": [
@@ -777,7 +783,7 @@
   {
    "kind": "figure",
    "number": "21",
-   "title": "Q for F4. Remark 5.11. It is not yet obvious that \u00b5rot actually does rotate by a third. The proof of Lemma 7.4, however, will show that \u00b5rot acts with order 3 on the seed torus for Q0, and therefore on the quiver. There is no circular dependency here, as that lemma does not depend on the existence o",
+   "title": "Q for F4. Remark 5.11. It is not yet obvious that µrot actually does rotate by a third. The proof of Lemma 7.4, however, will show that µrot acts with order 3 on the seed torus for Q0, and therefore on the quiver. There is no circular dependency here, as that lemma does not depend on the existence o",
    "page": 27,
    "confidence": 0.8,
    "evidence": [
@@ -789,7 +795,7 @@
   {
    "kind": "figure",
    "number": "22",
-   "title": "Vertex naming for Q0\u20132 (with L = 2\u2113+1), agreeing with Figure 13a and labeled to induce a mutable rectangle in e\u00b5P(Q0\u20132)",
+   "title": "Vertex naming for Q0–2 (with L = 2ℓ+1), agreeing with Figure 13a and labeled to induce a mutable rectangle in eµP(Q0–2)",
    "page": 28,
    "confidence": 0.8,
    "evidence": [
@@ -801,7 +807,7 @@
   {
    "kind": "figure",
    "number": "23",
-   "title": "e\u00b5P(Q0\u20132) for F4. We apologize for the hexadecimal notation; rows have > 9",
+   "title": "eµP(Q0–2) for F4. We apologize for the hexadecimal notation; rows have > 9",
    "page": 29,
    "confidence": 0.8,
    "evidence": [
@@ -813,7 +819,7 @@
   {
    "kind": "figure",
    "number": "24",
-   "title": "The \ufb02ip for F4",
+   "title": "The ﬂip for F4",
    "page": 30,
    "confidence": 0.7,
    "evidence": [
@@ -824,7 +830,7 @@
   {
    "kind": "figure",
    "number": "25",
-   "title": "For type F4, \u2206wk\u03c9i,wk\u03c9i(A) for abstract A = Qr",
+   "title": "For type F4, ∆wkωi,wkωi(A) for abstract A = Qr",
    "page": 31,
    "confidence": 0.7,
    "evidence": [
@@ -835,7 +841,7 @@
   {
    "kind": "figure",
    "number": "26",
-   "title": "M(\u03b1) for type F4",
+   "title": "M(α) for type F4",
    "page": 31,
    "confidence": 0.7,
    "evidence": [
@@ -857,7 +863,7 @@
   {
    "kind": "figure",
    "number": "28",
-   "title": "Quivers for type A3, also showing naming convention for Q0\u20132",
+   "title": "Quivers for type A3, also showing naming convention for Q0–2",
    "page": 33,
    "confidence": 0.8,
    "evidence": [
@@ -869,7 +875,7 @@
   {
    "kind": "figure",
    "number": "29",
-   "title": "QAlt on the left, QLin on the right, both quivers of Dynkin type A\u2113. We also introduce one more piece of notation",
+   "title": "QAlt on the left, QLin on the right, both quivers of Dynkin type Aℓ. We also introduce one more piece of notation",
    "page": 34,
    "confidence": 0.8,
    "evidence": [
@@ -881,7 +887,7 @@
   {
    "kind": "figure",
    "number": "30",
-   "title": "Maps \u03a6 and \u03a8 by Proposition 4.5, YV by De\ufb01nition 5.18",
+   "title": "Maps Φ and Ψ by Proposition 4.5, YV by Deﬁnition 5.18",
    "page": 36,
    "confidence": 0.8,
    "evidence": [
@@ -905,7 +911,7 @@
   {
    "kind": "figure",
    "number": "32",
-   "title": "QDn after e\u00b5Col(1)",
+   "title": "QDn after eµCol(1)",
    "page": 39,
    "confidence": 0.8,
    "evidence": [
@@ -917,7 +923,7 @@
   {
    "kind": "figure",
    "number": "33",
-   "title": "QDn after Q\u2113",
+   "title": "QDn after Qℓ",
    "page": 40,
    "confidence": 0.8,
    "evidence": [
@@ -929,7 +935,7 @@
   {
    "kind": "figure",
    "number": "34",
-   "title": "Coordinates from \u03b1120 and \u03b1302",
+   "title": "Coordinates from α120 and α302",
    "page": 42,
    "confidence": 0.8,
    "evidence": [
@@ -941,7 +947,7 @@
   {
    "kind": "figure",
    "number": "35",
-   "title": "Coordinates from \u03b1120 and \u03b1230, labeled by (n, m)",
+   "title": "Coordinates from α120 and α230, labeled by (n, m)",
    "page": 43,
    "confidence": 0.8,
    "evidence": [
@@ -953,7 +959,7 @@
   {
    "kind": "figure",
    "number": "36",
-   "title": "Coordinates after applying e\u00b5Flipcore, labeled by (n, m)",
+   "title": "Coordinates after applying eµFlipcore, labeled by (n, m)",
    "page": 43,
    "confidence": 0.8,
    "evidence": [
@@ -965,7 +971,7 @@
   {
    "kind": "figure",
    "number": "37",
-   "title": "Coordinates after applying e\u00b5Flipcore",
+   "title": "Coordinates after applying eµFlipcore",
    "page": 43,
    "confidence": 0.8,
    "evidence": [
@@ -1061,7 +1067,7 @@
   {
    "kind": "figure",
    "number": "45",
-   "title": "Q for D2 = A1 \u00d7 A1",
+   "title": "Q for D2 = A1 × A1",
    "page": 53,
    "confidence": 0.8,
    "evidence": [
@@ -1073,7 +1079,7 @@
   {
    "kind": "figure",
    "number": "46",
-   "title": "Q for A3 \u00d7 C2",
+   "title": "Q for A3 × C2",
    "page": 53,
    "confidence": 0.8,
    "evidence": [
@@ -1607,45 +1613,45 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 750,
-   "n_words": 112,
+   "page_end": 2,
+   "n_chars": 2115,
+   "n_words": 342,
    "label_start": "1",
-   "label_end": "1"
+   "label_end": "2"
   },
   {
    "id": "sec-000-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
    "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 4,
-   "n_words": 2,
-   "label_start": "1",
-   "label_end": "1"
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 618,
+   "n_words": 112,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-001-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 3,
-   "n_chars": 2846,
-   "n_words": 489,
-   "label_start": "1",
+   "n_chars": 878,
+   "n_words": 148,
+   "label_start": "2",
    "label_end": "3"
   },
   {
-   "id": "sec-002-11-classical-teichm\u00fcller-space",
+   "id": "sec-002-11-classical-teichmüller-space",
    "number": "1.1",
-   "title": "Classical Teichm\u00fcller space",
+   "title": "Classical Teichmüller space",
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 4964,
-   "n_words": 854,
+   "n_chars": 4887,
+   "n_words": 816,
    "label_start": "3",
    "label_end": "4"
   },
@@ -1656,15 +1662,15 @@
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 1118,
-   "n_words": 195,
+   "n_chars": 1115,
+   "n_words": 194,
    "label_start": "4",
    "label_end": "5"
   },
   {
-   "id": "sec-004-13-higher-teichm\u00fcller-spaces",
+   "id": "sec-004-13-higher-teichmüller-spaces",
    "number": "1.3",
-   "title": "Higher Teichm\u00fcller spaces",
+   "title": "Higher Teichmüller spaces",
    "level": 2,
    "page_start": 5,
    "page_end": 6,
@@ -1692,68 +1698,68 @@
    "level": 2,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 2651,
-   "n_words": 418,
+   "n_chars": 2913,
+   "n_words": 462,
    "label_start": "7",
    "label_end": "8"
   },
   {
-   "id": "sec-007-23-coxeter-elements",
-   "number": "2.3",
-   "title": "Coxeter elements",
-   "level": 2,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 204,
-   "n_words": 35,
-   "label_start": "8",
-   "label_end": "8"
-  },
-  {
-   "id": "sec-008-2-ingredients",
+   "id": "sec-007-2-ingredients",
    "number": "2",
    "title": "Ingredients",
    "level": 1,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 0,
-   "n_words": 0,
+   "n_chars": 177,
+   "n_words": 27,
    "label_start": "8",
    "label_end": "8"
   },
   {
-   "id": "sec-009-24-generalized-minors",
-   "number": "2.4",
-   "title": "Generalized minors",
-   "level": 2,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 78,
-   "n_words": 12,
-   "label_start": "8",
-   "label_end": "8"
-  },
-  {
-   "id": "sec-010-21-root-spaces-and-weyl-groups",
+   "id": "sec-008-21-root-spaces-and-weyl-groups",
    "number": "2.1",
    "title": "Root spaces and Weyl groups",
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 2786,
-   "n_words": 551,
+   "n_chars": 2784,
+   "n_words": 550,
    "label_start": "8",
    "label_end": "9"
   },
   {
-   "id": "sec-011-22-unipotent-subgroups",
+   "id": "sec-009-22-unipotent-subgroups",
    "number": "2.2",
    "title": "Unipotent subgroups",
    "level": 2,
    "page_start": 9,
+   "page_end": 9,
+   "n_chars": 654,
+   "n_words": 140,
+   "label_start": "9",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-010-23-coxeter-elements",
+   "number": "2.3",
+   "title": "Coxeter elements",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 625,
+   "n_words": 149,
+   "label_start": "9",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-011-24-generalized-minors",
+   "number": "2.4",
+   "title": "Generalized minors",
+   "level": 2,
+   "page_start": 9,
    "page_end": 11,
-   "n_chars": 5186,
-   "n_words": 1050,
+   "n_chars": 3808,
+   "n_words": 745,
    "label_start": "9",
    "label_end": "11"
   },
@@ -1844,7 +1850,7 @@
   {
    "id": "sec-019-42-triangular-quivers-and-fockgoncharov-coordina",
    "number": "4.2",
-   "title": "Triangular quivers and Fock\u2013Goncharov coordinate structures",
+   "title": "Triangular quivers and Fock–Goncharov coordinate structures",
    "level": 2,
    "page_start": 17,
    "page_end": 21,
@@ -1880,7 +1886,7 @@
   {
    "id": "sec-022-5-main-result-fockgoncharov-coordinate-structure",
    "number": "5",
-   "title": "Main Result: Fock\u2013Goncharov coordinate structures for non-A_n",
+   "title": "Main Result: Fock–Goncharov coordinate structures for non-A_n",
    "level": 1,
    "page_start": 23,
    "page_end": 23,
@@ -1919,14 +1925,38 @@
    "title": "The map M",
    "level": 2,
    "page_start": 29,
-   "page_end": 33,
-   "n_chars": 11826,
-   "n_words": 2297,
+   "page_end": 31,
+   "n_chars": 8714,
+   "n_words": 1658,
    "label_start": "29",
+   "label_end": "31"
+  },
+  {
+   "id": "sec-026-57-the-significance-of-the-twisting-mutations",
+   "number": "5.7",
+   "title": "The significance of the ``twisting'' mutations",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 861,
+   "n_words": 155,
+   "label_start": "31",
+   "label_end": "32"
+  },
+  {
+   "id": "sec-027-6-construction-for-a-n",
+   "number": "6",
+   "title": "Construction for A_n",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 33,
+   "n_chars": 2128,
+   "n_words": 465,
+   "label_start": "32",
    "label_end": "33"
   },
   {
-   "id": "sec-026-71-overview",
+   "id": "sec-028-71-overview",
    "number": "7.1",
    "title": "Overview",
    "level": 2,
@@ -1938,7 +1968,7 @@
    "label_end": "34"
   },
   {
-   "id": "sec-027-72-ordering-mutations",
+   "id": "sec-029-72-ordering-mutations",
    "number": "7.2",
    "title": "Ordering mutations",
    "level": 2,
@@ -1950,7 +1980,7 @@
    "label_end": "36"
   },
   {
-   "id": "sec-028-73-rotation-mutations",
+   "id": "sec-030-73-rotation-mutations",
    "number": "7.3",
    "title": "Rotation mutations",
    "level": 2,
@@ -1962,7 +1992,7 @@
    "label_end": "40"
   },
   {
-   "id": "sec-029-74-flip-mutations",
+   "id": "sec-031-74-flip-mutations",
    "number": "7.4",
    "title": "Flip mutations",
    "level": 2,
@@ -1974,19 +2004,19 @@
    "label_end": "44"
   },
   {
-   "id": "sec-030-9-examples",
+   "id": "sec-032-9-examples",
    "number": "9",
    "title": "Examples",
    "level": 1,
    "page_start": 44,
    "page_end": 53,
-   "n_chars": 23180,
-   "n_words": 4974,
+   "n_chars": 23177,
+   "n_words": 4973,
    "label_start": "44",
    "label_end": "53"
   },
   {
-   "id": "sec-031-references",
+   "id": "sec-033-references",
    "number": null,
    "title": "References",
    "level": 1,
@@ -2018,7 +2048,7 @@
     "items": [
      "Results",
      "Quivers",
-     "The A\u2022 edge",
+     "The A• edge",
      "The map M"
     ]
    },
@@ -2033,13 +2063,14 @@
     ]
    }
   },
-  "sections": 33,
-  "chars_total": 141170,
+  "sections": 35,
+  "chars_total": 141031,
+  "furniture_lines_stripped": 1,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "ms.tex",
    "tex_sections": 48,
-   "overlaid": 24,
+   "overlaid": 31,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -2054,21 +2085,24 @@
     {
      "id": "sec-000-acknowledgements",
      "title": "Acknowledgements",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-001-1-introduction",
      "title": "Introduction",
      "prose_ratio": 0.914,
-     "coverage_ratio": 0.344,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-002-11-classical-teichm\u00fcller-space",
-     "title": "Classical Teichm\u00fcller space",
+     "id": "sec-002-11-classical-teichmüller-space",
+     "title": "Classical Teichmüller space",
      "prose_ratio": 0.933,
-     "coverage_ratio": 0.99,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -2081,8 +2115,8 @@
      "converter": "latex"
     },
     {
-     "id": "sec-004-13-higher-teichm\u00fcller-spaces",
-     "title": "Higher Teichm\u00fcller spaces",
+     "id": "sec-004-13-higher-teichmüller-spaces",
+     "title": "Higher Teichmüller spaces",
      "prose_ratio": 0.951,
      "coverage_ratio": 0.987,
      "result": "overlaid",
@@ -2099,31 +2133,21 @@
     {
      "id": "sec-006-15-historical-context",
      "title": "Historical context",
-     "prose_ratio": 0.891,
+     "prose_ratio": 0.946,
      "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-007-23-coxeter-elements",
-     "title": "Coxeter elements",
-     "prose_ratio": 0.097,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-008-2-ingredients",
+     "id": "sec-007-2-ingredients",
      "title": "Ingredients",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.923,
+     "coverage_ratio": 0.929,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-009-24-generalized-minors",
-     "title": "Generalized minors",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-010-21-root-spaces-and-weyl-groups",
+     "id": "sec-008-21-root-spaces-and-weyl-groups",
      "title": "Root spaces and Weyl groups",
      "prose_ratio": 0.927,
      "coverage_ratio": 1.0,
@@ -2131,11 +2155,28 @@
      "converter": "latex"
     },
     {
-     "id": "sec-011-22-unipotent-subgroups",
+     "id": "sec-009-22-unipotent-subgroups",
      "title": "Unipotent subgroups",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.195,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-23-coxeter-elements",
+     "title": "Coxeter elements",
+     "prose_ratio": 0.935,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-24-generalized-minors",
+     "title": "Generalized minors",
+     "prose_ratio": 0.945,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-012-25-factorization-coordinates",
@@ -2195,7 +2236,7 @@
     },
     {
      "id": "sec-019-42-triangular-quivers-and-fockgoncharov-coordina",
-     "title": "Triangular quivers and Fock\u2013Goncharov coordinate structures",
+     "title": "Triangular quivers and Fock–Goncharov coordinate structures",
      "prose_ratio": 0.922,
      "coverage_ratio": 0.987,
      "result": "overlaid",
@@ -2219,7 +2260,7 @@
     },
     {
      "id": "sec-022-5-main-result-fockgoncharov-coordinate-structure",
-     "title": "Main Result: Fock\u2013Goncharov coordinate structures for non-A_n",
+     "title": "Main Result: Fock–Goncharov coordinate structures for non-A_n",
      "prose_ratio": 0.904,
      "coverage_ratio": 0.957,
      "result": "overlaid",
@@ -2244,19 +2285,33 @@
     {
      "id": "sec-025-56-the-map-m",
      "title": "The map M",
-     "prose_ratio": 0.759,
-     "coverage_ratio": 0.981,
+     "prose_ratio": 0.824,
+     "coverage_ratio": 0.957,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-026-71-overview",
-     "title": "Overview",
-     "prose_ratio": 0.223,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-026-57-the-significance-of-the-twisting-mutations",
+     "title": "The significance of the ``twisting'' mutations",
+     "prose_ratio": 0.893,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-027-72-ordering-mutations",
+     "id": "sec-027-6-construction-for-a-n",
+     "title": "Construction for A_n",
+     "prose_ratio": 0.595,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-028-71-overview",
+     "title": "Overview",
+     "prose_ratio": 0.223,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-029-72-ordering-mutations",
      "title": "Ordering mutations",
      "prose_ratio": 0.907,
      "coverage_ratio": 0.967,
@@ -2264,7 +2319,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-028-73-rotation-mutations",
+     "id": "sec-030-73-rotation-mutations",
      "title": "Rotation mutations",
      "prose_ratio": 0.92,
      "coverage_ratio": 0.98,
@@ -2272,7 +2327,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-029-74-flip-mutations",
+     "id": "sec-031-74-flip-mutations",
      "title": "Flip mutations",
      "prose_ratio": 0.891,
      "coverage_ratio": 0.977,
@@ -2280,7 +2335,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-030-9-examples",
+     "id": "sec-032-9-examples",
      "title": "Examples",
      "prose_ratio": 0.863,
      "coverage_ratio": 0.981,
@@ -2288,7 +2343,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-031-references",
+     "id": "sec-033-references",
      "title": "References",
      "result": "no matching \\section"
     }

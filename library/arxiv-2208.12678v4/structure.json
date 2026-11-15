@@ -8,7 +8,7 @@
   "pages": 14,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:21Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,24 +21,24 @@
    "stamp_date": "9 Mar 2025"
   },
   "doi": null,
-  "title": "STATIONARY CURVES UNDER THE M\u00d6BIUS-PLATEAU ENERGY",
+  "title": "STATIONARY CURVES UNDER THE MÖBIUS-PLATEAU ENERGY",
   "authors_raw": "MAX LIPTON AND GOKUL G. NAIR",
   "title_lines": [
-   "STATIONARY CURVES UNDER THE M\u00d6BIUS-PLATEAU ENERGY"
+   "STATIONARY CURVES UNDER THE MÖBIUS-PLATEAU ENERGY"
   ],
-  "abstract": "Plateau problems with elastic boundary energies have been of recent theoretical and applied interest. However, strong assumptions have to be made to avoid self-intersections of the boundary curve during energy minimization. We introduce a class of Plateau problems for boundaries with self-repulsive energies that obviates self-contact in energy minimization problems. For the self-repulsive energy, we choose the M\u00a8obius Energy introduced by O\u2019Hara due to its myriad regularity properties shown by Freedman et al. We first prove an existence theorem for this M\u00a8obius-Plateau problem in the class of closed Lipschitz curves of a given irreducible knot-type spanned by immersed discs. We then turn our attention to M\u00a8obius-Plateau variations of helicoidal strips, which are classified as \u201cscrew-like\u201d or \u201cribbon-like\u201d based on the signs of the radii of the boundary helices. By analyzing the Euler-Lagrange equations, we show that screw-like solutions are plentiful, whilst ribbon-like solutions impose strong constraints on their parameters: they must have high frequency (equivalently, low pitch), thin width in comparison to the frequency, and remain close to the axis.",
+  "abstract": "Plateau problems with elastic boundary energies have been of recent theoretical and applied interest. However, strong assumptions have to be made to avoid self-intersections of the boundary curve during energy minimization. We introduce a class of Plateau problems for boundaries with self-repulsive energies that obviates self-contact in energy minimization problems. For the self-repulsive energy, we choose the M¨obius Energy introduced by O’Hara due to its myriad regularity properties shown by Freedman et al. We first prove an existence theorem for this M¨obius-Plateau problem in the class of closed Lipschitz curves of a given irreducible knot-type spanned by immersed discs. We then turn our attention to M¨obius-Plateau variations of helicoidal strips, which are classified as “screw-like” or “ribbon-like” based on the signs of the radii of the boundary helices. By analyzing the Euler-Lagrange equations, we show that screw-like solutions are plentiful, whilst ribbon-like solutions impose strong constraints on their parameters: they must have high frequency (equivalently, low pitch), thin width in comparison to the frequency, and remain close to the axis.",
   "docinfo": {
    "Producer": "pdfTeX-1.40.25",
    "Creator": "LaTeX with hyperref",
    "CreationDate": "D:20250311012043Z"
   },
-  "title_raw": "STATIONARY CURVES UNDER THE M\u00d6BIUS-PLATEAU ENERGY",
+  "title_raw": "STATIONARY CURVES UNDER THE MÖBIUS-PLATEAU ENERGY",
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "STATIONARY CURVES UNDER THE M \u00a8 OBIUS-PLATEAU ENERGY 1. Introduction The problem of finding a surface of minimal area bounded by a fixed closed curve, also known as Plateau\u2019s problem , has captivated mathematicians for over two centuries. A relevant extension to this problem is when the boundary pos",
+   "heading": "STATIONARY CURVES UNDER THE M ¨ OBIUS-PLATEAU ENERGY 1. Introduction The problem of finding a surface of minimal area bounded by a fixed closed curve, also known as Plateau’s problem , has captivated mathematicians for over two centuries. A relevant extension to this problem is when the boundary pos",
    "outline": "1. Introduction",
-   "text": "STATIONARY CURVES UNDER THE M\u00d6BIUS-PLATEAU ENERGY",
+   "text": "STATIONARY CURVES UNDER THE MÖBIUS-PLATEAU ENERGY",
    "corroborated_by": [],
    "browser_print": false
   }
@@ -106,7 +106,7 @@
   },
   {
    "level": 1,
-   "title": "Necessary Conditions of M\u00f6bius-Plateau Critical Helix Pairs",
+   "title": "Necessary Conditions of Möbius-Plateau Critical Helix Pairs",
    "page": 6,
    "source": "outline",
    "number": "4",
@@ -151,7 +151,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "Two stationary helicoidal screws with identical parameters A = \u22121, \u03c9 = 2, except B \u22486.15375 in the figure on the left, whilst B = 1 in the figure on the right. In these examples, we set \u03b1 = 2, \u03b2 = 1",
+   "title": "Two stationary helicoidal screws with identical parameters A = −1, ω = 2, except B ≈6.15375 in the figure on the left, whilst B = 1 in the figure on the right. In these examples, we set α = 2, β = 1",
    "page": 8,
    "confidence": 0.7,
    "evidence": [
@@ -163,7 +163,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "A graph of the integrand in (15) with A = 0.1, B = 1, and \u03c9 = 10, as a function of v",
+   "title": "A graph of the integrand in (15) with A = 0.1, B = 1, and ω = 10, as a function of v",
    "page": 10,
    "confidence": 0.9,
    "evidence": [
@@ -176,7 +176,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "Contours in the AB-plane for (15) and (17), with \u03b1 = \u03b2 = 1, \u03c9 = 10, and approximate region of integration [\u221210000, 10000]. The intersection of the contour curves is (A, B) \u2248(0.810515, 0.818991) which is in the valid parameter space {(A, B) : 0 < A < B, A + B < 2}",
+   "title": "Contours in the AB-plane for (15) and (17), with α = β = 1, ω = 10, and approximate region of integration [−10000, 10000]. The intersection of the contour curves is (A, B) ≈(0.810515, 0.818991) which is in the valid parameter space {(A, B) : 0 < A < B, A + B < 2}",
    "page": 11,
    "confidence": 0.7,
    "evidence": [
@@ -322,33 +322,33 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 285,
-   "n_words": 41,
+   "n_chars": 1261,
+   "n_words": 183,
    "label_start": "1",
    "label_end": "1"
   },
   {
-   "id": "sec-000-3-energy-minimization",
-   "number": "3",
-   "title": "Energy Minimization",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 871,
-   "n_words": 128,
-   "label_start": "1",
-   "label_end": "1"
-  },
-  {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 4199,
-   "n_words": 635,
+   "n_chars": 3820,
+   "n_words": 581,
    "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-001-3-energy-minimization",
+   "number": "3",
+   "title": "Energy Minimization",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 274,
+   "n_words": 40,
+   "label_start": "2",
    "label_end": "2"
   },
   {
@@ -388,9 +388,9 @@
    "label_end": "6"
   },
   {
-   "id": "sec-005-4-necessary-conditions-of-m\u00f6bius-plateau-critica",
+   "id": "sec-005-4-necessary-conditions-of-möbius-plateau-critica",
    "number": "4",
-   "title": "Necessary Conditions of M\u00f6bius-Plateau Critical Helix Pairs",
+   "title": "Necessary Conditions of Möbius-Plateau Critical Helix Pairs",
    "level": 1,
    "page_start": 6,
    "page_end": 11,
@@ -449,6 +449,7 @@
   },
   "sections": 10,
   "chars_total": 41896,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
@@ -466,25 +467,25 @@
      "result": "no matching \\section"
     },
     {
-     "id": "sec-000-3-energy-minimization",
-     "title": "Energy Minimization",
-     "prose_ratio": 0.135,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-001-1-introduction",
+     "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.949,
-     "coverage_ratio": 0.984,
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "latex"
+    },
+    {
+     "id": "sec-001-3-energy-minimization",
+     "title": "Energy Minimization",
+     "prose_ratio": 0.079,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-002-2-problem-formulation",
      "title": "Problem Formulation",
      "prose_ratio": 0.955,
      "coverage_ratio": 0.348,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-003-32-equicontinuity-at-the-boundary",
@@ -503,8 +504,8 @@
      "converter": "latex"
     },
     {
-     "id": "sec-005-4-necessary-conditions-of-m\u00f6bius-plateau-critica",
-     "title": "Necessary Conditions of M\u00f6bius-Plateau Critical Helix Pairs",
+     "id": "sec-005-4-necessary-conditions-of-möbius-plateau-critica",
+     "title": "Necessary Conditions of Möbius-Plateau Critical Helix Pairs",
      "prose_ratio": 0.914,
      "coverage_ratio": 0.993,
      "result": "overlaid",

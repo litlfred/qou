@@ -1,0 +1,1 @@
+To guarantee a consistent model, we impose the following condition: For any given computational step, all operators, gates, and state vector amplitudes involved must belong to a single, pre-deﬁned associative subalgebra of the octonions.

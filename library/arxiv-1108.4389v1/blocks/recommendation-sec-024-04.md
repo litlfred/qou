@@ -1,0 +1,1 @@
+The real masses of the three chiral fields add to zero, and the R-charges to $2$, as it should be to allow the superpotential interaction $\mathcal{W}= \mu u\tilde u$, *cf.* Section [\[sec:MS\]](#sec:MS){reference-type="ref" reference="sec:MS"}.

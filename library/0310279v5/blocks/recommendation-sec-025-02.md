@@ -1,0 +1,1 @@
+In Section 5.6 we describe the foliation CA and PA must have so that the Markov tower corresponds to a G–exchange move, working out in detail the explicit foliation that yielded the G–exchange template of Figure 10.

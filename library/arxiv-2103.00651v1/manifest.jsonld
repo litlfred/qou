@@ -9,15 +9,16 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-2103.00651v1",
+  "title": "On Concentration Inequalities for Vector-Valued Lipschitz Functions",
   "contains": [
+    "library/arxiv-2103.00651v1/sections/sec-front-matter",
     "library/arxiv-2103.00651v1/sections/sec-000",
     "library/arxiv-2103.00651v1/sections/sec-001",
     "library/arxiv-2103.00651v1/sections/sec-002",
     "library/arxiv-2103.00651v1/sections/sec-003"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -27,7 +28,9 @@
   },
   "meta": {
     "doc_id": "arxiv-2103.00651v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "2103.00651v1.pdf",
     "source_sha256": "c5505d3e4891168ebe4b1af35e678043473268ac95640eb4df131a6c2f13b40d",
     "pages": 9,

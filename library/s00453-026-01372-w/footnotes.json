@@ -1,0 +1,849 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "s00453-026-01372-w",
+ "status": "determined",
+ "pages_unread": [
+  13
+ ],
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p011-1",
+   "page": 11,
+   "mark": "j",
+   "text": "=1E[exp(kλ ·f j(X∗ Pr[ f (X1, . . . , Xm) ≥(p0+ϵ)n] ≤ Pj ))/ exp(kλ(p0 + ϵ)n] .",
+   "marks": [
+    {
+     "page": 10,
+     "context": "and letf"
+    },
+    {
+     "page": 10,
+     "context": "and letf j:{0, 1}P"
+    },
+    {
+     "page": 10,
+     "context": "d letf j:{0, 1}Pj→[0, 1] be functions ofX Pj . We say that Y"
+    },
+    {
+     "page": 10,
+     "context": "tf j:{0, 1}Pj→[0, 1] be functions ofX Pj . We say that Y j=f"
+    },
+    {
+     "page": 10,
+     "context": "j=1f"
+    },
+    {
+     "page": 10,
+     "context": "j=1f"
+    },
+    {
+     "page": 10,
+     "context": "j=1E[Y"
+    },
+    {
+     "page": 11,
+     "context": "ily,wheref j:{0, 1}P"
+    },
+    {
+     "page": 11,
+     "context": "j=1E[ f"
+    },
+    {
+     "page": 11,
+     "context": "j=1f"
+    },
+    {
+     "page": 11,
+     "context": "j=1f"
+    },
+    {
+     "page": 11,
+     "context": "j=1f"
+    },
+    {
+     "page": 11,
+     "context": "j=1f"
+    },
+    {
+     "page": 11,
+     "context": "j=1E[exp(λ ·f"
+    }
+   ],
+   "block": "library/s00453-026-01372-w/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p017-1",
+   "page": 17,
+   "mark": "1",
+   "text": "Qiu, F., Singla, S.: Submodular dominance and applications. In: Chakrabarti, A., Swamy, C. (eds.) Approximation, Randomization, and Combinatorial Optimization. Algorithms and Techniques, APPROX/RANDOM 2022. LIPIcs, vol. 245, pp. 44–14421. Schloss Dagstuhl - Leibniz-Zentrum für Informatik, ??? (2022). https://doi.org/10.4230/LIPIcs.APPROX/RANDOM.2022.44",
+   "marks": [
+    {
+     "page": 17,
+     "context": "j=1f j(X"
+    }
+   ],
+   "block": "library/s00453-026-01372-w/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p017-2",
+   "page": 17,
+   "mark": "2",
+   "text": "Chekuri, C., Vondrák, J., Zenklusen, R.: Dependent randomized rounding via exchange properties of combinatorial structures. In: 51th Annual IEEE Symposium on Foundations of Computer Science, FOCS 2010, pp. 575–584. IEEE Computer Society, ??? (2010). https://doi.org/10.1109/FOCS.2010.",
+   "marks": [
+    {
+     "page": 16,
+     "context": "j∈SFj|X"
+    },
+    {
+     "page": 16,
+     "context": "j∈SFj|X"
+    },
+    {
+     "page": 16,
+     "context": "j|X"
+    },
+    {
+     "page": 16,
+     "context": "j|X"
+    },
+    {
+     "page": 16,
+     "context": "j|X"
+    }
+   ],
+   "block": "library/s00453-026-01372-w/blocks/prose-sec-010"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p018-1",
+   "page": 18,
+   "mark": "17",
+   "text": "Udwani, R.: Multi-objective maximization of monotone submodular functions with cardinality con- straint. In: Bengio, S., Wallach, H.M., Larochelle, H., Grauman, K., Cesa-Bianchi, N., Garnett, R. (eds.) Annual Conference on Neural Information Processing Systems, NeurIPS 2018, pp. 9513– 9524(2018).https://proceedings.neurips.cc/paper/2018/hash/7e448ed9dd44e6e22442dac8e21856ae- Abstract.html",
+   "block": "library/s00453-026-01372-w/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p018-2",
+   "page": 18,
+   "mark": "18",
+   "text": "Chekuri, C., Quanrud, K.: Submodular function maximization in parallel via the multilinear relax- ation. In: Chan, T.M. (ed.) Proceedings of the Thirtieth Annual ACM-SIAM Symposium on Discrete Algorithms, SODA 2019, San Diego, California, USA, January 6-9, 2019, pp. 303–322. SIAM, ??? (2019). https://doi.org/10.1137/1.9781611975482.20",
+   "block": "library/s00453-026-01372-w/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p018-3",
+   "page": 18,
+   "mark": "19",
+   "text": "Allen-Zhu, Z., Orecchia, L.: Nearly-linear time positive lp solver with faster convergence rate. In: Proceedings of the Forty-Seventh Annual ACM Symposium on Theory of Computing. STOC ’15, pp. 229–236. Association for Computing Machinery, ??? (2015). https://doi.org/10.1145/2746539. 2746573",
+   "block": "library/s00453-026-01372-w/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p018-4",
+   "page": 18,
+   "mark": "20",
+   "text": "Tsang, A., Wilder, B., Rice, E., Tambe, M., Zick, Y.: Group-fairness in inﬂuence maximization. In: Kraus, S. (ed.) Proceedings of the Twenty-Eighth International Joint Conference on Artiﬁcial Intelli- gence, IJCAI 2019, pp. 5997–6005. ijcai.org, ??? (2019). https://doi.org/10.24963/ijcai.2019/831",
+   "block": "library/s00453-026-01372-w/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p018-5",
+   "page": 18,
+   "mark": "21",
+   "text": "Wajc, D.: Negative Association: Deﬁnition, Properties, and Applications. Manuscript (2017). https://www.cs.cmu.edu/∼dwajc/notes/Negative%20Association.pdf",
+   "block": "library/s00453-026-01372-w/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p018-6",
+   "page": 18,
+   "mark": "22",
+   "text": "Dubhashi, D., Ranjan, D.: Balls and bins: a study in negative dependence. Random Struct. Algorithms 13(2), 99–124 (1998)",
+   "block": "library/s00453-026-01372-w/blocks/prose-sec-011"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "SharmilaDuppala"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "SharmilaDuppala1· GeorgeZ.Li"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "SharmilaDuppala1· GeorgeZ.Li2· JuanLuque"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "SharmilaDuppala1· GeorgeZ.Li2· JuanLuque1· AravindSrinivasan"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "RenataValieva"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "Pr[ f (X1, . . . , Xn) ≤(1 −δ) · μ0] ≤exp(−μ0δ"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "i∈SX"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "i∈SE [X"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "i∈S(1 −X"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "i∈SE [1 −X"
+  },
+  {
+   "page": 6,
+   "mark": "z",
+   "context": "j=1"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "isarealstablepolynomial(i.e.,ithasnoroot(z1, . . . , zn)∈C"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "S⊆N"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "i∈S"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "i∈Sx"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "i /∈S(1 −x"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "i, . . . , X"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1] · E[g(1, X"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "1] · E[g(1, X2, . . . , X"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1] · E[g(1, X2, . . . , Xn) −g(0, X"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "1] · E[g(1, X2, . . . , Xn) −g(0, X2, . . . , X"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "] · E[g(1, X2, . . . , Xn) −g(0, X2, . . . , Xn)] + E[g(0, X"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "2, . . . , Xn) −g(0, X2, . . . , Xn)] + E[g(0, X2, . . . , X"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1is independent withX"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "1is independent withX2, . . . , X"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1· g(1, X"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "1· g(1, X2, . . . , X"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1· g(1, X2, . . . , Xn) −g(0, X"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "1· g(1, X2, . . . , Xn) −g(0, X2, . . . , X"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1· g(1, X2, . . . , Xn) −g(0, X2, . . . , Xn)] + E[g(0, X"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "2, . . . , Xn) −g(0, X2, . . . , Xn)] + E[g(0, X2, . . . , X"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "Note that when we transformed the left-hand side of Equation"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1, X"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "1, X2, . . . , X"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Pr[ f (X1, . . . , Xn) ≤(1 −δ) · μ0] ≤exp(−μ0δ"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "i,"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "i, 0, . . . ,"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "i−1,"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "i−1, 0, . . . ,"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "i] = ω"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "i] = ωi and μ"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "i=1ω"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "i∈[0,"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "i)] ≤ω"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "i)] ≤ωi ·exp(λ)+(1−ω"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "i)] ≤ωi ·exp(λ)+(1−ωi) = 1+[exp(λ)−1]·ω"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "i)] ≤ωi ·exp(λ)+(1−ωi) = 1+[exp(λ)−1]·ωi≤exp[(exp(λ)−1)·ω"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "≤E[exp(λ ·f (X"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "≤E[exp(λ ·f (X1, . . . , X"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "≤exp[(exp(λ) −1) · μ"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "(1 −δ)(1−δ)μ"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "(1 −δ)(1−δ)μ0≤exp(−μ"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(1 −δ)(1−δ)μ0≤exp(−μ0 · δ"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "where we used (1 −δ)"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "where we used (1 −δ)1−δ≤exp(−δ + δ"
+  },
+  {
+   "page": 10,
+   "mark": "f",
+   "context": "j=1"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "j=1f j(X Pj) ≥(p + ϵ)"
+  },
+  {
+   "page": 10,
+   "mark": "f",
+   "context": "j=1"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "j=1f j(X Pj) ≤(p −ϵ)"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "j=1"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "j=1f j(X Pj) ≥(p"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "j=1f j(X Pj) ≥(p0 + ϵ)"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "j=1f j(X Pj) ≥(p0 + ϵ)n] ≤exp(−D(p"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "j=1f j(X Pj) ≥(p0 + ϵ)n] ≤exp(−D(p0 + ϵ||p"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "j=1"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "j=1"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "j=1"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "Pj))"
+  },
+  {
+   "page": 12,
+   "mark": "f",
+   "context": "j=1"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "j=1f"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "j=1f j(X Pj) ≥(p"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "j=1f j(X Pj) ≥(p0 + ϵ)"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "j=1f j(X Pj) ≥(p0 + ϵ)n] ≤exp(−D(p"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "j=1f j(X Pj) ≥(p0 + ϵ)n] ≤exp(−D(p0 + ϵ||p"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "thatf j(X Pj )forj∈[n]arearead-kfamily,wheref j:{0, 1}P"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "j=1E[ f"
+  },
+  {
+   "page": 12,
+   "mark": "f",
+   "context": "j=1"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "j=1f"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "j=1f j(X Pj) ≤(p"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "j=1f j(X Pj) ≤(p0 −ϵ)"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "j=1f j(X Pj) ≤(p0 −ϵ)n] ≤exp(−D(p"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "j=1f j(X Pj) ≤(p0 −ϵ)n] ≤exp(−D(p0 −ϵ||p"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "ProofDeﬁneg j:=1 −f j,whereg j:{0, 1}P"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "j=1E[g"
+  },
+  {
+   "page": 12,
+   "mark": "g",
+   "context": "j=1"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "j=1g"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "j=1g j(X Pj) ≥(1−(p"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "j=1g j(X Pj) ≥(1−(p0 −ϵ))"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "j=1g j(X Pj) ≥(1−(p0 −ϵ))n] ≤(1−p"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "j=1g j(X Pj) ≥(1−(p0 −ϵ))n] ≤(1−p0 +ϵ)"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "j=1g j(X Pj) ≥(1−(p0 −ϵ))n] ≤(1−p0 +ϵ)n] ≤exp(−D(1−p"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "=1g j(X Pj) ≥(1−(p0 −ϵ))n] ≤(1−p0 +ϵ)n] ≤exp(−D(1−p0 +ϵ||1−p"
+  },
+  {
+   "page": 12,
+   "mark": "f",
+   "context": "j=1"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "j=1f"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "j=1f j(X Pj) ≤(p"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "j=1f j(X Pj) ≤(p0 −ϵ)"
+  },
+  {
+   "page": 12,
+   "mark": "g",
+   "context": "j=1"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "j=1g"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "j=1g j(X Pj) ≥(1 −(p"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "j=1g j(X Pj) ≥(1 −(p0 −ϵ))"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "x<yPr[X"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "x<yPr[Xi=x] Pr[X"
+  },
+  {
+   "page": 14,
+   "mark": "g",
+   "context": "−f (1)"
+  },
+  {
+   "page": 14,
+   "mark": "g",
+   "context": "−f (1)g(1) +f (2)"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "F"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "j=1F"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "j∈SF"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "j=1F"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "j /∈SF"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "j∈SF"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "j /∈SF"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "j∈SF"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "j /∈SF"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "j∈SF"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "j∈SFj|X2, . . . , X"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "F"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "j∈SF"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "j∈SFj|X2, . . . , X"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "j|X2, . . . , X"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "F"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "j=1F"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "j|X2, . . . , X"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "j /∈SF"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "F"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "j|X2, . . . , X"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "j=1G"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "G"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "F"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "j=1G"
+  },
+  {
+   "page": 17,
+   "mark": "f",
+   "context": "j=1"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "j=1f"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "j=1f j(X1, . . . , X"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "j=1E[F"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "j=1F"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "j=1E[F"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "j=1E[exp(λ ·f"
+  },
+  {
+   "page": 17,
+   "mark": "q",
+   "context": "j=1E[exp(λ ·f j)/ exp(λ"
+  }
+ ]
+}

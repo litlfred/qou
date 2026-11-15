@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0810.2361v2
-doc_title: "2-VECTOR SPACES AND GROUPOIDS JEFFREY C. MORTON"
+doc_title: "2-VECTOR SPACES AND GROUPOIDS"
 section_id: sec-001-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-8
 source_pdf: 0810.2361v2.pdf
 source_sha256: 77d6d59a29596484
-doc_brief: "2-VECTOR SPACES AND GROUPOIDS JEFFREY C. MORTON — This paper describes a relationship between essentially ﬁn ite groupoids and 2-vector spaces."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.807
-latex_coverage_ratio: 0.982
+latex_prose_ratio: 0.971
+latex_coverage_ratio: 0.991
+doc_brief: "2-VECTOR SPACES AND GROUPOIDS — This paper describes a relationship between essentially ﬁnite groupoids and 2-vector spaces."
 ---
 []{#sec:intro label="sec:intro"}
 

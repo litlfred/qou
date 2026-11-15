@@ -1,0 +1,1 @@
+However, topological interactions may persist at those distance scales. [@higgscreen] In order for a given charge $q$ to be detected via Aharonov-Bohm scattering, the screening charge $q'$ must not couple to the Aharonov-Bohm interaction.

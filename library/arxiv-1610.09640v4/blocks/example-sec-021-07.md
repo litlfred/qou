@@ -1,1 +1,0 @@
-Let f : A→B be a ring homomorphism. In the notation of

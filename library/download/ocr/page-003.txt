@@ -1,0 +1,50 @@
+Concentration of empirical distribution functions 1387
+
+Note that the Poincaré-type inequality (1.1) is invariant under shifts of the measure jz, while
+the left-hand side of (1.3) is not. This is why the bound on the right-hand side of (1.3) should
+also depend on the means of the observations.
+
+In terms of the ordered statistics Xt <-++< Xj of the random vector (X1,..., Xn), there is a
+general two-sided estimate for the mean of the Kantorovich—Rubinstein distance:
+
+1 2 « «
+ine E|X} — EX7| <EWi (Fn, F) <— E|X; — EX;| (1.4)
+i=l i=l
+
+(see remarks at the end of Section 4). Hence, under the conditions of Theorem 1.1, one may
+control the local fluctuations of X;* (on average), which typically deviate from their mean by not
+more than Co (Atlee 1/3,
+
+Under a stronger hypothesis, such as (1.2), one can obtain more information about the fluc-
+tuations of F,,(x) — F(x) for individual points x and thus get some control of the Kolmogorov
+
+distance. Similarly to the bound (1.3), such fluctuations will, on average, be shown to be at most
+
+(Mo)?/3
+B = Te”
+
+in the sense that E| F, (x) — F(x)| < CB, where M is the Lipschitz seminorm of F (see Proposi-
+tion 6.3). As for the Kolmogorov distance, we prove the following theorem.
+
+Theorem 1.2. Assume that F has a density, bounded by a number M. Under LS\(o?), for any
+r>0,
+
+4
+Pil — Flr} se, (1.5)
+
+In particular,
+1/3 1
+E|| F, — Fl < CB log 145 ; (1.6)
+where c and C are positive absolute constants.
+In both cases, the stated bounds are of order n~!/3 up to a logn term with respect to the
+dimension n. Thus, they are not as sharp as in the classical i.i.d. case. Indeed, our assumptions
+
+are much weaker and may naturally lead to weaker conclusions. Let us look at two examples
+illustrating the bounds obtained in the cases that essentially differ from the i.i.d. case.
+
+Example 1. Let X; be independent and uniformly distributed in the intervals (i — 1,1), i =
+1,...,n. Their joint distribution is a product measure, satisfying (1.1) and (1.2) with some ab-
+solute constant 0. Clearly, F is the uniform distribution in (0,n) so M = } and £ is of order 1
+As is easy to see, E|| F;, — F'|| is also of order i, that is, the bound (1.6) is sharp up to a log!/3 n
+term. Also, since A is of order n, both sides of (1.3) are of order 1. In particular, this shows that
+the quantity A cannot be removed from (1.3).

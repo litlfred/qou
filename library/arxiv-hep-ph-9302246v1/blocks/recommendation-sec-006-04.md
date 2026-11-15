@@ -1,0 +1,1 @@
+Given the poor knowledge of the parameter $g_A$ and the rather good value for $f_V$ we are using ($f_V\,=$ 0.17 compared to the experimental value $f_V {\displaystyle|}_{\rm exp} \simeq 0.20$), we shall fix the value of $f_V$ to $f_V\,=$ 0.17 and fix from the decay $\rho^+ \to \pi^+ \gamma$ the value of $g_A$.

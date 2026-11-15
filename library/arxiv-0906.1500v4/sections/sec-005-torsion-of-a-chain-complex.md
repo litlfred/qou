@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-0906.1500v4
-doc_title: "TWISTED ALEXANDER INVARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS"
+doc_title: "Twisted Alexander invariant and non-abelian Reidemeister torsion for hyperbolic three-manifolds"
 section_id: sec-005-torsion-of-a-chain-complex
 section_title: "Torsion of a chain complex"
 section_number: null
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.98
 latex_coverage_ratio: 0.98
+doc_brief: "Twisted Alexander invariant and non-abelian Reidemeister torsion for hyperbolic three-manifolds — We study a computational method of the hyperbolic Reidemeister torsion (also called in the literature"
 ---
 Let 
 $C_* = (

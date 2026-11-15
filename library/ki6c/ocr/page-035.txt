@@ -1,0 +1,56 @@
+By calculating other entries similarly, the Hesse matrix of V at (to, $0, Uo) is presented by
+
+ye Yo
+_1+%0 _ to to 0
+1-29 _ 1-#
+xO xO
+Hy = 2nV/-1 oO — —%0 1 . (64)
+1- l-y 1-%
+zo xO Tl
+0 1
+1 — 29
+
+4.4 Verifying the assumption of the Poisson summation formula
+
+In this section, we verify the assumption of the Poisson summation formula in Lemma 4.3,
+which is used in the proof of Theorem 1.1 for the 62 knot in Section 4.1. As we mentioned
+in Remark 2.5, we verify the assumption for V(t, s, u) instead of V(t, s, u), since V(t, 5, u)
+converges uniformly to V(t, s,u) on A’ in the form mentioned in Remark 2.5.
+
+By computer calculation, we can see that the maximal value of ReV — Sp is about
+0.06. Therefore, in the proof of Lemma 4.3, it is sufficient to decrease, say, Re V(t, 5, u+
+
+5-1) — 276 by 0.06, by moving 6 (though we do not use this value in the proof of the
+lemma).
+
+Lemma 4.3. V(t,s,u) —¢
+
+R
+
+Proof. We show that 0A’ is null-homotopic in each of (15)-(20).
+
+satisfies the assumption of Proposition 2.8.
+
+As for (15) and (16), similarly as the proof of Lemma 3.4, it is sufficient to show that
+
+—(2n—e') < Re (S00 +ovat, 8, u)) < Ine (65)
+
+for some e’ > 0. The middle term is calculated as
+
+0» y 1
+Re (s3V (+ oV=1. S, u)) = —2Arg(1— x) + Arg (1 - 2) + 2n(t - 5)
+
+where « = e™V-M4XVD and y/a = e2"V Tt) e2(X-Y), Since 0.6 < t < 0.9,
+
+0 < Arg(l-2) < 2n(t 5).
+
+Hence,
+—2n(t— 5) < -2Arg (1-2) +2n(¢- 5) < 2e(t- 5).
+Further,
+min{0, —2n(t—s— 3} < Arg (1-4) < max{2n(5—t +s), o}.
+Therefore,
+
+a.
+min{—2«(t~5), —2n(2t—s—1)} < Re (GV ova. s, w)) < max{2z-s, on(t-5)}.
+
+35

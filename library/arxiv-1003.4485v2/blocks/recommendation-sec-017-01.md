@@ -1,0 +1,1 @@
+The idea is that this triangle should `commute': the direct way of identifying points in the trivial bundle in the $i$th patch to points in the trivial bundle over the $k$th patch should match the indirect way which proceeds via the $j$th patch.

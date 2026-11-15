@@ -1,0 +1,72 @@
+assume y: is-imag y 0 < ImyImy < 1
+
+have of-complex x € unit-disc of-complex y € unit-disc
+using x y
+by (simp-all add: cmod-eq-Re cmod-eq-Im)
+
+show ?P 0; (of-complex x) (of-complez y)
+proof
+assume distinct [On, of-complex x, of-complex y|
+hence zr 4 0y#O
+by auto
+
+let ?den1 = 1 — (cmod x)? and ?den2 = 1 — (cmod y)?
+have ?denl > 0 ?den2 > 0
+
+using x y
+
+by (simp-all add: cmod-eq-Re cmod-eq-Im abs-square-less-1)
+
+let ?d1 = 1 + 2 « (emod 2)? / ?denl
+
+have cosh (poincare-distance 0; (of-complex x)) = ?d1
+using <?den1 > 0»
+using poincare-distance-formulalof 0n of-complex x] <of-complex x € unit-disc»
+by simp
+
+moreover
+
+let ?d2 = 1 + 2 « (cmod y)? / ?den2
+
+have cosh (poincare-distance 0; (of-complex y)) = ?d2
+using <?den2 > 0) <of-complex y € unit-disc»
+using poincare-distance-formulalof On of-complex y|
+by simp
+
+moreover
+let ?den = ?den1 * ?den2
+let ?d? = 1 + 2 « (emod (x — y))? / ?den
+have cosh (poincare-distance (of-complex x) (of-complex y)) = ?d3
+using <of-compler x € unit-disc) ‘of-complex y € unit-disc»
+using <?den1 > 0» «?den2 > 0»
+using poincare-distance-formula|of of-complex x of-complex y]
+by simp
+moreover
+have ?d1 * ?d2 = ?d3
+proof—
+have ?d3 = ((1 — (cmod x)”) * (1 — (emod y)?) + 2 * (emod (a — y))?) / 2den
+using <?den1 > 0» «?den2 > 0»
+by (subst add-num-frac, simp, simp)
+also have ... = (Re ((1 — & * cnj xz) * (1 — y * enj y) + 2 * (a — y)xcnj (x — y)) / ?den)
+using <is-real x) <is-imag y>
+by ((subst cmod-square)+, simp)
+also have ... = Re (1 + x * cnj xz * y * cnjy
++axcenjxr—2x*xyxcnjx—-2*xaxx*xcnjyty* cnjy) / ?den
+by (simp add: field-simps)
+also have ... = Re ((1 + y * cnj y) * (1 + @ * enjx)) / ?den
+using <is-real x) <is-imag y>
+by (simp add: field-simps)
+finally
+show ?thesis
+using <?den1 > 0» «?den2 > 0»
+apply (subst add-num-frac, simp)
+apply (subst add-num-frac, simp)
+apply simp
+apply (subst cmod-square)+
+apply (simp add: field-simps)
+done
+qed
+ultimately
+show ?P’ 0), (of-complex x) (of-complex y)
+
+123

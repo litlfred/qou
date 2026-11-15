@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1603.06017v2
-doc_title: "Automatic Theorem Proving in Walnut Hamoon Mousavi"
+doc_title: "Automatic Theorem Proving in Walnut"
 section_id: sec-004-23-automatic-words
 section_title: "Automatic Words"
 section_number: 2.3
 pages: 6-7
 source_pdf: 1603.06017v2.pdf
 source_sha256: 3ff091e40573a5dd
-doc_brief: "Automatic Theorem Proving in Walnut Hamoon Mousavi — 34 sections: Introduction; Basics; Words and Automata"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.968
 latex_coverage_ratio: 0.984
+doc_brief: "Automatic Theorem Proving in Walnut — 42 sections: Front matter; Introduction; Basics"
 ---
 \label{sec:automatic words}
 An automatic word $W=(a_i)_{i\geq 0}$ is a word in $\Sigma^\omega$ for

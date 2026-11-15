@@ -1,0 +1,1 @@
+Thus, some irreducible component of $\overline{\phi(\cal R)}$, coming from an irreducible component of $\cal R$, must coincide with the entire irreducible component of ${\cal L}$ containing the geometric branch.

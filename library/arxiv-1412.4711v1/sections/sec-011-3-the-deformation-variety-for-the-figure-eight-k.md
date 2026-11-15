@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1412.4711v1
-doc_title: "CHARACTER VARIETIES FOR SL (3, C): THE FIGURE EIGHT KNOT"
+doc_title: "CHARACTER VARIETIES FOR SL(3, C): THE FIGURE EIGHT KNOT"
 section_id: sec-011-3-the-deformation-variety-for-the-figure-eight-k
 section_title: "The deformation variety for the figure eight knot complement"
 section_number: 3
 pages: 10-11
 source_pdf: 1412.4711v1.pdf
 source_sha256: 4fb1d6ee062cca8c
-doc_brief: "CHARACTER VARIETIES FOR SL (3, C): THE FIGURE EIGHT KNOT — We give a description of several representation varieties of the fundamental group of the complement of the ﬁgure eight knot in PGL(3, C) or"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.947
-latex_coverage_ratio: 0.987
+latex_coverage_ratio: 1.0
+doc_brief: "CHARACTER VARIETIES FOR SL(3, C): THE FIGURE EIGHT KNOT — We give a description of several representation varieties of the fundamental group of the complement of the ﬁgure eight knot in PGL(3, C) or"
 ---
 \label{computations}
 

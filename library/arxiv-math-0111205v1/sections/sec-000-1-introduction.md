@@ -10,7 +10,8 @@ source_sha256: 66325a21651aff89
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.993
-latex_coverage_ratio: 0.998
+latex_coverage_ratio: 0.995
+doc_brief: "arXiv:math/0111205v1 [math.CT] 19 Nov 2001 — For every tensor category C there is a braided tensor category Z(C), the ‘center’ of C."
 ---
 Define the `center' $Z_0(X)$ of a set $X$ to be the monoid of all functions 
 $f\colon X\rightarrow X$ (with composition as product and the identity map as unit.)

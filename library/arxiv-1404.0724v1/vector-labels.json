@@ -1,0 +1,1130 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1404.0724v1",
+  "pages": [
+    {
+      "page": 3,
+      "rotation": 0,
+      "drawings": 42,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1: Examples of braids"
+      ],
+      "labels": [
+        {
+          "text": "2.1",
+          "bbox": [
+            83.28,
+            87.8,
+            100.48,
+            99.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Artin’s presentation",
+          "bbox": [
+            113.93,
+            87.8,
+            232.18,
+            99.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "We denote by D2 the unit disk in the complex plane and ﬁx n marked points",
+          "bbox": [
+            83.28,
+            109.21,
+            452.54,
+            121.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "−1 < p1 < p2 · · · < pn < 1 ∈D2 ∩R.",
+          "bbox": [
+            223.14,
+            131.34,
+            396.96,
+            146.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Deﬁnition 2.1. A braid is a collection of n paths fi : I = [0, 1] 7→D2, called strands, such that:",
+          "bbox": [
+            83.28,
+            158.09,
+            536.84,
+            170.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "1. fi(0) = pi.",
+          "bbox": [
+            96.18,
+            180.74,
+            159.98,
+            192.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2. fi(1) = pτ(i), for some permutation τ in the symmetric group Σn.",
+          "bbox": [
+            96.18,
+            203.26,
+            422.99,
+            215.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "3. For each t ∈I, fi(t)̸ = fj(t) provided that i̸ = j.",
+          "bbox": [
+            96.18,
+            225.63,
+            339.51,
+            237.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Braids are pictured geometrically as a collection of n strands in three dimensional space. One",
+          "bbox": [
+            93.24,
+            248.29,
+            536.83,
+            259.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "is usually interested in braids only up to isotopies ﬁxing the endpoints of each strand. We will",
+          "bbox": [
+            83.28,
+            261.84,
+            536.9,
+            272.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "abuse the notation and take the word braid to mean an isotopy class. Some examples of braids",
+          "bbox": [
+            83.28,
+            275.39,
+            536.87,
+            286.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "are the following:",
+          "bbox": [
+            83.28,
+            288.94,
+            165.75,
+            299.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 1: Examples of braids",
+          "bbox": [
+            240.57,
+            442.41,
+            379.56,
+            453.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Deﬁnition 2.2. The braid group in n strands, denoted Bn, consists of the set of all braids with",
+          "bbox": [
+            83.28,
+            476.88,
+            536.84,
+            488.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "n strands with multiplication given by glueing.",
+          "bbox": [
+            83.28,
+            490.43,
+            303.26,
+            501.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "It is a good exercise to become convinced that this operation indeed gives Bn the structure of",
+          "bbox": [
+            93.24,
+            512.94,
+            536.83,
+            525.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "a group. The following result, due to Emil Artin, gives a presentation for the group Bn.",
+          "bbox": [
+            83.28,
+            526.49,
+            503.46,
+            538.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Theorem 2.3 (Artin [3]). Denote by Bn the group generated by the symbols σ1, . . . , σn−1 modulo",
+          "bbox": [
+            83.28,
+            548.87,
+            536.83,
+            561.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "the relations:",
+          "bbox": [
+            83.28,
+            562.56,
+            145.32,
+            573.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "1. σiσi+1σi = σi+1σiσi+1 for i = 1, ..., n −2.",
+          "bbox": [
+            96.18,
+            584.93,
+            307.81,
+            597.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2. σiσj = σjσi for |i −j| ≥2.",
+          "bbox": [
+            96.18,
+            607.45,
+            238.5,
+            620.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "There is an isomorphism of groups φ : Bn →Bn determined by:",
+          "bbox": [
+            93.24,
+            629.96,
+            396.47,
+            642.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "7→",
+          "bbox": [
+            288.14,
+            657.59,
+            299.05,
+            668.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "σi",
+          "bbox": [
+            264.58,
+            657.73,
+            273.7,
+            669.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            352.49,
+            657.73,
+            355.52,
+            668.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            307.32,
+            745.34,
+            312.78,
+            756.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 6,
+      "rotation": 0,
+      "drawings": 14,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2: Halftwist of a two pointed disk"
+      ],
+      "labels": [
+        {
+          "text": "]",
+          "bbox": [
+            450.27,
+            190.24,
+            453.3,
+            201.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 2: Halftwist of a two pointed disk",
+          "bbox": [
+            212.32,
+            213.75,
+            407.81,
+            224.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Example 2.10. An example of a nontrivial mapping class is that of the half twist. Here S is",
+          "bbox": [
+            83.28,
+            245.91,
+            536.82,
+            256.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the disk with two marked points, that we may take to be p = (−1",
+          "bbox": [
+            83.28,
+            257.46,
+            401.13,
+            270.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2, 0) and q = (1",
+          "bbox": [
+            396.89,
+            257.46,
+            472.17,
+            273.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2, 0). The half",
+          "bbox": [
+            467.94,
+            259.46,
+            536.84,
+            273.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "twist H is the class of the diﬀeormorphism described by the following picture:",
+          "bbox": [
+            83.28,
+            273.01,
+            456.17,
+            283.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Theorem 2.11. Let D be a disk with n marked points Q = {p1, . . . , pn}. There is an isomor-",
+          "bbox": [
+            83.28,
+            294.32,
+            536.84,
+            306.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "phism:",
+          "bbox": [
+            83.28,
+            308.01,
+            114.51,
+            318.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ψ : Bn →Mod(D, Q),",
+          "bbox": [
+            258.68,
+            334.97,
+            361.42,
+            347.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSS10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "characterized by the property that:",
+          "bbox": [
+            83.28,
+            354.5,
+            245.81,
+            365.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "σi 7→Hi.",
+          "bbox": [
+            289.02,
+            367.91,
+            331.08,
+            380.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Here Hi denotes the class of the homeomorphism which is supported on a disk containing only",
+          "bbox": [
+            93.24,
+            387.44,
+            536.82,
+            399.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "the i-th and i + 1-th punctures, and which acts as a half twist on that disk.",
+          "bbox": [
+            83.28,
+            400.99,
+            440.63,
+            411.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The reader interested in the proof of this theorem may consult [6]. In this section we have",
+          "bbox": [
+            93.24,
+            422.44,
+            536.85,
+            433.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "closely followed the book by Farb and Margalit [12], which is an excellent reference for learning",
+          "bbox": [
+            83.28,
+            435.99,
+            536.89,
+            446.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "about mapping class groups.",
+          "bbox": [
+            83.28,
+            449.54,
+            219.58,
+            460.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2.4",
+          "bbox": [
+            83.28,
+            477.74,
+            100.48,
+            489.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Pure braids",
+          "bbox": [
+            113.93,
+            477.74,
+            182.75,
+            489.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "There is a natural group homomorphism π : Bn →Σn which sends a braid to the corresponding",
+          "bbox": [
+            83.28,
+            499.01,
+            536.85,
+            511.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "permutation of the marked points. Alternatively, the homomorphism is characterized by the",
+          "bbox": [
+            83.28,
+            512.7,
+            536.88,
+            523.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "property that:",
+          "bbox": [
+            83.28,
+            526.25,
+            150.94,
+            537.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "σi 7→(i, i + 1).",
+          "bbox": [
+            275.42,
+            539.65,
+            344.68,
+            552.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Deﬁnition 2.12. The pure braid group on n strands, denoted by Pn, is the kernel of the homo-",
+          "bbox": [
+            83.28,
+            561.25,
+            536.83,
+            573.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "morphism π : Bn →Σn.",
+          "bbox": [
+            83.28,
+            574.66,
+            197.6,
+            587.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "The group Pn consists of those braids such that each strand starts and ends at the same",
+          "bbox": [
+            93.24,
+            596.26,
+            536.83,
+            608.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "point. These are closed paths in the conﬁguration space ˆCn(C), and in this way one obtains an",
+          "bbox": [
+            83.28,
+            607.05,
+            536.86,
+            621.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "identiﬁcation:",
+          "bbox": [
+            83.28,
+            623.35,
+            148.45,
+            634.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Pn ∼= π1( ˆCn(C), p).",
+          "bbox": [
+            264.42,
+            633.75,
+            355.69,
+            649.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Remark 2.13. Let G be an abelian group. An Eilenberg-Maclane space K(G, n) is a topological",
+          "bbox": [
+            83.28,
+            658.36,
+            536.83,
+            669.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "space such that:",
+          "bbox": [
+            83.28,
+            671.91,
+            160.07,
+            682.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "• πn(K(G, n)) ∼= G.",
+          "bbox": [
+            99.64,
+            690.21,
+            195.55,
+            705.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "• πm(K(G, n)) ∼= {0} for m̸ = n.",
+          "bbox": [
+            99.64,
+            712.31,
+            256.69,
+            727.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            307.32,
+            745.34,
+            312.78,
+            756.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    }
+  ]
+}

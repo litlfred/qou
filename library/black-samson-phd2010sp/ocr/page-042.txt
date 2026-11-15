@@ -1,0 +1,41 @@
+34
+
+CHAPTER IV
+
+A STATE-SUM FORMULA FOR THE ALEXANDER POLYNOMIAL
+
+IV.1.  Semi-normal Representations of the Hecke Algebra
+
+Much of the following is standard (see e.g. [11] or [25, chapters 4 and 5]). We collect some
+of the definitions here and fix some notation. In what follows, [r] € Z[v,v71] denotes the quantum
+integer
+
+yur
+
+[rh = — (IV.1)
+
+U-U-
+
+for any r € Z.
+
+IV.1.1. Seminormal Representations
+
+This exposition follows (35, section 3], although the results were originally worked out in
+[19]. For a new point of view and substantial generalization, see [8, section 5].
+
+Let Tab(A) denote the set of A-tableaux. These are fillings of the boxes in the Young
+diagram by the numbers 1,,..,d. Let Std(A) denote the set of standard A-tableaux, namely
+those that increase across rows and down columns. The symmetric group Sg acts on Tab(A) via
+its natural action on the entries, although Std(A) is not stable under this action. For a tableau
+T € Tab(A), its residue sequence (i1,...,ia) € Z is defined by setting i, = b — a where the box
+
+labeled 7 in T appears in row @ and column 6.
+
+Li 7-2RPH) EBT
+
+A=
+
+Figure IV.1: The partition \ = (3,1) € Par(4) and standard tableaux T and s2T. Here, T has
+residue sequence (0,1, —1, 2).
+
+Fix a partition \ € Par(n) and let $(A) be the C(v)-vector space on basis {a7 | T € Std(A)}.

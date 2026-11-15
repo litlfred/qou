@@ -1,0 +1,61 @@
+34 Oberwolfach Report 28/2012
+
+Ly and a fi-
+
+nite set X. We may define a diagram invariant as the number of colorings of arcs of
+D by elements of X, col (D). Even such a naive definition leads to a link invariant
+colx (L) = minpexcolx(D), where D € L means that D is a diagram of L.1. More
+sensible approach would start with magma (X;*) with the coloring convention
+
+1.1. Invariants of arc colorings. Consider a link diagram D, say
+
++b
+. Again, let for a finite X, col (D) denote the number of colorings of arcs
+
+by elements of X, according to the above convention at every crossing. We
+can define an oriented link invariant by considering colx(L) = minpercolx(D).
+Alternatively, we can minimize col, (D) over minimal crossing diagrams of L only.
+Such an invariant would be very difficult to compute so it is better to look for
+properties of (X;*) so that coly(D) is invariant under Reidemeister moves: Rj
+
+(-e) gives idempotency relation a *a =a. Ro (-e) forces « to be an invertible
+
+operation and the third move is illustrated in detail below:
+
+e (ac) * (bec) c ———  @xb)¥e
+So axb
+
+b> Dany bee <> 6 IR a bec
+
+a ne c R, ao’ c
+
+The magma (X;*) satisfying all three conditions is called a quandle, the last
+two — a rack, and only the last condition — a shelf or RDS. Thus, if (X;») is a
+quandle then col (D) is a link invariant. We can do more (after Carter-Kamada-
+Saito). We can sum over all crossings pairs +(a,b) according to the convention
+
+NG a _ -
+J WA ; the investigation of invariance of )> +(a, b) under Reidemeis-
+
+(ab) (a,b)
+ter moves was a hint toward construction of (co)homology of quandles.
+Let us now compare homology for associative structures (semigroups) with that
+for distributive structures (shelves).
+
+1.2. Group homology of a semigroup. Let (X,*) be a semigroup. We define
+a chain complex {Cn,0n} as follows: Cr(X) = ZX" and On = eg (-1)'di
+(alternating sum of face maps). Where do(21, ...,2n) = (2,.-.,@n),
+
+dj(@1, 00, €n) = (U1, ---, Vi-1, Vi * Vin, Vi42,-.-,Ln), for0<i<nand
+
+An (1, +n) = (Wy +4) Bn—1)-
+
+We check that did; = dj—idi for i < j. The sequence of groups Cy (n > 0) with
+maps d; : C; > Ci_1, which satisfies equalities djdj = dj_id; for 0 <i <j < nis
+called a presimplicial group (or presimplicial Z-module).
+
+1.3. Hochschild homology of a semigroup. Let (X;*) be a semigroup. We
+define a Hochschild chain complex {C;,,0,} as follows C,(X) = ZX"+" and the
+
+1One can say that it is a nonsense but an invariant nontrivial: col (L) = [X|?e"()+#),
+where cr(L) is the crossing number of L and t(L) the number of trivial components in L.

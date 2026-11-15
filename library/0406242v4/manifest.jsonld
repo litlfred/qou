@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "0406242v4",
+  "title": "On canonical triangulations of once-punctured torus bundles and two-bridge link complements Introduction",
   "contains": [
+    "library/0406242v4/sections/sec-front-matter",
     "library/0406242v4/sections/sec-000",
     "library/0406242v4/sections/sec-001",
     "library/0406242v4/sections/sec-002",
@@ -36,13 +37,17 @@
     "library/0406242v4/sections/sec-022",
     "library/0406242v4/sections/sec-023",
     "library/0406242v4/sections/sec-024",
-    "library/0406242v4/sections/sec-025"
+    "library/0406242v4/sections/sec-025",
+    "library/0406242v4/sections/sec-026",
+    "library/0406242v4/sections/sec-027"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "0406242v4",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0406242v4.pdf",
     "source_sha256": "27e48b483007b8240a4163dfc37f9dee64b8c07c7392e35329503d80bd25b2b6",
     "pages": 46,

@@ -1,0 +1,1 @@
+It should be noted that the asymptotic conjecture (\ref{zn-ae}) is itself the consequence of a stronger conjecture which provides an {\it exact} expression for the spectral determinant and the fermionic spectral traces in terms of topological string data (and, in particular, of BPS invariants of the CY $X$).

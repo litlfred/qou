@@ -5,5 +5,6 @@ export default remark({
   label: "rem:helicity-physical",
   title: "Helicity as quantised topological charge",
   uses: ["prop:helicity-conservation", "rem:trefoil-vortex-chirality-flip"],
+  cites: ["enciso2017"],
   tags: ["helicity", "topological-charge", "quantisation"],
 });

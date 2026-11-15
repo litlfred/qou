@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-ph-9502366v1
-doc_title: "arXiv:hep-ph/9502366v1 22 Feb 1995"
+doc_title: "Chiral Perturbation Theory"
 section_id: sec-011-82-radiative-k-decays
 section_title: "Radiative K Decays"
 section_number: 8.2
@@ -8,6 +8,7 @@ pages: 30-36
 source_pdf: 9502366v1.pdf
 source_sha256: 56df064956ca03f8
 toc_source: inferred
+doc_brief: "Chiral Perturbation Theory — An introduction to the basic ideas and methods of Chiral Perturbation Theory is presented."
 ---
 Owing to the constraints of electromagnetic gauge invariance, radiative K decays
 with at most one pion in the ﬁnal state do not occur at O(p2). Moreover, only a few
@@ -36,8 +37,6 @@ The symmetry constraints do not allow any direct tree-level K0
 O(p4) (K0
 1,2 refer to the CP-even and CP-odd eigenstates, respectively). This decay
 proceeds then through a loop of charged pions as shown in ﬁgure 1 (there are
-Chiral Perturbation Theory
-31
 similar diagrams with charged kaons in the loop, but their sum is proportional to
 M 2
 K0−M 2
@@ -100,8 +99,6 @@ At O(p4), this decay proceeds through a tree-level K0
 2 →π0, η transition, followed by π0, η →γγ
 vertices. Because of the Gell-Mann–Okubo relation, the sum of the π0 and η contributions cancels
 exactly to lowest order. The decay amplitude is then very sensitive to SU(3) breaking.
-32
-A Pich
 and Ng 1990, Mohapatra 1993). It is worth emphasizing that PL is especially sensitive
 to the presence of light scalars with CP-violating Yukawa couplings. Thus, PL seems
 to be a good signature to look for new physics beyond the Standard Model; for this to
@@ -169,8 +166,6 @@ the O(p4) prediction for the rate (Ecker, Pich and de Rafael 1987b, Cappiello an
 Taking only the absorptive parts of the K1,2 →µ+µ−amplitudes into account, a value |PL,ε| ≈
 7 × 10−4 was estimated previously (Herczeg 1983). However, this is only one out of four contributions
 to PL (Ecker and Pich 1991), which could all interfere constructively with unknown magnitudes.
-Chiral Perturbation Theory
-33
 D’Ambrosio 1988), Br(KL →π0γγ) = 0.67 × 10−6, is smaller than the experimental
 value:
 Br(KL →π0γγ) =
@@ -245,8 +240,6 @@ unitarization of the π–π intermediate states (Kambor and Holstein 1994), inc
 the experimental γγ →π0π0 amplitude, increases the KL →π0γγ decay width some
 10%, leading to a slightly smaller value of |aV |.
 †† The charged-pion loop has also been computed by Cappiello et al (1993).
-34
-A Pich
 8.2.4. K →πl+l−.
 In contrast to the previous processes, the O(p4) calculation of K+ →π+l+l−and
 KS →π0l+l−involves a divergent loop, which is renormalized by the O(p4) Lagrangian.
@@ -312,8 +305,6 @@ Br(KL →π0e+e−)
 
 Direct ≃6 × 10−12,
 (8.17)
-Chiral Perturbation Theory
-35
 the exact number depending on the values of mt and the quark-mixing angles.
 The indirect CP-violating amplitude induced by the K0
 1 component of the KL is
@@ -370,5 +361,3 @@ Notice that if both
 amplitudes were comparable there would be a sizeable CP-violating energy asymmetry
 between the e−and the e+ distributions (Sehgal 1988, Heiliger and Sehgal 1993,
 Donoghue and Gabbiani 1994).
-36
-A Pich

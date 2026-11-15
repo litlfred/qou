@@ -2,64 +2,63 @@
  "_schema": "library-summary/v1",
  "doc_id": "physrevd108106023",
  "source_sha256": "50c7980e88cd21a0",
- "brief": "Knot-quiver correspondence for double twist knots — 9 sections: INTRODUCTION; DOUBLE TWIST KNOTS; Fk ˜Fk /C1/C1/C1 /C1/C1/C1 Fk ˜Fk",
- "extended": "**Knot-quiver correspondence for double twist knots**\n\n*Center for Quantum and Topological Systems (CQTS), NYUAD Research Institute*\n\n11 pp, 9 sections.\n\n**Outline.** I INTRODUCTION; II DOUBLE TWIST KNOTS; 0 Fk ˜Fk /C1/C1/C1 /C1/C1/C1 Fk ˜Fk /C1/C1/C1 ; 1 R⊤; 1 T⊤; 1 U2 ˜R2; C Knot-quiver correspondence for Kðp; − 3Þ; IV CONCLUSION AND DISCUSSION; Acknowledgments\n\n**Extracted claims (proposals, not verified).**\n- Proposition: The r-colored Jones polynomial for double",
+ "brief": "Knot-quiver correspondence for double twist knots — 9 sections: Front matter; INTRODUCTION; Reverse engineering of Melvin-Mort",
+ "extended": "**Knot-quiver correspondence for double twist knots**\n\n*Vivek Kumar Singh*\n\n11 pp, 9 sections.\n\n**Outline.** Front matter; I INTRODUCTION; A Reverse engineering of Melvin-Morton-Rozansk; II DOUBLE TWIST KNOTS; A Colored HOMFLY-PT polynomials for a class of; III KNOT-QUIVER CORRESPONDENCE; IV CONCLUSION AND DISCUSSION; ACKNOWLEDGMENTS; APPENDIX: QUIVER MATRIX",
  "tokens": {
-  "brief": 32,
-  "extended": 117
+  "brief": 31,
+  "extended": 90
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-i-introduction",
    "title": "INTRODUCTION",
    "pages": "1-2"
   },
   {
-   "id": "sec-001-ii-double-twist-knots",
+   "id": "sec-001-a-reverse-engineering-of-melvin-morton-rozansky",
+   "title": "Reverse engineering of Melvin-Morton-Rozansky (MMR) expansion",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-ii-double-twist-knots",
    "title": "DOUBLE TWIST KNOTS",
-   "pages": "2-5"
+   "pages": "3-4"
   },
   {
-   "id": "sec-002-0-fk-fk-c1c1c1-c1c1c1-fk-fk-c1c1c1-fk-fk",
-   "title": "Fk ˜Fk /C1/C1/C1 /C1/C1/C1 Fk ˜Fk /C1/C1/C1 Fk ˜Fk",
-   "pages": "5-5"
+   "id": "sec-003-a-colored-homfly-pt-polynomials-for-a-class-of-d",
+   "title": "Colored HOMFLY-PT polynomials for a class of double twist knots Kðp; −mÞ",
+   "pages": "4-4"
   },
   {
-   "id": "sec-003-1-r",
-   "title": "R⊤",
-   "pages": "5-5"
+   "id": "sec-004-iii-knot-quiver-correspondence",
+   "title": "KNOT-QUIVER CORRESPONDENCE",
+   "pages": "4-7"
   },
   {
-   "id": "sec-004-1-t",
-   "title": "T⊤",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-005-1-u2-r2",
-   "title": "U2 ˜R2",
-   "pages": "5-6"
-  },
-  {
-   "id": "sec-006-c-knot-quiver-correspondence-for-kðp-3þ",
-   "title": "Knot-quiver correspondence for Kðp; − 3Þ",
-   "pages": "6-7"
-  },
-  {
-   "id": "sec-007-iv-conclusion-and-discussion",
+   "id": "sec-005-iv-conclusion-and-discussion",
    "title": "CONCLUSION AND DISCUSSION",
    "pages": "7-8"
   },
   {
-   "id": "sec-008-acknowledgments",
-   "title": "Acknowledgments",
+   "id": "sec-006-acknowledgments",
+   "title": "ACKNOWLEDGMENTS",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-007-appendix-quiver-matrix",
+   "title": "APPENDIX: QUIVER MATRIX",
    "pages": "8-11"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

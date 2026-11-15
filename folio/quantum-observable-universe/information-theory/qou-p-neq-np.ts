@@ -20,4 +20,10 @@ export default conjecture({
     "prf:qou-obstruction-reduction",
   ],
   cites: ["jaeger1990", "aharonov2009", "freedman2003", "cook1971"],
+  authorNotes: [
+    {
+      kind: "refined-framing",
+      body: "Earlier drafts stated the G_m-torsion dichotomy backwards.",
+    },
+  ],
 });

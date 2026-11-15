@@ -1,0 +1,68 @@
+have ?a1 € circline-set ?la ?a2 € circline-set ?la
+by (auto simp add: «?a1 # ?a2>)
+
+have la: is-poincare-line ?la
+using is-poincare-line-poincare-line{OF «?al # ?a2>|
+by simp
+
+have inv: inversion i1 = il inversion i2 = i2
+using <i © unit-circle-set> <i2 € unit-circle-sety
+by (auto simp add: circline-set-def unit-circle-set-def)
+
+have il 4 oon i2 4 on
+using inv
+by auto
+
+have ?al ¢ circline-set x-axis \ ?a2 ¢ circline-set x-axis
+proof (rule ccontr)
+assume — thesis
+hence ?al € circline-set x-axis V ?a2 € circline-set x-axis
+by auto
+hence ?la = x-axis
+proof
+assume ?al1 € circline-set z-axis
+hence {?a, ?a1} C circline-set ?la N circline-set z-axis
+using <?a € circline-set ?lay <?a1 € circline-set ?lay<?a € positive-x-axis>
+using circline-set-x-axis-I xa(1)
+by blast
+thus ?la = z-axis
+using wnique-is-poincare-line[of ?a ?al ?la x-axis]
+using <?al € unit-disc) «?a € unit-disc) la «?a # ?al>
+by auto
+next
+assume 7a2 € circline-set z-axis
+hence {?a, ?a2} C circline-set ?la M circline-set x-axis
+using <?a € circline-set ?lay <?a2 € circline-set ?lay «?a € positive-x-axis)
+using circline-set-x-axis-I xa(1)
+by blast
+thus ?la = z-axis
+using wnique-is-poincare-line[of ?a ?a2 ?la x-axis]
+using <?a2 € unit-disc) «?a € unit-disc) la <?a # ?a2>
+by auto
+qed
+
+hence i1 € circline-set x-axis \ i2 € circline-set x-axis
+using <?a1 € circline-set ?lay «?a2 € circline-set ?lay
+by (metis <i1 4 con» i2 # on» <of-complex (to-complex i1 / 2) € unit-discy <of-complex (to-complex
+i2 / 2) € unit-disc <poincare-collinear {0n, of-complex (to-complex il / 2), i1}> «poincare-collinear {0;,, of-complex
+(to-complex i2 / 2), i2}» divide-eq-0-iff inf-not-of-complez inv(1) inv(2) inversion-noteg-unit-disc of-complez-to-complex
+of-complex-zero-iff poincare-collinear3-poincare-lines-equal-general poincare-line-0-real-is-x-axis poincare-line-circline-set(2)
+zero-in-unit-disc zero-neq-numeral)
+
+thus False
+using <?lz # z-axis» unique-is-poincare-line-generallof i1 i2 ?li z-axis] <i1 A i2> inv «Pla = Plir
+by auto
+qed
+
+hence ?la # x-axis
+using <?al # ?a2) poincare-line-circline-set(1)
+by fastforce
+have intersects-z-azis-positive ?la
+using intersects-x-axis-positive-iff [of la] «?la # x-axis» <?a € circline-set ?la> la
+using <?a € unit-disc> «?a € positive-x-azxisy
+
+by auto
+
+have intersects-a-axis ?la
+
+164

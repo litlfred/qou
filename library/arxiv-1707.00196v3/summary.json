@@ -3,10 +3,10 @@
  "doc_id": "arxiv-1707.00196v3",
  "source_sha256": "9908b71521275b17",
  "brief": "Yang-Baxter representations of the inﬁnite symmetric group — Every unitary involutive solution of the quantum Yang-Baxter equation (R- matrix) deﬁnes an extremal character and a representation of the",
- "extended": "**Yang-Baxter representations of the inﬁnite symmetric group**\n\n*Gandalf Lechner, Ulrich Pennig, Simon Wood*\n\n36 pp, 15 sections.\n\n**Abstract.** Every unitary involutive solution of the quantum Yang-Baxter equation (R- matrix) deﬁnes an extremal character and a representation of the inﬁnite sym- metric group S∞. We give a complete classiﬁcation of all such Yang-Baxter characters and determine which extremal characters of S∞are of Yang-Baxter form. Calling two involutive R-matrices equivalent if they have the same character and the same dimension, we show that equivalence classes can be parameterized by pairs of Young diagrams, and construct an explicit normal form R-matrix for each class. Using operator-algebraic techniques (subfactors), we prove that two R-matrices are equivalent if and only if they have similar partial traces. Furthermore, we describe the algebraic structure of the set of equivalence classes of all involutive R-matrices, and discuss several families of examples.\n\n**Outline.** Front matter; 1 Introduction; 2 R-matrices and characters of S; 2.2 Faithfulness; 3 Yang-Baxter subfactors; 4 The structure of R0; 4.1 Normal forms of involutive R-matrices; 4.2 Parameterization by pairs of Young diagram; 5 Yang-Baxter representations; 5.1 R-matrices and K-theory; 5.2 R-matrices, K-theory and symmetric functio; 5.3 R-matrices and product states; 6 Examples; 6.1 R-matrices of diagonal type; 6.2 Temperley-Lieb R-matrices\n\n**Extracted claims (proposals, not verified).**\n- Theorem: I. R0/∼is in one to one correspondence with pairs of Young diagrams.\n- Theorem: II. Two R-matrices R, S ∈R0 are equivalent if and only if they have\n- Theorem: III. An extremal character of S∞is a Yang-Baxter character if and only\n- Theorem 2.1: [23] A character χ of S∞is extremal if and only if for any σ, σ′ ∈S∞\n- Theorem 2.3: [23] Let T denote the collection of all sequences {αi}i∈N, {βi}i∈N of\n- Theorem 2.5: [26] Let χ be an extremal character of S∞with Thoma parameters",
+ "extended": "**Yang-Baxter representations of the inﬁnite symmetric group**\n\n*Gandalf Lechner, Ulrich Pennig, Simon Wood*\n\n36 pp, 16 sections.\n\n**Abstract.** Every unitary involutive solution of the quantum Yang-Baxter equation (R- matrix) deﬁnes an extremal character and a representation of the inﬁnite sym- metric group S∞. We give a complete classiﬁcation of all such Yang-Baxter characters and determine which extremal characters of S∞are of Yang-Baxter form. Calling two involutive R-matrices equivalent if they have the same character and the same dimension, we show that equivalence classes can be parameterized by pairs of Young diagrams, and construct an explicit normal form R-matrix for each class. Using operator-algebraic techniques (subfactors), we prove that two R-matrices are equivalent if and only if they have similar partial traces. Furthermore, we describe the algebraic structure of the set of equivalence classes of all involutive R-matrices, and discuss several families of examples.\n\n**Outline.** Front matter; 1 Introduction; 2 R-matrices and characters of S; 2.1 Extremality and Thoma's parameterization; 2.2 Faithfulness; 3 Yang-Baxter subfactors; 4 The structure of R0; 4.1 Normal forms of involutive R-matrices; 4.2 Parameterization by pairs of Young diagram; 5 Yang-Baxter representations; 5.1 R-matrices and K-theory; 5.2 R-matrices, K-theory and symmetric functio; 5.3 R-matrices and product states; 6 Examples; 6.1 R-matrices of diagonal type; 6.2 Temperley-Lieb R-matrices",
  "tokens": {
   "brief": 49,
-  "extended": 496
+  "extended": 373
  },
  "sections": [
   {
@@ -22,65 +22,70 @@
   {
    "id": "sec-001-2-r-matrices-and-characters-of-s",
    "title": "R-matrices and characters of S",
-   "pages": "5-8"
+   "pages": "5-6"
   },
   {
-   "id": "sec-002-22-faithfulness",
+   "id": "sec-002-21-extremality-and-thomas-parameterization",
+   "title": "Extremality and Thoma's parameterization",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-003-22-faithfulness",
    "title": "Faithfulness",
    "pages": "8-8"
   },
   {
-   "id": "sec-003-3-yang-baxter-subfactors",
+   "id": "sec-004-3-yang-baxter-subfactors",
    "title": "Yang-Baxter subfactors",
    "pages": "8-15"
   },
   {
-   "id": "sec-004-4-the-structure-of-r0",
+   "id": "sec-005-4-the-structure-of-r0",
    "title": "The structure of R0",
    "pages": "15-15"
   },
   {
-   "id": "sec-005-41-normal-forms-of-involutive-r-matrices",
+   "id": "sec-006-41-normal-forms-of-involutive-r-matrices",
    "title": "Normal forms of involutive R-matrices",
    "pages": "15-20"
   },
   {
-   "id": "sec-006-42-parameterization-by-pairs-of-young-diagrams",
+   "id": "sec-007-42-parameterization-by-pairs-of-young-diagrams",
    "title": "Parameterization by pairs of Young diagrams",
    "pages": "20-22"
   },
   {
-   "id": "sec-007-5-yang-baxter-representations",
+   "id": "sec-008-5-yang-baxter-representations",
    "title": "Yang-Baxter representations",
    "pages": "22-22"
   },
   {
-   "id": "sec-008-51-r-matrices-and-k-theory",
+   "id": "sec-009-51-r-matrices-and-k-theory",
    "title": "R-matrices and K-theory",
    "pages": "22-25"
   },
   {
-   "id": "sec-009-52-r-matrices-k-theory-and-symmetric-functions",
+   "id": "sec-010-52-r-matrices-k-theory-and-symmetric-functions",
    "title": "R-matrices, K-theory and symmetric functions",
    "pages": "25-28"
   },
   {
-   "id": "sec-010-53-r-matrices-and-product-states",
+   "id": "sec-011-53-r-matrices-and-product-states",
    "title": "R-matrices and product states",
    "pages": "28-30"
   },
   {
-   "id": "sec-011-6-examples",
+   "id": "sec-012-6-examples",
    "title": "Examples",
    "pages": "30-30"
   },
   {
-   "id": "sec-012-61-r-matrices-of-diagonal-type",
+   "id": "sec-013-61-r-matrices-of-diagonal-type",
    "title": "R-matrices of diagonal type",
    "pages": "30-32"
   },
   {
-   "id": "sec-013-62-temperley-lieb-r-matrices",
+   "id": "sec-014-62-temperley-lieb-r-matrices",
    "title": "Temperley-Lieb R-matrices",
    "pages": "32-36"
   }
@@ -89,8 +94,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

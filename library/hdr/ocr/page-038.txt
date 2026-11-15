@@ -1,0 +1,49 @@
+Chapter 5
+
+Rational Cherednik Algebras
+
+Let W Cc GL(h) be a complex reflection group. There is a natural pairing (, ) : 6 x h* > C given by
+(y, x) := x(y). Let S be the set of all pseudo-reflections in W and let ¢: S + C be a conjugacy invariant
+function, that is, a map such that
+
+c(wsw ') =c(s) Vse S,weW.
+
+Let V :=6 @b* and let TV* denote the tensor algebra on the dual space of V. For s € S, fix a, € b*
+to be a basis of the one-dimensional vector space Im(s — idy)|,- and a¥ € b to be a basis of the one-
+dimensional vector space Im(s — idy)|,. Let t € C. The rational Cherednik algebra Hi,c(W) of W is the
+quotient of TV* x W by the relations:
+
+Yres)(ays2) |
+
+[z1,22] =0, [y1,92] =0, [y,2] =t(y,2) — 2) o(s) (av, a.)
+
+seS
+for all 71, %2,u € h* and yi, yo, y € b.
+
+Example 5.1 Let W = G,, and h = C”. Choose a basis 71,..., 2» of h* and a dual basis y1,..., Yn of
+6 so that
+rj, =To(iyF and oy; =YoiiyT VOE Gn, 1 <ign.
+
+The set S is the set of all transpositions in G,,. We denote by s;; the transposition (i, j). Set
+Qi = aj,—a2; and ay = Yi — Y Vici<j<n.
+We have (a¥;,ai;) = 2. There is a single conjugacy class in S, so take c € C. Then Hi,<(Gn) is the
+quotient of TV* x G,, by the relations:
+[v2] =0, [vis yj] =O, [wai] =t- c)o si, [yi vj] = esi fori Fj.
+jAt
+
+Remark 5.2 For all \ € C*, we have H)i,,c(W) = Hic(W). So we only need to consider the cases
+t=landt=0.
+
+There is a natural filtration F on Hi<(W) given by putting V* in degree one and W in degree
+zero. The crucial result by Etingof and Ginzburg is the Poincaré—Birkhoff-Witt (PBW) Theorem
+Theorem 1.3].
+
+Theorem 5.3 Let C[{V] be the set of regular functions on V (that is, the symmetric algebra Sym(V*) of
+the dual space of V). There is an isomorphism of algebras
+
+ery (Hie(W)) = CV] x W,
+
+given by a(v) + v, o(w) 4 w, where o(h) denotes the image of h € Hic(W) in gre-(Hi<(W)). In
+particular, there is an isomorphism of vector spaces
+
+Hic(W) & C[V] @ C[W].

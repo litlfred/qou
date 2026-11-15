@@ -1,0 +1,53 @@
+Appendix C
+
+FreeFEM+-+ Code for Genus 2
+
+The following box contains the FreeFEM-++ code for the{Balza surface. It contains basic
+comments, but for more information about the various solvers and finite element spaces
+available in the software, please consult the manual [32].
+
+int n = 30; //number of modes
+
+int nev=100; //number of eigenvalues to be calculated
+string fnm = "bolza_surface_30n_100nev.txt"; //file name for saving
+
+real r = 0.4550898605622276; //radius of circle
+real c = 1.09868411346781; //centre of circle on x-axis
+
+border Gl (t—5*pi/4,3*pi/4) { x<ctr*cos(t); y=r«esin(t);};
+
+border G2 (t=5«pi/4,3*pi/4) { x=cos(pi/4)*(ct+r*cos(t))—sin(pi/4)*r«sin(t);
+y=sin(pi/4)*(c+r*cos(t))+cos(pi/4)*r*sin(t);};
+
+border G3 (t=5«pi/4,3*pi/4) { x=cos(pi/2)*(c+r*cos(t))—sin(pi/2)*r«sin(t);
+y=sin(pi/2)*(c+r*cos(t))+cos(pi/2)*r*sin(t);};
+
+border G4 (t=5*pi/4,3*pi/4) { x=cos(3*pi/4)*(ctr*cos(t))—sin(3*pi/4)*r*sin(t);
+y=sin (3* pi/4)*(ct+r*cos(t))+cos(3*pi/4)*r*sin(t);};
+
+border G5 (t=5*pi/4,3*pi/4) { x=cos(pi)*(ctr*cos(t))—sin(pi)*r*sin(t);
+y=sin (pi)*(ctr*cos(t))+cos(pi)*r*sin(t);}3
+
+border G6 (t=5*pi/4,3*pi/4) { x=cos(5*pi/4)*(ctr*cos(t))—sin(5*pi/4)*r*sin(t);
+y=sin (5* pi/4)*(ct+r*cos(t))+cos(5*pi/4)*r*sin(t);};
+
+border G7 (t=5*pi/4,3*pi/4) { x=cos(6*pi/4)*(ctr*cos(t))—sin(6*pi/4)*r*sin(t);
+y=sin (6* pi /4)*(ct+r*cos(t))+cos(6*pi/4)*r*sin(t);};
+
+border G8 (t=5*pi/4,3*pi/4) { x=cos(7*pi/4)*(ctr*cos(t))—sin(7*pi/4)*r*sin(t);
+y=sin (7* pi /4)*(ct+r*cos(t))+cos(7*pi/4)*r*sin(t);};
+
+plot (G1(n)+G2(n)+G3(n)+G4(n)+G5(n)+G6(n)+G7(n)+G8(n));
+
+mesh Th=buildmesh (G1(n)-+G2(n)+G3(n)+G4(n)+G5(n)+G6(n)+G7(n)+G8(n) , fixeborder=true );
+plot (Th, wait=true, fill=true);
+
+fespace Vh(Th,P2, periodic =[[1,y] ,[5,y],[3,x],[7,x],[2,y—x] ,[6,y-x] ,[4.,.y+x] ,[8,y+x]]);
+
+//glues opposite sides such that orientation is preserved
+Vh ul, u2;
+
+real sigma = 0.00001; //value of the shift
+varf op(ul,u2)= int2d(Th)(dx(ul)*dx(u2)+ dy(ul)*dy(u2)— sigma*(4*ul¥u2)/(1—x°2-y~>2)*2);
+
+108

@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1012.5432v4/sections/sec-027",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "G Alice Physics and Cheshire Charges in Non-Abelian Gauge Theories",
+  "pageStart": 22,
+  "pageEnd": 23,
+  "contains": [
+    "library/arxiv-1012.5432v4/blocks/prose-sec-027",
+    "library/arxiv-1012.5432v4/blocks/recommendation-sec-027-01",
+    "library/arxiv-1012.5432v4/blocks/recommendation-sec-027-02",
+    "library/arxiv-1012.5432v4/blocks/recommendation-sec-027-03",
+    "library/arxiv-1012.5432v4/blocks/recommendation-sec-027-04"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1012.5432v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1012.5432v4",
+  "provenance": "ingested"
+}

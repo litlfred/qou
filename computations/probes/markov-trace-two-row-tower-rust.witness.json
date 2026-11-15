@@ -198,6 +198,15 @@
       "tr_markov_d": "-0.000011219721096034424946933842473114592150773236230395731838316",
       "two_precision_agreement_digits": "77.93",
       "z": 10
+    },
+    {
+      "a": 21,
+      "isotope": "21ne",
+      "n": 11,
+      "pn": 110,
+      "tr_markov_d": "-0.00000111369018222330944886508394912425428840338079162183931220578",
+      "two_precision_agreement_digits": "77.9",
+      "z": 10
     }
   ],
   "self_checks": [
@@ -225,6 +234,13 @@
       "n_max": 10,
       "seconds_check_dps": "3333.500",
       "seconds_main_dps": "3510.530",
+      "z": 10
+    },
+    {
+      "a_max": 21,
+      "n_max": 11,
+      "seconds_check_dps": "8298.840",
+      "seconds_main_dps": "9437.720",
       "z": 10
     }
   ],

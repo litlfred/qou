@@ -1,0 +1,68 @@
+show ?P H
+proof safe
+fix z
+assume z € unit-disc
+hence moebius-pt M z € unit-disc
+using (unit-disc-fir My
+by auto
+then obtain H’ where *: is-poincare-line H' perpendicular (moebius-circline MH) H' moebius-pt M z € circline-set
+H!
+using *
+by auto
+have h: H = moebius-circline (—M) (moebius-circline M H)
+by auto
+show ?P! H z
+using * <unit-disc-fix M»
+apply (subst h)
+apply (rule-tac s=moebius-circline (—M) H’' in eal)
+apply (simp del: moebius-circline-comp-inv-left)
+done
+qed
+qed fact
+thus ?thesis
+using assms
+by simp
+qed
+
+lemma ez-perpendicular-foot:
+assumes is-poincare-line H z € unit-disc
+shows 3 H’. is-poincare-line H' \ z € circline-set H' \ perpendicular H H' A
+(4 2’ € unit-disc. z' € circline-set H' Q circline-set H)
+using assms
+using ex-perpendicular[OF assms]
+using perpendicular-intersects|of H]
+by blast
+
+lemma Pythagoras:
+assumes in-disc: u € unit-disc v € unit-disc w € unit-disc v # w
+assumes distinct[u, v, w]) —> perpendicular (poincare-line u v) (poincare-line u w)
+shows cosh (poincare-distance v w) = cosh (poincare-distance u v) * cosh (poincare-distance u w) (is ?P’ uv w)
+proof (cases distinct [u, v, w])
+case False
+thus ?thesis
+using in-disc
+by (auto simp add: poincare-distance-sym)
+next
+case True
+have distinct [u, v, w] — ?P'’uvw (is ?P uv w)
+proof (rule wlog-perpendicular-axes[where P=?P])
+show is-poincare-line (poincare-line u v) is-poincare-line (poincare-line u w)
+using <distinct [u, v, w]>
+by simp-all
+next
+show perpendicular (poincare-line u v) (poincare-line u w)
+using True assms
+by simp
+next
+show u € unit-disc v € unit-disc w € unit-disc
+by fact+
+next
+show v € circline-set (poincare-line u v) w € circline-set (poincare-line u w)
+u € circline-set (poincare-line u v) M circline-set (poincare-line u w)
+using <distinct [u, v, w]>
+by auto
+next
+fix ry
+assume z: is-realz 0 < Rex Rex < 1
+
+122

@@ -1,0 +1,47 @@
+Spiders for Rank 2 Lie Algebras 111
+
+For this reason, spiders are sometimes defined as a type of (non-symmetric) tensor
+category. To construct such a category, one must divide the tensor factors of an
+invariant space
+
+Inv(V; ®--- @V,)
+
+into smaller tensor products which serve as the domain and target of a space of mor-
+phisms. This involves arbitrary choices that are extraneous to most of the arguments
+in this paper, so we will not usually treat spiders as categories.
+
+In this paper, we will define certain spiders in terms of generators and relations,
+and we will show that they are isomorphic to the representation theories of rank
+two Lie algebras and the quantum deformations of these representation theories.
+These results generalize a well-known construction for A; = sl(2) that first arose in
+a paper of Rumer, Teller, and Weyl [18], that was developed later by Temperley and
+Lieb [22], and that was greatly developed recently by Jones, Kauffman, Lickorish,
+Masbaum, and Vogel [5, 6, 10, 12]. Moreover, Frenkel and Khovanov have recently
+established that the bases of invariant spaces that arise when one constructs the A;
+spider by generators and relations are dual to the canonical bases of Lusztig [11].
+We conjecture that a similar phenomenon holds in the rank 2 cases.
+
+2. The A; Spider and sl(2, F)
+
+Let V & IF* be the defining representation of sl(2,IF), where F is some field of
+characteristic 0. (The complex numbers € are a good choice for FF.) Choose a
+parameter a € F. Since the vector space V is a self-dual representation, there exists
+a non-degenerate, invariant contraction operation o : V @ V — F. For each n, choose
+n points on the boundary of a disk in the plane, and let B,, the set of basis webs,
+be the set of crossingless matchings of the n points. For example, if n is odd, B,
+is empty, while Bg has the following 5 elements:
+
+Nb S/d 856
+
+By convention, Bo has a single element, the empty disk. Let W,, the web space,
+be the vector space of formal linear combinations of elements of B, with coeffi-
+cients in FF.
+
+Theorem 2.1. There exist isomorphisms on : Wy — Inv(V®").
+
+Theorem 2.1 has few consequences in isolation; it only says that web spaces
+have the same dimension as invariant spaces. By the Weyl character formula,
+dim Inv(V®") is the number of non-negative lattice paths of length n in one
+dimension, and there is a standard combinatorial bijection between such paths and
+crossingless matchings. (Idea: Both combinatorial sets are equivalent to balanced
+lists of parentheses of length n, such as “(())()” when n = 6.)

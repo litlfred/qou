@@ -1,0 +1,73 @@
+by simp
+hence ?a 4 7b
+
+by (metis to-complex-of-complex)
+have (i/2) 4 (1/5)
+
+by simp
+hence ?a 4 ?c
+
+by (metis to-complex-of-complex)
+have (—i/2) 4 (1/5)
+
+by (simp add: minus-equation-iff)
+hence ?b # ?c
+
+by (metis to-complex-of-complex)
+
+have 7a € unit-disc ?b € unit-disc ?c € unit-disc
+by auto
+
+moreover
+have ~(poincare-collinear {?a, ?b, ?c})
+unfolding poincare-collinear-def
+proof (rule ccontr)
+assume -— (fp. is-poincare-line p \ {?a, 2b, ?c} C circline-set p)
+then obtain p where is-poincare-line p A {?a, ?b, ?c} C circline-set p
+by auto
+let ?ab = poincare-line ?a ?b
+have p = ?ab
+using <is-poincare-line p \ {?a, ?b, ?c} C circline-set p>
+using unique-poincare-line[of ?a ?b] «?a # ?b» «?a € unit-disc» «?b € unit-dise»
+by auto
+have ?c ¢ circline-set ?ab
+proof (rule ccontr)
+assume — ?c ¢ circline-set ?ab
+have poincare-between ?a On ?b
+unfolding poincare-between-def
+using cross-ratio-Oinf by auto
+hence 0), € circline-set ?ab
+using <?a £ 2b» <?a © unit-disc) «?b € unit-discy
+using poincare-between-poincare-line-uzv zero-in-unit-disc
+by blast
+hence ?ab = poincare-line 0n ?a
+using unique-poincare-line[of ?a ?b| «?a # 2b» «?a © unit-disc> «?b € unit-disc»
+using <is-poincare-line p A {?a, ?b, ?c} C circline-set p>
+using <p = ?ab» poincare-line-circline-set(1) unique-poincare-line
+by (metis add.inverse-neutral divide-minus-left of-complex-zero-iff zero-in-unit-disc)
+hence (i/2) * enj(1/5) = enj(i/2) * (1/5)
+using poincare-collinear-zero-iff [of (i/2) (1/5)|
+using (?a # ?c) (4 ?c € circline-set ?ab> «?a € unit-discr «?c € unit-disc> «p = ?ab»
+using (On € circline-set ?ab) <is-poincare-line p \ {?a, ?b, ?c} C circline-set p»
+using poincare-collinear-def by auto
+thus False
+by simp
+qed
+thus False
+using <p = ?ab» <is-poincare-line p \ {?a, ?b, ?c} C circline-set p>
+by auto
+qed
+
+moreover
+
+have =(S a. x € unit-disc \
+poincare-distance ?a % = poincare-distance 2b % A
+poincare-distance ?a x = poincare-distance ?c 2)
+proof (rule ccontr)
+assume — ?thesis
+then obtain z where z € wnit-disc poincare-distance ?a x = poincare-distance ?b ©
+poincare-distance ?a x = poincare-distance ?c x
+by blast
+let ?x = to-complex x
+
+149

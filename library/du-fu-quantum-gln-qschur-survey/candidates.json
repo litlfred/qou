@@ -1,0 +1,116 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "du-fu-quantum-gln-qschur-survey",
+ "source": {
+  "structure_sha256": "6852134eaffb31376226d2f7c6d0c1b1f43fb44d37c1ccb95cb55875ae064cb6",
+  "file": "du-fu-quantum-gln-qschur-survey.pdf"
+ },
+ "provenance": {
+  "title": "QUANTUM gln, q-SCHUR ALGEBRAS AND THEIR",
+  "authors": "INFINITE/INFINITESIMAL COUNTERPARTS",
+  "arxiv": null,
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 6,
+  "by_kind": {
+   "recommendation": 6
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall see in \u00a79 that U(\u221e, r) \u223c= V(\u221e, r).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-008.md",
+   "section_title": "Page 8",
+   "pages": "8-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Thus, we shall write A(\u00afj) := A(j).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-008.md",
+   "section_title": "Page 8",
+   "pages": "8-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Similarly, we shall use A(\u00afj, r) := A(j, r) to denote the element de\ufb01ned earlier with \u03c5 replaced by \u03b5 for the q-Schur algebra U(n, r)k = U(n, r) \u2297Z k over k.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-008.md",
+   "section_title": "Page 8",
+   "pages": "8-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "By abuse of notation, we shall continue to denote the images of the generators Ei, Fi, Kj for \u02dcuk(n) by the same letters ei, fi, kj used for U(n, r).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-013.md",
+   "section_title": "Page 13",
+   "pages": "13-13",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall see in the next section that V(\u221e, r) is isomorphic to U(\u221e, r).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-015.md",
+   "section_title": "Page 15",
+   "pages": "15-15",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall see in the next section that there exist irreducible integrable modules which are not in Chi.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-019.md",
+   "section_title": "Page 19",
+   "pages": "19-19",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

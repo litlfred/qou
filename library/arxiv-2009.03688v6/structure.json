@@ -8,9 +8,15 @@
   "pages": 48,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:21Z",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 26,
+    "reason": "150 letters among 307 non-space characters other than digits: mojibake"
+   }
+  ]
  },
  "metadata": {
   "arxiv": {
@@ -26,7 +32,7 @@
    "E8-singularity, invariant theory and modular",
    "forms"
   ],
-  "abstract": "As an algebraic surface, the equation of E8-singularity x5 + y3 + z2 = 0 can be obtained from a quotient CY /SL(2, 13) over the modular curve X(13), where Y \u2282CP5 is a complete intersection curve given by a system of SL(2, 13)-invariant polynomials and CY is a cone over Y . It is di\ufb00erent from the Kleinian singularity C2/\u0393, where \u0393 is the binary icosahedral group. This gives a negative answer to Arnol\u2019d and Brieskorn\u2019s questions about the mys- terious relation between the icosahedron and E8, i.e., the E8-singularity is not necessarily the Kleinian icosahedral singularity. In particular, the equa- tion of E8-singularity possesses in\ufb01nitely many kinds of distinct modular parametrizations, and there are in\ufb01nitely many kinds of distinct construc- tions of the E8-singularity. They form a variation of the E8-singularity struc- ture over the modular curve X(13), for which we give its algebraic version, geometric version, j-function version and the version of Poincar\u00b4e homology 3- sphere as well as its higher dimensional lifting, i.e., Milnor\u2019s exotic 7-sphere. Moreover, there are variations of Q18 and E20-singularity structures over X(13). Thus, three di\ufb00erent algebraic surfaces, the equations of E8, Q18 and E20-singularities can be realized from the same quotients CY /SL(2, 13) over the modular curve X(13) and have the same modular parametrizations. 1",
+  "abstract": "As an algebraic surface, the equation of E8-singularity x5 + y3 + z2 = 0 can be obtained from a quotient CY /SL(2, 13) over the modular curve X(13), where Y ⊂CP5 is a complete intersection curve given by a system of SL(2, 13)-invariant polynomials and CY is a cone over Y . It is diﬀerent from the Kleinian singularity C2/Γ, where Γ is the binary icosahedral group. This gives a negative answer to Arnol’d and Brieskorn’s questions about the mys- terious relation between the icosahedron and E8, i.e., the E8-singularity is not necessarily the Kleinian icosahedral singularity. In particular, the equa- tion of E8-singularity possesses inﬁnitely many kinds of distinct modular parametrizations, and there are inﬁnitely many kinds of distinct construc- tions of the E8-singularity. They form a variation of the E8-singularity struc- ture over the modular curve X(13), for which we give its algebraic version, geometric version, j-function version and the version of Poincar´e homology 3- sphere as well as its higher dimensional lifting, i.e., Milnor’s exotic 7-sphere. Moreover, there are variations of Q18 and E20-singularity structures over X(13). Thus, three diﬀerent algebraic surfaces, the equations of E8, Q18 and E20-singularities can be realized from the same quotients CY /SL(2, 13) over the modular curve X(13) and have the same modular parametrizations. 1",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "LaTeX with hyperref",
@@ -90,7 +96,7 @@
   },
   {
    "level": 1,
-   "title": "Standard construction: E8-singularity as the",
+   "title": "Standard construction: E8-singularity as the icosahedral singularity",
    "page": 14,
    "source": "inferred",
    "number": "2",
@@ -98,19 +104,6 @@
    "evidence": [
     "style",
     "number",
-    "numbered-style"
-   ],
-   "page_label": null
-  },
-  {
-   "level": 1,
-   "title": "icosahedral singularity",
-   "page": 14,
-   "source": "inferred",
-   "number": null,
-   "confidence": 0.55,
-   "evidence": [
-    "style",
     "numbered-style"
    ],
    "page_label": null
@@ -131,7 +124,7 @@
   },
   {
    "level": 1,
-   "title": "A di\ufb00erent construction: E8-singularity from",
+   "title": "A diﬀerent construction: E8-singularity from",
    "page": 39,
    "source": "inferred",
    "number": "4",
@@ -530,8 +523,8 @@
    "level": 1,
    "page_start": 2,
    "page_end": 2,
-   "n_chars": 2,
-   "n_words": 1,
+   "n_chars": 0,
+   "n_words": 0,
    "label_start": null,
    "label_end": null
   },
@@ -542,51 +535,39 @@
    "level": 1,
    "page_start": 2,
    "page_end": 14,
-   "n_chars": 22056,
-   "n_words": 4300,
+   "n_chars": 22069,
+   "n_words": 4301,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-003-2-standard-construction-e8-singularity-as-the",
+   "id": "sec-003-2-standard-construction-e8-singularity-as-the-ic",
    "number": "2",
-   "title": "Standard construction: E8-singularity as the",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 14,
-   "n_chars": 0,
-   "n_words": 0,
-   "label_start": null,
-   "label_end": null
-  },
-  {
-   "id": "sec-004-icosahedral-singularity",
-   "number": null,
-   "title": "icosahedral singularity",
+   "title": "Standard construction: E8-singularity as the icosahedral singularity",
    "level": 1,
    "page_start": 14,
    "page_end": 16,
-   "n_chars": 4109,
-   "n_words": 784,
+   "n_chars": 4133,
+   "n_words": 786,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-005-3-invariant-theory-and-modular-forms-for-sl2-13",
+   "id": "sec-004-3-invariant-theory-and-modular-forms-for-sl2-13",
    "number": "3",
    "title": "Invariant theory and modular forms for SL(2, 13)",
    "level": 1,
    "page_start": 16,
    "page_end": 39,
-   "n_chars": 31329,
-   "n_words": 7645,
+   "n_chars": 30692,
+   "n_words": 7390,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-006-4-a-di\ufb00erent-construction-e8-singularity-from",
+   "id": "sec-005-4-a-diﬀerent-construction-e8-singularity-from",
    "number": "4",
-   "title": "A di\ufb00erent construction: E8-singularity from",
+   "title": "A diﬀerent construction: E8-singularity from",
    "level": 1,
    "page_start": 39,
    "page_end": 46,
@@ -596,7 +577,7 @@
    "label_end": null
   },
   {
-   "id": "sec-007-references",
+   "id": "sec-006-references",
    "number": null,
    "title": "References",
    "level": 1,
@@ -611,10 +592,10 @@
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 8,
-  "toc_inferred_entries": 8,
-  "toc_inferred_mean_confidence": 0.688,
-  "toc_inferred_empty_share": 0.25,
+  "toc_entries": 7,
+  "toc_inferred_entries": 7,
+  "toc_inferred_mean_confidence": 0.707,
+  "toc_inferred_empty_share": 0.143,
   "toc_inferred_method": "font",
   "figure_entries": 0,
   "figure_sequence_gaps": [],
@@ -622,7 +603,8 @@
    "count": 0,
    "items": []
   },
-  "sections": 9,
-  "chars_total": 75698
+  "sections": 8,
+  "chars_total": 75096,
+  "furniture_lines_stripped": 0
  }
 }

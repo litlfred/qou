@@ -1,0 +1,49 @@
+Problems on invariants of knots and 3-manifolds 433
+
+Here, A; and ¢; are the comultiplication and the counit acting on the i-th solid
+line; see [29] for these notations. An associator is derived from a Drinfel’d series
+
+(A, B) by
+e=o( f{ |. | ff ye auto, (17)
+
+where a Drinfel’d series is an invertible group-like power series y(A, B) of non-
+commutative indeterminates A and B satisfying certain relations.
+
+The Drinfel’d associator is given as follows. We consider the differential equa-
+tion
+
+1 A B
+In/-T ( z-1
+for an analytic function G of the variable z, where G(z) belongs to the formal
+power series ring C((A, B)) of non-commutative indeterminates A and B. There
+exists unique solutions G(.,), and G,..) of the above differential equation of
+the forms
+
+Gl(z) = Jee, (18)
+
+Gesye(2) = f(z)2Av1
+Goes) (z) = g(1 — z)(1— 2)BPmA
+
+where f(z) and g(z) are analytic functions with f(0) = g(0) = 1 € C(A, B))
+defined in a neighborhood of 0 € C. The power series y,,(A, B) € C(A, B))
+is defined by Giesye = Gees) Pxz (A, B). The associator derived from y,,(A, B)
+by (17) is called the Drinfel’d associator.
+
+Problem 3.13 Find a combinatorial direct presentation of an associator for
+all degrees, in particular, an associator with rational coefficients.
+
+Remark We still do not have a combinatorial direct presentation of any as-
+sociator for all degrees. This implies that we still do not know a combinatorial
+direct presentation of the Kontsevich invariant of each knot for all degrees (ex-
+cept for the trivial knot); see Problem 3.1 and its remarks. Bar-Natan [29]
+showed a combinatorial degree-by-degree proof of the existence of solutions of
+the defining relations of a pair (R,®). Our definition of ® follows from the
+
+defining relations when R is given by exp (3 }-{ ).
+
+Remark The only associator whose coefficients can be directly presented for
+all degrees so far is the Drinfel’d associator. We can present all degrees of the
+Drinfel’d associator by a limit of iterated integrals (see (19)) of by multiple zeta
+functions (see (20)). It is known [248] that all associators are related to each
+
+Geometry & Topology Monographs, Volume 4 (2002)

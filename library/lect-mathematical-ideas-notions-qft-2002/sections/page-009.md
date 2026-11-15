@@ -1,0 +1,72 @@
+---
+doc_id: lect-mathematical-ideas-notions-qft-2002
+doc_title: "Mathematical ideas and notions of quantum field theory"
+section_id: page-009
+section_title: "Page 9"
+pages: 9-9
+pdf_page: 9
+source_pdf: lect-mathematical-ideas-notions-qft-2002.pdf
+source_sha256: 95cac1ccd6c80226
+text_source: ocr
+granularity: page
+doc_brief: "Mathematical ideas and notions of quantum field theory — 78 sections: Page 1; Page 2; Page 3"
+---
+MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 9
+
+variable (check it!), so we can choose a coordinate system in such a way that
+B(a,x) = aj +--+ 23, and C(x) = 21. Therefore, it is sufficient to assume that
+d=1, and ¢(#) = a. In this case, the theorem says that
+
+[- ake /2 dy = (ony
+which is easily obtained from the definition of the Gamma function by change of
+variable y = x? /2. Oo
+Examples.
+2n)4/2
+[er tetataye Bede = FR 516,05),
+| £1 (x) bo(x) by (x) ba()e" BO? da =
+(2n)4/? "
+
+Taro (arta) B (ssl) + BO! (ly, f3)B" (lo, l1) + Bo" (E1, €4) BO" (2, és).
+
+Wick’s theorem shows that the problem of computing A; is of combinatorial
+nature. In fact, the central role in this computation is played by certain finite
+graphs, which are called Feynman diagrams. They are the main subject of the
+remainder of this section.
+
+3.2. Feynman’s diagrams and Feynman’s theorem. We come back to the
+problem of computing the coefficients A;. Since each particular A; depends only on
+a finite number of derivatives of g at c, it suffices to assume that g is a polynomial,
+or, more specifically, a product of linear functions: g = f,...én, ; € V*. Thus, it
+suffices to be able to compute the series expansion of the integral
+
+< ly... ly Ses HU 205(0)/P [ O(a)... Ey (w)e~8)/Pdex
+B
+
+Without loss of generality we may assume that c = 0, and S(c) = 0. Then the
+(asymptotic) Taylor expansion of S at cis S(a) = Bie.) +V33 BolGrtaeB) where
+B, = d’ f(0). Therefore, regarding the left hand side as a power series in h, and
+
+making a change of variable « + «/Vh (like in the last section), we get
+
+<t...0y >= nvr [ i(x)... Ln (ae
+Vv
+
+AGP Tyg WPT ER)
+(This is an identity of expansions in h, as we ignored the rapidly decaying error
+which comes from replacing the box by the whole space).
+
+The theorem below, due to Feynman, gives the value of this integral in terms of
+Feynman diagrams. This theorem is easy to prove but is central in quantum field
+theory, and will be one of the main theorems of this course. Before formulating this
+theorem, let us introduce some notation.
+
+Let G>3(N) be the set of isomorphism classes of graphs with N 1-valent “ex-
+ternal” vertices, labeled by 1,...,N, and a finite number of unlabeled “internal”
+vertices, of any valency > 3. Note that here and below graphs are allowed to have
+multiple edges between two vertices, and loops from a vertex to itself (see Fig. 2).
+
+For each graph T € G33(N), we define the Feynman amplitude of T as follows.
+
+1. Put the covector ¢; at the j-th external vertex.
+
+2. Put the tensor —B,, at each m-valent internal vertex.

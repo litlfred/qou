@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.969
 latex_coverage_ratio: 0.986
+doc_brief: "CUSP SHAPES UNDER CONE DEFORMATION — A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp shape."
 ---
 We now turn our attention to the term $(a^2+b^2)$ in Lemma [\[lemma:b_U=area\]](#lemma:b_U=area){reference-type="ref" reference="lemma:b_U=area"}. This term is closely related to the change in metric of the torus $\partial U$.
 

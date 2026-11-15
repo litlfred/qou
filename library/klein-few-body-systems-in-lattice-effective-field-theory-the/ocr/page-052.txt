@@ -1,0 +1,55 @@
+Chapter 4 Regularization Methods for Nuclear Lattice Effective Field Theory
+
+A problem is caused by the singularities which arise in the short-range region of the OPE contribution.
+On the one hand, this singularity exists for any lattice spacing as the relative distance 7 = 0 is possible
+and gives a very large but still finite contribution. On the other hand, minimizing the lattice spacing
+leads to additional lattice points with non-zero but very small distances to the origin and which give an
+additional large short-range contribution.
+
+Firstly, we switch off the smearing of the contact interaction and include the pion-nucleon interaction
+according to Eq. (4.3). In this case, the predictions for the effective range parameter are not close to the
+physical value and it is still necessary to include the smearing of the contact interaction [32].
+
+In the case of smeared contact interaction and non-smeared pion-nucleon interaction the LECs do not
+give a reasonably close value for the effective range in the 35 ,;-channel. The prediction is reasonable
+and constant for a lattice spacing larger than 1 fm, but it does decrease towards zero for smaller lattice
+spacings. As we do not include a regularization, the divergent 7N-contribution for small lattice spacings
+is more and more resolved for smaller lattice spacings resulting in a very sharp potential. The contact
+interaction in combination with the smearing factor b can compensate this effect but as the 's o- and
+35 ,-channel do not have exactly the same dependence, while it is still possible to fit to one of the effective
+ranges, the agreement for the other one gets worse.
+
+Now we turn on the smearing of the pion-nucleon interaction. While a smearing in momentum space
+according to Eq. (4.11) could be possible, we follow the arguments given in Ref. [22] and introduce the
+regularization in position space as proposed in Eq. (4.14). Then, the new OPE potential reads
+
+Hopp = 4 » » F(t, — 3) Gs, 5, (Ay — fy) pS 4 (it,) p54 (i) : (4.22)
+
+Sool ity Hy
+
+Throughout this chapter, we use n = 4 in Eq. (4.14), but we also checked for different n and the results are
+similar. Higher values of n are only necessary for strongly divergent contributions like two-pion-exchange
+potentials which we neglect in this exploratory study.
+
+In Fig. 4.2, the finite volume binding energy of the deuteron and the respective effective range expansion
+for the S-waves for a subset of the lattice spacings used are shown. Finite volume effects modify the
+binding energy so that a correction according to Eq. (4.15) is necessary but higher order terms are still
+negligible. Also the data points we obtain for the effective range expansion still have small enough
+momenta squared so that the expansion up to O(p”) is feasible. The resulting LECs, the smearing constant
+as well as the predictions for L = 34, 36, 38 are displayed in Tab. 4.3. While the value of the LECs are
+different to the pionless case, their general shape depending on the lattice spacing does not change and
+the LECs remain negative as well. Also the smearing factor b remains in a certain range between 2.40
+to 2.92 x10 MeV ~~, indicating that this regularization scheme works quite well. We do not show the
+results for the smaller set of lattice sizes, but we have shown that finite volume effects between these two
+sets become negligible for lattice spacings larger than 0.7 fm. Assuming a large enough lattice there is a
+rise in the smearing constant between 1.8 fm and 0.7 fm, and it is constant again for lattice spaces smaller
+than 0.7 fm. While in the range from 0.7 fm and 1.8 fm the pion-nucleon contribution changes, the lattice
+sites closest to the origin contribute more and more to the potential due to the divergent structure of the
+potential. This effect is compensated by the regularization at a certain range as we further decrease the
+lattice spacing, and then the regularized potential does not change its shape anymore. Note that in the
+intermediate range there are lattice artifacts in the OPEP which cause the oscillatory behavior of the
+LECs as they appear at different physical lengths and multiplied by a different regularization factor. As
+a result, we cannot see a plateau for the LECs Crs and C15, at a lattice spacing of a = 0.5 fm, but we
+have to further decrease the lattice spacing. Simultaneously, we increase the number of lattice points to
+
+46

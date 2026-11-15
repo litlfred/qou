@@ -1,0 +1,1 @@
+Although spacetimes of more than four dimensions are nowadays commonplace, these are generally in the Kaluza-Klein tradition where the extra dimensions, being space-like, must be “hidden from view” in a “Calabi-Yau” manifold in some way, shape or form.

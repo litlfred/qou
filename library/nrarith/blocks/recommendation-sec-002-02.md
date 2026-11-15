@@ -1,0 +1,1 @@
+Mess [Me] is interesting in reference to Theorem 3.2 and Proposi- tion 3.3—he shows that a 3-manifold group with a Z/p × Z/p quotient must either have a ﬁnite index subgroup with inﬁnite abelianization or the sizes of the successive quotients of the derived series must grow rapidly.

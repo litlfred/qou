@@ -52,6 +52,7 @@ export default conjecture({
     "exceptional-divisor",
     "hyperbolic-volume",
   ],
+  cites: ["dgkmsv2013"],
   uses: [
     "def:neutrino-knot",
     "prop:bn-mtc-action",

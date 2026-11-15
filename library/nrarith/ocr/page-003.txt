@@ -1,0 +1,37 @@
+Arithmetic of Hyperbolic Manifolds == 275
+
+Note that the question about whether hidden symmetries exist for MM = H°/T is just
+the question about whether Comm(I) (hidden symmetries) equals the normalizer of T
+(symmetries), i.e., whether I’ is normal in Comm(T).
+
+In Sections 5-8 of this paper we consider the manifold C(p, s) which is the comple-
+ment of a p link chain in S$? with s left half twists (or —s right half twists) pictured in
+Fig. 1 (we also make sense of this manifold—up to commensurability—for p = 0). We
+show it has a hyperbolic structure if and only if {|p+|,|s|} Z {0, 1,2} and determine its
+commensurator (i.e., the commensurator of its fundamental group) and some arithmetic
+invariants in this case. These computations use that Cp, s) is commensurable with the
+result of (p,s/2) Dehn surgery on one component of the Whitehead link (one can make
+sense of (p,q) surgery for qg a half-integer; see Sect. 5). These Dehn surgeries on the
+Whitehead link are also discussed in [HMW].
+
+a
+
+—/
+
+Figure 1. C(p,s) for p= 6, s=-3
+
+We give the finite list of (p,s) for which C(p, s) is arithmetic—it is then commen-
+surable with PSL20q4 with d € {1,2,3,7, 15} so the commensurator is PGL2Q(/—d)
+extended by complex conjugation. In all other cases we show that 7,C(p,s) is normal
+in its orientation preserving commensurator, with quotient the “obvious” group of orien-
+tation preserving symmetries of C(p, s), and an orientation reversing commensuration
+exists if and only if p+s=+s or p+s=O0ors=0.
+
+We say I’ (or H3/T’) has integral traces if {try : y € T'} consists of algebraic
+integers; it then follows that I’ can be conjugated to a subgroup of PSL2A, where A
+is the ring of algebraic integers. In [Ba2] Bass shows that if a hyperbolic manifold
+M = H/T has no closed incompressible surface of genus > 1 then I’ has integral
+traces. Note that the property of having integral traces is a commensurability invariant
+(since an element y € PSL2C has algebraic integer trace if and only if it has algebraic
+integer eigenvalues, which is true if it is true for some power of 7). In Theorem 6.3 we
+determine which C(p, s) have non-integral traces, namely those with p+ s = +s and

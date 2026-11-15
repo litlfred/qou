@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1205.4617v1
-doc_title: "Quaternion Octonion Reformulation of Grand Unified Theories"
+doc_title: "Quaternion Octonion Reformulation of Grand Uniﬁed Theories"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 2-3
 source_pdf: 1205.4617v1.pdf
 source_sha256: dd00cf2cee521bf5
-doc_brief: "Quaternion Octonion Reformulation of Grand Unified Theories — In this paper, Grand Uniﬁed theories are discussed in terms o f quater- nions and octonions by using the relation between quaternio n"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.995
+doc_brief: "Quaternion Octonion Reformulation of Grand Uniﬁed Theories — In this paper, Grand Uniﬁed theories are discussed in terms of quater- nions and octonions by using the relation between quaternion basis"
 ---
 In spite of all the successes of the Standard Model (SM) of elementary
 particles, it leaves many unresolved questions to be considered as

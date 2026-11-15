@@ -1,0 +1,71 @@
+let 21 = poincare-line uv
+show is-poincare-line ?1 A u € circline-set ?l A v € circline-set #1
+using assms
+unfolding circline-set-def
+by auto
+next
+fix |
+assume is-poincare-line | A u € circline-set 1 A v € circline-set |
+thus | = poincare-line uv
+using unique-poincare-line-general assms
+by auto
+qed
+
+4.2.4 Some consequences of line uniqueness
+H-line uv is the same as the h-line vu.
+
+lemma poincare-line-sym:
+assumes u € unit-disc v € unit-disc u # v
+shows poincare-line u v = poincare-line v u
+using assms
+using unique-poincare-line|of u v poincare-line v ul
+by simp
+
+lemma poincare-line-sym-general:
+assumes u # v u # inversion v
+shows poincare-line u v = poincare-line v u
+using assms
+using unique-poincare-line-generallof u v poincare-line v u]
+by simp
+
+Each h-line is the h-line constructed out of its two arbitrary different points.
+
+lemma ex-poincare-line-points:
+assumes is-poincare-line H
+shows J wv. u € unit-disc A v € unit-disc \ u # v A H = poincare-line uv
+using assms
+using ez-is-poincare-line-points
+using unique-poincare-line|[where |= H]
+by fastforce
+
+If an h-line contains two different points on x-axis/y-axis then it is the x-axis/y-axis.
+
+lemma poincare-line-0-real-is-a-azis:
+assumes z € circline-set r-aris x # On © A Oh
+shows poincare-line 0, x = x-axis
+using assms
+using is-poincare-line-0-real-is-t-axis|of poincare-line 0p & x]
+by auto
+
+lemma poincare-line-0-imag-is-y-axis:
+assumes y € circline-set y-axis y # On y # Wn
+shows poincare-line Oh y = y-axis
+using assms
+using is-poincare-line-0-imag-is-y-axis|of poincare-line On y y|
+by auto
+
+lemma poincare-line-x-axis:
+assumes & € unit-disc y € unit-disc x € circline-set x-axis y € circline-set x-axis t A y
+shows poincare-line x y = x-axis
+using assms
+using unique-poincare-line
+by auto
+
+lemma poincare-line-minus-one-one [simp]:
+
+shows poincare-line (of-complex (—1)) (of-complex 1) = x-axis
+proof—
+
+have 0», € circline-set (poincare-line (of-complex (—1)) (of-complez 1))
+
+30

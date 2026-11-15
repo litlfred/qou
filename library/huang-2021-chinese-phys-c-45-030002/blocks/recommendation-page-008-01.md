@@ -1,0 +1,1 @@
+For measurements with such high precisions, not only the electronic binding energy (single or multiple ioniza- tion), but also the molecular binding energy (dissocia- tion energy) should be considered in the data treatment.

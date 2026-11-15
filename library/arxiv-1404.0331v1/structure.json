@@ -6,10 +6,12 @@
   "sha256": "53d7ce3afaf405e1a8af39565f1c561f715abad4c9e4be70842dba47091445a5",
   "bytes": 166052,
   "pages": 9,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +22,26 @@
   },
   "doi": null,
   "title": "THE STRONG AJ CONJECTURE FOR CABLES OF TORUS KNOTS",
-  "authors_raw": null,
-  "abstract": "The AJ conjecture, formulated by Garoufalidis, relates the A-poly nomial and the colored Jones polynomial of a knot in the 3-sphere. It has b een con\ufb01rmed for all torus knots, some classes of two-bridge knots and pretzel knot s, and most cabled knots over torus knots. The strong AJ conjecture, formulated by Siko ra, relates the A-ideal and the colored Jones polynomial of a knot. It was con\ufb01rmed for all torus knots. In this paper we con\ufb01rm the strong AJ conjecture for most cabled knots over torus knots. 0. Introduction 0.1. The colored Jones polynomial. For a knot K in S3 and a positive integer n, let JK(n) \u2208 Z[t\u00b1 1] denote the n-colored Jones polynomial of K with zero-framing. The polynomial JK(n) is the quantum link invariant, as de\ufb01ned by Reshetikhin and Turaev [RT], associated to the Lie algebra sl2(C), with the color n standing for the irreducible sl2(C)-module Vn of dimension n. Here we use the functorial normalization, i.e. the one for which the colored Jones polynomial of the unknot U is JU (n) = [ n] := t2n \u2212 t\u2212 2n t2 \u2212 t\u2212 2 . It is known that JK(1) = 1 and JK(2) is the usual Jones polynomial [Jo]. The colored Jones polynomials of higher colors are more or less the usual Jones p olynomials of parallels of the knot. The color n can be assumed to take negative integer values by setting JK(\u2212n) := \u2212JK(n). In particular, one has JK(0) = 0. 0.2. The recurrence ideal and recurrence polynomial. Consider a discrete function f : Z \u2192 R := C[t\u00b1 1] and de\ufb01ne the linear operators L, M acting on such functions by (Lf )(n) := f (n + 1), (M f)(n) := t2nf (n). It is easy to see that LM = t2M L, and that L\u00b1 1, M \u00b1 1 generate the quantum torus T , a non-commutative ring with presentation T := R\u27e8L\u00b1 1, M \u00b1 1\u27e9/(LM \u2212 t2M L). Let AK := {P \u2208 T | P JK = 0}, which is a left-ideal of T , called the recurrence ideal of K. It was proved in [GL] that for every knot K, the recurrence ideal AK is non-zero. An element in AK is called a recurrence relation for the colored Jones polynomial of K",
+  "authors_raw": "ANH T. TRAN",
+  "title_lines": [
+   "THE STRONG AJ CONJECTURE FOR CABLES OF TORUS KNOTS"
+  ],
+  "abstract": "The AJ conjecture, formulated by Garoufalidis, relates the A-polynomial and the colored Jones polynomial of a knot in the 3-sphere. It has been conﬁrmed for all torus knots, some classes of two-bridge knots and pretzel knots, and most cabled knots over torus knots. The strong AJ conjecture, formulated by Sikora, relates the A-ideal and the colored Jones polynomial of a knot. It was conﬁrmed for all torus knots. In this paper we conﬁrm the strong AJ conjecture for most cabled knots over torus knots. 0. Introduction 0.1. The colored Jones polynomial. For a knot K in S3 and a positive integer n, let JK(n) ∈Z[t±1] denote the n-colored Jones polynomial of K with zero-framing. The polynomial JK(n) is the quantum link invariant, as deﬁned by Reshetikhin and Turaev [RT], associated to the Lie algebra sl2(C), with the color n standing for the irreducible sl2(C)-module Vn of dimension n. Here we use the functorial normalization, i.e. the one for which the colored Jones polynomial of the unknot U is JU(n) = [n] := t2n −t−2n t2 −t−2 . It is known that JK(1) = 1 and JK(2) is the usual Jones polynomial [Jo]. The colored Jones polynomials of higher colors are more or less the usual Jones polynomials of parallels of the knot. The color n can be assumed to take negative integer values by setting JK(−n) := −JK(n). In particular, one has JK(0) = 0. 0.2. The recurrence ideal and recurrence polynomial. Consider a discrete function f : Z →R := C[t±1] and deﬁne the linear operators L, M acting on such functions by (Lf)(n) := f(n + 1), (Mf)(n) := t2nf(n). It is easy to see that LM = t2ML, and that L±1, M±1 generate the quantum torus T , a non-commutative ring with presentation T := R⟨L±1, M±1⟩/(LM −t2ML). Let AK := {P ∈T | PJK = 0}, which is a left-ideal of T , called the recurrence ideal of K. It was proved in [GL] that for every knot K, the recurrence ideal AK is non-zero. An element in AK is called a recurrence relation for the colored Jones polynomial of K. The ring T is not a principa",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20180717085449-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20180717085449-04'00'"
   },
-  "title_lines": [
-   "THE STRONG AJ CONJECTURE FOR CABLES OF TORUS KNOTS",
-   "ANH T. TRAN"
-  ],
-  "title_prev": "THE STRONG AJ CONJECTURE FOR CABLES OF TORUS KNOTS ANH T. TRAN"
+  "title_raw": "THE STRONG AJ CONJECTURE FOR CABLES OF TORUS KNOTS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "THE STRONG AJ CONJECTURE FOR CABLES OF TORUS KNOTS 0. Introduction 0.1. The colored Jones polynomial. For a knot K in S 3 and a positive integer n , let J K ( n ) ∈ Z [ t ± 1 ] denote the n -colored Jones polynomial of K with zero-framing. The polynomial J K ( n ) is the quantum link invariant, as d",
+   "outline": "0. Introduction",
+   "text": "THE STRONG AJ CONJECTURE FOR CABLES OF TORUS KNOTS",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -41,141 +49,288 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "0"
+   "number": "0",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "The colored Jones polynomial",
    "page": 1,
    "source": "outline",
-   "number": "0.1"
+   "number": "0.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "The recurrence ideal and recurrence polynomial",
    "page": 1,
    "source": "outline",
-   "number": "0.2"
+   "number": "0.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "The AJ conjecture",
    "page": 2,
    "source": "outline",
-   "number": "0.3"
+   "number": "0.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Main result",
    "page": 2,
    "source": "outline",
-   "number": "0.4"
+   "number": "0.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Plan of the paper",
    "page": 3,
    "source": "outline",
-   "number": "0.5"
+   "number": "0.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Acknowledgment",
    "page": 3,
    "source": "outline",
-   "number": "0.6"
+   "number": "0.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "The Colored Jones polynomial of cabled knots",
    "page": 3,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "On the strong AJ conjecture",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "Case s>2 is odd and q>2",
    "page": 6,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "Case s>2 is odd and q=2",
    "page": 7,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Case s>2 is even",
    "page": 7,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Case s=2",
    "page": 8,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "References",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   }
  ],
  "toc_source": "outline",
- "sections": [
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
   {
-   "id": "sec-000-03-the-aj-conjecture",
-   "number": "0.3",
-   "title": "The AJ conjecture",
-   "level": 2,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "id": "sec-001-01-the-colored-jones-polynomial",
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 185,
+   "n_words": 27,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-000-01-the-colored-jones-polynomial",
    "number": "0.1",
    "title": "The colored Jones polynomial",
    "level": 2,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 344,
-   "n_words": 60
+   "n_chars": 342,
+   "n_words": 58,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-002-0-introduction",
+   "id": "sec-001-0-introduction",
    "number": "0",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 840,
-   "n_words": 158
+   "n_chars": 831,
+   "n_words": 149,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-003-02-the-recurrence-ideal-and-recurrence-polynomia",
+   "id": "sec-002-02-the-recurrence-ideal-and-recurrence-polynomia",
    "number": "0.2",
    "title": "The recurrence ideal and recurrence polynomial",
    "level": 2,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 3188,
-   "n_words": 607
+   "n_chars": 1674,
+   "n_words": 323,
+   "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-003-03-the-aj-conjecture",
+   "number": "0.3",
+   "title": "The AJ conjecture",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1391,
+   "n_words": 231,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-004-04-main-result",
@@ -184,8 +339,10 @@
    "level": 2,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 2516,
-   "n_words": 530
+   "n_chars": 2475,
+   "n_words": 487,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-005-05-plan-of-the-paper",
@@ -194,8 +351,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 252,
-   "n_words": 47
+   "n_chars": 250,
+   "n_words": 45,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
    "id": "sec-006-06-acknowledgment",
@@ -205,7 +364,9 @@
    "page_start": 3,
    "page_end": 3,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
    "id": "sec-007-1-the-colored-jones-polynomial-of-cabled-knots",
@@ -214,8 +375,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 1316,
-   "n_words": 294
+   "n_chars": 1257,
+   "n_words": 235,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-008-2-on-the-strong-aj-conjecture",
@@ -223,32 +386,92 @@
    "title": "On the strong AJ conjecture",
    "level": 1,
    "page_start": 4,
-   "page_end": 9,
-   "n_chars": 8595,
-   "n_words": 2188
+   "page_end": 6,
+   "n_chars": 3040,
+   "n_words": 665,
+   "label_start": "4",
+   "label_end": "6"
   },
   {
-   "id": "sec-009-references",
+   "id": "sec-009-3-case-s2-is-odd-and-q2",
+   "number": "3",
+   "title": "Case s>2 is odd and q>2",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1999,
+   "n_words": 339,
+   "label_start": "6",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-010-4-case-s2-is-odd-and-q2",
+   "number": "4",
+   "title": "Case s>2 is odd and q=2",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1021,
+   "n_words": 166,
+   "label_start": "7",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-011-5-case-s2-is-even",
+   "number": "5",
+   "title": "Case s>2 is even",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 600,
+   "n_words": 90,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-012-6-case-s2",
+   "number": "6",
+   "title": "Case s=2",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1171,
+   "n_words": 233,
+   "label_start": "8",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-013-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 9,
    "page_end": 9,
-   "n_chars": 2422,
-   "n_words": 391
+   "n_chars": 2414,
+   "n_words": 373,
+   "label_start": "9",
+   "label_end": "9"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 14,
-  "sections": 10,
-  "chars_total": 19473,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 15,
+  "chars_total": 18650,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 13,
-   "overlaid": 4,
+   "overlaid": 6,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -256,35 +479,43 @@
    },
    "sections": [
     {
-     "id": "sec-000-03-the-aj-conjecture",
-     "title": "The AJ conjecture",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
     },
     {
-     "id": "sec-001-01-the-colored-jones-polynomial",
+     "id": "sec-000-01-the-colored-jones-polynomial",
      "title": "The colored Jones polynomial",
      "prose_ratio": 0.116,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-002-0-introduction",
+     "id": "sec-001-0-introduction",
      "title": "Introduction",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-003-02-the-recurrence-ideal-and-recurrence-polynomia",
+     "id": "sec-002-02-the-recurrence-ideal-and-recurrence-polynomia",
      "title": "The recurrence ideal and recurrence polynomial",
      "prose_ratio": 0.967,
-     "coverage_ratio": 0.443,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.881,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-03-the-aj-conjecture",
+     "title": "The AJ conjecture",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-04-main-result",
      "title": "Main result",
      "prose_ratio": 0.982,
-     "coverage_ratio": 0.991,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -300,26 +531,47 @@
      "id": "sec-006-06-acknowledgment",
      "title": "Acknowledgment",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-007-1-the-colored-jones-polynomial-of-cabled-knots",
      "title": "The Colored Jones polynomial of cabled knots",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.926,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-008-2-on-the-strong-aj-conjecture",
      "title": "On the strong AJ conjecture",
-     "prose_ratio": 0.854,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.84,
+     "coverage_ratio": 0.919,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-009-references",
+     "id": "sec-009-3-case-s2-is-odd-and-q2",
+     "title": "Case s>2 is odd and q>2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-4-case-s2-is-odd-and-q2",
+     "title": "Case s>2 is odd and q=2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-5-case-s2-is-even",
+     "title": "Case s>2 is even",
+     "prose_ratio": 0.586,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-6-case-s2",
+     "title": "Case s=2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-references",
      "title": "References",
      "result": "no matching \\section"
     }

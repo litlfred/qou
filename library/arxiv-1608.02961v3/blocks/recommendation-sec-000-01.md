@@ -1,0 +1,1 @@
+As we shall review, the difficulty with cutting and gluing in complex Chern-Simons theory stems from the infinite-dimensional nature of Hilbert spaces, and the fact that, naively, wavefunctions often vanish or diverge.

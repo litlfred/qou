@@ -1,0 +1,31 @@
+Deforming hyperbolic 3—manifolds with boundary 437
+
+triangle the intersection of A* respectively with a face of A and with the link in A of a
+non-ideal vertex. The edges of the truncation triangles, which also belong to the lateral
+hexagons, are called boundary edges, and the other edges of A* are called internal
+edges. If A has ideal vertices, a lateral hexagon of A* may not be a hexagon, because
+some of its closed edges may be missing.
+
+A geometric realization of A is an identification of A* with a convex polyhedron in HI?
+such that the truncation triangles are geodesic triangles, the lateral hexagons are geodesic
+polygons with ideal vertices corresponding to missing edges, and truncation triangles
+and lateral hexagons lie at right angles to each other. An example of a geometric
+realization is shown in Figure |, where truncation triangles are shadowed.
+
+vet
+
+Figure 1: A geometric tetrahedron with one ideal vertex
+
+1.2. Triangulations
+
+Let N be a compact orientable manifold and let N be obtained from N by removing
+the toric components of ON. We define a partially truncated triangulation of N to
+be a realization of N as a gluing of some A*’s along a pairing of the lateral hexagons
+induced by a simplicial pairing of the faces of the A’s. When N is endowed with a
+hyperbolic structure, a partially truncated triangulation of N is called geometric if, for
+each tetrahedron A of the triangulation, the pull-back to A* of the Riemannian metric
+of N defines a geometric realization of A. Equivalently, the hyperbolic structure of N
+should be obtained by gluing geometric realizations of the A’s along isometries of their
+lateral hexagons.
+
+Algebraic & Geometric Topology 6 (2006)

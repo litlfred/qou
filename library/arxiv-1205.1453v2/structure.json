@@ -7,10 +7,11 @@
   "bytes": 142254,
   "pages": 12,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,21 +21,31 @@
    "stamp_date": "9 May 2012"
   },
   "doi": null,
-  "title": "An asymptotic formula of the divergent bilateral basic hypergeometric series Takeshi MORITA\u2217",
-  "authors_raw": null,
+  "title": "An asymptotic formula of the divergent bilateral basic hypergeometric series",
+  "authors_raw": "Takeshi MORITA∗",
   "title_lines": [
    "An asymptotic formula of the divergent",
-   "bilateral basic hypergeometric series",
-   "Takeshi MORITA\u2217"
+   "bilateral basic hypergeometric series"
   ],
-  "abstract": "We show an asymptotic formula of the divergent bilateral bas ic hypergeometric series 1\u03c8 0(a; \u2212;q, \u00b7) with using the q-Borel-Laplace method. We also give the limit q \u2192 1 \u2212 0 of our asymptotic formula.",
+  "abstract": "We show an asymptotic formula of the divergent bilateral basic hypergeometric series 1ψ0(a; −; q, ·) with using the q-Borel-Laplace method. We also give the limit q →1 −0 of our asymptotic formula.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20210921123104-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20210921123104-04'00'"
+  },
+  "title_raw": "An asymptotic formula of the divergent bilateral basic hypergeometric series",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "An asymptotic formula of the divergent bilateral basic hypergeometric series",
+   "outline": "1 Introduction",
+   "text": "An asymptotic formula of the divergent bilateral basic hypergeometric series",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "An asymptotic formula of the divergent bilateral basic hypergeometric series Takeshi MORITA∗"
  },
  "toc": [
   {
@@ -42,46 +53,164 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Basic notations",
    "page": 5,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "An asymptotic formula of the divergent series 10(a;-;q,x)",
    "page": 7,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Local solutions of the degenerated equation",
    "page": 8,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "An asymptotic formula",
    "page": 9,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The limit q1-0 of the asymptotic formula",
    "page": 10,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 340,
+   "n_words": 51,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -89,8 +218,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 5,
-   "n_chars": 5424,
-   "n_words": 1065
+   "n_chars": 5420,
+   "n_words": 1049,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-basic-notations",
@@ -98,42 +229,80 @@
    "title": "Basic notations",
    "level": 1,
    "page_start": 5,
-   "page_end": 8,
-   "n_chars": 3672,
-   "n_words": 790
+   "page_end": 7,
+   "n_chars": 2441,
+   "n_words": 563,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-31-local-solutions-of-the-degenerated-equation",
+   "id": "sec-002-3-an-asymptotic-formula-of-the-divergent-series",
+   "number": "3",
+   "title": "An asymptotic formula of the divergent series 10(a;-;q,x)",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1194,
+   "n_words": 249,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-31-local-solutions-of-the-degenerated-equation",
    "number": "3.1",
    "title": "Local solutions of the degenerated equation",
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 1322,
-   "n_words": 289
+   "n_chars": 1339,
+   "n_words": 273,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-32-an-asymptotic-formula",
+   "id": "sec-004-32-an-asymptotic-formula",
    "number": "3.2",
    "title": "An asymptotic formula",
    "level": 2,
    "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1439,
+   "n_words": 299,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-4-the-limit-q1-0-of-the-asymptotic-formula",
+   "number": "4",
+   "title": "The limit q1-0 of the asymptotic formula",
+   "level": 1,
+   "page_start": 10,
    "page_end": 12,
-   "n_chars": 4568,
-   "n_words": 897
+   "n_chars": 3041,
+   "n_words": 524,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 6,
-  "sections": 4,
-  "chars_total": 14986,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 7,
+  "chars_total": 15214,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 7,
-   "overlaid": 3,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -141,35 +310,56 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.994,
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.901,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-basic-notations",
      "title": "Basic notations",
-     "prose_ratio": 0.711,
-     "coverage_ratio": 0.976,
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.964,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-31-local-solutions-of-the-degenerated-equation",
-     "title": "Local solutions of the degenerated equation",
-     "prose_ratio": 0.98,
+     "id": "sec-002-3-an-asymptotic-formula-of-the-divergent-series",
+     "title": "An asymptotic formula of the divergent series 10(a;-;q,x)",
+     "prose_ratio": 0.792,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-32-an-asymptotic-formula",
+     "id": "sec-003-31-local-solutions-of-the-degenerated-equation",
+     "title": "Local solutions of the degenerated equation",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.941,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-32-an-asymptotic-formula",
      "title": "An asymptotic formula",
-     "prose_ratio": 0.913,
-     "coverage_ratio": 0.413,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.927,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-4-the-limit-q1-0-of-the-asymptotic-formula",
+     "title": "The limit q1-0 of the asymptotic formula",
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.302,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

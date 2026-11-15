@@ -1,0 +1,62 @@
+32 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY
+
+It turns out that there exists a contractible finite dimensional cell complex Y ,
+to be constructed below, on which QT acts cellularly with finitely many cell orbits.
+Thus, the Euler characteristic of Ty in the sense of Wall is well defined.
+
+Theorem 5.1. (Harer-Zagier) x(T}) = —Bog/2g, where B, are the Bernoulli
+numbers, defined by the generating function \>,,59 Bn2”/n! =
+
+1"
+
+Remark 1. The group I) acts on the Teichmiiller space 7,', which is, by
+definition the space of pairs ((R, z), f), where (R, z) is a complex Riemann surface
+with a marked point z, and f is an isotopy class of diffeomorphisms R + © that
+map z to p. One may show that Ty is a contractible manifold of dimension 6g — 4,
+and that the action of rT on Ty is properly discontinuous. In particular, we may
+define an orbifold M} = Tj /T}. This orbifold parametrizes pairs (R, z) as above;
+therefore, it is called the moduli space of Riemann surfaces (=smooth complex
+projective algebraic curves) with one marked point. Thus, Theorem 5.1 gives the
+orbifold Euler characteristic of the moduli space of curves with one marked point.
+
+Remark 2. If g > 1, one may define the analogs of the above objects without
+marked points, namely the mapping class group Ty, the Teichmiiller space 7,, and
+the moduli space of curves M, = Jj/T, (one can do it for g = 1 as well, but
+in this case there is no difference with the case of one marked point, since the
+translation group allows one to identify any two points on X). It is easy to see
+that we have an exact sequence 1 — 7(X) > Ty + T, > 1, which implies that
+
+x(Po9) = x(P4)/x(Z). Thus, x(0g) = Xoro(Mg) = Bag /49(g — 1)
+
+5.3. Construction of the complex Y. We begin the proof of Theorem 5.1 with
+the construction of the complex Y, following the paper of Harer and Zagier. We
+will first construct a simplicial complex with aT action, and then use it to construct
+Y.
+
+Let (Q1,...,Q@n) be a collection of closed simple unoriented curves on ©, which
+begin and end at p, and do not intersect other than at p. Such a collection is called
+an arc system if two conditions are satisfied:
+
+(A) none of the curves is contractible to a point;
+
+(B) none of the curves is contractible to each other.
+
+Define a simplicial complex A, whose n — 1-simplices are isotopy classes of arc
+systems consisting of n > 1 arcs, and the boundary of a simplex corresponding to
+(a1, ..-Qy) is the union of simplices corresponding to the arc system (a1, ..., i, ---, Qn)
+(a; is omitted).
+
+It is clear that the group T acts simplicially on A.
+
+Example. Let g = 1, ie. © = $' x S'. Then) = SL.2(Z). Up to its action,
+there are only three arc systems (Fig. 17). Namely, viewing S! as the unit circle in
+the complex plane, and representing arcs parametrically, we may write these three
+systems as follows:
+
+Bo = {(e!*,1)}: Br = {(€.1), (el): Bs = {(e".1), (Let), (e”, 6”)
+iFrom this it is easy to find the simplicial complex A. Namely, let T be the tree
+with root to connected to three vertices t,,t2,t3, with each t; connected to two
+vertices t,1, tj2, each tj; connected to tjj1, tij2, etc. (Fig.18). Put at every vertex of
+T a triangle, with sides transversal to the three edges going out of this vertex, and
+glue triangles along the sides. This yields the complex A, Fig.19 (check it!). The
+action of SLZ2(Z) (or rather PSL2(Z)) on this complex is easy to describe. Namely,

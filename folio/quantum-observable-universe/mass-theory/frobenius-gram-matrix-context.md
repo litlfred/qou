@@ -28,7 +28,6 @@ $K^\vee = \sum_{i,j} c_i (G^{-1})_{ij} b_j$.
 > `block_mem_radical` (a zero-weight block lies in the radical) →
 > `gram_det_eq_zero_of_radical_combination` ($\det G = 0$), with
 > `pairing_descends` and `mem_radical_of_pairing_zero` giving the descent.
-> Sorry-free.
 
 ## Markov trace of NF basis elements
 

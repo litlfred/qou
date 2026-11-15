@@ -11,5 +11,6 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "A Fourier-Free Density-Increment Proof of Roth's Theorem — We give an elementary, Fourier-free proof of Roth’s theorem."
 ---
 We write $A\lesssim B$ to mean $A\leq CB$ for a positive absolute constant $C$, and similarly $A\gtrsim B$. We write $A\sim B$ when both $A\lesssim B$ and $B\lesssim A$ hold. All implicit constants are absolute. For a prime $m$, write $\mathbb{Z}_m=\mathbb{Z}/m\mathbb{Z}$ and $\mathbb{Z}_m^\times=\mathbb{Z}_m\setminus\{0\}$.

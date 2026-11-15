@@ -15,6 +15,7 @@ export default conjecture({
     "conj:dilogarithm-archimedean-limit",
   ],
   cites: [
+    "arxiv-2304.12545v1",
     "bloch2000",
     "neumann-zagier1985",
     "suslin1991",

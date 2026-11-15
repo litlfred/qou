@@ -7,10 +7,11 @@
   "bytes": 342525,
   "pages": 24,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -26,13 +27,21 @@
    "L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV",
    "SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS"
   ],
-  "abstract": "We study (quasi-)cohomological properties through an anal ysis of quantum Markov semi-groups. We construct higher order Hochschild cocycle s using gradient forms associated with a quantum Markov semi-group. By using Schatten- Sp estimates we analyze when these cocycles take values in the coarse bimodule. For the 1-cocycles (the d erivations) we show that under natural conditions we obtain the Akemann-Ostrand property. We appl y this to q-Gaussian algebras \u0393 q(HR). As a result q-Gaussians satisfy AO + for |q|\u2a7d dim(HR)\u2212 1/ 2. This includes a new range of q in low dimensions compared to Shlyakhtenko [Shl04].",
+  "abstract": "We study (quasi-)cohomological properties through an analysis of quantum Markov semi-groups. We construct higher order Hochschild cocycles using gradient forms associated with a quantum Markov semi-group. By using Schatten-Sp estimates we analyze when these cocycles take values in the coarse bimodule. For the 1-cocycles (the derivations) we show that under natural conditions we obtain the Akemann-Ostrand property. We apply this to q-Gaussian algebras Γq(HR). As a result q-Gaussians satisfy AO+ for |q| ⩽dim(HR)−1/2. This includes a new range of q in low dimensions compared to Shlyakhtenko [Shl04].",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20200213221527-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20200213221527-05'00'"
+  },
+  "title_raw": "L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "L 2 -COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV SEMI-GROUPS ON q -GAUSSIAN ALGEBRAS 1. Introduction The aim of this paper is to connect the theory of quantum Markov semi-groups to certain cohomological properties of their algebras. Quantum Markov semi-groups are continuous semi-groups of trace prese",
+   "outline": "1. Introduction",
+   "text": "L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -41,123 +50,358 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Preliminaries",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "General conventions and notation",
    "page": 3,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Containment of bimodules",
    "page": 3,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Hochschild cohomology",
    "page": 4,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Gradient tensoring, n-cocycles and gradient-Sp",
    "page": 5,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Gradient tensoring",
    "page": 5,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Construction of n-cocycles.",
    "page": 8,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The Haagerup averaging technique",
    "page": 9,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Schatten Sp-estimates for the Ornstein-Uhlenbeck semi-group on q-Gaussians",
    "page": 10,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "q-Gaussian algebras",
    "page": 10,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Gradient-Sp estimates",
    "page": 11,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Consequences for Cartan rigidity",
    "page": 16,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Derivations and the Akemann-Ostrand property",
    "page": 17,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Group algebras",
    "page": 18,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Von Neumann algebras with filtration",
    "page": 19,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 791,
+   "n_words": 109,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -165,8 +409,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 7621,
-   "n_words": 1248
+   "n_chars": 6098,
+   "n_words": 963,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-preliminaries",
@@ -175,8 +421,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 1381,
+   "n_words": 211,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-21-general-conventions-and-notation",
@@ -185,8 +433,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 213,
-   "n_words": 44
+   "n_chars": 207,
+   "n_words": 38,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-22-containment-of-bimodules",
@@ -195,8 +445,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 3020,
-   "n_words": 634
+   "n_chars": 2996,
+   "n_words": 610,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-23-hochschild-cohomology",
@@ -205,8 +457,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 846,
-   "n_words": 184
+   "n_chars": 844,
+   "n_words": 183,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-3-gradient-tensoring-n-cocycles-and-gradient-sp",
@@ -215,8 +469,10 @@
    "level": 1,
    "page_start": 5,
    "page_end": 8,
-   "n_chars": 8153,
-   "n_words": 1703
+   "n_chars": 8028,
+   "n_words": 1534,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-32-construction-of-n-cocycles",
@@ -225,91 +481,139 @@
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 1391,
-   "n_words": 280
+   "n_chars": 1488,
+   "n_words": 318,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-007-41-q-gaussian-algebras",
-   "number": "4.1",
-   "title": "q-Gaussian algebras",
-   "level": 2,
-   "page_start": 9,
-   "page_end": 9,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-008-33-the-haagerup-averaging-technique",
+   "id": "sec-007-33-the-haagerup-averaging-technique",
    "number": "3.3",
    "title": "The Haagerup averaging technique",
    "level": 2,
    "page_start": 9,
-   "page_end": 11,
-   "n_chars": 6761,
-   "n_words": 1370
+   "page_end": 10,
+   "n_chars": 3357,
+   "n_words": 601,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-009-42-gradient-sp-estimates",
+   "id": "sec-008-4-schatten-sp-estimates-for-the-ornstein-uhlenbe",
+   "number": "4",
+   "title": "Schatten Sp-estimates for the Ornstein-Uhlenbeck semi-group on q-Gaussians",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 161,
+   "n_words": 27,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-41-q-gaussian-algebras",
+   "number": "4.1",
+   "title": "q-Gaussian algebras",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 3046,
+   "n_words": 617,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-010-42-gradient-sp-estimates",
    "number": "4.2",
    "title": "Gradient-Sp estimates",
    "level": 2,
    "page_start": 11,
    "page_end": 16,
-   "n_chars": 14425,
-   "n_words": 3185
+   "n_chars": 14088,
+   "n_words": 2886,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-010-43-consequences-for-cartan-rigidity",
+   "id": "sec-011-43-consequences-for-cartan-rigidity",
    "number": "4.3",
    "title": "Consequences for Cartan rigidity",
    "level": 2,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 3365,
-   "n_words": 660
+   "n_chars": 3309,
+   "n_words": 604,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-011-5-derivations-and-the-akemann-ostrand-property",
+   "id": "sec-012-5-derivations-and-the-akemann-ostrand-property",
    "number": "5",
    "title": "Derivations and the Akemann-Ostrand property",
    "level": 1,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 3223,
-   "n_words": 651
+   "n_chars": 3185,
+   "n_words": 613,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-012-51-group-algebras",
+   "id": "sec-013-51-group-algebras",
    "number": "5.1",
    "title": "Group algebras",
    "level": 2,
    "page_start": 18,
-   "page_end": 23,
-   "n_chars": 12329,
-   "n_words": 2502
+   "page_end": 19,
+   "n_chars": 2110,
+   "n_words": 375,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-013-references",
+   "id": "sec-014-52-von-neumann-algebras-with-filtration",
+   "number": "5.2",
+   "title": "Von Neumann algebras with filtration",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 23,
+   "n_chars": 9822,
+   "n_words": 1823,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-015-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 5652,
-   "n_words": 889
+   "n_chars": 5598,
+   "n_words": 835,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 17,
-  "sections": 14,
-  "chars_total": 66999,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 17,
+  "chars_total": 66509,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 17,
-   "overlaid": 10,
+   "overlaid": 13,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -317,10 +621,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.997,
-     "coverage_ratio": 0.992,
+     "prose_ratio": 0.793,
+     "coverage_ratio": 0.952,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -328,13 +637,13 @@
      "id": "sec-001-2-preliminaries",
      "title": "Preliminaries",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-002-21-general-conventions-and-notation",
      "title": "General conventions and notation",
      "prose_ratio": 0.824,
-     "coverage_ratio": 0.933,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -350,72 +659,90 @@
      "id": "sec-004-23-hochschild-cohomology",
      "title": "Hochschild cohomology",
      "prose_ratio": 0.375,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-005-3-gradient-tensoring-n-cocycles-and-gradient-sp",
      "title": "Gradient tensoring, n-cocycles and gradient-Sp",
-     "prose_ratio": 0.97,
-     "coverage_ratio": 0.736,
+     "prose_ratio": 0.924,
+     "coverage_ratio": 0.956,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-006-32-construction-of-n-cocycles",
      "title": "Construction of n-cocycles.",
-     "prose_ratio": 0.875,
-     "coverage_ratio": 0.977,
+     "prose_ratio": 0.896,
+     "coverage_ratio": 0.875,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-41-q-gaussian-algebras",
-     "title": "q-Gaussian algebras",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-008-33-the-haagerup-averaging-technique",
+     "id": "sec-007-33-the-haagerup-averaging-technique",
      "title": "The Haagerup averaging technique",
-     "prose_ratio": 0.971,
-     "coverage_ratio": 0.574,
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.948,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-42-gradient-sp-estimates",
+     "id": "sec-008-4-schatten-sp-estimates-for-the-ornstein-uhlenbe",
+     "title": "Schatten Sp-estimates for the Ornstein-Uhlenbeck semi-group on q-Gaussians",
+     "prose_ratio": 0.875,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-41-q-gaussian-algebras",
+     "title": "q-Gaussian algebras",
+     "prose_ratio": 0.908,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-42-gradient-sp-estimates",
      "title": "Gradient-Sp estimates",
-     "prose_ratio": 0.781,
-     "coverage_ratio": 0.952,
+     "prose_ratio": 0.779,
+     "coverage_ratio": 0.956,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-43-consequences-for-cartan-rigidity",
+     "id": "sec-011-43-consequences-for-cartan-rigidity",
      "title": "Consequences for Cartan rigidity",
      "prose_ratio": 0.746,
-     "coverage_ratio": 0.966,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-5-derivations-and-the-akemann-ostrand-property",
+     "id": "sec-012-5-derivations-and-the-akemann-ostrand-property",
      "title": "Derivations and the Akemann-Ostrand property",
      "prose_ratio": 0.977,
-     "coverage_ratio": 0.929,
+     "coverage_ratio": 0.92,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-51-group-algebras",
+     "id": "sec-013-51-group-algebras",
      "title": "Group algebras",
-     "prose_ratio": 0.941,
-     "coverage_ratio": 0.95,
+     "prose_ratio": 0.93,
+     "coverage_ratio": 0.918,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-references",
+     "id": "sec-014-52-von-neumann-algebras-with-filtration",
+     "title": "Von Neumann algebras with filtration",
+     "prose_ratio": 0.936,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-references",
      "title": "References",
      "result": "no matching \\section"
     }

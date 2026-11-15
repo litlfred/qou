@@ -8,6 +8,7 @@ pages: 35-38
 source_pdf: AFST_2007_6_16_3_665_0.pdf
 source_sha256: 402b61574e561f86
 toc_source: inferred
+doc_brief: "Galois theory of q-difference equations (van der Put–Reversat, Ann. Fac. Sci. Toulouse XVI:3, 2007, 665–718) — Galois-theoretic framework for q-difference equations."
 ---
 Let the q-diﬀerence module M over K be given by an exact sequence
 0 →P1 →M →P2 →0, where P1, P2 are pure with slopes λ1 < λ2. The

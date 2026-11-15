@@ -8,6 +8,7 @@ pages: 11-15
 source_pdf: ant-v14-n7-s-p08.pdf
 source_sha256: 81b8f00fe5fbd0f6
 toc_source: inferred
+doc_brief: "Burgess bounds for short character sums evaluated at forms — 11 sections: Front matter; Introduction; Method of proof: an overview"
 ---
 3A. Power-free conditions. We say that F ∈Z[x1, . . . , xn] is d-th power-free if each nonconstant irre-
 ducible factor of F over Z (or equivalently over Q, by Gauss’s lemma) appears with multiplicity strictly
@@ -140,47 +141,50 @@ basis to another. Thus in particular there exists A ∈GLn(k) such that m = (1, 
 (3)=⇒(4): Suppose that F(x A)≡f (x2, . . . , xn) for some f ∈k[x2, . . . , xn], so F(x)≡F((x A−1)A)≡
 f ((x A−1)2,...,(x A−1)n), where A−1 ∈GLn(k). Then it sufﬁces to deﬁne B to be the matrix constructed
 of the last n −1 columns of A−1.
-1924
-Lillian B. Pierce and Junyan Xu
-(4) =⇒(1): Now we suppose that there exists such an n ×(n−1) matrix B and f ∈k[x2, . . . , xn] such
-that F(x) ≡f (xB). Since multiplication by B is a linear map from kn to kn−1, the nullspace of this map
-is nontrivial and hence there exists 0̸ = m ∈kn such that mB = 0; consequently
-F(x) ≡f (xB) ≡f (xB + mB) ≡f ((x + m)B) ≡F(x + m).
-This implies (2), which certainly implies (1), concluding the proof of the lemma.
-□
-3C. All but ﬁnitely many primes. In the introduction we stated that forms that are “admissible” over Z
-are “admissible” over Fq for all but ﬁnitely many primes. The formal statement is here:
-Lemma 3.4. Let 1 ≥1 be ﬁxed. Let F ∈Z[x1, . . . , xn] and suppose F factors as F = G1H with
-G, H ∈Z[x1, . . . , xn] and H being 1-th power-free over Z. Furthermore, assume that H is nondegenerate
-over Z, in the sense that there is no A ∈GLn(Z) such that H(x A) ∈Z[x2, . . . , xn]. Then for all but ﬁnitely
-many primes q, the reduction of F modulo q is (1, q)-admissible.
-Proof. For a ﬁxed prime q, we reduce F, G, H modulo q to f, g, h ∈Fq[x1, . . . , xn]. By Lemma 3.22
-of [Xu 2018], since H is 1-th power-free over Z then for all but ﬁnitely many primes q, h is 1-th
-power-free over Fq. Letting Q1 denote this ﬁnite set of exceptional primes, then for all q̸ ∈Q1, we have
-that f = g1h with h being 1-th power-free over Fq. As a consequence of Lemma 3.2 (6), since H is
-nondegenerate over Z, the reduction h of H modulo q can be invariant under a nontrivial translation in Fn
-q
-only for ﬁnitely many primes q; we will call this exceptional set Q2. Finally, let Q3 denote the primes
-q ≤deg F. We now proceed to consider the primes q /∈Q1 ∪Q2 ∪Q3; for such primes, h is not invariant
-under any nontrivial translation in Fn
-q, and (3) in Lemma 3.3 shows that h cannot be made independent of
-any indeterminate by a linear change of variables in GLn(Fq). This proves the lemma. (Here we excluded
-primes in Q3 because we cite Lemma 3.3, but we note that the speciﬁc implications of this lemma that
-we employ here do not need the assumption q > deg F.)
-□
-3D. Permutations of variables. Within the Burgess method, we will use a variant of the Menshov–
+1924 Lillian B. Pierce and Junyan Xu
+
+(4) = (1): Now we suppose that there exists such an n x (n—1) matrix B and f €k[x2,..., x,] such
+that F(x) = f (xB). Since multiplication by B is a linear map from k” to k”~!, the nullspace of this map
+is nontrivial and hence there exists 0 4 m € k” such that mB = 0; consequently
+
+F(x) = f(xB) = f(xB+mB) = f((x+m)B)= F(x+m).
+This implies (2), which certainly implies (1), concluding the proof of the lemma. oO
+
+3C. All but finitely many primes. In the introduction we stated that forms that are “admissible” over Z
+are “admissible” over F, for all but finitely many primes. The formal statement is here:
+
+Lemma 3.4. Let A > 1 be fixed. Let F € Z[x,,...,%n] and suppose F factors as F = GH with
+G, H EZ[x,..., Xn] and H being A-th power-free over Z. Furthermore, assume that H is nondegenerate
+over Z, in the sense that there isno A € GL,(Z) such that H (x A) € Z[x2, ..., Xn]. Then for all but finitely
+many primes q, the reduction of F modulo q is (A, q)-admissible.
+
+Proof. For a fixed prime q, we reduce F, G, H modulo q to f, g,h € Fg[x1,.-., Xn]. By Lemma 3.22
+of [Xu 2018], since H is A-th power-free over Z then for all but finitely many primes g, h is A-th
+power-free over F,. Letting Q; denote this finite set of exceptional primes, then for all g ¢ Q1, we have
+that f = g4h with h being A-th power-free over F,. As a consequence of Lemma 3.2 (6), since H is
+nondegenerate over Z, the reduction h of H modulo gq can be invariant under a nontrivial translation in Fe
+only for finitely many primes g; we will call this exceptional set Q2. Finally, let Q3 denote the primes
+q < deg F. We now proceed to consider the primes g ¢ Q; U Q2 U Q3; for such primes, / is not invariant
+under any nontrivial translation in F”, and (3) in Lemma 3.3 shows that cannot be made independent of
+any indeterminate by a linear change of variables in GL, (F,). This proves the lemma. (Here we excluded
+primes in Q3 because we cite Lemma 3.3, but we note that the specific implications of this lemma that
+we employ here do not need the assumption q > deg F.) oO
+
+3D. Permutations of variables. Within the Burgess method, we will use a variant of the Menshov—
 Rademacher method for deducing bounds for maximal moments from nonmaximal moments. To carry
-out this argument in our setting, we will need to reorder the variables x1, x2, . . . , xn in F(x) so that a
-corresponding tuple of parameters (k1, . . . , kn) satisﬁes the ordering k1 ≤k2 ≤· · · ≤kn. Thus we are led
-to consider forms resulting from F when the variables are permuted. For any permutation π of {1, . . . , n},
-deﬁne the form Fπ(X) from the form F(X) by setting Fπ(X1, . . . , Xn) = F(Xπ(1), . . . , Xπ(n)).
-Lemma 3.5. Let 1 ≥1 and a prime q be ﬁxed. If a form F ∈[x1, . . . , xn] has the property that its
-reduction modulo q is (1, q)-admissible, then for every permutation π on a set of n elements, the
-reduction modulo q of Fπ is (1, q)-admissible.
-Proof. Letting f denote the reduction of F modulo q, we write f = g1h with h being 1-th power-free
-over Fq; then correspondingly for the permuted versions, if fπ denotes the reduction of Fπ modulo q
-then fπ = (gπ)1hπ with hπ being 1-th power-free over Fq. Moreover, h can be made independent of at
-least one variable after a GLn(Fq) change of variable if and only if hπ can.
-□
+out this argument in our setting, we will need to reorder the variables x, x2,..., xX, in F(x) so that a
+corresponding tuple of parameters (k;, ...,k,) satisfies the ordering ky < kz <--+-<k,. Thus we are led
+to consider forms resulting from F when the variables are permuted. For any permutation z of {1,...,n},
+define the form F(X) from the form F(X) by setting F(X 1,..., Xn) = F (Xa), --., Xxin))-
+
+Lemma 3.5. Let A > | and a prime q be fixed. If a form F € [x1,..., Xn] has the property that its
+reduction modulo q is (A, q)-admissible, then for every permutation m on a set of n elements, the
+
+reduction modulo q of Fz is (A, q)-admissible.
+
+Proof. Letting f denote the reduction of F modulo q, we write f = g4h with h being A-th power-free
+over F,; then correspondingly for the permuted versions, if f, denotes the reduction of F, modulo q
+then fr =(gz)4h_ with h, being A-th power-free over Fg. Moreover, h can be made independent of at
+least one variable after a GL, (F,) change of variable if and only if hz can. oO
 Burgess bounds for short character sums evaluated at forms
 1925

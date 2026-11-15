@@ -1,0 +1,46 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-072
+section_title: "Page 72"
+section_number: null
+pages: 72-72
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+444 T. Ohtsuki (Editor)
+
+Problem 3.26 (T. Kohno) Determine the image and the kernel of the above
+map T.
+
+The space of conformal blocks in WZW model is defined as the space of coin-
+variant tensors in the following way. Let p1,:-- ,pn be marked points on ©
+and H,,:-- ,H, be representations of the affine Lie algebra §. The space of
+conformal blocks is defined to be the set of linear forms
+
+¢:H,8-:-®H, —C
+
+invariant under the action of meromorphic functions with values in g with poles
+at most at pi,--- ,Pn, where the action is defined by the Laurent expansion at
+these points. There is a twisted version of the above construction, where the
+above meromorphic functions are replaced by meromorphic sections of a g local
+system.
+
+Problem 3.27 (T. Kohno) Compute the holonomy of the space of conformal
+blocks of the twisted WZW model. In particular, determine the action of the
+braid group of & on the space of conformal blocks for each G flat connection
+on b.
+
+There is also a notion of the algebra of chord diagrams on n strings with
+horizontal chord on ©, which we shall denote by An(X).
+
+Problem 3.28 (T. Kohno) Let P,(©) denote the pure braid group of © with
+n strings. Does there exist an injective multiplicative homomorphism
+
+@: Py(Z) > An()
+
+defined over Q?
+
+Geometry & Topology Monographs, Volume 4 (2002)

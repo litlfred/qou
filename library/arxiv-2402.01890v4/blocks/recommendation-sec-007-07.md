@@ -1,0 +1,1 @@
+Since $ P_k(\lambda^p) $ has $ \Delta$-factors $ \Delta_k(\lambda^p) $ and $ \Delta_k(\lambda^{p-1}) $, as one sees from Theorem \ref{importantThmPaul} and \eqref{reciprocity}, the structure of $ P_k(\lambda^p) $ must be the one indicated in $ { \bf c)}$.

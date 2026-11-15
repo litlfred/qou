@@ -148,6 +148,9 @@ export default chapter({
         "ns-singularity-descartes-interpretation",
         "torus-ns-regular",
         "torus-ns-regular-table-data",
+        "reeb-beltrami-regular-flow",
+        "reeb-beltrami-regular-flow-proof",
+        "reeb-beltrami-regular-flow-scope",
         "root-of-unity-truncation",
         "root-of-unity-truncation-interpretation",
         // ── Observable MTC / anyons (Track B) ──────────────────────

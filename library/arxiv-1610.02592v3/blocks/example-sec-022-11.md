@@ -1,1 +1,0 @@
-Considerthethrice-puncturedsphere S obtainedbygluing

@@ -2,50 +2,114 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1909.06744v1",
  "source_sha256": "82e3980da78c07da",
- "brief": "Springer correspondence for symmetric spaces — This is a survey on the Springer correspondence for symmetric spa ces.",
- "extended": "**Springer correspondence for symmetric spaces**\n\n*Toshiaki Shoji*\n\n25 pp, 6 sections.\n\n**Abstract.** This is a survey on the Springer correspondence for symmetric spa ces. We discuss various generalization of the theory of the Springer cor respondence for reductive groups to symmetric spaces and exotic symmetric space s associated to classical groups. §1. Introduction The Springer correspondence is the canonical correspondence b etween the unipo- tent classes of a connected reductive group G and irreducible representations of the Weyl group W of G, established by Springer [Sp] in 1976. In 1981, Lusztig [L2] found a way to reformulate the Springer’s theory by means of the t heory of per- verse sheaves. In the same paper, he gave a geometric interpret ation of Koskta polynomials in terms of the intersection cohomology associated to un ipotent classes of GLn.\n\n**Outline.** Front matter; 16.1 First we will give a combinatorial descri; 16.2 Lusztig’s theory of the generalized Sprin; 16.5 We give here some example of cuspidal pai; 16.7 We prepare some notations for formulating; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 16.8: (i) For ξ∈ CN ≃ SGιθ , indG\n- Theorem 18.2: For each m∈ Qa,r , (πm)∗ ~K (m)\n- Proposition 16.3: Under the identiﬁcation NGιθ≃ Ψ N , the pair (O, E ) is cuspidal\n- Proposition 17.2: There exists an open dense subset X 0\n- Proposition 18.1: Let m∈ Qa,r . For each λ∈ P(m), one can deﬁne a subvariety\n- Proposition 19.2: Assume that N = 2n + 1. Then",
+ "brief": "Springer correspondence for symmetric spaces — This is a survey on the Springer correspondence for symmetric spaces.",
+ "extended": "**Springer correspondence for symmetric spaces**\n\n*Toshiaki Shoji*\n\n25 pp, 19 sections.\n\n**Abstract.** This is a survey on the Springer correspondence for symmetric spaces. We discuss various generalization of the theory of the Springer correspondence for reductive groups to symmetric spaces and exotic symmetric spaces associated to classical groups. §1. Introduction The Springer correspondence is the canonical correspondence between the unipo- tent classes of a connected reductive group G and irreducible representations of the Weyl group W of G, established by Springer [Sp] in 1976. In 1981, Lusztig [L2] found a way to reformulate the Springer’s theory by means of the theory of per- verse sheaves. In the same paper, he gave a geometric interpretation of Koskta polynomials in terms of the intersection cohomology associated to unipotent classes of GLn.\n\n**Outline.** Front matter; §1. Introduction; Contents; §2. Springer correspondence for GLn; §3. Springer correspondence for reductive grou; §4. The interpretation via perverse sheaves; §5. The generalized Springer correspondence; §6. Geometric realization of Kostka polynomial; §8. Springer correspondence for the enhanced v; §9. Double Kostka polynomials; §10. Symmetric spaces in algebraic setting; §11. Symmetric spaces associated to classical ; §13. Exotic symmetric space associated to symp; §14. Springer correspondence for Gιθ; §15. Springer correspondence for Gιθ; §16. Generalized Springer correspondence for G; P Kξ is a semisimple perverse sheaf on Gιθ; §17. Exotic symmetric spaces of higher level, ",
  "tokens": {
   "brief": 29,
-  "extended": 378
+  "extended": 394
  },
  "sections": [
   {
    "id": "sec-front-matter",
    "title": "Front matter",
-   "pages": "1-18"
+   "pages": "1-1"
   },
   {
-   "id": "sec-000-161-first-we-will-give-a-combinatorial-descripti",
-   "title": "First we will give a combinatorial description of NGιθ . Let λ =",
-   "pages": "18-18"
+   "id": "sec-000-1-introduction",
+   "title": "§1. Introduction",
+   "pages": "1-1"
   },
   {
-   "id": "sec-001-162-lusztigs-theory-of-the-generalized-springer",
-   "title": "Lusztig’s theory of the generalized Springer correspondence for reductive",
-   "pages": "18-19"
+   "id": "sec-001-contents",
+   "title": "Contents",
+   "pages": "1-2"
   },
   {
-   "id": "sec-002-165-we-give-here-some-example-of-cuspidal-pairs",
-   "title": "We give here some example of cuspidal pairs. It would be interesting t o",
-   "pages": "19-19"
+   "id": "sec-002-2-springer-correspondence-for-gln",
+   "title": "§2. Springer correspondence for GLn",
+   "pages": "2-3"
   },
   {
-   "id": "sec-003-167-we-prepare-some-notations-for-formulating-th",
-   "title": "We prepare some notations for formulating the generalized Springe r cor-",
-   "pages": "19-24"
+   "id": "sec-003-3-springer-correspondence-for-reductive-groups",
+   "title": "§3. Springer correspondence for reductive groups",
+   "pages": "3-4"
   },
   {
-   "id": "sec-004-references",
-   "title": "References",
-   "pages": "24-25"
+   "id": "sec-004-4-the-interpretation-via-perverse-sheaves",
+   "title": "§4. The interpretation via perverse sheaves",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-005-5-the-generalized-springer-correspondence",
+   "title": "§5. The generalized Springer correspondence",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-006-6-geometric-realization-of-kostka-polynomials",
+   "title": "§6. Geometric realization of Kostka polynomials",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-007-8-springer-correspondence-for-the-enhanced-varie",
+   "title": "§8. Springer correspondence for the enhanced variety",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-008-9-double-kostka-polynomials",
+   "title": "§9. Double Kostka polynomials",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-009-10-symmetric-spaces-in-algebraic-setting",
+   "title": "§10. Symmetric spaces in algebraic setting",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-010-11-symmetric-spaces-associated-to-classical-grou",
+   "title": "§11. Symmetric spaces associated to classical groups",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-011-13-exotic-symmetric-space-associated-to-symplect",
+   "title": "§13. Exotic symmetric space associated to symplectic groups",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-012-14-springer-correspondence-for-gιθ",
+   "title": "§14. Springer correspondence for Gιθ",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-013-15-springer-correspondence-for-gιθ",
+   "title": "§15. Springer correspondence for Gιθ",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-014-16-generalized-springer-correspondence-for-gιθ",
+   "title": "§16. Generalized Springer correspondence for Gιθ",
+   "pages": "18-20"
+  },
+  {
+   "id": "sec-015-p-kξ-is-a-semisimple-perverse-sheaf-on-gιθ",
+   "title": "Kξ is a semisimple perverse sheaf on Gιθ",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-016-17-exotic-symmetric-spaces-of-higher-level-the-c",
+   "title": "§17. Exotic symmetric spaces of higher level, the case H = SpN",
+   "pages": "20-23"
+  },
+  {
+   "id": "sec-017-19-symmetric-spaces-in-characteristic-2",
+   "title": "§19. Symmetric spaces in characteristic 2",
+   "pages": "23-25"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

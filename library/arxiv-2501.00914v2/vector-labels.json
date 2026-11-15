@@ -1,0 +1,632 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-2501.00914v2",
+  "pages": [
+    {
+      "page": 7,
+      "rotation": 0,
+      "drawings": 124,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. The transverse foliations ˆFs and ˆFu on D, in the cases where Fs and Fu each have n = 2, 3, 4 boundary prongs. When n = 2 the point p at the center is a smooth point of each foliation, while for n ≥3 it is an n-pronged singular point."
+      ],
+      "labels": [
+        {
+          "text": "L-SPACES AND KNOT TRACES",
+          "bbox": [
+            240.31,
+            51.82,
+            371.68,
+            59.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "7",
+          "bbox": [
+            535.76,
+            51.82,
+            540.0,
+            59.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "for some real number λ > 1. The interior singularities of these foliations have at least 3 prongs, and",
+          "bbox": [
+            72.0,
+            73.44,
+            540.04,
+            84.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "each of these foliations has some number n ≥1 of boundary prongs ending on ∂Σ ⊂∂Σ0. Since φ0",
+          "bbox": [
+            72.0,
+            86.89,
+            539.5,
+            98.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "preserves the boundary prongs, the fractional Dehn twist coefficient of h is given by",
+          "bbox": [
+            72.0,
+            100.64,
+            472.88,
+            111.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "c(h) = k/n",
+          "bbox": [
+            279.97,
+            121.39,
+            332.04,
+            132.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "for some integer k; see [HKM07, §3.2]. Since h is veering, Theorem 2.1 says that k̸ = 0. Meanwhile,",
+          "bbox": [
+            72.0,
+            141.94,
+            540.02,
+            153.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "SFRM1095"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Proposition 2.2 implies that |k| < n. It follows that n ≥2. In this case, φ0 extends to a pseudo-",
+          "bbox": [
+            72.0,
+            155.6,
+            540.0,
+            168.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Anosov homeomorphism ˆφ0 of ˆΣ0, and Fs and Fu extend to stable and unstable foliations ˆFs and",
+          "bbox": [
+            72.0,
+            167.04,
+            540.01,
+            182.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "ˆFu for ˆφ0 in which the n boundary prongs extend to n prongs meeting at point p in D. The point",
+          "bbox": [
+            72.0,
+            180.64,
+            540.08,
+            195.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "p is a singularity of these two foliations when n ≥3, and a smooth point when n = 2; see Figure 1.",
+          "bbox": [
+            72.0,
+            196.85,
+            540.04,
+            207.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Note that p is the unique fixed point of ˆφ0 in D.",
+          "bbox": [
+            72.0,
+            210.6,
+            304.22,
+            223.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(For the reader interested in more details about how one extends the foliations and transverse",
+          "bbox": [
+            83.95,
+            227.18,
+            540.04,
+            238.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "measures over the disk D, we take the following easy way out: a pseudo-Anosov homeomorphism of a",
+          "bbox": [
+            72.0,
+            240.78,
+            540.01,
+            251.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "surface with boundary is, by definition, a map which restricts on the complement of the boundary to",
+          "bbox": [
+            72.0,
+            254.38,
+            540.08,
+            265.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "a pseudo-Anosov map of the corresponding punctured surface. Capping off a boundary component",
+          "bbox": [
+            72.0,
+            267.98,
+            540.08,
+            278.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "from this point of view corresponds simply to filling in the corresponding puncture with a point.)",
+          "bbox": [
+            72.0,
+            281.58,
+            537.44,
+            292.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 1. The transverse foliations ˆFs and ˆFu on D, in the cases where Fs and",
+          "bbox": [
+            107.86,
+            439.65,
+            504.14,
+            454.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Fu each have n = 2, 3, 4 boundary prongs. When n = 2 the point p at the center is",
+          "bbox": [
+            107.87,
+            455.86,
+            504.18,
+            468.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "a smooth point of each foliation, while for n ≥3 it is an n-pronged singular point.",
+          "bbox": [
+            107.87,
+            469.46,
+            500.41,
+            480.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "It follows in either case that Γ is a reducing system for ˆh as well, and thus contains ˆΓ. Moreover,",
+          "bbox": [
+            83.96,
+            495.26,
+            540.01,
+            509.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ˆφ is the extension of φ by the identity over D, and in particular agrees with φ on",
+          "bbox": [
+            72.0,
+            511.74,
+            461.9,
+            522.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Σ \\ Σ0 = ˆΣ \\ ˆΣ0,",
+          "bbox": [
+            266.42,
+            529.73,
+            345.58,
+            545.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "proving the first item of the theorem. For the other items, we analyze the difference Γ \\ ˆΓ.",
+          "bbox": [
+            72.0,
+            550.95,
+            504.27,
+            564.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "We first claim that Γ \\ ˆΓ consists of components of ∂ˆΣ0. Indeed, ˆφ fixes Γ and thus ∂ˆΣ0 setwise.",
+          "bbox": [
+            83.96,
+            567.99,
+            539.98,
+            583.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "It follows that ˆΓ ∪∂ˆΣ0 ⊂Γ is also a reducing system for ˆh, and hence for h as well. But then the",
+          "bbox": [
+            72.0,
+            582.05,
+            540.02,
+            597.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "minimality of Γ ⊂Σ as the canonical reducing system for h implies that",
+          "bbox": [
+            72.0,
+            598.38,
+            416.64,
+            609.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Γ = ˆΓ ∪∂ˆΣ0,",
+          "bbox": [
+            274.83,
+            616.52,
+            337.17,
+            631.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "which proves our claim about Γ \\ ˆΓ.",
+          "bbox": [
+            72.0,
+            637.28,
+            243.64,
+            650.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "We next claim that every component of Γ is homotopically essential in ˆΣ, and that no two",
+          "bbox": [
+            83.95,
+            654.32,
+            540.02,
+            667.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "components of Γ are freely homotopic in ˆΣ. Indeed, the analogous conditions hold for Γ ⊂Σ by",
+          "bbox": [
+            72.0,
+            667.92,
+            540.05,
+            681.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the minimality of this reducing system, and the only way this fails upon capping off is if ˆΣ0 is a",
+          "bbox": [
+            72.0,
+            681.52,
+            540.0,
+            696.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "disk or an annulus; equivalently, if Σ0 is an annulus or a pair of pants. Minimality of Γ ⊂Σ rules",
+          "bbox": [
+            72.0,
+            697.73,
+            540.07,
+            710.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "out the first possibility, while the second is excluded by the hypotheses of the theorem.",
+          "bbox": [
+            72.0,
+            711.47,
+            487.97,
+            722.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    }
+  ]
+}

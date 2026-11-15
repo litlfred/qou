@@ -8,6 +8,7 @@ pages: 12-16
 source_pdf: Invariant_eigendistributions_2.pdf
 source_sha256: ee43c3ebeff95265
 toc_source: inferred
+doc_brief: "Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups — 18 sections: Front matter; Contents; Introduction."
 ---
 Recall the W-ﬁltration of Z by the inverse images Z(O) of nilpotent K-orbits O on N ∩k⊥, which gave
 rise to the decomposition (4.1) of grH∗(Z). Passing from Z to S, the analogous ﬁltration of S by the

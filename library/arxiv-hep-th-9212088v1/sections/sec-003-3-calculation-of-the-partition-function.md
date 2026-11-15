@@ -8,6 +8,7 @@ pages: 6-9
 source_pdf: 9212088v1.pdf
 source_sha256: ecb2c02ec6fe11bd
 toc_source: inferred
+doc_brief: "arXiv:hep-th/9212088v1 14 Dec 1992 — We construct a random matrix model that, in the large N limit, reduces to the low energy limit of the QCD partition function put forward by Leutwyler and Smilga."
 ---
 In order to evaluate the partition function (2.2) the determinant is written as an
 integral over Grassmann variables
@@ -111,7 +112,6 @@ The diagonal mass matrix is denoted by m.
 The complex matrix σ + i¯σ can be decomposed in ’polar coordinates’ as [19]
 σ + i¯σ = UΛV −1,
 (3.6)
-6
 where U and V are unitary matrices and Λ is a diagonal real positive deﬁnite matrix. Since
 the r.h.s has Nf more degrees of freedom than the l.h.s., one has to impose constraints
 on the new integration variables. This can be achieved [19] by restricting U to the coset
@@ -162,7 +162,6 @@ point approximation. The saddle point equations for the Λ integrals read
 The negative solution is not inside the integration manifold and can be omitted.
 The integral over α, which ranges from 0 until 2π , can be executed either before or
 after the summation over N+. In the ﬁrst case we ﬁnd zero for odd values of N while for
-7
 even values of N only the term N+ = N−= N/2 contributes in which case the α integral
 becomes soft. However, in the second case the interference between contributions of all
 diﬀerent topologies results in the integrand (2 cos α)N which allows us to perform the
@@ -208,7 +207,6 @@ which completes the calculation of the partition function.
 As observed in [2], for more than one ﬂavor the value of the condensate depends on
 the sign of the quark mass. For example, in the case of two ﬂavors with equal negative
 masses and θ = 0, the saddle point is at V = −1.
-8
 It is also possible to introduce a complex mass in eq. (2.2) with the mass in the lower
 block equal to the complex conjugate of the mass in the upper block of the overlap matrix.
 In this case the ﬁnal result for the partition function depends only on the combination

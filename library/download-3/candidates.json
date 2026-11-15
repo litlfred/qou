@@ -1,0 +1,131 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "download-3",
+ "source": {
+  "structure_sha256": "7c2b83ba9f9baad71d84fccb3330e660fccca6fcdd072edf58338d89d28cce25",
+  "file": "Download (3).pdf"
+ },
+ "provenance": {
+  "title": "Co_ Math. Phys. 172, 223-262 (1995) Communications I\u03a0 Mathematical Physics \u00a9 Springer-Verlag 1995 Algebraic Index Theorem",
+  "authors": "Ryszard Nest",
+  "arxiv": null,
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 7,
+  "by_kind": {
+   "recommendation": 7
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This suggests that, in order to compute the trace in (0.1) in terms of ep, one should replace the trace with a suitable higher trace, or a cyclic cocycle.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "First, there should be generalizations of Theorem 1.1.1 for families and for manifolds with boundary.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-a--ccf.md",
+   "section_title": "&(A)-^ CCf",
+   "pages": "6-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This analogue should generalize the recent \"higher index theorem\" for the longitudinal Dirac operator on a certain class of foliations of codimension 1 (Moryoshi and Natsume).",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-a--ccf.md",
+   "section_title": "&(A)-^ CCf",
+   "pages": "6-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall denote the subalgebra g/(\u00ab)<r of g^ by \u03af),;, or simply by \u03af).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-013-4-algebraic-index-theorem-for-formal-deformation.md",
+   "section_title": "Algebraic Index Theorem for Formal Deformations",
+   "pages": "20-33",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "An Application In this section we shall prove a conjecture of B.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-014-7-an-application.md",
+   "section_title": "An Application",
+   "pages": "33-33",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall use an analogue of Theorem 4.1.1.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-015-1-g-cm-cc0a.md",
+   "section_title": "G C\u00b0(M, CC0(^A/))",
+   "pages": "33-33",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "For 7 G \u00a3/(g x4)> we shall denote by Y the image of Y under the map (Al).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-017-appendix-1-operations-on-the-cyclic-complex.md",
+   "section_title": "Operations on the Cyclic Complex",
+   "pages": "34-37",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

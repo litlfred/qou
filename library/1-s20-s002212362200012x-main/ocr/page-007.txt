@@ -1,0 +1,49 @@
+R. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392 7
+
+They show that if p is both log-concave on the positive orthant and homogeneous (which
+is equivalent to the fact >, X; is supported on one point), then the law of X1,...Xp
+admits, among other things, strong concentration properties in the form of a spectral
+gap (with respect to the Glauber dynamics).
+
+It is not hard to check that the log-concavity of the polynomial p, is equivalent to
+the condition
+
+V?L[v](x) < 2 (diag (VL[r](x)) +In), Ve € R”. (7)
+
+Since VL[v](a) € [-1,1]”, the above condition is strictly stronger than our semi-log-
+concavity condition (2) with 6 = 4.
+
+Note that our notion of log-concavity is invariant under reflections about the coordi-
+nate axes, whereas in the latter notion, the direction (1,...,1) has a special role. In cases
+of interest, such as homogeneous distributions where |A] <n, condition (7) is actually
+closer to strict log-concavity. Since the multi-linear polynomial p, is harmonic, its log-
+concavity implies that the Hessian matrix can have only one non-negative eigenvalue. In
+this sense, condition (7) is much more rigid than our condition.
+
+A perhaps more closely related work is [1], where it is shown that another related
+condition implies spectral gap. The main result in this work is roughly the following:
+Suppose that the covariance matrix of any restriction of the measure v to a sub-cube
+(hence, a set of the form {x; x; = y;, Vi € A} for some A C [n] and y € {—1,1}") has
+operator norm O(1). Then, the measure admits a spectral gap of n~°). Such a bound,
+however, does not allow one to get any improvement for the concentration of 1-Lipschitz
+functions with respect to the trivial bound Var,[y] < n?. In this respect, our theorem is
+complementary to [1].
+
+On the other hand, it is not hard to check that our condition (2) as is, cannot be
+enough to imply a spectral gap for the Glauber dynamics. Indeed, if one considers the
+uniform measure on the points with even parity, then this measure is semi log-concave,
+but its spectral gap is zero (the Glauber dynamics is simply stuck at one point). Thus,
+there is no hope for spectral gap unless one adds some “local” connectivity condition. We
+suspect that this example is essentially the only obstacle in the sense that and 3-semi
+log-concave measure has a spectral gap after applying a small noise, namely applying
+the heat semigroup for time O(1/n).
+
+While our proof is based mainly on analytic methods, the proof in [2] (and in [1] which
+is based on the same techniques) has a more algebraic flavor, and is based the theory
+of high-dimensional expanders. Let us mention that in the work [8] (which appeared in
+parallel with this work), it is shown that techniques which are related to the ones in our
+work can be used to obtain a spectral gap when the measure v is of the form eV du with
+V quadratic.
+
+In relation to Corollary 9, a result of a similar spirit appears in [1]. A corollary of the
+main theorem there shows that if v is d-homogeneous and all measures obtainable from v

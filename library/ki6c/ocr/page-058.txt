@@ -1,0 +1,57 @@
+A.3 Estimate of a solution of (58)
+
+In this section, we explain how to estimate a solution in 3-variable case. We explain it
+for a solution of (58); we can estimate solutions in other 3-variable cases in similar ways.
+
+As mentioned in Section 4.2, there are exactly two solutions of (58). These solutions
+give the maximal and minimal values of 2s+u. We put the solution for the maximal value
+to be (ti, $1, 1). Then, the maximal value of 2s + u is given by (25 + U)max = 281 + UW.
+As we mentioned in Remark 4.1, we give a rigorous proof of an estimate of (25+ U)max in
+the following lemma.
+
+Lemma A.3. (25+ U)max < 0.97.
+
+Proof. The system of equations (58) is rewritten
+
+—2 A(t) + A(t —w! + du) + 2A(w! — du) + A(u)—s, = 0,
+-2A(t)+A'(t-w'+ hu) = 0,
+$A(t — w' + du) — A(w’ — gu) + A'(u) = 0,
+
+2
+where ¢, = 0.700414248.... Putting s = w’ — 5, they are rewritten
+—2 A(t) + A(t—s)+2A(s)+A(u)-—s, = 0,
+
+QA'(t) = A(t—s), (94)
+zA(t—s)—A(s)+A(u) = 0.
+
+The second equation is rewritten
+2sin? at = sinz(t— 8).
+
+Hence,*
+
+1
+s = t——arcsin (2sin zt).
+7
+
+We put the right-hand side of this formula to be f(t), that is, s = f(t). By the second
+and third equations of (94), we obtain that
+
+A’(u) = A’(s) — A’(t).
+
+Hence,
+1 .
+u = —arcsin
+T
+
+sin 7s
+2sin =) ,
+
+Putting s = f(t), we put the right-hand side of this formula to be g(t), that is, u = g(t).
+Further, putting
+
+P(t) = —2A(t)+A(t— f(t) + 2A(f() + A(g() - sp
+
+the system of equations (94) is rewritten as a single equation P(t) = 0.
+
+4Here, we choose a branch of arcsin as —7/2 < arcsin(-) < 7/2. By choosing another branch, we obtain an estimate of
+the minimal value of 2s + u.

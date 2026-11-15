@@ -1,0 +1,1 @@
+The optimization algorithm makes $O(m)$ recursive calls to the approximate solver to identify a variable $x_i$ that must be 0 in every optimal solution; this is deduced using Theorem~\ref{cor:dual-fix-weak}.

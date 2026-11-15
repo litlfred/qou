@@ -1,0 +1,59 @@
+A representation theoretic explanation... 1361
+
+for the output stability region to be chosen independently of the input stability region.
+While this does not literally improve the result, it does allow for quicker computations.
+In particular, see Examples 6.3 and 6.4 where classical polynomial convolution results
+are easily derived from our framework.
+
+2. Our characterization does not require any degeneracy condition. Our results characterize
+operators which preserve (strong) stability rather than weak stability. As seen above,
+this slightly stronger notion of stability enables us to eliminate any image dimension
+degeneracy condition, as required in the Borcea—Brandén characterizations (Theorems
+1.1 and 1.2). This demonstrates a cleaner link between an operator and its symbol.
+
+3. Closed circular regions and projectively convex regions can be considered. The symbol
+we define in this paper handles products of open circular regions, as well as products of
+closed circular regions. (In [12], Melamud proves a result similar to the Borcea—Brandén
+characterization for closed circular regions.) Further, we are also able to consider more
+general projectively convex regions (circular regions with portions of their boundary; also
+called generalized circular regions, see [18] and [17]) in Proposition 6.5. This allows
+us to determine stability-preservation information about real intervals and half-lines. It
+also turns out, somewhat surprisingly, that our symbol can handle products of any sets
+as possible output space stability regions (as seen in Theorem 6.2 above).
+
+In the process of generalizing the Borcea—Brandén characterization we develop a general
+algebraic framework which also encompasses many of the classical polynomial tools. This
+framework aims to motivate classical results and provide intuition for the connection between
+a stability preserving operator and its symbol.
+
+The main idea
+
+A major purpose of this paper is to explain a certain conceptual thread in the history of
+polynomial stability theory: that it is often possible to determine general stability information
+from restricted sets of polynomials. For example, the Pélya-Schur and Borcea—Brindén
+characterizations derive from a single polynomial (i.e., the symbol) stability properties of a
+whole collection of polynomials in the output of a given linear operator. Additionally, the
+Grace—Walsh—Szeg6 coincidence theorem says that stability information of any polynomial
+can be determined from its polarization, which is of degree at most one in each variable.
+
+As it turns out, these sorts of phenomena can be explained using relatively basic algebraic
+and representation theoretic concepts. We view C”[x] as a representation of SL2(C) via the
+standard action, given as follows. For @ € SL2(C) and f € C”[x], we define:
+
+(b- f(x) = fe! x)
+
+Here @~! acts on x € Cas a Mobius transformation, or equivalently @ acts on the roots of f.
+(Similarly, C*[x1,..., Xm] can be viewed as a representation of (SL2(C))” via this action
+in each variable.) Under this interpretation, important maps like polarization, projection, the
+apolarity form, and even the symbol turn out to be invariant under these SL2(C) actions. This
+leads us to a conceptual thesis: SL2(C)-invariant maps transfer stability information.
+
+The goal of this paper is then to explicate and answer the most important question related
+to this thesis: what does it mean for the symbol map to be SL2(C)-invariant and how does
+it transfer stability information? To answer this, we consider the following standard ideas
+relating spaces of linear operators to tensor products.
+
+Let W), W2 be two finite dimensional representations of a group G, and let Hom(W), W2)
+denote the space of linear maps from W, to W2. Then, Hom(W;, W2) = W/' Kl Wo (the outer
+
+D Springer

@@ -1,0 +1,62 @@
+---
+doc_id: schechtman-varchenko1991-arrangements
+doc_title: "Arrangements of hyperplanes and Lie algebra homology"
+section_id: page-012
+section_title: "Page 12"
+pages: 12-12
+pdf_page: 12
+source_pdf: schechtman-varchenko1991-arrangements.pdf
+source_sha256: 0100fd32438740f0
+text_source: ocr
+granularity: page
+doc_brief: "Arrangements of hyperplanes and Lie algebra homology — 56 sections: Page 1; Page 2; Page 3"
+---
+150 V.V. Schechtman and A.N. Varchenko
+
+The Theorem will be proved a bit later, after some preliminaries.
+
+2.5 For He@ put
+
+(2.5.1) F'(6;H)= @ F°@)_cF’@)
+L¢eH
+(cf. 1.4.1).
+Suppose that @ is central, with a unique vertex v. In notations of n° 1.4,
+we have evident isomorphisms
+
+(2.5.2) F (€@;H)=F (x).
+Define the map
+(2.5.3) FN\(6;H) > F*(@)
+
+which sends ()>...>L~*) to (P>...> LN" 130). Using relations (2.1.1) one
+easily sees that (2.5.3) is epimorphic. (We'll prove a bit later that it is isomorph-
+ism).
+
+2.6 Proof of 2.4 By (2.1.2) and 1.3.2 one may suppose that @ is central with
+a unique vertex, and p=N. Let us prove 2.4 by induction on N. Consider
+the square
+
+F'\(6,H) 3, F)
+
+(6, H)* a og
+(2.6.1)
+of -*(6; H)* —~— AN (6)
+
+(5.1971
+
+Here vertical maps are adjoint to (2.3.3). One verifies that (2.6.1) commutes.
+
+By (2.5.2), (1.4.2) and induction hypothesis, y(@, H)* is iso; by (2.5) the
+upper horizontal map is epi. It follows that g* and (2.5.3) are isomorphisms,
+and we are done by 1.65. 0
+
+2.7 Remark. Let @ be a central arrangement with the unique vertex. Let K
+be the simplicial set associated with the ordered set of edges of @, as in [OS,
+
+s definitions follows the isomorphism ¥%(@)* = Ay _2(K).
+In particular, 2.6.b follows from [OS, 4.3].
+2.8 Corollary. Let n= max {p| F"(@) +0}. Then H?(F (@), d)=0 for p+n.
+Proof. Follows from 1.7.2 and 2.6. ©
+2.9 In the course of the proof of 2.6 we have proven the
+
+2.9.1 Corollary. Let @ be a central arrangement with the unique vertex v, He@.
+Then the map (2.5.3) is an isomorphism.

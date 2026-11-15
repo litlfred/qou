@@ -1,0 +1,47 @@
+58 Chapter 3 — Perverse sheaves on semiabelian varieties
+
+It remains to show that for admissible P,P; € P(Xq) also P, * Py is
+admissible. This follows from
+
+(Pi * Po) = (Pi) -X(P2) (part (d) of lemma 3)
+= 7(¥(P1)) -%(P(P2)) (admissibility of P,, P2)
+= x(¥(P1) *¥(P2)) (part (d) of lemma 3)
+<x(P(Pi * Pr) (part (i?) of lemma 12)
+<X(Pi* Po) (part (i) of lemma 12)
+which implies that the last two estimates must in fact be equalities. Oo
+
+Concerning the failure of tensor functoriality it now follows that the
+situation is as good as one could possibly hope for.
+
+THEOREM 3.15. On the rigid symmetric monoidal abelian subcategory
+of admissible objects, the nearby cycles define a tensor functor ACU
+
+¥:  P(Xq)“4 — P(x)
+so that for P € pa we obtain a closed immersion G(¥(P)) > G(P).
+
+Proof. Let P,, Py € P(X;)™. The last statement in lemma 3.13 (ii) gives
+a split monomorphism
+
+Y(Pi) + ¥(Py) Go PP, +P)
+
+in the abelian category P(X;). But 7(¥(P,) * P(P2)) = 7(¥(Pi * P2)) as we
+have seen in the proof of lemma 3.14. So the above monomorphism is an
+isomorphism in P(X,), and hence is a tensor functor on P(X; )““. For the
+statement about the Tannaka groups, recall that by definition every object
+of (¥(P)) is a subquotient of the image under ¥ of some object in (P). So
+our claim follows from the Tannakian formalism [33, prop. 2.21b)]. O
+
+3.6. Specialization of characters
+
+Let X —> S be a semiabelian scheme as above. Since we assumed the
+prime number / to be invertible on S, we know from [17] that the (tame)
+pro-/ fundamental groups
+
+Ty (Xq,0): = Ti (Xm, 0)i and ™ (X5,0); = 7 (Xs,0);
+are free Z;-modules of finite rank. However, the basic example of abelian
+varieties with semiabelian reduction illustrates that in general 7) (X;,0),
+will have strictly smaller rank than 7)(Xj,0). To complete the proof of
+lemma 3.13 we thus need to justify why in passing from the generic to the
+special fibre, we retain enough characters to apply the generic vanishing
+assumption from section 3.1 on both fibres. To this end, let II(X), denote
+the group of all continuous characters of 7 (X ,x), for any chosen geometric

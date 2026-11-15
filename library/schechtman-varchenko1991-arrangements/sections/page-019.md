@@ -1,0 +1,64 @@
+---
+doc_id: schechtman-varchenko1991-arrangements
+doc_title: "Arrangements of hyperplanes and Lie algebra homology"
+section_id: page-019
+section_title: "Page 19"
+pages: 19-19
+pdf_page: 19
+source_pdf: schechtman-varchenko1991-arrangements.pdf
+source_sha256: 0100fd32438740f0
+text_source: ocr
+granularity: page
+doc_brief: "Arrangements of hyperplanes and Lie algebra homology — 56 sections: Page 1; Page 2; Page 3"
+---
+Arrangements of hyperplanes and Lie algebra homology 157
+
+_. Clearly, a(v)-E— aN ? acts as multiplication by a(v)* on the subgroup
+AN~t=ker(d*: %~'(@) + I~? (@))— A '(@). So, it remains to show that
+
+(3.11.2) det(a(v)-E—A%~)hima~T] [I a(Lyoem,
+iZ1 Le@;
+LoHo
+
+By 3.10.5 and 3.10.9 the left hand side of (3.11.2) divides the right hand side.
+On the other hand, because of independence of det S on the choice of Ho,
+and by induction on N, the r.h.s. divides the l.h.s., so they are proportional.
+This completes the proof of Theorem 3.7.
+
+3.12 Corollary. Maps p'(L) (3.10.8) are isomorphisms.
+
+4 Topology
+
+Let @ be an arrangement in V, dim V=N. Put Y(@)= U HcV;U(@)=V\ Y(@).
+
+He€
+
+4.1 Orlik-Solomon theorem. Denote by Q°(U(@)) the de Rham complex of holo-
+morphic forms over U(@). One has canonical isomorphism
+
+(4.1.1) H’(Q'(U(@))= H'(U(@); ©).
+For any He@ choose an affine equation 4, =0 of H; assign to H a I-form
+(4.1.2) 1(H)=d log 4,EQ'(U(@)).
+
+1(H) doesn’t depend on the choice of 4,. This assignment defines an inclusion
+of graded @-algebras
+
+(4.1.3) 1: L(€) 2 Q(U())
+which is compatible with differentials if we imply the zero differential on /"(@)
+[Br, OS].
+
+4.1.4 Theorem (Brieskorn-Orlik-Solomon). 1 is a quasi-isomorphism, i.e. it induces
+the isomorphism
+
+A (6)=H'(U(6); ©)
+which maps f° (€)z isomorphically to H?(U (@); (2 i)? Z).
+Proof. Follows from [Br, OS] and 1.3.2.
+4.1.5 Corollary.
+
+N
+x(@)= Y (-* irk H(U(@);Z).
+i=0
+4.2 For a topological space X denote by C,(X) (resp., C’(X)) the complex of
+
+integer-valued singular chains (resp., cochains) of X. Put C,(V, Y(C)):=C,(V)/
+C(Y(@), CV, Y@H(CV, Y())*.

@@ -1,0 +1,56 @@
+33 Page 38 of 47 S. Jansen, L. Kolesnikov
+
+Proof We can modify the Kirkwood-Salsburg-type equations k? from Chapter 3.3 as follows:
+If &(-) is a function from D, to R, that does not see gaps of diameter at most ¢ and satisfies the
+measurability assumption from Theorem 2.6, define the function Hk (possibly assuming
+the value “‘oo”’) by
+
+(#28)(D) = ns2)6( ES U...U Ey )
+
+for D € Dy with E,,..., E, C E, and C(D) = {E),..., Ey}, where Dis given by “filling
+gaps” of diameter at most ¢ in D C R as defined above.
+
+Notice that for any such function &(-) (that does not see gaps of diameter at most ¢ and
+satisfies the measurability assumption from Theorem 2.6)
+
+Hs Ea RE
+holds, where «3& is the function defined by (3.9). In particular, the left hand side of the
+equation is well-defined. Since the functions Ty(-3z), N € N, and T(-; z) do not see gaps
+
+of diameter at most ¢ (by our assumption ¢ < 6 and the respective definitions), Proposition
+3.10 implies
+
+F(s2) =e + #72.
+and
+Tw4i(-sz) = eC) + (4 T)(-3 2).
+
+Assumption (4.29) is equivalent to e(D) + (#3 e")(D) < et) for any interval D C R. We
+prove by induction over N that Ty(D; z) < e@) for all N € N and all intervals D C R.
+For N = 1, we have by our assumption
+
+T\(D, z) = e(D) < e(D) + (#2 e")(D) < e@)
+
+for all intervals D C R. Next, assume for some N € N that Ty(D; z) < e@) for all intervals
+DCR, then
+
+Ty41(D; 2) = e(D) + X Ty (D; 2) < e(D) + (He (D) < &™,
+
+where the first inequality holds by the inductive hypothesis, by monotonicity of HS on non-
+negative functions and by the observation that for intervals D C R all the arguments of &
+appearing in the definition of (#8 &)(D) are again intervals.
+
+This completes the induction and proves Ty (D; z) < e“() for all N € N and all intervals
+D CR. Taking the limit N — 00 yields the corresponding bound for T (D; z). The claim for
+arbitrary bounded subsets follows since every bounded subset is contained in some compact
+interval and
+
+T (Di; 2) < T(D2, 2)
+for Dj} C D2 CR. o
+
+Proof of Theorem 4.7(a) In analogy to the discrete case, fora > 0 and L > 0 let
+
+oo
+Vi(D) =| Mte,x+LInDZey ax.
+=
+
+D Springer

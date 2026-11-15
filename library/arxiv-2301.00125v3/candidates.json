@@ -1,0 +1,166 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2301.00125v3",
+ "source": {
+  "structure_sha256": "7ecd0cff7d6c2ec4ca969bc68728e9d29769c57dfa49b482addae9a11ff89cc0",
+  "file": "2301.00125v3.pdf"
+ },
+ "provenance": {
+  "title": "Generating Function for Pinsky\u2019s Combinatorial Second Moment Formula for the Generalized Ulam Problem",
+  "authors": "Samen Hossein",
+  "arxiv": {
+   "id": "2301.00125",
+   "version": "3",
+   "primary_class": "math.CO",
+   "stamp_date": "3 May 2023"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 9,
+  "by_kind": {
+   "recommendation": 9
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Technically, the generalized Ulam problem should be the problem of stating as much as possible about the distribution of $Z_{n,k}$ for the doubly-indexed sequence of numbers for $n$ and $k$.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-004-14-motivation-for-exact-solutions.md",
+   "section_title": "Motivation for exact solutions",
+   "pages": "4-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The residue method may be used to derive formulas such as this, when they are unknown.",
+   "strength": "may",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-006-2-pinskys-combinatorial-second-moment-formula.md",
+   "section_title": "Pinsky's combinatorial second moment formula",
+   "pages": "5-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In other words, for the normal form, the roots of the quartic should come in pairs which are additive inverses.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-008-4-main-result.md",
+   "section_title": "Main result",
+   "pages": "12-16",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "It should be mentioned that $dr=dL^{-1}(s)$ also produces an even power of $(-cx+a)$.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-008-4-main-result.md",
+   "section_title": "Main result",
+   "pages": "12-16",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Even if further results seem like they should naturally be contained herein, we have limited this paper to the products of that research experience.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-5-summary-and-outlook.md",
+   "section_title": "Summary and outlook",
+   "pages": "16-16",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This means guessing, but they must make a good educated guess to get something that is not senseless.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-011-b-review-of-the-physicists-replica-approach-to-t.md",
+   "section_title": "B Review of the physicists' replica approach to the SK model",
+   "pages": "20-21",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We do recommend consulting the textbook [23].",
+   "strength": null,
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-011-b-review-of-the-physicists-replica-approach-to-t.md",
+   "section_title": "B Review of the physicists' replica approach to the SK model",
+   "pages": "20-21",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We also recommend the article of Aizenman and Ruzmaikina [3].",
+   "strength": null,
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-012-b1-mathematical-physics-and-probability-developm.md",
+   "section_title": "B.1 Mathematical physics and probability developments",
+   "pages": "21-22",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We must have |\u03be| = 1 or \u03be \u2208R.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-016-f-elementary-proofs-from-the-quadratic-formula.md",
+   "section_title": "F Elementary proofs from the quadratic formula",
+   "pages": "25-28",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

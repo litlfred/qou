@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0808.2716v4
-doc_title: "CUSP AREAS OF F AREY MANIFOLDS"
+doc_title: "CUSP AREAS OF FAREY MANIFOLDS"
 section_id: sec-001-11-cusp-shapes-and-areas
 section_title: "Cusp shapes and areas"
 section_number: 1.1
 pages: 1-3
 source_pdf: 0808.2716v4.pdf
 source_sha256: ea66f7ddcf9e9fe6
-doc_brief: "CUSP AREAS OF F AREY MANIFOLDS — This paper gives the ﬁrst explicit, two–sided estimates on t he cusp area of once– punctured torus bundles, 4–punctured sphere bundles, and 2 –bridge link"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.956
-latex_coverage_ratio: 0.975
+latex_coverage_ratio: 0.985
+doc_brief: "CUSP AREAS OF FAREY MANIFOLDS — This paper gives the ﬁrst explicit, two–sided estimates on the cusp area of once– punctured torus bundles, 4–punctured sphere bundles, and 2–bridge link complements."
 ---
 In a finite--volume hyperbolic 3--manifold $M$, a horoball neighborhood of a torus boundary component becomes a *cusp*, homeomorphic to $T^2\times[0,\infty)$. Mostow--Prasad rigidity implies that each cross-sectional torus $T^2$ is endowed with a flat metric, or *cusp shape*, that is determined up to similarity by the topology of $M$. When $M$ has a single torus boundary component, we may expand a horoball neighborhood until it meets itself. This *maximal horoball neighborhood* completely determines a flat metric on the torus, and one can measure lengths of curves and area on the torus using this metric. We will refer to such a metric as a *maximal cusp metric*. Similarly, when a 3--manifold has multiple cusps, a maximal horoball neighborhood is given by expanding a collection of horoball neighborhoods until none can be exapanded further while keeping their interiors disjoint. In the case of multiple cusps, the choice of horoball neighborhoods is no longer unique. However, if we are required to expand the cusp neighborhoods in a fixed order, this expansion recipe once again determines a collection of maximal cusp metrics.
 

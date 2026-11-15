@@ -2,242 +2,57 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0309426v2",
  "source_sha256": "f2aa01164d9f243c",
- "brief": "ELEMENTARY DIVISORS OF SPECHT MODULES — 46 sections: MATTHIAS K ¨UNZER AND ANDREW MATHA; Introduction and statement of main; The Hecke algebra and permutation",
- "extended": "**ELEMENTARY DIVISORS OF SPECHT MODULES**\n\n*MATTHIAS K ÜNZER AND ANDREW MATHAS*\n\n20 pp, 46 sections.\n\n**Outline.** 2 MATTHIAS K ¨UNZER AND ANDREW MATHAS; 1 Introduction and statement of main results; 2 The Hecke algebra and permutation modules; 3 Specht modules; 4 MATTHIAS K ¨UNZER AND ANDREW MATHAS; 3.1 (Dipper–James [2, Theorem 5.6] ) The Spech; 4 Diagonalizability and elementary divisors; 4.1 Lemma. Let A be an m ×m matrix with coeﬃci; 5 Elementary divisors for conjugate partitions; 5.1 Lemma. Suppose that λ is a partition. Then; 5.2 Corollary . The map M (λ) ✲δλ; 6 MATTHIAS K ¨UNZER AND ANDREW MATHAS; 5.3 Lemma. We have x#; 5.4 (Dipper–James [2, Lemma 4.1] ) Suppose tha; 5.5 Lemma (The Submodule Theorem) . If U is a ; 5.6 Lemma. We have Kernθλ =S(λ)⊥. This induces; 5.7 Lemma. We have zλT −1; 8 MATTHIAS K ¨UNZER AND ANDREW MATHAS",
+ "brief": "ELEMENTARY DIVISORS OF SPECHT MODULES — 9 sections: Front matter; Introduction and statement of main; The Hecke algebra and permutation",
+ "extended": "**ELEMENTARY DIVISORS OF SPECHT MODULES**\n\n*MATTHIAS KÜNZER AND ANDREW MATHAS*\n\n20 pp, 9 sections.\n\n**Outline.** Front matter; 1 Introduction and statement of main results; 2 The Hecke algebra and permutation modules; 3 Specht modules; 4 Diagonalizability and elementary divisors; 5 Elementary divisors for conjugate partitions; 6 The elementary divisors for hook partitions; 7 Some counterexamples; Acknowledgements",
  "tokens": {
-  "brief": 39,
-  "extended": 211
+  "brief": 33,
+  "extended": 104
  },
  "sections": [
   {
-   "id": "sec-000-2-matthias-k-unzer-and-andrew-mathas",
-   "title": "MATTHIAS K ¨UNZER AND ANDREW MATHAS",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-1-introduction-and-statement-of-main-results",
+   "id": "sec-000-1-introduction-and-statement-of-main-results",
    "title": "Introduction and statement of main results",
    "pages": "1-1"
   },
   {
-   "id": "sec-002-2-the-hecke-algebra-and-permutation-modules",
+   "id": "sec-001-2-the-hecke-algebra-and-permutation-modules",
    "title": "The Hecke algebra and permutation modules",
    "pages": "1-3"
   },
   {
-   "id": "sec-003-3-specht-modules",
+   "id": "sec-002-3-specht-modules",
    "title": "Specht modules",
    "pages": "3-4"
   },
   {
-   "id": "sec-004-4-matthias-k-unzer-and-andrew-mathas",
-   "title": "MATTHIAS K ¨UNZER AND ANDREW MATHAS",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-005-31-dipperjames-2-theorem-56-the-specht-module-sλ",
-   "title": "(Dipper–James [2, Theorem 5.6] ) The Specht module S(λ) is free as an R–",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-006-4-diagonalizability-and-elementary-divisors",
+   "id": "sec-003-4-diagonalizability-and-elementary-divisors",
    "title": "Diagonalizability and elementary divisors",
    "pages": "4-5"
   },
   {
-   "id": "sec-007-41-lemma-let-a-be-an-m-m-matrix-with-coeﬃcients",
-   "title": "Lemma. Let A be an m ×m matrix with coeﬃcients in R, and suppose that",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-008-5-elementary-divisors-for-conjugate-partitions",
+   "id": "sec-004-5-elementary-divisors-for-conjugate-partitions",
    "title": "Elementary divisors for conjugate partitions",
-   "pages": "5-5"
+   "pages": "5-9"
   },
   {
-   "id": "sec-009-51-lemma-suppose-that-λ-is-a-partition-then-the",
-   "title": "Lemma. Suppose that λ is a partition. Then the Specht module S(λ) is a pure",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-010-52-corollary-the-map-m-λ-δλ",
-   "title": "Corollary . The map M (λ) ✲δλ",
-   "pages": "5-6"
-  },
-  {
-   "id": "sec-011-6-matthias-k-unzer-and-andrew-mathas",
-   "title": "MATTHIAS K ¨UNZER AND ANDREW MATHAS",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-012-53-lemma-we-have-x",
-   "title": "Lemma. We have x#",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-013-54-dipperjames-2-lemma-41-suppose-that-w-sn-then",
-   "title": "(Dipper–James [2, Lemma 4.1] ) Suppose that w ∈ Sn. Then",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-014-55-lemma-the-submodule-theorem-if-u-is-a-pure-su",
-   "title": "Lemma (The Submodule Theorem) . If U is a pure submodule of M (λ), then",
-   "pages": "6-7"
-  },
-  {
-   "id": "sec-015-56-lemma-we-have-kernθλ-sλ-this-induces-an-isomo",
-   "title": "Lemma. We have Kernθλ =S(λ)⊥. This induces an isomorphism",
-   "pages": "7-7"
-  },
-  {
-   "id": "sec-016-57-lemma-we-have-zλt-1",
-   "title": "Lemma. We have zλT −1",
-   "pages": "7-8"
-  },
-  {
-   "id": "sec-017-8-matthias-k-unzer-and-andrew-mathas",
-   "title": "MATTHIAS K ¨UNZER AND ANDREW MATHAS",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-018-58-lemma-the-composition",
-   "title": "Lemma. The composition",
-   "pages": "8-9"
-  },
-  {
-   "id": "sec-019-6-the-elementary-divisors-for-hook-partitions",
+   "id": "sec-005-6-the-elementary-divisors-for-hook-partitions",
    "title": "The elementary divisors for hook partitions",
-   "pages": "9-10"
+   "pages": "9-17"
   },
   {
-   "id": "sec-020-10-matthias-k-unzer-and-andrew-mathas",
-   "title": "MATTHIAS K ¨UNZER AND ANDREW MATHAS",
-   "pages": "10-10"
-  },
-  {
-   "id": "sec-021-61-proposition-letλ-n-k-1k-the-map",
-   "title": "Proposition. Letλ = (n −k, 1k). The map",
-   "pages": "10-10"
-  },
-  {
-   "id": "sec-022-2-2n3k1k",
-   "title": "(2n−3k−1)[k]!",
-   "pages": "10-10"
-  },
-  {
-   "id": "sec-023-2-2n3k3k-1",
-   "title": "(2n−3k−3)[k + 1]!",
-   "pages": "10-11"
-  },
-  {
-   "id": "sec-024-62-corollary-suppose-that-λ-n-k-1k-then-k",
-   "title": "Corollary . Suppose that λ = (n −k, 1k). Then [k]!",
-   "pages": "11-11"
-  },
-  {
-   "id": "sec-025-63-corollary-the-module-sλ-is-rfree-with-basis-v",
-   "title": "Corollary . The module S′(λ) is R–free with basis {v′",
-   "pages": "11-12"
-  },
-  {
-   "id": "sec-026-12-matthias-k-unzer-and-andrew-mathas",
-   "title": "MATTHIAS K ¨UNZER AND ANDREW MATHAS",
-   "pages": "12-12"
-  },
-  {
-   "id": "sec-027-65-lemma-suppose-that-t-is-a-standard-λtableau-t",
-   "title": "Lemma. Suppose that t is a standard λ–tableau. Then",
-   "pages": "12-14"
-  },
-  {
-   "id": "sec-028-14-matthias-k-unzer-and-andrew-mathas",
-   "title": "MATTHIAS K ¨UNZER AND ANDREW MATHAS",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-029-67-corollary-suppose-that-s-and-t-are-standardλt",
-   "title": "Corollary . Suppose that s and t are standardλ–tableaux which have n in their",
-   "pages": "14-15"
-  },
-  {
-   "id": "sec-030-68-lemma-let-a",
-   "title": "Lemma. Let (a+",
-   "pages": "15-15"
-  },
-  {
-   "id": "sec-031-69-corollary-suppose-that-t-tλ-is-a-standard-kn",
-   "title": "Corollary . Suppose that t ⁄= tλ is a standard (k|n −k)–tableau. Then",
-   "pages": "15-16"
-  },
-  {
-   "id": "sec-032-16-matthias-k-unzer-and-andrew-mathas",
-   "title": "MATTHIAS K ¨UNZER AND ANDREW MATHAS",
-   "pages": "16-16"
-  },
-  {
-   "id": "sec-033-610-corollary-suppose-that-t-is-a-standard-n-k-1",
-   "title": "Corollary . Suppose that t is a standard (n −k, 1k)–tableau and that n does",
-   "pages": "16-16"
-  },
-  {
-   "id": "sec-034-611-proposition-suppose-that-λ-n-k-1k-for-some-k",
-   "title": "Proposition. Suppose that λ = (n −k, 1k), for some k with 0 ≤k <n. Then",
-   "pages": "16-17"
-  },
-  {
-   "id": "sec-035-612-corollary-suppose-that-r-is-a-ﬁeld-that-k",
-   "title": "Corollary . Suppose that R is a ﬁeld, that [k]!",
-   "pages": "17-17"
-  },
-  {
-   "id": "sec-036-7-some-counterexamples",
+   "id": "sec-006-7-some-counterexamples",
    "title": "Some counterexamples",
    "pages": "17-19"
   },
   {
-   "id": "sec-037-4-2-2",
-   "title": "(2 , 2) ✲",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-038-5-3-2",
-   "title": "(3 , 2) ✲",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-039-6-4-2",
-   "title": "(4 , 2) ✲",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-040-7-5-2",
-   "title": "(5 , 2) ✲",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-041-8-6-2",
-   "title": "(6 , 2) ✲",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-042-9-7-2-1",
-   "title": "(7 , 2) ✲1",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-043-acknowledgements",
+   "id": "sec-007-acknowledgements",
    "title": "Acknowledgements",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-044-references",
-   "title": "References",
    "pages": "19-20"
-  },
-  {
-   "id": "sec-045-20-matthias-k-unzer-and-andrew-mathas",
-   "title": "MATTHIAS K ¨UNZER AND ANDREW MATHAS",
-   "pages": "20-20"
   }
  ],
  "provenance": {

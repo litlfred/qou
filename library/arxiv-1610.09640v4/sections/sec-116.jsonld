@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-116",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Balanced DC: Existence",
+  "pageStart": 392,
+  "pageEnd": 402,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-116",
+    "library/arxiv-1610.09640v4/blocks/recommendation-sec-116-01",
+    "library/arxiv-1610.09640v4/blocks/recommendation-sec-116-02",
+    "library/arxiv-1610.09640v4/blocks/recommendation-sec-116-03",
+    "library/arxiv-1610.09640v4/blocks/recommendation-sec-116-04",
+    "library/arxiv-1610.09640v4/blocks/recommendation-sec-116-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "provenance": "ingested"
+}

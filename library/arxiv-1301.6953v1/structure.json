@@ -8,7 +8,7 @@
   "pages": 13,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:19Z",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,7 +21,7 @@
    "stamp_date": "29 Jan 2013"
   },
   "doi": null,
-  "title": "LU TP 13-03 Januray 2013",
+  "title": "Chiral Perturbation Theory and Mesons",
   "authors_raw": "Chiral Perturbation Theory and Mesons",
   "title_lines": [
    "LU TP 13-03",
@@ -44,7 +44,8 @@
    "text": "LU TP 13-03 Januray 2013",
    "corroborated_by": [],
    "browser_print": false
-  }
+  },
+  "title_prev": "LU TP 13-03 Januray 2013"
  },
  "toc": [
   {
@@ -183,7 +184,7 @@
   {
    "kind": "table",
    "number": "2",
-   "title": "The main new \ufb01t of the Lr",
+   "title": "The main new ﬁt of the Lr",
    "page": 7,
    "confidence": 0.8,
    "evidence": [
@@ -195,7 +196,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "The left plot shows the form-factor f+ in D \u2192\u03c0e\u03bd and D \u2192Ke\u03bd decays from CLEO [46]. In the",
+   "title": "The left plot shows the form-factor f+ in D →πeν and D →Keν decays from CLEO [46]. In the",
    "page": 9,
    "confidence": 0.9,
    "evidence": [
@@ -208,7 +209,7 @@
   {
    "kind": "table",
    "number": "3",
-   "title": "The coef\ufb01cients appearing the corrections to the vacuum-expectation-value for the three generic",
+   "title": "The coefﬁcients appearing the corrections to the vacuum-expectation-value for the three generic",
    "page": 10,
    "confidence": 0.8,
    "evidence": [
@@ -342,34 +343,34 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 65,
-   "n_words": 10,
+   "page_end": 2,
+   "n_chars": 1006,
+   "n_words": 148,
    "label_start": null,
-   "label_end": null
+   "label_end": "2"
   },
   {
    "id": "sec-000-2-chiral-perturbation-theory",
    "number": "2",
    "title": "Chiral Perturbation Theory",
    "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 144,
-   "n_words": 18,
-   "label_start": null,
-   "label_end": null
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 13,
+   "n_words": 2,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-001-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 5,
-   "n_chars": 10164,
-   "n_words": 1791,
-   "label_start": null,
+   "n_chars": 9427,
+   "n_words": 1677,
+   "label_start": "2",
    "label_end": "5"
   },
   {
@@ -379,8 +380,8 @@
    "level": 1,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 5493,
-   "n_words": 1008,
+   "n_chars": 5486,
+   "n_words": 1005,
    "label_start": "5",
    "label_end": "7"
   },
@@ -403,8 +404,8 @@
    "level": 1,
    "page_start": 8,
    "page_end": 10,
-   "n_chars": 3605,
-   "n_words": 717,
+   "n_chars": 3601,
+   "n_words": 715,
    "label_start": "8",
    "label_end": "10"
   },
@@ -415,8 +416,8 @@
    "level": 1,
    "page_start": 10,
    "page_end": 13,
-   "n_chars": 9803,
-   "n_words": 1528,
+   "n_chars": 9791,
+   "n_words": 1524,
    "label_start": "10",
    "label_end": "13"
   }
@@ -427,7 +428,7 @@
   "toc_entries": 6,
   "toc_inferred_entries": 6,
   "toc_inferred_mean_confidence": 1.0,
-  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_empty_share": 0.167,
   "toc_inferred_method": "latex",
   "figure_entries": 7,
   "figure_sequence_gaps": [],
@@ -436,7 +437,8 @@
    "items": []
   },
   "sections": 7,
-  "chars_total": 33354,
+  "chars_total": 33404,
+  "furniture_lines_stripped": 13,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "jlab12PoS.tex",
@@ -457,14 +459,14 @@
      "id": "sec-000-2-chiral-perturbation-theory",
      "title": "Chiral Perturbation Theory",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-001-1-introduction",
      "title": "Introduction",
      "prose_ratio": 0.948,
-     "coverage_ratio": 0.291,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.313,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-002-3-determining-low-energy-constants-in-the-contin",

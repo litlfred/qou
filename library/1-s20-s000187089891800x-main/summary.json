@@ -2,22 +2,27 @@
  "_schema": "library-summary/v1",
  "doc_id": "1-s20-s000187089891800x-main",
  "source_sha256": "9844f124dcbc7f36",
- "brief": "Advances in Mathematics 143, 357\u0015375 (1999) Spherical Categories John W. Barrett — 6 sections: MONOIDAL CATEGORIES WITH DUALS; INTRODUCTION; SPHERICAL CATEGORIES",
- "extended": "**Advances in Mathematics 143, 357\u0015375 (1999) Spherical Categories John W. Barrett**\n\n*School of Mathematical Sciences , University of Nottingham , University Park*\n\n19 pp, 6 sections.\n\n**Outline.** 1 MONOIDAL CATEGORIES WITH DUALS; INTRODUCTION; 2 SPHERICAL CATEGORIES; FIG. 1; 3 SPHERICAL HOPF ALGEBRAS; REFERENCES",
+ "brief": "Spherical Categories — 7 sections: Front matter; INTRODUCTION; MONOIDAL CATEGORIES WITH DUALS",
+ "extended": "**Spherical Categories**\n\n*Spherical Categories*\n\n19 pp, 7 sections.\n\n**Outline.** Front matter; INTRODUCTION; 1 MONOIDAL CATEGORIES WITH DUALS; 2 SPHERICAL CATEGORIES; FIG. 1; 3 SPHERICAL HOPF ALGEBRAS; REFERENCES",
  "tokens": {
-  "brief": 40,
-  "extended": 79
+  "brief": 23,
+  "extended": 53
  },
  "sections": [
   {
-   "id": "sec-000-1-monoidal-categories-with-duals",
-   "title": "MONOIDAL CATEGORIES WITH DUALS",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-introduction",
+   "id": "sec-000-introduction",
    "title": "INTRODUCTION",
-   "pages": "1-9"
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-1-monoidal-categories-with-duals",
+   "title": "MONOIDAL CATEGORIES WITH DUALS",
+   "pages": "2-9"
   },
   {
    "id": "sec-002-2-spherical-categories",

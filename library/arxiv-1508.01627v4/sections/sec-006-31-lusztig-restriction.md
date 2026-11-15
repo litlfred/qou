@@ -4,13 +4,13 @@ doc_title: "REPRESENTATION THEORY An Electronic Journal of the American Mathemat
 section_id: sec-006-31-lusztig-restriction
 section_title: "Lusztig restriction"
 section_number: 3.1
-pages: 5-6
+pages: 6-6
 source_pdf: 1508.01627v4.pdf
 source_sha256: 778e60219862e371
 toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.987
-latex_coverage_ratio: 0.927
+latex_prose_ratio: 0.936
+latex_coverage_ratio: 0.973
 doc_brief: "REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN–NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS"
 ---
 []{#subsec:*RLG label="subsec:*RLG"} We consider the following setup: ${\mathbf{G}}$ is a connected reductive algebraic group over an algebraic closure of the finite field ${\mathbb{F}}_p$, and $F:{\mathbf{G}}\rightarrow{\mathbf{G}}$ is a Steinberg endomorphism of ${\mathbf{G}}$, with finite group of fixed points ${\mathbf{G}}^F$. For an $F$-stable Levi subgroup ${\mathbf{L}}\le{\mathbf{G}}$ of ${\mathbf{G}}$ Lusztig defined, via certain $\ell$-adic cohomology constructions, induction and restriction functors $${R_{\mathbf{L}}^{\mathbf{G}}}:{\mathbb{Z}}{\operatorname{Irr}}({\mathbf{L}}^F)\rightarrow{\mathbb{Z}}{\operatorname{Irr}}({\mathbf{G}}^F)\quad\text{ and }\quad

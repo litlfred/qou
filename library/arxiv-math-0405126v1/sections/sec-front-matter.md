@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0405126v1
-doc_title: "arXiv:math/0405126v1 [math.GT] 7 May 2004"
+doc_title: "ASYMPTOTIC BEHAVIORS OF THE COLORED JONES POLYNOMIALS OF A TORUS KNOT"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 0405126v1.pdf
 source_sha256: 713498dbe80f7319
 toc_source: inferred
+doc_brief: "ASYMPTOTIC BEHAVIORS OF THE COLORED JONES POLYNOMIALS OF A TORUS KNOT — We study the asymptotic behaviors of the colored Jones polyno- mials of torus knots. Contrary to the works by R. Kashaev, O."
 ---
 arXiv:math/0405126v1  [math.GT]  7 May 2004
 ASYMPTOTIC BEHAVIORS OF THE COLORED JONES

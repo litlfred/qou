@@ -41,7 +41,7 @@ without appeal to the $\log A$ entropy bound: the channel-entropy argument shows
 the information reading cannot *size* the binding, and this shows the free-energy
 reading cannot *derive* it.
 
-`QOU.Mass.FreeEnergyReadingIsSigned` (sorry-free);
+`QOU.Mass.FreeEnergyReadingIsSigned`;
 `the_free_energy_reading_has_no_energy_spectrum_probe.py`. The identification
 $\mathfrak{E}_{\mathrm{bind}} = E_0 \ln(\mathrm{tr}_{\text{free}}/\mathrm{tr}_{\text{atom}})$
 is unaffected as a *definition*; what it does not have is a thermodynamic

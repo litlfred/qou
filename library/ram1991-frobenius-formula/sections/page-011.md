@@ -1,0 +1,71 @@
+---
+doc_id: ram1991-frobenius-formula
+doc_title: "A Frobenius formula for the characters of the Hecke algebras"
+section_id: page-011
+section_title: "Page 11"
+pages: 11-11
+pdf_page: 11
+source_pdf: ram1991-frobenius-formula.pdf
+source_sha256: 26b2fc85338d9150
+text_source: ocr
+granularity: page
+doc_brief: "A Frobenius formula for the characters of the Hecke algebras — 28 sections: Page 1; Page 2; Page 3"
+---
+A Frobenius formula for the characters of the Hecke algebras 471
+
+(4.2) Proposition. For any composition cF f,
+
+tr(DT,,) = [] tr(DT,,) .
+
+Proof. It is sufficient to prove that for permutations péS,, and céS,,,r1 tro =f,
+tr(DT, x) = tr(DT,) tr(DT,) .
+
+By direct computation, since 7, acts only on the first r, letters of a word w and 7,
+acts only on the remaining letters of w,
+
+Y DWT, xolw = XY Dwi W2Thxalwiwe
+
+wiw2=W
+Iwil = ris lwal = 12
+
+-( Y Dw Toln)|( YX Dia Teln) Oo
+
+wi wa
+Iwilar Iwal = ra
+
+Remark. The above proposition is just a proof of the fact that the trace of the
+
+action of H,,@H,,@... on the tensor product representation VOEA®
+
+V®2@...is the product of the traces of the actions of the H,, on V®*,
+
+4-ring notation and Hall-Littlewood symmetric functions
+
+In order to simplify the derivation of formulas for the irreducible characters of the
+Hecke algebras we shall use A-ring notation for symmetric functions. The following
+is a short exposition of J-ring notation. The identities (4.3—-4.10) are all well known
+and can be found in [Mac].
+
+An alphabet is a sum of commuting variables so that, for example,
+X=xX,+X.+...+ x, is the alphabet of commuting variables x,,..., x,. In this
+notation, if X =x, +...+x, and Y=y,+...+y, then XY represents the
+alphabet of variables {x;y;}1 <ij<n-
+
+For each r = 1 the power symmetric function p, is given by
+
+p-(0)=0,
+P(x) = x",
+PAX + Y) = p(X) + p(Y), (4.3)
+
+PAX Y) = p,(X)p,(¥) ,
+
+where x is any single variable and X and Y are any two alphabets. For each
+partition u = (11, H2,.-.., Mx) define
+
+Py(X) a Pu,(X)Pu2(X) tae Pu,(X) :
+
+For an alphabet X, we define
+
+21x) = exp( Y we)
+
+r>1 0

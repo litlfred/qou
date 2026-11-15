@@ -4,13 +4,14 @@ doc_title: "Non-perturbative approaches to the quantum Seiberg–Witten curve"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
-pages: 2-3
+pages: 2-4
 source_pdf: 1908.07065v3.pdf
 source_sha256: c43e413aed71aef1
 toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.721
-latex_coverage_ratio: 0.924
+latex_prose_ratio: 0.948
+latex_coverage_ratio: 0.944
+doc_brief: "Non-perturbative approaches to the quantum Seiberg–Witten curve — We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve of N = 2, SU(2) super Yang–Mills"
 ---
 In recent years, many interesting and surprising relations have been
 obtained between quantum mechanical systems, on one hand, and

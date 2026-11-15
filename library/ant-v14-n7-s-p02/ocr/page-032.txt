@@ -1,0 +1,56 @@
+1742 David Jarossay
+
+Proposition 5A.2. For all z € K such that |z| p < 1, we have, for the Ny, p-topology,
+
+tq) Li, (2) Gosr Lif (eo, (eee),
+
+q.a a> 00
+
+Tq) Li) (2) soar Leo, (Adge) (@e))g)-
+Moreover, these convergences are uniform on all the closed disks of center 0 and radius p < 1.
+
+Proof. t(q~*) Li} g(<) is the product of Lif? (2) (60, (eg )e) by
+t(q~*) Li (2 (eo, (Ady, (eg))g) (5-4)
+AK
+
+The coefficient of (5-4) at a word w is of the form,
+
+gq  &weight(w) > 3 Bq« mW) Came Tt Gy a(W3)
+
+(w1,w2) m=0
+
+where L € N* and w}, wz are in a finite set depending only on w, determined by the combinatorics of the
+composition of noncommutative formal power series. For all m ¢ N* we have —v,(m) > — log(m)/log(p).
+Applying this to the m; in (0-2) we deduce
+
+& log(q) + log(n)
+
+up(haryz,,(w)) > — weight(w) log(p)
+
+For all C, C’ € R*™*, and z € K such that |z|) < 1, we have g@nvp(z) — Ca —C'log(n) s>>> +00 and
+this convergence is uniform with respect to n. Indeed, let no be an integer such that for all n > no, we
+have C’ log(n) < Znvp(Z); then no is independent of @ and we have, for all n > no,
+
+gen
+2 Up(Z) _
+
+q*nvp(z) —Ca—C'log(n) >
+
+Because of the bounds of valuations of cyclotomic p-adic multiple zeta values of [Jarossay 2019, Section 4],
+the sequence (Va, p(®q,-«))@en is bounded. Thus, t(q7*) Lif .@) converges to Lif? (). Moreover,
+we can see that no can be chosen independently from z in a closed disk of center 0 and radius p < 1.
+
+The proofs of the statements concerning t(q~ a) Li’ (z) are similar. oO
+
+gq.—a
+Remark 5A.3. The convergence in Proposition 5A.2 does not a priori extend to a uniform convergence
+on U*". Indeed, otherwise, in fact, the map Lif? would be rigid analytic on U*". By the main result
+of Appendix A of [Jarossay 2019], this would imply that, for any word w, the multiple harmonic sums
+functions m +> har,,(w) restricted to classes of congruences modulo N should be continuous as a function
+meNclimZ/N, p'Z. This seems to contradict the results of Section 3C. More generally, we expect
+that the lack of regularity of the maps m +> har,,(w) can be at least partially reflected in the mode of
+convergence of the sequences Li} ,{wl when a — oo.
+
+Remark 5A.4. One can deduce a result similar to Proposition 5A.2 on the ball B(oo, 1) by applying the
+
+automorphism z +> 1/z of P! \ {0, j4y, co} and the functoriality of 7/"°°*.

@@ -1,0 +1,1 @@
+If a square-root kinetic energy, $$K^{rel}_i = \sqrt{ p^2_i + m^2_i } - m_i \ ,$$ where $p_i$ is the momentum of nucleon $i$, is introduced into the Hamiltonian, then the $N\!N$ potential must be readjusted to refit the $N\!N$ data.

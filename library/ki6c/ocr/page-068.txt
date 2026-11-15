@@ -1,0 +1,61 @@
+Proof. When n = 0, we can verify the lemma by Lemma D.1. So, we assume that
+1<n< N-—1, in the following of this proof. From the definition of oe we have that
+
+log |(q)n| = log Il |1— | = > log 2sin x =- > NG (100)
+1<j<n 1<j<n 1<j<n
+
+Further, we note that A’(¢) is a convex function for 0 < ¢ < 1, since A(t) = 1?/sin? rt >
+
+mw for0<t<1.
+We give a lower bound of “4 log |(q) ntl)” as follows. Since A/(t) is a convex
+
+function, the tangent line of the graph of A’(t) at t = N/j is located under the graph of
+
+A‘(t). Hence, by integrating them for 3 <t< 2 we obtain that
+
+l j 2j+1)/(2N
+Any) < | M(t) dt.
+NN (2-1)/(2N)
+Further, by making the sum of the above formula over 1 < 7 < n, we have that
+1 j (Qnt1)/QN) 2n+1 1
+— N(=) < A'(t)dt = A —A(—).
+FG S figy Md = AGHA) -AG)
+
+Therefore, by (100),
+
+2n+1 1
+> A(=-) = ; 101
+Mh) > aGhy = 088%), (101)
+where we obtain the last equality by Lemma D.1.
+
+We give an upper bound of “+ wv log \(q n| +A( (2ae1)”, as follows. Since A‘(t) is a convex
+function, the line connecting (Z AS x)) and (e A E)) is located over the graph of
+
+A‘(t). Hence, by integrating them for Z <t< uw , we obtain that
+
+Pevow < 1 (dy vie).
+
+1
+V log |(q)n| + A(
+
+3/N
+Further, by making the sum of the above formula over 1 < 7 < n, we have that
+n/N 1 1 n
+A'(t)dt < - = (A(5 N’(4)).
+Md Sy NG) ~ ay (M GANG
+
+Furthermore, in a similar way as above, we have that
+
+(2n+1)/(2N) 2n+1
+/ / /
+fn OWS aR 8)
+
+Hence, as the sum of the above two formulas, we obtain the following inequality,
+
+2n+1 1 ree ;
+A —A(oy) = A'(t) dt
+( aN ) (sn) ven) (t)
+: dy — big dy 2g ty 2 yy ert
+< wd Gy) sy Gy) an “ Gy) + Gy 8'( v ).
+
+68

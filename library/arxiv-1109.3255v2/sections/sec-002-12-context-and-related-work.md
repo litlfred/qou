@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1109.3255v2
-doc_title: "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE"
+doc_title: "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE PLANE AND A BINODAL CUBIC CURVE"
 section_id: sec-002-12-context-and-related-work
 section_title: "Context and related work"
 section_number: 1.2
 pages: 5-10
 source_pdf: 1109.3255v2.pdf
 source_sha256: dd4579be8e9b7e25
-doc_brief: "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE — We construct a family of Lagrangian submanifolds in the Landau– Ginzburg mirror to the projective plane equipped with a binodal cubic curve as"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.983
-latex_coverage_ratio: 0.984
+latex_coverage_ratio: 0.99
+doc_brief: "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE PLANE AND A BINODAL CUBIC CURVE — We construct a family of Lagrangian submanifolds in the Landau– Ginzburg mirror to the projective plane equipped"
 ---
 []{#sec:context label="sec:context"}
 

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2409.09372v4
-doc_title: "MARKOV TRACES ON DEGENERATE CYCLOTOMIC HECKE ALGEBRAS DEKE ZHAO Dedicated to Professor Yingbo Zhang on the occasion of her 80th birthday"
+doc_title: "Markov traces on degenerate cyclotomic Hecke algebras"
 section_id: sec-002-3-normalized-markov-traces
 section_title: "Normalized Markov traces"
 section_number: 3
 pages: 6-10
 source_pdf: 2409.09372v4.pdf
 source_sha256: b7eed67ec102ab3d
-doc_brief: "MARKOV TRACES ON DEGENERATE CYCLOTOMIC HECKE ALGEBRAS DEKE ZHAO Dedicated to Professor Yingbo Zhang on the occasion of her 80th birthday — LetH n(u) be the degenerate cyclotomic Hecke algebra with"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.994
+latex_prose_ratio: 0.961
+latex_coverage_ratio: 0.78
+doc_brief: "Markov traces on degenerate cyclotomic Hecke algebras — Let Hn(u) be the degenerate cyclotomic Hecke algebra with parameter u = {u1, . . . , um}."
 ---
 []{#Sec:Markov-traces label="Sec:Markov-traces"} In this section, we construct a $\mathbb{C}(\boldsymbol{u})$--linear function on $H_n(\boldsymbol{u})$ and demonstrate it constitutes a normalized Markov trace through Lambropoulou's approach from [@L], thereby proving Theorem [\[Them:Markov\]](#Them:Markov){reference-type="ref" reference="Them:Markov"} from the introduction.
 

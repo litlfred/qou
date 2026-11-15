@@ -1,0 +1,1 @@
+In the case of the nonabelian Higgs field, the field tensor must be given an extra index $a$. $$S_{YMH} = \int d^3x (-\dfrac{1}{4} F^{a \mu \nu} F^a_{\mu \nu} + (D^{\mu} \Phi)^\dag \cdot D_{ \mu } \Phi - V(\Phi))$$

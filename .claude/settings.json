@@ -30,7 +30,8 @@
           },
           {
             "type": "command",
-            "command": "./scripts/mount-fsh-guts.sh >\"${TMPDIR:-/tmp}/qou-mount-fsh-guts.log\" 2>&1"
+            "command": "./scripts/mount-fsh-guts.sh >\"${TMPDIR:-/tmp}/qou-mount-fsh-guts.log\" 2>&1",
+            "timeout": 900
           },
           {
             "type": "command",

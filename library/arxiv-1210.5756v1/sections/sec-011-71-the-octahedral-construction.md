@@ -7,10 +7,11 @@ section_number: 7.1
 pages: 16-18
 source_pdf: 1210.5756v1.pdf
 source_sha256: c7546a79a85b8dd5
-doc_brief: "Contact Graphs of Unit Sphere Packings Revisited ∗ — The contact graph of an arbitrary ﬁnite packing of unit balls in Euclidean 3-space is the (simple) graph whose vertices correspond to the packing"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.752
-latex_coverage_ratio: 0.977
+latex_coverage_ratio: 1.0
+doc_brief: "Contact Graphs of Unit Sphere Packings Revisited ∗ — The contact graph of an arbitrary ﬁnite packing of unit balls in Euclidean 3-space is the (simple) graph whose vertices correspond to the packing"
 ---
 We now consider an explicit construction of a unit sphere packing placed over the face-centered cubic lattice for which we obtain a high number of touching triplets and quadruples of unit balls in $\mathbb{E}^3$. For any positive integer $k \geq 2$, place $n(k)=\frac{2k^{3}+k}{3}$ lattice points of the face-centered cubic lattice such that their convex hull is a regular octahedron $\mathbf{K} \subset \mathbb{E}^3$ of edge length $2(k-1)$ having exactly $k$ lattice points along each of its edges (see Figure [1](#fig:OctahedralConstruction){reference-type="ref" reference="fig:OctahedralConstruction"} for $k=4$).
 

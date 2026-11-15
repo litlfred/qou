@@ -7,10 +7,11 @@ section_number: null
 pages: 34-37
 source_pdf: 2603.12136v1.pdf
 source_sha256: e9c50616344b24e0
-doc_brief: "Folding Mixed-Integer Linear Programs and Reflection Symmetries — For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.977
-latex_coverage_ratio: 0.908
+latex_coverage_ratio: 0.993
+doc_brief: "Folding Mixed-Integer Linear Programs and Reflection Symmetries — For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the"
 ---
 []{#sec_lp_algorithm label="sec_lp_algorithm"} In order to detect reflection reductions, it suffices to compute symmetric equitable partitions of the split reformulation form by [\[thm_refl_reduction\]](#thm_refl_reduction){reference-type="ref" reference="thm_refl_reduction"}. Thus, we can directly reuse the algorithm formulated in [@Grohe2014], which relies on the fast color refinement algorithm by Paige and Tarjan [@Paige1987]. Since the split reformulation consists of four copies of the constraint matrix, we can detect symmetric equitable partitions, and thus reflection reductions, in identical asymptotic worst-case time and space complexity as in [@Grohe2014].
 

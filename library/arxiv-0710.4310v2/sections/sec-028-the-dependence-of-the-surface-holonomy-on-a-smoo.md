@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.966
 latex_coverage_ratio: 0.993
+doc_brief: "On Two-Dimensional Holonomy — We deﬁne the thin fundamental categorical group P2(M, ∗) of a based smooth manifold (M, ∗) as the categorical group whose objects are rank-1 homotopy classes of based"
 ---
 The discussion in this subsection will be very similar to that of [\[BBB\]](#BBB){reference-type="ref" reference="BBB"}. We want to prove an analogue of lemma [\[EEE\]](#EEE){reference-type="ref" reference="EEE"} for the surface holonomy of a family of 2-paths $\G^x$.
 

@@ -1,0 +1,67 @@
+Chapter 4 Regularization Methods for Nuclear Lattice Effective Field Theory
+
+Initially, we consider the pionless case which works well for very low energies and is described by the
+effective Hamiltonian
+A = Hee + Heom - (4.18)
+
+It was shown in Ref. [111] that for any lattice spacing the non-smeared contact interaction cannot
+reproduce the effective range correctly. Hence, we introduce a smearing according to Eq. (4.11). The
+calculation is performed for N = 0 and N = 3.5 to estimate the influence of the stretching factor in
+the improved action. As we only have to consider the S-wave projection, we use the appropriate linear
+combinations
+
+rl rl
+C=5(3Ci5, +O5,) Cr=Z (Cs, 4Os,) - (4.19)
+
+The results for two stretching factors N = 0 and N = 3.5 are shown in Fig. 4.1. For N = 3.5, the
+explicit values of the fitted parameters and the predictions are listed in Tab. 4.2. The lattice size of
+L = 34, 36, 38 is motivated by the corresponding physical lattice length of L,1,, = 16.66, 17.64, 18.62 fm
+for a minimal lattice spacing of a = 0.49 fm. This should be still large enough so that higher order terms
+to Eqs. (4.15,4.16) and in the effective range expansion are negligible. The LECs in the respective table
+and plot are obtained after rescaling Cs 63 S4/'Sp /a’ so as to account for the different volumes.
+
+1
+Si/'So
+44 + r T T
+46 | |
+a nas b al
+i
+2 +
+= 50 f |
+8 get * v4
+x
+-s2 f xx x 1
+asa * x |
+28 | 4]
+29 b
+_ +
+= 0b + * 1
+2 gt *
+éaah Xx J
+sj x
+32 b x |
+33 x * |
+5 r i ;
+36,38: N=3.5
+48h 36,38; N=0.0  >€ x|
+464 1
+we 44h x al
+5
+2 42h ae ¥ * * 1
+= | + 4
+ask +4
+3.6 f J
+
+0 05 1 15 2
+
+a [fm]
+
+Figure 4.1: Low-energy coupling constants and the smearing parameter b in the pionless EFT for a lattice size of
+L = 34, 36, 38 and two different stretching factors.
+
+First, we see the parameters belonging to N = 0 and N = 3.5 have similar values and they approach a
+
+constant value when the lattice spacing is minimized. But there is a preference for N = 3.5 case because
+for this case, the variation of the LECs is significantly decreased for various lattice spacings than in the
+
+44

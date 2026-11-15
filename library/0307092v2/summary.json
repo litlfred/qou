@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "0307092v2",
  "source_sha256": "de2f7ddec49b2ce6",
- "brief": "Extended Bloch group and the Cheeger-Chern-Simons class — We deﬁne an extended Bloch group and show it is naturally isom orphic to H3(PSL(2, C)δ; Z).",
- "extended": "**Extended Bloch group and the Cheeger-Chern-Simons class**\n\n*Extended Bloch group and the*\n\n62 pp, 9 sections.\n\n**Abstract.** We deﬁne an extended Bloch group and show it is naturally isom orphic to H3(PSL(2, C)δ; Z). Using the Rogers dilogarithm function this leads to an ex- act simplicial formula for the universal Cheeger–Chern–Si mons class on this homology group. It also leads to an independent proof of the a nalytic relation- ship between volume and Chern–Simons invariant of hyperbol ic 3–manifolds conjectured in [16] and proved in [24], as well as eﬀective for mulae for the Chern–Simons invariant of a hyperbolic 3–manifold.\n\n**Outline.** 1 Introduction; 2 The extended Bloch group; 3 Parameters for ideal hyperbolic simplices; 4.1.1 Algebraic description; 5 Developing map; 6 The cycle relation; 8 The more extended Bloch group; 13 Unordered simplices; 15 Example\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.6: There exists an isomorphism λ : H3(PSL(2, C); Z) → ˆB(C)\n- Theorem 4.5: For each choice of z as in the above deﬁnition, a strong ﬂat-\n- Theorem 4.6: For any ﬂattening of K the element ∑\n- Theorem: s 4.5 and 4.6, which take up Sections 9 through 11.\n- Theorem 4.6: eventually applies to ﬂattenings that are not ne cessarily strong,\n- Theorem 4.5: That theorem says a strong ﬂattening of K exists. Since changing",
+ "brief": "Extended Bloch group and the Cheeger–Chern–Simons class — We deﬁne an extended Bloch group and show it is naturally isomorphic to H3(PSL(2, C)δ; Z).",
+ "extended": "**Extended Bloch group and the Cheeger–Chern–Simons class**\n\n*Walter D Neumann*\n\n62 pp, 20 sections.\n\n**Abstract.** We deﬁne an extended Bloch group and show it is naturally isomorphic to H3(PSL(2, C)δ; Z). Using the Rogers dilogarithm function this leads to an ex- act simplicial formula for the universal Cheeger–Chern–Simons class on this homology group. It also leads to an independent proof of the analytic relation- ship between volume and Chern–Simons invariant of hyperbolic 3–manifolds conjectured in [16] and proved in [24], as well as eﬀective formulae for the Chern–Simons invariant of a hyperbolic 3–manifold.\n\n**Outline.** Front matter; 1 Introduction; 2 The extended Bloch group; 3 Parameters for ideal hyperbolic simplices; 4 Definition of; 4.1 Representing elements of Hn(G;Z); 4.1.1 Algebraic description; 4.1.2 Topological description; 5 Developing map; 6 The cycle relation; 7 Computation of B\"0362B(C); 8 The more extended Bloch group; 9 Proof of Theorem ??; 10 Start of the proof of Theorem ??; 11 Completion of proof of Theorem ??; 12 Cheeger--Chern--Simons class; 13 Unordered simplices; 14 Invariants of 3--manifolds",
  "tokens": {
   "brief": 37,
-  "extended": 338
+  "extended": 285
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -22,45 +27,94 @@
   {
    "id": "sec-002-3-parameters-for-ideal-hyperbolic-simplices",
    "title": "Parameters for ideal hyperbolic simplices",
-   "pages": "8-14"
+   "pages": "8-13"
   },
   {
-   "id": "sec-003-411-algebraic-description",
+   "id": "sec-003-4-definition-of",
+   "title": "Definition of",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-004-41-representing-elements-of-hngz",
+   "title": "Representing elements of Hn(G;Z)",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-005-411-algebraic-description",
    "title": "Algebraic description",
-   "pages": "14-18"
+   "pages": "14-15"
   },
   {
-   "id": "sec-004-5-developing-map",
+   "id": "sec-006-412-topological-description",
+   "title": "Topological description",
+   "pages": "15-19"
+  },
+  {
+   "id": "sec-007-5-developing-map",
    "title": "Developing map",
-   "pages": "18-23"
+   "pages": "19-23"
   },
   {
-   "id": "sec-005-6-the-cycle-relation",
+   "id": "sec-008-6-the-cycle-relation",
    "title": "The cycle relation",
-   "pages": "23-30"
+   "pages": "23-26"
   },
   {
-   "id": "sec-006-8-the-more-extended-bloch-group",
+   "id": "sec-009-7-computation-of-b0362bc",
+   "title": "Computation of B\"0362B(C)",
+   "pages": "26-30"
+  },
+  {
+   "id": "sec-010-8-the-more-extended-bloch-group",
    "title": "The more extended Bloch group",
-   "pages": "30-49"
+   "pages": "30-32"
   },
   {
-   "id": "sec-007-13-unordered-simplices",
+   "id": "sec-011-9-proof-of-theorem",
+   "title": "Proof of Theorem ??",
+   "pages": "32-36"
+  },
+  {
+   "id": "sec-012-10-start-of-the-proof-of-theorem",
+   "title": "Start of the proof of Theorem ??",
+   "pages": "36-41"
+  },
+  {
+   "id": "sec-013-11-completion-of-proof-of-theorem",
+   "title": "Completion of proof of Theorem ??",
+   "pages": "41-47"
+  },
+  {
+   "id": "sec-014-12-cheeger--chern--simons-class",
+   "title": "Cheeger--Chern--Simons class",
+   "pages": "47-49"
+  },
+  {
+   "id": "sec-015-13-unordered-simplices",
    "title": "Unordered simplices",
-   "pages": "49-58"
+   "pages": "49-52"
   },
   {
-   "id": "sec-008-15-example",
+   "id": "sec-016-14-invariants-of-3--manifolds",
+   "title": "Invariants of 3--manifolds",
+   "pages": "52-58"
+  },
+  {
+   "id": "sec-017-15-example",
    "title": "Example",
-   "pages": "58-62"
+   "pages": "58-60"
+  },
+  {
+   "id": "sec-018-16-other-fields",
+   "title": "Other fields",
+   "pages": "60-62"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

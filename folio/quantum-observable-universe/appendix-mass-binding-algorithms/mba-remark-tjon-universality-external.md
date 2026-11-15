@@ -111,7 +111,7 @@ above establishes. The corpus rule this instantiates is
 *defined residual $\neq$ derived decomposition*: a residual introduced with
 $:=$ acquires no physical content from the index it is written under.
 
-Both facts are formalised, sorry-free and over a generic commutative ring, in
+Both facts are formalised over a generic commutative ring, in
 `QOU.MassTheory.TjonSimplexForm` — `tjon_baseline_lt_four_ratio`,
 `universal_ratio_not_in_tjon_baseline` and `universal_ratio_forces_mu4` — and
 measured in `computations/deltalambda/tjon_external_cross_check_probe.py`.

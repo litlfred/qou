@@ -46,4 +46,4 @@ substitution on the generator level.
 | `chi_V111_difference_at_one` | vanishes at $q = 1$ (isospin invariance) |
 | `chi_V111_difference_at_two` | numerical: $-75/128$ at $q = 2$ |
 
-All sorry-free, closed by `field_simp + ring` or `norm_num`.
+All are closed by `field_simp + ring` or `norm_num`.

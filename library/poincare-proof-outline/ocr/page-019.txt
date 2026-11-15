@@ -1,0 +1,68 @@
+using (za %y zb> (wa %y wh» *[symmetric]
+by auto
+
+let ?nom = X 21 22 wl w2. wlxcnj w2*(z1*cnj zl + 22*cnj 22) — z1*enj z2*(wl*cnj wl + w2xcnj w2)
+let ?den = X 21 22 wl w2. z1*cnj 22*cnj wl*w2 — wl*cnj w2xcnj z1*22
+
+show circline-eq-cmat (poincare-line-cvec-cmat za wa)
+(poincare-line-cvec-cmat zb wb)
+proof—
+have Jk. kA 0A
+poincare-line-cvec-cmat (zb1, 2b2) (wb1, wb2) = cor k *sm poincare-line-cvec-cmat (zal, za2) (wal, wa2)
+proof (cases ?den zal za2 wal wa2 # 0)
+case True
+hence ?den zb1 zb2 wbh1 wh2 4 0
+using **
+by (simp add: field-simps)
+
+let ?k = kz * cnj kz * kw * cnj kw
+
+have ?k 4 0
+using **
+by simp
+
+have is-real ?k
+using eq-cnj-iff-real[of ?k]
+by auto
+
+have cor (Re ’k) = ?k
+using <is-real ?k»
+using complex-of-real-Re
+by blast
+
+have Re ?k #4 0
+using <?k # 0» «cor (Re ?k) = ?k»
+by (metis of-real-0)
+
+have arg1: Re (i « ?den zb1 zb2 wb1 wb2) = Re ?k * Re (i * ?den zal za2 wal wa2)
+apply (subst **)+
+apply (subst Re-mult-real[symmetric, OF <is-real ?k»])
+apply (rule arg-cong[where f=Re])
+apply (simp add: field-simps)
+done
+have arg2: i * ?nom zb1 zb2 wb1 wb2 = ?k * i * ?nom zal za2 wal wa2
+using **
+by (simp add: field-simps)
+have mk-poincare-line-cmat (Re (ix ?den zb1 zb2 whl wh2)) (ix?nom zb1 z2b2 wb1 wb2) =
+cor (Re ?k) *sm mk-poincare-line-cmat (Re (ix ?den zal za2 wal wa2)) (ix?nom zal za2 wal wa2)
+using <cor (Re ?k) = ?k» <is-real ?k»
+apply (subst mk-poincare-line-cmat-scale)
+apply (subst arg1, subst arg2)
+apply (subst «cor (Re ?k) = ?k»)+
+apply simp
+done
+thus ?thesis
+using <?den zal za2 wal wa2 # 0» «?den zb1 zb2 wbh1 wh2 ¥ 0»
+using (Re ?k 4 0) (cor (Re ?k) = ?k»
+by (rule-tac c=Re ?k in exl, simp)
+next
+case False
+hence ?den zb1 zb2 wbh1 wh2 = 0
+using **
+by (simp add: field-simps)
+show ?thesis
+proof (cases zal*cnj za2 # 0)
+case True
+hence zb1*cnj zb2 4 0
+
+19

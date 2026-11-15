@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1404.0331v1/sections/sec-010",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Case s>2 is odd and q=2",
+  "pageStart": 7,
+  "pageEnd": 7,
+  "contains": [
+    "library/arxiv-1404.0331v1/blocks/prose-sec-010"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1404.0331v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1404.0331v1",
+  "provenance": "ingested"
+}

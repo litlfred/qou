@@ -7,10 +7,11 @@
   "bytes": 163368,
   "pages": 9,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,21 +21,31 @@
    "stamp_date": "28 Feb 2021"
   },
   "doi": null,
-  "title": "On Concentration Inequalities for Vector-Valued Lipschit z Functions Dimitrios Katselis katselis@illinois.edu",
-  "authors_raw": "ECE Department, University of Illinois at Urbana-Champaig n, USA",
+  "title": "On Concentration Inequalities for Vector-Valued Lipschitz Functions",
+  "authors_raw": "Dimitrios Katselis",
   "title_lines": [
-   "On Concentration Inequalities for Vector-Valued Lipschit z",
-   "Functions",
-   "Dimitrios Katselis katselis@illinois.edu"
+   "On Concentration Inequalities for Vector-Valued Lipschitz",
+   "Functions"
   ],
-  "abstract": "We derive two upper bounds for the probability of deviation of a vect or-valued Lipschitz function of a collection of random variables from its expected value. The resulting upper bounds can be tighter than bounds obtained by a direct application o f a classical theorem due to Bobkov and G\u00a8 otze.",
+  "abstract": "We derive two upper bounds for the probability of deviation of a vector-valued Lipschitz function of a collection of random variables from its expected value. The resulting upper bounds can be tighter than bounds obtained by a direct application of a classical theorem due to Bobkov and G¨otze.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20210301212637-05'00'",
    "Creator": "LaTeX with hyperref",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20210301212637-05'00'"
+  },
+  "title_raw": "On Concentration Inequalities for Vector-Valued Lipschitz Functions",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "On Concentration Inequalities for Vector-Valued Lipschitz Functions",
+   "outline": "1 Introduction",
+   "text": "On Concentration Inequalities for Vector-Valued Lipschitz Functions",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "On Concentration Inequalities for Vector-Valued Lipschit z Functions Dimitrios Katselis katselis@illinois.edu"
  },
  "toc": [
   {
@@ -42,32 +53,141 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Preliminaries and Main Result",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Proof of Theorem 1 and Additional Results",
    "page": 3,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Example",
    "page": 5,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 994,
+   "n_words": 130,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -75,8 +195,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 3714,
-   "n_words": 653
+   "n_chars": 3662,
+   "n_words": 603,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-001-2-preliminaries-and-main-result",
@@ -85,8 +207,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 2770,
-   "n_words": 611
+   "n_chars": 2679,
+   "n_words": 520,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-002-3-proof-of-theorem-1-and-additional-results",
@@ -95,8 +219,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 5,
-   "n_chars": 4758,
-   "n_words": 1074
+   "n_chars": 4490,
+   "n_words": 809,
+   "label_start": "3",
+   "label_end": "5"
   },
   {
    "id": "sec-003-4-example",
@@ -105,16 +231,26 @@
    "level": 1,
    "page_start": 5,
    "page_end": 9,
-   "n_chars": 9107,
-   "n_words": 1742
+   "n_chars": 8899,
+   "n_words": 1566,
+   "label_start": "5",
+   "label_end": "9"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 4,
-  "sections": 4,
-  "chars_total": 20349,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 5,
+  "chars_total": 20724,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "mybibfile_elsevier.tex",
@@ -127,34 +263,39 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.958,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-preliminaries-and-main-result",
      "title": "Preliminaries and Main Result",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.984,
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.962,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-3-proof-of-theorem-1-and-additional-results",
      "title": "Proof of Theorem 1 and Additional Results",
-     "prose_ratio": 0.992,
-     "coverage_ratio": 0.994,
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.939,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-4-example",
      "title": "Example",
-     "prose_ratio": 0.98,
-     "coverage_ratio": 0.991,
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.614,
      "result": "overlaid",
      "converter": "pandoc"
     }

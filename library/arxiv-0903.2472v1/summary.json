@@ -3,376 +3,106 @@
  "doc_id": "arxiv-0903.2472v1",
  "source_sha256": "637cfd1d4d833c02",
  "brief": "Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group — We develop several methods that allow us to compute all-loop partition functions in perturbative Chern-Simons theory with",
- "extended": "**Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group**\n\n*Tudor Dimofte,1 Sergei Gukov, 1,2 Jonatan Lenells, 3 and Don Zagier 4,5*\n\n61 pp, 73 sections.\n\n**Abstract.** We develop several methods that allow us to compute all-loop partition functions in perturbative Chern-Simons theory with comple x gauge group GC, sometimes in multiple ways. In the background of a non-abelian irreduc ible ﬂat connection, per- turbative GC invariants turn out to be interesting topological invarian ts, which are very diﬀerent from ﬁnite type (Vassiliev) invariants obtained in a theory with compact gauge group G. We explore various aspects of these invariants and present an example where we compute them explicitly to high loop order. We also introd uce a notion of “arithmetic TQFT” and conjecture (with supporting numerical evidence) thatSL(2, C) Chern-Simons theory is an example of such a theory. CALT-68-2716\n\n**Outline.** 1 California Institute of Technology, Pasadena; 2 Department of Physics and Department of Math; 3 Centre for Mathematical Sciences, Wilberforc; 4 Max-Planck-Institut f¨ ur Mathematik, Vivats; 5 Coll` ege de France, 3 rue d’Ulm, F-75005 Pa; 2 Perturbation theory around a non-trivial ﬂat; 2.1 F eynman diagrams and arithmetic TQFT; 2.2 Quantization of Mﬂat (GC, Σ); 0 (M ;u); 2.2.1 Analytic continuation; 2.2.2 A hierarchy of diﬀerential equations; 0 (u +jℏ)− 1; 2 S′′; 6 S′′′; 0 (u) = const +; 0 (u)− const =; 0 (u), and it never aﬀects the higher-order te; 0 (u) = i",
+ "extended": "**Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group**\n\n*Tudor Dimofte,1 Sergei Gukov,1,2 Jonatan Lenells,3 and Don Zagier4,5*\n\n61 pp, 19 sections.\n\n**Abstract.** We develop several methods that allow us to compute all-loop partition functions in perturbative Chern-Simons theory with complex gauge group GC, sometimes in multiple ways. In the background of a non-abelian irreducible ﬂat connection, per- turbative GC invariants turn out to be interesting topological invariants, which are very diﬀerent from ﬁnite type (Vassiliev) invariants obtained in a theory with compact gauge group G. We explore various aspects of these invariants and present an example where we compute them explicitly to high loop order. We also introduce a notion of “arithmetic TQFT” and conjecture (with supporting numerical evidence) that SL(2, C) Chern-Simons theory is an example of such a theory. CALT-68-2716\n\n**Outline.** Front matter; 2 Perturbation theory around a non-trivial fla; 2.1 Feynman diagrams and arithmetic TQFT; 2.2.1 Analytic continuation; 2.2.2 A hierarchy of differential equations; 2.3 Classical and quantum symmetries; 2.4 Brane quantization; 3 A state integral model for perturbative $SL(; 3.1 Ideal triangulations of hyperbolic 3-manif; 3.2 Hikami's invariant; 3.3 Quantum dilogarithm; 4 Examples and computations; 4.1 Numerical verification of the arithmeticit; 4.2 Perturbative $SL(2,{\\mathbb{C}})$ invarian; 4.2.1 Quantization; Geometric branch; Conjugate branch; Abelian branch",
  "tokens": {
   "brief": 49,
-  "extended": 376
+  "extended": 378
  },
  "sections": [
   {
-   "id": "sec-000-1-california-institute-of-technology-pasadena-ca",
-   "title": "California Institute of Technology, Pasadena, CA 91125, US A",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-001-2-department-of-physics-and-department-of-mathem",
-   "title": "Department of Physics and Department of Mathematics,",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-002-3-centre-for-mathematical-sciences-wilberforce-r",
-   "title": "Centre for Mathematical Sciences, Wilberforce Road,",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-003-4-max-planck-institut-f-ur-mathematik-vivatsgass",
-   "title": "Max-Planck-Institut f¨ ur Mathematik, Vivatsgasse 7, D-53 111 Bonn, Germany",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-004-5-coll-ege-de-france-3-rue-dulm-f-75005-paris-fr",
-   "title": "Coll` ege de France, 3 rue d’Ulm, F-75005 Paris, France",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-10"
   },
   {
-   "id": "sec-005-2-perturbation-theory-around-a-non-trivial-ﬂat-c",
-   "title": "Perturbation theory around a non-trivial ﬂat connection",
+   "id": "sec-000-2-perturbation-theory-around-a-non-trivial-flat",
+   "title": "Perturbation theory around a non-trivial flat connection",
    "pages": "10-10"
   },
   {
-   "id": "sec-006-21-f-eynman-diagrams-and-arithmetic-tqft",
-   "title": "F eynman diagrams and arithmetic TQFT",
-   "pages": "10-15"
+   "id": "sec-001-21-feynman-diagrams-and-arithmetic-tqft",
+   "title": "Feynman diagrams and arithmetic TQFT",
+   "pages": "10-18"
   },
   {
-   "id": "sec-007-22-quantization-of-mﬂat-gc-σ",
-   "title": "Quantization of Mﬂat (GC, Σ)",
-   "pages": "15-18"
-  },
-  {
-   "id": "sec-008-0-m-u",
-   "title": "(M ;u)",
-   "pages": "18-18"
-  },
-  {
-   "id": "sec-009-221-analytic-continuation",
+   "id": "sec-002-221-analytic-continuation",
    "title": "Analytic continuation",
    "pages": "18-20"
   },
   {
-   "id": "sec-010-222-a-hierarchy-of-diﬀerential-equations",
-   "title": "A hierarchy of diﬀerential equations",
-   "pages": "20-20"
+   "id": "sec-003-222-a-hierarchy-of-differential-equations",
+   "title": "A hierarchy of differential equations",
+   "pages": "20-23"
   },
   {
-   "id": "sec-011-0-u-jℏ-1",
-   "title": "(u +jℏ)− 1",
-   "pages": "20-21"
-  },
-  {
-   "id": "sec-012-2-s",
-   "title": "S′′",
-   "pages": "21-21"
-  },
-  {
-   "id": "sec-013-6-s",
-   "title": "S′′′",
-   "pages": "21-22"
-  },
-  {
-   "id": "sec-014-0-u-const",
-   "title": "(u) = const +",
-   "pages": "22-22"
-  },
-  {
-   "id": "sec-015-0-u-const",
-   "title": "(u)− const =",
-   "pages": "22-22"
-  },
-  {
-   "id": "sec-016-0-u-and-it-never-aﬀects-the-higher-order-terms-s",
-   "title": "(u), and it never aﬀects the higher-order terms S(α)",
-   "pages": "22-23"
-  },
-  {
-   "id": "sec-017-0-u-i",
-   "title": "(u) = i",
-   "pages": "23-23"
-  },
-  {
-   "id": "sec-018-23-classical-and-quantum-symmetries",
+   "id": "sec-004-23-classical-and-quantum-symmetries",
    "title": "Classical and quantum symmetries",
-   "pages": "23-23"
+   "pages": "23-25"
   },
   {
-   "id": "sec-019-3-a-a-a",
-   "title": "A ∧ A ∧ A",
-   "pages": "23-24"
-  },
-  {
-   "id": "sec-020-0-u-sα",
-   "title": "(u) = S(α)",
-   "pages": "24-24"
-  },
-  {
-   "id": "sec-021-0-u-mod-2-πu-258",
-   "title": "(u) (mod 2 πu). (2.58)",
-   "pages": "24-25"
-  },
-  {
-   "id": "sec-022-0-u-note-that-in-the",
-   "title": "(u). Note that in the",
-   "pages": "25-25"
-  },
-  {
-   "id": "sec-023-0-u-sα",
-   "title": "(u) =−S(α)",
-   "pages": "25-25"
-  },
-  {
-   "id": "sec-024-0-u-mod-2-πu-266",
-   "title": "(u) (mod 2 πu), (2.66)",
-   "pages": "25-25"
-  },
-  {
-   "id": "sec-025-2-vol-m-u-behavior-of-the-geometric-and-conjugat",
-   "title": "Vol (M ;u) behavior of the geometric and conjugate branches",
-   "pages": "25-25"
-  },
-  {
-   "id": "sec-026-24-brane-quantization",
+   "id": "sec-005-24-brane-quantization",
    "title": "Brane quantization",
    "pages": "25-27"
   },
   {
-   "id": "sec-027-3-a-state-integral-model-for-perturbative-sl2c-c",
-   "title": "A state integral model for perturbative SL(2,C) Chern-Simons theory",
+   "id": "sec-006-3-a-state-integral-model-for-perturbative-sl2mat",
+   "title": "A state integral model for perturbative $SL(2,{\\mathbb{C}})$ Chern-Simons theory",
    "pages": "27-27"
   },
   {
-   "id": "sec-028-31-ideal-triangulations-of-hyperbolic-3-manifold",
+   "id": "sec-007-31-ideal-triangulations-of-hyperbolic-3-manifold",
    "title": "Ideal triangulations of hyperbolic 3-manifolds",
-   "pages": "27-31"
+   "pages": "27-32"
   },
   {
-   "id": "sec-029-2-logz-πiqlog1z-πir-π2qr",
-   "title": "(Log(z) +πiq)(Log(1−z) +πir) + π2qr",
-   "pages": "31-32"
+   "id": "sec-008-32-hikamis-invariant",
+   "title": "Hikami's invariant",
+   "pages": "32-34"
   },
   {
-   "id": "sec-030-32-hikamis-invariant",
-   "title": "Hikami’s invariant",
-   "pages": "32-33"
-  },
-  {
-   "id": "sec-031-33-quantum-dilogarithm",
+   "id": "sec-009-33-quantum-dilogarithm",
    "title": "Quantum dilogarithm",
-   "pages": "33-35"
+   "pages": "34-43"
   },
   {
-   "id": "sec-032-1-the-asymptotic-formula-318-can-be-reﬁned-to-th",
-   "title": "The asymptotic formula (3.18) can be reﬁned to the asymptoti c expansion",
-   "pages": "35-35"
-  },
-  {
-   "id": "sec-033-2-the-function-xq-and-its-reciprocal-have-the-ta",
-   "title": "The function (x;q)∞ and its reciprocal have the Taylor expansions",
-   "pages": "35-36"
-  },
-  {
-   "id": "sec-034-3-the-function-φ-zτ-deﬁned-initially-for-re-τ-0",
-   "title": "The function Φ( z;τ ) deﬁned (initially for Re ( τ ) > 0 and |Re (z)| < 1",
-   "pages": "36-36"
-  },
-  {
-   "id": "sec-035-2-re-τ",
-   "title": "Re (τ ))",
-   "pages": "36-37"
-  },
-  {
-   "id": "sec-036-4-the-functional-equations-333-show-that",
-   "title": "The functional equations (3.33) show that",
-   "pages": "37-37"
-  },
-  {
-   "id": "sec-037-5-from-330-we-also-ﬁnd-the-taylor-expansion-of-i",
-   "title": "From (3.30) we also ﬁnd the Taylor expansion of I(z;τ ) at z = 0,",
-   "pages": "37-38"
-  },
-  {
-   "id": "sec-038-6-the-quantum-dilogarithm-is-related-via-the-jac",
-   "title": "The quantum dilogarithm is related via the Jacobi triple pro duct formula to the Jacobi",
-   "pages": "38-39"
-  },
-  {
-   "id": "sec-039-34-a-state-integral-model-for-z-ρm-ℏ",
-   "title": "A state integral model for Z (ρ)(M ; ℏ)",
-   "pages": "39-39"
-  },
-  {
-   "id": "sec-040-0-u-v-pgeomuu-345",
-   "title": "(u) = V (p(geom)(u),u ). (3.45)",
-   "pages": "39-39"
-  },
-  {
-   "id": "sec-041-0-u-and-matrix-elements-313",
-   "title": "(u) and matrix elements (3.13)-",
-   "pages": "39-40"
-  },
-  {
-   "id": "sec-042-0-u-v-pαuu-347",
-   "title": "(u) = V (p(α)(u),u ) (3.47)",
-   "pages": "40-42"
-  },
-  {
-   "id": "sec-043-0-u-1",
-   "title": "(u)− 1",
-   "pages": "42-43"
-  },
-  {
-   "id": "sec-044-4-examples-and-computations",
+   "id": "sec-010-4-examples-and-computations",
    "title": "Examples and computations",
    "pages": "43-44"
   },
   {
-   "id": "sec-045-41-numerical-veriﬁcation-of-the-arithmeticity-co",
-   "title": "Numerical veriﬁcation of the arithmeticity conjecture",
-   "pages": "44-45"
+   "id": "sec-011-41-numerical-verification-of-the-arithmeticity-c",
+   "title": "Numerical verification of the arithmeticity conjecture",
+   "pages": "44-48"
   },
   {
-   "id": "sec-046-1-0-s1-1",
-   "title": "(0) = s1 + 1",
-   "pages": "45-48"
+   "id": "sec-012-42-perturbative-sl2mathbbc-invariants-for-the-fi",
+   "title": "Perturbative $SL(2,{\\mathbb{C}})$ invariants for the figure-8 knot complement",
+   "pages": "48-51"
   },
   {
-   "id": "sec-047-42-perturbative-sl2-c-invariants-for-the-ﬁgure-8",
-   "title": "Perturbative SL(2, C) invariants for the ﬁgure-8 knot complement",
-   "pages": "48-49"
-  },
-  {
-   "id": "sec-048-3-re-z-im-z-im-z-1",
-   "title": "Re (z)≤ Im (z), Im (z)≤ 1√",
-   "pages": "49-49"
-  },
-  {
-   "id": "sec-049-3-1-re-z",
-   "title": "(1− Re (z))}",
-   "pages": "49-49"
-  },
-  {
-   "id": "sec-050-3-re-z-im-z-1",
-   "title": "Re (z)≤ Im (z)≤ 1√",
-   "pages": "49-49"
-  },
-  {
-   "id": "sec-051-3-re-z-422",
-   "title": "Re (z)} (4.22)",
-   "pages": "49-50"
-  },
-  {
-   "id": "sec-052-2-vol-m-0-icsm-0",
-   "title": "(Vol (M ; 0) +iCS(M ; 0)) +",
-   "pages": "50-50"
-  },
-  {
-   "id": "sec-053-2-vol-m-u-icsm-u-vgeomure-u-iπu-433",
-   "title": "(Vol (M ;u) +iCS(M ;u)) +vgeom(u)Re (u) +iπu, (4.33)",
-   "pages": "50-51"
-  },
-  {
-   "id": "sec-054-421-quantization",
+   "id": "sec-013-421-quantization",
    "title": "Quantization",
    "pages": "51-52"
   },
   {
-   "id": "sec-055-2-vol-41-0",
-   "title": "Vol (41; 0) +",
-   "pages": "52-52"
+   "id": "sec-014-geometric-branch",
+   "title": "Geometric branch",
+   "pages": "52-54"
   },
   {
-   "id": "sec-056-0-0-i",
-   "title": "(0) = i",
-   "pages": "52-52"
-  },
-  {
-   "id": "sec-057-2-vol-41-0-ics41-0",
-   "title": "(Vol (41; 0) +iCS(41; 0)) =",
-   "pages": "52-52"
-  },
-  {
-   "id": "sec-058-0-u-into-the-hierarchy-of-equations-the-rest-are",
-   "title": "(u) into the hierarchy of equations, the rest are readily",
-   "pages": "52-53"
-  },
-  {
-   "id": "sec-059-0-u",
-   "title": "(u) =",
-   "pages": "53-53"
-  },
-  {
-   "id": "sec-060-1-u-in-the-perturbative-chern-simons-par",
-   "title": "(u) in the perturbative Chern-Simons par-",
-   "pages": "53-54"
-  },
-  {
-   "id": "sec-061-0-u-i",
-   "title": "(u) =−i",
+   "id": "sec-015-conjugate-branch",
+   "title": "Conjugate branch",
    "pages": "54-54"
   },
   {
-   "id": "sec-062-0-u-sgeom",
-   "title": "(u) = −S(geom)",
-   "pages": "54-54"
-  },
-  {
-   "id": "sec-063-0-u-as-for-the-geometric-branch-this-is-then-sub",
-   "title": "(u). As for the geometric branch, this is then substituted",
-   "pages": "54-54"
-  },
-  {
-   "id": "sec-064-0-0-0-from-the-hierarchy-of-diﬀerential",
-   "title": "(0) = 0. From the hierarchy of diﬀerential",
-   "pages": "54-54"
-  },
-  {
-   "id": "sec-065-1-u-log-mm2-1",
-   "title": "(u) = log m(m2− 1)",
-   "pages": "54-54"
-  },
-  {
-   "id": "sec-066-2-u-0",
-   "title": "(u) = 0",
-   "pages": "54-54"
-  },
-  {
-   "id": "sec-067-3-u-4m2-12",
-   "title": "(u) = 4(m2− 1)2",
+   "id": "sec-016-abelian-branch",
+   "title": "Abelian branch",
    "pages": "54-55"
   },
   {
-   "id": "sec-068-422-state-integral-model",
+   "id": "sec-017-422-state-integral-model",
    "title": "State integral model",
-   "pages": "55-57"
-  },
-  {
-   "id": "sec-069-0-u-v-αu-457",
-   "title": "(u) = V (α)(u), (4.57)",
-   "pages": "57-57"
-  },
-  {
-   "id": "sec-070-1-u-1",
-   "title": "(u) =− 1",
-   "pages": "57-58"
-  },
-  {
-   "id": "sec-071-acknowledgments",
-   "title": "Acknowledgments",
-   "pages": "58-58"
-  },
-  {
-   "id": "sec-072-references",
-   "title": "References",
-   "pages": "58-61"
+   "pages": "55-61"
   }
  ],
  "provenance": {

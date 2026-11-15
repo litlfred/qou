@@ -8,6 +8,7 @@ pages: 16-18
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
 toc_source: inferred
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 27 sections: Front matter; INTRODUCTION; PRELIMINARIES"
 ---
 Recall the statement:
 Theorem B: The kernel of the Biot–Savart operator is precisely the space of gradient vector
@@ -40,8 +41,6 @@ Since the left- and right-hand sides are equal for all C, we must have
 890
 J. Math. Phys., Vol. 42, No. 2, February 2001
 Cantarella, DeTurck, and Gluck
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 E
 V¹3V d~vol!52E
 ]VV3n d~area!,
@@ -92,8 +91,6 @@ once again,
 891
 J. Math. Phys., Vol. 42, No. 2, February 2001
 The Biot–Savart operator
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 E
 ]Vi
 W3n d~area!56E

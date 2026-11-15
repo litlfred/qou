@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408099v1
-doc_title: "arXiv:hep-th/9408099v1 17 Aug 1994"
+doc_title: "Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD"
 section_id: sec-009-5-bps-saturated-states
 section_title: "BPS-saturated states"
 section_number: 5
@@ -8,6 +8,7 @@ pages: 17-20
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
 toc_source: inferred
+doc_brief: "Seiberg–Witten, Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD (1994) — exact metric on the moduli space of quantum vacua and exact stable-state spectrum for SU(2) with…"
 ---
 As we explained in our discussion of QED, a special role is played by the BPS-saturated
 states which are in “small” representations of the N = 2 algebra and are frequently the

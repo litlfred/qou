@@ -8,6 +8,7 @@ pages: 22-23
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
 toc_source: inferred
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 27 sections: Front matter; INTRODUCTION; PRELIMINARIES"
 ---
 We are looking for smooth vector ﬁelds U on a compact, smoothly bounded domain V in
 3-space, for which it is impossible to ﬁnd a smooth vector ﬁeld V on V satisfying the equation
@@ -28,8 +29,6 @@ FIG. 3. An impossible magnetic ﬁeld on the unit ball V.
 896
 J. Math. Phys., Vol. 42, No. 2, February 2001
 Cantarella, DeTurck, and Gluck
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 BS~V! 5~1/3!r sin uwˆ
 ~spherical coordinates!
 5~1/3!rwˆ

@@ -1,0 +1,74 @@
+assumes 2: is-real z1 and is-real z2 and rl > 0 and r2 > 0 and
+—1 < Re zl and Re z1 < 1 and —1 < Re 22 and Re z2 < 1 and
+zl # 22
+assumes 21: r1 € poincare-circle (of-complex z1) r1 M poincare-circle (of-complex 22) r2 and
+x2: x2 € poincare-circle (of-complez z1) r1 M poincare-circle (of-complez z2) r2 and
+vl # x2
+shows r1 = conjugate 72
+proof—
+have in-disc: of-complex z1 € unit-disc of-complex z2 € unit-disc
+using assms
+by (auto simp add: cmod-eq-Re)
+
+obtain x1’ 22’ where x’: x1 = of-complex x1‘ 12 = of-complex x2’
+using x1 «2
+using inf-or-of-complez|of x1] inf-or-of-complez|of x2]
+unfolding poincare-circle-def
+by auto
+
+obtain Ze1 Rel where 1: (Ze1, Rel) = poincare-circle-euclidean (of-complex z1) r1
+by (metis poincare-circle-euclidean-def )
+obtain Ze2 Re2 where 2: (Ze2, Re2) = poincare-circle-euclidean (of-complex z2) r2
+by (metis poincare-circle-euclidean-def )
+have circle: x1’ € circle Ze1 Re1 M circle Ze2 Re2 x2' € circle Zel Rel M circle Ze2 Re2
+using poincare-circle-is-euclidean-circle[of of-complex z1 r1]
+using poincare-circle-is-euclidean-circle|of of-complex 22 r2]
+using assms 1 2 <of-complex z1 € unit-disc» ‘of-complex z2 € unit-disc> x’
+by auto (metis image-iff of-complez-inj)+
+
+have is-real Ze1 is-real Ze2
+using 1 2 <is-real z1) <is-real 22»
+by (simp-all add: poincare-circle-euclidean-def Let-def )
+
+have Rel > 0 Re2 > 0
+using 1 2 in-disc (rl > 0» «r2 > 0»
+using poincare-circle-in-disc(2)[of r1 of-complex z1 Ze1 Re1]
+using poincare-circle-in-disc(2)|of r2 of-complex z2 Ze2 Re2]
+by auto
+
+have Zel # Ze2
+proof (rule ccontr)
+assume — ?thesis
+hence eq: Zel = Ze2 Rel = Re2
+using circle(1)
+unfolding circle-def
+by auto
+
+let ?A = Zel — Rel and ?B = Zel + Rel
+have ?A € circle Ze1 Rel ?B € circle Ze1 Rel
+using (Rel > 0»
+unfolding circle-def
+by simp-all
+
+hence of-compler ?A € poincare-circle (of-complex z1) r1 of-complex ?B € poincare-circle (of-complex z1) r1
+of-complex ?A € poincare-circle (of-complex z2) r2 of-complex ?B € poincare-circle (of-complex z2) r2
+
+using eq
+
+using poincare-circle-is-euclidean-circle|OF ‘of-complex z1 € unit-disc» «rl > 0>]
+using poincare-circle-is-euclidean-circle|OF ‘of-complex 22 € unit-disc» «r2 > 0>]
+using 1 2
+
+by auto blast+
+
+hence poincare-distance (of-complex z1) (of-complex ?A) = poincare-distance (of-complex z1) (of-complex ?B)
+poincare-distance (of-complex z2) (of-complex ?A) = poincare-distance (of-complex z2) (of-complex ?B)
+—1 < Re (Ze1 — Rel) Re (Zel — Rel) < 1 -1 < Re (Zel + Rel) Re (Zel + Rel) < 1
+
+using <is-real Ze1) <is-real Ze2>
+unfolding poincare-circle-def
+by (auto simp add: cmod-eq-Re)
+hence z1 = 22
+using unique-midpoint-x-axis|of Zel — Rel Ze1 + Rel]
+
+72

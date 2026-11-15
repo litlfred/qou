@@ -7,10 +7,11 @@ section_number: 5.3
 pages: 8-10
 source_pdf: 1303.6444v3.pdf
 source_sha256: 4f12ace2197f70ca
-doc_brief: "VIRIAL EXPANSION BOUNDS — In the 1960s, the technique of using cluster expansion bounds in order to achieve bounds on the virial expansion was developed by Lebowitz and Penrose (1964) and Ruelle"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.919
 latex_coverage_ratio: 0.986
+doc_brief: "VIRIAL EXPANSION BOUNDS — In the 1960s, the technique of using cluster expansion bounds in order to achieve bounds on the virial expansion was developed by Lebowitz and Penrose (1964) and Ruelle"
 ---
 We again use the same bounds on the cluster expansion and follow the method outlined in [@LPen64] and starting with [\[uform\]](#uform){reference-type="eqref" reference="uform"}, we arrange our expression $r(s)$ into the form: $$r(s)=\frac{C(\beta)^{-1}}{1+u}\frac{s}{u^2}\left((1+u)^2e^{-s}-(1+u)\right) \label{lebpenstart}$$ We use the identity: $\frac{1+u}{u^2}=\frac{(1+u)^2}{u^2}-\frac{1+u}{u}$, to rewrite it as: $$r(s)=\frac{C(\beta)^{-1}}{1+u}\left(s\frac{1+u}{u}-s^2\frac{(1+u)^2}{u^2}\left(\frac{1-e^{-s}}{s}\right)\right)$$ We make the change of variables $v= s\frac{1+u}{u}$ and define $g(w):=\frac{1-e^{-w}}{w}$ and obtain: $$\hat{r}(s)=\frac{C(\beta)^{-1}}{1+u}(v-v^2g\left(\frac{uv}{1+u}\right))$$ We note that $g'(w)=\frac{we^{-w}-(1-e^{-w})}{w^2}=\frac{(w+1)e^{-w}-1}{w^2}$
 

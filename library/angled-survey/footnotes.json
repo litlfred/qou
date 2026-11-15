@@ -1,0 +1,559 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "angled-survey",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "1",
+   "text": "Thereisanalternativeversionofananglestructure,inwhichtheanglesmustalsosatisfy the imaginary part of the completeness equations. This corresponds to taking a linear slice of the polytope A(τ). We will not need this version for the main part of the paper — but see Section",
+   "marks": [
+    {
+     "page": 7,
+     "context": "arediscardedentirely"
+    }
+   ],
+   "block": "library/angled-survey/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p023-1",
+   "page": 23,
+   "mark": "3",
+   "text": ", Ph.D. thesis, Universit´e de Paris XI (Orsay), 2006. [10] , Triangulated cores of punctured-torus groups, J. Diﬀerential Geom. 81 (2009), no. 1, 91–142. Licensed to Temple Univ.  Prepared on Tue Jul 30 15:53:49 EDT 2019for download from IP 155.247.31.215. License or copyright restrictions may apply to redistribution; see https://www.ams.org/publications/ebooks/terms",
+   "marks": [
+    {
+     "page": 22,
+     "context": "inH"
+    },
+    {
+     "page": 22,
+     "context": "itiesintoconvexitystatementsintheMinkowskispaceR3+1,whereH"
+    }
+   ],
+   "block": "library/angled-survey/blocks/prose-sec-005"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p007-2",
+   "page": 7,
+   "mark": "6",
+   "text": "1 for variations on this theme. Licensed to Temple Univ.  Prepared on Tue Jul 30 15:53:49 EDT 2019for download from IP 155.247.31.215. License or copyright restrictions may apply to redistribution; see https://www.ams.org/publications/ebooks/terms",
+   "block": "library/angled-survey/blocks/prose-sec-001"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "foldcanbeobtainedfromS"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "thetetrahedrainMcomefromidealtetrahedrainH"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "Definition2.1.AhyperbolicidealtetrahedronTistheconvexhullinH"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "fourdistinctpointson∂H"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "fourdistinctpointson∂H3.Thefourpointson∂H"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "RecallthatanisometryofH"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "pointson∂H"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "SupposewemoveTbyanorientation–preservingisometryofH"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "M→H"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "M→H"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "parabolicisometriesofH"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "half-space model of H"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "canbedevelopedtotileahorosphereinH"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "ofacollarneighborhoodofCisahoroballinH"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "sin β"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "tetrahedronisnaturallyidentiﬁedwithR"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "tetrahedronisnaturallyidentiﬁedwithR3"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "boundedpolytopeinR"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "boundedpolytopeinR3"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "constrains the coordinates of A(τ) to the open cube (0, π)"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "constrains the coordinates of A(τ) to the open cube (0, π)3"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "subspaceofR"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "subspaceofR3"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "ubspaceofR3n.Theintersectionbetweenthisaﬃnesubspaceand(0, π)"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "bspaceofR3n.Theintersectionbetweenthisaﬃnesubspaceand(0, π)3"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "wherev ∈R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "wherev ∈R3"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "LetcbeacuspofM.Associatedtoc,weconstructarowvectorrc∈R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "LetcbeacuspofM.Associatedtoc,weconstructarowvectorrc∈R2"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "λa=q"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "λa=qi(ab)+q"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "λa=qi(ab)+qi(ac)−q"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "λb=q"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "λb=qi(ab)+q"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "λb=qi(ab)+qi(bc)−q"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "λc=q"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "λc=qi(ac)+q"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "λc=qi(ac)+qi(bc)−q"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "λc=q"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "λc=qi(bc) + q"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "λc=qi(bc) + qi(cd) −q"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "=q"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "=qi(bc) + q"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "=qi(bc) + qi(ac) −q"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "Foreveryorientedsegmentσi,wedeﬁneavectorw(σi) ∈R"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "Foreveryorientedsegmentσi,wedeﬁneavectorw(σi) ∈R3"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "eachcoordinateofR"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "eachcoordinateofR3"
+  },
+  {
+   "page": 11,
+   "mark": "w",
+   "context": "i"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "iw(σ"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "i,whereΔ"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "jattheotherendofedge"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "iareinthesameorientedsimilarityclass(bothhavethesameanglesα"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "einthesameorientedsimilarityclass(bothhavethesameanglesαi, β"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "hesameorientedsimilarityclass(bothhavethesameanglesαi, βi, γ"
+  },
+  {
+   "page": 13,
+   "mark": "w",
+   "context": "v.Inparticular,"
+  },
+  {
+   "page": 13,
+   "mark": "v",
+   "context": "v.Inparticular,w(σ"
+  },
+  {
+   "page": 14,
+   "mark": "w",
+   "context": "v"
+  },
+  {
+   "page": 14,
+   "mark": "v",
+   "context": "vw(σ"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "deﬁnition,pliesintheopenset(0, π)"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "deﬁnition,pliesintheopenset(0, π)3"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "p + εw(σ) ∈(0, π)"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "p + εw(σ) ∈(0, π)3"
+  },
+  {
+   "page": 15,
+   "mark": "w",
+   "context": "i"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "iw(σ"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "rc∈R"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "Let A(τ) ⊂R"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Let A(τ) ⊂R3"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "∂w"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "w"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "1cot"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "1cot p"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "1cot p1+ w"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "2cot"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2cot p"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2cot p2+ w"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "3cot"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "3cot p"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "∂w"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "2cot"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2cot p"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "2cot p2+ (w"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2cot p2+ (w1+ w"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2cot p2+ (w1+ w2)"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "2cot p2+ (w1+ w2)2"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "2cot p2+ (w1+ w2)2 1 −cot"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "2cot p2+ (w1+ w2)2 1 −cot p"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "2cot p2+ (w1+ w2)2 1 −cot p1 cot"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2cot p2+ (w1+ w2)2 1 −cot p1 cot p"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "w"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "1cot"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "1cot p"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "1cot p1+ w"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(w1 + w2)"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(w1 + w2)2+ (w1 cot p1 −w2 cot p2)"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "possible when p1, p2∈(0, π/2).Thus ∂2vol(T)/∂w"
+  },
+  {
+   "page": 19,
+   "mark": "s",
+   "context": "H(σ1) = log"
+  },
+  {
+   "page": 19,
+   "mark": "s",
+   "context": "H(σ2) = log"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "Generalizingfurther,anS"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "ThesetofallS"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "ofS"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "EventhoughtheexistenceofS"
+  }
+ ]
+}

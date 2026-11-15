@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2607.03827v1
-doc_title: "AFFINE CELLULAR ALGEBRAS AND ASYMPTOTIC ALGEBRAS"
+doc_title: "Affine cellular algebras and asymptotic algebras"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-5
 source_pdf: 2607.03827v1.pdf
 source_sha256: 965d69603381942a
-doc_brief: "AFFINE CELLULAR ALGEBRAS AND ASYMPTOTIC ALGEBRAS — The theory of affine cellular algebrasAis extended to incorporate their asymptotic algebras ˆA, clarifying unexpected differences between classical"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.967
+latex_coverage_ratio: 0.986
+doc_brief: "Affine cellular algebras and asymptotic algebras — The theory of affine cellular algebras A is extended to incorporate their asymptotic algebras ˆA, clarifying unexpected differences between"
 ---
 The aim of this article is to clarify new and sometimes unexpected
 structures of affine cellular algebras and properties of embeddings into

@@ -158,7 +158,7 @@ difference, with $\mathrm{Vol}(4_1)$ cancelled). So it is a conditional
 structural statement, not an established prediction. This makes precise that $\Phi_b$ touches binding **only**
 through this channel: remove the `SDeformedVolumeChannel` hypothesis and
 no binding statement about $\Phi_b$ survives. On the open map $u(q_0)$
-itself, the Neumann–Zagier leading-form family laws are proved sorry-free
+itself, the Neumann–Zagier leading-form family laws are proved
 (`QOU.QBeta.UDeformFamilyPruning`) over the corrected harmonic form
 $\mathrm{Im}\,\mathfrak{V}(u) = (\sqrt{3}/4)(\mathrm{Re}^2 u - \mathrm{Im}^2 u)$
 (cusp modulus $\tau = -i\sqrt{3}$, so the leading coefficient
@@ -172,9 +172,7 @@ $S(\text{muon}) > 0 > S(\text{proton})$ *were one present*. The surviving
 necessary condition is that $u(q_0)$ must cross the diagonal
 $|\mathrm{Re}\,u| = |\mathrm{Im}\,u|$ between the anchors; $u(q_0)$ itself
 stays open. The measured values live in the probe witness, never in the
-Lean, and — per the O2 analysis
-(`docs/audits/2026-08-14-aomega-to-S-bridge-refuted-O2-negative.md`) —
-the individual anchor signs are not resolved by the data; the resolved
+Lean, and the individual anchor signs are not resolved by the data; the resolved
 target is the swing $S(\text{muon}) - S(\text{proton})$, and the onward
 identification of this channel with the resurgent monodromy datum
 $A_\omega$ is unsupported (no literature; integrality) and not carried.
@@ -205,7 +203,7 @@ ring $R$ with the **bar-involution** $\sigma$ (the structural setting —
 *not* $\mathbb{C}$) descends to **both** the bar-even
 (binding) and bar-odd ($\mathfrak{Q}_\beta$) parts from a single proof,
 because the projections $x \mapsto x\pm\sigma x$ act additively. Formalised
-sorry-free in [`QOU.MassEndomorphism`](binding-qbeta-complex-volume.lean):
+in [`QOU.MassEndomorphism`](binding-qbeta-complex-volume.lean):
 `invol_descent` (one ring identity $\Rightarrow$ both parity identities)
 and `recurrence_invol_descent` (a three-term $\mathfrak{V}$-recurrence with
 a bar-even multiplier $c$, $\sigma c = c$, yields the binding and
@@ -225,7 +223,7 @@ $\mathbb{R}$ or $\mathbb{C}$; division-free via $\sigma q \cdot q = 1$):
   multiplied through by $q^{n+1}$:
   $q^{n+1}\,h_{n+2} = 2x\,q^{n+1}\,h_{n+1} + (q^{n+1} - 1)\,h_n$ (`oddStep`).
 
-The **channel rotation** is proved sorry-free (`rotation_step`). With a
+The **channel rotation** is proved (`rotation_step`). With a
 formal rotation element $\iota \in R$, $\iota^2 = -1$ (the fibre-level
 stand-in for $i$; `Complex.I` is only the archimedean instance downstream
 of $\tau$), a sequence satisfies the odd step at $(q, x)$ **iff** its
@@ -251,7 +249,7 @@ companion remarks
 
 **Archimedean specialisation.** The measured binding and $Q_\beta$ form the real and imaginary parts $\mathrm{Re}, \mathrm{Im}$ of the complex Bring-surface volume, valued in $\mathbb{R}$ (with $E_0 : \mathbb{R}$). This provides the archimedean readout of the generic complex-volume construction, acknowledged here.
 
-Two further pieces of the operator picture are proved sorry-free at the free
+Two further pieces of the operator picture are proved at the free
 endpoint. First, the concrete $AW(3)$ realization: splitting the channel
 tridiagonal operator into lowering, raising, and grading parts $L$, $R$, $Q$
 (the shift-split of multiplication by $2x$ at the $q$-Hermite bottom), the

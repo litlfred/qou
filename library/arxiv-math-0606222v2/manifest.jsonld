@@ -11,6 +11,7 @@
   ],
   "title": "arxiv-math-0606222v2",
   "contains": [
+    "library/arxiv-math-0606222v2/sections/sec-front-matter",
     "library/arxiv-math-0606222v2/sections/sec-000",
     "library/arxiv-math-0606222v2/sections/sec-001",
     "library/arxiv-math-0606222v2/sections/sec-002",
@@ -29,10 +30,11 @@
     "library/arxiv-math-0606222v2/sections/sec-015",
     "library/arxiv-math-0606222v2/sections/sec-016",
     "library/arxiv-math-0606222v2/sections/sec-017",
-    "library/arxiv-math-0606222v2/sections/sec-018"
+    "library/arxiv-math-0606222v2/sections/sec-018",
+    "library/arxiv-math-0606222v2/sections/sec-019"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
     "searched": [

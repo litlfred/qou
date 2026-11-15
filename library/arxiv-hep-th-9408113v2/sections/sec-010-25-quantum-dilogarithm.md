@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408113v2
-doc_title: "arXiv:hep-th/9408113v2 25 Aug 1994"
+doc_title: "Dilogarithm identities"
 section_id: sec-010-25-quantum-dilogarithm
 section_title: "Quantum dilogarithm."
 section_number: 2.5
@@ -8,7 +8,9 @@ pages: 79-89
 source_pdf: 9408113v2.pdf
 source_sha256: dadd96e1155e820f
 toc_source: inferred
+doc_brief: "Dilogarithm identities — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
 ---
+2.5. Quantum dilogarithm.
 Let us remind that the Euler dilogarithm Li2(x) is deﬁned for 0 ≤x ≤1 by
 Li2(x) =
 X
@@ -265,7 +267,6 @@ n≥0
 (q2; q2)n
 =
 1
-Y
 j≥0
 (1 + q2j+1a)
 .
@@ -828,4 +829,3 @@ Corollary (of Lemma A1, with n = 2). We have
 (1 −β1x1)(α1α2 −β1β2(1 −t)).
 (A2)
 Dilogarithm identities
-89

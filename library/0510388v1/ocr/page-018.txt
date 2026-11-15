@@ -1,0 +1,29 @@
+Comments.
+
+¢ In R®, conditions (1) and (2) are easily seen to characterize the Green's operator,
+as follows. The difference Gr;(V) — Gr(V) between two candidates for the
+Green's operator is a harmonic vector field, and therefore its three components in
+rectangular coordinates are harmonic functions. By property (2), they go to zero at
+infinity and hence must be identically zero. Thus Gr,(V) = Gr,(V).
+
+¢ In R*, the statement that Gr(V)(y) > 0 as y > © can be improved:
+Gr(V)(y) > 0 atinfinity like 1/ly| in general, andif V is divergence-free, then
+it goes to zero at infinity like 1/|y\’. See our paper (2001) on the Biot-Savart operator.
+
+e In S°, condition (1) alone suffices to characterize the Green's operator, since
+the vector Laplacian : VF(S*) % VE(S°) is bijective.
+
+e In S°, because the vector Laplacian is bijective and commutes with grad, curl
+and div, we immediately get the same for the scalar and vector-valued Green's
+operators:
+
+V Gr(f) = Gr(Vf), VxGr(V) = GV xv), VeGr(V) = GV eV).
+
+e In H’, it is not yet clear to us how to characterize the vector-valued Green's
+operator. Even strengthening (2) to require that Gr(V)(y) goes to zero exponentially
+fast at infinity is not quite enough.
+
+The following theorem asserts the existence of vector-valued Green's operators
+in S* and H’, and provides explicit integral formulas.
+
+18

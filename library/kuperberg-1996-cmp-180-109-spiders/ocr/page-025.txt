@@ -1,0 +1,48 @@
+Spiders for Rank 2 Lie Algebras 133
+
+dim V; < dim V2 in both cases. Then the vector spaces
+
+Invs,(V2>),
+Inv4,(V2?) ,
+Inva,(V; @ VY @ V2),
+Inve, (Ve?) ,
+
+Invg,(Y, ® Vi ® V2)
+
+are all 1-dimensional. When q = 1, and for each of A2, Bz, and Gp, there exists
+a morphism ® from the unclasped combinatorial spider to the unclasped algebraic
+spider with the following property. If s is a generator of the strand set, then O(s) =
+V,, and if T is a trivalent vertex of some type, then ®(7) is a non-zero element
+in one of the above invariant spaces. We sketch the argument for the existence
+of ® in the A) case (see Ref. [9] for details): Pick any two non-zero elements
+x € Invy,(V2") and x* € Inv4,(V®"). By counting dimensions of invariant spaces,
+each of the left sides of Eqs. (2), (3), and (4) must be some linear combinations
+of the right sides in the algebraic A2 spider, if x and x* are denoted by the usual
+trivalent vertices. But at the same time, a computation shows that the right sides
+are linearly independent in the algebraic A, spider, and that, up to normalization of
+x and x*, the given coefficients are the only ones that respect this normalization.
+Thus, after rescaling, the invariant tensors x and x* of U,(A2) must satisfy the
+relations of the combinatorial A spider, although perhaps with a different choice
+of qg. Another simple computation shows that the choice of q is the same. Thus
+we can set (7) =x and O(7*) =x", if T and 7* are the trivalent vertices that
+generate Ap.
+
+Theorem 5.1. The morphism © from the combinatorial to the algebraic Az, B2,
+or G2 spider is surjective when q = 1, and therefore for generic q.
+
+This theorem is proved in Ref. [9], but we give a more conceptual argument
+here:
+
+Proof. Let q=1, let g be Az, Bo, or G2, and let G be the compact, simply-
+connected Lie group whose complexified Lie algebra is g. If s = 5, ---s, is a string,
+define
+
+Vs = Vs, ®-+- @Vs, «
+
+In each case, the image 2 of ® is some subspider of the algebraic spider of g.
+We interpret 2 as a category of linear transformations between tensor products
+of fundamental representations. The category % contains switching maps x @ y>
+y ®x, since they are the images of crossings under the map ®. Moreover, each
+Endg(V;) is a semisimple algebra, by the following construction: We define the
+Hermitian adjoint w* of w € W(ss*) by reflecting w about a vertical axis, taking the
+complex conjugate of all coefficients, and, in the A spider, reversing all orientations

@@ -1,0 +1,77 @@
+---
+doc_id: lect-mathematical-ideas-notions-qft-2002
+doc_title: "Mathematical ideas and notions of quantum field theory"
+section_id: page-042
+section_title: "Page 42"
+pages: 42-42
+pdf_page: 42
+source_pdf: lect-mathematical-ideas-notions-qft-2002.pdf
+source_sha256: 95cac1ccd6c80226
+text_source: ocr
+granularity: page
+doc_brief: "Mathematical ideas and notions of quantum field theory — 78 sections: Page 1; Page 2; Page 3"
+---
+42 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY
+
+7.1. The path integral in quantum mechanics. Let U(q) be a smooth function
+on the real line (the potential). We will assume that U(0) = 0, U'(0) = 0, and
+U"(0) = m?, where m > 0.
+
+Remark. In quantum field theory the parameter m in the potential is called
+the mass parameter. To be more precise, in classical mechanics it has the meaning
+of frequency w of oscillations. However, in quantum theory thanks to Einstein
+frequency is identified with energy (EZ = hw/2z), while in relativisitic theory energy
+is identified with mass (again thanks to Einstein, E = mc”).
+
+We want to construct the theory of a quantum particle moving in the potential
+field U(q). According to what we discussed before, this means that we want to give
+sense to and to evaluate the normalized correlation functions
+
+_ Salty)... atne®/" Dg
+— fe®@/*Dq ’
+
+where S(q) = f £(q)dt, and £L(q) = 47/2 — U(q).
+
+As we discussed, such integrals cannot be handled rigorously by means of measure
+theory if h is a positive number; so we will only define these path integrals “in
+perturbation theory”, i.e. as formal series in h.
+
+Before giving this (fully rigorous) definition, we will explain the motivation be-
+hind it. We warn the reader that this explanation is heuristic and involves steps
+which are mathematically non-rigorous (or “formal” in the language of physicists).
+
+< g(ti) ++ (tn) >:
+
+7.2. Wick rotation. In §1 we discussed path integrals with imaginary exponential
+(quantum mechanics), as well as real exponential (Brownian motion). If h is a
+number, then the integrals with imaginary exonential cannot be defined measure
+theoretically. Therefore, people study integrals with real exponential (which can
+be rigorously defined), and then perform a special analytic continuation procedure
+called the Wick rotation.
+
+In our formal setting (h is a formal parameter), one can actually define the
+integrals in both the real and the imaginary case. Still, the real case is a bit
+easier, and thus the Wick rotation is still useful. Besides, the Wick rotation is very
+important conceptually. Therefore, while it is not technically necessary, we start
+with introducing the Wick rotation here.
+
+Namely, let us denote < q(t1)...q(tn) > by GM (t1,...,tn), and “formally” make a
+change of variable 7 = it in the formula for G™(t1,...,tn). Let q(t) = qx(7). Then,
+taking into account that dr = idt, dq/dt = idq,/dr we get
+
+dgx\2
+G™ (t1, -.tn) = fae(ti) + de(Tn)e SAH) PD as
+nae fe SECEPHWWI/A Dg,
+
+This shows that
+Gur (tay ---stn) = Gp (ita, ---s ttn),
+
+where
+
+—Spr(q)/h
+OF tasty) = LOD ede.
+f e~Se(9/h Dg
+where Sp(q) = f La(q)dt, and Le(q) = @?/2 + U(q) (ie. Le is obtained from £
+by replacing U with —U).
+This manipulation certainly does not make rigorous sense, but it motivates the
+following definition.

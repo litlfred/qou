@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9709040v1
-doc_title: "arXiv:q-alg/9709040v1 29 Sep 1997"
+doc_title: "Deformation quantization of Poisson manifolds"
 section_id: sec-073-bibiliography
 section_title: "Bibiliography"
 section_number: null
@@ -8,6 +8,7 @@ pages: 45-46
 source_pdf: 9709040v1.pdf
 source_sha256: 8baf650d86c5b8ab
 toc_source: inferred
+doc_brief: "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products"
 ---
 [AKSZ] M. Alexandrov, M. Kontsevich, A. Schwarz, O. Zaboronsky, The Geometry of the Master Equation and
 Topological Quantum Field Theory, Intern. Jour. of Mod. Phys., 12 (1997), no. 7, 1405 - 1429, and

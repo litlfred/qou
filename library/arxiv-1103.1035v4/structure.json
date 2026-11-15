@@ -7,10 +7,11 @@
   "bytes": 551505,
   "pages": 31,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,28 @@
    "stamp_date": "10 Feb 2012"
   },
   "doi": null,
-  "title": "MC ELEMENTS IN PRONILPOTENT DGLIE ALGEBRAS AMNON YEKUTIELI",
-  "authors_raw": null,
+  "title": "MC ELEMENTS IN PRONILPOTENT DGLIE ALGEBRAS",
+  "authors_raw": "AMNON YEKUTIELI",
   "title_lines": [
-   "MC ELEMENTS IN PRONILPOTENT DGLIE ALGEBRAS",
-   "AMNON YEKUTIELI"
+   "MC ELEMENTS IN PRONILPOTENT DGLIE ALGEBRAS"
   ],
-  "abstract": "Consider a pronilpotent DG (differential graded) Lie algebra over a \ufb01eld of characteristic 0. In the \ufb01rst part of the paper we introduce the reduced Deligne groupoid associated to this DG Lie algebra. We prove that a DG Lie quasi- isomorphism between two such algebras induces an equivalence between the corresponding reduced Deligne groupoids. This extends the famous result of Goldman-Millson (attributed to Deligne) to the unbounded pronilpotent case. In the second part of the paper we consider the Deligne 2-groupoid. We show it exists under more relaxed assumptions than known before (the DG Lie algebra is either nilpotent or of quasi quantum type). We prove that a DG Lie quasi- isomorphism between such DG Lie algebras induces a weak equivalence between the corresponding Deligne 2-groupoids. In the third part of the paper we prove that an L-in\ufb01nity quasi-isomorphism between pronilpotent DG Lie algebras induces a bijection between the sets of gauge equivalence classes of Maurer-Cartan elements. This extends a result of Kontsevich and others to the pronilpotent case.",
+  "abstract": "Consider a pronilpotent DG (differential graded) Lie algebra over a ﬁeld of characteristic 0. In the ﬁrst part of the paper we introduce the reduced Deligne groupoid associated to this DG Lie algebra. We prove that a DG Lie quasi- isomorphism between two such algebras induces an equivalence between the corresponding reduced Deligne groupoids. This extends the famous result of Goldman-Millson (attributed to Deligne) to the unbounded pronilpotent case. In the second part of the paper we consider the Deligne 2-groupoid. We show it exists under more relaxed assumptions than known before (the DG Lie algebra is either nilpotent or of quasi quantum type). We prove that a DG Lie quasi- isomorphism between such DG Lie algebras induces a weak equivalence between the corresponding Deligne 2-groupoids. In the third part of the paper we prove that an L-inﬁnity quasi-isomorphism between pronilpotent DG Lie algebras induces a bijection between the sets of gauge equivalence classes of Maurer-Cartan elements. This extends a result of Kontsevich and others to the pronilpotent case.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20211102214912Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.12",
-   "Title": ""
-  }
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20211102214912Z"
+  },
+  "title_raw": "MC ELEMENTS IN PRONILPOTENT DGLIE ALGEBRAS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "MC ELEMENTS IN PRONILPOTENT DG LIE ALGEBRAS C ontents Introduction Some Facts about DG Lie Algebras The Reduced Deligne Groupoid DG Lie Quasi-isomorphisms – Nilpotent Algebras DG Lie Quasi-isomorphisms – Pronilpotent Algebras Some Facts on 2-Groupoids The Deligne 2-Groupoid L ∞ Morphisms and Coalgeb",
+   "outline": "0. Introduction",
+   "text": "MC ELEMENTS IN PRONILPOTENT DGLIE ALGEBRAS",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "MC ELEMENTS IN PRONILPOTENT DGLIE ALGEBRAS AMNON YEKUTIELI"
  },
  "toc": [
   {
@@ -41,126 +50,538 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "0"
+   "number": "0",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Some Facts about DG Lie Algebras",
    "page": 4,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "The Reduced Deligne Groupoid",
    "page": 7,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
-   "title": "DG Lie Quasi-isomorphisms \u2013 Nilpotent Algebras",
+   "title": "DG Lie Quasi-isomorphisms – Nilpotent Algebras",
    "page": 10,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 1,
-   "title": "DG Lie Quasi-isomorphisms \u2013 Pronilpotent Algebras",
+   "title": "DG Lie Quasi-isomorphisms – Pronilpotent Algebras",
    "page": 14,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "Some Facts on 2-Groupoids",
    "page": 18,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 1,
    "title": "The Deligne 2-Groupoid",
    "page": 21,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 1,
    "title": "L Morphisms and Coalgebras",
    "page": 24,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 1,
    "title": "L Quasi-isomorphisms between Pronilpotent Algebras",
    "page": 26,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 1,
    "title": "References",
    "page": 31,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Illustration for the proof of Lemma 3.9. The diagram is commutative",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Illustration for the proof of Lemma 3.11. Some of the arrows, like g and h, belong to the groupoid Delr(−, −). Other",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1159,
+   "n_words": 180,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-0-introduction",
    "number": "0",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 9,
-   "n_chars": 17375,
-   "n_words": 3472
+   "page_end": 4,
+   "n_chars": 6375,
+   "n_words": 1178,
+   "label_start": null,
+   "label_end": "4"
   },
   {
-   "id": "sec-001-2-the-reduced-deligne-groupoid",
+   "id": "sec-001-1-some-facts-about-dg-lie-algebras",
+   "number": "1",
+   "title": "Some Facts about DG Lie Algebras",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 6824,
+   "n_words": 1393,
+   "label_start": "4",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-002-2-the-reduced-deligne-groupoid",
    "number": "2",
    "title": "The Reduced Deligne Groupoid",
    "level": 1,
-   "page_start": 9,
-   "page_end": 23,
-   "n_chars": 29235,
-   "n_words": 5823
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 5983,
+   "n_words": 1212,
+   "label_start": "7",
+   "label_end": "10"
   },
   {
-   "id": "sec-002-6-the-deligne-2-groupoid",
+   "id": "sec-003-3-dg-lie-quasi-isomorphisms-nilpotent-algebras",
+   "number": "3",
+   "title": "DG Lie Quasi-isomorphisms – Nilpotent Algebras",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 14,
+   "n_chars": 7447,
+   "n_words": 1505,
+   "label_start": "10",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-004-4-dg-lie-quasi-isomorphisms-pronilpotent-algebra",
+   "number": "4",
+   "title": "DG Lie Quasi-isomorphisms – Pronilpotent Algebras",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 18,
+   "n_chars": 6792,
+   "n_words": 1346,
+   "label_start": "14",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-005-5-some-facts-on-2-groupoids",
+   "number": "5",
+   "title": "Some Facts on 2-Groupoids",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 21,
+   "n_chars": 8523,
+   "n_words": 1684,
+   "label_start": "18",
+   "label_end": "21"
+  },
+  {
+   "id": "sec-006-6-the-deligne-2-groupoid",
    "number": "6",
    "title": "The Deligne 2-Groupoid",
    "level": 1,
-   "page_start": 23,
-   "page_end": 31,
-   "n_chars": 14211,
-   "n_words": 2705
+   "page_start": 21,
+   "page_end": 24,
+   "n_chars": 6026,
+   "n_words": 1140,
+   "label_start": "21",
+   "label_end": "24"
   },
   {
-   "id": "sec-003-references",
+   "id": "sec-007-7-l-morphisms-and-coalgebras",
+   "number": "7",
+   "title": "L Morphisms and Coalgebras",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 4979,
+   "n_words": 933,
+   "label_start": "24",
+   "label_end": "26"
+  },
+  {
+   "id": "sec-008-8-l-quasi-isomorphisms-between-pronilpotent-alge",
+   "number": "8",
+   "title": "L Quasi-isomorphisms between Pronilpotent Algebras",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 31,
+   "n_chars": 7524,
+   "n_words": 1453,
+   "label_start": "26",
+   "label_end": "31"
+  },
+  {
+   "id": "sec-009-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 31,
    "page_end": 31,
-   "n_chars": 2071,
-   "n_words": 295
+   "n_chars": 2080,
+   "n_words": 294,
+   "label_start": "31",
+   "label_end": "31"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 10,
-  "sections": 4,
-  "chars_total": 62892,
+  "toc_inferred_entries": 0,
+  "figure_entries": 2,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "Introduction"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 11,
+  "chars_total": 63712,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "paper.tex",
    "tex_sections": 9,
-   "overlaid": 3,
+   "overlaid": 9,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -168,31 +589,84 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-0-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.694,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.882,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-001-2-the-reduced-deligne-groupoid",
+     "id": "sec-001-1-some-facts-about-dg-lie-algebras",
+     "title": "Some Facts about DG Lie Algebras",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-2-the-reduced-deligne-groupoid",
      "title": "The Reduced Deligne Groupoid",
-     "prose_ratio": 0.936,
-     "coverage_ratio": 0.914,
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.958,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-6-the-deligne-2-groupoid",
+     "id": "sec-003-3-dg-lie-quasi-isomorphisms-nilpotent-algebras",
+     "title": "DG Lie Quasi-isomorphisms – Nilpotent Algebras",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-4-dg-lie-quasi-isomorphisms-pronilpotent-algebra",
+     "title": "DG Lie Quasi-isomorphisms – Pronilpotent Algebras",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-5-some-facts-on-2-groupoids",
+     "title": "Some Facts on 2-Groupoids",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-6-the-deligne-2-groupoid",
      "title": "The Deligne 2-Groupoid",
-     "prose_ratio": 0.862,
-     "coverage_ratio": 0.975,
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.963,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-003-references",
+     "id": "sec-007-7-l-morphisms-and-coalgebras",
+     "title": "L Morphisms and Coalgebras",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.948,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-8-l-quasi-isomorphisms-between-pronilpotent-alge",
+     "title": "L Quasi-isomorphisms between Pronilpotent Algebras",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-references",
      "title": "References",
      "result": "no matching \\section"
     }

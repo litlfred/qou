@@ -10,7 +10,8 @@ source_sha256: 9a7757f998b7f680
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.969
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.985
+doc_brief: "On Two-Dimensional Holonomy — We deﬁne the thin fundamental categorical group P2(M, ∗) of a based smooth manifold (M, ∗) as the categorical group whose objects are rank-1 homotopy classes of based"
 ---
 ::: Definition
 Let $G$ be a Lie group. Let $M$ be a smooth manifold. Let $P \to M$ be a smooth principal bundle with structure group $G$. Denote the right action of $G$ on $P$ as $g \in G\mapsto {R_g} \in \diff(M)$. Let also ${\Gc=(\d\colon E \to G,\tr)}$ be a Lie crossed module, where $\tr$ is a Lie group left action of $G$ on $E$ by automorphisms. Let also ${\mathfrak{G}=(\d \colon \le \to  \lg,\tr )}$ be the associated differential crossed module. A $\Gc$-categorical connection on $P$ is a pair $(\w,m)$, where $\w$ is a connection 1-form on $P$, i.e. $\w\in \A^1(P,\lg)$ is a $1$-form on $P$ with values in $\lg$ such that:

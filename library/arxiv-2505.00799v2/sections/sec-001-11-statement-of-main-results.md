@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2505.00799v2
-doc_title: "QUANTUM MODULAR FORMS AND RESURGENCE"
+doc_title: "Quantum Modular Forms and Resurgence"
 section_id: sec-001-11-statement-of-main-results
 section_title: "Statement of Main Results"
 section_number: 1.1
-pages: 3-6
+pages: 3-7
 source_pdf: 2505.00799v2.pdf
 source_sha256: cc9d2ab4c6c79b50
-doc_brief: "QUANTUM MODULAR FORMS AND RESURGENCE — In 2010, Zagier described a new phenomenon which he called quantum mod- ularity."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.766
-latex_coverage_ratio: 0.987
+latex_prose_ratio: 0.869
+latex_coverage_ratio: 0.992
+doc_brief: "Quantum Modular Forms and Resurgence — In 2010, Zagier described a new phenomenon which he called quantum mod- ularity."
 ---
 Before we give the general statement of Theorem [\[thm: Main\]](#thm: Main){reference-type="ref" reference="thm: Main"}, we highlight corollaries in some key special cases which correspond to families of quantum modular forms generalizing Zagier's original examples. We note for the reader that the definitions of various terms from the theory of resurgence are deferred until Section 2.1 for ease of exposition.
 

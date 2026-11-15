@@ -1,0 +1,1 @@
+Likewise, the subspace ${\mathbb C}^3$ spanned by $r,g$ and $b$ corresponds to $$\langle d_R \rangle = \langle d_R^r, d_R^g, d_R^b \rangle .$$ Thus we must have $d^c_R = c$, where $c$ runs over the colors $r,g,b$.

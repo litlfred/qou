@@ -1,0 +1,42 @@
+2318 Stavros Garoufalidis and Rinat Kashaev
+
+numbers of twist knots are given by
+
+7) deg(Ax,) =2p—1, deg(Bx,)=3p—1,  5(Kp) =p, (p > 0)
+deg(Ax,) =2Ip|, — deg(Bx,) = 3lp|— 1, 8(Kp) =Ip|- 1 (p< 0).
+We mention parenthetically that the degree of the A-polynomials of the twist
+knots coincide with the degrees of their trace fields [HS01]. The excess de-
+gree of a knot and its relation to quantum invariants, their asymptotics,
+and their connection with the work of Gukov et al [GM21] is studied in
+detail by Campbell Wheeler in his upcoming thesis [Whe] and in forthcoming
+work [GGMnW].
+
+3. The colored Jones polynomials at roots of unity
+
+This section fills a historical gap where we discuss a previously unnoticed con-
+jectural relationship between the colored Jones polynomials and some quan-
+tum R-matrices at roots of unity considered by the second author in [Kas96].
+Namely, we show that the R-matrices over the vector space C% depending
+on a primitive N-th root of unity ¢ and indexed by an integer parameter
+0<m < N actually give knot invariants which conjecturally coincide with
+the (m+ 1)-colored Jones polynomial evaluated at g = ¢. In particular, we
+show that a specific choice of the discrete parameter m = N — 1 gives the
+Kashaev invariant (K’)y of a knot, which, in its turn, appears to be equal to
+the N-colored Jones polynomial Jy(¢) [MMO1]. The other choices of m lead
+to knot invariants (I) vm for m € {0,...,N — 1} (or even links, with each
+component colored by its own integer parameter).
+
+In [Kas94], the second author assigned a state-sum to a root of unity and
+to a pair consisting of a triangulated compact closed oriented 3-manifold and
+a link represented by a Hamiltonian sub-complex, and showed that the state-
+sum is invariant under some natural Pachner moves. The state-sum depended
+on a tetrahedral weight function, from which one can obtain an R-matrix
+that satisfies the Yang-Baxter equation. This led to an invariant of knots in
+the 3-sphere that depends to a root of unity, where the knot in question is
+a Hamiltonian path of a triangulation of the 3-sphere. This is how the R-
+matrix of [Kas95] was found and explained (without pictures), see [Kas95,
+Sec. 4]. The R-matrices of [Kas96], which depend on discrete and continuous
+spectral parameters, are expected to generalize the R-matrix of [Kas95]. The
+continuous spectral parameter apparently plays no role in constructing knot
+invariants, while the discrete spectral parameter seems to take care of the
+color in the colored Jones polynomials.

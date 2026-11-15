@@ -1,0 +1,58 @@
+Problems on invariants of knots and 3-manifolds A471
+
+7 Quantum and perturbative invariants of 3-mani-
+folds
+
+7.1 Witten-Reshetikhin-Turaev invariants and quantum invari-
+ants
+
+Witten [403] proposed that, for a semi-simple compact Lie group G and a
+positive integer k, a topological invariant of a closed oriented 3-manifold M is
+given by the path integral
+
+ZE(M) = / erm V=TRCS(A)D A, (36)
+
+which is a formal integral over gauge equivalence classes of connections A on
+the trivial G bundle on M. Here, the Chern-Simons functional CS: A = R is
+defined by
+
+ol
+~ Br
+for a connection A, regarding it as a g-valued 1-form on M, where g denotes
+the Lie algebra of G.
+
+CS(A) [, trace(A AdA+ =A AANA), (37)
+
+Motivated by Witten’s proposal, the quantum G invariant 7o(M ) has been
+defined and studied, first by Reshetikhin and Turaev [346] and later by other
+researchers, where we put r = k + h* with the dual Coxeter number h” of g.
+The quantum invariant is also called the Witten-Reshetikhin-Turaev invariant.
+For example, when M is obtained from S® by integral surgery along a framed
+knot K with a positive framing, OM ) for r > 3 and reo (mM ) for odd
+r > 3 are given by
+
+r—1 _,7r-l
+YM) = (Sing) Dinle*(n0)|
+n=1 n=1
+
+~, « . -1 .
+PAM) =( OO nlare"™(U)) YO Ines]
+O0<n<r O0<n<r
+r is odd r is odd
+
+g=exp(2nV=1/r)’
+
+g=exp(2nV=1/r)’
+
+where [n] = (q"/? — q-"/?)/(q'/? — q-/?), and U, denotes the trivial knot
+with +1 framing, and Q*'2:”(K) denotes the quantum invariant of K associ-
+ated with the irreducible n-dimensional representation of the quantum group
+U,(slz); for details see [221] (see also [321] for the notation). It is known [221]
+that . .
+
+TU (re (a) if r= 3 mod 4,
+
+TeUQ)(M) = 4 = “g
+. TU) re (aM) if r = 1 mod 4,
+
+Geometry & Topology Monographs, Volume 4 (2002)

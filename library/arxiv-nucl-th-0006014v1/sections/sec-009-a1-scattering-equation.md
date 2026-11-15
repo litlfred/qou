@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-nucl-th-0006014v1
-doc_title: "arXiv:nucl-th/0006014v1 9 Jun 2000"
+doc_title: "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn)"
 section_id: sec-009-a1-scattering-equation
 section_title: "Scattering equation"
 section_number: A.1
@@ -8,6 +8,7 @@ pages: 15-18
 source_pdf: 0006014v1.pdf
 source_sha256: 208c7a6aaf628b30
 toc_source: inferred
+doc_brief: "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn) — 56 sections: Front matter; Introduction; The model"
 ---
 Two-nucleon scattering is described covariantly by the Bethe-Salpeter (BS) equation [21]
 which reads in operator notation
@@ -17,7 +18,6 @@ with T the invariant amplitude for the two-nucleon scattering process, V the sum
 connected two-particle irreducible diagrams, and G the relativistic two-nucleon propaga-
 tor. Since this four-dimensional integral equation is very diﬃcult to solve, so-called three-
 dimensional reductions have been proposed, which are more amenable to numerical solution.
-15
 Furthermore, it has been shown by Gross [96] that the full BS equation in ladder approx-
 imation (that is, the kernel V is restricted to the exchange of single particles as, e. g., in
 the OBE model) does not have the correct one-body limit (i. e., when one of the particles
@@ -89,7 +89,6 @@ s′ −s −iǫ δ(+)[ ( 1
 2̸ P ′+̸ k + M ](1)[ 1
 2̸ P ′−̸ k + M ](2)
 (A7)
-16
 with δ(+) indicating that only the positive energy root of the argument of the δ-function is
 to be included; P 2 = s and P ′ ≡
 √
@@ -172,7 +171,6 @@ s
 M
 Eq
 (A16)
-17
 and
 V (q′, q) =
 s

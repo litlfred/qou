@@ -1,0 +1,60 @@
+Remark 5.13 The above result can be generalised to the case where ke = Le and key = —ALe
+for any complex number A. If A € Z or X € C\ Q, then both category O and Hexpi2miay(W, L) are
+semisimple, so the statement trivially holds. If \ is a negative rational number, let us say \ = —r/e for
+some e,r € Zyo with ged(e,r) = 1, and E € Irr(W), then KZ(L(£)) # 0 if and only if E belongs to the
+canonical basic set of H,(W, —L) with respect to @: q+ ¢. We recall now that the canonical basic sets
+for finite Coxeter groups where L can take negative values are described in [ChJal]. In fact, E belongs
+to the canonical basic set of H,(W,—L) with respect to 0: q+ C2 if and only if E ® € belongs to the
+canonical basic set of H4(W, L) with respect to 6, where ¢ denotes the sign representation of W.
+
+Proposition [5.12] yields the existence of canonical basic sets for all finite Coxeter groups in a uniform
+way. At the same time, it yields a description of the simple modules that are not killed by the KZ-
+functor, since canonical basic sets for finite Coxeter groups are explicitly known (see, for example,
+[GeJa2]). However, it does not imply that the a-function is an ordering on the category O, because we
+do not know what happens with the simple modules killed by the KZ-functor. We do believe though
+that, for finite Coxeter groups, the a-function is an ordering on the category O.
+
+Example 5.14 Let W be the symmetric group G,, and let | := L(s) for every transposition s € 6,
+(there exists only one orbit C in A/W). Let 7?! := C2 for some e,r € Zo with ged(e,r) = 1. As we saw
+in Example [2.14] the canonical basic set By of H(W, 1) with respect to @ : q ++ 7 consists of the e-regular
+partitions of Now take ke = r/2e and ke = —r/2e. Let \ be a partition of n and let E* be the
+corresponding irreducible representation of G,. We have KZ(L(E*)) 4 0 if and only if ) is e-regular.
+
+5.2.3 Canonical basic sets for Ariki-Koike algebras
+
+As we have said and seen earlier, there exist several orderings on the category O. For W = G(l,1,n),
+where the irreducible representations are parametrised by the set P(I,n) of l-partitions of n, one com-
+binatorial ordering on the category O is given by Dunkl and Griffeth in [DuGr]. More precisely, in this
+case, there are two hyperplane orbits in A/W; we will denote them by Cs and Cy. We have ec, = | and
+ec, = 2. Let (so,..., 51-1) € Z! and e € Zso. We define k = (ke,.0,-- +s Kes,l—1; Kee,0; KCe,1) by
+
+8; j 1
+ke,j = 2-2 for f=0,...,1-1, kao =) koa =0. (5.4)
+e I e
+
+Then the KZ-functor goes from the category O of Hy,(W) to the category of representations of the
+specialised Ariki-Koike algebra H,(W) with relations
+
+(s— G)(s— 8) ---(s-— CG) =0, (ti —G)(ti #1) =0 fori=1,...,n—-1,
+
+= (AO, AV-D) € P(l,n). We will denote by E> the corresponding irreducible representa-
+tion of G(I,1,n). We define the set of nodes of A to be the set
+
+[A] = {(a,b,c) :0<e<l-1l,ad1,1<d< XO}.
+
+Let 7 = (a(7), 6(7), e(7)) € [A]. We set 0(7) := (7) — a(y) + Sec). We then have the following
+Proof of Theorem 4.1]:
+
+Proposition 5.15 Let A, X’ € P(l,n). If [A(E>) : L(E*’)] #0, then there exist orderings ¥1,2,---+Yn
+and ¥,,7,...,7), of the nodes of X and X' respectively, and non-negative integers [11, [12,..., In, such
+that, for alll <i<n,
+
+Mi = (yi) — (4%) mod land py = e(y4) — c(i) + “woo — W(%))-
+
+Now, there are several different cyclotomic Ariki—Koike algebras that produce the specialised Ariki—
+Koike algebra Hy(W) defined above and they may have distinct a-functions attached to them. Let
+
+tj := sj — uy, for allO <j <1—1, and t := (to,...,t)-1). We then use the combinatorial description
+of the a-function for G(I,1,n) given by ( , taking aya := alt) (X) for all A € P(l,n). Note that this
+
+40

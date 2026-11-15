@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-0810.1697v1",
  "source_sha256": "1aef66179da3c154",
- "brief": "ON THE CABLE EXPANSION FORMULA QIHOU LIU — In this paper, a generalized version of Morton’s formula [8] is proved.",
- "extended": "**ON THE CABLE EXPANSION FORMULA QIHOU LIU**\n\n14 pp, 8 sections.\n\n**Abstract.** In this paper, a generalized version of Morton’s formula [8] is proved. Using this formula, one can write down the colored Jo nes polynomials of cabling of an knot in terms of the colored Jones polynomial s of the original knot.\n\n**Outline.** 1 Introduction; 2 Basic definitions and notations; 2.1 Examples; 2.2 The multilinear bracket; 3 Expansion of cables in the skein module; 4 Proof of Theorem 1; 5 Appendix; References",
+ "brief": "ON THE CABLE EXPANSION FORMULA — In this paper, a generalized version of Morton’s formula [8] is proved.",
+ "extended": "**ON THE CABLE EXPANSION FORMULA**\n\n*QIHOU LIU*\n\n14 pp, 9 sections.\n\n**Abstract.** In this paper, a generalized version of Morton’s formula [8] is proved. Using this formula, one can write down the colored Jones polynomials of cabling of an knot in terms of the colored Jones polynomials of the original knot.\n\n**Outline.** Front matter; 1 Introduction; 2 Basic definitions and notations; 2.1 Examples; 2.2 The multilinear bracket; 3 Expansion of cables in the skein module; 4 Proof of Theorem 1; 5 Appendix; References",
  "tokens": {
-  "brief": 28,
-  "extended": 126
+  "brief": 26,
+  "extended": 129
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",

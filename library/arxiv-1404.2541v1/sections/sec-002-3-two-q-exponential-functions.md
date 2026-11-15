@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1404.2541v1
-doc_title: "The Stokes phenomenon for the Ramanujan’s q-difference equation and its higher order extension"
+doc_title: "The Stokes phenomenon for the Ramanujan’s q -diﬀerence equation and its higher order extension"
 section_id: sec-002-3-two-q-exponential-functions
 section_title: "Two q-exponential functions"
 section_number: 3
 pages: 8-11
 source_pdf: 1404.2541v1.pdf
 source_sha256: edb7c9b2b1561ac3
-doc_brief: "The Stokes phenomenon for the Ramanujan’s q-difference equation and its higher order extension — We show connection formulae of local solutions of the Ramanu - jan equation between the origin and the"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.976
+latex_prose_ratio: 0.985
+latex_coverage_ratio: 1.0
+doc_brief: "The Stokes phenomenon for the Ramanujan’s q -diﬀerence equation and its higher order extension — We show connection formulae of local solutions of the Ramanu- jan equation between the origin and the"
 ---
 We review two different $q$-exponential functions $e_q(x)$ and $E_q(x)$ to consider the connection problem on the Ramanujan equation. In this section, we show the relation between them. We review two different $q$-exponential functions from the viewpoint of the connection problems. One of the $q$-exponential function $e_q(x)$ is given by $$e_q(x):={}_1\varphi_0 (0;-;q,x)=\sum_{n\ge 0}\frac{x^n}{(q;q)_n}.$$ The other $q$-exponential function $E_q(x)$ is $$E_q(x):={}_0\varphi_0(-;-;q,-x)=\sum_{n\ge 0}\frac{q^{\frac{n(n-1)}{2}}}{(q;q)_n}x^n.$$ The function $e_q(x)$ satisfies the following first order $q$-difference equation $$\left\{\sigma_q-(1-x)\right\}u(x)=0$$ and $E_q(x)$ satisfies $$\left\{(1+x)\sigma_q-1\right\}u(x)=0.$$ The limit $q\to 1-0$ converges the exponential function $$\lim_{q\to 1-0}e_q\left(x(1-q)\right)=\lim_{q\to 1-0}E_q\left(x(1-q)\right)=e^x.$$ In this sense, these functions considered as $q$-analogues of the exponential function. It is known that there exists the relation between these functions [@GR]: $$e_q(x)E_q(-x)=1,\quad e_{q^{-1}}(x)=E_q(-qx).$$ But another relation has not known. We show the connection formula between them and give alternate representation of $e_q(x)$.
 

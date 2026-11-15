@@ -1,0 +1,68 @@
+by simp
+moreover
+have (V a'E{z. z € unit-disc}.
+a#ali
+a#a2A
+a’ #an
+(Are{z. z € unit-disc}.
+poincare-between al z a2 A
+cA#al A
+x # aA
+(poincare-between a a' x V
+poincare-between a x a’)) —+
+(Are{z. z € unit-disc}.
+(poincare-between a x a’ V
+poincare-between aa’ x) A
+(poincare-between x x1 x2 V
+poincare-between x1 x x2 V
+poincare-between x1 x2 x)))
+using **(6)
+unfolding poincare-on-line-def poincare-in-angle-def poincare-ray-meets-line-def poincare-on-ray-def
+using poincare-collinear3-iff [of - x1 x2] poincare-between-rev *(2, 3)
+by auto
+ultimately
+show Jale{z. z € unit-disc}.
+Fa2e{z. z € unit-disc}.
+w— (poincare-between a al a2 V poincare-between al a a2 V poincare-between al a2 a)
+a (Axe{z. z © unit-disc}.
+(poincare-between a x al V
+poincare-between a al x) A
+(poincare-between x x1 42 V
+poincare-between x1 x x2 V
+poincare-between x1 x2 x)) A
+a (Axe{z. z © unit-disc}.
+(poincare-between a x a2 V
+poincare-between a a2 x) \
+(poincare-between x x1 42 V
+poincare-between x1 x x2 V
+poincare-between x1 x2 x)) A
+(Va'e{z. z € unit-disc}.
+a#ali
+a#a2A
+a’ #an
+(Are{z. z € unit-disc}.
+poincare-between al z a2 A
+cA#al A
+x # aA
+(poincare-between a a' x V
+poincare-between a x a’)) —+
+(Are{z. z € unit-disc}.
+(poincare-between a x a’ V
+poincare-between aa’ x) A
+(poincare-between x x1 x2 V
+poincare-between x1 x x2 V
+poincare-between x1 x2 x)))
+using **(1, 2)
+by auto
+qed
+qed
+
+interpretation PoincareElementaryTarskiHyperbolic: ElementaryTarskiHyperbolic p-congruent p-between
+proof
+
+12. Continuity
+fix pv
+assume J a.V zc. V y. px Aw y —> p-betweena xy
+thus 4 b.V2.V yprAwd y — p-between x by
+
+173
