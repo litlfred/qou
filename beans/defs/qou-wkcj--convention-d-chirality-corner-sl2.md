@@ -40,6 +40,13 @@ corner_sl2_parity_probe.py (all pass); audit §7 and §8.
 Open: the remark is NOT machine-validated (folio-assistant clone fetch timed out; manual render
 battery only). Stays in-progress: the chirality identification (scope a) is open.
 
+## 2026-11-15 corner doublet vs flavour (owner priority 3)
+
+Probe computations/probes/corner_doublet_vs_flavour_probe.py, audit §9. The H₄ (3,1)
+doublet on σ₁'s left line is NOT flavour-as-orientation: σ₃⁻¹|_D = σ₃|_D − h·I fixes both
+states; the two states are σ₃'s eigenlines (q, −q⁻¹). Scope (b), invariant = quadratic
+relation, conditional on #7836 reading. Branch claude/corner-doublet-vs-flavour-2026-11-15.
+
 ## 2026-11-15 validator run (platform pin 82b389982)
 
 `bun run scripts/run-validate.ts folio/quantum-observable-universe` on branch head 1d067551b:

@@ -535,3 +535,44 @@ sympy symbolic, mpmath 70 dps at the proton `q₀`).
 **Verdict: monotone, not alternating.** The only sign change anywhere is the single global
 L↔R swap under the root relabel or the transpose. That is the same one bit as §1.1, not
 an alternation in `n`.
+
+## 9. Is the `n = 4` corner doublet the same thing as flavour (`σ₃ ↦ σ₃⁻¹`)? No (owner priority 3, 2026-11-15)
+
+Probe: `computations/probes/corner_doublet_vs_flavour_probe.py` (all checks pass; exact
+sympy over symbolic `q`; no floats, no fit, no witness). The probe builds Young's
+seminormal form itself and **checks** the quadratic and braid relations, so the matrices
+below do not rest on the cited form.
+
+Setting: `D` is the `q`-line of `σ₁` inside the block `(3,1)` of `H₄`, spanned by the two
+tableaux with 1, 2 in the first row. It is the doublet of §6.4. Flavour is read as letter
+orientation (#7836): `u ~ σ₃`, `d ~ σ₃⁻¹`. `σ₃` commutes with `σ₁`, so it acts inside the
+corner.
+
+- **`dim D = 2`** and `σ₃|_D` has eigenvalues `q` and `−q⁻¹`, once each.
+- **`σ₃⁻¹|_D = σ₃|_D − h·I`.** This is the corpus definition `flip q s = s − h·1`
+  (`HelicityCommonSource.lean`) seen on `D`. The flavour flip is a shift by a central
+  scalar.
+- Consequences on `D`:
+  - in `σ₃`'s eigenbasis the flip is `diag(−q, q⁻¹)` against `diag(−q⁻¹, q)`: it **fixes both
+    doublet states** and never exchanges them;
+  - `span{I, σ₃|_D, σ₃⁻¹|_D}` has dimension 2 and is commutative: the Cartan part of `gl₂`,
+    with no raising or lowering element;
+  - the off-diagonal part of the corner `sl₂` comes from `P₊σ₂P₊`, the letter that does
+    **not** commute with `σ₁`; with it the corner acts on `D` as all of `M₂(K)`.
+- **The doublet's two states are the two eigenlines of `σ₃`**: one on `σ₃`'s `q`-line, one on
+  its `−q⁻¹`-line. The doublet label is `σ₃`'s chirality bit, not its orientation.
+- Sweep: every `sl₂`-carrying block of the left corner for `n = 4…6`, and every letter
+  `σ_j` (`j ≥ 3`) commuting with `σ₁`: 33 cases. The flip is a central shift on the
+  multiplicity space in all of them.
+
+**Verdict, scope (b) for this identification.** The invariant is the quadratic relation:
+`σ⁻¹ = σ − h` holds in every corner of every `H_n`, so letter orientation can only ever
+move a multiplicity space by a scalar. It can supply at most a `U(1)` direction, never the
+two states of a doublet. Conditional on the #7836 reading "flavour = letter orientation";
+if that reading changes, this must be rechecked. The `(3,1)` doublet itself is real
+(§6.4), but what it doubles is `L₁ ∩ L₃` vs `L₁ ∩ R₃`: chirality of a second letter, not
+`u` vs `d`.
+
+**Consequence for the plan.** Building the `H₄` doublet in Lean **as a flavour doublet** is
+not supported. What a build could still claim is "a left-only `sl₂` whose doublet is the
+`σ₃` chirality pair", which needs a different physical reading and is an owner call.
