@@ -32,5 +32,8 @@ and equals $[n]_q!$ only at $q = 1$.
 
 **Classical limit.** At $q = 1$ the block dimensions satisfy the
 Wedderburn–Artin count $\sum_\lambda d_\lambda^2 = n! = \dim H_n$ for
-$\mathbb{C}[S_n]$, and dividing by $n!$ recovers the unit-sum
-normalization above.
+$\mathbb{C}[S_n]$. Dividing by $n!$ gives the unit-sum normalization
+for the Plancherel weights $d_\lambda/n!$, which are the Markov weights
+at $z = 0$ (the regular trace). Under convention D, $q = 1$ gives
+$z = 1/2$ and different weights: at $n = 2$, $y_{(2)} = 3/4$ and
+$y_{(1,1)} = 1/4$.

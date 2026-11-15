@@ -13,12 +13,16 @@ $$
 $$
 The Markov trace is normalized so that $\mathrm{tr}_M(\mathbf{1}) = 1$
 (the defining trace condition), whence
-$\sum_{\lambda \vdash n} d_\lambda\, y_\lambda(q) = 1$. The unit sum is
-the Plancherel completeness of the $y_\lambda$ weights, established for
-every $n$ from the closed-form recipe for $y_\lambda$
-(`plancherel_via_recipe`).
+$\sum_{\lambda \vdash n} d_\lambda\, y_\lambda(q) = 1$. The
+decomposition exists because $H_n(R, q)$ is semisimple under the
+hypothesis $[k]_q \neq 0$ for $2 \le k \le n$.
 
-At $q = 1$ the Markov weights reduce to $y_\lambda = d_\lambda / n!$, and
-the identity becomes the Wedderburn–Artin dimension count
-$\sum_\lambda d_\lambda^2 = n! = \dim H_n$ for $\mathbb{C}[S_n]$.
+The weights $y_\lambda$ are *not* the Plancherel weights
+$d_\lambda / n!$ at $q = 1$. Under convention D, $q = 1$ gives
+$z = 1/2$; at $n = 2$ the conditions
+$y_{(2)} + y_{(1,1)} = 1$ and $y_{(2)} - y_{(1,1)} = \mathrm{tr}_M(\sigma) = 1/2$
+give $y_{(2)} = 3/4$, $y_{(1,1)} = 1/4$. The Plancherel weights belong to
+the normalised regular trace of $\mathbb{C}[S_n]$, which is the Markov
+trace at $z = 0$; for it the identity is the Wedderburn–Artin count
+$\sum_\lambda d_\lambda^2 = n!$.
 $\square$
