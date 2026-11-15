@@ -1,9 +1,10 @@
 import Mathlib.Algebra.Field.Basic
 import Mathlib.Algebra.Order.Field.Basic
-import Mathlib.Algebra.Order.Ring.Lemmas
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.LinearCombination
+import Mathlib.Algebra.Algebra.Defs
 
 /-!
 # The sl_N framing and the one-gluon colour factors
@@ -95,7 +96,7 @@ theorem sl_ratio_eq_two_iff (N : K) (hN : N ≠ 0) (hN1 : N - 1 ≠ 0) :
   constructor
   · intro h
     field_simp at h
-    linear_combination h
+    linear_combination -h
   · rintro rfl
     field_simp
     ring
@@ -112,11 +113,14 @@ eigenvalues `q^(1-1/N)` and `-q^(-1-1/N)`. -/
 theorem rescale_hecke {A : Type*} [Ring A] [Algebra K A] (σ : A) (a b c : K)
     (h : (σ - algebraMap K A a) * (σ - algebraMap K A b) = 0) :
     (c • σ - algebraMap K A (c * a)) * (c • σ - algebraMap K A (c * b)) = 0 := by
-  have e1 : c • σ - algebraMap K A (c * a) = c • (σ - algebraMap K A a) := by
-    rw [smul_sub, map_mul, Algebra.smul_def]
-  have e2 : c • σ - algebraMap K A (c * b) = c • (σ - algebraMap K A b) := by
-    rw [smul_sub, map_mul, Algebra.smul_def]
-  rw [e1, e2, smul_mul_smul_comm, h, smul_zero]
+  have e1 : c • σ - algebraMap K A (c * a) =
+      algebraMap K A c * (σ - algebraMap K A a) := by
+    rw [Algebra.smul_def, map_mul, mul_sub]
+  have e2 : c • σ - algebraMap K A (c * b) =
+      algebraMap K A c * (σ - algebraMap K A b) := by
+    rw [Algebra.smul_def, map_mul, mul_sub]
+  rw [e1, e2, mul_assoc, ← mul_assoc (σ - algebraMap K A a),
+    ← Algebra.commutes c (σ - algebraMap K A a), mul_assoc, h, mul_zero, mul_zero]
 
 end Generic
 
