@@ -18,6 +18,12 @@ group. Continuous `G`-valued functions on a preconnected set are constant, so a
   the constant 1-cochain `w_ij = c₀ᵢⱼ`.
 * `degH2_eq_one_iff`: hence `deg` detects the trivial class of `H²(U, G)`.
 * `deg_map`: `deg` is natural in the coefficient group.
+* `rel_of_deg_eq`, `degH2_injective`: equal degrees force cohomologous
+  cocycles.
+* `faceCocycle`, `degH2_surjective`: if no point lies in all four sets, the
+  cocycle with value `g` on the oriented face `(1,2,3)` has degree `g`.
+* `h2EquivOfEmptyQuad`, `cechH2EquivOfEmptyQuad`: hence `H²(U, G) ≃ G`, and the
+  same for the cover-level Čech `H²`.
 * `kummerSurfaceData_tet`: a `KummerSurfaceData` instance for the admissibility
   predicate `(· = tetCover U)`.
 
@@ -26,7 +32,6 @@ group. Continuous `G`-valued functions on a preconnected set are constant, so a
 The instance is **cover-level only**. Its colimit is over the single cover
 `tetCover U`, not over all open covers, so it is not a statement about `Ȟ²` of
 `X`. Comparing with the full colimit (Leray / survival, step C2) is open, as is
-surjectivity of `deg` (which needs the quadruple intersection to be empty) and
 the concrete cover of the 2-sphere (step C1b). Bean `qou-skn4`.
 
 -- Ref: [manuscript] lifting-and-descent, route R3, surface step C1
@@ -298,5 +303,100 @@ noncomputable def kummerSurfaceData_tet (n : ℕ) [NeZero n] :
       rw [map_mul, map_inv, kappa_kappaSection, mul_inv_cancel]
     rw [kappa_eq_one_iff] at h1
     simpa [toAdd_mul, toAdd_inv, sub_eq_add_neg] using h1
+
+
+/-! ### Surjectivity when no point lies in all four sets -/
+
+/-- The oriented incidence of the triple `(i,j,k)` with the face `{1,2,3}`. -/
+def tri (i j k : Fin 4) : ℤ :=
+  if (i, j, k) = (1, 2, 3) ∨ (i, j, k) = (2, 3, 1) ∨ (i, j, k) = (3, 1, 2) then 1
+  else if (i, j, k) = (1, 3, 2) ∨ (i, j, k) = (3, 2, 1) ∨ (i, j, k) = (2, 1, 3) then -1
+  else 0
+
+theorem tri_cocycle : ∀ i j k l : Fin 4, ¬ AllDistinct i j k l →
+    tri i j k + tri i k l = tri j k l + tri i j l := by decide
+
+theorem cover_of_allDistinct : ∀ i j k l : Fin 4, AllDistinct i j k l →
+    ∀ m : Fin 4, m = i ∨ m = j ∨ m = k ∨ m = l := by decide
+
+omit [IsTopologicalGroup G] [DiscreteTopology G] in
+/-- The 2-cocycle with value `g` on the oriented face `(1,2,3)` and `1` elsewhere,
+when no point of `X` lies in all four sets. -/
+noncomputable def faceCocycle (hE : ∀ x : X, ∃ m : Fin 4, x ∉ U m) (g : G) :
+    TwoCocycle U (contPresheaf X G) where
+  ev i j k T _ _ _ := (ContinuousMap.const T (g ^ tri i j k) : C(T, G))
+  ev_precomp _ _ _ _ _ _ _ _ _ := rfl
+  cocycle i j k l T a b c d := by
+    by_cases h : AllDistinct i j k l
+    · refine ContinuousMap.ext fun x => (?_ : False).elim
+      obtain ⟨m, hm⟩ := hE x.1
+      rcases cover_of_allDistinct i j k l h m with rfl | rfl | rfl | rfl
+      · exact hm (leOfHom a x.2)
+      · exact hm (leOfHom b x.2)
+      · exact hm (leOfHom c x.2)
+      · exact hm (leOfHom d x.2)
+    · refine ContinuousMap.ext fun x => ?_
+      change g ^ tri i j k * g ^ tri i k l = g ^ tri j k l * g ^ tri i j l
+      rw [← zpow_add, ← zpow_add, tri_cocycle i j k l h]
+
+/-- **The degree is onto** when no point lies in all four sets. -/
+theorem deg_faceCocycle (hE : ∀ x : X, ∃ m : Fin 4, x ∉ U m) (g : G) :
+    deg hU (faceCocycle hE g).toTwoCochain = g := by
+  change g ^ tri 1 2 3 * (g ^ tri 0 2 3)⁻¹ * g ^ tri 0 1 3 * (g ^ tri 0 1 2)⁻¹ = g
+  simp [tri]
+
+theorem degH2_surjective (hE : ∀ x : X, ∃ m : Fin 4, x ∉ U m) :
+    Function.Surjective (degH2 (G := G) hU) :=
+  fun g => ⟨(faceCocycle hE g).class, deg_faceCocycle hU hE g⟩
+
+/-- **Equal degrees force cohomologous cocycles.** -/
+theorem rel_of_deg_eq (c₁ c₂ : TwoCocycle U (contPresheaf X G))
+    (hd : deg hU c₁.toTwoCochain = deg hU c₂.toTwoCochain) : TwoCocycle.Rel c₁ c₂ := by
+  set V : Fin 4 → Fin 4 → Fin 4 → Additive G := fun i j k =>
+    Additive.ofMul (val hU c₂.toTwoCochain i j k) - Additive.ofMul (val hU c₁.toTwoCochain i j k)
+  have hc : ∀ i j k l, ¬ AllDistinct i j k l → V i j k + V i k l = V j k l + V i j l :=
+    fun i j k l h => by
+      have e₁ := congrArg Additive.ofMul (val_cocycle hU c₁ i j k l h)
+      have e₂ := congrArg Additive.ofMul (val_cocycle hU c₂ i j k l h)
+      simp only [ofMul_mul] at e₁ e₂
+      simp only [V]; linear_combination (norm := abel) e₂ - e₁
+  have hd' : V 1 2 3 - V 0 2 3 + V 0 1 3 - V 0 1 2 = 0 := by
+    have := congrArg Additive.ofMul hd
+    simp only [deg, ofMul_mul, ofMul_inv] at this
+    simp only [V]; linear_combination (norm := abel) -this
+  refine ⟨constOneCochain (fun i j => val hU c₂.toTwoCochain 0 i j *
+    (val hU c₁.toTwoCochain 0 i j)⁻¹), fun i j k T a b d => ?_⟩
+  apply ContinuousMap.ext
+  intro x
+  change sec (c₂.ev i j k a b d) x = sec (c₁.ev i j k a b d) x * _
+  rw [ev_apply hU, ev_apply hU]
+  have e := tet_coboundary V hc hd' i j k
+  apply Additive.ofMul.injective
+  change Additive.ofMul (val hU c₂.toTwoCochain i j k) = Additive.ofMul
+    (val hU c₁.toTwoCochain i j k * ((val hU c₂.toTwoCochain 0 i j *
+    (val hU c₁.toTwoCochain 0 i j)⁻¹) * (val hU c₂.toTwoCochain 0 j k *
+    (val hU c₁.toTwoCochain 0 j k)⁻¹) * (val hU c₂.toTwoCochain 0 i k *
+    (val hU c₁.toTwoCochain 0 i k)⁻¹)⁻¹))
+  simp only [V] at e
+  simp only [ofMul_mul, ofMul_inv]
+  linear_combination (norm := abel) e
+
+theorem degH2_injective : Function.Injective (degH2 (G := G) hU) := by
+  intro x y h
+  induction x using Quot.ind with
+  | mk c₁ =>
+    induction y using Quot.ind with
+    | mk c₂ => exact Quot.sound (rel_of_deg_eq hU c₁ c₂ h)
+
+/-- **`H²` of the cover is `G`** when no point lies in all four sets. -/
+noncomputable def h2EquivOfEmptyQuad (hE : ∀ x : X, ∃ m : Fin 4, x ∉ U m) :
+    H2 U (contPresheaf X G) ≃ G :=
+  Equiv.ofBijective (degH2 hU) ⟨degH2_injective hU, degH2_surjective hU hE⟩
+
+/-- The cover-level Čech `H²` (admissible covers: `tetCover U` alone) is `G`. -/
+noncomputable def cechH2EquivOfEmptyQuad (hE : ∀ x : X, ∃ m : Fin 4, x ∉ U m) :
+    CechH2 (contPresheaf X G) (· = tetCover U) ≃ G :=
+  (cechH2EquivCofinal (Cov := (· = tetCover U)) (contPresheaf_comm (X := X)) (tetCover U) rfl
+    tetCover_cof).trans (h2EquivOfEmptyQuad hU hE)
 
 end QOU.CentralExtension.Cech
