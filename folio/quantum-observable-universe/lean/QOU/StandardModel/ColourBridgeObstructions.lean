@@ -71,7 +71,7 @@ theorem colourStabilizerAction_of_finrank_le
   apply LinearMap.injective_of_linearIndependent (v := bg) bg.span_eq
   have hcomp : (f ∘ bg) = bE ∘ Fin.castLE h' := by
     funext i
-    simp [f, Basis.constr_basis]
+    simp [f]
   rw [hcomp]
   exact bE.linearIndependent.comp _ (Fin.castLE_injective h')
 
@@ -102,7 +102,7 @@ theorem no_complex_structure_of_odd_finrank
 /-- The tower's colour triplet `ℚ³` carries no complex structure. -/
 theorem tower_triplet_no_complex_structure (J : (Fin 3 → ℚ) →ₗ[ℚ] (Fin 3 → ℚ)) :
     J ∘ₗ J ≠ -LinearMap.id :=
-  no_complex_structure_of_odd_finrank (by simp) J
+  no_complex_structure_of_odd_finrank (by simp only [Module.finrank_fin_fun]; exact ⟨1, rfl⟩) J
 
 /-! ### 3. The stabilizer does not fix the orientation of `e` -/
 
@@ -127,9 +127,9 @@ theorem negLe_commutes {D : Der𝕆} (hD : D ∈ su3 stdIm) :
 /-- The two complex structures are different. -/
 theorem Le_neg_ne : Le ≠ -Le := by
   intro h
-  have h2 : Le ∘ₗ Le = -(Le ∘ₗ Le) := by
-    conv_lhs => rw [h]
-    rw [LinearMap.neg_comp]
+  have h2 : Le ∘ₗ Le = -(Le ∘ₗ Le) :=
+    calc Le ∘ₗ Le = Le ∘ₗ (-Le) := congrArg (Le ∘ₗ ·) h
+      _ = -(Le ∘ₗ Le) := LinearMap.comp_neg _ _
   rw [Le_sq_eq_neg_id, neg_neg] at h2
   have := LinearMap.congr_fun h2 (Pi.single 0 1)
   have h0 := congrFun this 0

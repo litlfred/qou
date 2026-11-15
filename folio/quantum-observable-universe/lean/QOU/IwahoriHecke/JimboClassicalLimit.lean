@@ -41,16 +41,42 @@ def e01 : Matrix (Fin 3) (Fin 3) R := Matrix.of fun i j => if i = 0 ∧ j = 1 th
 /-- The `((0,0),(1,0))` entry of the commutator is `q − 1`. -/
 theorem comm_entry_q (q qi : R) :
     (rCheckN q qi * primDelta (e01 : Matrix (Fin 3) (Fin 3) R)
-      - primDelta e01 * rCheckN q qi) ((0, 0), (1, 0)) = q - 1 := by
+      - primDelta e01 * rCheckN q qi : Matrix (Fin 3 × Fin 3) (Fin 3 × Fin 3) R)
+      (0, 0) (1, 0) = q - 1 := by
   simp [Matrix.mul_apply, Matrix.sub_apply, Fintype.sum_prod_type, Fin.sum_univ_three,
     primDelta, e01, rCheckN_apply, Prod.ext_iff]
 
 /-- The `((0,0),(0,1))` entry of the commutator is `qi − 1`. -/
 theorem comm_entry_qi (q qi : R) :
     (rCheckN q qi * primDelta (e01 : Matrix (Fin 3) (Fin 3) R)
-      - primDelta e01 * rCheckN q qi) ((0, 0), (0, 1)) = qi - 1 := by
+      - primDelta e01 * rCheckN q qi : Matrix (Fin 3 × Fin 3) (Fin 3 × Fin 3) R)
+      (0, 0) (0, 1) = qi - 1 := by
   simp [Matrix.mul_apply, Matrix.sub_apply, Fintype.sum_prod_type, Fin.sum_univ_three,
     primDelta, e01, rCheckN_apply, Prod.ext_iff]
+  ring
+
+/-- At `q = qi = 1`, Jimbo's `Ř` is the flip `a ↦ a.swap` (proof infrastructure). -/
+private def swapM (d : ℕ) : Matrix (Fin d × Fin d) (Fin d × Fin d) R :=
+  Matrix.of fun a b => if a = b.swap then 1 else 0
+
+private theorem rCheckN_one_one {d : ℕ} : rCheckN (d := d) (1 : R) 1 = swapM d := by
+  ext ⟨a1, a2⟩ ⟨b1, b2⟩
+  simp only [rCheckN_apply, swapM, Matrix.of_apply, Prod.swap_prod_mk, Prod.mk.injEq, sub_self]
+  split_ifs <;> simp_all
+
+private theorem swapM_mul {d : ℕ} (M : Matrix (Fin d × Fin d) (Fin d × Fin d) R)
+    (a b : Fin d × Fin d) :
+    (swapM d * M : Matrix (Fin d × Fin d) (Fin d × Fin d) R) a b = M a.swap b := by
+  have hx : ∀ x : Fin d × Fin d, (a = x.swap) ↔ (x = a.swap) := fun x =>
+    ⟨fun h => by subst h; simp, fun h => by subst h; simp⟩
+  rw [Matrix.mul_apply]
+  simp [swapM, hx]
+
+private theorem mul_swapM {d : ℕ} (M : Matrix (Fin d × Fin d) (Fin d × Fin d) R)
+    (a b : Fin d × Fin d) :
+    (M * swapM d : Matrix (Fin d × Fin d) (Fin d × Fin d) R) a b = M a b.swap := by
+  rw [Matrix.mul_apply]
+  simp [swapM]
 
 /-- **A classical `sl₃` root vector commutes with Jimbo's `Ř` only at `q = qi = 1`.** -/
 theorem primitive_commute_rCheckN_iff (q qi : R) :
@@ -64,11 +90,10 @@ theorem primitive_commute_rCheckN_iff (q qi : R) :
     rw [hz] at h1 h2
     exact ⟨(sub_eq_zero.mp (by simpa using h1.symm)), (sub_eq_zero.mp (by simpa using h2.symm))⟩
   · rintro ⟨rfl, rfl⟩
-    ext a b
-    rcases a with ⟨a1, a2⟩
-    rcases b with ⟨b1, b2⟩
-    fin_cases a1 <;> fin_cases a2 <;> fin_cases b1 <;> fin_cases b2 <;>
-      simp [Matrix.mul_apply, Fintype.sum_prod_type, Fin.sum_univ_three,
-        primDelta, e01, rCheckN_apply, Prod.ext_iff]
+    rw [rCheckN_one_one (R := R)]
+    ext ⟨a1, a2⟩ ⟨b1, b2⟩
+    rw [swapM_mul, mul_swapM]
+    simp only [primDelta, Matrix.of_apply, Prod.swap_prod_mk]
+    rw [add_comm]
 
 end QOU.IwahoriHecke.JimboClassicalLimit
