@@ -582,6 +582,7 @@ import QOU.Information.PolyGrowthAlgebra
 import QOU.Information.MagnitudeTraceCommutator
 import QOU.Information.CocenterTraceFactor
 import QOU.Information.OuterDerivationResidue
+import QOU.Information.WeylCentre
 import QOU.Information.HochschildH1
 import QOU.Information.SkeinGradeConnective
 import QOU.Information.SkeinShadowConjInvariance
@@ -1057,6 +1058,7 @@ import QOU.Machinery.HeckeH4Wedderburn
 import QOU.Machinery.HeckeH4Semisimple
 import QOU.Machinery.HeckeTowerBasicConstruction
 import QOU.Machinery.QuantumTorus
+import QOU.Machinery.QuantumTorusQDifference
 import QOU.Machinery.QuantumTorusAJ
 import QOU.Machinery.QuantumTorusDivision
 import QOU.Machinery.QuantumTorusSymbol
@@ -1079,6 +1081,7 @@ import QOU.Archimedean.BlochRigidity.Derivative
 import QOU.Archimedean.BlochRigidity.Growth
 import QOU.Archimedean.BlochRigidity.Holomorphic
 import QOU.Archimedean.BlochRigidity.Instance
+import QOU.Archimedean.BlochRigidity.IntegrationBridge
 import QOU.Archimedean.BlochRigidity.LinearSections
 import QOU.Archimedean.BlochRigidity.ReebPlane
 import QOU.Archimedean.BlochRigidity.Regularity
