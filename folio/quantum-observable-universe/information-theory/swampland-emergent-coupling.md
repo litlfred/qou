@@ -1,6 +1,6 @@
 The electromagnetic coupling is not a free input. It is a categorical trace ratio,
 $$
-  \alpha_{EM} = \frac{h^{2}}{q\,\delta_q(T_{2,9})\,\delta_q(T_{3,5})}.
+  \alpha_{EM} = \frac{h^{2}}{q\,\delta^{\mathrm{top}}_q(T_{2,9})\,\delta^{\mathrm{top}}_q(T_{3,5})}.
 $$
 This exact algebraic identity in $\mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$ is built from the two genus-$4$-saturating force-carrier torus knots. It echoes the Emergence Proposal.
 

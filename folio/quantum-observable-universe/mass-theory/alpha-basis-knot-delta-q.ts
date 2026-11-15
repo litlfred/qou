@@ -2,7 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:alpha-basis-knot-delta-q",
-  title: "q-dimension decoration of the basis knots: $\\delta_q(T_{2,k}) = h\\,[k]_q$",
+  title: "q-dimension decoration of the basis knots: $\\delta^{\\mathrm{top}}_q(T_{2,k}) = h\\,[k]_q$",
   lean: {
     ref: "qou:QOU.AlphaBasisKnot.deltaQ_eq_h_qbracket",
     validation: "not_checked",
@@ -16,6 +16,7 @@ export default proposition({
     ],
   },
   uses: [
+    "def:torus-knot-top-channel-decoration",
     "prop:alpha-em-categorical-trace-ratio",
   ],
   tags: [

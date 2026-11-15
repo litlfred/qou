@@ -468,10 +468,17 @@ theorem q_bkm_trivial {M : Type*} (sp : ArchimedeanSubstrateField M)
 -- ════════════════════════════════════════════════════════════════
 
 /-- **Boundary observability**: the limit of Hom(1, Ad(A_q)) as q → 1.
-    A QOU is NS-regular iff this is nonzero (observability fails
-    at the boundary, gauge mode appears, contact degenerates).
-    A QOU is NS-singular iff this is zero (observability persists,
-    contact stays non-degenerate, blowup occurs).
+    Per owner decision Q-VO9T-2 = 1 (2026-11-15, beans `qou-nzyr`, `qou-hjl0`,
+    matching `QOU.FluidDynamics.qou_ns_in_qou`), the NS obstruction `NS(A)` is
+    the **global** surface Euler class `e(ξ) ∈ H²(S, ℤ) ≅ ℤ` of degree
+    `euler_char = χ(A)` (not the curve restriction `e(ξ)|_Σ`, which vanishes
+    identically by `thm:ns-singularity-descartes` item 3).
+    A quantum universe is Categorically NS-regular iff `euler_char = 0` and
+    Categorically NS-singular iff `euler_char ≠ 0` (`euler_char_ne_zero`);
+    `ns_singular` additionally records the Kummer root-obstruction `2κ ∤ χ(A)`
+    at all levels `κ ≥ 4` (`thm:ns-singularity-descartes` item 2).
+    These labels are internal categorical properties of `(𝐂, A, τ)` (framework
+    model correspondence, not a deductive classical 3D PDE theorem).
 
     LaTeX: `\label{def:ns-regular-qou}` -/
 structure BoundaryObservability where

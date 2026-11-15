@@ -510,6 +510,7 @@ import QOU.SchurWeyl.HoefsmitRep
 import QOU.SchurWeyl.SeminormalParamAnchorReal
 import QOU.SchurWeyl.HoefsmitRepGeneral
 import QOU.SchurWeyl.QJucysMurphy
+import QOU.SchurWeyl.ContentCasimir
 import QOU.SchurWeyl.QJucysMurphyEigen
 import QOU.SchurWeyl.AxialDistanceBound
 import QOU.SchurWeyl.MatRepEquiv
@@ -1686,6 +1687,7 @@ import QOU.MassTheory.SegmentCollisionDatum
 import QOU.MassTheory.ConvolutionFlowParity
 import QOU.MassTheory.ConvolutionFlowFibre
 import QOU.MassTheory.BringResidueEnergy
+import QOU.MassTheory.DeuteronKappaThreeSixteenthsReconciliation
 import QOU.Brings.BringConjugationChirality
 import QOU.Brings.BringCoverTower
 import QOU.Brings.BringDescendingTower

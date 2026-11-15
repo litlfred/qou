@@ -1,36 +1,36 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T18:00:45.890178+00:00",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-15T22:21:45.254455+00:00",
+  "commitSha": "b8a698e518f74a1c7fd4d053438c71042ec323a5",
   "assertions": [
     {
       "name": "removing_the_floor_improves_pairwise_additivity_for_every_isotope",
       "computed": "1",
       "expected": "1",
       "passed": true,
-      "source": "|chain/atom - 1| after floor removal vs before, for T, 3He and 4He (D excluded: it IS the pn bond, so its ratio is 1 by construction). Measured T: 1.281194792 -> 1.11776971, 3He: 1.192724971 -> 1.019815566, 4He: 1.470641461 -> 1.194077432. The floor is a parameter-free quantity derived elsewhere; that subtracting it moves every ratio toward 1 is a genuine outcome, not an identity."
+      "source": "|chain/atom - 1| after floor removal vs before, for T, 3He and 4He (D excluded: it IS the pn bond, so its ratio is 1 by construction). Measured T: 2.494321946 -> 1.651830271, 3He: 2.318549795 -> 1.407754915, 4He: 5.565576376 -> 2.558024623. The floor is a parameter-free quantity derived elsewhere; that subtracting it moves every ratio toward 1 is a genuine outcome, not an identity."
     },
     {
       "name": "worst_case_additivity_deviation_more_than_halves",
       "computed": "1",
       "expected": "1",
       "passed": true,
-      "source": "worst |chain/atom - 1| over T, 3He, 4He falls from 0.47064146 to 0.19407743. Stated as a worst case rather than at a chosen isotope, so no member is selected."
+      "source": "worst |chain/atom - 1| over T, 3He, 4He falls from 4.5655764 to 1.5580246. Stated as a worst case rather than at a chosen isotope, so no member is selected."
     },
     {
       "name": "leading_hbar_q_coefficients_are_exact_dyadic_rationals",
       "computed": "1",
       "expected": "1",
       "passed": true,
-      "source": "c1 = lim (Dtr - c0(A))/hbar_q for the three bonds and three atoms, each against its best rational with denominator <= 4096: pp = 19/8, pn = 37/16, nn = 9/4, T = 163/64, 3He = 85/32, 4He = 259/128; every denominator a power of two, worst relative error 1.22563e-9. Dyadic is the same shape as the floor c0, which is derived, so this is structure rather than coincidence -- but note c1 is MEASURED here, not derived."
+      "source": "c1 = lim (Dtr - c0(A))/hbar_q for the three bonds and three atoms, each against its best rational with denominator <= 4096: pp = 1/8, pn = 1/16, nn = 0, T = 1/64, 3He = 1/8, 4He = 7/128; every denominator a power of two, worst error 4.53508e-9 (relative where c1 != 0, absolute at nn = 0). Dyadic is the same shape as the floor c0, which is derived, so this is structure rather than coincidence -- and c1 is derived in c1_leading_coefficient_derived_probe."
     }
   ],
   "allPassed": true,
-  "durationMs": 1868,
+  "durationMs": 1733,
   "computation": "binding-chain-floor-corrected-probe",
   "scriptFile": "binding_chain_floor_corrected_probe.py",
-  "scriptHash": "2c019212e89a",
+  "scriptHash": "ce12e7158c45",
   "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -39,14 +39,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585",
+    "clarabel": "0.11.1"
   },
   "invocation": {
     "argv": [
@@ -54,7 +55,7 @@
     ],
     "reproduce": "python3 -u computations/probes/binding_chain_floor_corrected_probe.py"
   },
-  "description": "Re-runs derive_binding_chain_cooperative's pairwise chain against the floor-corrected trace difference Dtr - c0(A). Pairwise additivity against the exact H_3A trace improves from 47.1% worst-case deviation to 19.4%, and 60.8% of the 4He pairwise-vs-exact gap turns out to be floor bookkeeping. The binding residual against AME gets slightly larger, reported plainly.",
+  "description": "Re-runs derive_binding_chain_cooperative's pairwise chain against the floor-corrected trace difference Dtr - c0(A) on the canonical (Borromean) word. Pairwise additivity against the exact H_3A trace improves from 456.6% worst-case deviation to 155.8% (2.93x reduction), and 89.7% of the 4He pairwise-vs-exact gap turns out to be floor bookkeeping. The binding residual against AME gets slightly larger, reported plainly.",
   "parameters": {
     "q0": "1.10997858275138080759166909561",
     "E0_convention_A_MeV": "4.18598136329447",
@@ -65,68 +66,73 @@
     "leading_order_coefficients": {
       "c1": {
         "pp": {
-          "measured": "2.37499999980904219",
-          "rational": "19/8",
+          "measured": "0.124999999947812255",
+          "rational": "1/8",
           "is_dyadic": true,
-          "relative_error": "8.04033e-11"
+          "relative_error": "4.17502e-10"
         },
         "pn": {
-          "measured": "2.31249999956528479",
-          "rational": "37/16",
+          "measured": "0.0624999999384365078",
+          "rational": "1/16",
           "is_dyadic": true,
-          "relative_error": "1.87985e-10"
+          "relative_error": "9.85016e-10"
         },
         "nn": {
-          "measured": "2.24999999943684356",
-          "rational": "9/4",
+          "measured": "-6.81262100572007444e-11",
+          "rational": "0",
           "is_dyadic": true,
-          "relative_error": "2.50292e-10"
+          "relative_error": "6.81262e-11"
         },
         "T": {
-          "measured": "2.54687499852843252",
-          "rational": "163/64",
+          "measured": "0.015624999929139328",
+          "rational": "1/64",
           "is_dyadic": true,
-          "relative_error": "5.77793e-10"
+          "relative_error": "4.53508e-9"
         },
         "3He": {
-          "measured": "2.65624999856015821",
-          "rational": "85/32",
+          "measured": "0.124999999922185635",
+          "rational": "1/8",
           "is_dyadic": true,
-          "relative_error": "5.42058e-10"
+          "relative_error": "6.22515e-10"
         },
         "4He": {
-          "measured": "2.02343749752001431",
-          "rational": "259/128",
+          "measured": "0.0546874999395100436",
+          "rational": "7/128",
           "is_dyadic": true,
-          "relative_error": "1.22563e-9"
+          "relative_error": "1.1061e-9"
         }
       },
       "leading_order_chain_over_atom": {
+        "T": "(1/16 + 0) / (1/64) = 4 = 4.0",
+        "3He": "(1/8 + 1/16) / (1/8) = 3/2 = 1.5",
+        "4He": "(1/8 + 1/16 + 0) / (7/128) = 24/7 = 3.4285714286"
+      },
+      "leading_order_chain_over_atom_grouped_superseded": {
         "T": "(37/16 + 9/4) / (163/64) = 292/163 = 1.7914110429",
         "3He": "(19/8 + 37/16) / (85/32) = 30/17 = 1.7647058824",
         "4He": "(19/8 + 37/16 + 9/4) / (259/128) = 888/259 = 24/7 = 3.4285714286"
       },
       "at_q0_for_contrast": {
         "D": "1.0",
-        "T": "1.11776971",
-        "3He": "1.019815566",
-        "4He": "1.194077432"
+        "T": "1.651830271",
+        "3He": "1.407754915",
+        "4He": "2.558024623"
       },
-      "reading": "the pairwise-vs-exact discrepancy at leading order is an exactly known rational. But it is FAR larger than the q0 discrepancy (3.43x vs 1.19x at 4He), so the good agreement at q0 is higher-order cancellation, not a leading-order property. Pairwise additivity of the SIGNED functor is not a controlled approximation.",
+      "reading": "the pairwise-vs-exact discrepancy at leading order is an exactly known rational (4 at T, 3/2 at 3He, 24/7 at 4He under the Borromean word; 24/7 at 4He is ordering-invariant). It is larger than the q0 discrepancy (3.43x vs 2.56x at 4He), so the agreement at q0 reflects higher-order contributions, not a leading-order property. Pairwise additivity of the SIGNED functor is not a controlled approximation.",
       "not_a_contradiction": "docs/audits/2026-06-16-b-sym-linear-chain-closed-form.md reports exact additivity for the LOG functor alpha*ln(tr_free/tr_atom). This probe measures the SIGNED functor tr_free - tr_atom, which is what derive_binding_chain_cooperative uses. Different functors; nothing here contradicts that audit, but the exactness claim must not be carried across."
     },
     "per_bond_trace_differences": {
       "pp": {
-        "delta_tr": "0.5084496945973",
-        "delta_tr_minus_c0(2)": "0.3834496945973"
+        "delta_tr": "0.15339654424625",
+        "delta_tr_minus_c0(2)": "0.028396544246247"
       },
       "pn": {
-        "delta_tr": "0.55654466040444",
-        "delta_tr_minus_c0(2)": "0.43154466040444"
+        "delta_tr": "0.14704667798041",
+        "delta_tr_minus_c0(2)": "0.022046677980408"
       },
       "nn": {
-        "delta_tr": "0.58184319813344",
-        "delta_tr_minus_c0(2)": "0.45684319813344"
+        "delta_tr": "0.13463214679772",
+        "delta_tr_minus_c0(2)": "0.0096321467977203"
       }
     },
     "chain_vs_exact_atom_trace": [
@@ -137,10 +143,10 @@
         "bonds": [
           "pn"
         ],
-        "atom_dtr_raw": "0.55654466040444",
-        "atom_dtr_floor_removed": "0.43154466040444",
-        "chain_sum_raw": "0.55654466040444",
-        "chain_sum_floor_removed": "0.43154466040444",
+        "atom_dtr_raw": "0.14704667798041",
+        "atom_dtr_floor_removed": "0.022046677980408",
+        "chain_sum_raw": "0.14704667798041",
+        "chain_sum_floor_removed": "0.022046677980408",
         "chain_over_atom_raw": "1.0",
         "chain_over_atom_floor_removed": "1.0",
         "gap_raw": "0.0",
@@ -155,14 +161,14 @@
           "pn",
           "nn"
         ],
-        "atom_dtr_raw": "0.88853612687367",
-        "atom_dtr_floor_removed": "0.79478612687367",
-        "chain_sum_raw": "1.1383878585379",
-        "chain_sum_floor_removed": "0.88838785853788",
-        "chain_over_atom_raw": "1.281194792",
-        "chain_over_atom_floor_removed": "1.11776971",
-        "gap_raw": "0.2498517317",
-        "gap_floor_removed": "0.09360173166",
+        "atom_dtr_raw": "0.11292801443633",
+        "atom_dtr_floor_removed": "0.019178014436333",
+        "chain_sum_raw": "0.28167882477813",
+        "chain_sum_floor_removed": "0.031678824778129",
+        "chain_over_atom_raw": "2.494321946",
+        "chain_over_atom_floor_removed": "1.651830271",
+        "gap_raw": "0.1687508103",
+        "gap_floor_removed": "0.01250081034",
         "floor_mismatch_(A-1)c0(2)-c0(A)": "0.15625"
       },
       {
@@ -173,14 +179,14 @@
           "pp",
           "pn"
         ],
-        "atom_dtr_raw": "0.89290857539352",
-        "atom_dtr_floor_removed": "0.79915857539352",
-        "chain_sum_raw": "1.0649943550017",
-        "chain_sum_floor_removed": "0.81499435500174",
-        "chain_over_atom_raw": "1.192724971",
-        "chain_over_atom_floor_removed": "1.019815566",
-        "gap_raw": "0.1720857796",
-        "gap_floor_removed": "0.01583577961",
+        "atom_dtr_raw": "0.12958238934505",
+        "atom_dtr_floor_removed": "0.035832389345052",
+        "chain_sum_raw": "0.30044322222666",
+        "chain_sum_floor_removed": "0.050443222226655",
+        "chain_over_atom_raw": "2.318549795",
+        "chain_over_atom_floor_removed": "1.407754915",
+        "gap_raw": "0.1708608329",
+        "gap_floor_removed": "0.01461083288",
         "floor_mismatch_(A-1)c0(2)-c0(A)": "0.15625"
       },
       {
@@ -192,28 +198,28 @@
           "pn",
           "nn"
         ],
-        "atom_dtr_raw": "1.1198090060862",
-        "atom_dtr_floor_removed": "1.0651215060862",
-        "chain_sum_raw": "1.6468375531352",
-        "chain_sum_floor_removed": "1.2718375531352",
-        "chain_over_atom_raw": "1.470641461",
-        "chain_over_atom_floor_removed": "1.194077432",
-        "gap_raw": "0.527028547",
-        "gap_floor_removed": "0.206716047",
+        "atom_dtr_raw": "0.078172562842163",
+        "atom_dtr_floor_removed": "0.023485062842163",
+        "chain_sum_raw": "0.43507536902438",
+        "chain_sum_floor_removed": "0.060075369024376",
+        "chain_over_atom_raw": "5.565576376",
+        "chain_over_atom_floor_removed": "2.558024623",
+        "gap_raw": "0.3569028062",
+        "gap_floor_removed": "0.03659030618",
         "floor_mismatch_(A-1)c0(2)-c0(A)": "0.3203125"
       }
     ],
     "additivity_summary": {
-      "worst_deviation_raw": "0.47064146",
-      "worst_deviation_floor_removed": "0.19407743",
-      "improvement_factor": "2.42502",
+      "worst_deviation_raw": "4.5655764",
+      "worst_deviation_floor_removed": "1.5580246",
+      "improvement_factor": "2.93036",
       "note": "the reduction in each gap is exactly (A-1)*c0(2) - c0(A), which is identically true given the definitions and is therefore reported here rather than asserted. The finding is that it moves the ratios toward 1."
     },
     "how_much_of_the_4He_many_body_gap_was_floor": {
-      "pairwise_minus_exact_raw": "0.527028547",
-      "pairwise_minus_exact_floor_removed": "0.206716047",
+      "pairwise_minus_exact_raw": "0.3569028062",
+      "pairwise_minus_exact_floor_removed": "0.03659030618",
       "explained_by_the_floor": "0.3203125",
-      "fraction_explained_percent": "60.7771",
+      "fraction_explained_percent": "89.7478",
       "reading": "part of what the pairwise chain could not reach at 4He was floor bookkeeping rather than many-body physics."
     },
     "binding_against_AME": {
@@ -222,47 +228,47 @@
           "isotope": "D",
           "A": 2,
           "AME_B_MeV": "2.2245662",
-          "chain_raw_convA_MeV": "2.329685576",
-          "chain_corrected_convA_MeV": "1.806437906",
-          "residual_raw_convA_MeV": "-0.1051193763",
-          "residual_corrected_convA_MeV": "0.4181282941",
-          "chain_corrected_convB_MeV": "0.3376118054"
+          "chain_raw_convA_MeV": "0.6155346536",
+          "chain_corrected_convA_MeV": "0.09228698315",
+          "residual_raw_convA_MeV": "1.609031546",
+          "residual_corrected_convA_MeV": "2.132279217",
+          "chain_corrected_convB_MeV": "0.01724785275"
         },
         {
           "isotope": "T",
           "A": 3,
           "AME_B_MeV": "8.4817962",
-          "chain_raw_convA_MeV": "4.76527036",
-          "chain_corrected_convA_MeV": "3.718775019",
-          "residual_raw_convA_MeV": "3.71652584",
-          "residual_corrected_convA_MeV": "4.763021181",
-          "chain_corrected_convB_MeV": "0.6950155022"
+          "chain_raw_convA_MeV": "1.179102311",
+          "chain_corrected_convA_MeV": "0.1326069701",
+          "residual_raw_convA_MeV": "7.302693889",
+          "residual_corrected_convA_MeV": "8.34918923",
+          "chain_corrected_convB_MeV": "0.02478340299"
         },
         {
           "isotope": "3He",
           "A": 3,
           "AME_B_MeV": "7.71799",
-          "chain_raw_convA_MeV": "4.458046522",
-          "chain_corrected_convA_MeV": "3.411551181",
-          "residual_raw_convA_MeV": "3.259943478",
-          "residual_corrected_convA_MeV": "4.306438819",
-          "chain_corrected_convB_MeV": "0.6375973123"
+          "chain_raw_convA_MeV": "1.257649729",
+          "chain_corrected_convA_MeV": "0.2111543881",
+          "residual_raw_convA_MeV": "6.460340271",
+          "residual_corrected_convA_MeV": "7.506835612",
+          "chain_corrected_convB_MeV": "0.03946341802"
         },
         {
           "isotope": "4He",
           "A": 4,
           "AME_B_MeV": "28.2956624",
-          "chain_raw_convA_MeV": "6.893631306",
-          "chain_corrected_convA_MeV": "5.323888295",
-          "residual_raw_convA_MeV": "21.40203109",
-          "residual_corrected_convA_MeV": "22.97177411",
-          "chain_corrected_convB_MeV": "0.995001009"
+          "chain_raw_convA_MeV": "1.821217386",
+          "chain_corrected_convA_MeV": "0.2514743751",
+          "residual_raw_convA_MeV": "26.47444501",
+          "residual_corrected_convA_MeV": "28.04418802",
+          "chain_corrected_convB_MeV": "0.04699896826"
         }
       ],
-      "honest_note": "TRACE additivity improves; the BINDING residual gets larger, because the correction removes binding from the chain sum. At 4He the residual goes 21.40 -> 22.97 MeV under convention A. Both are true and not in tension: the floor was inflating the pairwise sum, so removing it makes the pairwise picture more accurate AND leaves more for the cooperative alpha term."
+      "honest_note": "TRACE additivity improves; the BINDING residual gets larger, because the correction removes binding from the chain sum. At 4He the residual goes 26.47 -> 28.04 MeV under convention A (grouped superseded: 21.40 -> 22.97 MeV). Both are true and not in tension: the floor was inflating the pairwise sum, so removing it makes the pairwise picture more accurate AND leaves more for the cooperative alpha term."
     },
     "what_the_correction_repairs_structurally": "Dtr - c0(A) is a pure hbar_q^1 observable (qou-zrx2), and convention A is the hbar_q^1 scale, so A x (Dtr - c0) totals hbar_q^2 -- the same bookkeeping as Delta(net) x A, which predicts Q_beta to 0.168%. BEFORE the correction no convention paired consistently, because the observable's two parts sat at different orders. So the chain producer's use of A becomes hbar_q-coherent once the floor is subtracted. This is a reason to prefer A that does NOT come from which value lands closer to AME -- worth stating precisely because the closer-to-AME argument is the one this lane keeps withdrawing.",
-    "verdict": "Removing the derived floor improves pairwise additivity against the exact H_3A trace for every isotope: worst-case deviation 47.1% -> 19.4%, and 3He lands within 2%. 60.8% of the 4He pairwise-vs-exact gap was floor bookkeeping rather than many-body physics. The binding residual against AME gets slightly larger (21.40 -> 22.97 MeV at 4He) and that is reported rather than buried. The structural gain is that convention A becomes the hbar_q-coherent pairing for the corrected observable, which it was not before."
+    "verdict": "Removing the derived floor improves pairwise additivity against the exact H_3A trace for every isotope under the canonical (Borromean) word: worst-case deviation 456.6% -> 155.8% (2.93x reduction; grouped superseded: 47.1% -> 19.4%), and 89.7% of the 4He pairwise-vs-exact gap was floor bookkeeping rather than many-body physics. The leading-order hbar_q^1 coefficients are exact dyadic rationals (pp 1/8, pn 1/16, nn 0, T 1/64, 3He 1/8, 4He 7/128), with chain/atom ratios 4, 3/2, 24/7. The binding residual against AME gets slightly larger (26.47 -> 28.04 MeV at 4He) and that is reported rather than buried. The structural gain is that convention A becomes the hbar_q-coherent pairing for the corrected observable."
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
