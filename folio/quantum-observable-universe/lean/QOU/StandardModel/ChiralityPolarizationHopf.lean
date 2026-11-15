@@ -1,6 +1,5 @@
 import Mathlib.Tactic
 import QOU.BringConeIcosahedral
-import QOU.Interactions.confinementUniversality
 
 /-!
 # The chirality unit `u` as a point of the polarization line ℙ¹(ℂ)
@@ -216,31 +215,44 @@ theorem hopf_circular_plus : hopf (pol (1 : R) 0 0 1) = ⟨0, 0, -2, 0⟩ := by
 theorem hopf_circular_minus : hopf (pol (1 : R) 0 0 (-1)) = ⟨0, 0, 2, 0⟩ := by
   ext <;> simp [hopf, pol, cplx, unitJ, unitI]; ring
 
+/-! ## The Breit–Wheeler table fixes the two axes, not the dictionary
+
+`breit-wheeler-vertex.md` puts `σ₀` on the chart `v₂ ≠ 0` and `σ₁` on the chart
+`v₁ ≠ 0`. Read as chart centres, `σ₀ ↦ [0 : 1]` and `σ₁ ↦ [1 : 0]`. A linear map from
+the degree-1 photon content `φ₀σ₀ + φ₁σ₁` to `ℂ²` that sends each generator to its line
+is `(φ₀, φ₁) ↦ [φ₁ : λ φ₀]` with `λ = c + d i ≠ 0` **not fixed by the table**.
+
+* The two axes go to the antipodes `±i` for every `λ` (`hopf_pol_v1_axis`,
+  `hopf_pol_v2_axis`).
+* The image of a real mixed photon depends on `λ`: with `λ = 1`, the photon
+  `φ₀ = φ₁ = 1` is linear (Hopf image orthogonal to `j`, `polDict_one_linear`); with
+  `λ = i` it is circular (`polDict_i_circular`). So "real `φ` = linear polarisation" is
+  a choice of `λ`, not a consequence of the table.
+* The degree-2 Hopf dressing `φ₀₁ σ₀σ₁ = φ₀₁ L₊` is not a polarisation line. No point
+  of `ℙ¹` corresponds to it, so any such dictionary covers only the degree-1 part of the
+  photon. -/
+
+/-- The line `[v₁ : 0]`, the chart centre of `σ₁`, maps to `+|v₁|² i`. -/
+theorem hopf_pol_v1_axis (a b : R) :
+    hopf (pol a b 0 0) = (a * a + b * b) • unitI := by
+  ext <;> simp [hopf, pol, cplx, unitJ, unitI] <;> ring
+
+/-- The line `[0 : v₂]`, the chart centre of `σ₀`, maps to `−|v₂|² i`. -/
+theorem hopf_pol_v2_axis (c d : R) :
+    hopf (pol 0 0 c d) = -((c * c + d * d) • unitI) := by
+  ext <;> simp [hopf, pol, cplx, unitJ, unitI] <;> ring
+
+/-- The dictionary `(φ₀, φ₁) ↦ [φ₁ : λ φ₀]` with `λ = c + d i`, for real `φ`. -/
+def polDict (c d φ₀ φ₁ : R) : BringCone R := pol φ₁ 0 (c * φ₀) (d * φ₀)
+
+/-- With `λ = 1`, the photon `φ₀ = φ₁ = 1` is a linear polarisation. -/
+theorem polDict_one_linear : (hopf (polDict (1 : R) 0 1 1)).imJ = 0 := by
+  simp only [polDict, mul_one]
+  exact hopf_real_imJ 1 1
+
+/-- With `λ = i`, the same photon `φ₀ = φ₁ = 1` is circular: its image is `−2 j`. -/
+theorem polDict_i_circular : hopf (polDict (0 : R) 1 1 1) = ⟨0, 0, -2, 0⟩ := by
+  simp only [polDict, mul_one]
+  exact hopf_circular_plus
+
 end QOU.Tetraplectic
-
-/-! ## Confinement universality makes an inherited `u` invisible at nucleon level
-
-`prop:confinement-universality` is conditional on `ConfinementUniversalityConjecture`,
-which says the nucleon NF `N_F φ₀ φ₁ φ₀₁` takes one value for every real photon
-coefficient. If the chirality unit is a function `U` of those coefficients, no read-out
-`g` of the nucleon NF can return it unless `U` is constant. This is a one-line corollary
-of the class field `h_N_F`; it is recorded because it settles the direction of the
-tension: an inherited `u` is hidden by confinement, not contradicted by it. The class
-quantifies over **real** coefficients only, so under the reading `φ ↦ [v₁ : v₂]` it
-speaks only about the linear-polarization circle (`hopf_real_imJ`), not about circular
-states. -/
-
-namespace QOU.StandardModel.Chirality
-
-open QOU.Interactions
-
-/-- **Conditional on `ConfinementUniversalityConjecture`**: a photon-dependent unit
-`U` that can be read off the nucleon NF is constant. -/
-theorem inherited_unit_invisible_of_confinement (ctx : ConfinementUniversalityContext)
-    [h : ConfinementUniversalityConjecture ctx] {X : Type*}
-    (U : ℝ → ℝ → ℝ → X) (g : ℝ → X)
-    (hg : ∀ a b c, g (ctx.N_F a b c) = U a b c) (a b c a' b' c' : ℝ) :
-    U a b c = U a' b' c' := by
-  rw [← hg, ← hg, h.h_N_F, h.h_N_F]
-
-end QOU.StandardModel.Chirality
