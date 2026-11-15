@@ -73,15 +73,25 @@ nuclei = [
 
 # ── Engine ───────────────────────────────────────────────────────
 
-from q_parameter import Q_RAT_NUM, Q_RAT_DEN, Q, HBAR_Q_SQ
+from q_parameter import Q_RAT_NUM, Q_RAT_DEN, Q, HBAR_Q_SQ_MP
+from qou_substrate.precision import COMPUTE_DPS, fmt
+mp.dps = COMPUTE_DPS
 qr = HeckeRational(Q_RAT_NUM, Q_RAT_DEN)
-hbar_q_sq = HBAR_Q_SQ
+# NO-FLOAT64 (owner, 2026-11-15): hbar_q^2 as mpf, and each log ratio
+# taken on the exact rational V_par/V_dau, never on a float cast.
+hbar_q_sq = HBAR_Q_SQ_MP
+
+
+def _log_abs_ratio(vp, vd):
+    """log|vp/vd| for exact Fractions, evaluated at mp.dps."""
+    r = vp / vd
+    return mp.log(abs(mp.mpf(r.numerator) / mp.mpf(r.denominator)))
 
 print("=" * 60)
 print("Level 1 (quark-level) Q-value computation")
 print("=" * 60)
 print(f"q = {float(qr.q)}")
-print(f"ℏ_q² = {hbar_q_sq:.6f}")
+print(f"ℏ_q² = {mp.nstr(hbar_q_sq, 15)}")
 print()
 
 results = []
@@ -169,7 +179,7 @@ for nuc in nuclei:
     # Parent volumes do not depend on the conversion site: compute once.
     # traced_volumes_all gives the same exact rationals as per-generator
     # traced_volume calls, in one O(A) sweep (bean qou-l1zd).
-    _vp_all = [float(v) for v in qr.traced_volumes_all(quark_par)]
+    _vp_all = qr.traced_volumes_all(quark_par)
 
     for site in neutron_positions:
         nucleon_dau_trial = list(nucleon_par)
@@ -179,14 +189,14 @@ for nuc in nuclei:
         converting_trial = find_converting_quarks(quark_par, quark_dau_trial)
 
         n_gens = strands_L1 - 1
-        lr_sum = 0.0
+        lr_sum = mp.mpf(0)
         aff = 0
-        _vd_all = [float(v) for v in qr.traced_volumes_all(quark_dau_trial)]
+        _vd_all = qr.traced_volumes_all(quark_dau_trial)
         for i in range(n_gens):
             vp = _vp_all[i]
             vd = _vd_all[i]
-            if vp != 0 and vd != 0 and abs(vp - vd) > 1e-15:
-                lr_sum += mp.log(abs(vp)) - mp.log(abs(vd))
+            if vp != 0 and vd != 0 and vp != vd:
+                lr_sum += _log_abs_ratio(vp, vd)
                 aff += 1
 
         Q_trial = lr_sum / hbar_q_sq if hbar_q_sq != 0 else 0
@@ -209,14 +219,14 @@ for nuc in nuclei:
             converting_trial = find_converting_quarks(quark_par, quark_dau_trial)
 
             n_gens = strands_L1 - 1
-            lr_sum = 0.0
+            lr_sum = mp.mpf(0)
             aff = 0
-            _vd_all = [float(v) for v in qr.traced_volumes_all(quark_dau_trial)]
+            _vd_all = qr.traced_volumes_all(quark_dau_trial)
             for i in range(n_gens):
                 vp = _vp_all[i]
                 vd = _vd_all[i]
-                if vp != 0 and vd != 0 and abs(vp - vd) > 1e-15:
-                    lr_sum += mp.log(abs(vp)) - mp.log(abs(vd))
+                if vp != 0 and vd != 0 and vp != vd:
+                    lr_sum += _log_abs_ratio(vp, vd)
                     aff += 1
 
             Q_trial = lr_sum / hbar_q_sq if hbar_q_sq != 0 else 0
@@ -249,8 +259,8 @@ for nuc in nuclei:
         "ordering_method": method,
         "converting_positions": converting,
         "affected_generators": affected_count,
-        "log_ratio_sum": float(log_ratio_sum),
-        "Q_q_skein_units": float(Q_q),
+        "log_ratio_sum": fmt(log_ratio_sum),
+        "Q_q_skein_units": fmt(Q_q),
         "Q_exp_MeV": nuc["Q_exp_MeV"],
         "elapsed_s": elapsed,
         "status": "computed",
@@ -273,8 +283,8 @@ witness = {
         "All n neutron positions tested as conversion sites; "
         "the site giving negative Q_q with smallest magnitude is selected."
     ),
-    "q": float(qr.q),
-    "hbar_q_sq": hbar_q_sq,
+    "q": str(qr.q),
+    "hbar_q_sq": fmt(hbar_q_sq),
     "nuclei": results,
     "notes": [
         "Block ordering [protons first] is NOT the ground state for Level 1.",
