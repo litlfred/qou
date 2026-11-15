@@ -493,6 +493,12 @@ be a mismatch.
 
 ### 10.5 Owner decision D-H5: how should P be realised?
 
+> **Decided 2026-11-15 (owner, relayed by the coordinator): D-H5 = D + C.** (D): the CPT block
+> `type-b-folding-cpt.md` now carries the fixed-q scoping, and the conjecture's kind is
+> unchanged. (C): the neg route is research bean `qou-hlxp`. The §10.3 tension is bean
+> `qou-hlxt`, framed and not resolved. Separately, the coordinator's "D-H4 (b)", the
+> `force-knot-identification.md` §III fix, landed as #7852.
+
 * **(A) P = braid mirror σ ↦ σ⁻¹ (status quo).**
   - *Means:* parity keeps helicity and maps e⁻ → e⁺ and u → d.
   - *Costs:* nothing to change, beyond the scoping sentence of §9.
