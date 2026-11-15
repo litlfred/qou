@@ -48,6 +48,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "66aeaaa16380",
+          "ts": "0bbea5c7c9d6",
+          "lean": "62ad689f3763",
+          "lean_statement": "c1de1b155598"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:32.872Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "wigner-coefficient-derivation.lean:39-42 `axiom wigner_coefficient_axiom ... (hq : q₀ = 1.109978595554181) (hme : m_e = 0.51099895069) : |wignerCoefficient 5 q₀ m_e - 68.896| / 68.896 < 0.03` (exact check: 67.1008, rel 0.026056 — true, so not inconsistent, but a data comparison, not the .md:2-8 claim); :74-75 `∃ r : ℝ, 0 ≤ r ∧ ∃ value : ℝ, value = r * m_e` is trivially inhabited; ℝ gratuitous for the algebraic [5]_q!",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
       }
     ],
     "proof-statement-integrity": [
@@ -2102,6 +2120,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T06:38:29.758Z",
+  "updated_at": "2026-11-15T21:57:32.872Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

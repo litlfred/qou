@@ -1221,7 +1221,25 @@
         "reviewed_at": "2026-08-24T19:30:52.920Z",
         "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:34.041Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "checked with sympy; convention-d-kills-antisymmetriser-proof.md:10-27 identities hold",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: exposition"
+      }
     ]
   },
-  "updated_at": "2026-08-24T19:30:52.920Z"
+  "updated_at": "2026-11-15T21:57:34.041Z"
 }

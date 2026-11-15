@@ -136,6 +136,22 @@
         },
         "reviewed_at": "2026-06-28T22:34:58.468Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "ffbab55c3565",
+          "ts": "59237eee7e92"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:35.843Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "q-beta-over-e0-classical-vanishing.md:21 '(+0.168% without CODATA input ...) ... gives 0.4447 MeV (−43.16%)'",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: exposition"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -945,7 +961,7 @@
           "in_degree": 0,
           "cone_size": 108,
           "depth": 29,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1516,6 +1532,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T02:39:17.150Z",
+  "updated_at": "2026-11-15T21:57:35.843Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
