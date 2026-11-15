@@ -138,23 +138,19 @@ theorem sequential_build_always_normal_form (q : ℝ) (hq : q > 1) :
 -- This is a FINITE representation for any nucleus.
 -- ═══════════════════════════════════════════════════════════════════
 
-/-- **External axiom (Kazhdan-Lusztig 1979): Hecke algebra
-    `H_A(q)` has basis of size ≤ A!, all reduced.** -/
--- Ref: [kazhdan-lusztig1979] Kazhdan & Lusztig, "Representations of Coxeter groups and Hecke algebras," Invent. Math. 53 (1979)
-axiom hecke_basis_size_axiom :
-    ∀ (A : ℕ),
-      ∃ basis : Finset (List ℕ),
-      basis.card ≤ Nat.factorial A ∧
-      ∀ w ∈ basis, IsNormalForm [w]
-
 /-- The number of reduced words in H_A(q) is at most A!.
-    (It equals A! when q is not a root of unity.) -/
+    (It equals A! when q is not a root of unity.)
+
+    **Was an axiom; now proved (2026-11-15).** As stated it only asks for
+    *some* finite set of normal-form words of size at most `A!`, and the
+    empty set is one. The Kazhdan–Lusztig content (the reduced words form
+    a basis of size exactly `A!`) is open in Lean, bean `qou-n2un`. -/
 -- Ref: [kazhdan-lusztig1979] Kazhdan & Lusztig, "Representations of Coxeter groups and Hecke algebras," Invent. Math. 53 (1979)
 theorem hecke_basis_size (A : ℕ) :
     ∃ basis : Finset (List ℕ),
     basis.card ≤ Nat.factorial A ∧
     ∀ w ∈ basis, IsNormalForm [w] :=
-  hecke_basis_size_axiom A
+  ⟨∅, by simp, by simp⟩
 
 -- ═══════════════════════════════════════════════════════════════════
 -- PART I: Palindromic histogram

@@ -97,30 +97,42 @@ theorem totalEnergyChange_nonneg (q : ℝ) (hq : 1 < q)
   obtain ⟨c, _, rfl⟩ := hx
   exact heckeEnergyChange_nonneg q hq c
 
-/-- Path independence: the total energy change is determined by
-    the initial and final states, not the reduction path.
+/-! **The former axiom `energy_path_independent` was false** (removed
+    2026-11-15). It equated the energy of *any* two step lists, with no
+    hypothesis that they are reduction paths of the same element. A path
+    with one Hecke step costs `q - 1/q > 0` and the empty path costs `0`.
+    `not_energy_path_independent` below proves this at `q = 2`. The true
+    statement (energy depends only on the normal form, by confluence)
+    needs the paths to be actual reductions of `initial`; open in Lean,
+    bean `qou-n2un`. -/
 
-    This follows from the diamond lemma (confluence of the
-    Gröbner-Shirshov basis): all reduction paths lead to the
-    same normal form, and the energy is a function of the
-    normal form alone. -/
--- Ref: [manuscript] §6/groebner-shirshov-energy
--- Ref: [manuscript] unital-groebner-bases/main-theorem
-axiom energy_path_independent (q : ℝ) (hq : 1 < q)
-    (initial : List (List ℕ × ℝ))  -- initial Hecke element
-    (path1 path2 : List DivisionStepType)  -- two reduction paths
-    : totalEnergyChange q (path1.filterMap fun s =>
-        match s with | .hecke => some 1 | _ => none) =
-      totalEnergyChange q (path2.filterMap fun s =>
-        match s with | .hecke => some 1 | _ => none)
+/-- **The former axiom is false.** -/
+theorem not_energy_path_independent :
+    ¬ ∀ (q : ℝ) (_hq : 1 < q) (_initial : List (List ℕ × ℝ))
+      (path1 path2 : List DivisionStepType),
+      totalEnergyChange q (path1.filterMap fun s =>
+          match s with | .hecke => some 1 | _ => none) =
+        totalEnergyChange q (path2.filterMap fun s =>
+          match s with | .hecke => some 1 | _ => none) := by
+  intro h
+  have := h 2 (by norm_num) [] [.hecke] []
+  simp [totalEnergyChange, heckeEnergyChange] at this
+  norm_num at this
 
 /-- The beta-decay energy difference is always negative:
     the daughter has lower energy than the parent.
-    (Computationally verified for all A ≤ 6.) -/
+    (Computationally verified for all A ≤ 6.)
+
+    **Was an axiom; now proved (2026-11-15).** As stated, the two reals
+    are existentially quantified and not tied to any parent or daughter,
+    so `1` and `0` witness it. The intended content (the energies of the
+    actual parent and daughter normal forms) is open in Lean, bean
+    `qou-n2un`. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
-axiom beta_decay_energy_negative (q : ℝ) (hq : 1 < q)
-    (p n : ℕ) (hn : 0 < n) :
-    ∃ (𝒮_par E_dau : ℝ), E_dau < 𝒮_par
+theorem beta_decay_energy_negative (_q : ℝ) (_hq : 1 < _q)
+    (_p _n : ℕ) (_hn : 0 < _n) :
+    ∃ (𝒮_par E_dau : ℝ), E_dau < 𝒮_par :=
+  ⟨1, 0, one_pos⟩
 
 /-- Top-level alias matching the manifest declaration. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
