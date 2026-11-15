@@ -1,5 +1,5 @@
 """Auto-render the Layer-1 canonical |tr_M(q_0)| table inside
-`recursive-atom-knot-atlas.md` from the
+`recursive-atom-knot-atlas-registry.md` from the
 `canonical-mass-table-extended.witness.json` witness.
 
 Replaces hand-edited tabular content so atoms beyond ⁴He (⁵Li, ⁶Li,
@@ -33,7 +33,7 @@ ATLAS_MD = (
     / "folio"
     / "quantum-observable-universe"
     / "appendix-knot-periodic-table"
-    / "recursive-atom-knot-atlas.md"
+    / "recursive-atom-knot-atlas-registry.md"
 )
 WITNESS = _pb.witness_path("canonical-mass-table-extended.witness.json", HERE)
 
@@ -168,16 +168,16 @@ def render_table(witness_data: dict) -> str:
     )
     lines.append(
         f"_Computed via [`canonical_mass_table_extended.py`]"
-        f"(https://github.com/litlfred/qou/blob/main/folio-assistant/"
+        f"(https://github.com/litlfred/qou/blob/main/"
         f"computations/canonical_mass_table_extended.py) "
         f"(method=`{method}`). Witness: "
         f"[`canonical-mass-table-extended.witness.json`]"
-        f"(https://github.com/litlfred/qou/blob/main/folio-assistant/"
+        f"(https://github.com/litlfred/qou/blob/main/"
         f"computations/canonical-mass-table-extended.witness.json). "
         f"Nucleon masses (m_p, m_n) via "
-        f"[`m-p-borromean-verification-50dps.witness.json`]"
-        f"(https://github.com/litlfred/qou/blob/main/folio-assistant/"
-        f"computations/m-p-borromean-verification-50dps.witness.json). "
+        f"[`canonical_mass.nucleon_mass_mev()`]"
+        f"(https://github.com/litlfred/qou/blob/main/"
+        f"computations/canonical_mass.py). "
         f"Paper hard floor (CAL-2 propagation): ~{int(paper_floor)} ppb._"
     )
     lines.append("")

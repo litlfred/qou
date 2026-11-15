@@ -141,14 +141,70 @@ def prediction_uncertainty_ppb(Z: int, N: int, layer: str = "canonical") -> floa
     return float(mp.sqrt(d_q0 ** 2 + d_me ** 2) / abs(base) * mp.mpf(10) ** 9)
 
 
-def nucleon_mass_mev(species: str) -> float:
-    """Canonical nucleon mass (MeV). `species` ∈ {'p','proton','n','neutron'}."""
+def nucleon_mass_mev(species: str):
+    """Canonical nucleon mass (MeV) at mpmath precision (bean qou-4tui).
+    `species` ∈ {'p','proton','n','neutron'}.
+
+    Returns an ``mpmath.mpf`` parsed directly from the decimal string in
+    ``m-p-substrate-identity-50dps.witness.json`` at ≥50 dps (avoiding the
+    ``float(...)`` truncation flagged in bean ``qou-4tui``), while supporting
+    standard float format specifiers (e.g. ``f"{pred:.9f}"``) for legacy
+    test/display callers.
+    """
+    import mpmath as mp
+
+    class _FormattableMpf(mp.mpf):
+        def __format__(self, format_spec: str) -> str:
+            if not format_spec:
+                return str(self)
+            return format(float(self), format_spec)
+
+        def _wrap(self, res):
+            return _FormattableMpf(res) if isinstance(res, mp.mpf) else res
+
+        def __add__(self, other):
+            return self._wrap(super().__add__(other))
+
+        def __radd__(self, other):
+            return self._wrap(super().__radd__(other))
+
+        def __sub__(self, other):
+            return self._wrap(super().__sub__(other))
+
+        def __rsub__(self, other):
+            return self._wrap(super().__rsub__(other))
+
+        def __mul__(self, other):
+            return self._wrap(super().__mul__(other))
+
+        def __rmul__(self, other):
+            return self._wrap(super().__rmul__(other))
+
+        def __truediv__(self, other):
+            return self._wrap(super().__truediv__(other))
+
+        def __rtruediv__(self, other):
+            return self._wrap(super().__rtruediv__(other))
+
+        def __neg__(self):
+            return self._wrap(super().__neg__())
+
+        def __pos__(self):
+            return self._wrap(super().__pos__())
+
+        def __abs__(self):
+            return self._wrap(super().__abs__())
+
     s = species.lower()
-    if s in ("p", "proton"):
-        return proton_mass_mev()
-    if s in ("n", "neutron"):
-        return neutron_mass_mev()
-    raise ValueError(f"unknown nucleon species {species!r} (use 'p' or 'n')")
+    if s not in ("p", "proton", "n", "neutron"):
+        raise ValueError(f"unknown nucleon species {species!r} (use 'p' or 'n')")
+    if not _WITNESS.exists():
+        # Delegate missing-witness FileNotFoundError to proton_neutron_mass_mev
+        proton_neutron_mass_mev()
+    preds = json.loads(_WITNESS.read_text())["data"]["predictions"]
+    key = "m_p_MeV" if s in ("p", "proton") else "m_n_MeV"
+    with mp.workdps(max(50, mp.mp.dps)):
+        return _FormattableMpf(str(preds[key]))
 
 
 if __name__ == "__main__":
