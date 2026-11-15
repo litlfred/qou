@@ -1245,6 +1245,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f634e4aa3a7f",
+          "ts": "20fadbba99c2",
+          "lean": "8ba0a9b74686"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:14.921Z",
+        "reviewed_sha": "2ddd93430a21609842c768a1e983ab7fda5cf639",
+        "severity": "major",
+        "evidence": "Lean projects `Q.fibreFunctor`, a different claim, and is self-assuming. The proof is wrong: each End(V_λ) carries the invariant id_{V_λ}, so the central characters χ_λ (λ ≠ 0) are adjoint-invariant and not in the image of η. Hom(𝟙, A_ad) is infinite-dimensional; the conclusion holds only if \"Ad\" means the spin-1 summand, as the statement says and the proof does not use.",
+        "notes": "Hand review 2026-11-15 (statement vs Lean); issue #8020. "
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2486,6 +2504,6 @@
       }
     ]
   },
-  "updated_at": "2026-10-10T12:00:00.000Z",
+  "updated_at": "2026-11-15T21:55:14.921Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
