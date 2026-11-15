@@ -77,3 +77,15 @@ Pre-existing (blame fee4ad592), not introduced by #7825. Not fixed here.
 
 1. Move the pin to `a6e58846b` (or later)? Default: nothing changes, qa-sweep stays unloadable.
 2. Where should refreshed verdicts land — in-tree `.qa.json` or the qa-reports store?
+
+## 2026-11-15 — owner rulings P1 = B, P2 = yes (relayed by coordinator qou-s4ws)
+
+- **P1 = B, done on PR #7842 (d00e3c24e):** pin -> platform main 82b389982a. run-validate gives
+  16 issues at both pins with the lines identical; qa-sweep loads.
+  **Known break found:** platform 0c5468ac46 DELETED `.github/workflows/publish.yml`, so
+  `build.yml`'s `uses:` names a missing file. a6e58846b does NOT have this break.
+  Owner choice at merge: keep B (render entry broken until qou carries its own publish), or
+  fall back to A.
+- **P2, done (4d63b18f5):** the calibration-inputs vintage banner moved to authorNotes;
+  qa-sweep is now clean on that block.
+- The sidecar-destination question was appended to `qou-6ccl` (it already is that question).
