@@ -8,7 +8,7 @@ tags:
     - needs-owner
     - convention-d
 created_at: 2026-11-15T18:54:18Z
-updated_at: 2026-11-15T19:17:47Z
+updated_at: 2026-11-15T19:26:47Z
 parent: qou-avtq
 ---
 
@@ -47,3 +47,6 @@ A grep of folio/ content and Lean for an isospin orientation convention (e₁ = 
 
 
 **2026-11-15 §15 (3e0aa5fce5).** Scale: each corpus mass formula, applied to the weight ratio, gives 89–219 MeV (canonical facade, linearised facade, unified formula). Only the asserted α route gives a MeV-scale value (−39.58 %). No corpus formula derives a MeV-scale multiplier; the scale is the open object. Lean MarkovOrientationForced.lean (sorry-free, generic Field): the Markov condition is a = b q² for both Ř and Ř⁻¹; the K-weights of adjacent basis vectors differ by q². The permutation-module half is not formalised.
+
+
+**2026-11-15 §16.** Step 4: PR #7971 (draft, weak-vertex thread) proves that under D a crossing is a pure swap iff the over strand carries K = q. With corpus conventions (lower strand over in σᵢ; u over d) this gives u = e₁ = T³ = +½. Then n/p = q⁻², which makes the neutron heavier (correct sign). The sign is derived, conditional on #7971 landing. The magnitude is still open (the scale, §15). Keep open.
