@@ -11,7 +11,7 @@ tags:
     - 8f-open
     - lean
 created_at: 2026-09-03T09:08:30Z
-updated_at: 2026-11-15T18:12:08Z
+updated_at: 2026-11-15T18:49:23Z
 parent: qou-8lxd
 ---
 
@@ -45,3 +45,8 @@ stands: **no instance exists; none should be added.**
 ## 2026-11-15, PR #7946 (issue #7942)
 
 The owner chose to give `BlochWigner_unit_circle` its documented body `Cl_2`, so the field is now **true by IVT** (`bringZeroModeBlochClass_holds`, sorry-free, standard axioms), exactly as this bean predicted. Per this bean's triage it is a **named theorem, not a global instance** (commit 6ff8649b54), so `[BringZeroModeBlochClass]` on `bring_zero_mode_additive_form` is not discharged silently. The angle-rationality sharpening is `BringZeroModeRootOfUnityClass` (no instance). **The open claim, the Bloch-class identification on {T(2,9), T(3,5)}, is untouched; this bean stays open.** The class should eventually be restated to carry that identification.
+
+
+
+## 2026-11-15 analysis (thread on #7942; not yet acted on, owner card pending)
+(1) Restate: the real claim is a Bloch-group element xi = sum n_i [z_i], z_i algebraic (Q(zeta_15)), with sum n_i D(z_i) = 2/(3pi); falsifiable and stateable in Lean now. (2) T(2,9), T(3,5) are torus knots: Seifert fibred, simplicial volume 0, so by |vol rho| <= v3 ||M|| every Bloch class from them has D = 0 (scope (b), cited invariant). (3) For algebraic z_i, D(z_i) is a period, so the identity would make 1/pi a rational multiple of a period; Kontsevich-Zagier predicts not. Expected outcome: false; unconditional proof is a transcendence problem, out of reach. Keep open.
