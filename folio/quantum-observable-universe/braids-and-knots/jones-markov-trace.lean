@@ -108,11 +108,11 @@ structure JonesMarkovTrace (H : HeckeAlgebraData) where
   /-- Trace property (cyclicity): tr(ab) = tr(ba). -/
   tr_comm : ∀ (a b : H.carrier), tr (H.mul a b) = tr (H.mul b a)
 
-  /-- Markov-trace loop value z, determined by q. Numerically (after
-      specialisation ι : R_q → ℝ, q ↦ q₀) this is
-      z = 1 / (q^{1/2} + q^{-1/2}) = tr_M(σ_i). Carried as an
-      abstract field since neither square roots nor division exist
-      in R_q. -/
+  /-- Markov-trace loop value `z = tr_M(σ_i)`. The canonical value is
+      convention D, `z = q³/(q² + 1)` (owner ruling 2026-08-15), which
+      is what the `.md` statement fixes. This structure leaves `z` free:
+      the pin is **not** encoded here, so nothing proved from this
+      structure depends on convention D. -/
   z : R_q
 
   /-- The Markov parameter is nonzero. -/
@@ -130,12 +130,13 @@ structure JonesMarkovTrace (H : HeckeAlgebraData) where
   /-- Number of irreducible summands at level n (= ⌊n/2⌋ + 1 for SU_q(2)). -/
   numIrreps : ℕ
 
-  /-- **Non-degeneracy**: for each irreducible H_n(q)-module S_λ,
-      there exists an element whose trace is nonzero.
-
-      Jones (1987), Corollary 5.3: the Markov trace restricts to a
-      nonzero scalar multiple of the character on each S_λ. This
-      means every irreducible is "detected" by the trace. -/
+  /-- **Non-degeneracy (weak form)**: the trace is not identically zero.
+      The index `i` does not enter the body, so this field says only that
+      some element has nonzero trace; it does **not** encode "nonzero on
+      every irreducible `S_λ`". That stronger reading would also be false
+      under convention D, where the Ocneanu weight of every shape with a
+      third row vanishes. A per-`S_λ` statement needs the Wedderburn
+      decomposition, which this structure does not carry. -/
   -- Ref: [jones1987] Corollary 5.3
   nondeg : ∀ (i : Fin numIrreps), ∃ (a : H.carrier), tr a ≠ 0
 
