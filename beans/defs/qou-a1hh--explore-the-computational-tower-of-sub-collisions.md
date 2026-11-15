@@ -122,3 +122,8 @@ Reading 3 on H₄, vertices V/V̄ at sites 0,1, m=1..6. Pass counts 0/4, 0/16, 1
 
 ## 2026-11-15 — reading 3 tracks pure braids (c8b20019919, PR #7950; post hoc)
 At m ≤ 6 on 4 strands: every pure γγ word passes reading 3 (560/560); the only non-pure passes are the six mixed-site words, which fail the J₄ projection. So J₄-projected reading 3 ⟺ pure braid. At q = 1 it is S₄ character theory under convention D. Open: a uniform bound in q−1 (pure words of length m pass for q ≤ 1 + c/m) and whether it holds for m > 6. Lean (7fd7a7ec2de): site-0 vertices fix Ja; two strand-4 words commute with J₄.
+
+## 2026-11-15 — PR #7950 merged (rebase, main d0f681f5be9)
+- Amendment 3 (q-threshold on pure γγ words, 4 strands): m(q* − 1) ≥ 1.187 on m ≤ 12 (m = 9, 12 sampled); first failure always level-2 χ_(1,1).
+- Lean `QOU.QuarkState.GammaGammaFourStrandPureBound.pure_gg_reading3`: every pure γγ word of length m passes reading 3 for 1 ≤ q ≤ 1 + (1/12)/m. Sorry-free; axioms propext/choice/Quot.sound. Generic lemma `QOU.MathlibExt.ListProdPerturbation.prod_perturb`.
+- Still open: a sharp constant (measured ≥ 1.187 vs proved 1/12), whether long pure words fail at q₀ (the bound reaches q₀ only for m = 1), and pure ⟺ pass for m > 6.
