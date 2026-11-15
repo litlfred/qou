@@ -35,6 +35,15 @@ export default remark({
         "untouched; note that `ns-singularity-descartes-proof` lists the " +
         "withdrawn core-Levi equivalence as one of its inputs. Bean `qou-fm7s`.",
     },
+    {
+      kind: "refined-framing",
+      date: "2026-11-15",
+      body:
+        "Updated opening and closing sentences per owner decision (Q-VO9T-2 = 1, beans qou-nzyr, qou-507c, qou-hjl0): " +
+        "observability $\\mathrm{Hom}(\\mathbf{1}, \\mathrm{Ad}(A)) = 0$ deduces the internal global surface obstruction " +
+        "$\\mathrm{NS}(A) = e(\\xi) \\neq 0 \\in H^2(\\mathcal{S}, \\mathbb{Z})$ (`QOU.FluidDynamics.qou_internal_ns_singular`), " +
+        "while connecting that internal categorical class to classical 3D PDE blowup is scoped as the framework model correspondence (`def:ns-regular-qou`).",
+    },
   ],
   tags: [
     "observability",
