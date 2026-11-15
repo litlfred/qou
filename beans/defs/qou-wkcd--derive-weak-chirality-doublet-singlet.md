@@ -12,7 +12,7 @@ parent: qou-qs0e
 blocking:
     - qou-hlx7
 created_at: 2026-11-15T13:00:00Z
-updated_at: 2026-11-15T18:15:00Z
+updated_at: 2026-11-15T21:00:00Z
 ---
 
 Owner question (relayed by coordinator session_01M5GA1LmsEf8tSMxFjMkmnn, tracker #7735):
@@ -86,3 +86,8 @@ reading is scope (a).
 - Lean (sorry-free): W(σ) = σ − h·P_L(σ). W on strands 1–2 commutes with J₄, so it never changes the J₄ flavour (weak_site1_comm, weak_site2_comm). On strand 4 the insertion between flavours is −h/[2]·eJ, and −h/[2]·fJ back (weak_site3_flips, weak_site3_flips_back). So a one-vertex n↔p step exists, and only on the 4th strand.
 - Probe computations/probes/n4_weak_vertex_decay_probe.py (pre-registered, symbolic q, ALL PASS): in the reading-3 passing words, 31/48 have a positive-σ₃ slot; all 44 slots change Ja→Jb; but in most of these words the free word already flips flavour, and 40/44 slots also leak to σ₁'s right line. Only 8 slots flip ONLY through the vertex; 2 of them are leak-free (V0.V1.Vb0.Vb1 and Vb0.Vb1.V0.V1, slots 7 and 3).
 - Still open: which of Ja/Jb is n (owner call); the right-line leak; vertex on inverse letters (not ruled).
+
+## 2026-11-15 correction and open items (PR #7975, issue #7974)
+- CORRECTION: the earlier note here said the strand-4 weak vertex is a one-vertex n<->p step. That is wrong. The J4 label is the H3 isotypic sector: Ja = (3) (sigma1 = sigma2 = q), Jb = (2,1). Under Schur-Weyl that is the three-strand isospin 3/2 vs 1/2, NOT T3. Hecke elements commute with the U_q action (qou-0whz C2), so no braid word and no weak vertex changes n<->p. Neither J4 state is n or p. Also corrected in a #7957 comment.
+- Inverse letters: weakVertex q^-1 sigma^-1 = weakVertex q sigma; the insertion is h*rightLine (WeakVertexInverseLetter.lean).
+- Leak: the vertex on sigma1/sigma3 keeps the lines of sigma1; sigma2 is the leak (s2_leaks).
