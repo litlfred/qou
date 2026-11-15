@@ -183,5 +183,31 @@ stands cannot distinguish the open problem from a dimension count.
 
 ## 7. Verification
 
-The Lean is being verified lean-direct against the real import cone. This section is updated in the
-PR when the run completes.
+**Both files compile.** Command, run from `folio/quantum-observable-universe/lean`:
+`lean -DautoImplicit=false -s 65536 <file>`, exit 0, no errors and no warnings.
+
+**Import cone.** The real one, not a stub:
+- restored Mathlib (3480 oleans);
+- a hardlink mirror of the restored QOU tree;
+- `QOU.IwahoriHecke.TensorEmbeddingGL`, which had no olean and was built lean-direct (exit 0).
+
+Every other cone module was checked FRESH by comparing Lake's source hash against its `.trace`.
+
+**Axioms.** `#print axioms` on all 12 public theorems gives `[propext, Classical.choice, Quot.sound]`.
+There is no `sorry`, `native_decide` or `axiom`.
+
+**Proof repairs during verification.** No statement changed meaning.
+1. `comm_entry_q` / `comm_entry_qi` were ill-typed as first written (a matrix applied to a single
+   pair). They are now applied curried, as row `(0,0)` with column `(1,0)` / `(0,1)`, which is what
+   the docstrings say.
+2. The `←` direction of `primitive_commute_rCheckN_iff` is now proved via `Ř(1,1) = flip`. This
+   proof holds for any `x`, not only `E₀₁`.
+3. Minor tactic fixes: `Odd 3`, and a `calc` in `Le_neg_ne`.
+
+The commutator signs came out as computed in integer arithmetic beforehand:
+`((0,0),(1,0)) = q − 1` and `((0,0),(0,1)) = qi − 1`.
+
+**Not done.**
+- No `lean-library-sweep`.
+- No drop-one hypothesis check.
+- The real-form (compact vs split) fact of §0 is not formalised.
