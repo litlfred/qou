@@ -88,3 +88,8 @@ Owner choice 2026-11-15: record (this note) + Lean the exclusion (PR) + then the
 - Owner chose options 1 and 3. Option 1 pushed to PR #8005 (e38b10f9f): `axiom first_chern_vanishes` removed; proved `trace_sub_trace_inv` (τ(x) − τ(x⁻¹) = h·τ(1)) and `trace_ne_trace_inv`; .md QUO-3a withdrawn, wr(a) = abelianisation writhe, relations 26 → 25.
 - Option 3 (pre-registered, project file qou-crossing-energy/result-c1.md): the c₁ candidate is the determinant character. det ρ_λ(σ) = ±q^{c₁}, c₁(V_λ) = χ^λ(transposition); log_q|det ρ(β)| = c₁·w(β). det(Ad) = 1 and c₁(regular) = 0 for every λ, n = 2..5, exact. So the true "c₁(Ad A) = 0" holds identically and constrains nothing.
 - Open: whether the crossing-energy writhe coefficient is a y_λ-weighted sum of c₁(V_λ). Not tested.
+
+## 2026-11-15: option 1 Lean landed; option 3 energy link tested (scope-a negative)
+
+- PR #8005: `QOU/Braiding/DeterminantChern.lean` — `det_evalWord` (det ρ(β) = det ρ(σ)^writhe), `det_kronecker_inv_transpose` (det of Ad = 1). Sorry-free.
+- Pre-registered H1: crossing-energy writhe coefficient a = [2]/2 vs Σ_λ y_λ c₁(V_λ). FAIL as predicted: H1 = (q⁴+1)/(q²+1)² = 1 − 2/[2]² for n = 2..5 (n-independent, measured not proved). Equals the corpus constant α (augmentation/z_D Q_β ratio) as a rational function; identity of objects not established. Project file qou-crossing-energy/result-c1-energy.md.
