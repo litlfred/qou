@@ -1,4 +1,7 @@
 {
+ "scriptFile": "computations/probes/gg_gluon_segment/gg_gluon_segment_probe.py",
+ "engine": "sympy exact over Q(q) + mpmath 60 dps display",
+ "commitSha": "6c1bd186739d855e1fe1557dcf13eb9a88a36538",
  "recipe": "computations/probes/gg_gluon_segment/preregistration.md (a341245311 step 1, a9ca10d266 step 2)",
  "bean_parent": "qou-99qc",
  "q0Anchor": "proton",

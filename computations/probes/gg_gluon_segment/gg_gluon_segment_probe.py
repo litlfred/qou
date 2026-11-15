@@ -190,8 +190,34 @@ def localise(gluon):
     return eff
 
 
+def _find(relpath, key):
+    """First value stored under `key` anywhere in a committed witness (no literal copies)."""
+    def walk(o):
+        if isinstance(o, dict):
+            if key in o:
+                return o[key]
+            for v in o.values():
+                r_ = walk(v)
+                if r_ is not None:
+                    return r_
+        elif isinstance(o, list):
+            for v in o:
+                r_ = walk(v)
+                if r_ is not None:
+                    return r_
+        return None
+    with open(os.path.join(ROOT, relpath)) as fh:
+        val = walk(json.load(fh))
+    if val is None:
+        raise KeyError(f"{key} not in {relpath}")
+    return mp.mpf(str(val))
+
+
 def main() -> int:
     E0 = qbeta_e0.canonical()
+    REF_DTR = _find("computations/qbeta/qbeta-qbeta-scores-a-difference.witness.json", "recorded_tr_conv_D")
+    REF_E0 = _find("computations/qbeta/qbeta-e0-is-derived.witness.json", "E_0_tower_summed")
+    REF_QB = _find("computations/per-observable-100x-status.witness.json", "Q_beta_MeV")
 
     print("C1  rerun the bar-parity-split probe")
     r = subprocess.run([sys.executable, os.path.join(ROOT, "computations/qbeta/qbeta_bar_parity_split_gap_probe.py")],
@@ -204,10 +230,10 @@ def main() -> int:
     check("C2_f_closed_form", zero(ref["f"] - (q**2 - 1)*(q**4 + 1)*P12/(4*q**7*(q**2 + 1)**2)))
     check("C2_f_eq_h_g", ref["f_eq_hg"])
     check("C2_g_odd_closed_form", zero(ref["g_odd"] + H*(q + 1/q)*(q**2 + q**-2)/8), str(ref["g_odd"]))
-    check("C3_delta_tr", abs(ref["delta_tr_q0"] - mp.mpf("-0.1541948850472397056592555")) < mp.mpf("1e-24"),
+    check("C3_delta_tr", abs(ref["delta_tr_q0"] - REF_DTR) < mp.mpf("1e-24"),
           s(ref["delta_tr_q0"], 25))
-    check("C3_E0_canonical", abs(E0 - mp.mpf("4.22748335562903")) < mp.mpf("1e-13"), s(E0, 15))
-    check("C3_Q_beta_scored_cell", abs(ref["Q_beta_MeV"] - mp.mpf("0.65185631006")) < mp.mpf("1e-10"),
+    check("C3_E0_canonical", abs(E0 - REF_E0) < mp.mpf("1e-18"), s(E0, 15))
+    check("C3_Q_beta_scored_cell", abs(ref["Q_beta_MeV"] - REF_QB) < mp.mpf("1e-18"),
           s(ref["Q_beta_MeV"], 12))
     check("C4_y_normalisation", zero(Y3 + 2*Y21 - 1))
     check("C4_y21_value", abs(at_q0(Y21) - mp.mpf("0.2473")) < mp.mpf("5e-5"), s(at_q0(Y21), 10))
@@ -272,6 +298,9 @@ def main() -> int:
 
     nfail = sum(1 for _, ok, _ in CHECKS if not ok)
     out = {
+        "scriptFile": "computations/probes/gg_gluon_segment/gg_gluon_segment_probe.py",
+        "engine": "sympy exact over Q(q) + mpmath 60 dps display",
+        "commitSha": subprocess.run(["git", "-C", ROOT, "rev-parse", "HEAD"], capture_output=True, text=True).stdout.strip(),
         "recipe": "computations/probes/gg_gluon_segment/preregistration.md (a341245311 step 1, a9ca10d266 step 2)",
         "bean_parent": "qou-99qc",
         "q0Anchor": "proton", "q0Value": Q_50_DIGIT_STR,
