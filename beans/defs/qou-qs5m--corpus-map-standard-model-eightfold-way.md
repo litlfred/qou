@@ -1,13 +1,13 @@
 ---
 # qou-qs5m
 title: 'Corpus map: existing connections to the Standard Model and the eightfold way'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - quark-state
 created_at: 2026-11-15T08:00:00Z
-updated_at: 2026-11-15T08:00:00Z
+updated_at: 2026-11-15T09:00:00Z
 parent: qou-qs0e
 ---
 

@@ -1,13 +1,13 @@
 ---
 # qou-qs4c
 title: 'Relations among colour x spin x flavour x chirality x momentum; settle the colour channel'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - quark-state
 created_at: 2026-11-15T08:00:00Z
-updated_at: 2026-11-15T08:00:00Z
+updated_at: 2026-11-15T09:00:00Z
 parent: qou-qs0e
 ---
 
