@@ -24,9 +24,9 @@ whose boxes have both sides at most `η`.
 
 ## What this does NOT do
 
-It does not yet bound the diameter of a small box on the sphere or apply the
-Lebesgue number lemma (step P4), so `HemiComputesCech` is not yet an instance.
-Bean `qou-skn4`.
+It does not bound the diameter of a small box or apply the Lebesgue number
+lemma; that is step P4 in `CechSphereGood`, which gives the instance
+`HemiComputesCech`.
 
 -- Ref: [manuscript] lifting-and-descent, route R3, surface step C2
 -/

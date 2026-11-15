@@ -2,36 +2,39 @@ import QOU.MathlibExt.CechSphereHemispheres
 import QOU.MathlibExt.CechGoodRefinement
 
 /-!
-# Comparing the hemisphere cover with all open covers of `S²` (C2, open)
+# Comparing the hemisphere cover with all open covers of `S²` (C2)
 
 Surface case of route R3 (C-5a), step C2. `CechSphereHemispheres` computes
 `H²` of the four-hemisphere cover of `S²` as the coefficient group `G`. Whether
-that cover computes the full colimit `Ȟ²` over **all** open covers is the open
-step C2. This file records it as the conjecture class `HemiComputesCech` (no
-instance is given) and proves the downstream step C3 conditionally on it.
+that cover computes the full colimit `Ȟ²` over **all** open covers is step C2.
+This file states it as the class `HemiComputesCech` and proves the downstream
+step C3 from it. The instance is proved in `CechSphereGood` (steps P1 to P4), so
+C2 and C3 hold unconditionally once that file is imported.
 
 ## Results, all sorry-free
 
 * `Cech.Cover.inf`, `Cover.infLeft`, `Cover.infRight`: the meet of two covers
   of `⊤`, refining both, and `isOpenCover_inf`.
 * `cechClass_one_eq`: the trivial class is the same from any two open covers.
-* `HemiComputesCech G` (**conjecture, C2**): `H2.toCech` from the hemisphere
-  cover is a bijection onto `Ȟ²(S², G)`. Not proved here.
+* `HemiComputesCech G` (**C2**): `H2.toCech` from the hemisphere cover is a
+  bijection onto `Ȟ²(S², G)`. Stated here, proved in `CechSphereGood`.
 * `sphereEquiv`, `sphereEquiv_eq_one_iff`, `sphereEquiv_map`: given C2,
   `Ȟ²(S², G) ≃ G`, natural in `G`.
 * `isCoverDirected_isOpenCover`, `hemiComputesCech_of_good`: C2 follows once every
   open cover has a good refinement (see `CechGoodRefinement`).
-* `kummerSurfaceData_sphere` (**C3, conditional on C2**): `KummerSurfaceData`
-  on `S²` over all open covers, for `ℤ` and `μ_n`.
+* `kummerSurfaceData_sphere` (**C3**): `KummerSurfaceData` on `S²` over all
+  open covers, for `ℤ` and `μ_n`, from the C2 instances.
 
 ## What this does NOT do
 
-It does not prove C2. The expected route is Leray: show Čech `H¹` and `H²`
-with discrete coefficients vanish on the overlaps (open convex-cone slices of
-the sphere), then compare. Neither ingredient is in the repo or Mathlib.
+It does not prove C2 itself. The proof (`CechSameNerve`, `CechSplit`,
+`CechSphereBoxes`, `CechSphereFine`, `CechSphereGood`) avoids Leray: it shrinks
+the hemispheres to boxes with the same nerve, splits boxes along overlaps (each
+split is a bijection on `H²`), and refines any open cover by the Lebesgue number
+lemma.
 
 -- Ref: [manuscript] lifting-and-descent, route R3, surface step C2/C3
-Bean `qou-skn4` (stays open while C2 is open).
+Bean `qou-skn4`.
 -/
 
 namespace QOU.CentralExtension.Cech
@@ -71,7 +74,7 @@ theorem cechClass_one_eq {G : Type} [TopologicalSpace G] [Group G] [IsTopologica
   rw [← cechClass_one_pull 𝒰 (Cover.inf 𝒰 𝒱) h𝒰 (isOpenCover_inf 𝒰 𝒱 h𝒰 h𝒱) (Cover.infLeft 𝒰 𝒱),
     ← cechClass_one_pull 𝒱 (Cover.inf 𝒰 𝒱) h𝒱 (isOpenCover_inf 𝒰 𝒱 h𝒰 h𝒱) (Cover.infRight 𝒰 𝒱)]
 
-/-- **Step C2 target (open; a conjecture, no instance is provided).** The
+/-- **Step C2** (proved as an instance in `CechSphereGood`). The
 four-hemisphere cover computes the full open-cover colimit `Ȟ²(S², G)`: the
 canonical map from `H²` of the cover to `Ȟ²` is a bijection. -/
 class HemiComputesCech (G : Type) [TopologicalSpace G] [CommGroup G] [IsTopologicalGroup G]
@@ -140,9 +143,8 @@ theorem sphereEquiv_map [HemiComputesCech G] [HemiComputesCech H] (φ : G →* H
 
 end Conditional
 
-/-- **C3, conditional on C2.** If the hemisphere cover computes `Ȟ²` for `ℤ` and
-`μₙ` coefficients, the 2-sphere carries `KummerSurfaceData` over **all** open
-covers. -/
+/-- **C3.** Given C2 for `ℤ` and `μₙ` coefficients (proved in `CechSphereGood`),
+the 2-sphere carries `KummerSurfaceData` over **all** open covers. -/
 noncomputable def kummerSurfaceData_sphere (n : ℕ) [NeZero n]
     [HemiComputesCech (Multiplicative ℤ)] [HemiComputesCech (rootsOfUnityCircle n)] :
     KummerSurfaceData S2 n (IsOpenCover (X := S2)) where

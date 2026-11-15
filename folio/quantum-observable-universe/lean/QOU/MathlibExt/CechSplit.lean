@@ -24,8 +24,8 @@ from preconnectedness of the triple intersections of `U` (`split_link`).
 
 ## What this does NOT do
 
-It does not produce the fine covers of the sphere (step P3), so the colimit
-statement `HemiComputesCech` stays an open conjecture. Bean `qou-skn4`.
+It does not produce the fine covers of the sphere; that is steps P3 and P4
+(`CechSphereFine`, `CechSphereGood`), which prove `HemiComputesCech`.
 
 -- Ref: [manuscript] lifting-and-descent, route R3, surface step C2
 -/
