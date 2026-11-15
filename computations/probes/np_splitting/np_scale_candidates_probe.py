@@ -8,8 +8,9 @@ Candidates are fixed here; none is selected by its residual.
 Report all; CODATA 1.29333205 MeV is the comparison only.
 """
 from mpmath import mp,mpf,log,catalan
+from qou_substrate.constants import q_at  # proton pin, derived, not a typed copy
 mp.dps=40
-q=mpf('1.1099785827513808075916690956107688798744991218736')
+q=mpf(q_at(60))
 me=mpf('0.51099895069'); mpr=mpf('938.27208816'); cod=mpf('1.29333205')
 dPhi=2*log(q); a=me*8*catalan; hq=1-1/q
 mmuF=mpr/2+6*me

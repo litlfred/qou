@@ -12,6 +12,7 @@ Quantities: T_mu(x) = Tr(K^{⊗3} rho(x) Pi_mu) (raw; the common 1/Tr K^{⊗3} c
 Report dPhi = log|T_n| - log|T_p| and alpha*|dPhi| (alpha = m_e*8G); CODATA printed for comparison only.
 Exact over Q(q) (sympy), numbers at the 50-digit proton q0.  No outcome selects anything."""
 import sympy as sp, mpmath as mp, itertools
+from qou_substrate.constants import q_at  # proton pin, derived, not a typed copy
 q=sp.symbols('q',positive=True); h=q-1/q
 R=sp.zeros(4,4)
 idx=lambda i,j:2*i+j
@@ -38,7 +39,7 @@ els={'half twist':R1*R2*R1,'full twist':(R1*R2*R1)**2,'gg V^3':(R1*R2i)**3}
 basis=list(itertools.product((0,1),repeat=3))  # 0 = e1, 1 = e2; index = 4a+2b+c
 def Pi(n_e1):
     return sp.diag(*[1 if sum(1 for x in b if x==0)==n_e1 else 0 for b in basis])
-mp.mp.dps=40; q0=mp.mpf('1.1099785827513808075916690956107688798744991218736')
+mp.mp.dps=40; q0=mp.mpf(q_at(60))
 al=mp.mpf('0.51099895069')*8*mp.catalan; tgt=mp.mpf('1.29333378')
 for kn,K in Ks.items():
   K3=Kn(K,3)

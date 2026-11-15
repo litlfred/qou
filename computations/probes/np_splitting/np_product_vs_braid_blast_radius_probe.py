@@ -7,8 +7,9 @@ same table at quark level with u<->p, d<->n), compare
 in exact-ish mpmath (dps 40) at the 50-digit q0. Report log|P| - log|braid| per ordering.
 Also: is the H_3 (A=3) Ocneanu trace code validated against h3.py closed forms? (check uud/udd)."""
 import mpmath as mp, itertools
+from qou_substrate.constants import q_at  # proton pin, derived, not a typed copy
 mp.mp.dps=40
-q=mp.mpf('1.1099785827513808075916690956107688798744991218736'); h=q-1/q; z=q**3/(q**2+1)
+q=mp.mpf(q_at(60)); h=q-1/q; z=q**3/(q**2+1)
 def swap(p,i): p=list(p); p[i],p[i+1]=p[i+1],p[i]; return tuple(p)
 def inv(p):
     return sum(1 for i in range(len(p)) for j in range(i+1,len(p)) if p[i]>p[j])

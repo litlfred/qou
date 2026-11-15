@@ -12,6 +12,7 @@ Report Dm = alpha*|Phi(udd)-Phi(uud)|, alpha = m_e*8G; CODATA printed for compar
 Also print the H_3 channel decomposition of tr_z (w_(3), w_(21), w_(111)) to confirm w_(111)=0 at z_D.
 No outcome selects anything."""
 import sympy as sp, mpmath as mp, itertools
+from qou_substrate.constants import q_at  # proton pin, derived, not a typed copy
 q,z=sp.symbols('q z',positive=True); h=q-1/q
 perms=list(itertools.permutations(range(3)))
 def comp(a,b): return tuple(a[b[i]] for i in range(3))   # (a∘b)
@@ -48,7 +49,7 @@ def word(o,gens):
         pos[s-1],pos[s]=b,a
     return x
 mp.mp.dps=40
-q0=mp.mpf('1.1099785827513808075916690956107688798744991218736')
+q0=mp.mpf(q_at(60))
 al=mp.mpf('0.51099895069')*8*mp.catalan; tgt=mp.mpf('1.29333378')
 zD=q0**3/(q0**2+1); zC=mp.sqrt(q0)/(q0+1)
 for name,gens in (('half twist g1g2g1',[1,2,1]),('full twist (g1g2g1)^2',[1,2,1,1,2,1])):
