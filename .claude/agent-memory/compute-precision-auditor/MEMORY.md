@@ -697,3 +697,12 @@ TRAPs.
   * **Two agents "contradicting" each other can both be right about different FILES**:
     "the chi-cache gives 0.152" (proton witness) vs "0.575" (`-muon` witness, built 2026-08-30,
     before the ordering ruling). Resolve by naming the file, then measure.
+- 2026-11-15 (q0Anchor refill slice, branch `claude/precision-anchor-refill-a-2026-11-15`):
+  9/21 stamped by re-run. TRAPs: (1) a CORPUS-MEASURING audit (raw-float64 backlog,
+  intra-ordering fingerprint) cannot be "stamped, re-run, numbers unchanged" -- its
+  counts track the tree; fix the producer, hold the witness. (2) 3 rev_* producers
+  already carried q0Anchor in source; their witnesses were simply never re-run. (3) a
+  stale CONSUMER shows up as added rows (`rev-edge-relaxation-window` reads the
+  k<=12 exact-maximiser witness; committed copy saw k<=10). Run the upstream with its
+  committed env (`REV_EXACT_KMAX=12`) first. (4) parallel agents share
+  `<scratch>/maturin.log`/`cargo.log`; name logs per agent.
