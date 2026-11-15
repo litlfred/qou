@@ -1,9 +1,10 @@
 {
  "schema": "qou-witness/v1",
- "computedAt": "2026-09-14T06:11:24.672361+00:00",
+ "computedAt": "2026-11-15T20:38:18.388558+00:00",
  "computation": "rev_exact_maximiser_small_n_probe.py",
  "bean": "qou-hok7",
  "anchor": "physical_proton",
+ "q0Anchor": "proton",
  "q0Value": "1.1099785827513808075916690956107688798744991218736",
  "description": "M_n by EXHAUSTIVE enumeration over every partition of n, for triangular n up to T_12.  Every M_n this arc has published came from a neighbourhood search and was therefore a lower bound; these are maxima.  Affordable because betaSide_eq_hookSum makes the objective a sum over cells of phi(hook), and a cell's hook depends only on the rows below it, so building the diagram smallest-row-first costs one integer add per cell.  The search is exact integer arithmetic at scale 1e-40.",
  "constants": {
@@ -735,7 +736,7 @@
     }
    ],
    "staircase_is_argmax": false,
-   "elapsed_sec": 0.31
+   "elapsed_sec": 0.3
   },
   {
    "k": 10,
@@ -858,7 +859,7 @@
     }
    ],
    "staircase_is_argmax": false,
-   "elapsed_sec": 1.71
+   "elapsed_sec": 1.42
   },
   {
    "k": 11,
@@ -988,7 +989,7 @@
     }
    ],
    "staircase_is_argmax": false,
-   "elapsed_sec": 9.79
+   "elapsed_sec": 8.61
   },
   {
    "k": 12,
@@ -1098,7 +1099,7 @@
     }
    ],
    "staircase_is_argmax": false,
-   "elapsed_sec": 55.61
+   "elapsed_sec": 49.44
   }
  ],
  "heuristic_comparison": [
