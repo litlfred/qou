@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-15T19:54:12.378650+00:00",
-  "commitSha": "6898a93de88af7d81d0c34b80d3a9160e6ba9680",
+  "computedAt": "2026-11-15T20:21:08.094177+00:00",
+  "commitSha": "f1be230920b1bdc1f6a9070fd8fc7d187c5c2345",
   "assertions": [
     {
       "name": "all three published figures are the correct roundings of the Apollonius closed forms — centre 1/(1-k^2), radius k/(1-k^2), leftmost 1/(1+k)",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 3,
   "computation": "the_apollonius_circle_from_cal2_reproduces_exactly_probe",
   "scriptFile": "the_apollonius_circle_from_cal2_reproduces_exactly_probe.py",
   "scriptHash": "112da1e410db",
-  "scriptCommitSha": "547b78208f6bb667ec8b3580f16390a74dbb9ce4",
+  "scriptCommitSha": "660d4c3c55f096e925c57ca18d1fd68545d820d5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -47,8 +47,10 @@
     "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "cvxpy": "absent"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "24ca776b0ad05497"
   },
   "invocation": {
     "argv": [
