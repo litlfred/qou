@@ -314,6 +314,74 @@ theorem hPart_one_pairNF (a0 a1 a2 b0 b1 b2 : R) :
   funext i
   simp [hPart, pairNF_formal, Polynomial.coeff_C]
 
+/-! ## Flavour extraction from the photon pair (bean `qou-usxh`, exploration)
+
+Question: can the D1 definition read a flavour bit off `NF(γγ)` WITHOUT a chosen
+map? The only flavour-sensitive datum D1 provides is the `h¹` coefficient on the
+unit (`quarkState_eq`). Call it the **net flavour**. It is additive, so on a sum
+of letters it returns the sum of their flavour shifts, and nothing finer. -/
+
+/-- Net flavour: the `h¹` coefficient on the unit. -/
+noncomputable def netFlavour (v : Fin 6 → R[X]) : R := hPart 1 v 0
+
+theorem netFlavour_add (u v : Fin 6 → R[X]) :
+    netFlavour (u + v) = netFlavour u + netFlavour v := by
+  simp [netFlavour, hPart]
+
+theorem netFlavour_letter (g ε : Bool) :
+    netFlavour (quarkLetter (R := R) g ε) = flavourShift ε := by
+  have := congrFun (quarkState_eq (R := R) g ε) 0
+  simpa [netFlavour, quarkState, e0] using this
+
+/-- **(Q3) Residual freedom.** Per-letter flavour is NOT recoverable from a sum
+of letters: `u` on `σ₀` plus `d` on `σ₁` is the same element as `d` on `σ₀`
+plus `u` on `σ₁`. Only the net flavour is determined. -/
+theorem letter_sum_flavour_swap :
+    quarkLetter (R := R) true true + quarkLetter false false =
+      quarkLetter true false + quarkLetter false true := by
+  funext i; fin_cases i <;> simp [quarkLetter, e0, s0, s1]
+
+/-- The photon pair (both photons built from `σ` letters, `q`-independent labels)
+has net flavour zero, for EVERY colour content. -/
+theorem pairNF_netFlavour (a0 a1 a2 b0 b1 b2 : R) :
+    netFlavour (pairNF (X : R[X]) (C a0) (C a1) (C a2) (C b0) (C b1) (C b2)) = 0 := by
+  simp only [netFlavour, hPart_one_pairNF]; rfl
+
+/-- **(Q2) The nucleon flavours are not extractable from one photon pair.**
+Write `NF(γγ)` as three letters plus any remainder of zero net flavour. Then all
+three letters are `u`; `uud` and `udd` are impossible for every `(φ, ψ)`, so the
+set asked for is EMPTY. `CharZero` is used only to separate `−1, −2, −3` from `0`. -/
+theorem pairNF_three_letters_all_up [CharZero R] (a0 a1 a2 b0 b1 b2 : R)
+    (g1 g2 g3 e1 e2 e3 : Bool) (r : Fin 6 → R[X]) (hr : netFlavour r = 0)
+    (h : pairNF (X : R[X]) (C a0) (C a1) (C a2) (C b0) (C b1) (C b2) =
+      quarkLetter g1 e1 + quarkLetter g2 e2 + quarkLetter g3 e3 + r) :
+    e1 = true ∧ e2 = true ∧ e3 = true := by
+  have key := congrArg netFlavour h
+  rw [pairNF_netFlavour, netFlavour_add, netFlavour_add, netFlavour_add, hr,
+    netFlavour_letter, netFlavour_letter, netFlavour_letter] at key
+  cases e1 <;> cases e2 <;> cases e3 <;> simp [flavourShift] at key ⊢ <;> norm_num at key
+
+/-- With the second photon flavour-flipped (`σ ↦ σ⁻¹` on its letters), the net
+flavour is `−(ψ₀ + ψ₁ + (φ₀ + φ₁)ψ₀₁)`. The flavour comes from the photon's own
+letters: it is an INPUT, not produced by the collision. -/
+theorem pairBar_netFlavour (a0 a1 a2 b0 b1 b2 : R) :
+    netFlavour (mulNF (X : R[X]) (photon X (C a0) (C a1) (C a2))
+      (photonBar X (C b0) (C b1) (C b2))) = -(b0 + b1 + (a0 + a1) * b2) := by
+  have hd := flavour_reaches_deg0 (R := R[X]) X (C a0) (C a1) (C a2) (C b0) (C b1) (C b2)
+  have h0 := pairNF_formal a0 a1 a2 b0 b1 b2 0
+  have hv : mulNF (X : R[X]) (photon X (C a0) (C a1) (C a2))
+      (photonBar X (C b0) (C b1) (C b2)) 0 =
+      C (pairNF 0 a0 a1 a2 b0 b1 b2 0) + C (-(b0 + b1 + (a0 + a1) * b2)) * X
+        + C b2 * X ^ 2 := by
+    rw [sub_eq_iff_eq_add] at hd
+    rw [hd, h0]
+    simp only [N1, map_add, map_mul, map_neg, map_zero]
+    simp
+    ring
+  simp only [netFlavour, hPart, hv, Polynomial.coeff_add, Polynomial.coeff_C,
+    Polynomial.coeff_C_mul, Polynomial.coeff_X_pow, Polynomial.coeff_X]
+  simp
+
 end Generic
 
 /-! ## The `(2,1)` channel -/
