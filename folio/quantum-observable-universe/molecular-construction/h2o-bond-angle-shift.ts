@@ -22,10 +22,12 @@ export default proposition({
         "molecule's `109.5° → 104.5°` reduction, with the file's own " +
         "docstring recording that \"the magnitude `s = b/(2a)` is the " +
         "compute/experimental input\". A continuous physical angle is `ℝ` by " +
-        "meaning, as the photon-polarisation parameters of " +
-        "`confinement-universality` and the time parameter of " +
-        "`q-heat-equation` are, so the block sits on the archimedean side of " +
-        "the §7c wall by construction.",
+        "meaning, as the time parameter of `q-heat-equation` is, so the block " +
+        "sits on the archimedean side of the §7c wall by construction. " +
+        "(Until 2026-11-15 this note also cited the photon-polarisation " +
+        "parameters of `confinement-universality` as `ℝ` by meaning; that " +
+        "block's coefficients are now ring-generic, so the comparison was " +
+        "removed. Bean `qou-qs2u`.)",
     },
   ],
 });
