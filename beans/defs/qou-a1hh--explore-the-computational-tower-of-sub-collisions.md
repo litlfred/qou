@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-12T18:48:36Z
-updated_at: 2026-10-12T20:29:06Z
+updated_at: 2026-11-15T13:30:00Z
 ---
 
 Owner 2026-10-12: explore two types of towers. Parent context: qou-jfx8 (segment collision datum, PR #7741). Prior-work grep in progress.
@@ -53,3 +53,11 @@ Option-1 cells (pe_letter=0, cmol=1), 40 dps, measured:
 - True-trefoil electron σ0³σ1: nothing feasible in either orientation.
 - Locality (this config): ratio identical on 6-, 9-, 12-strand windows → CO can be done on a junction window, conditional on chain multiplicativity (not proved).
 Still open (owner): tie-break between the two inverse-trefoil braids; γγ ruling vs ilp-covalent-bond conflict on H₂.
+
+## 2026-11-15: correction, takeover, and the H₂ run under the one rule
+Takeover: thread "Map SM and eightfold way, probe option C" (session_01Qmmkt9BEcDtGHY9hqeKYab). The last commit on this branch before the takeover was b3e86396f5a.
+- Owner ruling 2026-11-15: "molecular bonds should be same... all one rule." So γγ + SDP (qou-ales) governs bonds. The bond exemption was an agent recommendation (2026-10-13), never a ruling.
+- Correction: "γγ selects nothing on H₂" (above) was over-stated. In the option-1 cell the γγ words fail only on the trace-drop clause, and that cell's junction letter is a single crossing, so it is not γγ. In the cell with no junction letter, V passed at n = 12. Re-audit doc: https://claude.ai/artifact/YEvvHTsb8EY6Suwp4hXX2d
+- One-rule cell (no p–e letter, no junction letter), with reading 3 at EVERY level by top closing. Pre-registered 4ff6d8d594d; results 3a88b14ab5c (4/4 checks). Outcome (ii): the bare x fails at level 3 in all 4 cells, because of the production proton block's (2,1) character (−0.08436 for T_w0, −0.04773 for the trefoil electron). So the bond is UNDECIDED until the atom is γγ-derived (re-audit decision C).
+- Observation: V³ never adds a failing level beyond the atom's. V and V² do (levels 7–12). At n = 12 only, V had looked feasible.
+Status: open. It waits on re-audit decisions A, B and C.
