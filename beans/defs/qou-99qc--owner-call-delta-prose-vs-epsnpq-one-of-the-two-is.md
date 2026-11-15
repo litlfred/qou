@@ -3394,3 +3394,13 @@ Asked in the six-part frame on PR #7718 (comment 6130340849). The four options w
 ### Cross-link (2026-10-11)
 
 the p-n interface convention R3 made canonical is the one the corpus's uniqueness theorem does NOT cover (it fails `BarInvariant`), so "canonical" there is not proved canonicity. Record: [`2026-10-11-atom-word-provenance.md`](../../docs/audits/2026-10-11-atom-word-provenance.md).
+
+## 2026-11-15 — four-strand doublet candidates priced under the ruled functional (branch claude/qbeta-delta-doublet-candidates-2026-11-15, bc6872c35)
+
+Probe `computations/probes/qbeta_delta_doublet/delta_doublet_candidates_probe.py` (ALL PASS, exact over Q(q), calibrated on the H_3 ruled base 0.444700408522 MeV). Candidates taken as given from the doublet thread (labels A = sigma_3 lines, B = J_4 lines on sigma_1's left line) and the SM thread's reading-3 passing gamma-gamma words (000, 111, 0101, 1010, all orientations). Delta = YWY - XWX; |eps| does not depend on which state is n.
+
+- Label A: all 48 overshoot, Q in [1.006, 2.397] MeV (F_required in [0.326, 0.778]).
+- Label B: all 48 undershoot, Q in [0.0087, 0.4607] MeV (F_required >= 1.698), 4 with eps = 0.
+- Every p-state and n-state passes reading 3 at strand counts 3 and 4.
+
+Scope (a). Nothing selected. Label B is outside the cos <= 1 ladder cap, exactly as the H_3 ruled base is. Label A is inside it, but only with the ladder phase alpha chosen, which is a fit until alpha is derived (qou-pdix). The word choice within a label stays open. Bean stays open (rule 13a).
