@@ -181,7 +181,8 @@ def main() -> int:
             "Per classical branch of the 2A+1 averaged letters, as everything "
             "geometric about this closure must be. Nothing about binding or "
             "the twist.")
-        print(f"\nWitness: {wb.save()}")
+        print(f"\nWitness: {wb.save(extra={"q0Anchor": "independent", "q0AnchorReason": (
+            "braid words, Reidemeister/Vogel isotopy and exact integer Kauffman brackets; no q is evaluated, q0 is never read")})}")
     except Exception as e:  # pragma: no cover
         print(f"\n(witness emit skipped: {e})")
 

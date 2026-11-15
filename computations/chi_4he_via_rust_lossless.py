@@ -94,6 +94,10 @@ def main() -> int:
         ),
         "producer": "rust-chi-q-via-gp-lossless",
         "convention": "sign-only-crossings",
+        # Hand-rolled payload: the q0_anchor_manifest entry cannot reach it
+        # (only WitnessBuilder.build() reads the manifest), so declare the pin.
+        "q0Anchor": "proton",
+        "q0Value": Q_50_DIGIT_STR,
         "q_0_50dps": str(q),
         "dps": 50,
         "n_strands": n,

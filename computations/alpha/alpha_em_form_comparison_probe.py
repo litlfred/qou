@@ -271,7 +271,11 @@ def main() -> int:
             f"The muon-pin rows use the converged live pin from {_MUON_WITNESS.name}, "
             "not the retired CODATA-2018 vintage that several content blocks still "
             "publish (qou-i229).")
-        print(f"\n  witness -> {wb.save()}")
+        # Both pins are read ON PURPOSE (every form is scored at each), so the
+        # witness is a q0 comparison, not a single-pin result: stamp it with the
+        # values actually computed with, and no bare q0Value.
+        from qou_substrate.witness import q0_comparison  # noqa: E402
+        print(f"\n  witness -> {wb.save(q0_comparison(muon=mp.nstr(q_muon_pin, 50, strip_zeros=False), proton=mp.nstr(q_proton_pin, 50, strip_zeros=False), reason='scores every alpha_EM closed form at BOTH registered pins (proton Q_50_DIGIT_STR and the live muon pin from the muon anchor witness) and reports the muon->proton pin change; both pins are read on purpose'))}")
     except Exception as e:  # pragma: no cover
         print(f"\n  (witness emit skipped: {e})")
 

@@ -310,8 +310,17 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     if use_transfer and not use_closed_form:
         import mpmath as mp
         from tr_m_atom_via_transfer import tr_m_atom_zn
+        # The traces carry 50 digits: χ is evaluated at the 50-digit
+        # Q_50_DIGIT_STR inside `chi_all_lambda_any(dps=50)`. They are
+        # SERIALIZED at that width too, not at the ambient `mp.dps` --
+        # `chi_free_via_lr` (imported lazily inside tr_m_atom_zn) calls
+        # `set_compute_dps()` at module scope, which raises the global to 70,
+        # and `nstr(…, mp.mp.dps)` then printed 20 digits the trace does not
+        # have (measured 2026-11-15: tr_M_atom went from 50 to 70 digits on a
+        # re-run with no change to this file).
+        _TR_DPS = 50
         tr_atom_mp, tr_free_mp, chi_atom, wall = tr_m_atom_zn(
-            Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn, dps=50)
+            Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn, dps=_TR_DPS)
         # Signed categorical scalar Δtr = tr_M(W_free) − tr_M(W_atom);
         # Im(q_0)=0 ⇒ real at the substrate anchor. Q_β(n) is the MeV-
         # dimensioned multiplier of the dimensionless trace difference.
@@ -327,8 +336,8 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
         return {
             "status": "solved",
             "Z": Z, "N": N, "A": A,
-            "tr_M_atom": mp.nstr(tr_atom_mp, mp.mp.dps),
-            "tr_M_free": mp.nstr(tr_free_mp, mp.mp.dps),
+            "tr_M_atom": mp.nstr(tr_atom_mp, _TR_DPS),
+            "tr_M_free": mp.nstr(tr_free_mp, _TR_DPS),
             "Q_beta_n_MeV": Q_beta_n_mev,
             # mpf, not `float(B)` — see the note on the shared tail's exit.
             "B_MeV": B,
@@ -340,7 +349,7 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
             # categorical content directly, with no experimental factor in it
             # at all — B_MeV's own precision is capped by Q_β's 8.5e-07
             # relative experimental uncertainty, not by the arithmetic.
-            "delta_tr_exact": mp.nstr(delta_tr, mp.mp.dps),
+            "delta_tr_exact": mp.nstr(delta_tr, _TR_DPS),
             "n_atom_terms": -1,
             "n_free_terms": -1,
             "use_closed_form": False,
@@ -641,18 +650,67 @@ if __name__ == "__main__":
     # A hand-typed reference value drifts silently; an accessor call cannot.
     # (2026-08-19, alongside the ame-2020-binding-energies witness becoming
     # producer-backed rather than hand-entered.)
+    #
+    # 2026-11-15 (NO-FLOAT64, raw-float64 gate): the reference value is READ,
+    # so it is carried as the AME table's EXACT decimal text
+    # (`ame_2020_binding_energies._binding_mev_exact`, a `Decimal`), not as a
+    # `float(...)` of the mpf accessor. The two are asserted equal below, so the
+    # registry accessor stays the canonical source and this is only its
+    # verbatim serialization (a 9-digit measurement must not be printed as if
+    # measured to 50 -- see `draining-raw-float64` / `_binding_mev_exact`).
+    from decimal import Decimal
+    import mpmath as mp
+    from ame_2020_binding_energies import _binding_mev_exact
+    from _precision import fmt
+
+    def _mass_and_rel_err(A: int, B_pred, B_AME):
+        """M_total and |B_pred - B_AME| / M_total in percent, at 60 dps.
+
+        A function rather than an inline `with mp.workdps(60)` inside the atom
+        loop: the import-time-dps audit walks one block level of `__main__`, so
+        the inline form (already at 60 dps) read as an mpf built at dps 15.
+        """
+        with mp.workdps(60):
+            M_total = A * M_P_MEV_VALIDATION
+            return M_total, abs(B_pred - mp.mpf(str(B_AME))) / M_total * 100
+
+    def _ame_exact(Z: int, A: int, accessor_value) -> Decimal:
+        d = _binding_mev_exact(Z, A)
+        with mp.workdps(60):
+            gap = abs(mp.mpf(str(d)) - accessor_value)
+            assert gap <= abs(accessor_value) * mp.mpf("1e-45"), (
+                f"Z={Z} A={A}: exact AME decimal {d} disagrees with "
+                f"codata_constants accessor {accessor_value}")
+        return d
+
     ATOMS = [
-        ("D",    1, 1, float(AME_B_DEUTERON_MEV_VALIDATION)),
-        ("T",    1, 2, float(AME_B_TRITIUM_MEV_VALIDATION)),
-        ("3He",  2, 1, float(AME_B_HE3_MEV_VALIDATION)),
-        ("4He",  2, 2, float(AME_B_HE4_MEV_VALIDATION)),
-        ("6Li",  3, 3, float(ame_binding_mev(3, 6))),
+        ("D",    1, 1, _ame_exact(1, 2, AME_B_DEUTERON_MEV_VALIDATION)),
+        ("T",    1, 2, _ame_exact(1, 3, AME_B_TRITIUM_MEV_VALIDATION)),
+        ("3He",  2, 1, _ame_exact(2, 3, AME_B_HE3_MEV_VALIDATION)),
+        ("4He",  2, 2, _ame_exact(2, 4, AME_B_HE4_MEV_VALIDATION)),
+        ("6Li",  3, 3, _ame_exact(3, 6, ame_binding_mev(3, 6))),
         # A=7 mirror pair — the SECOND proton-excess test after T/³He (the
         # Z-correction slope test, per the 9b workplan). ⁷Be (Z>N) is the
         # proton-rich member; ⁷Li (N>Z) its mirror. AME2020 binding (MeV).
-        ("7Li",  3, 4, float(ame_binding_mev(3, 7))),
-        ("7Be",  4, 3, float(ame_binding_mev(4, 7))),
+        ("7Li",  3, 4, _ame_exact(3, 7, ame_binding_mev(3, 7))),
+        ("7Be",  4, 3, _ame_exact(4, 7, ame_binding_mev(4, 7))),
     ]
+
+    # Q_beta(n) = M_N - M_P - M_E is a difference of three quoted decimals, so
+    # it IS a short exact decimal (0.78233340931). `_Q_BETA_N` is that value as a
+    # 60-dps mpf; print it at 30 significant digits with zeros stripped, which
+    # recovers the decimal text exactly, and assert that it does (a binary tail
+    # surviving here would mean the value was NOT a short decimal after all).
+    with mp.workdps(60):
+        _Q_BETA_N_TEXT = mp.nstr(_Q_BETA_N, 30)
+        # 1e-45, not tighter: the registry parses its ~939-MeV inputs at 50 dps,
+        # so the difference carries ~3e-50 of input rounding (measured).
+        assert abs(mp.mpf(_Q_BETA_N_TEXT) - _Q_BETA_N) <= mp.mpf("1e-45"), (
+            _Q_BETA_N_TEXT)
+    # The transfer route evaluates every trace at dps=50 (tr_m_atom_zn's
+    # default, also how tr_M_atom / tr_M_free / delta_tr_exact are emitted), so
+    # B_MeV and Δm/m are serialized at that width -- no wider.
+    _TRACE_DPS = 50
     print("=" * 100)
     print("BINDING via CANONICAL Jones-Markov trace "
           "(prop:categorical-mass-markov)")
@@ -676,37 +734,33 @@ if __name__ == "__main__":
         tr_f = complex(r["tr_M_free"].replace("(", "").replace(")", ""))
         # Proton mass from codata_constants registry (CODATA 2022, full
         # precision); was hardcoded inline as 938.272.
-        M_total = A * float(M_P_MEV_VALIDATION)
-        dm = abs(r["B_MeV"] - B_AME) / M_total * 100
+        M_total, dm = _mass_and_rel_err(A, r["B_MeV"], B_AME)
         print(f"  {name:>6} {A:>3} {3*A:>3} {B_AME:>8.3f} "
               f"{abs(tr_a):>12.6e} {abs(tr_f):>12.6e} "
               f"{r['B_MeV']:>+10.4f} {dm:>8.4f}%")
-        # float() on BOTH derived numbers, here at the witness boundary — see
-        # the note above `safe_results`. `dm` inherits B_MeV's mpf-ness through
-        # the subtraction, so without this it stringifies to 50 digits exactly
-        # as B_MeV would, changing a JSON number into a JSON string under every
-        # reader and advertising 50 digits for a quantity whose Q_beta(n) input
-        # is a seven-digit measurement.
-        results.append({**r, "atom": name,
-                        "B_MeV": float(r["B_MeV"]),
-                        "B_AME_MeV": B_AME,
-                        "delta_m_over_m_pct": float(dm)})
+        # Serialized at the witness boundary as decimal STRINGS (2026-11-15,
+        # raw-float64 gate). The previous `float(...)` casts here threw away
+        # the trace precision; see `precision_note` for why the digits are
+        # arithmetic exactness and the experimental uncertainty is a separate,
+        # recorded quantity. `wall_sec` is renamed `elapsed_sec` (a timing,
+        # excused by the gate only under an elapsed/dur name).
+        row = {k: v for k, v in r.items() if k != "wall_sec"}
+        if "wall_sec" in r:
+            row["elapsed_sec"] = r["wall_sec"]
+        row.update({"atom": name,
+                    "Q_beta_n_MeV": _Q_BETA_N_TEXT,
+                    "B_MeV": fmt(r["B_MeV"], dps=_TRACE_DPS),
+                    "B_AME_MeV": str(B_AME),
+                    "delta_m_over_m_pct": fmt(dm, dps=_TRACE_DPS)})
+        results.append(row)
 
     # Coerce sympy/mpmath fragments to JSON-serialisable types so
     # WitnessBuilder.save() (which does strict json.dumps) succeeds.
     #
-    # NOTE the explicit float() casts at the append site above: B_MeV is an
-    # `mpf` in the returned dict on purpose (see the notes at both return
-    # sites), because collapsing it in memory would throw away digits a ratio
-    # consumer can legitimately use. The cast belongs HERE, at the witness
-    # boundary, where the precision is actually being given up — `default=str`
-    # below would otherwise render the mpf as a 50-digit STRING, which is
-    # wrong twice over: it changes the field's JSON TYPE from number to string
-    # under every existing reader, and it advertises 50 digits for a quantity
-    # whose Q_beta(n) input carries an 8.518e-07 RELATIVE CODATA uncertainty.
-    # Fifty digits on a seven-digit measurement is fake precision by ~44
-    # orders. The genuinely-50-dps companion is `delta_tr_exact`, which is
-    # dimensionless and has no experimental input in it at all.
+    # B_MeV is an `mpf` in the returned dict on purpose (see the notes at both
+    # return sites); it is serialized above, at the witness boundary, through
+    # `fmt` at the trace width. `default=str` below is only a safety net for
+    # the remaining sympy/mpmath fragments (the tr_M strings are already str).
     safe_results = json.loads(json.dumps(results, default=str))
     builder = (
         WitnessBuilder("binding-canonical", engine="sympy+mpmath")
@@ -732,8 +786,8 @@ if __name__ == "__main__":
         )
         .set_audit_only("docs/audits/categorical-vs-fitted-q-decay-ba.md")
         .add_parameter("q0", q0)
-        .add_parameter("Q_beta_n_MeV", float(_Q_BETA_N))
-        .add_parameter("precision_note", "B_MeV is bounded by EXPERIMENT, not by float64. Q_beta(n) = M_N - M_P - M_E carries a CODATA uncertainty of 6.664e-07 MeV, i.e. 8.518e-07 relative -- about 7.7e9 times coarser than float64's 1.1e-16. Storing B_MeV as a float is therefore already ~9 orders more precision than the physics supports, and serialising it at 50 dps would be fake precision by ~44 orders. Do NOT add a B_MeV_exact. What IS genuinely 50-dps is delta_tr_exact, the dimensionless trace difference: no experimental input enters it, and Q_beta cancels in any ratio B(a)/B(b) = delta_tr(a)/delta_tr(b), so ratio consumers should read delta_tr_exact rather than B_MeV.")
+        .add_parameter("Q_beta_n_MeV", _Q_BETA_N_TEXT)
+        .add_parameter("precision_note", "Two different precisions, kept apart. ARITHMETIC: Q_beta_n_MeV is the exact decimal M_N - M_P - M_E of the quoted CODATA-2022 / AME inputs; B_MeV = Q_beta_n_MeV * delta_tr is that decimal times the 50-dps trace difference, serialized at 50 significant digits, every one determined by those inputs. B_AME_MeV is the AME2020 table's own decimal text, verbatim. delta_m_over_m_pct is computed from these and serialized at 50 digits. EXPERIMENT: Q_beta(n) carries a CODATA uncertainty of 6.664e-07 MeV (8.518e-07 relative), so B_MeV as a PHYSICAL prediction is meaningful only to ~6 significant figures; the extra digits are not a claim of measurement, they are what the arithmetic gives for the quoted inputs. Q_beta cancels in any ratio B(a)/B(b) = delta_tr(a)/delta_tr(b), so ratio consumers should read delta_tr_exact, which has no experimental input at all.")
         .add_data("results", safe_results)
     )
     out = builder.save()

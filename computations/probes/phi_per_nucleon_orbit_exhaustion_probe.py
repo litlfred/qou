@@ -185,6 +185,12 @@ def main() -> int:
             json.dump({"description":
                        "Exhaustive phi over both nucleon letter-orbits at n=3.",
                        "data": results,
+                       "q0Anchor": "independent",
+                       "q0AnchorReason": (
+                           "phi = f1/f0 is the exact first-order log-derivative "
+                           "of tr_M at q = 1, computed in Fraction from the "
+                           "q-series of the braid word; no substrate pin q0 "
+                           "is read"),
                        "scriptFile": os.path.basename(__file__)}, fh, indent=2)
 
     print("\nDONE", flush=True)

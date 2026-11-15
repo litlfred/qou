@@ -12,6 +12,8 @@ import sys
 from pathlib import Path
 
 import mpmath as mp
+mp.mp.dps = max(mp.mp.dps, 40)  # the h2_one_rule base works at 40 dps; stated here so this
+                                # probe does not rely on an import side effect two modules away
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent / "h2_gg_atom"))

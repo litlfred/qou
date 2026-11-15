@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T17:01:43.538720+00:00",
-  "commitSha": "21a8d76250d2c826430ebb0e65b697ccce0adbfd",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-15T19:52:50.460630+00:00",
+  "commitSha": "6898a93de88af7d81d0c34b80d3a9160e6ba9680",
   "assertions": [
     {
       "name": "the CS-tower row the block publishes reproduces at the proton pin",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 6,
   "computation": "alpha_em_form_comparison_probe",
   "scriptFile": "alpha_em_form_comparison_probe.py",
-  "scriptHash": "17922d9e7dbc",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "08103e52bb2c",
+  "scriptCommitSha": "547b78208f6bb667ec8b3580f16390a74dbb9ce4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,11 +30,13 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1"
+    "mpmath": "1.4.1",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent"
   },
   "invocation": {
     "argv": [
@@ -85,5 +87,11 @@
     "The smallest residual belongs to the RULED-OUT PSLQ-empirical form. That is the signature of a fit, not evidence for it; the form is recorded only so the comparison is legible.",
     "kappa is still a `sorry`. Exact closure at the proton pin needs 1.9153143 against Witten's 1.722, an 11.2 % gap, and nothing here derives it.",
     "The muon-pin rows use the converged live pin from q-pinning-50-digit.witness.json, not the retired CODATA-2018 vintage that several content blocks still publish (qou-i229)."
-  ]
+  ],
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.1099785956427390466817951293800017527000655610290",
+    "proton": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "q0AnchorReason": "scores every alpha_EM closed form at BOTH registered pins (proton Q_50_DIGIT_STR and the live muon pin from the muon anchor witness) and reports the muon->proton pin change; both pins are read on purpose"
 }

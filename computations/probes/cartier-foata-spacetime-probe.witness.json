@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-15T12:53:58.403390+00:00",
-  "commitSha": "a1cde1b482c656a06b3c1aad56629ababd9896ae",
+  "computedAt": "2026-11-15T19:50:44.851206+00:00",
+  "commitSha": "6898a93de88af7d81d0c34b80d3a9160e6ba9680",
   "assertions": [
     {
       "name": "width_within_lean_bound",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 57,
+  "durationMs": 78,
   "computation": "cartier-foata-spacetime-probe",
   "scriptFile": "cartier_foata_spacetime_probe.py",
-  "scriptHash": "5abf33d03486",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "7e5fd1a205c2",
+  "scriptCommitSha": "a37c1692c1408f40318a9c4190a8c3777b6ee67c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,6 +37,7 @@
     "python": "3.13.18",
     "numpy": "2.5.3",
     "scipy": "1.18.1",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "cvxpy": "absent"
   },
@@ -615,5 +616,7 @@
         ]
       }
     ]
-  }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "pure combinatorics on braid-generator indices (Cartier-Foata layers); no q, no q0, no physical value is read"
 }

@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-14T23:11:51.703181+00:00",
-  "commitSha": "807f3a76cd370080bfad9342401cb88c618dcd72",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-15T20:11:05.924376+00:00",
+  "commitSha": "6898a93de88af7d81d0c34b80d3a9160e6ba9680",
   "assertions": [
     {
       "name": "1. det rho(sigma_i) = -1 identically",
@@ -96,11 +96,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 35,
   "computation": "qbeta-eigenphase-rationality-quantization",
   "scriptFile": "qbeta_eigenphase_rationality_quantization_probe.py",
-  "scriptHash": "db5d90fe003d",
-  "scriptCommitSha": "624a98a7d05d1ae0dc1aa9421cc9f1439316e54b",
+  "scriptHash": "a374710295a2",
+  "scriptCommitSha": "547b78208f6bb667ec8b3580f16390a74dbb9ce4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -108,12 +108,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "24ca776b0ad05497"
   },
   "invocation": {
     "argv": [
@@ -188,5 +191,7 @@
         }
       }
     }
-  }
+  },
+  "q0Anchor": "ambiguous",
+  "q0AnchorReason": "the ladder window, required phase and convention-C distance are evaluated at BOTH the proton pin (q_at) and the live CODATA-2022 muon pin (q_muon_at) and both are recorded; Part 3's headline is at proton, the muon arm is a cross-pin robustness check"
 }

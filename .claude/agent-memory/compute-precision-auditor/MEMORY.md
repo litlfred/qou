@@ -214,6 +214,10 @@ accept `workdps` at module scope). Sweep re-run: 440 fields moved, max rel
 8.78e-49; baseline arm reproduced the committed witness with 0 moved. The
 GENERAL trap stands: any module-scope `set_compute_dps(N)` in a LIBRARY
 module is this bug — grep for it before trusting a caller's declared dps.
+Second live instance, measured 2026-11-15: `chi_free_via_lr` calls
+`set_compute_dps()` (-> 70) at module scope and is imported lazily inside
+`tr_m_atom_zn`, so `binding_canonical` printed its 50-digit traces at 70 via
+`nstr(x, mp.mp.dps)`. **Serialize at the value's own width, never at ambient dps.**
 The `qou-mass/_internal/` mirror still carries the old line until a
 `sync-qou-mass-vendor.py --apply` (12 modules already drifted on main).
 
@@ -697,3 +701,20 @@ TRAPs.
   * **Two agents "contradicting" each other can both be right about different FILES**:
     "the chi-cache gives 0.152" (proton witness) vs "0.575" (`-muon` witness, built 2026-08-30,
     before the ordering ruling). Resolve by naming the file, then measure.
+- 2026-11-15 (q0Anchor refill slice, branch `claude/precision-anchor-refill-c-2026-11-15`). Two TRAPs:
+  * **A manifest `physical_proton` entry is INERT for a producer whose payload records two pins.**
+    `build()` stamps payload-first; a payload carrying both a proton and a muon `q` resolves
+    `ambiguous`, and only muon/proton are stamped, so the witness stays unstamped. Check with
+    `resolve_q0_anchor_payload_first(w, script, require_declared=True)` before choosing the manifest;
+    for a two-pin payload stamp `ambiguous` + reason via `save(extra=...)`.
+  * **`git checkout -- computations/` after `precision-gates.sh` also reverts UNCOMMITTED producer
+    edits.** Commit producer changes before running the gate family, then revert.
+- 2026-11-15 (q0Anchor refill slice, branch `claude/precision-anchor-refill-a-2026-11-15`):
+  9/21 stamped by re-run. TRAPs: (1) a CORPUS-MEASURING audit (raw-float64 backlog,
+  intra-ordering fingerprint) cannot be "stamped, re-run, numbers unchanged" -- its
+  counts track the tree; fix the producer, hold the witness. (2) 3 rev_* producers
+  already carried q0Anchor in source; their witnesses were simply never re-run. (3) a
+  stale CONSUMER shows up as added rows (`rev-edge-relaxation-window` reads the
+  k<=12 exact-maximiser witness; committed copy saw k<=10). Run the upstream with its
+  committed env (`REV_EXACT_KMAX=12`) first. (4) parallel agents share
+  `<scratch>/maturin.log`/`cargo.log`; name logs per agent.

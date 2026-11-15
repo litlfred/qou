@@ -23,7 +23,7 @@ normalization produces, and adjudicates to ONE canonical answer (or an honest
 THE THREE CANDIDATES
 --------------------
 (1) OPEN-DILOG π  (R3; #3831, `conj:dilogarithm-archimedean-limit`,
-    `conj:alg-geom-dilog-equiv`). The Rogers / Bloch–Wigner archimedean dilog.
+    `conj:algebraic-geometric-dilog-equivalence`). The Rogers / Bloch–Wigner archimedean dilog.
     π-power of the dilog data: Rogers `L(z)` values are rational·π² (π-power +2);
     Bloch–Wigner `D(z)` is an O(1) real (π-power 0). A bare `1/π` (power −1) is
     NOT the dilog signature at leading order — it would require the CONJECTURAL
