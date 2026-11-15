@@ -37,6 +37,10 @@ from _precision import fmt  # noqa: E402
 
 A = 3
 PLAYERS = ["k0", "k1", "k2", "m0", "m1"]
+# --alone: the owner's ruling of 2026-11-15 (H2 electron card): every particle must
+# ALSO pass reading 3 on its own three strands. The violation of each particle
+# tested alone is added to the bonded-group violation.
+ALONE = "--alone" in sys.argv
 
 
 def main() -> int:
@@ -52,7 +56,11 @@ def main() -> int:
         m = [state[A + b] for b in bonds]
         key = (tuple(k), tuple(bonds), tuple(m))
         if key not in cache:
-            cache[key] = P.energy(Cs, list(k), list(bonds), h, m if bonds else None)[0]
+            e = P.energy(Cs, list(k), list(bonds), h, m if bonds else None)[0]
+            if ALONE:
+                v = e[0] + mp.fsum(P.energy(Cs[1], [ki], [], h)[0][0] for ki in k)
+                e = (v, e[1])
+            cache[key] = e
         return cache[key]
 
     def rng(i):
@@ -121,7 +129,8 @@ def main() -> int:
     print(f"global optimum {gmin['state']} cost {gmin['cost']}; wall {time.time() - t0:.0f} s", flush=True)
 
     from qou_substrate.witness import WitnessBuilder  # noqa: PLC0415
-    wb = WitnessBuilder("chain-reaction-product-distribution-probe", engine="python", start_time=t0)
+    name = "chain-reaction-product-distribution-alone-probe" if ALONE else "chain-reaction-product-distribution-probe"
+    wb = WitnessBuilder(name, engine="python", start_time=t0)
     wb.set_description("Stable states and pathway end states of the bonded three-particle gamma-gamma "
                        "chain under reading 3 per bonded group (convention D, proton pin); lexicographic "
                        "(violation, crossings) energy is a stated choice. Counts reachable products, no rates.")
@@ -129,6 +138,7 @@ def main() -> int:
     wb.add_parameter("dps", P.DPS)
     wb.add_parameter("kmax", P.KMAX)
     wb.add_parameter("mmax", P.MMAX)
+    wb.add_parameter("rule", "per bonded group + each particle alone" if ALONE else "per bonded group")
     wb.add_data("stable_states", stables)
     wb.add_data("global_optimum", gmin)
     wb.add_data("pathways", paths)
