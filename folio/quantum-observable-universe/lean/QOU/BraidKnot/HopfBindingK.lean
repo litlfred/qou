@@ -19,9 +19,11 @@ deuteron at `n_0 = 6`.
 - `hopfBindingWord_lengthBound` — proven via `decide`
 - `hopfBindingWord_minimal` — proven from a finite-search argument
   over all length-1 words in `{σ_3, σ_3⁻¹}`
-- `deuteron_hopfBindingK_categoricalNecessary` — combines the
-  decidable proxies with `evenPower_necessary_for_blockPosSemidef`
-  to bracket the categorical claim
+- `deuteron_hopfBindingK_passes_necessary_conditions` — bundles the
+  decidable proxies. (The general axiom
+  `evenPower_necessary_for_blockPosSemidef` it once cited was false and
+  was removed 2026-11-15; for single-generator words such as `[3, 3]`
+  the even-power test is still the right PSD criterion.)
 
 ## Mathematical content
 
@@ -98,16 +100,13 @@ theorem hopfBindingWord_minimal_in_sigma3_subset :
     all_goals decide
 
 /-- **Categorical necessary-condition bracket**: combines all the
-    decidable proxies for `[3, 3]` to assert the categorical
-    necessity of PSD-feasibility (via the
-    `evenPower_necessary_for_blockPosSemidef` axiom from
-    `PSDFeasibilityProxy`).
+    decidable proxies for `[3, 3]`.
 
-    Read: "If the braid-word evaluation `braidWordEval 6 [3, 3]`
-    fails to be Wedderburn-block-PSD, then `[3, 3]` violates
-    `evenPower`.  But `[3, 3]` does satisfy `evenPower`
-    (`hopfBindingWord_evenPower`), so the contrapositive does not
-    apply — and the necessary condition for PSD is met."
+    For a single-generator word `σ_g^k` the element has eigenvalues
+    `q^k` and `(−q⁻¹)^k`, so it is block-PSD iff `k` is even; `[3, 3]`
+    has `k = 2`. (The general even-power axiom once cited here was
+    false — the full twist in `H_3` is PSD with odd counts — and was
+    removed 2026-11-15.)
 
     This is contrapositive-style: doesn't PROVE PSD-feasibility,
     but documents that the necessary-condition checks all pass. -/
