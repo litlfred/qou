@@ -147,11 +147,30 @@ flavour flip. Measured on the ruled cell:
   f(1/q₀) (agreement to 7e-52). So the Markov trace at z_D intertwines the bar involution with
   q ↦ q⁻¹ on this word, but Δ is not bar-anti-invariant.
 
-Reading: the "bar-odd" label belongs to the **retired z = 1 closed form**
-|q² − 2q − 1|(q + 1)/(2q³), not to the ruled z_D cell. That the bar involution is the flavour
-flip, and Q_β is a flavour difference, is **consistent in spirit but not literally borne
-out**: the measured trace has no definite bar parity. Treat the label as historical for the
-ruled cell. This is the agent's reading; nothing is edited.
+~~Reading: the "bar-odd" label belongs to the **retired z = 1 closed form**.~~
+**🛑 CORRECTED 2026-11-15 (same day, same author). That attribution was never measured, and
+it is false.** None of the three Q_β functionals on record has a definite bar parity under
+q ↦ q⁻¹. Measured symbolically (sympy, exact):
+
+| functional | exact form | f(1/q) = −f(q)? | vanishes at q = 1? |
+|---|---|---|---|
+| retired Form A, (q² − 2q − 1)(q + 1)/(2q³) | — | **no**: g + ḡ = −(q+1)²(q⁴+q³−2q²+q+1)/(2q³) | **no** (−2) |
+| retired z = 1 trace | (q² − 1)(q² − 2q − 1)/(2q²) | **no** | **yes**, carries the factor q·h |
+| ruled z_D trace (`nuc11_interleaved`) | (q² − 1)(q⁴ + 1)·P₁₂(q)/(4q⁷(q² + 1)²) | **no** | **yes**, carries the factor q·h |
+
+Here P₁₂ = 2q¹² − 6q¹⁰ + 3q⁸ − 6q⁶ + 5q⁴ − 5q² + 2. The ruled trace's bar-even part is
+exactly −h²·(q² + 1)(q⁴ + 1)/(8q³) = −h²·[2]_q·(q² + q⁻²)/8, which is nonzero for q ≠ ±1.
+
+So the only "sinh" content measurable in either trace functional is an **overall factor
+h = 2 sinh λ**, which makes them vanish at q = 1. That is weaker than bar-oddness, and Form A
+does not have even that. The label "bar-odd sinh partner" is therefore not a measured parity
+of any Q_β functional in the corpus. It reads as an interpretive description.
+
+**Contamination from the wrong attribution:** §7 D-W2 and the paragraph above (corrected
+here); the `qou-hlx7` bean append; the PR #7844 body ("that label belongs to the retired
+z = 1 form"); two messages to the coordinator, and the coordinator's relay of D-W2 to the
+owner. The measured facts in those places (f(q₀), f(1/q₀), no parity for the ruled cell) are
+unaffected. Only the "retired form" attribution is wrong.
 
 ## 5. Scope of every negative
 
@@ -194,6 +213,9 @@ ruled cell. This is the agent's reading; nothing is edited.
 the bit is not in the letter and 6b is the only place the corpus puts chirality.
 
 ### D-W2: should the "bar-odd sinh partner" description of Q_β be scoped to the retired z = 1 form?
+
+> 🛑 Corrected 2026-11-15: the premise "it belongs to the retired form" is false (§4). The
+> option stands, but the note must say that **no** Q_β functional on record is bar-odd.
 
 * **(yes)** *Means:* a one-line scoping note where AGENTS.md / content call Q_β bar-odd.
   *Costs:* a small prose edit. *Risks:* none to numbers. *Commits to:* not using bar parity

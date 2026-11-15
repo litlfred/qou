@@ -84,3 +84,7 @@ lean-direct exit 0, axioms standard). Audit: docs/audits/2026-11-15-one-sided-we
   [2]W_R = [2]s − (q⁻¹ s − q s⁻¹), both sorry-free. The one-sided vertex is the letter minus
   the normalised skein difference. L vs R is exactly the weighting convention (which crossing
   carries q), and bar swaps both. 9a's risk is confirmed, scope (b) within one letter. Audit §8.
+- 🛑 CORRECTION 2026-11-15 (own claim). The line above saying "bar-odd sinh partner belongs
+  to the retired z = 1 form" was unmeasured and is FALSE. Retired Form A, the retired z = 1
+  trace, and the ruled z_D trace all lack definite bar parity. The two traces only carry an
+  overall factor h. Audit §4 corrected; follow-up question is bean qou-hlx8.
