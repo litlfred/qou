@@ -153,8 +153,8 @@ def chi_lambda_atom_braid(lambda_shape, atom_word, q_value=Q_50_DIGIT_STR,
             total += coeff * val
         else:
             # Empty word = identity element; χ_λ(1) = dim V_λ
-            from hecke_characters import hook_length_dim_lambda
-            total += coeff * mp.mpf(hook_length_dim_lambda(lambda_shape))
+            from hecke_characters import specht_dim
+            total += coeff * mp.mpf(specht_dim(lambda_shape))
     return total
 
 
