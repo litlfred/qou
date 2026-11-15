@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-wigner-su4-alpha-cluster-probe",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:wigner-su4-alpha-cluster-probe",
+  "kind": "remark",
+  "title": "Numerical probe: SU(4) alpha-cluster capacity and AME residuals",
+  "interprets": "papers/quantum-observable-universe/blocks/conj-wigner-su4-from-spin-isospin",
+  "tags": [
+    "nuclear-physics",
+    "su4",
+    "alpha-cluster",
+    "audit",
+    "numerical-probe"
+  ],
+  "text": "wigner-su4-alpha-cluster-probe.md",
+  "provenance": "authored"
+}
