@@ -162,9 +162,6 @@ theorem word2_p6 : B1 q * V0 q * B0 q * V0 q * V1 q * B1 q =
      (-q^6 + q^4 - q^2 + 1) / (q^4*(q^2 + 1)), (-q^6 + q^4 - q^2 + 1) / (q^4*(q^2 + 1)), (q^8 + q^4 - q^2 + 1) / (q^4*(q^2 + 1))] := by
   rw [word2_p5 hq hn hD, B1_eq hq hn hD]; mat3
 
-theorem Jb_Ja : Jb q * Ja q = 0 := by
-  have := D_ne' hD; have := D_ne'' hD; unfold Ja Jb; mat3
-
 /-- `w₁` commutes with `J₄` although it uses the strand-4 site twice. -/
 theorem word1_comm_J4 : Commute (word1 q) (J4 q) := by
   unfold Commute SemiconjBy word1; rw [word1_p6 hq hn hD, J4_eq hq hn]; mat3
