@@ -236,6 +236,6 @@ Built on branch `claude/categorify-analytic-steps-2026-11-15`. All sorry-free, a
 - Item 3: `QBeta/FaddeevCompactCurve.lean` (the compact-curve class, `ratio_const`, and the entire instance).
 
 Added after #7946's rigidity theorem landed (21:21Z). The branch merges #7946's branch:
-- Item 1, Part B: `blochWigner : SuslinDilogTheory ℂ ℝ`, and `SuslinDilogTheory.eq_mul_blochWigner`, which says every continuous, conjugation-odd instance over ℂ is c·D. Reflection oddness D(1−z) = −D(z) is not yet proved for D, so it is a hypothesis of the anharmonic lemma.
+- Item 1, Part B: `blochWigner : SuslinDilogTheory ℂ ℝ`, and `SuslinDilogTheory.eq_mul_blochWigner`, which says every continuous, conjugation-odd instance over ℂ is c·D. Reflection oddness D(1−z) = −D(z) is now proved (`FiveTermProof.blochD_one_sub`, commit 3cbbacd09a), so `blochWigner_anharmonic` holds unconditionally. `reflection_of_continuous` extends it to every continuous conjugation-odd instance.
 - Item 2: `Archimedean/IdealTetVolumeRigidity.lean`. Continuity, the Bloch–Wigner symmetries and the five-term (2–3 move) relation give V = (V(i)/D(i))·D on ℂ∖{0,1}, for acute and obtuse shapes alike. These three geometric inputs are hypotheses, not yet proved for the Lean hyperbolic volume. They are the remaining work on this route.
 - Item 4 was withdrawn (see the correction above).
