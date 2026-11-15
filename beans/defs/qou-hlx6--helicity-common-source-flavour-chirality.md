@@ -1,7 +1,7 @@
 ---
 # qou-hlx6
 title: 'Helicity: do flavour and chirality share the letter orientation as common source?'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - chirality
 parent: qou-qs0e
 created_at: 2026-11-15T09:00:00Z
-updated_at: 2026-11-15T10:30:00Z
+updated_at: 2026-11-15T17:20:00Z
 ---
 
 Owner 2026-11-15: "work Helicity bean. Derive whether flavour and chirality share the
@@ -44,3 +44,10 @@ docs/audits/2026-11-15-helicity-common-source-flavour-chirality.md.
 D-H1 = A: Hecke-parameter labelling canonical (BW +q root = L). D-H2 = no: the swap is not a
 second per-letter bit; chirality stays on the cone side. Consequence: the left-only weak
 coupling still needs a SEPARATE source (scope (a) for V-A) — follow-up bean qou-hlx7.
+
+
+## 2026-11-15 closed (owner card)
+
+Question answered: refuted, scope (b), sorry-free (`HelicityCommonSource.lean`). Owner
+decisions D-H1 = A and D-H2 = no are recorded above. The open follow-up (source of the
+left-only weak coupling) lives in qou-hlx7, which stays open.

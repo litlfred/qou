@@ -1,13 +1,13 @@
 ---
 # qou-iav7
 title: threerow_isospin_parity_probe has the same C/D straddle as qou-qdtk, and emits NO witness
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-25T19:29:30Z
-updated_at: 2026-10-04T15:14:14Z
+updated_at: 2026-11-15T17:20:00Z
 parent: qou-5vkl
 ---
 
@@ -169,3 +169,11 @@ refuted. A probe that could address it must be built on an object D does not ann
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-25 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-11-15 closed (owner card)
+
+The convention-D repair landed 2026-08-25. The last defect was a crash: an `mpf` in an
+f-string with `:.0f` stopped the probe before `w.save()`. Fixed in PR #7932 (commit
+799617af8): exit 0, 0.5 s, 4/4 assertions. Instrument bean only — the isospin question
+itself stays open; this probe cannot address it under convention D.
