@@ -49,3 +49,9 @@ Lean-direct exits 0; standard axioms.
 - Still open: the Čech–singular comparison and orientation (`KummerSurfaceData`), Poincaré–Hopf `deg c₁(T_S) = χ`, and local real lifts of the tangent cocycle. Not planned (Mathlib-scale).
 
 2026-11-15 (session_01Qmmkt7arrvA9y98dYdLsLV): KummerSurfaceData consistency check, branch claude/gerbe-kummer-data-point-2026-11-15, file QOU/MathlibExt/CechDominantCover.lean, sorry-free. In a thin category, a cocycle on a family with a dominant member is a coboundary, so Ȟ² is a point when every admissible cover contains the whole space. On a one-point space with the open-cover predicate, every field of KummerSurfaceData is proved (both degrees are 0). This shows the class is satisfiable. It does NOT give the surface case: hχ forces χ=0. Still open: Ȟ²(S,ℤ)≅ℤ and Ȟ²(S,μn)≅ℤ/n for a closed surface (Čech–singular comparison). Bean stays open.
+
+## 2026-11-15 (later): surface steps S1 and S2, plus R2
+- S1 is proved: Čech H² of any finite (Alexandrov-discrete) space equals the H² of its minimal cover. See `cechH2EquivMinimal` in `QOU/MathlibExt/CechCofinalCover.lean`, branch `claude/c5a-r2-surface-2026-11-15`, issue #7958. It is sorry-free.
+- S2 is negative. On the 6-point finite S², the Čech H² of the minimal cover is 0, measured exactly mod 2, mod 3 and mod 1000003, with locally constant ℤ coefficients. The sanity check passes: the 4-point S¹ gives H¹ = 1. So no finite model of this type gives a non-trivial KummerSurfaceData. Notes are in /mnt/project-files/qou-leftovers/s2-finite-sphere-negative.md.
+- A real surface still needs the Čech = singular comparison, which is Mathlib-scale. This bean stays OPEN.
+- R2, reading A, is proved to fail for every z: `StrandTowerObstruction.lean`. Reading B (root of unity) has no derivation in the corpus.
