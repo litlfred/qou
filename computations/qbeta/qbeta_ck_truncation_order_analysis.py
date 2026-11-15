@@ -234,7 +234,7 @@ def main() -> int:
     print("    q₀-ANCHOR-INDEPENDENT. A near-match swings across q₀ anchors.")
     print()
     # c_3 empirical at two q₀ anchors (values from the deep-audit record)
-    c3_muon_pin = mpf("-2.0097")   # muon-anchored q₀
+    c3_muon_pin = mpf("-2.01986031187401")   # muon-anchored q₀
     c3_mp_pin   = mpf("-2.0693")   # m_p-anchored q₀ (current canonical)
     c3_nominal  = mpf("-2")        # J_Hopf(q=1)
     swing_muon = float(abs((c3_muon_pin - c3_nominal) / c3_nominal) * 100)

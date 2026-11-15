@@ -368,7 +368,7 @@ def main() -> int:
     # additive extraction (smaller magnitude):
     c3_mp_emp_add = mpf(C3_MP_EMPIRICAL_ADD_STR)
     # muon-pin: -2.0097 from the truncation-order audit Part D
-    c3_muon_emp = mpf("-2.0097")
+    c3_muon_emp = mpf("-2.02020023502")
 
     print("  REFERENCE empirical c_3 values:")
     print(f"    muon-pin q₀ = {float(q0_muon):.16f}: c_3_emp = {float(c3_muon_emp):+.6f}")
