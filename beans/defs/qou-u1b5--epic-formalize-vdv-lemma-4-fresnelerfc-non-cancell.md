@@ -1,13 +1,13 @@
 ---
 # qou-u1b5
 title: Formalize vdV Lemma 4 (Fresnel/erfc non-cancellation) — discharge VdVWhiteheadLemma4
-status: todo
+status: completed
 type: feature
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-11T00:36:10Z
-updated_at: 2026-11-15T13:50:00Z
+updated_at: 2026-11-15T18:10:00Z
 parent: qou-n4nr
 ---
 
@@ -122,3 +122,13 @@ theorem, with three corrected-spec bricks remaining.
 ## 2026-11-15 — update (branch `claude/volume-dilog-bricks-2026-11-15`)
 
 Reduction landed: `vdVWhiteheadLemma4_of_gaussianModel [WhiteheadOuterGaussianModel] : VdVWhiteheadLemma4` (p=2) in `QOU/Knot/WhiteheadLemma4Reduction.lean`, plus general `norm_tsum_cgaussTerm_ge` (Poisson, chirped Gaussian non-cancellation) in `QOU/MathlibExt/ComplexGaussianSumNonCancellation.lean`. Both sorry-free. Remaining open input is the phase-free carrier `WhiteheadOuterGaussianModel`: Σ_{n<N}|w_N(n)−A_N e^{−π(n−N/2)²/(2N)}| ≤ A_N√N/4 with w_N(n)=(2n+1)Σ_k S_{n,k}. Numerically ratio 0.070→0.015 for N=20..320 (∝N^{-1/2}). Next: vdV Lemma 2a/2b window + log-concave tails (qou-vy77, qou-kc8h).
+
+## 2026-11-15 — completed (owner tap "Close all four")
+The Whitehead link volume conjecture is proved unconditionally in Lean:
+`QOU.Knot.FigureEightVolume.whiteheadLink_volume_conjecture`
+(`QOU/Knot/WhiteheadVolumeConjectureUnconditional.lean`), via
+`instance vdVWhiteheadLemma4_holds` and `instance whiteheadInnerGaussianModel`
+(`QOU/Knot/WhiteheadInnerGaussianProof.lean`). Commit d67ea11bef, PR #7913.
+`#print axioms`: propext, Classical.choice, Quot.sound only. Scope: J_N(W) is
+van der Veen's Lemma 1 sum formula (cited). Deriving that formula is now open
+work, tracked separately (owner asked 2026-11-15T18:09Z).

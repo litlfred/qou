@@ -1,13 +1,13 @@
 ---
 # qou-vy77
 title: 'L4-2: vdV Lemma 2a/2b — Gaussian window estimates S_nk/S~N'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-11T00:36:11Z
-updated_at: 2026-11-15T11:48:19Z
+updated_at: 2026-11-15T18:10:00Z
 parent: qou-r9ih
 ---
 
@@ -59,3 +59,13 @@ discriminate and all six land on 4a-c+d.
 Consequence already banked: with signs restored the Step-4 integral runs over
 all of R^{n+1} and is elementary for every n -- no orthant, no erfc (see
 qou-9r2q, and QOU.MathlibExt.integral_vdv_step4, sorry-free).
+
+## 2026-11-15 — completed (owner tap "Close all four")
+The Whitehead link volume conjecture is proved unconditionally in Lean:
+`QOU.Knot.FigureEightVolume.whiteheadLink_volume_conjecture`
+(`QOU/Knot/WhiteheadVolumeConjectureUnconditional.lean`), via
+`instance vdVWhiteheadLemma4_holds` and `instance whiteheadInnerGaussianModel`
+(`QOU/Knot/WhiteheadInnerGaussianProof.lean`). Commit d67ea11bef, PR #7913.
+`#print axioms`: propext, Classical.choice, Quot.sound only. Scope: J_N(W) is
+van der Veen's Lemma 1 sum formula (cited). Deriving that formula is now open
+work, tracked separately (owner asked 2026-11-15T18:09Z).

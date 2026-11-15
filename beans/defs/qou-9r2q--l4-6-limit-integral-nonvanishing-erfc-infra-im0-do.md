@@ -1,13 +1,13 @@
 ---
 # qou-9r2q
 title: 'L4-6: limit integral nonvanishing — erfc infra + Im>0 domination; then instance VdVWhiteheadLemma4'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-11T00:36:12Z
-updated_at: 2026-11-15T13:50:00Z
+updated_at: 2026-11-15T18:10:00Z
 parent: qou-n4nr
 ---
 
@@ -50,3 +50,13 @@ Ledger: docs/coordination/whitehead-link-volume-conjecture-join.md
 ## 2026-11-15 — update (branch `claude/volume-dilog-bricks-2026-11-15`)
 
 The Fresnel/erfc non-cancellation is now covered by `half_sqrt_le_norm_tsum_whiteheadGauss` (‖Σ_ℤ G‖ ≥ √N/2, N≥16) in `WhiteheadLemma4Reduction.lean`, sorry-free. Instance VdVWhiteheadLemma4 now waits only on `WhiteheadOuterGaussianModel` (see qou-u1b5).
+
+## 2026-11-15 — completed (owner tap "Close all four")
+The Whitehead link volume conjecture is proved unconditionally in Lean:
+`QOU.Knot.FigureEightVolume.whiteheadLink_volume_conjecture`
+(`QOU/Knot/WhiteheadVolumeConjectureUnconditional.lean`), via
+`instance vdVWhiteheadLemma4_holds` and `instance whiteheadInnerGaussianModel`
+(`QOU/Knot/WhiteheadInnerGaussianProof.lean`). Commit d67ea11bef, PR #7913.
+`#print axioms`: propext, Classical.choice, Quot.sound only. Scope: J_N(W) is
+van der Veen's Lemma 1 sum formula (cited). Deriving that formula is now open
+work, tracked separately (owner asked 2026-11-15T18:09Z).
