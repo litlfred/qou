@@ -53,12 +53,24 @@ Many physically-motivated spectral sequences degenerate at E₂
 (no higher differentials). This is the Hochschild / KLR situation
 relevant for residue A. -/
 
-/-- Conditional class axiomatising E₂-degeneration of a spectral
-sequence. NEAR-MATCH tier; instance not constructed (requires
-upstream Hochschild / KLR machinery). -/
-class E2Degenerates (S : SpectralSequencePage) : Prop where
-  /-- All differentials vanish for `r ≥ 2` (opaque marker). -/
-  d_vanishes_above_two : True
+/-- Conditional class: the spectral sequence degenerates at `E₂`, i.e.
+every differential `d r` with `r ≥ 2` is zero.
+
+The pages are bare types, so "zero" needs a `Zero` on each page; it is
+taken as an instance argument.  Until 2026-11-15 the only field was
+`d_vanishes_above_two : True`, which every `S` satisfied; the field now
+says what its name says.  NEAR-MATCH tier; no instance is constructed
+(that needs the upstream Hochschild / KLR machinery). -/
+class E2Degenerates (S : SpectralSequencePage) [∀ r p q, Zero (S.E r p q)] : Prop where
+  /-- All differentials vanish for `r ≥ 2`. -/
+  d_vanishes_above_two : ∀ r : ℕ, 2 ≤ r → ∀ (p q : ℤ) (x : S.E r p q), S.d r p q x = 0
+
+/-- `E₂`-degeneration is a real constraint: a page whose `d₂` sends some
+element to a nonzero element is not degenerate. -/
+theorem not_e2Degenerates_of_d2_ne_zero (S : SpectralSequencePage)
+    [∀ r p q, Zero (S.E r p q)] {p q : ℤ} (x : S.E 2 p q) (hx : S.d 2 p q x ≠ 0) :
+    ¬ E2Degenerates S :=
+  fun h => hx (h.d_vanishes_above_two 2 le_rfl p q x)
 
 /-! ## Conditional class: KLR spectral sequence
 
