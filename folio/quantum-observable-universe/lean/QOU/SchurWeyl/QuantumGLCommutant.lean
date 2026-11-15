@@ -34,8 +34,9 @@ Cartan elements, so the commutant is unchanged; that identification is not prove
 
 ## Base ring (§7c)
 
-F1's transpose identities: any commutative ring. Everything else needs a linearly ordered field,
-because positivity of the dot product is the mechanism, as in `JimboGL`.
+F1's transpose identities: any commutative ring. `exists_ne_zero_mem_hwSpace` and the commutant
+machinery: any field. The complement, generation and dimension statements need a linearly
+ordered field, because positivity of the dot product is the mechanism, as in `JimboGL`.
 
 -- Ref: [jimbo1986] M. Jimbo, Lett. Math. Phys. 11 (1986) 247–252.
 -/
@@ -91,7 +92,7 @@ end Transpose
 
 section Perp
 
-variable {L : Type*} [Field L] [LinearOrder L] [IsStrictOrderedRing L] {ι : Type*} [Fintype ι]
+variable {L : Type*} [Field L] {ι : Type*} [Fintype ι]
 
 /-- A submodule invariant under every matrix in `S`. -/
 def Invariant (S : Set (Matrix ι ι L)) (W : Submodule L (ι → L)) : Prop :=
@@ -117,9 +118,11 @@ theorem dotPerp_eq (W : Submodule L (ι → L)) :
     dotForm]
 
 /-- **The dot-product complement is a complement** (anisotropy over an ordered field). -/
-theorem isCompl_dotPerp (W : Submodule L (ι → L)) : IsCompl W (dotPerp W) := by
-  have hrefl : (dotForm (ι := ι)).IsRefl := fun x y h => by
-    simp only [dotForm, dotProductBilin_apply_apply] at h ⊢
+theorem isCompl_dotPerp [LinearOrder L] [IsStrictOrderedRing L] (W : Submodule L (ι → L)) :
+    IsCompl W (dotPerp W) := by
+  have hrefl : (dotForm (ι := ι)).IsRefl := fun (x y : ι → L) (h : dotForm x y = 0) => by
+    change x ⬝ᵥ y = 0 at h
+    change y ⬝ᵥ x = 0
     rw [dotProduct_comm]; exact h
   rw [dotPerp_eq, LinearMap.BilinForm.isCompl_orthogonal_iff_disjoint hrefl, ← dotPerp_eq,
     Submodule.disjoint_def]
@@ -240,16 +243,16 @@ end Gens
 
 section Generate
 
-variable {L : Type*} [Field L] [LinearOrder L] [IsStrictOrderedRing L] {d : ℕ}
+variable {L : Type*} [Field L] {d : ℕ}
 
 /-- The potential `Σ_x x·μ(x)`, raised by one by every `E_i`. -/
-def potential (μ : Fin d → ℕ) : ℕ := ∑ x, (x : ℕ) * μ x
+def potential (μ : Fin d → ℕ) : ℕ := ∑ x : Fin d, (x : ℕ) * μ x
 
 theorem potential_shift {i j : Fin d} (hij : (j : ℕ) = i + 1) {μ ν : Fin d → ℕ}
     (h1 : ν j = μ j + 1) (h2 : ν i + 1 = μ i) (h3 : ∀ x, x ≠ i → x ≠ j → ν x = μ x) :
     potential ν = potential μ + 1 := by
   have hji : j ≠ i := fun e => by rw [e] at hij; omega
-  have key : ∀ x, (x : ℕ) * ν x + (if x = i then (x : ℕ) else 0)
+  have key : ∀ x : Fin d, (x : ℕ) * ν x + (if x = i then (x : ℕ) else 0)
       = (x : ℕ) * μ x + (if x = j then (x : ℕ) else 0) := by
     intro x
     by_cases hxi : x = i
@@ -286,7 +289,7 @@ theorem exists_ne_zero_mem_hwSpace (q : L) (m : ℕ) {W : Submodule L ((Fin (m +
       rw [hT, Finset.mem_filter]
       refine ⟨hμ, weightProj μ *ᵥ v, hW _ (weightProj_mem_uqGens q m μ) v hvW, hne0, ?_⟩
       rw [mulVec_mulVec, weightProj_mul_self]
-    rw [hemp] at hmem; exact absurd hmem (Finset.not_mem_empty μ)
+    rw [hemp] at hmem; exact absurd hmem (Finset.notMem_empty μ)
   obtain ⟨μ, hμT, hmax⟩ := T.exists_max_image potential hTne
   obtain ⟨-, v, hvW, hv0, hvμ⟩ := (Finset.mem_filter.mp hμT)
   refine ⟨μ, v, hvW, hv0, hvμ, fun i j hij => ?_⟩
@@ -304,14 +307,14 @@ theorem exists_ne_zero_mem_hwSpace (q : L) (m : ℕ) {W : Submodule L ((Fin (m +
     have := hmax ν hνT
     rw [potential_shift hij hshift.1 hshift.2.1 hshift.2.2] at this
     omega
-  · rw [hu, ← hvμ, mulVec_mulVec, mulVec_mulVec, ← Matrix.mul_assoc,
+  · rw [hu, ← hvμ, mulVec_mulVec, mulVec_mulVec,
       weightProj_mul_raiseOp_mul_weightProj q q⁻¹ hij hshift, zero_mulVec]
 
 /-- The span of all highest-weight spaces. -/
 def hwAll (q : L) (m : ℕ) : Submodule L ((Fin (m + 1) → Fin d) → L) := ⨆ μ, hwSpace q m μ
 
 /-- **F2: the highest-weight vectors generate `V`.** -/
-theorem genClosure_hw_eq_top (q : L) (m : ℕ) :
+theorem genClosure_hw_eq_top [LinearOrder L] [IsStrictOrderedRing L] (q : L) (m : ℕ) :
     genClosure (uqGens q m) (hwAll (d := d) q m) = ⊤ := by
   set C := genClosure (uqGens q m) (hwAll (d := d) q m)
   have hC : Invariant (uqGens q m) C := invariant_genClosure _ _
@@ -331,7 +334,7 @@ end Generate
 
 section Bound
 
-variable {L : Type*} [Field L] [LinearOrder L] [IsStrictOrderedRing L] {d : ℕ}
+variable {L : Type*} [Field L] {d : ℕ}
 
 theorem mulVec_mem_hwSpace {q : L} {m : ℕ} {Y : Matrix (Fin (m + 1) → Fin d) _ L}
     (hY : Y ∈ commutant (uqGens q m)) {μ : Fin d → ℕ} {v : (Fin (m + 1) → Fin d) → L}
@@ -344,28 +347,30 @@ theorem mulVec_mem_hwSpace {q : L} {m : ℕ} {Y : Matrix (Fin (m + 1) → Fin d)
 /-- Restriction of a commutant element to the highest-weight spaces. -/
 def resHW (q : L) (m : ℕ) :
     commutant (uqGens (d := d) q m) →ₗ[L]
-      ((μ : occW d m) → (hwSpace q m μ →ₗ[L] hwSpace q m μ)) where
+      ((μ : occW d m) → (hwSpace q m μ.1 →ₗ[L] hwSpace q m μ.1)) where
   toFun Y μ := (Matrix.mulVecLin Y.1).restrict fun _ hv => mulVec_mem_hwSpace Y.2 hv
   map_add' Y Y' := by
     funext μ; ext v
-    simp [Matrix.add_mulVec]
+    simp
   map_smul' c Y := by
     funext μ; ext v
-    simp [Matrix.smul_mulVec]
+    simp
 
-theorem resHW_injective (q : L) (m : ℕ) : Function.Injective (resHW (d := d) q m) := by
+theorem resHW_injective [LinearOrder L] [IsStrictOrderedRing L] (q : L) (m : ℕ) :
+    Function.Injective (resHW (d := d) q m) := by
   classical
-  rw [← LinearMap.ker_eq_bot, LinearMap.ker_eq_bot']
+  refine (injective_iff_map_eq_zero (resHW (d := d) q m)).mpr ?_
   intro Y hY
   have hN : ∀ v ∈ hwAll (d := d) q m, Y.1 *ᵥ v = 0 := by
     intro v hv
     refine Submodule.iSup_induction (motive := fun v => Y.1 *ᵥ v = 0)
       (fun μ => hwSpace q m μ) hv (fun μ w hw => ?_)
-      (mulVec_zero _) (fun x y hx hy => by rw [mulVec_add, hx, hy, add_zero])
+      (mulVec_zero _) (fun x y hx hy => by simp only at hx hy ⊢; rw [mulVec_add, hx, hy, add_zero])
     by_cases hμ : μ ∈ occW d m
     · have := congrArg (fun f => ((f ⟨μ, hμ⟩) ⟨w, hw⟩ : (Fin (m + 1) → Fin d) → L)) hY
       simpa [resHW] using this
-    · rw [← hw.1, weightProj_eq_zero_of_not_mem hμ, zero_mulVec, mulVec_zero]
+    · show Y.1 *ᵥ w = 0
+      rw [← hw.1, weightProj_eq_zero_of_not_mem hμ, zero_mulVec, mulVec_zero]
   have hall := mulVec_eq_zero_of_genClosure Y.2 hN
   rw [genClosure_hw_eq_top] at hall
   apply Subtype.ext
@@ -374,7 +379,7 @@ theorem resHW_injective (q : L) (m : ℕ) : Function.Injective (resHW (d := d) q
   simpa [mulVec_single_one] using this
 
 /-- **F3: `dim B' ≤ Σ_μ (dim N_μ)²`.** -/
-theorem finrank_commutant_le (q : L) (m : ℕ) :
+theorem finrank_commutant_le [LinearOrder L] [IsStrictOrderedRing L] (q : L) (m : ℕ) :
     Module.finrank L (commutant (uqGens (d := d) q m))
       ≤ ∑ μ ∈ occW d m, Module.finrank L (hwSpace q m μ) ^ 2 := by
   have h := LinearMap.finrank_le_finrank_of_injective (resHW_injective (d := d) q m)
@@ -389,7 +394,8 @@ open YoungDiagram QOU.Mathlib
 /-- **G3.4, conditional on (★)**: the Jimbo image of `H_{m+1}(q)` is the full commutant of the
 `U_q(gl_d)` operators on `(L^d)^{⊗(m+1)}`. The hypothesis `hstar` is the bound (★) of the scoping
 audit; it is a hypothesis of the theorem, not an axiom. -/
-theorem range_jimbo_eq_commutant [NeZero d] (q : L) (hq : q ≠ 0)
+theorem range_jimbo_eq_commutant [LinearOrder L] [IsStrictOrderedRing L] [NeZero d]
+    (q : L) (hq : q ≠ 0)
     (hq2 : GenericParameter.NotRootOfUnity q) (m : ℕ)
     (hstar : ∑ μ ∈ occW d m, Module.finrank L (hwSpace q m μ) ^ 2
       ≤ ∑ lam : RowCapIdx d m,
