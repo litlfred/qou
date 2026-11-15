@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T18:17:08Z
-updated_at: 2026-10-04T15:21:01Z
+updated_at: 2026-11-15T13:50:00Z
 parent: qou-v2om
 ---
 
@@ -118,3 +118,9 @@ Also fixed in the same file: the comment above `Z_MARKOV` claimed *"Matches
 mass_endomorphism.z_mark = 1/(q^1/2 + q^-1/2)"* — convention **C** — while the line below it
 computes `Q0**3/(Q0**2+1)`, convention **D**. Second instance of the `qou-pc7l` class in as many
 files.
+
+## 2026-11-15 — mpf defaults
+
+`jones_wenzl_weight` and `ocneanu_weights_3A` defaulted to the float64 `Q0_PROTON` / `Z_MARKOV`, so every default call evaluated the weights at a double's worth of q. The defaults are now the mpf proton pin `Q_MP`, with z derived in mpf from that same q. Measured at 70 dps: the weights move by ~5e-17 relative (for example (3) → −5.3e-17, (2,1) → +4.3e-17).
+
+Correction to a claim made earlier the same day: I said the normalisation Σ_λ d_λ w_λ = 1 held only to ~1e-16 because of the float64 default. That was wrong. The 1e-16 came from measuring at mpmath's default 15 digits. At 70 dps the identity holds to ~1e-70 with the old defaults and with the new ones, because it is a rational identity in (q, z) and holds for any z. So the "Fixed" section above stands as written.
