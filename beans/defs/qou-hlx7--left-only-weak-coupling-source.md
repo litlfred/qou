@@ -10,7 +10,7 @@ tags:
     - weak
 parent: qou-qs0e
 created_at: 2026-11-15T09:00:00Z
-updated_at: 2026-11-15T11:05:00Z
+updated_at: 2026-11-15T11:12:00Z
 ---
 
 Follow-up from qou-hlx6 (PR #7836). Corpus-grepped 2026-11-15 (beans, docs/audits,
@@ -158,3 +158,13 @@ Next steps: validate and merge #7865; D-H3; qou-hlxt option (4); qou-hlxp resear
 
 Container note: the root .lake Mathlib cache was deleted to free disk. Restore it via the
 AGENTS.md Step 0 recipe before any Lean work.
+
+## 2026-11-15 owner decision D-H3 (relayed by session_01Qmmkt6dCyH72NJwcLGW2sF)
+
+D-H3: record "weak vertex ∝ left projector" (the q-weighted skein difference
+(q − q⁻¹)[2]_q P₊) as an OPEN CONJECTURE, and also try to derive it. NOT done by stream 9a;
+the new project thread takes it. Natural base: sibling 9c's
+`two_smul_oneSidedL_eq_skein` (#7844, [2]W_L = [2]σ − (qσ − q⁻¹σ⁻¹)). The conjecture needs
+a Lean carrier with content (§3b-tax). Live computations from stream 9a: none. Two
+send_message attempts to the coordinator returned "resource not found", so this bean is
+the handoff record.
