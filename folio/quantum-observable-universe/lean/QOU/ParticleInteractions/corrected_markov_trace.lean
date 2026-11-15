@@ -1,71 +1,44 @@
-import Mathlib.Tactic
+import Mathlib.Algebra.Algebra.Basic
+import Mathlib.Algebra.Module.LinearMap.Defs
+import Mathlib.Tactic.Ring
 
 /-!
-# QOU.ParticleInteractions.corrected_markov_trace — `tr_M(σ₀σ₁σ₀) = z³`
+# QOU.ParticleInteractions.corrected_markov_trace — `tr_M(σ₀σ₁σ₀) = h·z² + z`
 
 Canonical Lean for content block
-[`prop:corrected-markov-trace`](../../../quantum-observable-universe/particle-interactions/corrected-markov-trace.md).
+[`prop:corrected-markov-trace`](../../../quantum-observable-universe/mass-theory/corrected-markov-trace.md).
 
-*The Markov trace of the trefoil braid `σ₀σ₁σ₀` is `z³` — NOT
-`h·z² + z` as the (invalid for adjacent generators) vertex-volume
-product formula would give.*
+**Corrected 2026-11-15.** This file used to derive `tr_M(σ₀σ₁σ₀) = z³`
+from the hypothesis `tr_M(σ₀σ₁σ₀) = z · tr_M(σ₁σ₀)`. That hypothesis is
+false: the Markov property `tr_M(x σ_n) = z · tr_M(x)` needs `x ∈ H_n`,
+i.e. `σ_n` must be the maximal generator and must not occur in `x`. In
+`σ₀σ₁σ₀` the outer `σ₀` is not maximal. The correct value is `h·z² + z`,
+derived below from linearity, cyclicity, the Hecke relation and one
+genuine application of the Markov property.
 
-The `.md` proof is a three-step recursion using the **Markov
-reduction property** (`thm:jones-markov-trace`): peeling the
-top-index generator multiplies the trace by `z`.  This file derives
-`z³` **from those reduction steps as hypotheses** — not from the
-conclusion.  The previous encoding axiomatised an opaque
-`intermediate_trace` with `h_trefoil : trM = intermediate` and
-`h_z3 : z³ = intermediate` and rewrote with both; that was a vacuous
-self-assuming projection (the two fields just *posit* the answer) and
-is removed.
-
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/corrected-markov-trace.md
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
 -/
 
 namespace QOU.ParticleInteractions
 
-/-- **Corrected Markov-trace of the trefoil** `tr_M(σ₀ σ₁ σ₀) = z³`,
-derived from the Markov reduction steps.
+/-- **Markov trace of `σ₀σ₁σ₀`.** Let `tr : A → R` be `R`-linear, cyclic,
+with `tr 1 = 1` and `tr σ₀ = z`, let `σ₀² = h•σ₀ + 1` (Hecke relation),
+and let the Markov property hold for the word `σ₀² σ₁` (here `σ₀² ∈ H₂`
+and `σ₁` is the maximal generator). Then `tr(σ₀σ₁σ₀) = h·z² + z`.
 
-The hypotheses are exactly the three reduction steps of the `.md`
-proof, each an instance of the Markov property (peel the maximal-index
-generator, multiplying the trace by `z`):
-
-* `h_single : trM_σ0 = z`               (single generator),
-* `h_reduce1 : trM_σ1σ0 = z * trM_σ0`   (peel `σ₁`),
-* `h_reduce2 : trM_σ0σ1σ0 = z * trM_σ1σ0` (peel the top `σ₀`).
-
-From these, `tr_M(σ₀σ₁σ₀) = z·(z·(z)) = z³` by substitution and
-`ring`.  None of the hypotheses asserts the conclusion `= z³`.
-
-**Base ring (§7c).** The reduction recursion is a polynomial identity
-(`z·z·z = z³`) — only `+`, `*`, substitution, and a `≠` distinctness
-hypothesis; no inverse, no `Real.*`, no ordering. It is therefore stated
-over a generic commutative ring `{R : Type*} [CommRing R]`. -/
--- Ref: [manuscript] thm:jones-markov-trace (Markov reduction property)
-theorem corrected_markov_trace {R : Type*} [CommRing R]
-    (z trM_σ0 trM_σ1σ0 trM_σ0σ1σ0 : R)
-    (h_single : trM_σ0 = z)
-    (h_reduce1 : trM_σ1σ0 = z * trM_σ0)
-    (h_reduce2 : trM_σ0σ1σ0 = z * trM_σ1σ0) :
-    trM_σ0σ1σ0 = z ^ 3 := by
-  rw [h_reduce2, h_reduce1, h_single]; ring
-
-/-- **Naive vs corrected**: the trefoil Markov trace is NOT the naive
-vertex-volume product `h·z² + z` (whenever those two scalars differ).
-
-Combines `corrected_markov_trace` with the inequality hypothesis
-`z³ ≠ h·z² + z`. -/
--- Ref: [manuscript] prop:corrected-markov-trace (product factorisation invalid for adjacent generators)
-theorem corrected_markov_trace_ne_naive {R : Type*} [CommRing R]
-    (h z trM_σ0 trM_σ1σ0 trM_σ0σ1σ0 : R)
-    (h_single : trM_σ0 = z)
-    (h_reduce1 : trM_σ1σ0 = z * trM_σ0)
-    (h_reduce2 : trM_σ0σ1σ0 = z * trM_σ1σ0)
-    (h_distinct : z ^ 3 ≠ h * z ^ 2 + z) :
-    trM_σ0σ1σ0 ≠ h * z ^ 2 + z := by
-  rw [corrected_markov_trace z trM_σ0 trM_σ1σ0 trM_σ0σ1σ0 h_single h_reduce1 h_reduce2]
-  exact h_distinct
+Proof: cyclicity gives `tr(σ₀σ₁σ₀) = tr(σ₀²σ₁)`; Markov gives
+`z · tr(σ₀²)`; Hecke and linearity give `z · (h·z + 1)`. -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+theorem corrected_markov_trace {R A : Type*} [CommRing R] [Ring A] [Algebra R A]
+    (tr : A →ₗ[R] R) (σ₀ σ₁ : A) (h z : R)
+    (hecke : σ₀ * σ₀ = h • σ₀ + 1)
+    (cyclic : ∀ a b : A, tr (a * b) = tr (b * a))
+    (tr_one : tr 1 = 1) (tr_σ₀ : tr σ₀ = z)
+    (markov : tr (σ₀ * σ₀ * σ₁) = z * tr (σ₀ * σ₀)) :
+    tr (σ₀ * σ₁ * σ₀) = h * z ^ 2 + z := by
+  have hc : tr (σ₀ * σ₁ * σ₀) = tr (σ₀ * σ₀ * σ₁) := by
+    rw [cyclic (σ₀ * σ₁) σ₀, ← mul_assoc]
+  rw [hc, markov, hecke, map_add, map_smul, tr_one, tr_σ₀, smul_eq_mul]
+  ring
 
 end QOU.ParticleInteractions

@@ -490,7 +490,7 @@
 | [prop:categorical-chain-convergence-mechanisms](#prop:categorical-chain-convergence-mechanisms) | Convergence of $\mathfrak{Q}_\beta^{\text{cat}}$'s infinite product: per-knot c(K) brane-tower bound + inter-knot linking-number locality (Habiro-ring interpretation) | Ch 7 | `qou:QOU.BraidKnot.categorical_chain_convergence_mechanisms` |
 | [prop:quantum-dilog-convergence](#prop:quantum-dilog-convergence) | Convergence of the quantum dilogarithm $\Phi_q$ on $\lvert z\rvert < q$ | Ch 12 | `qou:QOU.MassEndomorphism.PhiQConvergence.quantumDilog_multipliable` |
 | [prop:core-levi-form](#prop:core-levi-form) | The Levi datum of the vorticity plane field is the single scalar $\xi\cdot\mathrm{curl}\,\xi$ | Ch 18 | `qou:QOU.FluidDynamics.CoreLevi.core_levi_form` |
-| [prop:corrected-markov-trace](#prop:corrected-markov-trace) | Corrected Markov trace of the trefoil braid | Ch 12 | `qou:QOU.ParticleInteractions.corrected_markov_trace` |
+| [prop:corrected-markov-trace](#prop:corrected-markov-trace) | Markov trace of $\sigma_0\sigma_1\sigma_0$ | Ch 12 | `qou:QOU.ParticleInteractions.corrected_markov_trace` |
 | [prop:cosimplicial-crossed-groupoid](#prop:cosimplicial-crossed-groupoid) | Cosimplicial crossed groupoid | Ch 4 | `qou:QOU.LiftingDescent.cosimplicial_crossed_groupoid_exists` |
 | [prop:skein-coulomb-enhancement](#prop:skein-coulomb-enhancement) | Coulomb enhancement from electron-proton Skein crossings | Ch 14 | `qou:QOU.Archimedean.skein_coulomb_enhancement` |
 | [prop:coulomb-strong-ratio-q-rational](#prop:coulomb-strong-ratio-q-rational) | Coulomb/strong ratio $\tanh(\ln q)$ is the q-rational $(q^2-1)/(q^2+1)$ | Ch 11 | `qou:QOU.Braiding.coulomb_strong_ratio_q_rational` |
