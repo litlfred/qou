@@ -1,0 +1,109 @@
+{
+ "producer": "computations/probes/w_braid_reconcile_probe.py",
+ "bean": "qou-0whz",
+ "arithmetic": "exact (sympy over Q(q)); no floats",
+ "q0_anchor": "none (symbolic in q)",
+ "C1_K_orientation": [
+  {
+   "h_slot": "std",
+   "K_on_e1": "q^+1",
+   "markov": true,
+   "z": "q**3/(q**2 + 1)",
+   "z_is_zD": true,
+   "partial_trace": [
+    [
+     "q**2",
+     "0"
+    ],
+    [
+     "0",
+     "q**2"
+    ]
+   ]
+  },
+  {
+   "h_slot": "std",
+   "K_on_e1": "q^-1",
+   "markov": false,
+   "z": null,
+   "z_is_zD": false,
+   "partial_trace": [
+    [
+     "1",
+     "0"
+    ],
+    [
+     "0",
+     "q**2 + 1 - 1/q**2"
+    ]
+   ]
+  },
+  {
+   "h_slot": "swp",
+   "K_on_e1": "q^+1",
+   "markov": false,
+   "z": null,
+   "z_is_zD": false,
+   "partial_trace": [
+    [
+     "q**2 + 1 - 1/q**2",
+     "0"
+    ],
+    [
+     "0",
+     "1"
+    ]
+   ]
+  },
+  {
+   "h_slot": "swp",
+   "K_on_e1": "q^-1",
+   "markov": true,
+   "z": "q**3/(q**2 + 1)",
+   "z_is_zD": true,
+   "partial_trace": [
+    [
+     "q**2",
+     "0"
+    ],
+    [
+     "0",
+     "q**2"
+    ]
+   ]
+  }
+ ],
+ "C2_schur_weyl_weight_preservation": {
+  "coproduct": "E⊗K+1⊗E",
+  "s1": {
+   "K": true,
+   "E": true,
+   "F": true
+  },
+  "s2": {
+   "K": true,
+   "E": true,
+   "F": true
+  },
+  "T(3,5)": {
+   "K": true,
+   "E": true,
+   "F": true
+  },
+  "s1^4": {
+   "K": true,
+   "E": true,
+   "F": true
+  }
+ },
+ "C3_component_count": {
+  "max_components_3_strand_closure": 3,
+  "components_T35_closure": 1,
+  "rhs_min_components_p_trefoil_unknot": 5
+ },
+ "checks": {
+  "C1": true,
+  "C2": true,
+  "C3": true
+ }
+}
