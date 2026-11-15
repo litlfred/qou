@@ -2,7 +2,7 @@
   "engine": "python",
   "engineVersion": "python 3.11.15",
   "computedAt": "2026-09-06T09:33:45.793299+00:00",
-  "commitSha": "8236415f5a227b9ac73c388e6e9b3a21d99a41e9",
+  "commitSha": "b8a698e518f74a1c7fd4d053438c71042ec323a5",
   "assertions": [
     {
       "name": "three_row_weights_vanish_identically_at_n_6_9_12",
@@ -20,9 +20,9 @@
     },
     {
       "name": "series_order_one_equals_the_six_recorded_rationals_exactly",
-      "computed": "0",
+      "computed": "1",
       "expected": "1",
-      "passed": false,
+      "passed": true,
       "source": "[ε¹] of Δtr(1+ε) (= c1, since ε = ℏ_q + O(ℏ_q²)) vs the Richardson-measured rationals in PairwiseChainLeadingOrder.lean, Fraction equality: pp 1/8, pn 1/16, nn 0, T 1/64, 3He 1/8, 4He 7/128"
     },
     {
@@ -49,24 +49,24 @@
     },
     {
       "name": "closed_form_equals_permutation_count_for_every_ZN_with_A_2_to_20",
-      "computed": "0",
+      "computed": "1",
       "expected": "1",
-      "passed": false,
-      "source": "c1(Z,N) = (21Z+16N)(2^(-A-1) - 2^(-2A)) - 4(I_pp - I_nn) 2^(-2A), I_pp = max(Z-1,0), I_nn = max(N-1,0), vs [★](free) - [★](atom) for all 228 (Z,N) with A = 2..20, Fraction equality. The 21 and 16 are the nucleon letter census 4·#σ - #σ⁻¹ (proton 6/3, neutron 5/4); the ±4 are the pp/nn interface letters."
+      "passed": true,
+      "source": "c1(Z,N) = (3Z-2N)(2^(-A-1) - 2^(-2A)) - 4(I_pp - I_nn) 2^(-2A), I_pp = max(Z-1,0), I_nn = max(N-1,0), vs [★](free) - [★](atom) for all 228 (Z,N) with A = 2..20, Fraction equality. The 3 and -2 are the Borromean nucleon deletion weights (S_p, S_n)/2 = (6, -4)/2 (superseded grouped: 21 and 16 from (42, 32)/2); the ±4 are the pp/nn interface letters."
     },
     {
       "name": "closed_form_reproduces_the_six_recorded_rationals",
       "computed": "1",
       "expected": "1",
       "passed": true,
-      "source": "pp: 19/8, pn: 37/16, nn: 9/4, T: 163/64, 3He: 85/32, 4He: 259/128"
+      "source": "pp: 1/8, pn: 1/16, nn: 0, T: 1/64, 3He: 1/8, 4He: 7/128"
     }
   ],
-  "allPassed": false,
+  "allPassed": true,
   "durationMs": 524505,
   "computation": "c1-leading-coefficient-derived-probe",
   "scriptFile": "c1_leading_coefficient_derived_probe.py",
-  "scriptHash": "0f752db2b3f4",
+  "scriptHash": "35222ba1072c",
   "scriptCommitSha": "ef3cb742a974afbd8da720d6c38b5c53578f9140",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -105,9 +105,11 @@
         "c0_derived": "1/8",
         "a0_eq_c0": true,
         "c1_exact": "1/8",
-        "c1_recorded": "19/8",
-        "c1_eq_recorded": false,
-        "c2_exact": "33/32"
+        "c1_recorded": "1/8",
+        "c1_eq_recorded": true,
+        "c2_exact": "33/32",
+        "c3_exact": "67/16",
+        "c4_exact": "-585/128"
       },
       {
         "case": "pn",
@@ -121,9 +123,11 @@
         "c0_derived": "1/8",
         "a0_eq_c0": true,
         "c1_exact": "1/16",
-        "c1_recorded": "37/16",
-        "c1_eq_recorded": false,
-        "c2_exact": "25/32"
+        "c1_recorded": "1/16",
+        "c1_eq_recorded": true,
+        "c2_exact": "25/32",
+        "c3_exact": "43/8",
+        "c4_exact": "109/192"
       },
       {
         "case": "nn",
@@ -137,9 +141,11 @@
         "c0_derived": "1/8",
         "a0_eq_c0": true,
         "c1_exact": "0",
-        "c1_recorded": "9/4",
-        "c1_eq_recorded": false,
-        "c2_exact": "1/16"
+        "c1_recorded": "0",
+        "c1_eq_recorded": true,
+        "c2_exact": "1/16",
+        "c3_exact": "27/4",
+        "c4_exact": "27/32"
       },
       {
         "case": "T",
@@ -153,9 +159,11 @@
         "c0_derived": "3/32",
         "a0_eq_c0": true,
         "c1_exact": "1/64",
-        "c1_recorded": "163/64",
-        "c1_eq_recorded": false,
-        "c2_exact": "99/128"
+        "c1_recorded": "1/64",
+        "c1_eq_recorded": true,
+        "c2_exact": "99/128",
+        "c3_exact": "101/16",
+        "c4_exact": "371/192"
       },
       {
         "case": "3He",
@@ -169,9 +177,11 @@
         "c0_derived": "3/32",
         "a0_eq_c0": true,
         "c1_exact": "1/8",
-        "c1_recorded": "85/32",
-        "c1_eq_recorded": false,
-        "c2_exact": "157/128"
+        "c1_recorded": "1/8",
+        "c1_eq_recorded": true,
+        "c2_exact": "157/128",
+        "c3_exact": "839/128",
+        "c4_exact": "9989/1536"
       },
       {
         "case": "4He",
@@ -185,9 +195,11 @@
         "c0_derived": "7/128",
         "a0_eq_c0": true,
         "c1_exact": "7/128",
-        "c1_recorded": "259/128",
-        "c1_eq_recorded": false,
-        "c2_exact": null
+        "c1_recorded": "7/128",
+        "c1_eq_recorded": true,
+        "c2_exact": "439/512",
+        "c3_exact": "1329/256",
+        "c4_exact": "43079/6144"
       }
     ],
     "permutation_formula": [
@@ -370,8 +382,8 @@
         "N": 2,
         "A": 2,
         "c1": "0",
-        "closed_form": "9/4",
-        "equal": false,
+        "closed_form": "0",
+        "equal": true,
         "c1_times_2^(3A)": "0"
       },
       {
@@ -379,8 +391,8 @@
         "N": 1,
         "A": 2,
         "c1": "1/16",
-        "closed_form": "37/16",
-        "equal": false,
+        "closed_form": "1/16",
+        "equal": true,
         "c1_times_2^(3A)": "4"
       },
       {
@@ -388,8 +400,8 @@
         "N": 0,
         "A": 2,
         "c1": "1/8",
-        "closed_form": "19/8",
-        "equal": false,
+        "closed_form": "1/8",
+        "equal": true,
         "c1_times_2^(3A)": "8"
       },
       {
@@ -397,8 +409,8 @@
         "N": 3,
         "A": 3,
         "c1": "-5/32",
-        "closed_form": "19/8",
-        "equal": false,
+        "closed_form": "-5/32",
+        "equal": true,
         "c1_times_2^(3A)": "-80"
       },
       {
@@ -406,8 +418,8 @@
         "N": 2,
         "A": 3,
         "c1": "1/64",
-        "closed_form": "163/64",
-        "equal": false,
+        "closed_form": "1/64",
+        "equal": true,
         "c1_times_2^(3A)": "8"
       },
       {
@@ -415,8 +427,8 @@
         "N": 1,
         "A": 3,
         "c1": "1/8",
-        "closed_form": "85/32",
-        "equal": false,
+        "closed_form": "1/8",
+        "equal": true,
         "c1_times_2^(3A)": "64"
       },
       {
@@ -424,8 +436,8 @@
         "N": 0,
         "A": 3,
         "c1": "19/64",
-        "closed_form": "181/64",
-        "equal": false,
+        "closed_form": "19/64",
+        "equal": true,
         "c1_times_2^(3A)": "152"
       },
       {
@@ -433,8 +445,8 @@
         "N": 4,
         "A": 4,
         "c1": "-11/64",
-        "closed_form": "115/64",
-        "equal": false,
+        "closed_form": "-11/64",
+        "equal": true,
         "c1_times_2^(3A)": "-704"
       },
       {
@@ -442,8 +454,8 @@
         "N": 3,
         "A": 4,
         "c1": "-13/256",
-        "closed_form": "491/256",
-        "equal": false,
+        "closed_form": "-13/256",
+        "equal": true,
         "c1_times_2^(3A)": "-208"
       },
       {
@@ -451,8 +463,8 @@
         "N": 2,
         "A": 4,
         "c1": "7/128",
-        "closed_form": "259/128",
-        "equal": false,
+        "closed_form": "7/128",
+        "equal": true,
         "c1_times_2^(3A)": "224"
       },
       {
@@ -460,8 +472,8 @@
         "N": 1,
         "A": 4,
         "c1": "41/256",
-        "closed_form": "545/256",
-        "equal": false,
+        "closed_form": "41/256",
+        "equal": true,
         "c1_times_2^(3A)": "656"
       },
       {
@@ -469,8 +481,8 @@
         "N": 0,
         "A": 4,
         "c1": "9/32",
-        "closed_form": "9/4",
-        "equal": false,
+        "closed_form": "9/32",
+        "equal": true,
         "c1_times_2^(3A)": "1152"
       },
       {
@@ -478,8 +490,8 @@
         "N": 5,
         "A": 5,
         "c1": "-67/512",
-        "closed_form": "19/16",
-        "equal": false,
+        "closed_form": "-67/512",
+        "equal": true,
         "c1_times_2^(3A)": "-4288"
       },
       {
@@ -487,8 +499,8 @@
         "N": 4,
         "A": 5,
         "c1": "-63/1024",
-        "closed_form": "1287/1024",
-        "equal": false,
+        "closed_form": "-63/1024",
+        "equal": true,
         "c1_times_2^(3A)": "-2016"
       },
       {
@@ -496,8 +508,8 @@
         "N": 3,
         "A": 5,
         "c1": "1/256",
-        "closed_form": "677/512",
-        "equal": false,
+        "closed_form": "1/256",
+        "equal": true,
         "c1_times_2^(3A)": "128"
       },
       {
@@ -505,8 +517,8 @@
         "N": 2,
         "A": 5,
         "c1": "71/1024",
-        "closed_form": "1421/1024",
-        "equal": false,
+        "closed_form": "71/1024",
+        "equal": true,
         "c1_times_2^(3A)": "2272"
       },
       {
@@ -514,8 +526,8 @@
         "N": 1,
         "A": 5,
         "c1": "69/512",
-        "closed_form": "93/64",
-        "equal": false,
+        "closed_form": "69/512",
+        "equal": true,
         "c1_times_2^(3A)": "4416"
       },
       {
@@ -523,8 +535,8 @@
         "N": 0,
         "A": 5,
         "c1": "209/1024",
-        "closed_form": "1559/1024",
-        "equal": false,
+        "closed_form": "209/1024",
+        "equal": true,
         "c1_times_2^(3A)": "6688"
       },
       {
@@ -532,8 +544,8 @@
         "N": 6,
         "A": 6,
         "c1": "-11/128",
-        "closed_form": "749/1024",
-        "equal": false,
+        "closed_form": "-11/128",
+        "equal": true,
         "c1_times_2^(3A)": "-22528"
       },
       {
@@ -541,8 +553,8 @@
         "N": 5,
         "A": 6,
         "c1": "-201/4096",
-        "closed_form": "3147/4096",
-        "equal": false,
+        "closed_form": "-201/4096",
+        "equal": true,
         "c1_times_2^(3A)": "-12864"
       },
       {
@@ -550,8 +562,8 @@
         "N": 4,
         "A": 6,
         "c1": "-27/2048",
-        "closed_form": "1647/2048",
-        "equal": false,
+        "closed_form": "-27/2048",
+        "equal": true,
         "c1_times_2^(3A)": "-3456"
       },
       {
@@ -559,8 +571,8 @@
         "N": 3,
         "A": 6,
         "c1": "93/4096",
-        "closed_form": "3441/4096",
-        "equal": false,
+        "closed_form": "93/4096",
+        "equal": true,
         "c1_times_2^(3A)": "5952"
       },
       {
@@ -568,8 +580,8 @@
         "N": 2,
         "A": 6,
         "c1": "15/256",
-        "closed_form": "897/1024",
-        "equal": false,
+        "closed_form": "15/256",
+        "equal": true,
         "c1_times_2^(3A)": "15360"
       },
       {
@@ -577,8 +589,8 @@
         "N": 1,
         "A": 6,
         "c1": "387/4096",
-        "closed_form": "3735/4096",
-        "equal": false,
+        "closed_form": "387/4096",
+        "equal": true,
         "c1_times_2^(3A)": "24768"
       },
       {
@@ -586,8 +598,8 @@
         "N": 0,
         "A": 6,
         "c1": "269/2048",
-        "closed_form": "1943/2048",
-        "equal": false,
+        "closed_form": "269/2048",
+        "equal": true,
         "c1_times_2^(3A)": "34432"
       },
       {
@@ -595,8 +607,8 @@
         "N": 7,
         "A": 7,
         "c1": "-429/8192",
-        "closed_form": "885/2048",
-        "equal": false,
+        "closed_form": "-429/8192",
+        "equal": true,
         "c1_times_2^(3A)": "-109824"
       },
       {
@@ -604,8 +616,8 @@
         "N": 6,
         "A": 7,
         "c1": "-547/16384",
-        "closed_form": "7391/16384",
-        "equal": false,
+        "closed_form": "-547/16384",
+        "equal": true,
         "c1_times_2^(3A)": "-70016"
       },
       {
@@ -613,8 +625,8 @@
         "N": 5,
         "A": 7,
         "c1": "-15/1024",
-        "closed_form": "3849/8192",
-        "equal": false,
+        "closed_form": "-15/1024",
+        "equal": true,
         "c1_times_2^(3A)": "-30720"
       },
       {
@@ -622,8 +634,8 @@
         "N": 4,
         "A": 7,
         "c1": "67/16384",
-        "closed_form": "8005/16384",
-        "equal": false,
+        "closed_form": "67/16384",
+        "equal": true,
         "c1_times_2^(3A)": "8576"
       },
       {
@@ -631,8 +643,8 @@
         "N": 3,
         "A": 7,
         "c1": "187/8192",
-        "closed_form": "1039/2048",
-        "equal": false,
+        "closed_form": "187/8192",
+        "equal": true,
         "c1_times_2^(3A)": "47872"
       },
       {
@@ -640,8 +652,8 @@
         "N": 2,
         "A": 7,
         "c1": "681/16384",
-        "closed_form": "8619/16384",
-        "equal": false,
+        "closed_form": "681/16384",
+        "equal": true,
         "c1_times_2^(3A)": "87168"
       },
       {
@@ -649,8 +661,8 @@
         "N": 1,
         "A": 7,
         "c1": "247/4096",
-        "closed_form": "4463/8192",
-        "equal": false,
+        "closed_form": "247/4096",
+        "equal": true,
         "c1_times_2^(3A)": "126464"
       },
       {
@@ -658,8 +670,8 @@
         "N": 0,
         "A": 7,
         "c1": "1299/16384",
-        "closed_form": "9237/16384",
-        "equal": false,
+        "closed_form": "1299/16384",
+        "equal": true,
         "c1_times_2^(3A)": "166272"
       },
       {
@@ -667,8 +679,8 @@
         "N": 8,
         "A": 8,
         "c1": "-501/16384",
-        "closed_form": "4071/16384",
-        "equal": false,
+        "closed_form": "-501/16384",
+        "equal": true,
         "c1_times_2^(3A)": "-513024"
       },
       {
@@ -676,8 +688,8 @@
         "N": 7,
         "A": 8,
         "c1": "-1373/65536",
-        "closed_form": "16915/65536",
-        "equal": false,
+        "closed_form": "-1373/65536",
+        "equal": true,
         "c1_times_2^(3A)": "-351488"
       },
       {
@@ -685,8 +697,8 @@
         "N": 6,
         "A": 8,
         "c1": "-373/32768",
-        "closed_form": "8771/32768",
-        "equal": false,
+        "closed_form": "-373/32768",
+        "equal": true,
         "c1_times_2^(3A)": "-190976"
       },
       {
@@ -694,8 +706,8 @@
         "N": 5,
         "A": 8,
         "c1": "-119/65536",
-        "closed_form": "18169/65536",
-        "equal": false,
+        "closed_form": "-119/65536",
+        "equal": true,
         "c1_times_2^(3A)": "-30464"
       },
       {
@@ -703,8 +715,8 @@
         "N": 4,
         "A": 8,
         "c1": "127/16384",
-        "closed_form": "4699/16384",
-        "equal": false,
+        "closed_form": "127/16384",
+        "equal": true,
         "c1_times_2^(3A)": "130048"
       },
       {
@@ -712,8 +724,8 @@
         "N": 3,
         "A": 8,
         "c1": "1135/65536",
-        "closed_form": "19423/65536",
-        "equal": false,
+        "closed_form": "1135/65536",
+        "equal": true,
         "c1_times_2^(3A)": "290560"
       },
       {
@@ -721,8 +733,8 @@
         "N": 2,
         "A": 8,
         "c1": "881/32768",
-        "closed_form": "10025/32768",
-        "equal": false,
+        "closed_form": "881/32768",
+        "equal": true,
         "c1_times_2^(3A)": "451072"
       },
       {
@@ -730,8 +742,8 @@
         "N": 1,
         "A": 8,
         "c1": "2389/65536",
-        "closed_form": "20677/65536",
-        "equal": false,
+        "closed_form": "2389/65536",
+        "equal": true,
         "c1_times_2^(3A)": "611584"
       },
       {
@@ -739,8 +751,8 @@
         "N": 0,
         "A": 8,
         "c1": "755/16384",
-        "closed_form": "5327/16384",
-        "equal": false,
+        "closed_form": "755/16384",
+        "equal": true,
         "c1_times_2^(3A)": "773120"
       },
       {
@@ -748,8 +760,8 @@
         "N": 9,
         "A": 9,
         "c1": "-2279/131072",
-        "closed_form": "2297/16384",
-        "equal": false,
+        "closed_form": "-2279/131072",
+        "equal": true,
         "c1_times_2^(3A)": "-2333696"
       },
       {
@@ -757,8 +769,8 @@
         "N": 8,
         "A": 9,
         "c1": "-3287/262144",
-        "closed_form": "38023/262144",
-        "equal": false,
+        "closed_form": "-3287/262144",
+        "equal": true,
         "c1_times_2^(3A)": "-1682944"
       },
       {
@@ -766,8 +778,8 @@
         "N": 7,
         "A": 9,
         "c1": "-505/65536",
-        "closed_form": "19645/131072",
-        "equal": false,
+        "closed_form": "-505/65536",
+        "equal": true,
         "c1_times_2^(3A)": "-1034240"
       },
       {
@@ -775,8 +787,8 @@
         "N": 6,
         "A": 9,
         "c1": "-753/262144",
-        "closed_form": "40557/262144",
-        "equal": false,
+        "closed_form": "-753/262144",
+        "equal": true,
         "c1_times_2^(3A)": "-385536"
       },
       {
@@ -784,8 +796,8 @@
         "N": 5,
         "A": 9,
         "c1": "257/131072",
-        "closed_form": "1307/8192",
-        "equal": false,
+        "closed_form": "257/131072",
+        "equal": true,
         "c1_times_2^(3A)": "263168"
       },
       {
@@ -793,8 +805,8 @@
         "N": 4,
         "A": 9,
         "c1": "1781/262144",
-        "closed_form": "43091/262144",
-        "equal": false,
+        "closed_form": "1781/262144",
+        "equal": true,
         "c1_times_2^(3A)": "911872"
       },
       {
@@ -802,8 +814,8 @@
         "N": 3,
         "A": 9,
         "c1": "381/32768",
-        "closed_form": "22179/131072",
-        "equal": false,
+        "closed_form": "381/32768",
+        "equal": true,
         "c1_times_2^(3A)": "1560576"
       },
       {
@@ -811,8 +823,8 @@
         "N": 2,
         "A": 9,
         "c1": "4315/262144",
-        "closed_form": "45625/262144",
-        "equal": false,
+        "closed_form": "4315/262144",
+        "equal": true,
         "c1_times_2^(3A)": "2209280"
       },
       {
@@ -820,8 +832,8 @@
         "N": 1,
         "A": 9,
         "c1": "2791/131072",
-        "closed_form": "11723/65536",
-        "equal": false,
+        "closed_form": "2791/131072",
+        "equal": true,
         "c1_times_2^(3A)": "2857984"
       },
       {
@@ -829,8 +841,8 @@
         "N": 0,
         "A": 9,
         "c1": "6853/262144",
-        "closed_form": "48163/262144",
-        "equal": false,
+        "closed_form": "6853/262144",
+        "equal": true,
         "c1_times_2^(3A)": "3508736"
       },
       {
@@ -838,8 +850,8 @@
         "N": 10,
         "A": 10,
         "c1": "-1273/131072",
-        "closed_form": "20449/262144",
-        "equal": false,
+        "closed_form": "-1273/131072",
+        "equal": true,
         "c1_times_2^(3A)": "-10428416"
       },
       {
@@ -847,8 +859,8 @@
         "N": 9,
         "A": 10,
         "c1": "-7633/1048576",
-        "closed_form": "84347/1048576",
-        "equal": false,
+        "closed_form": "-7633/1048576",
+        "equal": true,
         "c1_times_2^(3A)": "-7816192"
       },
       {
@@ -856,8 +868,8 @@
         "N": 8,
         "A": 10,
         "c1": "-2543/524288",
-        "closed_form": "43447/524288",
-        "equal": false,
+        "closed_form": "-2543/524288",
+        "equal": true,
         "c1_times_2^(3A)": "-5208064"
       },
       {
@@ -865,8 +877,8 @@
         "N": 7,
         "A": 10,
         "c1": "-2539/1048576",
-        "closed_form": "89441/1048576",
-        "equal": false,
+        "closed_form": "-2539/1048576",
+        "equal": true,
         "c1_times_2^(3A)": "-2599936"
       },
       {
@@ -874,8 +886,8 @@
         "N": 6,
         "A": 10,
         "c1": "1/131072",
-        "closed_form": "22997/262144",
-        "equal": false,
+        "closed_form": "1/131072",
+        "equal": true,
         "c1_times_2^(3A)": "8192"
       },
       {
@@ -883,8 +895,8 @@
         "N": 5,
         "A": 10,
         "c1": "2555/1048576",
-        "closed_form": "94535/1048576",
-        "equal": false,
+        "closed_form": "2555/1048576",
+        "equal": true,
         "c1_times_2^(3A)": "2616320"
       },
       {
@@ -892,8 +904,8 @@
         "N": 4,
         "A": 10,
         "c1": "2551/524288",
-        "closed_form": "48541/524288",
-        "equal": false,
+        "closed_form": "2551/524288",
+        "equal": true,
         "c1_times_2^(3A)": "5224448"
       },
       {
@@ -901,8 +913,8 @@
         "N": 3,
         "A": 10,
         "c1": "7649/1048576",
-        "closed_form": "99629/1048576",
-        "equal": false,
+        "closed_form": "7649/1048576",
+        "equal": true,
         "c1_times_2^(3A)": "7832576"
       },
       {
@@ -910,8 +922,8 @@
         "N": 2,
         "A": 10,
         "c1": "2549/262144",
-        "closed_form": "3193/32768",
-        "equal": false,
+        "closed_form": "2549/262144",
+        "equal": true,
         "c1_times_2^(3A)": "10440704"
       },
       {
@@ -919,8 +931,8 @@
         "N": 1,
         "A": 10,
         "c1": "12743/1048576",
-        "closed_form": "104723/1048576",
-        "equal": false,
+        "closed_form": "12743/1048576",
+        "equal": true,
         "c1_times_2^(3A)": "13048832"
       },
       {
@@ -928,8 +940,8 @@
         "N": 0,
         "A": 10,
         "c1": "7647/524288",
-        "closed_form": "53637/524288",
-        "equal": false,
+        "closed_form": "7647/524288",
+        "equal": true,
         "c1_times_2^(3A)": "15661056"
       },
       {
@@ -937,8 +949,8 @@
         "N": 11,
         "A": 11,
         "c1": "-11233/2097152",
-        "closed_form": "22511/524288",
-        "equal": false,
+        "closed_form": "-11233/2097152",
+        "equal": true,
         "c1_times_2^(3A)": "-46010368"
       },
       {
@@ -946,8 +958,8 @@
         "N": 10,
         "A": 11,
         "c1": "-17355/4194304",
-        "closed_form": "185199/4194304",
-        "equal": false,
+        "closed_form": "-17355/4194304",
+        "equal": true,
         "c1_times_2^(3A)": "-35543040"
       },
       {
@@ -955,8 +967,8 @@
         "N": 9,
         "A": 11,
         "c1": "-1531/524288",
-        "closed_form": "95153/2097152",
-        "equal": false,
+        "closed_form": "-1531/524288",
+        "equal": true,
         "c1_times_2^(3A)": "-25083904"
       },
       {
@@ -964,8 +976,8 @@
         "N": 8,
         "A": 11,
         "c1": "-7141/4194304",
-        "closed_form": "195413/4194304",
-        "equal": false,
+        "closed_form": "-7141/4194304",
+        "equal": true,
         "c1_times_2^(3A)": "-14624768"
       },
       {
@@ -973,8 +985,8 @@
         "N": 7,
         "A": 11,
         "c1": "-1017/2097152",
-        "closed_form": "25065/524288",
-        "equal": false,
+        "closed_form": "-1017/2097152",
+        "equal": true,
         "c1_times_2^(3A)": "-4165632"
       },
       {
@@ -982,8 +994,8 @@
         "N": 6,
         "A": 11,
         "c1": "3073/4194304",
-        "closed_form": "205627/4194304",
-        "equal": false,
+        "closed_form": "3073/4194304",
+        "equal": true,
         "c1_times_2^(3A)": "6293504"
       },
       {
@@ -991,8 +1003,8 @@
         "N": 5,
         "A": 11,
         "c1": "2045/1048576",
-        "closed_form": "105367/2097152",
-        "equal": false,
+        "closed_form": "2045/1048576",
+        "equal": true,
         "c1_times_2^(3A)": "16752640"
       },
       {
@@ -1000,8 +1012,8 @@
         "N": 4,
         "A": 11,
         "c1": "13287/4194304",
-        "closed_form": "215841/4194304",
-        "equal": false,
+        "closed_form": "13287/4194304",
+        "equal": true,
         "c1_times_2^(3A)": "27211776"
       },
       {
@@ -1009,8 +1021,8 @@
         "N": 3,
         "A": 11,
         "c1": "9197/2097152",
-        "closed_form": "55237/1048576",
-        "equal": false,
+        "closed_form": "9197/2097152",
+        "equal": true,
         "c1_times_2^(3A)": "37670912"
       },
       {
@@ -1018,8 +1030,8 @@
         "N": 2,
         "A": 11,
         "c1": "23501/4194304",
-        "closed_form": "226055/4194304",
-        "equal": false,
+        "closed_form": "23501/4194304",
+        "equal": true,
         "c1_times_2^(3A)": "48130048"
       },
       {
@@ -1027,8 +1039,8 @@
         "N": 1,
         "A": 11,
         "c1": "447/65536",
-        "closed_form": "115581/2097152",
-        "equal": false,
+        "closed_form": "447/65536",
+        "equal": true,
         "c1_times_2^(3A)": "58589184"
       },
       {
@@ -1036,8 +1048,8 @@
         "N": 0,
         "A": 11,
         "c1": "33719/4194304",
-        "closed_form": "236273/4194304",
-        "equal": false,
+        "closed_form": "33719/4194304",
+        "equal": true,
         "c1_times_2^(3A)": "69056512"
       },
       {
@@ -1045,8 +1057,8 @@
         "N": 12,
         "A": 12,
         "c1": "-12271/4194304",
-        "closed_form": "98267/4194304",
-        "equal": false,
+        "closed_form": "-12271/4194304",
+        "equal": true,
         "c1_times_2^(3A)": "-201048064"
       },
       {
@@ -1054,8 +1066,8 @@
         "N": 11,
         "A": 12,
         "c1": "-38853/16777216",
-        "closed_form": "403299/16777216",
-        "equal": false,
+        "closed_form": "-38853/16777216",
+        "equal": true,
         "c1_times_2^(3A)": "-159141888"
       },
       {
@@ -1063,8 +1075,8 @@
         "N": 10,
         "A": 12,
         "c1": "-14313/8388608",
-        "closed_form": "206763/8388608",
-        "equal": false,
+        "closed_form": "-14313/8388608",
+        "equal": true,
         "c1_times_2^(3A)": "-117252096"
       },
       {
@@ -1072,8 +1084,8 @@
         "N": 9,
         "A": 12,
         "c1": "-18399/16777216",
-        "closed_form": "423753/16777216",
-        "equal": false,
+        "closed_form": "-18399/16777216",
+        "equal": true,
         "c1_times_2^(3A)": "-75362304"
       },
       {
@@ -1081,8 +1093,8 @@
         "N": 8,
         "A": 12,
         "c1": "-2043/4194304",
-        "closed_form": "108495/4194304",
-        "equal": false,
+        "closed_form": "-2043/4194304",
+        "equal": true,
         "c1_times_2^(3A)": "-33472512"
       },
       {
@@ -1090,8 +1102,8 @@
         "N": 7,
         "A": 12,
         "c1": "2055/16777216",
-        "closed_form": "444207/16777216",
-        "equal": false,
+        "closed_form": "2055/16777216",
+        "equal": true,
         "c1_times_2^(3A)": "8417280"
       },
       {
@@ -1099,8 +1111,8 @@
         "N": 6,
         "A": 12,
         "c1": "6141/8388608",
-        "closed_form": "227217/8388608",
-        "equal": false,
+        "closed_form": "6141/8388608",
+        "equal": true,
         "c1_times_2^(3A)": "50307072"
       },
       {
@@ -1108,8 +1120,8 @@
         "N": 5,
         "A": 12,
         "c1": "22509/16777216",
-        "closed_form": "464661/16777216",
-        "equal": false,
+        "closed_form": "22509/16777216",
+        "equal": true,
         "c1_times_2^(3A)": "92196864"
       },
       {
@@ -1117,8 +1129,8 @@
         "N": 4,
         "A": 12,
         "c1": "1023/524288",
-        "closed_form": "59361/2097152",
-        "equal": false,
+        "closed_form": "1023/524288",
+        "equal": true,
         "c1_times_2^(3A)": "134086656"
       },
       {
@@ -1126,8 +1138,8 @@
         "N": 3,
         "A": 12,
         "c1": "42963/16777216",
-        "closed_form": "485115/16777216",
-        "equal": false,
+        "closed_form": "42963/16777216",
+        "equal": true,
         "c1_times_2^(3A)": "175976448"
       },
       {
@@ -1135,8 +1147,8 @@
         "N": 2,
         "A": 12,
         "c1": "26595/8388608",
-        "closed_form": "247671/8388608",
-        "equal": false,
+        "closed_form": "26595/8388608",
+        "equal": true,
         "c1_times_2^(3A)": "217866240"
       },
       {
@@ -1144,8 +1156,8 @@
         "N": 1,
         "A": 12,
         "c1": "63417/16777216",
-        "closed_form": "505569/16777216",
-        "equal": false,
+        "closed_form": "63417/16777216",
+        "equal": true,
         "c1_times_2^(3A)": "259756032"
       },
       {
@@ -1153,8 +1165,8 @@
         "N": 0,
         "A": 12,
         "c1": "4603/1048576",
-        "closed_form": "64475/2097152",
-        "equal": false,
+        "closed_form": "4603/1048576",
+        "equal": true,
         "c1_times_2^(3A)": "301662208"
       },
       {
@@ -1162,8 +1174,8 @@
         "N": 13,
         "A": 13,
         "c1": "-53211/33554432",
-        "closed_form": "26619/2097152",
-        "equal": false,
+        "closed_form": "-53211/33554432",
+        "equal": true,
         "c1_times_2^(3A)": "-871809024"
       },
       {
@@ -1171,8 +1183,8 @@
         "N": 12,
         "A": 13,
         "c1": "-85951/67108864",
-        "closed_form": "872279/67108864",
-        "equal": false,
+        "closed_form": "-85951/67108864",
+        "equal": true,
         "c1_times_2^(3A)": "-704110592"
       },
       {
@@ -1180,8 +1192,8 @@
         "N": 11,
         "A": 13,
         "c1": "-16371/16777216",
-        "closed_form": "446373/33554432",
-        "equal": false,
+        "closed_form": "-16371/16777216",
+        "equal": true,
         "c1_times_2^(3A)": "-536444928"
       },
       {
@@ -1189,8 +1201,8 @@
         "N": 10,
         "A": 13,
         "c1": "-45017/67108864",
-        "closed_form": "913213/67108864",
-        "equal": false,
+        "closed_form": "-45017/67108864",
+        "equal": true,
         "c1_times_2^(3A)": "-368779264"
       },
       {
@@ -1198,8 +1210,8 @@
         "N": 9,
         "A": 13,
         "c1": "-12275/33554432",
-        "closed_form": "58355/4194304",
-        "equal": false,
+        "closed_form": "-12275/33554432",
+        "equal": true,
         "c1_times_2^(3A)": "-201113600"
       },
       {
@@ -1207,8 +1219,8 @@
         "N": 8,
         "A": 13,
         "c1": "-4083/67108864",
-        "closed_form": "954147/67108864",
-        "equal": false,
+        "closed_form": "-4083/67108864",
+        "equal": true,
         "c1_times_2^(3A)": "-33447936"
       },
       {
@@ -1216,8 +1228,8 @@
         "N": 7,
         "A": 13,
         "c1": "1/4096",
-        "closed_form": "487307/33554432",
-        "equal": false,
+        "closed_form": "1/4096",
+        "equal": true,
         "c1_times_2^(3A)": "134217728"
       },
       {
@@ -1225,8 +1237,8 @@
         "N": 6,
         "A": 13,
         "c1": "36851/67108864",
-        "closed_form": "995081/67108864",
-        "equal": false,
+        "closed_form": "36851/67108864",
+        "equal": true,
         "c1_times_2^(3A)": "301883392"
       },
       {
@@ -1234,8 +1246,8 @@
         "N": 5,
         "A": 13,
         "c1": "28659/33554432",
-        "closed_form": "253887/16777216",
-        "equal": false,
+        "closed_form": "28659/33554432",
+        "equal": true,
         "c1_times_2^(3A)": "469549056"
       },
       {
@@ -1243,8 +1255,8 @@
         "N": 4,
         "A": 13,
         "c1": "77785/67108864",
-        "closed_form": "1036015/67108864",
-        "equal": false,
+        "closed_form": "77785/67108864",
+        "equal": true,
         "c1_times_2^(3A)": "637214720"
       },
       {
@@ -1252,8 +1264,8 @@
         "N": 3,
         "A": 13,
         "c1": "24563/16777216",
-        "closed_form": "528241/33554432",
-        "equal": false,
+        "closed_form": "24563/16777216",
+        "equal": true,
         "c1_times_2^(3A)": "804880384"
       },
       {
@@ -1261,8 +1273,8 @@
         "N": 2,
         "A": 13,
         "c1": "118719/67108864",
-        "closed_form": "1076949/67108864",
-        "equal": false,
+        "closed_form": "118719/67108864",
+        "equal": true,
         "c1_times_2^(3A)": "972546048"
       },
       {
@@ -1270,8 +1282,8 @@
         "N": 1,
         "A": 13,
         "c1": "69593/33554432",
-        "closed_form": "137177/8388608",
-        "equal": false,
+        "closed_form": "69593/33554432",
+        "equal": true,
         "c1_times_2^(3A)": "1140211712"
       },
       {
@@ -1279,8 +1291,8 @@
         "N": 0,
         "A": 13,
         "c1": "159657/67108864",
-        "closed_form": "1117887/67108864",
-        "equal": false,
+        "closed_form": "159657/67108864",
+        "equal": true,
         "c1_times_2^(3A)": "1307910144"
       },
       {
@@ -1288,8 +1300,8 @@
         "N": 14,
         "A": 14,
         "c1": "-14331/16777216",
-        "closed_form": "458709/67108864",
-        "equal": false,
+        "closed_form": "-14331/16777216",
+        "equal": true,
         "c1_times_2^(3A)": "-3756785664"
       },
       {
@@ -1297,8 +1309,8 @@
         "N": 13,
         "A": 14,
         "c1": "-188345/268435456",
-        "closed_form": "1875787/268435456",
-        "equal": false,
+        "closed_form": "-188345/268435456",
+        "equal": true,
         "c1_times_2^(3A)": "-3085844480"
       },
       {
@@ -1306,8 +1318,8 @@
         "N": 12,
         "A": 14,
         "c1": "-73699/134217728",
-        "closed_form": "958367/134217728",
-        "equal": false,
+        "closed_form": "-73699/134217728",
+        "equal": true,
         "c1_times_2^(3A)": "-2414968832"
       },
       {
@@ -1315,8 +1327,8 @@
         "N": 11,
         "A": 14,
         "c1": "-106451/268435456",
-        "closed_form": "1957681/268435456",
-        "equal": false,
+        "closed_form": "-106451/268435456",
+        "equal": true,
         "c1_times_2^(3A)": "-1744093184"
       },
       {
@@ -1324,8 +1336,8 @@
         "N": 10,
         "A": 14,
         "c1": "-2047/8388608",
-        "closed_form": "499657/67108864",
-        "equal": false,
+        "closed_form": "-2047/8388608",
+        "equal": true,
         "c1_times_2^(3A)": "-1073217536"
       },
       {
@@ -1333,8 +1345,8 @@
         "N": 9,
         "A": 14,
         "c1": "-24557/268435456",
-        "closed_form": "2039575/268435456",
-        "equal": false,
+        "closed_form": "-24557/268435456",
+        "equal": true,
         "c1_times_2^(3A)": "-402341888"
       },
       {
@@ -1342,8 +1354,8 @@
         "N": 8,
         "A": 14,
         "c1": "8195/134217728",
-        "closed_form": "1040261/134217728",
-        "equal": false,
+        "closed_form": "8195/134217728",
+        "equal": true,
         "c1_times_2^(3A)": "268533760"
       },
       {
@@ -1351,8 +1363,8 @@
         "N": 7,
         "A": 14,
         "c1": "57337/268435456",
-        "closed_form": "2121469/268435456",
-        "equal": false,
+        "closed_form": "57337/268435456",
+        "equal": true,
         "c1_times_2^(3A)": "939409408"
       },
       {
@@ -1360,8 +1372,8 @@
         "N": 6,
         "A": 14,
         "c1": "24571/67108864",
-        "closed_form": "135151/16777216",
-        "equal": false,
+        "closed_form": "24571/67108864",
+        "equal": true,
         "c1_times_2^(3A)": "1610285056"
       },
       {
@@ -1369,8 +1381,8 @@
         "N": 5,
         "A": 14,
         "c1": "139231/268435456",
-        "closed_form": "2203363/268435456",
-        "equal": false,
+        "closed_form": "139231/268435456",
+        "equal": true,
         "c1_times_2^(3A)": "2281160704"
       },
       {
@@ -1378,8 +1390,8 @@
         "N": 4,
         "A": 14,
         "c1": "90089/134217728",
-        "closed_form": "1122155/134217728",
-        "equal": false,
+        "closed_form": "90089/134217728",
+        "equal": true,
         "c1_times_2^(3A)": "2952036352"
       },
       {
@@ -1387,8 +1399,8 @@
         "N": 3,
         "A": 14,
         "c1": "221125/268435456",
-        "closed_form": "2285257/268435456",
-        "equal": false,
+        "closed_form": "221125/268435456",
+        "equal": true,
         "c1_times_2^(3A)": "3622912000"
       },
       {
@@ -1396,8 +1408,8 @@
         "N": 2,
         "A": 14,
         "c1": "32759/33554432",
-        "closed_form": "581551/67108864",
-        "equal": false,
+        "closed_form": "32759/33554432",
+        "equal": true,
         "c1_times_2^(3A)": "4293787648"
       },
       {
@@ -1405,8 +1417,8 @@
         "N": 1,
         "A": 14,
         "c1": "303019/268435456",
-        "closed_form": "2367151/268435456",
-        "equal": false,
+        "closed_form": "303019/268435456",
+        "equal": true,
         "c1_times_2^(3A)": "4964663296"
       },
       {
@@ -1414,8 +1426,8 @@
         "N": 0,
         "A": 14,
         "c1": "171985/134217728",
-        "closed_form": "1204051/134217728",
-        "equal": false,
+        "closed_form": "171985/134217728",
+        "equal": true,
         "c1_times_2^(3A)": "5635604480"
       },
       {
@@ -1423,8 +1435,8 @@
         "N": 15,
         "A": 15,
         "c1": "-245717/536870912",
-        "closed_form": "491497/134217728",
-        "equal": false,
+        "closed_form": "-245717/536870912",
+        "equal": true,
         "c1_times_2^(3A)": "-16103309312"
       },
       {
@@ -1432,8 +1444,8 @@
         "N": 14,
         "A": 15,
         "c1": "-409523/1073741824",
-        "closed_form": "4013887/1073741824",
-        "equal": false,
+        "closed_form": "-409523/1073741824",
+        "equal": true,
         "c1_times_2^(3A)": "-13419249664"
       },
       {
@@ -1441,8 +1453,8 @@
         "N": 13,
         "A": 15,
         "c1": "-5119/16777216",
-        "closed_form": "2047897/536870912",
-        "equal": false,
+        "closed_form": "-5119/16777216",
+        "equal": true,
         "c1_times_2^(3A)": "-10735321088"
       },
       {
@@ -1450,8 +1462,8 @@
         "N": 12,
         "A": 15,
         "c1": "-245709/1073741824",
-        "closed_form": "4177701/1073741824",
-        "equal": false,
+        "closed_form": "-245709/1073741824",
+        "equal": true,
         "c1_times_2^(3A)": "-8051392512"
       },
       {
@@ -1459,8 +1471,8 @@
         "N": 11,
         "A": 15,
         "c1": "-81901/536870912",
-        "closed_form": "532451/134217728",
-        "equal": false,
+        "closed_form": "-81901/536870912",
+        "equal": true,
         "c1_times_2^(3A)": "-5367463936"
       },
       {
@@ -1468,8 +1480,8 @@
         "N": 10,
         "A": 15,
         "c1": "-81895/1073741824",
-        "closed_form": "4341515/1073741824",
-        "equal": false,
+        "closed_form": "-81895/1073741824",
+        "equal": true,
         "c1_times_2^(3A)": "-2683535360"
       },
       {
@@ -1477,8 +1489,8 @@
         "N": 9,
         "A": 15,
         "c1": "3/268435456",
-        "closed_form": "2211711/536870912",
-        "equal": false,
+        "closed_form": "3/268435456",
+        "equal": true,
         "c1_times_2^(3A)": "393216"
       },
       {
@@ -1486,8 +1498,8 @@
         "N": 8,
         "A": 15,
         "c1": "81919/1073741824",
-        "closed_form": "4505329/1073741824",
-        "equal": false,
+        "closed_form": "81919/1073741824",
+        "equal": true,
         "c1_times_2^(3A)": "2684321792"
       },
       {
@@ -1495,8 +1507,8 @@
         "N": 7,
         "A": 15,
         "c1": "81913/536870912",
-        "closed_form": "1146809/268435456",
-        "equal": false,
+        "closed_form": "81913/536870912",
+        "equal": true,
         "c1_times_2^(3A)": "5368250368"
       },
       {
@@ -1504,8 +1516,8 @@
         "N": 6,
         "A": 15,
         "c1": "245733/1073741824",
-        "closed_form": "4669143/1073741824",
-        "equal": false,
+        "closed_form": "245733/1073741824",
+        "equal": true,
         "c1_times_2^(3A)": "8052178944"
       },
       {
@@ -1513,8 +1525,8 @@
         "N": 5,
         "A": 15,
         "c1": "40955/134217728",
-        "closed_form": "2375525/536870912",
-        "equal": false,
+        "closed_form": "40955/134217728",
+        "equal": true,
         "c1_times_2^(3A)": "10736107520"
       },
       {
@@ -1522,8 +1534,8 @@
         "N": 4,
         "A": 15,
         "c1": "409547/1073741824",
-        "closed_form": "4832957/1073741824",
-        "equal": false,
+        "closed_form": "409547/1073741824",
+        "equal": true,
         "c1_times_2^(3A)": "13420036096"
       },
       {
@@ -1531,8 +1543,8 @@
         "N": 3,
         "A": 15,
         "c1": "245727/536870912",
-        "closed_form": "307179/67108864",
-        "equal": false,
+        "closed_form": "245727/536870912",
+        "equal": true,
         "c1_times_2^(3A)": "16103964672"
       },
       {
@@ -1540,8 +1552,8 @@
         "N": 2,
         "A": 15,
         "c1": "573361/1073741824",
-        "closed_form": "4996771/1073741824",
-        "equal": false,
+        "closed_form": "573361/1073741824",
+        "equal": true,
         "c1_times_2^(3A)": "18787893248"
       },
       {
@@ -1549,8 +1561,8 @@
         "N": 1,
         "A": 15,
         "c1": "163817/268435456",
-        "closed_form": "2539339/536870912",
-        "equal": false,
+        "closed_form": "163817/268435456",
+        "equal": true,
         "c1_times_2^(3A)": "21471821824"
       },
       {
@@ -1558,8 +1570,8 @@
         "N": 0,
         "A": 15,
         "c1": "737179/1073741824",
-        "closed_form": "5160589/1073741824",
-        "equal": false,
+        "closed_form": "737179/1073741824",
+        "equal": true,
         "c1_times_2^(3A)": "24155881472"
       },
       {
@@ -1567,8 +1579,8 @@
         "N": 16,
         "A": 16,
         "c1": "-262121/1073741824",
-        "closed_form": "2097103/1073741824",
-        "equal": false,
+        "closed_form": "-262121/1073741824",
+        "equal": true,
         "c1_times_2^(3A)": "-68713447424"
       },
       {
@@ -1576,8 +1588,8 @@
         "N": 15,
         "A": 16,
         "c1": "-884653/4294967296",
-        "closed_form": "8552243/4294967296",
-        "equal": false,
+        "closed_form": "-884653/4294967296",
+        "equal": true,
         "c1_times_2^(3A)": "-57976619008"
       },
       {
@@ -1585,8 +1597,8 @@
         "N": 14,
         "A": 16,
         "c1": "-360413/2147483648",
-        "closed_form": "4358035/2147483648",
-        "equal": false,
+        "closed_form": "-360413/2147483648",
+        "equal": true,
         "c1_times_2^(3A)": "-47240052736"
       },
       {
@@ -1594,8 +1606,8 @@
         "N": 13,
         "A": 16,
         "c1": "-556999/4294967296",
-        "closed_form": "8879897/4294967296",
-        "equal": false,
+        "closed_form": "-556999/4294967296",
+        "equal": true,
         "c1_times_2^(3A)": "-36503486464"
       },
       {
@@ -1603,8 +1615,8 @@
         "N": 12,
         "A": 16,
         "c1": "-98293/1073741824",
-        "closed_form": "2260931/1073741824",
-        "equal": false,
+        "closed_form": "-98293/1073741824",
+        "equal": true,
         "c1_times_2^(3A)": "-25766920192"
       },
       {
@@ -1612,8 +1624,8 @@
         "N": 11,
         "A": 16,
         "c1": "-229345/4294967296",
-        "closed_form": "9207551/4294967296",
-        "equal": false,
+        "closed_form": "-229345/4294967296",
+        "equal": true,
         "c1_times_2^(3A)": "-15030353920"
       },
       {
@@ -1621,8 +1633,8 @@
         "N": 10,
         "A": 16,
         "c1": "-32759/2147483648",
-        "closed_form": "4685689/2147483648",
-        "equal": false,
+        "closed_form": "-32759/2147483648",
+        "equal": true,
         "c1_times_2^(3A)": "-4293787648"
       },
       {
@@ -1630,8 +1642,8 @@
         "N": 9,
         "A": 16,
         "c1": "98309/4294967296",
-        "closed_form": "9535205/4294967296",
-        "equal": false,
+        "closed_form": "98309/4294967296",
+        "equal": true,
         "c1_times_2^(3A)": "6442778624"
       },
       {
@@ -1639,8 +1651,8 @@
         "N": 8,
         "A": 16,
         "c1": "32767/536870912",
-        "closed_form": "1212379/536870912",
-        "equal": false,
+        "closed_form": "32767/536870912",
+        "equal": true,
         "c1_times_2^(3A)": "17179344896"
       },
       {
@@ -1648,8 +1660,8 @@
         "N": 7,
         "A": 16,
         "c1": "425963/4294967296",
-        "closed_form": "9862859/4294967296",
-        "equal": false,
+        "closed_form": "425963/4294967296",
+        "equal": true,
         "c1_times_2^(3A)": "27915911168"
       },
       {
@@ -1657,8 +1669,8 @@
         "N": 6,
         "A": 16,
         "c1": "294895/2147483648",
-        "closed_form": "5013343/2147483648",
-        "equal": false,
+        "closed_form": "294895/2147483648",
+        "equal": true,
         "c1_times_2^(3A)": "38652477440"
       },
       {
@@ -1666,8 +1678,8 @@
         "N": 5,
         "A": 16,
         "c1": "753617/4294967296",
-        "closed_form": "10190513/4294967296",
-        "equal": false,
+        "closed_form": "753617/4294967296",
+        "equal": true,
         "c1_times_2^(3A)": "49389043712"
       },
       {
@@ -1675,8 +1687,8 @@
         "N": 4,
         "A": 16,
         "c1": "229361/1073741824",
-        "closed_form": "2588585/1073741824",
-        "equal": false,
+        "closed_form": "229361/1073741824",
+        "equal": true,
         "c1_times_2^(3A)": "60125609984"
       },
       {
@@ -1684,8 +1696,8 @@
         "N": 3,
         "A": 16,
         "c1": "1081271/4294967296",
-        "closed_form": "10518167/4294967296",
-        "equal": false,
+        "closed_form": "1081271/4294967296",
+        "equal": true,
         "c1_times_2^(3A)": "70862176256"
       },
       {
@@ -1693,8 +1705,8 @@
         "N": 2,
         "A": 16,
         "c1": "622549/2147483648",
-        "closed_form": "5340997/2147483648",
-        "equal": false,
+        "closed_form": "622549/2147483648",
+        "equal": true,
         "c1_times_2^(3A)": "81598742528"
       },
       {
@@ -1702,8 +1714,8 @@
         "N": 1,
         "A": 16,
         "c1": "1408925/4294967296",
-        "closed_form": "10845821/4294967296",
-        "equal": false,
+        "closed_form": "1408925/4294967296",
+        "equal": true,
         "c1_times_2^(3A)": "92335308800"
       },
       {
@@ -1711,8 +1723,8 @@
         "N": 0,
         "A": 16,
         "c1": "393189/1073741824",
-        "closed_form": "2752413/1073741824",
-        "equal": false,
+        "closed_form": "393189/1073741824",
+        "equal": true,
         "c1_times_2^(3A)": "103072137216"
       },
       {
@@ -1720,8 +1732,8 @@
         "N": 17,
         "A": 17,
         "c1": "-1114063/8589934592",
-        "closed_form": "1114099/1073741824",
-        "equal": false,
+        "closed_form": "-1114063/8589934592",
+        "equal": true,
         "c1_times_2^(3A)": "-292044931072"
       },
       {
@@ -1729,8 +1741,8 @@
         "N": 16,
         "A": 17,
         "c1": "-1900455/17179869184",
-        "closed_form": "18153255/17179869184",
-        "equal": false,
+        "closed_form": "-1900455/17179869184",
+        "equal": true,
         "c1_times_2^(3A)": "-249096437760"
       },
       {
@@ -1738,8 +1750,8 @@
         "N": 15,
         "A": 17,
         "c1": "-393197/4294967296",
-        "closed_form": "9240461/8589934592",
-        "equal": false,
+        "closed_form": "-393197/4294967296",
+        "equal": true,
         "c1_times_2^(3A)": "-206148468736"
       },
       {
@@ -1747,8 +1759,8 @@
         "N": 14,
         "A": 17,
         "c1": "-1245121/17179869184",
-        "closed_form": "18808589/17179869184",
-        "equal": false,
+        "closed_form": "-1245121/17179869184",
+        "equal": true,
         "c1_times_2^(3A)": "-163200499712"
       },
       {
@@ -1756,8 +1768,8 @@
         "N": 13,
         "A": 17,
         "c1": "-458727/8589934592",
-        "closed_form": "74751/67108864",
-        "equal": false,
+        "closed_form": "-458727/8589934592",
+        "equal": true,
         "c1_times_2^(3A)": "-120252530688"
       },
       {
@@ -1765,8 +1777,8 @@
         "N": 12,
         "A": 17,
         "c1": "-589787/17179869184",
-        "closed_form": "19463923/17179869184",
-        "equal": false,
+        "closed_form": "-589787/17179869184",
+        "equal": true,
         "c1_times_2^(3A)": "-77304561664"
       },
       {
@@ -1774,8 +1786,8 @@
         "N": 11,
         "A": 17,
         "c1": "-32765/2147483648",
-        "closed_form": "9895795/8589934592",
-        "equal": false,
+        "closed_form": "-32765/2147483648",
+        "equal": true,
         "c1_times_2^(3A)": "-34356592640"
       },
       {
@@ -1783,8 +1795,8 @@
         "N": 10,
         "A": 17,
         "c1": "65547/17179869184",
-        "closed_form": "20119257/17179869184",
-        "equal": false,
+        "closed_form": "65547/17179869184",
+        "equal": true,
         "c1_times_2^(3A)": "8591376384"
       },
       {
@@ -1792,8 +1804,8 @@
         "N": 9,
         "A": 17,
         "c1": "196607/8589934592",
-        "closed_form": "5111731/4294967296",
-        "equal": false,
+        "closed_form": "196607/8589934592",
+        "equal": true,
         "c1_times_2^(3A)": "51539345408"
       },
       {
@@ -1801,8 +1813,8 @@
         "N": 8,
         "A": 17,
         "c1": "720881/17179869184",
-        "closed_form": "20774591/17179869184",
-        "equal": false,
+        "closed_form": "720881/17179869184",
+        "equal": true,
         "c1_times_2^(3A)": "94487314432"
       },
       {
@@ -1810,8 +1822,8 @@
         "N": 7,
         "A": 17,
         "c1": "262137/4294967296",
-        "closed_form": "10551129/8589934592",
-        "equal": false,
+        "closed_form": "262137/4294967296",
+        "equal": true,
         "c1_times_2^(3A)": "137435283456"
       },
       {
@@ -1819,8 +1831,8 @@
         "N": 6,
         "A": 17,
         "c1": "1376215/17179869184",
-        "closed_form": "21429925/17179869184",
-        "equal": false,
+        "closed_form": "1376215/17179869184",
+        "equal": true,
         "c1_times_2^(3A)": "180383252480"
       },
       {
@@ -1828,8 +1840,8 @@
         "N": 5,
         "A": 17,
         "c1": "851941/8589934592",
-        "closed_form": "2719699/2147483648",
-        "equal": false,
+        "closed_form": "851941/8589934592",
+        "equal": true,
         "c1_times_2^(3A)": "223331221504"
       },
       {
@@ -1837,8 +1849,8 @@
         "N": 4,
         "A": 17,
         "c1": "2031549/17179869184",
-        "closed_form": "22085259/17179869184",
-        "equal": false,
+        "closed_form": "2031549/17179869184",
+        "equal": true,
         "c1_times_2^(3A)": "266279190528"
       },
       {
@@ -1846,8 +1858,8 @@
         "N": 3,
         "A": 17,
         "c1": "147451/1073741824",
-        "closed_form": "11206463/8589934592",
-        "equal": false,
+        "closed_form": "147451/1073741824",
+        "equal": true,
         "c1_times_2^(3A)": "309227159552"
       },
       {
@@ -1855,8 +1867,8 @@
         "N": 2,
         "A": 17,
         "c1": "2686883/17179869184",
-        "closed_form": "22740593/17179869184",
-        "equal": false,
+        "closed_form": "2686883/17179869184",
+        "equal": true,
         "c1_times_2^(3A)": "352175128576"
       },
       {
@@ -1864,8 +1876,8 @@
         "N": 1,
         "A": 17,
         "c1": "1507275/8589934592",
-        "closed_form": "5767065/4294967296",
-        "equal": false,
+        "closed_form": "1507275/8589934592",
+        "equal": true,
         "c1_times_2^(3A)": "395123097600"
       },
       {
@@ -1873,8 +1885,8 @@
         "N": 0,
         "A": 17,
         "c1": "3342221/17179869184",
-        "closed_form": "23395931/17179869184",
-        "equal": false,
+        "closed_form": "3342221/17179869184",
+        "equal": true,
         "c1_times_2^(3A)": "438071590912"
       },
       {
@@ -1882,8 +1894,8 @@
         "N": 18,
         "A": 18,
         "c1": "-589811/8589934592",
-        "closed_form": "9437129/17179869184",
-        "equal": false,
+        "closed_form": "-589811/8589934592",
+        "equal": true,
         "c1_times_2^(3A)": "-1236923318272"
       },
       {
@@ -1891,8 +1903,8 @@
         "N": 17,
         "A": 18,
         "c1": "-4063137/68719476736",
-        "closed_form": "38403867/68719476736",
-        "equal": false,
+        "closed_form": "-4063137/68719476736",
+        "equal": true,
         "c1_times_2^(3A)": "-1065126985728"
       },
       {
@@ -1900,8 +1912,8 @@
         "N": 16,
         "A": 18,
         "c1": "-1703895/34359738368",
-        "closed_form": "19529607/34359738368",
-        "equal": false,
+        "closed_form": "-1703895/34359738368",
+        "equal": true,
         "c1_times_2^(3A)": "-893331701760"
       },
       {
@@ -1909,8 +1921,8 @@
         "N": 15,
         "A": 18,
         "c1": "-2752443/68719476736",
-        "closed_form": "39714561/68719476736",
-        "equal": false,
+        "closed_form": "-2752443/68719476736",
+        "equal": true,
         "c1_times_2^(3A)": "-721536417792"
       },
       {
@@ -1918,8 +1930,8 @@
         "N": 14,
         "A": 18,
         "c1": "-262137/8589934592",
-        "closed_form": "10092477/17179869184",
-        "equal": false,
+        "closed_form": "-262137/8589934592",
+        "equal": true,
         "c1_times_2^(3A)": "-549741133824"
       },
       {
@@ -1927,8 +1939,8 @@
         "N": 13,
         "A": 18,
         "c1": "-1441749/68719476736",
-        "closed_form": "41025255/68719476736",
-        "equal": false,
+        "closed_form": "-1441749/68719476736",
+        "equal": true,
         "c1_times_2^(3A)": "-377945849856"
       },
       {
@@ -1936,8 +1948,8 @@
         "N": 12,
         "A": 18,
         "c1": "-393201/34359738368",
-        "closed_form": "20840301/34359738368",
-        "equal": false,
+        "closed_form": "-393201/34359738368",
+        "equal": true,
         "c1_times_2^(3A)": "-206150565888"
       },
       {
@@ -1945,8 +1957,8 @@
         "N": 11,
         "A": 18,
         "c1": "-131055/68719476736",
-        "closed_form": "42335949/68719476736",
-        "equal": false,
+        "closed_form": "-131055/68719476736",
+        "equal": true,
         "c1_times_2^(3A)": "-34355281920"
       },
       {
@@ -1954,8 +1966,8 @@
         "N": 10,
         "A": 18,
         "c1": "131073/17179869184",
-        "closed_form": "671739/1073741824",
-        "equal": false,
+        "closed_form": "131073/17179869184",
+        "equal": true,
         "c1_times_2^(3A)": "137440002048"
       },
       {
@@ -1963,8 +1975,8 @@
         "N": 9,
         "A": 18,
         "c1": "1179639/68719476736",
-        "closed_form": "43646643/68719476736",
-        "equal": false,
+        "closed_form": "1179639/68719476736",
+        "equal": true,
         "c1_times_2^(3A)": "309235286016"
       },
       {
@@ -1972,8 +1984,8 @@
         "N": 8,
         "A": 18,
         "c1": "917493/34359738368",
-        "closed_form": "22150995/34359738368",
-        "equal": false,
+        "closed_form": "917493/34359738368",
+        "equal": true,
         "c1_times_2^(3A)": "481030569984"
       },
       {
@@ -1981,8 +1993,8 @@
         "N": 7,
         "A": 18,
         "c1": "2490333/68719476736",
-        "closed_form": "44957337/68719476736",
-        "equal": false,
+        "closed_form": "2490333/68719476736",
+        "equal": true,
         "c1_times_2^(3A)": "652825853952"
       },
       {
@@ -1990,8 +2002,8 @@
         "N": 6,
         "A": 18,
         "c1": "196605/4294967296",
-        "closed_form": "11403171/17179869184",
-        "equal": false,
+        "closed_form": "196605/4294967296",
+        "equal": true,
         "c1_times_2^(3A)": "824621137920"
       },
       {
@@ -1999,8 +2011,8 @@
         "N": 5,
         "A": 18,
         "c1": "3801027/68719476736",
-        "closed_form": "46268031/68719476736",
-        "equal": false,
+        "closed_form": "3801027/68719476736",
+        "equal": true,
         "c1_times_2^(3A)": "996416421888"
       },
       {
@@ -2008,8 +2020,8 @@
         "N": 4,
         "A": 18,
         "c1": "2228187/34359738368",
-        "closed_form": "23461689/34359738368",
-        "equal": false,
+        "closed_form": "2228187/34359738368",
+        "equal": true,
         "c1_times_2^(3A)": "1168211705856"
       },
       {
@@ -2017,8 +2029,8 @@
         "N": 3,
         "A": 18,
         "c1": "5111721/68719476736",
-        "closed_form": "47578725/68719476736",
-        "equal": false,
+        "closed_form": "5111721/68719476736",
+        "equal": true,
         "c1_times_2^(3A)": "1340006989824"
       },
       {
@@ -2026,8 +2038,8 @@
         "N": 2,
         "A": 18,
         "c1": "1441767/17179869184",
-        "closed_form": "6029259/8589934592",
-        "equal": false,
+        "closed_form": "1441767/17179869184",
+        "equal": true,
         "c1_times_2^(3A)": "1511802273792"
       },
       {
@@ -2035,8 +2047,8 @@
         "N": 1,
         "A": 18,
         "c1": "6422415/68719476736",
-        "closed_form": "48889419/68719476736",
-        "equal": false,
+        "closed_form": "6422415/68719476736",
+        "equal": true,
         "c1_times_2^(3A)": "1683597557760"
       },
       {
@@ -2044,8 +2056,8 @@
         "N": 0,
         "A": 18,
         "c1": "3538883/34359738368",
-        "closed_form": "24772385/34359738368",
-        "equal": false,
+        "closed_form": "3538883/34359738368",
+        "equal": true,
         "c1_times_2^(3A)": "1855393890304"
       },
       {
@@ -2053,8 +2065,8 @@
         "N": 19,
         "A": 19,
         "c1": "-4980681/137438953472",
-        "closed_form": "9961443/34359738368",
-        "equal": false,
+        "closed_form": "-4980681/137438953472",
+        "equal": true,
         "c1_times_2^(3A)": "-5222622560256"
       },
       {
@@ -2062,8 +2074,8 @@
         "N": 18,
         "A": 19,
         "c1": "-8650651/274877906944",
-        "closed_form": "81002255/274877906944",
-        "equal": false,
+        "closed_form": "-8650651/274877906944",
+        "equal": true,
         "c1_times_2^(3A)": "-4535432511488"
       },
       {
@@ -2071,8 +2083,8 @@
         "N": 17,
         "A": 19,
         "c1": "-917493/34359738368",
-        "closed_form": "41156481/137438953472",
-        "equal": false,
+        "closed_form": "-917493/34359738368",
+        "equal": true,
         "c1_times_2^(3A)": "-3848244559872"
       },
       {
@@ -2080,8 +2092,8 @@
         "N": 16,
         "A": 19,
         "c1": "-6029237/274877906944",
-        "closed_form": "83623669/274877906944",
-        "equal": false,
+        "closed_form": "-6029237/274877906944",
+        "equal": true,
         "c1_times_2^(3A)": "-3161056608256"
       },
       {
@@ -2089,8 +2101,8 @@
         "N": 15,
         "A": 19,
         "c1": "-2359265/137438953472",
-        "closed_form": "10616797/34359738368",
-        "equal": false,
+        "closed_form": "-2359265/137438953472",
+        "equal": true,
         "c1_times_2^(3A)": "-2473868656640"
       },
       {
@@ -2098,8 +2110,8 @@
         "N": 14,
         "A": 19,
         "c1": "-3407823/274877906944",
-        "closed_form": "86245083/274877906944",
-        "equal": false,
+        "closed_form": "-3407823/274877906944",
+        "equal": true,
         "c1_times_2^(3A)": "-1786680705024"
       },
       {
@@ -2107,8 +2119,8 @@
         "N": 13,
         "A": 19,
         "c1": "-524279/68719476736",
-        "closed_form": "43777895/137438953472",
-        "equal": false,
+        "closed_form": "-524279/68719476736",
+        "equal": true,
         "c1_times_2^(3A)": "-1099492753408"
       },
       {
@@ -2116,8 +2128,8 @@
         "N": 12,
         "A": 19,
         "c1": "-786409/274877906944",
-        "closed_form": "88866497/274877906944",
-        "equal": false,
+        "closed_form": "-786409/274877906944",
+        "equal": true,
         "c1_times_2^(3A)": "-412304801792"
       },
       {
@@ -2125,8 +2137,8 @@
         "N": 11,
         "A": 19,
         "c1": "262149/137438953472",
-        "closed_form": "22544301/68719476736",
-        "equal": false,
+        "closed_form": "262149/137438953472",
+        "equal": true,
         "c1_times_2^(3A)": "274883149824"
       },
       {
@@ -2134,8 +2146,8 @@
         "N": 10,
         "A": 19,
         "c1": "1835005/274877906944",
-        "closed_form": "91487911/274877906944",
-        "equal": false,
+        "closed_form": "1835005/274877906944",
+        "equal": true,
         "c1_times_2^(3A)": "962071101440"
       },
       {
@@ -2143,8 +2155,8 @@
         "N": 9,
         "A": 19,
         "c1": "196607/17179869184",
-        "closed_form": "46399309/137438953472",
-        "equal": false,
+        "closed_form": "196607/17179869184",
+        "equal": true,
         "c1_times_2^(3A)": "1649259053056"
       },
       {
@@ -2152,8 +2164,8 @@
         "N": 8,
         "A": 19,
         "c1": "4456419/274877906944",
-        "closed_form": "94109325/274877906944",
-        "equal": false,
+        "closed_form": "4456419/274877906944",
+        "equal": true,
         "c1_times_2^(3A)": "2336447004672"
       },
       {
@@ -2161,8 +2173,8 @@
         "N": 7,
         "A": 19,
         "c1": "2883563/137438953472",
-        "closed_form": "745469/2147483648",
-        "equal": false,
+        "closed_form": "2883563/137438953472",
+        "equal": true,
         "c1_times_2^(3A)": "3023634956288"
       },
       {
@@ -2170,8 +2182,8 @@
         "N": 6,
         "A": 19,
         "c1": "7077833/274877906944",
-        "closed_form": "96730739/274877906944",
-        "equal": false,
+        "closed_form": "7077833/274877906944",
+        "equal": true,
         "c1_times_2^(3A)": "3710822907904"
       },
       {
@@ -2179,8 +2191,8 @@
         "N": 5,
         "A": 19,
         "c1": "2097135/68719476736",
-        "closed_form": "49020723/137438953472",
-        "equal": false,
+        "closed_form": "2097135/68719476736",
+        "equal": true,
         "c1_times_2^(3A)": "4398010859520"
       },
       {
@@ -2188,8 +2200,8 @@
         "N": 4,
         "A": 19,
         "c1": "9699247/274877906944",
-        "closed_form": "99352153/274877906944",
-        "equal": false,
+        "closed_form": "9699247/274877906944",
+        "equal": true,
         "c1_times_2^(3A)": "5085198811136"
       },
       {
@@ -2197,8 +2209,8 @@
         "N": 3,
         "A": 19,
         "c1": "5504977/137438953472",
-        "closed_form": "25165715/68719476736",
-        "equal": false,
+        "closed_form": "5504977/137438953472",
+        "equal": true,
         "c1_times_2^(3A)": "5772386762752"
       },
       {
@@ -2206,8 +2218,8 @@
         "N": 2,
         "A": 19,
         "c1": "12320661/274877906944",
-        "closed_form": "101973567/274877906944",
-        "equal": false,
+        "closed_form": "12320661/274877906944",
+        "equal": true,
         "c1_times_2^(3A)": "6459574714368"
       },
       {
@@ -2215,8 +2227,8 @@
         "N": 1,
         "A": 19,
         "c1": "1703921/34359738368",
-        "closed_form": "51642137/137438953472",
-        "equal": false,
+        "closed_form": "1703921/34359738368",
+        "equal": true,
         "c1_times_2^(3A)": "7146762665984"
       },
       {
@@ -2224,8 +2236,8 @@
         "N": 0,
         "A": 19,
         "c1": "14942079/274877906944",
-        "closed_form": "104594985/274877906944",
-        "equal": false,
+        "closed_form": "14942079/274877906944",
+        "equal": true,
         "c1_times_2^(3A)": "7833952714752"
       },
       {
@@ -2233,8 +2245,8 @@
         "N": 20,
         "A": 20,
         "c1": "-5242851/274877906944",
-        "closed_form": "41942979/274877906944",
-        "equal": false,
+        "closed_form": "-5242851/274877906944",
+        "equal": true,
         "c1_times_2^(3A)": "-21990110920704"
       },
       {
@@ -2242,8 +2254,8 @@
         "N": 19,
         "A": 20,
         "c1": "-18349973/1099511627776",
-        "closed_form": "170393347/1099511627776",
-        "equal": false,
+        "closed_form": "-18349973/1099511627776",
+        "equal": true,
         "c1_times_2^(3A)": "-19241341288448"
       },
       {
@@ -2251,8 +2263,8 @@
         "N": 18,
         "A": 20,
         "c1": "-7864273/549755813888",
-        "closed_form": "86507387/549755813888",
-        "equal": false,
+        "closed_form": "-7864273/549755813888",
+        "equal": true,
         "c1_times_2^(3A)": "-16492575850496"
       },
       {
@@ -2260,8 +2272,8 @@
         "N": 17,
         "A": 20,
         "c1": "-13107119/1099511627776",
-        "closed_form": "175636201/1099511627776",
-        "equal": false,
+        "closed_form": "-13107119/1099511627776",
+        "equal": true,
         "c1_times_2^(3A)": "-13743810412544"
       },
       {
@@ -2269,8 +2281,8 @@
         "N": 16,
         "A": 20,
         "c1": "-2621423/274877906944",
-        "closed_form": "44564407/274877906944",
-        "equal": false,
+        "closed_form": "-2621423/274877906944",
+        "equal": true,
         "c1_times_2^(3A)": "-10995044974592"
       },
       {
@@ -2278,8 +2290,8 @@
         "N": 15,
         "A": 20,
         "c1": "-7864265/1099511627776",
-        "closed_form": "180879055/1099511627776",
-        "equal": false,
+        "closed_form": "-7864265/1099511627776",
+        "equal": true,
         "c1_times_2^(3A)": "-8246279536640"
       },
       {
@@ -2287,8 +2299,8 @@
         "N": 14,
         "A": 20,
         "c1": "-2621419/549755813888",
-        "closed_form": "91750241/549755813888",
-        "equal": false,
+        "closed_form": "-2621419/549755813888",
+        "equal": true,
         "c1_times_2^(3A)": "-5497514098688"
       },
       {
@@ -2296,8 +2308,8 @@
         "N": 13,
         "A": 20,
         "c1": "-2621411/1099511627776",
-        "closed_form": "186121909/1099511627776",
-        "equal": false,
+        "closed_form": "-2621411/1099511627776",
+        "equal": true,
         "c1_times_2^(3A)": "-2748748660736"
       },
       {
@@ -2305,8 +2317,8 @@
         "N": 12,
         "A": 20,
         "c1": "1/68719476736",
-        "closed_form": "23592917/137438953472",
-        "equal": false,
+        "closed_form": "1/68719476736",
+        "equal": true,
         "c1_times_2^(3A)": "16777216"
       },
       {
@@ -2314,8 +2326,8 @@
         "N": 11,
         "A": 20,
         "c1": "2621443/1099511627776",
-        "closed_form": "191364763/1099511627776",
-        "equal": false,
+        "closed_form": "2621443/1099511627776",
+        "equal": true,
         "c1_times_2^(3A)": "2748782215168"
       },
       {
@@ -2323,8 +2335,8 @@
         "N": 10,
         "A": 20,
         "c1": "2621435/549755813888",
-        "closed_form": "96993095/549755813888",
-        "equal": false,
+        "closed_form": "2621435/549755813888",
+        "equal": true,
         "c1_times_2^(3A)": "5497547653120"
       },
       {
@@ -2332,8 +2344,8 @@
         "N": 9,
         "A": 20,
         "c1": "7864297/1099511627776",
-        "closed_form": "196607617/1099511627776",
-        "equal": false,
+        "closed_form": "7864297/1099511627776",
+        "equal": true,
         "c1_times_2^(3A)": "8246313091072"
       },
       {
@@ -2341,8 +2353,8 @@
         "N": 8,
         "A": 20,
         "c1": "2621431/274877906944",
-        "closed_form": "49807261/274877906944",
-        "equal": false,
+        "closed_form": "2621431/274877906944",
+        "equal": true,
         "c1_times_2^(3A)": "10995078529024"
       },
       {
@@ -2350,8 +2362,8 @@
         "N": 7,
         "A": 20,
         "c1": "13107151/1099511627776",
-        "closed_form": "201850471/1099511627776",
-        "equal": false,
+        "closed_form": "13107151/1099511627776",
+        "equal": true,
         "c1_times_2^(3A)": "13743843966976"
       },
       {
@@ -2359,8 +2371,8 @@
         "N": 6,
         "A": 20,
         "c1": "7864289/549755813888",
-        "closed_form": "102235949/549755813888",
-        "equal": false,
+        "closed_form": "7864289/549755813888",
+        "equal": true,
         "c1_times_2^(3A)": "16492609404928"
       },
       {
@@ -2368,8 +2380,8 @@
         "N": 5,
         "A": 20,
         "c1": "18350005/1099511627776",
-        "closed_form": "207093325/1099511627776",
-        "equal": false,
+        "closed_form": "18350005/1099511627776",
+        "equal": true,
         "c1_times_2^(3A)": "19241374842880"
       },
       {
@@ -2377,8 +2389,8 @@
         "N": 4,
         "A": 20,
         "c1": "2621429/137438953472",
-        "closed_form": "3276793/17179869184",
-        "equal": false,
+        "closed_form": "2621429/137438953472",
+        "equal": true,
         "c1_times_2^(3A)": "21990140280832"
       },
       {
@@ -2386,8 +2398,8 @@
         "N": 3,
         "A": 20,
         "c1": "23592859/1099511627776",
-        "closed_form": "212336179/1099511627776",
-        "equal": false,
+        "closed_form": "23592859/1099511627776",
+        "equal": true,
         "c1_times_2^(3A)": "24738905718784"
       },
       {
@@ -2395,8 +2407,8 @@
         "N": 2,
         "A": 20,
         "c1": "13107143/549755813888",
-        "closed_form": "107478803/549755813888",
-        "equal": false,
+        "closed_form": "13107143/549755813888",
+        "equal": true,
         "c1_times_2^(3A)": "27487671156736"
       },
       {
@@ -2404,8 +2416,8 @@
         "N": 1,
         "A": 20,
         "c1": "28835713/1099511627776",
-        "closed_form": "217579033/1099511627776",
-        "equal": false,
+        "closed_form": "28835713/1099511627776",
+        "equal": true,
         "c1_times_2^(3A)": "30236436594688"
       },
       {
@@ -2413,8 +2425,8 @@
         "N": 0,
         "A": 20,
         "c1": "3932143/137438953472",
-        "closed_form": "13762529/68719476736",
-        "equal": false,
+        "closed_form": "3932143/137438953472",
+        "equal": true,
         "c1_times_2^(3A)": "32985206226944"
       }
     ],
