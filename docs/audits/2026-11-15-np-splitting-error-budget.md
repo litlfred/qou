@@ -265,3 +265,14 @@ Consequence here: p = uud carries K^{⊗3} = q, n = udd carries q⁻¹. So **n/p
 t_n/t_p = q⁻² exactly for both words, as proved in Lean (§17).
 
 **Reading (scope a).** The only derived scale in the corpus, used in the corpus's own linear form on the ruled element, gives −74.8 %. That is robust: V³ and V⁶ agree to 0.6 %. D2 is closer, but the log form has no corpus support, so ranking it higher would be selecting by residual. The sign under the linear form is not settled either. t_p is negative here, so whether the neutron is heavier depends on whether the mass reads t or |t|. **The derivation does not close.** Following the owner's card, the next step is a proposed conjecture wording for the n–p block, put up for review and not applied.
+
+## §19 Route 1: is Φ a volume? Route 4: H_α in Lean
+**Route 1 (corpus, structural; conditional on the Kashaev volume conjecture).** The corpus's volume statement (`vol-through-tau`, conditional on conj:kashaev-volume-conjecture) assigns volume only to **braids**, through their closure. It states explicitly that the atomic words c σ_g + d·1 "are general Hecke elements, not braids, and their volume is 0". The traced product ∏ᵢ∏_{j>i}(σᵢ+dᵢⱼ), whose log is Φ, is a product of exactly those atomic words. So Φ is not a volume in the corpus's sense. The Kashaev limit itself is a limit over coloured Jones at roots of unity, and a single level-3 trace at real q₀ is not that limit.
+
+On the ruled element the picture is sharper. p and n are the same braid V³ = (σ₁σ₂⁻¹)³, whose closure is the Borromean rings, Vol = 8G. Volume depends only on the closure, so **ΔVol(n, p) = 0**. The u/d label is not braid data. So the volume route cannot derive H_α: under the corpus's own volume statement the n–p volume difference vanishes. That is scope (b) **conditional on KVC**: the invariant is that volume factors through the closure.
+
+A side observation, not used to select anything: α = m_e·8G is m_e times the volume of the ruled nucleon's own closure. So H_α reads naturally as "the nucleon's volume sets the MeV per unit of a dimensionless trace". That is an interpretation. The corpus does not derive it.
+
+**Route 4 (Lean).** In `neutron-proton-mass-splitting.lean`, `class ScaleHypothesis (α Δm : ℝ)` with field `conversion : Δm = α·|Φ(udd) − Φ(uud)|` is content-bearing and has **no instance**. `splitting_of_scaleHypothesis` proves |Δm − 1.0541| < 0.001 conditional on it. lean-direct `-DautoImplicit=false` exit 0.
+
+**Route 2 (pending).** m_n − m_p = Q_β + m_e is kinematics. The corpus has no block linking the n–p splitting to Q_β (grep over content found none). This is being coordinated with the Q_β thread.
