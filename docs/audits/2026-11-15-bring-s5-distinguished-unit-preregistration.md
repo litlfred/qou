@@ -113,3 +113,88 @@ handedness at all: if `−u = g·u` for some `g ∈ A₅`, the symmetry conjugat
    form the 60 rotations, find all points of `S²` with nontrivial stabiliser (the rotation
    axes), compute orbits, stabiliser orders, and the antipode test of §2.
 3. Report against §3 without changing any rule.
+
+---
+
+## 5. RESULTS (added after measurement; §§0–4 above are as committed in `5b76d41e08`, unchanged)
+
+No rule in §2 was altered after measuring. Both legs were measured as fixed.
+
+### 5.1 The action leg — outcome (iii), independent of any computation
+
+Re-stated from §1, now as the headline: **the corpus does not establish that Bring's `S₅`,
+or its `A₅`, acts on the model cone `BringCone` or on its admissible units `u`.** The
+`A₅` actions it holds are on Klein's `ℙ(V)` and on `Σ₄`; the `S²` of admissible `u` is
+the Hopf base of the quaternionic model, which `BringConeLinkEulerNumber.lean` already
+records is not Bring's link (`UT(Σ₄)`, Euler number −6, vs Hopf, −1). Searched surfaces
+are listed in §1; this is a statement about them, not a proof no such action exists.
+
+Two structural facts constrain what any such action could be:
+
+- `S₅` has no faithful real 3-dimensional representation (irreducible degrees
+  1,1,4,4,5,5,6 — standard character table), so only `A₅` can act on `S²` linearly.
+- `A₅` has two inequivalent 3-dimensional representations. **Measured:** the
+  Galois-conjugate embedding `√5 ↦ −√5` of `2I` has a different character on
+  corresponding order-5 elements (values `(1 ± √5)/2` swap). That the odd coset of `S₅`
+  realises this swap is the standard outer-automorphism fact, cited, not computed. So
+  `S₅` does not choose between the two embeddings.
+
+### 5.2 Conditional on (H-ico) — what the group action gives
+
+Lean, `QOU/BringConeIcosahedral.lean` (generic `CommRing`; `lean -DautoImplicit=false
+-s 65536` exit 0; axioms ⊆ `propext, Classical.choice, Quot.sound`):
+
+| decl | content |
+|---|---|
+| `leftMul_conj_chiralGammaU` | `L_g ∘ Γ_u ∘ L_{ḡ} = Γ_{g u ḡ}` — a left-multiplication symmetry acts on `u` by conjugation |
+| `re_conjBy`, `normSq_conjBy` | conjugation by a unit preserves pure + norm |
+| `conjBy_unitI_unitJ_fixed_eq_zero` | a pure `u` fixed by conjugation by `i` and `j` is `0` (2 cancellable) |
+| `conjBy_neg_of_anticomm` | a unit `w` anticommuting with `u` sends `u ↦ −u` |
+| `leftMul_flips_chiralGammaU` | …so `L_w` carries `Γ_u` to `−Γ_u` (L↔R) |
+| `leftMul_unitJ_flips_chiralGamma_i` | the instance `w = j`, `u = i` |
+
+Exact compute, `computations/probes/bring_cone_icosahedral_unit_orbits_probe.py`
+(pairs of `Fraction` over `ℚ(√5)`, no float; 12/12 checks pass): `|2I| = 120`,
+image in `SO(3)` = 60, `i, j ∈ 2I`, and
+
+| rule | result |
+|---|---|
+| **R0** global fixed point | **none** (0 directions; also Lean, via `i, j ∈ 2I`) |
+| **R1 / R3** maximal stabiliser = minimal orbit | **unique orbit: the 12 vertex directions**, stabiliser `C₅`, = 6 axes |
+| **R2** exceptional orbits | three orbits, 12 / 20 / 30, stabilisers 5 / 3 / 2 — not unique |
+| antipode test | **every exceptional orbit contains `−u` for each of its `u`**, moved there by 5 / 3 / 2 rotations of `A₅` (the half-turns perpendicular to `u`) |
+
+### 5.3 Reading against §3
+
+- **(i) unique point — NO.** R0 is empty.
+- **(ii) distinguished orbit — YES under R1/R3, conditionally:** the 12 vertex directions
+  (6 `±` pairs). But three things make this no better than the base-point choice it was
+  meant to replace:
+  1. **It cannot fix a handedness.** Each vertex `u` and its antipode `−u` are in the
+     same orbit, related by an `A₅` half-turn `w` perpendicular to `u`, and
+     `leftMul_flips_chiralGammaU` then gives `L_w Γ_u L_{w̄} = −Γ_u`. So the symmetry the
+     rule is built from **identifies L with R**; an `A₅`-invariant prescription cannot
+     carry a chirality at all. Fixing one requires breaking `A₅` to the stabiliser `C₅` of
+     a chosen vertex: one of 12 points (6 axes, then an orientation).
+  2. **The orbit is only defined once `2I ⊂ ℍ^×` is placed.** Any conjugate `h·2I·h⁻¹`
+     moves the 12 points by `h`, and the Reeb triad does not constrain `h` (left
+     multiplications commute with it). The probe's standard icosians, with `i, j, k ∈ 2I`,
+     are a coordinate choice aligned with the triad's axes, not a derived one. The freedom
+     in placing `2I` is the same `SO(3)`-worth of freedom as the freedom in `u`.
+  3. **Two embeddings.** Under (H-ico) there is in addition the Galois choice of §5.1,
+     which `S₅` does not resolve.
+- **(iii) — YES on the action leg.** Nothing in the corpus puts Bring's symmetry on the
+  cone.
+
+**Outcome: (iii), with a conditional (ii) that fails to fix handedness.** The ruling's
+question has a negative answer on the corpus as it stands: Bring's `S₅` does not single out
+`u`. Granting the action, it singles out the 12-vertex orbit — and then itself swaps L and
+R inside it.
+
+### 5.4 Gap
+
+The missing link is a homomorphism from Bring's automorphisms to the triad-commuting
+symmetries of the model cone (necessarily through `2I`, by
+`commutes_reeb_triad_iff_leftMul` and the representation constraint above), with the
+placement of `2I` fixed. Any such link sits on the same model-vs-`UT(Σ₄)` question as
+`qou-rydq`: on Bring's real link the `S₅` acts on `Σ₄`, not on a Hopf base `S²`.
