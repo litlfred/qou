@@ -12,4 +12,8 @@ export default definition({
     "def:categorical-connection",
     "def:categorical-reeb",
   ],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/categorical-q-connection-0.svg", blockIndex: 0, hash: "b98993abe1fc" },
+  ],
+
 });

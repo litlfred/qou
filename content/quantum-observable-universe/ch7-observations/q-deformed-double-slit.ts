@@ -10,4 +10,8 @@ export default remark({
   ],
   tags: ["double-slit", "q-deformation", "scattering", "reeb", "torsion", "dirac", "wavefront"],
   simulator: { ref: "sim:q-double-slit" },
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/q-deformed-double-slit-0.svg", blockIndex: 0, hash: "6227345a2d09" },
+  ],
+
 });

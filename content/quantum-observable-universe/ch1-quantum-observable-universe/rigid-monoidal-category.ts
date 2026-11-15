@@ -11,7 +11,7 @@ export default definition({
   uses: ["def:snake-identity", "def:no-quasi-zeros"],
   examples: ["ex:rigid-monoidal-vect"],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/rigid-monoidal-category-1.svg", blockIndex: 1, hash: "9b5f1dfb5af4" },
+    { mime: "image/svg+xml", url: "rendered/rigid-monoidal-category-0.svg", blockIndex: 0, hash: "dcde857fc6e5" },
   ],
 
 });

@@ -14,8 +14,8 @@ export default definition({
     "def:quantum-observable-universe",
   ],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/observation-0.svg", blockIndex: 0, hash: "dc276429434c" },
-    { mime: "image/svg+xml", url: "rendered/observation-1.svg", blockIndex: 1, hash: "98292928e613" },
+    { mime: "image/svg+xml", url: "rendered/observation-0.svg", blockIndex: 0, hash: "849f046a076b" },
+    { mime: "image/svg+xml", url: "rendered/observation-1.svg", blockIndex: 1, hash: "8e5f48f1a2dd" },
   ],
 
 });

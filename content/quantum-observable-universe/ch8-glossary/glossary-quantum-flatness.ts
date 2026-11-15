@@ -9,4 +9,8 @@ export default remark({
     "def:categorical-instanton",
     "def:quantum-gauge-group",
   ],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/glossary-quantum-flatness-0.svg", blockIndex: 0, hash: "2a55f7193ef2" },
+  ],
+
 });

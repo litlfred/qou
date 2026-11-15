@@ -10,7 +10,7 @@ export default proposition({
   uses: ["rem:braid-group-action", "rem:holonomy-trefoil"],
   proofs: ["prf:coral-elliptic"],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/coral-elliptic-0.svg", blockIndex: 0, hash: "3b18553affcb" },
+    { mime: "image/svg+xml", url: "rendered/coral-elliptic-0.svg", blockIndex: 0, hash: "8d6bf4a5074b" },
   ],
 
 });

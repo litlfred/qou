@@ -15,7 +15,7 @@ export default proposition({
   ],
   proofs: ["prf:mi-sw-abelianisation"],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/mi-sw-abelianisation-0.svg", blockIndex: 0, hash: "af7757ccd6f4" },
+    { mime: "image/svg+xml", url: "rendered/mi-sw-abelianisation-0.svg", blockIndex: 0, hash: "14223e481516" },
   ],
 
 });

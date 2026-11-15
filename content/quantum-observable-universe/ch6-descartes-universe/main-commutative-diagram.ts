@@ -11,7 +11,7 @@ export default proposition({
   proofs: ["prf:main-commutative-diagram"],
   tags: ["commutative-diagram", "main-result"],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/main-commutative-diagram-0.svg", blockIndex: 0, hash: "ac46a8d6ede5" },
+    { mime: "image/svg+xml", url: "rendered/main-commutative-diagram-0.svg", blockIndex: 0, hash: "3d1c55010082" },
   ],
 
 });

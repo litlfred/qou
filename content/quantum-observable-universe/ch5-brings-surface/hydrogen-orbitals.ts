@@ -19,4 +19,8 @@ export default remark({
     "ex:hydrogen-knot-structure",
     "prop:hydrogen-shell-writhe",
   ],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/hydrogen-orbitals-0.svg", blockIndex: 0, hash: "83220f72f696" },
+  ],
+
 });

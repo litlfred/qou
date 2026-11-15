@@ -22,4 +22,8 @@ export default definition({
   },
   uses: [],
   examples: [],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/snake-identity-0.svg", blockIndex: 0, hash: "1f029ef104c0" },
+  ],
+
 });

@@ -12,4 +12,8 @@ export default definition({
     "def:projective-line-object",
     "def:categorical-reeb",
   ],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/contact-affine-chart-0.svg", blockIndex: 0, hash: "187417dfd032" },
+  ],
+
 });

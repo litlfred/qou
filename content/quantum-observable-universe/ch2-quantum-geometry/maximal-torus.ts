@@ -10,4 +10,8 @@ export default definition({
   uses: ["prop:spin-labels"],
   examples: ["ex:maximal-torus-su2"],
   tags: ["torus", "weight"],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/maximal-torus-0.svg", blockIndex: 0, hash: "34a7bde324f4" },
+  ],
+
 });

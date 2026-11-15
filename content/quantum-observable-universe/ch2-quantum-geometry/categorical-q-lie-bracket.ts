@@ -9,4 +9,8 @@ export default definition({
     validation: "not_checked",
   },
   uses: ["def:substrate-parameter"],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/categorical-q-lie-bracket-0.svg", blockIndex: 0, hash: "04c520186828" },
+  ],
+
 });

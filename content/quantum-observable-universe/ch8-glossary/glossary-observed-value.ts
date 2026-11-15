@@ -5,8 +5,4 @@ export default remark({
   lean: { decl: "QOU.ObservedValue" },
   title: "Observed spacetime value",
   tags: ["glossary", "brings-surface", "color-tube"],
-  uses: ["def:color-tube-fibers", "rem:brings-smoothness"],
-  rendered: [
-    { mime: "image/svg+xml", url: "rendered/observed-value-0.svg", blockIndex: 0, hash: "768da6d6762e" },
-  ],
-});
+  uses: ["def:color-tube-fibers", "rem:brings-smoothness"],});

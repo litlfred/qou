@@ -11,7 +11,7 @@ export default proposition({
   uses: ["def:categorical-q-ext-deriv"],
   proofs: ["prf:dq-squared"],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/dq-squared-0.svg", blockIndex: 0, hash: "4b6d1699abb9" },
+    { mime: "image/svg+xml", url: "rendered/dq-squared-0.svg", blockIndex: 0, hash: "8d93aec80ced" },
   ],
 
 });

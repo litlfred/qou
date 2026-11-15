@@ -10,4 +10,8 @@ export default theorem({
   uses: ["def:weight-decomposition"],
   proofs: ["prf:weight-decomposition-exists"],
   tags: ["existence", "weight", "decomposition"],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/weight-decomposition-exists-0.svg", blockIndex: 0, hash: "b61d7cb67799" },
+  ],
+
 });

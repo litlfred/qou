@@ -6,7 +6,7 @@ export default remark({
   title: "Geometric drag and the mass residue",
   uses: ["def:substrate-parameter", "def:mass-identity"],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/geometric-drag-0.svg", blockIndex: 0, hash: "09ba06a8e86e" },
+    { mime: "image/svg+xml", url: "rendered/geometric-drag-0.svg", blockIndex: 0, hash: "67bd86b80920" },
   ],
 
 });

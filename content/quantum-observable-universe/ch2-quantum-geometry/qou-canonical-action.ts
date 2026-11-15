@@ -15,4 +15,8 @@ export default proposition({
     "rem:yekutieli-stokes",
     "def:yekutieli-lifting-condition",
   ],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/qou-canonical-action-0.svg", blockIndex: 0, hash: "3090e65d6a81" },
+  ],
+
 });

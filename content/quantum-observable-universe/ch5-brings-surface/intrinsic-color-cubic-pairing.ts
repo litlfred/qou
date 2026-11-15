@@ -6,7 +6,7 @@ export default remark({
   title: "Intrinsic color cubic: pairing structure",
   uses: ["rem:aggregate-color-quantities"],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/intrinsic-color-cubic-pairing-0.svg", blockIndex: 0, hash: "af07e7b7c51d" },
+    { mime: "image/svg+xml", url: "rendered/intrinsic-color-cubic-pairing-0.svg", blockIndex: 0, hash: "f975e52b2e6f" },
   ],
 
 });

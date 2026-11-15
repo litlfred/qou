@@ -9,4 +9,8 @@ export default remark({
     "def:categorical-lagrangian",
     "prop:categorical-self-duality",
   ],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/instanton-on-shell-0.svg", blockIndex: 0, hash: "4b3016e7f2e6" },
+  ],
+
 });

@@ -11,7 +11,7 @@ export default proposition({
   uses: ["def:categorical-q-lie-bracket"],
   proofs: ["prf:q-jacobiator"],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/q-jacobiator-0.svg", blockIndex: 0, hash: "1aac21e2c547" },
+    { mime: "image/svg+xml", url: "rendered/q-jacobiator-0.svg", blockIndex: 0, hash: "89d6a896f05a" },
   ],
 
 });

@@ -9,9 +9,9 @@ export default remark({
     "def:quantum-planck-constant",
     "ex:q-reeb-flow",
     "rem:q-harmonic-physical",
-  ],
+  ],  simulator: { ref: "sim:quantum-brings-surface" },
   rendered: [
     { mime: "image/svg+xml", url: "rendered/spectral-dynamics-0.svg", blockIndex: 0, hash: "dbf0b9977a75" },
   ],
-  simulator: { ref: "sim:quantum-brings-surface" },
+
 });

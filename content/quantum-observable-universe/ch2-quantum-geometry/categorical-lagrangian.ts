@@ -9,4 +9,8 @@ export default definition({
     validation: "not_checked",
   },
   uses: ["def:categorical-dirac-operator"],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/categorical-lagrangian-0.svg", blockIndex: 0, hash: "d261ff00882b" },
+  ],
+
 });

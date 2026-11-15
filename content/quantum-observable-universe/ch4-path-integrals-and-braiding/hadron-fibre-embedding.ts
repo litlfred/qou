@@ -10,7 +10,7 @@ export default definition({
   },
   uses: ["def:localized-hadron"],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/hadron-fibre-embedding-0.svg", blockIndex: 0, hash: "2bdcb2f4751d" },
+    { mime: "image/svg+xml", url: "rendered/hadron-fibre-embedding-0.svg", blockIndex: 0, hash: "01e2ca9922f0" },
   ],
 
 });
