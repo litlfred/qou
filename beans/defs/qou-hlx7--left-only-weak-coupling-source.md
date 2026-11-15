@@ -10,7 +10,7 @@ tags:
     - weak
 parent: qou-qs0e
 created_at: 2026-11-15T09:00:00Z
-updated_at: 2026-11-15T12:00:00Z
+updated_at: 2026-11-15T10:30:00Z
 ---
 
 Follow-up from qou-hlx6 (PR #7836). Corpus-grepped 2026-11-15 (beans, docs/audits,
@@ -103,3 +103,15 @@ lean-direct exit 0, axioms standard). Audit: docs/audits/2026-11-15-one-sided-we
   to the retired z = 1 form" was unmeasured and is FALSE. Retired Form A, the retired z = 1
   trace, and the ruled z_D trace all lack definite bar parity. The two traces only carry an
   overall factor h. Audit §4 corrected; follow-up question is bean qou-hlx8.
+
+## 2026-11-15 D-W1 = A result: the cone point u cannot pick the bit equivariantly (scope b)
+
+ConePointChiralityBit.lean (sorry-free, lean-direct exit 0, axioms standard). Algebra maps
+preserve the L/R type (map_oneSidedL), so any assignment u -> vertex that is equivariant under
+the unit-quaternion gauge is constant on orbits (type_invariant). Conjugation by j sends i to
+-i, which is the photon swap. Hence tau(-u) = tau(u) (cone_point_cannot_pick_bit); a constant
+convention satisfies the hypotheses (non-vacuity). Only the bar involution q -> 1/q swaps
+W_L <-> W_R, so the bit IS the orientation of q (= which crossing carries weight q). Owner
+decision D-W3 (convention / look for a q-orientation datum / stop) is framed in
+docs/audits/2026-11-15-cone-point-chirality-bit.md section 6. Default: stop. The bean stays
+in-progress: the conjecture (where V-A comes from) is open.
