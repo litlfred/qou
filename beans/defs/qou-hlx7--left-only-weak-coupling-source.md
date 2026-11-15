@@ -102,7 +102,7 @@ lean-direct exit 0, axioms standard). Audit: docs/audits/2026-11-15-one-sided-we
 - 🛑 CORRECTION 2026-11-15 (own claim). The line above saying "bar-odd sinh partner belongs
   to the retired z = 1 form" was unmeasured and is FALSE. Retired Form A, the retired z = 1
   trace, and the ruled z_D trace all lack definite bar parity. The two traces only carry an
-  overall factor h. Audit §4 corrected; follow-up question is bean qou-hlx8.
+  overall factor h. Audit §4 corrected; follow-up question is bean qou-hlxp.
 
 ## 2026-11-15 D-W1 = A result: the cone point u cannot pick the bit equivariantly (scope b)
 
@@ -115,3 +115,15 @@ W_L <-> W_R, so the bit IS the orientation of q (= which crossing carries weight
 decision D-W3 (convention / look for a q-orientation datum / stop) is framed in
 docs/audits/2026-11-15-cone-point-chirality-bit.md section 6. Default: stop. The bean stays
 in-progress: the conjecture (where V-A comes from) is open.
+
+## 2026-11-15 owner decisions (relayed by coordinator)
+
+D-H5 = D + C. (D): type-b-folding-cpt.md is scoped at fixed q. (C): the neg route is research
+bean qou-hlxp. The mirror/positron vs d-flavour tension is bean qou-hlxt. The force-knot §III
+fix (the coordinator's "D-H4 (b)") merged as #7852.
+
+Also found, reported and NOT edited: `conj:p-from-braid-mirror` (mass-theory/p-from-braid-mirror.md)
+defines P as σᵢ ↦ σᵢ⁻¹ with q held FIXED. no_linear_flip proves no K-linear algebra map of
+H_n(q) does that unless q² = 1. So that P is well defined on the braid group B_n but does not
+descend to H_n(q) at fixed q. The block also calls the bar involution "composite CPT", whereas
+§10 finds the C/CT profile for the mirror.
