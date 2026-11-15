@@ -1,0 +1,49 @@
+Keep it simple; as simple as possible, but no simpler.
+Albert Einstein
+
+Introduction
+
+Twahori-Hecke algebras first appeared in the work of Iwahori [34] and now
+have applications in subjects ranging from the ordinary and modular representation
+theory of Coxeter groups and the groups of Lie type, to knot theory, quantum
+groups and statistical mechanics (sce [52] and the references there). Schur algebras
+were introduced by Schur [61] who used them to classify the ordinary irreducible
+polynomial representations of GE,(C); their “quantum analogues,” the g-Schur
+algebras, also determine the representation theory of the finite general linear groups
+in non-defining characteristic [15].
+
+These notes aim to give a clear and concise treatment of the modular repre-
+sentation theory of the Iwahori-Hecke algebras of the symmetric groups and of the
+q-Schur algebras. Both of these theories were pioneered by Dipper and James in a
+series of landmark papers [13-16]. Taking full advantage of recent advances, these
+notes recast this theory with a primary goal of classifying and constructing the sim-
+ple modules and the blocks of these algebras. Apart from some basic representation
+theory, these notes are entirely self-contained.
+
+One of the central themes of these notes is to view the Iwahori—Hecke algebras
+and q-Schur algebras as cellular algebras, a class of algebras introduced by Graham
+and Lehrer [26]. This amounts to constructing a basis which is extremely well
+adapted to the representation theory of the algebra. For example, given a cellular
+basis one can immediately construct all of the simple modules of the algebra.
+
+The cellular basis of the Iwahori-Hecke algebra which we concentrate upon
+is the so-called Murphy basis [55]; this is a very natural basis indexed by pairs
+of standard tableaur. Apart from being cellular, the Murphy basis has another
+marvelous property in that it is very easy to “lift” this basis to give a cellular basis
+for the g-Schur algebra, which is indexed by pairs of semistandard tableaux. In this
+way, one obtains a very clean and very elegant construction of the simple modules
+of both the Iwahori-Hecke algebras and the q—Schur algebras.
+
+In order to classify the blocks of the our algebras we prove an analogue of
+Jantzen’s sum formula for the Weyl modules of the g-Schur algebras. Key to our
+proof of this result are generalizations of the Jucys—Murphy elements from the
+representation theory of the symmetric groups. Using these elements we are able
+to construct orthogonal bases for the Weyl modules (when the g-Schur algebras are
+semisimple), which then allow us to compute the Gram determinant of the cellular
+basis of the Weyl modules. Essentially some highest weight theory then allows us
+to deduce the sum formula and so classify both the blocks of the g-Schur algebras
+and Iwahori—Hecke algebras.
+
+Briefly, the structure of these notes is as follows. Chapter | begins by proving
+some basic facts about the symmetric group and its Iwahori-Hecke algebra #. In
+fact, this is really a chapter Coxeter groups and general Iwahori—Hecke algebras

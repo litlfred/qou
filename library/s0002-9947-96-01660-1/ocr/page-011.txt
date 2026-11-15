@@ -1,0 +1,47 @@
+INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS 4007
+
+FIGURE 4
+
+Note that, given f and a labelling of M, there is a unique compatible labelling
+of N.
+
+Now the properties of the state space of a triangle under combinatorial isomor-
+phisms are described. The combinatorial isomorphisms are just permutations in
+S3. For the standard triangle T(a, b, c), labelled by O9T > a, 0,T b, HT Hc,
+the labelling is permuted by (a,b,c) ++ o*(a,b,c) for an even permutation o*,
+and (a,b,c) o~ (a, 6, é) for an odd permutation o~. For this reason, it is more
+convenient to use the notation V(a, b,c)=H(a, b, c) for the state space of a labelled
+triangle when the symmetry properties are considered.
+
+There is a canonical map V(a, b,c) > V(b, c, a), ie.,
+
+Hom(b, a c) + Hom(é,b @ a),
+defined by mapping f: b+ a®c to the following composite:
+
+€(b)@1 1@f@l 121@é(c)
+
+@>e@e— 5 d@b@é 5 Daa@caée b@a®e > bea.
+
+This corresponds to the graph in Figure 4.
+There is also a canonical pairing V (a, b,c) x V(é,b, @) > F, ie.,
+Hom(b, a @ c) x Hom(b, é@ 4) > F.
+Let f: b—-a®@cand g:b—¢@4. Then the pairing is defined by
+(f.9) = tri (9).
+Equivalently, it is determined by the closed tangle in Figure 5.
+
+Definition 3.5. For every ordered triple, (a,b,c), of elements of IJ and every even
+permutation a+ € 93, there is an isomorphism
+
+O(at): V(a,b,c) + Vor (a,b,c).
+
+For (a,b,c) + (b,c, a), this is the canonical map just defined. Repeating this gives
+the isomorphism for (a, b,c) ++ (c,a,b). The identity is associated to the identity.
+
+For every ordered triple, (a,b,c), of elements of J, and every odd permutation
+ao” € S3, there is a non-degenerate pairing, (—,—),-,
+
+V (a,b,c) @ Vow (a,b, é) > F.
+
+For o~ the odd permutation (a,b,c) + (c,b, a), this is the pairing defined above.
+The pairings for the other two odd permutations can be defined by the formula
+(v1, ¥2),- = (v1, 0(oF v2) 94+

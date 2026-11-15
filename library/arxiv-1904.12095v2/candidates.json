@@ -1,0 +1,106 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1904.12095v2",
+ "source": {
+  "structure_sha256": "7006b250f0d3c991fc0f6b822f74211e255a6ea876e38bf8cacc5633dc9a45be",
+  "file": "1904.12095v2.pdf"
+ },
+ "provenance": {
+  "title": "Veri\ufb01ed computations for closed hyperbolic 3-manifolds",
+  "authors": "Matthias Goerner",
+  "arxiv": {
+   "id": "1904.12095",
+   "version": "2",
+   "primary_class": "math.GT",
+   "stamp_date": "6 Jan 2021"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 5,
+  "by_kind": {
+   "recommendation": 5
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The cocycle condition says that the matrices on the edges of a polygon must multiply to the identity.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "2-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Roughly speaking, the idea is that if the product of three small rotations about three axes in generic position is the identity, then each rotation must be the identity.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "2-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Note that the orientation on $(L_k,L^=_k)$ in the above definitions must be chosen such that the boundary of a small hexagon in $(L_k,L^=_k)$ contains a $\\gamma^{\\sigma(0)\\sigma(1)\\sigma(2)}$ for $\\sigma\\in \\mathbf{A}_4$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-004-5-extending-cocycles-on-triangulations.md",
+   "section_title": "Extending cocycles on triangulations",
+   "pages": "12-14",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Compare this to the ideal case where Neumann-Zagier (see Appendix) state that all edge equations must be fulfilled whenever $m-o$ are fulfilled. :::",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-6-examples-of-non-gimbal-lock.md",
+   "section_title": "Examples of (non-)gimbal lock",
+   "pages": "14-15",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "As we shall see, this cannot happen.\\ From the edge lengths $(L\\circ\\gamma)(t)\\in\\mathrm{Sol}(\\mathcal{T})$, we can construct a 1-parameter family of developing maps $d'$ as above.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-008-9-discussion.md",
+   "section_title": "Discussion",
+   "pages": "21-25",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

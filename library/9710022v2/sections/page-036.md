@@ -1,0 +1,81 @@
+---
+doc_id: 9710022v2
+doc_title: "Harmonic Analysis on the quantum Lorentz group"
+section_id: page-036
+section_title: "Page 36"
+pages: 36-36
+pdf_page: 36
+source_pdf: 9710022v2.pdf
+source_sha256: e5ff373a1ec6884a
+text_source: ocr
+granularity: page
+doc_brief: "Harmonic Analysis on the quantum Lorentz group — This w ork b egins with a review of complexi cation and reali cation of Hopf algebras."
+---
+and we can decompose this rational function in simple poles:
+
+Arpt + Bre,
+Rr,p(a) = Pig) +S alr es
+
+with P,,,(x) polynomial of degree less or equal to 2pk — n. Because Rz,p(x) has the same parity
+as n, we necessarely have Aj,¢,p = 0 if n is even, and Bix.) = 0 if n is odd. When n is odd we
+get Arkp = (-1'(q- at)" fn!) Le — I]q72Pk(F+9 , therefore
+
+n n k+l 1yl—n
+x)= a Pyyp(@) + > OT @ (7) «me — Ij.
+
+k,l=0
+
+The second term of the right handside is zero due to the antisymmetry in the exchange of k
+and I. As a result gp(a) is a polynomial of degree less or equal to (2p — 1)n. From Rx.p(x) =
+xPk+nQ), (x), with Q;.,p(x) rational function not having 0 as pole, we get by differentiating that
+Rx,p()'™ (0) = 0, for 0 << m <n, and Ro,p(x)(™ = nl(—1)"q
+even. As a result we obtain that go,n(w) = don and gin(x) = (—1)"¢
+application of this result shows that
+
+The prook i is similar if n is
+no
+
+. An immediate
+
++00 _
+- (q-q")" 2 (Hy —Hp) REED on? 1 Hon
+F(«)B(2)F(2)"' ={>> ana Ha) (G2? 7m 1) Bn) = Rog”? B(2).
+n=0 °
+oO
+We summarize the previous results in the following proposition, which gives a new expression
+for the coefficients AZS (No, Xi).
+
+Proposition 1:
+
+(PD) m m
+BC _ vayr NM @, 3D) ( F
+AAp(Xo, 81) = (oD NOG, 2)
+
+C B 2012 ( %1 7%
+Oo O1 q BC
+
+where again 2No +1 = B+ 2,28, +1=—-2+ 2. As a result ARG as well as (A4G)° are
+Laurent polynomials in the variable x.
+
+n) (123)
+
+2
+
+Proof: The universal matrix A(«) can be simplified using the previous Lemma, and we have:
+A(a) = qe gah,
+Using this simple expression, it is then trivial to obtain the announced formula. Oo
+
+H2
+Pe
+
+Remark: The linear relation Fi) («)q7 = Rog?" galt F,o(z) is a very important
+relation. We have computed [3], see also [2 a “using a generalisation of this identity, the exact
+form of the shifted cocycles F : §* + Uq(6), where § is a Cartan subalgebra of 6.
+
+4.3. Characters
+
+Funec(SLq(2,C)r) = Pol(SU;(2) ® Fun-(AN,(2)) is a multiplier Hopf algebra, let us define
+on the vector space D = Pol(SU,(2))*®Pol(SU,(2)), where Pol(SU,(2))* is the restricted dual
+of Pol(SU;(2)) and © is the algebraic tensor product, a structure of multiplier Hopf algebra
+
+36

@@ -1,0 +1,56 @@
+4, THE IRREDUCIBLE #-MODULES 31
+
+Proof. (i) By Proposition 3.33(i) the transition matrix between the standard basis
+of S* and { f, | t € Std()) } is unitriangular so this set is a basis of S*. Moreover,
+ifs and ¢ are standard \-tableaux then
+
+(fs, fo) = (foFs: fd) = (fa: fPS) = (fas fs) = Sac( fs, fs)
+
+by Proposition 2.7(ii) and Proposition 3.33(iv). Thus, { fi | €€ Std(A) } is an or-
+thogonal basis of S*.
+
+(ii) By part (i) we may write fs7; = >>, co fs for some cy € R where v € Std(A).
+Let & be any integer such that & # i,i+ 1 (mote that there is nothing to prove
+when n < 2). Then J; and Ly; commute so fsTj) Ly = fsL xT; = [ress(k)]qfsTi by
+Proposition 3.33(iii). On the other hand,
+
+FsTi Ly = Soca fel = So eolrese (Mate:
+b b
+Equating coefficients, ¢y[resy(k)]q = Cy[res,()], for all k # 7,7 + 1. Therefore, by
+Lemma 3.32(ii), cp = 0 unless » = 5, or » = t and t is standard.
+
+Suppose first that t is not standard; then we have shown that f,;7; = csf, for
+some ¢s € R. By Proposition 3.33(i), fs = Ms + D>,5, 47M» for some a, € R.
+Because t is not standard, either 7 and i+ 1 are in the same row of s or they
+are in the same column. In the first case, m,7; = qm, by Corollary 3.4; in the
+second, ms7T; = —ms + Lops b, for some b, € R by Corollary 3.19. Therefore, by
+Proposition 3.33(i) again, fs7; equals qf; or —fs respectively.
+
+Now assume that ¢ is standard. We have shown that fs7; = csfs+cerf; for some
+cs,c, € R. First suppose that 5 > t. Then msT; = mi; so, fsT; = me + Soup Pun
+for some b,, € R. Therefore, as in the last paragraph, c, = 1; that is, fs7; = es fs+fe-
+Now ress(i) = resy(i+ 1) and ress(i + 1) = res,(i). Therefore, using Theorem 3.30
+and Proposition 3.24(ii), we find that
+
+eslresi(i)]q fs + [ress(i)] fe = (esfs + fo) Ligs = fsTi Lig
+= fe{(q—WLigi +14 0:7}
+= {(q _ l[resi(2)]q +1+ es[ress(2)]q } fs + [ress(@)]q Se.
+Consequently, remembering that [m]g = (q’”” — 1)/(q — 1) (when q # 1),
+
+—_ = Dlrese(J]g +b pes gti) (q-}) to
+* rese(i)]q — [ress(i)]q greseti) — gresel)  Tplag
+as claimed.
+The formula for f,Z; (or, equivalently, for fs7; when t is standard and t > s)
+can now be obtained by expanding fsT? = fiT; — 1/[PlafsTi- Oo
+
+We will see in the next section that # is semisimple if and only if e > n; so
+the last few results have really been about the semisimple case. Even so, our main
+applications of these results will be in the case where # is not semisimple.
+
+4. The irreducible #—modules
+
+In this section we give necessary and sufficient conditions for the module D* to
+be non-zero; by Theorem 3.21 this will classify the simple .#—modules. Throughout
+this section we assume that FR is a field.
+
+Recall that ¢ is the smallest positive integer such that [e], = 0 (or e = ov).

@@ -1,0 +1,64 @@
+NOTES ON CHAPTER 5 65
+
+vg? — 1p) > vp(G? — 1p). Therefore,
+
+Yp(La]q) = vp(LBla) <> vp(a) = vp(b),
+
+completing the proof of the Lemma. Oo
+Given partitions ¢ = (a1, 09,...) and r = (71, 7,...) andm EN, we define +
+r to be the partition (¢;+7,,¢2+79,...) and mr to be the partition (m7,mr7a,...).
+
+Recall that \’ is the partition which is conjugate to X.
+
+5.42 Theorem (James—Mathas) Suppose that F is a field of characteristic p
+and let \ be an e-regular partition of r. Then the Sd is irreducible if and only if
+
+there exist partitions 0,0)... and 7),7),... such that
+(i) MW =o) + er), 6 is an e-core, and of) = of) +e—1 for alli with
+xf) #0; and
+(ii) for all j >1, 7D = G4 4 prG4), GU4 is a p-core, and oft) = GFA) 4
+
+p—1 for alli with ith) #0.
+
+Proof. If ¢ = 00, then $2 is always irreducible; in this case take a) = ) and let
+the partitions ¢),..., 7), 7(),... be partitions of 0. Thus, we may assume that
+EFM.
+
+By Theorem 5.40 and Lemma 5.41, Sa is irreducible if and only if for all nodes
+(a,b) and (a,c) in [A] either e { b>, and € { hX., or e | hd, and e | hd, and
+Yp(h,) = vp(h2.). We show that this condition is equivalent to (i) and (ii) above.
+
+Draw the diagram [A‘] and circle those nodes which have hook lengths divisible
+by e, as in Example 5.43 below. The condition that for all (a,b) and (a,c) € []
+either ¢ { h>, and ¢ { h?,, or e | hi, and e | hX, amounts to saying that in each
+column of [\’] either no node is circled or every node is circled. By removing an
+e-tim hook from the rightmost column which contains a circled node and using
+induction this is equivalent to (i). Assume therefore that condition (i) holds.
+
+Suppose that the (a, b)-node of [A] is circled (ie. € divides h?,,), and that (a,)
+lies in the r-th column of circled nodes in [A]. Then h?, = eht,. Therefore,
+v,(h%,) = vp(h2.) for all e with (a,e) € [A] if and only if v,(hZ,") = vp(h7.?) for
+all ¢ with (7,¢) € [79]. Replace \ by 7 e by p and iterate this argument to
+complete the proof. Oo
+
+5.43 Example Suppose that \ = (4,33, 25, 1°) and e = 3. We illustrate [\’],
+marking those nodes in the e-core by x and circling those nodes which have hook
+lengths divisible by e.
+
+xxB Tol T TTI
+xf TT Tet Ty
+
+[=
+
+EKKE
+
+Therefore, by Theorem 5.40, SA is irreducible when F is a field of characteristic 0. In
+this case, the decomposition of \’ given by Theorem 5.42 is \’ = (5,3, 1°) +.3(2?, 1).
+If F is a field of characteristic 3 then the analogous diagram for 7!) is sso 52
+
+is not irreducible when p = 3.
+
+Notes on Chapter 5
+
+1. The beta numbers used in the proof of Theorem 5.27 were introduced by Little-
+wood [53]. The abaci of Lemma 5.34 are due to James [37].

@@ -1,13 +1,15 @@
 ---
 doc_id: 67-6-1860
-doc_title: "Progress of Theoretical Physics, Vol. 67, No. 6, June 1982"
+doc_title: "Quaternionic Weinberg-Salam Theory"
 section_id: page-013
 section_title: "Page 13"
-section_number: null
 pages: 13-13
+pdf_page: 13
 source_pdf: 67-6-1860.pdf
 source_sha256: e2e5d45edd369762
-toc_source: undetermined
+text_source: ocr
+granularity: page
+doc_brief: "Quaternionic Weinberg-Salam Theory — 17 sections: Page 1; Page 2; Page 3"
 ---
 1872 K. Morita
 
@@ -60,4 +62,4 @@ fields as gauge-singlets in perturbation theory around $' s=<¢'s>. Therefore,
 the Fock space (40) and (41) gives a consistent framework for the Q-gauge theory
 owing to the spontaneous symmetry breakdown.
 
-9z0z Ainr 90 uo ysanB Aq 79Z2881/0981/9/29/A101112/d}d/Wios'dno-o1wapese//:sdyjy Wo. pepeojuMoq
+9z0z Ainr 06 uo ysanB Aq 79Z2881/0981/9/29/A101112/d}d/Wios'dno-o1wapese//:sdyjy Wo. pepeojuMoq

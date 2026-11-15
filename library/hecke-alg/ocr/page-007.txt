@@ -1,0 +1,58 @@
+2 1. THE IWAHORI-HECKE ALGEBRA OF THE SYMMETRIC GROUP
+
+as required. Oo
+
+For convenience let T = {(#,7) € Gn} = Unes, wSw-!. Then T is the set of
+reflections in G,, (considering G, as a Coxeter group), and N(w) C T.
+
+1.3 Proposition Suppose that w € G,. Then
+
+(i) &(w) = |N(w)|; and,
+
+(ii) N(w) = {te T | (tw) < &(w) }-
+Proof. Suppose that s;, ...s;, isa reduced expression for w and, fora = 1,...,k,
+let tg = $i, ..-5i,2,5igSt,-,---5i,. Then ta € T for all a and, by Lemma 1.2,
+N(w) = N(s;,--.8i,) = {ts}+---+{t,}. We claim that t, 4 t, for a # 6. By way
+of contradiction, suppose that tg = t, for some a < b. Then
+
+w = tglhw = $3, ..-84,_,8igSig_y ~~» Si, Siq - - -Sip_y Si, Sin_y Si W
+
+= Si, 6 Si, os Sig ee Sigs
+
+where sj indicates that the transposition s; is omitted. However, this contradicts
+the assumption that w has length & so ¢;,...,¢,; must all be distinct. Hence,
+N(w) = {t1,...,d} and ¢(w) = |N(w)] proving (i).
+
+Now t,w = 8),...8;,...8i, fora=1,...,kso N(w) C {4 ET | &(tw) < &(w) }-
+Conversely, by what we have already shown, if t € T then t € N(t). Furthermore,
+N(tw) = N(t)4tN(w)t by Lemma 1.2; so if ¢ ¢ N(w) then t € N(tw) and &(w) =
+&(tiw) < f(tw) by (i). This proves (ii). ia)
+
+As a special case of the Proposition we have the following.
+1.4 Corollary Suppose that w € Gy and that s; ES. Then
+
+oy J ew) +d. fiw + Iu,
+Msiw) = {i -1, ifiw> (@—1w.
+
+1.5 Theorem (The Strong Exchange Condition) Suppose that s;,,.... Sj, are
+elements of S, t € T and that €(ts;, ...8;,) < €(s;,...8;,). Then
+
+£85, 0. Sig = Si, 85, 6. Sy
+for some a. Furthermore, t = 8), ...5i,2,SigSig_y «+» Si,
+Proof. Let w = s;,...s;, and, for | < a < k, define t, as in the proof of the
+
+Proposition 1.3. Then N(w) = {t;}+---+{t,} by Lemma 1.2 and ¢ € N(w) by
+Proposition 1.3(ii). Therefore, ¢ = 4, for some a and the result follows. Oo
+
+Note that in the statement of the strong exchange condition we do not require
+that s;,...s;, be reduced. The exchange condition also has an equivalent right
+hand analogue.
+
+1.6 Corollary Suppose that w € Gp ands €S. Then
+
+(i) &(sw) < £(w) if and only if w has a reduced expression beginning with s;
+
+(ii) f(s) < E(w) if and only if w has a reduced expression ending with s.
+Proof. Because (sw) = £(w~'s), parts (i) and (ii) are equivalent and it suffices
+to consider (i). Suppose then that €(sw) < ¢(w) and let s;,...s;, be a reduced
+expression for w. By the exchange condition there exists an integer a such that

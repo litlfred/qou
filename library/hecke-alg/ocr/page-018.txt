@@ -1,0 +1,54 @@
+2. SIMPLE MODULES IN A CELLULAR ALGEBRA 13
+
+induction, if A > v then every irreducible composition factor of C” is isomorphic
+to D¥ for some yt € A. This completes the proof. oO
+
+Let At = {eE€ A| D4 40}. Then p» € At if and only if the bilinear form
+(, ) on C¥ is non-degenerate. In principle, Theorem 2.13 classifies the simple
+A-modules; however, in practice, it is often difficult to determine the set At.
+
+If x € At and AE A let dy, be the composition multiplicity of the irreducible
+module D! in C*; by the Jordan—Hélder Theorem [10], dy, is well-defined. The
+matrix D = (d,,,), where \ € A and y € At, is the so-called decomposition matrix of
+A. The next result could also have been deduced during the proof of Theorem 2.13.
+2.14 Corollary Suppose that R is a field. Then the decomposition matriz D of
+A is unitriangular; that is, if 4 € A+ and \ € A then dy, = 1 and dy, #0 only
+frX> pe
+Proof. The decomposition number d), is non-zero if and only if there exists
+a submodule M of C* and a homomorphism @:C# —+ C®/M with the image
+of @ isomorphic to D". Therefore, if dy, # 0 then A > ys by Proposition 2.10(i).
+Furthermore, if 4 = ye then C*/ker@ is simple if and only if ker? = rad C# by
+Proposition 2.9(ii), so d,,, = 1. Oo
+
+Next we describe the Cartan invariants of A. For each element 4 € At we
+have a simple module D* and a projective indecomposable module P*, uniquely
+determined up to isomorphism by the property that it has simple head D». In fact,
+since D* @p D isa simple ideal we have A = @Baeat D* @p P?.
+
+If p € At let ey, be the composition multiplicity of D’ in P*. Then C = (ey,),
+where A, p € At, is the Cartan matrix of A.
+
+In order to compute C we need two Lemmas and some more notation.
+
+2.15 Lemma Suppose that R is a field, \€ A+ andv eA. Then
+dy = dimg Homa(P*,C”) = dimg P* 4 0”.
+
+Proof. Ifv € A then d,, is non-zero only if there exists a submodule M of C”
+together with a surjective homomorphism @: M—+ D”. Since P» is projective, @
+lifts uniquely to a homomorphism 0 : P —+ M and the inclusion M <> C’” produces
+an A-homomorphism P* —> C”. Thus, d,, = dimr Hom,(P%, CY) as required.
+Oo
+
+A subset T of A a poset ideal if A € T whenever p € T and A > yw. If T isa
+poset ideal let A(T) be the R-submodule of A with basis {cl,} where yx € T and
+u,o€ T(z). Then A(T) is a two-sided ideal of A by (2.1) (i) and Corollary 2.3(i).
+2.16 Lemma Suppose that P is a projective A-module. Then P has a filtration
+@= Py C-:: C PB, = P with composition factors P;/P;-1 isomorphic to the
+(non-zero) modules P ®4 (CH* @p C#), with each pe € A occurring exactly once.
+Proof. Let T be a poset ideal and suppose that T U {j} is also an ideal for some
+“WE A\T. Then 0 > A(P) — A(T U {p})  A(T)/A(T U {2}) 9 0 is a short exact
+sequence of (A, A)-bimodules and A(T U {y})/A(T) = C#* @p C#. Because P is
+
+projective, we can tensor this sequence with P to obtain an exact sequence
+
+03 Pa, A(T) 3 POs A(PULp}) @ Pa ATU f:})/A(L) 3 0.

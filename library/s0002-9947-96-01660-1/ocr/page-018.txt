@@ -1,0 +1,59 @@
+4014 JOHN W. BARRETT AND BRUCE W. WESTBURY
+
+This results in a triangulation of the 3-ball with 2p + 1 tetrahedra. Finally do a
+bistellar move of order 2 on the 3 tetrahedra ONSE,, ONSE, and NSE, Ep,
+replacing them by the two tetrahedra ONE) E,, and OSE, Ey.
+
+5. INVARIANTS OF MANIFOLDS
+The following is the main theorem in this paper.
+
+Theorem 5.1. A finite semisimple spherical category of non-zero dimension de-
+termines an invariant of oriented singular 3-manifolds.
+
+Since closed (3-)manifolds are examples of singular 3-manifolds, this determines
+an invariant of closed manifolds. Throughout this section, the proof refers to closed
+manifolds, which, as is the general convention in this paper, are taken to be oriented.
+However every statement is also true for oriented singular manifolds.
+
+Let M be a closed simplicial manifold, J a choice of one simple object from each
+isomorphism class, and K the dimension of the spherical category.
+
+The notation in this section is as follows: for a simplicial manifold M, the edge
+set is denoted E. Thus 1: E — I is a labelling, and the labelled manifold is the
+pair (M,1). Let v be the number of vertices of M.
+
+Define the state sum invariant of M by a summation over the set of all labellings
+by elements of J:
+
+C(M)=K-* S* Z(M,1) TT dim, (I(e)).
+l: Bod ecE
+Proof of Theorem 5.1. The rest of this section is a proof that C(M) is the mani-
+fold invariant; that is, that any simplicial manifold M which triangulates a given
+piecewise-linear manifold M determines the same invariant.
+
+Let M be a simplicial complex that triangulates M. First, C(M) does not
+depend on the choice of simple objects J due to Proposition 3.3. Next it is necessary
+to show that C(M) does not depend on the choice of simplicial structure for the
+complex which triangulates M, and finally that it does not depend on the choice
+of triangulation.
+
+Let M, and Mp be two different choices of simplicial structure with the same
+underlying complex and the same orientation. Then the identity map of complexes
+is a combinatorial isomorphism of simplicial manifolds. By Theorem 3.9, the state
+sum C(M;) is equal to a state sum over the set of labellings of M2 which are
+compatible with a labelling E — J of M,. This is not the state sum C(M2),
+because the labelling of an edge in the complex runs over either the set J or the set
+J={a | a € J}. However it is equal to C(Mz) because G is a simple object if a is,
+and J also contains one element of each isomorphism class of simple objects. The
+equality follows from Proposition 3.3. This shows that C(M) does not depend on
+the simplicial structure. Now it remains to consider the triangulation.
+
+If L is asubcomplex of a complex M, and L hi simplicial structure determined
+by a total order of the vertices of L, then this can be extended to a simplicial
+structure of M, by extending the total order. If a complex N is obtained from the
+complex M by a bistellar move, so that M = XUo"*003-* and N = XUda"xa3-*,
+then a choice of standard simplicial structure for 0o* can be extended to X U 0%,
+which contains M and N as subcomplexes. Such a choice of simplicial structure
+for 0o* is just the identification of o4 as the boundary of the standard 4-simplex,
+(01234).
+

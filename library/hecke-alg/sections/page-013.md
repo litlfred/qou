@@ -1,87 +1,19 @@
 ---
 doc_id: hecke-alg
-doc_title: "symmetric group Andrew Mathas Author address: School thema University Sydney, Sydney 00. ustralia"
+doc_title: "Hecke algebras and Schur algebras of the symmetric group"
 section_id: page-013
 section_title: "Page 13"
-section_number: null
 pages: 13-13
+pdf_page: 13
 source_pdf: hecke_alg.pdf
 source_sha256: 4ac08dfd165fb366
-toc_source: undetermined
+text_source: ocr
+granularity: page
+doc_brief: "Hecke algebras and Schur algebras of the symmetric group — 78 sections: Page 1; Page 2; Page 3"
 ---
-
-.
-THE
-IW
-AHORI{HECKE
-ALGEBRA
-OF
-THE
-SYMMETRIC
-GR
-OUP
-.
-Ev
-en
-though
-the
-c
-haracters
-of
-H
-K
-are
-not
-class
-functions,
-there
-is
-a
-w
-ell
-b
-e-
-ha
-v
-ed
-notion
-of
-char
-acter
-table
-whic
-h
-is
-dened
-b
-y
-the
-v
-alues
-of
-the
-irreducible
-c
-haracters
-on
-minimal
-length
-conjugacy
-class
-represen
-tativ
-es.
-These
-c
-haracters
-w
-ere
-rst
-calculated
-b
-y
-Ram
-[	];
-see
-also
-[].
+8 1. THE IWAHORI-HECKE ALGEBRA OF THE SYMMETRIC GROUP
+
+7. Even though the characters of #% are not class functions, there is a well be-
+haved notion of character table which is defined by the values of the irreducible
+characters on minimal length conjugacy class representatives. These characters
+were first calculated by Ram [59]; sce also [24].

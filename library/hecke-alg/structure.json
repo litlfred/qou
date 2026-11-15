@@ -1,23 +1,34 @@
 {
- "_schema": "pdf-structure/v1",
- "doc_id": "hecke-alg",
  "source": {
   "file": "hecke_alg.pdf",
   "sha256": "4ac08dfd165fb366a669c54b438755590ddb074934082b97a83cdeb7f2258889",
   "bytes": 706588,
-  "pages": 78,
-  "text_source": "embedded",
-  "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:25Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "pages": 78,
+  "text_source": "ocr",
+  "runContext": {
+   "sha256": "c2a3234c4f4d108c6042385b16d17203d6f313bfe3f453d02a327da949d1197d"
+  }
  },
  "metadata": {
-  "arxiv": null,
-  "doi": null,
-  "title": "symmetric group Andrew Mathas Author address: School thema University Sydney, Sydney \u000200\u0006. ustralia",
-  "authors_raw": null,
+  "title": "Hecke algebras and Schur algebras of the symmetric group",
+  "docinfo": {
+   "Producer": "ESP Ghostscript 815.02",
+   "CreationDate": "D:20071109023218"
+  },
+  "title_raw": null,
+  "title_source": "filename",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Hec algebras and Sc ur algebras of the symmetric group Andrew Mathas Author address: School of Ma thema tics University of Sydney, Sydney NSW ustralia E-mail addr ess mathas@maths.usyd.e du.au",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "symmetric group Andrew Mathas Author address: School thema University Sydney, Sydney \u000200\u0006. ustralia",
   "title_lines": [
+   "algebras",
    "symmetric",
    "group",
    "Andrew",
@@ -29,578 +40,14 @@
    "University",
    "Sydney",
    "Sydney",
-   "\u000200\u0006",
-   "ustralia"
-  ],
-  "abstract": null,
-  "docinfo": {
-   "Producer": "ESP Ghostscript 815.02",
-   "CreationDate": "D:20071109023218"
-  },
-  "title_raw": "symmetric group Andrew Mathas Author address: School thema University Sydney, Sydney \u000200\u0006. ustralia",
-  "title_source": "text",
-  "title_verified": false,
-  "title_evidence": {
-   "heading": "Hec algebras and Sc ur algebras of the symmetric group Andrew Mathas Author address: School of Ma thema tics University of Sydney, Sydney NSW ustralia E-mail addr ess mathas@maths.usyd.e du.au",
-   "text": "symmetric group Andrew Mathas Author address: School thema University Sydney, Sydney \u000200\u0006. ustralia",
-   "corroborated_by": [],
-   "browser_print": false
-  }
+   "ustralia",
+   "E-mail"
+  ]
  },
- "toc": [],
- "toc_source": "undetermined",
- "toc_undetermined_reason": "5 inferred entries with mean confidence 0.00, below the 0.6 floor \u2014 too little evidence agreed",
+ "_schema": "pdf-structure/v1",
+ "doc_id": "hecke-alg",
+ "toc_source": "none",
  "granularity": "page",
- "structure_note": "No outline, and no inferred contents could be trusted (5 inferred entries with mean confidence 0.00, below the 0.6 floor \u2014 too little evidence agreed): one section per page.",
- "figures": [],
- "pages": [
-  {
-   "physical": 1,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 2,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 3,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 4,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 5,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 6,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 7,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 8,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 9,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 10,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 11,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 12,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 13,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 14,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 15,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 16,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 17,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 18,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 19,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 20,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 21,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 22,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 23,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 24,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 25,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 26,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 27,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 28,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 29,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 30,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 31,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 32,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 33,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 34,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 35,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 36,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 37,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 38,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 39,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 40,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 41,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 42,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 43,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 44,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 45,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 46,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 47,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 48,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 49,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 50,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 51,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 52,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 53,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 54,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 55,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 56,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 57,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 58,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 59,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 60,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 61,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 62,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 63,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 64,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 65,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 66,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 67,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 68,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 69,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 70,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 71,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 72,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 73,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 74,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 75,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 76,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 77,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 78,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  }
- ],
  "sections": [
   {
    "id": "page-001",
@@ -609,10 +56,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 213,
-   "n_words": 37,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 208,
+   "n_words": 28
   },
   {
    "id": "page-002",
@@ -621,10 +66,8 @@
    "level": 1,
    "page_start": 2,
    "page_end": 2,
-   "n_chars": 801,
-   "n_words": 165,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 755,
+   "n_words": 112
   },
   {
    "id": "page-003",
@@ -633,10 +76,8 @@
    "level": 1,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 976,
-   "n_words": 216,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 933,
+   "n_words": 161
   },
   {
    "id": "page-004",
@@ -645,10 +86,8 @@
    "level": 1,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 3265,
-   "n_words": 678,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 3093,
+   "n_words": 493
   },
   {
    "id": "page-005",
@@ -657,10 +96,8 @@
    "level": 1,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 2972,
-   "n_words": 621,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2831,
+   "n_words": 458
   },
   {
    "id": "page-006",
@@ -669,10 +106,8 @@
    "level": 1,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 2428,
-   "n_words": 733,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2103,
+   "n_words": 396
   },
   {
    "id": "page-007",
@@ -681,10 +116,8 @@
    "level": 1,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 2882,
-   "n_words": 918,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2437,
+   "n_words": 480
   },
   {
    "id": "page-008",
@@ -693,10 +126,8 @@
    "level": 1,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 3649,
-   "n_words": 1239,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2915,
+   "n_words": 536
   },
   {
    "id": "page-009",
@@ -705,10 +136,8 @@
    "level": 1,
    "page_start": 9,
    "page_end": 9,
-   "n_chars": 3242,
-   "n_words": 941,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2858,
+   "n_words": 571
   },
   {
    "id": "page-010",
@@ -717,10 +146,8 @@
    "level": 1,
    "page_start": 10,
    "page_end": 10,
-   "n_chars": 2699,
-   "n_words": 743,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2411,
+   "n_words": 470
   },
   {
    "id": "page-011",
@@ -729,10 +156,8 @@
    "level": 1,
    "page_start": 11,
    "page_end": 11,
-   "n_chars": 2897,
-   "n_words": 758,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2566,
+   "n_words": 467
   },
   {
    "id": "page-012",
@@ -741,10 +166,8 @@
    "level": 1,
    "page_start": 12,
    "page_end": 12,
-   "n_chars": 3167,
-   "n_words": 808,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2936,
+   "n_words": 564
   },
   {
    "id": "page-013",
@@ -753,10 +176,8 @@
    "level": 1,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 362,
-   "n_words": 78,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 346,
+   "n_words": 57
   },
   {
    "id": "page-014",
@@ -765,10 +186,8 @@
    "level": 1,
    "page_start": 14,
    "page_end": 14,
-   "n_chars": 2145,
-   "n_words": 565,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 1964,
+   "n_words": 399
   },
   {
    "id": "page-015",
@@ -777,10 +196,8 @@
    "level": 1,
    "page_start": 15,
    "page_end": 15,
-   "n_chars": 2551,
-   "n_words": 745,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2204,
+   "n_words": 467
   },
   {
    "id": "page-016",
@@ -789,10 +206,8 @@
    "level": 1,
    "page_start": 16,
    "page_end": 16,
-   "n_chars": 2850,
-   "n_words": 857,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2479,
+   "n_words": 516
   },
   {
    "id": "page-017",
@@ -801,10 +216,8 @@
    "level": 1,
    "page_start": 17,
    "page_end": 17,
-   "n_chars": 2883,
-   "n_words": 776,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2645,
+   "n_words": 531
   },
   {
    "id": "page-018",
@@ -813,10 +226,8 @@
    "level": 1,
    "page_start": 18,
    "page_end": 18,
-   "n_chars": 3166,
-   "n_words": 854,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2940,
+   "n_words": 605
   },
   {
    "id": "page-019",
@@ -825,10 +236,8 @@
    "level": 1,
    "page_start": 19,
    "page_end": 19,
-   "n_chars": 2527,
-   "n_words": 673,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2335,
+   "n_words": 462
   },
   {
    "id": "page-020",
@@ -837,10 +246,8 @@
    "level": 1,
    "page_start": 20,
    "page_end": 20,
-   "n_chars": 3353,
-   "n_words": 892,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 3072,
+   "n_words": 586
   },
   {
    "id": "page-021",
@@ -849,10 +256,8 @@
    "level": 1,
    "page_start": 21,
    "page_end": 21,
-   "n_chars": 2136,
-   "n_words": 541,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 1966,
+   "n_words": 373
   },
   {
    "id": "page-022",
@@ -861,10 +266,8 @@
    "level": 1,
    "page_start": 22,
    "page_end": 22,
-   "n_chars": 2815,
-   "n_words": 775,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2543,
+   "n_words": 507
   },
   {
    "id": "page-023",
@@ -873,10 +276,8 @@
    "level": 1,
    "page_start": 23,
    "page_end": 23,
-   "n_chars": 2903,
-   "n_words": 889,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2560,
+   "n_words": 530
   },
   {
    "id": "page-024",
@@ -885,10 +286,8 @@
    "level": 1,
    "page_start": 24,
    "page_end": 24,
-   "n_chars": 2746,
-   "n_words": 819,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2399,
+   "n_words": 510
   },
   {
    "id": "page-025",
@@ -897,10 +296,8 @@
    "level": 1,
    "page_start": 25,
    "page_end": 25,
-   "n_chars": 3352,
-   "n_words": 920,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 3092,
+   "n_words": 636
   },
   {
    "id": "page-026",
@@ -909,10 +306,8 @@
    "level": 1,
    "page_start": 26,
    "page_end": 26,
-   "n_chars": 2788,
-   "n_words": 827,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2482,
+   "n_words": 524
   },
   {
    "id": "page-027",
@@ -921,10 +316,8 @@
    "level": 1,
    "page_start": 27,
    "page_end": 27,
-   "n_chars": 2522,
-   "n_words": 728,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2260,
+   "n_words": 485
   },
   {
    "id": "page-028",
@@ -933,10 +326,8 @@
    "level": 1,
    "page_start": 28,
    "page_end": 28,
-   "n_chars": 3212,
-   "n_words": 859,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2975,
+   "n_words": 622
   },
   {
    "id": "page-029",
@@ -945,10 +336,8 @@
    "level": 1,
    "page_start": 29,
    "page_end": 29,
-   "n_chars": 3023,
-   "n_words": 861,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2748,
+   "n_words": 580
   },
   {
    "id": "page-030",
@@ -957,10 +346,8 @@
    "level": 1,
    "page_start": 30,
    "page_end": 30,
-   "n_chars": 2561,
-   "n_words": 700,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2323,
+   "n_words": 462
   },
   {
    "id": "page-031",
@@ -969,10 +356,8 @@
    "level": 1,
    "page_start": 31,
    "page_end": 31,
-   "n_chars": 3001,
-   "n_words": 856,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2629,
+   "n_words": 517
   },
   {
    "id": "page-032",
@@ -981,10 +366,8 @@
    "level": 1,
    "page_start": 32,
    "page_end": 32,
-   "n_chars": 2472,
-   "n_words": 737,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2147,
+   "n_words": 428
   },
   {
    "id": "page-033",
@@ -993,10 +376,8 @@
    "level": 1,
    "page_start": 33,
    "page_end": 33,
-   "n_chars": 3090,
-   "n_words": 939,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2704,
+   "n_words": 569
   },
   {
    "id": "page-034",
@@ -1005,10 +386,8 @@
    "level": 1,
    "page_start": 34,
    "page_end": 34,
-   "n_chars": 2657,
-   "n_words": 789,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2300,
+   "n_words": 460
   },
   {
    "id": "page-035",
@@ -1017,10 +396,8 @@
    "level": 1,
    "page_start": 35,
    "page_end": 35,
-   "n_chars": 2975,
-   "n_words": 959,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2486,
+   "n_words": 523
   },
   {
    "id": "page-036",
@@ -1029,10 +406,8 @@
    "level": 1,
    "page_start": 36,
    "page_end": 36,
-   "n_chars": 3050,
-   "n_words": 893,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2719,
+   "n_words": 549
   },
   {
    "id": "page-037",
@@ -1041,10 +416,8 @@
    "level": 1,
    "page_start": 37,
    "page_end": 37,
-   "n_chars": 3536,
-   "n_words": 1007,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 3108,
+   "n_words": 628
   },
   {
    "id": "page-038",
@@ -1053,10 +426,8 @@
    "level": 1,
    "page_start": 38,
    "page_end": 38,
-   "n_chars": 3284,
-   "n_words": 1036,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2786,
+   "n_words": 584
   },
   {
    "id": "page-039",
@@ -1065,10 +436,8 @@
    "level": 1,
    "page_start": 39,
    "page_end": 39,
-   "n_chars": 2976,
-   "n_words": 737,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2791,
+   "n_words": 536
   },
   {
    "id": "page-040",
@@ -1077,10 +446,8 @@
    "level": 1,
    "page_start": 40,
    "page_end": 40,
-   "n_chars": 2024,
-   "n_words": 520,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 1851,
+   "n_words": 355
   },
   {
    "id": "page-041",
@@ -1089,10 +456,8 @@
    "level": 1,
    "page_start": 41,
    "page_end": 41,
-   "n_chars": 2590,
-   "n_words": 672,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2390,
+   "n_words": 443
   },
   {
    "id": "page-042",
@@ -1101,10 +466,8 @@
    "level": 1,
    "page_start": 42,
    "page_end": 42,
-   "n_chars": 3349,
-   "n_words": 942,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2997,
+   "n_words": 603
   },
   {
    "id": "page-043",
@@ -1113,10 +476,8 @@
    "level": 1,
    "page_start": 43,
    "page_end": 43,
-   "n_chars": 2801,
-   "n_words": 838,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2359,
+   "n_words": 477
   },
   {
    "id": "page-044",
@@ -1125,10 +486,8 @@
    "level": 1,
    "page_start": 44,
    "page_end": 44,
-   "n_chars": 2652,
-   "n_words": 744,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2403,
+   "n_words": 480
   },
   {
    "id": "page-045",
@@ -1137,10 +496,8 @@
    "level": 1,
    "page_start": 45,
    "page_end": 45,
-   "n_chars": 2686,
-   "n_words": 785,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2408,
+   "n_words": 492
   },
   {
    "id": "page-046",
@@ -1149,10 +506,8 @@
    "level": 1,
    "page_start": 46,
    "page_end": 46,
-   "n_chars": 2791,
-   "n_words": 850,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2393,
+   "n_words": 468
   },
   {
    "id": "page-047",
@@ -1161,10 +516,8 @@
    "level": 1,
    "page_start": 47,
    "page_end": 47,
-   "n_chars": 3080,
-   "n_words": 931,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2659,
+   "n_words": 519
   },
   {
    "id": "page-048",
@@ -1173,10 +526,8 @@
    "level": 1,
    "page_start": 48,
    "page_end": 48,
-   "n_chars": 3302,
-   "n_words": 957,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2883,
+   "n_words": 551
   },
   {
    "id": "page-049",
@@ -1185,10 +536,8 @@
    "level": 1,
    "page_start": 49,
    "page_end": 49,
-   "n_chars": 2766,
-   "n_words": 713,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2500,
+   "n_words": 438
   },
   {
    "id": "page-050",
@@ -1197,10 +546,8 @@
    "level": 1,
    "page_start": 50,
    "page_end": 50,
-   "n_chars": 1612,
-   "n_words": 354,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 1528,
+   "n_words": 260
   },
   {
    "id": "page-051",
@@ -1209,10 +556,8 @@
    "level": 1,
    "page_start": 51,
    "page_end": 51,
-   "n_chars": 2349,
-   "n_words": 674,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2089,
+   "n_words": 417
   },
   {
    "id": "page-052",
@@ -1221,10 +566,8 @@
    "level": 1,
    "page_start": 52,
    "page_end": 52,
-   "n_chars": 2392,
-   "n_words": 724,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2079,
+   "n_words": 438
   },
   {
    "id": "page-053",
@@ -1233,10 +576,8 @@
    "level": 1,
    "page_start": 53,
    "page_end": 53,
-   "n_chars": 2458,
-   "n_words": 773,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 1986,
+   "n_words": 414
   },
   {
    "id": "page-054",
@@ -1245,10 +586,8 @@
    "level": 1,
    "page_start": 54,
    "page_end": 54,
-   "n_chars": 2232,
-   "n_words": 699,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 1788,
+   "n_words": 385
   },
   {
    "id": "page-055",
@@ -1257,10 +596,8 @@
    "level": 1,
    "page_start": 55,
    "page_end": 55,
-   "n_chars": 3010,
-   "n_words": 925,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2575,
+   "n_words": 545
   },
   {
    "id": "page-056",
@@ -1269,10 +606,8 @@
    "level": 1,
    "page_start": 56,
    "page_end": 56,
-   "n_chars": 2698,
-   "n_words": 834,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2231,
+   "n_words": 460
   },
   {
    "id": "page-057",
@@ -1281,10 +616,8 @@
    "level": 1,
    "page_start": 57,
    "page_end": 57,
-   "n_chars": 3243,
-   "n_words": 959,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2747,
+   "n_words": 551
   },
   {
    "id": "page-058",
@@ -1293,10 +626,8 @@
    "level": 1,
    "page_start": 58,
    "page_end": 58,
-   "n_chars": 1900,
-   "n_words": 594,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 1503,
+   "n_words": 307
   },
   {
    "id": "page-059",
@@ -1305,10 +636,8 @@
    "level": 1,
    "page_start": 59,
    "page_end": 59,
-   "n_chars": 2104,
-   "n_words": 648,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 1496,
+   "n_words": 324
   },
   {
    "id": "page-060",
@@ -1317,10 +646,8 @@
    "level": 1,
    "page_start": 60,
    "page_end": 60,
-   "n_chars": 2210,
-   "n_words": 688,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 1664,
+   "n_words": 358
   },
   {
    "id": "page-061",
@@ -1329,10 +656,8 @@
    "level": 1,
    "page_start": 61,
    "page_end": 61,
-   "n_chars": 2834,
-   "n_words": 866,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2281,
+   "n_words": 481
   },
   {
    "id": "page-062",
@@ -1341,10 +666,8 @@
    "level": 1,
    "page_start": 62,
    "page_end": 62,
-   "n_chars": 2786,
-   "n_words": 774,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2431,
+   "n_words": 482
   },
   {
    "id": "page-063",
@@ -1353,10 +676,8 @@
    "level": 1,
    "page_start": 63,
    "page_end": 63,
-   "n_chars": 2627,
-   "n_words": 829,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2252,
+   "n_words": 472
   },
   {
    "id": "page-064",
@@ -1365,10 +686,8 @@
    "level": 1,
    "page_start": 64,
    "page_end": 64,
-   "n_chars": 2530,
-   "n_words": 776,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 1987,
+   "n_words": 402
   },
   {
    "id": "page-065",
@@ -1377,10 +696,8 @@
    "level": 1,
    "page_start": 65,
    "page_end": 65,
-   "n_chars": 2850,
-   "n_words": 792,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2458,
+   "n_words": 489
   },
   {
    "id": "page-066",
@@ -1389,10 +706,8 @@
    "level": 1,
    "page_start": 66,
    "page_end": 66,
-   "n_chars": 2767,
-   "n_words": 751,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2473,
+   "n_words": 487
   },
   {
    "id": "page-067",
@@ -1401,10 +716,8 @@
    "level": 1,
    "page_start": 67,
    "page_end": 67,
-   "n_chars": 3506,
-   "n_words": 1004,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 3158,
+   "n_words": 658
   },
   {
    "id": "page-068",
@@ -1413,10 +726,8 @@
    "level": 1,
    "page_start": 68,
    "page_end": 68,
-   "n_chars": 2879,
-   "n_words": 789,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2497,
+   "n_words": 472
   },
   {
    "id": "page-069",
@@ -1425,10 +736,8 @@
    "level": 1,
    "page_start": 69,
    "page_end": 69,
-   "n_chars": 3262,
-   "n_words": 1018,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2746,
+   "n_words": 593
   },
   {
    "id": "page-070",
@@ -1437,10 +746,8 @@
    "level": 1,
    "page_start": 70,
    "page_end": 70,
-   "n_chars": 3080,
-   "n_words": 872,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2646,
+   "n_words": 534
   },
   {
    "id": "page-071",
@@ -1449,10 +756,8 @@
    "level": 1,
    "page_start": 71,
    "page_end": 71,
-   "n_chars": 2137,
-   "n_words": 482,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 2020,
+   "n_words": 345
   },
   {
    "id": "page-072",
@@ -1461,10 +766,8 @@
    "level": 1,
    "page_start": 72,
    "page_end": 72,
-   "n_chars": 1231,
-   "n_words": 353,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 1080,
+   "n_words": 215
   },
   {
    "id": "page-073",
@@ -1473,10 +776,8 @@
    "level": 1,
    "page_start": 73,
    "page_end": 73,
-   "n_chars": 1804,
-   "n_words": 504,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 1543,
+   "n_words": 283
   },
   {
    "id": "page-074",
@@ -1485,10 +786,8 @@
    "level": 1,
    "page_start": 74,
    "page_end": 74,
-   "n_chars": 1448,
-   "n_words": 456,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 1119,
+   "n_words": 213
   },
   {
    "id": "page-075",
@@ -1497,10 +796,8 @@
    "level": 1,
    "page_start": 75,
    "page_end": 75,
-   "n_chars": 171,
-   "n_words": 44,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 152,
+   "n_words": 26
   },
   {
    "id": "page-076",
@@ -1509,10 +806,8 @@
    "level": 1,
    "page_start": 76,
    "page_end": 76,
-   "n_chars": 3289,
-   "n_words": 739,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 3107,
+   "n_words": 501
   },
   {
    "id": "page-077",
@@ -1521,10 +816,8 @@
    "level": 1,
    "page_start": 77,
    "page_end": 77,
-   "n_chars": 3681,
-   "n_words": 804,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 3491,
+   "n_words": 537
   },
   {
    "id": "page-078",
@@ -1533,27 +826,9 @@
    "level": 1,
    "page_start": 78,
    "page_end": 78,
-   "n_chars": 1584,
-   "n_words": 323,
-   "label_start": null,
-   "label_end": null
+   "n_chars": 1527,
+   "n_words": 231
   }
  ],
- "diagnostics": {
-  "pages_without_text": 0,
-  "likely_scanned": false,
-  "toc_entries": 0,
-  "toc_inferred_entries": 5,
-  "toc_inferred_mean_confidence": 0.0,
-  "toc_inferred_empty_share": 0.0,
-  "toc_inferred_method": "regex",
-  "figure_entries": 0,
-  "figure_sequence_gaps": [],
-  "page_label_conflicts": {
-   "count": 0,
-   "items": []
-  },
-  "sections": 78,
-  "chars_total": 202842
- }
+ "structure_note": "Ingested at PAGE granularity by scripts/pdf-pages.py. This PDF carries no embedded outline and its inferred chapter structure was measurably wrong (bean 6xaz), so no chapter tree is claimed. A page is a determined division; an inferred chapter was not."
 }

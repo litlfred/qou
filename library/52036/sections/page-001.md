@@ -1,0 +1,80 @@
+---
+doc_id: 52036
+doc_title: "Torus Knots Extremizing the Möbius Energy"
+section_id: page-001
+section_title: "Page 1"
+pages: 1-1
+pdf_page: 1
+source_pdf: 52036.pdf
+source_sha256: ab02866e1f7191b7
+text_source: ocr
+granularity: page
+doc_brief: "Torus Knots Extremizing the Möbius Energy — 9 sections: Page 1; Page 2; Page 3"
+---
+Torus Knots Extremizing the Mobius Energy
+
+Denise Kim and Rob Kusner
+
+CONTENTS
+
+. Introduction
+
+. Mobius Invariance
+
+. Torus Knots and Symmetric Criticality
+. Torus Links
+
+. Discretization and Computer Experiments
+
+Dau ktWwn =
+
+. Further Experiments
+Acknowledgements
+References
+
+Software Availability
+
+This work was accomplished while the authors were at the
+Institute for Advanced Study, and was partly supported by an
+NSF Postdoctoral Fellowship.
+
+Using the principle of symmetric criticality [Palais 1979], we
+construct torus knots and links that extremize the Mébius-
+invariant energy introduced by O'Hara [1991] and Freedman,
+He and Wang [1993]. The critical energies are explicitly com-
+putable using the calculus of residues, a result obtained in
+collaboration with Gil Stengle.
+
+Experiments with a discretized version of the Mébius energy—
+applicable to the study of arbitrary knots and links—are also
+described, and confirm the results of the analytic calculations.
+
+1. INTRODUCTION
+
+Recently Freedman, He and Wang [Freedman et
+al.], following work of O’Hara [1991], introduced
+an energy E(I) for a simple closed curve I c R?.
+The functional FE is continuous on each isotopy
+class of curves, and tends to infinity as I’ nears
+self-intersection. Moreover, E is “proper” on the
+set of all isotopy classes, in the sense that there are
+only finitely many knot types below a given energy
+level.
+
+A useful geometric property of E is Mobius in-
+variance: if y is a Mobius transformation of R?Uoo
+and p(T) C R%, then E(u(L)) = E(T). This can
+be used to prove [Freedman et al.] that each prime
+knot class has an energy-minimizing representative
+(of differentiability class C!': see definition in the
+beginning of Section 2), and that the round circle
+is the unique energy minimizer among all curves,
+with E = 4. It is also a nontrivial result of [Freed-
+man et al.] that, at least for C'! curves, the func-
+tional F is sufficiently smooth to have a “gradient”
+dE (see Section 3). Thus it becomes an interesting
+problem to find E-critical curves, that is, solutions
+todE =0.
+
+© AK Peters, Ltd.
+1058-6458/96 $0.50 per page

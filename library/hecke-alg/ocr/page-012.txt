@@ -1,0 +1,60 @@
+NOTES ON CHAPTER 1 7
+
+Proof. Fix a total ordering w; > we > ++: > Wa: = 1 on G, such that wy > wy,
+whenever (wa) > (wy). Define H to the R-module with basis { Ty, | <a} and
+let 44 =0. Thn0= GCM CHC: CH= #.
+
+Now, if w € Gp, and s € S then because g = 0
+
+TT = Tws, if (ws) > E(w),
+ws) Te, if E(ws) < Lw),
+
+by Theorem 1.11. Consequently, for each a > 1 the R-module % is a right
+H—-module (in fact it is an ideal). Therefore, 4/241 is a one dimensional #—
+module; in particular, #/#441 is simple. Since these modules give a filtration of
+JE, every irreducible #-module is of the form 4 /#441 for some a with 1 <a <
+n!. The Theorem follows. Oo
+
+Norton [57] explicitly constructs the principal indecomposable modules of #
+when q = 0. She shows that, up to isomorphism, the irreducible representations
+of #€ are labelled by the subsets of S. If J C S the corresponding irreducible
+representation yy :.# —> R is the unique homomorphism such that
+
+1, ified,
+gr(Ti) -{
+
+0, otherwise,
+
+fori = 1,2,...,n— 1. Furthermore, the decomposition matrices and Cartan ma-
+trices of the 0-Hecke algebra of G,, are all explicitly known [7] (in type A only).
+
+Notes on Chapter 1
+
+1. The elegant proof of the exchange condition given in Section | is due to Matthew
+Dyer [22,23]. Dyer calls the function N a reflection cocycle and he shows that
+a group W generated a set S of involutions is a Coxeter group if and only if
+W possesses a map N such that (i) N(s) = {s} for all s € S and (ii) for all
+elements v and w in W, N(vw) = N(v)tuN(w)v7!; ef. Lemma 1.2.
+
+2. Theorem 1.8 is a special case of Matsumoto’s monid lemma [11, 64.20], which is
+really a result about the corresponding braid group. It is the key result of the
+first section because it shows that the T—basis is well-defined.
+
+3. Theorem 1.11 is often taken as the definition of #. In this case, it is necessary to
+prove that an algebra exists satisfying Theorem 1.11; this is done by working in
+the endomorphism ring of the R-module #; see, for example, [33, Chapter 7].
+
+4. Let G = GL, (q), where q is a prime power, and let B be the subgroup of upper
+triangular matrices in G (a Borel subgroup). Let eg = TET Lover b; then ep is
+idempotent and Iwahori [34] showed that .#,4 = epCGeg. This is one of the
+main reasons why these algebras are interesting and important. (Note that Gy is
+the Weyl group of GL,(q).) The principal series representations of G are just the
+irreducible constituents of CGeg; this begins to explain why the dimensions of
+the principal series representations are given by specializing the generic degrees.
+Proofs and more complete details can be found in [11, §67-68].
+
+5. The proof that #% is semisimple in Corollary 1.15 is due to Gyoja and Uno [31].
+
+6. In the literature, a Hecke algebra is any algebra of the form eAe = End,4(eA)
+where A is an algebra and e is an idempotent in A. Such algebras were first
+studied by Hecke: this is why Iwahori called # a Hecke algebra.

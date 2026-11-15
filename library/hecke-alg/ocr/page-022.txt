@@ -1,0 +1,54 @@
+CHAPTER 3
+
+The Modular representation theory of #
+
+In this chapter we construct Murphy’s basis of the Iwahori—Hecke algebra #.
+Murphy’s papers [55, 56]appeared before the theory of cellular algebras: neverthe-
+less, his basis is cellular.
+
+For the rest of these notes we assume that q is an invertible element of R.
+In particular, this implies that 7; is invertible with T7! = g71(T —q +1) for
+i= 1,2,...,n—1. Consequently if w €G, and s;,...5;, is a reduced expression
+for w then Tz! = Ty; - Ty.
+
+1. The combinatorics of tableaux
+
+Let m be a positive integer. A composition of m is a sequence jt = (jt1, flo,.-.)
+of non-negative integers such that || = 3°; i = m. The integers yj, 7 > 1, are the
+parts of ye, if 4; = 0 for 2 > k we identify y with Gai,..., Ht). A composition yp is
+a partition if a; > ys41 for all? > 1.
+
+The diagram of a composition p is the subset
+
+MW={G%iA|1< i<j andi> 1}.
+
+of N x N. The elements of [y/] are called the nodes of yt; more generally, a node
+is any element of N x N. It will be convenient to represent the diagram of sz as an
+array of boxes in the plane. For example, if ye = (2,3) then [4] =
+
+If 4 is a composition of n then a p-tableau is a bijection t: [ye] — {1,2,...,n};
+we say that t has shaper pp and write Shape(t) = ys. Notice that a tableau t
+corresponds to a labelled diagram; for example, if p = (2,3) then
+
+3 5
+are two pe-tableaux. Accordingly, we will speak of the rows and columns of tableaux,
+We distinguish two particular types of y-tableaux. A y-tableau t is row stan-
+dard if the entries in t increase from left to right in cach row; ¢ is standard if (i)
+jc is a partition and (ii) the entries in ¢ increase from left to right in each row and
+from top to bottom in each column. If y is a partition let Std(j:) denote the set of
+standard p-tableaux.
+Of the two tableaux above, only the first is row standard; neither is standard
+because (2,3) is not a partition. If \ = (3,2) then Hf is a standard A-tableau.
+Given any composition y: let t“ be the row standard p-tableau in which the
+
+integers 1,2,....m are entered in increasing order from left to right along the rows
+of [pa]. For example, if = (2,3) then t# = a
+Tf pe = (f1,..-, fe) is a composition of n ‘then the symmetric group G, acts
+
+from the right upon the set of y-tableaux by permuting the entries inside a given
+tableau. For example, if t =PFL, then ¢(2,4,5,3) = PPh.
+
+Let G, be the subgroup of 6, which stabilizes the rows of t” and let t 0G. )
+be the subalgebra of . spanned by {T, | w € 6, }. Then 6, = Gy, x +++ xX Gy,
+
+17

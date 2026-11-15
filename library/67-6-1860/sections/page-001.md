@@ -1,13 +1,15 @@
 ---
 doc_id: 67-6-1860
-doc_title: "Progress of Theoretical Physics, Vol. 67, No. 6, June 1982"
+doc_title: "Quaternionic Weinberg-Salam Theory"
 section_id: page-001
 section_title: "Page 1"
-section_number: null
 pages: 1-1
+pdf_page: 1
 source_pdf: 67-6-1860.pdf
 source_sha256: e2e5d45edd369762
-toc_source: undetermined
+text_source: ocr
+granularity: page
+doc_brief: "Quaternionic Weinberg-Salam Theory — 17 sections: Page 1; Page 2; Page 3"
 ---
 1860
 Progress of Theoretical Physics, Vol. 67, No. 6, June 1982
@@ -57,4 +59,4 @@ In this paper we attempt to establish a new formalism elucidating a logical
 connection between the gauge symmetry SU(2),x SU(2)”X U(1) and the ele-
 mentary fermions of the theory. It is motivated by parity symmetry and replica-
 
-9z0z Ainr 90 uo ysanB Aq 79Z2881/0981/9/29/A101112/d}d/Wios'dno-o1wapese//:sdyjy Wo. pepeojuMoq
+9z0z Ainr 06 uo ysanB Aq 79Z2881/0981/9/29/A101112/d}d/Wios'dno-o1wapese//:sdyjy Wo. pepeojuMoq

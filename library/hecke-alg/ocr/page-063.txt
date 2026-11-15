@@ -1,0 +1,60 @@
+58 5. THE JANTZEN-SCHAPER THEOREM
+
+Proof. Because R is a principal ideal domain, we can find a basis {f1,... , fa} of
+M such that there exist r; € R¥ with (e;, f;) = d;;7; for 1 < i,j < d. Furthermore,
+the Gram determinant G = []j_, (ei. fi) = Tl, Pi, 80 Uy(G) = a Vp (Pi).
+
+Now, m = 3°; ai fi, for a; € R, is an element of M(k) if and only if ajr; is an
+element of p*R fori =1..... d; that is, vp(ajr;) > k for all i. Therefore, M(k) is
+the free R-submodule of M with basis
+
+{fil vp(rs) > RYU Lp MOF; | vp (ri) < k}.
+Accordingly, Mp(k) has basis { f; ® 1 | vp(ri) > k } and so
+
+z
+
+So dimp Mp(k) = S> vp(ri) = ¥p(G),
+
+k>O i=l
+
+as we wished to show. Oo
+
+We are going to apply this Lemma in the case where M = WA¢gqutn; before we
+can do this however, we need some preparation.
+
+Let ¢ be an element of R such that [n]; #0; by Theorem 5.27 this ensures that
+Gh(q) £0 for all 1 € At(d,n) and ye € A(d,n). Let q = 4 + pR and consider F as
+an R-module in the natural way. Then .%p 4(d,n) = -Yprg(d,n) Or F.
+
+Suppose that Mp is a right .%p,4(d,n)-module and let {a, |v € A*(d,n) } be
+a set of integers. Write Mp <> >, a, Wy if
+
+Mp & Ba (-a,)Wy and Ba a, Wer
+a,<0 a,>0
+have the same composition factors. Thus, Mp and the virtual module }>,, a, Wy
+have the same images in the Grothendieck group of .%p,q(d, n).
+
+5.30 Lemma Let My be a right Apq(d.n)-module and suppose that there exist
+integers {ay |v € A*(d,n) } such that
+
+dimg Mryrrm = ay dim Wy gets
+veAt(dn)
+
+for all € At+(d,n). Then Mp —+ S~ a, We.
+
+Proof. By Theorem 4.16 there exist integers ¢, such that My = >, ec, Wi. There-
+fore,
+
+0= SD (a) dimy Wier = SD (ev — a) -|To(r nL.
+
+veAt(dn) veAt(dn)
+
+However, To(v,v) = {T”} and To(v, 4) = @ unless v & yt so the matrix (|To(v, 1)|)
+is unitriangular, where v, € A*(d,n). Hence, the equations above have a unique
+solution; namely, ¢, = a, for all vy € A*(d,n). Oo
+
+Given a sequence a = (a1,...,Qp) of integers recall that @ is the sequence
+obtained by reordering the terms in a so that they are in non-increasing order.
+Let w € Gy, be a permutation such that @; = ajy,. If @ is the sequence of beta
+numbers for a partition #¢ € At(d,n) then w is uniquely determined (see 5.21) and
+we define W¢ to be the (virtual) Ap g(d, n)-module (—1)“ WE. Similarly, let

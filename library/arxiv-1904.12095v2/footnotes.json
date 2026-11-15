@@ -1,0 +1,1567 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1904.12095v2",
+ "status": "determined",
+ "body_size": 11.0,
+ "footnotes": [
+  {
+   "id": "fn-p003-1",
+   "page": 3,
+   "mark": "1",
+   "text": "In not yet published work, Maria Trnkova has proven that there is no geometric spun triangulation of m007(3,1) with a small number of tetrahedra.",
+   "marks": [
+    {
+     "page": 3,
+     "context": "ricspuntriangulationunlesswepasstoacover"
+    }
+   ],
+   "block": "library/arxiv-1904.12095v2/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "2",
+   "text": "Forconsistencyonhowarrowsinacategorycompose,thelooptraversingtheloopaﬁrstandthe loop b second is denoted by ba in π1(T ).",
+   "marks": [
+    {
+     "page": 5,
+     "context": "v"
+    },
+    {
+     "page": 5,
+     "context": "v"
+    },
+    {
+     "page": 6,
+     "context": "characteristic polynomial pG(x) = det(xI −G) = x4+4x3+a2x"
+    },
+    {
+     "page": 6,
+     "context": "(c)c"
+    },
+    {
+     "page": 6,
+     "context": "We will describe how to compute a representation"
+    }
+   ],
+   "block": "library/arxiv-1904.12095v2/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p015-1",
+   "page": 15,
+   "mark": "3",
+   "text": "For example, Manifold(\"m003(-3.3,1.1)\") in SnapPy gives a geometric spun triangulation for the singular hyperbolic structure on the closed Weeks manifold m003(-3,1) with cone angle 2π/1.1.",
+   "marks": [
+    {
+     "page": 14,
+     "context": "e, E∼and E=, Γ1,...,Γo and g be as in Deﬁnition 5.1. Let K⊂R"
+    },
+    {
+     "page": 15,
+     "context": " be deformed so that the geodesic becomes a cone singularity"
+    },
+    {
+     "page": 15,
+     "context": "the two tetrahedron triangulation of S"
+    }
+   ],
+   "block": "library/arxiv-1904.12095v2/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p020-1",
+   "page": 20,
+   "mark": "4",
+   "text": "SeeHTLinkExteriors,AlternatingKnotExteriors,andNonalternatingKnotExteriorsin SnapPy.",
+   "marks": [
+    {
+     "page": 20,
+     "context": "crossings tabulated by Hoste-Thistlethwaite"
+    }
+   ],
+   "block": "library/arxiv-1904.12095v2/blocks/prose-sec-006"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "ahyperbolic3-manifold.ThisalgorithmrequirestilingH"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "ers of S"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "ticeslabeled0,...,3inH"
+  },
+  {
+   "page": 5,
+   "mark": "132",
+   "context": "β"
+  },
+  {
+   "page": 5,
+   "mark": "123",
+   "context": "γ"
+  },
+  {
+   "page": 5,
+   "mark": "123",
+   "context": "α"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "ci j= (−1)"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "characteristic polynomial pG(x) = det(xI −G) = x"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "characteristic polynomial pG(x) = det(xI −G) = x4+4x"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "i j< cii"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "i j< ciic j jfor all"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "i j< ciic j jfor all iand"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "H"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "H"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "Wethinkoftheupperhalfspacemodelofhyperbolic3-spaceasasubsetH"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "z + t : t> 0} of the quaternions.Recall that Isom+(H"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "action of a SL2(C)-matrix on H"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "ces of two (not necessarily distinct) simplices line up in H"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "of a point in H"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "associate a SO3-matrix to an element in Isom+(H"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "matrix to an element in Isom+(H3) ﬁxing a (ﬁnite) point of H"
+  },
+  {
+   "page": 8,
+   "mark": "12",
+   "context": "12−1−v"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "v"
+  },
+  {
+   "page": 8,
+   "mark": "120",
+   "context": "α"
+  },
+  {
+   "page": 8,
+   "mark": "210",
+   "context": "α120= α"
+  },
+  {
+   "page": 8,
+   "mark": "123",
+   "context": "α120= α210= α"
+  },
+  {
+   "page": 8,
+   "mark": "213",
+   "context": "α120= α210= α123= α"
+  },
+  {
+   "page": 8,
+   "mark": "123",
+   "context": "β"
+  },
+  {
+   "page": 8,
+   "mark": "132",
+   "context": "β123= β"
+  },
+  {
+   "page": 8,
+   "mark": "120",
+   "context": "γ"
+  },
+  {
+   "page": 8,
+   "mark": "210",
+   "context": "γ120¢−1= γ"
+  },
+  {
+   "page": 8,
+   "mark": "213",
+   "context": "γ120¢−1= γ210= (γ"
+  },
+  {
+   "page": 8,
+   "mark": "123",
+   "context": "γ"
+  },
+  {
+   "page": 8,
+   "mark": "123",
+   "context": "Note that β"
+  },
+  {
+   "page": 8,
+   "mark": "123",
+   "context": "Note that β123and γ"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "Note that β123and γ123ﬁx the point∈H"
+  },
+  {
+   "page": 8,
+   "mark": "120",
+   "context": "Proof.α"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "ution exchanging the pointsand exp(l12). The associated CP"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Consider the hyperbolic plane H"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "Consider the hyperbolic plane H2= {x + t : x∈R,t> 0} ⊂H"
+  },
+  {
+   "page": 8,
+   "mark": "123",
+   "context": "Consider the hyperbolic plane H2= {x + t : x∈R,t> 0} ⊂H3.β"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "oftherotationofH"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "We obtain the PSL2(R)-matrix for the rotation of H"
+  },
+  {
+   "page": 10,
+   "mark": "l",
+   "context": "adiskinL \\SP"
+  },
+  {
+   "page": 10,
+   "mark": "l",
+   "context": "adiskinL \\SPl.TheinteriorofthediskembedsintoL \\SP"
+  },
+  {
+   "page": 11,
+   "mark": "l",
+   "context": "Deﬁnition4.6.Let(L,L \\SP"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "gimballoop.Fixa(SO"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "gimballoop.Fixa(SO3,SO"
+  },
+  {
+   "page": 11,
+   "mark": "l",
+   "context": "gimballoop.Fixa(SO3,SO2)-cocycleonL \\SP"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "gΓ : R"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "gΓ : Rp→R"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "Recallthata(SO"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Recallthata(SO3,SO"
+  },
+  {
+   "page": 11,
+   "mark": "l",
+   "context": "Recallthata(SO3,SO2)-cocycleonL \\SP"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Recallthata(SO3,SO2)-cocycleonL \\SPlassignsarotationRω∈Im(SO"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "lthata(SO3,SO2)-cocycleonL \\SPlassignsarotationRω∈Im(SO2,→SO"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "6,"
+  },
+  {
+   "page": 11,
+   "mark": "19",
+   "context": "6,e"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "6,e19,"
+  },
+  {
+   "page": 11,
+   "mark": "18",
+   "context": "6,e19,e"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "6,e19,e18,"
+  },
+  {
+   "page": 11,
+   "mark": "17",
+   "context": "6,e19,e18,e"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "6,e19,e18,e17,"
+  },
+  {
+   "page": 11,
+   "mark": "16",
+   "context": "6,e19,e18,e17,e"
+  },
+  {
+   "page": 11,
+   "mark": "l",
+   "context": "Proof.Assumeeachd"
+  },
+  {
+   "page": 11,
+   "mark": "d",
+   "context": "Proof.Assumeeachdl= 2π.TheneachR"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "6"
+  },
+  {
+   "page": 11,
+   "mark": "19",
+   "context": "6e"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "6e19"
+  },
+  {
+   "page": 11,
+   "mark": "18",
+   "context": "6e19e"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "6e19e18"
+  },
+  {
+   "page": 11,
+   "mark": "17",
+   "context": "6e19e18e"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "6e19e18e17"
+  },
+  {
+   "page": 11,
+   "mark": "16",
+   "context": "6e19e18e17e"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "6e19e18e17e16"
+  },
+  {
+   "page": 11,
+   "mark": "15",
+   "context": "6e19e18e17e16e"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "6e19e18e17e16e15)"
+  },
+  {
+   "page": 11,
+   "mark": "5",
+   "context": "6e19e18e17e16e15)e"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "6e19e18e17e16e15)e5"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "6e19e18e17e16e15)e5e"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "4"
+  },
+  {
+   "page": 11,
+   "mark": "14",
+   "context": "4e"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "4e14"
+  },
+  {
+   "page": 11,
+   "mark": "13",
+   "context": "4e14e"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "4e14e13"
+  },
+  {
+   "page": 11,
+   "mark": "12",
+   "context": "4e14e13e"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "4e14e13e12"
+  },
+  {
+   "page": 11,
+   "mark": "11",
+   "context": "4e14e13e12e"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "4e14e13e12e11)"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "4e14e13e12e11)e"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "4e14e13e12e11)e3"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "4e14e13e12e11)e3e"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "2"
+  },
+  {
+   "page": 11,
+   "mark": "10",
+   "context": "2e"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "2e10"
+  },
+  {
+   "page": 11,
+   "mark": "9",
+   "context": "2e10e"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "2e10e9"
+  },
+  {
+   "page": 11,
+   "mark": "8",
+   "context": "2e10e9e"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "2e10e9e8"
+  },
+  {
+   "page": 11,
+   "mark": "7",
+   "context": "2e10e9e8e"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "2e10e9e8e7)"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "2e10e9e8e7)e"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "Let DgΓ : R"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "of the matrix space M(3× p,R) as R"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "of the matrix space M(3× p,R) as R3"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "nition 4.8.Using the same setup as in Deﬁnition 4.6, let K⊂R"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "Lemma 4.10.Using the same setup as in Deﬁnition 4.6, let K⊂R"
+  },
+  {
+   "page": 13,
+   "mark": "301",
+   "context": "β"
+  },
+  {
+   "page": 13,
+   "mark": "302",
+   "context": "γ"
+  },
+  {
+   "page": 13,
+   "mark": "310",
+   "context": "γ"
+  },
+  {
+   "page": 13,
+   "mark": "321",
+   "context": "∆i′γ"
+  },
+  {
+   "page": 13,
+   "mark": "013",
+   "context": "β"
+  },
+  {
+   "page": 13,
+   "mark": "012",
+   "context": "α"
+  },
+  {
+   "page": 13,
+   "mark": "012",
+   "context": "γ"
+  },
+  {
+   "page": 13,
+   "mark": "103",
+   "context": "γ"
+  },
+  {
+   "page": 13,
+   "mark": "021",
+   "context": "β"
+  },
+  {
+   "page": 13,
+   "mark": "102",
+   "context": "β"
+  },
+  {
+   "page": 13,
+   "mark": "031",
+   "context": "γ"
+  },
+  {
+   "page": 13,
+   "mark": "132",
+   "context": "γ"
+  },
+  {
+   "page": 13,
+   "mark": "023",
+   "context": "γ"
+  },
+  {
+   "page": 13,
+   "mark": "120",
+   "context": "γ"
+  },
+  {
+   "page": 13,
+   "mark": "123",
+   "context": "β"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "k⊂L"
+  },
+  {
+   "page": 13,
+   "mark": "v",
+   "context": "k⊂Lkfor each"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "k⊂Lkfor each v"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "k⊂Lkfor each vk.Note that (L"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "1,...,"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "1,...,"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "k′(with"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "k′(with kand"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "1,...,"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "1,...,"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "m−3o} be a partition of E(T ) and ﬁx gimbal loops Γ"
+  },
+  {
+   "page": 13,
+   "mark": "o",
+   "context": "m−3o} be a partition of E(T ) and ﬁx gimbal loops Γ1,...,Γ"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "g: R"
+  },
+  {
+   "page": 13,
+   "mark": "o",
+   "context": "g: R3"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "g: R3o→R"
+  },
+  {
+   "page": 13,
+   "mark": "o",
+   "context": "g: R3o→R3"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "A box K⊂R"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "k) contains a γσ(0)σ(1)σ(2) for σ ∈A"
+  },
+  {
+   "page": 14,
+   "mark": "031",
+   "context": "···γ"
+  },
+  {
+   "page": 14,
+   "mark": "013",
+   "context": "∆i·β"
+  },
+  {
+   "page": 14,
+   "mark": "012",
+   "context": "∆i·RTj·γ"
+  },
+  {
+   "page": 14,
+   "mark": "021",
+   "context": "∆i·β"
+  },
+  {
+   "page": 14,
+   "mark": "103",
+   "context": "···γ"
+  },
+  {
+   "page": 14,
+   "mark": "310",
+   "context": "∆i·γ"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "∆i′·RT"
+  },
+  {
+   "page": 14,
+   "mark": "301",
+   "context": "∆i′·RTj·β"
+  },
+  {
+   "page": 14,
+   "mark": "302",
+   "context": "∆i′·γ"
+  },
+  {
+   "page": 14,
+   "mark": "o",
+   "context": ", E∼and E=, Γ1,...,Γo and g be as in Deﬁnition 5.1. Let K⊂R3"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "1,...,Θ"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "1= ··· = Θ"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "1= ··· = Θ"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "1,...,"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "1,...,"
+  },
+  {
+   "page": 14,
+   "mark": "v",
+   "context": "i̸= 2π. Looking at a vertex"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "hood is the hyperbolic cone of its link which is S"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "structure different from the standard S"
+  },
+  {
+   "page": 14,
+   "mark": "v",
+   "context": "1connectingtwodistinctvertices"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "1connectingtwodistinctverticesv"
+  },
+  {
+   "page": 14,
+   "mark": "v",
+   "context": "1̸= 2π.Thelinksof"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "1̸= 2π.Thelinksofv"
+  },
+  {
+   "page": 14,
+   "mark": "v",
+   "context": "1̸= 2π.Thelinksofv1and"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "1̸= 2π.Thelinksofv1andv"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "1̸= 2π.Thelinksofv1andv2wouldhave"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "1,...,"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "1= ··· = Θ"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "iand"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "1·RΘ"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "1= RΘ"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "iR−Θ"
+  },
+  {
+   "page": 15,
+   "mark": "z",
+   "context": "1∈SO3is a rotation by π about an axis orthogonal to"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "1∈SO3is a rotation by π about an axis orthogonal to z. Then"
+  },
+  {
+   "page": 15,
+   "mark": "o",
+   "context": "a non-trivial kernel.If we add edges to E∼such that |E∼| = 3"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "i= Θ"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "l= Θ"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "1= ··· = Θ"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "approximationsfortheedgeparametersν"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "approximationsfortheedgeparametersνe1,...,ν"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "approximationsfortheedgeparametersνe1,...,νemsuchthattheΘ"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "ximationsfortheedgeparametersνe1,...,νemsuchthattheΘe1,...,Θ"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "e will either fail in one of the steps or obtain intervals ν"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "ither fail in one of the steps or obtain intervals νe1,...,ν"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "tain values for ν"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "tain values for νe1,...,ν"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "1,...,"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "1,...,"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "1,...,"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "1,...,ν"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "j∈E=. To have intervals ν"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "j∈E=. To have intervals νe"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "j∈E=. To have intervals νe1,...,ν"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "j∈E=. To have intervals νe1,...,νe"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "1,...,Θ"
+  },
+  {
+   "page": 17,
+   "mark": "e",
+   "context": "1× ··· × Θ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "ciic j j −c"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "and note that each ∂ckl/∂vmn = (−1)"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "j−2π = 0 in variables ν"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "of the gimbal matrices mΓkassociated to the gimbal loops Γ"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "1·RT"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "2·RT"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "3·RT"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "ds for a product of β- and γ-matrices and rotations RTi′with"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "2·RT"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "3···RT"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "1·RT"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "2·RT"
+  },
+  {
+   "page": 19,
+   "mark": "e",
+   "context": "1,...,Θ"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "Tiand all the RT"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "strictly less than 1/r"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "rank of Mis at most m −3o (for example, x"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "etry class of ﬁnite simplices in H"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "(a)Sol(T ) ⊂R"
+  },
+  {
+   "page": 22,
+   "mark": "e",
+   "context": ">0,thesetofalltuples(l"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": ">0,thesetofalltuples(le"
+  },
+  {
+   "page": 22,
+   "mark": "l",
+   "context": ">0,thesetofalltuples(le1,...,"
+  },
+  {
+   "page": 22,
+   "mark": "e",
+   "context": ">0,thesetofalltuples(le1,...,l"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": ">0,thesetofalltuples(le1,...,le"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "T→H"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "when letting M= H"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "a 3o-dimensional smooth submanifold ofR"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "H"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "H"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "T→H"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "developing maps are in 1-1 correspondence to (H"
+  },
+  {
+   "page": 22,
+   "mark": "o",
+   "context": "developing maps are in 1-1 correspondence to (H3)"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "Tare determined by (d(˜v1),...,d(˜vo)) ∈(H"
+  },
+  {
+   "page": 23,
+   "mark": "o",
+   "context": "Tare determined by (d(˜v1),...,d(˜vo)) ∈(H3)"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "maps form an open subset U⊂(H"
+  },
+  {
+   "page": 23,
+   "mark": "o",
+   "context": "maps form an open subset U⊂(H3)"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "x positions of the simplex. As a function of (x1,...,xo) ∈(H"
+  },
+  {
+   "page": 23,
+   "mark": "o",
+   "context": "positions of the simplex. As a function of (x1,...,xo) ∈(H3)"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "Γ = Im(ρ).Thus, the condition is also open in (H"
+  },
+  {
+   "page": 23,
+   "mark": "o",
+   "context": "Γ = Im(ρ).Thus, the condition is also open in (H3)"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "Claim: The map L = i ◦l :U→R"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": ">0is smooth where"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": ">0is smooth where i: Sol(T ) ,→R"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "The distance function H"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "The distance function H3×H"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "T→H"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "that the attractive ﬁxed points pi∈∂H"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "i∈∂H"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "inSol(T ).Thus,(d(˜v1),...,d(˜vo)) ∈U⊂(H"
+  },
+  {
+   "page": 23,
+   "mark": "o",
+   "context": "inSol(T ).Thus,(d(˜v1),...,d(˜vo)) ∈U⊂(H3)"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "Claim: The differential DL of L :U→R"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "T→H"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "H"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": " lifts˜v1,...,˜voof vertices corresponds to the action of (H"
+  },
+  {
+   "page": 23,
+   "mark": "o",
+   "context": "ifts˜v1,...,˜voof vertices corresponds to the action of (H3)"
+  },
+  {
+   "page": 23,
+   "mark": "o",
+   "context": "elementinΓ"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "(H"
+  },
+  {
+   "page": 23,
+   "mark": "o",
+   "context": "(H3)"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "eof Tforms a loop in π1(T ,p) and denote by Fe= {x ∈CP"
+  },
+  {
+   "page": 24,
+   "mark": "e",
+   "context": "1,"
+  },
+  {
+   "page": 24,
+   "mark": "e",
+   "context": "2,"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "3}andE=be"
+  },
+  {
+   "page": 24,
+   "mark": "e",
+   "context": "i= F"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "−→a"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "−→a"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "i)−1"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "i)"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "ibecomegeodesicswith"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "ibecomegeodesicswithapotentialkinkattheimageof"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "Let−→a"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "iand −→a"
+  },
+  {
+   "page": 24,
+   "mark": "e",
+   "context": "ibe the directions (of unit length) in which the two ends of"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "d(p) ∈H"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "T→H"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "ω∈SO"
+  },
+  {
+   "page": 24,
+   "mark": "j",
+   "context": "ω∈SO3denotestherotationabout−→vbyangleω.Let−→a"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "i,kdenotethe"
+  },
+  {
+   "page": 24,
+   "mark": "j",
+   "context": "component of−→a"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "i. At the point where all T"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "−−→a"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "−−→a"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "−−→a"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "−−→a"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "−−→a"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "−−→a"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "i,2+−→a"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "i,1+−→a"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "i,0+−→a"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "where ai= −→a"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "i+−→a"
+  },
+  {
+   "page": 24,
+   "mark": "e",
+   "context": "iif |F"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "i| = 1) and"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "i| = 1) anda"
+  },
+  {
+   "page": 24,
+   "mark": "e",
+   "context": "i(respectively pointing to F"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "Claim: Given a point x ∈H"
+  },
+  {
+   "page": 25,
+   "mark": "e",
+   "context": "iif |F"
+  },
+  {
+   "page": 25,
+   "mark": "x",
+   "context": "i| = 1).The set Vof"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "iare distinct. Otherwise V= H"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "Letf: H"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": ": H3\\∪i gi→R,x 7→ω(a1,a2,a3) where ω is the volume form on H"
+  },
+  {
+   "page": 25,
+   "mark": "f",
+   "context": "jare equal.Thus"
+  },
+  {
+   "page": 25,
+   "mark": "e",
+   "context": "iand F"
+  }
+ ]
+}

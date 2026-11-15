@@ -1,13 +1,15 @@
 ---
 doc_id: 67-6-1860
-doc_title: "Progress of Theoretical Physics, Vol. 67, No. 6, June 1982"
+doc_title: "Quaternionic Weinberg-Salam Theory"
 section_id: page-014
 section_title: "Page 14"
-section_number: null
 pages: 14-14
+pdf_page: 14
 source_pdf: 67-6-1860.pdf
 source_sha256: e2e5d45edd369762
-toc_source: undetermined
+text_source: ocr
+granularity: page
+doc_brief: "Quaternionic Weinberg-Salam Theory — 17 sections: Page 1; Page 2; Page 3"
 ---
 Quaternionic Weinberg-Salam Theory 1873
 
@@ -55,4 +57,4 @@ exist no 4,2 with b=0, p=1 in the Weinberg-Salam limit.
 *) The left-right symmetric SU(2).* SU(2)e* U()s-2 Weinberg-Salam theory in which we
 cannot construct gauge singlets for fermions has recently been discussed by many authors.'®
 
-9z0z Ainr 90 uo ysanB Aq 79Z2881/0981/9/29/A10111e/djd/wi0s'dno-o1wapese//:sd}jy Wo. pepeojuMoq
+9z0z Ainr 06 uo ysanB Aq 79Z2881/0981/9/29/A10111e/djd/wi0s'dno-o1wapese//:sd}jy Wo. pepeojuMoq

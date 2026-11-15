@@ -1,0 +1,59 @@
+6 1. THE IWAHORI-HECKE ALGEBRA OF THE SYMMETRIC GROUP
+
+representation lj of #. Nonetheless, there is an analogue of the orthogonality
+relations when # is semisimple,
+
+Let Wn(9) = owes, gi be the Poincaré polynomial of G,,; this polynomial
+arises naturally in the invariant theory of the symmetric group (see, for example,
+[33, §3.15]). Because {1, 8,1, 8,—18n—2,.--,8n—1-.-S1} is a set of right coset
+representatives for G,_; in Gy, it follows that
+
+Wa(g)= +a +a+@)..+g4--49"""):
+
+thus, W,(g) = [q], in the notation of (3.28). Finally, note that if ¢ = | then
+Wa(1) = nl = |Gp|.
+1.15 Corollary Suppose that K = C(q) and let Ae = He g(Gn). Then Hq is
+
+semisimple. Moreover, mw and % are irreducible characters of 7 then
+
+Toy be 1 OMTA) Ta) = Bye Dua
+
+) es,
+
+for some rational function Dy(q) in #.
+
+Proof. By Proposition 1.14, # is asymmetric algebra with dual bases {T;, } and
+{GT -1 }, so the orthogonality relation will follow from the theory of symmetric
+algebras (see [11, §9A]) once we show that % is semisimple.
+
+Suppose that #% is not semisimple. Then we can find a non-zero element h
+in the radical of # . Without loss of generality we may assume that h € #2 and
+h¢ (q— 1) #42. Let 9: Hz — CG, be the specialization homomorphism sending
+gto1éC. Then for any ap, € C we have
+
+So anyag(hly=¢( S> anyTohT,).
+
+@.yEGn @,yEGn
+
+Now h is nilpotent so ¢g(h) is also nilpotent; however, CG,, is semisimple so we
+must have y(h) = 0. Therefore, h € kery = (¢ — 1) #2 which contradicts our
+assumptions on h. Oo
+
+We shall see in Corollary 3.22 below that the Hecke algebra .% is split semisim-
+ple and that, as an algebra, it is isomorphic to K Gp.
+
+The rational functions D, (q) of Corollary 1.15 are the so-called generic degrees
+of G,; they are all explicitly. known (see [6, p. 446]) and turn out to be polyno-
+mials in Z[qg]. Therefore, given the remark of the last paragraph, the equation
+defining Dy (@) in Corollary 1.15 can be evaluated at ¢ = 1 where it becomes one of
+the orthogonality relations for the ordinary irreducible characters if the symmetric
+group. It follows that Dy(1) is the dimension of an irreducible complex representa-
+tion of G,,. What is more, when q is a prime power the D,(q) give the dimensions
+of the principal series representations of GE,(q); see [6] and Note 4 below.
+
+3. The 0—-Hecke algebra
+After this section we will assume that g is invertible. For completeness we now
+describe the simple .#-—modules when q = 0.
+
+1.16 Theorem (Norton) Suppose that R is a field and that q = 0. Then every
+irreducible Z -—module is one dimensional.
