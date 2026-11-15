@@ -136,6 +136,7 @@ export default chapter({
       blocks: [
         "nn-isospin-interface-intro",
         "isospin-singlet-binds-more",
+        "isospin-singlet-binds-more-two-nucleon-reading",
         "isospin-singlet-binds-more-proof",
         "content-keyed-interface-refuted",
         "markov-stabilisation-needs-a-fresh-generator",

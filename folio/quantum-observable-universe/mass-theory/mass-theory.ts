@@ -827,6 +827,7 @@ export default chapter({
         // strand-doubling *interpretation* was refuted (the algebraic
         // identity stands); see its historical-note section.
         "cyclotomic-strand-doubling",
+        "cyclotomic-strand-doubling-habiro-observation",
         "cyclotomic-strand-doubling-proof",
         "a8-partition-function-identity",
         "a8-partition-function-identity-proof",
@@ -925,6 +926,7 @@ export default chapter({
         "wigner-2-coefficient-proof",
         "wigner-2-coefficient-interpretation",
         "mass-endomorphism-tower",
+        "mass-endomorphism-tower-phi-q-history",
         "mass-endomorphism-tower-proof",
         "mass-endomorphism-jet-tower",
         "mass-endomorphism-jet-tower-table1-data",
@@ -1238,6 +1240,7 @@ export default chapter({
         // Gen-3 extension: φ(1020) = T(2,7), m_φ/m_π ≈ 7.320 (2167 ppm vs
         // PDG); the torus tower tracks the strange-vector line, not the η.
         "gen3-meson-phi-hecke-seifert",
+        "gen3-meson-phi-hecke-seifert-identification",
         "tower-binding-energy",
         "tower-binding-energy-table-data",
         "mass-table-z1-20",
