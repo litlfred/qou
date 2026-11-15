@@ -136,6 +136,36 @@ This question is prior to D1, and the hypothesis as stated answers it in a way t
 
   Documented on `mulNF` and `H3A.v`.
 
+## 4c. Flavour extraction from NF(γγ) (bean `qou-usxh`, exploration; no map chosen)
+
+The only flavour-sensitive datum the D1 definition supplies is the h¹ coefficient on the unit,
+**net flavour** (`netFlavour`). It is additive (`netFlavour_add`), and on a letter it equals the
+letter's flavour shift (`netFlavour_letter`). Results:
+
+1. **Per-letter readout (Q1): not possible from a sum.**
+   - `letter_sum_flavour_swap`: (u on σ₀) + (d on σ₁) = (d on σ₀) + (u on σ₁) as elements.
+   - So a sum determines only the net flavour, never which letter carries which bit.
+   - This residual freedom (Q3) is a finding. It is not resolved by choice.
+2. **Net flavour of a photon pair is identically 0 (`pairNF_netFlavour`),** for every colour content,
+   when both photons are built from σ letters with q-independent labels.
+3. **uud / udd from one photon pair: the set is EMPTY (Q2)** (`pairNF_three_letters_all_up`).
+   - Write NF(γγ) as three letters plus any remainder of zero net flavour. Then all three letters are u.
+   - This is scope (b). The invariant is net flavour, which is additive and identically 0 on γγ.
+   - The scope is stated exactly: σ-letter photons, q-independent labels, and the D1 functional.
+4. **Flavour enters only through the photon's own letters.**
+   - Flip the second photon's letters (σ ↦ σ⁻¹). Then the net flavour is −(ψ₀ + ψ₁ + (φ₀+φ₁)ψ₀₁)
+     (`pairBar_netFlavour`).
+   - So the net flavour equals the flavour put in, and the collision does not produce it.
+   - Nucleon net flavour −1 (uud) or −2 (udd) then corresponds to the affine quadric
+     ψ₀ + ψ₁ + (φ₀+φ₁)ψ₀₁ = 1 or 2. That is the level set of the input, not an extraction.
+
+**Gap (open, beaned under `qou-usxh`).**
+- A per-letter readout needs a PRODUCT (word) of letters, not a sum. The h¹ part of a word of letters
+  is Σₖ cₖ·(word with letter k deleted), so the cₖ are recoverable exactly when those deleted words
+  are linearly independent. This is not computed here.
+- What decides a photon's letter orientation (σ vs σ⁻¹) is not derived here. It may connect to
+  `qou-qs2u` (u as polarization or chirality).
+
 ## 5. Verification
 
 `lean -DautoImplicit=false -s 65536` against the restored `cat/folio-assistant-sci/lake-cache/qou-v4-24-0`
