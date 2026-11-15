@@ -200,12 +200,14 @@ theorem weightProj_mem_uqGens (q : K) (m : ℕ) (μ : Fin d → ℕ) :
     weightProj μ ∈ uqGens (d := d) q m :=
   Or.inr (Or.inr ⟨μ, rfl⟩)
 
-/-- The weights occurring in `(K^d)^{⊗(m+1)}`: contents of index words. -/
-def occWeights (d m : ℕ) : Finset (Fin d → ℕ) :=
+/-- The weights occurring in `(K^d)^{⊗(m+1)}`: contents of index words. Definitionally the
+`occWeights` of `QuantumGLHWBound` (sibling PR #7873); kept local so the two modules can be
+imported together. -/
+def occW (d m : ℕ) : Finset (Fin d → ℕ) :=
   Finset.univ.image (fun a : Fin (m + 1) → Fin d => content a)
 
 theorem sum_weightProj (m : ℕ) :
-    ∑ μ ∈ occWeights d m, (weightProj μ : Matrix (Fin (m + 1) → Fin d) _ K) = 1 := by
+    ∑ μ ∈ occW d m, (weightProj μ : Matrix (Fin (m + 1) → Fin d) _ K) = 1 := by
   classical
   ext a b
   rw [Matrix.sum_apply, Matrix.one_apply]
@@ -214,10 +216,10 @@ theorem sum_weightProj (m : ℕ) :
   · subst hab
     simp only [if_true]
     rw [Finset.sum_ite_eq]
-    simp [occWeights]
+    simp [occW]
   · simp [hab]
 
-theorem weightProj_eq_zero_of_not_mem {m : ℕ} {μ : Fin d → ℕ} (hμ : μ ∉ occWeights d m) :
+theorem weightProj_eq_zero_of_not_mem {m : ℕ} {μ : Fin d → ℕ} (hμ : μ ∉ occW d m) :
     (weightProj μ : Matrix (Fin (m + 1) → Fin d) _ K) = 0 := by
   ext a b
   simp only [weightProj, Matrix.diagonal_apply, Matrix.zero_apply]
@@ -268,14 +270,14 @@ theorem exists_ne_zero_mem_hwSpace (q : L) (m : ℕ) {W : Submodule L ((Fin (m +
     ∃ μ, ∃ v ∈ W, v ≠ 0 ∧ v ∈ hwSpace q m μ := by
   classical
   -- weights carrying a nonzero vector of `W`
-  set T := (occWeights d m).filter
+  set T := (occW d m).filter
     (fun μ => ∃ v ∈ W, v ≠ 0 ∧ weightProj μ *ᵥ v = v) with hT
   have hTne : T.Nonempty := by
     obtain ⟨v, hvW, hv0⟩ := Submodule.exists_mem_ne_zero_of_ne_bot hne
     by_contra hemp
     rw [Finset.not_nonempty_iff_eq_empty] at hemp
     apply hv0
-    have hsplit : v = ∑ μ ∈ occWeights d m, weightProj μ *ᵥ v := by
+    have hsplit : v = ∑ μ ∈ occW d m, weightProj μ *ᵥ v := by
       rw [← Matrix.sum_mulVec, sum_weightProj, one_mulVec]
     rw [hsplit]
     refine Finset.sum_eq_zero fun μ hμ => ?_
@@ -290,7 +292,7 @@ theorem exists_ne_zero_mem_hwSpace (q : L) (m : ℕ) {W : Submodule L ((Fin (m +
   refine ⟨μ, v, hvW, hv0, hvμ, fun i j hij => ?_⟩
   set u := raiseOp q q⁻¹ i j *ᵥ v with hu
   have huW : u ∈ W := hW _ (raiseOp_mem_uqGens q m hij) v hvW
-  rw [show u = ∑ ν ∈ occWeights d m, weightProj ν *ᵥ u by
+  rw [show u = ∑ ν ∈ occW d m, weightProj ν *ᵥ u by
     rw [← Matrix.sum_mulVec, sum_weightProj, one_mulVec]]
   refine Finset.sum_eq_zero fun ν hν => ?_
   by_cases hshift : ν j = μ j + 1 ∧ ν i + 1 = μ i ∧ ∀ x, x ≠ i → x ≠ j → ν x = μ x
@@ -342,7 +344,7 @@ theorem mulVec_mem_hwSpace {q : L} {m : ℕ} {Y : Matrix (Fin (m + 1) → Fin d)
 /-- Restriction of a commutant element to the highest-weight spaces. -/
 def resHW (q : L) (m : ℕ) :
     commutant (uqGens (d := d) q m) →ₗ[L]
-      ((μ : occWeights d m) → (hwSpace q m μ →ₗ[L] hwSpace q m μ)) where
+      ((μ : occW d m) → (hwSpace q m μ →ₗ[L] hwSpace q m μ)) where
   toFun Y μ := (Matrix.mulVecLin Y.1).restrict fun _ hv => mulVec_mem_hwSpace Y.2 hv
   map_add' Y Y' := by
     funext μ; ext v
@@ -360,7 +362,7 @@ theorem resHW_injective (q : L) (m : ℕ) : Function.Injective (resHW (d := d) q
     refine Submodule.iSup_induction (motive := fun v => Y.1 *ᵥ v = 0)
       (fun μ => hwSpace q m μ) hv (fun μ w hw => ?_)
       (mulVec_zero _) (fun x y hx hy => by rw [mulVec_add, hx, hy, add_zero])
-    by_cases hμ : μ ∈ occWeights d m
+    by_cases hμ : μ ∈ occW d m
     · have := congrArg (fun f => ((f ⟨μ, hμ⟩) ⟨w, hw⟩ : (Fin (m + 1) → Fin d) → L)) hY
       simpa [resHW] using this
     · rw [← hw.1, weightProj_eq_zero_of_not_mem hμ, zero_mulVec, mulVec_zero]
@@ -374,11 +376,11 @@ theorem resHW_injective (q : L) (m : ℕ) : Function.Injective (resHW (d := d) q
 /-- **F3: `dim B' ≤ Σ_μ (dim N_μ)²`.** -/
 theorem finrank_commutant_le (q : L) (m : ℕ) :
     Module.finrank L (commutant (uqGens (d := d) q m))
-      ≤ ∑ μ ∈ occWeights d m, Module.finrank L (hwSpace q m μ) ^ 2 := by
+      ≤ ∑ μ ∈ occW d m, Module.finrank L (hwSpace q m μ) ^ 2 := by
   have h := LinearMap.finrank_le_finrank_of_injective (resHW_injective (d := d) q m)
   rw [Module.finrank_pi_fintype] at h
   refine h.trans (le_of_eq ?_)
-  rw [← Finset.sum_coe_sort (occWeights d m)]
+  rw [← Finset.sum_coe_sort (occW d m)]
   refine Finset.sum_congr rfl fun μ _ => ?_
   rw [Module.finrank_linearMap, sq]
 
@@ -389,7 +391,7 @@ open YoungDiagram QOU.Mathlib
 audit; it is a hypothesis of the theorem, not an axiom. -/
 theorem range_jimbo_eq_commutant [NeZero d] (q : L) (hq : q ≠ 0)
     (hq2 : GenericParameter.NotRootOfUnity q) (m : ℕ)
-    (hstar : ∑ μ ∈ occWeights d m, Module.finrank L (hwSpace q m μ) ^ 2
+    (hstar : ∑ μ ∈ occW d m, Module.finrank L (hwSpace q m μ) ^ 2
       ≤ ∑ lam : RowCapIdx d m,
           Fintype.card (StandardYoungTableau (partitionShape lam.1)) ^ 2) :
     LinearMap.range (jimbo d q hq m).toLinearMap = commutant (uqGens q m) := by
