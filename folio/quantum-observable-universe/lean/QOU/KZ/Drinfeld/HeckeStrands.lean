@@ -17,8 +17,10 @@ Bridge A, step A4 (`QOU.Mass.BraidedStrands`), applied to the braided `ℂ`-line
   `σ_i = strand g n i` on `V^{⊗n}` satisfy the Hecke quadratic, the braid relation and far
   commutation. **No holonomy is computed for `n ≥ 3`**: the braid relation is categorical.
 * `heckeMonodromy_of_DH` — the step-2 class `QOU.Mass.HeckeMonodromy` holds for any Markov-trace
-  tower whose generators are the images of these `σ_i` (`BraidedMonodromy`, the Drinfeld–Kohno
-  hypothesis), with the shadow field passed separately.
+  tower over a ring `R` whose generators are the images of these `σ_i` (`BraidedMonodromy`, the
+  Drinfeld–Kohno hypothesis), with the `q ↦ 1` shadow passed separately.
+* `heckeMonodromy_shadow_trivial` — at one fixed `ℏ` that shadow is necessarily the zero ring: the
+  classical shadow is a statement about the family over `ℏ`, which this file does not construct.
 
 The analytic content of `D_ℏ` (Drinfeld's KZ associator) is already proved in its own files; this
 file adds only algebra and category theory. Sorry-free.
@@ -71,14 +73,34 @@ theorem far_strand (n i j : ℕ) (hij : i + 2 ≤ j) (hj : j + 1 < n) :
   strand_far (gDH c) n i j hij hj
 
 open QOU.MathlibExt.OcneanuTrace in
-/-- **Step 2 from Drinfeld–Kohno alone.** For a Markov-trace tower over `ℂ` whose generators are
-the images of the `D_ℏ` braid generators (`BraidedMonodromy`), the step-2 class holds at
-`q = e^{iπℏ}`. The only hypothesis besides that is the shadow field (see
-`QOU.Mass.HeckeMonodromy.subsingleton_of_ne`). -/
-theorem heckeMonodromy_of_DH {A : Type*} [Ring A] [Algebra ℂ A] (T : MarkovTrace ℂ A)
-    {B : Type*} [Ring B] (ε : A →+* B) [BraidedMonodromy T (Vd c) (gDH c)]
-    (shadow_involution : ∀ i, ε (T.g i) * ε (T.g i) = 1) :
-    QOU.Mass.HeckeMonodromy T (qV c) ε :=
-  heckeMonodromy_of_braided T (qV c) ε (Vd c) (gDH c) (g_isYB c) (g_quad c) shadow_involution
+/-- **Step 2 from Drinfeld–Kohno alone.** For a Markov-trace tower over a commutative ring `R`,
+with `q : Rˣ` mapped to `q = e^{iπℏ}` by `φ : R → ℂ`, whose generators are the images of the
+`D_ℏ` braid generators (`BraidedMonodromy`), the step-2 class holds for any shadow `ε` lying over
+`q ↦ 1`. By `heckeMonodromy_shadow_trivial` that shadow is necessarily zero when the monodromy
+factors through `D_ℏ` at one fixed `ℏ`: the shadow needs the family in `ℏ`. -/
+theorem heckeMonodromy_of_DH {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A]
+    (T : MarkovTrace R A) (q : Rˣ) (φ : R →+* ℂ) (hφ : φ q = qV c) {B : Type*} [Ring B]
+    (ε : A →+* B) [BraidedMonodromy T φ (Vd c) (gDH c)]
+    (shadow_at_one : ε (algebraMap R A q) = 1) :
+    QOU.Mass.HeckeMonodromy T q ε := by
+  have hinv : φ ↑q⁻¹ = (qV c)⁻¹ := by rw [map_units_inv, hφ]
+  refine heckeMonodromy_of_braided T q φ ε (Vd c) (gDH c) (g_isYB c) ?_ shadow_at_one
+  rw [hφ, hinv]
+  exact g_quad c
+
+open QOU.MathlibExt.OcneanuTrace in
+/-- **At fixed `ℏ` the shadow is zero.** Since `q = e^{iπℏ} ≠ 1` for transcendental `ℏ`
+(`qV_sub_inv_ne_zero`), a tower whose monodromy factors through `D_ℏ` has only the zero ring as a
+`q ↦ 1` shadow (`subsingleton_of_fixed_coupling`). The classical shadow is a statement about the
+family over the coupling, not about one `D_ℏ`. -/
+theorem heckeMonodromy_shadow_trivial {R : Type*} [CommRing R] {A : Type*} [Ring A]
+    [Algebra R A] (T : MarkovTrace R A) (q : Rˣ) (φ : R →+* ℂ) (hφ : φ q = qV c) {B : Type*}
+    [Ring B] (ε : A →+* B) [BraidedMonodromy T φ (Vd c) (gDH c)]
+    [QOU.Mass.HeckeMonodromy T q ε] : Subsingleton B := by
+  refine subsingleton_of_fixed_coupling T q φ ε (Vd c) (gDH c) ?_
+  rw [hφ]
+  intro h1
+  apply qV_sub_inv_ne_zero c hc.out
+  rw [h1, inv_one, sub_self]
 
 end QOU.KZ.Drinfeld

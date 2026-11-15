@@ -380,8 +380,8 @@ theorem kzExchange_quad (c : ℂ) :
   abel
 
 /-- **The classical shadow is the flip, an involution.** At `c = 0` (`q = 1`, no deformation)
-the KZ exchange is the transposition of the two points: the shadow field
-`QOU.Mass.HeckeMonodromy.shadow_involution`, derived. -/
+the KZ exchange is the transposition of the two points: the shadow involution
+`QOU.Mass.HeckeMonodromy.shadow_involution`, here at the specialisation `c = 0`. -/
 theorem kzExchange_zero : kzExchange 0 = flip := by
   simp [kzExchange, halfMonodromy]
 
@@ -392,7 +392,7 @@ theorem flip_mul_flip : (flip : Matrix (Fin 4) (Fin 4) ℂ) * flip = 1 := by
     Matrix.mul_smul, smul_smul, h]
   module
 
-/-- The shadow field of `QOU.Mass.HeckeMonodromy` for the two-point KZ exchange:
+/-- The shadow involution of `QOU.Mass.HeckeMonodromy` for the two-point KZ exchange:
 at `q = 1` the exchange squares to the identity. -/
 theorem kzExchange_shadow_involution : kzExchange 0 * kzExchange 0 = 1 := by
   rw [kzExchange_zero, flip_mul_flip]
