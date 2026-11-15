@@ -11,7 +11,7 @@ The Lean carrier makes the conditioning explicit: `qou_implies_p_neq_np` derives
 
 This stratification is cited fact, not a QOU derivation. Crucially, $\#\mathrm{P}$-hardness of one invariant's exact evaluation **does not** separate $\mathrm{P}$ from $\mathrm{NP}$: it concerns counting, not decision, and no known reduction turns it into a $\mathrm{P} \neq \mathrm{NP}$ proof.
 
-**The $\mathbb{G}_m$-torsion stratification (corrected).** Earlier drafts stated the torsion dichotomy backwards. The correct picture, matching the citations above:
+**The $\mathbb{G}_m$-torsion stratification.** Matching the citations above:
 
 | Regime | Value of $q$ | Jones complexity |
 |--------|--------------|------------------|
