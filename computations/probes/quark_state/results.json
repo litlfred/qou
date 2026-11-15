@@ -1,0 +1,810 @@
+{
+ "000": {
+  "A_full_NF": {
+   "distinct": 4,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu",
+     "dud",
+     "udd"
+    ],
+    [
+     "duu",
+     "udu",
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  },
+  "B_h1_part": {
+   "distinct": 4,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu",
+     "dud",
+     "udd"
+    ],
+    [
+     "duu",
+     "udu",
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  },
+  "C_21_matrix": {
+   "distinct": 4,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu",
+     "dud",
+     "udd"
+    ],
+    [
+     "duu",
+     "udu",
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  },
+  "D_21_trace": {
+   "distinct": 4,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu",
+     "dud",
+     "udd"
+    ],
+    [
+     "duu",
+     "udu",
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  }
+ },
+ "001": {
+  "A_full_NF": {
+   "distinct": 6,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu"
+    ],
+    [
+     "dud",
+     "udd"
+    ],
+    [
+     "duu",
+     "udu"
+    ],
+    [
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  },
+  "B_h1_part": {
+   "distinct": 6,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu"
+    ],
+    [
+     "dud",
+     "udd"
+    ],
+    [
+     "duu",
+     "udu"
+    ],
+    [
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  },
+  "C_21_matrix": {
+   "distinct": 6,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu"
+    ],
+    [
+     "dud",
+     "udd"
+    ],
+    [
+     "duu",
+     "udu"
+    ],
+    [
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  },
+  "D_21_trace": {
+   "distinct": 6,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu"
+    ],
+    [
+     "dud",
+     "udd"
+    ],
+    [
+     "duu",
+     "udu"
+    ],
+    [
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  }
+ },
+ "010": {
+  "A_full_NF": {
+   "distinct": 8,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu"
+    ],
+    [
+     "dud"
+    ],
+    [
+     "duu"
+    ],
+    [
+     "udd"
+    ],
+    [
+     "udu"
+    ],
+    [
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  },
+  "B_h1_part": {
+   "distinct": 8,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu"
+    ],
+    [
+     "dud"
+    ],
+    [
+     "duu"
+    ],
+    [
+     "udd"
+    ],
+    [
+     "udu"
+    ],
+    [
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  },
+  "C_21_matrix": {
+   "distinct": 7,
+   "classes": [
+    [
+     "ddd",
+     "uuu"
+    ],
+    [
+     "ddu"
+    ],
+    [
+     "dud"
+    ],
+    [
+     "duu"
+    ],
+    [
+     "udd"
+    ],
+    [
+     "udu"
+    ],
+    [
+     "uud"
+    ]
+   ]
+  },
+  "D_21_trace": {
+   "distinct": 7,
+   "classes": [
+    [
+     "ddd",
+     "uuu"
+    ],
+    [
+     "ddu"
+    ],
+    [
+     "dud"
+    ],
+    [
+     "duu"
+    ],
+    [
+     "udd"
+    ],
+    [
+     "udu"
+    ],
+    [
+     "uud"
+    ]
+   ]
+  }
+ },
+ "011": {
+  "A_full_NF": {
+   "distinct": 6,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu",
+     "dud"
+    ],
+    [
+     "duu"
+    ],
+    [
+     "udd"
+    ],
+    [
+     "udu",
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  },
+  "B_h1_part": {
+   "distinct": 6,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu",
+     "dud"
+    ],
+    [
+     "duu"
+    ],
+    [
+     "udd"
+    ],
+    [
+     "udu",
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  },
+  "C_21_matrix": {
+   "distinct": 6,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu",
+     "dud"
+    ],
+    [
+     "duu"
+    ],
+    [
+     "udd"
+    ],
+    [
+     "udu",
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  },
+  "D_21_trace": {
+   "distinct": 6,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu",
+     "dud"
+    ],
+    [
+     "duu"
+    ],
+    [
+     "udd"
+    ],
+    [
+     "udu",
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  }
+ },
+ "100": {
+  "A_full_NF": {
+   "distinct": 6,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu",
+     "dud"
+    ],
+    [
+     "duu"
+    ],
+    [
+     "udd"
+    ],
+    [
+     "udu",
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  },
+  "B_h1_part": {
+   "distinct": 6,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu",
+     "dud"
+    ],
+    [
+     "duu"
+    ],
+    [
+     "udd"
+    ],
+    [
+     "udu",
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  },
+  "C_21_matrix": {
+   "distinct": 6,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu",
+     "dud"
+    ],
+    [
+     "duu"
+    ],
+    [
+     "udd"
+    ],
+    [
+     "udu",
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  },
+  "D_21_trace": {
+   "distinct": 6,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu",
+     "dud"
+    ],
+    [
+     "duu"
+    ],
+    [
+     "udd"
+    ],
+    [
+     "udu",
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  }
+ },
+ "101": {
+  "A_full_NF": {
+   "distinct": 8,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu"
+    ],
+    [
+     "dud"
+    ],
+    [
+     "duu"
+    ],
+    [
+     "udd"
+    ],
+    [
+     "udu"
+    ],
+    [
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  },
+  "B_h1_part": {
+   "distinct": 8,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu"
+    ],
+    [
+     "dud"
+    ],
+    [
+     "duu"
+    ],
+    [
+     "udd"
+    ],
+    [
+     "udu"
+    ],
+    [
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  },
+  "C_21_matrix": {
+   "distinct": 7,
+   "classes": [
+    [
+     "ddd",
+     "uuu"
+    ],
+    [
+     "ddu"
+    ],
+    [
+     "dud"
+    ],
+    [
+     "duu"
+    ],
+    [
+     "udd"
+    ],
+    [
+     "udu"
+    ],
+    [
+     "uud"
+    ]
+   ]
+  },
+  "D_21_trace": {
+   "distinct": 7,
+   "classes": [
+    [
+     "ddd",
+     "uuu"
+    ],
+    [
+     "ddu"
+    ],
+    [
+     "dud"
+    ],
+    [
+     "duu"
+    ],
+    [
+     "udd"
+    ],
+    [
+     "udu"
+    ],
+    [
+     "uud"
+    ]
+   ]
+  }
+ },
+ "110": {
+  "A_full_NF": {
+   "distinct": 6,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu"
+    ],
+    [
+     "dud",
+     "udd"
+    ],
+    [
+     "duu",
+     "udu"
+    ],
+    [
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  },
+  "B_h1_part": {
+   "distinct": 6,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu"
+    ],
+    [
+     "dud",
+     "udd"
+    ],
+    [
+     "duu",
+     "udu"
+    ],
+    [
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  },
+  "C_21_matrix": {
+   "distinct": 6,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu"
+    ],
+    [
+     "dud",
+     "udd"
+    ],
+    [
+     "duu",
+     "udu"
+    ],
+    [
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  },
+  "D_21_trace": {
+   "distinct": 6,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu"
+    ],
+    [
+     "dud",
+     "udd"
+    ],
+    [
+     "duu",
+     "udu"
+    ],
+    [
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  }
+ },
+ "111": {
+  "A_full_NF": {
+   "distinct": 4,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu",
+     "dud",
+     "udd"
+    ],
+    [
+     "duu",
+     "udu",
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  },
+  "B_h1_part": {
+   "distinct": 4,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu",
+     "dud",
+     "udd"
+    ],
+    [
+     "duu",
+     "udu",
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  },
+  "C_21_matrix": {
+   "distinct": 4,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu",
+     "dud",
+     "udd"
+    ],
+    [
+     "duu",
+     "udu",
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  },
+  "D_21_trace": {
+   "distinct": 4,
+   "classes": [
+    [
+     "ddd"
+    ],
+    [
+     "ddu",
+     "dud",
+     "udd"
+    ],
+    [
+     "duu",
+     "udu",
+     "uud"
+    ],
+    [
+     "uuu"
+    ]
+   ]
+  }
+ }
+}
