@@ -91,3 +91,20 @@ Readouts, all at q₀:
 
 No hypothesis is preferred. "Pure ⟺ pass" fails if any pure word fails or any non-pure word passes.
 Nothing is selected or fitted; samples are seeded and fixed above. Scope (a).
+
+## Amendment 5 (2026-11-15, before any run): the shortest pure γγ word that fails reading 3 at q₀
+
+Amendment 4 found failing pure words at length 24 (power u⁴, |u| = 6) and in samples at m = 24, 30, and none
+among all words of length ≤ 8. Lengths 9..23 were only sampled.
+
+Object and convention as in amendment 4 (q₀ proton, convention D, 40 dps, pass iff every level character ≥ −1e-30).
+
+Readouts:
+- S1 (exhaustive, pure only): every pure word of length m = 9, 10, 11. Report pure pass/fail counts, the
+  smallest level character over pure words, and every failing pure word if any.
+- S2 (powers): for every pure u with 7 ≤ |u| ≤ 11 found in S1 or amendment 4, the powers u^k with
+  k·|u| ≤ 23. Report any failure and its length.
+- Stated answer: the smallest length L among failures found. If S1 and S2 find none, the result is
+  "no failing pure word of length ≤ 11, and none among the powers tested", and 12..23 stays open.
+
+No hypothesis preferred. Nothing selected or fitted. Scope (a).
