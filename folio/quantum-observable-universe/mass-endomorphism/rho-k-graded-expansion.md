@@ -1,6 +1,6 @@
 ## Statement
 
-> **Scope note (2026-11-15).** The single-generator piece was labelled "proved" and is not: its form and the scale $\alpha$ are chosen so that the result matches the mass table, and the $0.18\%$ mean error is a fit diagnostic, not a derivation. Only the leading-order piece is an identity. The empirical accuracy figure in the statement is a comparison, not part of the claim.
+> **Scope note (2026-11-15).** The single-generator piece was labelled "proved" and is not: its form and the scale $\alpha$ are chosen so that the result matches the mass table, and the $0.18\%$ mean error is a fit diagnostic, not a derivation. Only the leading-order piece is an identity. The empirical accuracy figure is a comparison, not part of the claim, and is recorded in [the accuracy remark](#rem:rho-k-graded-expansion-accuracy).
 
 
 We expose the graded expansion of the categorical density $\rho_K$ by multiplying the GB-NF identity ([atomic mass via GB-NF](#prop:atomic-mass-gb-nf)) $\mathfrak{m}(K) = m_e \cdot \rho_K \cdot |\!\mathrm{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K))|$ through by $m_e \cdot |\!\mathrm{tr}_M(\mathcal{B}_K)|$:
@@ -20,7 +20,7 @@ $$
   }
 $$
 
-where $\alpha = m_e \cdot 8G$ ([binding scale](#prop:binding-scale-catalan)) and $z = q^{3}/(q^{2}+1)$ forms the Markov parameter (**convention D**). The graded expansion truncates at the single-generator level to achieve the empirical $0.18\%$ accuracy reported in [atomic braid mass](#thm:wedderburn-mass-formula).
+where $\alpha = m_e \cdot 8G$ ([binding scale](#prop:binding-scale-catalan)) and $z = q^{3}/(q^{2}+1)$ forms the Markov parameter (**convention D**). Its comparison with measured masses is recorded in [the accuracy remark](#rem:rho-k-graded-expansion-accuracy).
 
 ## Proof
 
@@ -85,20 +85,6 @@ Each piece of the graded expansion corresponds to a term in the Kashaev limit of
 See [Table 2](#tbl:rho-k-graded-expansion-table2-data).
 
 The graded $\rho_K$ expansion supplies the Kashaev specialisation of the six-term theorem (`thm:knot-mass-formula-unified`) expressed at the GB-NF level. The constituent-mass piece is explicitly factored out via the Markov-multiplicativity rewriting.
-
-## Significance
-
-The graded expansion replaces the empirical leading-order ansatz of [atomic mass via GB-NF](#prop:atomic-mass-gb-nf) with a categorical derivation:
-
-- The leading-order piece acts as a theorem derived from Markov multiplicativity and free-constituent additivity.
-- The single-generator piece is a binding correction whose form is chosen to match the data ($0.18\%$ mean error); it is not derived.
-- The pair-generator and higher pieces remain open work. Finding the precise Wedderburn-coupling structure closes the six-term theorem's Kashaev limit at sub-percent accuracy.
-
-Combined with the Hecke branching trace decomposition (refined Sub-lemma 2.1, operator-valued $A^\lambda_{\mu, \nu}(I)$ interface), the bound atomic case receives full coverage. The leading-order and single-generator pieces give $\rho_K$ to $0.18\%$; the higher pieces and the interface contribution close the residual.
-
-## Production wiring
-
-The graded expansion has been computed end to end. The leading-order constituents $Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e$ are the muon-anchored nucleon and electron masses. No CODATA nucleon masses enter. The single-generator correction $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$ is evaluated at $50$ decimal places of precision, yielding $0.19\%$ mean error and $0.30\%$ maximum error across the published $Z = 1..10$ table. The pair-generator tier is reported as the open residual only. It is never added to the mass, as its naive log-additive form degrades accuracy (see Table 1). Per-generator volumes carry the known $H_3$-weight convention of the published table. The dynamic $H_{3A}$ re-weighting remains a separate open correction.
 
 ## References
 
