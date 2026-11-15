@@ -10,7 +10,7 @@ tags:
     - weak
 parent: qou-qs0e
 created_at: 2026-11-15T09:00:00Z
-updated_at: 2026-11-15T09:00:00Z
+updated_at: 2026-11-15T12:00:00Z
 ---
 
 Follow-up from qou-hlx6 (PR #7836). Corpus-grepped 2026-11-15 (beans, docs/audits,
@@ -59,3 +59,24 @@ Verdict: fixing e⁻ as the positive word σ₀σ₁σ₀ fixes the labelling re
 Content finding, reported and not edited: type-b-folding-cpt.md realises P as the braid
 mirror, which is chirality-blind at letter level (scope a). Owner decision D-H4 is framed in
 audit §9.
+
+## 2026-11-15 mechanism: the one-sided vertex is a non-letter, forced up to one bit
+
+Session: https://claude.ai/code/session_01Qmmkt6YA78a79y4cG3D5Pk (sibling of coordinator
+session_01M5GA1LmsEf8tSMxFjMkmnn). Lean `QOU/QuarkState/OneSidedWeakVertex.lean` (sorry-free,
+lean-direct exit 0, axioms standard). Audit: docs/audits/2026-11-15-one-sided-weak-vertex.md.
+
+- W_L := P+ s^-1 P+ + P- s P- = q^-1 J and W_R := P+ s P+ + P- s^-1 P- = q J, with
+  J = P+ - P- = (s + s^-1)/[2], J^2 = 1, J bar-invariant (oneSidedL_eq, oneSidedR_eq,
+  grading_sq, grading_flip). Neither is a letter (oneSidedL_not_letter).
+- Forced given the line (eq_of_eigen_action, any ambient algebra). The line is a real binary
+  choice: {W_L, W_R}, mutually inverse, swapped by bar (oneSidedL_flip). Scope (b) inside one
+  letter for "the letter picks L".
+- Observation (not identification): the nucleon word's ud letter s - h/2 = ([2]/2) J.
+- Q_beta (probe qbeta_one_sided_weak_vertex_probe.py, no witness, dashboard untouched): base
+  tr reproduced (-0.15419488504724); one-sided placements move |tr| by -83 % to +273 %,
+  choice-dependent; L vs R differ. Markov trace is not chirality-blind, the word is.
+- Ruled Q_beta trace is NOT bar-odd: f(q0) = -0.15419, f(1/q0) = +0.10929. "bar-odd sinh
+  partner" belongs to the retired z = 1 form.
+- Owner decisions D-W1 (take the bit from cone point u?) and D-W2 (scope the bar-odd label?)
+  framed in audit section 7. Stays in-progress: the L/R bit source is open.
