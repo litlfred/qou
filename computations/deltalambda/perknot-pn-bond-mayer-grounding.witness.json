@@ -12,8 +12,8 @@
     },
     {
       "name": "split_matches_target_under_5pct",
-      "detail": "|rel err| = 2.605% < 5% (pred 1.33145 vs 1.36707)",
-      "passed": true
+      "detail": "|rel err| = 28.33% (gate: < 5%; pred 1.75438 vs 1.36707)",
+      "passed": false
     },
     {
       "name": "physics_sign_correct",
@@ -21,32 +21,46 @@
       "passed": true
     }
   ],
-  "allPassed": true,
+  "allPassed": false,
   "data": {
     "discipline": "EXPLORATORY",
     "production_wired": false,
     "tr_M": {
-      "p": "1.065306238075878215688040411687927620547",
-      "n": "0.9232333051498377254657353027649112341638"
+      "p": "0.6293284022029219181653457467784859276002",
+      "n": "0.4751335171556822125060902326750057995584"
     },
-    "split_pred": "1.331453532235317247960653200610521107804",
+    "tr_M_source": {
+      "witness": "atomic-tr-m-mpfr-50dps-proton.witness.json",
+      "field": "results[atom].tr_M_at_q0_50dps",
+      "word": "borromean",
+      "convention": "D",
+      "q0Anchor": "proton",
+      "q0Value": "1.1099785827513808075916690956107688798744991218736",
+      "superseded_typed_literals_convention_C": {
+        "p": "1.065306238075878215688040411687927620546686279347",
+        "n": "0.92323330514983772546573530276491123416377319107628",
+        "split_pred_on_them": "1.3315",
+        "rel_err_pct_on_them": "-2.61"
+      }
+    },
+    "split_pred": "1.754378632162053774758004384760302263403",
     "structural_reduction": "(tr_p/tr_n)^2",
     "structural_reduction_exact": true,
     "target_mu_ratio": "1.367066471600697764024473361369026964559",
-    "rel_err_pct": "-2.60506",
-    "true_exponent": "2.1844122",
+    "rel_err_pct": "28.3316",
+    "true_exponent": "1.1124675",
     "model_exponent": 2,
     "categorical_home": "Mayer/ideal-gas normalization 1/(Z_a Z_b) of the pair correlation g2=tr(ab)/(tr(a)tr(b))-1; tr_M = Plancherel-weighted partition sum Sum_lambda y_lambda chi_lambda. b2 (pairwise) level of B/m_e = Sum_k b_k.",
     "physics": "tr_n<tr_p => w(nn)>w(pp) => nn binds more => 3He less bound; correct Coulomb/isospin sign (AME B(T)=8.482 > B(3He)=7.718).",
     "honest_bounds": "b2/pairwise object. Main's Ursell frame: pairwise b2 is the SATURATED ceiling; the OPEN magnitude gap is the CONNECTED b4. Grounds the p!=n isospin discriminator but is ORTHOGONAL to the extensivity magnitude closure (does not reproduce full non-monotone mu_ext; 4He not max).",
-    "anti_numerology_flag": "true exponent 2.184 (model exactly 2). With the stale mu targets this read 2.097 and was flagged as near 2.093 (4He super-pairwise excess); at the live targets that proximity no longer holds. Either way: COINCIDENCE, NOT fit (Ursell-doc guardrail, Rule-14 hidden DOF).",
-    "verdict": "GROUNDED (partial): the inverse-product weight is the Mayer b2 normalization, the T/3He split reduces exactly to (tr_p/tr_n)^2 with correct Coulomb sign and -2.605% magnitude. It is a categorically-grounded p!=n isospin discriminator, ORTHOGONAL to the open connected-b4 extensivity magnitude gap. Scope-(a); no wiring."
+    "anti_numerology_flag": "true exponent 1.112 (model exactly 2). On the retired convention-C traces it read 2.184 (live targets) and 2.097 (stale targets). Never fit it (Ursell-doc guardrail, Rule-14 hidden DOF).",
+    "verdict": "STRUCTURE GROUNDED, MAGNITUDE NOT REPRODUCED: the inverse-product weight is the Mayer b2 normalization and the T/3He split reduces exactly to (tr_p/tr_n)^2 with correct Coulomb sign; on the canonical traces (borromean, D, proton) its magnitude misses the target by 28.33%. The earlier -2.61% held only on retired convention-C traces. Scope-(a) negative for the magnitude; ORTHOGONAL to the open connected-b4 extensivity gap. No wiring; gate not widened."
   },
   "scriptFile": "perknot_pn_bond_mayer_grounding_probe.py",
-  "scriptHash": "8c0b5c38b7a2",
-  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
-  "commitSha": "25e7f84b95cb3d8470cc01fe61162a8777b48484",
-  "computedAt": "2026-10-13T17:39:33.590795+00:00",
+  "scriptHash": "e441dfafe0e2",
+  "scriptCommitSha": "2f45eb9c1c748ed222a7113bfee7ef1b4fd701d4",
+  "commitSha": "0b88920e3516ad7d6c2744ca4f7c49cad9a81029",
+  "computedAt": "2026-11-15T07:52:22.945814+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
