@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-10-11T07:50:29Z
+updated_at: 2026-11-15T12:20:00Z
 parent: qou-v2om
 ---
 
@@ -3391,3 +3391,38 @@ PR #7375. `mpmath` dps 60 + `Fraction`; no float anywhere.
 ### Cross-link (2026-10-11)
 
 the p-n interface factor's canonicity is conditional — `pn_averaging_unique` is sorry-free but carries `BarInvariant` as an instance hypothesis, which the canonical convention fails. Record: [`2026-10-11-atom-word-provenance.md`](../../docs/audits/2026-10-11-atom-word-provenance.md).
+
+## 2026-11-15 — salvage of three stalled PRs onto today's main (#7407, #6358, #7216)
+
+Owner pick on the qou-brng card (2026-11-15 11:33Z): "Both, salvage then Lean".
+The three PRs sat 2587–6621 commits behind main and two conflicted, so their
+files are carried onto one branch from main and each claim re-run there. The
+claims are the PRs' own, unchanged; this note records only the re-verification.
+
+- **#7407** — `computations/probes/bar_anomaly_of_the_two_amplitudes_probe.py`
+  (sympy, exact). Re-run on main: **12/12**. Survives as stated in its own
+  body: ω(1/ħ_q²) = q² matches the Ocneanu framing quantum a_N = q^N at N = 2
+  and no other N, plus the naming bridge between `markovZ_bar_weight` (q⁻⁴) and
+  `markov_framing_ratio_eq` (a² = q⁴). Its four retractions R1–R4 stand; every
+  cited corpus site still exists (now under `folio/`). Residual (ii) is NOT
+  closed by it.
+- **#6358** — `computations/probes/nf_bond_count_injectivity_probe.py` +
+  witness (exact, `Fraction`). Re-run on main: 222 configurations, **0
+  normal-form collisions** against 115 grade-shape collisions; 4/4 witness
+  assertions. Scope-(a) positive on the swept sample, not a proof of
+  injectivity. The committed witness is kept as authored (a re-run here
+  recorded a thinner environment block, so it was not substituted).
+- **#7216** — `QOU/Hecke/BondCutSymmetryFibreTower.lean` and
+  `…FibreTowerBound.lean`, moved from `content/` to `folio/` unchanged, plus
+  `computations/qbeta/qbeta_class_d_fibre_tower_probe.py`.
+  `lean-direct-cone.sh QOU.Hecke.BondCutSymmetryFibreTowerBound -B`: 4/4
+  modules rebuilt from source, exit 0; `#print axioms` on all 28 theorems:
+  ⊆ {propext, Classical.choice, Quot.sound}, no sorryAx. Probe: **28/28**.
+  Class D (fibre tower / higher q-order) is NOT an independent escape from the
+  bond-count caps (scope-(b) for the shape statement, by the ring-map
+  transfer); the SEMF inequality a_V < a_A enters the Lean only as a
+  hypothesis, never as a number.
+
+The bean stays OPEN. Next on this front: the γγ-vertex lemma recorded above
+(a vertex σᵢσᵢ₊₁⁻¹ touches ≤ 2 consecutive blocks, so LinearLayoutNoBulk
+extends to γγ-selected words).
