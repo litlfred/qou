@@ -81,3 +81,8 @@ sigma1 left line 2-dim (doublet), right 1-dim (singlet).
   (m=3,4): ALL PASS. On Ja ((3) sector) every gg vertex acts as 1.
 Open: 3-strand words mix L and R; which of Ja/Jb is n is unassigned (owner call); physical
 reading is scope (a).
+
+## 2026-11-15 19:2xZ — weak vertex on the n=4 J₄ doublet (PR #7957, commit 7d0faf867)
+- Lean (sorry-free): W(σ) = σ − h·P_L(σ). W on strands 1–2 commutes with J₄, so it never changes the J₄ flavour (weak_site1_comm, weak_site2_comm). On strand 4 the insertion between flavours is −h/[2]·eJ, and −h/[2]·fJ back (weak_site3_flips, weak_site3_flips_back). So a one-vertex n↔p step exists, and only on the 4th strand.
+- Probe computations/probes/n4_weak_vertex_decay_probe.py (pre-registered, symbolic q, ALL PASS): in the reading-3 passing words, 31/48 have a positive-σ₃ slot; all 44 slots change Ja→Jb; but in most of these words the free word already flips flavour, and 40/44 slots also leak to σ₁'s right line. Only 8 slots flip ONLY through the vertex; 2 of them are leak-free (V0.V1.Vb0.Vb1 and Vb0.Vb1.V0.V1, slots 7 and 3).
+- Still open: which of Ja/Jb is n (owner call); the right-line leak; vertex on inverse letters (not ruled).
