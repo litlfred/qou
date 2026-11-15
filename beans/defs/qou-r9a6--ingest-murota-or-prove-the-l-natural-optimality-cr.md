@@ -1,11 +1,11 @@
 ---
 # qou-r9a6
 title: 'Ingest Murota (or prove the L-natural optimality criterion): the Xbot arc''s one load-bearing citation resolves to nothing in the corpus'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-11T08:35:32Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-15T22:20:00Z
 parent: qou-3e6w
 ---
 
@@ -102,3 +102,11 @@ Status `in-progress` (not closed): the owner may still want (1).
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## 2026-11-15 (Round 44, PR #8044, commit `704fca1db0eda5cb6a4a400ce4fd936a3248f86e`) — `boxDiffDomain` midpoint closure proved
+
+Per owner ruling `Q-3E6W-2 = 1` (session `session_012EE90758AE4945AC814D43`), extended `folio/quantum-observable-universe/lean/QOU/BraidKnot/LNaturalOptimality.lean` (and wired it into `QOU/BraidKnot.lean`) with the midpoint-closure proof for the L♮-convex polyhedron of box + pairwise difference constraints (`boxDiffDomain lo hi c = {u | (∀ i, lo i ≤ u i ∧ u i ≤ hi i) ∧ ∀ i j, u i - u j ≤ c i j}`):
+- `ceilMid_mem_boxDiffDomain`, `floorMid_mem_boxDiffDomain`, `boxDiffDomain_midpoint_closed`
+- `global_of_local_boxDiffDomain`: specialises `global_of_local` to `boxDiffDomain lo hi c` with `hmidD` discharged automatically.
+- Verified with `lean -DautoImplicit=false -s 65536`: 0 errors, 0 warnings, 0 `sorry`, axioms `[propext, Classical.choice, Quot.sound]`.
+- Status kept at `in-progress` (not closed).

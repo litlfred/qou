@@ -1,13 +1,13 @@
 ---
 # qou-hok7
 title: 'Deuteron-wall resummation: classical Borel on q=1 period is the WRONG transform (substrate object is q-Gevrey) -> reopen; needs q-Borel of Z_n(q0)'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-10-10T08:52:56Z
+updated_at: 2026-11-15T22:20:00Z
 parent: qou-3e6w
 ---
 
@@ -2172,5 +2172,8 @@ is stated over, so the probe and the formalisation are testing the same thing."*
 mathematical claim stands, but `SupergradientCertificate.lean` **imports only Mathlib** and
 names `SearchCoercivity` in prose alone — so that correspondence is a reading, not a
 machine-checked fact.
+
+**2026-11-15 update (Round 44, PR #8044, commit `704fca1db0eda5cb6a4a400ce4fd936a3248f86e`):**
+Discharged the prose-only caveat above: `QOU/BraidKnot/SupergradientCertificate.lean` now imports `QOU.BraidKnot.SearchCoercivity` and proves `antitone_step_box_bound` (composing `SearchCoercivity.sub_le_mul_of_antitone_step` with `SupergradientCertificate.box_mul_sub_le`) and `sup_ghatBot_frame_certificate` (composing `SearchCoercivity.sum_ghatBot_frame_bound` and `SearchCoercivity.ghatBot` with `SupergradientCertificate.box_mul_sub_le`), sorry-free (`lean -DautoImplicit=false -s 65536` exit 0, 0 warnings, standard axioms `[propext, Classical.choice, Quot.sound]`).
 
 **Do not close this bean.**

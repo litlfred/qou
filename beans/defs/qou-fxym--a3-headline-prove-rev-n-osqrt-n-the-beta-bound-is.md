@@ -1,13 +1,13 @@
 ---
 # qou-fxym
 title: 'A3 (headline): prove REV_n = O(sqrt n) — the beta-bound is the weak step, not the (l,W) reduction'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-10T07:03:49Z
-updated_at: 2026-11-15T09:10:00Z
+updated_at: 2026-11-15T22:20:00Z
 parent: qou-3e6w
 ---
 
@@ -341,3 +341,12 @@ Its two lemmas that `main` lacked are ported into `StaircaseRowDeletedHook.lean`
 - `rowDeletedYD_card`: the cell count is `T_{k−r} + T_r + r(k−r+1)`.
 
 The ε-valued assembly is still not in Lean, in either derivation. This bean stays open.
+
+## 2026-11-15 (Round 44, PR #8044, commit `704fca1db0eda5cb6a4a400ce4fd936a3248f86e`) — 4 Lean assembly steps formalised
+
+Per owner ruling `Q-3E6W-2 = 1` (session `session_012EE90758AE4945AC814D43`), created `folio/quantum-observable-universe/lean/QOU/BraidKnot/RevBoundedExcessAssembly.lean` (wired into `QOU/BraidKnot.lean`) proving all four assembly steps over a generic ordered ring/field (sorry-free, 0 warnings, standard axioms `[propext, Classical.choice, Quot.sound]`, 0 findings on all 4 vacuity audits):
+- **(a) Tangent-line pair bound & `S₂` tail inequality:** `pair_sum_ge_of_tangent`, `even_tail_le_weighted_sum`, and `oneBody_sub_pair_le_of_tangent` — proves `L · E₂ − Σ_{k<L} (L − k) ε(2k) ≤ S₂` and bounds `(Σ_i oneBody_i) − (Σ_{k,i} pairTerm_{k,i})` by `L · A + S₂ + Σ_k slope_k · Δ_k(t)`.
+- **(b) Telescoping middle cancellation of `Δ_k(d)`:** `sum_shiftDiff_eq_Ico`, `sum_shiftDiff_eq_head_sub_tail`, and `abs_sum_shiftDiff_le` — telescopes `Σ_{i < L−k} (d_i − d_{i+k})` to the first `m_k = min(k, L − k)` coordinates minus the last `m_k` coordinates, cancelling the middle overlap.
+- **(c) Explicit rounded water-fill `q_i = max(w_i, c_i)` admissibility:** `roundedWaterfill`, `roundedWaterfill_monotone`, `shiftDiff_roundedWaterfill_nonpos`, `shiftDiff_le_of_roundedWaterfill`, `roundedWaterfill_ge_floor`, `roundedWaterfill_le_of_lt`, and `roundedWaterfill_pythagoras` — discharges both order hypotheses of `RoundedWaterfillExchange.rounded_pythagoras` from `w ≤ t` and `a ≤ c ≤ a + 1`.
+- **(d) Two-sided `O(1)` excess assembly:** `coord_tradeoff_sum_le`, `rev_upper_bound_assembly`, `rev_lower_bound_assembly`, and `rev_two_sided_excess_bracket` — combines `int_tradeoff` + `extra_rows_tradeoff` into `Ψ ≤ A√(2n) + K₂` and the row-deleted staircase decomposition (`rowDeleted_hookSum_ge` + `rem ≥ 0` + `F(n) ≤ C`) into `Ψ(λ_{k,r}) ≥ A√(2n) − K₃`, yielding `−K₃ ≤ M_n − A√(2n) ≤ K₂`.
+- **Bean stays `in-progress` (not closed):** convergence `e_n → κ` and concrete series evaluation past the archimedean wall remain open.
