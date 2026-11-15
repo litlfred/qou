@@ -300,6 +300,24 @@ class KappaZeroImpliesSelfConjugate where
     ∀ (lam : YoungDiagram) [Saturated lam],
       kappa lam = 0 → isSelfConjugate lam
 
+/-- **`KappaZeroImpliesSelfConjugate` has no instance** (2026-11-15).
+    `Saturated` is an empty `Prop` class, so `⟨⟩ : Saturated λ` exists for
+    every `λ`, and the field then claims every zero-sum content multiset is
+    symmetric. The abstract diagram with contents `{1, 2, -3}` refutes it.
+    (A genuine Young diagram does too: `λ = (6,3,2,2,2)` has `κ = 0` and
+    conjugate `(5,5,2,1,1,1)`.) So `SaturatedShellConjecture`, which extends
+    this class, is unsatisfiable as stated, and results conditional on it are
+    vacuous until `Saturated` carries real content. -/
+theorem not_kappaZeroImpliesSelfConjugate : ¬ KappaZeroImpliesSelfConjugate := by
+  intro h
+  let lam : YoungDiagram := ⟨3, {1, 2, -3}, rfl⟩
+  haveI : Saturated lam := ⟨⟩
+  have hk : kappa lam = 0 := by decide
+  have hs := h.kappa_zero_imp_self_conjugate lam hk
+  have hc := congrArg YoungDiagram.contents hs
+  simp only [conjugate, lam] at hc
+  revert hc; decide
+
 /-- Convenience iff packaging both directions: forward is the
     proved theorem, reverse is the typeclass field. -/
 -- Ref: [manuscript] conj:categorical-neutrality-saturated-shells

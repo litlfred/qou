@@ -141,7 +141,17 @@ theorem markovTraceRecursiveReducer_terminates {R : Type*} [Inhabited R] :
     proof structure mirrors the cyclic-peeling argument; see the
     `.md` sibling. -/
 
-/-- Defining axioms of a genuine Markov trace `mT : ℕ → List ℤ → R` on
+/-- **Warning (2026-11-15): these axioms do NOT describe a genuine Markov
+    trace.** `strip` and `stable` are quantified over every word, with no
+    condition that `w` lives on the lower strands. Together they force
+    `mT n w = z ^ |w|` for every word of non-negative letters
+    (`IsMarkovTrace.eq_pow_length`). A genuine Markov trace on `H_n(q)` has
+    `tr(σ₁²) = h z + 1 ≠ z²`, so no genuine trace satisfies this structure, and
+    the disjoint-product law proved below is the product law of `z ^ |w|`.
+    Repair needs support conditions on `strip` and `stable`, plus the Hecke
+    relations, and is tracked in bean `qou-n2un`.
+
+    Original description: axioms of a Markov trace `mT : ℕ → List ℤ → R` on
     braid words, with strand-shift embedding `embedRight` and
     stabilisation factor `z`.  A `(mT, embedRight, z)` triple satisfying
     these is what the categorical construction produces (`tr_M` in
@@ -296,6 +306,15 @@ theorem append_cost (h : IsMarkovTrace mT embedRight z) (α : List ℤ) :
     rw [← List.append_assoc, h.peel ha (α ++ t), ih hrest,
       List.length_append, List.length_singleton, pow_succ]
     ring
+
+/-- **The structure collapses to word length.** Any `IsMarkovTrace` gives
+    `mT n w = z ^ |w|` on words of non-negative letters. In particular
+    `mT n [0, 0] = z²`, whereas a genuine Markov trace has
+    `tr(σ₁²) = h z + 1`. -/
+theorem eq_pow_length (h : IsMarkovTrace mT embedRight z) (n : ℕ) (w : List ℤ)
+    (hw : ∀ c ∈ w, 0 ≤ c) : mT n w = z ^ w.length := by
+  rw [h.ambient_irrelevant n w]
+  simpa [h.normalised 0] using h.append_cost [] w hw
 
 end IsMarkovTrace
 
