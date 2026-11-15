@@ -20,12 +20,11 @@ export default proposition({
       kind: "note",
       date: "2026-08-08",
       body:
-        "**§7c base-ring note (archimedean specialisation).** " +
-        "The Lean module `lean/QOU/Interactions/confinementUniversality.lean` " +
-        "quantifies over photon polarisation coefficients `(φ₀, φ₁, φ₀₁)`, which are continuous physical parameters. " +
-        "The `ℝ` is therefore forced by the statement itself rather than " +
-        "chosen, so the block sits on the archimedean side of the §7c wall " +
-        "by construction.",
+        "**§7c base-ring note (superseded 2026-11-15).** " +
+        "This note said the `ℝ` was forced by the statement. It is not: the statement " +
+        "and proof use no structure of the coefficient type. The Lean context is now " +
+        "parametrised by the coefficient type `K` and the NF type `M`, and `K = ℂ` " +
+        "covers circular polarisations (bean `qou-qs2u`, PR #7825).",
     },
   ],
 
