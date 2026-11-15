@@ -512,6 +512,7 @@ import QOU.SchurWeyl.SeminormalParamAnchorReal
 import QOU.SchurWeyl.HoefsmitRepGeneral
 import QOU.SchurWeyl.QJucysMurphy
 import QOU.SchurWeyl.QJucysMurphyEigen
+import QOU.SchurWeyl.QSchurMoves
 import QOU.SchurWeyl.QSchurUpperBound
 import QOU.SchurWeyl.AxialDistanceBound
 import QOU.SchurWeyl.MatRepEquiv
