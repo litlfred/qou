@@ -1,0 +1,1 @@
+The [fusion identity](#prop:meson-qcg-fusion-identity) is used as the categorical foundation for the meson mass-squared ratio $m_K^2 / m_\pi^2$. Since a meson is a 2-body state, its mass-squared is a bilinear quantity evaluated on the pair. The comparison of this ratio with measurement is made in [the meson ratio remark](#rem:meson-em-sinh-ratio-reading).
