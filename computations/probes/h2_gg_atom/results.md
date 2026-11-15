@@ -70,3 +70,24 @@ probe does not see it.
 Scope (a): this family (Vᵐ, m ≤ 7), these two corpus electrons, the owner-option-1 cell, convention
 D at the proton pin. Flavour cannot be represented by a three-strand γγ nucleon; that needs more
 strands or a non-γγ letter.
+
+## Derivation of the level-6 trefoil failure (added 2026-11-15, owner request)
+
+Checked by [`level6_trefoil_derivation.py`](level6_trefoil_derivation.py) (sympy over Q(q), 7/7 checks).
+Scope: the bare H₂ word, nucleon V³, owner option 1 (no p–e or junction letter).
+
+1. Atom 1 is p ⊗ e on strands 1–6. Closing strands 7–12 multiplies by the trace of atom 2, which
+   is positive, so the sign at level 6 is that of χ_(3,3)(p ⊗ e).
+2. (3,3) restricted to H₃ ⊗ H₃ is (3)⊠(3) ⊕ (2,1)⊠(2,1) (dimensions 1 + 2·2 = 5), so
+   χ_(3,3)(p ⊗ e) = χ_(3)(p) χ_(3)(e) + χ_(2,1)(p) χ_(2,1)(e).
+3. In the seminormal (2,1) representation σ₀ = diag(q, −q⁻¹) and σ₁ has diagonal
+   (−q⁻²/[2], q²/[2]), so χ_(2,1)(σ₀ᵏσ₁) = (−q^(k−2) + (−1)ᵏ q^(2−k))/[2]. Hence
+   χ_(2,1)(σ₀³σ₁) = −1 for every q, and χ_(2,1)(σ₀σ₁σ₀) = 0 (conjugate to k = 2).
+4. For p = V³: χ_(3)(V³) = 1 and χ_(2,1)(V³) = −(q⁴−q²+1)(q⁸−2q⁶−2q²+1)/q⁶ ≈ 1.99419 at q₀.
+5. Trefoil: χ_(3,3) ∝ q⁴ − χ_(2,1)(V³) ≈ 1.51795 − 1.99419 < 0. T_w0: χ_(3,3) ∝ q³ > 0.
+   V³ electron: χ_(3,3) ∝ 1 + χ_(2,1)(V³)² > 0.
+
+Predicted (3,3)/(6) = −0.31373335326276292589; the witness gives the same to 1e-18.
+The bracket is negative for 1 ≤ q < 1.18313, so the failure is not specific to q₀.
+The T_w0 pass rests on its (2,1) character vanishing; its closure is a Hopf link, not a trefoil.
+Not derived: words with a bond letter inside atom 1, where step 1's tensor split does not apply.

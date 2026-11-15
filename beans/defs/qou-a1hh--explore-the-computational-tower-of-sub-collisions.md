@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-12T18:48:36Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-15T13:45:00Z
 ---
 
 Owner 2026-10-12: explore two types of towers. Parent context: qou-jfx8 (segment collision datum, PR #7741). Prior-work grep in progress.
@@ -74,3 +74,7 @@ Pre-registered (97dacc709d3), then computed (4901ed2c59b). Nucleon block Vᵐ, m
 ## 2026-11-15 — γγ electron (owner: "Yes, test a γγ electron"), PR #7741 `h2_gg_electron/`
 
 Pre-registered e1e22ebfb1d. Nucleon V³/V⁶, electron V^k, k = 0…7, 224 rows. Bare H₂ passes iff k ∈ {0, 3, 6}; then the passing bonds are exactly V³ at s = 4, 5 (ratio ≈ 0.9984). Under the one rule on three strands nucleon, electron and bond all come from {V³, V⁶} and the bond is V³; nucleon and electron are not distinguished by the grammar. Open: which power is the electron (owner). Scope (a).
+
+## 2026-11-15 — level-6 trefoil failure derived (owner request)
+
+Closed form, PR #7741 `h2_gg_atom/level6_trefoil_derivation.py` (7/7). χ_(3,3)(p⊗e) = χ_(3)(p)χ_(3)(e) + χ_(2,1)(p)χ_(2,1)(e); χ_(2,1)(σ₀³σ₁) = −1 exactly, χ_(2,1)(σ₀σ₁σ₀) = 0, χ_(2,1)(V³) ≈ 1.99419 > q⁴ ≈ 1.51795 ⇒ negative; matches witness to 1e-18. Negative for 1 ≤ q < 1.18313. The T_w0 "pass" holds only because its (2,1) character vanishes (Hopf link). Bare word only.
