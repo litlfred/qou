@@ -143,7 +143,7 @@ async function resolveLean(): Promise<string | undefined> {
  * indistinguishable from the file having changed.
  */
 async function statementHash(path: string): Promise<string | undefined> {
-  const sig = join(REPO_ROOT, "folio-assistant/cat-harness-tools/pipeline/lean-signature.ts");
+  const sig = join(REPO_ROOT, "folio-assistant/folio-assistant-sci/pipeline/lean-signature.ts");
   if (!existsSync(sig)) return undefined;
   try {
     const { leanStatementHash } = await import(sig);
