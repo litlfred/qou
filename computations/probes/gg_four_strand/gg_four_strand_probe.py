@@ -14,6 +14,8 @@ from pathlib import Path
 
 import mpmath as mp
 
+mp.mp.dps = max(mp.mp.dps, 40)  # stated here: the probe does not rely on an import side effect two modules away
+
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent / "h2_gg_atom"))
 import h2_gg_atom_probe as ga  # noqa: E402
