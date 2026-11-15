@@ -45,8 +45,7 @@ positive imaginary, near the cusp $\tau \to 0$), the $S$-transform sends
 $\tau_0 \mapsto -1/\tau_0 \approx +60.2\,i$ — large positive imaginary
 part, i.e. nome $\tilde q \to 0$, the root-of-unity / TQFT limit. (The
 choice of $q_0^{-1}$ over $q_0$ is the bar-image point of the conjecture
-statement above; witness
-[`computations/probes/d14-theta-bar-side.witness.json`](../../../computations/probes/d14-theta-bar-side.witness.json).)
+statement above.)
 
 This gives the framework an **explicit categorical handle** on the
 small-$q_0$ $\leftrightarrow$ root-of-unity duality.

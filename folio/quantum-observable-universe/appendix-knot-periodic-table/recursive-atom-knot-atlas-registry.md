@@ -227,11 +227,10 @@ Each per-isotope record lists the knot operators used to build its canonical bra
 where $h = q_0 - q_0^{-1}$ and $\delta$ is the substrate flavour split of
 [`prop:flavor-split-substrate`](#prop:flavor-split-substrate).
 
-The `pn` row previously read $\sigma + (-h/2)\cdot\mathbf{1}$ with wire-format
-`averaged`. That is the $\delta = 0$ form, and it is **not** what
-`atom_canonical_crossings` emits at generator $3k+2$. Both `ctype`s are real and
-the producer emits both, but at different places: `averaged` is the intra-nucleon
-quark crossing, and it never appears at $3k+2$. Verified against the producer for
+The $\delta = 0$ form $\sigma + (-h/2)\cdot\mathbf{1}$ (wire-format
+`averaged`) is **not** the `pn` interface. Both `ctype`s occur in
+`atom_canonical_crossings`, but at different places: `averaged` is the
+intra-nucleon quark crossing, and it never appears at $3k+2$. Verified against the producer for
 $\mathrm{D}$, ${}^{3}\mathrm{He}$ and ${}^{4}\mathrm{He}$ — every generator
 $3k+2$ returns `sigma` (p-p), `sigma_inv` (n-n) or `averaged_weighted` (p-n), and
 never `averaged`. The two forms differ by $h\delta/4 \approx 7.190 \times
@@ -258,12 +257,11 @@ For an atom with mass number $A$, we build the canonical braid word in $B_{3A}$ 
 
 ### Layer-1 canonical $|\mathrm{tr}_M(q_0)|$ table
 
-> **The binding column is census-assigned, not derived (2026-09-05).** Each
-> atom's knot is selected so its volume reproduces $B_\mathrm{AME}/m_e$, and the
-> $^4$He row is $4\times$ the $^3$He row using the same $8G$. The `± 0.0000 %`
-> is the AME *experimental* uncertainty, not an error bar on the prediction.
-> Retired as a live binding route; see
-> `docs/audits/2026-09-05-binding-route-consolidation-no-knot-selection.md`.
+**The binding column is census-assigned, not derived.** Each atom's knot is
+selected so its volume reproduces $B_\mathrm{AME}/m_e$, and the $^4$He row is
+$4\times$ the $^3$He row using the same $8G$. The `± 0.0000 %` is the AME
+*experimental* uncertainty, not an error bar on a prediction. This column is
+not a binding prediction.
 
 <!-- AUTO:canonical-tr-m-table BEGIN -->
 
