@@ -1,7 +1,8 @@
 ## Proof
 
 The four expressions are equal as rational functions of $q$ over any
-field with $q \ne 0$. Starting from the leftmost, expand
+commutative ring in which $q$ and $2$ are invertible (the factor $\tfrac12$
+needs $2$ invertible, so characteristic $2$ is excluded). Starting from the leftmost, expand
 $\hbar_q^2 = (1 - q^{-1})^2 = 1 - 2 q^{-1} + q^{-2}$, so
 
 $$
