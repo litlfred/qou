@@ -38,6 +38,7 @@ canonical interface requires.  For canonical |tr_M(deuteron)|, use:
 
 which uses tr_M_via_wenzl_bridge_mpfr.py + atom_braid_word_3A and
 gives |tr_M(β_D)| = 0.388286471547713278511065922316 (canonical).
+[2026-11-15: that figure is the superseded grouped/convention-C value; canonical deuteron is the borromean/D witness row 0.151968339204231607… at the proton pin (atomic-tr-m-mpfr-50dps-proton.witness.json; tracker #7735 item K).]
 
 Disjoint multiplicativity tr_M(α ⊗ β) = tr_M(α) · tr_M(β) is **only
 valid for genuine disjoint-cluster braids** (e.g. an unknot operator
@@ -107,6 +108,8 @@ ATOMS = {
     # ── deuteron REMOVED (PR #564, 2026-05-08) ──────────────────
     # The disjoint H_3 ⊗ H_3 word σ₁⁷σ₂⁴σ₄⁶σ₅⁴σ₄⁻¹ (22 crossings)
     # is empirically wrong — it does not reproduce the canonical
+    # [0.388286... is the superseded grouped/convention-C value; the
+    #  canonical borromean/D row is 0.151968339204… (tracker #7735 item K)]
     # |tr_M(β_D)| = 0.388286... value pinned by the Wenzl-bridge
     # path in atomic-tr-m-mpfr-50dps.witness.json.  The canonical
     # word β_p · I · β_n = atom_braid_word_3A(1, 1) (23 crossings,
@@ -186,6 +189,9 @@ def main() -> int:
     # has an interface crossing σ_3 that breaks multiplicativity.  The
     # canonical |tr_M(β_D)| value (atomic-tr-m-mpfr-50dps.witness.json)
     # equals 0.388286..., which is NOT |tr_M(p)|·|tr_M(n)| ≈ 0.984.
+    # [0.388286... is the superseded grouped/convention-C value; the canonical
+    #  borromean/D row is 0.151968339204… (tracker #7735 item K). The
+    #  `reason` string below predates that and is left as recorded.]
     # See `hecke-branching-trace-decomposition.md` for the operator-
     # valued A^λ_{μ,ν}(I) decomposition that replaces disjoint product.
     checks: dict = {
