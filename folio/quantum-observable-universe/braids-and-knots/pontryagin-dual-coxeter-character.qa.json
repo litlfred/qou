@@ -79,6 +79,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "47c52b8edf2e",
+          "ts": "3def03d54601",
+          "lean": "aa5bfe646ac2",
+          "lean_statement": "1fc7d53f3e05"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:27:33.624Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "minor",
+        "evidence": "PontryaginDualCoxeterCharacter.holds (line 119) encodes two auxiliary facts: characters ZMod 2 ->+ ZMod 2 are determined by their value at 1, and sign(swap 0 1) = -1. It encodes neither the abelianisation isomorphism S_n^ab = Z/2 nor Hom(Z/2, C^x) = Z/2 as stated in the md."
       }
     ],
     "proof-statement-integrity": [
@@ -2123,6 +2141,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-15T21:27:33.624Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
