@@ -8,7 +8,7 @@ For each irreducible representation $V_\lambda$ of $U_q(\mathfrak{sl}_n)$ (and h
   T_1 = [[1,2],[3]]  --(\tilde{f}_1)-->  T_2 = [[1,3],[2]]
 ```
 
-This single edge has weight $b_\lambda = b$. The $N=1$ eigenphase shift $-b\,\hbar_q^2/2$ equals this matrix element multiplied by $\hbar_q^2/2$. The same coupling at the second rung provides the proved factor $(1 - b^2\hbar_q^4)$. This construction fixes the data used downstream.
+This single edge has weight $b_\lambda = b$. The $N=1$ eigenphase shift $-b\,\hbar_q^2/2$ equals this matrix element multiplied by $\hbar_q^2/2$. The same coupling enters the second-rung factor $(1 - b^2\hbar_q^4)$, which is taken as given here rather than derived. This construction fixes the data used downstream.
 
 ### 2. Jucys–Murphy elements (diagonal eigenphase envelope)
 
@@ -24,7 +24,7 @@ At $q = \zeta_N$, a primitive $N$-th root of unity, the Habiro ring evaluation (
 
 ## Synthesis
 
-The Kashiwara coupling fixes the proved data (the $N=1$ envelope $b$ and the second rung $c_2 = -1$). Habiro provides the Ohtsuki-invariant reading and the canonical home of the recursion. Jucys–Murphy supplies the complementary diagonal eigenphase envelope. Macdonald places the higher rungs in the $(q, q^2)$ inner product. The rungs obey a single proved recursion with an open kernel.
+The Kashiwara coupling fixes the $N=1$ envelope $b$ and enters the second-rung factor, whose ladder reading is $c_2 = -1$. Habiro provides the Ohtsuki-invariant reading and the canonical home of the recursion. Jucys–Murphy supplies the complementary diagonal eigenphase envelope. Macdonald places the higher rungs in the $(q, q^2)$ inner product. The rungs are conjectured to obey a single recursion whose kernel is open.
 
 ```
                   Kashiwara crystal (coupling b → N=1, c_2)
