@@ -1,12 +1,12 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "thm:mass-energy-equivalence",
+  interprets: "def:mass-energy",
   label: "rem:mass-energy-equivalence-interpretation",
   title:
-    "Regime behaviour, the electron consistency check, and pair creation",
+    "Regime behaviour, the electron, and pair creation",
   uses: [
-    "thm:mass-energy-equivalence",
+    "def:mass-energy",
     "cor:mass-identity-C",
     "rem:mass-energy-electron-check",
     "rem:mass-energy-pair-creation",

@@ -26,7 +26,7 @@ move `γ` from above `β_𝔋` to below it.
        costs `|q − q⁻¹|` in Skein units, weighted by `|c_w|`);
     2. `mass_energy_equiv` — mass–energy equivalence `m_𝔋 = E_𝔋 · (q − 1)²`
        (the factor `(q − 1)² = 1/c_q²` converts Skein/spatial units to
-       mass/temporal units), from [`thm:mass-energy-equivalence`].
+       mass/temporal units), from [`def:mass-energy`].
 
   The headline equation is obtained by substitution + `ring`; it is
   **not** a field of the context, so the projection-vacuity test is not

@@ -153,6 +153,7 @@
 | [def:lp-confined](#def:lp-confined) | LP-confined element of $H_3(q)$ | Ch 10 | `qou:QOU.ParticleInteractions.LPConfined` |
 | [def:lp-stable](#def:lp-stable) | LP-stable element of $H_3(q)$ | Ch 10 | `qou:QOU.ParticleInteractions.LPStable` |
 | [def:markov-axiom-recursive-ascent](#def:markov-axiom-recursive-ascent) | Markov-axiom recursive ascent for atomic $\mathrm{tr}_M$ | Ch 12 | `qou:QOU.Interactions.markov_peel` |
+| [def:mass-energy](#def:mass-energy) | Energy of a braid class ($\mathfrak{E} = \mathfrak{m} \cdot c_q^2$) | Ch 20 | `qou:QOU.Information.energy` |
 | [def:mass-identity](#def:mass-identity) | Mass (categorical trace) | Ch 7 | `qou:QOU.Torsion.MassIdentity` |
 | [def:levi-form-defect](#def:levi-form-defect) | Matter as Frobenius failure via the Levi form | Ch 6 | `qou:QOU.AlgebraicSubstrate.LeviFormDefect` |
 | [def:maximal-ideal-defect](#def:maximal-ideal-defect) | Maximal ideal at the unit coordinate | Ch 6 | `qou:QOU.AlgebraicSubstrate.MaximalIdealDefect` |
@@ -301,7 +302,6 @@
 | [thm:hoefsmit-ew-cell-content](#thm:hoefsmit-ew-cell-content) | Hoefsmit cell-content identification of the EW triplet inside $\mathrm{End}_R(V^{\otimes 6})$ (categorical existence) | Ch 12 | `qou:QOU.IwahoriHecke.Hoefsmit.HoefsmitSeminormalBasis` |
 | [thm:kummer-bloch-wigner-identity](#thm:kummer-bloch-wigner-identity) | Kummer's identity: $D(z) = \mathrm{Im}\,\mathrm{Li}_2(z) + \log\lVert z\rVert\,\arg(1-z)$ on the upper half plane | Ch 12 | `qou:QOU.Knot.KummerRadial.kummer` |
 | [thm:hyperreal-limit-transfer](#thm:hyperreal-limit-transfer) | Limit transfer at $\mathbb{R}^*$: $\mathrm{st}$ computes limits, and the surreal carrier is not needed | Ch 25 | `qou:QOU.AppendixSurreals.HyperrealTransfer.st_ofSeq_of_tendstoReal` |
-| [thm:mass-energy-equivalence](#thm:mass-energy-equivalence) | Mass--energy equivalence ($E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$) | Ch 20 | `qou:QOU.Information.massEnergyEquivalence` |
 | [thm:hyperelliptic-z5-classification](#thm:hyperelliptic-z5-classification) | Minimal-genus hyperelliptic curves with faithful $\mathbb{Z}_5$-symmetry | Ch 10 | `qou:QOU.HyperellipticQuintic.minimal_z5_classification` |
 | [thm:motivic-perpetual-obstruction](#thm:motivic-perpetual-obstruction) | Motivic perpetual obstruction: $\chi^{\mathrm{mot}}_A$ is non-trivial at almost every finite place when $\chi(A) \neq 0$ | Ch 4 | `qou:QOU.LiftingDescent.motivic_perpetual_obstruction_frobenius` |
 | [thm:observability-q-independent](#thm:observability-q-independent) | Observability is a base property: $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ is independent of the substrate section | Ch 18 | `qou:QOU.FluidDynamics.observability_q_independent` |

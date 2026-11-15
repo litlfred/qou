@@ -2,7 +2,7 @@
 *An **embeddable knot operator** is a knot operator $K$ together with an embedding of its braid into the ambient $3$-manifold, carrying an **overlap weight** $w \in (0, 1]$ determined by the embedding direction relative to the bond axis. Its **binding contribution** is*
 
 $$
-  \mathfrak{E}(K) = \mathfrak{E}_0(K)\, w ,
+  \mathfrak{E}_{\mathrm{bind}}(K) = \mathfrak{E}_0(K)\, w ,
 $$
 
 *where $\mathfrak{E}_0(K)$ is the un-embedded channel binding.*
@@ -21,7 +21,7 @@ $$
 *The binding of a composite is the overlap-weighted sum*
 
 $$
-  \mathfrak{E}\Bigl(\textstyle\bigcup_i K_i\Bigr) = \sum_i \mathfrak{E}_0(K_i)\, w_i .
+  \mathfrak{E}_{\mathrm{bind}}\Bigl(\textstyle\bigcup_i K_i\Bigr) = \sum_i \mathfrak{E}_0(K_i)\, w_i .
 $$
 
 *An order-$k$ bond is one axial $\sigma$ channel and $k-1$ transverse $\pi$ channels, with total binding $\mathfrak{E}_0\,\bigl(1 + (k-1)\,w_\perp\bigr)$.*
