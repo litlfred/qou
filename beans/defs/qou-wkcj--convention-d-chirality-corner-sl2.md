@@ -30,3 +30,12 @@ tau(sigma)=z_D alone). The sl2-carrying parts of the two corners tend to the sam
 bar-invariant in size and equals 3 at q = 1, so it belongs to convention D, not to |q|>1.
 Remark rem:convention-d-chirality-side added in mass-theory (interprets
 prop:markov-trace-frobenius-selection).
+
+## 2026-11-15 handoff (stand-down, coordinator thread session_01Qmmkt6dCyH72NJwcLGW2sF)
+
+Done on draft PR #7867 (branch claude/conventionD-chirality-corner-sl2-2026-11-15):
+remark rem:convention-d-chirality-side; Lean ConventionDLineWeights.lean (verified, lean-direct
+exit 0, no sorryAx); probes corner_sl2_weighted_persistence_probe.py and
+corner_sl2_parity_probe.py (all pass); audit §7 and §8.
+Open: the remark is NOT machine-validated (folio-assistant clone fetch timed out; manual render
+battery only). Stays in-progress: the chirality identification (scope a) is open.
