@@ -63,3 +63,31 @@ was registered on it.
 **Reading.** Scope (a): within this grammar, every site-pattern word survives the J₄ projection, and the
 six orientation-sensitive exceptions do not. So at m = 6, "passes reading 3 in every flavour sector"
 coincides with "passes by site pattern". Nothing is selected or adopted.
+
+## Exploration (post hoc, not pre-registered): reading 3 at m ≤ 6 tracks the pure-braid condition
+
+`gg_four_strand_pure_braid_check.py`. A γγ vertex V_s or V̄_s maps to the same permutation, the 3-cycle
+s_{s+1}s_{s+2}, so a word's permutation forgets orientation. Against the reading-3 results above:
+
+| m | pure & pass | pure & fail | not pure & pass | not pure & fail |
+|---|---|---|---|---|
+| 1, 2, 5 | 0 | 0 | 0 | all |
+| 3 | 16 | 0 | 0 | 48 |
+| 4 | 32 | 0 | 0 | 224 |
+| 6 | 512 | 0 | **6** | 3578 |
+
+Every pure γγ word with m ≤ 6 passes. The only non-pure passing words are the six mixed-site words, and
+those are exactly the ones that fail the J₄-projected reading (Amendment 2). So at m ≤ 6:
+**J₄-projected reading 3 holds ⟺ the word is a pure braid.**
+
+Why this is expected near q = 1 (standard character theory, not yet formalised): at q = 1, H₄ becomes the
+group algebra of S₄ and a γγ word becomes its permutation π, an even permutation. Under convention D only the
+shapes (4), (3,1), (2,2) carry weight. χ_(2,2) = −1 on 3-cycles and χ_(3,1) = −1 on double transpositions,
+so at q = 1 reading 3 passes iff π = id, where every χ_λ = dim λ > 0. Lower levels see π restricted, with the
+same conclusion. So the 448 inequalities at q₀ ≈ 1.11 are perturbations of strict inequalities
+χ_λ = dim λ > 0 at q = 1. The projected diagonals d_a, d_b, d_R all sit near 1 = tr(projector), as they
+should. The six exceptions are non-pure words that the deformation pushes over the line. The same argument
+explains the 3-strand result (V^m pure iff 3 | m) and the orientation blindness.
+
+Open: a uniform bound that makes this a theorem ("pure γγ words of length m pass for 1 ≤ q ≤ 1 + c/m"),
+and whether pure ⟺ pass persists for m > 6.
