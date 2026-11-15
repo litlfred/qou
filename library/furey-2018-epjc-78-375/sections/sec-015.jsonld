@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/furey-2018-epjc-78-375/sections/sec-015",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Minimal left ideals in the matrix formalism",
+  "pageStart": 7,
+  "pageEnd": 7,
+  "contains": [
+    "library/furey-2018-epjc-78-375/blocks/prose-sec-015",
+    "library/furey-2018-epjc-78-375/blocks/recommendation-sec-015-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/furey-2018-epjc-78-375",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/furey-2018-epjc-78-375",
+  "provenance": "ingested"
+}

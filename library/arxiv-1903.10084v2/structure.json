@@ -1,0 +1,280 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1903.10084v2",
+ "source": {
+  "file": "1903.10084.pdf",
+  "sha256": "cc06a452ee7129a70cd70328183510b6caf44f61b5b056fe501bb7d52c10d506",
+  "bytes": 250926,
+  "pages": 7,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T10:16:12Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1903.10084",
+   "version": "2",
+   "primary_class": "hep-ph",
+   "stamp_date": "9 Jul 2019"
+  },
+  "doi": null,
+  "title": "Probing the linear polarization of photons in ultraperipheral heavy ion collisions",
+  "authors_raw": "Cong Li,1 Jian Zhou,1 and Ya-jin Zhou1",
+  "title_lines": [
+   "Probing the linear polarization of photons in ultraperipheral heavy ion collisions"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20211116225313-05'00'"
+  },
+  "title_raw": "Probing the linear polarization of photons in ultraperipheral heavy ion collisions",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Probing the linear polarization of photons in ultraperipheral heavy ion collisions",
+   "outline": "I Introduction",
+   "text": "Probing the linear polarization of photons in ultraperipheral heavy ion collisions",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "I Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "II Azimuthal asymmetries in di-lepton production in UPCs",
+   "page": 2,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
+  },
+  {
+   "level": 1,
+   "title": "III Conclusions",
+   "page": 4,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 6,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 6,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Estimates of the cos 2\u03c6 asymmetry as the function of q\u22a5for the di\ufb00erent muon pair mass regions 0.4-0.76 GeV, 0.76-1.2 GeV and 1.2-2.6 GeV at \u221a",
+   "page": 4,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Estimates of the cos 4\u03c6 asymmetry as the function of q\u22a5for the di\ufb00erent di-electron invariant mass regions 0.4-0.76 GeV, 0.76-1.2 GeV and 1.2-2.6 Gev at \u221a",
+   "page": 5,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Estimates of the cos 4\u03c6 asymmetry as the function of q\u22a5for the di\ufb00erent di-muon mass regions 0.4-0.76 GeV, 0.76-1.2 GeV and 1.2-2.6 GeV at \u221a",
+   "page": 5,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Estimates of the cos 4\u03c6 asymmetry as the function of q\u22a5for the di-muon mass region 4-45 GeV at \u221a",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 664,
+   "n_words": 90,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-i-introduction",
+   "number": null,
+   "title": "I Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 4481,
+   "n_words": 666,
+   "label_start": null,
+   "label_end": "2"
+  },
+  {
+   "id": "sec-001-ii-azimuthal-asymmetries-in-di-lepton-production",
+   "number": null,
+   "title": "II Azimuthal asymmetries in di-lepton production in UPCs",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 6,
+   "n_chars": 11744,
+   "n_words": 2019,
+   "label_start": "2",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-002-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 4230,
+   "n_words": 637,
+   "label_start": "6",
+   "label_end": "7"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 5,
+  "toc_inferred_entries": 0,
+  "figure_entries": 4,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 4,
+  "chars_total": 21119,
+  "furniture_lines_stripped": 0
+ }
+}
