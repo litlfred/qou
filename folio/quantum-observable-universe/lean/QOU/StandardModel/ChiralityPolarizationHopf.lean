@@ -132,15 +132,17 @@ theorem hopf_eq_ray (h2 : ∀ x : R, 2 * x = 0 → x = 0) {p p' : BringCone R}
   have hK := congrArg (fun x : BringCone R => x.imK) hcomm
   simp [unitI] at hJ hK
   refine ⟨h2 _ ?_, h2 _ ?_, ?_⟩
-  · linear_combination -hJ
   · linear_combination hK
+  · linear_combination -hJ
   · rw [hw, ← mul_assoc, hps, one_mul]
+
+/-- A quaternion `c j + d k`, orthogonal to the complex line `ℂ = ℝ + ℝ i`. -/
+def orthW (c d : R) : BringCone R := ⟨0, 0, c, d⟩
 
 /-- For `w = c j + d k`, `w i w̄ = −(c² + d²) i`. -/
 theorem orth_conj_unitI (c d : R) :
-    (⟨0, 0, c, d⟩ : BringCone R) * unitI * star (⟨0, 0, c, d⟩ : BringCone R)
-      = -((c * c + d * d) • unitI) := by
-  ext <;> simp [unitI] <;> ring
+    orthW c d * unitI * star (orthW c d) = -((c * c + d * d) • unitI) := by
+  ext <;> simp [orthW, unitI] <;> ring
 
 /-- **A Hermitian-orthogonal partner has the antipodal Hopf image**: if the `ℂ`-part of
 `p̄₁ p₂` vanishes and `p₁` is a unit, `hopf p₂ = −|p₂|² hopf p₁`. -/
@@ -149,8 +151,8 @@ theorem hopf_orth {p₁ p₂ : BringCone R} (hp₁ : Quaternion.normSq p₁ = 1)
     hopf p₂ = -(((star p₁ * p₂).imJ * (star p₁ * p₂).imJ
       + (star p₁ * p₂).imK * (star p₁ * p₂).imK) • hopf p₁) := by
   have hps := mul_star_self_of_normSq hp₁
-  have hw : star p₁ * p₂ = ⟨0, 0, (star p₁ * p₂).imJ, (star p₁ * p₂).imK⟩ := by
-    ext <;> simp [hre, hi]
+  have hw : star p₁ * p₂ = orthW (star p₁ * p₂).imJ (star p₁ * p₂).imK := by
+    ext <;> simp [orthW, hre, hi]
   have hp2 : p₂ = p₁ * (star p₁ * p₂) := by rw [← mul_assoc, hps, one_mul]
   conv_lhs => rw [hp2, hopf_mul, hw, orth_conj_unitI]
   rw [mul_neg, neg_mul, mul_smul_comm, smul_mul_assoc]
@@ -172,7 +174,8 @@ theorem orth_pair_chirality {p₁ p₂ : BringCone R} (hp₁ : Quaternion.normSq
   have ho := hopf_orth hp₁ hre hi
   rw [hn, one_smul] at ho
   have h1 : hopf p₁ = -hopf p₂ := by rw [ho, neg_neg]
-  rw [h1, chiralGammaU_neg, (chiralGammaU_eigen_iff hp₂ _).mpr rfl, neg_neg]
+  have e : chiralGammaU (hopf p₂) p₂ = -p₂ := (chiralGammaU_eigen_iff hp₂ _).mpr rfl
+  rw [h1, chiralGammaU_neg, e, neg_neg]
 
 /-- **Swapping the two photons is the global flip** `Γ ↦ −Γ`. -/
 theorem orth_pair_swap_is_flip {p₁ p₂ : BringCone R} (hp₁ : Quaternion.normSq p₁ = 1)
@@ -200,18 +203,18 @@ def pol (a b c d : R) : BringCone R := cplx a b + unitJ * cplx c d
 /-- **Real (linear) polarizations have Hopf image orthogonal to `j`**: they fill the
 `i`–`k` great circle. -/
 theorem hopf_real_imJ (a c : R) : (hopf (pol a 0 c 0)).imJ = 0 := by
-  simp [hopf, pol, cplx, unitJ, unitI]; ring
+  simp [hopf, pol, cplx, unitJ, unitI]
 
 /-- The Hopf image is always pure. -/
 theorem hopf_re (p : BringCone R) : (hopf p).re = 0 := re_hopf p
 
 /-- Circular polarization `[1 : i]` goes to `−2 j`. -/
 theorem hopf_circular_plus : hopf (pol (1 : R) 0 0 1) = ⟨0, 0, -2, 0⟩ := by
-  ext <;> simp [hopf, pol, cplx, unitJ, unitI] <;> ring
+  ext <;> simp [hopf, pol, cplx, unitJ, unitI]; ring
 
 /-- Circular polarization `[1 : −i]` goes to `+2 j`. -/
 theorem hopf_circular_minus : hopf (pol (1 : R) 0 0 (-1)) = ⟨0, 0, 2, 0⟩ := by
-  ext <;> simp [hopf, pol, cplx, unitJ, unitI] <;> ring
+  ext <;> simp [hopf, pol, cplx, unitJ, unitI]; ring
 
 end QOU.Tetraplectic
 
