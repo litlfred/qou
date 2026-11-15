@@ -2,6 +2,22 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:habiro-residue-sum-equivalence",
+  authorNotes: [
+    {
+      kind: "status",
+      date: "2026-11-15",
+      body:
+        "**Witness-certified axiom removed from Lean (owner decision, bean " +
+        "`qou-uabo`).** The Lean sibling no longer carries " +
+        "`protonExample_archimedean_agreement_axiom` or the `protonExample` " +
+        "instance. That axiom equated an opaque integer polynomial evaluated " +
+        "at `√q₀` with the decimal `2.1225825095` read from a Python witness, " +
+        "i.e. it put a witness-certified number into a formal premise. The " +
+        "proton identity " +
+        "stays open in `conj:gs-archimedean-agreement-residue` (no instance); " +
+        "the cross-pipeline numerical agreement stays in this block's table.",
+    },
+  ],
   title:
     "Habiro completion ≡ Gröbner–Shirshov residue spectral sum (equivalence)",
   lean: {

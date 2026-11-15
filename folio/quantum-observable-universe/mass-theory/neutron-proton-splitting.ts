@@ -8,6 +8,18 @@ export default proposition({
   authorNotes: [
     {
       kind: "status",
+      date: "2026-11-15",
+      body:
+        "**CODATA comparison moved out of Lean (owner decision, bean " +
+        "`neutron_proton_splitting`).** The Lean theorem now states only the " +
+        "model value `α·|Φ(udd) − Φ(uud)| = 3.7449·0.3476 = 1.30172724`; the " +
+        "CODATA-tolerance conjunct and `codataNeutronProtonSplittingMeV` are " +
+        "removed. The comparison (+0.65 % vs CODATA 2022 1.29333378 MeV; the " +
+        "old prose said 0.63 % and the old Lean said 0.68 % against the " +
+        "rounded 1.293) is in the block's comparison paragraph.",
+    },
+    {
+      kind: "status",
       date: "2026-08-14",
       body:
         "**Lean carrier restructured — sorry-free (bean `qou-octr`, PR #5019).** " +

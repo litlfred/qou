@@ -1,14 +1,14 @@
 ---
 # neutron_proton_splitting
 title: neutron proton splitting missing hypotheses
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-11T00:00:00Z
-updated_at: 2026-10-04T15:46:32Z
+updated_at: 2026-11-15T14:30:00Z
 ---
 
 File: `folio/quantum-observable-universe/lean/QOU/Torsion/neutron_proton_splitting.lean`
@@ -29,3 +29,15 @@ Also known as `npsp` (its former front-matter header id; the beans CLI uses the 
 ## Reopened 2026-10-04 (review of PR #7496)
 
 The closing evidence (1be9bf9ec0) resolves the missing hypotheses by adding a `codata_agreement` field, which places an empirical comparison inside a Lean class. The owner's rule keeps empirical values out of formal statements, so this is not closed on that evidence. Owner decides how the hypotheses should be supplied. No content was changed.
+
+## 2026-11-15 — completed (owner decision card: "Move them to comparison notes")
+
+The CODATA comparison is out of Lean. `neutron_proton_splitting` now states only the
+model value `α·|Φ(udd) − Φ(uud)| = 3.7449·0.3476 = 1.30172724`, and
+`codataNeutronProtonSplittingMeV` is deleted (no other Lean consumer). The comparison
+(+0.65 % against CODATA 2022 1.29333378 MeV) is in the block's **Comparison with
+measurement** paragraph. That replaces two inconsistent figures: 0.63 % in the old
+prose and 0.68 % in the old Lean (against the rounded 1.293).
+Verified with `lean -DautoImplicit=false -s 65536`: exit 0. Axioms are
+`[propext, Classical.choice, Quot.sound]` only. Still open, but not this bean: porting
+the closed-form traced volumes so that the numeric pins become theorems.

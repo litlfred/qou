@@ -43,8 +43,10 @@ between the two paths.  The current run achieves:
 | D (deuteron, $A=2$)              | $0.1774369242$ | $0.1774369242$ | $0$ |
 
 All differences fall within the relative tolerance $10^{-9}$ — the
-two paths agree to machine epsilon.  This is direct empirical evidence
-for the analytic identity stated above.
+two paths agree to machine epsilon.  This is numerical evidence for the
+analytic identity stated above, not a proof; the Lean formalization does
+not take it as a premise, and the proton case remains the open conjecture
+`conj:gs-archimedean-agreement-residue`.
 
 **Cross-validation infrastructure.** The check is run by
 the formal derivation; output witness
