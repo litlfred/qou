@@ -38,9 +38,10 @@ In a monoidal category `C` with an object `V`, put `V^{⊗0} = 𝟙`, `V^{⊗(n+
 
 The Drinfeld–Kohno theorem says that the monodromy functor of the KZ connection is braided
 monoidal: the KZ monodromy generators on `V^{⊗n}` are the images of the categorical braid
-generators. The class `BraidedMonodromy` states exactly that for a Markov-trace tower `T`: there
-are `K`-algebra maps `ρ_n : End(V^{⊗n}) → A` with `ρ_n(σ_i) = T.g i`. It is a **hypothesis**; no
-instance is claimed for the framework's substrate connection (bean `qou-d0qq`).
+generators. The class `BraidedMonodromy` states exactly that for a Markov-trace tower `T` over a
+commutative ring `R`, with a ring map `φ : R → K` to the scalars of the category: there are ring
+maps `ρ_n : End(V^{⊗n}) → A`, semilinear along `φ`, with `ρ_n(σ_i) = T.g i`. It is a
+**hypothesis**; no instance is claimed for the framework's substrate connection (bean `qou-d0qq`).
 
 `heckeMonodromy_of_braided` assembles the step-2 class `HeckeMonodromy` from
 
@@ -48,12 +49,17 @@ instance is claimed for the framework's substrate connection (bean `qou-d0qq`).
 2. the two-strand Hecke quadratic for `f` (in the KZ model this is
    `QOU.Mass.KohnoTwoPoint.kzExchange_quad`; in `D_ℏ` it is `QOU.KZ.Drinfeld.hecke_DH`),
 
-plus the shadow field, which is passed separately. **The shadow field cannot be met
-non-trivially** when `q − q⁻¹ ≠ 0`: `HeckeMonodromy.subsingleton_of_ne` shows it forces the
-target ring `B` to be the zero ring. This is a defect of the class as stated, not of this file;
-see that lemma's docstring.
+plus a shadow map `ε` lying over `q ↦ 1`, which is passed separately.
 
-Base ring §7c: generic `Field K`, generic `Ring A`; the category is arbitrary. Nothing analytic.
+**A category at one fixed coupling cannot supply the shadow.** `subsingleton_of_fixed_coupling`:
+if the monodromy factors through a `K`-linear category with `K` a field and `φ(q) ≠ 1`, then every
+shadow ring is zero. The `q = 1` shadow needs the coupling to vary, i.e. a tower over a ring such as
+`ℤ[q, q⁻¹]` whose monodromy is not pinned to one value of `q`. So this file supplies the Hecke
+quadratic, the braid relation and far commutation from Drinfeld–Kohno; the shadow is a statement
+about the family, and stays open here.
+
+Base ring §7c: generic `Field K` for the category's scalars, generic `CommRing R` for the tower,
+generic `Ring A`; the category is arbitrary. Nothing analytic.
 
 -- Ref: [kassel1995] Kassel, *Quantum Groups*, Thm XIII.1.3 (braided category ⇒ braid group action)
 -- Ref: [kohno1987] Kohno, Ann. Inst. Fourier 37 (1987) — KZ monodromy and the R-matrix
@@ -254,17 +260,21 @@ section Assembly
 
 open QOU.MathlibExt.OcneanuTrace
 
-variable {K : Type*} [Field K] {A : Type*} [Ring A] [Algebra K A]
+variable {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A]
+variable {K : Type*} [Field K]
 variable {C : Type*} [Category C] [MonoidalCategory C] [Preadditive C] [Linear K C]
 
 /-- **Drinfeld–Kohno, as a hypothesis on a tower.** The generators of the Markov-trace tower `T`
-are the images of the categorical braid generators `σ_i = strand f n i` under `K`-algebra maps
-`ρ_n : End(V^{⊗n}) → A`. For the KZ connection this is the content of the Drinfeld–Kohno theorem
-(the monodromy functor is braided monoidal, so the KZ monodromy of `σ_i` is the braiding acting on
-strands `i, i+1`). Nothing here asserts it for the framework's own connection (bean `qou-d0qq`). -/
-class BraidedMonodromy (T : MarkovTrace K A) (V : C) (f : V ⊗ V ⟶ V ⊗ V) : Prop where
+(over `R`) are the images of the categorical braid generators `σ_i = strand f n i` under ring maps
+`ρ_n : End(V^{⊗n}) → A` that are semilinear along `φ : R → K`. For the KZ connection this is the
+content of the Drinfeld–Kohno theorem (the monodromy functor is braided monoidal, so the KZ
+monodromy of `σ_i` is the braiding acting on strands `i, i+1`). Nothing here asserts it for the
+framework's own connection (bean `qou-d0qq`). -/
+class BraidedMonodromy (T : MarkovTrace R A) (φ : R →+* K) (V : C) (f : V ⊗ V ⟶ V ⊗ V) :
+    Prop where
   /-- The monodromy maps, one per strand count. -/
-  exists_rep : ∃ ρ : ∀ n, End (tpow V n) →ₐ[K] A,
+  exists_rep : ∃ ρ : ∀ n, End (tpow V n) →+* A,
+    (∀ n (r : R) (x : End (tpow V n)), ρ n (φ r • x) = r • ρ n x) ∧
     ∀ n i, i + 1 < n → ρ n (strand V f n i) = T.g i
 
 variable [MonoidalPreadditive C] [MonoidalLinear K C]
@@ -272,22 +282,22 @@ variable [MonoidalPreadditive C] [MonoidalLinear K C]
 /-- **Step 2 assembled from Drinfeld–Kohno and the two-strand Hecke quadratic.** If the tower's
 generators are the images of `σ_i = strand f n i` (`BraidedMonodromy`), `f` satisfies the
 three-strand relation (`IsYB`; automatic for a braiding, `isYB_braiding`) and the two-strand
-quadratic `f² = (q − q⁻¹) f + 1`, then the tower satisfies the Hecke quadratic, the braid relation
-and far commutation. The classical-shadow field is taken as a hypothesis (see
-`HeckeMonodromy.subsingleton_of_ne` for why it cannot be met non-trivially as stated). -/
-theorem heckeMonodromy_of_braided (T : MarkovTrace K A) (q : K) {B : Type*} [Ring B]
-    (ε : A →+* B) (V : C) (f : V ⊗ V ⟶ V ⊗ V) [hDK : BraidedMonodromy T V f]
-    (hYB : IsYB f) (hquad : f ≫ f = (q - q⁻¹) • f + 𝟙 (V ⊗ V))
-    (shadow_involution : ∀ i, ε (T.g i) * ε (T.g i) = 1) :
+quadratic `f² = (φ q − φ q⁻¹) f + 1`, then the tower satisfies the Hecke quadratic, the braid
+relation and far commutation. The shadow `ε` lying over `q ↦ 1` is a hypothesis; see
+`subsingleton_of_fixed_coupling` for why it cannot come from the category at fixed coupling. -/
+theorem heckeMonodromy_of_braided (T : MarkovTrace R A) (q : Rˣ) (φ : R →+* K) {B : Type*}
+    [Ring B] (ε : A →+* B) (V : C) (f : V ⊗ V ⟶ V ⊗ V) [hDK : BraidedMonodromy T φ V f]
+    (hYB : IsYB f) (hquad : f ≫ f = (φ q - φ ↑q⁻¹) • f + 𝟙 (V ⊗ V))
+    (shadow_at_one : ε (algebraMap R A q) = 1) :
     HeckeMonodromy T q ε := by
-  obtain ⟨ρ, hρ⟩ := hDK.exists_rep
-  refine ⟨fun i => ?_, fun i => ?_, fun i j hij => ?_, shadow_involution⟩
+  obtain ⟨ρ, hsmul, hρ⟩ := hDK.exists_rep
+  refine ⟨fun i => ?_, fun i => ?_, fun i j hij => ?_, shadow_at_one⟩
   · -- Hecke quadratic: on `V^{⊗(i+2)}`
     have h := strand_quad hquad (i + 2) i (by omega)
     have h' := congrArg (ρ (i + 2)) h
     rw [← hρ (i + 2) i (by omega)]
     rw [← End.mul_def] at h'
-    rw [map_mul, map_add, map_smul] at h'
+    rw [← map_sub, map_mul, map_add, hsmul] at h'
     have h1 : (ρ (i + 2)) (𝟙 (tpow V (i + 2))) = 1 := map_one (ρ (i + 2))
     rw [h1] at h'
     exact h'
@@ -304,36 +314,28 @@ theorem heckeMonodromy_of_braided (T : MarkovTrace K A) (q : K) {B : Type*} [Rin
     rw [← hρ (j + 2) i (by omega), ← hρ (j + 2) j (by omega)]
     exact h'.symm
 
+omit [MonoidalPreadditive C] [MonoidalLinear K C] in
+/-- **A category at fixed coupling cannot carry the `q = 1` shadow.** If the tower's monodromy
+factors through a `K`-linear category (`BraidedMonodromy`, `K` a field) and `φ(q) ≠ 1`, then a
+shadow `ε` lying over `q ↦ 1` has zero target. Reason: `q` acts on the tower through the scalar
+`φ(q)` of `End(𝟙)`, and `ε ∘ ρ` sends the unit `φ(q) − 1` of that field to `0`. The shadow needs
+`q` to vary, which a single fixed-coupling category does not provide. -/
+theorem subsingleton_of_fixed_coupling (T : MarkovTrace R A) (q : Rˣ) (φ : R →+* K) {B : Type*}
+    [Ring B] (ε : A →+* B) (V : C) (f : V ⊗ V ⟶ V ⊗ V) [hDK : BraidedMonodromy T φ V f]
+    [HeckeMonodromy T q ε] (hq : φ q ≠ 1) : Subsingleton B := by
+  obtain ⟨ρ, hsmul, -⟩ := hDK.exists_rep
+  have hA : algebraMap R A q = ρ 0 (φ q • (1 : End (tpow V 0))) := by
+    rw [hsmul, map_one, Algebra.algebraMap_eq_smul_one]
+  have h1 : ε (ρ 0 ((φ q - 1) • (1 : End (tpow V 0)))) = 0 := by
+    rw [sub_smul, one_smul, map_sub, map_sub, ← hA, HeckeMonodromy.shadow_at_one (T := T),
+      map_one, map_one, sub_self]
+  have hu : IsUnit ((φ q - 1) • (1 : End (tpow V 0))) := by
+    rw [Algebra.smul_def, mul_one]
+    exact (isUnit_iff_ne_zero.mpr (sub_ne_zero.mpr hq)).map _
+  have hu' := (hu.map (ρ 0)).map ε
+  rw [h1] at hu'
+  exact subsingleton_of_zero_eq_one (isUnit_zero_iff.mp hu')
+
 end Assembly
 
 end QOU.Mass.BraidedStrands
-
-/-! ### The shadow field of `HeckeMonodromy` forces a zero target -/
-
-namespace QOU.Mass.HeckeMonodromy
-
-open QOU.MathlibExt.OcneanuTrace
-
-variable {K : Type*} [Field K] {A : Type*} [Ring A] [Algebra K A]
-variable (T : MarkovTrace K A) (q : K) {B : Type*} [Ring B] (ε : A →+* B)
-
-/-- **The shadow field is unsatisfiable off `q = ±1`, except by the zero ring.** If
-`q − q⁻¹ ≠ 0`, then `shadow_kills_h` gives `ε((q − q⁻¹) • g) = 0`; since `q − q⁻¹` is a unit of
-`K`, its image `ε(algebraMap (q − q⁻¹))` is a unit of `B`, so `ε(g) = 0`, and then
-`1 = ε(g)² = 0`. So for a fixed `q ≠ ±1` every instance of `HeckeMonodromy` has `B` the zero ring.
-
-The intended content (the `q = 1` specialisation is a permutation representation) needs `q` to vary:
-a tower over a base ring such as `ℤ[q, q⁻¹]` with `ε` the specialisation `q ↦ 1`, or a family in
-the coupling, as in `QOU.Mass.KZHolonomy.kzBraidRep_zero_σ`. A ring map out of a single algebra over
-a field cannot see it. -/
-theorem subsingleton_of_ne [HeckeMonodromy T q ε] (hq : q - q⁻¹ ≠ 0) : Subsingleton B := by
-  have hk := shadow_kills_h T q ε 0
-  have hinv := HeckeMonodromy.shadow_involution (T := T) (q := q) (ε := ε) 0
-  rw [Algebra.smul_def, map_mul] at hk
-  have hu : IsUnit (ε (algebraMap K A (q - q⁻¹))) :=
-    ((isUnit_iff_ne_zero.mpr hq).map (algebraMap K A)).map ε
-  have hg : ε (T.g 0) = 0 := (hu.mul_right_eq_zero).mp hk
-  rw [hg, zero_mul] at hinv
-  exact subsingleton_of_zero_eq_one hinv
-
-end QOU.Mass.HeckeMonodromy
