@@ -145,4 +145,4 @@ The genus-$0$ stability cubic accounts for all stable nuclei via lattice-point e
 - No substitution $X \mapsto \alpha X + \beta$ carries (S) to (C) at real $z$, since $J_C > 0 > J_S$ (proved in Lean, `no_affine_match`).
 - The golden ratio degeneration at $q = 1/\varphi^2$ holds (exact, from the $(s^2 + s - 1)$ factor).
 
-**Witness data**: See `computations/elliptic-stability.json` for the full numerical computation at 100-digit precision.
+The full numerical computation is carried out at 100-digit precision.

@@ -18,11 +18,9 @@ Lepton number is conserved by construction:
 Every process expressed as a sequence of Skein relations and Hecke reductions conserves lepton number.
 
 **Lepton number is not a $\mathbb{Z}$-grading (proved).**
-An earlier version of this section asserted that the Skein module
-$\mathcal{K}(S^3; q)$ admits a natural $\mathbb{Z}$-grading by the smoothing
-count, with the nuclear sector in grade $0$ and each smoothing shifting the
-grade by $+1$. **That is false**, and the obstruction is proved in
-`QOU/StandardModel/LeptonNumberGradingObstruction.lean`.
+The Skein module $\mathcal{K}(S^3; q)$ admits no $\mathbb{Z}$-grading by the
+smoothing count with the nuclear sector in grade $0$ and each smoothing shifting
+the grade by $+1$ (`QOU.StandardModel.LeptonNumberGradingObstruction`).
 
 The skein relation is *inhomogeneous* for such a grading. Writing it as
 $$
@@ -93,7 +91,7 @@ minimal level, where the braid word is determined by the knot type. **Scope-(a)*
 $L = \mathrm{sign}(w)$ is refuted; lepton number itself and the $Y = B - L$
 route are untouched, and what the refutation locates is that $L$ must come from
 data the writhe does not carry --- the framing or the smoothing history, not the
-crossing sum. See beans `qou-kl39`, `qou-qia8`.
+crossing sum.
 
 **Individual lepton assignments.**
 
