@@ -193,6 +193,27 @@ theorem ud_letter_eq_grading (h2 : (2 : K) ≠ 0) (hq2 : q + q⁻¹ ≠ 0) :
   rw [← smul_sub, two_smul]
   congr 1; abel
 
+/-! ### The one-sided flip IS the letter corrected by the corpus skein difference
+
+`HelicityCommonSource.skein_asym_eq`: `q s − q⁻¹ s⁻¹ = h·[2]·P₊`. So the L-only flip is the
+letter minus the normalised skein difference, and the R-only flip is the letter minus the
+normalised MIRROR difference. Which side is "one-sided" is exactly which crossing carries
+the weight `q`: the L/R bit reduces to that weighting convention. -/
+
+/-- `[2]·W_L = [2]·s − (q s − q⁻¹ s⁻¹)`. -/
+theorem two_smul_oneSidedL_eq_skein (hq : q ≠ 0) (hq2 : q + q⁻¹ ≠ 0) (hs : IsLetter q s) :
+    (q + q⁻¹) • oneSidedL q s = (q + q⁻¹) • s - (q • s - q⁻¹ • Helicity.flip q s) := by
+  rw [oneSidedL_eq hq hq2 hs, smul_smul, mul_comm, ← smul_smul, two_smul_grading hq2]
+  unfold Helicity.flip
+  module
+
+/-- `[2]·W_R = [2]·s − (q⁻¹ s − q s⁻¹)`: the mirror weighting gives the other side. -/
+theorem two_smul_oneSidedR_eq_mirror (hq : q ≠ 0) (hq2 : q + q⁻¹ ≠ 0) (hs : IsLetter q s) :
+    (q + q⁻¹) • oneSidedR q s = (q + q⁻¹) • s - (q⁻¹ • s - q • Helicity.flip q s) := by
+  rw [oneSidedR_eq hq hq2 hs, smul_smul, mul_comm, ← smul_smul, two_smul_grading hq2]
+  unfold Helicity.flip
+  module
+
 end Abstract
 
 /-! ## On 6a's formal-`h` NF algebra: net flavour of the grading -/

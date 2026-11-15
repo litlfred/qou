@@ -207,3 +207,27 @@ is measured and anyone reasoning from the label about the ruled cell would be mi
 
 No row of the §3 tables should be adopted. If anyone wants a weak-vertex insertion in the Q_β
 word, the placement and the L/R bit must come from a derivation (D-W1), not from the residual.
+
+## 8. Addendum: composing with 9a's skein difference (coordinator input)
+
+9a's `skein_asym_eq` gives the corpus parity element q s − q⁻¹ s⁻¹ = h·[2]_q·P₊. It composes
+with this file's result exactly. Both identities below are sorry-free and use standard axioms
+only.
+
+| theorem | statement |
+|---|---|
+| `two_smul_oneSidedL_eq_skein` | [2]·W_L = [2]·s − (q s − q⁻¹ s⁻¹) |
+| `two_smul_oneSidedR_eq_mirror` | [2]·W_R = [2]·s − (q⁻¹ s − q s⁻¹) |
+
+**Reading.** The one-sided flip is **the letter, corrected by the normalised skein
+difference**. So the corpus's q ≠ 1 parity mechanism and the one-sided flavour vertex are the
+same element up to the letter. Equivalently, W_L = s − h·P₊, so the correction is the
+letter's h¹ part restricted to the L line.
+
+**The risk 9a flagged is confirmed, scope (b) within one letter.** The L-only and R-only
+vertices differ **only** by which crossing carries the weight q. q s − q⁻¹ s⁻¹ gives W_L, and
+the mirror weighting q⁻¹ s − q s⁻¹ gives W_R. The bar involution exchanges the two weightings,
+since the skein difference is bar-odd (`skein_asym_bar_odd`), and it exchanges W_L ↔ W_R
+(`oneSidedL_flip`). So "the weak coupling is left-handed" is, inside the letter algebra,
+**the same datum as the convention that q weights L₊**. It moves the L/R choice to that
+convention; it does not derive it. Breaking the tie needs data outside the letter (D-W1).
