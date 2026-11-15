@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-15T18:12:20Z
-updated_at: 2026-11-15T20:53:51Z
+updated_at: 2026-11-15T21:20:33Z
 parent: qou-r9ih
 ---
 
@@ -25,3 +25,5 @@ STILL OPEN: BlochSuslinRigidity has no instance (Bloch 1978 / Suslin 1991 rigidi
 
 
 2026-11-15 (session 01Qmmkt8): BlochSuslinRigidity FiveTermProof.blochD PROVED, instance blochSuslinRigidity_blochD (QOU/Archimedean/BlochRigidity/Instance.lean), axioms propext/Choice/Quot.sound, commit 6cbad1078a on PR #7946. Not merged yet. Remaining on this bean: owner-requested Dolbeault-layer refactor of D1/D2. Keep open until PR merges.
+
+2026-11-15: Abstract.lean (DolbeaultStructure, eq_mul_of_fiveTermS) and Smooth.lean (smoothDolbeault; J from reebM_i, conj from realStr; blochSuslinRigidity_of_smooth) pushed, 3ca286b9e1 + 7defa5e327, PR #7946. Sorry-free.
