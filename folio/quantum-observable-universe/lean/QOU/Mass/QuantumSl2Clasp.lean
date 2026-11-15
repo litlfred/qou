@@ -118,4 +118,67 @@ theorem irrepF_pow_entry (q : 𝕜) (m n : ℕ) (a b : Fin (m + 1)) (hab : (b : 
       rw [this, mul_zero]
     · simp
 
+section ClaspEntry
+
+variable (s : 𝕜) (hs : s ≠ 0)
+
+/-- The column of `S` at `v_p ⊗ v_m` is the unit column (`F` kills `v_m`). -/
+theorem rSum_apply_colBot (m m' M : ℕ) (p : Fin (m + 1)) (x : Fin (m + 1) × Fin (m' + 1)) :
+    Rep.rSum s (irrep (pow_ne_zero 2 hs) m) (irrep (pow_ne_zero 2 hs) m') M x (p, ⟨m', by omega⟩)
+      = if x = (p, ⟨m', by omega⟩) then 1 else 0 := by
+  unfold Rep.rSum
+  rw [Matrix.sum_apply, Finset.sum_eq_single 0]
+  · simp only [Matrix.smul_apply, kroneckerMap_apply, pow_zero, one_apply, smul_eq_mul]
+    have hc : rcoef s 0 = 1 := by simp [rcoef, qfact]
+    rw [hc, one_mul]
+    by_cases hx : x = (p, ⟨m', by omega⟩)
+    · subst hx; simp
+    · rw [if_neg hx]
+      by_cases h1 : x.1 = p
+      · have h2 : x.2 ≠ ⟨m', by omega⟩ := by
+          intro h2; apply hx; ext <;> simp [h1, h2]
+        rw [if_neg h2, mul_zero]
+      · rw [if_neg h1, zero_mul]
+  · intro n _ hn
+    rw [Matrix.smul_apply, kroneckerMap_apply,
+      show (irrep (pow_ne_zero 2 hs) m').F = irrepF (s ^ 2) m' from rfl,
+      irrepF_pow_apply (s ^ 2) m' n x.2 _ (by have := x.2.isLt; simp; omega), mul_zero, smul_zero]
+  · simp
+
+/-- **The clasp entry of the monodromy**, a single product:
+`M_{(m−k, j),(j−k, m)} = s^{wt(m)wt(j−k)} s^{wt(j)wt(m−k)} c_{m−j} (E^{m−j})_{j,m} (F^{m−j})_{m−k,j−k}`. -/
+theorem mono_clasp_entry (m j k : ℕ) (hkj : k ≤ j) (hjm : j ≤ m) :
+    mono s hs m m (⟨m - k, by omega⟩, ⟨j, by omega⟩) (⟨j - k, by omega⟩, ⟨m, by omega⟩)
+      = s ^ (wt m m * wt m (j - k)) * s ^ (wt m j * wt m (m - k)) * rcoef s (m - j)
+        * (irrepE (s ^ 2) m ^ (m - j)) ⟨j, by omega⟩ ⟨m, by omega⟩
+        * (irrepF (s ^ 2) m ^ (m - j)) ⟨m - k, by omega⟩ ⟨j - k, by omega⟩ := by
+  unfold mono
+  rw [mul_apply, Finset.sum_eq_single (⟨m, by omega⟩, ⟨j - k, by omega⟩)]
+  · unfold rCheckMat rMat cartanTheta
+    simp only [submatrix_apply, diagonal_mul, Prod.swap, id]
+    rw [rSum_apply_colBot s hs m m _ _ (⟨j - k, by omega⟩, ⟨m, by omega⟩), if_pos rfl, mul_one]
+    unfold Rep.rSum
+    rw [Matrix.sum_apply, Finset.sum_eq_single (m - j)]
+    · simp only [Matrix.smul_apply, kroneckerMap_apply, smul_eq_mul]
+      rw [show (irrep (pow_ne_zero 2 hs) m).E = irrepE (s ^ 2) m from rfl,
+        show (irrep (pow_ne_zero 2 hs) m).F = irrepF (s ^ 2) m from rfl,
+        mul_comm (wt m (j - k)) (wt m m)]
+      ring
+    · intro n _ hn
+      rw [Matrix.smul_apply, kroneckerMap_apply,
+        show (irrep (pow_ne_zero 2 hs) m).E = irrepE (s ^ 2) m from rfl,
+        irrepE_pow_apply (s ^ 2) m n _ _ (by simp; omega), zero_mul, smul_zero]
+    · intro h; exfalso; exact h (Finset.mem_range.mpr (by unfold rOrder; omega))
+  · intro z _ hz
+    unfold rCheckMat rMat cartanTheta
+    simp only [submatrix_apply, diagonal_mul, id]
+    rw [rSum_apply_colBot s hs m m _ _ (z.swap), if_neg, mul_zero, mul_zero]
+    intro h; apply hz
+    rcases z with ⟨z1, z2⟩
+    simp only [Prod.swap, Prod.mk.injEq] at h
+    rw [h.1, h.2]
+  · simp
+
+end ClaspEntry
+
 end QOU.Mass.QuantumSl2
