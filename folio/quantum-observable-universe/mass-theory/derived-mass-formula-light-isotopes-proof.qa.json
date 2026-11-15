@@ -237,6 +237,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "617bee8056cb",
+          "ts": "12a2379a65c7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:34.263Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "derived-mass-formula-light-isotopes.md:26-27 'reproduces the atomic masses of all isotopes from p through ⁷Li to sub-percent accuracy'; proof.md:21 'q₀ = 1.1099785955541805… (the CODATA-2018 muon pin)'",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: binding"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1140,7 +1156,7 @@
           "in_degree": 0,
           "cone_size": 6,
           "depth": 6,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1358,7 +1374,7 @@
         "reviewed_at": "2026-08-15T10:31:00.611Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
-        "evidence": "1 negation-contrast construction(s): \", not calibrated.\" \u2014 state the positive claim directly"
+        "evidence": "1 negation-contrast construction(s): \", not calibrated.\" — state the positive claim directly"
       },
       {
         "field_hash": {
@@ -1373,7 +1389,7 @@
         },
         "reviewed_at": "2026-08-21T15:48:39.659Z",
         "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
-        "evidence": "Full read of the proof (baseline, Wedderburn 3-term, Delta_W / Delta_{T=1}, evaluation, Witness, Scope, structural extension). The Scope paragraph carries three denials \u2014 'no continuous parameters are fitted', 'no choices were made by selecting from a menu of variants', 'is predictive, not calibrated' \u2014 but each is a distinct anti-fit disclosure the corpus requires (continuous-parameter fitting / model selection / calibration are three different objections), so this is the substantive-distinction false-positive class rather than assertion-by-denial.",
+        "evidence": "Full read of the proof (baseline, Wedderburn 3-term, Delta_W / Delta_{T=1}, evaluation, Witness, Scope, structural extension). The Scope paragraph carries three denials — 'no continuous parameters are fitted', 'no choices were made by selecting from a menu of variants', 'is predictive, not calibrated' — but each is a distinct anti-fit disclosure the corpus requires (continuous-parameter fitting / model selection / calibration are three different objections), so this is the substantive-distinction false-positive class rather than assertion-by-denial.",
         "notes": "Density noted: four negation forms in one 60-word paragraph. If a later editor tightens it, the redundant member is 'not calibrated', already implied by the two preceding denials."
       }
     ],
@@ -1442,7 +1458,7 @@
         },
         "reviewed_at": "2026-08-21T15:48:39.729Z",
         "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
-        "evidence": "Three spaced dashes: one true paired parenthetical ('across A = 1 to 7 \u2014 including the unfitted extension to 6Li and 7Li \u2014 is predictive') and one appended consequence ('several algebraically-natural variants \u2014 hence is technically fitted'). The second could be a comma, but two constructions across ~250 words is below the density that makes this the tell."
+        "evidence": "Three spaced dashes: one true paired parenthetical ('across A = 1 to 7 — including the unfitted extension to 6Li and 7Li — is predictive') and one appended consequence ('several algebraically-natural variants — hence is technically fitted'). The second could be a comma, but two constructions across ~250 words is below the density that makes this the tell."
       }
     ],
     "trap-triples": [
@@ -1510,7 +1526,7 @@
         },
         "reviewed_at": "2026-08-21T15:48:39.799Z",
         "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
-        "evidence": "Ends 'the specific shadow-price form is open research' \u2014 an honest open-item statement naming what is missing, the opposite of a placed quotable line."
+        "evidence": "Ends 'the specific shadow-price form is open research' — an honest open-item statement naming what is missing, the opposite of a placed quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1648,8 +1664,8 @@
         "reviewed_at": "2026-08-21T15:48:39.936Z",
         "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
         "severity": "minor",
-        "evidence": "Two unqualified maximum-strength claims. (1) 'The systematic binding under-prediction is the formula's principal limitation' \u2014 contradicted by the block's own sibling table (tbl:derived-mass-formula-light-isotopes-table2-data): the deuteron is OVER-predicted, B_pred +3.14 vs AME +2.22 (+41%). Under-prediction holds for 5 of 6 tabulated isotopes, not systematically. (2) 'The atomic mass agreement to sub-percent across A = 1 to 7 ... is **predictive**, not calibrated' \u2014 the quantity scored is dominated by the CODATA baseline Z*m_p + N*m_n + Z*m_e, which the same proof calls 'CODATA inputs'; recomputing from Table 1, the 4He 'sub-percent' error 0.576% IS the 21.5 MeV binding shortfall divided by 3728.40 MeV, so sub-percent-on-the-total is arithmetically equivalent to 'binding is under 1% of the mass' and carries no predictive content of its own.",
-        "notes": "Proposed (structural, not applied \u2014 both are factual corrections): (1) 'The binding under-prediction for A >= 3 (32% to 76%) is the formula's principal limitation; the deuteron is over-predicted by 41%.' (2) Scope the predictive claim to what is actually scoreable: the binding energies and the p-n splitting, not the absolute atomic mass in MeV \u2014 per the absolute-mass excision (AGENTS.md 2026-08-11) and the calibration-input correction (2026-08-18). As written the paragraph scores a calibration pass-through."
+        "evidence": "Two unqualified maximum-strength claims. (1) 'The systematic binding under-prediction is the formula's principal limitation' — contradicted by the block's own sibling table (tbl:derived-mass-formula-light-isotopes-table2-data): the deuteron is OVER-predicted, B_pred +3.14 vs AME +2.22 (+41%). Under-prediction holds for 5 of 6 tabulated isotopes, not systematically. (2) 'The atomic mass agreement to sub-percent across A = 1 to 7 ... is **predictive**, not calibrated' — the quantity scored is dominated by the CODATA baseline Z*m_p + N*m_n + Z*m_e, which the same proof calls 'CODATA inputs'; recomputing from Table 1, the 4He 'sub-percent' error 0.576% IS the 21.5 MeV binding shortfall divided by 3728.40 MeV, so sub-percent-on-the-total is arithmetically equivalent to 'binding is under 1% of the mass' and carries no predictive content of its own.",
+        "notes": "Proposed (structural, not applied — both are factual corrections): (1) 'The binding under-prediction for A >= 3 (32% to 76%) is the formula's principal limitation; the deuteron is over-predicted by 41%.' (2) Scope the predictive claim to what is actually scoreable: the binding energies and the p-n splitting, not the absolute atomic mass in MeV — per the absolute-mass excision (AGENTS.md 2026-08-11) and the calibration-input correction (2026-08-18). As written the paragraph scores a calibration pass-through."
       }
     ],
     "trap-nonspeakable": [
@@ -1683,8 +1699,8 @@
         },
         "reviewed_at": "2026-08-21T15:48:39.971Z",
         "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
-        "evidence": "Prose parses aloud EXCEPT where sweep damage has destroyed it \u2014 see notes.",
-        "notes": "SWEEP DAMAGE (token substitution, reported not fixed \u2014 I cannot recover the original script names): (a) '(see witnesses the formal derivation, the formal derivation, the formal derivation)' \u2014 three distinct producer/witness names replaced by the same filler; the sentence is now ungrammatical. (b) 'canonical evaluation at q_0 = ...' \u2014 sentence-initial lowercase 'canonical' where 'Numerical' was substituted (the canonical<-numerical class named in AGENTS.md). (c) 'uses the formal derivation (witness derived-only-formula.witness.json)' \u2014 a script name replaced by filler; the witness name survived beside it, so the producer is recoverable from that witness's provenance."
+        "evidence": "Prose parses aloud EXCEPT where sweep damage has destroyed it — see notes.",
+        "notes": "SWEEP DAMAGE (token substitution, reported not fixed — I cannot recover the original script names): (a) '(see witnesses the formal derivation, the formal derivation, the formal derivation)' — three distinct producer/witness names replaced by the same filler; the sentence is now ungrammatical. (b) 'canonical evaluation at q_0 = ...' — sentence-initial lowercase 'canonical' where 'Numerical' was substituted (the canonical<-numerical class named in AGENTS.md). (c) 'uses the formal derivation (witness derived-only-formula.witness.json)' — a script name replaced by filler; the witness name survived beside it, so the producer is recoverable from that witness's provenance."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1707,6 +1723,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T15:48:39.971Z",
+  "updated_at": "2026-11-15T21:57:34.263Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

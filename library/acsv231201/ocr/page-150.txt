@@ -1,0 +1,52 @@
+132 Multivariate Fourier—Laplace integrals
+
+Additional exercises
+
+Exercise 5.13. Consider an integrand of the form A(x, y, ze“) dz, where
+A(x, y,Z) = (x? + y + ey is not smooth at the origin when a ¢ Z,. What kind
+of asymptotic estimate or expansion can be obtained in this case?
+
+Exercise 5.14. Prove that for critical points on the boundary of the chain of
+integration, where the chain is locally diffeomorphic to a halfspace and ¢ has
+vanishing one-sided normal derivative, the conclusion of Theorem 5.2 holds
+with the leading coefficient multiplied by 1/2. (See Example 10.66 in Chap-
+ter 10 for an application of this result.)
+
+Exercise 5.15. (non-isolated critical points) Consider the integral
+
+‘E 1
+f f e 40 drdé,
+-eJ0
+
+where (6, t) = (1—1)g1(@)+1g1(0) and each g; is analytic and vanishes to order
+2 at 6 = 0, with positive second derivative. Calculate the first-order asymptotic
+as A — oo in terms of derivatives of g; and go at 0. (This foreshadows the
+computations in Section 10.5, in particular Proposition 10.62.)
+
+Exercise 5.16. Use the vanishing to order 3 of ¢ at the origin to write a simpler
+expression for L;(A, @). Further simplify it in the cases where A vanishes to
+orders one, two, and three, respectively, at the origin.
+
+Exercise 5.17. (alternative method to compute higher order terms) This exer-
+cise outlines an alternative way of computing higher order terms in the asymp-
+totic expansion of a Fourier—Laplace integral. Assume for simplicity that the
+phase ¢ has a single critical point, occurring at 0, and that the amplitude A
+vanishes outside the closure of a neighborhood of 0. Let S be the standard
+quadratic $(z) = D4, z?.
+
+(i) Prove that when ¢ = S, the differential operator
+
+2ri ara
+5; a7
+
+» 4kri leery!’
+
+Ir[=k
+
+when applied to A and evaluated at 0, gives the coefficient c, from Theo-
+rem 5.3.
+
+(ii) The Complex Morse Lemma gives an analytic change of variables z =
+wy) such that S(y) = (¢ 0 Wy). Apply the result of (i) and solve a
+triangular system to compute the derivatives of yw at 0. Note that this
+changes the amplitude function A to (A o w) dety’.

@@ -1,0 +1,42 @@
+356 Cone point asymptotics
+Proof For every y € That, define
+Z(y) = K?(a, + iy) = K"(hom(g, a. + iy),
+
+where w is any vector in tan,,(B). By Proposition 11.26 this cone contains
+tan, (B), establishing conclusion (i) of Theorem 11.1. Conclusion (iv) is part
+of the conclusion of Lemma 11.27. For conclusion (iii), first suppose that z =
+exp(x, + fy) is not a stratified critical point for hs on V. Pulling back by
+the exponential map, we see that x, + iy is not a critical point for the log-
+linear map #(w) = #- w on the stratum S of exp™![V] containing zx, + iy.
+Thus d(hs ° exp)|s # 0, meaning that 7 is not orthogonal to the tangent space
+Ta+iy(S), so * ¢ N(y). By the contrapositive, this establishes the first part of
+conclusion (iii). Conversely, if 7 ¢ N(y) then since N(y) = (—Z(y))* there
+is some v € Z(y) with f - v > 0. The cone Z(y) is projective, so v can be
+normalized so that fF - v = 1.
+
+To prove conclusion (ii), begin by fixing t, x, and y. By Proposition 11.26, g
+is strongly hyperbolic at x + iy in any direction w € tang, (B) with some radius
+e(u,y) > 0 that is Lipschitz-1 continuous in both arguments. This is (11.1)
+with ¢ and y fixed, u = u(t, y) taken to be 1V(y) +(1-a(a- @,), and € set to
+e(u(t, y), y). Let (¢, y) vary over the compact set [0, 1] Ta and use continuity
+to see that e(u(t, y), y) = Eo > O for some ép and all (t, y). Equation (11.1) is
+then satisfied for any 6 < & . oO
+
+11.2.6 Projective deformations
+
+This section address a special but reasonably common case where the dominant
+critical point z = exp(a + iy) governs a set of coefficient asymptotics whose
+directions N(z) form a set with non-empty interior. Because N(z) is a subset
+of the lognormal space to the stratum containing z, this implies the stratum is
+the 0-dimensional singleton {z}. The prototypical examples are quadratic cone
+points, with or without additional linear divisors passing through the cone point
+(Aztec diamond, cube groves), as well as the other applications mentioned in
+the preliminary section of this chapter: Szegé functions, the GKZ symmet-
+ric rational functions, and the Kauers-Zeilberger 4-variable function. Looking
+ahead at Figures 11.2 and 11.3 may help to give a mental picture of the variety
+and the deformations used. A quick outline of this section and the next goes as
+follows.
+
+(i) For a hyperbolic homogeneous polynomial g, construct a deformation
+from the imaginary fiber u+iR¢ over a point u in a cone of hyperbolicity
+K to a projective contour: a set closed under multiplication by positive

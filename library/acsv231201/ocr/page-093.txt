@@ -1,0 +1,61 @@
+3.4 Transfer theorems 75
+
+they are polynomials, Theorem 3.15 thus gives an expansion
+
+An = 4a | - 3 + 0(n-')}-16-4"( 3 +o())
+4ni Vn 32n? Vr 32n2
+
+[ey/4—o2 [en] /4-2)82
+
++O (4"n-?)
+
+Ye
+[e"]O(1/4-z))
+3 1 5 9 z
+=4"|n-? —-n? + O(n?
+eon ete)
+
+4
+
+Exercise 3.5 (common subexpression problem). Flajolet and Odlyzko [FO90]
+quote the generating function
+
+f= $Y *)| Viera vime|
+P
+
+2z ‘30 pti
+
+involved in the representation of trees by directed acyclic graphs.
+
+(a) Show that the minimal modulus singularity occurs at z = 1/4, around
+
+which
+c
+
+Vd — 42 log(1 — 41)
+
+(b) Compute the asymptotic behavior of the coefficients of f (you can check
+your answer against [FO90, (6.7b)]).
+
+f@ ~
+
+Example 3.17 (branching random walk: logarithmic singularity). For an ex-
+ample including a logarithmic term, recall from Example 2.13 the implicit
+equation
+
+(2) = [1 = pz + po(G@)P .
+
+This characterizes the probability generating function for the number X of par-
+ticles to reach the origin in a binary branching nearest-neighbor random walk
+with absorption at the origin. Aldous (see [AB05, Theorem 29] and [Ald98,
+Theorem 6]) showed that there is a critical value p = p, satisfying 16p.(1 —
+Pp») = 1, such that if p > p, then X is sometimes infinite, while if p < p. then
+X is never infinite. At the critical value X is always finite, and it is of interest
+to know the likelihood of large values of X.
+Below, we show that
+
+l-z
+log(1/(1 — 2))’
+
+l-z
+(2) =1- pete (3.12)

@@ -1023,7 +1023,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "critical",
-        "evidence": "folio/quantum-observable-universe/mass-theory/lambda-scale-substrate-form.ts:1: block has CAL-4 caveat but is kind=proposition without acknowledgment banner \u2014 demote to conjecture or add CAL-4 banner"
+        "evidence": "folio/quantum-observable-universe/mass-theory/lambda-scale-substrate-form.ts:1: block has CAL-4 caveat but is kind=proposition without acknowledgment banner — demote to conjecture or add CAL-4 banner"
       },
       {
         "field_hash": {
@@ -1043,7 +1043,7 @@
         "reviewed_at": "2026-08-21T20:55:30.902Z",
         "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc",
         "severity": "critical",
-        "evidence": "folio/quantum-observable-universe/mass-theory/lambda-scale-substrate-form.ts:1: block has CAL-4 caveat but is kind=proposition without acknowledgment banner \u2014 demote to conjecture or add CAL-4 banner"
+        "evidence": "folio/quantum-observable-universe/mass-theory/lambda-scale-substrate-form.ts:1: block has CAL-4 caveat but is kind=proposition without acknowledgment banner — demote to conjecture or add CAL-4 banner"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -1755,6 +1755,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5297bb99d6df",
+          "ts": "bdfcf1c2299e",
+          "lean": "fc14136005c3",
+          "lean_statement": "30ab7e3b616d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:31.645Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "lambda-scale-substrate-form.lean:47-48 `noncomputable def lambdaA_qForm (q : ℝ) : ℝ := (3 * q^2 + 4 + 3 * q^(-2 : ℤ)) / 4` — the sum Σ_{λ⊢4} dim_q V_λ (.md:4) is never formed; only q-form = h-form (:58-65) proved; .ts:52 title states the falsified '5/2 − h²·G' form",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2889,7 +2907,7 @@
         "reviewed_at": "2026-08-21T21:12:19.798Z",
         "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
         "severity": "minor",
-        "evidence": "'This structurally derives the leading volume-density term.' gives 'this' \u2014 an unnamed antecedent spanning the two preceding sentences \u2014 the role of deriving, and 'structurally derives' is not something a sentence can do to a term. The following line, 'The evaluation of higher $h^2$ corrections remains an active research direction', is the same shape and additionally contradicts the block's own '**exact** closed form': the identity 5/2 + (3/4)h^2 is exact in h with NO higher-order terms, so within this block there are no 'higher $h^2$ corrections' left to evaluate.",
+        "evidence": "'This structurally derives the leading volume-density term.' gives 'this' — an unnamed antecedent spanning the two preceding sentences — the role of deriving, and 'structurally derives' is not something a sentence can do to a term. The following line, 'The evaluation of higher $h^2$ corrections remains an active research direction', is the same shape and additionally contradicts the block's own '**exact** closed form': the identity 5/2 + (3/4)h^2 is exact in h with NO higher-order terms, so within this block there are no 'higher $h^2$ corrections' left to evaluate.",
         "notes": "proposed: 'The half-symmetric count over conjugate pairs gives the leading volume-density term 5/2 without input.' and either delete the higher-corrections sentence or say which OTHER quantity (not $\\lambda_A$) it refers to. Flagged rather than fixed: the second sentence is a scope claim I cannot re-aim without knowing the intended referent."
       }
     ],
@@ -2973,6 +2991,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T21:12:19.798Z",
+  "updated_at": "2026-11-15T21:57:31.645Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

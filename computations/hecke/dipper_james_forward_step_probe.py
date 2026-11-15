@@ -14,7 +14,7 @@ THEOREM.  A Lean proof follows the PROOF, and the two can come apart -- which is
 what this probe finds.
 
 Mathas' argument for `s |>= t  ==>  d(s) <= d(t)`, transcribed from the source
-(`library/hecke-alg/sections/sec-000-document.md`, the paragraph after 3.7):
+(`library/hecke-alg/sections/page-025.md`, the paragraph after 3.7):
 
     First suppose that s |> t and choose r minimal such that row r of s and row r of t are
     different.  Let a be the smallest number which is in row r of s but not in row r of t;

@@ -1,0 +1,59 @@
+5.2 Standard phase 119
+
+constants
+
+Bon = Vit
+Proposition 5.6. For alln € N,
+
+co 2
+f xe dx = Bon.
+00
+
+Proof Forn = 0 this is just the standard Gaussian integral
+
+f e* dx = vi,
+
+and the general result follows by induction. Indeed, rewriting
+
+00 5 eo Qn >
+f. xe dx = f. 5) (-2xe"* dx)
+
+and applying integration by parts gives
+
+a 4 2n-1 2
+f xe dx = SS f xn? eo dx
+
+_2n-1 (2n - 2)!
+~ 2 Vt oa
+
+(2n)!
+= VI ae
+
+by induction, as claimed. ia)
+
+(2n)!
+nt4r"
+
+Corollary 5.7 (monomial integral). Let S(z) = ya ZG and r € N¢. Then
+
+f. Ze dz = B, Aen?
+ee
+
+for any A > 0, where By = Tf. Br; if all the components rj are even and
+Br = 0 otherwise.
+
+Proof Ifn € N then making the change of variables x = yA~'/? and applying
+Proposition 5.6 proves
+
+00 00 5
+f en ene dx= aie ye dy = Vien an»
+00 -
+
+co
+
+while f° x°"*! e~*” = 0 as its integrand is odd. The integral under considera-
+
+tion factors as
+d 0 ;
+f. Ze 8A dz = I] Lf Leki as ;
+Rd jal L-@ J

@@ -249,6 +249,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0588dbc0b242",
+          "ts": "09550fec3b9c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:02.632Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "(S↔P column of thm:topological-mass row) Ref resolves to library `QOU.Torsion.mass_decomposition_categorical` (lean/QOU/Torsion/mass_decomposition_categorical.lean:51). Its context class carries `mass_decomposes : Prop`, `decomposition_active : mass_decomposes` and `impl_… : mass_decomposes → mass = Σ_{n<N} mass_level n`, so it is self-assuming with a free-Prop carrier. It also states a different decomposition (a sum over tower levels) from the theorem's ‖tr_desc‖ + Σᵢ‖tr_trans(ϱ,pᵢ)‖. The sibling `.lean` proves only the triangle inequality, and equality under non-negativity hypotheses. prf:topological-mass says itself that it gives only an upper bound, and that equality is \"open\". prf:topological-mass-categorical cites lem:topological-mass-cat-eigenspace as an additive split ‖tr τα‖ + ‖tr(α−τα)‖, but that lemma states the Pythagorean m² = a² + b² and stresses \"not additively\". So the proof contradicts the lemma it cites. Its transient step uses the false \"disjoint supports ⇒ norm of sum = sum of norms\". The statement also says the orthogonal splitting makes the mass \"decompose additively\", which is the same error (Pythagoras gives √(a²+b²))"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1841,6 +1857,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-29T15:52:33.383Z",
+  "updated_at": "2026-11-15T21:56:02.632Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

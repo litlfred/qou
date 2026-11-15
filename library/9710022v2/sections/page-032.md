@@ -1,0 +1,80 @@
+---
+doc_id: 9710022v2
+doc_title: "Harmonic Analysis on the quantum Lorentz group"
+section_id: page-032
+section_title: "Page 32"
+pages: 32-32
+pdf_page: 32
+source_pdf: 9710022v2.pdf
+source_sha256: e5ff373a1ec6884a
+text_source: ocr
+granularity: page
+doc_brief: "Harmonic Analysis on the quantum Lorentz group — This w ork b egins with a review of complexi cation and reali cation of Hopf algebras."
+---
+Using the pictorial representation, it is easy to show that this relation is true. Indeed, the
+righthandside of the relation (113) can also be represented as
+
+-B G
+
+~ aw
+KMOR, NAVBNOND eX ao
+
+and, using the usual graphical rules ‘the folk owing equations hold:
+
+IRF
+
+|S
+KMUX2 >>
+3B
+F IRF
+-B
+A
+ween, D
+~B
+
+7
+B
+>
+
+IRF
+
+F BD|G AC|G AC
+No No Ni] Ne No Ni | Ns No Ni
+which conclude the proof of the relation (113).
+
+In order to prove the irreducibility and the unitarity of this representation we need an explicit
+1
+
+‘
+
+which is explicitely equal to
+
+Sr einla-c-n) 2C+1)?2D+1)2 [BD
+[2G + 1] No Ni
+
+iu
+H \ Uns UN /-UFUAVG
+5 .
+X3 UR, vcUD
+
+Rods
+
+4 1c
+
+formula for the action of Gi ie we need to compute ARS This is trivial to do using the explicit
+formula for the 67 symbols when one of the spin is fixed to + which are given in the appendix.
+We obtain the following formulas:
+
+AR, ayn) — EEC Be FIC tg 4
+crgo4g 808i) = BC+ 1]
+
+age an _ PEC + d+ Ble qe -3[c+4 2]
+
+é-sc-3(8o.8i1) = PCa 1]
+
+APC, (No.8) = Ao Jic+} ™ic+s4 pr +C4+E4 Spx c+ mah
+C-aCtg rt) "DE +I] 2 2 2° Q01 a 2°23
+
+= My 1¢_3 (No, Xi).
+
+32

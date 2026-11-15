@@ -1,0 +1,46 @@
+3. THE BLOCKS OF -¥(d,n) AND # 61
+
+For example, if A = (4,3,2,1) then one sequence of partitions leading to the
+3-core of \ is the following.
+
+xT]
+
+so the 3-core of A is the partition (1). It is not at all clear that the e-core does
+not depend upon the order in which the rim hooks are removed. The next Lemma
+shows that this is not the case.
+
+5.34 Lemma The e-core of a partition is well defined.
+
+Proof. Let 8 = (1,...,8n) be the sequence of beta numbers for the partition A.
+Think of the beta numbers as being arranged on an abacus with e—runners, where
+the bead positions on the abacus are numbered from left to right as 0, 1....,¢—1in
+the first row, e,e+1,...,2e—1 in the second row and so on. For example, if e = 3
+and \ = (4,3,2.1) as above then 9 = (13, 11,9,7,5,4,3, 2, 1,0) is the sequence of
+beta numbers for A and they are represented on an abacus as follows.
+
+By Lemma 5.26, unwrapping an e-hook from \ corresponds to decreasing some
+beta number 3; by e; this is the same as moving a bead one row higher in some
+column of the abacus. Consequently, the e-core of \ corresponds to pushing all of
+the beads up to their highest possible positions in each column of the abacus. In
+particular, the e-core is independent of the sequence of rim hooks removed. oO
+
+5.35 Lemma Let M be an .%zq(d,n)—module and suppose that all of the compo-
+sition factors of M belong to the same block and that M <> Yu a, Wf for some
+integers a,, jt € At(d,n). Then WE and M lie in the same block whenever a, #0.
+
+Proof. By Lemma 5.30 a virtual module Yh a,WE + 0 if and only if a, = 0
+
+for all p € A*(d,n). Hence, the Lemma follows by applying a suitable sum of block
+idempotents. oO
+
+5.36 Theorem Suppose that F is a field and that d > n. Then the Weyl modules
+We and Wy’ belong to the same block if and only if X and jt have the same e-core.
+
+Proof. By Theorem 5.31 the composition factors of W?, apart from L? itself, are
+of the form L& where the partition sis obtained by unwrapping a rim hook from
+X and wrapping it back on lower down in the resulting diagram. Suppose that Wf
+appears with non-zero coefficient in the Jantzen sum formula for Wj. Then there
+exist nodes (a,b) and (a,c) in the diagram of \ such that vp([h>,]3) # vp([hdcJa)
+and ys can be obtained from \ by unwrapping the rim hook R?, and wrapping it
+back on lower down. Now, if h is an integer and vp([h]g) # 0 then [h]g € p'R:
+therefore, [h], = 0 in F and, consequently, e divides h. It follows that ¢ must divide

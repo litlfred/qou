@@ -1,0 +1,47 @@
+304 Multiple point asymptotics
+
+tors €,,...,€, vanishing on distinct hyperplanes V,,...,V, in C4, with the
+factors scaled so that €(z) = 1 - z- b” for a real vector of coefficients bY.
+Let M = C4\V denote the set where F is analytic, and define Mz = MOR‘.
+
+A stratum S in V can be represented by its closure, which is an intersection
+S= Vi, 1---AV«, of some of the hyperplanes defining V with the hyper-
+planes not in S removed. By the convexity of the height function, each stratum
+contains at most one critical point in each orthant of R¢, and if ée{ +1) then
+we let os = os¢(7) denote the unique critical point of S in the same orthant as
+. We further define Mz(S) to be R¢ with the hyperplanes defining S removed,
+and let Bs = Bs¢ denote the unique component of Mg(S) in the same orthant
+as € whose closure contains the origin.
+
+The homology and cohomology of (complements of) hyperplane arrange-
+ments has been well studied. Recall the relative homology group H,(M, —00)
+that describes the homology of M relative to any sublevel set M.. = {z € M:
+h,(z) < c}, where c is smaller than the heights of all critical points.
+
+Definition 10.19 (imaginary fibers). For each component B of Meg, the imag-
+inary fiber with respect to B is any chain Cg = x + iR4 with x € B, oriented
+so that each copy of R goes from —co to +00.
+
+The imaginary fiber Cg is well defined in Ha(M), as if x, y € B then f(t) =
+(1-t)a+ty+iR¢ defines a homotopy between f(0) = a+iR¢ and f(1) = y+iR¢
+which stays in M.
+
+Proposition 10.20. If 7 is a generic direction then the set of fibers Cz as B
+varies over components of Mz on which hg is bounded from below is a basis
+
+for HiM, -°%).
+Proof See Varchenko and Gelfand [VG87, page 268]. ia)
+
+Proposition 10.20 implies that for linear divisors the domains of integration
+Cw in (10.1) can be expressed in terms of imaginary fibers. We now specialize
+to the case of a transverse arrangement, where all nonempty intersections of k
+hyperplanes have codimension k. In this case we can explicitly compute cycle
+representatives for another homology basis using the following construction.
+
+Definition 10.21 (linking tori). For any w € Vz let Adj(w) be the set of
+components B in Mz with w € B. If w is contained in the stratum S with
+closure S = Vj, 1--+ Vj, then the linking torus T,, is the relative cycle
+
+Tw = » sgn,,(B) Cr (10.8)
+
+BeAdj(w)

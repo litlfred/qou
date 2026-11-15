@@ -1,0 +1,46 @@
+342 Cone point asymptotics
+
+be cones of hyperbolicity of the homogenization of g at x + iy, picking the
+one that contains tan,(B). While the theorem does not rule out other choices,
+choosing smaller cones would be wasteful because then N(y) would be larger
+and the last part of conclusion (iii) would apply less often, while choosing
+larger cones turns out to make conclusion (ii) impossible to satisfy. The hy-
+pothesis that x, € OB is important: for a counterexample when this fails, see
+Exercise 11.10.
+
+The cones N(y) allow us to define a set of points that locally look like min-
+imal critical points, except that they “don’t see” points of Q.
+
+Definition 11.3. The set local(#) of locally minimal points of Q with respect
+to a, in the direction # consists of the points z = exp(a. + iy) € T.(x.),
+where Q vanishes and ¢ € N(y). We also define the set of logarithmic locally
+minimal arguments localarg(f) = {y € Tra : exp(a + iy) € local(?)}.
+
+Locally minimal points are the only points that can cause an obstruction
+when trying to deform the Cauchy domain of integration to lower height.
+
+Theorem 11.4. Assume the hypotheses of Theorem 11.1 and let T = T(x)
+for any x € OB. If local(#) is empty then T is homotopic in M to a cycle C,
+whose maximum height is less than h, = -? - &..
+
+Proof of Theorem 11.4 from Theorem 11.1 Fix x € OB and for each y € Taat
+let v(y) denote a vector v as in conclusion (iii) of Theorem 11.1. By semicon-
+tinuity, for each y € Tra there is a neighborhood N(y) of y in Trat such that
+u(y) € Z(y’) when y’ € N(y). Cover Tat with finitely many of the neigh-
+borhoods {V(yj) : 1 < j < m} by compactness, let {yj : 1 < j < m} bea
+partition of unity subordinate to this finite cover, and for y € Tra define
+
+m
+Vy) = > wavy). (11.2)
+j=l
+For each j such that y € N(yj), the vector v(y;) lies in the cone Z(y). The vec-
+tor vy) is a convex combination of these vectors and therefore, by convexity
+of the cone Z(y), we see that Vy) € Z(y). By linearity of the dot product with
+f,, we also have that Vy) - F, > 0. In particular, V is a smooth non-vanishing
+section of Z. Let ¢ > 0 be as in conclusion (ii) of Theorem 11.1. Again using
+convexity of Z(y) and the fact that Z(y) > tang,(B) 2 B- =x (the set B with
+a, translated to the origin), we see that the line segment between and Vy) and
+any x € Bis contained in Z(y).
+Define the map ¢ : Tgat x[0, 1] by
+
+iy) = exp{iy +a, +6 [(1- N(a-2.) +1Vy)] } . (11.3)

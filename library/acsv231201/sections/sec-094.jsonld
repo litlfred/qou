@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/acsv231201/sections/sec-094",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Description of the attachments",
+  "pageStart": 541,
+  "pageEnd": 545,
+  "contains": [
+    "library/acsv231201/blocks/prose-sec-094",
+    "library/acsv231201/blocks/figure-img-p544-1",
+    "library/acsv231201/blocks/figure-img-p544-1173"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
+  "provenance": "ingested"
+}

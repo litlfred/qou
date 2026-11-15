@@ -1,0 +1,45 @@
+488 Residue forms and classical Morse theory
+
+the pole (0, z,...,Z). This is equal to
+(2zi) f P(0, Z2,..-,Za)5
+o
+
+which in this special case is precisely f Res(w). oO
+There is also a relative version of this result.
+
+Theorem C.10 (relative residue integral theorem). Let V and w be as in The-
+orem C.9. If Y is any closed subspace of C4 such that Hg(C4, Y) vanishes, and
+if a is a d-cycle in M, then
+
+[onan ff Resiw) + [ w (C.2.2)
+a INT[a,0;V] Cc
+
+for some chain C’ supported on the interior of Y. In particular, if w = z-"n
+for some holomorphic form n on M and if Y is the set where the real part of
+
+hp = -? - log z is at most c then, as A > ©,
+f w = 2ni f Res(w) + O(e*’) (C.2.3)
+a INT[a,0;V]
+
+for any c' > c.
+
+Proof By the vanishing of HAC, Y) there is a (d + 1)-chain H with OH =
+a+y and y supported on the interior of Y. Let N denote the intersection of H
+with a neighborhood of V. As before,
+
+for for fo.
+@ y ‘ON
+
+Letting 7 = H NY, we recall that ON is homotopic to o Xx B, plus a piece
+y’ in the interior of Y. Taking C’ = y + y’, the rest of the proof of (C.2.3)
+is the same as that of Theorem C.9. The asymptotic estimate follows because
+If. a < eX kL |n|, as in the proof of Proposition B.10. Oo
+
+C.2.2 Residue forms on smooth higher order poles
+
+Let w and w’ be holomorphic d-forms on M with simple poles on the smooth
+variety V = Vo. If w and w’ are cohomologous in H4(M) then [Res(w)] =
+[Res(w’)] in H41(V,), and the study of residue classes of forms with smooth
+higher order poles can be reduced to those with smooth simple poles using this
+
+property.

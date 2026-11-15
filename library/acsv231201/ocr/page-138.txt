@@ -1,0 +1,60 @@
+120 Multivariate Fourier—Laplace integrals
+and the result follows from simplifying each factor. ia)
+
+Before establishing Theorem 5.1 we also need to bound the error terms that
+appear.
+
+Lemma 5.8 (Big-O Lemma). Let A be a measurable function satisfying A(z) =
+O(\z|") at the origin. Then the integral of A(z)e~*S over any compact set K
+may be bounded from above by
+
+f Azo dz = 0(a-r?),
+K
+
+The implied constant on the right goes to zero as the implied constant in the
+hypothesis A(z) = O(|z|") goes to zero.
+
+Proof Because K is compact and A(z) = O(|z|") at the origin, there exists a
+constant C > 0 such that |A(z)| < C|z|’ on all of K. Let
+
+Ko={z€K:|asa'?}
+denote the intersection of K with the ball of radius A~!/”, and for n > 1 let
+Kya {zeK:2'0'? xia sonar}
+
+denote the intersection of K with a shell. On Ko we have |A(z)| < CA~"? and
+le" < 1, so
+
+(nay?
+r (4 + 1)
+
+For n > 1, when z € K, we have the upper bounds
+
+f A(zjeS™ dz < Vol(Ko) CA”? = ca.
+Ko
+
+|A(z)| < 2™ca"? by upper bound on |z|
+eS) < by lower bound on |z|
+
+dn qd /2
+Vol(K,) < ———~ a4? by upper bound on |z|.
+
+r(g + 1)
+
+Thus, if C’ = 1+ Dyjso WME?
+< a CC aan
+~ d
+
+| [ swe ae f[ a@ev? ae
+Kk 4 \Jx, r($+1)
+
+<
+with the right-hand side going to zero with the implied constant C, as claimed.
+ia]
+
+2n-2
+
+< oo then
+
+/2
+
+We are now ready to prove Theorem 5.1.

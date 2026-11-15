@@ -380,9 +380,27 @@
         "reviewed_at": "2026-08-19T12:58:12.213Z",
         "reviewed_sha": "98acdf5024da09352ca36428922fa1046f83d309"
       }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "eb410b3893d5",
+          "ts": "c68c9f04ba33"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:04.786Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "minor",
+        "evidence": "(S↔P column of prop:pairwise-interaction-decomposition row) Lean is genuine: hexagon (`braiding_tensor_left_hom`), `yang_baxter`, and an original proof of the C(n,2) inversion bound. All three match. In the proof, part 2's sketch \"apply part 1 to c_{X,Y⊗Z}\" misstates the derivation: part 1 is for c_{X⊗Y,Z}, and YBE comes from naturality of c_{–,Z} in c_{X,Y} plus part 1 twice"
+      }
     ]
   },
-  "updated_at": "2026-08-19T12:58:12.213Z",
+  "updated_at": "2026-11-15T21:56:04.786Z",
   "paths": {
     "ts": "folio/quantum-observable-universe/knots-particles-confinement/pairwise-interaction-decomposition-proof.ts",
     "md": "folio/quantum-observable-universe/knots-particles-confinement/pairwise-interaction-decomposition-proof.md"

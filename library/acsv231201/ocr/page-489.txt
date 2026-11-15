@@ -1,0 +1,46 @@
+B.2 Tools for homology 471
+
+X with k <n. IfC and C’ are k-chains on X with C = C’ in H,(X, Y) then, as
+
+A> ~,
+fers [ore ole).
+
+Proof By definition, the difference between C and C’ is a relative boundary
+C-C’ =dD+C” with C” supported on Y. Using Stokes’s Theorem (Theo-
+
+rem A.24),
+fo-fl=[f os [iol=|fiaoe [a
+Cc Cc aD cr D cr”
+= f w <[ eln| < Ke,
+cr” c”
+
+where K = ke || and the appearance of |7| in an integral means that when 77 is
+pulled back to integrate, we integrate the modulus of the result. ia)
+
+Let (X, A) be a pair for which A is a strong deformation retract of an open
+neighborhood in X. It can be shown [Mun84, Ex. 39.2] that for all n > 1
+the relative homology group H,,(X,A) is isomorphic to the singular homol-
+ogy group H,,(X/A) of the quotient X/A, obtained from X by shrinking A to a
+point. This gives a way of computing the homology of a quotient X/A: apply-
+ing Theorem B.8 to the short exact sequence of chain complexes 0 — C(A) >
+C(X) — C(X,A) > 0 gives a long exact sequence computing H,(X, A), and
+hence H,(X/A), from H,(X), H(A) and some knowledge of the maps in the
+long exact sequence.
+
+Corollary B.11. Let A be a subspace of X. Then there is along exact sequence
+of the pair (X,Y),
+
++ Hye (XA) 29 H(A) “> Hy(X) 2s Hy(X, A) 2 Ay (A) 9,
+
+where i, and j, are the maps induced by the inclusions of A into X, and X
+into (X,A), respectively, and 0, is the map induced by taking a relative cycle
+y € C,(X) to its boundary dy € Cy-\(A). When A is a deformation retract of
+an open neighborhood in X then this long exact sequence holds with H,(X, A)
+replaced by H,(X/A), where the reduced homology group H,, is the same Hy,
+when n > 0, and has dimension one less when n = 0.
+
+Exercise B.5 (computing homology of S”~!), Let X = A” and let Y be the
+subcomplex of cells with dimension strictly less than n. Use the long exact
+sequence for the pair (X, Y) to determine H,,_;(Y).
+
+One important feature of relative homology is the excision property.

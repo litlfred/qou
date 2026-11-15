@@ -1,0 +1,46 @@
+262 Smooth point asymptotics
+
+tively, the Thom isomorphism (Theorem C.2) says that o induces an injec-
+tion from Hy_)(V.) to H,(C4 \ V). Being functorial, it commutes with z,
+where zt: V, > (V,,V<c-e) is projection. The Thom isomorphism carries
+INT(T, T’) to T — T’, which is equal to T in Hy(V., V<c_-), proving (iii). O
+
+We remark that it is possible to have a minimal smooth contributing point p
+in the direction #, and another smooth critical (but not contributing) point p’
+in the direction # that is not minimal but has the same height as p.
+
+9.3 Smooth bivariate functions
+
+This section further explores bivariate rational functions, for which we can be
+more explicit and give stronger results.
+
+9.3.1 Smooth bivariate power series
+
+We first present a complete algorithm for bivariate power series that finds all
+smooth contributing critical points, without any assumption of minimality, fol-
+lowing the techniques of [DeV11; DvdHP11].
+
+Assumption 9.1. Jn this section we always assume that V is smooth and Q is
+square-free, so that for every (x,y) € V, at least one of Qx(x, y) and Qy(x, y) is
+non-zero, and that the set of critical points is finite. If Q is not square-free then
+our arguments characterizing the singularities that determine asymptotics still
+hold when Q is replaced by its square-free part.
+
+In any number of variables, a potential program to determine asymptotics is
+the following.
+
+1. Explicitly compute a cycle representing the intersection class.
+
+2. Try to push the cycle below each critical point, starting at the highest.
+
+3. When it is not possible to push past a point, describe the local cycle that is
+‘snagged’ on the critical point.
+
+4. Check whether this is a quasi-local cycle of the form we have already de-
+scribed and, if so, read off the estimate from saddle point asymptotics.
+
+This program is not generally effective because the step of ‘pushing the cycle
+down’ is not algorithmic, which is why we use the framework of stratified
+Morse theory. However, an exception occurs when d = 2, since the cycle C has
+codimension | in V and thus, up to a time change, there is only one way for it
+to flow downward.

@@ -624,7 +624,7 @@
           "in_degree": 0,
           "cone_size": 3,
           "depth": 3,
-          "pagerank": 7.6e-05,
+          "pagerank": 0.000076,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1025,6 +1025,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0db219106d3e",
+          "ts": "01085ed457fb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:00:14.124Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "[sidecar review 2026-11-15, issue #8030] **Statement contradicts its own proof.** The statement says the splitting \"requires no calibration\" and \"depends only on q₀ and M_N\". The prf says Step 1 holds only in the excised convention-C frame, and that Eq. (2) \"is a fitted ansatz … selection against the target\". Residuals are also wrong: at the proton pin (q−1)²(1−q⁻⁴)/3 = 1.37571e−3 against CODATA 1.37747e−3, i.e. **−0.128 %**, not −0.10 %; M_N·(that) = 1.29168 MeV against 1.29333, i.e. **−0.128 %**, not the −0.52 % in the table (the /M_N row and the MeV row must have the same residual when M_N is CODATA). **Cross-block conflict:** `prop:neutron-proton-mass-splitting`, same chapter, gives the model value 1.054 MeV (−18.5 %) for the same quantity."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1768,6 +1784,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-23T15:54:16.002Z",
+  "updated_at": "2026-11-15T22:00:14.124Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

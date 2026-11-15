@@ -1,0 +1,86 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "thurston",
+ "source": {
+  "structure_sha256": "6010919ed83edd813af6b0c7cae19072e144a6bd94538c4b29dc60b099227c9e",
+  "file": "Thurston.pdf"
+ },
+ "provenance": {
+  "title": "William P. Thurston The Geometry and Topology of Three-Manifolds",
+  "authors": "The Geometry and Topology of Three-Manifolds",
+  "arxiv": null,
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 4,
+  "by_kind": {
+   "recommendation": 4
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We must therefore resort to distorted pictures of hyperbolic space.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-019.md",
+   "section_title": "Page 19",
+   "pages": "19-19",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Thus, hyperbolic space should be a sphere of radius i.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-025.md",
+   "section_title": "Page 25",
+   "pages": "25-25",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall later see how this is related to three-dimensional topology, giving a measure of the \u201csize\u201d of manifolds.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-026.md",
+   "section_title": "Page 26",
+   "pages": "26-26",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Since any geodesic must lie in a two-dimensional subspace, \u00a8Xt must be a linear combination of Xt and \u02d9Xt, and we have 2.6.1. \u00a8Xt = \u2212 \u21e3s r \u23182 Xt.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-027.md",
+   "section_title": "Page 27",
+   "pages": "27-27",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

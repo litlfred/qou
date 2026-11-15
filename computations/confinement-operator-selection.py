@@ -37,7 +37,7 @@ from derived_masses import (  # noqa: E402
 try:
     SHA = subprocess.check_output(
         ['git', 'rev-parse', 'HEAD'],
-        cwd=str(Path(__file__).resolve().parent.parent.parent),
+        cwd=str(Path(__file__).resolve().parent.parent),
         stderr=subprocess.DEVNULL
     ).decode().strip()
 except (subprocess.CalledProcessError, FileNotFoundError):
@@ -407,7 +407,7 @@ for nucleon_name, quark_types in [("PROTON (u,u,d)", ['u', 'u', 'd']),
 
     # ── Ranking by multiple criteria ──────────────────────────────
     is_proton = 'u' == quark_types[0] and quark_types.count('u') == 2
-    target_net = TARGET_NET_PROTON_FN() if is_proton else TARGET_NET_NEUTRON_FN()
+    target_net = float(TARGET_NET_PROTON_FN() if is_proton else TARGET_NET_NEUTRON_FN())
 
     print(f"\n  RANKING 1 — Naive (fewer demand channels, lower E_×):")
     ranked1 = sorted(results_table, key=lambda r: (r['n_demand'], r['E_x']))
@@ -636,37 +636,36 @@ for nucleon_name, quark_types in [("proton", ['u', 'u', 'd']),
 
 out_path = Path(__file__).parent / "confinement-operator-selection.witness.json"
 
-# ── GUARD: this producer is BEHIND its own committed witness ────────────
+# ── Provenance stamp + excised STUB dual keys (qou-cds2 / qou-lpio) ────
 #
-# The committed witness carries 12 keys this script cannot produce. MEASURED,
-# because the distinction matters and the first version of this comment got
-# it wrong:
-#
-#   9 are STUBS, not data -- `active_set`, `primal_obj`, `dual_obj`,
-#     `duality_gap`, `y0_star`, `y_star` are all `None`, and the three
-#     `*_status` fields read "STUB -- re-run script through lp_dual_solver.py
-#     to populate". They satisfy the LP-dual validator's field-PRESENCE check;
-#     they carry no shadow prices.
-#
-#   3 are REAL -- `engine`, `scriptFile`, `commitSha`: WitnessBuilder
-#     provenance, and the only content actually at risk here.
-#
-# So an overwrite does not destroy computed duals; there are none to destroy.
-# What it does is drop `gram_inverse`'s companions below the REQUIRED_FIELDS
-# of `bound_state_observable_validator` and `audit_frobenius_pairing`, and
-# lose the provenance stamp. Both are still reasons not to clobber silently.
-#
-# AND NOTE WHAT THE STUB NOTE ASKS FOR IS NOT AVAILABLE. "Re-run through
-# lp_dual_solver.py" presumes an LP in this file. There is none -- the three
-# RANKING passes are sorts, not optimisations, and nothing here has a primal
-# to take a dual of. So the duals either belong to a different producer or
-# want an LP that was never written. That is an open question, not a wiring
-# task; do not "fix" it by calling the solver on a problem that is not posed.
-#
-# Refuse to overwrite a witness that holds keys we cannot regenerate. Set
-# QOU_ALLOW_WITNESS_DOWNGRADE=1 only if you have deliberately decided the
-# drop is correct.
+# Per owner ruling Q-WXHI-2 = 1 (beans qou-cds2, qou-lpio):
+#   * The 9 null/STUB LP-dual placeholder keys (`active_set`, `primal_obj`,
+#     `dual_obj`, `dual_obj_status`, `duality_gap`, `duality_gap_status`,
+#     `y0_star`, `y0_star_status`, `y_star`) are stripped from the witness.
+#     This script performs three ranking sorts over 9 candidate operators, not
+#     an LP/SDP solve, so those placeholders carried no shadow prices.
+#   * Real WitnessBuilder provenance (`engine`, `scriptFile`, `commitSha`,
+#     `q0Anchor`, `q0Value`) is stamped BEFORE checking `_lost` against any
+#     existing witness on disk, so normal re-runs refresh the witness cleanly
+#     at Convention D / proton pin without requiring an override flag.
 import os  # noqa: E402
+from qou_substrate.witness import WitnessBuilder as _WB  # noqa: E402
+
+_EXCISED_STUB_DUAL_KEYS = frozenset({
+    "active_set",
+    "dual_obj",
+    "dual_obj_status",
+    "duality_gap",
+    "duality_gap_status",
+    "primal_obj",
+    "y0_star",
+    "y0_star_status",
+    "y_star",
+})
+
+witness.setdefault("scriptFile", os.path.basename(__file__))
+_WB.stamp_staleness_metadata(
+    witness, script_path=__file__, engine=None, q0_anchor=None)
 
 _existing = {}
 if out_path.exists():
@@ -674,31 +673,21 @@ if out_path.exists():
         _existing = json.loads(out_path.read_text())
     except (OSError, ValueError):
         _existing = {}
-_lost = sorted(set(_existing) - set(witness))
+_lost = sorted((set(_existing) - set(witness)) - _EXCISED_STUB_DUAL_KEYS)
 
 if _lost and os.environ.get("QOU_ALLOW_WITNESS_DOWNGRADE") != "1":
     print(f"\n\nWitness NOT written to {out_path.name} -- refusing a downgrade.")
     print(f"  the committed witness holds {len(_lost)} key(s) this producer "
           f"cannot emit:")
     print(f"    {', '.join(_lost)}")
-    print("  (9 of those are None/STUB placeholders, 3 are real provenance --"
-          " see the guard comment.)")
     print("  Set QOU_ALLOW_WITNESS_DOWNGRADE=1 to override.")
     print("Done (witness preserved).")
 else:
     if _lost:
         print(f"\n\nWitness DOWNGRADE forced: dropping {', '.join(_lost)}")
     with open(out_path, 'w') as f:
-        # Provenance stamp (bean qou-4un2): this producer writes its
-        # witness directly, so nothing else records which script made
-        # it -- and a re-run of an unstamped producer DELETES the
-        # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
-        from qou_substrate.witness import WitnessBuilder as _WB
-        import os as _os  # noqa: E402 -- provenance stamp
-        witness.setdefault("scriptFile", _os.path.basename(__file__))
-        _WB.stamp_staleness_metadata(
-            witness, script_path=__file__, engine=None, q0_anchor=None)
         json.dump(witness, f, indent=2)
+        f.write("\n")
     print(f"\n\nWitness written to: {out_path.name}")
     print("Done.")
 

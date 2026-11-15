@@ -1,6 +1,6 @@
 {
   "$schema": "block-qa/v1",
-  "label": "prop:q-beta-radius-of-convergence-gate",
+  "label": "conj:q-beta-radius-of-convergence-gate",
   "kind": "proposition",
   "paths": {
     "ts": "folio/quantum-observable-universe/mass-theory/q-beta-radius-of-convergence-gate.ts",
@@ -48,6 +48,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "11cfcc27536b",
+          "ts": "0dbc2feef137",
+          "lean": "c255f027f9bf",
+          "lean_statement": "14d1c97528b9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:27.716Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "S↔L: the ref `qbeta_g_simple_pole_at_u_substrate` returns the class field `pole_location_is_u_substrate : qBetaCandidatePoleLocation = u_substrate` (lean:91-92, 105), a self-assuming projection. Its subject is an unconditional `axiom qBetaCandidatePoleLocation : ℝ` (lean:66), alongside `axiom qBetaLadderCoefficients : ℕ → ℝ` (lean:57), which is never used. Nothing links the pole to the series g(u) = Σ c_k u^k, and \"simple pole\" is not formalised at all. `u_substrate : ℝ := 0.008517234550156142` (lean:75) is a numerical anchor; `gate_satisfied_at_exact_match` is `x = x := rfl` (lean:136-138). The ts says the class is \"over `CommRing R`\" (ts:46), but the file is ℝ throughout. S↔P: Steps 1-2 (rational generating function, ratio and flatness signatures) are correct mathematics. The load-bearing Step 3, though, infers an exact simple pole at u_substrate from finitely many numerically pinned coefficients: \"c_2, …, c_10 exhibit exactly the simple-pole signature … within the resolution of the k ≤ 10 window\" (prf:47-59). Finite data cannot determine the dominant pole, so the statement's exact claim (md:1) exceeds what is proved. The c_k come from \"canonical SDP extraction\" at a proton-pinned q_0 (prf:3-5, 86) and the anchor is a \"proton–muon re-pin\" (prf:60-62, 75-76): data-anchored inputs. The 10⁻⁶ tolerance is \"calibrated\" from that swing (prf:74-79), a chosen threshold presented as part of the proposition (md:3).",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2120,6 +2138,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T22:08:37.087Z",
+  "updated_at": "2026-11-15T21:57:27.716Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -1,0 +1,46 @@
+482 Residue forms and classical Morse theory
+
+open set in ‘V and B is a neighborhood of the origin in C. This is accomplished
+by considering the embedded complex manifold V in its ambient space C4.
+The tangent bundle of V may be identified with a sub-bundle of the tangent
+space to C4 by sending v to e,(v), where e : V — C4 is the embedding of V
+into C4,
+
+Recall from Appendix A that for any w € C® there is a natural identification
+¢ of the tangent space T,,C@ with C/ using the standard basis 0/dz1,...,0/0za
+for the holomorphic tangent space. Intuitively, we decompose C“ near w by
+taking the tangent plane to V at w and its orthogonal complement. Formally,
+the embedded tangent space and the embedded normal space of V at w are the
+subsets Sy := {w+(e,(X)) : X € TwV} and Si, := {wtv :v € NwV} of C4,
+respectively, where NyV € C@ is the orthogonal complement to $(e.(TwV))-
+
+Under our assumptions, N,V is the one-dimensional complex vector space
+(or two-dimensional real vector space) described in local coordinates as the
+span of the vector (V Q)(w). The total space of the normal bundle to V is the
+set {(w,v) © VX Cl: ve NyV} pairing elements of V and normal vectors.
+
+Lemma C.1 (Collar Lemma). Under our running assumption that the gra-
+dient of Q is nonvanishing on VV, there is an open neighborhood of V in C4
+that is diffeomorphic to the total space of the normal bundle to V under a
+diffeomorphism that maps w € V to the vector (w, 0).
+
+Proof Because V Q is nonvanishing on ‘V, the gradient V Q is non-zero in
+a neighborhood of V and thus defines a complex line bundle whose integral
+surfaces have real dimension two. If U is any sufficiently small neighborhood
+of V, we let a: U > V be the map sending z € U to the unique point of V
+on whose integral curve it lies; see Figure C.2. The map w sending z € U to
+wW(z) = (a(Z), e(Z)) is the desired diffeomorphism, where p(z) is the projection
+of z—a(z) onto the affine set Suz because p(z) € Naz)V by construction and
+the kernels of da and dp are transverse on V (they are orthogonal subspaces),
+hence also transverse in a sufficiently small neighborhood of V. a
+
+Lemma C.1 implies that for any k-chain y in V we can define a (k + 1)-chain
+oy, which we call a tube around y, by taking the union of small circles in the
+fibers of the normal bundle with centers in y. The radii of these disks should
+be positive and small enough to fit into the domain of the collar map, but can
+(continuously) vary with the point on the base. Different choices of the radii of
+these circles lead to homologous tubes. Similarly, we let ey denote the union of
+solid disks in the fibers of the normal bundle with centers in y. The elementary
+tules for boundaries of products imply
+
+O(oy) = o(dy) and dey) = oy Ue(dy).

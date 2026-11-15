@@ -15,7 +15,7 @@ export default conjecture({
     "computational-horizon",
   ],
   uses: [
-    "prop:p-vs-np-boundary",
+    "conj:p-vs-np-boundary",
     "ex:chi-minus-six-derivation",
     "prf:qou-obstruction-reduction",
   ],

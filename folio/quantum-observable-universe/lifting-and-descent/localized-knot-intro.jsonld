@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prose-localized-knot-intro",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "prose:localized-knot-intro",
+  "kind": "prose",
+  "tags": [
+    "knot",
+    "bundle",
+    "hadron",
+    "initial-conditions"
+  ],
+  "text": "localized-knot-intro.md",
+  "provenance": "authored"
+}

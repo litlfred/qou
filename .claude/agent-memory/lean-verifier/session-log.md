@@ -415,3 +415,8 @@ containing the commit) -> `rm` the commit/tree/20 part blobs by path + FETCH_HEA
 Lesson: on a low-disk container install the toolchain WITHOUT that script's restore step, then
 stream the parts from a throwaway repo (MEMORY.md §"stream the parts INTO tar").
 lean-direct of two Mathlib-only files: 3.7 s / 1.6 s; autoImplicit control re-confirmed both sides.
+
+## 2026-11-15 — ContentCasimir.lean (branch claude/q-laplacian-eigenvalue-derivation-2026-11-15)
+- BASELINE: toolchain already at ~/.elan/toolchains/leanprover--lean4---v4.24.0 (no ~/.elan/bin); release.lean-lang.org 403, GitHub zip 200 (730 MB, 24 s) — not needed.
+- BASELINE: streamed restore of cat/folio-assistant-sci/lake-cache/qou-v4-24-0 @ a792c46d01b: fetch 1m36s, root .lake 3758 / per-paper 2703 oleans; disk 16G -> 8.8G free.
+- STABLE: cone rebuild into a `cp -al` shadow of the per-paper lib dir (7 modules, HeckeAlgebra 64 s, rest ≤6 s), LEAN_PATH = shadow + root .lake/packages/*; works with no union mirror.

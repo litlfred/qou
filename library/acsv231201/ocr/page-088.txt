@@ -1,0 +1,46 @@
+70 Univariate asymptotics
+
+Let m be a positive integer greater than Re{—a} and let W,, be the Taylor
+series remainder such that
+
+Wz) — 1 b= 2) = (= 2)" inl)
+k=0
+Multiplying by (1 — z)* yields
+fO- Dbl =D = (1 =" nl)
+k=0
+
+on the open unit disk, and taking the coefficient of z” on both sides implies
+va atk
+a>) n-( a FO) = [ZI =D"). B.9)
+k=0
+
+By assumption a + m+ 1 > 0, so the function (1 — z)**”"*!Wp, is La +m + 1]
+times continuously differentiable on the unit circle and Lemma 3.9 implies
+the right-hand side of (3.9) is O(n). Since this argument works for any m
+sufficiently large, this proves the desired series for a, exists. oO
+
+Example 3.13 (2-regular graphs: an algebraic singularity). Let
+f= PVT Hz
+
+be the exponential generating function for the number a, of 2-regular graphs
+that was derived in Example 2.52 of Chapter 2. Applying Darboux’s Theorem
+with R = 1, a = -1/2, and w = exp(—z/2 — z7/4) gives
+
+Gn wi) nie = es
+
+n! T(-a) van-
+
+4
+
+Exercise 3.4. Use Darboux’s Theorem to compute an asymptotic estimate for
+
+the coefficients of the generating function f(z) = ——_——...
+1-42+22
+
+3.4 Transfer theorems
+
+Our proof of Darboux’s Theorem uses analyticity of Y(z) = f(z)/(R — z)* be-
+yond the disk of radius R only to provide a series development of f at z = R. By
+making stronger use of analytic properties, and using a sharper estimate than
+Lemma 3.9 to bound error terms, it is possible to do better. There are various
+results along these lines, our favorite being the transfer theorems of Flajolet

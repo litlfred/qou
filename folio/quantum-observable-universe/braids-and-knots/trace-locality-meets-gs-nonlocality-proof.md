@@ -36,58 +36,9 @@ braid word. Therefore the normal form depends non-locally on the
 input — flipping a single generator in $\beta$ can require rewriting
 many generators in $\mathrm{NF}_{\mathrm{GS}}(\beta)$. $\square$ for (2).
 
-**(3) Product factorisation.** Part (3) is Wenzl 1988
-[`wenzl1988`], Theorem 5.13.2 in the QOU manuscript. The argument:
-
-By the Wedderburn structure of $H_n(R, q)$ at generic $q$,
-$$
-  H_n(R, q) \otimes_R \mathbb{Q}(q^{1/2})
-  \;\cong\;
-  \bigoplus_{\lambda \vdash n}
-    \mathrm{End}_{\mathbb{Q}(q^{1/2})}(S^\lambda_q).
-$$
-The normal form $\mathrm{NF}_{\mathrm{GS}}(\beta)$ is an element of
-this direct sum; in each Wedderburn block, it is a single matrix
-unit times a scalar coefficient. The Markov trace on a matrix unit
-in $\mathrm{End}(S^\lambda_q)$ is (by uniqueness up to scalar) a
-fixed multiple of the standard trace, with proportionality constant
-$w_\lambda(q)$. The product factorisation then follows from the
-multiplicativity of the standard trace on products of matrix units
-in distinct positions of the same block: at each normal-form
-generator $e_{j_i}$, the local contribution is exactly the
-$i$-th vertex volume $\widehat{V}_i(q)$, determined by the local
-data of the GS coefficient $(a_i, b_i)$.
-
-Specifically, Wenzl 1988 establishes:
-- The Wedderburn-block weight
-  $w_\lambda(q) = \prod_{x \in \lambda}
-  \bigl(z\,q^{c(x)} - z_{-}\,q^{-c(x)}\bigr)/\bigl(q^{h(x)} - q^{-h(x)}\bigr)$
-  is the canonical proportionality constant, where $c(x)$ and $h(x)$
-  are the content and hook length of the cell $x$ and
-  $z_{-} = z - (q - q^{-1})$
-  (checked exactly for every $\lambda \vdash n \leq 5$).
-- Each vertex volume $\widehat{V}_i(q)$ depends only on the
-  Bratteli-diagram path traced by the normal-form generator $e_{j_i}$
-  through the inductive system $H_1 \subset H_2 \subset \cdots$.
-- The product $\prod_i \widehat{V}_i(q)$ equals the Markov trace of
-  the normal-form element.
-
-This factorisation is *local in the normal-form word*: each
-vertex volume depends on a single normal-form generator and its
-Bratteli-path context, not on the global braid word $\beta$. $\square$
-for (3).
-
-**Reconciliation.** Parts (1)–(3) together establish that the
-composite operation $\beta \mapsto \mathrm{tr}_M(\rho(\beta))$
-factors as
-
-$$
-  \beta \;\xrightarrow{\;\text{GS (non-local)}\;}\;
-  \mathrm{NF}_{\mathrm{GS}}(\beta)
-  \;\xrightarrow{\;\prod \widehat{V}_i \text{ (local in NF)}\;}\;
-  \mathrm{tr}_M(\rho(\beta)).
-$$
-
-The first arrow is non-local; the second is local. The composite is
-the global expectation value, and the two operational stances in the
-QOU manuscript correspond to the two arrows. $\square$
+**Reconciliation.** Parts (1) and (2) concern different operations.
+Part (1) is a property of the trace and part (2) a property of the
+reduction to normal form, so they do not conflict: the composite
+$\beta \mapsto \mathrm{tr}_M(\rho(\beta))$ passes through the
+non-local map $\beta \mapsto \mathrm{NF}_{\mathrm{GS}}(\beta)$, and the
+trace is then evaluated on the normal form. $\square$

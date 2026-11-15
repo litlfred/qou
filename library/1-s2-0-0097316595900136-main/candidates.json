@@ -1,0 +1,41 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "1-s2-0-0097316595900136-main",
+ "source": {
+  "structure_sha256": "c92d3e85b3dec20a86b4452420a09811900ce6edf67cddec7478b59edae98316",
+  "file": "1-s2.0-0097316595900136-main.pdf"
+ },
+ "provenance": {
+  "title": "A q-Rational Murnaghan-Nakayama Rule",
+  "authors": "Macalester College, Saint Paul, Minnesota 55105",
+  "arxiv": null,
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "recommendation": 1
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "For example, I IJ ~, = (5, 3, o, -2, -3) = It should be noted that any pair of partitions #=(/z 1, ..-,/~l(~)) and v = (Va, ..., vt(v)) with l(#) + l(v) <<. r determines an r-staircase - def 0,0,..~, --V2,--Vl) , (2.1) [~, v/~= (#~,/z2 ..... /~1(~), .. -vl(~) .... , r - l(~) - l(v) where the partitions have been separated by r - l(It) + l(v) zeros.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+336 Multiple point asymptotics
+
+and hence is not generic. For these reasons we turn to surgery. The Fourier—
+Laplace integral in Theorem 10.59 is more degenerate than can be handled by
+Theorem 5.3 of Chapter 5. However, we can still complete the analysis for this
+specific situation.
+
+Proposition 10.68 (two curves intersecting tangentially in two dimensions).
+Suppose that F(x,y) = P(x,y)/(Qi(x,y)Q2(x,y)), where Q, and Q» define
+smooth divisors V ; intersecting at a strictly minimal multiple point (1, 1). Sup-
+pose further that V, and V3 intersect tangentially at (1,1), where Viog Qi and
+Viog Q2 are both multiples of some direction (A, 1). Let u, and uz denote ana-
+lytic functions such that Vj = {(x,uj(x)) : x € C} in a neighborhood of (1,1),
+let vj(x) = 1/uj(x) denote the inverse roots, and let gj(@) = log v;(e!) be the
+parametrization of the logarithmic inverse roots in polar coordinates. If
+
+kK
+gj(0) = ir.0 - > & +00)
+for each j with k, + ky > 0, the kj nonnegative, and P(1, 1) # 0 then
+
+7 Pd, 1) 2 1/2
+
+£3
+
+Vin VRi+ VG
+
+as (r, 8) > 00 with r = As + O()).
+
+Proof Lemma 10.60 implies that
+
+ow Ss 599.) 4.(Q) dé dt
+
+ars ~ app fie o(4)
+
+for (r, s) = A(?, 8) + OC), where & = N x xA, with N a neighborhood (—6, 6)
+of zero in R, the amplitude Ao(x, y) = P(x, y)/(xy), and 2A, = [0, 1]. The phase
+function ¢ is the convex combination
+
+—$(6, t) = 1g1(0) + 1 — gr),
+
+which has nonnegative real part on (—6,6) x [0, 1], which vanishes on the line
+segment S = {0} x [0,1]. As opposed to previous cases we have considered,
+the entire line segment is now critical for ¢. Integrating e~**” d@ over (—6, 5)
+for fixed t gives
+
+(2zsk,)~'/? + 0(s-9?) ;
+
+where x; = tk, + (1 — fk2 is the quadratic term of (0, ft). The O(s~*/?) error
+term is uniformly o(s~!/), therefore the expression for the leading term may

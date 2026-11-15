@@ -1,0 +1,49 @@
+18 Generating functions
+
+where [z”~-*]G(z) is defined to be zero if r — s has a negative coordinate (so
+the sum in the convolution is always finite). The generating function of the
+array {a, 27 € N7} is the formal power series >) peyu d,z" € C[[z]].
+
+The additive identity in C[[z]] is the series 0 (where every coefficient is
+zero) and the multiplicative identity is the series 1 (which has a coefficient of
+zero for every index vector r # 0).
+
+Exercise 2.1. Prove that F(z) € C[[z]] has a multiplicative inverse if and only
+if F(O) #0.
+
+Exercise 2.1 implies C[[z]] is a local ring, meaning that it has a unique
+maximal ideal m that, in this case, consists of all non-units. Local rings come
+equipped with a notion of convergence: a sequence of elements F,,(z) € C[[z]]
+converges to F(z) € C[[z]] if and only if for every k € N the difference
+F,(2) — F(z) lies in m* for all sufficiently large n. An easier way to say this
+is that F,(z) — F(z) if and only if for any r € N? there exists N, € N such
+that [z”]F,(z) = [z"]F(z) for all n = N,. In other words, each coefficient
+eventually stabilizes.
+
+For 1 < k < d we write 0; for the formal partial derivative operator which
+takes f(z) = Dipena dp 2” and returns
+
+ane =2 fe = naz.
+xk rend
+Powers 0; of 0; denote repeated differentiation, with (RS MZ) = f(z), anda
+monomial 0” = 0/'---d// represents repeated differentiation with respect to
+each variable. We also use the shorthand f.+(z) and f(z) for (O" f)(z) =
+(O"'f/Af, --- Bz).
+
+Although formal power series are simply algebraic objects, we often con-
+sider them as representing convergent series expansions, and thus analytic
+functions, in certain subsets of C¢. The (open) polydisk centered at p € C4
+with polyradius b € R4, is the set
+
+Do(p) := {z € C*: |z; — pjl < bj for 1 < j< d},
+
+and a neighborhood of a point p € C4 is any polydisk containing p. The torus
+centered at p € C4 with polyradius r € R4, is the set
+
+Ty(r) := {z€ ct: lz; - pil =rjforl < j<d}.
+
+To ease notation we write T(r) for a torus centered at the origin p = 0, and for
+every w € C4 (here C, = C \ {0} is the set of non-zero complex numbers) we
+define
+
+T(w) = (wil... bwal) = {2 € C*: [z,| = hw for 1 <j < d}.

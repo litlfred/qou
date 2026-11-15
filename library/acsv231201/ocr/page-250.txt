@@ -1,0 +1,45 @@
+232 Effective computations and ACSV
+
+the 3 x 3 minor (i.e., determinant) of the matrix
+
+XA, yAy ZA;
+XB, yBy zB}.
+r s t
+
+Solving the resulting polynomial system
+
+ryz + sxz— 3txy =0
+
+gives the point w = (4/3)(# + 8,7 + 8,32), which is the unique point on ¢ at
+which (r,s, t) lies in the plane spanned by the logarithmic tangents (x, 2y, z)
+and (2x, y, z) to the planes defined by A and B.
+
+Thus, critical(r, s, f) consists of the points 0, 7, and w, which are distinct
+unless 2r = s (in which case o = w) or r = 2s (in which case T = w). For
+z € € the space L(z) is the two-dimensional span of the log-gradient vectors
+of A and B at z, while for z in S; (respectively 5») the space L(z) is the one-
+dimensional space defined as the span of the log-normal to A (respectively B)
+at Zz. <
+
+The last three examples have critical points that are either rational functions
+of r or require only square roots. In general we may obtain algebraic functions
+of arbitrary complexity, and it is often best to encode critical points via their
+minimal polynomials.
+
+Example 8.16. Again consider the generating function
+
+ay = 3)
+(l= x)4 = xy = x= x? +3 + xy)"
+
+F(x,y) = » ArsX'y> =
+rs20
+The smooth critical points of F in the direction *, where r = (r, s), are encoded
+by the ideal (Q, sxQ, — ryQ,). Writing A = s/r, the Grobner basis of this ideal
+with respect to the lexicographic term order where y > x (which gives a simpler
+result than x > y) contains a polynomial of the form (1 — x)°8,(x) where
+
+Ba) = (1+ a)x4 +41 +.2)228 + 1000? 4.A= 1x? +4(20- 1)? x + (1 - (1-22)
+
+is irreducible for generic 2. There is some simplification for particular values
+of A, for instance the roots of the polynomial B1/2(x) = x°(x? + 6x — 5/3) lie in
+a quadratic extension of Q. 4

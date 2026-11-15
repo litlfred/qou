@@ -19,7 +19,7 @@ The coefficients $a_k, b_k \in \mathbb{Z}[h] \subset \mathbb{Z}[q, q^{-1}]$ are 
 
 **Step 3: Markov-trace values on the $H_3$ basis.** The axioms and cyclicity uniquely fix the trace on the canonical reduced-word basis $\{1, \sigma_1, \sigma_2, \sigma_1\sigma_2, \sigma_2\sigma_1, \sigma_1\sigma_2\sigma_1\}$ of $H_3(q)$. See [Table 2](#tbl:markov-trace-axiomatic-closed-form-table2-data).
 
-The last entry follows from the braid relation $\sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2$. Applying the Markov axiom to $\alpha = \sigma_2\sigma_1 \in H_3$ (after cyclic rotation) gives $\mathrm{tr}_M(\sigma_2\sigma_1\sigma_2) = z\cdot\mathrm{tr}_M(\sigma_2\sigma_1)$. This contradicts naive expectations. The correct derivation uses the Hecke-quadratic identity $\sigma_1\sigma_2\sigma_1 - \sigma_2\sigma_1\sigma_2 = 0$ and the cyclic application $\mathrm{tr}_M(\sigma_2\sigma_1\sigma_2) = \mathrm{tr}_M(\sigma_1\sigma_2\sigma_1)$. We combine this with $\sigma_1^2 = h\sigma_1 + 1$ on the inner factor to give $\mathrm{tr}_M(\sigma_1\sigma_2\sigma_1) = h\,\mathrm{tr}_M(\sigma_1\sigma_2) + \mathrm{tr}_M(\sigma_2) = h z^2 + z$.
+The last entry uses cyclicity and the Hecke quadratic only. Cyclicity gives $\mathrm{tr}_M(\sigma_1\sigma_2\sigma_1) = \mathrm{tr}_M(\sigma_2\sigma_1\sigma_1) = \mathrm{tr}_M(\sigma_2\sigma_1^2)$. Substituting $\sigma_1^2 = h\sigma_1 + 1$ gives $h\,\mathrm{tr}_M(\sigma_2\sigma_1) + \mathrm{tr}_M(\sigma_2)$. By cyclicity and the Markov axiom with $\alpha = \sigma_1 \in H_2$, $\mathrm{tr}_M(\sigma_2\sigma_1) = \mathrm{tr}_M(\sigma_1\sigma_2) = z\,\mathrm{tr}_M(\sigma_1) = z^2$, and $\mathrm{tr}_M(\sigma_2) = z\,\mathrm{tr}_M(1) = z$. Hence $\mathrm{tr}_M(\sigma_1\sigma_2\sigma_1) = h z^2 + z$. The braid relation $\sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2$ is consistent with this value and is not needed to obtain it.
 
 **Step 4: Linear combination.** We apply $\mathrm{tr}_M$ to the expansion in Step 2 and read off the basis values:
 
@@ -29,22 +29,6 @@ $$
 $$
 
 This methodology is fully axiomatic. It invokes only the Hecke quadratic relation, the Markov axioms, cyclicity, and the braid relations. We do not use representation theory, Hoefsmit-Wenzl seminormal construction, or character tables. $\square$
-
-## Numerical witness
-
-Substituting $h = q - q^{-1}$ and $z = q^{3}/(q^{2}+1)$ into the Step-4 closed form and evaluating at the substrate parameter $q_0$ gives:
-
-$$
-  \mathrm{tr}_M(\sigma_1^7\sigma_2^4)(q_0) \;\approx\; 1.884319\,467\ldots
-$$
-
-in agreement with the statement. Step 4 is an identity in $\mathbb{Q}(q)$, so the only approximation entering this line is the decimal evaluation of $q_0$ itself; the seminormal route's agreement with it is recorded in the statement.
-
-The categorical-mass formula $M(K) = m_e \cdot \rho_K \cdot |\mathrm{tr}_M(\mathcal{B}_K)|$ ([`prop:categorical-mass-markov`](#prop:categorical-mass-markov)) yields the following for the proton ($K = $ proton, $\mathcal{B}_K = \sigma_1^7\sigma_2^4$):
-
-$$
-  \rho_p^{\mathrm{CODATA}} \;=\; \frac{1836.15}{|\mathrm{tr}_M(\mathcal{B}_p)|(q_0)} \;\approx\; \frac{1836.15}{1.88432} \;\approx\; 974.44.
-$$
 
 ## References
 

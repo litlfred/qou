@@ -1,0 +1,32 @@
+146 Laurent series, amoebas, and convex geometry
+
+Figure 6.3 Sketch of amoeba(1 — 4xy + x7 + y°).
+
+in Z“ \ {0}, then Rouché’s Theorem implies
+
+s- v(x) = # zeros — # poles of f(piw",..., paw”) inside |w| = 1
+vse
+
+= # zeros — # poles of ayp" w*” inside |w| = 1
+
+=S-v.
+
+Since this holds for all s € Z4 \ {0}, we see that v(x) = v.
+
+If v is a vertex of Ny then there exists r € R¢ such that v-r > w-r for all
+w # v in the support of f. When p = e'” for t > 0 the term |ayp”| = |a,|e’”
+grows exponentially faster, as tf > oo, than |ayp”| = |awle“’”? for all w # v
+in the support of f. In particular, when ¢ is sufficiently large then p = e'”
+satisfies |a,z”| > ke - ay2"| for all z € T(p). Oo
+
+Summarizing our results, we have shown the following.
+
+Theorem 6.18. The connected components of amoeba(f)° are convex subsets
+of R¢ in one-to-one correspondence with the convergent Laurent expansions
+of 1/ f(z). The order map sends each component of amoeba(f)° to a different
+element of N ¢ MZ and every vertex of N ; lies in the image of amoeba(f)°.
+
+Exercise 6.7. Figure 6.3 displays amoeba(1—4xy+ x? +y°). Use Corollary 6.17
+to prove algebraically that the amoeba complement contains a bounded com-
+ponent and find its order. Prove that for N > 0 the coefficient of xy” in the
+Laurent expansion of F(x,y) = 1/(1 — 4xy + x° + y*) corresponding to the

@@ -2,132 +2,142 @@
  "_schema": "library-summary/v1",
  "doc_id": "s0002-9947-96-01660-1",
  "source_sha256": "aa63e62b78aa5045",
- "brief": "AMERICAN MATHEMATICAL SOCIETY INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS — This paper presents an algebraic framework for constructing in- variants of closed oriented 3-manifolds by taking a state",
- "extended": "**AMERICAN MATHEMATICAL SOCIETY INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS**\n\n*JOHN W. BARRETT AND BRUCE W. WESTBURY*\n\n26 pp, 24 sections.\n\n**Abstract.** This paper presents an algebraic framework for constructing in- variants of closed oriented 3-manifolds by taking a state sum model on a tri- angulation. This algebraic framework consists of a tensor category with a condition on the duals which we have called a spherical category. A signiﬁcant feature is that the tensor category is not required to be braided. The main examples are constructed from the categories of representations of involutive Hopf algebras and of quantised enveloping algebras at a root of unity. 0. Introduction The purpose of this paper is to present an algebraic framework for constructing invariants of closed oriented 3-manifolds. The construction is in the spirit of topo- logical quantum ﬁeld theory and the invariant is calculated from a triangulation of the 3-manifold.\n\n**Outline.** 0 Introduction; 1 State sum models; 2 Spherical categories; 3 The functors C×C→C w h i c ho no b j e c t s; 1 For all morphisms, f : a→b, the following di; 2 For all objects a, the following composite i; 3 For all objects a and b the following compos; 1 An orientation of each edge,; 2 A distinguished edge at each trivalent verte; 3 A map from edges to objects,; 4 A map from vertices to morphisms,; 3 Symmetries of simplicial invariants; 1.6 Since the action of σ onV∗(e1,e 2,e 3) is ; 3.7 This tensor product is composed with the u; 4 Piecewise-linear manifolds; 2 A bistellar move on a manifold with boundary; 5 Invariants of manifolds; 5.1 Theorem 5.1 will follow once it has been e",
+ "brief": "Invariants of piecewise-linear 3-manifolds — This paper presents an algebraic framework for constructing in- variants of closed oriented 3-manifolds by taking a state sum model on a tri- angulation.",
+ "extended": "**Invariants of piecewise-linear 3-manifolds**\n\n*JOHN W. BARRETT AND BRUCE W. WESTBURY*\n\n26 pp, 26 sections.\n\n**Abstract.** This paper presents an algebraic framework for constructing in- variants of closed oriented 3-manifolds by taking a state sum model on a tri- angulation. This algebraic framework consists of a tensor category with a condition on the duals which we have called a spherical category. A signiﬁcant feature is that the tensor category is not required to be braided. The main examples are constructed from the categories of representations of involutive Hopf algebras and of quantised enveloping algebras at a root of unity. 0. Introduction The purpose of this paper is to present an algebraic framework for constructing invariants of closed oriented 3-manifolds. The construction is in the spirit of topo- logical quantum ﬁeld theory and the invariant is calculated from a triangulation of the 3-manifold.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12; Page 13; Page 14; Page 15; Page 16; Page 17; Page 18",
  "tokens": {
   "brief": 49,
-  "extended": 414
+  "extended": 272
  },
  "sections": [
   {
-   "id": "sec-000-0-introduction",
-   "title": "Introduction",
-   "pages": "1-2"
+   "id": "page-001",
+   "title": "Page 1",
+   "pages": "1-1"
   },
   {
-   "id": "sec-001-1-state-sum-models",
-   "title": "State sum models",
-   "pages": "2-4"
+   "id": "page-002",
+   "title": "Page 2",
+   "pages": "2-2"
   },
   {
-   "id": "sec-002-2-spherical-categories",
-   "title": "Spherical categories",
+   "id": "page-003",
+   "title": "Page 3",
+   "pages": "3-3"
+  },
+  {
+   "id": "page-004",
+   "title": "Page 4",
    "pages": "4-4"
   },
   {
-   "id": "sec-003-3-the-functors-ccc-w-h-i-c-ho-no-b-j-e-c-t-sa-r",
-   "title": "The functors C×C→C w h i c ho no b j e c t sa r eg i v e nb y(a,b )↦→ (a⊗b)ˆ and",
-   "pages": "4-5"
-  },
-  {
-   "id": "sec-004-1-for-all-morphisms-f-ab-the-following-diagram-c",
-   "title": "For all morphisms, f : a→b, the following diagram commutes:",
+   "id": "page-005",
+   "title": "Page 5",
    "pages": "5-5"
   },
   {
-   "id": "sec-005-2-for-all-objects-a-the-following-composite-is-t",
-   "title": "For all objects a, the following composite is the identity map of ˆa:",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-006-3-for-all-objects-a-and-b-the-following-composit",
-   "title": "For all objects a and b the following composite is required to be ϵ(a⊗b):",
-   "pages": "5-6"
-  },
-  {
-   "id": "sec-007-1-an-orientation-of-each-edge",
-   "title": "An orientation of each edge,",
+   "id": "page-006",
+   "title": "Page 6",
    "pages": "6-6"
   },
   {
-   "id": "sec-008-2-a-distinguished-edge-at-each-trivalent-vertex",
-   "title": "A distinguished edge at each trivalent vertex,",
-   "pages": "6-6"
+   "id": "page-007",
+   "title": "Page 7",
+   "pages": "7-7"
   },
   {
-   "id": "sec-009-3-a-map-from-edges-to-objects",
-   "title": "A map from edges to objects,",
-   "pages": "6-6"
+   "id": "page-008",
+   "title": "Page 8",
+   "pages": "8-8"
   },
   {
-   "id": "sec-010-4-a-map-from-vertices-to-morphisms",
-   "title": "A map from vertices to morphisms,",
-   "pages": "6-8"
+   "id": "page-009",
+   "title": "Page 9",
+   "pages": "9-9"
   },
   {
-   "id": "sec-011-3-symmetries-of-simplicial-invariants",
-   "title": "Symmetries of simplicial invariants",
-   "pages": "8-14"
+   "id": "page-010",
+   "title": "Page 10",
+   "pages": "10-10"
   },
   {
-   "id": "sec-012-16-since-the-action-of-σ-onve1e-2e-3-is-the-inve",
-   "title": "Since the action of σ onV∗(e1,e 2,e 3) is the inverse of the adjoint of the action",
+   "id": "page-011",
+   "title": "Page 11",
+   "pages": "11-11"
+  },
+  {
+   "id": "page-012",
+   "title": "Page 12",
+   "pages": "12-12"
+  },
+  {
+   "id": "page-013",
+   "title": "Page 13",
+   "pages": "13-13"
+  },
+  {
+   "id": "page-014",
+   "title": "Page 14",
    "pages": "14-14"
   },
   {
-   "id": "sec-013-37-this-tensor-product-is-composed-with-the-uniq",
-   "title": "This tensor product is composed with the unique iterate of the twist map P",
-   "pages": "14-16"
+   "id": "page-015",
+   "title": "Page 15",
+   "pages": "15-15"
   },
   {
-   "id": "sec-014-4-piecewise-linear-manifolds",
-   "title": "Piecewise-linear manifolds",
+   "id": "page-016",
+   "title": "Page 16",
    "pages": "16-16"
   },
   {
-   "id": "sec-015-2-a-bistellar-move-on-a-manifold-with-boundary-d",
-   "title": "A bistellar move on a manifold with boundary does not change the triangu-",
-   "pages": "16-18"
+   "id": "page-017",
+   "title": "Page 17",
+   "pages": "17-17"
   },
   {
-   "id": "sec-016-5-invariants-of-manifolds",
-   "title": "Invariants of manifolds",
-   "pages": "18-19"
+   "id": "page-018",
+   "title": "Page 18",
+   "pages": "18-18"
   },
   {
-   "id": "sec-017-51-theorem-51-will-follow-once-it-has-been-estab",
-   "title": "Theorem 5.1 will follow once it has been established that C(M) is invariant",
-   "pages": "19-22"
+   "id": "page-019",
+   "title": "Page 19",
+   "pages": "19-19"
   },
   {
-   "id": "sec-018-6-spherical-hopf-algebras",
-   "title": "Spherical Hopf algebras",
+   "id": "page-020",
+   "title": "Page 20",
+   "pages": "20-20"
+  },
+  {
+   "id": "page-021",
+   "title": "Page 21",
+   "pages": "21-21"
+  },
+  {
+   "id": "page-022",
+   "title": "Page 22",
    "pages": "22-22"
   },
   {
-   "id": "sec-019-1-any-involutory-hopf-algebra-is-spherical-the-e",
-   "title": "Any involutory Hopf algebra is spherical. The element w can be taken to be",
-   "pages": "22-22"
-  },
-  {
-   "id": "sec-020-2-any-ribbon-hopf-algebra-as-deﬁned-in-19-is-sph",
-   "title": "Any ribbon Hopf algebra, as deﬁned in [19], is spherical. The elementw can be",
-   "pages": "22-23"
-  },
-  {
-   "id": "sec-021-1-the-coproduct-is-deﬁned-by-k-kk-and-x-xkk1x",
-   "title": "The coproduct, ∆, is deﬁned by ∆(K)= K⊗K and ∆(X)= X⊗K+K−1⊗X,",
+   "id": "page-023",
+   "title": "Page 23",
    "pages": "23-23"
   },
   {
-   "id": "sec-022-2-the-augmentation-ϵ-is-deﬁned-by-ϵk1a-n-d-ϵx0",
-   "title": "The augmentation, ϵ, is deﬁned by ϵ(K)=1a n d ϵ(X)=0 ,",
-   "pages": "23-25"
+   "id": "page-024",
+   "title": "Page 24",
+   "pages": "24-24"
   },
   {
-   "id": "sec-023-references",
-   "title": "References",
-   "pages": "25-26"
+   "id": "page-025",
+   "title": "Page 25",
+   "pages": "25-25"
+  },
+  {
+   "id": "page-026",
+   "title": "Page 26",
+   "pages": "26-26"
   }
  ],
  "provenance": {

@@ -1,0 +1,58 @@
+3. THE SEMISTANDARD BASIS THEOREM Al
+
+S € Jo(A, 4) and T € Jy(A,v). By Corollary 4.12, mgr € M1 M”* so we can define
+¥sr to be the element of %(d,n) given by
+
+413 ¥st(Meh) = daymsrh for all a € A(d,n) andh €.#.
+
+For any partition A € A*(d.n) let To(A) = Uneatany To(A:#) and define
+S*(d,n) to be the R-submodule of (d,n) spanned by the homomorphisms ¢sr
+where $,T € Jo(a) for some a € A*(d,n) such that a > A. Similarly, %*(d,n) is
+the R-submodule spanned by the maps ¢s1 where $,T € Jo(a) and ab A.
+
+4.14 The Semistandard Basis Theorem (R. Green) The q—Schur algebra is
+free as an R-module with basis
+
+b={ ger | dE At(d,n) and 8,7 € To() }.
+
+Moreover,
+(i) The R-linear map * :.¥(d,n) —> ¥(d,n) determined by g3q = ¢1s, for all
+$,T€ 7o(A) and all \ € A*(d,n), is an anti-isomorphism of F(d.n).
+(ii) Suppose that \ € At(d,n) and that T is a semistandard X-tableau. Then for
+allg €.S(d,n) there exist ry € R such that for all S € To(A)
+
+stp = Ss rygsy mod S*(d,n).
+VETa(A)
+Consequently, (©, A*(d,n)) is a cellular basis of A(d,n).
+Proof. Combining Corollary 4.9 and Corollary 4.12 shows that %(d,n) is free as
+an R-module with basis ®. It remains to verify (i) and (ii).
+
+Let \ be a partition in At+(d,n) and suppose that $ € To(A, #) and T € 7o(A, v).
+Then yip(m,) = ms = mrs = (¢rs(m,))”. Now suppose that a € At(d,n), UE
+To(a,o) and V € To(a,7). We may assume that v = o since otherwise ¢gsryuy = 0.
+Write ms = hsm, and myy = hym, for hs, hy €. #. Then
+
+(esr guv)*(m,) = (ysreu(m,))” = (hghym,)* = m,hjhs
+= pw(m )hg = pw(myhs) = pw yrs(mp:).
+
+Hence, (gsr ¢uv)* = gives and * is an anti-isomorphism, proving (i).
+
+Now consider (ii). We may assume that ¢ € Hom (M7, M”) for some r €
+A(d,n). By Corollary 4.9 there exists an h € .# such that g(m,) = m,h; so,
+¢gst¢(m;) = msth. Now msrh is an element of M! 9 M7* so by Theorem 4.10
+we may write msrh = So ryymyy where ryy € R and the sum is over pairs (U,V)
+of semistandard a—-tableaux where a € At(d,n). Therefore, by Theorem 3.18(ii),
+there exist ry, ryy € R such that
+
+mMsgth = y ryMsy + y y ryy Myy.
+
+VETa(A,7) a€At(dn) VETE(a.H)
+apd WETo(a,7)
+Hence, Ysrp = > rvgsy mod S*(d,n), which proves (ii). oO
+VETO(A,T)
+
+We call ® the semistandard basis of .W(d,n).
+
+Now that we have a cellular basis of the g-Schur algebra we can describe its
+irreducible representations over a field. Traditionally, the cell modules of (d,n)
+are called Weyl modules.

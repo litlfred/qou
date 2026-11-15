@@ -1,0 +1,101 @@
+phenomenon illustrates the conjectured behavior,
+discussed in Section 1, of an E-minimizing (p, q)-
+torus knot for p and q large. Further results on
+Hopf links are given in [Kusner and Sullivan].
+
+5. DISCRETIZATION AND COMPUTER EXPERIMENTS
+
+Given a C!! knot [.: S$! = R/27Z > R”™, and
+a sufficiently large integer n, the polygon y with
+vertices y(h) = T(2ah/n), for 1 < h <n, is a knot
+isotopic to T, which we call a polygonal approxima-
+tion to T. One possible way to approximate E(I)
+discretely would be simply to use E(), but this en-
+ergy unfortunately is infinite! It can be regularized,
+by deleting the contributions of adjacent edges, to
+an energy E*(7) that has the advantage of an infi-
+nite barrier to changing isotopy type, but the dis-
+advantage of being difficult to compute. Another
+discrete energy e(7), defined below, is much easier
+to compute. It can be shown that both E*(y) and
+e(y) converge to E(I) as y approaches I for n very
+large.
+
+Definition. The discrete energy of a polygon with
+vertices y : Z/nZ — R” is
+
+0= DE (Raa (AP mn)
+
+1<i¢j<n
+«IY @O IYI,
+
+where
+
+l7'(h)| = Sly = 1) — 7h) + (rh) — Wh + DI)
+
+and d(i,j) is the distance between y(i) and y(j)
+along the polygon, that is, the lesser of
+
+Dh ly(h)—yh+1)| and DF |7(h) -
+
+ish<j GSgh<i
+
+y(h+1)I.
+
+If y = pq is a polygonal approximation to the
+orbit [7 C $°, we can reduce the double sum
+above (by setting h = i— j) to
+
+J 2 1 1
+e=nhOP & (Gay—aa > eam):
+
+1<h<n
+
+Kim and Kusner: Torus Knots Extremizing the Mébius Energy 7
+
+Using this formula we wrote a simple Fortran
+search routine, torusknotenergy.f, to produce
+approximate values for the Mobius energies of crit-
+ical (p, g)-torus knots. The results are very close to
+those obtained from the analytic formula on page 4,
+which was implemented in a Mathematica program
+tke.m [Wolfram 1991]: see Table 1.
+
+(p, 4) n 0 Tp.q energy
+(1,1) 360 10 °° — 3.9608
+720 5 — 3.9804
+1440 25 — 3.9902
+2880 12 — 3.9951
+5760 .06 — 3.9975
+11520 03 —_ 3.9987
+extrapolation — 3.9999
+analytic value — 4.00000
+(2,3) 1440 68 = 1.85 74.353
+2880 34 1.85 74.383
+5760 17 (1.857 74.397
+11520 09 1.857 74.405
+extrapolation 1.857 74,412
+analytic values = 1.857275 74.41204
+(2,8) 1440 77 5.69 215.518
+2880 38 5.69 215.646
+5760 19 5.692 215.710
+11520 10 5.693 215.742
+extrapolation 5.694 215.774
+analytic values 5.694942 = .215.77463
+(3, 4) 1440 85 1.48 204.094
+2880 42 1.48 204.156
+5760 21 1.486 204.186
+11520 1 1.486 204.201
+extrapolation 1.486 204.217
+analytic values 1.486906  204.21670
+
+TABLE1. Critical radii and energies obtained from
+the discrete programs torusknotenergy.f and
+toruslinkenergy.f. Here n is the number of seg-
+ments in the discretization, and @ is the maxi-
+mum angle (in degrees) between segments. The
+last two lines in each block show how extrapola-
+tion of the program output as n — oo gives results
+very close to those predicted by the analytic for-
+mula on page 4, which were computed with the
+Mathematica programs tke.m and tle.m.

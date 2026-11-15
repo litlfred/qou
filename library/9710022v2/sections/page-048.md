@@ -1,0 +1,68 @@
+---
+doc_id: 9710022v2
+doc_title: "Harmonic Analysis on the quantum Lorentz group"
+section_id: page-048
+section_title: "Page 48"
+pages: 48-48
+pdf_page: 48
+source_pdf: 9710022v2.pdf
+source_sha256: e5ff373a1ec6884a
+text_source: ocr
+granularity: page
+doc_brief: "Harmonic Analysis on the quantum Lorentz group — This w ork b egins with a review of complexi cation and reali cation of Hopf algebras."
+---
+As a result it will be sufficient to show that if (fm)m<inf(A,D) € L?(Ip), with (Y)(A, B) =
+(Y)(D, @) =1, is such that
+
+X [| fn ARG, p)aP(m,p) =0.NB.C € 52% (151)
+ae Tn
+
+then fm = 0,Vm. Let us prove this result. If we assume that >7,, Sin fm (p)AKG (m, p)dP(m, p) =
+0,VB,C, we obtain using the linear equations (135) that
+
+X [Fe snl PARE, p)APCm. p) = 0.¥B.C.T. J
+m 2th
+This can be written as
+X [lm + iat om ion ARG(mp\do = O.¥r.8 eZ" (152)
+In,
+
+We will first show that this implies that Sh fin(p) ARS (m, p)q'??dp = 0,Vn € Z. This is done
+by an induction on mo the largest integer appearing in the finite sum (151). Indeed from the
+equation (152), we obtain the equality for every integer p,r,s
+
+[tno A850, p)a'#ap = (153)
+
+So @)NRB (0, a [5(—mo + to)]E5 (+10 +ip)] +a"? )dp+ (154)
+
+x [, foal) ARB (0m, pa [5 (—m + ip)]ls (+m + ip)ldp. (155)
+
+m<mo
+
+As a result we get:
+
+if Fino (P) ARS (mo, p)a' =? dp|
+»
+
+<|IARB(m0,-)fmallc2llrsllz2 + SY [ARB (m, -) fmll2|Per,sm ln (156)
+
+m<mo
+
+where Gr.9: rs. are the functions: g;,5(9) = qe [$(—mo + ép)][$(+mo + ip)] + + qi?” and
+hysm(p) = > *[E (—m-+ip)|[$(+m-+ip)]. Let us define a sequence rp, 8p by rp —8p = 1, Pp +p =
+p, (with p odd or even depending on the parity of n), then it is easily shown that gp,,s,;Nrp,sp.m
+are uniformally convergent toward 0 when p goes to infinity. As a result, by fixing r = rp, s = sp
+in (156) and taking the limit p + +00, we obtain that J7, fino (p)A%5 (mo, p)q'??dp = 0. This
+implies that fm,A%5(mo,.) = 0 as a L? function. There always exist B,C such that A35(mo, p)
+is anon constant function, and because A%% (mo, p)? is a trigonometric polynomial, it has only a
+finite number of zeros. As a result we obtain that fm, = 0 as a L? function. A trivial induction
+on mo shows that f,, = 0 for all m # 0. The induction ends up when m = 0, in this case (152)
+implies that Ji, lé isp IeGplo(e) AB (0040 = 0, from which we deduce that fo(p) = 0 because
+we assumed folp) = fo(—p). This concludes the proof. Oo
+
+6 Conclusion
+The main theme of this article was the recognition of the central role played by generalized 67
+
+symbols in the harmonic analysis of SLq(2,C)g. There are many ways in which our work can
+be pursued.
+
+48

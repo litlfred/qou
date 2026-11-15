@@ -1,0 +1,54 @@
+48 Generating functions
+
+the origin, when |y| is sufficiently small the function F(z, y/z) is absolutely con-
+vergent for z in some annulus A(y). Treating y as a constant, we view F(z, y/z)
+as a convergent Laurent series in z inside the annulus A(y) with constant term
+h(y). The Cauchy Integral Formula then gives the integral expression
+
+ye P(z,y/z)
+hos ma feat ia
+
+where C is any positively oriented circle in the annulus of convergence A(y).
+By the Residue Theorem,
+
+PR y/2)
+AV) = 2.11
+
+= » Res (Bev Syl)? er)
+where the sum is over all poles a(y) inside the circle C. These residues are
+all rational expressions of the poles, which are roots of Q(z, y/z), so we have
+represented the diagonal as a sum of algebraic functions, which is also alge-
+braic. ia)
+
+Remark. Taking |y| sufficiently small in the proof of Theorem 2.32 allows one
+to pick a circle C such that the poles of the Cauchy integrand inside the circle
+are precisely the roots z = a(y) of Q(z, y/z) that approach zero as y > 0. An
+annihilating polynomial for the diagonal can be computed from (2.11) using
+algebraic tools like the resultant, although in low-degree cases it can usually
+be computed directly.
+
+Example 2.33 (Delannoy numbers, continued). Recall from above that the
+generating function of the Delannoy numbers is F(x, y) = 1/(1 — x — y— xy),
+so
+
+1
+
+x F(x,y/x) = 5
+x- x -y-xy
+
+has poles at
+
+l-y+ yl-6y+y*
+
+xs(y) = ,
+with only x_(y) > Oas y > 0. Since x“! F(x, y/x) = -1/[(x—x_() )(x-x4.(y))],
+the sequence of Delannoy numbers where both indices are equal has generating
+function
+-1 1
+
+x)= %0) Toye?
+
+(AF)(Q) = Res, x! F(x, y/x) =
+
+The converse of Theorem 2.32 also holds. First, we give an explicit formula
+of Furstenberg [Fur67] that holds in a special case.

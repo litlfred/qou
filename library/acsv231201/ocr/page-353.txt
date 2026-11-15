@@ -1,0 +1,45 @@
+10.5 Surgery, non-generic directions, and non-arrangement points 335
+
+Proof The condition that 7, is on a facet of N(p) is equivalent to the condition
+that c(t(r,.)) is on a facet of A,_;. The main contribution to the inner integral
+in (10.32) comes from an ¢-ball about t(r) for any sufficiently small ¢ > 0, and
+when t is on a facet this integral is over a halfspace neighborhood rather than a
+ball neighborhood. The leading term in such an integral is precisely half of the
+leading term for a ball neighborhood. After introducing a factor of 1/2 in the
+inner integral of (10.32), the new hypotheses leave everything else unchanged.
+This proves the result when r is a precise multiple of *,. When r — |r|7, is
+bounded, the uniformity statement in Theorem 10.59 shows that (10.31) and
+hence (10.32) remain valid, introducing the factor of 1/2 and completing the
+proof. ia)
+
+Example 10.66 (two lines, boundary directions). Suppose F = 1/Q(x,y),
+
+where
+ow.y) =(1 1 2 1 2 1)
+x,y) = 3° 3> 37 3° .
+
+As we have seen in Example 10.27, a,; ~ 3 when r,s — oo with r/s ina
+compact subset of (1/2, 2). By Theorem 10.65, the coefficients along the (1, 1)-
+diagonal are asymptotically half of the coefficients on the interior of the cone
+1/2 <r/s <2, thus
+
+zs, ~ 3/2
+
+as s — oo. In fact, this approximation holds for any a,; with r—2s = O(1). Note
+that as we approach the boundary of the cone from the interior, the convergence
+to the limiting value becomes slower and slower; on the boundary the relative
+error term is no longer exponentially small, but of order 1/s. 4
+
+Remark 10.67. The requirement that r — |r|#, remain bounded is not best
+possible. In [BMP23, Section 6.2] it is shown that, for linear divisors, uniform
+estimates hold when |r —|r| #,| = o((r|!/?), yielding a Gaussian transition
+regime whose width scales as |r|!/.
+
+Non-arrangement points
+
+As a final application of the surgery method, we consider the case where
+n = d = 2 and the two divisors V; and V2 meet tangentially. In this case,
+the meeting point p is not an arrangement point because the intersection lat-
+tice of the divisors has order 2, whereas the intersection lattice of the tangent
+planes has order | (both tangent lines coincide). Furthermore, the normal cone
+at p degenerates to a single ray, so that this direction is a boundary direction

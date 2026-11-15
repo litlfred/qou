@@ -41,5 +41,15 @@ export default proposition({
         "land first for the computation path to resolve. The constituent " +
         "condition (electron passes reading 3 alone) was ruled by the owner on 2026-11-15: each particle must pass reading 3 on its own strands, so V^3 is unique.",
     },
+    {
+      kind: "caveat",
+      date: "2026-11-15",
+      body:
+        "The proposition is a computation at the single point q = q0 (proton pin), " +
+        "evaluated in 40-digit arithmetic; no other q is tested (owner chose to name q0 " +
+        "in the statement, 2026-11-15). The Lean ref `inverse_trefoil_not_gammaGamma` " +
+        "encodes only the side remark that the inverse trefoil has odd length and so is " +
+        "not a gamma-gamma word; the selection result itself is not formalized.",
+    },
   ],
 });

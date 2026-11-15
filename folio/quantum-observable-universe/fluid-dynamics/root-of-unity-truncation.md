@@ -3,6 +3,7 @@
 [`conj:ns-counterexample`](#conj:ns-counterexample),
 [`conj:critical-exponent`](#conj:critical-exponent),
 [`prop:blowup-yekutieli`](#prop:blowup-yekutieli),
+[`conj:vorticity-lower-bound`](#conj:vorticity-lower-bound),
 and
 [`conj:regularity-breakdown`](#conj:regularity-breakdown);
 "Root-of-unity truncation").**
@@ -74,7 +75,7 @@ relying on some shared universal constant $C$. The resulting mathematical bound 
 
 **The refined gap.**
 
-The baseline [vorticity lower bound](#prop:vorticity-lower-bound) strictly mandates $\sup_t \kappa(t) \leq C$, keeping $C$ rigidly independent of $q$. The unified root-of-unity analysis directly supplies $\kappa(t) \leq 1 + C(\kappa-1)$, which visibly scales alongside $\kappa$. The absolute question zeroes in on the **rate of growth**:
+The baseline [vorticity lower bound](#conj:vorticity-lower-bound) strictly mandates $\sup_t \kappa(t) \leq C$, keeping $C$ rigidly independent of $q$. The unified root-of-unity analysis directly supplies $\kappa(t) \leq 1 + C(\kappa-1)$, which visibly scales alongside $\kappa$. The absolute question zeroes in on the **rate of growth**:
 
 - Assuming $\kappa(t) \leq C_0$ uniformly (operating entirely independent of $\kappa$): the physical core remains permanently circular. The rigorous lower bound flawlessly holds. NS definitively blows up. The counter-example stands mathematically established.
 - Assuming $\kappa(t) \sim \kappa$ (exhibiting purely linear growth): the physical core safely flattens exactly mirroring the rate unlocking new modes. Physical vorticity safely spreads forming a wide sheet. The strict lower bound $\omega \geq c/(T^*-t)$ potentially fails. NS may function as completely regular.

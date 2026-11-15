@@ -1,0 +1,50 @@
+78 Univariate asymptotics
+
+In Chapter 4 we will see that for integrals of the form
+
+f A(z) exp(-A9(z))
+
+with parameter J going to infinity, including the Cauchy integral, one can get
+away with approximating the critical point zo(A) by the critical point zo for ¢,
+ignoring A and removing the dependence of zp on A. This approximation is
+often good enough to provide an asymptotic expansion of the integral, but here
+we consider cases where we can deal with zo(A) directly. For the second step
+above not to fail, either f must be entire or the saddle point where J’ vanishes
+must have smaller modulus than the singularities of f. In practice this is often
+satisfied, and this classic method is widely applicable. For instance, the seminal
+paper [Hay56] defines a broad class of functions, called admissible functions,
+for which the saddle point method works and can be automated.
+
+Examples of saddle point integrals
+
+Because we go into great detail on saddle point integrals in Chapter 4, here
+we simply present two examples illustrating the theory. At their heart, these
+examples rely on the estimate
+
+2n
+$' (zo)A
+
+where A and ¢ are smooth functions with Re{¢} minimized in the interior of y
+
+f A(e) exp(-Ag(2)) dz ~ A(zo) exp(-Ab(zo)), (3.13)
+Y
+
+at a point zo where #” does not vanish. The approximation (3.13) follows from
+Theorem 4.1, however we compute it directly in our first example to illustrate
+why it is true.
+
+Example 3.18 (ordered-set partitions: an isolated essential singularity). Ex-
+ample 2.51 implies that the exponential generating function for the number a,
+of ordered-set partitions of [7] is
+
+f(2 = exp().
+
+Our goal here is to prove the estimate
+
+dy ~ nb 4/ ae exp (2 vn) ;
+
+starting with the Cauchy integral expression
+
+an 1 Zz -n-l
+on s~_\erlg
+nl 2ni Jigee exp (; - Je <

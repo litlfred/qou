@@ -7,14 +7,109 @@
   "bytes": 12103798,
   "pages": 589,
   "text_source": "embedded",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 44,
+    "reason": "11 of 403 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 79,
+    "reason": "11 of 379 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 82,
+    "reason": "11 of 476 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 108,
+    "reason": "10 of 305 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 171,
+    "reason": "17 of 463 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 180,
+    "reason": "11 of 410 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 203,
+    "reason": "11 of 449 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 209,
+    "reason": "11 of 465 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 236,
+    "reason": "11 of 497 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 241,
+    "reason": "12 of 475 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 283,
+    "reason": "10 of 405 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 290,
+    "reason": "17 of 453 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 304,
+    "reason": "10 of 457 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 339,
+    "reason": "10 of 406 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 369,
+    "reason": "12 of 479 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 370,
+    "reason": "11 of 490 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 373,
+    "reason": "11 of 412 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 393,
+    "reason": "1173 letters among 3286 non-space characters other than digits: mojibake"
+   },
+   {
+    "page": 406,
+    "reason": "11 of 460 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 435,
+    "reason": "12 of 440 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 438,
+    "reason": "12 of 330 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 518,
+    "reason": "18 of 460 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 542,
+    "reason": "11 of 498 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Analytic Combinatorics in Several Variables",
+  "title": "Analytic Combinatorics in Several Variables Expanded Second Edition",
   "authors_raw": "Expanded Second Edition",
   "title_lines": [
    "Analytic Combinatorics in Several",
@@ -23,11 +118,22 @@
   "abstract": null,
   "docinfo": {
    "Producer": "pdfTeX-1.40.21",
-   "Author": "",
-   "Title": "",
    "Creator": "LaTeX with hyperref",
    "CreationDate": "D:20231128123224-05'00'"
-  }
+  },
+  "title_raw": "Analytic Combinatorics in Several Variables",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Analytic Combinatorics in Several Variables Expanded Second Edition",
+   "outline": "Preface to the second edition",
+   "text": "Analytic Combinatorics in Several Variables",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Analytic Combinatorics in Several Variables"
  },
  "toc": [
   {
@@ -35,1602 +141,7814 @@
    "title": "Preface to the second edition",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "xi"
   },
   {
    "level": 1,
    "title": "Preface to the first edition",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "xiv"
   },
   {
    "level": 1,
    "title": "List of Symbols",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "xvii"
   },
   {
    "level": 1,
-   "title": "\\MakeUppercasePart I Combinatorial enumeration",
+   "title": "MakeUppercasePart I Combinatorial enumeration",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Introduction",
    "page": 21,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 3,
    "title": "Generating functions and asymptotics",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 3,
    "title": "New multivariate methods",
    "page": 27,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 3,
    "title": "Outline of the remaining chapters",
    "page": 30,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Generating functions",
    "page": 35,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 3,
    "title": "Power series",
    "page": 35,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 3,
    "title": "Rational operations on generating functions",
    "page": 38,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 3,
    "title": "Algebraic generating functions",
    "page": 48,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   },
   {
    "level": 3,
    "title": "D-finite generating functions and diagonals",
    "page": 58,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   },
   {
    "level": 3,
    "title": "Labeled classes",
    "page": 69,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "51"
   },
   {
    "level": 2,
    "title": "Univariate asymptotics",
    "page": 78,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "60"
   },
   {
    "level": 3,
    "title": "An explicit formula for rational functions",
    "page": 78,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "60"
   },
   {
    "level": 3,
    "title": "Meromorphic asymptotics",
    "page": 80,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "62"
   },
   {
    "level": 3,
    "title": "Darboux's method",
    "page": 85,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "67"
   },
   {
    "level": 3,
    "title": "Transfer theorems",
    "page": 88,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "70"
   },
   {
    "level": 3,
    "title": "The saddle point method",
    "page": 95,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "77"
   },
   {
    "level": 1,
-   "title": "\\MakeUppercasePart II Mathematical background",
+   "title": "MakeUppercasePart II Mathematical background",
    "page": 105,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "87"
   },
   {
    "level": 2,
-   "title": "Fourier\u2013Laplace integrals in one variable",
+   "title": "Fourier–Laplace integrals in one variable",
    "page": 107,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "89"
   },
   {
    "level": 3,
    "title": "Real integrands",
    "page": 109,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "91"
   },
   {
    "level": 3,
    "title": "Complex phase",
    "page": 115,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "97"
   },
   {
    "level": 3,
    "title": "Analytic versus smooth functions",
    "page": 123,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "105"
   },
   {
    "level": 2,
-   "title": "Multivariate Fourier\u2013Laplace integrals",
+   "title": "Multivariate Fourier–Laplace integrals",
    "page": 132,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "114"
   },
   {
    "level": 3,
    "title": "Overview",
    "page": 132,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "114"
   },
   {
    "level": 3,
    "title": "Standard phase",
    "page": 136,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "118"
   },
   {
    "level": 3,
    "title": "Real part of phase has a strict minimum",
    "page": 139,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "121"
   },
   {
    "level": 3,
    "title": "General nondegenerate phase with finite critical set",
    "page": 143,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "125"
   },
   {
    "level": 3,
    "title": "Higher order terms in the expansions",
    "page": 147,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "129"
   },
   {
    "level": 2,
    "title": "Laurent series, amoebas, and convex geometry",
    "page": 152,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "134"
   },
   {
    "level": 3,
    "title": "Laurent series",
    "page": 153,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "135"
   },
   {
    "level": 3,
    "title": "Polynomial amoebas",
    "page": 159,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "141"
   },
   {
    "level": 3,
    "title": "Convex cones and exponential bounds",
    "page": 165,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "147"
   },
   {
    "level": 3,
    "title": "Singularities, amoeba boundaries, and minimal points",
    "page": 171,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "153"
   },
   {
    "level": 3,
    "title": "Additional constructions",
    "page": 180,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "162"
   },
   {
    "level": 1,
-   "title": "\\MakeUppercasePart III Multivariate enumeration",
+   "title": "MakeUppercasePart III Multivariate enumeration",
    "page": 185,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "167"
   },
   {
    "level": 2,
    "title": "Overview of analytic methods for multivariate GFs",
    "page": 187,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "169"
   },
   {
    "level": 3,
    "title": "Some illustrative examples",
    "page": 189,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "171"
   },
   {
    "level": 3,
    "title": "The smooth case",
    "page": 200,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "182"
   },
   {
    "level": 3,
    "title": "The general case via stratified Morse theory",
    "page": 214,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "196"
   },
   {
    "level": 3,
    "title": "Geometry",
    "page": 224,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "206"
   },
   {
    "level": 3,
    "title": "Deformations",
    "page": 232,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "214"
   },
   {
    "level": 2,
    "title": "Effective computations and ACSV",
    "page": 239,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "221"
   },
   {
    "level": 3,
    "title": "Techniques for polynomial systems",
    "page": 240,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "222"
   },
   {
    "level": 3,
    "title": "Computing critical points",
    "page": 244,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "226"
   },
   {
    "level": 3,
    "title": "Verifying minimal points",
    "page": 253,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "235"
   },
   {
    "level": 3,
    "title": "Further computations for asymptotics",
    "page": 256,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "238"
   },
   {
    "level": 2,
    "title": "Smooth point asymptotics",
    "page": 263,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "245"
   },
   {
    "level": 3,
    "title": "Finitely minimal points and the surgery method",
    "page": 271,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "253"
   },
   {
    "level": 3,
    "title": "The method of residue forms",
    "page": 275,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "257"
   },
   {
    "level": 3,
    "title": "Smooth bivariate functions",
    "page": 280,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "262"
   },
   {
    "level": 3,
    "title": "Additional formulae for asymptotics",
    "page": 297,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "279"
   },
   {
    "level": 2,
    "title": "Multiple point asymptotics",
    "page": 309,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "291"
   },
   {
    "level": 3,
    "title": "A taxonomy of multiple points",
    "page": 311,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "293"
   },
   {
    "level": 3,
    "title": "Main results on integrals",
    "page": 317,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "299"
   },
   {
    "level": 3,
    "title": "Main results on coefficient asymptotics",
    "page": 320,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "302"
   },
   {
    "level": 3,
    "title": "Classifying multiple points",
    "page": 340,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "322"
   },
   {
    "level": 3,
    "title": "Surgery, non-generic directions, and non-arrangement points",
    "page": 345,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "327"
   },
   {
    "level": 2,
    "title": "Cone point asymptotics",
    "page": 357,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "339"
   },
   {
    "level": 3,
    "title": "Results on cones and deformations",
    "page": 359,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "341"
   },
   {
    "level": 3,
    "title": "Proof of Theorem 11.1",
    "page": 365,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "347"
   },
   {
    "level": 3,
    "title": "Evaluating asymptotics",
    "page": 379,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "361"
   },
   {
    "level": 3,
    "title": "Examples and consequences",
    "page": 386,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "368"
   },
   {
    "level": 2,
    "title": "Combinatorial applications",
    "page": 399,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "381"
   },
   {
    "level": 3,
    "title": "Some classifications",
    "page": 399,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "381"
   },
   {
    "level": 3,
    "title": "Powers, quasi-powers, and Riordan arrays",
    "page": 403,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "385"
   },
   {
    "level": 3,
    "title": "Lagrange inversion",
    "page": 408,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "390"
   },
   {
    "level": 3,
    "title": "Transfer matrices",
    "page": 411,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "393"
   },
   {
    "level": 3,
    "title": "Higher order asymptotics",
    "page": 417,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "399"
   },
   {
    "level": 3,
    "title": "Algebraic generating functions",
    "page": 420,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "402"
   },
   {
    "level": 3,
    "title": "Additional worked examples",
    "page": 422,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "404"
   },
   {
    "level": 3,
    "title": "Limit laws from probability theory",
    "page": 430,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "412"
   },
   {
    "level": 2,
    "title": "Challenges and extensions",
    "page": 442,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "424"
   },
   {
    "level": 3,
    "title": "Contributing singularities and diagonals",
    "page": 442,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "424"
   },
   {
    "level": 3,
    "title": "Phase transitions",
    "page": 444,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "426"
   },
   {
    "level": 3,
    "title": "Degenerate phase",
    "page": 444,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "426"
   },
   {
    "level": 3,
    "title": "Critical points at infinity",
    "page": 447,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "429"
   },
   {
    "level": 3,
    "title": "Algebraic GFs",
    "page": 448,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "430"
   },
   {
    "level": 3,
    "title": "Asymptotic formulae",
    "page": 450,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "432"
   },
   {
    "level": 3,
    "title": "Symmetric functions",
    "page": 451,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "433"
   },
   {
    "level": 3,
    "title": "Conclusion",
    "page": 453,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "435"
   },
   {
    "level": 2,
    "title": "to 1.15Appendix AIntegration on manifolds",
    "page": 456,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "438"
   },
   {
    "level": 3,
    "title": "Manifolds",
    "page": 456,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "438"
   },
   {
    "level": 3,
    "title": "Vector fields and differential forms",
    "page": 461,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "443"
   },
   {
    "level": 3,
    "title": "Integration of forms",
    "page": 470,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "452"
   },
   {
    "level": 3,
    "title": "Complex manifolds and differential forms in Cn",
    "page": 474,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "456"
   },
   {
    "level": 2,
    "title": "to 1.15Appendix BAlgebraic topology",
    "page": 480,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "462"
   },
   {
    "level": 3,
    "title": "Chain complexes and homology theory",
    "page": 480,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "462"
   },
   {
    "level": 3,
    "title": "Tools for homology",
    "page": 486,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "468"
   },
   {
    "level": 3,
    "title": "Cohomology",
    "page": 493,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "475"
   },
   {
    "level": 3,
    "title": "Topology of complex manifolds",
    "page": 495,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "477"
   },
   {
    "level": 2,
    "title": "to 1.15Appendix CResidue forms and classical Morse theory",
    "page": 498,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "480"
   },
   {
    "level": 3,
    "title": "Intersection classes",
    "page": 499,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "481"
   },
   {
    "level": 3,
    "title": "Residue forms and the residue integral theorem",
    "page": 503,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "485"
   },
   {
    "level": 3,
    "title": "Classical Morse theory",
    "page": 517,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "499"
   },
   {
    "level": 3,
    "title": "Description at the level of homology",
    "page": 523,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "505"
   },
   {
    "level": 2,
    "title": "to 1.15Appendix DStratification and stratified Morse theory",
    "page": 531,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "513"
   },
   {
    "level": 3,
    "title": "Whitney stratified spaces",
    "page": 531,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "513"
   },
   {
    "level": 3,
    "title": "Critical points and the fundamental lemma",
    "page": 536,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "518"
   },
   {
    "level": 3,
    "title": "Description of the attachments",
    "page": 541,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "523"
   },
   {
    "level": 3,
    "title": "Stratified Morse theory for complex manifolds",
    "page": 545,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "527"
   },
   {
    "level": 2,
    "title": "References",
    "page": 551,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "533"
   },
   {
    "level": 2,
    "title": "Author Index",
    "page": 571,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "553"
   },
   {
    "level": 2,
    "title": "Subject Index",
    "page": 577,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "559"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "7.5",
+   "title": "Gradient ﬂows form an important component of our analytic toolbox. Indeed, rather than computing a ﬂow for each example, standard results in Morse theory usually guarantee the existence of ﬂows that push domains of integration down to points where saddle point approximations can be computed. Unfortu",
+   "page": 199,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "181"
+  },
+  {
+   "kind": "figure",
+   "number": "7.8",
+   "title": "When r = (1, 1), which components of amoeba(Q)c have hr unbounded from below, and which vertices of the Newton polygon for Q do these regions correspond to under the relationship described in Theorem 6.18?",
+   "page": 205,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "187"
+  },
+  {
+   "kind": "algorithm",
+   "number": "1",
+   "title": "Algorithm to compute CPAI. Input: Polynomial Q ∈K[z], direction r and polynomial generators of algebraic sets F0 ⊃F1 ⊃· · · ⊃Fm deﬁning the canonical Whitney stratiﬁcation of V(Q)",
+   "page": 252,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "234"
+  },
+  {
+   "kind": "algorithm",
+   "number": "2",
+   "title": "Simpliﬁed algorithm to compute CPAI assuming V is smooth",
+   "page": 253,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "235"
+  },
+  {
+   "kind": "algorithm",
+   "number": "3",
+   "title": "Determination of W in the smooth, bivariate case. Input: Bivariate rational function F(x, y) and direction (r, s)",
+   "page": 287,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "269"
+  },
+  {
+   "kind": "figure",
+   "number": "9.6",
+   "title": "Six of the components are unbounded and correspond to vertices on the perimeter of the Newton polygon, and the seventh component is a bounded component corresponding to the origin, which is an interior lattice point of the Newton polygon",
+   "page": 293,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "275"
+  },
+  {
+   "kind": "algorithm",
+   "number": "4",
+   "title": "Decomposition into transverse hyperplane arrangements. Input: Rational or meromorphic function F(z) = P(z)/Q(z) whose singular variety is the hyperplane arrangement deﬁned by the vanishing of Q(z) = Qn",
+   "page": 331,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "313"
+  },
+  {
+   "kind": "figure",
+   "number": "11.3",
+   "title": "Theorem 11.33 (local projective deformation). Let B be a component of the complement of amoeba(Q). Suppose Q satisﬁes conclusion (iii) of Lemma 11.27 and that −ˆr∗·x is minimized on B uniquely at some point x ∈∂B. Assume further that local( ˆr∗) is ﬁnite and that ˆr∗is a non-obstructed direction in",
+   "page": 377,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "359"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "i",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "ii",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "iii",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "iv",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "vii",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "viii",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "ix",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "x",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "xi",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "xii",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "xiii",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "xiv",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "xv",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "xvi",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "xvii",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "xviii",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "xix",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "xx",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "2",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "3",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "4",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "5",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "6",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "7",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "8",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "9",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "10",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "11",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "12",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "13",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "14",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "15",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "16",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "17",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "18",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "19",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "20",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "21",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "22",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "23",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "24",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "25",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "26",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "27",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "28",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "29",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "30",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "31",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "32",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "33",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "34",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "35",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "36",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "37",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "38",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "39",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "40",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "41",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "42",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "43",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "44",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "45",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "46",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "47",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "48",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "49",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "50",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "51",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "52",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "53",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "54",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "55",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": "56",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": "57",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 76,
+   "label": "58",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 77,
+   "label": "59",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 78,
+   "label": "60",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 79,
+   "label": "61",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 80,
+   "label": "62",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 81,
+   "label": "63",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 82,
+   "label": "64",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 83,
+   "label": "65",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 84,
+   "label": "66",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 85,
+   "label": "67",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 86,
+   "label": "68",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 87,
+   "label": "69",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 88,
+   "label": "70",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 89,
+   "label": "71",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 90,
+   "label": "72",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 91,
+   "label": "73",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 92,
+   "label": "74",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 93,
+   "label": "75",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 94,
+   "label": "76",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 95,
+   "label": "77",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 96,
+   "label": "78",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 97,
+   "label": "79",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 98,
+   "label": "80",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 99,
+   "label": "81",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 100,
+   "label": "82",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 101,
+   "label": "83",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 102,
+   "label": "84",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 103,
+   "label": "85",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 104,
+   "label": "86",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 105,
+   "label": "87",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 106,
+   "label": "88",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 107,
+   "label": "89",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 108,
+   "label": "90",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 109,
+   "label": "91",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 110,
+   "label": "92",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 111,
+   "label": "93",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 112,
+   "label": "94",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 113,
+   "label": "95",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 114,
+   "label": "96",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 115,
+   "label": "97",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 116,
+   "label": "98",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 117,
+   "label": "99",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 118,
+   "label": "100",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 119,
+   "label": "101",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 120,
+   "label": "102",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 121,
+   "label": "103",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 122,
+   "label": "104",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 123,
+   "label": "105",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 124,
+   "label": "106",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 125,
+   "label": "107",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 126,
+   "label": "108",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 127,
+   "label": "109",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 128,
+   "label": "110",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 129,
+   "label": "111",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 130,
+   "label": "112",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 131,
+   "label": "113",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 132,
+   "label": "114",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 133,
+   "label": "115",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 134,
+   "label": "116",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 135,
+   "label": "117",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 136,
+   "label": "118",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 137,
+   "label": "119",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 138,
+   "label": "120",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 139,
+   "label": "121",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 140,
+   "label": "122",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 141,
+   "label": "123",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 142,
+   "label": "124",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 143,
+   "label": "125",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 144,
+   "label": "126",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 145,
+   "label": "127",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 146,
+   "label": "128",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 147,
+   "label": "129",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 148,
+   "label": "130",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 149,
+   "label": "131",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 150,
+   "label": "132",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 151,
+   "label": "133",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 152,
+   "label": "134",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 153,
+   "label": "135",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 154,
+   "label": "136",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 155,
+   "label": "137",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 156,
+   "label": "138",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 157,
+   "label": "139",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 158,
+   "label": "140",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 159,
+   "label": "141",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 160,
+   "label": "142",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 161,
+   "label": "143",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 162,
+   "label": "144",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 163,
+   "label": "145",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 164,
+   "label": "146",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 165,
+   "label": "147",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 166,
+   "label": "148",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 167,
+   "label": "149",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 168,
+   "label": "150",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 169,
+   "label": "151",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 170,
+   "label": "152",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 171,
+   "label": "153",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 172,
+   "label": "154",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 173,
+   "label": "155",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 174,
+   "label": "156",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 175,
+   "label": "157",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 176,
+   "label": "158",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 177,
+   "label": "159",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 178,
+   "label": "160",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 179,
+   "label": "161",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 180,
+   "label": "162",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 181,
+   "label": "163",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 182,
+   "label": "164",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 183,
+   "label": "165",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 184,
+   "label": "166",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 185,
+   "label": "167",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 186,
+   "label": "168",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 187,
+   "label": "169",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 188,
+   "label": "170",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 189,
+   "label": "171",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 190,
+   "label": "172",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 191,
+   "label": "173",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 192,
+   "label": "174",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 193,
+   "label": "175",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 194,
+   "label": "176",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 195,
+   "label": "177",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 196,
+   "label": "178",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 197,
+   "label": "179",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 198,
+   "label": "180",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 199,
+   "label": "181",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 200,
+   "label": "182",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 201,
+   "label": "183",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 202,
+   "label": "184",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 203,
+   "label": "185",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 204,
+   "label": "186",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 205,
+   "label": "187",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 206,
+   "label": "188",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 207,
+   "label": "189",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 208,
+   "label": "190",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 209,
+   "label": "191",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 210,
+   "label": "192",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 211,
+   "label": "193",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 212,
+   "label": "194",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 213,
+   "label": "195",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 214,
+   "label": "196",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 215,
+   "label": "197",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 216,
+   "label": "198",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 217,
+   "label": "199",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 218,
+   "label": "200",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 219,
+   "label": "201",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 220,
+   "label": "202",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 221,
+   "label": "203",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 222,
+   "label": "204",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 223,
+   "label": "205",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 224,
+   "label": "206",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 225,
+   "label": "207",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 226,
+   "label": "208",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 227,
+   "label": "209",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 228,
+   "label": "210",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 229,
+   "label": "211",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 230,
+   "label": "212",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 231,
+   "label": "213",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 232,
+   "label": "214",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 233,
+   "label": "215",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 234,
+   "label": "216",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 235,
+   "label": "217",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 236,
+   "label": "218",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 237,
+   "label": "219",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 238,
+   "label": "220",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 239,
+   "label": "221",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 240,
+   "label": "222",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 241,
+   "label": "223",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 242,
+   "label": "224",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 243,
+   "label": "225",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 244,
+   "label": "226",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 245,
+   "label": "227",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 246,
+   "label": "228",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 247,
+   "label": "229",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 248,
+   "label": "230",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 249,
+   "label": "231",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 250,
+   "label": "232",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 251,
+   "label": "233",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 252,
+   "label": "234",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 253,
+   "label": "235",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 254,
+   "label": "236",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 255,
+   "label": "237",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 256,
+   "label": "238",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 257,
+   "label": "239",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 258,
+   "label": "240",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 259,
+   "label": "241",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 260,
+   "label": "242",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 261,
+   "label": "243",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 262,
+   "label": "244",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 263,
+   "label": "245",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 264,
+   "label": "246",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 265,
+   "label": "247",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 266,
+   "label": "248",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 267,
+   "label": "249",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 268,
+   "label": "250",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 269,
+   "label": "251",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 270,
+   "label": "252",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 271,
+   "label": "253",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 272,
+   "label": "254",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 273,
+   "label": "255",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 274,
+   "label": "256",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 275,
+   "label": "257",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 276,
+   "label": "258",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 277,
+   "label": "259",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 278,
+   "label": "260",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 279,
+   "label": "261",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 280,
+   "label": "262",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 281,
+   "label": "263",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 282,
+   "label": "264",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 283,
+   "label": "265",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 284,
+   "label": "266",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 285,
+   "label": "267",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 286,
+   "label": "268",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 287,
+   "label": "269",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 288,
+   "label": "270",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 289,
+   "label": "271",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 290,
+   "label": "272",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 291,
+   "label": "273",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 292,
+   "label": "274",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 293,
+   "label": "275",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 294,
+   "label": "276",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 295,
+   "label": "277",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 296,
+   "label": "278",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 297,
+   "label": "279",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 298,
+   "label": "280",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 299,
+   "label": "281",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 300,
+   "label": "282",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 301,
+   "label": "283",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 302,
+   "label": "284",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 303,
+   "label": "285",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 304,
+   "label": "286",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 305,
+   "label": "287",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 306,
+   "label": "288",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 307,
+   "label": "289",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 308,
+   "label": "290",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 309,
+   "label": "291",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 310,
+   "label": "292",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 311,
+   "label": "293",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 312,
+   "label": "294",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 313,
+   "label": "295",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 314,
+   "label": "296",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 315,
+   "label": "297",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 316,
+   "label": "298",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 317,
+   "label": "299",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 318,
+   "label": "300",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 319,
+   "label": "301",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 320,
+   "label": "302",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 321,
+   "label": "303",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 322,
+   "label": "304",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 323,
+   "label": "305",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 324,
+   "label": "306",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 325,
+   "label": "307",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 326,
+   "label": "308",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 327,
+   "label": "309",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 328,
+   "label": "310",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 329,
+   "label": "311",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 330,
+   "label": "312",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 331,
+   "label": "313",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 332,
+   "label": "314",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 333,
+   "label": "315",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 334,
+   "label": "316",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 335,
+   "label": "317",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 336,
+   "label": "318",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 337,
+   "label": "319",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 338,
+   "label": "320",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 339,
+   "label": "321",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 340,
+   "label": "322",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 341,
+   "label": "323",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 342,
+   "label": "324",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 343,
+   "label": "325",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 344,
+   "label": "326",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 345,
+   "label": "327",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 346,
+   "label": "328",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 347,
+   "label": "329",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 348,
+   "label": "330",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 349,
+   "label": "331",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 350,
+   "label": "332",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 351,
+   "label": "333",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 352,
+   "label": "334",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 353,
+   "label": "335",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 354,
+   "label": "336",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 355,
+   "label": "337",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 356,
+   "label": "338",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 357,
+   "label": "339",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 358,
+   "label": "340",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 359,
+   "label": "341",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 360,
+   "label": "342",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 361,
+   "label": "343",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 362,
+   "label": "344",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 363,
+   "label": "345",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 364,
+   "label": "346",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 365,
+   "label": "347",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 366,
+   "label": "348",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 367,
+   "label": "349",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 368,
+   "label": "350",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 369,
+   "label": "351",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 370,
+   "label": "352",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 371,
+   "label": "353",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 372,
+   "label": "354",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 373,
+   "label": "355",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 374,
+   "label": "356",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 375,
+   "label": "357",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 376,
+   "label": "358",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 377,
+   "label": "359",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 378,
+   "label": "360",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 379,
+   "label": "361",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 380,
+   "label": "362",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 381,
+   "label": "363",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 382,
+   "label": "364",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 383,
+   "label": "365",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 384,
+   "label": "366",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 385,
+   "label": "367",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 386,
+   "label": "368",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 387,
+   "label": "369",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 388,
+   "label": "370",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 389,
+   "label": "371",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 390,
+   "label": "372",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 391,
+   "label": "373",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 392,
+   "label": "374",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 393,
+   "label": "375",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 394,
+   "label": "376",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 395,
+   "label": "377",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 396,
+   "label": "378",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 397,
+   "label": "379",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 398,
+   "label": "380",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 399,
+   "label": "381",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 400,
+   "label": "382",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 401,
+   "label": "383",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 402,
+   "label": "384",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 403,
+   "label": "385",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 404,
+   "label": "386",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 405,
+   "label": "387",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 406,
+   "label": "388",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 407,
+   "label": "389",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 408,
+   "label": "390",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 409,
+   "label": "391",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 410,
+   "label": "392",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 411,
+   "label": "393",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 412,
+   "label": "394",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 413,
+   "label": "395",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 414,
+   "label": "396",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 415,
+   "label": "397",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 416,
+   "label": "398",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 417,
+   "label": "399",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 418,
+   "label": "400",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 419,
+   "label": "401",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 420,
+   "label": "402",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 421,
+   "label": "403",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 422,
+   "label": "404",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 423,
+   "label": "405",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 424,
+   "label": "406",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 425,
+   "label": "407",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 426,
+   "label": "408",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 427,
+   "label": "409",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 428,
+   "label": "410",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 429,
+   "label": "411",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 430,
+   "label": "412",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 431,
+   "label": "413",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 432,
+   "label": "414",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 433,
+   "label": "415",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 434,
+   "label": "416",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 435,
+   "label": "417",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 436,
+   "label": "418",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 437,
+   "label": "419",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 438,
+   "label": "420",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 439,
+   "label": "421",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 440,
+   "label": "422",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 441,
+   "label": "423",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 442,
+   "label": "424",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 443,
+   "label": "425",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 444,
+   "label": "426",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 445,
+   "label": "427",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 446,
+   "label": "428",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 447,
+   "label": "429",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 448,
+   "label": "430",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 449,
+   "label": "431",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 450,
+   "label": "432",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 451,
+   "label": "433",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 452,
+   "label": "434",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 453,
+   "label": "435",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 454,
+   "label": "436",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 455,
+   "label": "437",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 456,
+   "label": "438",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 457,
+   "label": "439",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 458,
+   "label": "440",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 459,
+   "label": "441",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 460,
+   "label": "442",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 461,
+   "label": "443",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 462,
+   "label": "444",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 463,
+   "label": "445",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 464,
+   "label": "446",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 465,
+   "label": "447",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 466,
+   "label": "448",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 467,
+   "label": "449",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 468,
+   "label": "450",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 469,
+   "label": "451",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 470,
+   "label": "452",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 471,
+   "label": "453",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 472,
+   "label": "454",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 473,
+   "label": "455",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 474,
+   "label": "456",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 475,
+   "label": "457",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 476,
+   "label": "458",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 477,
+   "label": "459",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 478,
+   "label": "460",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 479,
+   "label": "461",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 480,
+   "label": "462",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 481,
+   "label": "463",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 482,
+   "label": "464",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 483,
+   "label": "465",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 484,
+   "label": "466",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 485,
+   "label": "467",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 486,
+   "label": "468",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 487,
+   "label": "469",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 488,
+   "label": "470",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 489,
+   "label": "471",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 490,
+   "label": "472",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 491,
+   "label": "473",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 492,
+   "label": "474",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 493,
+   "label": "475",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 494,
+   "label": "476",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 495,
+   "label": "477",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 496,
+   "label": "478",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 497,
+   "label": "479",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 498,
+   "label": "480",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 499,
+   "label": "481",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 500,
+   "label": "482",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 501,
+   "label": "483",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 502,
+   "label": "484",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 503,
+   "label": "485",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 504,
+   "label": "486",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 505,
+   "label": "487",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 506,
+   "label": "488",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 507,
+   "label": "489",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 508,
+   "label": "490",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 509,
+   "label": "491",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 510,
+   "label": "492",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 511,
+   "label": "493",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 512,
+   "label": "494",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 513,
+   "label": "495",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 514,
+   "label": "496",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 515,
+   "label": "497",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 516,
+   "label": "498",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 517,
+   "label": "499",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 518,
+   "label": "500",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 519,
+   "label": "501",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 520,
+   "label": "502",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 521,
+   "label": "503",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 522,
+   "label": "504",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 523,
+   "label": "505",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 524,
+   "label": "506",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 525,
+   "label": "507",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 526,
+   "label": "508",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 527,
+   "label": "509",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 528,
+   "label": "510",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 529,
+   "label": "511",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 530,
+   "label": "512",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 531,
+   "label": "513",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 532,
+   "label": "514",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 533,
+   "label": "515",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 534,
+   "label": "516",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 535,
+   "label": "517",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 536,
+   "label": "518",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 537,
+   "label": "519",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 538,
+   "label": "520",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 539,
+   "label": "521",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 540,
+   "label": "522",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 541,
+   "label": "523",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 542,
+   "label": "524",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 543,
+   "label": "525",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 544,
+   "label": "526",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 545,
+   "label": "527",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 546,
+   "label": "528",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 547,
+   "label": "529",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 548,
+   "label": "530",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 549,
+   "label": "531",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 550,
+   "label": "532",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 551,
+   "label": "533",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 552,
+   "label": "534",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 553,
+   "label": "535",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 554,
+   "label": "536",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 555,
+   "label": "537",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 556,
+   "label": "538",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 557,
+   "label": "539",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 558,
+   "label": "540",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 559,
+   "label": "541",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 560,
+   "label": "542",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 561,
+   "label": "543",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 562,
+   "label": "544",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 563,
+   "label": "545",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 564,
+   "label": "546",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 565,
+   "label": "547",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 566,
+   "label": "548",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 567,
+   "label": "549",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 568,
+   "label": "550",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 569,
+   "label": "551",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 570,
+   "label": "552",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 571,
+   "label": "553",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 572,
+   "label": "554",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 573,
+   "label": "555",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 574,
+   "label": "556",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 575,
+   "label": "557",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 576,
+   "label": "558",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 577,
+   "label": "559",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 578,
+   "label": "560",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 579,
+   "label": "561",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 580,
+   "label": "562",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 581,
+   "label": "563",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 582,
+   "label": "564",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 583,
+   "label": "565",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 584,
+   "label": "566",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 585,
+   "label": "567",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 586,
+   "label": "568",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 587,
+   "label": "569",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 588,
+   "label": "570",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 589,
+   "label": "571",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 9,
+   "n_chars": 4321,
+   "n_words": 651,
+   "label_start": "i",
+   "label_end": "xi"
+  },
   {
    "id": "sec-000-preface-to-the-second-edition",
    "number": null,
    "title": "Preface to the second edition",
    "level": 1,
    "page_start": 9,
-   "page_end": 15,
-   "n_chars": 13164,
-   "n_words": 2111
+   "page_end": 12,
+   "n_chars": 6164,
+   "n_words": 991,
+   "label_start": "xi",
+   "label_end": "xiv"
   },
   {
-   "id": "sec-001-list-of-symbols",
+   "id": "sec-001-preface-to-the-first-edition",
+   "number": null,
+   "title": "Preface to the first edition",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 6962,
+   "n_words": 1106,
+   "label_start": "xiv",
+   "label_end": "xvii"
+  },
+  {
+   "id": "sec-002-list-of-symbols",
    "number": null,
    "title": "List of Symbols",
    "level": 1,
    "page_start": 15,
    "page_end": 21,
-   "n_chars": 3410,
-   "n_words": 579
+   "n_chars": 3426,
+   "n_words": 596,
+   "label_start": "xvii",
+   "label_end": "3"
   },
   {
-   "id": "sec-002-introduction",
+   "id": "sec-003-introduction",
    "number": null,
    "title": "Introduction",
    "level": 2,
    "page_start": 21,
    "page_end": 23,
-   "n_chars": 4288,
-   "n_words": 757
+   "n_chars": 4339,
+   "n_words": 795,
+   "label_start": "3",
+   "label_end": "5"
   },
   {
-   "id": "sec-003-generating-functions-and-asymptotics",
+   "id": "sec-004-generating-functions-and-asymptotics",
    "number": null,
    "title": "Generating functions and asymptotics",
    "level": 3,
    "page_start": 23,
    "page_end": 27,
-   "n_chars": 7899,
-   "n_words": 1432
+   "n_chars": 7905,
+   "n_words": 1437,
+   "label_start": "5",
+   "label_end": "9"
   },
   {
-   "id": "sec-004-new-multivariate-methods",
+   "id": "sec-005-new-multivariate-methods",
    "number": null,
    "title": "New multivariate methods",
    "level": 3,
    "page_start": 27,
    "page_end": 30,
-   "n_chars": 8177,
-   "n_words": 1319
+   "n_chars": 8199,
+   "n_words": 1340,
+   "label_start": "9",
+   "label_end": "12"
   },
   {
-   "id": "sec-005-outline-of-the-remaining-chapters",
+   "id": "sec-006-outline-of-the-remaining-chapters",
    "number": null,
    "title": "Outline of the remaining chapters",
    "level": 3,
    "page_start": 30,
    "page_end": 35,
-   "n_chars": 11292,
-   "n_words": 1847
+   "n_chars": 11291,
+   "n_words": 1847,
+   "label_start": "12",
+   "label_end": "17"
   },
   {
-   "id": "sec-006-generating-functions",
+   "id": "sec-007-generating-functions",
    "number": null,
    "title": "Generating functions",
    "level": 2,
    "page_start": 35,
    "page_end": 35,
-   "n_chars": 440,
-   "n_words": 72
+   "n_chars": 467,
+   "n_words": 80,
+   "label_start": "17",
+   "label_end": "17"
   },
   {
-   "id": "sec-007-power-series",
+   "id": "sec-008-power-series",
    "number": null,
    "title": "Power series",
    "level": 3,
    "page_start": 35,
    "page_end": 38,
-   "n_chars": 4903,
-   "n_words": 887
+   "n_chars": 4957,
+   "n_words": 941,
+   "label_start": "17",
+   "label_end": "20"
   },
   {
-   "id": "sec-008-rational-operations-on-generating-functions",
+   "id": "sec-009-rational-operations-on-generating-functions",
    "number": null,
    "title": "Rational operations on generating functions",
    "level": 3,
    "page_start": 38,
    "page_end": 48,
-   "n_chars": 24642,
-   "n_words": 4501
+   "n_chars": 24807,
+   "n_words": 4675,
+   "label_start": "20",
+   "label_end": "30"
   },
   {
-   "id": "sec-009-algebraic-generating-functions",
+   "id": "sec-010-algebraic-generating-functions",
    "number": null,
    "title": "Algebraic generating functions",
    "level": 3,
    "page_start": 48,
-   "page_end": 69,
-   "n_chars": 38091,
-   "n_words": 6956
+   "page_end": 58,
+   "n_chars": 18353,
+   "n_words": 3566,
+   "label_start": "30",
+   "label_end": "40"
   },
   {
-   "id": "sec-010-labeled-classes",
+   "id": "sec-011-d-finite-generating-functions-and-diagonals",
+   "number": null,
+   "title": "D-finite generating functions and diagonals",
+   "level": 3,
+   "page_start": 58,
+   "page_end": 69,
+   "n_chars": 19942,
+   "n_words": 3636,
+   "label_start": "40",
+   "label_end": "51"
+  },
+  {
+   "id": "sec-012-labeled-classes",
    "number": null,
    "title": "Labeled classes",
    "level": 3,
    "page_start": 69,
    "page_end": 78,
-   "n_chars": 18182,
-   "n_words": 3247
+   "n_chars": 18260,
+   "n_words": 3321,
+   "label_start": "51",
+   "label_end": "60"
   },
   {
-   "id": "sec-011-univariate-asymptotics",
+   "id": "sec-013-univariate-asymptotics",
    "number": null,
    "title": "Univariate asymptotics",
    "level": 2,
    "page_start": 78,
    "page_end": 78,
-   "n_chars": 355,
-   "n_words": 63
+   "n_chars": 375,
+   "n_words": 62,
+   "label_start": "60",
+   "label_end": "60"
   },
   {
-   "id": "sec-012-an-explicit-formula-for-rational-functions",
+   "id": "sec-014-an-explicit-formula-for-rational-functions",
    "number": null,
    "title": "An explicit formula for rational functions",
    "level": 3,
    "page_start": 78,
    "page_end": 80,
-   "n_chars": 4809,
-   "n_words": 900
+   "n_chars": 4787,
+   "n_words": 891,
+   "label_start": "60",
+   "label_end": "62"
   },
   {
-   "id": "sec-013-meromorphic-asymptotics",
+   "id": "sec-015-meromorphic-asymptotics",
    "number": null,
    "title": "Meromorphic asymptotics",
    "level": 3,
    "page_start": 80,
-   "page_end": 88,
-   "n_chars": 15415,
-   "n_words": 2895
+   "page_end": 85,
+   "n_chars": 8835,
+   "n_words": 1689,
+   "label_start": "62",
+   "label_end": "67"
   },
   {
-   "id": "sec-014-transfer-theorems",
+   "id": "sec-016-darbouxs-method",
+   "number": null,
+   "title": "Darboux's method",
+   "level": 3,
+   "page_start": 85,
+   "page_end": 88,
+   "n_chars": 6513,
+   "n_words": 1231,
+   "label_start": "67",
+   "label_end": "70"
+  },
+  {
+   "id": "sec-017-transfer-theorems",
    "number": null,
    "title": "Transfer theorems",
    "level": 3,
    "page_start": 88,
    "page_end": 95,
-   "n_chars": 9613,
-   "n_words": 1946
+   "n_chars": 9611,
+   "n_words": 1970,
+   "label_start": "70",
+   "label_end": "77"
   },
   {
-   "id": "sec-015-the-saddle-point-method",
+   "id": "sec-018-the-saddle-point-method",
    "number": null,
    "title": "The saddle point method",
    "level": 3,
    "page_start": 95,
    "page_end": 107,
-   "n_chars": 14768,
-   "n_words": 2801
+   "n_chars": 14800,
+   "n_words": 2855,
+   "label_start": "77",
+   "label_end": "89"
   },
   {
-   "id": "sec-016-fourierlaplace-integrals-in-one-variable",
+   "id": "sec-019-fourierlaplace-integrals-in-one-variable",
    "number": null,
-   "title": "Fourier\u2013Laplace integrals in one variable",
+   "title": "Fourier–Laplace integrals in one variable",
    "level": 2,
    "page_start": 107,
    "page_end": 109,
-   "n_chars": 2609,
-   "n_words": 502
+   "n_chars": 2584,
+   "n_words": 489,
+   "label_start": "89",
+   "label_end": "91"
   },
   {
-   "id": "sec-017-real-integrands",
+   "id": "sec-020-real-integrands",
    "number": null,
    "title": "Real integrands",
    "level": 3,
    "page_start": 109,
    "page_end": 115,
-   "n_chars": 9721,
-   "n_words": 1914
+   "n_chars": 9773,
+   "n_words": 1992,
+   "label_start": "91",
+   "label_end": "97"
   },
   {
-   "id": "sec-018-complex-phase",
+   "id": "sec-021-complex-phase",
    "number": null,
    "title": "Complex phase",
    "level": 3,
    "page_start": 115,
    "page_end": 123,
-   "n_chars": 11552,
-   "n_words": 2264
+   "n_chars": 11622,
+   "n_words": 2338,
+   "label_start": "97",
+   "label_end": "105"
   },
   {
-   "id": "sec-019-analytic-versus-smooth-functions",
+   "id": "sec-022-analytic-versus-smooth-functions",
    "number": null,
    "title": "Analytic versus smooth functions",
    "level": 3,
    "page_start": 123,
    "page_end": 132,
-   "n_chars": 17264,
-   "n_words": 3178
+   "n_chars": 17329,
+   "n_words": 3253,
+   "label_start": "105",
+   "label_end": "114"
   },
   {
-   "id": "sec-020-multivariate-fourierlaplace-integrals",
+   "id": "sec-023-multivariate-fourierlaplace-integrals",
    "number": null,
-   "title": "Multivariate Fourier\u2013Laplace integrals",
+   "title": "Multivariate Fourier–Laplace integrals",
    "level": 2,
    "page_start": 132,
    "page_end": 132,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 38,
+   "n_words": 3,
+   "label_start": "114",
+   "label_end": "114"
   },
   {
-   "id": "sec-021-overview",
+   "id": "sec-024-overview",
    "number": null,
    "title": "Overview",
    "level": 3,
    "page_start": 132,
    "page_end": 136,
-   "n_chars": 8832,
-   "n_words": 1646
+   "n_chars": 8944,
+   "n_words": 1758,
+   "label_start": "114",
+   "label_end": "118"
   },
   {
-   "id": "sec-022-standard-phase",
+   "id": "sec-025-standard-phase",
    "number": null,
    "title": "Standard phase",
    "level": 3,
    "page_start": 136,
    "page_end": 139,
-   "n_chars": 2630,
-   "n_words": 539
+   "n_chars": 2636,
+   "n_words": 561,
+   "label_start": "118",
+   "label_end": "121"
   },
   {
-   "id": "sec-023-real-part-of-phase-has-a-strict-minimum",
+   "id": "sec-026-real-part-of-phase-has-a-strict-minimum",
    "number": null,
    "title": "Real part of phase has a strict minimum",
    "level": 3,
    "page_start": 139,
-   "page_end": 147,
-   "n_chars": 16096,
-   "n_words": 3062
+   "page_end": 143,
+   "n_chars": 6966,
+   "n_words": 1414,
+   "label_start": "121",
+   "label_end": "125"
   },
   {
-   "id": "sec-024-higher-order-terms-in-the-expansions",
+   "id": "sec-027-general-nondegenerate-phase-with-finite-critical",
+   "number": null,
+   "title": "General nondegenerate phase with finite critical set",
+   "level": 3,
+   "page_start": 143,
+   "page_end": 147,
+   "n_chars": 9266,
+   "n_words": 1829,
+   "label_start": "125",
+   "label_end": "129"
+  },
+  {
+   "id": "sec-028-higher-order-terms-in-the-expansions",
    "number": null,
    "title": "Higher order terms in the expansions",
    "level": 3,
    "page_start": 147,
    "page_end": 152,
-   "n_chars": 8509,
-   "n_words": 1486
+   "n_chars": 8524,
+   "n_words": 1518,
+   "label_start": "129",
+   "label_end": "134"
   },
   {
-   "id": "sec-025-laurent-series-amoebas-and-convex-geometry",
+   "id": "sec-029-laurent-series-amoebas-and-convex-geometry",
    "number": null,
    "title": "Laurent series, amoebas, and convex geometry",
    "level": 2,
    "page_start": 152,
-   "page_end": 159,
-   "n_chars": 13514,
-   "n_words": 2444
+   "page_end": 153,
+   "n_chars": 1595,
+   "n_words": 251,
+   "label_start": "134",
+   "label_end": "135"
   },
   {
-   "id": "sec-026-polynomial-amoebas",
+   "id": "sec-030-laurent-series",
+   "number": null,
+   "title": "Laurent series",
+   "level": 3,
+   "page_start": 153,
+   "page_end": 159,
+   "n_chars": 12078,
+   "n_words": 2330,
+   "label_start": "135",
+   "label_end": "141"
+  },
+  {
+   "id": "sec-031-polynomial-amoebas",
    "number": null,
    "title": "Polynomial amoebas",
    "level": 3,
    "page_start": 159,
    "page_end": 165,
-   "n_chars": 9258,
-   "n_words": 1764
+   "n_chars": 9403,
+   "n_words": 1914,
+   "label_start": "141",
+   "label_end": "147"
   },
   {
-   "id": "sec-027-convex-cones-and-exponential-bounds",
+   "id": "sec-032-convex-cones-and-exponential-bounds",
    "number": null,
    "title": "Convex cones and exponential bounds",
    "level": 3,
    "page_start": 165,
    "page_end": 171,
-   "n_chars": 10775,
-   "n_words": 1989
+   "n_chars": 10864,
+   "n_words": 2088,
+   "label_start": "147",
+   "label_end": "153"
   },
   {
-   "id": "sec-028-singularities-amoeba-boundaries-and-minimal-poin",
+   "id": "sec-033-singularities-amoeba-boundaries-and-minimal-poin",
    "number": null,
    "title": "Singularities, amoeba boundaries, and minimal points",
    "level": 3,
    "page_start": 171,
    "page_end": 180,
-   "n_chars": 23008,
-   "n_words": 3469
+   "n_chars": 21249,
+   "n_words": 3792,
+   "label_start": "153",
+   "label_end": "162"
   },
   {
-   "id": "sec-029-additional-constructions",
+   "id": "sec-034-additional-constructions",
    "number": null,
    "title": "Additional constructions",
    "level": 3,
    "page_start": 180,
    "page_end": 187,
-   "n_chars": 8597,
-   "n_words": 1623
+   "n_chars": 8653,
+   "n_words": 1683,
+   "label_start": "162",
+   "label_end": "169"
   },
   {
-   "id": "sec-030-overview-of-analytic-methods-for-multivariate-gf",
+   "id": "sec-035-overview-of-analytic-methods-for-multivariate-gf",
    "number": null,
    "title": "Overview of analytic methods for multivariate GFs",
    "level": 2,
    "page_start": 187,
    "page_end": 189,
-   "n_chars": 4649,
-   "n_words": 743
+   "n_chars": 4698,
+   "n_words": 752,
+   "label_start": "169",
+   "label_end": "171"
   },
   {
-   "id": "sec-031-some-illustrative-examples",
+   "id": "sec-036-some-illustrative-examples",
    "number": null,
    "title": "Some illustrative examples",
    "level": 3,
    "page_start": 189,
    "page_end": 200,
-   "n_chars": 32104,
-   "n_words": 3748
+   "n_chars": 27509,
+   "n_words": 3895,
+   "label_start": "171",
+   "label_end": "182"
   },
   {
-   "id": "sec-032-the-smooth-case",
+   "id": "sec-037-the-smooth-case",
    "number": null,
    "title": "The smooth case",
    "level": 3,
    "page_start": 200,
-   "page_end": 224,
-   "n_chars": 46795,
-   "n_words": 8388
+   "page_end": 214,
+   "n_chars": 27504,
+   "n_words": 5015,
+   "label_start": "182",
+   "label_end": "196"
   },
   {
-   "id": "sec-033-geometry",
+   "id": "sec-038-the-general-case-via-stratified-morse-theory",
+   "number": null,
+   "title": "The general case via stratified Morse theory",
+   "level": 3,
+   "page_start": 214,
+   "page_end": 224,
+   "n_chars": 19568,
+   "n_words": 3671,
+   "label_start": "196",
+   "label_end": "206"
+  },
+  {
+   "id": "sec-039-geometry",
    "number": null,
    "title": "Geometry",
    "level": 3,
    "page_start": 224,
    "page_end": 232,
-   "n_chars": 11619,
-   "n_words": 2027
+   "n_chars": 11703,
+   "n_words": 2111,
+   "label_start": "206",
+   "label_end": "214"
   },
   {
-   "id": "sec-034-deformations",
+   "id": "sec-040-deformations",
    "number": null,
    "title": "Deformations",
    "level": 3,
    "page_start": 232,
-   "page_end": 240,
-   "n_chars": 17486,
-   "n_words": 3079
+   "page_end": 239,
+   "n_chars": 15361,
+   "n_words": 2830,
+   "label_start": "214",
+   "label_end": "221"
   },
   {
-   "id": "sec-035-techniques-for-polynomial-systems",
+   "id": "sec-041-effective-computations-and-acsv",
+   "number": null,
+   "title": "Effective computations and ACSV",
+   "level": 2,
+   "page_start": 239,
+   "page_end": 240,
+   "n_chars": 2264,
+   "n_words": 375,
+   "label_start": "221",
+   "label_end": "222"
+  },
+  {
+   "id": "sec-042-techniques-for-polynomial-systems",
    "number": null,
    "title": "Techniques for polynomial systems",
    "level": 3,
    "page_start": 240,
    "page_end": 244,
-   "n_chars": 10692,
-   "n_words": 1976
+   "n_chars": 10792,
+   "n_words": 2061,
+   "label_start": "222",
+   "label_end": "226"
   },
   {
-   "id": "sec-036-computing-critical-points",
+   "id": "sec-043-computing-critical-points",
    "number": null,
    "title": "Computing critical points",
    "level": 3,
    "page_start": 244,
    "page_end": 253,
-   "n_chars": 16386,
-   "n_words": 3003
+   "n_chars": 16596,
+   "n_words": 3213,
+   "label_start": "226",
+   "label_end": "235"
   },
   {
-   "id": "sec-037-verifying-minimal-points",
+   "id": "sec-044-verifying-minimal-points",
    "number": null,
    "title": "Verifying minimal points",
    "level": 3,
    "page_start": 253,
    "page_end": 256,
-   "n_chars": 6901,
-   "n_words": 1163
+   "n_chars": 6971,
+   "n_words": 1230,
+   "label_start": "235",
+   "label_end": "238"
   },
   {
-   "id": "sec-038-further-computations-for-asymptotics",
+   "id": "sec-045-further-computations-for-asymptotics",
    "number": null,
    "title": "Further computations for asymptotics",
    "level": 3,
    "page_start": 256,
    "page_end": 263,
-   "n_chars": 14138,
-   "n_words": 2488
+   "n_chars": 14309,
+   "n_words": 2659,
+   "label_start": "238",
+   "label_end": "245"
   },
   {
-   "id": "sec-039-smooth-point-asymptotics",
+   "id": "sec-046-smooth-point-asymptotics",
    "number": null,
    "title": "Smooth point asymptotics",
    "level": 2,
    "page_start": 263,
    "page_end": 271,
-   "n_chars": 15604,
-   "n_words": 2812
+   "n_chars": 15705,
+   "n_words": 2890,
+   "label_start": "245",
+   "label_end": "253"
   },
   {
-   "id": "sec-040-finitely-minimal-points-and-the-surgery-method",
+   "id": "sec-047-finitely-minimal-points-and-the-surgery-method",
    "number": null,
    "title": "Finitely minimal points and the surgery method",
    "level": 3,
    "page_start": 271,
    "page_end": 275,
-   "n_chars": 7502,
-   "n_words": 1326
+   "n_chars": 7578,
+   "n_words": 1402,
+   "label_start": "253",
+   "label_end": "257"
   },
   {
-   "id": "sec-041-the-method-of-residue-forms",
+   "id": "sec-048-the-method-of-residue-forms",
    "number": null,
    "title": "The method of residue forms",
    "level": 3,
    "page_start": 275,
    "page_end": 280,
-   "n_chars": 10864,
-   "n_words": 1915
+   "n_chars": 10933,
+   "n_words": 1981,
+   "label_start": "257",
+   "label_end": "262"
   },
   {
-   "id": "sec-042-smooth-bivariate-functions",
+   "id": "sec-049-smooth-bivariate-functions",
    "number": null,
    "title": "Smooth bivariate functions",
    "level": 3,
    "page_start": 280,
    "page_end": 297,
-   "n_chars": 33825,
-   "n_words": 6132
+   "n_chars": 33997,
+   "n_words": 6313,
+   "label_start": "262",
+   "label_end": "279"
   },
   {
-   "id": "sec-043-additional-formulae-for-asymptotics",
+   "id": "sec-050-additional-formulae-for-asymptotics",
    "number": null,
    "title": "Additional formulae for asymptotics",
    "level": 3,
    "page_start": 297,
    "page_end": 309,
-   "n_chars": 22349,
-   "n_words": 3949
+   "n_chars": 22516,
+   "n_words": 4129,
+   "label_start": "279",
+   "label_end": "291"
   },
   {
-   "id": "sec-044-multiple-point-asymptotics",
+   "id": "sec-051-multiple-point-asymptotics",
    "number": null,
    "title": "Multiple point asymptotics",
    "level": 2,
    "page_start": 309,
    "page_end": 311,
-   "n_chars": 3416,
-   "n_words": 561
+   "n_chars": 3483,
+   "n_words": 604,
+   "label_start": "291",
+   "label_end": "293"
   },
   {
-   "id": "sec-045-a-taxonomy-of-multiple-points",
+   "id": "sec-052-a-taxonomy-of-multiple-points",
    "number": null,
    "title": "A taxonomy of multiple points",
    "level": 3,
    "page_start": 311,
    "page_end": 317,
-   "n_chars": 9314,
-   "n_words": 1578
+   "n_chars": 9400,
+   "n_words": 1661,
+   "label_start": "293",
+   "label_end": "299"
   },
   {
-   "id": "sec-046-main-results-on-integrals",
+   "id": "sec-053-main-results-on-integrals",
    "number": null,
    "title": "Main results on integrals",
    "level": 3,
    "page_start": 317,
-   "page_end": 340,
-   "n_chars": 48408,
-   "n_words": 8697
+   "page_end": 320,
+   "n_chars": 7476,
+   "n_words": 1444,
+   "label_start": "299",
+   "label_end": "302"
   },
   {
-   "id": "sec-047-classifying-multiple-points",
+   "id": "sec-054-main-results-on-coefficient-asymptotics",
+   "number": null,
+   "title": "Main results on coefficient asymptotics",
+   "level": 3,
+   "page_start": 320,
+   "page_end": 340,
+   "n_chars": 41346,
+   "n_words": 7717,
+   "label_start": "302",
+   "label_end": "322"
+  },
+  {
+   "id": "sec-055-classifying-multiple-points",
    "number": null,
    "title": "Classifying multiple points",
    "level": 3,
    "page_start": 340,
    "page_end": 345,
-   "n_chars": 9509,
-   "n_words": 1716
+   "n_chars": 9558,
+   "n_words": 1765,
+   "label_start": "322",
+   "label_end": "327"
   },
   {
-   "id": "sec-048-surgery-non-generic-directions-and-non-arrangeme",
+   "id": "sec-056-surgery-non-generic-directions-and-non-arrangeme",
    "number": null,
    "title": "Surgery, non-generic directions, and non-arrangement points",
    "level": 3,
    "page_start": 345,
    "page_end": 357,
-   "n_chars": 22715,
-   "n_words": 4126
+   "n_chars": 22860,
+   "n_words": 4287,
+   "label_start": "327",
+   "label_end": "339"
   },
   {
-   "id": "sec-049-cone-point-asymptotics",
+   "id": "sec-057-cone-point-asymptotics",
    "number": null,
    "title": "Cone point asymptotics",
    "level": 2,
    "page_start": 357,
    "page_end": 359,
-   "n_chars": 3876,
-   "n_words": 643
+   "n_chars": 3910,
+   "n_words": 657,
+   "label_start": "339",
+   "label_end": "341"
   },
   {
-   "id": "sec-050-results-on-cones-and-deformations",
+   "id": "sec-058-results-on-cones-and-deformations",
    "number": null,
    "title": "Results on cones and deformations",
    "level": 3,
    "page_start": 359,
    "page_end": 365,
-   "n_chars": 12269,
-   "n_words": 2280
+   "n_chars": 12420,
+   "n_words": 2428,
+   "label_start": "341",
+   "label_end": "347"
   },
   {
-   "id": "sec-051-proof-of-theorem-111",
+   "id": "sec-059-proof-of-theorem-111",
    "number": null,
    "title": "Proof of Theorem 11.1",
    "level": 3,
    "page_start": 365,
    "page_end": 379,
-   "n_chars": 31723,
-   "n_words": 5752
+   "n_chars": 32028,
+   "n_words": 6062,
+   "label_start": "347",
+   "label_end": "361"
   },
   {
-   "id": "sec-052-evaluating-asymptotics",
+   "id": "sec-060-evaluating-asymptotics",
    "number": null,
    "title": "Evaluating asymptotics",
    "level": 3,
    "page_start": 379,
    "page_end": 386,
-   "n_chars": 15314,
-   "n_words": 2760
+   "n_chars": 15448,
+   "n_words": 2899,
+   "label_start": "361",
+   "label_end": "368"
   },
   {
-   "id": "sec-053-examples-and-consequences",
+   "id": "sec-061-examples-and-consequences",
    "number": null,
    "title": "Examples and consequences",
    "level": 3,
    "page_start": 386,
    "page_end": 399,
-   "n_chars": 27703,
-   "n_words": 4718
+   "n_chars": 25465,
+   "n_words": 4658,
+   "label_start": "368",
+   "label_end": "381"
   },
   {
-   "id": "sec-054-combinatorial-applications",
+   "id": "sec-062-combinatorial-applications",
    "number": null,
    "title": "Combinatorial applications",
    "level": 2,
    "page_start": 399,
-   "page_end": 403,
-   "n_chars": 7958,
-   "n_words": 1208
+   "page_end": 399,
+   "n_chars": 1142,
+   "n_words": 168,
+   "label_start": "381",
+   "label_end": "381"
   },
   {
-   "id": "sec-055-powers-quasi-powers-and-riordan-arrays",
+   "id": "sec-063-some-classifications",
+   "number": null,
+   "title": "Some classifications",
+   "level": 3,
+   "page_start": 399,
+   "page_end": 403,
+   "n_chars": 6821,
+   "n_words": 1043,
+   "label_start": "381",
+   "label_end": "385"
+  },
+  {
+   "id": "sec-064-powers-quasi-powers-and-riordan-arrays",
    "number": null,
    "title": "Powers, quasi-powers, and Riordan arrays",
    "level": 3,
    "page_start": 403,
    "page_end": 408,
-   "n_chars": 9965,
-   "n_words": 1780
+   "n_chars": 9974,
+   "n_words": 1795,
+   "label_start": "385",
+   "label_end": "390"
   },
   {
-   "id": "sec-056-lagrange-inversion",
+   "id": "sec-065-lagrange-inversion",
    "number": null,
    "title": "Lagrange inversion",
    "level": 3,
    "page_start": 408,
    "page_end": 411,
-   "n_chars": 4286,
-   "n_words": 788
+   "n_chars": 4274,
+   "n_words": 776,
+   "label_start": "390",
+   "label_end": "393"
   },
   {
-   "id": "sec-057-transfer-matrices",
+   "id": "sec-066-transfer-matrices",
    "number": null,
    "title": "Transfer matrices",
    "level": 3,
    "page_start": 411,
    "page_end": 417,
-   "n_chars": 10645,
-   "n_words": 2082
+   "n_chars": 10691,
+   "n_words": 2134,
+   "label_start": "393",
+   "label_end": "399"
   },
   {
-   "id": "sec-058-higher-order-asymptotics",
+   "id": "sec-067-higher-order-asymptotics",
    "number": null,
    "title": "Higher order asymptotics",
    "level": 3,
    "page_start": 417,
    "page_end": 420,
-   "n_chars": 5599,
-   "n_words": 975
+   "n_chars": 5629,
+   "n_words": 1002,
+   "label_start": "399",
+   "label_end": "402"
   },
   {
-   "id": "sec-059-algebraic-generating-functions",
+   "id": "sec-068-algebraic-generating-functions",
    "number": null,
    "title": "Algebraic generating functions",
    "level": 3,
    "page_start": 420,
    "page_end": 422,
-   "n_chars": 4898,
-   "n_words": 817
+   "n_chars": 4896,
+   "n_words": 815,
+   "label_start": "402",
+   "label_end": "404"
   },
   {
-   "id": "sec-060-additional-worked-examples",
+   "id": "sec-069-additional-worked-examples",
    "number": null,
    "title": "Additional worked examples",
    "level": 3,
    "page_start": 422,
    "page_end": 430,
-   "n_chars": 14383,
-   "n_words": 2809
+   "n_chars": 14425,
+   "n_words": 2851,
+   "label_start": "404",
+   "label_end": "412"
   },
   {
-   "id": "sec-061-limit-laws-from-probability-theory",
+   "id": "sec-070-limit-laws-from-probability-theory",
    "number": null,
    "title": "Limit laws from probability theory",
    "level": 3,
    "page_start": 430,
    "page_end": 442,
-   "n_chars": 22489,
-   "n_words": 4100
+   "n_chars": 22671,
+   "n_words": 4318,
+   "label_start": "412",
+   "label_end": "424"
   },
   {
-   "id": "sec-062-challenges-and-extensions",
+   "id": "sec-071-challenges-and-extensions",
    "number": null,
    "title": "Challenges and extensions",
    "level": 2,
    "page_start": 442,
    "page_end": 442,
-   "n_chars": 337,
-   "n_words": 51
+   "n_chars": 362,
+   "n_words": 53,
+   "label_start": "424",
+   "label_end": "424"
   },
   {
-   "id": "sec-063-contributing-singularities-and-diagonals",
+   "id": "sec-072-contributing-singularities-and-diagonals",
    "number": null,
    "title": "Contributing singularities and diagonals",
    "level": 3,
    "page_start": 442,
    "page_end": 444,
-   "n_chars": 3615,
-   "n_words": 599
+   "n_chars": 3611,
+   "n_words": 595,
+   "label_start": "424",
+   "label_end": "426"
   },
   {
-   "id": "sec-064-phase-transitions",
+   "id": "sec-073-phase-transitions",
    "number": null,
    "title": "Phase transitions",
    "level": 3,
    "page_start": 444,
    "page_end": 444,
-   "n_chars": 1730,
-   "n_words": 289
+   "n_chars": 1734,
+   "n_words": 293,
+   "label_start": "426",
+   "label_end": "426"
   },
   {
-   "id": "sec-065-degenerate-phase",
+   "id": "sec-074-degenerate-phase",
    "number": null,
    "title": "Degenerate phase",
    "level": 3,
    "page_start": 444,
-   "page_end": 448,
-   "n_chars": 6653,
-   "n_words": 1209
+   "page_end": 447,
+   "n_chars": 3920,
+   "n_words": 729,
+   "label_start": "426",
+   "label_end": "429"
   },
   {
-   "id": "sec-066-algebraic-gfs",
+   "id": "sec-075-critical-points-at-infinity",
+   "number": null,
+   "title": "Critical points at infinity",
+   "level": 3,
+   "page_start": 447,
+   "page_end": 448,
+   "n_chars": 2704,
+   "n_words": 477,
+   "label_start": "429",
+   "label_end": "430"
+  },
+  {
+   "id": "sec-076-algebraic-gfs",
    "number": null,
    "title": "Algebraic GFs",
    "level": 3,
    "page_start": 448,
    "page_end": 450,
-   "n_chars": 5807,
-   "n_words": 1052
+   "n_chars": 5814,
+   "n_words": 1059,
+   "label_start": "430",
+   "label_end": "432"
   },
   {
-   "id": "sec-067-asymptotic-formulae",
+   "id": "sec-077-asymptotic-formulae",
    "number": null,
    "title": "Asymptotic formulae",
    "level": 3,
    "page_start": 450,
    "page_end": 451,
    "n_chars": 298,
-   "n_words": 46
+   "n_words": 46,
+   "label_start": "432",
+   "label_end": "433"
   },
   {
-   "id": "sec-068-symmetric-functions",
+   "id": "sec-078-symmetric-functions",
    "number": null,
    "title": "Symmetric functions",
    "level": 3,
    "page_start": 451,
    "page_end": 453,
-   "n_chars": 4283,
-   "n_words": 741
+   "n_chars": 4328,
+   "n_words": 783,
+   "label_start": "433",
+   "label_end": "435"
   },
   {
-   "id": "sec-069-conclusion",
+   "id": "sec-079-conclusion",
    "number": null,
    "title": "Conclusion",
    "level": 3,
    "page_start": 453,
    "page_end": 456,
-   "n_chars": 4953,
-   "n_words": 809
+   "n_chars": 4965,
+   "n_words": 818,
+   "label_start": "435",
+   "label_end": "438"
   },
   {
-   "id": "sec-070-manifolds",
+   "id": "sec-080-manifolds",
    "number": null,
    "title": "Manifolds",
    "level": 3,
    "page_start": 456,
-   "page_end": 470,
-   "n_chars": 30783,
-   "n_words": 5776
+   "page_end": 461,
+   "n_chars": 10662,
+   "n_words": 1983,
+   "label_start": "438",
+   "label_end": "443"
   },
   {
-   "id": "sec-071-integration-of-forms",
+   "id": "sec-081-vector-fields-and-differential-forms",
+   "number": null,
+   "title": "Vector fields and differential forms",
+   "level": 3,
+   "page_start": 461,
+   "page_end": 470,
+   "n_chars": 20449,
+   "n_words": 4229,
+   "label_start": "443",
+   "label_end": "452"
+  },
+  {
+   "id": "sec-082-integration-of-forms",
    "number": null,
    "title": "Integration of forms",
    "level": 3,
    "page_start": 470,
-   "page_end": 480,
-   "n_chars": 17270,
-   "n_words": 3300
+   "page_end": 474,
+   "n_chars": 6501,
+   "n_words": 1344,
+   "label_start": "452",
+   "label_end": "456"
   },
   {
-   "id": "sec-072-chain-complexes-and-homology-theory",
+   "id": "sec-083-complex-manifolds-and-differential-forms-in-cn",
+   "number": null,
+   "title": "Complex manifolds and differential forms in Cn",
+   "level": 3,
+   "page_start": 474,
+   "page_end": 480,
+   "n_chars": 10928,
+   "n_words": 2158,
+   "label_start": "456",
+   "label_end": "462"
+  },
+  {
+   "id": "sec-084-chain-complexes-and-homology-theory",
    "number": null,
    "title": "Chain complexes and homology theory",
    "level": 3,
    "page_start": 480,
    "page_end": 486,
-   "n_chars": 12845,
-   "n_words": 2294
+   "n_chars": 12884,
+   "n_words": 2333,
+   "label_start": "462",
+   "label_end": "468"
   },
   {
-   "id": "sec-073-tools-for-homology",
+   "id": "sec-085-tools-for-homology",
    "number": null,
    "title": "Tools for homology",
    "level": 3,
    "page_start": 486,
    "page_end": 493,
-   "n_chars": 14094,
-   "n_words": 2585
+   "n_chars": 14110,
+   "n_words": 2638,
+   "label_start": "468",
+   "label_end": "475"
   },
   {
-   "id": "sec-074-cohomology",
+   "id": "sec-086-cohomology",
    "number": null,
    "title": "Cohomology",
    "level": 3,
    "page_start": 493,
    "page_end": 495,
-   "n_chars": 3927,
-   "n_words": 745
+   "n_chars": 3976,
+   "n_words": 791,
+   "label_start": "475",
+   "label_end": "477"
   },
   {
-   "id": "sec-075-topology-of-complex-manifolds",
+   "id": "sec-087-topology-of-complex-manifolds",
    "number": null,
    "title": "Topology of complex manifolds",
    "level": 3,
    "page_start": 495,
-   "page_end": 498,
-   "n_chars": 6454,
-   "n_words": 1127
+   "page_end": 499,
+   "n_chars": 7251,
+   "n_words": 1272,
+   "label_start": "477",
+   "label_end": "481"
   },
   {
-   "id": "sec-076-intersection-classes",
+   "id": "sec-088-intersection-classes",
    "number": null,
    "title": "Intersection classes",
    "level": 3,
-   "page_start": 498,
+   "page_start": 499,
    "page_end": 503,
-   "n_chars": 8897,
-   "n_words": 1572
+   "n_chars": 8293,
+   "n_words": 1572,
+   "label_start": "481",
+   "label_end": "485"
   },
   {
-   "id": "sec-077-residue-forms-and-the-residue-integral-theorem",
+   "id": "sec-089-residue-forms-and-the-residue-integral-theorem",
    "number": null,
    "title": "Residue forms and the residue integral theorem",
    "level": 3,
    "page_start": 503,
-   "page_end": 516,
-   "n_chars": 24517,
-   "n_words": 4593
+   "page_end": 517,
+   "n_chars": 26168,
+   "n_words": 5260,
+   "label_start": "485",
+   "label_end": "499"
   },
   {
-   "id": "sec-078-classical-morse-theory",
+   "id": "sec-090-classical-morse-theory",
    "number": null,
    "title": "Classical Morse theory",
    "level": 3,
-   "page_start": 516,
+   "page_start": 517,
    "page_end": 523,
-   "n_chars": 13888,
-   "n_words": 2597
+   "n_chars": 12681,
+   "n_words": 2379,
+   "label_start": "499",
+   "label_end": "505"
   },
   {
-   "id": "sec-079-description-at-the-level-of-homology",
+   "id": "sec-091-description-at-the-level-of-homology",
    "number": null,
    "title": "Description at the level of homology",
    "level": 3,
    "page_start": 523,
-   "page_end": 536,
-   "n_chars": 25680,
-   "n_words": 4684
+   "page_end": 531,
+   "n_chars": 16284,
+   "n_words": 3095,
+   "label_start": "505",
+   "label_end": "513"
   },
   {
-   "id": "sec-080-critical-points-and-the-fundamental-lemma",
+   "id": "sec-092-whitney-stratified-spaces",
+   "number": null,
+   "title": "Whitney stratified spaces",
+   "level": 3,
+   "page_start": 531,
+   "page_end": 536,
+   "n_chars": 9510,
+   "n_words": 1726,
+   "label_start": "513",
+   "label_end": "518"
+  },
+  {
+   "id": "sec-093-critical-points-and-the-fundamental-lemma",
    "number": null,
    "title": "Critical points and the fundamental lemma",
    "level": 3,
    "page_start": 536,
    "page_end": 541,
-   "n_chars": 10089,
-   "n_words": 1764
+   "n_chars": 10139,
+   "n_words": 1814,
+   "label_start": "518",
+   "label_end": "523"
   },
   {
-   "id": "sec-081-description-of-the-attachments",
+   "id": "sec-094-description-of-the-attachments",
    "number": null,
    "title": "Description of the attachments",
    "level": 3,
    "page_start": 541,
-   "page_end": 551,
-   "n_chars": 17823,
-   "n_words": 3359
+   "page_end": 545,
+   "n_chars": 8674,
+   "n_words": 1714,
+   "label_start": "523",
+   "label_end": "527"
   },
   {
-   "id": "sec-082-references",
+   "id": "sec-095-stratified-morse-theory-for-complex-manifolds",
+   "number": null,
+   "title": "Stratified Morse theory for complex manifolds",
+   "level": 3,
+   "page_start": 545,
+   "page_end": 551,
+   "n_chars": 9254,
+   "n_words": 1769,
+   "label_start": "527",
+   "label_end": "533"
+  },
+  {
+   "id": "sec-096-references",
    "number": null,
    "title": "References",
    "level": 2,
    "page_start": 551,
    "page_end": 571,
-   "n_chars": 41373,
-   "n_words": 6472
+   "n_chars": 41214,
+   "n_words": 6313,
+   "label_start": "533",
+   "label_end": "553"
   },
   {
-   "id": "sec-083-author-index",
+   "id": "sec-097-author-index",
    "number": null,
    "title": "Author Index",
    "level": 2,
    "page_start": 571,
    "page_end": 577,
-   "n_chars": 8394,
-   "n_words": 1645
+   "n_chars": 8377,
+   "n_words": 1628,
+   "label_start": "553",
+   "label_end": "559"
   },
   {
-   "id": "sec-084-subject-index",
+   "id": "sec-098-subject-index",
    "number": null,
    "title": "Subject Index",
    "level": 2,
    "page_start": 577,
    "page_end": 589,
-   "n_chars": 21099,
-   "n_words": 3110
+   "n_chars": 21115,
+   "n_words": 3126,
+   "label_start": "559",
+   "label_end": "571"
   }
  ],
  "diagnostics": {
   "pages_without_text": 10,
   "likely_scanned": false,
   "toc_entries": 106,
-  "sections": 85,
-  "chars_total": 1122006
+  "toc_inferred_entries": 0,
+  "figure_entries": 8,
+  "figure_sequence_gaps": [
+   "figure 11.1",
+   "figure 11.2",
+   "figure 7.1",
+   "figure 7.2",
+   "figure 7.3",
+   "figure 7.4",
+   "figure 7.6",
+   "figure 7.7",
+   "figure 9.1",
+   "figure 9.2",
+   "figure 9.3",
+   "figure 9.4",
+   "figure 9.5"
+  ],
+  "page_label_conflicts": {
+   "count": 3,
+   "items": [
+    "p11: pdf-labels xiii, contents xi",
+    "p14: pdf-labels xvi, contents xiv",
+    "p17: pdf-labels xix, contents xvii"
+   ]
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "Contents"
+    ]
+   },
+   "found_not_listed": {
+    "count": 6,
+    "items": [
+     "0 Lv",
+     "1 When Z is a smooth algebraic hypersurface.",
+     "2 When Z is the simplex or the complexiﬁcation of a simplex.",
+     "3 When Z is a hyperplane arrangement.",
+     "4 When Z is the product of two spaces on which the local product is induced by a diﬀeomorphism.",
+     "3 The normal data has the following characterizations."
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 100,
+  "chars_total": 1123965,
+  "furniture_lines_stripped": 0
  }
 }

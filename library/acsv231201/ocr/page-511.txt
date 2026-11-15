@@ -1,0 +1,58 @@
+C.2 Residue forms and the residue integral theorem 493
+
+(ii) Formula for the iterated residue. Denoting the iterated residue defined
+by this restriction by Res(w; Sp), there is a formula
+
+P P
+Rese ia 3 so = Pe) din, A+++ A Any 4 «
+
+k z=
+Th Qi(2) det Jy(2)lercien)
+
+(C.2.8)
+(iii) Residue integral identity. Let 7 be any (d — k)-chain in Sp and T =
+w-!(T,) be as above. Then
+
+I - Pe) de = [rola : s.] - (C29)
+(271) Sx Tj-1 Q(2) lo TTi-1 Q(2)
+(iv) Formula for Cauchy integral. Jn particular,
+
+1 zTtP(z) de = { 2" P(z)
+(221) Sto Tier 0,(z) ~ J, det Ty(z)
+
+saGlen) a
+‘for all i¢e
+
+(C.2.10)
+
+Proof We first prove all four parts under the assumption that Q(z) = z; for
+alll <j <k. Setting 7; = k +i forall 1 <i<d-—-k, the form 6 = P(z) dz A
+-+-Adzzq Satisfies (C.2.7). As in the proof of Proposition C.6 above, the result of
+Exercise A.17 implies that c*0 is well defined, yielding (i). The formula (C.2.8)
+is also evident in this case: Jy is the identity matrix, hence (C.2.8) agrees with
+our choice of 6 after setting z; = 0 for 1 < i < k, proving (ii). For (iii), we write
+the left-hand side as an iterated integral
+
+1 fff _P@)dz_
+2ni¥ Jo Jy, Sy, TE Oi)
+
+where y; is the circle of radius ¢ about the origin in the jth coordinate. Apply-
+ing the univariate residue theorem to each of the inner k integrals leaves
+
+ff Perdee A-++Adzg,
+o
+
+proving (iii). Finally, (iv) follows from (iii) by replacing P(z) with z~"~!P(z)
+in (C.2.8) and absorbing one factor of each z; in the denominator when going
+from det Jy to det Ty.
+
+For the general case, map by and use functoriality. The fact that Res is
+well defined and functorial follows from the same argument as in the proof
+of Proposition C.6. Applying the case already proved to the image space and
+pulling back by wl! it remains only to observe that dzj41 A+++ Adzq pulls back
+dn, N+ + AdZn4,, and P(O) pulls back to P(Z)|,=cz_) + i¢m-
+
+ia]
+
+1
+{0 TD eaten) sie

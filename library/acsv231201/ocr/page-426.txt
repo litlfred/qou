@@ -1,0 +1,49 @@
+408 Combinatorial applications
+
+Decomposing the probability that n is a winning choice for the player by
+how many heads are rolled in the first n throws shows that the probability is
+
+> (‘Jernarsy(" _ “lasers
+a r-a
+at+b=n
+
+If a,s is the sum of the winning probability over all n, then the array {a,s}
+is the convolution of the arrays (")a73ya/3y" and (")a/3y'@/3)', so the
+generating function F(x, y) = >), drsx”y* is the product
+
+Pry) 1
+© GY (IF YI)
+
+The complete intersection asymptotic results of Chapter 10 imply that a,; =
+3 plus an error term which is exponentially small as r,s — oo provided that
+r/(r + s) stays in a compact subinterval of (1/3, 2/3). A purely combinatorial
+analysis of the sum may be carried out to yield the leading term 3, but says
+nothing about the error terms. 4
+
+Example 12.26 (Lattice paths constrained to a quadrant). Consider the class
+of lattice paths on Z? that start at the origin and must remain in the nonneg-
+ative quadrant N? while using the set {(1,0), (1, -1), (-1, 0), (-1, D} of allow-
+able steps. The kernel method |Me121, Chapter 4] allows one to prove that the
+generating function enumerating such walks by number of steps is the main
+diagonal of
+
+_ + DO? =-yD@-Yaty)
+
+F(x, y,t :
+(yD 1 = xyt(x + xy"! + yx! + x7!)
+
+This is a rational function with smooth singular variety, and minimal critical
+points p; = (1,1,1/4) and p2 = (-1,1,1/4). As the numerator of F has a
+zero of order 2 at p; and a zero of order 3 at po, only p; contributes to domi-
+nant asymptotics. Computation with a computer algebra system shows that the
+counting sequence for the number of walks on these steps satisfies
+_ 4" 8 qn
+
+Sn = DF +0 ml
+ACSV provides a powerful framework to determine asymptotics of such lattice
+path models [Mel21, Chapters 6 and 9]. 4
+
+Example 12.27 (alignments). Fix a positive integer d. The (d, n)-alignments
+are d X m binary matrices for some m, such that no columns are identically
+zero and the ith row sum is n;. These structures have relevance to bioinformat-
+ics [RTO5; Wat95], and the generating function enumerating such alignments

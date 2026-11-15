@@ -1,0 +1,47 @@
+6.4 Singularities, amoeba boundaries, and minimal points 155
+
+all o € {+1}4, and once again we have shown z € D for z in a neighborhood
+of w, contradicting w € dD.
+(Second statement) As in the proof of the first statement, if T(z) NV = @ for
+
+all z in the open line segment between (|p,|,...,|pal) and (|w;|,...,|wa|) then
+all points on this line segment lie in D, so w € D. Since w € V we cannot
+have w € D, and thus w € dD. oO
+
+The singularities on the boundary of the domain of convergence of a Laurent
+expansion are very important to the asymptotic analysis of the corresponding
+series coefficients.
+
+Definition 6.34 (minimal points). A point w € V is called a minimal point
+with respect to the Laurent expansion f(z) = )ipeza apz” (or the domain of
+convergence D, or the convex set B) if w € VN OD. Equivalently, w € V is
+minimal when Relog(w) € 0B. We further say w is a finitely minimal point if
+T(w) MV is finite, and a strictly minimal point if T(w) NV is the singleton
+{w}.
+
+Example 6.35. Let 0 < p < | and define
+
+Oi(x,y)=1-x-y a1 =(p,1-p)
+Ox(x,y) =1-¥ -y o2 =(vl-p.p)
+Q3(x,y) = 1 - xy o3 = (p,1/p).
+
+Consider o; with respect to the power series expansion of 1/Q;(x, y). Then a;
+is a strictly minimal point since |x + y| < |x| + |y| unless x is a nonnegative real
+multiple of y, and a is the only point on T(a7) N Vo, satisfying that condition.
+Similarly, ov is a finitely minimal point, but it is not strictly minimal because
+(- l-p, p) € Vo,. Finally, 03 is minimal but it is not finitely minimal as
+(pw, 1/(pw)) lies in T(a3) NM Vg, whenever |w| = 1. 4
+
+Proposition 6.33 allows us to test minimality.
+
+Corollary 6.36 (minimality test). [fy € D then w € V is minimal if and only
+if the open line segment
+
+{tRelog(y) + (1 — t) Relog(w) : t € (0, 1)}
+
+from Relog(y) to Relog(w) stays in B. If we consider the power series expan-
+sion of f, then w is minimal if and only if T(tw) 0 'V = @ for all t € (0, 1).
+
+Proof The first statement follows from the convexity of B and the fact that w
+is minimal if and only if Relog(w) € OB. The second condition follows from
+Proposition 6.33: since 0 lies in the power series domain of convergence, if

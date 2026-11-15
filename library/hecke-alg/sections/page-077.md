@@ -1,773 +1,129 @@
 ---
 doc_id: hecke-alg
-doc_title: "symmetric group Andrew Mathas Author address: School thema University Sydney, Sydney 00. ustralia"
+doc_title: "Hecke algebras and Schur algebras of the symmetric group"
 section_id: page-077
 section_title: "Page 77"
-section_number: null
 pages: 77-77
+pdf_page: 77
 source_pdf: hecke_alg.pdf
 source_sha256: 4ac08dfd165fb366
-toc_source: undetermined
+text_source: ocr
+granularity: page
+doc_brief: "Hecke algebras and Schur algebras of the symmetric group — 78 sections: Page 1; Page 2; Page 3"
 ---
-
+72
+
+[32]
+[33]
+[34]
+[35]
+[36]
+[37]
+[38]
+[39]
+[40]
+[41]
+[42]
+[43]
+[44]
+[45]
+[46]
+[47]
+[48]
+[49]
+[50]
+[51]
+[52]
+[53]
+[54]
+[55]
+[56]
+[57]
+[58]
+[59]
+[60]
+[61]
+
+[62]
+
 BIBLIOGRAPHY
-[]
-P.
-N.
-Hoefsmit,
-R
-epr
-esentations
-of
-He
-cke
-algebr
-as
-of
-nite
-gr
-oups
-with
-B
-N
-{p
-airs
-of
-classic
-al
-typ
-e,
-PhD
-thesis,
-Univ
-ersit
-y
-of
-British
-Colum
-bia,
-		.
-[]
-J.
-E.
-Humphreys,
-R
-ee
-ction
-Gr
-oups
-and
-Coxeter
-Gr
-oups,
-Cam
-bridge
-Univ
-ersit
-y
-Press,
-Cam-
-bridge,
-		0.
-[]
-N.
-Iw
-ahori,
-On
-the
-structur
-e
-of
-the
-He
-cke
-ring
-of
-a
-Cheval
-ley
-gr
-oup
-over
-a
-nite
-eld,
-J.
-F
-ac.
-Sci.
-U.
-T
-oky
-o,
-0
-(	),
-{.
-[]
-G.
-D.
-James,
-On
-the
-de
-c
-omp
-osition
-matric
-es
-of
-the
-symmetric
-gr
-oups
-II,
-J.
-Algebra,
-
-(	),
-{.
-[]
-,
-The
-r
-epr
-esentation
-the
-ory
-of
-the
-symmetric
-gr
-oups,
-SLN,
-,
-Springer{V
-erla
-g,
-New
-Y
-ork,
-	.
-[]
-,
-Some
-c
-ombinatorial
-r
-esults
-involving
-Y
-oung
-diagr
-ams,
-Pro
-c.
-Cam
-b.
-Phil.
-So
-c.,
-
-(	),
-{0.
-[]
-G.
-D.
-James,
-The
-de
-c
-omp
-osition
-matric
-es
-of
-GL
-n
-(q
-)
-for
-n
-
-0,
-Pro
-c.
-London
-Math.
-So
-c.
-(),
-0
-(		0),
-{.
-[	]
-G.
-D.
-James
-and
-A.
-Ma
-thas,
-A
-q
-{analo
-gue
-of
-the
-Jantzen{Schap
-er
-the
-or
-em,
-Pro
-c.
-London
-Math.
-So
-c.
-(),
-
-(		),
-{.
-[0]
-,
-The
-cyclotomic
-Jantzen{Schap
-er
-the
-or
-em,
-preprin
-t,
-(		).
-[]
-,
-The
-irr
-e
-ducible
-Sp
-e
-cht
-mo
-dules
-in
-char
-acteristic
-,
-preprin
-t,
-(		).
-[]
-G.
-D.
-James
-and
-G.
-E.
-Murphy,
-The
-determinant
-of
-the
-Gr
-am
-matrix
-for
-a
-Sp
-e
-cht
-mo
-dule,
-J.
-Algebra,
-	
-(		),
-{.
-[]
-J.
-C.
-Jantzen,
-Darstel
-lungen
-halb
-einfacher
-algebr
-aischer
-Grupp
-en
-und
-zuge
-or
-dnete
-kon-
-tr
-avariante
-F
-ormen,
-Bonner
-Math.
-Sc
-h.,
-
-(	).
-[]
-,
-Weyl
-mo
-dules
-for
-gr
-oups
-of
-Lie
-typ
-e,
-in
-Finite
-Simple
-Groups
-I
-I:
-Pro
-c.
-LMS
-Symp
-o-
-sium,
-Durham
-	,
-M.
-Collins,
-ed.,
-Academic
-Press,
-	0.
-[]
-A.
-A.
-Jucys,
-On
-the
-Y
-oung
-op
-er
-ators
-of
-the
-symmetric
-gr
-oups,
-Lith
-uanian
-Ph
-ys.
-J.,
-
-(	),
-{0.
-[]
-D.
-Kazhd
-an
-and
-G.
-Lusztig,
-R
-epr
-esentations
-of
-Coxeter
-gr
-oups
-and
-He
-cke
-algebr
-as,
-In
-v
-en
-t.
-Math.,
-
-(		),
-{.
-[]
-D.
-Knuth,
-The
-A
-rt
-of
-Computer
-Pr
-o
-gr
-amming,
-v
-ol.
-,
-Addison{W
-esley
-,
-Massac
-h
-usetts,
-	.
-[]
-S.
-K
-
-onig
-and
-C.
-Xi,
-Cel
-lular
-algebr
-as:
-inations
-and
-morita
-e
-quivalenc
-e
-s,
-preprin
-t,
-(		).
-[	]
-,
-On
-the
-numb
-er
-of
-c
-el
-ls
-of
-a
-c
-el
-lular
-algebr
-a,
-preprin
-t,
-(		).
-[0]
-,
-On
-the
-structur
-e
-of
-c
-el
-lular
-algebr
-as,
-Pro
-ceedings
-of
-ICRA
-VI
-I
-I,
-AMS,
-to
-app
-ear.
-[]
-A.
-Lascoux,
-B.
-Lecler
-c,
-and
-J.-Y.
-Thibon,
-He
-cke
-algebr
-as
-at
-r
-o
-ots
-of
-unity
-and
-crystal
-b
-ases
-of
-quantum
-ane
-algebr
-as,
-Comm.
-Math.
-Ph
-ys.,
-
-(		),
-0{.
-[]
-G.
-I.
-Lehrer,
-A
-survey
-of
-He
-cke
-algebr
-as
-and
-A
-rtin
-br
-aid
-gr
-oups,
-Con.
-Math.,
-
-(	),
-{.
-[]
-D.
-E.
-Littlew
-ood,
-Mo
-dular
-r
-epr
-esentations
-of
-symmetric
-gr
-oups,
-Pro
-c.
-Ro
-y
-al
-So
-c.
-A,
-0	
-(	),
-{.
-[]
-G.
-E.
-Murphy,
-A
-new
-c
-onstruction
-of
-Y
-oung's
-semi{normal
-r
-epr
-esentation
-of
-the
-symmetric
-gr
-oups,
-J.
-Algebra,
-	
-(	),
-{	.
-[]
-,
-On
-the
-r
-epr
-esentation
-the
-ory
-of
-the
-symmetric
-gr
-oups
-and
-asso
-ciate
-d
-He
-cke
-algebr
-as,
-J.
-Algebra,
-
-(	),
-	{.
-[]
-,
-The
-r
-epr
-esentations
-of
-He
-cke
-algebr
-as
-of
-typ
-e
-A
-n
-,
-J.
-Algebra,
-
-(		),
-	{.
-[]
-P.
-N.
-Nor
-ton,
-0{He
-cke
-algebr
-as,
-J.
-Austral.
-Math.
-So
-c.,
-
-(		),
-{.
-[]
-B.
-P
-arshall
-and
-J.
-p.
-W
-ang,
-Quantum
-gener
-al
-line
-ar
-gr
-oups,
-Memoirs
-A.M.S.,
-	
-(		).
-[	]
-A.
-Ram,
-A
-F
-r
-ob
-enius
-formula
-for
-the
-char
-acters
-of
-the
-He
-cke
-algebr
-a,
-In
-v
-en
-t.
-Math.,
-0
-(		),
-{.
-[0]
-K.-D.
-Schaper,
-Char
-akterformeln
-f
-ur
-Weyl{Mo
-duln
-und
-Sp
-e
-cht{Mo
-duln
-in
-Primchar
-acter-
-istik,
-Diplomarb
-e
-it,
-Bonn,
-	.
-[]
-I.
-Schur,
-
-Ub
-er
-eine
-Klasse
-von
-Matrizen,
-die
-sich
-einer
-ge
-geb
-enen
-Matrix
-zuor
-dnen
-lassen,
-Gesammelte
-Abhandlungen
-I,
-Springer-V
-erlag
-,
-Berlin,
-	0.
-[]
-D.
-W
-oodcock,
-Str
-aightening
-c
-o
-determinants,
-J.
-Pure
-Appl.
-Algebra,
-
-(		),
-{0.
+
+P.N. Honrsmrt, Representations of Hecke algebras of finite groups with BN-pairs of classical
+type, PhD thesis, University of British Columbia, 1979.
+
+J. E. HUMPHREYS, Reflection Groups and Coreter Groups, Cambridge University Press, Cam-
+bridge, 1990.
+
+N. Iwanort, On the structure of the Hecke ring of a Chevalley group over a finite field, J.
+Fac. Sci. U. Tokyo, 10 (1964), 214-236.
+
+G. D. James, On the decomposition matrices of the symmetric groups II, J. Algebra, 43
+(1976), 45-54.
+
+. The representation theory of the symmetric groups, SLN, 682, Springer-Verlag, New
+York, 1978.
+
+, Some combinatorial results involving Young diagrams, Proc. Camb. Phil. Soc., 83
+(1978), 1-10.
+
+G.D. James, The decomposition matrices of GLn(q) for n < 10, Proc. London Math. Soc.
+(3), 60 (1990), 225-264.
+
+G.D. JAMBs AND A. MaTHas, A q-analogue of the Jantzen-Schaper theorem, Proc. London
+Math. Soc. (3), 74 (1997), 241-274.
+
+, The cyclotomic Jantzen-Schaper theorem, preprint, (1998).
+
+. The irreducible Specht modules in characteristic 2, preprint, (1998).
+
+G. D. JAMEs AND G. E. Murrny, The determinant of the Gram matrix for a Specht module,
+J. Algebra, 59 (1979), 222-235.
+
+J.C. JANTZEN, Darstellungen halbeinfacher algebraischer Gruppen und zugeordnete kon-
+travariante Formen, Bonner Math. Sch., 67 (1973).
+
+. Weyl modules for groups of Lie type, in Finite Simple Groups II: Proc. LMS Sympo-
+sium, Durham 1978, M. Collins, ed., Academie Press, 1980.
+
+A. A. Jucys, On the Young operators of the symmetric groups, Lithuanian Phys. J., 11
+(1971), 1-10.
+
+D. KaAZHDAN AND G, LuszTIG, Representations of Coreter groups and Hecke algebras, Invent.
+Math., 53 (1979), 165-184.
+
+D. Knut, The Art of Computer Programming, vol. 3, Addison-Wesley, Massachusetts,
+1973.
+
+S. Kania ann C. Xt, Cellular algebras: inflations and morita equivalences, preprint, (1998).
+, On the number of cells of a cellular algebra, preprint, (1998).
+
+. On the structure of cellular algebras, Proceedings of ICRA VIII, AMS, to appear.
+A. Lascoux, B. LECLERC, AND J.-Y. THIBoN, Hecke algebras at roots of unity and crystal
+bases of quantum affine algebras, Comm. Math. Phys., 181 (1996), 205-263.
+
+G. 1. Lenrer, A survey of Hecke algebras and Artin braid groups, Con. Math., 78 (1988),
+365-385.
+
+D. E. LittLewoop, Modular representations of symmetric groups, Proc. Royal Soc. A, 209
+(1951), 333-352.
+
+G. E. Murpny, A new construction of Young’s semi-normal representation of the symmetric
+groups, J. Algebra, 69 (1981), 287-297.
+
+, On the representation theory of the symmetric groups and associated Hecke algebras,
+J. Algebra, 152 (1982), 492-513.
+
+. The representations of Hecke algebras of type An, J. Algebra, 173 (1995), 97-121.
+P. N. Norton, 0-Hecke algebras, J. Austral. Math. Soc., 27 (1979), 337-357.
+
+B. PARSHALL AND J. P. WANG, Quantum general linear groups, Memoirs A.M.S., 439 (1991).
+A. Ram, A Frobenius formula for the characters of the Hecke algebra, Invent. Math., 106
+(1991), 461-488.
+
+K.-D. ScHaPER, Charakterformeln fiir Weyl-Moduln und Specht-Moduln in Primcharacter-
+istik, Diplomarbeit, Bonn, 1981.
+
+I. Scuur, Uber eine Klasse von Matrizen, die sich einer gegebenen Matrix zuordnen lassen,
+Gesammelte Abhandlungen I, Springer-Verlag, Berlin, 1901.
+
+D. Wooncock, Straightening codeterminants, J, Pure Appl. Algebra, 88 (1993), 317-320.

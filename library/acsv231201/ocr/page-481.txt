@@ -1,0 +1,47 @@
+B.1 Chain complexes and homology theory 463
+
+lowing abstract definitions, which generalize some of the properties discussed
+above.
+
+(i) A chain complex is a collection C = {C, : n = 0,1,2,...} of com-
+plex vector spaces, not necessarily finite dimensional, together with a
+boundary operator 0, which for all n is a linear map 0, from the space
+of n-chains C,, to the space of (n — 1)-chains C,_; that satisfies P=
+(meaning 0,0 0,41 = 0 for all n, so that “a boundary has no boundary”).
+By definition, 0 = 0 on Co.
+
+(ii) The vector space of n-cycles Z, C C, of a chain complex C is the kernel
+of 0, and the group B, C C,, of n-boundaries of C is the image of 0,41.
+
+(iii) The nth homology group of C is the vector space quotient
+
+An(C) := Zn/By.
+
+The notation H,(C) is used to refer collectively to H;,(C) for all n. Cycles in
+the same equivalence class are called homologous.
+
+Remark. Because we work with complex vector spaces, H,.(C) is sometimes
+called homology with coefficients in C to distinguish it from the analogous
+construction with integer coefficients. While the theory with integer coeffi-
+cients is richer, taking coefficients in a field better suits the purposes of com-
+puting integrals. With integer coefficients, the spaces of chains, cycles, and
+boundaries are Z-modules, and their quotients are abelian groups, hence “ho-
+mology group” rather than “homology vector space.”
+
+To discuss the homology of a manifold, we must define an appropriate chain
+complex. One natural candidate is the chain complex defined by smooth chains
+together with the boundary map discussed in Section A.3 of Appendix A. For
+many purposes, however, it is convenient to relax our smoothness condition.
+If M is any Hausdorff topological space then a singular n-simplex in M is a
+continuous (not necessarily smooth) map 7 : A” — M from the standard n-
+simplex A” to M, and a singular n-chain in M is a complex linear combination
+of singular n-simplices in M. Just as for smooth chains, we may use the natural
+ordering of the faces of A” to define a canonical boundary map through (A.3.1),
+taking a singular n-simplex to a singular (n— 1)-simplex and extending linearly
+to singular chains. It is a foundational result in homology theory that the ho-
+mology of a manifold is unchanged whether one studies smooth or singular
+chains.
+
+Proposition B.1. Let M be a differentiable manifold, let C be the chain com-
+plex whose chains are linear combinations of singular simplices on M, and
+let C’ be the chain complex whose chains are linear combinations of smooth

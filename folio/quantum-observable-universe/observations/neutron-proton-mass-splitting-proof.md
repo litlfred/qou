@@ -24,12 +24,13 @@ $\mathfrak{d}\mathfrak{d}$ crossing ($\sigma^{-1}$) generates more
 confinement than the $\mathfrak{u}\mathfrak{u}$ crossing ($\sigma$). This
 excess makes the neutron heavier.
 
-The scale $\alpha = m_e \times 8G$ governing nuclear binding also dictates
-the quark-level confinement splitting:
+By $(\mathrm{H}_\alpha)$, the splitting is
 
 $$
   \Delta m \approx 3.7445 \times 0.281509 \approx 1.0541 \;\mathrm{MeV}.
 $$
+
+$(\mathrm{H}_\alpha)$ is an assumption of this block; no derivation of it is on record. The corpus's derived hadronic scale $E_0 = m_e/(q(q-1))$, applied linearly to the restricted trace of the $\gamma\gamma$ nucleon, gives a different value (`docs/audits/2026-11-15-np-splitting-error-budget.md` §18).
 
 $\square$
 

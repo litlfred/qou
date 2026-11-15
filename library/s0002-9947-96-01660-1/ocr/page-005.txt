@@ -1,0 +1,64 @@
+INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS 4001
+
+1. For all morphisms, f: a — b, the following diagram commutes:
+
+e(a) a
+— aa
+
+«| [sen
+
+beb —— bea
+lef
+
+2. For all objects a, the following composite is the identity map of a:
+
+a=e@a 9 (494) @a=4@(a@ay @O- agesa.
+
+3. For all objects a and b the following composite is required to be e(a @ b):
+
+€(a) 1@(e(b)@1)
+cee
+
+e—“,a@a = (e@4) a®((b®b) @4) =(a@b) @(a@b)>.
+
+The functor ~ and the maps € are not independent. The maps ¢€ determine ~ .
+
+Lemma 2.3. In any pivotal category, for any morphism f: a — b the following
+composite is f:
+
+§=b@e 2, 5.@ (a@ a) 2E™ 50 (be = (606) 04 OO cana.
+
+Proof. This follows directly from conditions (1) and (2) of the preceding definition.
+
+Definition 2.4. Let a be any object in a pivotal category. Then the monoid End(a)
+has two trace maps, try,trr: End(a) > End(e). In a pivotal category trz(f) is
+defined to be the composite
+
+©, aaa = aaa aaa = etry “Seae
+and trp(f) is defined to be the composite
+
+9, aaa aaa = oar “ @ =
+These are called trace maps because they satisfy tr,(fg) = tri (gf) and trr(fg) =
+
+trr(gf).
+
+Definition 2.5. A pivotal category is spherical if, for all objects a and all mor-
+phisms f: a — a,
+
+tr(f) = trr(f).
+
+An equivalent condition is that tr; (f) = trz(f), for all f: a > a. For each object
+ain aspherical category, its quantum dimension is defined to be dim,(a) = trz (1a).
+Thus, dim,(a) = dim,(4).
+
+Also, in a spherical category, trr(f ® g) = tri(f).trz(g) (where the product is
+in End(e)) for all f: a> a and all g:b > b.
+
+All spherical categories considered in the rest of this are additive. This means
+that each Hom set is a finitely generated abelian group with composition Z-bilinear
+and that the data defining the spherical structure is compatible with the additive
+structure. This means that ® is Z-bilinear and that ~ is Z-linear.
+
+In any additive monoidal category End(e) is a commutative ring (see [10]) and we
+denote this ring by F. In particular each of the above trace maps takes values in this
+ring. It follows that an additive monoidal category is F-linear. We need to assume

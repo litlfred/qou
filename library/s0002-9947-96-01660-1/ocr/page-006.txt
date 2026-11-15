@@ -1,0 +1,60 @@
+4002 JOHN W. BARRETT AND BRUCE W. WESTBURY
+
+some further conditions. These are that F is a field and that each set of morphisms
+is a finite dimensional vector space over F. In this paper an additive spherical
+category means a spherical category in which these conditions are satisfied.
+
+The main examples of additive spherical categories arise as the category of rep-
+resentations of a Hopf algebra with some additional structure. This is discussed in
+section 6.
+
+Example 2.6. An example of a spherical category which cannot be regarded as
+a category whose objects are finite dimensional vector spaces is given by taking
+the free Z[6, z|-linear category on the category of oriented framed tangles and then
+taking the quotient by the well-known skein relation for the HOMFLY polynomial.
+This is a spherical category, and for each pair of objects X and Y, Hom(X,Y) is
+a finitely generated free module. This example satisfies all the conditions for an
+additive spherical category except that F is not a field. However the objects cannot
+be taken to be finitely generated modules unless z is a quantum integer.
+
+Strict pivotal categories are discussed in [6], where it is shown that the category
+of oriented planar graphs up to isotopy and with labelled edges is a strict pivotal
+category. Similar constructions are discussed [9], [7], [19]. The following is an
+informal statement of the result needed in the discussion in this paper. This result
+is not required for the proofs in this paper, as an algebraic proof can always be given
+in place of a diagrammatic proof. However it is important for an understanding of
+the proofs.
+
+Given a trivalent planar graph with the following data attached:
+
+1. An orientation of each edge,
+
+2. A distinguished edge at each trivalent vertex,
+
+3. A map from edges to objects,
+
+4. A map from vertices to morphisms,
+
+then this graph can be evaluated to give a morphism. The relations for a pivotal
+category imply that this evaluation depends only on the isotopy class of the graph,
+where the attached data is carried along with the isotopy.
+
+The sphere S$? can be regarded as the plane with the point at infinity attached,
+and so a planar graph can also be thought of as a graph embedded in $?. Spherical
+categories are pivotal categories which satisfy an extra condition, the equality of
+left and right trace. This condition implies that the spherical category determines
+an invariant of isotopy classes of closed graphs on the sphere. There is an isotopy of
+the sphere which takes a closed graph of the form of Figure 1 to the graph obtained
+by closing M in a loop to the left. This isotopy moves the loop in Figure 1 past
+the point at infinity. Taken together with planar isotopies, such an operation on
+planar graphs generates all the isotopies on the sphere.
+
+Definition 2.7. For any two objects a and b there is a bilinear pairing
+0: Hom(a,b) x Hom(b, a) > F
+defined by O(f, 9) = tri (fg) = trz(gf).
+
+Definition 2.8. An additive spherical category is non-degenerate if, for all objects
+a and b, the pairing © is non-degenerate.
+
+The next theorem shows that every additive spherical category has a natural
+quotient which is a non-degenerate spherical category.

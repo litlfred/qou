@@ -1,0 +1,49 @@
+A.2 Vector fields and differential forms 449
+
+vectors in T p)M’ to R, so the composition f*(é) = €0 f, of € with the differ-
+ential of f is a map from T,,M to R, which is a cotangent vector in T?-M. In
+other words, we have constructed a contravariant map f* : T/?)M’ > TPM,
+known as the pullback by f.
+
+Exercise A.8. Let f : M— M’ and g: M’ > M” be smooth maps. Prove
+that (go f)* = f* og".
+
+The pullback can be computed explicitly in local coordinates. Suppose (U, ¢)
+is a chart of M containing p and let (V,W) be a chart on M’ containing f(p).
+We have seen above that the differential of f, with respect to the standard
+bases {0/d@;} and {0/dy;} of TpM and Typ)M’ in these charts is given by
+left-multiplication of the Jacobian matrix J(f). Plugging in the definition of
+
+f,
+
+riau(2) - wav(e(4))
+J J
+
+a OUK° fy, 8
+- val ~ a6; on|
+_ Wie f)
+
+= a6, (p).
+
+In other words, with respect to the dual bases {d¢;} and {dy;} the linear map
+f* is defined through right-multiplication by the Jacobian matrix.
+
+If M is a manifold then a differential I-form on M is a section on T*M.
+In other words, a 1-form is a smooth map w that takes p € M and returns a
+cotangent vector w|p € T?M. If f : M > Ris a smooth function on M then
+the differential of f is the 1-form df : M — T*M defined by
+
+(df|p)(Xp) = Xp(f) for all p € M and Xp € TpM.
+
+Remark A.15. When x is the standard coordinate on R and we take p € M
+and Xp € TpM then
+
+d
+S(Xp) = flp\Xp) TF)»
+XT f(p)
+where f, : TpM — Typ)R is the differential of f defined previously. Thus,
+both of our definitions of the differential agree under the identification T(p)R =
+R given by the standard basis of the tangent space (see Example A.12).
+
+If (U,@) is a chart on M then for any p € U the cotangent vectors d¢j|p,
+...,d¢mlp form a basis for T?M. Thus, for any map w : M > T*M with

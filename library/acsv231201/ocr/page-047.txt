@@ -1,0 +1,46 @@
+2.2 Rational operations on generating functions 29
+
+In probability theory, the study of branching processes is almost always dealt
+with by means of analytic generating functions.
+
+Example 2.12 (Galton—Watson process). Let f(z) be a probability generating
+function supported on N, meaning that f(z) = D9 Pnz” with p, > 0 and
+D9 Pn = 1. A branching process with offspring distribution f is a random
+tree with one vertex in generation 0 where each individual in each generation
+has a random number of children, and the numbers of children born to the
+individuals in a generation are independent and equal to n with probability p,.
+If Z, is the random variable tracking the number of individuals in generation
+n then we can compute the probability generating function gn(z) = Dyso PnkZ*
+for Z, inductively, where p,x is the probability that Z, = k.
+
+Indeed, the probability generating function for Z, is simply f(z). In a con-
+figuration with Z, = k, the next generation is composed of a sequence of k
+families, each independently having size j with probability p;. The probabil-
+ity generating function for such a sequence is f(z)‘, whence gn = 8, ° f.
+Inductively then, g, = fo---o f is the n-fold composition of f with itself.
+Observe that, unless po = 0 (no extinction), this composition is not defined in
+the formal power series ring, but since all functions involved are convergent on
+the unit disk, the compositions are well defined analytically. 4
+
+Example 2.13 (branching random walk). Associate to each particle in a branch-
+ing process a real number, which we interpret as the displacement in one di-
+mension between its position and that of its parent. If these are independent of
+each other and of the branching, and are identically distributed, then one has
+the classical branching random walk. A question that has been asked several
+times in the literature, for instance in [Kes78], is how to determine when there
+exists a line of descent from a single particle at position | that remains to the
+right of the origin for all time. Here we consider the simplest non-trivial case,
+where the branching process is deterministic binary splitting (p2 = 1) and the
+displacement distribution is a random walk that moves one unit to the right
+with probability p < 1/2 and one unit to the left with probability 1 — p.
+
+If we modify the process so that particles stop moving or reproducing when
+they hit the origin, then p < 1/2 implies an infinite line of descent to the
+right of the origin is equivalent to infinitely many particles reaching the origin.
+To analyze the process we thus let X be the number of particles ever to hit
+the origin, beginning with a single particle at 1, and let @ be the probability
+generating function
+
+o(z) = » anz' where a, = P(X =n).
+
+n=0

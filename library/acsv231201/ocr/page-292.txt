@@ -1,0 +1,25 @@
+274 Smooth point asymptotics
+
+between these and ordinary power series is that we can no longer count on
+the intersection cycle y to be the union of small circles around points of inter-
+section of V with one of the coordinate axes. The solution is to consider the
+components B where the series is defined and B’ where height goes to —oo and
+trace an explicit intersection path y between two points in these components.
+One can then try to infer the intersection numbers #(y, y/) between y and every
+ascent path y/ from every critical point p;. If successful, this identifies W as
+the set of p; such that h(p;) is maximized among p; such that #(y, y/) = +1.
+
+Example 9.37. The generating function 1/Q(x, y), where
+1 1
+Oxy) =34x4xtyty ls ZOO +) + 507 xlty-yh),
+
+appears in the analysis of certain matrix inversions arising from Green’s func-
+tion computations [Wan22]. Figure 9.6 shows a plot of the amoeba of Q. Its
+Newton polygon is the convex hull of the 3x3 grid of lattice points with |x| < 1
+and |y| < 1.
+
+log|x|
+
+Figure 9.6 The amoeba of Q (reproduced with permission of Hong-Yi Wang).
+
+The complement of the amoeba of Q has seven components, illustrated in

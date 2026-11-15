@@ -1,0 +1,61 @@
+10.3 Main results on coefficient asymptotics 317
+
+the linking torus [7,,]. A representative of this homology class is T x y where
+T is an actual torus in the normal link and y is homeomorphic to a (d—k)-disk,
+lies in the stratum containing p, and has a boundary lying below height h(p).
+In the case of non-linear divisors, we use the term “linking torus” to refer to
+T x y; when k = d this is an absolute cycle, namely a d-torus, while for k < d
+it is a relative cycle. Combining this observation with the expansion computed
+in Theorem 10.15 gives the following.
+
+Theorem 10.38 (strictly minimal transverse multiple point asymptotics). Let
+p be a transverse multiple point of F with local decomposition
+
+PP)
+Oz)" +++ Oz)"
+
+as described above. Suppose that p = p(#) is a minimal point for the Laurent
+
+F(z)=
+
+expansion F(z) = Dy» 4p2" with domain of convergence D = Relog™|(B), is a
+critical point in the generic direction ?, and is the unique critical point with its
+height. Let N(p) be the lognormal cone described in Definition 10.17 above.
+
+(i) If ® € N(p) and det H(p) # 0 then
+dy © Op (Pr), (10.17)
+where Mp(r) is the asymptotic expansion defined in Theorem 10.25 by
+(10.11) (for a complete intersection) or (10.12) (otherwise). This asymp-
+totic expansion holds uniformly as |r| > 00 with * varying such that it
+
+and p(f) satisfy the assumptions above.
+(ii) If? ¢ N(p) then ay grows exponentially smaller than p~".
+
+Proof We have already seen that the local homology group of M at p has a
+[ertre@ae ~ ®,(r). To prove con-
+Cc
+
+single generator C, and that Oni?
+clusion (i) it remains to show that the domain of integration T in the Cauchy
+integral for a, satisfies [T] = +Tp in Hy(M, Mxc_¢), where c = ha(p), and that
+the modulus / absolute value signs in the middle term on the right of (10.12)
+capture the orientation.
+
+In Section 10.5 we will see that this is indeed true by following the original
+derivation in [PW04]. That derivation involves the residue sum identity (10.29),
+but the topological fact may also be seen directly by applying the Thom iso-
+morphism one divisor at a time. For the orientation, note that
+
+1
+det Ty,
+
+Tier Pj
+det Ty
+
+Tliew Pil _
+|detly| —
+
+>
+
+where the rows of Ty, are augmented by elementary basis vectors e,j) in-
+stead of zje,(j). This matrix is real, so again the absolute value multiplies by

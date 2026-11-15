@@ -1,0 +1,47 @@
+464 Algebraic topology
+
+simplices on M. Then for any n € N the homology groups H,(C) and H,(C’)
+are isomorphic.
+
+Proof See [Eil47]. oO
+
+We write C(M) for the chain complex defined by the singular n-chains in M.
+The homology group H,,(C(M)) is written H,,(M) and called the nth singular
+homology group of M. One can think of the rank of the homology group
+H,(M) -i.e., the minimum size of a generating set of the group — as indicating
+how many unique cycles in M don’t bound anything.
+
+Example B.2. The rank of H;(M) represents the number of nonequivalent
+circles that can be drawn on M without bounding something in M. The rank
+of H\(M) for a connected space M is thus zero if M is simply connected,
+however the converse does not hold. Homology with coefficients in C cannot
+detect the presence of a cycle y such that y does not bound anything but k times
+y does (homology with integer coefficients is more discerning but typically
+more complicated to compute). 4
+
+Topological invariance of homology
+
+The first crucial property of homology is that it is a topological invariant. A
+topological map (or simply map) between two topological spaces is a continu-
+ous function between them, while a chain map between two chain complexes
+is a function between them that commutes with their boundary operators. More
+precisely, if (A, 0) and (B, 8") are two chain complexes then a chain map be-
+tween them can be considered to be a collection of functions f = (fo, fi,..-)
+with f,, : A, — 8, mapping from the n-chains of A to the n-chains of B, such
+that 0 o f;, = fr-10 0 for all n.
+
+A topological map from X to Y induces a chain map from the singular chain
+complex of X to the singular chain complex of Y. A map f : A > 8 between
+chain complexes in turn induces a homomorphism jf, on homology groups
+by applying the map to representatives for the equivalence classes of cycles
+modulo boundaries. Both of these induced maps are functorial.
+
+Proposition B.3. If the topological spaces X and Y are homeomorphic then
+the singular homology groups H,(X) and H,(Y) are isomorphic for all n.
+
+Proof A homeomorphism between topological spaces is a topological map
+
+whose inverse is also a topological map. Hence, a homeomorphism between
+
+two spaces induces an isomorphism between the homology groups of the spaces.
+o

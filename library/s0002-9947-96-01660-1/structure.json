@@ -7,443 +7,566 @@
   "bytes": 464315,
   "pages": 26,
   "text_source": "embedded",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 10,
+    "reason": "10 of 489 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 22,
+    "reason": "10 of 476 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "AMERICAN MATHEMATICAL SOCIETY INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS",
+  "title": "Invariants of piecewise-linear 3-manifolds",
   "authors_raw": "JOHN W. BARRETT AND BRUCE W. WESTBURY",
   "title_lines": [
    "AMERICAN MATHEMATICAL SOCIETY",
    "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS"
   ],
-  "abstract": "This paper presents an algebraic framework for constructing in- variants of closed oriented 3-manifolds by taking a state sum model on a tri- angulation. This algebraic framework consists of a tensor category with a condition on the duals which we have called a spherical category. A signi\ufb01cant feature is that the tensor category is not required to be braided. The main examples are constructed from the categories of representations of involutive Hopf algebras and of quantised enveloping algebras at a root of unity. 0. Introduction The purpose of this paper is to present an algebraic framework for constructing invariants of closed oriented 3-manifolds. The construction is in the spirit of topo- logical quantum \ufb01eld theory and the invariant is calculated from a triangulation of the 3-manifold. The data for the construction of the invariant is a tensor category with a condition on the duals, which we have called a spherical category. The def- inition of a spherical category and a coherence theorem needed in this paper are given in [3]. There are two classes of examples of spherical categories discussed in this paper. The \ufb01rst examples are given by the quantised enveloping algebra of a semisimple Lie algebra, and the second are given by an involutive Hopf algebra. In the \ufb01rst case, the invariant for sl2 de\ufb01ned in this paper is the Turaev-Viro invariant [25]. This invariant is known to distinguish lens spaces of the same homotopy type which already shows that the invariants in this paper are not trivial. For the general case, our examples rely on the known properties of the tilting modules, in particular the dimension formula of [1]. The problem of generalising the Turaev-Viro invariant to other quantised enveloping algebras has also been considered by [5], [28] and [24]. A noteworthy feature of our construction is that it does not require a braid- ing; the notion of a spherical category is more general than the notion of a ribbon category. A simple example of this is the",
+  "abstract": "This paper presents an algebraic framework for constructing in- variants of closed oriented 3-manifolds by taking a state sum model on a tri- angulation. This algebraic framework consists of a tensor category with a condition on the duals which we have called a spherical category. A signiﬁcant feature is that the tensor category is not required to be braided. The main examples are constructed from the categories of representations of involutive Hopf algebras and of quantised enveloping algebras at a root of unity. 0. Introduction The purpose of this paper is to present an algebraic framework for constructing invariants of closed oriented 3-manifolds. The construction is in the spirit of topo- logical quantum ﬁeld theory and the invariant is calculated from a triangulation of the 3-manifold. The data for the construction of the invariant is a tensor category with a condition on the duals, which we have called a spherical category. The def- inition of a spherical category and a coherence theorem needed in this paper are given in [3]. There are two classes of examples of spherical categories discussed in this paper. The ﬁrst examples are given by the quantised enveloping algebra of a semisimple Lie algebra, and the second are given by an involutive Hopf algebra. In the ﬁrst case, the invariant for sl2 deﬁned in this paper is the Turaev-Viro invariant [25]. This invariant is known to distinguish lens spaces of the same homotopy type which already shows that the invariants in this paper are not trivial. For the general case, our examples rely on the known properties of the tilting modules, in particular the dimension formula of [1]. The problem of generalising the Turaev-Viro invariant to other quantised enveloping algebras has also been considered by [5], [28] and [24]. A noteworthy feature of our construction is that it does not require a braid- ing; the notion of a spherical category is more general than the notion of a ribbon category. A simple example of this is the",
   "docinfo": {
-   "CreationDate": "D:19960909142938",
-   "Producer": "Acrobat Distiller 2.1 for Macintosh"
-  }
+   "Producer": "Acrobat Distiller 2.1 for Macintosh",
+   "CreationDate": "D:19960909142938"
+  },
+  "title_raw": "AMERICAN MATHEMATICAL SOCIETY INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS 0. Introduction The purpose of this paper is to present an algebraic framework for constructing invariants of closed oriented 3-manifolds. The construction is in the spirit of topological quantum ﬁeld theory and the invariant is calculated from a triangulat",
+   "text": "AMERICAN MATHEMATICAL SOCIETY INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "AMERICAN MATHEMATICAL SOCIETY INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS"
  },
- "toc": [
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "25 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (25 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed): one section per page.",
+ "figures": [],
+ "pages": [
   {
-   "level": 1,
-   "title": "Introduction",
-   "page": 1,
-   "source": "inferred",
-   "number": "0"
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "State sum models",
-   "page": 2,
-   "source": "inferred",
-   "number": "1"
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "Spherical categories",
-   "page": 4,
-   "source": "inferred",
-   "number": "2"
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "The functors C\u00d7C\u2192C w h i c ho no b j e c t sa r eg i v e nb y(a,b )\u21a6\u2192 (a\u2297b)\u02c6 and",
-   "page": 4,
-   "source": "inferred",
-   "number": "3"
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "For all morphisms, f : a\u2192b, the following diagram commutes:",
-   "page": 5,
-   "source": "inferred",
-   "number": "1"
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "For all objects a, the following composite is the identity map of \u02c6a:",
-   "page": 5,
-   "source": "inferred",
-   "number": "2"
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "For all objects a and b the following composite is required to be \u03f5(a\u2297b):",
-   "page": 5,
-   "source": "inferred",
-   "number": "3"
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "An orientation of each edge,",
-   "page": 6,
-   "source": "inferred",
-   "number": "1"
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "A distinguished edge at each trivalent vertex,",
-   "page": 6,
-   "source": "inferred",
-   "number": "2"
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "A map from edges to objects,",
-   "page": 6,
-   "source": "inferred",
-   "number": "3"
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "A map from vertices to morphisms,",
-   "page": 6,
-   "source": "inferred",
-   "number": "4"
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "Symmetries of simplicial invariants",
-   "page": 8,
-   "source": "inferred",
-   "number": "3"
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 2,
-   "title": "Since the action of \u03c3 onV\u2217(e1,e 2,e 3) is the inverse of the adjoint of the action",
-   "page": 14,
-   "source": "inferred",
-   "number": "1.6"
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 2,
-   "title": "This tensor product is composed with the unique iterate of the twist map P",
-   "page": 14,
-   "source": "inferred",
-   "number": "3.7"
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "Piecewise-linear manifolds",
-   "page": 16,
-   "source": "inferred",
-   "number": "4"
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "A bistellar move on a manifold with boundary does not change the triangu-",
-   "page": 16,
-   "source": "inferred",
-   "number": "2"
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "Invariants of manifolds",
-   "page": 18,
-   "source": "inferred",
-   "number": "5"
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 2,
-   "title": "Theorem 5.1 will follow once it has been established that C(M) is invariant",
-   "page": 19,
-   "source": "inferred",
-   "number": "5.1"
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "Spherical Hopf algebras",
-   "page": 22,
-   "source": "inferred",
-   "number": "6"
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "Any involutory Hopf algebra is spherical. The element w can be taken to be",
-   "page": 22,
-   "source": "inferred",
-   "number": "1"
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "Any ribbon Hopf algebra, as de\ufb01ned in [19], is spherical. The elementw can be",
-   "page": 22,
-   "source": "inferred",
-   "number": "2"
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "The coproduct, \u2206, is de\ufb01ned by \u2206(K)= K\u2297K and \u2206(X)= X\u2297K+K\u22121\u2297X,",
-   "page": 23,
-   "source": "inferred",
-   "number": "1"
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "The augmentation, \u03f5, is de\ufb01ned by \u03f5(K)=1a n d \u03f5(X)=0 ,",
-   "page": 23,
-   "source": "inferred",
-   "number": "2"
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "References",
-   "page": 25,
-   "source": "inferred",
-   "number": null
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   }
  ],
- "toc_source": "inferred",
  "sections": [
   {
-   "id": "sec-000-0-introduction",
-   "number": "0",
-   "title": "Introduction",
+   "id": "page-001",
+   "number": null,
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
-   "page_end": 2,
-   "n_chars": 3835,
-   "n_words": 631
+   "page_end": 1,
+   "n_chars": 2874,
+   "n_words": 462,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-1-state-sum-models",
-   "number": "1",
-   "title": "State sum models",
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
    "level": 1,
    "page_start": 2,
-   "page_end": 4,
-   "n_chars": 5150,
-   "n_words": 894
+   "page_end": 2,
+   "n_chars": 3438,
+   "n_words": 570,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-2-spherical-categories",
-   "number": "2",
-   "title": "Spherical categories",
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 2777,
+   "n_words": 504,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
    "level": 1,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 1888,
-   "n_words": 318
+   "n_chars": 2872,
+   "n_words": 519,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-3-the-functors-ccc-w-h-i-c-ho-no-b-j-e-c-t-sa-r",
-   "number": "3",
-   "title": "The functors C\u00d7C\u2192C w h i c ho no b j e c t sa r eg i v e nb y(a,b )\u21a6\u2192 (a\u2297b)\u02c6 and",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 5,
-   "n_chars": 264,
-   "n_words": 44
-  },
-  {
-   "id": "sec-004-1-for-all-morphisms-f-ab-the-following-diagram-c",
-   "number": "1",
-   "title": "For all morphisms, f : a\u2192b, the following diagram commutes:",
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
    "level": 1,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 57,
-   "n_words": 14
+   "n_chars": 2292,
+   "n_words": 442,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-2-for-all-objects-a-the-following-composite-is-t",
-   "number": "2",
-   "title": "For all objects a, the following composite is the identity map of \u02c6a:",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 5,
-   "n_chars": 77,
-   "n_words": 16
-  },
-  {
-   "id": "sec-006-3-for-all-objects-a-and-b-the-following-composit",
-   "number": "3",
-   "title": "For all objects a and b the following composite is required to be \u03f5(a\u2297b):",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 6,
-   "n_chars": 3556,
-   "n_words": 633
-  },
-  {
-   "id": "sec-007-1-an-orientation-of-each-edge",
-   "number": "1",
-   "title": "An orientation of each edge,",
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
    "level": 1,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 3169,
+   "n_words": 550,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-2-a-distinguished-edge-at-each-trivalent-vertex",
-   "number": "2",
-   "title": "A distinguished edge at each trivalent vertex,",
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
    "level": 1,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1875,
+   "n_words": 332,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-009-3-a-map-from-edges-to-objects",
-   "number": "3",
-   "title": "A map from edges to objects,",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-010-4-a-map-from-vertices-to-morphisms",
-   "number": "4",
-   "title": "A map from vertices to morphisms,",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 8,
-   "n_chars": 4447,
-   "n_words": 778
-  },
-  {
-   "id": "sec-011-3-symmetries-of-simplicial-invariants",
-   "number": "3",
-   "title": "Symmetries of simplicial invariants",
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
    "level": 1,
    "page_start": 8,
-   "page_end": 14,
-   "n_chars": 8727,
-   "n_words": 1525
+   "page_end": 8,
+   "n_chars": 2356,
+   "n_words": 456,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-012-16-since-the-action-of-\u03c3-onve1e-2e-3-is-the-inve",
-   "number": "1.6",
-   "title": "Since the action of \u03c3 onV\u2217(e1,e 2,e 3) is the inverse of the adjoint of the action",
-   "level": 2,
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 651,
+   "n_words": 139,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 2370,
+   "n_words": 446,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 1927,
+   "n_words": 367,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1291,
+   "n_words": 257,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-013",
+   "number": null,
+   "title": "Page 13",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 1212,
+   "n_words": 229,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-014",
+   "number": null,
+   "title": "Page 14",
+   "level": 1,
    "page_start": 14,
    "page_end": 14,
-   "n_chars": 1358,
-   "n_words": 238
+   "n_chars": 2405,
+   "n_words": 463,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-013-37-this-tensor-product-is-composed-with-the-uniq",
-   "number": "3.7",
-   "title": "This tensor product is composed with the unique iterate of the twist map P",
-   "level": 2,
-   "page_start": 14,
-   "page_end": 16,
-   "n_chars": 3212,
-   "n_words": 603
+   "id": "page-015",
+   "number": null,
+   "title": "Page 15",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 2243,
+   "n_words": 419,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-014-4-piecewise-linear-manifolds",
-   "number": "4",
-   "title": "Piecewise-linear manifolds",
+   "id": "page-016",
+   "number": null,
+   "title": "Page 16",
    "level": 1,
    "page_start": 16,
    "page_end": 16,
-   "n_chars": 1233,
-   "n_words": 222
+   "n_chars": 2594,
+   "n_words": 482,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-015-2-a-bistellar-move-on-a-manifold-with-boundary-d",
-   "number": "2",
-   "title": "A bistellar move on a manifold with boundary does not change the triangu-",
+   "id": "page-017",
+   "number": null,
+   "title": "Page 17",
    "level": 1,
-   "page_start": 16,
-   "page_end": 18,
-   "n_chars": 3066,
-   "n_words": 543
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 2047,
+   "n_words": 359,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-016-5-invariants-of-manifolds",
-   "number": "5",
-   "title": "Invariants of manifolds",
+   "id": "page-018",
+   "number": null,
+   "title": "Page 18",
    "level": 1,
    "page_start": 18,
-   "page_end": 19,
-   "n_chars": 3910,
-   "n_words": 698
+   "page_end": 18,
+   "n_chars": 3210,
+   "n_words": 575,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-017-51-theorem-51-will-follow-once-it-has-been-estab",
-   "number": "5.1",
-   "title": "Theorem 5.1 will follow once it has been established that C(M) is invariant",
-   "level": 2,
-   "page_start": 19,
-   "page_end": 22,
-   "n_chars": 6629,
-   "n_words": 1136
-  },
-  {
-   "id": "sec-018-6-spherical-hopf-algebras",
-   "number": "6",
-   "title": "Spherical Hopf algebras",
-   "level": 1,
-   "page_start": 22,
-   "page_end": 22,
-   "n_chars": 675,
-   "n_words": 128
-  },
-  {
-   "id": "sec-019-1-any-involutory-hopf-algebra-is-spherical-the-e",
-   "number": "1",
-   "title": "Any involutory Hopf algebra is spherical. The element w can be taken to be",
-   "level": 1,
-   "page_start": 22,
-   "page_end": 22,
-   "n_chars": 2,
-   "n_words": 1
-  },
-  {
-   "id": "sec-020-2-any-ribbon-hopf-algebra-as-de\ufb01ned-in-19-is-sph",
-   "number": "2",
-   "title": "Any ribbon Hopf algebra, as de\ufb01ned in [19], is spherical. The elementw can be",
-   "level": 1,
-   "page_start": 22,
-   "page_end": 23,
-   "n_chars": 1174,
-   "n_words": 220
-  },
-  {
-   "id": "sec-021-1-the-coproduct-is-de\ufb01ned-by-k-kk-and-x-xkk1x",
-   "number": "1",
-   "title": "The coproduct, \u2206, is de\ufb01ned by \u2206(K)= K\u2297K and \u2206(X)= X\u2297K+K\u22121\u2297X,",
-   "level": 1,
-   "page_start": 23,
-   "page_end": 23,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-022-2-the-augmentation-\u03f5-is-de\ufb01ned-by-\u03f5k1a-n-d-\u03f5x0",
-   "number": "2",
-   "title": "The augmentation, \u03f5, is de\ufb01ned by \u03f5(K)=1a n d \u03f5(X)=0 ,",
-   "level": 1,
-   "page_start": 23,
-   "page_end": 25,
-   "n_chars": 6976,
-   "n_words": 1169
-  },
-  {
-   "id": "sec-023-references",
+   "id": "page-019",
    "number": null,
-   "title": "References",
+   "title": "Page 19",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 2348,
+   "n_words": 442,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-020",
+   "number": null,
+   "title": "Page 20",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 1630,
+   "n_words": 287,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-021",
+   "number": null,
+   "title": "Page 21",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 2370,
+   "n_words": 406,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-022",
+   "number": null,
+   "title": "Page 22",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 2603,
+   "n_words": 470,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-023",
+   "number": null,
+   "title": "Page 23",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 2306,
+   "n_words": 421,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-024",
+   "number": null,
+   "title": "Page 24",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 3323,
+   "n_words": 550,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-025",
+   "number": null,
+   "title": "Page 25",
    "level": 1,
    "page_start": 25,
+   "page_end": 25,
+   "n_chars": 3204,
+   "n_words": 531,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-026",
+   "number": null,
+   "title": "Page 26",
+   "level": 1,
+   "page_start": 26,
    "page_end": 26,
-   "n_chars": 4285,
-   "n_words": 725
+   "n_chars": 3342,
+   "n_words": 492,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 24,
-  "sections": 24,
-  "chars_total": 60521
+  "toc_entries": 0,
+  "toc_inferred_entries": 25,
+  "toc_inferred_mean_confidence": 0.0,
+  "toc_inferred_empty_share": 0.2,
+  "toc_inferred_method": "regex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 26,
+  "chars_total": 62729,
+  "furniture_lines_stripped": 0
  }
 }

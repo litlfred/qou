@@ -496,11 +496,18 @@ def q_beta_kashiwara_n2_mev() -> mp.mpf:
     q_0 alone, NO experimental input:
 
         Q_A   = m_e·|q²−2q−1|(q+1)/(2q³)            (= q_beta_predicted_mev)
-        z     = 1/(√q + 1/√q),  h = q − q⁻¹,  ℏ_q = (q−1)/q
+        z     = q³/(q²+1) (convention D),  h = q − q⁻¹,  ℏ_q = (q−1)/q
         α     = (z − 1)·h / 2
         b     = √(1 − q²/(q²+1)²)                     (Hoefsmit b)
-        Q_N1  = Q_A · cos(α − b·ℏ_q²/2)               (N=1, +73.8 ppm on Q_β)
-        Q_N2  = Q_N1 · (1 − b²·ℏ_q⁴)                  (N=2, +1.25 ppm on Q_β)
+        Q_N1  = Q_A · cos(α − b·ℏ_q²/2)
+        Q_N2  = Q_N1 · (1 − b²·ℏ_q⁴)                  (N=2, +602 ppm on Q_β)
+
+    The +73.8 ppm (N=1) and +1.25 ppm (N=2) figures recorded earlier were
+    convention C, z = 1/(√q + 1/√q), which is excised. Under convention D the
+    N=2 value is +602 ppm on Q_β. The base Q_A is the published Form A, i.e.
+    the z = 1 cell the 2026-09-08 ruling retired as inadmissible, so this
+    function combines a retired base with a convention-D phase. Which base
+    element replaces it is open (bean qou-99qc).
 
     TIER: **near-match** (not proved). The b^k recursion is the Kashiwara
     crystal brane-tower of `prop:tau-M-asymptotic-rep-theory` (authorNote
@@ -511,11 +518,11 @@ def q_beta_kashiwara_n2_mev() -> mp.mpf:
     never the value. Exact closure is gated on the s5-so3 / Habiro-element
     keystone (`conj:s5-so3-fiber-action`, bean s5bb).
 
-    On the neutron, Q_β is only ~0.083 % of m_n, so the 1.25 ppm Q-error
-    becomes ~1 ppb on m_n — vs the flavor-split route's −1.76 ppm.
+    On the neutron, Q_β is only ~0.083 % of m_n, so the +602 ppm Q-error
+    becomes +501 ppb on m_n (it was ~1 ppb under convention C).
 
     Probe: `probe_q_beta_operator_valued_N3.py`
-    (witness `q-beta-operator-valued-N3.witness.json`: Q_N2, eps_N2 ≈ 1.25 ppm).
+    (witness `q-beta-operator-valued-N3.witness.json`: Q_N2, eps_N2 ≈ 602 ppm).
     """
     q = _q_0()
     Q_A = q_beta_predicted_mev()
@@ -543,7 +550,7 @@ def q_beta_toroidal_mev() -> mp.mpf:
     ruling "do not re-wire q_beta_toroidal_mev into canonical_mass.py").
 
         Q_A   = m_e·|q²−2q−1|(q+1)/(2q³)
-        z     = 1/(√q + 1/√q),  h = q − q⁻¹,  ℏ_q = (q−1)/q
+        z     = q³/(q²+1) (convention D),  h = q − q⁻¹,  ℏ_q = (q−1)/q
         α     = (z − 1)·h / 2
         b     = √(1 − q²/(q²+1)²)
         u     = b·ℏ_q²

@@ -1,0 +1,54 @@
+94 Fourier-Laplace integrals in one variable
+
+as A(x) = xsin(x7!). If A is represented by an infinite asymptotic series then an
+asymptotic expansion for the integral follows by applying the lemma for each
+M.
+
+Proof Multiply the estimate
+
+M-1
+A(x) — » bjx! = O(x")
+
+j=0
+by exp(—A¢(x)) and integrate. Using Lemma 4.3 to bound the integral of the
+right-hand side gives
+
+M-1 ne ;
+z-» f bjx/ exp(-ax’) da}
+j=0 V9
+
+and applying (4.3) to each integral with monomial amplitude gives the desired
+conclusion. o
+
+= o(acen'n) ;
+
+Exercise 4.4. Apply Lemma 4.4 with M = | to give an asymptotic estimate
+with remainder for
+
+1
+f (1+ xsin(x je? dx.
+0
+
+General A and ¢
+
+A change of variables reduces the general case to Lemma 4.4, although a bit of
+care is required to ensure we understand the asymptotic series for the functions
+involved in the change of variables.
+
+Lemma 4.5. Let M > 2 be an integer and suppose
+V(X) = CYX +00 + ceux"! + Ox") (4.5)
+
+in a neighborhood of zero, where c, # 0. Then there is a neighborhood of
+zero on which y has a compositional inverse. The inverse function x(y) has an
+expansion
+
+M-1 M
+XY) = ayy t++++ay-y" +00"),
+where each a; is a polynomial in c,,...,¢; and ci.
+
+Proof Suppose that c, = 1. From y = x + O(x”) we see that y ~ x at zero,
+hence
+
+x=y+O(x*) =y+ 0G”).
+
+Now let 2 <n < M and suppose inductively that x = y+ apy? +++++a,-.y" 1+

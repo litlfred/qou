@@ -1,0 +1,41 @@
+2.1 Power series 19
+
+Let N be a neighborhood of the origin and suppose that F,G € C[[z]] are
+the generating functions of the sequences {f,} and {g,}. If pena |fpw"| and
+Dreand |[grw"| are finite for all w € N then F and G are absolutely convergent
+series on N, meaning they represent analytic functions, and taking the sum
+F(z) + G(z) or product F(z)G(z) as formal series or analytic functions gives
+the same result. If f represents an analytic function on a neighborhood of C4
+then every partial derivative of f does as well.
+
+Since a finite intersection of neighborhoods of the origin is a neighborhood
+of the origin, the collection of series that converge in some neighborhood of the
+origin is a proper subring C{z} of C[[z]], called the ring of germs of analytic
+functions. The interior D c C4 of the domain on which the formal power
+series F converges is the union of open polydisks, and is hence characterized
+by its intersection Dz with R’. The domain D is in fact log-convex, meaning
+that the set {a € R¢ : (e"',...,e*) € Dg} is convex; see Chapter 6 for further
+details and generalizations.
+
+Because there are formal power series that fail to converge in any open poly-
+disk centered at the origin, to which we cannot apply analytic methods, it can
+be convenient to work with a rescaled series )) <u we" for a judiciously
+chosen function g. In combinatorial contexts, it is often useful to let g(r) be
+a product of factorials r;!, and a generating function normalized in this way
+is called an exponential generating function. In addition to facilitating conver-
+gence of power series, exponential generating functions also have important
+combinatorial interpretations (see Section 2.5 below).
+
+Remark. In examples we often write (x,y,z) for (z), 22,23), and (r, s,t) for
+(71,172,173), to remove the need for subscripts.
+
+Exercise 2.2. Which of the following formal power series lie in C{x}?
+
+(a) »Y nx"
+n=0
+
+(b) »Y nx"
+n=0
+
+o Se
+n=1

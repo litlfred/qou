@@ -1,0 +1,47 @@
+4.1 Real integrands 93
+
+¢ is a monomial and A is anything
+
+Generalizing our argument to the case of general amplitude requires the fol-
+lowing estimate.
+
+Lemma 4.3 (Big-O Lemma). Let k,€ > 0 with k an integer. If A and $ are
+real-valued functions such that A(x) = o(x') and 6(x) ~ x* at x = 0, and 6(x)
+vanishes in [0, €] only at 0, then
+
+f * ACs) exp(—Ag(x)) dx = O(a tol’)
+0
+as A> ©.
+
+Proof Pick any K > 0 such that |A(x)| < KIx\° on [0, €]. Because (x) ~ x*
+at x = 0, for any 6 € (0, 1) there is some interval [0, e’] with e’ < € such that
+(x) > (1-6) x* on [0, e’]. Fixing any such 6 and ¢’, nonvanishing of ¢ on (0, €]
+implies that inf,,<,<, G(x) is positive, hence the portion of the integral coming
+from [e’, €] decays exponentially in A. On [0, e’],
+
+f . A(x) exp(—Ad(x)) dx] < K f ° x! exp(—A(1 — 6)x*) dx
+0 0
+
+<K f x! exp(—A(1 — 6)x") dx
+0
+= O((ACL - 8))-1*9"") by (4.3)
+= 0 (at+o/8) ,
+as desired. oO
+
+For monomial phase functions and general amplitude functions, we now
+have the following result.
+
+Lemma 4.4. Suppose that A is a real function with
+
+M-1
+A(x) = » bjx! + O(x")
+jae
+as x — 0. Then
+6 M-1 ;
+f A(x) exp(—ax’) dx = y bjClk, ar rlk 4 O(a eer),
+0 =
+
+where C(k, j) =T((1 + j)/k)/k.
+
+Remark. The hypothesis on A in Lemma 4.4 is quite weak. In particular, A
+need not even be continuously differentiable, so it is useful for examples such

@@ -17,7 +17,7 @@ export default theorem({
     "degree-zero",
     "information-theory",
   ],
-  uses: ["prop:p-vs-np-boundary"],
+  uses: ["def:computational-boundary", "prop:p-bandwidth-bound"],
   authorNotes: [
     {
       kind: "note",

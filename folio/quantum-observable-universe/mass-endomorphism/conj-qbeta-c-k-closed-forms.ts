@@ -1,13 +1,13 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:qbeta-c-k-closed-forms",
+export default conjecture({
+  label: "conj:qbeta-c-k-closed-forms",
   lean: {
     ref: "qou:QOU.BraidKnot.QBetaCKClosedForms",
     validation: "not_checked",
   },
   title:
-    "Closed-form conjectures for $c_4, c_5, c_6, c_7$ in the $\\mathfrak{Q}_\\beta$ precision ladder: empirical pattern-matches to sub-percent residual; first-principles derivation open (Khovanov-Rozansky at finite $q$ or KLR canonical-basis trace)",
+    "Closed-form conjectures for $c_4, c_5, c_6, c_7$ in the $\\mathfrak{Q}_\\beta$ precision ladder (convention-C frame)",
   uses: ["rem:per-block-hopf-jones-absorption-pattern"],
   cites: [
     "khovanov2000",

@@ -1,0 +1,43 @@
+A.3 Integration of forms 455
+
+where J is the Jacobian matrix of o : R“ — R¢ and the final integral is the
+Riemann integral of a smooth function on R¢. This mirrors the usual change of
+variables formula seen in a first calculus course. 4
+
+We often want to integrate over manifolds, but our formal definition of inte-
+gration holds over chains. Integration over a manifold can be defined by divid-
+ing the manifold into a finite collection of chains, provided (i) how we divide
+up the manifold does not affect the result, and (ii) we can orient the chains in
+a consistent way so that the integral is uniquely determined up to a sign de-
+pending on a global orientation. Recall from above that a manifold M is called
+oriented if for any charts (U,) and (V,y) on M with nonempty intersection
+W = UV the smooth function ¢ 0 y~! from y(W) Cc R” to 6(W) Cc R” has
+positive Jacobian determinant. We do not attempt to define integration over
+non-orientable manifolds.
+
+Assume that the p-manifold M is orientable and fix one of its two orienta-
+tions. We say that a p-simplex 0 : A? — M is a positively oriented simplex
+with respect to this orientation of M if for any oriented chart (U,¢) of M the
+differential 7, : TpR” — To(p)M with respect to the bases 0/Ox, and 0/0,
+of TpR” and Tz(p)M has positive determinant. If M is also compact then a
+triangulation of M is a finite set 71,...,0, of positively oriented p-simplices
+satisfying certain conditions set out at greater length in the definition of a sim-
+plicial complex in Section B.1 of Appendix B. These conditions imply that the
+simplices divide M into regions, meaning that each map is one-to-one on the
+interior of A”, the images of the interiors are disjoint, and the union of the
+images is all of M. Triangulation represents M as a p-chain Diet oj, So the
+integral of a p-form w over M is defined by linearity,
+
+w:= w. (A.3.2)
+fee,
+
+The integral does not depend on which oriented triangulation we chose [War83,
+Section 4.8], so (A.3.2) defines the integral of a p-form over an orientable p-
+manifold (up to a sign that depends on the orientation chosen).
+
+Exercise A.11. Give an explicit oriented triangulation of S? and use it to inte-
+grate f(x,y) = xy’ on S?.
+
+Above we defined the differential map, which takes a smooth function on
+a manifold M -— in other words, a 0-form f € E°(M) — and returns a 1-form
+df ¢ E'(M). We now extend this map to the differential operator (or exterior

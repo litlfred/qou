@@ -1,0 +1,52 @@
+200 Overview of analytic methods for multivariate GFs
+
+postpone the formal definitions of critical points at infinity and critical values
+at infinity until Definition 7.42 below.
+
+Lemma 7.25. [f hp has no critical values (including at infinity) in [a,b], then
+the inclusion Mca © Mz is a homotopy equivalence. The same is true of the
+inclusion Vq © Vp.
+
+Remark 7.26. The fact that stratified critical values isolate all the topological
+change in V, may be less surprising than the fact that they do so in M.
+
+Let p be a stratified critical point for hp in some stratum S. Mirroring our
+definition of V?!"° above, we let
+
+MBP! = (Meo-e U Boe(p), Mec)»
+
+for any sufficiently small ¢ > 0, which is defined up to homotopy equivalence.
+
+The simplifying assumption of distinct critical values often fails in ACSV,
+for example if there is a pair of complex conjugate critical points, necessitating
+one further definition. Let c be a critical value, let p;,..., DP» be the critical
+points at height c, and assume ¢ is sufficiently small so that the balls By.(p;)
+are disjoint.
+
+Definition 7.27 (all attachments at height c). Under the setup above, the total
+attachment pair at height c is
+
+(Mess Me-) = | Meee UL) Brea), Meee - (7.13)
+
+zl
+By disjointness of the balls B2,(p;), this is a direct sum in the category of pairs
+
+m
+
+of MP?°, hence the homology H.(M,, M_) is the direct sum B H,(MP °°),
+j=l
+
+Lemma 7.28. Suppose hp has no critical values at infinity in [a, b] and has a
+
+single critical value c in [a,b], occurring in the interior (a, b). Then the pairs
+
+(Mey, Mea) are naturally homotopy equivalent for anya <a’ <c<b' <b.
+
+Lemmas 7.25 and 7.28 are taken from [BMP22]; a sketch of the proof is
+reproduced in Section 7.5.
+
+Building by attachment
+We now fit together the attachments at critical points of all possible heights.
+This involves classical topological facts, and works without knowing the ho-
+motopy type of any individual attachment.
+Let c) > cp > +++ > Cm denote the critical values in the interval [c, 00)

@@ -1,0 +1,61 @@
+9.1 Finitely minimal points and the surgery method 255
+
+then the difference of J and J’ can be computed in terms of Y. If rg < 0 the
+argument is the same, with the roles of C; and C, reversed, changing the sign
+in front of the residue integral. Ultimately, we obtain the following, which may
+be thought of as the computational analog of the fact that one can integrate in
+relative homology at the expense of an exponentially small error (see Proposi-
+tion B.10 in Appendix B).
+
+Theorem 9.17 (reduction to residue integral). Let
+
+°
+
+. d
+Y(2°\(2°)" = (9.14)
+N Z1°°* Zd-1
+
+~sgn(ra)
+(2ni)4-!
+with ¥ given by (9.13). Assuming the hypotheses of Theorem 9.5 when W(r) =
+{w(F)},
+
+yval-l=
+
+Iw" (ar -— x)| > 0
+exponentially in |r|, uniformly as r — co with # varying over M.
+
+The fact that we can obtain explicit asymptotic expansions is a consequence
+of the following result.
+
+Lemma 9.18. Under the hypotheses of Theorem 9.5, the residue Y has the
+form ¥(z°) = —g(z°) (2°) where
+
+p-l
+oy (ra + Dp-k-1) 5
+W,(z°) = Ly Kp-k-D! pre ). (9.15)
+Here (a)p) = a(a — 1)---(a—b + 1) and
+
+Ry(2°) = (-g(2°)y - fim, 4 (za — g(2°))P F()).
+
+In particular, Vy is a polynomial of degree p —\ in rq with leading coefficient
+P(2*, 8(2°))
+
+(AON z°, g(z°))
+
+Proof Our assumptions imply that F(z°, t) has a pole of order p at t = g(z°),
+
+and (9.15) comes from the classic residue formula
+
+(-1?g(2"y? p
+
+Res(F(2*, "1s t= g(2")) = a" ((cq = lz")? Fl)"
+
+li
+(p — 1)! age")
+together with Leibniz’s rule for derivatives. The leading term in ry comes from
+the summand where k = 0. im
+
+Remark 9.19. The results of this section only require that F be meromorphic
+in a neighborhood of the domain of convergence D. If F is locally the ratio of
+analytic functions P and Q in a neighborhood of w then all formulae are still

@@ -1,0 +1,33 @@
+Appendix B
+
+Algebraic topology
+
+Having established the necessary background for integration on real and com-
+plex manifolds in Appendix A, we now move on to the topological results that
+allow us to manipulate these integrals in order to derive asymptotics. A differ-
+ential form w is said to be a closed form if dw = 0 and an exact form if w = dt
+for some form t. Many of the forms we care about are closed, for instance if w
+is any holomorphic n-form in C” then dw vanishes by holomorphicity and dw
+vanishes because there are no holomorphic (n + 1)-forms, hence w is closed. A
+chain C is called a cycle if OC = 0 and a boundary if C = OD for some chain
+D. The boundaries form a subset (in fact, a sub-vector space) of the cycles
+because 0” = 0.
+
+By the same reasoning as our proof of Theorem A.27 in the last appendix,
+the integral of any closed form over a boundary is zero. Thus, by linearity of
+the integral, if C is a cycle, then tL w depends only on the equivalence class
+of C in the quotient space of cycles modulo boundaries. Homology theory
+is the study of this quotient space, which may be thought of simultaneously
+as a topological invariant and as classifying contours of integration for closed
+forms. After studying various forms of homology, we dualize our constructions
+and define cohomology of differential forms. Just as hk w depends only on the
+homology class of the chain C, it also depends only on the cohomology class
+of the form w.
+
+B.1 Chain complexes and homology theory
+
+Instead of working only with cycles of integration, we develop homology in a
+more general setting. This approach better illustrates underlying structure, and
+allows us to reuse results in different contexts. We therefore introduce the fol-
+
+462
