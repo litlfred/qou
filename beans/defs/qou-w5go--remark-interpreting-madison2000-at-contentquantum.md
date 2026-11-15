@@ -1,6 +1,6 @@
 ---
 # qou-w5go
-title: Remark interpreting [madison2000] at content/quantum-observable-universe/observations/bec-vortex-…
+title: Remark interpreting [madison2000] at folio/quantum-observable-universe/observations/bec-vortex-…
 status: todo
 type: task
 priority: normal

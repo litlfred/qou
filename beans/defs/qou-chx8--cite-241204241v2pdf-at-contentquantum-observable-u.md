@@ -1,6 +1,6 @@
 ---
 # qou-chx8
-title: Cite 2412.04241v2.pdf at content/quantum-observable-universe/lean/QOU/Machinery/HabiroZetaFamily.…
+title: Cite 2412.04241v2.pdf at folio/quantum-observable-universe/lean/QOU/Machinery/HabiroZetaFamily.…
 status: todo
 type: task
 priority: normal

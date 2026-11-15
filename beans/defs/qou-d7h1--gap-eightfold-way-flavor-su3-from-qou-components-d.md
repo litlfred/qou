@@ -397,7 +397,7 @@ STATUS above says the `SU(3)_C / SU(3)_F` notation collision "needs an owner
 convention decision before the medium-term work can even be stated
 unambiguously". **That decision exists.**
 
-`content/quantum-observable-universe/notation/notation-collisions.md` carries a
+`folio/quantum-observable-universe/notation/notation-collisions.md` carries a
 full ruling, landed **2026-09-03** in `afec87d506` (bean `qou-gght`) with a
 28-site sweep of the eightfold chapter:
 

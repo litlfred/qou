@@ -1,6 +1,6 @@
 ---
 # qou-8d5e
-title: Remark interpreting 1108.5286v3.pdf at content/quantum-observable-universe/braids-and-knots/marko…
+title: Remark interpreting 1108.5286v3.pdf at folio/quantum-observable-universe/braids-and-knots/marko…
 status: todo
 type: task
 priority: normal

@@ -23,7 +23,7 @@ scalar sum cannot carry it.
 member 3, difference 1, or a combination). **Constraint:** must be ι-odd
 (difference-type), never the ι-even sum.
 
-Files: `content/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean`,
+Files: `folio/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean`,
 `computations/probes/fivetwo_crossknot_34_distinguisher.py`,
 `docs/audits/2026-08-02-fivetwo-crossknot-34-resolution.md`.
 Parent forks: qou-yh67, qou-pzzl. Sibling keystones: #4554, #4553.

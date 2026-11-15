@@ -1,13 +1,13 @@
 ---
 # qou-ns02
 title: 'Witness integrity: 1 unparseable, 1 non-object root, 2 anchor-without-value'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-19T20:54:16Z
-updated_at: 2026-10-04T15:25:38Z
+updated_at: 2026-11-15T13:40:00Z
 parent: qou-5vkl
 ---
 
@@ -248,3 +248,7 @@ the same artifact from different directions, one route went deeper, and the
 right move is to cite rather than re-derive. The finding recorded here stands as
 *this bean's* evidence (the unparseable count of 3702 is 1, and it is that file);
 the fix belongs to `qou-oyde`.
+
+## Closed 2026-11-15 (owner tap, precision epic triage)
+
+The unparseable witness is now named, asserted and in the gate. The fix to its root cause (producers truncating their witness on import) is tracked by qou-oyde, which stays open.

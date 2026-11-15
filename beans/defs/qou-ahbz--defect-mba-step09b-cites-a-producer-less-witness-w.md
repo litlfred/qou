@@ -13,7 +13,7 @@ parent: qou-5vkl
 
 ## Verified 2026-08-25 (PR #5765)
 
-`content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.ts`
+`folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.ts`
 declares:
 
     computation: { script: "qou-mass/src/qou_mass/api.py",

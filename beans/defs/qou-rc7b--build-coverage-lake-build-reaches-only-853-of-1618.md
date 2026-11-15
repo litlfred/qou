@@ -12,7 +12,7 @@ parent: qou-5vkl
 ---
 
 
-`lake build` in `content/quantum-observable-universe/lean/` builds the default
+`lake build` in `folio/quantum-observable-universe/lean/` builds the default
 target `QOU`, which is the **root module `QOU.lean` plus its transitive
 imports** — not the `lean/` tree. Measured on `claude/sorry-audit-joo5`
 (2026-08-08):

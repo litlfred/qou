@@ -21,7 +21,7 @@ agent has an ID that resolves.
 
 ## THE CODE
 
-`content/quantum-observable-universe/lean/QOU/Mathlib/HeckeAlgebra.lean`:
+`folio/quantum-observable-universe/lean/QOU/Mathlib/HeckeAlgebra.lean`:
 
 - `:118` `class WedderburnDecomposition (R) [CommRing R] (n) (q : R)
   [H : IwahoriHeckeAlgebra R n q]` -- fields `blocks_sum_to_one : Prop` +

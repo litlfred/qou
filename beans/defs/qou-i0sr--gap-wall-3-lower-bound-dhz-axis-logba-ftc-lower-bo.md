@@ -46,7 +46,7 @@ Points 4–6 are the substantial part (measurability of deriv, integrability fro
 finite lintegral, FTC hypotheses, Bochner↔lintegral bridge). Est. multi-hundred
 lines. This is the "Mathlib has no hyperbolic geometry" reason.
 
-File: content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicGeodesicZAxis.lean
+File: folio/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicGeodesicZAxis.lean
 
 
 

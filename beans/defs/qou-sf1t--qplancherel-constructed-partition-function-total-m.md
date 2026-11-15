@@ -21,7 +21,7 @@ WHAT LANDED (PR #5372, rebase-merged):
   e9696f45095  lean(QPlancherel): construct the partition function, prove total mass one
   22fd14fde5e  docs(Z-defect): the "no total-mass theorem" line is superseded
 
-The Lean, in content/quantum-observable-universe/lean/QOU/MathlibExt/QPlancherel.lean:
+The Lean, in folio/quantum-observable-universe/lean/QOU/MathlibExt/QPlancherel.lean:
   qPartitionFunctionOn    Z_q(s) = Sum_{lam in s} d_q(lam)^2 as a DEFINITION over
                           an explicit Finset -- previously HasPartitionFunction.Z
                           was an opaque class field whose "= Sum d_q^2" identity

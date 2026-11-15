@@ -1,6 +1,6 @@
 ---
 # qou-fls0
-title: Cross-check [bujack2022] at content/quantum-observable-universe/predicted-spectra/schrodinger-col…
+title: Cross-check [bujack2022] at folio/quantum-observable-universe/predicted-spectra/schrodinger-col…
 status: todo
 type: task
 priority: normal

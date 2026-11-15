@@ -22,7 +22,7 @@ trace-space or hyperbolic-volume", and concluded that r0, A^(1/3) and the 3/5
 shape factor have NO derived counterpart to wire in. The owner said that was
 wrong and pointed at a computational Planck length. They are right.
 
-`content/quantum-observable-universe/information-theory/discrete-planck-step.md:35`
+`folio/quantum-observable-universe/information-theory/discrete-planck-step.md:35`
 
     One Planck length of flow. After one Planck step, the Reeb flow displaces a
     state by exactly one Planck length:
@@ -185,7 +185,7 @@ and does NOT give us.
       CAUSAL FERMION SYSTEMS. Spacetime and its geometry EMERGE from a measure
       on operators on a Hilbert space -- the closest published programme to
       "distance is computational". Corpus block:
-      content/quantum-observable-universe/observations/cfs-comparison-summary.md
+      folio/quantum-observable-universe/observations/cfs-comparison-summary.md
       STATUS: structural comparison ONLY. Records agreements (both type II_1
       factors, free-probability class) and mismatches (G(1,1)=1 vs
       L_CFS(1,1)=0), leaves the key numerical question open, imports no geometry.

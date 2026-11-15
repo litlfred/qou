@@ -22,7 +22,7 @@ finished work. This one cost ~10 minutes before the body was read.
 
 Verified on `origin/main` @ 21ac80c881 before closing it:
 
-    bun run scripts/run-validate.ts content/quantum-observable-universe
+    bun run scripts/run-validate.ts folio/quantum-observable-universe
     → ✓ Valid — 5 issue(s)      (4 ⚠ + 1 ℹ, zero ✗)
 
 Better than the 13 the bean recorded, so the fix held and the corpus

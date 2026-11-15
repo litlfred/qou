@@ -21,14 +21,14 @@ different subject.)
 
 **Two sites use it, both unsourced.**
 
-1. `content/quantum-observable-universe/brings-surface/brings-is-qou-verification.md:15`
+1. `folio/quantum-observable-universe/brings-surface/brings-is-qou-verification.md:15`
    — *"The degree-4 covering `π` has 6 branch points with total ramification
    `R_tot = 14` (Riemann–Hurwitz)."* Its `.ts` has **no `cites` field at all** —
    and the same block also asserts *"The differential calculus `Ω¹(A)` is the
    Woronowicz 3-dimensional calculus"* uncited, though its sibling
    `brings-is-qou-proof` **does** cite `woronowicz1987-twisted-su2`
    (`.md:11,15`, `.ts:12`). Fold that half in while editing this block.
-2. `content/quantum-observable-universe/lean/QOU/BringsSurface/CoveringDegreeRamification.lean:88-91`
+2. `folio/quantum-observable-universe/lean/QOU/BringsSurface/CoveringDegreeRamification.lean:88-91`
    — the file is explicit that `ramification` is *"a **definition** encoding
    Riemann–Hurwitz for a `ℙ¹` target, not a proof"*, and lists *"the
    Riemann–Hurwitz theorem itself"* under what is **not** proved (`:73`). The file

@@ -113,7 +113,7 @@ stale before the next session starts.
 ## The cheap replacement: sweep the DELTA, not the closure
 
     git diff --name-only <last-sweep-commit>..HEAD \
-      -- content/quantum-observable-universe/lean/QOU | grep '\.lean$'
+      -- folio/quantum-observable-universe/lean/QOU | grep '\.lean$'
     scripts/lean-shadow-verify.sh $(that list)
 
 Measured on today's 62: `cone=414 rebuild=406 levels=23 widest=110` — a few

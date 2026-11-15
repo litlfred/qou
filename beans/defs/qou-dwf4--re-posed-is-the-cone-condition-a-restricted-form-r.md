@@ -260,7 +260,7 @@ Probe: `computations/probes/markov_loop_value_product_and_framing_ratio.py`,
 
 **THE CORPUS ALREADY NAMES BOTH SIDES**, and the six-path grep found it:
 `prop:markov-z-reconciliation`
-(`content/quantum-observable-universe/mass-endomorphism/markov-z-reconciliation.md`)
+(`folio/quantum-observable-universe/mass-endomorphism/markov-z-reconciliation.md`)
 defines the NEGATIVE-crossing loop value `z_- = z - (q - 1/q) = z - hbar`,
 forced by the Hecke quadratic relation from the one-sided stabilisation rule,
 and calls `a^2 = z/z_-` the Ocneanu FRAMING RATIO. So `z - hbar`, which the

@@ -37,7 +37,7 @@ Material wanting exposition, all of it Lean-proved and sorry-free:
 
 ## ⚠ Precedent that shapes how to do this
 
-`content/quantum-observable-universe/mass-theory/thurston-volume-additivity.md` already
+`folio/quantum-observable-universe/mass-theory/thurston-volume-additivity.md` already
 asserted *"Flat tetrahedra contribute zero volume"* and *"Torus knots … hyperbolic volume
 vanishes identically"* — while its Lean sidecar **axiomatised both**. Prose ran **ahead**
 of the formalisation and the sidecar papered over the gap with an `axiom` plus a false

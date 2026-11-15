@@ -1,12 +1,12 @@
 ---
 # qou-cf3m
 title: H_n(q)/rad ≅ TL_n over ℂ for q not a root of unity; kernel of the Hecke action on (ℂ²)^{⊗n} (also OS kernel r>n at n=2)
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-10-12T20:03:36Z
-updated_at: 2026-10-12T20:48:16Z
-parent: qou-xhci
+updated_at: 2026-11-15T13:40:00Z
+parent: qou-59vq
 ---
 
 2026-10-12 (session 01A1cKZc, PR #7768): PROVED sorry-free, `QOU/SchurWeyl/JimboKernelGeneric.lean`, over any CharZero field K, q ≠ 0, NotRootOfUnity q (so ℂ included):
@@ -18,3 +18,15 @@ parent: qou-xhci
 Route, with no positivity: (1) ker ⊆ rad is formal via jimboTrace = wtrace. (2) TL relations hold in H/rad because they hold after Jimbo, giving a surjection TL → H/rad. (3) dim TL ≤ catalan and dim H/rad = catalan (TraceQuotGeneric), so the surjection is bijective. (4) jimbo = tlRep∘ψ⁻¹∘π on generators, so rad ⊆ ker.
 Axioms: propext, Classical.choice, Quot.sound only. Verified with lean-direct against a shadow rebuild of the stale cone (≈180 modules).
 Remaining: CharZero is inherited from heckeProduct (the dimension of H/rad). Not covered: positive characteristic, roots of unity, and the OS-kernel item (r>n at n=2).
+
+## Parented 2026-11-15 (owner-approved bean triage)
+
+Parent `qou-xhci` → `qou-59vq`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## Re-scoped 2026-11-15 (owner tap, E1 bean triage)
+
+H_n(q)/rad ≅ TL_n over ℂ at q not a root of unity is proved (#7768, merged 2026-10-13). **Still open:** positive characteristic, roots of unity, and the OS kernel for r>n at n=2. This bean now tracks only those.

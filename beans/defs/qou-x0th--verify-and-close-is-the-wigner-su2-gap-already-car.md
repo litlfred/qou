@@ -200,7 +200,7 @@ arise here.
   `folio/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md`.
   **That file does not exist**; the block is under `nuclear-interactions/`.
 - The 2026-06-01 audit's Lean section cites
-  `content/quantum-observable-universe/lean/...` — the **pre-rename** path
+  `folio/quantum-observable-universe/lean/...` — the **pre-rename** path
   (`content/` → `folio/`).
 
 Neither fixed here: both are one-line edits in another arc's documents, and

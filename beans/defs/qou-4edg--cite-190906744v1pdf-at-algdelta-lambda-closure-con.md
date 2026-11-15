@@ -1,6 +1,6 @@
 ---
 # qou-4edg
-title: Cite 1909.06744v1.pdf at alg:delta-lambda-closure (content/quantum-observable-universe/appendix-m…
+title: Cite 1909.06744v1.pdf at alg:delta-lambda-closure (folio/quantum-observable-universe/appendix-m…
 status: completed
 type: task
 priority: normal

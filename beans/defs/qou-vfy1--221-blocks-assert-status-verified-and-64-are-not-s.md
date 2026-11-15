@@ -178,7 +178,7 @@ field. Re-measured by **indentation and parent key** rather than by grepping
 the token:
 
 ```
-3584  .ts scanned under content/quantum-observable-universe/
+3584  .ts scanned under folio/quantum-observable-universe/
  277  carry a `status:` key
  276  at 4-space indent, ALL of them inside `computation: { … }`
    1  at block level  ->  mass-endomorphism/qbeta-toroidal-harmonics-basis.ts:13

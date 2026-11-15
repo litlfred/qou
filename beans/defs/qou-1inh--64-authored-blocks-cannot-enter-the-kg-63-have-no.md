@@ -50,7 +50,7 @@ from the graph.
 
 ### The 1 — nested subdirectory
 
-`content/quantum-observable-universe/nuclear-interactions/audit/wigner-su4-alpha-cluster-probe`
+`folio/quantum-observable-universe/nuclear-interactions/audit/wigner-su4-alpha-cluster-probe`
 has a `label:` and still gets no sibling. Confirmed cause: **0** of the 3613
 `.jsonld` live at `content/<paper>/<chapter>/<subdir>/<block>` depth and all 3613
 live at `content/<paper>/<chapter>/<block>`, so the generator does not walk

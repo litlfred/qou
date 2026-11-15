@@ -1,12 +1,12 @@
 ---
 # qou-gd90
 title: 'qou-q425 torus links gcd(r,s)>1: exact periodic-state correction to MiddleWeightTraces, then prove'
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-10-12T18:13:10Z
-updated_at: 2026-10-12T19:16:31Z
-parent: qou-xhci
+updated_at: 2026-11-15T13:30:00Z
+parent: qou-59vq
 ---
 
 Owner order: (1) gcd>1 torus links, (2) Schur–Weyl trace split under q not a root of unity, (3) W_{r,j}.
@@ -47,3 +47,11 @@ SchurWeylTrace §12, sorry-free.
 - trace_gamW (2j ≤ r): tr(γ^p|W_{r,0}) = q^{np}. For j ≥ 1, tr(γ^p|W_{r,j}) = rhoTr q n p j − rho'Tr q n p (j−1), where rhoTr and rho'Tr are the periodic-state closed forms. Proof: invert the triangular system T_gam_pow_split at m = j and m = j−1, then apply T_gam_succ.
 - trace_W_gam_pow_explicit and markov_gam_pow_explicit: the per-module Rosso–Jones formula for every torus link T(r,p).
 - Probe check (f) added: 22932/22932 exact checks pass.
+
+## Parented 2026-11-15 (owner-approved bean triage)
+
+Parent `qou-xhci` → `qou-59vq`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

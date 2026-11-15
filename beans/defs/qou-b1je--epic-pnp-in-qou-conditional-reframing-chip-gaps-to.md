@@ -1,11 +1,11 @@
 ---
 # qou-b1je
 title: 'EPIC: P≠NP-in-QOU — conditional reframing + chip gaps to paper standard'
-status: in-progress
+status: todo
 type: epic
 priority: normal
 created_at: 2026-07-24T16:00:13Z
-updated_at: 2026-10-04T15:10:03Z
+updated_at: 2026-11-15T13:30:00Z
 parent: b9cj
 ---
 
@@ -41,3 +41,7 @@ Chippable kernel is now exhausted; further progress needs one of the two walls.
 ## Reorganisation 2026-10-04
 
 Now the epic for P2.PNP under UMBRELLA: open conjectures (formal mathematics only).
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

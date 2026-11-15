@@ -1,14 +1,14 @@
 ---
 # qou-a3l1
 title: '[TOOLS T5] Wrap the 170 content-wired producers as Tool nodes (downstream = witness)'
-status: in-progress
+status: todo
 type: feature
 priority: normal
 tags:
     - migration
     - tools
 created_at: 2026-10-04T16:35:42Z
-updated_at: 2026-10-05T14:43:22Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-k3er
 ---
 
@@ -58,3 +58,7 @@ qbessel-jackson-contiguity, qbessel-second-order-qdifference-equation, qbeta-qbe
 - rho chain: rho_k_h3a_refinement, then co_casimir, frobenius_pairing, lp_dual, wenzl_bridge, crystal, rho_k_co_casimir_extended. Δρ −7.5688 → −28.6465; Occam Δ_λ = −24.2001 (λ=(6)), as the diagnosis predicted.
 - precision-gates --changed: no finding names any of the 12 witnesses. The audit witnesses it rewrote were restored, not committed.
 - NOT changed (content, owner's call): markov-trace-frobenius-selection.md:111 still prints the grouped-era deuteron tr_M; FrobeniusNormRoute.lean's '0.046' comment matches neither version (now 0.0906).
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

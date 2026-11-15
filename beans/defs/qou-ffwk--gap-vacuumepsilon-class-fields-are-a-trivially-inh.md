@@ -101,7 +101,7 @@ the same time discovering it.
 
 The class docstring says the content is *"vacuum normalisation requires
 `Geom(unknot) = 0`"*. Reading the source block
-[`conj:vacuum-epsilon`](content/quantum-observable-universe/appendix-surreals/vacuum-epsilon.md),
+[`conj:vacuum-epsilon`](folio/quantum-observable-universe/appendix-surreals/vacuum-epsilon.md),
 that is the **strict** vacuum being *relaxed*, not the conjecture. The
 conjecture is the opposite:
 

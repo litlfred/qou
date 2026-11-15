@@ -5,7 +5,8 @@ status: todo
 type: task
 priority: high
 created_at: 2026-10-10T07:37:59Z
-updated_at: 2026-10-10T18:12:00Z
+updated_at: 2026-11-15T13:30:00Z
+parent: qou-5vkl
 ---
 
 ## The finding
@@ -165,3 +166,7 @@ hash, is an owner call about someone else's arc. This bean stays `todo` at
 ## 2026-10-10 — owner decision
 
 Owner decision 6a (ofri, 2026-10-10): leave `test/attestations/` and the in-tree `.qa.json` sidecars as they are. The measurement suggested alongside 6a has not been run. It would grep the pinned platform for the sidecar write path, and it needs the folio-assistant clone, which is absent in this container. It remains the next step if the question is reopened.
+
+## Parented 2026-11-15 (owner-approved bean triage)
+
+Parent `(none)` → `qou-5vkl`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.

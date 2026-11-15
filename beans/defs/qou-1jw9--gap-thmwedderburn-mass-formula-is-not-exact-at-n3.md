@@ -117,7 +117,7 @@ THERE IS NO RIGHT HELPER — atom_gen_chains returns 2 chains for every (Z,N)
 and is an H_3-shaped approximation, explicitly disclaimed for this formula.
 
 TWO SEPARATE DEFECTS FOUND, both actionable, neither fixed here:
-  a) content/quantum-observable-universe/observations/
+  a) folio/quantum-observable-universe/observations/
      neutron-proton-mass-splitting-proof.md:35 still asserts
      "**Witness**: atom-mass-complete-wedderburn.witness.json" with NO
      caveat. The sibling wedderburn-mass-formula-proof.md:143 was rescoped;
@@ -474,7 +474,7 @@ weaker one.
 Merged to main as dc72e4494 (PR #5771, rebase-merge; #5758 closed as superseded,
 branch retained per rule 9).  On main now:
   computations/wedderburn_beta3_provenance_probe.py
-  content/quantum-observable-universe/lean/QOU/Mass/WedderburnMassFormulaCoefficients.lean
+  folio/quantum-observable-universe/lean/QOU/Mass/WedderburnMassFormulaCoefficients.lean
 
 UNCLAIMING deliberately (status -> todo).  I am no longer working this, and a
 bean left at in-progress reads as an ACTIVE CLAIM -- which is what triggered

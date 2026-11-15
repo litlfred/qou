@@ -49,7 +49,7 @@ tl_cable.rs:13 sets A = q^(-1/2) and delta = -A^2 - A^-2; and q - z_D = 1/delta.
 
 ## CONFIRMED DEFECT SITES -- each says 1/delta and supplies the sqrt(q) number
 
-  1. content/quantum-observable-universe/mass-theory/
+  1. folio/quantum-observable-universe/mass-theory/
      h3-markov-wenzl-weights-context.md:69
        "The stipulated value 1/(q^{1/2}+q^{-1/2}) is the Temperley-Lieb loop
         reciprocal 1/delta -- correct for the TL generator e_i"
@@ -59,7 +59,7 @@ tl_cable.rs:13 sets A = q^(-1/2) and delta = -A^2 - A^-2; and q - z_D = 1/delta.
        "Value = delta^-1 (Temperley-Lieb loop reciprocal) where the TL trace
         parameter is delta^-2"
      THE CORPUS'S OWN DEFECT LEDGER CARRIES THE DEFECT.
-  3. content/quantum-observable-universe/mass-theory/
+  3. folio/quantum-observable-universe/mass-theory/
      reeb-linking-cwf-normalization.md:20
        "the exchange channel with the Markov conditional-expectation weight
         z = delta^{-1}"

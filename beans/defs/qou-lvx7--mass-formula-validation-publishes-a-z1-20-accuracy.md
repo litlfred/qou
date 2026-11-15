@@ -15,7 +15,7 @@ Surfaced by the qou-zzwm survey (owner question: "investigate 2.4 accuracy
 loss -- some other related issues?"). Filed separately because it is a
 MISSING-PRODUCER defect, not a convention one.
 
-THE CLAIM: content/quantum-observable-universe/observations/mass-formula-validation.md:41
+THE CLAIM: folio/quantum-observable-universe/observations/mass-formula-validation.md:41
 publishes "all beta-stable nuclei satisfy |Delta/M| < 0.04 %", with a Table 5
 spanning 1e-6 .. 0.04 %.
 

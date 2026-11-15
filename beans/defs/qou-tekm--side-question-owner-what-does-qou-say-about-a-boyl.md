@@ -19,7 +19,7 @@ a tranche on it.
 
 ## MEASURED: "Boyle" appears NOWHERE in the corpus
 
-`rg '[Bb]oyle'` over `content/quantum-observable-universe/**/*.md` returns **no
+`rg '[Bb]oyle'` over `folio/quantum-observable-universe/**/*.md` returns **no
 files**. So this is not a term the framework uses, and there is no existing block,
 audit or probe to pick up. Whoever takes this bean starts from the question, not
 from prior work.

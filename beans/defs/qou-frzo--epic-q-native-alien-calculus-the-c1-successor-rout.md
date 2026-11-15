@@ -1,11 +1,11 @@
 ---
 # qou-frzo
 title: 'EPIC: q-native alien calculus — the C1 successor route the RSZ closure names'
-status: in-progress
+status: todo
 type: epic
 priority: normal
 created_at: 2026-09-07T06:24:35Z
-updated_at: 2026-10-04T15:10:01Z
+updated_at: 2026-11-15T13:30:00Z
 parent: b9cj
 ---
 
@@ -399,3 +399,7 @@ size of the claim, and it must appear in any PR body.
 ## Reorganisation 2026-10-04
 
 Now the epic for P2.RES under UMBRELLA: open conjectures (formal mathematics only).
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

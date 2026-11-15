@@ -13,7 +13,7 @@ parent: qou-trd0
 
 FOUND while my own new Lean file took a §7c MIXED advisory it does not deserve.
 
-    content/quantum-observable-universe/lean/QOU/MathlibExt/MarkovUnusedGenerator.lean
+    folio/quantum-observable-universe/lean/QOU/MathlibExt/MarkovUnusedGenerator.lean
       [WARN §7c MIXED generic + archimedean -> split into two files per §7c]
          25:  far_comm : forall i j : N, i + 2 <= j -> sigma i * sigma j = sigma j * sigma i
          85:      by_cases hfar : g + 2 <= m

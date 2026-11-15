@@ -92,5 +92,5 @@ the same grounds. This bean is the diagnosis; the edge-direction calls are the
 owner's.
 
 Reproduce: parse `detangler-no-dependency-cycle` evidence out of
-`content/quantum-observable-universe/**/*.qa.json`, split each chain on `->`,
+`folio/quantum-observable-universe/**/*.qa.json`, split each chain on `->`,
 build the digraph, run Tarjan for SCCs with more than one node.

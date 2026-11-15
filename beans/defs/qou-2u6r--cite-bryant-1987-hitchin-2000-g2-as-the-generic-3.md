@@ -14,7 +14,7 @@ parent: qou-mub3
 **Class U — the fact is named in three places and the one citation attached to it
 does not contain it.**
 
-`content/quantum-observable-universe/lean/QOU/Eightfold/G2FrameDimensions.lean`
+`folio/quantum-observable-universe/lean/QOU/Eightfold/G2FrameDimensions.lean`
 defers three times to the same classical input:
 
 - `:46-47` — *"(The identity is arithmetic. That the stabiliser there **is** `G₂`

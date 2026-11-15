@@ -13,7 +13,7 @@ parent: qou-v2om
 
 ## What exists
 
-`content/quantum-observable-universe/lean/QOU/Mathlib/LPDuality.lean` now
+`folio/quantum-observable-universe/lean/QOU/Mathlib/LPDuality.lean` now
 carries FOUR sorry-free theorems (lean-direct exit 0; `#print axioms` on all
 four = `[propext, Classical.choice, Quot.sound]`, no `sorryAx`):
 

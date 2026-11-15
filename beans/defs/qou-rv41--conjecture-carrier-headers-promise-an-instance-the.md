@@ -15,9 +15,9 @@ MEASURED 2026-09-03 against origin/main d502ed06ce.
 
 THE DEFECT. Three conjecture carriers share one generated header boilerplate whose claims are false of the current files:
 
-  content/quantum-observable-universe/lean/QOU/Archimedean/BorelZagierQouVolumes.lean
-  content/quantum-observable-universe/lean/QOU/Archimedean/SingleVolumeIrrationality.lean
-  content/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/GActionOnSubstrate.lean
+  folio/quantum-observable-universe/lean/QOU/Archimedean/BorelZagierQouVolumes.lean
+  folio/quantum-observable-universe/lean/QOU/Archimedean/SingleVolumeIrrationality.lean
+  folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/GActionOnSubstrate.lean
 
 Each header says the class 'carries a placeholder field; the noncomputable instance is the conjectural witness whose sorry represents the open conjecture', and that the field schema is 'a structural placeholder; refine the fields to match the conjecture's actual content'. All three claims are false:
 

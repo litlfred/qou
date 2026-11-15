@@ -1,6 +1,6 @@
 ---
 # qou-nrty
-title: Cross-check 0806.3105v3.pdf at content/quantum-observable-universe/appendix-standard-model/sm-hyp…
+title: Cross-check 0806.3105v3.pdf at folio/quantum-observable-universe/appendix-standard-model/sm-hyp…
 status: todo
 type: task
 priority: normal
