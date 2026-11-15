@@ -502,3 +502,36 @@ counts that rest on the cited seminormal form); they are not formalised in Lean.
 - That left-multiplication `Sp(1)` is weak isospin. Scope (a).
 - Any map between quaternion sides and Hecke eigenlines.
 - An argument for the `> 1` root of the mass formula (§1.5a: none found; convergence points the other way).
+
+## 8. Does the corner asymmetry alternate with n, or with a sign? No: it is monotone (owner question, 2026-11-15)
+
+Probe: `computations/probes/corner_sl2_parity_probe.py` (all checks pass; exact SYT counts,
+sympy symbolic, mpmath 70 dps at the proton `q₀`).
+
+- **Exclusivity, by parity of n.** For each `n = 4…16` the probe lists the corner `sl₂`
+  carriers that convention D keeps. The right corner has **none** only at `n = 4`. From
+  `n = 5` on, the right corner keeps every two-row shape `(n−k, k)` with `k ≥ 2`, and the
+  left corner keeps those plus `(n−1, 1)`. Exclusivity does not return at even `n`, at
+  `n ≡ 0 (mod 4)`, or anywhere else in the range.
+- **The weighted ratio sequence.** `S_L/S_R` (computed for `n = 5…16`) **decreases
+  monotonically**. Every increment is negative: −0.779, −0.346, −0.177, −0.0960, −0.0537,
+  −0.0304, −0.0172, −0.00978, −0.00553, −0.00312, −0.00175. Every deviation from
+  `[3]_{q₀} = 3.0437` is positive, from 1.522 down to 0.00222, so the ratio approaches
+  `[3]_{q₀}` from above. The difference `S_L − S_R` **increases monotonically**, from 0.436
+  to 0.5053. None of the three sequences alternates.
+- **Transpose `λ ↔ λ'`** (the sign twist).
+  - It swaps the two line ranks, `a ↔ b`. This holds for every `λ`, `n ≤ 16`.
+  - Convention D is not transpose-symmetric. It kills the transpose of a two-row shape
+    exactly when that shape has ≥ 3 columns. The only kept transposes are two-column
+    shapes, such as `(2,2)`.
+  - My first version of this check claimed "always killed" for `n ≥ 4`. That was wrong:
+    `(2,2)` is its own transpose. The probe caught it, and the check now states the exact
+    condition.
+- **Root relabel `q ↦ −q⁻¹`.** At `z_D(−q⁻¹)` the line weights are `1 : [3]_q`: the bias
+  flips side and keeps the same size. At `n = 3` the relabelled weights are
+  `y_(3) = 0`, `y_(2,1) = q²/(q²+1)²`, `y_(1³) = (q⁴+1)/(q²+1)²`. That is exactly the
+  transpose of convention D: the all-q block is now the one that is killed.
+
+**Verdict: monotone, not alternating.** The only sign change anywhere is the single global
+L↔R swap under the root relabel or the transpose. That is the same one bit as §1.1, not
+an alternation in `n`.
