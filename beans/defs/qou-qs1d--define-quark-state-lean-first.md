@@ -7,7 +7,7 @@ priority: normal
 tags:
     - quark-state
 created_at: 2026-11-15T08:00:00Z
-updated_at: 2026-11-15T08:30:00Z
+updated_at: 2026-11-15T09:50:00Z
 parent: qou-qs0e
 ---
 
@@ -58,3 +58,6 @@ NF(γγ); (2,1) = the nucleon built from three of them. This is the owner's call
 
 Verified with lean-direct: exit 0; MarkovTraceOnHecke, HeckeH3AlgebraLaws and HeckeH3AlgebraInstance all
 recompile; #print axioms is clean on 21 checked theorems.
+
+## 2026-11-15 — owner: "try quark = strand, explore downstream" (PR #7823)
+`docs/audits/2026-11-15-quark-equals-strand-implications.md` + `QOU/SchurWeyl/QuarkStrandConsequences.lean` (lean-direct exit 0, std axioms). Proved: a factorised strand space (colour x spin x flavour) is not a Hecke rep at q>1 (crossing eigenvalues q^2,-1,q^-2 satisfy no quadratic) -> at most one factor is q-deformed; integer charge <-> triality (imported charges). Matches the constituent quark model at q=1; at q0 the corpus deforms isospin (conv D) while physics gauges colour. Nuclear ratio 33.7 = B_d / virtual-state energy: one-crossing ratio is (N+1)/(N-1) <= 3 in any SU(N) frame; owner decision (re-scope as ill-posed) framed in §4. Hypothesis, not a definition yet: quark = one strand's label.

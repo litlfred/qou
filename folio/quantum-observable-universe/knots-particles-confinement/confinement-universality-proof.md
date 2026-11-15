@@ -1,10 +1,3 @@
 ## Proof
 
-The derivation chain has two stages:
-
-1. **Pair production:** $\gamma_k \cdot \gamma_k'$ produces a 6-component NF vector with coefficients depending on $\varphi_0, \varphi_1, \varphi_{01}$.
-2. **Confinement:** $\mathcal{B}_3 \cdot C(f_1, f_2; \sigma_0) \cdot C(f_1, f_3; \sigma_0) \cdot C(f_2, f_3; \sigma_1)$.
-
-Stage 2 takes only the quark types ($\mathfrak{u}$ or $\mathfrak{d}$) as input, not the photon color weights. The quark extraction from the pair production NF selects the crossing channel ($\sigma_0$ for up, $\sigma_0 - \tfrac{1}{2}h_{\mathrm{A}}$ for down). These typed crossings are fixed by the quark flavor and do not depend on $\varphi$.
-
-Therefore, the confinement computation $\mathcal{B}_3 \cdot \mathrm{crossings}$ is identical for all photon polarizations. The photon initial conditions determine which quark type is produced at each vertex. Once the quark types are fixed, the nucleon NF is determined by $q$ alone.
+The confinement word $\mathcal{B}_3 \cdot C(f_1, f_2; \sigma_0) \cdot C(f_1, f_3; \sigma_0) \cdot C(f_2, f_3; \sigma_1)$ is built from the braid $\mathcal{B}_3$ and the typed crossings $C(f_i, f_j; \sigma)$. Each typed crossing is fixed by the flavour pair and the generator, and none of them contains a photon coefficient. Its normal form is therefore a function of $q$ and $f$ alone, and $\mathfrak{N}(\varphi_0, \varphi_1, \varphi_{01}) = \mathfrak{N}_f$ for every value of the photon coefficients. The argument uses no property of the coefficient ring.

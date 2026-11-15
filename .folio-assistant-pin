@@ -253,4 +253,27 @@
 # folio-assistant/cat-harness-tools/schemas/<group>/<x>, in the same commit,
 # because neither spelling resolves at the other pin. No maths content changed.
 #
-b61e85669af5e43b7f5f63c7cc69c291ca1a2600
+#
+# BUMPED 2026-11-15 to 82b389982 (platform main), bean qou-4jhp, owner ruling P1 = B
+# relayed by the qou-s4ws coordinator. Why: at b61e856 qa-sweep cannot load. The lock
+# mounts folio-assistant-sci@1e31c506, which still imports
+# cat-harness/schemas/kg/cat-harness (moved by 8lcl); the sci fix 689a0e7 first
+# enters a platform lock at a6e58846b.
+#
+# Same corpus (qou 4d63b18f5), `run-validate folio/quantum-observable-universe`:
+#
+#     b61e856, qou unchanged          ->  "16 issue(s)"
+#     82b389982, qou unchanged        ->  CRASH: lean-formal-ref moved
+#                                          cat-harness-tools/pipeline -> folio-assistant-sci/pipeline
+#     82b389982, + the 2 imports below ->  "16 issue(s)", the 16 lines IDENTICAL to b61e856's
+#
+# Re-pointed in the same commit (neither spelling resolves at the other pin):
+# scripts/run-validate.ts, scripts/preload-registry.ts (lean-formal-ref) and
+# folio/pipeline/qa-agent-entry.ts (lean-signature), all to folio-assistant-sci/pipeline/.
+#
+# KNOWN BREAK, not present at a6e58846b: platform 0c5468ac46 (2026-11-10) DELETED
+# .github/workflows/publish.yml, so build.yml's `uses:` below names a file that does
+# not exist at this sha. build.yml is dispatch-only and its last run (2026-06-30)
+# failed, so nothing runs it today, but it is qou's only paper-render entry point.
+#
+82b389982a73701b77f723d34d42c77acf41b5b4

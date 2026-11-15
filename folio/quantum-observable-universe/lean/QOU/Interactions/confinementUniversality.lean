@@ -8,6 +8,14 @@ import Mathlib.Tactic
 
 This module states the manuscript claim conditional on the §3b hypothesis class.
 
+**Definitional reading (owner E1 = (a), 2026-11-15, bean `qou-qs2u`).** The quark
+flavours are an input to the confinement stage, and the confinement word contains no
+photon coefficient. So the class is satisfied **by construction** whenever the nucleon NF
+is computed from a fixed flavour assignment: `ofFlavourInput` builds the instance. The
+class is not a physical decoupling hypothesis, and nothing here derives asymptotic
+freedom. The substantive question, which photon states produce a given flavour
+assignment, is separate and open.
+
 **Coefficient ring (bean `qou-qs2u`, owner D2, 2026-11-15).** The context is
 parametrised by the coefficient type `K` of the photon polarisation and the type `M` of
 the nucleon NF. Nothing in the statement or proof uses any structure of `K`; until
@@ -41,30 +49,11 @@ class ConfinementUniversalityConjecture {K M : Type*} [Zero K]
   /-- General polarization case equals reference. -/
   h_N_F : ∀ φ_0 φ_1 φ_01 : K, ctx.N_F φ_0 φ_1 φ_01 = ctx.N_F_zero
 
-/-- **Proposition statement** (from manuscript):
-
-Let $\gamma_k = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1$ be a 4-term photon
-([Breit--Wheeler](#def:breit-wheeler-pair-production)).
-Let $\mathfrak{N}(\varphi_0, \varphi_1, \varphi_{01})$ denote the
-nucleon NF obtained by the derivation chain
-([4-term pair nucleon](#prop:four-term-pair-nucleon)):
-$\gamma\gamma \to q\bar{q} \to \mathcal{B}_3 \cdot \mathrm{crossings} \to \mathfrak{N}$.*
-
-*Then for all $\varphi_0, \varphi_1, \varphi_{01} \in \mathbb{R}$:*
-
-$$
-  \mathfrak{N}(\varphi_0, \varphi_1, \varphi_{01})
-  =
-  \mathfrak{N}(0, 0, 0)
-  =
-  \mathrm{NF}(\mathcal{B}_3 \cdot \mathrm{crossings}).
-$$
-
-*The nucleon NF depends only on $q$ and the quark flavor assignment.*
-
-## Proof
-
-The Lean encoding below derives the equality from the hypothesis class. -/
+/-- **Proposition statement** (from manuscript, definitional reading): with the quark
+flavours `f` supplied as input, the nucleon NF of the chain
+`γγ → q q̄ → B₃ · crossings` does not depend on the photon coefficients
+`(φ₀, φ₁, φ₀₁)`, because the confinement word contains none of them. It depends only on
+`q` and `f`. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-universality.ts
 theorem confinementUniversality {K M : Type*} [Zero K]
     (ctx : ConfinementUniversalityContext K M)
@@ -72,6 +61,13 @@ theorem confinementUniversality {K M : Type*} [Zero K]
     ∀ (φ_0 φ_1 φ_01 : K), ctx.N_F φ_0 φ_1 φ_01 = ctx.N_F 0 0 0 := by
   intro φ_0 φ_1 φ_01
   rw [hc.h_N_F, hc.h_N_F_zero]
+
+/-- **True by construction.** A context whose nucleon NF is a fixed value `G`, the NF
+of the confinement word for a fixed flavour assignment, satisfies the class. -/
+theorem ofFlavourInput {K M : Type*} [Zero K] (Z N : ℕ) (G : M) :
+    ConfinementUniversalityConjecture
+      (⟨Z, N, fun _ _ _ => G, G⟩ : ConfinementUniversalityContext K M) :=
+  ⟨rfl, fun _ _ _ => rfl⟩
 
 /-- **Corollary (a one-line consequence of the class field `h_N_F`).** If a
 quantity `U` of the photon (for instance the chirality unit `u` read off the photon

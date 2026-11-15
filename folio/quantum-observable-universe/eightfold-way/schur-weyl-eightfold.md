@@ -104,6 +104,17 @@ textbook.  The eightfold-way classification is not "approximately available"
 at $N = 2$ --- it is structurally unavailable.  This is a scope-(b)
 exclusion, and the invariant justifying it is the Schur--Weyl row cap.
 
+**The $N = 2$ half of the duality is machine-checked.**
+`QOU/SchurWeyl/JimboActionKernel.lean` builds the Jimbo action of $H_n(q)$ on
+$V^{\otimes n}$ with $\dim V = 2$ and proves, sorry-free over an ordered field
+at generic $q$: the induced trace is the Markov trace with
+$z = q^3/(q^2+1)$ (`jimboTrace_eq_wtrace`); the kernel of the action is
+exactly the trace radical, i.e. the blocks with three or more rows
+(`ker_jimbo_eq_traceRadicalIdeal`); and the image has dimension the Catalan
+number (`finrank_range_jimbo_eq_catalan`). Surjectivity onto the
+$\mathcal{U}_q(\mathfrak{sl}_2)$ commutant is not claimed, and no $N \geq 3$
+action is formalised, so the $N = 3$ statement above remains cited.
+
 `decuplet_forces_three` and `singlet_forces_three` run from an
 *observed* channel dimension to $N = 3$; what the framework requires is
 $N = 3$ *supplied* by a construction.  That is the affirmative half, and it

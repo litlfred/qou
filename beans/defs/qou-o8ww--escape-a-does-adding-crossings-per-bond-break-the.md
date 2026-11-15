@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-01T08:27:18Z
-updated_at: 2026-09-01T08:30:52Z
+updated_at: 2026-11-15T10:10:00Z
 ---
 
 
@@ -76,3 +76,6 @@ proposed. Does NOT cover a bond that is a SUM of products, or one entangling the
 two nucleons' internal strands rather than acting on a single interface
 generator. The det-magnitude obstruction (A1-A3) is independent of the
 |mu| < 1 binding convention; the A5 ratio numbers are not.
+
+## 2026-11-15 — OWNER RULING (PR #7823): the 33.7 comparison is ILL-POSED
+A one-crossing coupling ratio (gl_N frame 1; SU(N) frame (N+1)/(N-1) <= 3) compared to B_d / E_virtual(1S0) = 2.224566/0.066 is a coupling-vs-energy category mismatch across the bound/virtual threshold, not a 33.7x miss. The 0.066 MeV itself is correct (effective-range np 1S0 pole, 0.0657 MeV). Probes quoting 33.7 left unedited (scriptHash). Follow-up: a derived coupling -> two-body binding step. See docs/audits/2026-11-15-quark-equals-strand-implications.md §4.

@@ -300,6 +300,7 @@ export default chapter({
             "active-set-trace-concentration",
             "markov-trace-frobenius-selection",
             "markov-trace-frobenius-selection-proof",
+            "convention-d-chirality-side",
             "trace-ledger",
             "categorical-trace-is-the-markov-trace",
             // Re-homed orphans: the min-Frobenius-norm collapse T_β = S·1
@@ -375,8 +376,9 @@ export default chapter({
             "electron-period-base-cohomology",
             "calibration-cohomology-alignment",
             "calibration-cohomology-alignment-proof",
+            "bar-involution-parity-decomposition",
+            "bar-involution-parity-decomposition-proof",
             "bar-parity-split",
-            "bar-parity-split-proof",
             "deuteron-binding-dressing-proton-net",
             "lr-coefficient-hecke",
             "hecke-1d-irrep-closed-form-character",

@@ -173,6 +173,32 @@ fi
 
 cd "$LEAN_DIR"
 
+# ── Early guard: a restored Mathlib cache is present (owner OK 2026-11-15) ──
+# The later guard (below) only runs AFTER `lake update` and `cache get`, inspects
+# only the FIRST mathlib tree that exists (the paper tree, which a root-level
+# restore leaves nearly empty), and only fires on a trace-free restore. The
+# current `lake-cache/qou-v4-24-0` restore is ~100% trace-paired and lands in the
+# ROOT tree, so on 2026-11-15 that guard never fired and every SessionStart and
+# resume walked into `lake update` / `cache get` / `lake build` over the top of a
+# verified 3480-olean restore (session PR #7823 killed it twice by hand).
+# Whether `lake build` evicts a TRACED restore is untested (AGENTS.md), so the
+# safe default is to not run it at all. Verify with lean-direct + LEAN_PATH.
+# Override with QOU_FORCE_LAKE_BUILD=1.
+if [ "${QOU_FORCE_LAKE_BUILD:-0}" != "1" ]; then
+    for tree in "$REPO_ROOT/.lake/packages/mathlib/.lake/build/lib/lean" \
+                "$LEAN_DIR/.lake/packages/mathlib/.lake/build/lib/lean"; do
+        [ -d "$tree" ] || continue
+        n_restored=$(find "$tree" -name '*.olean' 2>/dev/null | head -3001 | wc -l)
+        if [ "$n_restored" -gt 3000 ]; then
+            write_status "unavailable" \
+                "Restored Mathlib cache present ($tree, >3000 oleans) - skipping lake update/cache get/build so it is not evicted. Verify with lean-direct + LEAN_PATH (AGENTS.md); set QOU_FORCE_LAKE_BUILD=1 to override." \
+                "guard" 0
+            echo "lean-build-bg: restored Mathlib cache in $tree (>3000 oleans) - skipping lake; QOU_FORCE_LAKE_BUILD=1 overrides."
+            exit 0
+        fi
+    done
+fi
+
 # ── Step 0: local mathlib redirect (if configured) ──────────────
 if mathlib_local_available; then
     mathlib_enable_local_redirect

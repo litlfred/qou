@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns#"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-sl-n-color-framing",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:sl-n-color-framing",
+  "kind": "proposition",
+  "title": "The $\\mathrm{SU}(N)$ framing reproduces the one-gluon color factors",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-color-su3-from-g2"
+  ],
+  "cites": [
+    "references/kassel1995",
+    "references/jimbo1986"
+  ],
+  "leanRef": "qou:QOU.Braiding.SlNFraming.forced_framing_eq_inv",
+  "text": "sl-n-color-framing.md",
+  "provenance": "authored"
+}

@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T07:09:45Z
-updated_at: 2026-10-04T15:15:07Z
+updated_at: 2026-10-12T20:57:57Z
 parent: qou-v2om
 ---
 
@@ -830,3 +830,45 @@ points. test_guard_rejects_spurious.py now pins the rejecting direction.
   * Complex type is the NECESSARY condition the Sym^2 gate demands, NOT sufficient.
     Nothing here connects these representations to the eightfold's N=3 problem.
   * Classes 2-13 unsolved (c2 segfaulted on msolve's internal ceiling).
+
+## 2026-10-12 — §(xliii)'s own regression guard has NEVER RUN
+
+§(xliii) above records two silent bugs, the lesson that *"neither tool errored;
+both exited 0 with a confident sentence"*, and the repair: *"the calibration
+that should have caught the first (4_1) PASSED under the broken reduction …
+because I only ever tested that the guard ACCEPTS good points.
+`test_guard_rejects_spurious.py` now pins the rejecting direction."*
+
+**It does not. It cannot be collected, and never could have been.** Line 13 is
+
+    core = ast.literal_eval(open('L6a4_c1_q_sl5_P.res').read().strip().rstrip(':'))[1]
+
+at **module scope**, so it runs at import, before any test body. Measured on
+`main` `ab86909398b`:
+
+- **`L6a4_c1_q_sl5_P.res` does not exist anywhere in the repository**, and a
+  corpus-wide grep finds the string in exactly **one** place — that `open()`
+  call. Nothing generates it, nothing else references it.
+- The `.res` files that do exist are hyphenated and come from two producers
+  (`ptolemy_class_sweep.py:225`, `rur_exact_number_field.py:104`), both of
+  which resolve through `HERE = pathlib.Path(__file__).resolve().parent`. This
+  test is the only `.res` consumer in the tree using a **bare relative path**,
+  so it would additionally be cwd-dependent even if the file existed.
+- `python3 -m pytest computations/ --collect-only` →
+  `ERROR computations/ptolemy/test_guard_rejects_spurious.py - FileNotFoundError`.
+
+**So the guard written BECAUSE a calibration gave false assurance is itself
+giving false assurance**, and this bean is where the claim is recorded. That is
+§(xliii)'s own lesson one level up: a test that cannot run reports nothing, and
+reads from the ledger as though it reports something.
+
+**Not fixed here, deliberately.** Which file was meant is not recoverable from
+the corpus — the nearest present sibling is `L6a4_c1_fkr_p.res` (the only other
+underscore-named `.res`), and the hyphenated RUR outputs are a different shape.
+Guessing it would be exactly the speculative repair this bean's §(xliii) warns
+about. What is needed is the author's answer to *which `.res` is the degree-18
+RUR from the UNSATURATED reduction*, after which the fix is one line plus the
+`HERE /` idiom its two siblings already use.
+
+Found while running the first `pytest` on `computations/` on record; full
+measurement in `docs/audits/2026-10-12-first-pytest-run.md`.

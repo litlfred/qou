@@ -400,7 +400,7 @@
 | [prop:h2o-bond-angle-shift](#prop:h2o-bond-angle-shift) | Bent angle as a quadratic-well shift | Ch 16 | `qou:QOU.Molecular.bond_angle_shift` |
 | [prop:beta-decay-transfer-matrix](#prop:beta-decay-transfer-matrix) | Beta decay as a universal matrix-valued polynomial in $q$ | Ch 12 | `qou:QOU.Archimedean.BetaDecayTransfer.beta_decay_transfer_matrix` |
 | [prop:beta-stability](#prop:beta-stability) | Beta-stability line from the Skein binding Lagrangian | Ch 10 | `qou:QOU.Braiding.beta_stability` |
-| [prop:bar-parity-split](#prop:bar-parity-split) | Binding (cosh) and β-decay (sinh) are the two bar-parities of one element | Ch 12 | `qou:QOU.Mass.evenPart_add_oddPart` |
+| [lem:bar-involution-parity-decomposition](#lem:bar-involution-parity-decomposition) | Even/odd decomposition under a linear involution | Ch 12 | `qou:QOU.Mass.evenPart_add_oddPart` |
 | [prop:binding-alpha-shift-extension](#prop:binding-alpha-shift-extension) | Binding A≥3 via per-rep Reeb phase at a force-carrier torus knot | Ch 12 | `qou:QOU.BraidKnot.binding_unique_via_alpha_shift` |
 | [prop:binding-scale-catalan](#prop:binding-scale-catalan) | Binding energy scale $\alpha = m_e \times 8G$ | Ch 12 | `qou:QOU.BindingScale.bindingScale_value` |
 | [prop:isovector-chiral-residue](#prop:isovector-chiral-residue) | Binding isovector coefficient as the $W_\lambda$ chiral residue (conditional) | Mass and Binding Algorithms | `qou:QOU.BraidKnot.binding_isovector_mirror_from_chiral` |
@@ -460,7 +460,6 @@
 | [prop:qbeta-counit-closed-form](#prop:qbeta-counit-closed-form) | Closed form of the counit $Q$-value $\varepsilon(\Delta)\cdot\mathfrak{E}_0$ | Ch 10 | `qou:QOU.Interactions.QBetaEnergyScale.Qbeta_closed` |
 | [prop:q-codifferential-formula](#prop:q-codifferential-formula) | Closed formula for the $q$-codifferential $\delta_q$ | Ch 2 | `qou:QOU.QuantumGeometry.q_codifferential_formula` |
 | [prop:qbeta-c-k-closed-forms](#prop:qbeta-c-k-closed-forms) | Closed-form conjectures for $c_4, c_5, c_6, c_7$ in the $\mathfrak{Q}_\beta$ precision ladder: empirical pattern-matches to sub-percent residual; first-principles derivation open (Khovanov-Rozansky at finite $q$ or KLR canonical-basis trace) | Ch 7 | `qou:QOU.BraidKnot.QBetaCKClosedForms` |
-| [prop:sigma-shell-from-beta-chain-derivation](#prop:sigma-shell-from-beta-chain-derivation) | Closed-form derivation of $\sigma_{\mathrm{shell}}$ magnitude from compound $\beta$-decay chain Q-values | Ch 12 | `qou:QOU.BraidKnot.sigma_shell_from_beta_chain` |
 | [prop:h3-markov-wenzl-weights](#prop:h3-markov-wenzl-weights) | Closed-form Jones/Temperley–Lieb weights on $H_3(q)$ (Borromean Jones polynomial): $y_{(3)} = [4]_q/[2]_q^3$, $y_{(2,1)} = 1/[2]_q^2$, $y_{(1^3)} = 0$ | Ch 12 | `qou:QOU.BraidsAndKnots.h3_markov_wenzl_weights` |
 | [prop:hadron-operations-closure](#prop:hadron-operations-closure) | Closure of hadron operations under braiding, Hopf linking, skein action, and fusion | Ch 8 | `qou:QOU.Hadron.hadron_operations_closure` |
 | [prop:cohomological-embedding](#prop:cohomological-embedding) | Cohomological embedding: torus knot representations exhaust $H^1(\Sigma_g)$ | Ch 6 | `qou:QOU.Archimedean.cohomological_embedding` |
@@ -1187,6 +1186,7 @@
 | [conj:spin-from-so3-fiber](#conj:spin-from-so3-fiber) | Spin $\mathrm{SU}(2)_S$ from full $\mathrm{SO}(3)$ fiber action on color-sheet rotations | Ch 10 | `qou:QOU.BraidsAndKnots.SpinFromSo3Fiber` |
 | [conj:shell-transition-knot](#conj:shell-transition-knot) | Stability pairs from Borromean spin-orbit shell-transition knots | Ch 8 | `qou:QOU.Conjectures.ShellTransitionKnot` |
 | [conj:staircase-ew-residual](#conj:staircase-ew-residual) | Staircase EW-residual: $q^{1/(2k-1)}$ as pairwise eigenvalue ratio of $\beta_{\mathrm{EW}}$ on $V_{\rho_k}$ | Ch 12 | `qou:QOU.StaircaseCornerHook.StaircaseEWResidual` |
+| [conj:sigma-shell-from-beta-chain-derivation](#conj:sigma-shell-from-beta-chain-derivation) | Staircase-partition closed form for the $\sigma_{\mathrm{shell}}$ magnitude (convention C; identically zero under convention D) | Ch 12 | `qou:QOU.BraidKnot.SigmaShellFromBetaChainDerivation` |
 | [conj:sm-gauge-truncation](#conj:sm-gauge-truncation) | Standard-Model truncation: $\mathrm{SU}(3) \times \mathrm{SU}(2) \times \mathrm{U}(1)$ in the archimedean gauge image | Toward the Standard Model | `qou:QOU.StandardModel.StandardModelTruncation` |
 | [conj:rho-prefactor-structural](#conj:rho-prefactor-structural) | Structural prefactor rule: $\rho(\mathfrak{H}) = \dim_q(\lambda^*(T_w))$ | Ch 12 | `qou:QOU.BraidKnot.RhoPrefactorStructural` |
 | [conj:q-zero-stokes-region-identification](#conj:q-zero-stokes-region-identification) | Substrate $q_0$ identification via Stokes region of the generating function (over $\mathbb{Z}[q, q^{-1}]$) | Ch 10 | `qou:QOU.BraidKnot.QZeroStokesRegionIdentification.QZeroStokesIdentification` |

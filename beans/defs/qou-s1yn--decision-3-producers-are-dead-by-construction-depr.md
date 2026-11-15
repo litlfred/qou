@@ -1,13 +1,13 @@
 ---
 # qou-s1yn
 title: 'DECISION: 3 producers are dead by construction — deprecate, delete, or keep as tombstones?'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T14:56:18Z
-updated_at: 2026-10-04T15:18:37Z
+updated_at: 2026-11-15T09:45:00Z
 parent: qou-5vkl
 ---
 
@@ -73,3 +73,18 @@ question visible.
 
 **Default if nothing is decided:** state A holds for all three. They fail
 honestly, cost nothing, and mislead no one.
+
+## 2026-11-15 — decided and implemented (owner: "s1yn per recommendation")
+
+- **1-2 → B.** `compound_binding_via_differences.py` and `neutron_error_diagnostic.py`,
+  with their witnesses and `script-qa/neutron_error_diagnostic.script-qa.json`, are
+  parked byte-identical on the store branch `cat/cat-harness/fsh-guts` under
+  `fsh-guts/deprecated/computations/` (commit `b48da959ae8`, same layout as the
+  2026-10-10 cut-over, bean `qou-6u3n`) and removed from main. Read them with
+  `scripts/mount-fsh-guts.sh`.
+- **3 → A.** `probes/lambda_scale_homflypt_skein_recursion_probe.py` stays on main as a
+  tombstone; its deleted input has no recorded rationale, so the question stays visible.
+
+A fourth script with the same deleted input, `audits/deuteron_delta_i_audit.py`, was
+not in this bean. Owner chose option C for it the same day: rewritten as a probe of
+Δ_I(D) = tr_M(D)/(tr_M(p)·tr_M(n)) = 0.50823 = z_D + d_pn on canonical traces.

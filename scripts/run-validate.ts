@@ -19,7 +19,7 @@ import {
   CHAPTER_EXPECTED_REGIMES, CATEGORICAL_CHAPTERS, ARCHIMEDEAN_CHAPTERS,
   TERMS_NEEDING_DEFINITIONS, LEAN_MODULE_CHAPTERS,
 } from "../folio/values/chapter-profiles";
-import { configureLeanPackages } from "../folio-assistant/cat-harness-tools/pipeline/lean-formal-ref";
+import { configureLeanPackages } from "../folio-assistant/folio-assistant-sci/pipeline/lean-formal-ref";
 import { LEAN_PACKAGES } from "../schemas/lean-packages";
 import { validateObjects } from "../folio-assistant/cat-harness-tools/pipeline/validate";
 
