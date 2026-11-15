@@ -1,0 +1,36 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "masbaum2003",
+  "library": {
+    "docId": "agt-v3-n1-p17-p",
+    "dir": "library/agt-v3-n1-p17-p",
+    "pdf": "library/agt-v3-n1-p17-p/agt-v3-n1-p17-p.pdf",
+    "stage": "candidates",
+    "pages": 20,
+    "sections": 8,
+    "alternates": [
+      "0306345v1"
+    ]
+  },
+  "type": "article-journal",
+  "title": "Skein-theoretical derivation of some formulas of Habiro",
+  "author": [
+    {
+      "family": "Masbaum",
+      "given": "Gregor"
+    }
+  ],
+  "container-title": "Algebraic & Geometric Topology",
+  "issued": {
+    "date-parts": [
+      [
+        2003
+      ]
+    ]
+  },
+  "volume": "3",
+  "page": "537-556",
+  "DOI": "10.2140/agt.2003.3.537",
+  "URL": "https://doi.org/10.2140/agt.2003.3.537",
+  "note": "Second copy held at library/0306345v1/ (the arXiv version of the same paper). arXiv:math/0306345. Published companion to habiro2000: skein-theoretic derivation of Habiro's cyclotomic expansions for TWIST KNOTS (4₁ = K_{-1}, trefoil = K_1) — the source used by the corpus's Masbaum twist-knot cross-check (bean xcyc). Twist knots only; does NOT cover the Borromean rings. Added 2026-07-06 (ds4b, PR #3434)."
+}

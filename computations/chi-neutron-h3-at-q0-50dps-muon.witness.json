@@ -1,0 +1,63 @@
+{
+  "computation": "chi-neutron-h3-at-q0-50dps",
+  "description": "Numerical χ^λ_q(β_atomic(0, 1)) = neutron per partition λ ⊢ 3, evaluated at q = q_0 at 50 decimal places via the Hoefsmit seminormal basis. Companion to the symbolic chi-neutron-h3.witness.json emitted by per_irrep_pole_atom.py; this numerical cache is used by canonical_tr_m_via_chi_cache.py and the 3-way 1ppb cross-check (cross_check_trM_1ppb.py) when full symbolic data is not yet available. ~100× faster to build than the symbolic counterpart (no sympy poly arithmetic).",
+  "convention": "averaged-crossings",
+  "producer": "chi_at_q0_via_hoefsmit_mpfr.py",
+  "n_partitions_total": 3,
+  "partial": false,
+  "q_0_50dps": "1.109978595642739046681795129380001752700065561029011556974045769999095",
+  "dps": 50,
+  "n_strands": 3,
+  "atom": "neutron",
+  "Z": 0,
+  "N": 1,
+  "n_partitions": 3,
+  "compute_time_sec": "0.00",
+  "tr_M_at_q0": "0.47513351923652028398666578296885046887079244459737",
+  "weight_family": "markov_y_lambda_convention_D",
+  "by_partition": [
+    {
+      "partition": [
+        3
+      ],
+      "dim": 1,
+      "y_lambda": "0.50540422769832109562592733339027830963382034195281",
+      "chi_lambda": "1.1221068373444437007038750458738546008265350963143",
+      "contribution": "0.5671175395230741773629774811838537244765023157998",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        2,
+        1
+      ],
+      "dim": 2,
+      "y_lambda": "0.2472978861508394521870363333048608451830898290236",
+      "chi_lambda": "-0.37195635481675003310892115772273520361848164592046",
+      "contribution": "-0.091984020286553893376311698215003255605709871202428",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        1,
+        1,
+        1
+      ],
+      "dim": 1,
+      "y_lambda": "0.0",
+      "chi_lambda": "-0.91076220617481017512896859293597288063283584049813",
+      "contribution": "0.0",
+      "compute_time_sec": "0.00"
+    }
+  ],
+  "scriptFile": "chi_at_q0_via_hoefsmit_mpfr.py",
+  "scriptHash": "5c9e1e716bfd",
+  "scriptCommitSha": "9c1fccd54d0b6322d8e908706c79b8a7f7967392",
+  "commitSha": "b4642b7113e8f0c3cf080f64476efae0eca55204",
+  "engine": "python+mpmath",
+  "computedAt": "2026-10-13T18:59:15.068736+00:00",
+  "durationMs": 0,
+  "engineVersion": "python 3.13 + mpmath 1.4.1",
+  "q0Anchor": "muon",
+  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
+}

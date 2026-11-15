@@ -5,7 +5,7 @@
 Item 4b (PROPER) — Δ_n² discharge via LP-dual shadow-price extraction.
 
 Per term7-alpha5's `prop:frobenius-self-duality-forces-lp-dual-extraction`
-+ `prop:mass-formula-iterative-lp-dual`, the unified theorem says
++ `mass-formula-iterative-lp-dual`, the unified theorem says
 
   𝔪(ϱ) = Σ_{ℓ=0}^{ℓ_max} u^{(ℓ)*}(T_w)
   u^{(ℓ)*}(T_w) = m_e · tr_M(P_ℓ · T_w) / [n]_q!
@@ -40,6 +40,11 @@ character-table reduction); it is deferred to a follow-up script
 and explicitly noted in the witness output.
 
 Output: delta-n2-lp-dual-extraction.witness.json
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 

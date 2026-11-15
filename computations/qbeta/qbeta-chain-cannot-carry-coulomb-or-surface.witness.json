@@ -1,5 +1,6 @@
 {
   "computation": "qbeta-chain-cannot-carry-coulomb-or-surface",
+  "q0Anchor": "proton",
   "assertions": [
     {
       "name": "at_lead_the_chain_misses_over_97_percent_of_proton_pairs",
@@ -124,8 +125,8 @@
     "joint_R2": "0.9265690231"
   },
   "provenance": {
-    "headSha": "7adb05491f39297b15cfb4cc93f3a4212dae1b42",
+    "headSha": "eb645d81e7fe1646342513e676f6498caab4a229",
     "producer": "computations/qbeta/qbeta_chain_cannot_carry_coulomb_or_surface_probe.py",
-    "elapsed_s": 0.637
+    "elapsed_s": 0.74
   }
 }

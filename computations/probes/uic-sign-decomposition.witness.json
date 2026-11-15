@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+rust",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-14T18:02:54.408383+00:00",
-  "commitSha": "66f90be92131bfa6a0b7628113b5668ba668d23c",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T14:59:58.504718+00:00",
+  "commitSha": "cf13de45381038fe90515829757a2d4b8ed809af",
   "assertions": [
     {
       "name": "C_lambda >= 0 on every partition, to tolerance 1.0e-40",
@@ -105,8 +105,8 @@
   "durationMs": 6,
   "computation": "uic-sign-decomposition",
   "scriptFile": "uic_sign_decomposition_probe.py",
-  "scriptHash": "d514512bd0f9",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e51b3858966e",
+  "scriptCommitSha": "3e377a368384538adab53a835eab0fb1bf34ca67",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -114,14 +114,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -295,5 +295,7 @@
       "reconstruction_not_producer": "Sums are over |lambda| <= cap with ordering ['p']*Z + ['n']*N and one kernel call per partition; the producer uses the alternating ground-state ordering and its own k_exact ladder. Agreement is checked at 2H k=6 only.",
       "not_the_entanglement_result": "computations/meson/binding_cut_entropy_sign_is_forced_probe.py concludes 'the sign is forced' about entanglement entropy across the proton|neutron cut, where positivity is a theorem. Unrelated."
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

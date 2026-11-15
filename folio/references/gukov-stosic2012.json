@@ -1,0 +1,37 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "gukov-stosic2012",
+  "library": {
+    "docId": "arxiv-1112.0030v2",
+    "dir": "library/arxiv-1112.0030v2",
+    "pdf": "library/arxiv-1112.0030v2/1112.0030v2.pdf",
+    "stage": "candidates",
+    "pages": 46,
+    "sections": 7,
+    "arxiv": "1112.0030v2"
+  },
+  "type": "article",
+  "title": "Homological Algebra of Knots and BPS States",
+  "author": [
+    {
+      "family": "Gukov",
+      "given": "Sergei"
+    },
+    {
+      "family": "Stošić",
+      "given": "Marko"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2012
+      ]
+    ]
+  },
+  "container-title": "Geometry & Topology Monographs",
+  "volume": "18",
+  "page": "309-367",
+  "URL": "https://arxiv.org/abs/1112.0030",
+  "note": "arXiv:1112.0030v2 [hep-th], Geom. Topol. Monogr. 18 (2012) 309-367. Added 2026-08-02 from library/arxiv-1112.0030v2/1112.0030v2.pdf (authors verified from the arXiv title page: Sergei Gukov, Marko Stošić). The knot-homology ↔ BPS-states bridge: reduced/colored HOMFLY homology of a knot K is the space of **open** BPS states of the M5-brane on the conormal Lagrangian $L_K \\subset T^*S^3$ (§1–2; Appendix C computes the $H_3(4_1)$ colored homology of the figure-eight). For QOU: assessed as the candidate published conjecture licensing the G3 Stokes integer $A_\\omega = 3$. The non-degeneracy check (PR of 2026-08-02) finds the OPEN-HOMFLY count of $4_1$ is $\\det(4_1)=5$ (5 HOMFLY generators / 5-node quiver, via the knots–quivers correspondence kucharski-reineke-stosic-sulkowski2017), NOT the GGM resurgent-Stokes spectrum $\\{3,4\\}$ — a DISTINCT BPS sector. So this bridge does NOT license $A_\\omega=3$; the licensing conjecture is the closed / state-integral resurgent-Stokes = DT/BPS identification (garoufalidis-gu-marino2023peacock Conjecture 3(d) + gukov-pei-putrov-vafa2017)."
+}

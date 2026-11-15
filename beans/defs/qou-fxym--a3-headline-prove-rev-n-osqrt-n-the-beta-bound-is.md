@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-10T07:03:49Z
-updated_at: 2026-10-11T14:00:00Z
+updated_at: 2026-11-15T09:10:00Z
 parent: qou-3e6w
 ---
 
@@ -271,3 +271,73 @@ to be slack in the argument, and each one is removed by one discrete statement.
   - Try a shape that interpolates between `δ_k` and `δ_{k+1}` with `O(1)` pair-term cost, rather
     than adding corners one at a time.
 - After that, formalise the assembly, starting with the hook-sum = cell-weight identity.
+
+## 2026-10-12 — the excess is BOUNDED BELOW too: `e_n ≥ −K₃ = −21.955` for every `n ≥ 1`
+
+(Stream 4 of #7735, session_01PmZzY27QHceKGXwNivRt64; owner said "go" after #7731.)
+
+**Claim.** `e_n = M_n − A√(2n) ≥ −K₃`, with `K₃ = 3A/2 + 2B + C = 21.95521059677760`,
+where `B = Σ_{m≥0} m·ε(2m+1) = 5.18936914405934`, `C = Σ ε(m) = 6.17140572007914`. With #7731:
+
+    −21.955 ≤ e_n ≤ 85.366     for every n ≥ 1,
+
+i.e. **`M_n = A√(2n) + O(1)` two-sided.** Measured `e_n ∈ [−12.83, −5.10]` for `n ≤ 40` sits inside.
+
+**The shape.** For `n = T_k + r` take `λ_{k,r}` = `δ_k` with one outer corner on each of its
+**top `r` rows** = `δ_{k+1}` with row `r+1` deleted. Its β-set is the odd block
+`{1,3,…,2m−1}` (`m = k−r`) plus the even block `{2m+2,…,2k}`.
+
+**Why one corner at a time fails, and why this doesn't.** A single corner costs
+`2(A−E₂) − ε(1) = 0.4012`, so corners added independently lose `O(r)`. On the top `r` rows
+each pair of corners creates one doubly-shifted cell, whose loss is short of the two single
+losses by a second difference of ε; summed over gaps,
+`Σ_g [ε(2g−1) − 2ε(2g) + ε(2g+1)] = 2(A−E₂) − ε(1)` **exactly** — the loss is repaid.
+
+**The identity (exact).** From the β-set form `Σ_c ε(h) = Σ F(β_i) − Σ_{i<j} ε(β_i−β_j)` and the
+staircase hook multiset (Lean `staircase_hookSum`) twice:
+
+    Σ_c ε(h(λ_{k,r})) = A·k − 2B + rem_m + rem_r + X_{k,r},
+    rem_j = Σ_{m≥j}(m−j)ε(2m+1) ≥ 0,   X_{k,r} = Σ_{j=1}^r Σ_{s=j}^{m+j} ε(2s) ≥ 0.
+
+`λ_{k,r}` = `δ_k` + r outer corners attains `H_min(n)` (#7731 (A)), so `Ψ(λ_{k,r}) = Σε − F(n)
+≥ A·k − 2B − C`, and `2n ≤ k² + 3k < (k+3/2)²` gives the claim.
+
+**Evidence.** `computations/deltalambda/rev_bounded_excess_lower_bound_probe.py`, **6/6**, 12.6 s,
+mpmath 60 dps + exact integers; witness `computations/rev-bounded-excess-lower-bound.witness.json`.
+Closed form vs brute-force hooks on all 860 shapes `k ≤ 40, r ≤ k`: worst 4e-59. Bound checked by
+closed form for `n ≤ 20000` (min `−21.935`) and against exact `M_n` (full scan) for `n ≤ 40`.
+`λ_{k,r}` is within **1.02** of the true maximiser for every `n ≤ 40` (largest gap at `n = 34`).
+
+**What is NOT established.**
+- Not in Lean: the β-set closed form for `λ_{k,r}` (the staircase step it rests on is Lean).
+- Not the limit: `e_n → κ = −10.72317` remains MEASURED; only `−21.955 ≤ e_n ≤ 85.366` is proved.
+- Both constants are bounds, not values.
+
+**Status stays `todo`** per §13a: the convergence of `e_n` (the conjectured `κ`) is still open.
+
+**Lean (same day): the combinatorial step IS formalised.** `QOU/BraidKnot/StaircaseRowDeletedHook.lean`,
+sorry-free, `lean -DautoImplicit=false -s 65536` exit 0, axioms `[propext, Classical.choice,
+Quot.sound]`. `rowDeletedYD k r` (sublevel set `i+j<k ∨ (i<r ∧ i+j=k)`) and
+
+    rowDeleted_hookSum : Σ_{c∈λ_{k,r}} g(h(c)) = Σ_{δ_{k−r}} g(h) + Σ_{δ_r} g(h) + Σ_{i<r} Σ_{j≤k−r} g(2(k−i−j))
+
+for any `AddCommMonoid`: the hooks are a copy of `δ_{k−r}`, a copy of `δ_r`, and an `r × (k−r+1)`
+rectangle of EVEN hooks. This is the direct-hook form of the β-set identity above (rectangle =
+`X_{k,r}`). The ε-valued assembly (`rem ≥ 0`, `F ≤ C`, `√(2n) < k + 3/2`) stays in the probe.
+Issue #7745.
+
+## 2026-11-15 — independent confirmation (#7802), two lemmas ported
+
+#7802 (session `01RDZSaansT3gCHtnzymkVL7`, 2026-10-17) derived the same lower bound
+independently: the same family (δ_k plus its r top outer corners), the same hook split
+`hooks δ_r + hooks δ_{k−r} + 2·hooks(r × (k−r+1))`, and the same constant
+`K3 = 3A/2 + 2B + C = 21.955`. Its probe measured the family's worst deficit at −15.01, inside
+−K3. So the result here now has two independent derivations.
+
+On the owner's ruling (option B), #7802 is closed as superseded by #7750, with its branch kept.
+Its two lemmas that `main` lacked are ported into `StaircaseRowDeletedHook.lean` in this file's
+(k, r) form:
+- `rowDeleted_hookSum_ge`: for g ≥ 0, the two staircase hook sums are ≤ the shape's hook sum.
+- `rowDeletedYD_card`: the cell count is `T_{k−r} + T_r + r(k−r+1)`.
+
+The ε-valued assembly is still not in Lean, in either derivation. This bean stays open.

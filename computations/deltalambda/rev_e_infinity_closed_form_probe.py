@@ -450,6 +450,10 @@ _wit = {
     "computation": {"script": "computations/deltalambda/rev_e_infinity_closed_form_probe.py"},
     "bean": "qou-hok7",
     "anchor": "physical_proton",
+    # Canonical anchor key read by the q0 audits/ratchet (the "anchor" key above is
+    # a near-miss spelling they cannot see), plus scriptFile provenance.
+    "q0Anchor": "proton",
+    "scriptFile": os.path.basename(__file__),
     "q0Value": Q_50_DIGIT_STR,
     "description": (
         "Both pieces of e_inf -- the edge energy and the run -- are explicit convergent series "

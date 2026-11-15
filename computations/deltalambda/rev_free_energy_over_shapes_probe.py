@@ -272,7 +272,7 @@ def main() -> int:
         "bean": "qou-hok7",
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "q0Value": mp.nstr(Q0, 50),
-        "q0_anchor": "physical_proton",
+        "q0_anchor": "physical_proton", "q0Anchor": "proton",
         "dps": mp.dps,
         "identity": ("REV_n = log sum_{lambda|-n} exp(R_lambda - (H(lambda)-H_min) ln q0), "
                      "R_lambda = log term_lambda(q0) - (n^2-H(lambda)) ln q0, "

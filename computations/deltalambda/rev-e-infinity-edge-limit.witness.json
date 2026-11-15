@@ -1,11 +1,13 @@
 {
   "schema": "https://litlfred.github.io/qou/schemas/witness/v1",
-  "computedAt": "2026-09-14T06:14:42.933532+00:00",
+  "computedAt": "2026-10-13T14:15:36.921157+00:00",
   "computation": {
     "script": "computations/deltalambda/rev_e_infinity_edge_limit_probe.py"
   },
   "bean": "qou-hok7",
   "anchor": "physical_proton",
+  "q0Anchor": "proton",
+  "scriptFile": "rev_e_infinity_edge_limit_probe.py",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "description": "e_inf, the last unknown constant in the REV_n asymptotics, as a three-piece decomposition rather than a single-n measurement.  The maximiser's run of -1 has a FREE position (#7323), and a free position goes to infinity because displaced rows interact only through eps, which dies geometrically -- so at the optimum the run sits far from both blocks and the excess splits into three mutually non-interacting k-free pieces: e_inf = max over (s_t, s_b) of Xblock(s_t) + Xrun(s_t+s_b) + Xbot(s_b), the run length forced by sum u = 0.  That also explains #7331's non-additivity: two isolated edges each carry their own run, so their sum double-counts one run's interface.  Exhaustive over an explicit shape class -- a rigorous LOWER bound on the true e_k -- where the class is the shape #7305's full enumeration independently found at every k <= 12 and every one of its bounds is widened in E5.  NOT a proof that the limit exists: the upper bound on M_n is still open.",
   "constants": {

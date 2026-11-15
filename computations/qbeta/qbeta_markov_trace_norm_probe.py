@@ -343,7 +343,12 @@ def main() -> None:
         "x_L2_vs_x_M_at_q0",
         {
             "names": nf_names,
-            "x_L2": [str(v) for v in x_L2_at_q0],
+            # x_L2 is READ from the SDP witness, where it is a binary64 solver
+            # output. Echo the source text at its true precision; str() of the
+            # 50-dps sympy Float printed the double's expansion as if measured
+            # (float64-padding gate).
+            "x_L2": [repr(coords_witness[k]) if isinstance(coords_witness[k], float)
+                     else str(coords_witness[k]) for k in keys_unicode],
             "x_M": [str(v) for v in x_M_at_q0],
             "max_abs_diff": str(max_diff),
         },

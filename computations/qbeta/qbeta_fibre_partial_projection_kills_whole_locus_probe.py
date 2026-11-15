@@ -275,7 +275,7 @@ out = {
     "zeros_found": len(zeros_found),
     "degeneracy": deg,
     "q0": mpm.nstr(q0, 20),
-    "q0_pin": "proton (q_at)",
+    "q0_pin": "proton (q_at)", "q0Anchor": "proton",
     "dps": mp.dps,
     "assertions": RESULTS,
     "allPassed": all(r["passed"] for r in RESULTS),

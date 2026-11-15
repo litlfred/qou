@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-12T19:05:05.316394+00:00",
-  "commitSha": "694ebc51a880c1a8fb628e051c9d3c2fcbf55329",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T15:16:31.551979+00:00",
+  "commitSha": "266c147ee39666e932727287228d9e48d3b84a5c",
   "assertions": [
     {
       "name": "ladder factor x functional factor reproduces the total -- 1311.63 x 257.26 = 337429.0",
@@ -64,7 +64,7 @@
   "computation": "qbeta-zd-gap-anatomy",
   "scriptFile": "qbeta_zd_gap_anatomy_probe.py",
   "scriptHash": "c5a35c6dc0eb",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -72,14 +72,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -148,5 +148,7 @@
       "binding_channel_still_convention_C": "qou-46ys",
       "E0_two_live_forms": "unified per owner 2026-09-12, qbeta_e0.py"
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,0 +1,25 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "pedersen1995",
+  "type": "article-journal",
+  "title": "Stieltjes Moment Problems and the Friedrichs Extension of a Positive Definite Operator",
+  "author": [
+    {
+      "family": "Pedersen",
+      "given": "Henrik Laurberg"
+    }
+  ],
+  "container-title": "Journal of Approximation Theory",
+  "volume": "83",
+  "issue": "3",
+  "page": "289-307",
+  "issued": {
+    "date-parts": [
+      [
+        1995
+      ]
+    ]
+  },
+  "URL": "https://www.sciencedirect.com/science/article/pii/S0021904585711227",
+  "note": "Verified 2026-08-01 (ksel2id) via ScienceDirect listing (title/journal/volume/issue/pages/year confirmed; DOI not resolvable from the sandbox — proxy blocks Crossref/doi.org — so omitted rather than guessed). For an indeterminate Stieltjes problem the Friedrichs extension of the moment operator is identified inside the Nevanlinna parametrization; its spectral measure attains the largest smallest support point, and the Krein-side canonical solution contains 0. The identification input of the KSel-2-ID Friedrichs/Krein probe (ksel2id_friedrichs_selection_probe.py)."
+}

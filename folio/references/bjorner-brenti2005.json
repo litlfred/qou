@@ -1,0 +1,30 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "bjorner-brenti2005",
+  "type": "book",
+  "title": "Combinatorics of Coxeter Groups",
+  "author": [
+    {
+      "family": "Björner",
+      "given": "Anders"
+    },
+    {
+      "family": "Brenti",
+      "given": "Francesco"
+    }
+  ],
+  "publisher": "Springer",
+  "publisher-place": "Berlin, Heidelberg",
+  "issued": {
+    "date-parts": [
+      [
+        2005
+      ]
+    ]
+  },
+  "collection-title": "Graduate Texts in Mathematics",
+  "collection-number": 231,
+  "DOI": "10.1007/3-540-27596-7",
+  "URL": "https://doi.org/10.1007/3-540-27596-7",
+  "note": "Cited for Coxeter-group length and the Hecke T_w basis in QOU/Knot/HeckeTwBasis.lean, JetGradePromotion.lean, BlockLengthAdditive.lean and JetGradeLengthShift.lean. DOI taken from the citing Lean comment, which carries it inline."
+}

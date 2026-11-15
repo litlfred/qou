@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2406.05311v1/blocks/prose-sec-018",
+  "kind": "prose",
+  "title": "Products of trees",
+  "pageStart": 29,
+  "pageEnd": 30,
+  "text": "../sections/sec-018-58-products-of-trees.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2406.05311v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2406.05311v1",
+  "provenance": "ingested"
+}

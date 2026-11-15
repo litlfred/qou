@@ -1,0 +1,21 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "wenzl1988b",
+  "type": "manuscript",
+  "title": "Wenzl 1988 — placeholder (title/venue/pages to be verified)",
+  "author": [
+    {
+      "family": "Wenzl",
+      "given": "Hans"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        1988
+      ]
+    ]
+  },
+  "DOI": "10.1007/BF01393839",
+  "note": "PLACEHOLDER: only the DOI 10.1007/BF01393839 is verified (cited inline in delta-q-decoration.lean as a Wenzl 1988 work). The Springer 10.1007/BF... prefix suggests Invent. Math. or similar, NOT Annals of Math (which uses 10.2307 / 10.4007). Resolve DOI manually before publication. Distinct from wenzl1988 = Hecke algebras of type An (DOI BF01404457, Invent. Math. 92)."
+}

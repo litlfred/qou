@@ -59,11 +59,13 @@ import math
 import os
 import re
 import glob
+import sys
 from collections import Counter
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LIB = os.path.join(REPO, "library")
-REFS = os.path.join(REPO, "folio", "schema", "references.ts")
+sys.path.insert(0, os.path.join(REPO, "scripts", "lib"))
+import references_dir  # noqa: E402  -- folio/references/<id>.json (bean qou-l7pj)
 TRIAGE = os.path.join(REPO, "docs", "audits", "2026-08-15-library-uncited-triage.md")
 
 # Words that are technical but say nothing about *which* technical area.
@@ -85,28 +87,13 @@ def cited_docs() -> set[str]:
     `cites: [...]` in a `.ts` manifest, and a Lean `-- Ref: [key]`. Reading
     only the first would call a document uncited when a proof cites it.
     """
-    refs = open(REFS, encoding="utf-8").read()
-    # entry id -> doc-id, taken from each entry's `library:` block. Read by
-    # brace-matching from `ref({` rather than by a flat regex: `id` and
-    # `docId` sit in different nested objects, and a file-wide scan pairs
-    # them across entry boundaries.
+    # entry id -> doc-id, from each entry's `library` block
+    # (folio/references/<id>.json since bean qou-l7pj).
     id_to_doc: dict[str, str] = {}
-    for m in re.finditer(r"\bref\(\{", refs):
-        i = refs.index("{", m.start())
-        depth = 0
-        blk = ""
-        for j in range(i, len(refs)):
-            if refs[j] == "{":
-                depth += 1
-            elif refs[j] == "}":
-                depth -= 1
-                if depth == 0:
-                    blk = refs[i:j + 1]
-                    break
-        a = re.search(r'\bid:\s*"([^"]+)"', blk)
-        b = re.search(r'docId:\s*"([^"]+)"', blk)
-        if a and b:
-            id_to_doc[a.group(1)] = b.group(1)
+    for e in references_dir.entries(REPO):
+        d = (e.get("library") or {}).get("docId")
+        if d:
+            id_to_doc[e["id"]] = d
 
     keys: set[str] = set()
     for path in glob.glob(os.path.join(REPO, "folio", "**", "*.md"), recursive=True):

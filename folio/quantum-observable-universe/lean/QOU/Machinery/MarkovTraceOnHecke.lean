@@ -171,7 +171,21 @@ the symbolic preflight in `gram.py`'s `hm` convention, which also verified
 | 2 | `σ₁` | `(1)`     | `mulσ₁ u` |
 | 3 | `L₊` | `(1,0)`   | `mulσ₀ (mulσ₁ u)` |
 | 4 | `L₋` | `(0,1)`   | `mulσ₁ (mulσ₀ u)` |
-| 5 | `e⁻` | `(0,1,0)` | `mulσ₀ (mulσ₁ (mulσ₀ u))` | -/
+| 5 | `e⁻` | `(0,1,0)` | `mulσ₀ (mulσ₁ (mulσ₀ u))` |
+
+**Orientation trap (owner decision D3, 2026-11-15, bean `qou-qs1d`).** The labels
+`L₊`, `L₋` are `gram.NF_NAMES`, defined by `gram`'s product. `gram.hm` is LEFT
+multiplication with word concatenation, so `gram`'s index 3 is `σ₀σ₁ = L₊`.
+`mulNF` is the OPPOSITE product: `mulNF u v` is `v·u` in `gram`'s convention, and
+`mulσ₀`, `mulσ₁` are right actions only with respect to `mulNF`. Read in THIS
+product (the `H3A` ring), coordinate 3 is `σ₁·σ₀` and coordinate 4 is `σ₀·σ₁`
+(`QOU.QuarkState.s1_mul_s0`, `s0_mul_s1`). So `rem:knot-basis-color-content`'s
+`L₊ = σ₀σ₁`, computed with `mulNF`, lands at coordinate 4.
+
+No value moves either way: `H₃ ≅ H₃ᵒᵖ` under word reversal, which fixes the
+generators and swaps coordinates 3 and 4, and `TRM` is equal (`z²`) on both. Any
+use of the `L₊`/`L₋` NAMES together with `mulNF`/`H3A` products must state which
+orientation it means. -/
 def mulNF (h : R) (u v : Fin 6 → R) : Fin 6 → R := fun i =>
     v 0 * u i
   + v 1 * mulσ₀ h u i

@@ -254,7 +254,10 @@ def main() -> int:
                                           v["full_rel_vs_zD_2q_minus_1"].items()},
         } for k, v in steps.items()},
         "two_q_minus_1": s(two_q_m1), "zD_two_q_minus_1": s(Z_D * two_q_m1),
-        "wall_seconds": round(time.time() - T0, 1),
+        # Runtime duration: named from the declared vocabulary
+        # (qou_substrate.witness._EPHEMERAL_META_FIELDS) so the raw-float64
+        # ratchet reads it as runtime metadata, not as a payload float.
+        "elapsed_seconds": round(time.time() - T0, 1),
     }
     from qou_substrate.witness import WitnessBuilder as _WB
     witness.setdefault("scriptFile", os.path.basename(__file__))

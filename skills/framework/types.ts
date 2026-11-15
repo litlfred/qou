@@ -27,4 +27,4 @@ export type {
   HookCommand,
   RoleAssignment,
   SkillRegistry,
-} from "../../../folio-assistant/cat-harness/schemas/assistant-types.js";
+} from "../../../folio-assistant/cat-harness-tools/schemas/conduct/assistant-types.js";

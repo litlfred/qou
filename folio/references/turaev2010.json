@@ -1,0 +1,31 @@
+{
+  "$schema": "folio-reference/v1",
+  "_comment": [
+    "No arxiv mirror — the 1994 1st ed book + 2010 2nd ed are",
+    "both de Gruyter monographs, not deposited to arxiv. The",
+    "find-arxiv-mirrors.py search returned a phantom match",
+    "(q-alg/9409028) that 404s; URL field intentionally omitted."
+  ],
+  "id": "turaev2010",
+  "type": "book",
+  "title": "Quantum Invariants of Knots and 3-Manifolds",
+  "author": [
+    {
+      "family": "Turaev",
+      "given": "Vladimir G."
+    }
+  ],
+  "publisher": "Walter de Gruyter",
+  "issued": {
+    "date-parts": [
+      [
+        2010
+      ]
+    ]
+  },
+  "edition": "2",
+  "collection-title": "De Gruyter Studies in Mathematics",
+  "collection-number": 18,
+  "DOI": "10.1515/9783110221831",
+  "URL": "https://arxiv.org/abs/q-alg/9409028"
+}

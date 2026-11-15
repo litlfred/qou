@@ -1,17 +1,38 @@
 {
-  "elapsed_seconds": 348.621399968,
+  "elapsed_seconds": 430.502659274,
   "engine": {
     "name": "hecke-modular",
     "version": "0.11.0"
   },
-  "f_pauli_f64": 0.13348103197706362,
+  "f_pauli_f64": 0.13347888852278378,
+  "generation": {
+    "argv": [
+      "hecke-modular",
+      "9",
+      "10"
+    ],
+    "binary": "hecke-modular",
+    "commit": "33d54fd71b",
+    "engine_version": "0.8.0",
+    "q0": 1.1099785827513808,
+    "q0_pin": "proton",
+    "reproduce": "cargo run --release --bin hecke-modular -- 9 10"
+  },
   "isotope": {
     "a": 19,
     "n": 10,
     "symbol": "f",
-    "z": 9,
-    "name": "19F"
+    "z": 9
   },
-  "net_f64": -169330350931035.5,
-  "tr_alt_f64": 22602389987312.957
+  "l1_norm_f64": 2.437485062071183e+17,
+  "net_f64": -169317520298581.25,
+  "tr_alt_f64": 22600314416888.504,
+  "tr_markov_d": {
+    "computed": true,
+    "value": "0.0000445571132742366303398408904292610857578602489531211737921857",
+    "method": "two-row seminormal characters up the Hecke tower, diagonal-only (hecke-tower-trace, MPFR at 80 and 70 digits); agrees with the Python tower probe to >= 59 digits on all 63 isotopes both compute",
+    "z": "q^3/(q^2+1)",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "normalisation": "divided by 2^pn_count, like the *_f64 fields"
+  }
 }

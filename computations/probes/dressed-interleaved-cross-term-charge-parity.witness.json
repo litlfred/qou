@@ -7,7 +7,8 @@
     "harness": "computations/probes/markov_trace_n4_interleaved_cross_term_probe.py route_rep",
     "why": "qou-brng closes the Ocneanu trace family (rank bound), the magnitude (cyclic_trace_kills_iterCommTower), mu-bar_123 (channel-blind) and the whole linking-data class (lk IS I_3, both channels at I_3 = 0). Its closure note leaves open 'an invariant reading the braid word beyond its linking data', and the multiplicativity defect is such an object."
   },
-  "q0Anchor": "physical_proton",
+  "q0Anchor": "proton",
+  "q0AnchorReason": "Physical-Observations layer (manifest key physical_proton): q0 = Q_50_DIGIT_STR, the proton m_p/m_e pin",
   "convention": "D (z = q^3/(q^2+1))",
   "mirror_map": "d -> -h - d  (p<->n on each bond; exchanges d_pp=0 and d_nn=-h)",
   "verdict": {
@@ -160,5 +161,5 @@
     }
   ],
   "free_parameters": 0,
-  "computedAt": "2026-09-14T18:36:35.185160+00:00"
+  "computedAt": "2026-10-13T11:32:32.168922+00:00"
 }

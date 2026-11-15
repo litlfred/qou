@@ -1,10 +1,10 @@
 {
  "schema": "witness/v1",
- "computedAt": "2026-09-13T14:13:19.224683+00:00",
+ "computedAt": "2026-10-13T11:36:02.993783+00:00",
  "engine": "mpmath",
  "scriptFile": "gamma_gamma_bond_is_pair_independent_probe.py",
- "commitSha": "a100f6722bf6e03bee9de5da7c2d67968f9c8f04",
- "q0Anchor": "physical_proton",
+ "commitSha": "e43d2617f2eb8c43ce6147ff3b80b6fd25343bed",
+ "q0Anchor": "proton",
  "q0AnchorReason": "seeded from Q_50_DIGIT_STR; convention D (z = q^3/(q^2+1))",
  "description": "Measures whether the gamma-gamma-selected bond G^3 = (sigma_2 sigma_3^-1)^3 gives a PAIR-DEPENDENT bond factor, and evaluates the Lean-proved chain sign condition b3 = -((f01-1)(f12-1)) on both A=3 chains. Decides Option 1 of qou-brng at the qou-ales / qou-q8vl junction: a pair-INDEPENDENT bond word gives three equal bond factors and can never be sign-mixed. Nothing is tuned; the bond word is fixed by the owner's 2026-09-08 ruling.",
  "dps": 60,

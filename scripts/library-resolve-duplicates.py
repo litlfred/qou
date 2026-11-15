@@ -74,7 +74,8 @@ import sys
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LIB = os.path.join(REPO, "library")
-REFS = os.path.join(REPO, "folio", "schema", "references.ts")
+sys.path.insert(0, os.path.join(REPO, "scripts", "lib"))
+import references_dir  # noqa: E402  -- folio/references/<id>.json (bean qou-l7pj)
 LEDGER = os.path.join(REPO, "docs", "audits", "library-duplicate-ledger.json")
 
 
@@ -115,7 +116,7 @@ def confirmed_groups() -> tuple[list[list[str]], list[list[str]]]:
     return [sorted(v) for v in out.values() if len(v) > 1], rejected
 
 
-def facts(doc: str, refs: str) -> dict:
+def facts(doc: str, refs: set[str]) -> dict:
     sj = os.path.join(LIB, doc, "structure.json")
     art = {}
     if os.path.exists(sj):
@@ -127,13 +128,13 @@ def facts(doc: str, refs: str) -> dict:
     chars = sum((s.get("n_chars") or 0) for s in (art.get("sections") or []))
     return {
         "doc": doc,
-        "registered": f'docId: "{doc}"' in refs,
+        "registered": doc in refs,
         "arxiv": bool((md.get("arxiv") or {}).get("id")),
         "chars": chars,
     }
 
 
-def choose(group: list[str], refs: str) -> tuple[str, str]:
+def choose(group: list[str], refs: set[str]) -> tuple[str, str]:
     f = [facts(d, refs) for d in group]
     reg = [x for x in f if x["registered"]]
     if len(reg) == 1:
@@ -154,7 +155,9 @@ def main() -> int:
     ap.add_argument("--apply", action="store_true")
     args = ap.parse_args()
 
-    refs = open(REFS, encoding="utf-8").read()
+    # doc-ids some bibliography entry's `library` block names
+    # (folio/references/<id>.json since bean qou-l7pj).
+    refs = {(e.get("library") or {}).get("docId") for e in references_dir.entries(REPO)} - {None}
     groups, rejected = confirmed_groups()
     print(f"{len(groups)} confirmed same-work groups "
           f"({len(rejected)} pairs adjudicated different-work, left alone)\n")

@@ -1,0 +1,40 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "ggmw2020",
+  "type": "article-journal",
+  "title": "Resurgence of Chern-Simons theory at the trivial flat connection",
+  "author": [
+    {
+      "family": "Garoufalidis",
+      "given": "Stavros"
+    },
+    {
+      "family": "Gu",
+      "given": "Jie"
+    },
+    {
+      "family": "Mariño",
+      "given": "Marcos"
+    },
+    {
+      "family": "Wheeler",
+      "given": "Campbell"
+    }
+  ],
+  "library": {
+    "docId": "arxiv-2111.04763v2",
+    "dir": "library/arxiv-2111.04763v2",
+    "pdf": "library/arxiv-2111.04763v2/2111.04763v2.pdf",
+    "stage": "sections"
+  },
+  "container-title": "Communications in Mathematical Physics",
+  "issued": {
+    "date-parts": [
+      [
+        2025
+      ]
+    ]
+  },
+  "volume": "406",
+  "note": "Cited in QOU/QBeta/HabiroClassicalLimit.lean (eq 161). Identity CONFIRMED from the held PDF library/arxiv-2111.04763v2 -- authors Garoufalidis, Gu, Marino, Wheeler (GGMW), title exact. The citing key 'ggmw2020' and its inline expansion 'Gukov-Garoufalidis-Marino-Wheeler (2020)' were BOTH wrong: it is Garoufalidis-Gu-Marino-Wheeler, arXiv:2111.04763 (2021), CMP 406 (2025). Entry carries the true authors/year; the 'eq (161)' anchor is the citing author's and was not re-verified against the PDF this session."
+}

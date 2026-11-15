@@ -20,6 +20,18 @@ export default definition({
   authorNotes: [
     {
       kind: "status",
+      date: "2026-10-12",
+      body:
+        "**Braid classes (owner decision 1c, 2026-10-12; bean qou-ywyq).** The mass identity is stated on " +
+        "braid classes, braids modulo conjugation and positive or negative stabilisation, so the algebra " +
+        "covers it fully. Proved sorry-free in `QOU/Torsion/MassTraceMarkovClass.lean`: `artinTower` (the Artin " +
+        "braid groups as a Markov tower), `jonesTot_isMarkovInvariant` (the framing-corrected trace at " +
+        "$w = (1, q^2)$ respects both moves), `massClass` (its descent), `exists_wordBraid`, and " +
+        "`massClass_wordBraid` (the identity on classes). The passage from braid classes to links " +
+        "(Alexander–Markov) is cited, not proved, and is used by no statement.",
+    },
+    {
+      kind: "status",
       date: "2026-10-10",
       body:
         "**Typed and proved (bean qou-puwe, defect 1; goal milestone qou-ywyq).** The definition used to " +

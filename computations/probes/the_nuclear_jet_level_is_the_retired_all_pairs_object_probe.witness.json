@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T17:37:35.109152+00:00",
-  "commitSha": "f1e4e39fb38388fac6756dbaeef1d2ec77928673",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T16:18:22.405545+00:00",
+  "commitSha": "bd6cd22b8c7092ad8fd1ac2a69e2ff2b10ce48e2",
   "assertions": [
     {
       "name": "at A = 2 the quotient braid closes to the UNKNOT (J = 1) for every bond type and both averaged resolutions — the jet level multiplies the knot factor by 1, i.e. contributes nothing",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 8,
   "computation": "the_nuclear_jet_level_is_the_retired_all_pairs_object_probe",
   "scriptFile": "the_nuclear_jet_level_is_the_retired_all_pairs_object_probe.py",
   "scriptHash": "30bd662e9d7c",
-  "scriptCommitSha": "075d093b31a774e43a27b4c9f1dda101e5c5de25",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -66,14 +66,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e87a23f8d6fd6732"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -110,5 +110,7 @@
     "Both source blocks are labelled Conjecture. Neither is retracted here; the probe reports what they specify and what a well-posed reformulation would have to supply.",
     "The k -> infinity convergence claim of jet-convergence-classical-limit is NOT tested. Only the k = 3 exactness claim's weights are.",
     "No binding claim. B = alpha L remains the open interpretation of rem:bond-log-ratio-is-a-free-energy."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

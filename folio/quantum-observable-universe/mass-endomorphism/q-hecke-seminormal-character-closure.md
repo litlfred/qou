@@ -63,13 +63,19 @@ written down anywhere else; it is flagged for the owner in `qou-fq0f`.
 
 ## Numerical verification
 
-| Atom | $|\mathrm{tr}_M|$ (convention **D**, muon pin) |
+| Atom | $|\mathrm{tr}_M|$ (convention **D**, proton pin) |
 |---|---:|
-| Proton | $0.62932842249$ |
-| Neutron | $0.47513351767$ |
-| Deuteron | $0.15196834396$ |
-| Tritium | $0.02914404235$ |
-| ${}^3$He | $0.05859625835$ |
+| Proton | ${{ qou.computations.atomic-tr-m-mpfr-50dps-proton.results.0.tr_M_at_q0_50dps | precision: 11 }}$ |
+| Neutron | ${{ qou.computations.atomic-tr-m-mpfr-50dps-proton.results.1.tr_M_at_q0_50dps | precision: 11 }}$ |
+| Deuteron | ${{ qou.computations.atomic-tr-m-mpfr-50dps-proton.results.2.tr_M_at_q0_50dps | precision: 11 }}$ |
+| Tritium | ${{ qou.computations.atomic-tr-m-mpfr-50dps-proton.results.3.tr_M_at_q0_50dps | precision: 11 }}$ |
+| ${}^3$He | ${{ qou.computations.atomic-tr-m-mpfr-50dps-proton.results.4.tr_M_at_q0_50dps | precision: 11 }}$ |
+
+> **Pin moved muon → proton, 2026-11-15** (owner-approved; the proton pin is the compute default
+> by the 2026-08-07 directive). The values above are read from
+> `atomic-tr-m-mpfr-50dps-proton.witness.json`, the same producer at `q0Anchor: proton`. The muon-pin
+> values in the two history notes below differ from them by about $3 \times 10^{-8}$ relative (the $\mu$–p
+> substrate tension), so read those notes as muon-pinned records.
 
 > **Ordering corrected 2026-09-05** (`qou-hu1f`). Earlier the same day these
 > values were migrated C → D from `atomic-tr-m-mpfr-50dps.witness.json` — which
@@ -132,7 +138,7 @@ written down anywhere else; it is flagged for the owner in `qou-fq0f`.
 ## Production paths
 
 The values above come from the canonical Hoefsmit + Wenzl bridge,
-`atomic-tr-m-mpfr-50dps.witness.json`, under the production convention **D**.
+`atomic-tr-m-mpfr-50dps-proton.witness.json`, under the production convention **D** at the proton pin.
 
 The earlier claim that "all three paths agree at the precision floor of their
 respective layers" is **withdrawn as stated**: that agreement was measured

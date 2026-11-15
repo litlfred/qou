@@ -1,0 +1,32 @@
+{
+  "$schema": "folio-reference/v1",
+  "_comment": [
+    "URL field intentionally omitted: the previous URL",
+    "(numdam.org/item/AST_2002__278__R1_0/) resolved to the volume's",
+    "PRELIMINARY PAGES (front matter, pp. I-XII), not Zink's chapter.",
+    "The actual chapter URL is /item/AST_2002__278__<startpage>_0",
+    "- needs volume TOC lookup at numdam.org/issue/AST_2002__278__",
+    "to find the correct startpage. Until verified, no URL is",
+    "emitted; gen-bib-papers-list.py won't try to re-fetch the",
+    "wrong PDF."
+  ],
+  "id": "zink2002",
+  "type": "book",
+  "title": "The Display of a Formal p-Divisible Group",
+  "author": [
+    {
+      "family": "Zink",
+      "given": "Thomas"
+    }
+  ],
+  "publisher": "Société Mathématique de France",
+  "issued": {
+    "date-parts": [
+      [
+        2002
+      ]
+    ]
+  },
+  "collection-title": "Astérisque",
+  "collection-number": 278
+}

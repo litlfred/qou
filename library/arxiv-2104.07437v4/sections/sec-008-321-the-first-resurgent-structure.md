@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.972
 latex_coverage_ratio: 0.994
+doc_brief: "Peacock patterns and new integer invariants in topological string theory — Topological string theory near the conifold point of a Calabi–Yau threefold gives rise to factorially divergent power series"
 ---
 By using the free energies \eqref{eq:CF0-F0}--\eqref{eq:CF2-F0} we can construct the first asymptotic series for $N=1$ by
 

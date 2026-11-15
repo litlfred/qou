@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2504.18825v2/manifest.jsonld",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2504.18825v2",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-2504.18825v2",
+  "title": "Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications",
   "contains": [
+    "library/arxiv-2504.18825v2/sections/sec-front-matter",
     "library/arxiv-2504.18825v2/sections/sec-000",
     "library/arxiv-2504.18825v2/sections/sec-001",
     "library/arxiv-2504.18825v2/sections/sec-002",
@@ -21,12 +22,7 @@
     "library/arxiv-2504.18825v2/sections/sec-007",
     "library/arxiv-2504.18825v2/sections/sec-008",
     "library/arxiv-2504.18825v2/sections/sec-009",
-    "library/arxiv-2504.18825v2/sections/sec-010",
-    "library/arxiv-2504.18825v2/sections/sec-011",
-    "library/arxiv-2504.18825v2/sections/sec-012",
-    "library/arxiv-2504.18825v2/sections/sec-013",
-    "library/arxiv-2504.18825v2/sections/sec-014",
-    "library/arxiv-2504.18825v2/sections/sec-015"
+    "library/arxiv-2504.18825v2/sections/sec-010"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -39,7 +35,8 @@
   },
   "meta": {
     "doc_id": "arxiv-2504.18825v2",
-    "title_source": "slug",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "2504.18825v2.pdf",
     "source_sha256": "829f97190cb1c8adcc6c5fcfa347fc73b8fb5100ad16b2b8d8e2653c0a5d78a0",
     "pages": 56,
@@ -50,8 +47,8 @@
       "stamp_date": "11 Mar 2026"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

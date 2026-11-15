@@ -60,6 +60,7 @@ sys.path.insert(0, str(HERE.parent))
 mp.mp.dps = 50
 
 from qou_substrate.constants import M_E_MEV, Q_NEUTRON_MEV, q_at  # noqa: E402
+from qbeta_utils import c3_proton_extracted  # noqa: E402
 
 ME = mp.mpf(str(M_E_MEV))
 QEXP = mp.mpf(str(Q_NEUTRON_MEV))
@@ -129,8 +130,12 @@ def main() -> int:
     cand = -2 - mp.mpf(3) / 2 * W4
 
     ledger_target = mp.mpf("-2.06249")          # the ledger's own stated target
-    live_proton = mp.mpf("-2.0693425728")       # live extracted c_3, proton pin
-    live_muon = mp.mpf("-2.0202002328")         # live extracted c_3, muon pin
+    live_proton = c3_proton_extracted()         # live extracted c_3, proton pin (recomputed)
+    # NOT recomputed (out of scope of the 2026-10-13 proton trace): this muon literal
+    # is 2.2e-9 from the CODATA-2018 muon-pin extraction (-2.0202002350213) and
+    # 1.7e-4 from the live CODATA-2022 one (-2.0198603119); see the PR that added
+    # c3_proton_extracted.
+    live_muon = mp.mpf("-2.0202002328")         # extracted c_3, muon pin (typed)
 
     print("Convention C (the ledger's frame).  mpmath, 50 dps.\n")
     print(f"  q0 (proton)        = {mp.nstr(q_pr, 15)}")

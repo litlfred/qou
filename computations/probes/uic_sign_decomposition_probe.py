@@ -94,6 +94,10 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 
+# Module-scope constants below are built at import time; mpmath's default is
+# 15 dps, so raise it first (import-time dps ratchet).
+set_compute_dps()
+
 ATOMS = [(1, 1, "2H"), (1, 2, "3H"), (2, 1, "3He"), (2, 2, "4He"), (3, 3, "6Li")]
 CAPS_2H = (6, 8, 10)
 ZERO = mp.mpf("1e-40")

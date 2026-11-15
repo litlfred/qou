@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-12T19:00:45.989095+00:00",
-  "commitSha": "1e60488960e000b52c36c0de07bfafbe61be5ee6",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T14:33:24.377203+00:00",
+  "commitSha": "d6019fd4c044f86ed6c0ef36b5a6ea3244375302",
   "assertions": [
     {
       "name": "convex_combination_exact_1e_60",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "pn-betweenness-blocks-sign-mixed",
   "scriptFile": "pn_betweenness_blocks_sign_mixed_probe.py",
   "scriptHash": "9dfdf6376642",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -66,13 +66,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -84,6 +85,8 @@
   "caveats": [
     "NOT claimed: that no third bond family exists. Only that any such family must break the averaging of the pn letter or the affineness of tr_2. The binding magnitude (qou-brng) is untouched and nothing here is wired."
   ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0_proton": "1.10997858275138080759166909561",
   "convention": "D",
   "rows": [

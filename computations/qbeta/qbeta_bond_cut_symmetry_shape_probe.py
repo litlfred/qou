@@ -219,6 +219,7 @@ def main() -> int:
     print("\n" + ("ALL PASSED" if ok else "SOME FAILED"))
     witness = {
         "computation": "qbeta-bond-cut-symmetry-shape",
+        "q0Anchor": "proton",
         "assertions": a,
         "allPassed": bool(ok),
         "parameters": {"q0": mp.nstr(Q0, 30), "q0_pin": "proton", "dps": DPS,

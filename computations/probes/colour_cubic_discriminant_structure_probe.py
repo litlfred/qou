@@ -209,7 +209,7 @@ def main() -> int:
     print(f"\n{n_pass}/{len(checks)} checks pass")
 
     wb = WitnessBuilder("colour-cubic-discriminant-structure", _script_path=__file__)
-    wb.save({
+    wb.save({"q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal",
         "description": (
             "Structure of the colour-tube cubic's discriminant locus (the "
             "Bring-side divergent points) and a direct test of the "

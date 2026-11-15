@@ -1,0 +1,33 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "mathas1999",
+  "library": {
+    "docId": "hecke-alg",
+    "dir": "library/hecke-alg",
+    "pdf": "library/hecke-alg/hecke_alg.pdf",
+    "stage": "sections",
+    "pages": 78,
+    "sections": 1
+  },
+  "note": "PDF library/hecke-alg/ — the copy's own title page drops the 'Iwahori-' prefix this entry carries ('Hecke algebras and Schur algebras of the symmetric group'), which is why a title match does not join them.",
+  "type": "book",
+  "title": "Iwahori–Hecke Algebras and Schur Algebras of the Symmetric Group",
+  "author": [
+    {
+      "family": "Mathas",
+      "given": "Andrew"
+    }
+  ],
+  "publisher": "American Mathematical Society",
+  "issued": {
+    "date-parts": [
+      [
+        1999
+      ]
+    ]
+  },
+  "collection-title": "University Lecture Series",
+  "collection-number": 15,
+  "DOI": "10.1090/ulect/015",
+  "URL": "https://doi.org/10.1090/ulect/015"
+}

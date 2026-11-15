@@ -1,1 +1,1 @@
-For X smooth and proper over B, χ( X/B) is equal to the composition
+Let K = Q(ζ7)+. Let E be an elliptic curve deﬁned over K. Then E is modular.

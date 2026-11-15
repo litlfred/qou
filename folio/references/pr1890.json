@@ -1,0 +1,20 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "pr1890",
+  "type": "webpage",
+  "title": "Q_β bar-even kernel §4 formalize-first gate (Track A/B; bundled into the BarEvenKernel typeclass)",
+  "author": [
+    {
+      "literal": "QOU project (litlfred/qou)"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2026
+      ]
+    ]
+  },
+  "URL": "https://github.com/litlfred/qou/pull/1890",
+  "note": "Internal QOU pull request #1890. One of the four §4 formalize-first invariants (Tracks A + B) bundled by prop:q-beta-bar-even-kernel-typeclass into a single parametric Lean class. Cited by q-beta-bar-even-kernel-typeclass.lean."
+}

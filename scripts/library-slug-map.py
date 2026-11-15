@@ -45,7 +45,8 @@ Usage:  python3 scripts/library-slug-map.py [--json OUT]
 import argparse, json, os, re, sys, glob, collections
 
 LIB = "library"
-REFS = "folio/schema/references.ts"
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "lib"))
+import references_dir  # noqa: E402  -- folio/references/<id>.json (bean qou-l7pj)
 
 # Lines that are demonstrably not an author list. Every one of these was
 # observed in the tree; they are not hypothetical.
@@ -126,16 +127,15 @@ def year_from_docinfo(di):
     return None
 
 
-def bib_bindings(path):
-    """docId -> bib id, parsed from the references.ts ref({...}) blocks."""
-    src = open(path, encoding="utf-8").read()
+def bib_bindings(repo="."):
+    """docId -> bib id, and every bib id, from folio/references/<id>.json (bean qou-l7pj)."""
     out = {}
-    for b in re.findall(r"ref\(\{(.*?)\n  \}\)", src, re.S):
-        i = re.search(r'id:\s*"([^"]+)"', b)
-        d = re.search(r'docId:\s*"([^"]+)"', b)
-        if i and d:
-            out[d.group(1)] = i.group(1)
-    return out, set(re.findall(r'^\s*id:\s*"([^"]+)"', src, re.M))
+    entries = references_dir.entries(repo)
+    for e in entries:
+        d = (e.get("library") or {}).get("docId")
+        if d:
+            out[d] = e["id"]
+    return out, {e["id"] for e in entries}
 
 
 def main():
@@ -143,7 +143,7 @@ def main():
     ap.add_argument("--json", help="write the full map here")
     a = ap.parse_args()
 
-    bound, all_slugs = bib_bindings(REFS)
+    bound, all_slugs = bib_bindings()
     dirs = sorted(os.path.basename(p.rstrip("/")) for p in glob.glob(f"{LIB}/*/"))
 
     rows = []

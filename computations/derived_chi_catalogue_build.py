@@ -295,7 +295,28 @@ def derive_h3_knot(
             strand_count=3,
             chi_lambda_q_laurent=laurent_pairs(chi_21, q),
             mu_eigenvalues=["?", "?"],  # Hoefsmit follow-up commit
-            k_lambda=1,  # max-|μ| partition per prop:per-partition-k-lambda-rule
+            # 🛑 FITTED (selection against target), NOT DERIVED --
+            # strengthened 2026-10-10 from the weaker "BASIS OPEN" that
+            # stood here earlier the same day. The rule's originating
+            # probe (PR #639 cycle 5b, readable commit-pinned at
+            # 0763606e4f^:_deprecated/probes/probe_phiq_per_partition_klambda.py)
+            # states it as "k_lambda = 1 if lambda is the maximum-|contrib|
+            # outlier for the atom" -- i.e. it selects the block that
+            # DOMINATES the quantity being reproduced, which AGENTS.md
+            # §NO FITTING classifies as a fit with no parameter tuned.
+            # The "max-|μ|" label is separately wrong: for tritium the
+            # flipped block is [6,3] while max|μ| sits at [4,3,1,1].
+            # Its "closes" verdict meant |tower| < 2 and was never
+            # compared to AME, and three of its nine dominant-block
+            # entries were hardcoded rather than computed -- including
+            # deuteron's k=1 term, as a literal 0.0 "# negligible", which
+            # is the whole effect the rule has on that atom. See the
+            # corrected table in derived_chi_catalogue.py.
+            # Note mu_eigenvalues is ["?", "?"] here, so
+            # a max-|μ| rule could not have been evaluated at this site
+            # at all. Value unchanged; nothing reads it numerically.
+            # Deriving a real selector is bean qou-9f4h.
+            k_lambda=1,
             y_lambda_at_zero=(
                 "1/4" if knot_name == "borromean"
                 else "?"  # T18 result only covers Borromean; others later

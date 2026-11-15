@@ -67,8 +67,20 @@ open Real BigOperators
 
 /-! ## Convention parameters -/
 
-/-- Markov parameter `z = 1 / (q^(1/2) + q^(-1/2))` in the σ-convention
-    used in this paper (eigenvalues `q, -q⁻¹`). -/
+/-- Markov parameter `z_D = q^3 / (q^2 + 1)` in the σ-convention used in
+    this paper (eigenvalues `q, -q⁻¹`) — **convention D**, canonical by the
+    owner ruling of 2026-08-15 (R1).
+
+    This docstring read `z = 1 / (q^(1/2) + q^(-1/2))` until 2026-09-12, which
+    is **convention C** (`z_C(q₀) = 0.4993…` against `z_D(q₀) = 0.6127…`).
+    The name and the docstring agreed with each other and both disagreed with
+    the body one line down, which has always been `q^3/(q^2+1)`; only the body
+    was right. Agreement between two labels is not evidence about the third
+    thing — the `markovZc` case AGENTS.md records is the same defect.
+
+    The value here is the `z` at which `QOU.SchurWeyl.SeminormalRep`
+    `eq_wtrace_of_markov` identifies the unique Markov trace with the
+    Ocneanu/Wenzl weight family. -/
 noncomputable def jonesMarkovZ (q : ℝ) : ℝ :=
   q ^ 3 / (q ^ 2 + 1)
 

@@ -1,0 +1,148 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-15T08:23:52.389961+00:00",
+  "commitSha": "9225bee9db0c4bf5aa229ea317948e5207fce58f",
+  "assertions": [
+    {
+      "name": "B1_sl_exponent_is_twice_colour_factor_all_N",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "sl exponents = 2c_R, gl = 2c_R + 1/N, ratio -(N + 1)/(N - 1), =2 iff N in [3]"
+    },
+    {
+      "name": "B2_singlet_transparency_forces_q_minus_1_over_N",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "gl_N monodromy of V around Lambda^N_q is q^2 (explicit N=2,3; contents for all N); trivial singlet forces c = [q**(-1/N), (-1/q)**(1/N)]"
+    },
+    {
+      "name": "B3_e_max_over_3_is_the_sl3_framing",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "ratio(u=log q/3) = 2.0"
+    },
+    {
+      "name": "B4_both_arms_gl_ratio_1_sl_ratio_2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "gl_3 ratio 1.0, sl_3 ratio 2.0, signs preserved"
+    },
+    {
+      "name": "B5_sl2_framing_gives_3_not_nuclear_33p7",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "sl_2 ratio 3.0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "sl_n_framing_colour_factor_probe",
+  "scriptFile": "sl_n_framing_colour_factor_probe.py",
+  "scriptHash": "8d47599567ed",
+  "scriptCommitSha": "963140a79de0ddc5287c3506af153ddd23e92a0d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/sl_n_framing_colour_factor_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/sl_n_framing_colour_factor_probe.py"
+  },
+  "description": "The factor 2 in the level-3 colour-factor test (level_three_colour_channel_probe A4) is the u_1 part of gl_N = sl_N + u_1. The Hecke generator is the gl_N braiding; its exponents are 2c_R + 1/N where c_R = (C_2(R) - 2C_F)/2 is the QCD one-gluon colour factor. The SU(N) braiding q^(-1/N) sigma has exponents exactly 2c_R, giving ratio (N+1)/(N-1) = 2 at N = 3 with correct signs. The factor q^(-1/N) is forced, not fitted: in gl_N the monodromy of V around the q-antisymmetric line Lambda^N_q is q^2 (explicit Jimbo matrices N=2,3; Young contents all N), and requiring the colour singlet to braid trivially gives c^(2N) q^2 = 1, c = q^(-1/N). This is also the e = e_max/3 value already recorded by the level-3 probe A6. It does not repair the nuclear ratio (sl_2 gives 3, not 33.7).",
+  "data": {
+    "symbolic": {
+      "c_sym": "(N - 1)/(2*N)",
+      "c_anti": "-(N + 1)/(2*N)",
+      "sl_sym_eq_2c": "True",
+      "sl_anti_eq_2c": "True",
+      "gl_sym_eq_2c_plus_1/N": "True",
+      "gl_anti_eq_2c_plus_1/N": "True",
+      "ratio": "-(N + 1)/(N - 1)",
+      "sl_L_sum_over_logq": "2/N",
+      "ratio_2_iff_N": "[3]",
+      "c_sym_N3": "1/3",
+      "c_anti_N3": "-2/3"
+    },
+    "forcing": {
+      "N=2,q=3/2": {
+        "hecke": "True",
+        "braid": "True",
+        "dim_ker": "2",
+        "monodromy": "[9/4, 9/4]",
+        "q_squared": "9/4"
+      },
+      "N=2,q=7/5": {
+        "hecke": "True",
+        "braid": "True",
+        "dim_ker": "2",
+        "monodromy": "[49/25, 49/25]",
+        "q_squared": "49/25"
+      },
+      "N=3,q=3/2": {
+        "hecke": "True",
+        "braid": "True",
+        "dim_ker": "3",
+        "monodromy": "[9/4, 9/4, 9/4]",
+        "q_squared": "9/4"
+      }
+    },
+    "forcing_general_N": {
+      "exponent": "2",
+      "forced_c": "[q**(-1/N), (-1/q)**(1/N)]"
+    },
+    "arms_at_q0": {
+      "gl_2": {
+        "L_sym": "-0.10434072031951951232",
+        "L_anti": "0.10434072031951951232",
+        "ratio": "1.0"
+      },
+      "sl_2": {
+        "L_sym": "-0.052170360159759756158",
+        "L_anti": "0.15651108047927926847",
+        "ratio": "3.0"
+      },
+      "gl_3": {
+        "L_sym": "-0.10434072031951951232",
+        "L_anti": "0.10434072031951951232",
+        "ratio": "1.0"
+      },
+      "sl_3": {
+        "L_sym": "-0.069560480213013008211",
+        "L_anti": "0.13912096042602601642",
+        "ratio": "2.0"
+      }
+    }
+  },
+  "caveats": [
+    "Applying the SU(N) frame to colour observables is a modelling ruling (bean qou-sl3f), not established here. Rescaling sigma multiplies an unnormalised Markov trace of a word by c^writhe and shifts the Markov parameter z -> c z; it must not be applied to already-ruled gl/convention-D observables without an owner decision.",
+    "The identification of the two-strand Wedderburn blocks with 3bar and 6 is inherited from level_three_colour_channel_probe and is not constructed here."
+  ],
+  "q0Anchor": "proton",
+  "q0AnchorReason": "q0 enters only the B4/B5 numerical arms via q_parameter.q_at, which resolves to the proton pin (standing compute default, 2026-08-07 directive). B1-B3 are symbolic or exact-rational and q0-free.",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

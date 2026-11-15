@@ -46,9 +46,14 @@ Per AGENTS.md long-compute discipline:
     python3 -u _helium_habiro_coefficient_extract.py 2>&1 | tee /tmp/helium_habiro.log
 
 Ref: prop:full-pole-structure-mass-trace
-Ref: prop:constit-factor-tau-M-proton-identity
+Ref: `constit-factor-tau-M-proton-identity`
 Ref: closed_form_tau_M.py (canonical closed-form module)
 Ref: habiro_coefficients_atomic.py (cyclotomic expansion engine)
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 

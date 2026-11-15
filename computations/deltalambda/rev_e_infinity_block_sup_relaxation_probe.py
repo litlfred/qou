@@ -153,7 +153,12 @@ TMAX = int(os.environ.get("REV_BLOCK_SUP_TMAX", "12"))
 UMAX = mp.mpf(30)
 
 E_INF_7335 = mp.mpf("2.43929645512078402706542884314")
-INT_SUP = mp.mpf("2.1598023761182859616035304")        # #7349's enumerated max, at [4,3,2,2,1,1,1]
+# #7349's enumerated max (at [4,3,2,2,1,1,1]), READ from the witness that
+# measures it (rev-e-infinity-search-reduction, coercivity_S3.measured_B) rather
+# than typed (witness-value copy ratchet).
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                       "rev-e-infinity-search-reduction.witness.json"), encoding="utf-8") as _fh:
+    INT_SUP = mp.mpf(json.load(_fh)["coercivity_S3"]["measured_B"])
 B_SHARP = mp.mpf("3.92139923021415319458053")          # #7349's per-row uniform bound
 
 CHECKS: list[tuple[str, bool, str]] = []
@@ -749,6 +754,10 @@ _wit = {
         "script": "computations/deltalambda/rev_e_infinity_block_sup_relaxation_probe.py"},
     "bean": "qou-hok7",
     "anchor": "physical_proton",
+    # Canonical anchor key read by the q0 audits/ratchet (the "anchor" key above is
+    # a near-miss spelling they cannot see), plus scriptFile provenance.
+    "q0Anchor": "proton",
+    "scriptFile": os.path.basename(__file__),
     "q0Value": Q_50_DIGIT_STR,
     "description": (
         "The top-block value is CONCAVE in the displacement vector -- every internal term is "

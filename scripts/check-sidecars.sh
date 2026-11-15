@@ -123,7 +123,7 @@ for f in "${files[@]}"; do
         else
           echo "    ⚠ NO sidecar yet"; action=1
         fi
-        echo "    → refresh: bun run folio-assistant/cat-harness/content/pipeline/qa-sweep.ts $base"
+        echo "    → refresh: bun run folio-assistant/cat-harness-tools/pipeline/qa-sweep.ts $base"
       else
         # STANDALONE library Lean — covered by the per-block checker ONLY if some content
         # block's `lean.ref` resolves here (candidate-2); a library file referenced by NO
@@ -330,7 +330,7 @@ for f in "${files[@]}"; do
       else
         echo "    (no sidecar yet)"
       fi
-      echo "    → bun run folio-assistant/cat-harness/content/pipeline/qa-sweep.ts $base   (refresh stale criteria)"
+      echo "    → bun run folio-assistant/cat-harness-tools/pipeline/qa-sweep.ts $base   (refresh stale criteria)"
       ;;
     computations/*.py)
       echo "▸ $f  [compute producer]"
@@ -573,7 +573,8 @@ if printf '%s\n' "${files[@]}" | grep -qE '\.(ts|lean)$'; then
         --files "${citefiles[@]}" --strict 2>&1); then
     action=1
     echo "⚠ dangling citation key(s) in files you changed — add the entry to"
-    echo "  folio/schema/references.ts, or use a documented convention."
+    echo "  bibliography (folio/references/<key>.json + ORDER in folio/schema/references.ts),"
+    echo "  or use a documented convention."
     printf '%s\n' "$cite_out" | grep -A1 -E '^\s+[0-9]+\s+(ts-cites|lean-ref|md-cite)' | sed 's/^/    /'
   fi
 fi

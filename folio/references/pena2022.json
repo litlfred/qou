@@ -1,0 +1,24 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "pena2022",
+  "type": "chapter",
+  "title": "QGoL: A Quantum Game of Life",
+  "author": [
+    {
+      "family": "Pe\\~{n}a"
+    },
+    {
+      "literal": "others"
+    }
+  ],
+  "container-title": "Advances in Quantum Computation and Quantum Cellular Automata",
+  "publisher": "Springer Nature",
+  "issued": {
+    "date-parts": [
+      [
+        2022
+      ]
+    ]
+  },
+  "note": "Models Conway's Game of Life as a reversible quantum circuit with Toffoli-based neighbour-count logic."
+}

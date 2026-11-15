@@ -924,6 +924,7 @@ fn main() {
         let mid_stripped = !accum.net.is_zero() || !accum.net_by_len.is_empty();
         let base = |computed: bool| MarkovTraceD {
             computed, value: None, exact_z_t: None, reason: None,
+            method: computed.then(|| "v9: Ocneanu recursion on the strip-free T_w expansion".to_string()),
             z: "q^3/(q^2+1)".to_string(),
             q0: Q0_50.to_string(),
             normalisation: "divided by 2^pn_count, like the *_f64 fields".to_string(),

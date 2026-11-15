@@ -206,6 +206,7 @@ def main() -> int:
     out = HERE / "qbeta-covariance-kernel-slack.witness.json"
     out.write_text(json.dumps({
         "computation": "qbeta-covariance-kernel-slack",
+        "q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal",
         "assertions": a, "allPassed": bool(ok),
         "parameters": {"epic": "qou-x631", "bean": "qou-vilx",
                        "claim": "A/B ~ 0.59 against a threshold of 1: the conjecture has "

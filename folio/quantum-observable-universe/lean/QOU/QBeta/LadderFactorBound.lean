@@ -22,7 +22,7 @@ below 1.
 and `ladder_lt_of_one_le` extends that through any further rungs whose product
 lies in `(0, 1]`. `rung_lt_one` is why that hypothesis is met by this corpus's
 ladder: every `c_k` it records or derives is negative (`c_2 = −1` structural,
-`c_3 = −2.0693425728` recorded, `c_5 = −(b²+½)` derived), so every factor is
+`c_3 = −2.0693425771` recorded, `c_5 = −(b²+½)` derived), so every factor is
 below 1.
 
 **Consequence.** `qou-cds1`'s standing blocker — *"the blocker is still the N=1

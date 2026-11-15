@@ -296,7 +296,7 @@ def main() -> int:
         # tolerance would be meaningless: the evidence is an exact division in
         # Q[u], not an agreement to N digits.
         w.add_assertion(name, "PASS" if ok else "FAIL", "PASS", source=detail)
-    w.save()
+    w.save({"q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"})
     print()
     print(f"  Witness: gram-h3-supergolden-is-convention-c-artefact.witness.json")
     return 0 if all_ok else 1

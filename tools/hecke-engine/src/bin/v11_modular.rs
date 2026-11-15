@@ -373,7 +373,11 @@ fn main() {
     acc_alt = acc_alt.add(&ra); acc_net = acc_net.add(&rn);
 
     let elapsed = t0.elapsed().as_secs_f64();
-    let t_val = 1.10998_f64.sqrt();
+    // Certificate anchor: the PROTON pin, read from `gram::Q_0`. This was a
+    // local literal `1.10998`, which the 2026-08-15 re-pin never reached
+    // (the same defect v10_crt had), while `generation` below already
+    // recorded `gram::Q_0` -- so the certificate disagreed with itself.
+    let t_val = hecke_engine::gram::Q_0.sqrt();
     let div = 2.0_f64.powi(pn as i32);
     let alt_f = acc_alt.eval_f64(t_val) / div;
     let net_f = acc_net.eval_f64(t_val) / div;

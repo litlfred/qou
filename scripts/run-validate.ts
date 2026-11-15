@@ -11,12 +11,17 @@
 import { resolve } from "path";
 import { realpathSync } from "fs";
 import { execFileSync } from "child_process";
-import { configureValueRegistry } from "../folio-assistant/cat-harness/content/pipeline/value-registry-di";
-import { configureReferenceRegistry } from "../folio-assistant/cat-harness/content/pipeline/references-registry-di";
+import { configureValueRegistry } from "../folio-assistant/cat-harness-tools/pipeline/value-registry-di";
+import { configureReferenceRegistry } from "../folio-assistant/cat-harness-tools/pipeline/references-registry-di";
 import { WITNESSED_VALUES, lookupValue, verifiedNames } from "../folio/values/registry";
-import { configureLeanPackages } from "../folio-assistant/cat-harness/content/pipeline/lean-formal-ref";
+import { configureChapterProfiles } from "../folio-assistant/cat-harness-tools/pipeline/chapter-profile-registry-di";
+import {
+  CHAPTER_EXPECTED_REGIMES, CATEGORICAL_CHAPTERS, ARCHIMEDEAN_CHAPTERS,
+  TERMS_NEEDING_DEFINITIONS, LEAN_MODULE_CHAPTERS,
+} from "../folio/values/chapter-profiles";
+import { configureLeanPackages } from "../folio-assistant/folio-assistant-sci/pipeline/lean-formal-ref";
 import { LEAN_PACKAGES } from "../schemas/lean-packages";
-import { validateObjects } from "../folio-assistant/cat-harness/content/pipeline/validate";
+import { validateObjects } from "../folio-assistant/cat-harness-tools/pipeline/validate";
 
 // Inject the domain-specific registries into the generic platform.
 configureValueRegistry({
@@ -25,6 +30,16 @@ configureValueRegistry({
   verifiedNames,
 });
 configureLeanPackages(LEAN_PACKAGES);
+// qou's chapter profiles (bean folio-assistant-saqd). The platform's checker
+// module registers its own copy when it loads; this call runs after that
+// import, and the last call wins.
+configureChapterProfiles({
+  chapterExpectedRegimes: CHAPTER_EXPECTED_REGIMES,
+  categoricalChapters: CATEGORICAL_CHAPTERS,
+  archimedeanChapters: ARCHIMEDEAN_CHAPTERS,
+  termsNeedingDefinitions: TERMS_NEEDING_DEFINITIONS,
+  leanModuleChapters: LEAN_MODULE_CHAPTERS,
+});
 
 const args = process.argv.slice(2);
 const strict = args.includes("--strict");

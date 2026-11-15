@@ -48,7 +48,7 @@
   ],
   "checks_passed": 8,
   "checks_total": 8,
-  "computedAt": "2026-10-11T07:53:14.467532+00:00",
+  "computedAt": "2026-10-13T15:20:28.211248+00:00",
   "constants": {
     "A": "3.603377725719857264313303015738948753938",
     "A_sqrt2": "5.09594565006614074432446001423",
@@ -63,6 +63,7 @@
   "n_exact": 30,
   "n_scan": 40,
   "probe": "rev_sharp_coefficient_upper_bound_probe",
+  "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0_anchor": "physical_proton",
   "rate_scan": [

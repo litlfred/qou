@@ -1,0 +1,16 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "rothlemma-chapter",
+  "library": {
+    "docId": "roth-lemma",
+    "dir": "library/roth-lemma",
+    "pdf": "library/roth-lemma/roth_lemma.pdf",
+    "stage": "candidates",
+    "pages": 21,
+    "sections": 4
+  },
+  "type": "chapter",
+  "title": "Roth's Lemma",
+  "chapter-number": "5",
+  "note": "PDF library/roth-lemma/roth_lemma.pdf — AUTHOR AND CONTAINING BOOK UNIDENTIFIED — recorded as held rather than attributed, and the id breaks the <lastname><year> convention because neither input is known. `library/roth-lemma/` is a 21-page scan of 'Chapter 5 — ROTH'S LEMMA' from a book on Diophantine approximation; running heads number to p. 97, there is no title page, no author line and no imprint in the scan. Do not guess: several classic texts carry a chapter of this name. Needs a human pass to identify the book."
+}

@@ -136,6 +136,7 @@ _HERE = os.path.dirname(os.path.abspath(__file__))
 _COMPUTATIONS = os.path.dirname(_HERE)
 if _COMPUTATIONS not in sys.path:
     sys.path.insert(0, _COMPUTATIONS)
+import _path_bridge  # noqa: E402, F401 -- puts substrate/ (where _precision lives) on sys.path
 
 from mpmath import mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
@@ -449,6 +450,10 @@ _wit = {
         "script": "computations/deltalambda/rev_e_infinity_g1_bottom_edge_cap_probe.py"},
     "bean": "qou-hok7",
     "anchor": "physical_proton",
+    # Canonical anchor key read by the q0 audits/ratchet (the "anchor" key above is
+    # a near-miss spelling they cannot see), plus scriptFile provenance.
+    "q0Anchor": "proton",
+    "scriptFile": os.path.basename(__file__),
     "q0Value": Q_50_DIGIT_STR,
     "description": (
         "G1 -- Xbot(s) <= Xblock(s), the last conditionality on e_inf -- has one recorded "

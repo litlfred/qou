@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-07T18:03:12.173054+00:00",
-  "commitSha": "916e42f892fda3f524fd7b7e08fd1ac2d4e2729a",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T15:10:58.193356+00:00",
+  "commitSha": "266c147ee39666e932727287228d9e48d3b84a5c",
   "assertions": [
     {
       "name": "Delta_S_bar_odd_iff_admissible__z_1",
@@ -110,11 +110,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2384,
+  "durationMs": 3056,
   "computation": "qbeta-bar-odd-element-discriminator",
   "scriptFile": "qbeta_bar_odd_element_discriminator_probe.py",
   "scriptHash": "3d217693e505",
-  "scriptCommitSha": "916e42f892fda3f524fd7b7e08fd1ac2d4e2729a",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -122,14 +122,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -237,5 +237,7 @@
       "NOT_established": "(i) coefficients in Q(q) — bar acts on them too, and scaling a trace by f(q) rescales Q_beta, so it is a different physical claim, untested either way; (ii) that Delta_L can never be bar-odd for ANY z — its second branch is involution-consistent, so some INADMISSIBLE z may work, which is irrelevant to the physics but means the universal claim was not shown",
       "premise": "bar is p<->n conjugation, measured in qou-e58e over 11 nuclei; a p<->n DIFFERENCE should therefore be bar-odd. If that reading is wrong, the criterion loses its motivation and this becomes an observation about two rational functions."
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

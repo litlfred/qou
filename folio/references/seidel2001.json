@@ -1,0 +1,30 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "seidel2001",
+  "library": {
+    "docId": "arxiv-math-0105186v2",
+    "dir": "library/arxiv-math-0105186v2",
+    "pdf": "library/arxiv-math-0105186v2/0105186v2.pdf",
+    "stage": "candidates",
+    "pages": 71,
+    "sections": 45,
+    "arxiv": "math/0105186v2"
+  },
+  "type": "article",
+  "title": "A long exact sequence for symplectic Floer cohomology",
+  "author": [
+    {
+      "family": "Seidel",
+      "given": "Paul"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2001
+      ]
+    ]
+  },
+  "URL": "https://arxiv.org/abs/math/0105186",
+  "note": "PDF library/arxiv-math-0105186v2/0105186v2.pdf — arXiv:math/0105186v2, stamped 20 Jul 2002 ('Revised version, May 2002'); id year 2001 is the arXiv submission. THE long exact sequence of symplectic Floer theory, and the reason this upload matters: `pdf-structure.py` had extracted its title as 'Along exact sequence for symplectic Floer cohomology Paul Seidel' — the space in 'A long' welded shut and the byline absorbed — so it was invisible to an index search for 'long exact sequence' (folio-assistant bean gx86, since fixed)."
+}

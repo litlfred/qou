@@ -246,7 +246,7 @@ def main() -> int:
                      computed=str(len(mismatches)), expected="0")
     wb.add_assertion("mix_branch_never_fires",
                      computed=str(mix_nonzero), expected="0")
-    wb.save(extra={"auditOnly": True})
+    wb.save(extra={"auditOnly": True, "q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"})
 
     print("=== SYT (1,2)-relation: closed form vs brute-force enumeration ===")
     print(f"  exhaustive n=1..{N_MAX}: {checked} partitions, "

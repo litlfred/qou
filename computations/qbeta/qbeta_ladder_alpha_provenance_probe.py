@@ -232,7 +232,7 @@ def main() -> int:
         "scope": "(a) -- about the cited attribution, not about whether any "
                  "phase term is derivable",
         "q0": mp.nstr(q, 20),
-        "q0_pin": "proton (q_at)",
+        "q0_pin": "proton (q_at)", "q0Anchor": "proton",
         "dps": DPS,
         "h": mp.nstr(h, 20),
         "u": mp.nstr(u, 20),

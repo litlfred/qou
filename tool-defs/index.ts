@@ -26,8 +26,8 @@
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { defineTool, type ToolDefinition } from "../folio-assistant/cat-harness/schemas/tool.js";
-import { toolTypeIri } from "../folio-assistant/cat-harness/schemas/tool-types.js";
+import { defineTool, type ToolDefinition } from "../folio-assistant/cat-harness-tools/schemas/tools/tool.js";
+import { toolTypeIri } from "../folio-assistant/cat-harness-tools/schemas/tools/tool-types.js";
 
 interface Producer {
   script: string;
@@ -136,7 +136,7 @@ export function referencesBibCheckTool(): ToolDefinition {
     id: "references-bib-check",
     title: "Check references.bib against the bibliography",
     description:
-      "Regenerate `references.bib` from `folio/schema/references.ts` with the platform's `export-bibtex.ts` into a temp " +
+      "Regenerate `references.bib` from the bibliography (`folio/references/`, loaded by `folio/schema/references.ts`) with the platform's `export-bibtex.ts` into a temp " +
       "file and compare it with the committed copy, ignoring the `% Generated:` timestamp line. Exit 0 current, 1 drift " +
       "(with the first differing line), 2 could not run. Writes nothing in the tree; regenerating the committed file is " +
       "a separate, deliberate step.",
@@ -158,13 +158,13 @@ export function referencesBibCheckTool(): ToolDefinition {
 const BIB_TOOLS: Array<{ id: string; title: string; shell: string; what: string; runtime: string }> = [
   { id: "references-pdf-check", title: "Check every reference's PDF path resolves",
     shell: "python3 scripts/check-reference-pdfs.py", runtime: "python3",
-    what: "Check that every `pdf:` path in `folio/schema/references.ts` resolves on disk, and the reverse: a `library/<doc-id>/` holding more than one PDF. Read-only." },
-  { id: "references-library-sync-check", title: "Check references.ts is in sync with the library",
+    what: "Check that every `library.pdf` path in `folio/references/<id>.json` resolves on disk, and the reverse: a `library/<doc-id>/` holding more than one PDF. Read-only." },
+  { id: "references-library-sync-check", title: "Check the bibliography is in sync with the library",
     shell: "python3 scripts/sync-references-library.py --check", runtime: "python3",
-    what: "Exit 1 when the generated `library:` blocks in `folio/schema/references.ts` are out of date with `library/`. Read-only; the fix, `--apply`, rewrites references.ts and waits on the owner." },
+    what: "Exit 1 when the generated `library` blocks in `folio/references/<id>.json` are out of date with `library/`. Read-only; the fix, `--apply`, rewrites those files and waits on the owner." },
   { id: "references-propose-from-library", title: "Propose bibliography entries for uncited library documents",
     shell: "python3 scripts/library-propose-references.py --band high", runtime: "python3",
-    what: "List candidate CSL entries for library documents no reference points at, at the high-confidence band. Writes nothing into references.ts." },
+    what: "List candidate CSL entries for library documents no reference points at, at the high-confidence band. Writes nothing into the bibliography." },
   { id: "reference-literals-dry-run", title: "Preview replacing hand-typed constants with CODATA symbols",
     shell: "python3 scripts/drain-reference-literals.py --dry-run", runtime: "python3",
     what: "Print the diff that would rewrite hand-typed CODATA/AME literals named by the audit witness into `codata_constants` symbols. `--dry-run` writes nothing; the real run is a sweep and needs the owner." },

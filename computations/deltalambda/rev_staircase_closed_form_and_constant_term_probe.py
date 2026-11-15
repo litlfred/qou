@@ -325,6 +325,10 @@ _w = {
     "computation": "rev_staircase_closed_form_and_constant_term_probe",
     "bean": "qou-hok7",
     "anchor": "physical_proton",
+    # Canonical anchor key read by the q0 audits/ratchet (the "anchor" key above is
+    # a near-miss spelling they cannot see), plus scriptFile provenance.
+    "q0Anchor": "proton",
+    "scriptFile": os.path.basename(__file__),
     "q0Value": Q_50_DIGIT_STR,
     "description": (
         "The staircase leg of M_n is closed form: V(delta_k) = A*k - B - F(n) up to a remainder "

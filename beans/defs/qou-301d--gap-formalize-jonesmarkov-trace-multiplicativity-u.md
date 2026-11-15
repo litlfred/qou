@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T12:29:38Z
-updated_at: 2026-10-04T15:12:52Z
+updated_at: 2026-10-12T20:35:49Z
 parent: qou-v2om
 ---
 
@@ -505,3 +505,13 @@ theorem  disjointBlock_heckeColimit  : DisjointBlockMultiplicative (heckeColimit
 **Sibling beans stale in the same direction, none recording the above:** `qou-0fmb` is `todo` while its own steps 4–6 are landed (it is the plan this file executes); `qou-ejde` is `todo` while its step-1 keystone `heckeProduct_injective` is landed on `main` (`SchurWeyl/HeckeProductInjective.lean`, 0 sorry).
 
 **Bean stays open (rule 13a).** What remains is faithfulness and the geometric Jones statement, neither of which this discharges. Do not read "the hypothesis is dischargeable at one carrier" as "Jones multiplicativity is formalised" — that conflation is the error class this session recorded twice.
+
+
+--------
+
+**2026-10-12 — a second BraidedTower instance with growing filtration and h = q − q⁻¹ ≠ 0, now over ANY field** (`QOU/IwahoriHecke/HeckeColimitTensorTrace.lean`, commit `1b6dbbe2fb`, bean `qou-0fmb`). `disjointBlock_tensorColimit : DisjointBlockMultiplicative (tensorColimitMarkovTrace hq hq1)` with only `[Field K]`, `q ≠ 0`, `q²+1 ≠ 0` — the existing `disjointBlock_heckeColimit` needs `ℝ` and `q` not a root of unity. Trace = IwahoriHecke tensor-model quantum trace at z_D; tower compatibility by Markov-trace uniqueness. lean-direct exit 0, axioms clean, 0 sorry. Does NOT change what this bean says remains open (faithfulness; the amplitude = trace identification; the geometric Jones statement); the tensor trace is the TL quotient and is not faithful. Bean stays open.
+
+
+--------
+
+**2026-10-12 (later):** the BraidedTower instance and the disjoint-block law now also hold on the **Coxeter-presentation** Iwahori–Hecke tower `HeckeAlgebra K (q*q) (Aₙ n)` itself (`QOU/IwahoriHecke/CoxeterTower.lean`, commit `9d2b8bfd78`): `coxeterMarkovTrace`, `braidedTower_coxeter`, `disjointBlock_coxeter`, with generators the §7a `Balanced.sigma = q⁻¹·T_n`, over any field, q ≠ 0, q²+1 ≠ 0. Sorry-free. The trace is not faithful (tensor-model / TL), and the faithfulness, amplitude=trace identification and geometric Jones items this bean lists as open are unchanged. Bean stays open.

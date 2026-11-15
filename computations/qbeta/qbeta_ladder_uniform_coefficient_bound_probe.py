@@ -96,7 +96,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools" /
 
 from qou_substrate.constants import q_at, q_muon_at  # noqa: E402
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
-from qbeta_utils import substrate_ladder_quantities  # noqa: E402
+from qbeta_utils import c3_proton_extracted, substrate_ladder_quantities  # noqa: E402
 
 mp.dps = 60
 
@@ -126,11 +126,12 @@ SIBLING = (Path(__file__).resolve().parent /
 
 
 #: The ladder coefficients the corpus actually records. c_2 is structural; c_3
-#: is the proton-pin extraction; c_5 is the CURRENT value, and the superseded
+#: is the proton-pin extraction (recomputed by the canonical qbeta_ck_cache
+#: extraction, not typed); c_5 is the CURRENT value, and the superseded
 #: c_5 is carried deliberately as the worst case the corpus has ever held.
 CORPUS_CK = {
     "c_2 (structural)":            mp.mpf("-1"),
-    "c_3 (proton extraction)":     mp.mpf("-2.0693425728"),
+    "c_3 (proton extraction)":     c3_proton_extracted(60),
     "c_5 (current, -(b^2+1/2))":   mp.mpf("-1.2527"),
 }
 CK_SUPERSEDED = {"c_5 (SUPERSEDED, 3c_3^2+b)": mp.mpf("12.8676")}

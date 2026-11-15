@@ -1,10 +1,10 @@
 {
  "schema": "witness/v1",
- "computedAt": "2026-09-13T10:37:46.435763+00:00",
+ "computedAt": "2026-10-13T11:40:15.570091+00:00",
  "engine": "mpmath",
  "scriptFile": "gamma_gamma_aggregator_convexity_probe.py",
- "commitSha": "352194d429a70bd24652d2a5b0b1727d7b21ff42",
- "q0Anchor": "physical_proton",
+ "commitSha": "e43d2617f2eb8c43ce6147ff3b80b6fd25343bed",
+ "q0Anchor": "proton",
  "q0AnchorReason": "seeded from Q_50_DIGIT_STR; convention D (z = q^3/(q^2+1))",
  "description": "Measures whether the gamma-gamma-selected bond gives a NON-AFFINE binding aggregator at A = 3, by comparing the two-bond trace ratio against the product of the two single-bond ratios. delta = 0 is exactly the bond product (affine log-assembly, b_3 = 0); delta's sign decides which side of qou-82mc's convexity dichotomy the assembly sits on. The template sigma_2 bond is a control for which the bond product is a theorem.",
  "dps": 60,

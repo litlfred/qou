@@ -310,7 +310,7 @@ def main() -> int:
         "probe": "rev_coefficient_lower_bound_probe",
         "bean": "qou-hok7",
         "computedAt": datetime.now(timezone.utc).isoformat(),
-        "q0_anchor": "physical_proton",
+        "q0_anchor": "physical_proton", "q0Anchor": "proton",
         "q0Value": mp.nstr(Q0, 30),
         "dps": mp.dps,
         "staircase_limit_A_sqrt2": mp.nstr(stair_lim, 20),

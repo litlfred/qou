@@ -24,11 +24,11 @@
  * Exit 0 iff every named block passes (0 hits).
  */
 import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
-import { checkBaseRingMinimal } from "../folio-assistant/cat-harness/content/pipeline/qa-checkers-voice.ts";
+import { checkBaseRingMinimal } from "../folio-assistant/cat-harness-tools/pipeline/qa-checkers-voice.ts";
 import {
   resolveCanonicalLean,
   type LakeTreeCache,
-} from "../folio-assistant/cat-harness/content/pipeline/qa-utils.ts";
+} from "../folio-assistant/cat-harness-tools/pipeline/qa-utils.ts";
 import { dirname, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 

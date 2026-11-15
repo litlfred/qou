@@ -198,7 +198,7 @@ def main() -> int:
     wb.add_assertion("entropy_guard_reported",
                      computed=str(all("n_admissible_rationals" in r for r in rows)),
                      expected="True")
-    wb.save(extra={"auditOnly": True})
+    wb.save(extra={"auditOnly": True, "q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"})
 
     print("=== coefficient quantisation reachability (route-1 class prune) ===")
     print(f"  rule fixed in advance: q <= {Q_MAX}, tol {float(TOL_REL)*100:.0f}%")

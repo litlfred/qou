@@ -1,5 +1,7 @@
 {
   "computation": "qbeta-covariance-kernel-monotone",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal",
   "assertions": [
     {
       "name": "conditional_mean_is_not_monotone_at_any_k",
@@ -222,8 +224,8 @@
     }
   },
   "provenance": {
-    "headSha": "9ce6f931f6abb4018e168d792fbbc3cd92a61d39",
+    "headSha": "eacf7ca73101030f04c9f788e9f705839bef23c3",
     "producer": "computations/qbeta/qbeta_covariance_kernel_monotone_probe.py",
-    "elapsed_s": "0.354"
+    "elapsed_s": "0.305"
   }
 }

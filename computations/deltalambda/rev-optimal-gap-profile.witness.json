@@ -1,9 +1,11 @@
 {
   "schema": "qou-witness/v1",
-  "computedAt": "2026-09-13T11:54:07.075524+00:00",
+  "computedAt": "2026-10-13T14:59:58.836814+00:00",
   "computation": "rev_optimal_gap_profile_probe.py",
   "bean": "qou-hok7",
   "anchor": "physical_proton",
+  "q0Anchor": "proton",
+  "scriptFile": "rev_optimal_gap_profile_probe.py",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "description": "The gap profile of the best shape found at each n: a top block of 3-gaps, a bulk of 2s, a bottom block of 1s, no gap above 3. Also refutes a single-widened-gap model (mine) that predicted an optimal gap of 5.",
   "source_witness": "rev-energy-gap-rigidity.witness.json",

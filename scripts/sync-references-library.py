@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """
 sync-references-library — record each source's library location + ingestion
-stage on its `references.ts` entry.
+stage on its bibliography entry, `folio/references/<id>.json`.
 
-`folio/schema/references.ts` is the authoritative bibliography (CSL-JSON).
+The bibliography is CSL-JSON, one entry per file in `folio/references/`
+(bean qou-l7pj; `folio/schema/references.ts` loads them).
 It says what a source *is*; until now nothing there said whether we hold a
 copy, where, or how far it has been processed. Answering that meant joining
 three files by hand.
@@ -38,6 +39,26 @@ copy" is a property of the source, not a verdict about it, so it belongs on
 this side of that line. The ledger keeps `source.file` as the join key; this
 field is the resolved, enriched view of it.
 
+## Per-entry files (bean qou-l7pj)
+
+The block is the `library` key of each `folio/references/<id>.json`, placed
+right after `id`, with its fields in `render()` order. `--apply` rewrites
+only the files whose block changed, in the same JSON format the split wrote
+(`references_dir.dumps`), so an unchanged file stays byte-identical.
+
+This script refuses to run on a checkout from before the split (entries
+inline in `references.ts`). That checkout would show an empty directory,
+and the script would report "up to date" while writing nothing.
+
+An entry built by code in `references.ts` (today only `leitner2026`) cannot
+carry a block. If a join reaches one, the script names it and leaves it
+alone.
+
+Before the split this script found entries by the regex `ref({` followed
+directly by `id:`. Three entries open with a comment line before `id:`
+(`kobayashi1996`, `borel1986`, `chlouveraki2016`), so
+the regex never matched them. Per-entry files have no such blind spot.
+
 Usage:
     scripts/sync-references-library.py --check     # exit 1 if stale
     scripts/sync-references-library.py --apply
@@ -52,9 +73,9 @@ import re
 import sys
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-REFS = os.path.join(REPO, "folio", "schema", "references.ts")
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "lib"))
 import bib_ledger  # noqa: E402  -- the source ledger's reader (attestation store, legacy fallback)
+import references_dir  # noqa: E402  -- folio/references/<id>.json, in ORDER
 LIB = os.path.join(REPO, "library")
 
 FIELD = "library"
@@ -114,7 +135,7 @@ def library_index() -> dict[str, dict]:
 
 
 def ref_to_doc() -> dict[str, str]:
-    """references.ts id -> doc-id, via the ledger's source.file."""
+    """entry id -> doc-id, via the ledger's source.file."""
     led, note = bib_ledger.read_source_ledger(REPO)
     print(note, file=sys.stderr)
     entries = led.get("entries", [])
@@ -147,18 +168,21 @@ def ref_to_doc() -> dict[str, str]:
     return out
 
 
-def notes_to_doc(text: str) -> dict[str, str]:
-    """references.ts id -> doc-id, harvested from `note:` prose.
+def notes_to_doc(files: dict[str, dict]) -> dict[str, str]:
+    """entry id -> doc-id, harvested from `note:` prose.
 
     A second join source, and not a redundant one. Earlier agents recorded
     "PDF library/<doc-id>/<file>" in an entry's note when they identified a
     source by hand, without ever adding a ledger row. Those entries look
     uncited to a ledger-only join even though the identification was already
     done — 12 of them, measured. The ledger still wins where both exist.
+
+    The text searched is the entry's whole file, as the TypeScript entry
+    body was before the split (bean qou-l7pj).
     """
     out: dict[str, str] = {}
-    for m in re.finditer(r'\n\s*id: "([^"]+)",(.*?)\n  \}\)', text, re.S):
-        rid, body = m.group(1), m.group(2)
+    for rid, entry in files.items():
+        body = references_dir.dumps(entry)
         # A note that merely *mentions* another document must not create a
         # link. Three false links came from taking any path in the prose:
         # a note comparing this paper to another one, and a DEPRECATED
@@ -179,35 +203,49 @@ def held(doc_id: str) -> bool:
     return bool(doc_id) and os.path.isdir(os.path.join(LIB, doc_id))
 
 
-def render(info: dict, indent: str = "    ") -> str:
-    order = ["docId", "dir", "pdf", "claimedPath", "stage", "pages", "sections", "arxiv",
-             "alternates", "duplicateOf"]
-    lines = [f"{indent}{FIELD}: {{"]
-    for k in order:
-        if k not in info:
+RENDER_ORDER = ["docId", "dir", "pdf", "claimedPath", "stage", "pages", "sections", "arxiv",
+                "alternates", "duplicateOf"]
+
+
+def render(info: dict) -> dict:
+    """The `library` block, its keys in the fixed order `LibraryRef` documents."""
+    return {k: info[k] for k in RENDER_ORDER if k in info}
+
+
+def with_block(entry: dict, block: dict) -> dict:
+    """`entry` with its `library` key set to `block`, placed right after `id`."""
+    out: dict = {}
+    for k, v in entry.items():
+        if k == FIELD:
             continue
-        v = info[k]
-        lines.append(f'{indent}  {k}: {json.dumps(v)},')
-    lines.append(f"{indent}}},")
-    return "\n".join(lines)
+        out[k] = v
+        if k == "id":
+            out[FIELD] = block
+    return out
 
 
-def sync(text: str, mapping: dict[str, str], index: dict[str, dict], kept: list[str] | None = None) -> tuple[str, int, int]:
-    """Insert or refresh the library block on each matching ref({...}).
+def sync(files: dict[str, dict], order: list[str], mapping: dict[str, str], index: dict[str, dict],
+         kept: list[str] | None = None, unreachable: list[str] | None = None) -> tuple[dict[str, dict], int, int]:
+    """Insert or refresh the library block on each entry file.
 
-    An existing block whose entry no join reaches is kept verbatim and its id
-    appended to `kept` — unconfirmed, not refuted.
+    Returns the entries whose file content changes, keyed by id. An existing
+    block whose entry no join reaches is kept verbatim and its id appended
+    to `kept`: unconfirmed, not refuted. A join that reaches an entry built
+    by code in references.ts is appended to `unreachable`, since no file
+    exists to carry the block.
     """
     kept = [] if kept is None else kept
+    unreachable = [] if unreachable is None else unreachable
     canon_of = {a: d for d, v in index.items() for a in v.get("alternates", [])}
     added = updated = 0
-    out: list[str] = []
-    pos = 0
-    # Each entry starts `ref({` and its id line follows shortly after.
-    for m in re.finditer(r"\n(\s*)ref\(\{\n(\s*)id:\s*\"([^\"]+)\",", text):
-        entry_indent = m.group(2)
-        rid = m.group(3)
+    changed: dict[str, dict] = {}
+    for rid in order:
         doc_id = mapping.get(rid)
+        if rid not in files:
+            if doc_id:
+                unreachable.append(rid)
+            continue
+        entry = files[rid]
         if doc_id and doc_id.startswith(MISSING):
             info = {"stage": "missing", "claimedPath": doc_id[len(MISSING):]}
         else:
@@ -229,18 +267,8 @@ def sync(text: str, mapping: dict[str, str], index: dict[str, dict], kept: list[
                     info = dict(canon)
                     info["alternates"] = sorted(set(info.get("alternates", [])) | {doc_id})
 
-        insert_at = m.end()
-        out.append(text[pos:insert_at])
-        pos = insert_at
-
-        # An existing block sits immediately after the id line.
-        existing = re.match(
-            r"\n" + re.escape(entry_indent) + FIELD + r": \{.*?\n" + re.escape(entry_indent) + r"\},",
-            text[pos:], re.S,
-        )
-        if existing:
-            block = existing.group(0)
-            pos += existing.end()
+        block = entry.get(FIELD)
+        if isinstance(block, dict):
             if not info:
                 # No join reaches this entry any more, but a block is already
                 # here. It is an earlier identification (by hand or by an
@@ -249,50 +277,54 @@ def sync(text: str, mapping: dict[str, str], index: dict[str, dict], kept: list[
                 # sources we hold (owner ruling 2026-10-05: keep unconfirmed
                 # links). Keep it verbatim and count it, so it is visible.
                 kept.append(rid)
-                out.append(block)
                 continue
             # Alternates already recorded stay recorded while the copy is
             # still in the library: a refresh must not forget a known copy
             # just because the duplicate markers moved.
             # So does the copy the block used to name, when the join now
             # resolves to a different (canonical) one.
-            old_alt: set[str] = set()
-            prior = re.search(r"alternates: (\[.*?\])", block)
-            if prior:
-                try:
-                    old_alt = {a for a in json.loads(prior.group(1)) if held(a)}
-                except ValueError:
-                    pass
-            prior_doc = re.search(r'docId: "([^"]+)"', block)
-            if prior_doc and held(prior_doc.group(1)):
-                old_alt.add(prior_doc.group(1))
+            old_alt = {a for a in (block.get("alternates") or []) if isinstance(a, str) and held(a)}
+            prior_doc = block.get("docId")
+            if isinstance(prior_doc, str) and held(prior_doc):
+                old_alt.add(prior_doc)
             alt = (set(info.get("alternates", [])) | old_alt) - {info.get("docId")}
             if alt:
                 info = {**info, "alternates": sorted(alt)}
             updated += 1
         elif info:
             added += 1
+        else:
+            continue
 
-        if info:
-            out.append("\n" + render(info, entry_indent))
-
-    out.append(text[pos:])
-    return "".join(out), added, updated
+        new = with_block(entry, render(info))
+        if references_dir.dumps(new) != references_dir.dumps(entry):
+            changed[rid] = new
+    return changed, added, updated
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Record library location + ingestion stage on references.ts")
+    ap = argparse.ArgumentParser(description="Record library location + ingestion stage on folio/references/<id>.json")
     g = ap.add_mutually_exclusive_group(required=True)
-    g.add_argument("--check", action="store_true", help="exit 1 if references.ts is stale")
+    g.add_argument("--check", action="store_true", help="exit 1 if any entry file is stale")
     g.add_argument("--apply", action="store_true")
     args = ap.parse_args()
 
+    # Refuse the pre-split layout rather than report "up to date" over nothing.
+    try:
+        references_dir.require_split_layout(REPO)
+    except SystemExit as e:
+        print(f"sync-references-library: {e}", file=sys.stderr)
+        return 2
+
     index = library_index()
-    text = open(REFS, encoding="utf-8").read()
-    mapping = notes_to_doc(text)
+    files = references_dir.file_entries(REPO)
+    order = references_dir.order(REPO)
+    order += [rid for rid in sorted(files) if rid not in set(order)]
+    mapping = notes_to_doc(files)
     mapping.update(ref_to_doc())        # ledger is authoritative where both exist
     kept: list[str] = []
-    new, added, updated = sync(text, mapping, index, kept)
+    unreachable: list[str] = []
+    changed, added, updated = sync(files, order, mapping, index, kept, unreachable)
 
     joined = sum(1 for r in mapping if mapping[r] in index)
     absent = sum(1 for r in mapping if mapping[r].startswith(MISSING))
@@ -301,20 +333,25 @@ def main() -> int:
     print(f"claimed-but-absent files : {absent}")
     print(f"entries added / refreshed: {added} / {updated}")
     print(f"kept, unconfirmed by any join: {len(kept)}" + (f" ({', '.join(kept)})" if kept else ""))
+    if unreachable:
+        print(f"joined but built in references.ts, no file to write: {', '.join(unreachable)}")
 
     stages: dict[str, int] = {}
     for v in index.values():
         stages[v["stage"]] = stages.get(v["stage"], 0) + 1
     print("stages:", ", ".join(f"{k}={v}" for k, v in sorted(stages.items())))
 
-    if new == text:
-        print("\nreferences.ts is up to date")
+    if not changed:
+        print("\nfolio/references/ is up to date")
         return 0
     if args.check:
-        print("\nreferences.ts is STALE — run --apply", file=sys.stderr)
+        print(f"\n{len(changed)} file(s) in folio/references/ are STALE — run --apply", file=sys.stderr)
+        for rid in sorted(changed)[:20]:
+            print(f"  {rid}.json", file=sys.stderr)
         return 1
-    open(REFS, "w", encoding="utf-8").write(new)
-    print("\nreferences.ts updated")
+    for entry in changed.values():
+        references_dir.write_entry(REPO, entry)
+    print(f"\nfolio/references/: {len(changed)} file(s) updated")
     return 0
 
 

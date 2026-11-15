@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-10T08:58:07Z
-updated_at: 2026-10-11T07:42:51Z
+updated_at: 2026-10-12T20:14:03Z
 parent: qou-d8c7
 ---
 
@@ -104,3 +104,74 @@ New QOU/Archimedean/RossoJonesMiddle.lean. It is sorry-free and works over a gen
 - markov_rossoJones: the same, for every normalised cyclic Markov trace with z_D on any Hecke family, for coprime (r, s). Open item (1) of the previous entry is therefore CLOSED for coprime (r, s).
 - How it works. gam_eq_G gives an explicit matrix for γ. Three identities hold: γ = ρ + E K, ρ E = E ρ', K E = γ − ρ'. Here E is the U_q(sl2) raising operator and ρ, ρ' are weighted cyclic rotations. pow_decomp turns them into a telescoping identity. That gives T_{m+1}(γ^p) = T_{m+1}(ρ^p) + T_m(γ^p) − T_m(ρ'^p). Under gcd(n+1, p) = 1, rot^p fixes only the constant states, so the middle traces of ρ^p and ρ'^p vanish. Then T_m(γ^p) = q^{np} − (q^{n} q^{-2})^p for every 0 < m < n+1.
 STILL OPEN: the non-coprime case (torus links). The probe shows MiddleWeightTraces FAILS there, so a different statement is needed. Items (2) and (3) of the previous entry are untouched: explicit W_{r,j}, and quantum Schur–Weyl tr_q = Σ_j [j+1] tr_{W_{r,j}} / [2]^r. This bean stays open.
+
+
+## 2026-10-12 — torus links, gcd(r,s) > 1: PROVED (branch claude/rosso-jones-torus-links-2026-10-12, PR #7737, commit bdea7900f1)
+
+New file QOU/Archimedean/RossoJonesTorusLink.lean, sorry-free; axioms are only propext, Classical.choice and Quot.sound.
+- T_gam_eq_sum: T_m(γ^p) = Σ_{j≤m} T_j(ρ^p) − Σ_{j<m} T_j(ρ'^p) for every p. The telescoping step pow_decomp / T_gam_succ never needed coprimality.
+- rho_eq_wRot / rho'_eq_wRot: the weight of ρ (and ρ') at b depends only on (ones b, last letter of b).
+- lastOnes_mul: a double count gives (n+1)·S = p·ones b for every rot^p-fixed b.
+- card_fixSet: #{weight-j states fixed by rot^p} = C(d, j/e) if e | j, else 0. Here d = gcd(n+1,p) and e = (n+1)/d. The proof goes through Bezout and the d-periodic ↔ length-d word bijection perExt/restr.
+- T_gam_pow, rossoJones_torusLink, markov_rossoJones_torusLink: tr(W γ^p) and every Markov trace with z_D on (s0⋯s_{n−1})^p, given as explicit finite sums for ALL (r,s).
+- Closed form (d=gcd(r,p), e=r/d, a=p/d, j=ke): T_j(ρ^p) = C(d,k) q^{a[(r−j−1)(d−k)+(j−3)k]} and T_j(ρ'^p) = C(d,k) q^{a[(r−j−3)(d−k)+(j−1)k]}.
+- Probe computations/probes/rj_torus_link_periodic_probe.py does exact Laurent-polynomial arithmetic with ints: 1350/1350 checks pass for r ≤ 6, p ≤ 2r+2. precision-gates.sh could not run in the sparse worktree (mpmath and qou_substrate missing), so its preflight failed and that is not a gate result. The probe contains no float.
+- Verification: lean -DautoImplicit=false -s 65536 exits 0 against a shadow holding JonesNormalForm, MarkovTransfer, TensorMarkovModel, RossoJonesGeneral and RossoJonesMiddle. Those five oleans were missing from the restored cache.
+- Still open: (2) the Schur–Weyl trace split T_m(X) = Σ_j tr(X|W_{r,j}) for q not a root of unity; (3) the modules W_{r,j}. The torus-link result does not depend on either.
+
+
+## 2026-10-12 (later): items (2) and (3) PROVED, except the full-twist scalar (PR #7737, commit 4b3439b86d)
+File: QOU/Archimedean/SchurWeylTrace.lean. Sorry-free; axioms are only propext, Classical.choice and Quot.sound. The hypothesis is QIntNonzero q r, i.e. [k]_q ≠ 0 for 1 ≤ k ≤ r. It covers q = 1 in characteristic 0.
+- (2) trace_split: tr(X|V_m) = Σ_{j≤min(m,r−m)} tr(X|W_{r,j}), with W_{r,j} := ker E ∩ V_{r−j} (Wmod). It holds for every weight-preserving X with XE = EX.
+  - Fm is the lowering operator. Em_Fm_comm and Dg_eq show [E,F] = diag([2·ones − r]).
+  - qZ is the signed q-integer, with qZ_mul and sum_qZ.
+  - Epow_inj: E^k is injective on V_m when 2m+k ≤ r.
+  - Em_transpose: E^T(q) = cmp·E(q⁻¹)·cmp. With a rank argument this gives El_surj on the upper half.
+  - trace_eq_trace_ker_add: trace across an intertwining surjection.
+- (3) Proved: WP_gam and gam_comm_Em; gamW (γ^p on W_{r,j}); T_gam_pow_split; trace_W_gam_pow_split, which says tr(Wγ^p) = Σ_{2j≤r}(Σ_{m=j}^{r−j} q^{2m}) tr(γ^p|W_{r,j}).
+- Probe computations/probes/rj_schur_weyl_trace_split_probe.py: 22504/22504 exact checks pass.
+- STILL OPEN: the full twist γ^r acts on W_{r,j} by a scalar. The probe finds the scalar q^{r(r−1) − 2j(r−j+1)} for r ≤ 6. The proof needs the ribbon element (Δ² as a function of the quantum Casimir via Jucys–Murphy elements) or irreducibility of W_{r,j} under B_r. Neither is formalised.
+
+
+## 2026-10-12 (later still): full-twist scalar PROVED (PR #7737, commit d4678e2306)
+- SchurWeylTrace.lean §10–11, sorry-free; axioms are only propext, Classical.choice and Quot.sound. The hypothesis is QIntNonzero q r.
+- gamW_fullTwist: γ^{rt} acts on W_{r,j} (for 2j ≤ r) as (twistScalar)^t, where twistScalar = q^{r(r−1)−2j(r−j+1)}.
+  - Route: the telescoping γ^r = ρ^r + E K_r, with ρ^r the scalar s_j on V_j.
+  - Then w = E^{r−2j} v, and γ^r w − s_j w = E^{r−2j+1} y. This vector is killed by E, so Epow_inj gives y = 0.
+  - No ribbon element and no irreducibility were needed.
+- finrank_Wmod (char 0): dim W_{r,j} = C(r,j) − C(r,j−1).
+- trace_W_fullTwist and markov_fullTwist: per-module Rosso–Jones for the full twists.
+- The probe's exact checks now also compare the scalar with the Lean twistScalar and the dims with the binomial formula: 22624/22624 pass.
+- Not done: per-module Rosso–Jones for general s, not a multiple of r. That needs the action of γ (not only γ^r) on W_{r,j}, e.g. its eigenvalues. The torus-link formula itself is already proved in RossoJonesTorusLink.
+
+
+## 2026-10-12: per-module trace of γ^p for EVERY p, PROVED (PR #7737, commit 61b4fc2a10)
+SchurWeylTrace §12, sorry-free.
+- trace_gamW (2j ≤ r): tr(γ^p|W_{r,0}) = q^{np}. For j ≥ 1, tr(γ^p|W_{r,j}) = rhoTr q n p j − rho'Tr q n p (j−1), where rhoTr and rho'Tr are the periodic-state closed forms. Proof: invert the triangular system T_gam_pow_split at m = j and m = j−1, then apply T_gam_succ.
+- trace_W_gam_pow_explicit and markov_gam_pow_explicit: the per-module Rosso–Jones formula for every torus link T(r,p).
+- Probe check (f) added: 22932/22932 exact checks pass.
+
+**2026-10-12 — Jones normal words are linearly independent in Pres (sorry-free).** New file `QOU/IwahoriHecke/JonesWordsIndependent.lean`: `presEquivHecke : Pres N (q-qi) (q*qi) ≃ₐ[R] QOU.SchurWeyl.Hecke R q qi N` (same presentation, generator to generator; any CommRing R, any q qi); `presBasis` (via `HeckeCoset.stdBasisAny`, regular rep); `card_words_pres`: exactly (N+1)! distinct normal words; `words_pres_linearIndependent` and `wordsBasis` (words are a basis), `words_pres_linearIndependent_of_le` (every level n ≤ N). Hypotheses: [CommRing R] [Nontrivial R]; quadratic of the form s²=(q−qi)s+q·qi — covers convention D (qi=q⁻¹) and the unbalanced (qi=1) relation. NOT covered: a general pair (a,b) not of that form. Proof: span + rank condition gives |words| ≥ (N+1)!, with card_words_le equality; surjective endomorphism of R^{words} injective (OrzechProperty). Verified lean -DautoImplicit=false -s 65536 exit 0; #print axioms = propext, Classical.choice, Quot.sound. The remaining q425 items (closed Rosso–Jones for general r) are untouched.
+
+**2026-10-12 — quantum Schur–Weyl for the whole braid algebra (sorry-free; branch `claude/rj-schur-weyl-2026-10-12`).** New file `QOU/IwahoriHecke/TensorSchurWeyl.lean`, importing `SchurWeylTrace` (qou-gd90). It does not restate anything that file already proves. Contents:
+- The U_q(sl₂) coproduct built recursively on V^{⊗n} by Kronecker products: E_{n+1} = E_n⊗k + 1⊗e, F_{n+1} = F_n⊗1 + K⁻¹⊗f, K_{n+1} = K_n⊗k.
+- `S_comm_E` / `S_comm_F` / `S_comm_K` / `S_comm_Ki`: every strand braid S q N i commutes with E, F, K and K⁻¹. Proved by induction on N (each braid is either S⊗1 or 1⊗Ř).
+- `braidAlg_spec`: the same for every element of adjoin(range S), which also preserves weight.
+- `E_eq_Em`: the coproduct E_{n+1} equals RossoJonesMiddle's `Em q n`.
+- `trace_W_split`: tr(W X) = Σ_{2j≤r} (Σ_{m=j}^{r−j} q^{2m}) tr(X|W_{r,j}) for any weight-preserving X with X Em = Em X. This generalises `trace_W_gam_pow_split` from γ^p to all such X.
+- `braidAlg_trace_split` and `braidAlg_trace_W_split`: both forms for every element of the braid algebra, under `QIntNonzero`.
+- Verification: lean -DautoImplicit=false -s 65536 exit 0. `#print axioms` = propext, Classical.choice, Quot.sound.
+
+Still open:
+- The individual tr(X|W_{r,j}) are not computed for X other than γ^p.
+- F-side / lowest-weight mirror. Not needed for the split.
+- Status unchanged.
+
+
+## 2026-10-12 — torus links re-checked; coprime and full-twist specialisations added (branch claude/rj-torus-links-2026-10-12)
+A session was sent to prove the torus-link Rosso–Jones formula on the premise that the earlier attempt was lost in a container restart. It was not lost: RossoJonesTorusLink.lean (c35183cdca) is on main and already proves T_gam_pow, card_fixSet, rossoJones_torusLink and markov_rossoJones_torusLink for every gcd(r, s). This session first re-proved the same results independently in a standalone RossoJonesLinks.lean. That version used Euclid's gcd induction where main uses Bezout, and it also compiled sorry-free. It was then cut down, because it duplicated main's declaration names in the same namespace. What remains is new: it imports RossoJonesTorusLink and adds
+- fixCount_zero, fixCount_mid_of_coprime: for gcd(n+1, p) = 1, fix(0) = 1 and fix(j) = 0 for 0 < j < n+1;
+- T_gam_mid_of_torusLink, middleWeightTraces_of_torusLink: the coprime case derived from the general T_gam_pow, giving T_m(γ^p) = q^{np} − (q^n q^{-2})^p and MiddleWeightTraces;
+- fixCount_full_twist: for p = (n+1)k, fix(j) = C(n+1, j).
+Verification: lean -DautoImplicit=false -s 65536, exit 0, against a private shadow (the RossoJonesTorusLink cone was rebuilt there because its oleans are missing from the restored cache). #print axioms gives at most [propext, Classical.choice, Quot.sound]. Scratch probes re-run: rjlinks_probe.py reports ALL OK (N ≤ 6, p ≤ 8, every m), and rjlinks_plethysm.py reports bad 0 (N ≤ 7, p ≤ 12; the ratio to Rosso–Jones with ψ^e is a monomial framing factor).
+Still open: the Adams-operation form of Rosso–Jones (Σ_k c_k [k+1] θ_k^{p/r} with ψ^e) is checked only by the probe and is not stated in Lean. The plethysm cross-check also leaves the framing monomial unidentified.

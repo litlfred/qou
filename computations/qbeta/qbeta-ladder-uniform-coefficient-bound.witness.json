@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-14T20:21:45.859742+00:00",
-  "commitSha": "de289438b2311d204ca1bbaeab79204009540b43",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T17:35:08.194837+00:00",
+  "commitSha": "b5f5f6bd8f92f88c6532d78513db772b50af553c",
   "assertions": [
     {
       "name": "1. G = u^2/(1-u) matches the truncated geometric sum at both pins",
@@ -60,11 +60,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 6,
   "computation": "qbeta-ladder-uniform-coefficient-bound",
   "scriptFile": "qbeta_ladder_uniform_coefficient_bound_probe.py",
-  "scriptHash": "336b937cda68",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "100e85867f8a",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -72,12 +72,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -138,14 +140,14 @@
     "corpus_coefficients": {
       "live": {
         "c_2 (structural)": "-1.0",
-        "c_3 (proton extraction)": "-2.0693425728",
+        "c_3 (proton extraction)": "-2.06934257711516783787971951725",
         "c_5 (current, -(b^2+1/2))": "-1.2527"
       },
       "superseded_worst_case": {
         "c_5 (SUPERSEDED, 3c_3^2+b)": "12.8676"
       },
-      "largest_live_abs": "2.0693425728",
-      "C_min_over_largest_live": "1101.53812258214758966195990767",
+      "largest_live_abs": "2.06934257711516783787971951725",
+      "C_min_over_largest_live": "1101.53812028512730344554751768",
       "C_min_over_largest_ever_held": "177.147232787887645912244614196"
     },
     "ladder_cap_at_generous_C": {

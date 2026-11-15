@@ -1,5 +1,6 @@
 {
   "computation": "qbeta-loop-value-pinned",
+  "q0Anchor": "proton",
   "assertions": [
     {
       "name": "product_of_the_two_pure_crossing_bonds_is_the_inverse_loop_squared",
@@ -114,8 +115,8 @@
     "b_pn_times_two_q": "1.02199769102491"
   },
   "provenance": {
-    "headSha": "6ac687ff65cf007b00e4b94bb1e20026938569de",
+    "headSha": "eacf7ca73101030f04c9f788e9f705839bef23c3",
     "producer": "computations/qbeta/qbeta_loop_value_pinned_probe.py",
-    "elapsed_s": 0.417
+    "elapsed_s": 0.478
   }
 }

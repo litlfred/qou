@@ -1,0 +1,30 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "sniady2006asymptotics",
+  "library": {
+    "docId": "arxiv-math-0411647v2",
+    "dir": "library/arxiv-math-0411647v2",
+    "pdf": "library/arxiv-math-0411647v2/0411647v2.pdf",
+    "stage": "candidates",
+    "pages": 60,
+    "sections": 18,
+    "arxiv": "math/0411647v2"
+  },
+  "type": "article",
+  "title": "Asymptotics of characters of symmetric groups, genus expansion and free probability",
+  "author": [
+    {
+      "family": "Śniady",
+      "given": "Piotr"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2005
+      ]
+    ]
+  },
+  "URL": "https://arxiv.org/abs/math/0411647",
+  "note": "arXiv:math/0411647v2 [math.CO], 21 Oct 2005. Author, title, arXiv id and preprint date read directly off library/arxiv-math-0411647v2/0411647v2.pdf. The corpus elsewhere asserts a published version in Probab. Theory Relat. Fields 136 (2006) 263-297, DOI 10.1007/s00440-005-0479-7 - that journal metadata is NOT recorded here because it could not be verified in-session (arxiv.org and doi.org are egress-blocked from the agent sandbox) and the local PDF is the preprint. A reader with network access should confirm and promote this entry to article-journal. Consumed for Thm 4.14 (the Sigma-hat_3 = R_4 + R_2 identity that wlambda_covariance_kernel_frontier.py verifies numerically) and Prop 3.4 (deg Sigma_pi = n - 2*genus(pi))."
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "ciccolikoelinkkoornwinder1999",
+  "library": {
+    "docId": "arxiv-math-9805023v1",
+    "dir": "library/arxiv-math-9805023v1",
+    "pdf": "library/arxiv-math-9805023v1/9805023v1.pdf",
+    "stage": "candidates",
+    "pages": 20,
+    "sections": 10,
+    "arxiv": "math/9805023v1"
+  },
+  "type": "article-journal",
+  "title": "q-Laguerre polynomials and big q-Bessel functions and their orthogonality relations",
+  "author": [
+    {
+      "family": "Ciccoli",
+      "given": "Nicola"
+    },
+    {
+      "family": "Koelink",
+      "given": "Erik"
+    },
+    {
+      "family": "Koornwinder",
+      "given": "Tom H."
+    }
+  ],
+  "container-title": "Methods and Applications of Analysis",
+  "issued": {
+    "date-parts": [
+      [
+        1999
+      ]
+    ]
+  },
+  "volume": "6",
+  "page": "109-127",
+  "URL": "https://arxiv.org/abs/math/9805023",
+  "note": "Big q-Bessel / q-Laguerre spectral duality: the completed (non-N-extremal, Ramanujan ₁ψ₁) q-Laguerre L²-basis and its dual big-q-Bessel basis are exchanged by a self-reciprocal q-Hankel-type transform; SU(1,1)/E(2) quantum-group interpretations. Serves as the analytic prototype of the self-reciprocal transform whose categorical avatar (Verlinde S-matrix, S⁴=1) is the keystone (C) self-duality leg (KeystoneSelfDualSpectralNarrowing.lean; docs/audits/2026-07-05-keystone-selfduality-spectral-narrowing.md). Its discrete orthogonality carries a free scale c>0 (§4), so it is NOT a 0-dof node screen — used as a duality template, not an imported family. arXiv:math/9805023."
+}

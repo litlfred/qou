@@ -1,0 +1,20 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "pr1602",
+  "type": "webpage",
+  "title": "c_k precision-ladder recursion from the Habiro q-difference equation; proved seed c_2 = −1",
+  "author": [
+    {
+      "literal": "QOU project (litlfred/qou)"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2026
+      ]
+    ]
+  },
+  "URL": "https://github.com/litlfred/qou/pull/1602",
+  "note": "Internal QOU pull request #1602. Establishes the depth-d linear recursion on the c_k ladder induced by a fibre-level Habiro element satisfying a q-difference equation, and the bar-even seed c_2 = −1. Cited by q-beta-c-k-recursion-from-habiro-q-difference.lean, q-beta-c-2-eq-neg-one-structural.lean."
+}

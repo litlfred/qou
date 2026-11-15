@@ -34,7 +34,7 @@ What the port shows, measured 2026-10-10 (read the witness for the digits):
   `syt_prefix_cache` hands an mpf matrix to `scipy.sparse`, which rejects
   `dtype=object`.  Recorded as a gap in the witness, not filled with float64.
 ════════════════════════════════════════════════════════════════════════════
-**CONTEXT (per prop:li2q-phiq-bar-symmetrization).** This script is a
+**CONTEXT (per `li2q-phiq-bar-symmetrization`).** This script is a
 **BINDING-context DIAGNOSTIC**: it documents the compact q-dilog Φ_q failure
 mode (the −737 MeV mirror-nucleus pathology in the T2/T3 brane tower)
 that motivates the Li_2^q migration recommended by the bar-symmetrization
@@ -179,6 +179,11 @@ product gives a per-isotope additive binding contribution
 that any Σ-form tower must reproduce.
 
 Output: `brane-tower-isospin-diagnosis.witness.json`
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 

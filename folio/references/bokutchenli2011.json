@@ -1,0 +1,38 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "bokutchenli2011",
+  "library": {
+    "docId": "arxiv-1101.1563v1",
+    "dir": "library/arxiv-1101.1563v1",
+    "pdf": "library/arxiv-1101.1563v1/1101.1563v1.pdf",
+    "stage": "candidates",
+    "pages": 20,
+    "sections": 3,
+    "arxiv": "1101.1563v1"
+  },
+  "type": "article",
+  "title": "Gröbner-Shirshov bases for categories",
+  "author": [
+    {
+      "family": "Bokut",
+      "given": "L. A."
+    },
+    {
+      "family": "Chen",
+      "given": "Yuqun"
+    },
+    {
+      "family": "Li",
+      "given": "Yu"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2011
+      ]
+    ]
+  },
+  "URL": "https://arxiv.org/abs/1101.1563",
+  "note": "PDF library/arxiv-1101.1563v1/ — joined 2026-08-16: the library held this paper unlinked, so it read as an unregistered document. Establishes the Composition-Diamond lemma for small categories presented by a graph (quiver) plus defining relations, working in the free category partial algebra kC(X) of uniform (matching source/target) partial words. Theorem 4.4: S is a Gröbner-Shirshov basis <=> every f in Id(S) has leading word divisible as a·s̄·b <=> Irr(S) is a linear basis of kC(X)/Id(S). Also gives GS bases for the simplicial and cyclic categories. arXiv:1101.1563v1 [math.RA]."
+}

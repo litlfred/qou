@@ -18,7 +18,7 @@ carries.
 `⊆` half of "the radical is the `ℓ(λ) ≥ 3` blocks" needs the ≤2-row weights to be
 nonzero, and that the corpus has that only through
 `WenzlWeightVanishing.conventionD_ocneanuWeight_eq_zero_iff_of_wenzl`, which is
-**conditional on the class `IsOcneanuWeightSystem`** — a class whose own docstring
+**conditional on the class `IsOcneanuWeightSystem`** (deleted 2026-11-15, bean `qou-gld2`; the weights are now a theorem, `SchurWeyl.JimboGL.markov_tr_blockE`) — a class whose own docstring
 says an instance *"is exactly Wenzl's theorem, and is exactly what remains
 unformalised."*
 

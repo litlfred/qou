@@ -14,7 +14,7 @@ rings L6a4), this script:
    nearest distance in ℂ and records the pairing distances.
 
 The output is a witness for `conj:shared-denominator-cusp-holonomy`
-(it also once named `conj:pl-jsj-mass-integration-equivalence`, which
+(it also once named `pl-jsj-mass-integration-equivalence`, which
 has no carrier): it measures how far
 the bare algebraic seeds sit from SnapPy's actual hyperbolic
 shape parameters, bounding the conjecture's strong "literal numerical
@@ -25,11 +25,26 @@ SnapPea kernel and is left to a future witness.
 
 Manuscript references:
   - conj:shared-denominator-cusp-holonomy
-  - conj:pl-jsj-mass-integration-equivalence      [no carrier]
-  - conj:denominator-zeros-as-sw-critical-points  [no carrier]
+  - `pl-jsj-mass-integration-equivalence`          [REMOVED -- see below]
+  - `denominator-zeros-as-sw-critical-points`  [no carrier]
   (The two labels marked [no carrier] were blocks in the removed
    `descartes-universe/` chapter; no file in the tree defines them.
    See bean qou-3kni.)
+
+Removal record for `pl-jsj-mass-integration-equivalence` (owner ruling
+"a1", relayed 2026-10-10: the carrier stays REMOVED and citations point at the
+record). Deleted in f86ea9d7ac, 2026-05-18, "content(thimble): demote
+def:picard-lefschetz-thimble + delete redundant bridges" -- Phase C of the
+thimble simplification, on the stated ground that "PL is no longer rigorously
+needed after Tier 1+2 (algebraic-residue swap on principal Galois orbit +
+Moebius-from-binomials derivation)". It was a REDUNDANT bridge, not a lost one.
+Its chapter `descartes-universe/` has since been removed entirely, so there is
+no longer anywhere for it to live. Do NOT restore it.
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 

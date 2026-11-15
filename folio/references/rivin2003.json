@@ -1,0 +1,34 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "rivin2003",
+  "library": {
+    "docId": "arxiv-math-9907032v1",
+    "dir": "library/arxiv-math-9907032v1",
+    "pdf": "library/arxiv-math-9907032v1/9907032v1.pdf",
+    "stage": "candidates",
+    "pages": 27,
+    "sections": 18,
+    "arxiv": "math/9907032v1"
+  },
+  "type": "article-journal",
+  "title": "Combinatorial optimization in geometry",
+  "author": [
+    {
+      "family": "Rivin",
+      "given": "Igor"
+    }
+  ],
+  "container-title": "Advances in Applied Mathematics",
+  "volume": "31",
+  "issue": "1",
+  "page": "242-271",
+  "issued": {
+    "date-parts": [
+      [
+        2003
+      ]
+    ]
+  },
+  "DOI": "10.1016/S0196-8858(03)00093-9",
+  "note": "Recasts hyperbolic-geometry realization problems (angle structures, circle patterns, Delaunay/Voronoi metric problems) as linear and convex programs; §3 develops the linear-programming duality used to certify feasibility. Source for the LP weak-duality inequality formalized sorry-free in `QOU.Optimization.lp_weak_duality` / `lp_duality_gap_nonneg`, which is the proved backing for the `duality_gap ≥ 0` assertion carried by every QOU LP/SDP-dual witness. Cited bibliographically for the abstract duality statement.PDF library/arxiv-math-9907032v1/ — joined 2026-08-16. This branch had drafted a separate entry [rivin1999] for the same paper from the library copy; main registered it independently with fuller metadata, so that draft was dropped and the library join moved here. "
+}

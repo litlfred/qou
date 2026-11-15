@@ -220,7 +220,7 @@ def main() -> int:
         "bean": "qou-hok7",
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "q0Value": mp.nstr(Q0, 50),
-        "q0_anchor": "physical_proton",
+        "q0_anchor": "physical_proton", "q0Anchor": "proton",
         "dps": mp.dps,
         "refutes": ("the conjecture 'REV_n ~ A sqrt(2n) with A sqrt2 = 5.0959' stated in "
                     "rev_sublinearity_closed_probe.py -- refuted as an asymptotic EQUALITY"),

@@ -25,7 +25,7 @@
   ],
   "checks_passed": 4,
   "checks_total": 4,
-  "computedAt": "2026-09-07T07:57:30.702770+00:00",
+  "computedAt": "2026-10-13T15:19:08.734969+00:00",
   "corrected_statement": "lim REV/sqrt(n) > A sqrt2 = 5.0959; A sqrt2 is a LOWER bound on the constant, not its value",
   "dps": 60,
   "entropy_cap_pi_sqrt_2_over_3": "2.5650996603237281911",
@@ -120,6 +120,7 @@
     }
   ],
   "probe": "rev_constant_conjecture_correction_probe",
+  "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0_anchor": "physical_proton",
   "refutes": "the conjecture 'REV_n ~ A sqrt(2n) with A sqrt2 = 5.0959' stated in rev_sublinearity_closed_probe.py -- refuted as an asymptotic EQUALITY",

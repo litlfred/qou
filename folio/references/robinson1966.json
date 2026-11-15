@@ -1,0 +1,22 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "robinson1966",
+  "type": "book",
+  "title": "Non-standard Analysis",
+  "author": [
+    {
+      "family": "Robinson",
+      "given": "Abraham"
+    }
+  ],
+  "publisher": "North-Holland",
+  "publisher-place": "Amsterdam",
+  "issued": {
+    "date-parts": [
+      [
+        1966
+      ]
+    ]
+  },
+  "note": "Original model-theoretic construction of the hyperreals $^*\\mathbb{R}$ and the standard-part map $\\mathrm{st}$.  The surreal appendix adopts Robinson's standard-part construction as the replacement for the broken classical-limit functor $q \\to 1$."
+}

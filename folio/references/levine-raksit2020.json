@@ -1,0 +1,36 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "levine-raksit2020",
+  "library": {
+    "docId": "ant-v14-n7-s-p05",
+    "dir": "library/ant-v14-n7-s-p05",
+    "pdf": "library/ant-v14-n7-s-p05/ant-v14-n7-s-p05.pdf",
+    "stage": "candidates",
+    "pages": 52,
+    "sections": 18
+  },
+  "type": "article-journal",
+  "title": "Motivic Gauss-Bonnet formulas",
+  "author": [
+    {
+      "family": "Levine",
+      "given": "Marc"
+    },
+    {
+      "family": "Raksit",
+      "given": "Arpon"
+    }
+  ],
+  "container-title": "Algebra & Number Theory",
+  "volume": "14",
+  "issue": "7",
+  "issued": {
+    "date-parts": [
+      [
+        2020
+      ]
+    ]
+  },
+  "DOI": "10.2140/ant.2020.14.1801",
+  "note": "PDF library/ant-v14-n7-s-p05/ — paper 5 of the bound issue ant-v14-n7-s, split out by scripts/split-bound-volume.py. DOI read from its title page."
+}

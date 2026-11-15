@@ -1,0 +1,35 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "bokutchen2015pbw",
+  "library": {
+    "docId": "arxiv-1502.06472v1",
+    "dir": "library/arxiv-1502.06472v1",
+    "pdf": "library/arxiv-1502.06472v1/1502.06472v1.pdf",
+    "stage": "candidates",
+    "pages": 13,
+    "sections": 14,
+    "arxiv": "1502.06472v1"
+  },
+  "type": "article",
+  "title": "Gröbner-Shirshov bases and PBW theorems",
+  "author": [
+    {
+      "family": "Bokut",
+      "given": "L. A."
+    },
+    {
+      "family": "Chen",
+      "given": "Yuqun"
+    }
+  ],
+  "container-title": "arXiv preprint",
+  "issued": {
+    "date-parts": [
+      [
+        2015
+      ]
+    ]
+  },
+  "URL": "https://arxiv.org/abs/1502.06472",
+  "note": "arXiv:1502.06472v1 [math.RA], 13 pp., survey. YEAR CAVEAT: the arXiv banner rendered on p. 1 reads '8 Nov 2014' but the 1502.* identifier is a February 2015 posting; recorded as 2015 with the printed banner date noted here. No DOI or journal line on the preprint; no published version sought. Read 2026-08-09 for §3.7 (p. 6), verified in the PDF: Shirshov 1953 and Cartier 1958 give counterexamples to PBW for Lie algebras over a commutative algebra, and Cohn's 1963 family L_p = Lie_K(x₁,x₂,x₃ | y₃x₃ = y₂x₂ + y₁x₁) over K = k[y₁,y₂,y₃ | yᵢᵖ = 0] is proved not to embed in its universal enveloping algebra for p = 2, 3, 5 (Bokut–Chen–Chen, J. Algebra 337 (2011) 82-102). That paragraph is why cor:pbw / cor:ugb-pbw cannot drop the 'free as an R-module' hypothesis their proofs use (bean qou-pwd4). §3.7 REPORTS those counterexamples and proves none of them — the primaries have not been read and are not in this file, so cite this entry as the collecting source, not as the proof."
+}

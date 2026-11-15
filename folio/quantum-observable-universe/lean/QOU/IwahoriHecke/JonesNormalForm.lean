@@ -41,7 +41,9 @@ arbitrary quadratic relation, which is what Markov uniqueness needs.
 ## What is NOT proved here
 
 * Linear independence of the words (so `dim = (n+1)!`, i.e. the `T_w` **basis**) — only
-  spanning, which is the half uniqueness uses.
+  spanning, which is the half uniqueness uses. (Independence is proved for the presented
+  algebra with quadratic `s² = (q − qi)s + q·qi` over any nontrivial commutative ring in
+  `QOU.IwahoriHecke.JonesWordsIndependent`.)
 * **Existence** of the Markov trace (Ocneanu) — uniqueness says at most one.
 * The Rosso–Jones torus-knot formula for general `r` (bean `qou-q425`): uniqueness reduces
   `tr((s₀⋯s_{r-2})^s)` to a computation in the normal form, but evaluating it in closed

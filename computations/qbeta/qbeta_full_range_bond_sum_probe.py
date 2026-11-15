@@ -347,6 +347,7 @@ def main() -> int:
 
     witness = {
         "computation": "qbeta-full-range-bond-sum",
+        "q0Anchor": "proton",
         "assertions": a,
         "allPassed": bool(ok),
         "parameters": {"q0": mp.nstr(Q0, 30), "dps": DPS,

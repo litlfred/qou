@@ -1,0 +1,31 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "hikami2004torus",
+  "library": {
+    "docId": "arxiv-math-0403224v1",
+    "dir": "library/arxiv-math-0403224v1",
+    "pdf": "library/arxiv-math-0403224v1/0403224v1.pdf",
+    "stage": "candidates",
+    "pages": 7,
+    "sections": 9,
+    "arxiv": "math/0403224v1"
+  },
+  "type": "article",
+  "title": "Difference equation of the colored Jones polynomial for torus knot",
+  "author": [
+    {
+      "family": "Hikami",
+      "given": "Kazuhiro"
+    }
+  ],
+  "container-title": "arXiv preprint",
+  "issued": {
+    "date-parts": [
+      [
+        2004
+      ]
+    ]
+  },
+  "URL": "https://arxiv.org/abs/math/0403224",
+  "note": "arXiv:math/0403224. Proves the N-colored Jones polynomial of the torus knot T(s,t) satisfies a q-difference equation, with the relation to the AJ conjecture / quantum A-polynomial. Uploaded library/arxiv-math-0403224v1/0403224v1.pdf (SM-uploads batch, main 5d1385d1); relevant to the corpus's colored-Jones tower infrastructure, not to the SM appendix directly."
+}

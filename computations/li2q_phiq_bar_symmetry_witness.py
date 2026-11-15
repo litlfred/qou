@@ -5,7 +5,7 @@
 """Numerical witness for the bar-(anti-)symmetrization identity
 between Li_2^q and compact-q-dilog Φ_q.
 
-The boxed identity in `prop:li2q-phiq-bar-symmetrization` (content/
+The boxed identity in `li2q-phiq-bar-symmetrization` (content/
 quantum-observable-universe/braids-and-knots/li2q-phiq-bar-
 symmetrization.md) — bar-**symmetrization** (SUM) form
 
@@ -36,14 +36,19 @@ numerically validates the commuting diagram
 
 that ties the categorical mass-tower endomorphism to the
 Bring-Bloch decomposition (per
-`conj:lambda-scale-bring-bloch-identity`, introduced in PR #843).
+`lambda-scale-bring-bloch-identity`, introduced in PR #843).
 
 References:
-- prop:li2q-phiq-bar-symmetrization (the identity)
+- `li2q-phiq-bar-symmetrization` (the identity)
 - def:q-dilogarithm (Li_2^q definition; series form)
 - prop:phi-q-tower-jsj-bridge (where the identity is consumed)
 - [andersen-kashaev2014] Faddeev quantum dilog Volume-conjecture
   form Φ_q(z) = ∏_{k≥0}(1 - q^{2k+1} z)^{-1}.
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 

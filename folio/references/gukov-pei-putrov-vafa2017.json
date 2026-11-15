@@ -1,0 +1,46 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "gukov-pei-putrov-vafa2017",
+  "library": {
+    "docId": "arxiv-1701.06567v2",
+    "dir": "library/arxiv-1701.06567v2",
+    "pdf": "library/arxiv-1701.06567v2/1701.06567v2.pdf",
+    "stage": "candidates",
+    "pages": 81,
+    "sections": 86,
+    "arxiv": "1701.06567v2"
+  },
+  "type": "article",
+  "title": "BPS Spectra and 3-Manifold Invariants",
+  "author": [
+    {
+      "family": "Gukov",
+      "given": "Sergei"
+    },
+    {
+      "family": "Pei",
+      "given": "Du"
+    },
+    {
+      "family": "Putrov",
+      "given": "Pavel"
+    },
+    {
+      "family": "Vafa",
+      "given": "Cumrun"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2020
+      ]
+    ]
+  },
+  "container-title": "Journal of Knot Theory and Its Ramifications",
+  "volume": "29",
+  "issue": "2",
+  "page": "2040003",
+  "URL": "https://arxiv.org/abs/1701.06567",
+  "note": "arXiv:1701.06567v2 [hep-th], J. Knot Theory Ramifications 29 (2020) 2040003. Added 2026-08-02 from library/arxiv-1701.06567v2/1701.06567v2.pdf (authors verified: Sergei Gukov, Du Pei, Pavel Putrov, Cumrun Vafa). The GPPV homological invariants $\\hat{H}_a(M_3)$ / $\\hat{Z}$: the Hilbert space of BPS states of the 6d fivebrane on $M_3 \\times D^2$ categorifies WRT / the 3d $\\mathcal{N}=2$ $T[M_3]$ indices ($D^2\\times S^1$ half-index, $S^2\\times S^1$ superconformal / twisted index). For QOU this is the **closed** / state-integral BPS sector that supplies the BPS-Hilbert-space realization of the resurgent-Stokes = DT count behind $A_\\omega$ (the licensing bridge, with garoufalidis-gu-marino2023peacock Conjecture 3(d) and dimofte-gaiotto-gukov2013) — distinct from the OPEN-HOMFLY sector of gukov-stosic2012."
+}

@@ -21,4 +21,14 @@ export default remark({
     "rem:physics-names-knot-operations",
     "prop:four-term-pair-nucleon",
   ],
+  authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-15",
+      body:
+        "**Fit labelled (owner H2, bean `qou-ccst`, PR #7825).** The values φ = 0.0487 and s = 0.0978 are " +
+        "obtained by setting E_pair = 2m_e, i.e. fitted to the electron mass. The text now says so, and no " +
+        "longer presents closing the 1.6 % gap as evidence.",
+    },
+  ],
 });

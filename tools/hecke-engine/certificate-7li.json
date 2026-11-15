@@ -1,18 +1,38 @@
 {
-  "elapsed_seconds": 0.005740499,
+  "elapsed_seconds": 0.004942568,
   "engine": {
     "name": "hecke-modular",
     "version": "0.11.0"
   },
-  "f_pauli_f64": 8.630603311363078,
+  "f_pauli_f64": 8.63024338694943,
+  "generation": {
+    "argv": [
+      "hecke-modular",
+      "3",
+      "4"
+    ],
+    "binary": "hecke-modular",
+    "commit": "33d54fd71b",
+    "engine_version": "0.8.0",
+    "q0": 1.1099785827513808,
+    "q0_pin": "proton",
+    "reproduce": "cargo run --release --bin hecke-modular -- 3 4"
+  },
   "isotope": {
     "a": 7,
     "n": 4,
     "symbol": "li",
-    "z": 3,
-    "name": "7Li"
+    "z": 3
   },
-  "l1_norm_f64": 0.035506262013014996,
-  "net_f64": 0.1691307668541459,
-  "tr_alt_f64": -1.4597005564647685
+  "l1_norm_f64": 0.035505086835010635,
+  "net_f64": 0.16913690315481777,
+  "tr_alt_f64": -1.4596926399409724,
+  "tr_markov_d": {
+    "computed": true,
+    "value": "0.0864563895092805485633642463958880239080338984400837441170959",
+    "method": "two-row seminormal characters up the Hecke tower (computations/probes/markov_trace_two_row_tower_probe.py); agrees with the v9 method to 60 digits on the 12 nuclei both compute",
+    "z": "q^3/(q^2+1)",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "normalisation": "divided by 2^pn_count, like the *_f64 fields"
+  }
 }

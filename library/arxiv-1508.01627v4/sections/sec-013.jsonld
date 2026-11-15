@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1508.01627v4/sections/sec-013",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Simple endotrivial modules",
+  "pageStart": 14,
+  "pageEnd": 14,
+  "contains": [
+    "library/arxiv-1508.01627v4/blocks/prose-sec-013"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1508.01627v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1508.01627v4",
+  "provenance": "ingested"
+}

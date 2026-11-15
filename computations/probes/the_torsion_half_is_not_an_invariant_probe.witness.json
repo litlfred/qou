@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-03T20:22:49.312146+00:00",
-  "commitSha": "be2d1bf56ca16ec9ecd45acd6dee6e4ae2efca02",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-10-13T15:29:36.894729+00:00",
+  "commitSha": "eacf7ca73101030f04c9f788e9f705839bef23c3",
   "assertions": [
     {
       "name": "T(2,3): κ > 0 on the whole family — the Frenet frame is a global framing",
@@ -138,11 +138,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 21,
   "computation": "the_torsion_half_is_not_an_invariant_probe",
   "scriptFile": "the_torsion_half_is_not_an_invariant_probe.py",
-  "scriptHash": "2561f6ac0813",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ac6a3037af80",
+  "scriptCommitSha": "b66bb4547db13638c8099f077e34464f80e426d1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -150,11 +150,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -260,5 +263,7 @@
     "The torus embedding is a convenience, not a canonical realisation; every torsion and writhe number here is a property of that embedding and of r, which is the point being made. A canonical embedding (Mobius-energy or ropelength minimiser) would give canonical numbers, and would still not give an isotopy invariant.",
     "Writhe is a trapezoid x panelled Gauss-Legendre double integral in (t, u = s - t) coordinates, checked only through the integrality of Wr + Tw_F (residual reported as worst_Lk_integrality_residual); its absolute accuracy is well below the 24-dps working precision of the single integrals.",
     "Per component only. A realisation of the whole chain link is not constructed; the principle does not depend on it."
-  ]
+  ],
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"
 }

@@ -2,98 +2,80 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2504.18825v2",
  "source_sha256": "829f97190cb1c8ad",
- "brief": "MURNAGHAN–NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS NAIHUAN JING AND NING LIU — 16 sections: Introduction; Preliminaries; Murnaghan–Nakayama rule for the cy",
- "extended": "**MURNAGHAN–NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS NAIHUAN JING AND NING LIU**\n\n*ALGEBRA AND APPLICATIONS*\n\n56 pp, 16 sections.\n\n**Outline.** 1 Introduction; 2 Preliminaries; 3 Murnaghan–Nakayama rule for the cyclotomic H; 4 Special cases of the Murnaghan–Nakayama rule; 5 A dual Murnaghan–Nakayama rule via vertex op; 6 Application I: Regev-type formula; 7 Application II: Lübeck–Prasad–Adin–Roichman; 8 Multiple bitrace for the irreducible charact; 1 Introduction; 2 Preliminaries; 3 Murnaghan–Nakayama rule for the cyclotomic H; 4 Special cases of the Murnaghan–Nakayama rule; 5 A dual Murnaghan–Nakayama rule via vertex op; 6 Application I: Regev-type formula; 7 Application II: Lübeck–Prasad–Adin–Roichman; 8 Multiple bitrace for the irreducible charact",
+ "brief": "Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications — We establish a Murnaghan–Nakayama rule for the irreducible characters of the cyclotomic Hecke algebra Hm,n(q, u) on Shoji’s",
+ "extended": "**Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications**\n\n*NAIHUAN JING AND NING LIU*\n\n56 pp, 12 sections.\n\n**Abstract.** We establish a Murnaghan–Nakayama rule for the irreducible characters of the cyclotomic Hecke algebra Hm,n(q, u) on Shoji’s standard elements. Combined with Shoji’s determinacy result, our formula provides a direct combinatorial route to the full irreducible character table of Hm,n(q, u). Our construction is based on our recent multi- parameter Murnaghan–Nakayama rule for Macdonald polynomials and specializes uni- formly to several previously known formulas, including those for the complex reflection group of type G(m, 1, n) and the Iwahori–Hecke algebras of types A and B. In a dual framework, using the vertex operator realization of Schur functions, we also derive a com- plementary iterative formula for irreducible characters on upper multipartitions, which may be viewed as a dual Murnaghan–Nakayama rule.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 3 Murnaghan–Nakayama rule for the cyclotomic H; 4 Special cases of the Murnaghan–Nakayama rule; 5 A dual Murnaghan–Nakayama rule via vertex op; 6 Application I: Regev-type formula; 7 Application II: Lübeck–Prasad–Adin–Roichman-; 8 Multiple bitrace for the irreducible charact; Appendix A. An alternative proof of Corollary ; Appendix B. SageMath implementation of the Mur; References\n\n**Extracted claims (proposals, not verified).**\n- Corollary: \\ref{c:dualMN2} ensures that the iteration can continue even when the parts of $\\la^{(1)}$ are exhausted.\n- Lemma: A.1. Let ψλ be the irreducible character of the Hecke algebra in type A indexed\n- Lemma: A.2. ([JL22, Theorem 3.1],[Zha19, Theorem B]) The Regev formula for the Hecke",
  "tokens": {
-  "brief": 44,
-  "extended": 196
+  "brief": 49,
+  "extended": 437
  },
  "sections": [
   {
-   "id": "sec-000-introduction",
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-1"
+   "pages": "1-7"
   },
   {
-   "id": "sec-001-preliminaries",
+   "id": "sec-001-2-preliminaries",
    "title": "Preliminaries",
-   "pages": "1-1"
+   "pages": "7-11"
   },
   {
-   "id": "sec-002-murnaghan-nakayama-rule-for-the-cyclotomic-hecke",
+   "id": "sec-002-3-murnaghannakayama-rule-for-the-cyclotomic-heck",
    "title": "Murnaghan–Nakayama rule for the cyclotomic Hecke algebra",
-   "pages": "1-1"
+   "pages": "11-18"
   },
   {
-   "id": "sec-003-special-cases-of-the-murnaghan-nakayama-rule",
-   "title": "Special cases of the Murnaghan–Nakayama rule",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-004-a-dual-murnaghan-nakayama-rule-via-vertex-operat",
-   "title": "A dual Murnaghan–Nakayama rule via vertex operators",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-005-application-i-regev-type-formula",
-   "title": "Application I: Regev-type formula",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-006-application-ii-lu-beck-prasad-adin-roichman-type",
-   "title": "Application II: Lübeck–Prasad–Adin–Roichman-type formula",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-007-multiple-bitrace-for-the-irreducible-characters",
-   "title": "Multiple bitrace for the irreducible characters",
-   "pages": "1-2"
-  },
-  {
-   "id": "sec-008-introduction",
-   "title": "Introduction",
-   "pages": "2-7"
-  },
-  {
-   "id": "sec-009-preliminaries",
-   "title": "Preliminaries",
-   "pages": "7-12"
-  },
-  {
-   "id": "sec-010-murnaghan-nakayama-rule-for-the-cyclotomic-hecke",
-   "title": "Murnaghan–Nakayama rule for the cyclotomic Hecke algebra",
-   "pages": "12-18"
-  },
-  {
-   "id": "sec-011-special-cases-of-the-murnaghan-nakayama-rule",
+   "id": "sec-003-4-special-cases-of-the-murnaghannakayama-rule",
    "title": "Special cases of the Murnaghan–Nakayama rule",
    "pages": "18-20"
   },
   {
-   "id": "sec-012-a-dual-murnaghan-nakayama-rule-via-vertex-operat",
+   "id": "sec-004-5-a-dual-murnaghannakayama-rule-via-vertex-opera",
    "title": "A dual Murnaghan–Nakayama rule via vertex operators",
    "pages": "20-25"
   },
   {
-   "id": "sec-013-application-i-regev-type-formula",
+   "id": "sec-005-6-application-i-regev-type-formula",
    "title": "Application I: Regev-type formula",
    "pages": "25-34"
   },
   {
-   "id": "sec-014-application-ii-lu-beck-prasad-adin-roichman-type",
-   "title": "Application II: Lübeck–Prasad–Adin–Roichman-type formula",
+   "id": "sec-006-7-application-ii-lübeckprasadadinroichman-type-f",
+   "title": "Application II: Lübeck–Prasad–Adin–Roichman-type formula",
    "pages": "34-43"
   },
   {
-   "id": "sec-015-multiple-bitrace-for-the-irreducible-characters",
+   "id": "sec-007-8-multiple-bitrace-for-the-irreducible-character",
    "title": "Multiple bitrace for the irreducible characters",
-   "pages": "43-56"
+   "pages": "43-49"
+  },
+  {
+   "id": "sec-008-appendix-a-an-alternative-proof-of-corollary-63",
+   "title": "Appendix A. An alternative proof of Corollary 6.3",
+   "pages": "49-51"
+  },
+  {
+   "id": "sec-009-appendix-b-sagemath-implementation-of-the-murnag",
+   "title": "Appendix B. SageMath implementation of the Murnaghan–Nakayama rule",
+   "pages": "51-55"
+  },
+  {
+   "id": "sec-010-references",
+   "title": "References",
+   "pages": "55-56"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles"
+   "abstract",
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

@@ -782,7 +782,12 @@ user's last message, not the most recently mentioned file.
       SHA-256 prefixes) drift from the current file contents;
       refresh by deleting the stale `criteria.<crit>` entry from
       the `.qa.json` and running
-      `bun run folio-assistant/content/pipeline/qa-sweep.ts <path> --only <crit>`
+      `bun run folio-assistant/cat-harness-tools/pipeline/qa-sweep.ts <path> --only <crit>`
+      (path corrected 2026-11-15: `content/pipeline/` no longer exists in the
+      platform. It takes ONE path per call — extra paths are ignored silently.
+      At platform pin `b61e856` it does not load at all: the pinned
+      `folio-assistant-sci` layer still imports `cat-harness/schemas/kg/cat-harness`,
+      which moved to `cat-harness-tools/schemas/`. See bean `qou-4jhp`)
       (single canonical invocation; use `/integration-audit
       <axis>` to batch a whole axis). Witnesses are stale when
       `witness.scriptHash` (SHA-256 prefix of producer file
@@ -2170,7 +2175,7 @@ possible, [PR #1805](https://github.com/litlfred/qou/pull/1805)).
 > twin** of the "≈ 3 %" swing this document already corrects two sections
 > up: both were computed from the pre-#1422 muon `c_3 = -2.0097` and its
 > 2.88 % swing, and both should have been re-derived at the same time.
-> With the live anchors (`c_3(p) = -2.0693425728`, `c_3(μ) =
+> With the live anchors (`c_3(p) = -2.0693425771`, `c_3(μ) =
 > -2.0202002328`, `Δq = 1.28e-8`) three independent routes agree:
 > **3.8375e6** by secant, **3.8320e6** from `2.37/u³` at `u = 0.00852`,
 > and `3838404.458` recorded in `rem-qstar`'s own witness as
@@ -2178,6 +2183,16 @@ possible, [PR #1805](https://github.com/litlfred/qou/pull/1805)).
 > 3.84e6 is just as impossible for a smooth real `f` as 4.6e6, the
 > **prune stands and the real-q c₃ family stays killed** — only the
 > quoted magnitude was wrong.
+>
+> **Proton `c_3` corrected 2026-10-13 (PR #7792):** it read `-2.0693425728`,
+> a typed copy no producer reproduces; the canonical extraction
+> (`qbeta_ck_cache.py`, `qbeta_utils.c3_proton_extracted`) gives
+> `-2.06934257711516783787971951725`, and with the typed copy the N=3
+> residual it is defined to zero was 2.7e-6 ppb instead of ~0. The secant
+> moves by 0.34, invisible at the precision quoted. The muon `-2.0202002328`
+> is the CODATA-2018-era figure (that extraction now gives `-2.0202002350`;
+> the live CODATA-2022 muon pin gives `-2.0198603119`); it is kept because
+> the secant is quoted as of that pin, not re-derived here.
 >
 > **🛑 "five other sites" was wrong by an order of magnitude, and wrong
 > about WHERE (corrected 2026-08-29, bean `qou-kt8o`).** Measured on
@@ -2302,8 +2317,19 @@ All three are the **three real DOF of the single H¹(Bring) = 2W** (rank-2 W-pla
   **Both are still live, and this line previously said they were not.** It read "both were live in the corpus until 2026-08-10", i.e. an all-clear. The 2026-08-10 drain (#4886 → #4901 → #4917, reported as "14 sites across 12 files, corpus-wide") swept `content/` only. Measured 2026-08-15 with fixed-string grep: **54 sites across 35 files** remain — 5 in `content/`, 28 in `computations/`, 21 in `docs/` (25 `.py`, 17 `.md`, 12 `.json`; **0** in `.lean`/`.ts`, which the drain did clear). Do not read this guard as "already fixed"; assume the file you are editing still carries it, and check. Tracked as `qou-zdz5`.
 
   Most survivors compute the RIGHT value under the WRONG name — e.g. `VOL41 = 2*mp.clsin(2, mp.pi/3)` is `2·Cl₂(π/3) = 2.0299` ✓ annotated `# Vol(4₁) = 2Λ(π/3)` ✗. So a grep for the bad *name* does not imply a bad *number*; check the arithmetic beside it before "fixing" a value.)
-- **Q_β** (the CAL-2 proxy):  `Q_β = ℏ/𝔇_β = m_e·|q₀²−2q₀−1|(q₀+1)/(2q₀³) ≈ 0.784 MeV` (0.17% vs CODATA) — the bar-odd `sinh` partner of the bar-even `cosh` meson scale m_π. 𝔇_β **is** CAL-2; because the modulus is overdetermined and pinned most precisely by m_μ/m_e, Q_β reproduced from q₀ is a 0.17% **cross-check**, not a fourth input.
+- **Q_β** (the CAL-2 proxy):  `Q_β = ℏ/𝔇_β = m_e·|q₀²−2q₀−1|(q₀+1)/(2q₀³) ≈ 0.784 MeV` (0.17% vs CODATA). 𝔇_β **is** CAL-2; because the modulus is overdetermined and pinned most precisely by m_μ/m_e, Q_β reproduced from q₀ is a 0.17% **cross-check**, not a fourth input.
 
+  > **🛑 EXCISED 2026-11-15 (owner, D-W2): "Q_β is the bar-odd `sinh` partner of the
+  > bar-even `cosh` meson scale m_π".** That description stood here until this date. It is
+  > removed because **no Q_β functional on record has a definite bar parity** under
+  > q ↦ q⁻¹: not Form A above, not the retired z = 1 trace, and not the ruled z_D trace. The
+  > two traces carry only an overall factor h = q − q⁻¹ = 2 sinh λ. Measured exactly in
+  > [`docs/audits/2026-11-15-one-sided-weak-vertex.md` §4](docs/audits/2026-11-15-one-sided-weak-vertex.md).
+  > Nothing numeric, Lean or compute depended on the label. Do **not** reinstate it on the
+  > strength of the letter-level fact that σ − σ⁻¹ = h is bar-odd; that is true of the letter
+  > and was never shown of Q_β. Open question: bean `qou-hlx8`. Out of scope and untouched:
+  > `prop:bar-parity-split` and `conj:binding-qbeta-complex-volume` (Q_β ↔ binding).
+  >
   > **🛑 SCOPING NOTE (2026-09-05) — the route that produces this number is
   > under review; the number is unchanged and nothing here is enacted.**
   > Solving the published closed form against the ansatz shape
@@ -3253,7 +3279,7 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **fifty-six** rows (re-counted 2026-10-10, twice in one day as `main` appended a row each time; 46 landed 2026-09-14
+>   catalogues **fifty-eight** rows (re-counted 2026-10-12 with the anchored regex after #7583 merged as row 57 and #7734 as row 58, both renumbered on merge; previously fifty-six, re-counted 2026-10-10, twice in one day as `main` appended a row each time; 46 landed 2026-09-14
 >   in `81a8ac98b9` after this line last said forty-five, then 47 and 48 landed,
 >   49 is PR #7401's — which arrived numbered 46 and had to be renumbered on
 >   merge — then PR #7318's two merged in at 50-51, main took 52-54, and **55 is
@@ -4030,7 +4056,7 @@ When a user request arrives, route to the right skill(s):
 | "devils advocate / why is this wrong / what will reviewers argue / adversarial review / red team / referee objection / counterexample / break this proof / poke holes" | `local/devils-advocate-watcher` (per-block + Lean adversarial review; 4 lenses + adjudicator; emits `da-*` sidecars) | reader |
 | "/integration-watch devils-advocate / da / adversarial" | `local/integration-watch` (dispatcher → devils-advocate-watcher child) | reader |
 | "bold defined terms / tighten definition / no rambling / no preamble in defn / one definition per block / each thing its own definition / tight theorem/prop/lemma statement / no interpretation in a theorem-prop-lemma-conjecture / statement should be pure / interpretation should be a follow-on remark / graduate-level formal math book style / informal register / contractions / hype / rhetorical header / why-question header / consequence header / academic header register / no Why…? or Consequence. section headers / definition in the wrong block / misplaced definition / definition clarity / setup clarity audit" | `local/definition-clarity-audit` (defn+statement clarity scanner; 8 criteria — `clarity-defterm-bold` / `clarity-defn-single` / `clarity-defn-tight` / `clarity-stmt-tight` / `clarity-stmt-pure` (a theorem/prop/lemma/conjecture must carry only its claim; interpretation moves to a follow-on `remark`) / `clarity-grad-style` (graduate-level formal-math register) / `clarity-rhetorical-header` (section headers must be noun-phrase academic, not "Why…?"/"Consequence." rhetorical/colloquial) + inverse `clarity-defn-misplaced` (a non-`definition` block secretly carrying a definition); emits `clarity-*` sidecars) | reader |
-| "QA report / .qa.json / multi-reviewer / hash staleness / per-block audit sidecar" | `folio-assistant/content/pipeline/qa-sweep.ts` + `qa-staleness.ts` (CLI), `folio-assistant/schemas/block-qa.ts` (schema) | collaborator |
+| "QA report / .qa.json / multi-reviewer / hash staleness / per-block audit sidecar" | `folio-assistant/cat-harness-tools/pipeline/qa-sweep.ts` + `qa-staleness.ts` (CLI), `folio-assistant/cat-harness-tools/schemas/sdlc/block-qa.ts` (schema) | collaborator |
 | "session todos / work plan / what's left / track progress / beans" | `local/todo-manager` (session work-plan via the `beans` CLI) + `local/bean-coordination` | reader |
 | "process feedback / review todos / triage open feedback" | `local/todo-review` (content-feedback triage) | reader |
 | "prepare merge auto / auto merge / resolve and merge / ship it" | `local/prepare-merge-auto` (full autonomous merge pipeline: coordinate siblings → prepare-merge → resolve comments → merge) | collaborator |
@@ -4306,7 +4332,8 @@ consult `LEAN_PACKAGES` for the list of valid prefixes.
 sorry
 ```
 
-- The `[key]` must match an entry in `folio/schema/references.ts` exactly (case-sensitive).
+- The `[key]` must match a bibliography key exactly (case-sensitive): a
+  `folio/references/<key>.json` file, loaded by `folio/schema/references.ts`.
   (`references.bib` is auto-generated from `references.ts` — the `export-bibtex`
   shortcut was dropped in the miga migration, pending re-wiring).
 - If no published reference exists, use `[manuscript]` and cite chapter/section.
@@ -5365,7 +5392,8 @@ Sibling files share the same root name: `rigid-monoidal-category.ts`,
 | `folio-assistant/content/pipeline/validate.ts` | Three-level validation |
 | `folio-assistant/content/pipeline/render-latex.ts` | Block → LaTeX + AST validation |
 | `folio-assistant/content/pipeline/build.ts` | Full document build |
-| `folio/schema/references.ts` | **Bibliography source of truth** (CSL-JSON) |
+| `folio/references/<id>.json` | **Bibliography source of truth** (CSL-JSON, one entry per file) |
+| `folio/schema/references.ts` | Loads `folio/references/` in `ORDER`; exports the registry |
 | `folio-assistant/content/pipeline/export-bibtex.ts` | Generates `references.bib` from CSL-JSON |
 | `folio-assistant/content/pipeline/validate-references.ts` | Bibliography + citation cross-checks |
 | `folio-assistant/content/pipeline/citations.ts` | `\cite{}` extraction from .md content |
@@ -5373,12 +5401,23 @@ Sibling files share the same root name: `rigid-monoidal-category.ts`,
 
 ### Bibliography architecture
 
-The bibliography is managed as **typed CSL-JSON** in
-`folio/schema/references.ts`. BibTeX (`references.bib`) is a downstream
-render target, auto-generated from `references.ts` (the `bun run export-bibtex`
-shortcut was dropped in the miga migration — pending re-wiring).
+The bibliography is managed as **typed CSL-JSON**, one entry per file in
+`folio/references/<id>.json` (bean `qou-l7pj`, owner 2026-10-14 "1 + 2").
+`folio/schema/references.ts` loads those files in the order its `ORDER` list
+gives, validates each with `ref()`, and exports the registry (`references`,
+`referenceMap`, `getRef`) that every consumer imports. BibTeX
+(`references.bib`) is a downstream render target, generated in `ORDER`
+(`bun run scripts/check-references-bib.ts` checks the committed copy).
 
-- **Adding a reference**: use the `ref()` builder in `references.ts`
+- **Adding a reference**: write `folio/references/<id>.json` with
+  `"$schema": "folio-reference/v1"` first, then add a `{ id: <id> }` line to
+  `ORDER` in `references.ts` (the loader refuses a file `ORDER` does not list).
+  Only an entry whose values are computed stays inline as a `ref({...})`
+  call (today `leitner2026`).
+- **Do not regex `references.ts` for entry fields** — it holds no entry
+  bodies. Python reads the entries through `scripts/lib/references_dir.py`.
+  Its `{ id: ... }` lines are kept so key-only scanners
+  (`bib-cite-resolves`, `check-citation-keys.py`) keep working.
 - **Block citations**: `cites: string[]` field on blocks (auto-extracted
   from `\cite{}` in .md by the pipeline, or set explicitly in .ts)
 - **Chapter bibliography**: aggregated at build time from all block cites
@@ -5568,13 +5607,24 @@ and **SEED the cache branch afterwards**. Full slug/seed rules:
 ROOT=$(git rev-parse --show-toplevel); TGZ=$(mktemp)
 trap 'rm -f "$TGZ"' EXIT INT TERM   # ~2.4G scratch tarball; NOTHING else reaps it
 SLUG=$(cut -d: -f2 "$ROOT/lean-toolchain" | tr -d '\r' | tr . -)   # v4.24.0 -> v4-24-0
-git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
+. "$ROOT/scripts/lib/lake-cache-family.sh"   # branch name comes from qou.json
+BR=$(lake_cache_read_branch "qou-$SLUG")     # cat/folio-assistant-sci/lake-cache/qou-v4-24-0
+git fetch --depth=1 origin "$BR" \
   && C=$(git rev-parse FETCH_HEAD) \
   && git ls-tree --name-only "$C" | grep '^lake-oleans\.tgz\.part' | sort \
      | while read -r p; do git show "$C:$p"; done > "$TGZ" \
   && tar xzf "$TGZ" -C "$ROOT" --transform 's,^content/,folio/,' \
   && bash "$ROOT/scripts/lake-restore-trace-check.sh" "$ROOT" \
-  && echo "restored from lake-cache/qou-$SLUG — skip Steps 1–3"
+  && echo "restored from $BR — skip Steps 1–3"
+
+# 🛑 The branch NAME is declared, not written here (corrected 2026-11-15). The
+# family moved to `cat/folio-assistant-sci/lake-cache/<member>` (bean `qou-hb5v`,
+# declared in qou.json `storage.branchPrefix`), and the legacy
+# `refs/heads/lake-cache/*` refs no longer exist on origin — measured with
+# `git ls-remote origin 'refs/heads/lake-cache/*'`, which returns nothing. This
+# recipe hardcoded `lake-cache/qou-$SLUG` and so failed at the fetch. Every
+# literal `lake-cache/qou-...` branch name elsewhere in this file is now the
+# member name under that prefix; resolve it with `lake_cache_read_branch`.
 
 # 🛑 The `--transform` is load-bearing too, and it is NOT cosmetic. The seeded
 # tarball stores PAPER paths as `content/<paper>/lean/...` — MEASURED 2026-10-10 by
@@ -5629,7 +5679,7 @@ git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
 # Fetch into a THROWAWAY repo so `rm -rf` reclaims it with no gc:
 #   T=/tmp/cachecheck; rm -rf $T; git init -q $T
 #   git -C $T remote add origin https://github.com/litlfred/qou
-#   git -C $T fetch --depth=1 -q origin lake-cache/qou-v4-24-0
+#   git -C $T fetch --depth=1 -q origin cat/folio-assistant-sci/lake-cache/qou-v4-24-0
 #   C=$(git -C $T rev-parse FETCH_HEAD)
 #   git -C $T ls-tree --name-only $C | grep '^lake-oleans\.tgz\.part' | sort \
 #     | while read -r p; do git -C $T show "$C:$p"; done | tar tzf - > /tmp/listing.txt

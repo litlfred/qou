@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-06T11:06:31.263962+00:00",
-  "commitSha": "35636ba86e3c3e61597062e71d91d26e672d2a49",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T14:24:28.243652+00:00",
+  "commitSha": "d3fc1984798d417519e0e0a4d07c80a6e62169b6",
   "assertions": [
     {
       "name": "insertion_expansion_order0_equals_derived_floor",
@@ -34,11 +34,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 252273,
+  "durationMs": 244065,
   "computation": "c2-diagonal-insertion-expansion-probe",
   "scriptFile": "c2_diagonal_insertion_expansion_probe.py",
-  "scriptHash": "5d6cf345ba6e",
-  "scriptCommitSha": "35636ba86e3c3e61597062e71d91d26e672d2a49",
+  "scriptHash": "c5f6bd3cd945",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,14 +46,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -197,5 +197,7 @@
       }
     ],
     "verdict": "c2 is DERIVED by the same mechanism as c0 and c1, one insertion deeper. The Hecke generator is exactly s + (diagonal, O(eps)), so the trace of any word at any order is a weighted fixed-point count over sub-words; order k needs at most k deletions. Conditional only on the Schur-Weyl identification, which the stage-1 probe checks on these words."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

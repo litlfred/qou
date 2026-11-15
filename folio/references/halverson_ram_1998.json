@@ -1,0 +1,38 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "halverson_ram_1998",
+  "library": {
+    "docId": "9511222v1",
+    "dir": "library/9511222v1",
+    "pdf": "library/9511222v1/9511222v1.pdf",
+    "stage": "sections",
+    "pages": 26,
+    "sections": 5
+  },
+  "type": "article-journal",
+  "title": "Murnaghan–Nakayama rules for characters of Iwahori–Hecke algebras of classical type",
+  "author": [
+    {
+      "family": "Halverson",
+      "given": "Tom"
+    },
+    {
+      "family": "Ram",
+      "given": "Arun"
+    }
+  ],
+  "container-title": "Transactions of the American Mathematical Society",
+  "volume": "348",
+  "issue": "10",
+  "page": "3967-3995",
+  "issued": {
+    "date-parts": [
+      [
+        1996
+      ]
+    ]
+  },
+  "DOI": "10.1090/S0002-9947-96-01622-1",
+  "URL": "https://doi.org/10.1090/S0002-9947-96-01622-1",
+  "note": "Verified 2026-06-23 (doth): Halverson & Ram, 'Murnaghan–Nakayama rules…', Trans. Amer. Math. Soc. 348(10), 3967–3995 — year corrected 1998→1996 (the '-96-' DOI segment + Arun Ram's author-site filename 1996TAMSv348n10p3967.pdf both confirm 1996). The id 'halverson_ram_1998' is retained for cross-ref stability despite the corrected year. DOI→page binding not landing-page-confirmed (sandbox 403). See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §C."
+}

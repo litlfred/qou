@@ -1,5 +1,6 @@
 {
   "computation": "qbeta-symmetry-sign-is-am-gm-locked",
+  "q0Anchor": "proton",
   "assertions": [
     {
       "name": "geometric_mean_is_exactly_one_over_two_q",
@@ -293,8 +294,8 @@
     ]
   },
   "provenance": {
-    "headSha": "592eddbfe30f39fd5289176721866b39490ca39d",
+    "headSha": "eacf7ca73101030f04c9f788e9f705839bef23c3",
     "producer": "computations/qbeta/qbeta_symmetry_sign_is_am_gm_locked_probe.py",
-    "elapsed_s": 0.009
+    "elapsed_s": 0.011
   }
 }

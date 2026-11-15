@@ -1,15 +1,15 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-09-13T21:14:07.514177+00:00",
-  "commitSha": "7e8c46d282594f11e59fa7a9f6a9dfbd3dde5327",
+  "computedAt": "2026-10-13T18:39:56.194927+00:00",
+  "commitSha": "1254251f32a91cb2588007366642042850d867cb",
   "assertions": [],
   "allPassed": true,
   "durationMs": 18,
   "computation": "markov-peel-atomic-tr-m-muon",
   "scriptFile": "markov_peel_atomic_witness.py",
   "scriptHash": "dfea977cab9c",
-  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,14 +17,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e87a23f8d6fd6732"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -51,10 +51,10 @@
         "tr_M_at_q0": "0.62932842431369996896355326733787143726642537907034",
         "elapsed_reduce_sec": "0.072",
         "elapsed_trace_sec": "0.001",
-        "elapsed_evalf_sec": "0.009",
+        "elapsed_evalf_sec": "0.008",
         "atom": "proton",
-        "bridge_witness_value": "0.629328422494892939934465029388718478549942559054704673665113",
-        "abs_diff_vs_bridge": "1.81881e-9",
+        "bridge_witness_value": "0.629328424313699968963553267337871437266425379070329935733983",
+        "abs_diff_vs_bridge": "1.06911e-50",
         "bridge_is_color_blind": false
       },
       {
@@ -66,12 +66,12 @@
         "reduced_term_count": 6,
         "trace_sympy_ops": 164,
         "tr_M_at_q0": "0.47513351923652028398666578296885046887079244459737",
-        "elapsed_reduce_sec": "0.043",
+        "elapsed_reduce_sec": "0.046",
         "elapsed_trace_sec": "0.000",
-        "elapsed_evalf_sec": "0.005",
+        "elapsed_evalf_sec": "0.004",
         "atom": "neutron",
-        "bridge_witness_value": "0.475133517674156240681798891402919584726147383954157477116503",
-        "abs_diff_vs_bridge": "1.56236e-9",
+        "bridge_witness_value": "0.475133519236520283986665782968850468870792444597367176586750",
+        "abs_diff_vs_bridge": "2.67276e-51",
         "bridge_is_color_blind": false
       },
       {
@@ -83,12 +83,12 @@
         "reduced_term_count": 72,
         "trace_sympy_ops": 7501,
         "tr_M_at_q0": "0.15196834576094227586290544332021370125078935418161",
-        "elapsed_reduce_sec": "4.309",
-        "elapsed_trace_sec": "0.026",
-        "elapsed_evalf_sec": "0.208",
+        "elapsed_reduce_sec": "5.079",
+        "elapsed_trace_sec": "0.031",
+        "elapsed_evalf_sec": "0.220",
         "atom": "deuteron",
-        "bridge_witness_value": "0.151968343958468755872283121674754245819148987877933688432946",
-        "abs_diff_vs_bridge": "1.80247e-9",
+        "bridge_witness_value": "0.151968345760942275862905443320213701250789354181600575388696",
+        "abs_diff_vs_bridge": "9.35468e-51",
         "bridge_is_color_blind": true
       },
       {
@@ -100,12 +100,12 @@
         "reduced_term_count": 864,
         "trace_sympy_ops": 88924,
         "tr_M_at_q0": "0.029144043033883520810730527854925555695923126555695",
-        "elapsed_reduce_sec": "91.868",
-        "elapsed_trace_sec": "1.638",
-        "elapsed_evalf_sec": "2.575",
+        "elapsed_reduce_sec": "123.408",
+        "elapsed_trace_sec": "1.789",
+        "elapsed_evalf_sec": "2.961",
         "atom": "tritium",
-        "bridge_witness_value": "0.0291440423539614099999473434226673098704920436236057330873125",
-        "abs_diff_vs_bridge": "6.79922e-10",
+        "bridge_witness_value": "0.0291440430338835208107305278549255556959231265556915262479357",
+        "abs_diff_vs_bridge": "3.46624e-51",
         "bridge_is_color_blind": true
       },
       {
@@ -117,12 +117,12 @@
         "reduced_term_count": 432,
         "trace_sympy_ops": 41911,
         "tr_M_at_q0": "0.058596259531631911295732767469725546878639863957569",
-        "elapsed_reduce_sec": "28.959",
-        "elapsed_trace_sec": "0.457",
-        "elapsed_evalf_sec": "1.092",
+        "elapsed_reduce_sec": "34.639",
+        "elapsed_trace_sec": "0.451",
+        "elapsed_evalf_sec": "1.442",
         "atom": "helium-3",
-        "bridge_witness_value": "0.0585962583454862042691531956774434357752044480583623006231397",
-        "abs_diff_vs_bridge": "1.18615e-9",
+        "bridge_witness_value": "0.0585962595316319112957327674697255468786398639575657550899776",
+        "abs_diff_vs_bridge": "3.25743e-51",
         "bridge_is_color_blind": true
       },
       {
@@ -134,9 +134,9 @@
         "reduced_term_count": 5184,
         "trace_sympy_ops": 450953,
         "tr_M_at_q0": "0.011237418561500166414486153160213967309805036000877",
-        "elapsed_reduce_sec": "1086.895",
-        "elapsed_trace_sec": "57.289",
-        "elapsed_evalf_sec": "13.429",
+        "elapsed_reduce_sec": "1352.313",
+        "elapsed_trace_sec": "68.768",
+        "elapsed_evalf_sec": "16.084",
         "atom": "helium-4",
         "bridge_witness_value": null,
         "abs_diff_vs_bridge": null
@@ -146,11 +146,11 @@
     "upstream_witness_hashes": [
       {
         "path": "atomic-tr-m-mpfr-50dps.witness.json",
-        "sha256": "bccaf8668d74310c894ff91e7e9094a5bd80c81c89a0f6c915e267bc1a51e260",
-        "size_bytes": 8561,
-        "commitSha": "b1b7e4b259ecfe514ded4b0c52c5b415f7196cdb",
-        "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
-        "computedAt": "2026-09-13T11:51:38.822950+00:00"
+        "sha256": "e0c150a1f59f846cc915468685f60a092cb181a533537754d7314c4815b8beca",
+        "size_bytes": 8535,
+        "commitSha": "b9941b94f2b1a97d923c3f6cba6dc06565b63cda",
+        "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
+        "computedAt": "2026-10-13T18:12:09.222102+00:00"
       }
     ]
   },

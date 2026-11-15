@@ -611,7 +611,7 @@ def main() -> int:
         "bean": ["qou-0ie7", "qou-hok7"],
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "q0Value": mp.nstr(Q0, 50),
-        "q0_anchor": "physical_proton",
+        "q0_anchor": "physical_proton", "q0Anchor": "proton",
         "dps": mp.dps,
         "constants": {
             "C": mp.nstr(C_CONST, 40),

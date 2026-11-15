@@ -33,8 +33,13 @@ Candidate V(K) forms (categorically motivated):
   V5: V(K) = Z·N · ℏ_q^{n-1}                — flavour-aware
   V6: V(K) = (Z²+N²) · ℏ_q^{n-1}            — flavour-symmetric
 
-  Ref: [manuscript] conj:delta-lambda-categorical-closure
+  Ref: [manuscript] `delta-lambda-categorical-closure`
   Ref: [manuscript] docs/audits/2026-05-19-delta-lambda-exploration-findings.md
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 
 from __future__ import annotations
@@ -52,6 +57,10 @@ sys.path.insert(0, str(HERE))
 import mpmath as mp
 
 from witness_base import WitnessBuilder, record_upstream
+# tr_m_nucleon serves any row of the witness (deuteron included), with the
+# pin + intra-ordering guards; not edited to avoid import-cone drift on its
+# 27 importers.
+from canonical_trm_reference import tr_m_nucleon  # noqa: E402
 
 # Upstream hash records captured before the WitnessBuilder exists;
 # attached at construction. Owned by this module — see
@@ -208,10 +217,13 @@ def main() -> int:
     builder.add_assertion(
         "tr_M_data_loaded",
         computed=atoms["D"]["abs_tr_M"],
-        expected=0.3882864715477132,
+        # Reference READ from the owning witness (tracker #7735 item K), not
+        # typed: was the superseded grouped/convention-C literal 0.38828647….
+        expected=tr_m_nucleon("deuteron"),
         tolerance=1e-10,
         unit="tr_M(D) at q_0",
-        source="delta-lambda-empirical-tabulation.witness.json",
+        source=("delta-lambda-empirical-tabulation.witness.json vs "
+                "atomic-tr-m-mpfr-50dps-proton.witness.json results[deuteron]"),
     )
 
     builder.save()

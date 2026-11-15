@@ -1,0 +1,30 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "thurston1978",
+  "library": {
+    "docId": "thurston",
+    "dir": "library/thurston",
+    "pdf": "library/thurston/Thurston.pdf",
+    "stage": "sections",
+    "pages": 33,
+    "sections": 22
+  },
+  "type": "book",
+  "title": "The Geometry and Topology of Three-Manifolds",
+  "author": [
+    {
+      "family": "Thurston",
+      "given": "William P."
+    }
+  ],
+  "publisher": "Princeton University lecture notes",
+  "issued": {
+    "date-parts": [
+      [
+        1978
+      ]
+    ]
+  },
+  "URL": "https://www.msri.org/publications/books/gt3m/",
+  "note": "Original lecture notes establishing the ideal-tetrahedron PDF library/thurston/ — the extractor had taken the byline as the title, so a title match could not find this entry.decomposition of hyperbolic 3-manifolds and the Bloch-Wigner volume formula $V = \\sum D(z_i)$ used in the crossing-graded expansion of the categorical mass endomorphism."
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "ruamunoz2025",
+  "library": {
+    "docId": "quaternioms",
+    "dir": "library/quaternioms",
+    "pdf": "library/quaternioms/quaternioms.pdf",
+    "stage": "candidates",
+    "pages": 41,
+    "sections": 40
+  },
+  "type": "article-journal",
+  "title": "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations",
+  "author": [
+    {
+      "family": "Rua Munoz",
+      "given": "Johan Heriberto"
+    },
+    {
+      "family": "Mahecha Gomez",
+      "given": "Jorge Eduardo"
+    },
+    {
+      "family": "Pineda Montoya",
+      "given": "Santiago"
+    }
+  ],
+  "container-title": "Quantum Reports",
+  "volume": "7",
+  "page": "55",
+  "issued": {
+    "date-parts": [
+      [
+        2025
+      ]
+    ]
+  },
+  "DOI": "10.3390/quantum7040055",
+  "note": "PDF library/quaternioms/ — registered from library intake. Volume, article number and year are from the article's own running head ('Quantum Rep. 2025, 7, 55'); the DOI is on the cover page. The extracted title was '3.01.3', the MDPI reprint cover's section number, so the title here comes from a hand-verified override (docs/audits/library-title-overrides.json)."
+}

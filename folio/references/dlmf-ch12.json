@@ -1,0 +1,23 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "dlmf-ch12",
+  "type": "chapter",
+  "title": "Parabolic Cylinder Functions (Chapter 12)",
+  "author": [
+    {
+      "family": "Temme",
+      "given": "Nico M."
+    }
+  ],
+  "container-title": "NIST Digital Library of Mathematical Functions (release 1.2.x)",
+  "publisher": "National Institute of Standards and Technology",
+  "URL": "https://dlmf.nist.gov/12",
+  "issued": {
+    "date-parts": [
+      [
+        2024
+      ]
+    ]
+  },
+  "note": "Canonical reference for D_nu(z): Weber equation, the even/odd solution pair, and the connection formula whose 1/Gamma((1-nu)/2), 1/Gamma(-nu/2) coefficients implement parity selection by pole-vanishing at integer nu — the classical mechanism transported to the QOU even/odd (bar-parity) channel interpolation."
+}
