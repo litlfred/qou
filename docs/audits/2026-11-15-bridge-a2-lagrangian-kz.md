@@ -238,3 +238,51 @@ residue that is conjugate to a constant but not equal to one. The room for this 
 2. Regular residues at triple collisions for matrix connections, `n ≥ 4` (input 2).
 
 Input 3 is closed.
+
+## Second follow-up: triple collisions come from the monoidal structure (2026-11-15)
+
+The owner pointed out that triple collisions are part of the monoidal structure. They are, and
+that changes the status of input 2 (and probably of the gap left on input 1).
+
+**The categorical side.** A braided monoidal category is an algebra over the little-disks
+operad. When a cluster `S` of strands collides, the fibre near that collision is `⊗_{p∈S} V_p`
+treated as one object, tensored with the rest. How a pair sits inside a larger cluster is
+governed by the associator. The spaces of that operad are the Fulton–MacPherson compactifications,
+and the compatible algebraic model is the De Concini–Procesi wonderful model `\overline{Conf}_n`,
+where every collision stratum is blown up and the boundary is a normal-crossing divisor. The local
+system the braiding defines extends across this model. That part is topology.
+
+**Lean (`cluster_residue`, sorry-free).** For an Arnold-class form, let the cluster `S` collide as
+`z_p = c + ε w_p`. Then `ε · ω` along the collision direction is `½ Σ_{p≠q∈S} M_{pq}` plus a term
+regular at `ε = 0`. So:
+- the exceptional divisor of the collision carries the residue `Σ_{p<q∈S} M_{pq}`;
+- the pairs leaving the cluster contribute nothing singular.
+
+With `M_{pq} = Ω_{pq}`, this is the Casimir of the cluster as one object minus the Casimirs of its
+factors. The monoidal structure can be read off at the collision.
+
+**Input 2, re-derived.**
+1. On the wonderful model the boundary has normal crossings. Deligne's canonical extension gives a
+   connection with log poles there whose residues are holomorphic along each boundary component.
+2. The diagonal `z_i = z_j` meets the triple-collision locus `z_k = z_i` in a divisor of the
+   diagonal, so blowing up does not change the diagonal there. Holomorphic residue on the
+   diagonal is therefore exactly condition (c).
+3. The local monodromy around the cluster divisor is the full twist of the cluster. The braided
+   (ribbon) structure fixes it, so the categorical data determines the residues' exponentials.
+
+So input 2 is not new physics. It is the monoidal structure plus the Riemann–Hilbert input
+already isolated in Part IV, applied on the wonderful model rather than on `Conf_n`. The
+rank-one restriction of the first follow-up is no longer needed.
+
+**Input 1, probably closed the same way.** Including the point at infinity (the `ℂ^×`
+compactification of the Euler direction) in the wonderful model, the Deligne extension also has
+log poles along the divisor at infinity. That is the log-pole control on the twist logarithm `B`
+that the first follow-up lacked. This is stated, not checked in detail.
+
+**What is still assumed, explicitly.**
+1. Riemann–Hilbert in Deligne's form on the (`ℂ^×`-equivariant) wonderful model. This is the same
+   isolated analytic input, on a different compactification.
+2. That the resulting algebraic vector bundle on `Conf_n` is trivial, so that the extension is
+   `V^{⊗n}` with a single global connection form. Line bundles on `Conf_n` are trivial, since it is
+   a hyperplane-arrangement complement with trivial Picard group. Triviality in higher rank is
+   not checked here.
