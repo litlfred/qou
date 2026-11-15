@@ -109,3 +109,32 @@ Du–Parshall–Wang, *q-Schur algebras*; Green, *q-Schur algebras as quotients 
 algebras* (J. Algebra 1996). Held and relevant: `black-samson-phd2010sp` (Schur–Weyl duality and
 quotients of Hecke algebras). F1–F3 need none of the missing sources. The owner should upload
 Dipper–James and Green only if the route in (b) is ever taken.
+
+## (★): the exact interface (agreed with 7a, 2026-11-15)
+
+7a has accepted the split. P3 takes (★) as an explicit hypothesis in its **summed** form, so that
+7a's two halves can be combined on their side without P3 needing to know about dominance:
+
+```lean
+open QOU.SchurWeyl.QuantumGL QOU.SchurWeyl.JimboGL in
+/-- The weights that occur in `(K^d)^{⊗(m+1)}`: contents of index words. -/
+def occWeights (d m : ℕ) : Finset (Fin d → ℕ) :=
+  Finset.univ.image (fun a : Fin (m + 1) → Fin d => content a)
+
+-- (★), as consumed by P3:
+--   {L} [Field L] [LinearOrder L] [IsStrictOrderedRing L] [NeZero d]
+--   (q : L) (hq : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (m : ℕ)
+(hstar : ∑ μ ∈ occWeights d m, Module.finrank L (hwSpace q m μ) ^ 2
+          ≤ ∑ lam : RowCapIdx d m,
+              Fintype.card (StandardYoungTableau (partitionShape lam.1)) ^ 2)
+```
+
+The right-hand side is literally that of `finrank_range_jimbo`. 7a supplies it from:
+
+1. `hwSpace_eq_bot_of_not_dominant` (draft PR #7870). Dominance is in 7a's orientation:
+   `μ i ≤ μ (i+1)`, non-decreasing, because `E_i` raises `e_i → e_{i+1}`.
+2. `finrank (hwSpace q m μ) ≤ f^{λ(μ)}` for dominant `μ`, where `λ(μ)` is the reversal of `μ`.
+3. A bijection between the dominant elements of `occWeights d m` and `RowCapIdx d m`.
+
+`occWeights` was chosen over `Fin d → ℕ` so that the sum is finite. Off it, `weightProj μ = 0`, so
+`hwSpace μ = ⊥`.
