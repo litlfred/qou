@@ -80,7 +80,7 @@ Every named avenue for the ladder phase is now closed or uninstantiated:
 braid image excluded, arbitrary M circular, constant-residue holonomies fail the
 doubling identity, all real-spectrum generators are on the wrong side of 1, Im(q)
 cannot supply ellipticity, Bring's E and tau_0 are both non-CM, bar-odd operators
-have zero Plancherel trace, the tower carries one eigenphase per H_3 element,
+have zero W-weighted trace Sum W_lam chi^lam, the tower carries one eigenphase per H_3 element,
 no rational factor bridges the gap, real nuclear decays are hyperbolic, and no
 species difference has a small enough eigenphase.
 

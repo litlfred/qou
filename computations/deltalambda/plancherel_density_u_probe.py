@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Plancherel-trace coproduct density `u` on H_n(q) vs the refuted co-Casimir Δ_λ.
+"""Plancherel-functional coproduct density `u` on H_n(q) vs the refuted co-Casimir Δ_λ.
 
 Owner-approved exploration (item 4, branch claude/frobenius-counit-axiom2-2026-10-13).
 
@@ -20,11 +20,11 @@ Counit choices examined (none selected by agreement with any target):
   (a)  ε = tr_M                        -> ε_λ = y_λ.  Under D, y_λ = 0 on every
        three-row block for n ≥ 3, so c_λ = 1/0: NO counit exists on H_n with this ε;
        only on the quotient H_n/rad (TL_n), where u = 1.
-  (b)  ε = τ_P as written in the corpus at
+  (b)  ε = τ_P, the UNWEIGHTED PLANCHEREL FUNCTIONAL, as written in the corpus at
        mass-theory/frobenius-codim-universal.lean (docstring of
        frobenius_codim_tau_invariant):  τ_P(p_λ) = dim_q(λ)·d_λ/[n]_q!,
        dim_q(λ) = [n]_q!/Π_x [h(x)]_q (balanced).  ε_λ = dim_q(λ)/[n]_q!.
-  (bκ) the same with the q^{-κ_λ} content factor that the corpus's
+  (bκ) the CANONICAL TRACE: the same with the q^{-κ_λ} content factor that the corpus's
        QOU/MathlibExt/MolienFakeDegree.lean carries (Σ f^λ q^{-κ_λ} dim_q = [n]_q!,
        proved n=2,3,4): ε_λ = q^{-κ_λ} dim_q(λ)/[n]_q!.  This probe checks
        symbolically (n=2,3,4) that (bκ) IS the canonical trace τ(T_w) = δ_{w,1}
@@ -251,7 +251,7 @@ def verify_traces(n):
     check(f"n={n}: (bκ) Σ q^-κ dim_q/[n]! χ_λ is the canonical trace "
           f"τ(σ_w)=δ_w,1 on all {len(words)} reduced words", canon_bk)
     canon_b = all(is_zero(trace_fn(eps_b, w) - (1 if len(w) == 0 else 0)) for w in words)
-    check(f"n={n}: (b) corpus τ_P (no κ) is NOT the canonical trace "
+    check(f"n={n}: (b) unweighted Plancherel functional τ_P (no κ) is NOT the canonical trace "
           f"[structural fact recorded, not a selection]", not canon_b)
     t_b1 = trace_fn(eps_b, ())
     return {"n": n, "markov_D": mk, "canonical_bkappa": canon_bk,
@@ -355,7 +355,7 @@ def table(n):
 
 
 def main():
-    print("Plancherel-trace coproduct density u vs co-Casimir 1/dim_q (conv D, exact)")
+    print("Plancherel-functional coproduct density u vs co-Casimir 1/dim_q (conv D, exact)")
     print(f"proton pin q0 = {_QSTR}")
     trace_checks = [verify_traces(n) for n in (2, 3, 4)]
 

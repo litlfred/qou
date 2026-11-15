@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-10-13T17:34:21Z
-updated_at: 2026-10-13T17:40:29Z
+updated_at: 2026-11-15T13:00:00Z
 ---
 
 Owner, 2026-10-13: option A2 (keep the antipode, general coproduct). Measured that A2 is already the general form: def:mass-identity has m(ϱ) = ‖∫(u·ϱ)‖ with u = (∫⊗id)Δ(1). MassTraceIdentity.lean proves massIntegrand_eq_leftMul_density, frobeniusForm_massIntegrand and massTrace_eq_functional_hol with no counit hypothesis. The four _of_frobeniusForm_eq_counit theorems are the special case u = 1.
@@ -34,3 +34,5 @@ Side finding: the corpus carries two distinct 'Plancherel trace' objects (with a
 Side finding: the Lean coCasimirSum constant 0.14496 is stale against the witness value 0.17312. The inequalities still hold.
 
 2026-11-15: the stale coCasimirSum is fixed. DeltaLambdaRefutation.lean now carries the regenerated witness figures (rho-k-h3a-co-casimir.witness.json, 2026-10-05, proton pin): coCasimirSum 0.173120471677, targetSigned -4.353367491256, closureGap 4.526487962933 (12-figure truncations; the gap identity is exact over Q). lean-direct exit 0, axioms [propext, Classical.choice, Quot.sound]. The refutation verdict is unchanged. The two-"Plancherel trace" rename is still open and waits on the owner.
+
+2026-11-15: renamed across the corpus on the owner's choice. "Plancherel trace" was three objects, not two: the canonical trace (with q^{-κ_λ}, MolienFakeDegree), the unweighted Plancherel functional τ_P (frobenius-codim-universal.lean), and the q-Plancherel measure trace tr_qP (weights dim_q²/[n]_q!, hoefsmit_symbolic.py). General Σ W_λ χ^λ sums are now "W-weighted traces". Docstrings and prose only; no values, function names or file names changed. Table in docs/audits/2026-10-13-plancherel-density-u-vs-cocasimir.md §Naming.
