@@ -1,11 +1,11 @@
 ---
 # qou-avtq
 title: 'MILESTONE: attack-vector queue (Q_beta / c3^odd / f-map)'
-status: todo
+status: in-progress
 type: epic
 priority: high
 created_at: 2026-08-26T04:22:51Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-15T23:50:00Z
 parent: qou-10v9
 ---
 
@@ -177,3 +177,10 @@ Now the epic for P1.QB under PROGRAM: L2 at 1 ppQ (mass and binding accuracy).
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## 2026-11-15 — executed owner rulings `Q-AVTQ-2 = 1` (`qou-ay84`, `qou-dq2q`) and `Q-AVTQ-3 = 1` (`qou-0e66`, `qou-6tdg`) in PR #8063
+
+- **`qou-ay84` (absorbing `qou-mcus`, `status: in-progress`):** Computed exact Borromean 3-cusp NZ Hessian and 60-dps deformation series (`computations/qbeta/borromean_three_cusp_nz_hessian_probe.py`, `computations/qbeta/borromean-three-cusp-nz-hessian.witness.json`) and formalized 12 sorry-free theorems in `QOU/QBeta/BorromeanThreeCuspNZHessian.lean`. At quadratic order $\partial v_i/\partial u_j|_{u=0} = -2i\,\delta_{ij}$ is strictly diagonal ($\kappa_{\mathrm{Bor}}^{\mathrm{sym}} = 3\,\kappa_{\text{per-cusp}}$; `sign_flip_resolved = False` at 2nd order), while shared octahedral tetrahedra couple at 3rd order in $v_i(u)$ (quartic order $O(u^4)$ in $\mathrm{CVol}$), flipping the cubic longitude coefficient from $+i/12$ on $(u,0,0)$ to $-5i/12$ on $(u,u,u)$.
+- **`qou-dq2q` (absorbing `qou-ynff`, `qou-5gh6`, `qou-7lim`, `qou-ized`, `status: in-progress`):** Computed exact closed-form bar-odd resolvent projections over $K_{5_2}$ ($\Delta = -23$, $\mathbb{Q}(\sqrt{-23})$) and Masbaum cyclotomic-coefficient-asymmetry ratios (`computations/qbeta/five_two_disc_neg23_cyclotomic_asymmetry_probe.py`, `computations/qbeta/five-two-disc-neg23-cyclotomic-asymmetry.witness.json`) and formalized 8 sorry-free theorems in `QOU/QBeta/FiveTwoSumRuleIntegrand.lean`.
+- **`qou-0e66` (absorbing `qou-t7az`, `status: in-progress`):** Formalized the written negative and 4 structural obstructions (`mcphailSnyder_archimedean_bridge_exclusion`) in `QOU/QBeta/McPhailSnyderBridgeExclusion.lean`.
+- **`qou-6tdg` (`status: in-progress`):** Completed the §§0–10 currency and notation-disambiguation pass on `docs/canonical-derivation-cheat-sheet.md` (added `§0.1 Notation Disambiguation Table`).

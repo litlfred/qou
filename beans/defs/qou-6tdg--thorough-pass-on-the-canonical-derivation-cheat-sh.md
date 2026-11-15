@@ -1,13 +1,13 @@
 ---
 # qou-6tdg
 title: 'Thorough pass on the canonical derivation cheat sheet (audit + paper): reflect every 2026-09-15 decision; list gaps/conjectures; name the specific open mass-binding gaps'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-15T19:54:10Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-11-15T23:50:00Z
 parent: qou-avtq
 ---
 
@@ -25,3 +25,9 @@ Evidence: `docs/canonical-derivation-cheat-sheet.md` §10 (line 1124ff), with §
 
 Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
 Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+
+## 2026-11-15 — second half completed under owner ruling `Q-AVTQ-3 = 1` (PR #8063)
+
+- Added `§0.1 Notation Disambiguation Table` to `docs/canonical-derivation-cheat-sheet.md` explicitly separating $\chi^\lambda$ (Hecke irreducible character), $\chi_{\mathrm{eu}}(M_0) = 2-2g(M_0) = -6$ (topological Euler characteristic of Bring's curve, $g(M_0)=4$), $\chi(M_0, \mathcal{V})$ (holomorphic sheaf Euler characteristic), $\operatorname{tr}$ (matrix trace), $\operatorname{tr}_M$ (normalized Markov trace at $z_D = q^3/(q^2+1)$), $\dim_q(X) = (\mathrm{ev}\circ\mathrm{ch})([X])$ (quantum rigid dimension), $\mathrm{NS}(A) = e(\xi) \in H^2(\mathcal{S}, \mathbb{Z})$ (global surface contact Euler class, PR #7982), $q_0$ (`Q_50_DIGIT_STR` 50-dps proton pin), and $\beta_{\mathrm{Bor}}$.
+- Updated §§0, 1, 2, 3, 6, 9.5, and 10.1 in `docs/canonical-derivation-cheat-sheet.md` so Step 3 ($z_D = q^3/(q^2+1)$), Step 4 ($\chi_{\mathrm{eu}}(M_0) = -6$, $g(M_0)=4$, $\mathrm{NS}(A)=e(\xi)$), the $q_0$ proton-pin reference (`Q_50_DIGIT_STR`), and the Phase-5 Z-step formula inline text reflect canonical convention D and the 2026-09-15 / #7982 notation rulings. Held at `status: in-progress` pending PR #8063 merge and owner closure review.

@@ -1,13 +1,13 @@
 ---
 # qou-0e66
 title: 'c3-borel #5 (diagrammatic route): test whether the QOU braid-word -> (m,ℓ)/Stokes-entry selection IS the McPhail-Snyder (arXiv:2601.05136) per-edge integer state-sum k∈Z^E over crossings, specialised at q₀. This is the DIAGRAMMATIC realisation of the qnnq braid->data map (complement to Fantini-Wheeler''s NZ-datum route): k attached to the knot diagram, (µ,λ)=cusp holonomy, worked for the 5₂ Kashaev invariant. Ref mcphail-snyder2026 + McPhail-Snyder–Reshetikhin holonomy R-matrices. Parent qou-wmkb; bears on qou-qnnq. No fit, nothing wired.'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T18:47:21Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-11-15T23:50:00Z
 parent: qou-avtq
 ---
 
@@ -33,3 +33,14 @@ Evidence: The re-scoped task (does a q0-evaluation of McPhail-Snyder's fibre-lev
 
 Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
 Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+
+## 2026-11-15 — executed under owner ruling `Q-AVTQ-3 = 1` (PR #8063, absorbing `qou-t7az`)
+
+- **Written Negative & Lean 4 Exclusion Module:** `folio/quantum-observable-universe/lean/QOU/QBeta/McPhailSnyderBridgeExclusion.lean` (wired into `QOU.lean`, compiled with `0` errors / `0` warnings / `0` `sorry`).
+- **Four Structural Obstructions Formalized (`mcphailSnyder_archimedean_bridge_exclusion`):**
+  1. **Holonomy input non-derivation (`mcphailSnyderStateSum_ne_of_mu_ne`):** The diagrammatic state-sum takes the cusp holonomy $(\mu, \lambda)$ as an external boundary parameter (`CuspHolonomyInput`) rather than deriving it from the braid word.
+  2. **State summation vs. branch selection (`mcphailSnyderStateSum_shift_invariant`, `stateSum_strictly_gt_single_state`):** The edge colourings $k \in (\mathbb{Z}/N\mathbb{Z})^E$ are summed over the full finite group, making the output invariant under any translation $k \mapsto k + \delta$ and strictly larger than any single state weight when $N \ge 2$ and weights are positive.
+  3. **Habiro / $q$-Pochhammer real-locus divergence (`qPoch_not_tendsto_zero_of_one_lt`):** At the archimedean pin $q_0 > 1$, the cyclotomic $q$-Pochhammer factor $(q_0; q_0)_n$ does not tend to $0$, ruling out naive real-locus series continuation of the root-of-unity state sum.
+  4. **Modular-double dual suppression (`modular_reciprocity`, `dual_lt_of_y_lt_one`):** Under Faddeev's modular double ($b^2 = (\ln q_0)/(2\pi i)$), the dual parameter $\tilde{q} = \exp(-4\pi^2/\ln q_0) \approx 5.93 \times 10^{-165}$ is non-perturbatively suppressed.
+- Held at `status: in-progress` pending PR #8063 merge and owner closure review.
