@@ -22,7 +22,7 @@ The table that stood here until 2026-11-15 ($a_0 = 4$, $a_1 = -74u - 74$, …)
 was the convention-C expansion.
 
 The neutron has the same structure with $M = 8$ and different integer
-coefficients. The deuteron has $M = 12$.
+coefficients. The deuteron has $M = 13$ under convention D (it was $12$ under C).
 
 ## Uniqueness of the archimedean evaluation
 
