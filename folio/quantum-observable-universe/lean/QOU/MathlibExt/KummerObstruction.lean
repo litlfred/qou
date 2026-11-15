@@ -35,6 +35,13 @@ theorem bring_kummerObstruction_eq_zero_iff (n : ℕ) :
   rw [kummerObstruction_eq_zero_iff, Int.dvd_neg]
   exact_mod_cast Iff.rfl
 
+/-- R1 bridge: if the level-0 Markov trace of the identity is the integer
+`χ(A)` (relation C-4b, `tr_M(id) = χ(A)`), the Kummer obstruction is that trace
+reduced mod `n`. The trace value is a hypothesis here, not proved. -/
+theorem kummerObstruction_eq_trace_id_mod (trId χ : ℤ) (hC4b : trId = χ)
+    (n : ℕ) : kummerObstruction χ n = (trId : ZMod n) := by
+  rw [hC4b]; rfl
+
 /-- Every additive map from `ℤ/n` (`n ≠ 0`) into an `ℕ`-torsion-free group
 is zero. -/
 theorem addMonoidHom_zmod_eq_zero {M : Type*} [AddCommGroup M]
