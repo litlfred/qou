@@ -30,8 +30,14 @@ constant is consumed ONCE — normalising by the D value — after which D is th
 and ONLY T/³He/⁴He are genuine predictions.  Screening ~4 weights × 2 aggregates ⇒ the
 entropy caveat applies: a single <5% hit is a LEAD to verify, NOT a closure.
 
-INPUTS (current-main-verified per-knot Jones–Markov traces, chi-cache):
-    tr_M(p) = 1.0653062 ,  tr_M(n) = 0.9232333
+INPUTS (READ from their owning witnesses since 2026-11-15; see below):
+    tr_M(p), tr_M(n) — atomic-tr-m-mpfr-50dps-proton.witness.json
+        (borromean word, convention D, proton pin).  Until 2026-11-15 these
+        were typed 1.0653062 / 0.9232333, the RETIRED convention-C traces
+        (bean qou-am5t), mislabelled "current-main-verified".
+    μ_ext targets — deltalambda-extensivity-gap-synthesis.witness.json
+        (`extensivity_multipliers_target`).  Until 2026-11-15 typed as the
+        stale 5.853 / 4.444 / 3.292 / 9.313.
 Pair-bond decompositions (all C(A,2) pairs):
     D  = (p,n)     → {pn}
     T  = (p,n,n)   → {pn, pn, nn}
@@ -64,16 +70,20 @@ except Exception:
 # Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
 set_compute_dps()
 
-# ── pre-registered inputs ─────────────────────────────────────────────────────
-TR = {"p": mp.mpf("1.0653062"), "n": mp.mpf("0.9232333")}
+# ── pre-registered inputs, READ from their owning witnesses ──────────────────
+# parse_float=str so decimal text reaches mp.mpf without passing through float.
+import json  # noqa: E402
 
-# targets from deltalambda-extensivity-gap-synthesis.witness.json
-MU_TARGET = {
-    "D":   mp.mpf("5.852902577599116"),
-    "T":   mp.mpf("4.444146924325849"),
-    "3He": mp.mpf("3.2918285794896933"),
-    "4He": mp.mpf("9.313340597451814"),
-}
+_TR_SRC = HERE.parent / "atomic-tr-m-mpfr-50dps-proton.witness.json"
+_TRW = json.loads(_TR_SRC.read_text(), parse_float=str)
+if _TRW.get("q0Anchor") != "proton" or _TRW.get("intra_ordering_frame") != "borromean":
+    raise SystemExit(f"refusing: {_TR_SRC.name} is not the borromean/proton witness")
+_TRA = {r["atom"]: r["tr_M_at_q0_50dps"] for r in _TRW["results"]}
+TR = {"p": mp.mpf(_TRA["proton"]), "n": mp.mpf(_TRA["neutron"])}
+
+_MU_SRC = HERE / "deltalambda-extensivity-gap-synthesis.witness.json"
+_MU = json.loads(_MU_SRC.read_text(), parse_float=str)["extensivity_multipliers_target"]
+MU_TARGET = {K: mp.mpf(_MU[K]) for K in ("D", "T", "3He", "4He")}
 # bond multisets (pair type per bond)
 BONDS = {
     "D":   ["pn"],
@@ -211,9 +221,9 @@ def main() -> int:
         verdict = ("LEAD (strong): a parameter-free per-knot p≠n bond weight reproduces BOTH the "
                    "T/³He split (<5%) AND the full non-monotone μ_ext ordering. Verify, not closure.")
     elif lead_on_split:
-        verdict = (f"LEAD (qualified): the inverse-product per-bond weight w(a,b)=1/(tr_a·tr_b) under "
-                   f"the product aggregate reproduces the T/³He degeneracy-break to "
-                   f"{b['t_3he_relerr_pct']:+.2f}% (pred {b['t_3he_ratio']:.4f} vs 1.3500) — the split a "
+        verdict = (f"LEAD (qualified): the per-bond weight/aggregate {best} "
+                   f"reproduces the T/³He degeneracy-break to "
+                   f"{b['t_3he_relerr_pct']:+.2f}% (pred {b['t_3he_ratio']:.4f} vs {tgt_ratio:.4f}) — the split a "
                    f"symmetric/equal-weight model structurally CANNOT make (controls give exactly 1.000). "
                    f"This is the genuine non-duplicative contribution: the p≠n resolution supplies the "
                    f"sign+magnitude of the T≠³He degeneracy-break. BUT it does NOT supply k(A): the full "
@@ -221,9 +231,12 @@ def main() -> int:
                    f"off by tens of %). One <5% hit among ~8 screened combos + a binary direction choice ⇒ "
                    f"a LEAD to verify, NOT a closure (entropy caveat). Scope-(a).")
     else:
-        verdict = ("PRUNE (scope-(a) negative): no parameter-free per-knot bond weight splits T/³He to "
-                   "<5% in the right direction — even the p≠n-resolved bond model does not supply k(A). "
-                   "Narrows the search away from per-bond-weight extensivity.")
+        verdict = ("PRUNE (scope-(a) negative): on the canonical traces (borromean, D, proton) no "
+                   "screened parameter-free per-knot bond weight splits T/³He to <5% in the right "
+                   f"direction (best {best}: {b['t_3he_relerr_pct']:+.2f}%). The p≠n-resolved bond "
+                   "model, as screened here, does not supply the split or k(A). The earlier qualified "
+                   "LEAD (inverse-product, -1.38%) held only on retired convention-C traces and stale "
+                   "μ targets.")
     print("\n### VERDICT")
     print("   " + verdict)
 
@@ -234,12 +247,12 @@ def main() -> int:
             wb.set_description(
                 "EXPLORATORY scope-(a): screens parameter-free per-knot p≠n-resolved bond weights "
                 "w(a,b)=fixed fn of tr_M(p)/tr_M(n) against the open extensivity multiplier "
-                "μ_ext=B_AME/B_base (D 5.853 / T 4.444 / ³He 3.292 / ⁴He 9.313). The decisive test is the "
-                "T/³He degeneracy-break (ratio 1.350) that any symmetric/equal-weight model gives as 1.000. "
-                "The inverse-product weight 1/(tr_a·tr_b) under the product aggregate reproduces the split "
-                "to ~1.4% (right direction) — supplying the sign+magnitude of the T≠³He break the p≠n "
-                "resolution uniquely provides — but does NOT reproduce the full non-monotone μ_ext (⁴He not "
-                "the max). Qualified LEAD, not closure; entropy caveat (1 hit / ~8 combos). No fit, no wiring.")
+                "μ_ext=B_AME/B_base, both read from their owning witnesses (traces: borromean, "
+                "convention D, proton pin). The decisive test is the T/³He degeneracy-break that any "
+                "symmetric/equal-weight model gives as 1.000. Until 2026-11-15 this probe ran on "
+                "retired convention-C traces and stale targets, where the inverse-product weight "
+                "reproduced the split to -1.38%; see `verdict` for the result on canonical inputs. "
+                "Entropy caveat (~8 combos screened). No fit, no wiring.")
             wb.set_audit_only("docs/audits/2026-07-17-perknot-pn-bond-resolved-extensivity.md")
             wb.add_data("discipline", "EXPLORATORY")
             wb.add_data("production_wired", False)
@@ -265,14 +278,12 @@ def main() -> int:
                 name="t3he_split_reproduced_under_5pct_right_direction",
                 computed=str(int(lead_on_split)), expected="1", tolerance=0,
                 source=(f"best genuine per-bond weight ({best}) gives T/³He={b['t_3he_ratio']:.4f} "
-                        f"vs target 1.3500 ({b['t_3he_relerr_pct']:+.2f}%); symmetric controls give 1.000. "
-                        "A parameter-free p≠n-resolved weight DOES supply the degeneracy-break sign+magnitude."))
+                        f"vs target {tgt_ratio:.4f} ({b['t_3he_relerr_pct']:+.2f}%); symmetric controls give 1.000."))
             wb.add_assertion(
                 name="full_muext_ordering_and_4He_max_reproduced",
                 computed=str(int(b["ordering_full_match"])), expected="1", tolerance=0,
                 source=("whether the full non-monotone μ_ext ordering (3He<T<D<4He, ⁴He max) is reproduced. "
-                        "FAILS: the split is captured but k(A) global extensivity / ⁴He-max is not — "
-                        "so this is a qualified LEAD (split only), not a closure of k(A). Scope-(a)."))
+                        "Not a closure of k(A) either way. Scope-(a)."))
             wb.add_data("allPassed", bool(lead_on_split))
             out = wb.save()
             print(f"\nWitness: {out}")
