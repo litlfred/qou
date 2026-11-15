@@ -1,13 +1,13 @@
 ---
 # qou-nm6y
 title: pyhecke_native in this container is a 2026-08-09 wheel, two weeks behind source — it still exports the deleted gram_inverse
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T16:43:53Z
-updated_at: 2026-10-04T15:22:50Z
+updated_at: 2026-11-15T13:40:00Z
 parent: qou-5vkl
 ---
 
@@ -94,3 +94,7 @@ reverts in 7ce3014c3 were correct.
 
 **Native-backed regeneration is unblocked from here** — anything re-run in this
 container after this point uses native code matching the source.
+
+## Closed 2026-11-15 (owner tap, E1 bean triage)
+
+The body records that the wheel was rebuilt and native regeneration is unblocked. This was container-scoped, and nothing is owed.

@@ -430,7 +430,7 @@ The table is finite; this is not.
 Lean, sorry-free, `lean`-direct exit 0 against the real import cone,
 `#print axioms` clean on all five declarations (propext / Quot.sound /
 Classical.choice only):
-`content/quantum-observable-universe/lean/QOU/BraidKnot/CentreGradingObstruction.lean`
+`folio/quantum-observable-universe/lean/QOU/BraidKnot/CentreGradingObstruction.lean`
 — `gbDepth_pos`, `gbDepth_ne_zero`, `shift_cannot_fill_a_gap`, `N4_gapfree`,
 `coxeter_reading_excluded_at_four`. The algebra-side inputs are carried as
 hypotheses (H_n(q) and its centre are not Lean objects here) and the theorem

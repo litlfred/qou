@@ -17,7 +17,7 @@ this is a defect I contributed to rather than one I merely noticed.
 ## The measurement
 
 `grep -rn -E '^\s*(class|structure|def|abbrev|noncomputable def)\s+HeckeAlgebra\b' --include=*.lean`
-over `content/quantum-observable-universe/lean/`:
+over `folio/quantum-observable-universe/lean/`:
 
 | FQN | kind | file:line | quadratic relation |
 |---|---|---|---|

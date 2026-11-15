@@ -1239,7 +1239,7 @@ adjudicate a convention, wires nothing.
 
 [`qbeta_eigenphase_carrier_classical_limit_probe.py`](../computations/qbeta/qbeta_eigenphase_carrier_classical_limit_probe.py)
 (5/5) ·
-[`QOU/QBeta/EigenphaseCarrierClassicalLimit.lean`](../content/quantum-observable-universe/lean/QOU/QBeta/EigenphaseCarrierClassicalLimit.lean)
+[`QOU/QBeta/EigenphaseCarrierClassicalLimit.lean`](../folio/quantum-observable-universe/lean/QOU/QBeta/EigenphaseCarrierClassicalLimit.lean)
 (sorry-free).
 
 Entry 6 expands `α` and tests it against a holonomy ansatz. **Nobody had asked
@@ -1395,7 +1395,7 @@ that exclusion explicitly does not reach.
 
 [`qbeta_kd_monodromy_reading_closed_probe.py`](../computations/qbeta/qbeta_kd_monodromy_reading_closed_probe.py)
 (4/4) ·
-[`QOU/QBeta/MonodromyTraceInvariance.lean`](../content/quantum-observable-universe/lean/QOU/QBeta/MonodromyTraceInvariance.lean)
+[`QOU/QBeta/MonodromyTraceInvariance.lean`](../folio/quantum-observable-universe/lean/QOU/QBeta/MonodromyTraceInvariance.lean)
 (sorry-free).
 
 Entry 5 words branch 3 as a connection *"whose monodromy reproduces the Hecke

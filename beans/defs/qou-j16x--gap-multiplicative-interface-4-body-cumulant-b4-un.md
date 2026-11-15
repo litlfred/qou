@@ -39,6 +39,6 @@ board, not re-attacked here:
 
 ## Artifacts
 - Probe: `computations/deltalambda/b4_multiplicative_cumulant_probe.py` (+witness)
-- Lean: `content/quantum-observable-universe/lean/QOU/MassTheory/B4MultiplicativeCumulant.lean`
+- Lean: `folio/quantum-observable-universe/lean/QOU/MassTheory/B4MultiplicativeCumulant.lean`
 - Audit: `docs/audits/2026-08-02-option-e-b4-multiplicative-cumulant.md`
 - PR: #4605  ·  Nothing wired; B_AME diagnostic-only; free_parameters=0.

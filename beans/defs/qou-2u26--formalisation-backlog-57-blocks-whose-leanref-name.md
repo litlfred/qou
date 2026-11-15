@@ -182,7 +182,7 @@ Three by hand, since a table is easy to disbelieve:
   `theorem QCasimirEigenvalue_classical_limit` at line 127.
 
 The first two are **`definition`**-kind, where the Lean sibling is
-*enforced*. `bun run scripts/run-validate.ts content/quantum-observable-universe`
+*enforced*. `bun run scripts/run-validate.ts folio/quantum-observable-universe`
 passes both and reports exactly **one** unresolved-Lean error paper-wide.
 If their refs did not resolve, validate would error on them. It doesn't.
 That is the repo's own resolver contradicting this bean, not my script.
@@ -202,22 +202,22 @@ declared nowhere. All 9 also have **no sibling `.lean` at all**, and none
 of them appears in the 57 above — so this bean is wrong in both
 directions: 57 false positives, 9 false negatives, zero overlap.
 
-- **`conjecture`** [`gs-spectral-decomposition-existence`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/mass-theory/gs-spectral-decomposition-existence.md) → `qou:QOU.BraidKnot.GBResidueSpectralSum.spectral_decomposition`
-- **`proposition`** [`cyclotomic-depth3-dimension-synthesis`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.md) → `qou:QOU.BraidKnot.CyclotomicDepth3DimensionSynthesis.dimension_synthesis_upper_bound`
-- **`proposition`** [`confined-knot-binding`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/mass-theory/confined-knot-binding.md) → `qou:QOU.BraidKnot.confined_knot_binding`
-- **`proposition`** [`dt-spectrum-bar-eigenspace`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/mass-theory/dt-spectrum-bar-eigenspace.md) → `qou:QOU.QBeta.FiveTwoDTSpectrumSplit`
-- **`proposition`** [`cyclotomic-dimension-synthesis-all-depths`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths.md) → `qou:QOU.BraidKnot.CyclotomicDimensionSynthesisAllDepths.dimension_synthesis_all_depths`
-- **`proposition`** [`phi-b-unitary-bar-odd`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/mass-theory/phi-b-unitary-bar-odd.md) → `qou:QOU.QBeta.IsSigmaUnitary.sq_eq_one_of_bar_even`
-- **`proposition`** [`qbeta-canonical-markov-weights-explicit-instance`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/mass-endomorphism/qbeta-canonical-markov-weights-explicit-instance.md) → `qou:QOU.BraidKnot.CanonicalMarkovWeightsH3.explicitInstance`
-- **`definition`** [`qou-motivic-galois-instance`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.md) → `qou:QOU.LiftingDescent.QOUInstance.qouMotivicGaloisChar`
-- **`proposition`** [`type-b-folded-crystal-combinatorics`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/predicted-spectra/type-b-folded-crystal-combinatorics.md) → `qou:QOU.Archimedean.TypeBFoldedCrystalCombinatorics.content_sum_plus_transpose_content_sum_eq_zero`
+- **`conjecture`** [`gs-spectral-decomposition-existence`](https://github.com/litlfred/qou/blob/main/folio/quantum-observable-universe/mass-theory/gs-spectral-decomposition-existence.md) → `qou:QOU.BraidKnot.GBResidueSpectralSum.spectral_decomposition`
+- **`proposition`** [`cyclotomic-depth3-dimension-synthesis`](https://github.com/litlfred/qou/blob/main/folio/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.md) → `qou:QOU.BraidKnot.CyclotomicDepth3DimensionSynthesis.dimension_synthesis_upper_bound`
+- **`proposition`** [`confined-knot-binding`](https://github.com/litlfred/qou/blob/main/folio/quantum-observable-universe/mass-theory/confined-knot-binding.md) → `qou:QOU.BraidKnot.confined_knot_binding`
+- **`proposition`** [`dt-spectrum-bar-eigenspace`](https://github.com/litlfred/qou/blob/main/folio/quantum-observable-universe/mass-theory/dt-spectrum-bar-eigenspace.md) → `qou:QOU.QBeta.FiveTwoDTSpectrumSplit`
+- **`proposition`** [`cyclotomic-dimension-synthesis-all-depths`](https://github.com/litlfred/qou/blob/main/folio/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths.md) → `qou:QOU.BraidKnot.CyclotomicDimensionSynthesisAllDepths.dimension_synthesis_all_depths`
+- **`proposition`** [`phi-b-unitary-bar-odd`](https://github.com/litlfred/qou/blob/main/folio/quantum-observable-universe/mass-theory/phi-b-unitary-bar-odd.md) → `qou:QOU.QBeta.IsSigmaUnitary.sq_eq_one_of_bar_even`
+- **`proposition`** [`qbeta-canonical-markov-weights-explicit-instance`](https://github.com/litlfred/qou/blob/main/folio/quantum-observable-universe/mass-endomorphism/qbeta-canonical-markov-weights-explicit-instance.md) → `qou:QOU.BraidKnot.CanonicalMarkovWeightsH3.explicitInstance`
+- **`definition`** [`qou-motivic-galois-instance`](https://github.com/litlfred/qou/blob/main/folio/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.md) → `qou:QOU.LiftingDescent.QOUInstance.qouMotivicGaloisChar`
+- **`proposition`** [`type-b-folded-crystal-combinatorics`](https://github.com/litlfred/qou/blob/main/folio/quantum-observable-universe/predicted-spectra/type-b-folded-crystal-combinatorics.md) → `qou:QOU.Archimedean.TypeBFoldedCrystalCombinatorics.content_sum_plus_transpose_content_sum_eq_zero`
 
 **One of the nine is load-bearing.** `qou-motivic-galois-instance` is a
 `definition`, so its missing Lean is the single error that makes
-`run-validate content/quantum-observable-universe` exit non-zero — the red
+`run-validate folio/quantum-observable-universe` exit non-zero — the red
 every branch in flight has been carrying as inherited noise. Its class
 `MotivicGaloisCharacter` exists
-([`MotivicGaloisCharacter.lean:60`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/lean/QOU/LiftingDescent/MotivicGaloisCharacter.lean));
+([`MotivicGaloisCharacter.lean:60`](https://github.com/litlfred/qou/blob/main/folio/quantum-observable-universe/lean/QOU/LiftingDescent/MotivicGaloisCharacter.lean));
 what is missing is the QOU **instance**, i.e. a
 `frobenius_at : Nat.Primes → Mhat` for the substrate. That is real
 mathematics (Habiro → Frob_p), not a rename — do **not** discharge it with

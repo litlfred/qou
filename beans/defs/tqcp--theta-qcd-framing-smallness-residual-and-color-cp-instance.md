@@ -17,7 +17,7 @@ blocked_by:
 
 Framing-phase route to the strong-CP angle θ_QCD
 (branch `claude/theta-qcd-framing-phase-2026-08-02`,
-`content/quantum-observable-universe/appendix-standard-model/theta-qcd-framing-cp.lean`,
+`folio/quantum-observable-universe/appendix-standard-model/theta-qcd-framing-cp.lean`,
 audit `docs/audits/2026-08-02-theta-qcd-framing-phase-cp-route.md`).
 
 PROVED sorry-free: bar-symmetry (CP-even) ∧ pure-phase ⟹ Θ²=1 ⟹ θ∈{0,π}

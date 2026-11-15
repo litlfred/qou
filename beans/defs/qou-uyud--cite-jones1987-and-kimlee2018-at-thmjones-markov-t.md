@@ -11,7 +11,7 @@ updated_at: 2026-10-04T15:17:40Z
 parent: qou-mub3
 ---
 
-`content/quantum-observable-universe/braids-and-knots/jones-markov-trace.ts` has
+`folio/quantum-observable-universe/braids-and-knots/jones-markov-trace.ts` has
 NO cites field at all, while its .md (line 29) asserts that the vanishing blocks
 span the radical of the trace form, that H_n(q)/rad =~ TL_n(q), and that the
 surviving sum of dim^2 is the Catalan number C_n (2, 5, 14, 42, 132, 429). The

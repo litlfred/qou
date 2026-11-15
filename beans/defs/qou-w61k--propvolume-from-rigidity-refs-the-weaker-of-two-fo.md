@@ -13,7 +13,7 @@ parent: b9cj
 
 ## The ref points at the weaker of two formalisations
 
-`content/quantum-observable-universe/quantum-observable-universes/volume-from-rigidity.ts`
+`folio/quantum-observable-universe/quantum-observable-universes/volume-from-rigidity.ts`
 has `lean.ref = "qou:QOU.volume_from_rigidity"`. That declaration exists, in
 `QOU/volume_from_rigidity.lean` — but resolution takes the sibling
 `volume-from-rigidity.lean` first, and the sibling declares

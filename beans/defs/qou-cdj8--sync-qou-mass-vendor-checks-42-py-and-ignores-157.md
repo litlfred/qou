@@ -1,13 +1,13 @@
 ---
 # qou-cdj8
 title: sync-qou-mass-vendor checks 42 .py and ignores 157 .witness.json — 122 disagree with source on the q0 pin
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T21:44:29Z
-updated_at: 2026-10-04T15:14:02Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-5vkl
 ---
 
@@ -222,3 +222,7 @@ Two facts for whoever picks up step 3:
   `computations/_li_2_q_util.py`, which is in the cone. Re-running `--check`
   against `origin/main`'s copy of that file still gives 23, so `_li_2_q_util`
   was already drifted and the branch did not inflate the number.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

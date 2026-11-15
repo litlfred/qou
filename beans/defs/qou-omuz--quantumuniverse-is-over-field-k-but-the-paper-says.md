@@ -31,7 +31,7 @@ specialised."* Nothing in the four axioms visibly needs inverses.
 
 The corpus overwhelmingly agrees with the prose, not with this structure:
 **3132** occurrences of `[CommRing R]` against **206** of `[Field k]` under
-`content/quantum-observable-universe/`.
+`folio/quantum-observable-universe/`.
 
 ## 2. The excluded ring is the framework's OWN ground ring
 

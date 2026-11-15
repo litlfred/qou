@@ -1455,13 +1455,13 @@ the session restarted — so this was run directly.
 COMMAND (root mathlib had traces ~= oleans, i.e. genuinely built, so lean-direct
 was safe; `lake build` NOT run, per the restored-cache trap):
 
-    LP="$PWD/content/quantum-observable-universe/lean/.lake/build/lib/lean"
+    LP="$PWD/folio/quantum-observable-universe/lean/.lake/build/lib/lean"
     for p in mathlib batteries aesop Qq proofwidgets importGraph plausible \
              LeanSearchClient; do
       LP="$LP:$PWD/.lake/packages/$p/.lake/build/lib/lean"
     done
     LEAN_PATH="$LP" lean \
-      content/quantum-observable-universe/lean/QOU/SchurWeyl/OcneanuWeight.lean
+      folio/quantum-observable-universe/lean/QOU/SchurWeyl/OcneanuWeight.lean
 
 exit 0, no diagnostics. Note exit 0 ALONE is not the gate — lean exits 0 on a
 `sorry` (it is a warning), so #print axioms is what settles it:

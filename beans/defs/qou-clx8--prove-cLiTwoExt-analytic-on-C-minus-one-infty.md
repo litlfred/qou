@@ -422,6 +422,10 @@ the bean asserting *its own* openness, not merely mentioning something open.
 
 Re-close it when the work its body names is actually done.
 
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
 ## 2026-11-15 — closed (branch `claude/volume-dilog-bricks-2026-11-15`)
 
 Already proved on main: `analyticOnNhd_cLiTwoExt`, `differentiableOn_cLiTwoExt` in `QOU/MathlibExt/ComplexDilogarithmDeriv.lean` (2026-08-08); re-verified lean-direct exit 0, standard axioms only.

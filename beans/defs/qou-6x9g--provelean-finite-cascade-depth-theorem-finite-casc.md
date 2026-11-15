@@ -16,7 +16,7 @@ parent: qou-l2vh
 ---
 
 **File:** `QOU/FluidDynamics/q_turbulence_spectrum.lean` (QOU)  ·  1 cited sorry(s)
-**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/content/quantum-observable-universe/lean/QOU/FluidDynamics/q_turbulence_spectrum.lean
+**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/folio/quantum-observable-universe/lean/QOU/FluidDynamics/q_turbulence_spectrum.lean
 
 ### `finite_cascade_depth`  —  line 139  ·  tier **P** (repo-infra-dependent)
 - **Proposition:** `theorem finite_cascade_depth : (ctx.N_modes : ℝ) ≤ (3 : ℝ) / 4 * Real.log ctx.Re_q / Real.log ctx.q `

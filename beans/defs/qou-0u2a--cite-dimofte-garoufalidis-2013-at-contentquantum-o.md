@@ -1,6 +1,6 @@
 ---
 # qou-0u2a
-title: Cite [dimofte-garoufalidis-2013] at content/quantum-observable-universe/lean/QOU/OneLoopEdgeLatti…
+title: Cite [dimofte-garoufalidis-2013] at folio/quantum-observable-universe/lean/QOU/OneLoopEdgeLatti…
 status: todo
 type: task
 priority: normal

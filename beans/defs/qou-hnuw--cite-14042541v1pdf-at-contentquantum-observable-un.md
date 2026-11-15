@@ -1,6 +1,6 @@
 ---
 # qou-hnuw
-title: Cite 1404.2541v1.pdf at content/quantum-observable-universe/lean/QOU/MathlibExt/QBorelKernelLevel…
+title: Cite 1404.2541v1.pdf at folio/quantum-observable-universe/lean/QOU/MathlibExt/QBorelKernelLevel…
 status: todo
 type: task
 priority: normal

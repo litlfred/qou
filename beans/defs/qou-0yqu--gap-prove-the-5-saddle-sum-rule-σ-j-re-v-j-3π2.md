@@ -1,7 +1,7 @@
 ---
 # qou-0yqu
 title: 'GAP: prove the 5₂ saddle sum rule Σ_j Re V_j = -3π²/2'
-status: in-progress
+status: todo
 type: feature
 priority: normal
 tags:
@@ -1133,6 +1133,10 @@ over the `c^m` orbits (46→47, 153→154). Anything reducing to an ordinary
 Bloch-group computation is blind here for the reason in G4.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
 
 ## 2026-11-15 — update (branch `claude/volume-dilog-bricks-2026-11-15`)
 

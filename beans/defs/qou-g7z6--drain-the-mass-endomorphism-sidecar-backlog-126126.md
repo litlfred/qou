@@ -13,7 +13,7 @@ parent: qou-mub3
 
 Surfaced while verifying #6016, not caused by it.
 
-`bun run folio-assistant/content/pipeline/qa-staleness.ts content/quantum-observable-universe/mass-endomorphism`
+`bun run folio-assistant/content/pipeline/qa-staleness.ts folio/quantum-observable-universe/mass-endomorphism`
 reports **126 blocks; fresh=0, stale/partial=126** on 2026-08-29. Pre-existing.
 #6016 refreshed exactly one sidecar — the block whose `.lean` it renamed — and
 reverted the other 127 so a rename PR did not become a chapter sweep.

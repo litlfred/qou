@@ -17,7 +17,7 @@ parent: qou-l2vh
 ---
 
 **File:** `QOU/Archimedean/knot_operator_selection.lean` (QOU)  ·  1 cited sorry(s)
-**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/content/quantum-observable-universe/lean/QOU/Archimedean/knot_operator_selection.lean
+**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/folio/quantum-observable-universe/lean/QOU/Archimedean/knot_operator_selection.lean
 
 ### `knot_operator_selection`  —  line 85  ·  tier **P** (repo-infra-dependent)
 - **Proposition:** `theorem knot_operator_selection [ctx : KnotOperatorSelectionContext] : ctx.tr_Phi = (Finset.range ctx.n_partitions).sum (fun l => ctx.tr_Phi_lambda l) ∧ ctx.action_pair = ctx.channel_sum ∧ ctx.pairing_kernel_dim = 0 ∧ (∀ Φ_alt : ctx.CategoricalObj → ctx.CategoricalObj, ctx.is_on_shell Φ_alt → ctx.ac`

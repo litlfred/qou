@@ -11,7 +11,7 @@ updated_at: 2026-10-04T15:26:46Z
 parent: qou-jc9f
 ---
 
-File: `content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals/markov_identification.lean`
+File: `folio/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals/markov_identification.lean`
 The `markovTrace_branching` theorem is unprovable. It posits an equality between opaque constants `markovTrace` and `sum (markovWeight * spechtPartialTrace)` without any axiomatic branching / Wenzl-bridge decomposition rules that would make it derivable.
 
 

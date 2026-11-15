@@ -981,7 +981,7 @@ the ratio.
 The entry above says *"the open question RELOCATES: the p/n asymmetry is
 injected at the like-pair letters"*. A corpus-grep I should have run before
 writing it turns up
-`content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-mirror-cancellation`,
+`folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-mirror-cancellation`,
 which corrects it in three ways.
 
 ### 1. The bond letters are NOT the only p/n injection

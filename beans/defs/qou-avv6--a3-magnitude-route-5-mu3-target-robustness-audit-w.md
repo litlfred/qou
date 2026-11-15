@@ -25,7 +25,7 @@ ROBUSTNESS:
 
 DELIVERABLES:
 - computations/deltalambda/mu3_target_robustness_audit_probe.py + mu3-target-robustness-audit.witness.json
-- content/quantum-observable-universe/lean/QOU/MassTheory/Mu3TargetWellPosedness.lean (sorry-free, lean-direct exit 0; mu2 FORCED [cannot reach 1] vs mu3 FREE [surjective in target])
+- folio/quantum-observable-universe/lean/QOU/MassTheory/Mu3TargetWellPosedness.lean (sorry-free, lean-direct exit 0; mu2 FORCED [cannot reach 1] vs mu3 FREE [surjective in target])
 - docs/audits/2026-08-01-mu3-target-robustness-audit.md
 
 Branch claude/mu3-target-robustness-audit-2026-08-01. Nothing wired.

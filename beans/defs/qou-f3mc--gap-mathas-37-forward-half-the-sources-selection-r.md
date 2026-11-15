@@ -224,7 +224,7 @@ Ehresmann.
 
 ## UPDATE 4 — next-step (b) is DONE.  Easy Ehresmann is PROVED, sorry-free.
 
-New file `content/quantum-observable-universe/lean/QOU/Machinery/BruhatRankCriterion.lean`,
+New file `folio/quantum-observable-universe/lean/QOU/Machinery/BruhatRankCriterion.lean`,
 324 lines, **14 declarations, all `[propext, Classical.choice, Quot.sound]`, zero
 `sorryAx`**:
 

@@ -13,7 +13,7 @@ parent: qou-v2om
 
 ## What is open
 
-`CategoricalMobiusEnergy` (`content/quantum-observable-universe/lean/QOU/MobiusEnergy.lean`)
+`CategoricalMobiusEnergy` (`folio/quantum-observable-universe/lean/QOU/MobiusEnergy.lean`)
 encodes the classical limit as
 
     classicalLimit : energy = (1 / 4) * classicalEnergy.value + classicalLimitConst

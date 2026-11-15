@@ -14,7 +14,7 @@ parent: qou-10v9
 
 ## The finding
 
-`content/quantum-observable-universe/mass-theory/he4-two-row-dominance.md` is a
+`folio/quantum-observable-universe/mass-theory/he4-two-row-dominance.md` is a
 **reader-facing** content block whose table was computed against the
 `chi-helium-4-h12-at-q0-50dps` cache as it stood before the 2026-09-06
 regeneration (`qou-92u9`, owner ruling "regen").  Content blocks are not
@@ -251,7 +251,7 @@ statements, which is the same staleness class this bean is about.
 
 - render-QA grep battery on the `.md`: **9/9**, twice (before and after the
   λ\* revision).
-- `run-validate content/quantum-observable-universe`: **✓ Valid — 4 issue(s)**,
+- `run-validate folio/quantum-observable-universe`: **✓ Valid — 4 issue(s)**,
   all pre-existing and none in this block. Platform **`8475c83`**, which is
   **not** the pin `428ca5c` — stating it per the pin discipline.
 - `qa-sweep` on the block: **92 pass / 19 n/a / 0 fail**, sidecar refreshed.

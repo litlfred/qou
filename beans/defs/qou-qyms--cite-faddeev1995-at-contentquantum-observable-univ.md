@@ -1,6 +1,6 @@
 ---
 # qou-qyms
-title: Cite [faddeev1995] at content/quantum-observable-universe/lean/QOU/QBeta/FaddeevPhiFullUniqueness…
+title: Cite [faddeev1995] at folio/quantum-observable-universe/lean/QOU/QBeta/FaddeevPhiFullUniqueness…
 status: todo
 type: task
 priority: normal

@@ -1,11 +1,12 @@
 ---
 # qou-s7z2
 title: WenzlTowerStep at the Markov trace over the TL_n quotient (successor to the refuted qou-vndn)
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T17:57:00Z
-updated_at: 2026-10-04T15:14:24Z
+updated_at: 2026-11-15T13:30:00Z
+parent: qou-59vq
 ---
 
 Successor to qou-vndn, whose premise ("Hecke radical vanishing") is refuted at
@@ -626,3 +627,11 @@ this corpus and IsSemisimpleRing of a Hecke algebra.
    one correction above, and have not proposed a retirement -- the 2026-09-07
    override makes that an ask, and `CoxeterCarrierEquiv.lean:73` shows the corpus
    does sometimes prefer retiring over repairing, so it is a real choice.
+
+## Parented 2026-11-15 (owner-approved bean triage)
+
+Parent `(none)` → `qou-59vq`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

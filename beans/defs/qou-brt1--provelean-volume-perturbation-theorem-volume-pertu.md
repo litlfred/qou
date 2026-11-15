@@ -16,7 +16,7 @@ parent: qou-t5uj
 ---
 
 **File:** `QOU/BraidKnot/volume_perturbation.lean` (QOU)  ·  1 cited sorry(s)
-**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/content/quantum-observable-universe/lean/QOU/BraidKnot/volume_perturbation.lean
+**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/folio/quantum-observable-universe/lean/QOU/BraidKnot/volume_perturbation.lean
 
 ### `volume_perturbation`  —  line 81  ·  tier **P** (repo-infra-dependent)
 - **Proposition:** `theorem volume_perturbation [ctx : VolumePerturbationContext] : ∀ k : ℕ, 4 ≤ k → ctx.δΦ k = ctx.z ^ 2 * ctx.Vol_41 * qIntSym ctx.q ((k : ℤ) - 3) `

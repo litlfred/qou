@@ -17,7 +17,7 @@ AGENTS.md (§"q₀ anchor convention", R1 block) states that `y_(1³) = 0` holds
 construction* under convention D, **citing
 `markovWeights_eq_jones_of_threeRow_eq_zero`**. That declaration runs the other
 way. Literal signature,
-`content/quantum-observable-universe/lean/QOU/BraidsAndKnots/MarkovTraceTLUniqueness.lean:119`,
+`folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/MarkovTraceTLUniqueness.lean:119`,
 context `variable {R : Type*} [CommRing R] [IsDomain R]`:
 
 ```lean

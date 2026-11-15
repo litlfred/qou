@@ -19,7 +19,7 @@ main and NOT proved.
 
 ## THE DEFECT
 
-content/quantum-observable-universe/lean/QOU/Hecke/Wedderburn.lean (merged in
+folio/quantum-observable-universe/lean/QOU/Hecke/Wedderburn.lean (merged in
 PR #4857, now on main):
 
     theorem trace_decomposition (x : A) :

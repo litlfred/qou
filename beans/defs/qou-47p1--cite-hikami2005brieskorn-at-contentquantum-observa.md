@@ -1,6 +1,6 @@
 ---
 # qou-47p1
-title: Cite [hikami2005brieskorn] at content/quantum-observable-universe/lean/QOU/BraidKnot/BWVacuumRowH…
+title: Cite [hikami2005brieskorn] at folio/quantum-observable-universe/lean/QOU/BraidKnot/BWVacuumRowH…
 status: todo
 type: task
 priority: normal

@@ -21,8 +21,8 @@ All three are **non-exempt** after the `isDefProof` narrowing, so they are live 
 
 Fix per declaration: either add the disclosure sentence (stating the content is carried by the context-class axiom with derivation pending), or drop the `**Theorem**` framing.
 
-- `content/quantum-observable-universe/lean/QOU/BraidKnot/Cl3Zeta5PslqIndependence.lean:37` — `pslq_independence`
-- `content/quantum-observable-universe/lean/QOU/BraidKnot/KnotIndexedConvolutionGrid.lean:35` — `grid_placement`
-- `content/quantum-observable-universe/lean/QOU/BraidKnot/QHeckeSeminormalCharacterClosure.lean:33` — `character_closure_holds`
+- `folio/quantum-observable-universe/lean/QOU/BraidKnot/Cl3Zeta5PslqIndependence.lean:37` — `pslq_independence`
+- `folio/quantum-observable-universe/lean/QOU/BraidKnot/KnotIndexedConvolutionGrid.lean:35` — `grid_placement`
+- `folio/quantum-observable-universe/lean/QOU/BraidKnot/QHeckeSeminormalCharacterClosure.lean:33` — `character_closure_holds`
 
 Criterion: `docs/audits/2026-08-09-honest-placeholder-criterion.md`

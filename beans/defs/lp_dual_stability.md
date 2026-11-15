@@ -11,7 +11,7 @@ updated_at: 2026-10-04T15:26:45Z
 parent: qou-uot9
 ---
 
-File: `content/quantum-observable-universe/lean/QOU/ParticleInteractions/lp_dual_stability.lean`
+File: `folio/quantum-observable-universe/lean/QOU/ParticleInteractions/lp_dual_stability.lean`
 The `lp_dual_stability` theorem is unprovable. The context class `LpDualStabilityContext` only provides LP data (like the Gram matrix, shadow prices, etc.) without assuming that `x_star` is actually the LP optimum or any properties of `G`, making the stability conclusions refutable.
 
 

@@ -140,7 +140,7 @@ at **0 errors** in this container, before and after a definition swap, with
 `lean` invoked directly:
 
 ```sh
-cd content/quantum-observable-universe/lean
+cd folio/quantum-observable-universe/lean
 export PATH="$HOME/.elan/bin:$PATH"
 LP=$(find "$PWD/.lake" -type d -path "*/build/lib/lean" | tr '\n' ':')
 export LEAN_PATH="${LP}${PWD}/.lake/build/lib/lean"
@@ -261,7 +261,7 @@ The 20 that were unverifiable an hour earlier all **PASS**:
     lean-verify-siblings: pass=20 neutral-skip=0 fail=0
 
 They were neutral-skipped because I ran them against the *paper's* olean tree
-(`content/quantum-observable-universe/lean/.lake`), whose cone does not cover
+(`folio/quantum-observable-universe/lean/.lake`), whose cone does not cover
 their imports. `scripts/lean-verify-siblings.sh` uses the **root** `.lake`, and
 the root cache is in fact fine here: 3480 mathlib oleans, above the ~2900
 "complete" mark. Re-running `lean-cache-restore.sh` now prints *"3480 mathlib
