@@ -102,24 +102,17 @@ class JonesWenzlProjector (R H : Type*) [CommRing R] [Ring H] [Algebra R H]
   -- Strand-killing `p·σ_i = -q⁻¹·p` (i < n-1) needs the generators `σ_i`,
   -- absent from this signature — documented, not enforced.
 
-/-! ## Conditional class: residue A as a Markov-trace residue
+/-! ## Open: residue A as a Markov-trace residue
 
 The Q_β residue A at `u_substrate` is conjecturally the Markov-trace
 residue of a composite Wenzl × Demazure operator (path D). This is
-captured as a conditional class. -/
+not yet statable here; see the removal note below. -/
 
-/-- Conditional class for the residue A composite identification.
-NEAR-MATCH tier; instance not constructed (requires upstream Wenzl,
-Markov trace, and Demazure-crystal infrastructure to be in place).
-
-The composite operator is `(Wenzl projector p_3) × (Demazure char χ_λ)`,
-evaluated at proton-pinned q₀; the Markov-trace residue at the
-`u_substrate` pole is conjecturally `A = c_3 (Hopf-Jones value) +
-q-Pochhammer correction`. -/
-class ResidueACompositeIdentification : Prop where
-  /-- Composite Wenzl × Demazure operator has well-defined Markov-trace
-  residue at `u_substrate` (opaque marker for the open derivation). -/
-  composite_markov_residue : True
+/-! **Removed 2026-11-15: `ResidueACompositeIdentification`.** Its only
+field was `composite_markov_residue : True`, so it asserted nothing, and no
+file used it. The missing statement — the Markov-trace residue of the
+composite Wenzl × Demazure operator at `u_substrate` equals the Q_β residue
+A — needs that operator to be constructed first. Recorded in bean `qou-n2un`. -/
 
 /-! ## Concrete `H₃(q)` Markov trace — the real structure
 
@@ -250,8 +243,8 @@ theorem markovTrace_realized (z h : R) :
 /-! ## Extending past H₃ (open keystone infra)
 
 The `H3` realization above is `n = 3`-specific (the `Fin 6` NF basis
-`[γ, σ₀, σ₁, L₊, L₋, e⁻]`). The `markov_trace_origin` marker
-(`QOU.BraidKnot.MmuR9V9Closure.UniversalHabiroStructure`) needs the trace for
+`[γ, σ₀, σ₁, L₊, L₋, e⁻]`). The open Markov-trace-origin claim
+in `QOU.BraidKnot.MmuR9V9Closure` (bean `qou-n2un`) needs the trace for
 general `n` — the `fun n r => ℏ_rⁿ` family — which requires two ingredients
 this file does not yet carry:
 

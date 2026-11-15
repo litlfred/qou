@@ -64,8 +64,8 @@ commitment about a particular set of data.
 
 ## What is NOT encoded
 
-Three properties the block names have **no statable form against existing types**, and each
-keeps its `opaque marker` field rather than being silently dropped: the SU(4) action on a
+Three properties the block names have **no statable form against existing types**, and they are
+not carried as fields (three `: True` markers were removed 2026-11-15, bean `qou-n2un`): the SU(4) action on a
 nucleon's 4-dimensional internal space, Wigner's supermultiplet theorem (`A = 4`
 totally-antisymmetric ⇒ trivial rep), and the α-cluster recursion as products of SU(4)
 singlet quadruplets. All three need SU(4) representation infrastructure the corpus does not
@@ -106,20 +106,10 @@ class WignerSU4FromSpinIsospin
   requirement `c_λ = B_AME / E_gate`, which captures ~94 % of the binding at the ⁴He
   magic shell. -/
   occupancy_from_binding : ∀ A, c A = B_AME A / E_gate A
-  /-- The SU(4) action on each nucleon's 4-dimensional internal space.
-
-  `opaque marker` — needs SU(4) representation infrastructure the corpus does not have;
-  carried as an explicitly-labelled marker rather than dropped. -/
-  su4_action : True
-  /-- Wigner's supermultiplet theorem: the `A = 4` totally-antisymmetric tensor product
-  gives the trivial representation.
-
-  `opaque marker` — requires the representation infrastructure above. -/
-  a_four_yields_singlet : True
-  /-- α-cluster recursion as products of SU(4)-singlet quadruplets.
-
-  `opaque marker` — depends on the two markers above. -/
-  alpha_cluster_from_su4_quadruplets : True
+  -- Removed 2026-11-15: three `: True` marker fields (`su4_action`,
+  -- `a_four_yields_singlet`, `alpha_cluster_from_su4_quadruplets`). They
+  -- asserted nothing. The SU(4) action, Wigner's A = 4 singlet and the
+  -- α-cluster recursion are recorded as open in bean `qou-n2un`.
 
 /-- **The occupancy in terms of the Plancherel weight alone** — derived by composing the
 two laws, rather than stated as a third field. This is what the block's pair of equations
@@ -153,8 +143,5 @@ theorem wignerSU4FromSpinIsospin_satisfiable :
     WignerSU4FromSpinIsospin 1 (fun _ => 1) (fun _ => 0) (fun _ => 1) (fun _ => 0) where
   capacity_from_plancherel := by intro A; norm_num
   occupancy_from_binding := by intro A; norm_num
-  su4_action := trivial
-  a_four_yields_singlet := trivial
-  alpha_cluster_from_su4_quadruplets := trivial
 
 end QOU.BraidsAndKnots

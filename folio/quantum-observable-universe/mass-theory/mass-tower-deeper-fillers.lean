@@ -15,8 +15,8 @@ one sorry-free Lean file:
 
 (A) Height-6 partition enumeration — finite Lean type for the
     Term-7 reduction.
-(B) Demazure sub-crystal predicate — AGENTS.md §7b item 3,
-    "incomplete topological states lowering the energy budget".
+(B) Demazure sub-crystal predicate — removed 2026-11-15 (it was a
+    `: True` marker; the statement needs crystal infrastructure).
 (C) KL classical-limit functor placeholder — `H_n(R, q) → ℤ[S_n]`
     at `q = 1` via Kazhdan-Lusztig basis specialisation.
 (D) Minimal `BlochGroup` carrier — free abelian group on `F^×`, for
@@ -27,8 +27,8 @@ one sorry-free Lean file:
     Fourier-series infrastructure for full Cl_2 functional
     equations.
 
-Base ring (§7c). (A)–(D) are substrate-side: (A) is over `ℕ`, (B) and
-(D) quantify over a generic carrier, and (C) is now generic over a
+Base ring (§7c). (A)–(D) are substrate-side: (A) is over `ℕ`, (D)
+quantifies over a generic carrier, and (C) is now generic over a
 `CommRing` ground ring (it used to be typed `ℝ → ℝ`, which mislabelled
 the `q = 1` Hecke specialisation as archimedean). The residual `ℝ` is
 confined to (E): `Cl_2` is the real Clausen function, so the pentagon
@@ -75,23 +75,11 @@ theorem heightSixPartition_finite_existence
 
 /-! ## (B) Demazure sub-crystal predicate -/
 
-/-- A **Demazure sub-crystal** is a connected sub-graph of a
-    Kashiwara crystal closed under a chosen subset of Kashiwara
-    raising operators `ẽ_i`. Per AGENTS.md §7b item 3, Demazure
-    sub-crystals correspond to *incomplete topological states*
-    (resonances): unstable intermediaries (W/Z bosons, hadronic
-    resonances) lowering the energy budget by sitting in the
-    sub-crystal rather than the full crystal. -/
-class IsDemazureSubCrystal
-    {V : Type*} (S : Set V) : Prop where
-  /-- Closed under a sub-monoid of Kashiwara raising operators `ẽ_i`.
-
-      `opaque marker` — Mathlib has no Kashiwara-crystal infrastructure
-      (`ẽ_i` / `f̃_i` operators, crystal graphs), so the genuine
-      closure predicate cannot be stated over an abstract `Set V`.  This
-      field is a tracked opaque tag for the open KLR / Kashiwara
-      scaffold (AGENTS.md §7b), not a fabricated trivial assertion. -/
-  closed_under_kashiwara_raising : True
+/-! **Removed 2026-11-15: `IsDemazureSubCrystal`.** Its only field was
+`closed_under_kashiwara_raising : True`, and no file used it. Closure under
+the Kashiwara raising operators `ẽ_i` cannot be stated over a bare `Set V`;
+it needs a crystal structure, which Mathlib lacks. Recorded in bean
+`qou-n2un`. -/
 
 /-! ## (C) Kazhdan-Lusztig classical-limit functor -/
 
@@ -174,7 +162,7 @@ class Cl_2_PentagonIdentity : Prop where
 /-- **Synthesis: assembled deeper-filler typeclass.**
 
     A type carrying all deeper-filler instances simultaneously.
-    Inhabiting this class collects (B), (D), (E) — the three
+    Inhabiting this class collects (D), (E) — the three
     Mathlib-pending structural hypotheses — and is the natural
     next §3b-cond hook for full BlochSuslinUniqueness closure. -/
 class DeeperMathlibFillers
