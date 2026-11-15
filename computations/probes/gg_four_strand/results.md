@@ -120,3 +120,22 @@ Reading (scope a):
 - A bound of the form 1 + c/m with c ≈ 1.19 reaches q₀ ≈ 1.10998 only for m ≤ 10. So such a theorem
   cannot by itself say that every pure word passes at q₀; whether long pure words fail at q₀ is open
   (at m = 12 the sampled minimum, 1.146, is still above q₀).
+
+## Theorem (Lean): pure γγ words pass reading 3 for 1 ≤ q ≤ 1 + (1/12)/m
+
+`QOU.QuarkState.GammaGammaFourStrandPureBound.pure_gg_reading3`
+(`folio/quantum-observable-universe/lean/QOU/QuarkState/GammaGammaFourStrandPureBound.lean`), sorry-free;
+`#print axioms` gives propext, Classical.choice, Quot.sound only. For every pure γγ word w of length m ≥ 1,
+every q with 1 ≤ q ≤ 1 + (1/12)/m, and every one of the eight level shapes, the convention-D level character is ≥ 0.
+
+Method. The Hoefsmit seminormal matrices of the (3,1) and (2,2) blocks are written out over ℝ (the H₄ quadratic and
+braid relations are proved in the same file). At q = 1 a pure word is the identity, so the 24-element S₄ closure
+table gives the q = 1 products exactly. A generic perturbation lemma (`QOU.MathlibExt.ListProdPerturbation`, ℓ∞
+operator norm) bounds the distance from the identity by M((1 + Mδ)^m − 1) with M = 11/6 (largest table row sum) and
+δ = (11/10)(q − 1) (certified per-entry rational bounds on q ∈ [1, 11/10]). Bernoulli then gives ≤ 1 when
+m·M·δ·(M + 1) ≤ 1, which c = 1/12 ensures, so every diagonal entry is ≥ 0 and each level character, a positive
+combination of diagonal entries, is ≥ 0.
+
+Scope (a). c = 1/12 is proved; the measured threshold is m(q* − 1) ≥ 1.187 (Amendment 3), so the constant is not
+sharp. The bound reaches q₀ ≈ 1.10998 only for m = 1, so it says nothing about long words at q₀. Generators:
+`lean_gen/` (exact sympy).
