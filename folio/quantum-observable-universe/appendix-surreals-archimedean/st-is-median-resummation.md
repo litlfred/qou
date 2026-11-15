@@ -3,7 +3,7 @@ The standard-part map $\mathrm{st}$
 resummation $\mathcal{L}^{\mathrm{med}}$ of
 [Écalle–Borel resummation](#def:ecalle-borel-resummation) compute the
 same value wherever both are defined. This remark records the
-identification once, at block level; it was previously stated only in
+identification once, at block level; elsewhere it appears only in
 passing inside the [surreal Kashaev reformulation](#conj:kashaev-surreal).
 
 Concretely: let $\tilde f$ be a Gevrey-1 transseries whose Borel
