@@ -4,6 +4,6 @@ By [`chi_blocks_have_q2_minus_1_factor`](qbeta-per-block-chi-closed-forms.md), e
 
 ## Limitations
 
-- **Concrete instance of `CanonicalMarkovWeightsH3`.** The formalisation of canonical $\sqrt q$-bearing Wenzl weights requires Markov-parameter $\sqrt q$ handling beyond the `ring` tactic. This theorem is rigorous conditionally on such an instance existing.
+- **Concrete instance of `CanonicalMarkovWeightsH3`.** The class is inhabited by `CanonicalMarkovWeightsH3.canonicalInstance`, the convention-D weights $y_{(3)} = (q^4+1)/(q^2+1)^2$, $y_{(2,1)} = q^2/(q^2+1)^2$, $y_{(1^3)} = 0$. These are rational in $q$, and the normalisation is discharged by `field_simp; ring`. The hypothesis of the theorem is therefore met by the canonical instance.
 - **Higher-order Taylor coefficients of $\Delta\mathrm{tr}_M^{\text{can}}$.** Vanishing at $q = 1$ (order-0) is an immediate consequence. Higher orders depend on the specific behaviour of $y_\lambda(q)$ at $q = 1$, which the dimension-normalisation axiom does not uniquely determine.
 - **Bridge to the $c_k$ precision ladder.** The $f$-map itself remains open. What follows provides pre-archimedean structural input for the $f$-map, rather than completing the derivation.
