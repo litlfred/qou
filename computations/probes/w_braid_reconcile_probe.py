@@ -25,6 +25,15 @@ Checks
       proton is the Borromean B_3, 3 components). So no braid insertion on the
       nucleon's strands can produce it as a link equality; lepton emission
       needs new strands (a creation/coevaluation morphism), not a braid.
+  C4  Over/under transmission (qou-0whz, owner card "Probe C4 + Lean"): with the
+      corpus convention that in s_i the lower strand i passes OVER
+      (intro-particles-as-knots, Lean QOU/Knot/BraidClosure stepOver_lo; for
+      s_i^{-1} strand i+1 is over), and with K fixed by C1, a crossing is a pure
+      transposition (no h label-exchange term) iff its over strand carries the
+      K = q weight vector. Checked for both R conventions and both signs.
+      With def:down-quark ("u passes over d at every crossing") this reads
+      u = the K = q vector, T^3 = +1/2. Lean twin:
+      QOU/QuarkState/OverStrandWeight.lean (over_e1_iff_pure, ptr_markov).
 """
 from __future__ import annotations
 
@@ -158,12 +167,55 @@ def c3_components():
                              "rhs_min_components_p_trefoil_unknot": rhs_min}
 
 
+def _basis(i, j):
+    v = sp.zeros(4, 1)
+    v[2 * i + j] = 1
+    return v
+
+
+def c4_over_under():
+    rows = []
+    ok = True
+    for slot in ("std", "swp"):
+        S = R(slot)
+        Sinv = sp.simplify(S - h * sp.eye(4))
+        assert is_zero(S * Sinv - sp.eye(4))
+        # K orientation forced by C1 for this R: weight index carrying K = q
+        kq = None
+        for a in (1, -1):
+            K = sp.diag(q**a, q**-a)
+            P = sp.kronecker_product(sp.eye(2), K) * S
+            part = sp.simplify(sp.Matrix(2, 2, lambda i, j: sum(P[2 * i + k, 2 * j + k] for k in range(2))))
+            if is_zero(part - part[0, 0] * sp.eye(2)):
+                kq = 0 if a == 1 else 1
+        for sign, M, over_pos in (("+", S, 0), ("-", Sinv, 1)):
+            for over_lab in (0, 1):
+                under_lab = 1 - over_lab
+                lab = [None, None]
+                lab[over_pos] = over_lab
+                lab[1 - over_pos] = under_lab
+                v = _basis(*lab)
+                out = sp.simplify(M * v)
+                swapped = _basis(lab[1], lab[0])
+                exch = sp.simplify(out - swapped)
+                pure = is_zero(exch)
+                predicted = (over_lab == kq)
+                ok = ok and (pure == predicted)
+                rows.append({"h_slot": slot, "sign": sign,
+                             "over_strand_carries": f"e{over_lab + 1}",
+                             "K_on_over_strand": "q" if over_lab == kq else "q^-1",
+                             "pure_transposition": pure,
+                             "exchange_term": [str(x) for x in exch]})
+    return ok, rows
+
+
 def main():
     res = {}
     ok1, res["C1_K_orientation"] = c1_k_orientation()
     ok2, res["C2_schur_weyl_weight_preservation"] = c2_schur_weyl()
     ok3, res["C3_component_count"] = c3_components()
-    res["checks"] = {"C1": ok1, "C2": ok2, "C3": ok3}
+    ok4, res["C4_over_under_transmission"] = c4_over_under()
+    res["checks"] = {"C1": ok1, "C2": ok2, "C3": ok3, "C4": ok4}
     for k, v in res["checks"].items():
         print(k, "PASS" if v else "FAIL")
     print(json.dumps(res, indent=1, ensure_ascii=False))
