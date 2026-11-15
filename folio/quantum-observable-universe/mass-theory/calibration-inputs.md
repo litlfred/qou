@@ -158,7 +158,7 @@ No further parameters exist because:
 - Hecke amplitude: $h = q - q^{-1} \approx 0.209$
 - Crossing asymmetry: $q/q^{-1} \approx 1.231$ (matter/antimatter)
 - Neutron-proton splitting structure: $m_n - m_p \propto \mathcal{S}_{\mathfrak{d}\mathfrak{d}} - \mathcal{S}_{\mathfrak{u}\mathfrak{u}}$
-- Pair production polarisation selection rule
+- Pair production polarisation selection rule (a model statement; tree-level QED gives nonzero pair production for parallel linear polarisations, so this is not a successful prediction; see [rem:breit-wheeler-vertex](#rem:breit-wheeler-vertex))
 - All NF decompositions and operator selection weights
 
 **From $q_0$ + $m_e$ (in MeV):**
