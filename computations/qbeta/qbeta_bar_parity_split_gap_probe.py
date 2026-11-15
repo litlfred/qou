@@ -138,6 +138,40 @@ def main() -> int:
     check("f_odd_equals_trace_of_bar_odd_part_of_Delta",
           is_zero(f_odd - (f - fbarw) / 2))
 
+    print("\nR5  localisation of g_odd (exact subset interpolation, no word change)")
+    # Bar one segment at a time (letter-level bar, kept at the same q), all 2^3
+    # subsets of {core, tail, gluon}; Mobius-invert to single and cross effects.
+    # Diagnostic only: the word is ruled and is NOT changed (qou-ales/qou-99qc).
+    import itertools
+    T1tail, T2tail = [UD(0), D(1)], [U(0), UD(0)]
+
+    def g_sub(sub):
+        c = bar_letters(CORE) if "core" in sub else CORE
+        gl = bar_letters(GLUON) if "gluon" in sub else GLUON
+        t1 = bar_letters(T1tail) if "tail" in sub else T1tail
+        t2 = bar_letters(T2tail) if "tail" in sub else T2tail
+        return sp.factor(-(trw(c + t1 + gl) + trw(c + t2 + gl)) / 2)
+
+    segs = ("core", "tail", "gluon")
+    G = {s: g_sub(set(s)) for r in range(4) for s in itertools.combinations(segs, r)}
+    check("all_segments_barred_equals_g(1/q)", is_zero(G[segs] - bar(g)))
+    eff = {}
+    for r in range(1, 4):
+        for s in itertools.combinations(segs, r):
+            m = sum((-1) ** (r - k) * G[t] for k in range(r + 1)
+                    for t in itertools.combinations(s, k))
+            eff[s] = sp.factor(-m / 2)
+            print(f"    contribution to g_odd of {s}: {eff[s]}")
+    check("contributions_sum_to_g_odd", is_zero(sum(eff.values()) - g_odd))
+    check("quark_tail_contributes_zero_alone_and_in_every_cross_term",
+          all(is_zero(v) for k, v in eff.items() if "tail" in k))
+    check("obstruction_is_core_plus_gluon_plus_their_cross_term",
+          not is_zero(eff[("gluon",)]) and not is_zero(eff[("core", "gluon")]))
+    check("core_trace_alone_is_bar_even", is_zero(trw(bar_letters(CORE)) - trw(CORE)))
+    g_nogl = sp.factor(-(trw(CORE + T1tail) + trw(CORE + T2tail)) / 2)
+    check("context_trace_without_gluon_pair_is_bar_even (diagnostic)",
+          is_zero(g_nogl - bar(g_nogl)), f"g_without_gluon = {g_nogl}")
+
     print("\nR1  existence of F with identity readouts")
     # tau = (q + 1/q)/2 is bar-even; F := tau + f would need f bar-odd.
     tau = (q + 1 / q) / 2
