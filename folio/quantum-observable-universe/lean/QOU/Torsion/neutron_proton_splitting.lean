@@ -31,7 +31,10 @@ they are the canonical Hecke **traced-volume** of the quark orderings
 (`computations/level1-qvalues.py`, `HeckeRational.traced_volume`).  This has an
 exact closed form — `log` of a rational function of `q` — e.g.
 `Φ(udd) = log|(q²+1)²(10000q² − 4993q − 10000) / (40000 q³)|` (with the
-NF-basis constant `z = 4993/10000`).  Provenance + symbolic derivation:
+NF-basis constant `z = 4993/10000`).  That `z` is the rounded convention-C
+value `√q/(q+1)`; the canonical convention is D (`z = q³/(q²+1)`), under which
+the same construction gives a different `|ΔΦ| ≈ 0.2815`.  The pinned values below
+are therefore convention-C, and the convention-D re-derivation is open.  Provenance + symbolic derivation:
 `docs/audits/2026-07-11-quark-volume-provenance.md`.  (This transfer-matrix
 `V̂ᵢ` is a *different* object from the `Φ_q` q-Pochhammer of
 `QOU.MathlibExt.QuantumDilogarithm`.)  They remain opaque
