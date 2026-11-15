@@ -1,4 +1,5 @@
 import QOU.Mass.QuantumSl2RMatrix
+import Mathlib.Algebra.BigOperators.Intervals
 
 /-!
 # Highest-weight vectors in `V_{m+1} ⊗ V_{m'+1}`
@@ -241,5 +242,63 @@ theorem rCheck_hwVec (m m' j : ℕ) (hjm : j ≤ m) (hjm' : j ≤ m')
   rw [if_pos (by simp)]
 
 end Braiding
+
+/-! ### Closed form of the braiding eigenvalue -/
+
+/-- Closed form of the highest-weight coefficients:
+`a_p · Π_{i<p} [m−i] = (−1)^p q^{−Σ_{i<p} (m'−2(j−1−i))} Π_{i<p} [m'−j+i+1]`. -/
+theorem hwCoef_mul_prod (q : 𝕜) (hq : q ≠ 0) (m m' j p : ℕ) (hp : ∀ i < p, qint q (m - i) ≠ 0) :
+    hwCoef q m m' j p * ∏ i ∈ Finset.range p, qint q (m - i)
+      = (-1) ^ p * q ^ (-∑ i ∈ Finset.range p, wt m' (j - 1 - i))
+          * ∏ i ∈ Finset.range p, qint q (m' - j + i + 1) := by
+  induction p with
+  | zero => simp [hwCoef]
+  | succ p ih =>
+    have hmp : qint q (m - p) ≠ 0 := hp p (by omega)
+    rw [hwCoef, Finset.prod_range_succ, Finset.prod_range_succ, Finset.sum_range_succ, neg_add,
+      zpow_add₀ hq]
+    have : -(hwCoef q m m' j p * qint q (m' - j + p + 1) * q ^ (-wt m' (j - 1 - p)))
+            / qint q (m - p) * ((∏ i ∈ Finset.range p, qint q (m - i)) * qint q (m - p))
+          = -(hwCoef q m m' j p * ∏ i ∈ Finset.range p, qint q (m - i))
+          * qint q (m' - j + p + 1) * q ^ (-wt m' (j - 1 - p)) := by
+      field_simp
+    rw [this, ih (fun i hi => hp i (by omega))]
+    ring
+
+/-- `Σ_{i<j} (m − 2i) = j m − j (j − 1)`. -/
+theorem sum_wt_range (m j : ℕ) :
+    ∑ i ∈ Finset.range j, wt m i = (j : ℤ) * m - (j : ℤ) * ((j : ℤ) - 1) := by
+  induction j with
+  | zero => simp
+  | succ j ih =>
+    rw [Finset.sum_range_succ, ih]
+    unfold wt; push_cast; ring
+
+/-- **The braiding eigenvalue on `V_{2m−2j+1} ⊂ V_{m+1} ⊗ V_{m+1}`:**
+`λ_j = s^{(m−2j)m} a_j = (−1)^j s^{m² − 4jm + 2j² − 2j}`. -/
+theorem braidEigen_eq (s : 𝕜) (hs : s ≠ 0) (m j : ℕ) (hj : j ≤ m)
+    (hint : ∀ i < j, qint (s ^ 2) (m - i) ≠ 0) :
+    s ^ (wt m j * wt m 0) * hwCoef (s ^ 2) m m j j
+      = (-1) ^ j * s ^ ((m : ℤ) ^ 2 - 4 * j * m + 2 * (j : ℤ) ^ 2 - 2 * j) := by
+  have hP : ∏ i ∈ Finset.range j, qint (s ^ 2) (m - i) ≠ 0 :=
+    Finset.prod_ne_zero_iff.mpr fun i hi => hint i (Finset.mem_range.mp hi)
+  have hrefl : ∏ i ∈ Finset.range j, qint (s ^ 2) (m - j + i + 1)
+      = ∏ i ∈ Finset.range j, qint (s ^ 2) (m - i) := by
+    rw [← Finset.prod_range_reflect]
+    refine Finset.prod_congr rfl fun i hi => ?_
+    have := Finset.mem_range.mp hi
+    congr 1; omega
+  have hsum : ∑ i ∈ Finset.range j, wt m (j - 1 - i) = (j : ℤ) * m - (j : ℤ) * ((j : ℤ) - 1) := by
+    rw [← sum_wt_range]
+    exact Finset.sum_range_reflect (fun i => wt m i) j
+  have hc := hwCoef_mul_prod (s ^ 2) (pow_ne_zero 2 hs) m m j j hint
+  rw [hrefl, hsum] at hc
+  have ha : hwCoef (s ^ 2) m m j j
+      = (-1) ^ j * (s ^ 2) ^ (-((j : ℤ) * m - (j : ℤ) * ((j : ℤ) - 1))) := by
+    apply mul_right_cancel₀ hP
+    rw [hc]
+  rw [ha, ← zpow_natCast s 2, ← zpow_mul, mul_left_comm, ← zpow_add₀ hs]
+  congr 2
+  unfold wt; push_cast; ring
 
 end QOU.Mass.QuantumSl2
