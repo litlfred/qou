@@ -71,8 +71,7 @@ $\tau = \log$: a multiplicative amplitude has an additive free energy $E = \log 
 mass-deficit binding equals the connected (interaction) free energy $-\log I$, which is positive
 exactly when the assembly amplitude is suppressed (`QOU.Mass.ArchimedeanTraceBridge`).
 
-**Two multiplicative structures must be kept apart here, and an earlier version of this paragraph
-conflated them.** For the normalised Jones polynomial the *connected sum* is exactly multiplicative,
+**Two multiplicative structures must be kept apart here.** For the normalised Jones polynomial the *connected sum* is exactly multiplicative,
 $J(K_1 \# K_2) = J(K_1)\,J(K_2)$, whereas the *disjoint union* carries the loop value,
 $J(K_1 \sqcup K_2) = \delta\,J(K_1)\,J(K_2)$ with $\delta = [2]_q = q + q^{-1}$. The matrix result
 that is actually proved — the Kronecker-product multiplicativity of the trace

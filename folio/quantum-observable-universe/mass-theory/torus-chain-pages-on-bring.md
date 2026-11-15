@@ -26,8 +26,7 @@ Two limits. The frame is the split real form $\mathfrak{sl}_2(\mathbb{R})$,
 whereas the Reeb triad modelled on the Bring cone link elsewhere in this
 manuscript is the compact form $\mathfrak{su}(2)$; a genus-$4$ unit tangent
 bundle has $\widetilde{\mathrm{SL}_2}$ geometry and admits no 3-Sasakian
-structure, so which real form is intended there is a question for that lemma
-(`docs/audits/2026-09-03-bring-cone-link-is-the-unit-tangent-bundle.md`).
+structure, so which real form is intended there is a question for that lemma.
 And none of this reaches the twist: the framing datum the binding gap needs is
 the torsion integral, which neither the pages nor the circle pencil carry by
 themselves.

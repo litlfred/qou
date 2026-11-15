@@ -39,15 +39,14 @@ Borel ray is distinct, so the Davison–Meinhardt plethystic log is trivial and
 $\dim \mathrm{BPS}_d = |\Omega_d|$ with no superpotential and no motivic
 $q$-correction — the spectrum would be *abelian*, which is why $A_\omega$ and the
 whole Stokes tower are integers rather than Poincaré polynomials
-(`QOU.QBeta.AomegaM2BPSCohomology`, `computations/probes/aomega_m2_bps_cohomology.py`).
+(`QOU.QBeta.AomegaM2BPSCohomology`).
 This does **not** build the closed-sector quiver-with-potential $(Q,W)$ (Milestone
 M1, still unwritten), does not compute a cohomology from a category, and does not
 derive $A_\omega$: the count is *imported* (conditional on the bridge above), and
 what M2 adds is only that its BPS realization would carry no hidden motivic
 multiplicity. The Hecke-to-BPS bridge (M3) that would *derive* rather than *import*
 the count stays open; this proposition fixes only the structural target. The onward identification of $A_\omega$ with the
-bar-odd decay leak $S$ has no literature support and is not derivable (recorded in
-`docs/audits/2026-08-14-aomega-to-S-bridge-refuted-O2-negative.md`); it is not
+bar-odd decay leak $S$ has no literature support and is not derivable; it is not
 carried here.
 
 ## Lean structure

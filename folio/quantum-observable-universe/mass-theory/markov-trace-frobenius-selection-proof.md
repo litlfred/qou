@@ -254,4 +254,4 @@ What is *not* claimed: that $\mathrm{tr}_M$ is non-degenerate on
 $H_n(R, q)$ (it is not, for $n \geq 3$), that non-degeneracy selects
 it (it does not — every nowhere-vanishing weight vector gives a
 non-degenerate form), or that the antecedent is established (the
-fibre-categorical premise is open, bean `qou-n1dj`). $\blacksquare$
+fibre-categorical premise is open). $\blacksquare$

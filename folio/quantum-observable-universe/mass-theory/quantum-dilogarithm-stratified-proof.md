@@ -56,8 +56,7 @@ $$
 > plausible — $e_\lambda$ central idempotent gives
 > $\tau(e_\lambda a) = \tau(e_\lambda a e_\lambda)$ — but it is not
 > stated in the block, and it is a different question from the one
-> corrected here. Analysis:
-> [`docs/audits/2026-08-26-frobenius-duality-of-strata-is-diagonal.md`](../../../docs/audits/2026-08-26-frobenius-duality-of-strata-is-diagonal.md).
+> corrected here.
 
 where $N$ is the maximal GB-depth in $Z(A)$, retained below only as the
 top of the depth range. The pairing $Z^{(k)} \times Z^{(k)} \to R$ is

@@ -51,6 +51,15 @@ export default proposition({
   },
   authorNotes: [
     {
+      kind: "refined-framing",
+      body: "An earlier reading of this block as indefinite or Lorentzian was withdrawn (commit 748ba9b1); it came from quoting the bilinear pairing without saying so.",
+    },
+    {
+      kind: "note",
+      date: "2026-09-05",
+      body: "**Digit corrected 2026-09-05** (`qou-i229`, probe\n`the_gram_block_publishes_a_D_eigenvalue_no_pin_produces_probe.py`, 6/6). The\nlargest **D** eigenvalue read $+4.23033920$. This block's own declared witness\ncomputes $4.230339225030225$ at the proton pin — which rounds to\n$4.2303392\\mathbf{3}$, five half-ulps away at the published precision. It is a\ntranscription error rather than a pin difference: recomputing the whole $6\n\\times 6$ from this block's symbolic entries gives $4.2303392\\mathbf{3}$ at the\nproton pin and $4.2303394\\mathbf{0}$ at the muon and retired pins, and\n**no registered $q_0$ produces $4.23033920$.** The other five D entries are\ncorrect at the proton pin and unchanged.\n\nThe **C** column is untouched and remains unverified against an independent\ncomputation — convention C is excised, so none exists. It does pass the one\ncheck its own numbers permit: the six published C eigenvalues multiply to\n$-0.18920521\\underline{5}$ against the published $\\det G =\n-0.18920521\\underline{9}144$, a $2.0 \\times 10^{-8}$ agreement, which is what\nsix figures rounded to 8 decimals should give. That is internal consistency,\nnot verification.",
+    },
+    {
       kind: "note",
       date: "2026-06-04",
       body: "**Markov-bug fix.** Earlier versions of this block asserted $\\mathrm{tr}_M(e^-) = z^3$ and offered a 'peel-from-the-right' derivation. This was incorrect: $\\sigma_1\\sigma_0$ is **not** in the sub-algebra $H_2 = \\langle \\sigma_0 \\rangle$ (the Markov axiom $\\mathrm{tr}_M(\\sigma_n \\cdot x) = z\\,\\mathrm{tr}_M(x)$ requires $x \\in H_n$), so the Markov-property step cannot be applied directly to $\\sigma_1 \\cdot \\sigma_0\\sigma_0$ after the cyclicity step. The canonical Ocneanu–Wenzl recursion gives $\\mathrm{tr}_M(e^-) = hz^2 + z$, verified independently in `docs/audits/-trm5-markov-bug.md` against the y-lambda Wenzl-bridge consistency $\\mathrm{tr}_M(b_i) = \\sum_\\lambda y_\\lambda(q) \\chi_\\lambda(b_i)$ (residual $\\sim 10^{-32}$ after fix; $\\sim 0.12$ before). The fix has been applied to `tools/pyhecke/python/pyhecke/gram.py` and the Gram matrix table below.",

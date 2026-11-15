@@ -93,7 +93,7 @@ identified against its Lean closed form to $5\times10^{-60}$. Same letter
 multiset, different order, and it does **not** satisfy the per-generator form:
 that fails by $2.8\times$ at $A = 2$, rising to $13.3\times$ at $A = 4$.
 
-*A distinction worth keeping, because this arc's bean once lost it.* Grouped and
+*A distinction worth keeping.* Grouped and
 alternating describe the arrangement of six letters **inside** the eleven-letter
 intra block, not the block itself. That block is not $\beta_{\mathrm{Bor}}$
 under either arrangement and cannot be: two of its eleven letters are averaged,
@@ -103,7 +103,7 @@ name. One proton: $1.145759692457300870$ grouped, $0.629328402202921918$
 alternating, against $0.998562163836787266$ for the bare six-letter
 $\beta_{\mathrm{Bor}}$ — three distinct objects.
 
-**Nothing above is retracted by that.** The load-bearing step is connected-sum
+**The factorisation survives this.** The load-bearing step is connected-sum
 multiplicativity, which is blind to letter order inside a summand, and it is
 measured to survive the reordering exactly:
 $\mathrm{tr}_M(\text{chain}) = \prod_k \mathrm{tr}_M(\text{intra}_k)\prod_i(z+d_i)$.
