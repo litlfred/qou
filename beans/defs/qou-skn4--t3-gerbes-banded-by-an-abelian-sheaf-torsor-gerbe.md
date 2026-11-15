@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-10-12T19:48:14Z
-updated_at: 2026-11-15T17:55:17Z
+updated_at: 2026-11-15T19:08:37Z
 parent: qou-533l
 ---
 
@@ -55,3 +55,19 @@ Lean-direct exits 0; standard axioms.
 - S2 is negative. On the 6-point finite S², the Čech H² of the minimal cover is 0, measured exactly mod 2, mod 3 and mod 1000003, with locally constant ℤ coefficients. The sanity check passes: the 4-point S¹ gives H¹ = 1. So no finite model of this type gives a non-trivial KummerSurfaceData. Notes are in /mnt/project-files/qou-leftovers/s2-finite-sphere-negative.md.
 - A real surface still needs the Čech = singular comparison, which is Mathlib-scale. This bean stays OPEN.
 - R2, reading A, is proved to fail for every z: `StrandTowerObstruction.lean`. Reading B (root of unity) has no derivation in the corpus.
+
+## 2026-11-15 — surface case C1 done at cover level; C2 OPEN (PR #7964)
+
+Landed, sorry-free, on `claude/c5a-r2-surface-2026-11-15`:
+- `CechNerveTetrahedron.lean`: for a four-set open cover with nonempty preconnected
+  overlaps of at most three members and discrete abelian G, the alternating face
+  product is a degree on H²(cover) that detects the trivial class, is natural in G,
+  and (when no point lies in all four) is a bijection `H²(U,G) ≃ G`.
+- `CechSphereHemispheres.lean`: the four open hemispheres of S² centred at the
+  tetrahedron vertices are such a cover; `cechH2SphereHemiEquiv`, and the
+  cover-level `kummerSurfaceData_sphereHemi`.
+
+STILL OPEN (do not close this bean): C2, that the hemisphere cover computes the
+full open-cover colimit Ȟ²(S², G). Needs either Leray (Čech H¹ = H² = 0 on the
+convex-cone slices of S²) or a triangulation argument for fine covers; neither is
+in the repo or Mathlib. Estimated 5–10 sessions. C3 (full instance, χ = 2) waits on C2.
