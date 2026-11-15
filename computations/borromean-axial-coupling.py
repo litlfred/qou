@@ -372,7 +372,7 @@ w.add_assertion(
 # certificate via `QOU.Mathlib.LPDuality.duality_gap_decomposition`
 # (sorry-free, unconditional), with a tolerance DERIVED from the
 # cancellation floor rather than chosen.
-_gap_rec = getattr(lp, "gap_recomputed_str", None)
+_gap_rec: str | None = getattr(lp, "gap_recomputed_str", None)  # a decimal string, not a float
 if _gap_rec is not None:
     _bits = getattr(lp, "precision_bits", None) or 53
     _dps = _mp.mpf(_bits) * _mp.log10(2)
