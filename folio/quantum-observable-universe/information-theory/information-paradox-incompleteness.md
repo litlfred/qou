@@ -16,7 +16,7 @@ We map the three standard positions on the information paradox to positions on i
 | Information is preserved but inaccessible | Sections exist but cannot be computed from outside | G\"{o}del sentences are true but unprovable (the standard reading) |
 | Information escapes via Hawking radiation | Degree $\geq 1$ data gradually reconstructs degree-$0$ truth | Partial witnesses accumulate toward a proof that never terminates |
 
-We adopt the second position. The algebra $A$ is well-defined everywhere, including behind the horizon, but no finite sequence of Planck steps from the outside can reach it.
+We adopt the second position. Two physics references bear on this choice. Harlow and Hayden argue that extracting the relevant information from the radiation takes time exponential in the entropy of the black hole \cite[\S3.4]{arxiv-1301.4504v4}, a computational form of "preserved but inaccessible". Lowe, Polchinski and Susskind argue that the standard argument for information loss assumes the effective theory outside the horizon is a local quantum field theory, and give evidence from string theory that this locality fails across the horizon \cite{arxiv-hep-th-9506138v1}; the second position therefore carries a cost in locality. The algebra $A$ is well-defined everywhere, including behind the horizon, but no finite sequence of Planck steps from the outside can reach it.
 
 **The Bekenstein--Hawking entropy as a G\"{o}del count.**
 The Bekenstein--Hawking entropy $S = A / (4\ell_P^2)$ counts the dimension of $\Gamma(\mathcal{H}, A_1/A_0)$, the independent degree-$1$ sections on the horizon surface. These are the verifiable partial evidence, thermal leakage, and NP witnesses accessible from the outside.
