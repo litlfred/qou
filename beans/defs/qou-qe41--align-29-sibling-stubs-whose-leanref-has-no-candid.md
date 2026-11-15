@@ -40,7 +40,7 @@ Renames touch imports, so each is a real change, not a sweep.
    **ref's leaf name**, not the class name (that error inflated the
    orphan count by 4).
 3. Apply the change, then `bun run scripts/run-validate.ts
-   content/quantum-observable-universe` and **diff the warning set**
+   folio/quantum-observable-universe` and **diff the warning set**
    against the pre-change run. A broken `lean.ref` surfaces as a new
    *"no Lean declaration yet"* warning on the affected block; an
    identical warning set is the pass condition.

@@ -23,8 +23,8 @@ it corrects a **mass-ratio relation at fixed q_0**; it does not derive `q_0`.
 
 Audit: `docs/audits/2026-08-08-mu-p-residual-carrier-order-and-bar-parity-prune.md`
 Probe: `docs/audits/scripts/mu_p_carrier_order_window_probe.py`
-Lean:  `content/quantum-observable-universe/lean/QOU/BraidKnot/MuPCarrierBarParity.lean` (generic)
-     + `content/quantum-observable-universe/lean/QOU/BraidKnot/MuPCarrierOrderWindow.lean` (archimedean)
+Lean:  `folio/quantum-observable-universe/lean/QOU/BraidKnot/MuPCarrierBarParity.lean` (generic)
+     + `folio/quantum-observable-universe/lean/QOU/BraidKnot/MuPCarrierOrderWindow.lean` (archimedean)
        (`lean`-direct exit 0 on both + real 4-module import cone via
         `lean-direct-cone.sh`; 0 sorries; `#print axioms` clean on all 11 decls;
         `check-sidecars.sh` clean)

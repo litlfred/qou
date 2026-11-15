@@ -17,7 +17,7 @@ the whole `QOU` library are in one file, and it is not mine — zero overlap wit
 
 ## Where it came from
 
-`content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicGeodesicZAxis.lean`,
+`folio/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicGeodesicZAxis.lean`,
 landed on main by:
 
 * `5cd0e901f0` — WALL-3 upper bound (bean `qou-6eco`)

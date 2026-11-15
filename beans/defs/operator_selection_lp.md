@@ -11,7 +11,7 @@ updated_at: 2026-10-04T15:26:48Z
 parent: qou-uot9
 ---
 
-File: `content/quantum-observable-universe/lean/QOU/ParticleInteractions/operator_selection_lp.lean`
+File: `folio/quantum-observable-universe/lean/QOU/ParticleInteractions/operator_selection_lp.lean`
 The `operator_selection_lp` theorem is unprovable. `OperatorSelectionLpContext` provides `x_star` and `y_0_star` as unconstrained data fields, meaning it does not assume they actually satisfy the optimality conditions or strong duality, making the theorem refutable.
 
 

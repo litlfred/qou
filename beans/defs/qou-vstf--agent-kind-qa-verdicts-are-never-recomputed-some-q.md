@@ -5,7 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-04T22:05:10Z
-updated_at: 2026-09-05T00:26:34Z
+updated_at: 2026-11-15T13:30:00Z
+parent: qou-5vkl
 ---
 
 Found 2026-09-04 while re-encoding the eight §3b-cond item-5 violations of `qou-tmmt`.
@@ -188,3 +189,7 @@ essentially all of the 125 + 21 are drained findings rather than bad verdicts,
 then the whole population is stale-and-clearable, and the right change is in
 `litlfred/folio-assistant`: mark an agent verdict `needs-agent` when its
 `field_hash` drifts, instead of leaving it asserting `fail`.
+
+## Parented 2026-11-15 (owner-approved bean triage)
+
+Parent `(none)` → `qou-5vkl`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.

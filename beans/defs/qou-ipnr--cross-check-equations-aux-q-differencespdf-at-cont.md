@@ -1,6 +1,6 @@
 ---
 # qou-ipnr
-title: Cross-check Equations_aux_q-differences.pdf at content/quantum-observable-universe/lean/QOU/QBeta…
+title: Cross-check Equations_aux_q-differences.pdf at folio/quantum-observable-universe/lean/QOU/QBeta…
 status: todo
 type: task
 priority: normal

@@ -108,7 +108,7 @@ regression, not a formality.
 Independent of the #1416 question, verified directly, and **not found in the
 red-team audit or the ck-dk registry** as a defect.
 
-`content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-ck-truncation-ladder.md`
+`folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-ck-truncation-ladder.md`
 states:
 
 > **Python API entry point.** *Canonical compute is the script

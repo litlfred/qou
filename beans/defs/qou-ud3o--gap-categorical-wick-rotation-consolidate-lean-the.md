@@ -19,13 +19,13 @@ Where is Wick rotation in QOU, how do we use it, and can we define it
 
 ## Corpus state (grep done — it is PARTIALLY there already)
 
-- [`intro-q-resolvent-wick.md`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/content/quantum-observable-universe/quantum-observable-universes/intro-q-resolvent-wick.md):
+- [`intro-q-resolvent-wick.md`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/folio/quantum-observable-universe/quantum-observable-universes/intro-q-resolvent-wick.md):
   the categorical Wick rotation **collapses the Laplace and Fourier
   transforms into a single grouplike pairing** against
   $\exp_q \in G(\mathcal{H}_q)$ evaluated at $s$ (Laplace) or $i\xi$
   (Fourier). The $q$-resolvent $R_q(s)=(s+\widehat{\Delta_q})^{-1}$ is
   the categorical Laplace transform of the $q$-heat semigroup.
-- [`i-as-braiding-orientation.md`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/content/quantum-observable-universe/quantum-observable-universes/i-as-braiding-orientation.md):
+- [`i-as-braiding-orientation.md`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/folio/quantum-observable-universe/quantum-observable-universes/i-as-braiding-orientation.md):
   **$i$ = braiding orientation** $c_{V,V}$ vs $c_{V,V}^{-1}$. Wick
   $t\mapsto it$ (Laplace half-plane → Fourier half-plane) flips under
   $i\mapsto -i$, i.e. it **is** the crossing-orientation flip
@@ -95,7 +95,7 @@ Verdict: **tractable, probable, high-leverage.** Prioritise over alpha_S.
 ## ✅ PROVED (2026-08-02) — the load-bearing lemma is now sorry-free Lean
 
 `QOU.QExp.qExpTerm_summable` in
-[`QExpEntire.lean`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/content/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/QExpEntire.lean):
+[`QExpEntire.lean`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/QExpEntire.lean):
 
 > For `q > 1` (substrate regime, q₀≈1.11), the q-exponential series
 > `∑ xⁿ / [n]_q!` is **Summable for every `x : ℂ`** — i.e. exp_q is entire.

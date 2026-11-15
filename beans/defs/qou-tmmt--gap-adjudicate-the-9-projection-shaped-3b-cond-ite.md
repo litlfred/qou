@@ -89,7 +89,7 @@ them. That is per-block mathematics, not a sweep.
 
 ### 1. `cor:knot-factor-borromean-composite` — CONFIRMED
 
-`content/quantum-observable-universe/mass-theory/knot-factor-borromean-composite.lean`
+`folio/quantum-observable-universe/mass-theory/knot-factor-borromean-composite.lean`
 
     structure BrunnianDecoupling (k : ℕ) (component_factor : ℝ)
         (composite_factor : ℝ) : Prop where
@@ -127,8 +127,8 @@ and the theorem projects one of its fields.
 
 `GBResidueSpectralSum` is declared **twice**, both in `namespace QOU.BraidKnot`:
 
-- `content/quantum-observable-universe/mass-theory/gb-residue-spectral-sum.lean` (block sibling)
-- `content/quantum-observable-universe/lean/QOU/BraidKnot/GBResidueSpectralSum.lean` (library)
+- `folio/quantum-observable-universe/mass-theory/gb-residue-spectral-sum.lean` (block sibling)
+- `folio/quantum-observable-universe/lean/QOU/BraidKnot/GBResidueSpectralSum.lean` (library)
 
 i.e. two declarations of `QOU.BraidKnot.GBResidueSpectralSum`. This is the
 sibling/library divergence hazard from `qou-e7xv` / PR #6540 §"A cost of this

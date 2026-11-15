@@ -17,7 +17,7 @@ parent: qou-l2vh
 ---
 
 **File:** `QOU/ParticleInteractions/lp_dual_stability.lean` (QOU)  ·  1 cited sorry(s)
-**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/content/quantum-observable-universe/lean/QOU/ParticleInteractions/lp_dual_stability.lean
+**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/folio/quantum-observable-universe/lean/QOU/ParticleInteractions/lp_dual_stability.lean
 
 ### `lp_dual_stability`  —  line 89  ·  tier **B** (infra-blocked / open-conjecture)
 - **Proposition:** `theorem lp_dual_stability [ctx : LpDualStabilityContext] : (∀ i : Fin ctx.channels, 0 ≤ (Finset.univ.sum fun j : Fin ctx.channels => ctx.G i j * ctx.x_star j)) ∧ (∀ i : Fin ctx.channels, |ctx.y_star i| ≤ ctx.κ_G * ctx.t_norm) ∧ (Finset.univ.sum fun j : Fin ctx.channels => ctx.G ctx.σ_0_idx j * ctx.x`
@@ -53,7 +53,7 @@ matrix and `q0` of
 | `σ₀²` (Hopf) | `(+1.10, +0.73, +0.55, +0.36, +0.36, +0.63)` | **+0.36** | +0.18 |
 
 The `−0.11` of
-[`tbl:lp-dual-stability-table-data`](../content/quantum-observable-universe/nuclear-interactions/lp-dual-stability-table-data.md)
+[`tbl:lp-dual-stability-table-data`](../folio/quantum-observable-universe/nuclear-interactions/lp-dual-stability-table-data.md)
 row 5 is the only negative number in the chapter and the entire evidential basis
 for the confinement reading. Where it sits, the computation gives **+0.32**.
 Under `def:lp-stable` that sub-unit is **LP-stable**, and the row's **No** is a

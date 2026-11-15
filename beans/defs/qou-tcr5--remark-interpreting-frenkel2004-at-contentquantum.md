@@ -1,6 +1,6 @@
 ---
 # qou-tcr5
-title: Remark interpreting [frenkel2004] at content/quantum-observable-universe/mass-theory/vertex-opera…
+title: Remark interpreting [frenkel2004] at folio/quantum-observable-universe/mass-theory/vertex-opera…
 status: todo
 type: task
 priority: normal

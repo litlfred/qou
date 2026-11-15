@@ -11,7 +11,7 @@ updated_at: 2026-10-04T15:26:48Z
 parent: qou-uot9
 ---
 
-File: `content/quantum-observable-universe/lean/QOU/ParticleInteractions/parity_regime_selection.lean`
+File: `folio/quantum-observable-universe/lean/QOU/ParticleInteractions/parity_regime_selection.lean`
 The `parity_regime_selection` theorem is unprovable. The context class `ParityRegimeSelectionContext` provides data fields but no hypotheses relating them. It needs axioms to derive the Q-value and parity regimes.
 
 

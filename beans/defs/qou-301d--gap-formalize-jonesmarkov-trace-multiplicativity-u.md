@@ -1,13 +1,13 @@
 ---
 # qou-301d
 title: 'GAP: formalize Jones/Markov-trace multiplicativity under connected sum (discharge the ArchimedeanTraceBridge multiplicativity hypothesis)'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T12:29:38Z
-updated_at: 2026-10-12T20:35:49Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-v2om
 ---
 
@@ -515,3 +515,7 @@ theorem  disjointBlock_heckeColimit  : DisjointBlockMultiplicative (heckeColimit
 --------
 
 **2026-10-12 (later):** the BraidedTower instance and the disjoint-block law now also hold on the **Coxeter-presentation** Iwahori–Hecke tower `HeckeAlgebra K (q*q) (Aₙ n)` itself (`QOU/IwahoriHecke/CoxeterTower.lean`, commit `9d2b8bfd78`): `coxeterMarkovTrace`, `braidedTower_coxeter`, `disjointBlock_coxeter`, with generators the §7a `Balanced.sigma = q⁻¹·T_n`, over any field, q ≠ 0, q²+1 ≠ 0. Sorry-free. The trace is not faithful (tensor-model / TL), and the faithfulness, amplitude=trace identification and geometric Jones items this bean lists as open are unchanged. Bean stays open.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

@@ -1,14 +1,14 @@
 ---
 # qou-l7pj
 title: 'Bibliography: split references.ts into one CSL-JSON file per entry in a declared directory (each a Reference node), keep LaTeX/BibTeX output identical'
-status: in-progress
+status: todo
 type: feature
 priority: normal
 tags:
     - migration
     - content
 created_at: 2026-10-14T17:50:00Z
-updated_at: 2026-10-14T19:30:00Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-8tlx
 ---
 
@@ -88,3 +88,7 @@ Measured:
    `bib-cite-resolves` is unaffected because ORDER keeps `id:`.
 3. **Done-when item 4** (63q4's `references/<key>.jsonld` generator) belongs to the platform.
 4. **Skills docs** under `skills/local/` still say "add a `ref()` in references.ts".
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

@@ -40,7 +40,7 @@ STALE-REFRESH 2026-08-29, verified against main. Per-child state:
 - C12 (couple the Markov-trace face tr_M(C_q^k(h)) -> 1 to the map) UNTOUCHED and is now the largest unformalized Tier-C item: collatz-three-forms.md states the categorical convergence over H_n(q) in prose and its .ts carries NO lean ref at all.
 Tier C is therefore 3 done / 1 conditional-with-named-residual / 1 untouched.
 
-C12 CARRIER LANDED 2026-08-29, PR #6042, commit d09d3357e7. File: content/quantum-observable-universe/lean/QOU/AppendixSurreals/collatz_three_forms.lean. rem:collatz-three-forms now has a machine-checked carrier at four separated tiers.
+C12 CARRIER LANDED 2026-08-29, PR #6042, commit d09d3357e7. File: folio/quantum-observable-universe/lean/QOU/AppendixSurreals/collatz_three_forms.lean. rem:collatz-three-forms now has a machine-checked carrier at four separated tiers.
 
 PROVED (sorry-free, axiom-audited): integer_threshold_eq_two (v=1 never suffices, v=2 always does, no v<2 can, for every q>0 -- no transcendental quantity); one_lt_contactThreshold + contactThreshold_lt_two + contactThreshold_mem_Ioo; the residue face at q=-1 over generic CommRing (qi2_at_divisor, qi3_at_divisor, odd_branch_at_divisor); expected_halvings_eq_two (the block's displayed E[v_2(3n+1)] = sum k 2^-k = 2, via Mathlib's geometric series); classical_limit_is_critical.
 

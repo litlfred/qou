@@ -1,19 +1,19 @@
 ---
 # qou-8iru
 title: 'H4/C5 answered: convention D IS Temperley-Lieb. Radical = TL ideal, dim H_n/rad = Catalan(n). Interface gain 2->5 params.'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T14:54:13Z
-updated_at: 2026-10-04T15:13:04Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-rtxm
 ---
 
 
 Branch: claude/anchor-followups-2026-08-08.
-Lean: content/quantum-observable-universe/lean/QOU/QBeta/TemperleyLiebTower.lean
+Lean: folio/quantum-observable-universe/lean/QOU/QBeta/TemperleyLiebTower.lean
 (NEW). Answers the owner's "h4" -- option C5 from qou-17gn / qou-4g4a.
 
 ## THE MEASUREMENT THAT REFRAMES EVERYTHING
@@ -573,3 +573,7 @@ a count of dimensions are not an isomorphism of algebras" remains TRUE; the
 dimension OBSTRUCTION is what is gone.
 
 Bean stays open (rule 13a): the ideal equality and TL_n semisimplicity are open.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

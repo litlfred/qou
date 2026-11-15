@@ -1,11 +1,11 @@
 ---
 # qou-5zl1
 title: 'Lean: trace factorisation tr_z(W_atom) = prod_bonds (z+d_k) * P_p(z)^Z * P_n(z)^N on a concrete braided Hecke tower'
-status: in-progress
+status: todo
 type: task
 priority: high
 created_at: 2026-10-12T19:00:00Z
-updated_at: 2026-10-12T19:00:00Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-0fmb
 ---
 Stream 4 of the 2026-10-12 stalled-session split (coordinator session_01M5GA1LmsEf8tSMxFjMkmnn,
@@ -74,3 +74,7 @@ on every braided-tower Markov trace; `tr_atomWord_colimit` on the Hecke colimit 
 - no Lean model checks that `atom_braid_word_3A` emits exactly these letters;
 - existence of a Markov trace at arbitrary z on the Hecke tower is open (only D and Wenzl r);
 - no binding energy / c_k.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

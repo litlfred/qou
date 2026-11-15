@@ -1,6 +1,6 @@
 ---
 # qou-9g14
-title: Remark interpreting 1909.06744v1.pdf at content/quantum-observable-universe/appendix-mass-binding…
+title: Remark interpreting 1909.06744v1.pdf at folio/quantum-observable-universe/appendix-mass-binding…
 status: todo
 type: task
 priority: normal

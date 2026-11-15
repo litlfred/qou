@@ -1,7 +1,7 @@
 ---
 # qou-8v3k
 title: 'Route 8: transport the 5₂ sum rule along GGM''s deformation to the cyclotomic point x = −1'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
@@ -11,7 +11,7 @@ tags:
     - reorg-2026-10-04
     - qbeta
 created_at: 2026-08-07T16:40:00Z
-updated_at: 2026-10-04T15:13:51Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-n4nr
 ---
 
@@ -184,3 +184,7 @@ See `qou-trns` and `qbeta_5two_route16_discriminant_vanishes_probe.py`. The
 transport is **open** again: the branch-labelled formulation presumes a labelling
 that does not survive the arc. `Σⱼ Vⱼ` is symmetric in the roots, so the repair
 is probably to work symmetrically or deform off the circle — neither is written.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

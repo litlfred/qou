@@ -13,7 +13,7 @@ parent: qou-o9ge
 
 Residual gap from bean `rtrb` (RT-1 ribbon extension), branch
 `claude/rtrb-ribbon-dual-2026-08-02`, file
-`content/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneRibbonCategory.lean`.
+`folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneRibbonCategory.lean`.
 
 ## What is closed (this branch, sorry-free)
 

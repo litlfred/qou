@@ -1,6 +1,6 @@
 ---
 # qou-bivd
-title: Remark interpreting [habiro2008] at content/quantum-observable-universe/lean/QOU/BraidKnot/Keysto…
+title: Remark interpreting [habiro2008] at folio/quantum-observable-universe/lean/QOU/BraidKnot/Keysto…
 status: todo
 type: task
 priority: normal

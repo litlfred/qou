@@ -49,7 +49,7 @@ would *supply* those weights.
 
 ## ✅ Formalize-first scaffold landed (2026-08-02) — R2a proved; R2-inst is the open piece
 
-[`QSchurWeyl.lean`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/content/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/QSchurWeyl.lean)
+[`QSchurWeyl.lean`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/QSchurWeyl.lean)
 (`QOU.SchurWeyl`), generic field `K`:
 
 - `HeckeWedderburnData` — content-bearing structure axiomatizing the

@@ -13,7 +13,7 @@ parent: qou-v2om
 
 
 Branch: claude/anchor-followups-2026-08-08.
-Lean: content/quantum-observable-universe/lean/QOU/QBeta/GramSignature.lean,
+Lean: folio/quantum-observable-universe/lean/QOU/QBeta/GramSignature.lean,
 section BandSeparation. sorry-free, lake build exit 0,
 #print axioms = [propext, Classical.choice, Quot.sound] on all four theorems.
 

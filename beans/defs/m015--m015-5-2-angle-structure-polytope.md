@@ -1,7 +1,7 @@
 ---
 # m015
 title: m015 (5₂) angle-structure polytope — the missing anchor for Casson–Rivin
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
@@ -11,7 +11,7 @@ tags:
     - lean
     - hyperbolic-volume
 created_at: 2026-08-09T19:15:46Z
-updated_at: 2026-10-04T15:13:14Z
+updated_at: 2026-11-15T13:30:00Z
 parent: b9cj
 ---
 
@@ -389,7 +389,7 @@ Checking produced a better result than either answer.
 
 ### The exposition already exists — and asserts exactly what was just proved
 
-`content/quantum-observable-universe/mass-theory/thurston-volume-additivity.md` states:
+`folio/quantum-observable-universe/mass-theory/thurston-volume-additivity.md` states:
 
 > *"Flat tetrahedra ($z_i \in \mathbb{R}$) contribute zero volume."*
 > *"Torus knots project entirely onto a surface, forcing every $z_c$ to be real. Their
@@ -492,3 +492,7 @@ piece of corpus work on the same manifold is filed under **`FiveTwo*`** and
 untouched territory when three sibling files were closing its motivation. Same
 family as the detector blind spots catalogued this session: right measurement,
 wrong vocabulary. When checking a census-named bean, grep the **knot name** too.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

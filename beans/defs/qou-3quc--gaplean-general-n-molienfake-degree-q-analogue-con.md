@@ -14,7 +14,7 @@ parent: qou-1oif
 OPENED 2026-08-21 alongside the concrete cases, per AGENTS.md "if you cannot
 close a derivation, CREATE A BEAN" -- not faked with a sorry.
 
-PROVED (content/quantum-observable-universe/lean/QOU/MathlibExt/MolienFakeDegree.lean,
+PROVED (folio/quantum-observable-universe/lean/QOU/MathlibExt/MolienFakeDegree.lean,
 sorry-free, axioms [propext, Classical.choice, Quot.sound]):
 
     sum_{lam |- n}  f^lam * q^(-kappa_lam) * qDim q lam  =  qFactorial q n
@@ -113,7 +113,7 @@ machinery, a real formalization project = THIS BEAN. Nothing wired.
 
 ## 2026-08-29 — general-n REDUCTION landed (sorry-free), gap re-scoped precisely
 
-New uncommitted file: content/quantum-observable-universe/lean/QOU/MathlibExt/MolienFakeDegreeGeneralN.lean
+New uncommitted file: folio/quantum-observable-universe/lean/QOU/MathlibExt/MolienFakeDegreeGeneralN.lean
 (lean-direct exit 0; axioms [propext, Classical.choice, Quot.sound] — no sorryAx).
 
 PROVED sorry-free, GENERAL n, over the canonical Fintype Nat.Partition n (same index as RSKBurnsideHolds):

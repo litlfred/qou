@@ -4,7 +4,8 @@ title: 'GAP: SpechtDimension assumes a dimension that Partition.dimIrrep already
 status: todo
 type: task
 created_at: 2026-08-21T15:17:07Z
-updated_at: 2026-08-21T15:17:07Z
+updated_at: 2026-11-15T13:30:00Z
+parent: qou-1oif
 ---
 
 Found by the TL-arc Lean infrastructure survey, PR #5352, branch claude/tl-arc-lean-infra-2026-08-21. Ledger: docs/audits/2026-08-21-tl-arc-lean-infra-ledger.md, gap F2-b.
@@ -13,7 +14,7 @@ An assumption stands where a proof is two files away, and a type collision is th
 only thing in between.
 
 THE ASSUMPTION.
-content/quantum-observable-universe/lean/QOU/Hecke/Wedderburn.lean:54
+folio/quantum-observable-universe/lean/QOU/Hecke/Wedderburn.lean:54
 
   class SpechtDimension {n : ℕ} (lam : Partition n) where
     dim : ℕ
@@ -23,7 +24,7 @@ It has NO INSTANCE anywhere in the tree. It assumes a Specht dimension exists an
 is positive, and computes nothing.
 
 THE PROOF THAT ALREADY EXISTS.
-content/quantum-observable-universe/lean/QOU/BraidKnot/DeltaLambdaSignRule.lean:130
+folio/quantum-observable-universe/lean/QOU/BraidKnot/DeltaLambdaSignRule.lean:130
 
   def Partition.dimIrrep {n : ℕ} (Λ : Partition n) : ℕ :=
     Nat.factorial n / Λ.hookProduct
@@ -74,3 +75,7 @@ which front 2 also needs and which is still open.
 <!-- ported 2026-11-15 from closed PR #5352 -->
 
 Ported 2026-11-15, when PR #5352 was closed on the owner's decision. It is still live on `main` `0d3ee898f`: `class SpechtDimension` is still at `QOU/Hecke/Wedderburn.lean:58`. The ledger it cites came along as a dated record. Its paths say `content/…`, which is now `folio/…`. The sibling bean `qou-a4dr` (PUnit global instances) was NOT ported, because `main` fixed it on 2026-08-23 (`triv_hecke` is now a `def`, see `QOU/Mathlib/HeckeAlgebra.lean`).
+
+## Parented 2026-11-15 (owner-approved bean triage)
+
+Parent `(none)` → `qou-1oif`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.

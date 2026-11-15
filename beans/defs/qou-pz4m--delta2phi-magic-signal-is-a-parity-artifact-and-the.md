@@ -17,7 +17,7 @@ no `.qa.json` finding, and no audit doc covers either defect (corpus-grepped:
 `.beans/` — all six paths).
 
 Concerns `prop:magic-numbers-from-q`
-(`content/quantum-observable-universe/observations/magic-numbers-from-q.md`) and
+(`folio/quantum-observable-universe/observations/magic-numbers-from-q.md`) and
 its Lean `QOU.AtomicMass.MagicNumbersFromQ`.
 
 ## Defect 1 — the sign test is parity, not magic

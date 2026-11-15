@@ -271,7 +271,7 @@ lives decides it:
 
 **Reason 1 — siblings cannot import siblings, so a sibling-resident upstream class
 cannot be bound.** Confirmed structurally, not from a docstring:
-`content/quantum-observable-universe/lean/lakefile.toml` declares
+`folio/quantum-observable-universe/lean/lakefile.toml` declares
 `globs = ["QOU", "QOU.+"]` with `srcDir = "."` (the `lean/` dir), so a file at
 `mass-theory/foo.lean` has no module name at all. Corroborated by measurement:
 **every** `^import QOU.` line in a sibling resolves to a library module

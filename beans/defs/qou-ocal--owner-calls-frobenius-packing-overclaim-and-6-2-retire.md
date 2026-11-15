@@ -8,7 +8,8 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-21T16:25:00Z
-updated_at: 2026-10-04T15:21:55Z
+updated_at: 2026-11-15T13:30:00Z
+parent: qou-v2om
 ---
 
 Two content-block edits surfaced by arc items 2 & 4 (PR #5389) that are OWNER decisions (they edit
@@ -68,7 +69,7 @@ My audit 2026-08-21-deuteron-w3-knot-identity-adjudicated.md now carries the ret
 
 ## 2026-08-22 — item 2 EXECUTED (owner-authorised): 6₂ flagged, NOT retargeted
 Owner authorised the flag in session. Applied to the live atlas registry
-(content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas-registry.md):
+(folio/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas-registry.md):
  • deuteron record: added a **Provenance ⚠** row — 6₂ is AME-inverted (producer's own admission,
    mass_table_ppb.py L18-21) so the +1.09% is circular; and the closure claim is asserted-not-computed
    (mass word is not a braid word; arity mismatch — closes to a 3-component link, 6₂ is a knot).
@@ -83,3 +84,7 @@ is established; the flag records undetermined status, it does not pick a winner.
 Gates: relative links verified to resolve; render-QA preflight clean (balanced $/braces, no
 \operatorname, no crash-class unicode); qa-sweep run — sidecar md+ts in sync, 0 stale criteria.
 Both items of this bean are now executed; ready for owner close.
+
+## Parented 2026-11-15 (owner-approved bean triage)
+
+Parent `(none)` → `qou-v2om`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.

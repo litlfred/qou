@@ -279,11 +279,11 @@ this corpus"* and concluded requirement (ii) was **unstatable**.
 **That was a false negative from my own check.** Re-run correctly: **35** of them
 match. And what is there is directly on this rung:
 
-* [`QOU/QBeta/CuspShapeBarParity.lean`](content/quantum-observable-universe/lean/QOU/QBeta/CuspShapeBarParity.lean)
+* [`QOU/QBeta/CuspShapeBarParity.lean`](folio/quantum-observable-universe/lean/QOU/QBeta/CuspShapeBarParity.lean)
   — `barEven`/`barOdd` on the **cusp shape** `ω`, stating in as many words that
   *"the `√−3` that drives the **Neumann–Zagier deformation** `CVol(u) = Vol −
   (τ/4)u² + …` is `barOdd(ω)`"*;
-* [`QOU/QBeta/BarParityZeta4Swap.lean`](content/quantum-observable-universe/lean/QOU/QBeta/BarParityZeta4Swap.lean)
+* [`QOU/QBeta/BarParityZeta4Swap.lean`](folio/quantum-observable-universe/lean/QOU/QBeta/BarParityZeta4Swap.lean)
   — the `barEven`/`barOdd` carrier it builds on.
 
 **So bar parity DOES act on NZ-adjacent geometric data**, and my retraction of

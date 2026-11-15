@@ -11,7 +11,7 @@ updated_at: 2026-10-04T15:26:44Z
 parent: qou-iqjk
 ---
 
-File: `content/quantum-observable-universe/lean/QOU/ParticleInteractions/atomic_nf_witness.lean`
+File: `folio/quantum-observable-universe/lean/QOU/ParticleInteractions/atomic_nf_witness.lean`
 The `atomic_nf_witness` theorem is unprovable. `AtomicNfWitnessContext` provides `F_Pauli`, `trAlt`, and `net` as free unconstrained variables, so `F_Pauli = |trAlt / net|` does not logically follow.
 
 

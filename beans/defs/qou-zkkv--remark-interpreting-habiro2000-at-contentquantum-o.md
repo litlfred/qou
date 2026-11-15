@@ -1,6 +1,6 @@
 ---
 # qou-zkkv
-title: Remark interpreting [habiro2000] at content/quantum-observable-universe/lean/QOU/Knot/BorromeanVo…
+title: Remark interpreting [habiro2000] at folio/quantum-observable-universe/lean/QOU/Knot/BorromeanVo…
 status: todo
 type: task
 priority: normal

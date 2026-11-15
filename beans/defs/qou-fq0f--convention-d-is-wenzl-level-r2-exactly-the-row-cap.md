@@ -52,7 +52,7 @@ The *mathematics* is already correct and documented — `markov_weights_symbolic
 What is wrong is a **content block that argues the opposite**, in prose the
 C→D migration never touched.
 
-`content/quantum-observable-universe/mass-endomorphism/q-hecke-seminormal-character-closure.md`,
+`folio/quantum-observable-universe/mass-endomorphism/q-hecke-seminormal-character-closure.md`,
 "Two layers have to be got right", bullet 1:
 
 > **Weight layer.** The two-variable Schur function s_λ(q, q⁻¹)/H_q(λ) vanishes

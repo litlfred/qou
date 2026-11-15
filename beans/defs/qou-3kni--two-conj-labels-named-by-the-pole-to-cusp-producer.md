@@ -50,7 +50,7 @@ load-bearing for the whole `n`-overload question (`qou-mfdq`, and the sixth
 "depth" sense now registered in `notation-collisions.md`), and its carrier is
 gone.
 
-All three lived under `content/quantum-observable-universe/descartes-universe/`,
+All three lived under `folio/quantum-observable-universe/descartes-universe/`,
 which no longer exists (`ls -d` → No such file or directory).
 
 ## Why no checker catches any of them
@@ -153,7 +153,7 @@ above are a month and ~500 commits old):
 And **no witness either**: the `jet-gb-pl-correspondence.witness.json` that
 `docs/audits/2026-05-18-compute-integration-sweep.md:145` lists does not exist.
 Both dated audits place the block at
-`content/quantum-observable-universe/descartes-universe/`, which the
+`folio/quantum-observable-universe/descartes-universe/`, which the
 `content/` -> `folio/` move left behind.
 
 **Still open, and why it is not closeable here** (per the rule against closing a

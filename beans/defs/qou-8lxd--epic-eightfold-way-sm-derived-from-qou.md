@@ -1,13 +1,13 @@
 ---
 # qou-8lxd
 title: 'EPIC: eightfold way / SM derived from QOU'
-status: in-progress
+status: todo
 type: epic
 priority: high
 tags:
     - 8f-index
 created_at: 2026-08-03T23:27:15Z
-updated_at: 2026-10-11T07:45:38Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-0uga
 ---
 
@@ -494,3 +494,7 @@ front's "open items" read as their titles by default, whatever their status.
 **The rule, restated to cover both cases:** a claim about a bean that came from
 a listing is **unverified** until its body is read. That applies to this epic's
 own front tables, which are listings too.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

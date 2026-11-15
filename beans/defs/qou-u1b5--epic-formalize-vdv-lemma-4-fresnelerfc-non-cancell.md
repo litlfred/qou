@@ -25,8 +25,8 @@ Euler-Maclaurin rule nine days after the composite one landed, and the lane had
 ALREADY applied it to the same function (logSinc = phi - log 2).
 
 STANDING RULE for every remaining brick, before writing a line:
-  grep -rln "<topic>" content/quantum-observable-universe/lean/QOU/MathlibExt/ \
-                      content/quantum-observable-universe/lean/QOU/Knot/
+  grep -rln "<topic>" folio/quantum-observable-universe/lean/QOU/MathlibExt/ \
+                      folio/quantum-observable-universe/lean/QOU/Knot/
 "I checked what landed since my fork point" is NOT the corpus-grep checklist --
 it cannot see a file that has been on main for nine days.
 Audit: docs/audits/2026-08-19-qou-shrp-duplicated-corpus-euler-maclaurin.md

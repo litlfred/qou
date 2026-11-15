@@ -5,7 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-04T23:34:22Z
-updated_at: 2026-09-04T23:34:51Z
+updated_at: 2026-11-15T13:30:00Z
+parent: qou-v2om
 ---
 
 Scoped out of `qou-tmmt` on 2026-09-04 (PR #6681), deliberately.
@@ -48,7 +49,7 @@ Three siblings reference the class's fields by `lean.ref`:
 - `gs-spectral-sum-finite.ts` → `qou:QOU.BraidKnot.spectral_sum_finite`.
 
 There is also a **library twin**,
-`content/quantum-observable-universe/lean/QOU/BraidKnot/GBResidueSpectralSum.lean`,
+`folio/quantum-observable-universe/lean/QOU/BraidKnot/GBResidueSpectralSum.lean`,
 which defines the same class and a `spectral_sum_finite` **of a different
 statement** under the same name in the same namespace. It is imported by
 `QOU.BraidKnot`, so changing it needs an olean rebuild (`lean -o`, never
@@ -58,3 +59,7 @@ statement** under the same name in the same namespace. It is imported by
 class, drifting (the sibling had `ℝ` hardcoded where the library is generic;
 that direction was already corrected once), is the actual root problem here, and
 fixing `mass` in only one of them would widen the drift rather than close it.
+
+## Parented 2026-11-15 (owner-approved bean triage)
+
+Parent `(none)` → `qou-v2om`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.

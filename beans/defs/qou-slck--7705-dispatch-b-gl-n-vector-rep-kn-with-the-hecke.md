@@ -1,12 +1,12 @@
 ---
 # qou-slck
 title: '#7705 dispatch B: GL_n vector rep K^n with the Hecke R-matrix as a nondegenerate OS(z,t) datum; go to the trace'
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-10-12T18:13:10Z
-updated_at: 2026-10-12T19:29:23Z
-parent: qou-xhci
+updated_at: 2026-11-15T13:30:00Z
+parent: qou-59vq
 ---
 
 Owner picks on #7705.
@@ -25,3 +25,11 @@ OPEN: (1) that the GLnTrace weighted partial trace equals the closure in OS(z,t)
 STILL OPEN (not asked): injectivity of Brundan's iota_r into End_OS(E^r) as a corollary (needs lift o OS-heckeAction = conjugated crossing heckeAction); m+1 > n kernel (q-Schur/Temperley-Lieb quotient) not studied.
 
 2026-10-12 (cont. 2) Faithfulness inside OS CLOSED: Model/GLnOSFaithful.lean OS_heckeAction_injective: for m+1 <= n, Brundan iota_{m+1}: H_{m+1}(q) -> End_OS(E^{tensor(m+1)}) in OS(q,qi,q^n,[n]_q) is injective, any CommRing with q*qi=1. Via map_gen (lift of OS crossing gen = Phi-conjugate of GL_n gen, coherence by monoidal) and lift_heckeAction (glnFunctor o iota = conj_Phi o rho as AlgHoms), then heckeAction_injective. Sorry-free, axioms clean. Open: m+1 > n kernel.
+
+## Parented 2026-11-15 (owner-approved bean triage)
+
+Parent `qou-xhci` → `qou-59vq`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

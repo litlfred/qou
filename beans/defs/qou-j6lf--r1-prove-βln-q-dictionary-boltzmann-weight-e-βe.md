@@ -16,7 +16,7 @@ Near-term. Identify the stat-mech Boltzmann factor with the Frobenius/Markov wei
 
 ## ✅ PROVED (2026-08-02) — sorry-free Lean
 
-[`QBetaEnergyDictionary.lean`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/content/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/QBetaEnergyDictionary.lean),
+[`QBetaEnergyDictionary.lean`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/QBetaEnergyDictionary.lean),
 namespace `QOU.Thermo`, β = ln q (β>0 for q>1 via `logPos_of_one_lt`):
 
 - `boltzmann_energyOf` — read-off correct: `e^{-β·(-ln y/β)} = y` (derive-then-check, β≠0, y>0).

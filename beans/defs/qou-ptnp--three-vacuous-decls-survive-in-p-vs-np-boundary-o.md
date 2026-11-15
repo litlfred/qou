@@ -17,7 +17,7 @@ parent: qou-6qbv
 Found while scanning the Lean tree for the `qou-rhax` shape (an axiom whose
 right-hand side is trivially inhabited). `rhax` did not generalise — it is the
 only inconsistent axiom — but the scan surfaced a different, live class in
-[`information-theory/p-vs-np-boundary.lean`](../content/quantum-observable-universe/information-theory/p-vs-np-boundary.lean).
+[`information-theory/p-vs-np-boundary.lean`](../folio/quantum-observable-universe/information-theory/p-vs-np-boundary.lean).
 
 Three declarations there prove nothing their names or docstrings claim. Each
 statement is quoted verbatim from the current file.
@@ -59,7 +59,7 @@ archimedean — so the structure is inhabited by any `q` at all. What is proved 
 `3 ^ c ≥ 3` for `c ≥ 1`.
 
 It is **cited as a corpus result** in
-[`QOU/Information/PhysicalIntractability.lean:175`](../content/quantum-observable-universe/lean/QOU/Information/PhysicalIntractability.lean):
+[`QOU/Information/PhysicalIntractability.lean:175`](../folio/quantum-observable-universe/lean/QOU/Information/PhysicalIntractability.lean):
 
 > At a **non-torsion** substrate `q₀` the Hecke algebra is semisimple, so **no
 > paths cancel**: the full `3^c` tree survives (corpus `nontorsion_full_tree`).

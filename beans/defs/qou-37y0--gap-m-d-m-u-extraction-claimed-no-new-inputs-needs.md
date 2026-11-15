@@ -19,7 +19,7 @@ refutation of anything wired — the block wires nothing.
 
 ## The claim
 
-[`appendix-standard-model/sm-params-quark-masses.md`](../content/quantum-observable-universe/appendix-standard-model/sm-params-quark-masses.md)
+[`appendix-standard-model/sm-params-quark-masses.md`](../folio/quantum-observable-universe/appendix-standard-model/sm-params-quark-masses.md)
 reframes the six quark masses as scheme quantities of the observer's inversion
 procedure rather than numbers the framework owes, and argues that the cleanest
 extractable one is the isospin difference `m_d − m_u`:
@@ -55,12 +55,12 @@ forbid.
 **2. The block does not cite the substrate split the corpus already has.**
 Two existing blocks already derive isospin-splitting content from `q₀`:
 
-- [`observations/flavor-split-substrate.md`](../content/quantum-observable-universe/observations/flavor-split-substrate.md)
+- [`observations/flavor-split-substrate.md`](../folio/quantum-observable-universe/observations/flavor-split-substrate.md)
   — `(m_n − m_p)/M_N ≈ (q−1)²(1−q⁻⁴)/3 = ℏ_q²·h_q·[2]_q`, depending only on
   `q₀` and `M_N`, matching CODATA to **−0.10 %**.
-- [`mass-theory/flavor-dressed-mass-from-substrate-split.md`](../content/quantum-observable-universe/mass-theory/flavor-dressed-mass-from-substrate-split.md)
+- [`mass-theory/flavor-dressed-mass-from-substrate-split.md`](../folio/quantum-observable-universe/mass-theory/flavor-dressed-mass-from-substrate-split.md)
   — recovers the dressed difference `μ_d − μ_u ≈ 1.288 MeV` as a derived
-  consequence; [`observations/terminal-resolution-proof.md`](../content/quantum-observable-universe/observations/terminal-resolution-proof.md)
+  consequence; [`observations/terminal-resolution-proof.md`](../folio/quantum-observable-universe/observations/terminal-resolution-proof.md)
   reports `μ_u ≈ 311.10`, `μ_d ≈ 312.39 MeV` with a **−0.53 %** residual on
   `m_n − m_p`.
 

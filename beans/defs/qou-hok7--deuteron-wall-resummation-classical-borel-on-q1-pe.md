@@ -730,7 +730,7 @@ negative (2026-08-21) is untouched.
 central one cost four lines because the corpus already had it in a different
 register.
 
-`content/quantum-observable-universe/lean/QOU/BraidKnot/HookSumBetaCoordinates.lean`,
+`folio/quantum-observable-universe/lean/QOU/BraidKnot/HookSumBetaCoordinates.lean`,
 11 declarations, 0 `sorry`, axioms `[propext, Classical.choice, Quot.sound]` on all 11.
 
 | | |
@@ -930,7 +930,7 @@ It treats ℓ as a search dimension. Above the maximiser's own row count it is n
 ℓ is the **padding** of the β-frame, and the objective is provably blind to it.
 
 **The theorem, which came first.**
-[`QOU.BraidKnot.HookSum.betaSide_eq_hookSum`](content/quantum-observable-universe/lean/QOU/BraidKnot/HookSumBetaCoordinates.lean)
+[`QOU.BraidKnot.HookSum.betaSide_eq_hookSum`](folio/quantum-observable-universe/lean/QOU/BraidKnot/HookSumBetaCoordinates.lean)
 — sorry-free, `lean`-direct exit 0 with `-DautoImplicit=false -s 65536`, shadow-verified
 against current library source, axioms `[propext, Classical.choice, Quot.sound]`. For any
 `g` into an additive commutative group and any padding `L ≥ ℓ(μ)`,
@@ -1066,7 +1066,7 @@ $$\sum_{c\in\delta_k} g(h(c)) \;=\; \sum_{s<k} (s+1)\cdot g\!\left(2(k-s)-1\righ
 for any `g` into an additive commutative monoid — and at `g = ε`, via `betaSide_eq_hookSum`,
 that **is** the staircase's β-side.
 
-[`StaircaseHookMultiset.lean`](content/quantum-observable-universe/lean/QOU/BraidKnot/StaircaseHookMultiset.lean),
+[`StaircaseHookMultiset.lean`](folio/quantum-observable-universe/lean/QOU/BraidKnot/StaircaseHookMultiset.lean),
 0 `sorry`, axioms `[propext, Classical.choice, Quot.sound]`, shadow-verified against current
 library source (32 modules had changed since the olean snapshot, so a bare-`lean` green would
 have been a claim about the snapshot — `qou-56qy`).
@@ -1414,7 +1414,7 @@ upper bound on `M_n`, which is the arc's one real open problem and is untouched 
 ## The search is COERCIVE, and the greedy route into it is REFUTED (2026-09-14)
 
 Probe [`rev_e_infinity_search_reduction_probe.py`](computations/deltalambda/rev_e_infinity_search_reduction_probe.py), 7/7.
-Lean [`SearchCoercivity.lean`](content/quantum-observable-universe/lean/QOU/BraidKnot/SearchCoercivity.lean), four declarations, sorry-free.
+Lean [`SearchCoercivity.lean`](folio/quantum-observable-universe/lean/QOU/BraidKnot/SearchCoercivity.lean), four declarations, sorry-free.
 
 ### The negative first, because it kills the argument a reader reaches for
 
@@ -2048,7 +2048,7 @@ the argument, since the join needs a finite window and that follows from SEPARAT
 on the two edges.
 
 Probe: `computations/deltalambda/rev_e_infinity_xbot_relaxation_probe.py`.
-Lean: `content/quantum-observable-universe/lean/QOU/BraidKnot/SupergradientCertificate.lean`.
+Lean: `folio/quantum-observable-universe/lean/QOU/BraidKnot/SupergradientCertificate.lean`.
 
 **Do not close this bean.**
 
