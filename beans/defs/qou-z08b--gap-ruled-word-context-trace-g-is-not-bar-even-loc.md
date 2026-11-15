@@ -35,3 +35,12 @@ qbeta_word_dependent_isospin_maps_probe.py (6/6, exact; no witness, no Q_beta va
 
 
 2026-11-15 localisation done (PR #7860, a45ef59d2, probe R5): quark tail contributes exactly 0 (alone and in all cross terms); g_odd = core term K + gluon term + core x gluon cross term (-2K); tr(core) alone bar-even; context without gluon pair bar-even. Obstruction needs the gluon pair, which is census-derived (not gamma-gamma-ruled). Stays todo: why the gluon pair breaks bar-evenness is not derived; links to qou-99qc element question. No word changed.
+
+## 2026-11-15 append (D-I1 = A result; thread "Test isospin as a module map")
+
+Probe qbeta_isospin_module_map_probe.py, 11/11, exact over Q(q); audit section 11.
+- P+ H3 P+ is 2-dim and commutative (g = 0, 1): no corner sl2 at n = 3 (Wedderburn).
+- Centraliser of {core, gluon} in H3 = the centre (dim 3), so a core/gluon-commuting isospin acts by scalars on H3.P+.
+- 14 fixed candidates x 20 state pairs x 2 idempotents: 0 of 560 map psi_p to psi_n, exactly or up to scalar. No candidate commutes with the core.
+- Centraliser solve: 4 of 40 settings hit, all degenerate: psi_n = q^-2 psi_p (sigma0 u/d letters cancel; P+(sigma1) absorbs the last letter's flavour as an eigenvalue). None with the gluon.
+- Next: n >= 4 only, gated on Stream 11's corner-multiplicity = flavour check (#7867).
