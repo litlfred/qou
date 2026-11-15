@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-15T19:00:22Z
-updated_at: 2026-11-15T20:11:18Z
+updated_at: 2026-11-15T20:13:09Z
 ---
 
 Opened 2026-11-15 from owner question on a decay trigger and translating ILP/SDP likelihood into a rate; owner chose 'bean both gaps, then probe'. prop:hadron-half-life: Γ_β = |W|²μ₀/(2π³)·[2]_q·|M_q|²·f(Q). W(q) has a D closed form (qou-egvf); μ₀, |M_q|² (prop:trace-ratio-observable, proportionality only) and f(Q) do not. def:beta-decay-skein says WHAT, not WHEN. LP/SDP shadow prices are used only for shell binding from measured Q-values. Candidate to test, pre-registered: per-step probability = trace weight of the channel where the insertion reduces to the daughter. half-life-as-q-probe states environmental predictions (neutron-star q ≫ q₀; 1e-9 per metre) with no derivation — scope (a). Neutron lifetime not derived.
@@ -53,3 +53,7 @@ Space (C²)^⊗3 ⊗ V ⊗ V*, 32-dimensional: quark strands 1–3 and a created
 
 
 RESULT 5 (PR #7981, 4439872c62): the expectation held; the magnitudes differ for all words. |A_c|²/|A_m|² at q₀: s1 s2⁻¹ 2.71, V³ = (s1 s2⁻¹)³ 0.387, s1⁴ 1045, (s1 s2)⁵ 55.2. On the canonical γγ nucleon V³, the MIRROR vertex is larger: with the corpus W, the nucleon prefers right-handed emission. This is a real tension. Open: is the corpus W's P_L/P_R assignment (W = σP_R + σ⁻¹P_L) the mirror of the physical one, or is the nucleon word or the insertion rule wrong? Bean stays open.
+
+
+## PRE-REGISTRATION 6 (2026-11-15 20:15Z): closed-trace amplitude, written before computing
+The 'both, closed trace first' route was chosen. M_w = Σ_k (word w with letter k replaced by δ_k) on (C²)^⊗3, for the corpus vertex and for its mirror. Close the spectator strands 1 and 2 with the D Markov weights (partial quantum trace with K⊗K, K = diag(q, q⁻¹)), leaving a 2×2 operator T_w on strand 3, the converting strand. The emission amplitude (#7973 arm A) is the d→d entry T_w[d,d]. Report T_corpus[d,d], T_mirror[d,d] and the squared ratio, exact in q, for V³ = (s1 s2⁻¹)³, s1 s2⁻¹, s1⁴, (s1 s2)⁵. Also report whether T_w is a scalar (Markov). No direction is predicted. Whatever comes out gets reported. Then the corpus audit of W's P_L/P_R.
