@@ -1,5 +1,8 @@
 **Proof.**
 
+> **Scope note (2026-11-15).** Two steps here are assumed rather than proved. First, the order-$h^2$ term of $\ln(V_{\mathrm{pp}}/V_{\mathrm{nn}})$: the step $z h + O(h^2) = \ln(1 + zh) + O(h^3)$ needs the $h^2$ coefficient to be $-z^2/2$, which is not computed. Second, the exponential remainder rests on conj:archimedean-remainder-exponential-decay, a conjecture, so the remainder bound is conditional. The $+1.31$ keV residual and the CODATA $7\%$ agreement are empirical comparisons, not proof steps. No `sorry` exists in the companion Lean for the `Real.log` steps; the Lean section's sentence about deferring them is out of date.
+
+
 *Form A side.* The normal form counit reads $\lvert\Delta(\mathrm{net})\rvert = h(2 - h)/2 = h - h^2/2 + O(h^3)$, obtained via direct expansion of the single-wrap symbolic closed form ([prop:neutron-qvalue-symbolic](#prop:neutron-qvalue-symbolic)).
 
 *Form B side.* The Hecke perturbation carries the half-factor $\Delta_\beta(q) = \tfrac{1}{2}(q - q^{-1})\,\mathbb{I} = \tfrac{h}{2}\,\mathbb{I}$ ([prop:beta-decay-transfer-matrix](#prop:beta-decay-transfer-matrix)). The change in Markov-traced volume per generator incorporates this factor:

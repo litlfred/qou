@@ -1,5 +1,8 @@
 ## Statement
 
+> **Scope note (2026-11-15).** The single-generator piece was labelled "proved" and is not: its form and the scale $\alpha$ are chosen so that the result matches the mass table, and the $0.18\%$ mean error is a fit diagnostic, not a derivation. Only the leading-order piece is an identity. The empirical accuracy figure in the statement is a comparison, not part of the claim.
+
+
 We expose the graded expansion of the categorical density $\rho_K$ by multiplying the GB-NF identity ([atomic mass via GB-NF](#prop:atomic-mass-gb-nf)) $\mathfrak{m}(K) = m_e \cdot \rho_K \cdot |\!\mathrm{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K))|$ through by $m_e \cdot |\!\mathrm{tr}_M(\mathcal{B}_K)|$:
 
 $$
@@ -42,7 +45,7 @@ $$
 
 The script `rho-k-markov-multiplicativity.witness.json` numerically verifies the [Wenzl 1988] branching identity $\chi^\lambda(\mathcal{B}_p \otimes \mathcal{B}_n) = \sum c^\lambda_{\mu, \nu} \chi^\mu(\mathcal{B}_p) \chi^\nu(\mathcal{B}_n)$ to machine precision ($3.2 \times 10^{-14}$) for all $\lambda \vdash 6$ in the deuteron case.
 
-### Single-generator piece (proved)
+### Single-generator piece (fitted)
 
 Per [atomic braid mass](#thm:wedderburn-mass-formula), the per-generator log-volume sum reads:
 
@@ -88,7 +91,7 @@ The graded $\rho_K$ expansion supplies the Kashaev specialisation of the six-ter
 The graded expansion replaces the empirical leading-order ansatz of [atomic mass via GB-NF](#prop:atomic-mass-gb-nf) with a categorical derivation:
 
 - The leading-order piece acts as a theorem derived from Markov multiplicativity and free-constituent additivity.
-- The single-generator piece forms the proved binding correction, achieving $0.18\%$ empirical accuracy.
+- The single-generator piece is a binding correction whose form is chosen to match the data ($0.18\%$ mean error); it is not derived.
 - The pair-generator and higher pieces remain open work. Finding the precise Wedderburn-coupling structure closes the six-term theorem's Kashaev limit at sub-percent accuracy.
 
 Combined with the Hecke branching trace decomposition (refined Sub-lemma 2.1, operator-valued $A^\lambda_{\mu, \nu}(I)$ interface), the bound atomic case receives full coverage. The leading-order and single-generator pieces give $\rho_K$ to $0.18\%$; the higher pieces and the interface contribution close the residual.
