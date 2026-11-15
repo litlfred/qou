@@ -1,0 +1,88 @@
+import Mathlib.Analysis.Complex.Basic
+import Mathlib.LinearAlgebra.Complex.FiniteDimensional
+
+
+/-!
+# Bloch–Suslin rigidity: algebra over `ℂ` (no analysis)
+
+Two facts about `ℂ` as a real vector space, and the step that solves the cocycle equation.
+
+* `rlinear_functional_eq_re`, `rlinear_eq_add_conj`: these package a real derivative of a real
+  (or complex) function into a complex coefficient `ω` (or a pair `α, β`). They let the analytic
+  propositions state their output as complex identities.
+* `cocycle_eq_mul_im` (stage U1, algebraic half): a real `ρ` with
+  `ρ(ab) = ρ(a)·b̄ + a·ρ(b)` is `k · Im` on `ℂ ∖ {0,1}`.
+-/
+
+open Complex
+
+namespace QOU.Archimedean.BlochRigidity
+
+/-- Every `ℝ`-linear functional on `ℂ` is `v ↦ Re (ω v)` for `ω = L 1 - i L i`. -/
+theorem rlinear_functional_eq_re (L : ℂ →ₗ[ℝ] ℝ) (v : ℂ) :
+    L v = (((L 1 : ℂ) - I * (L I : ℂ)) * v).re := by
+  have hv : v = (v.re : ℝ) • (1 : ℂ) + (v.im : ℝ) • I := by
+    apply Complex.ext <;> simp
+  conv_lhs => rw [hv]
+  rw [map_add, map_smul, map_smul]
+  simp [Complex.mul_re, smul_eq_mul]
+  ring
+
+/-- Every `ℝ`-linear map `ℂ → ℂ` is `v ↦ α v + β v̄`. -/
+theorem rlinear_eq_add_conj (L : ℂ →ₗ[ℝ] ℂ) (v : ℂ) :
+    L v = (L 1 - I * L I) / 2 * v + (L 1 + I * L I) / 2 * (starRingEnd ℂ) v := by
+  have hv : v = (v.re : ℝ) • (1 : ℂ) + (v.im : ℝ) • I := by
+    apply Complex.ext <;> simp
+  conv_lhs => rw [hv]
+  rw [map_add, map_smul, map_smul]
+  conv_rhs => rw [hv]
+  simp only [Complex.real_smul, map_add, map_mul, Complex.conj_ofReal, map_one, Complex.conj_I]
+  ring_nf
+  rw [Complex.I_sq]
+  ring
+
+/-- **The ρ-cocycle is a multiple of `Im`.** If a real function `ρ` satisfies
+`ρ(ab) = ρ(a)·b̄ + a·ρ(b)` for all `a, b ∉ {0,1}` with `ab ≠ 1`, then `ρ = k · Im` on `ℂ ∖ {0,1}`.
+Pure algebra in `ℂ`: the imaginary part of the identity gives `ρ(a) Im b = ρ(b) Im a`. -/
+theorem cocycle_eq_mul_im {ρ : ℂ → ℝ}
+    (h : ∀ a b : ℂ, a ≠ 0 → a ≠ 1 → b ≠ 0 → b ≠ 1 → a * b ≠ 1 →
+      ((ρ (a * b) : ℝ) : ℂ) = (ρ a : ℂ) * (starRingEnd ℂ) b + a * (ρ b : ℂ)) :
+    ∃ k : ℝ, ∀ z : ℂ, z ≠ 0 → z ≠ 1 → ρ z = k * z.im := by
+  -- imaginary part of the identity
+  have him : ∀ a b : ℂ, a ≠ 0 → a ≠ 1 → b ≠ 0 → b ≠ 1 → a * b ≠ 1 →
+      ρ a * b.im = ρ b * a.im := by
+    intro a b ha0 ha1 hb0 hb1 hab
+    have := congrArg Complex.im (h a b ha0 ha1 hb0 hb1 hab)
+    simp [Complex.mul_im] at this
+    linarith
+  refine ⟨ρ I, fun z hz0 hz1 => ?_⟩
+  have hI0 : (I : ℂ) ≠ 0 := I_ne_zero
+  have hI1 : (I : ℂ) ≠ 1 := by intro h; simpa using congrArg Complex.im h
+  -- second reference point `2i`
+  set J : ℂ := 2 * I
+  have hJ0 : J ≠ 0 := mul_ne_zero two_ne_zero hI0
+  have hJ1 : J ≠ 1 := by intro h; simpa [J] using congrArg Complex.im h
+  have hIJ : I * J ≠ 1 := by
+    intro h
+    have := congrArg Complex.re h
+    simp [J] at this
+    norm_num at this
+  -- ρ J = 2 ρ I
+  have hJ : ρ J = ρ I * 2 := by
+    have := him I J hI0 hI1 hJ0 hJ1 hIJ
+    simp [J] at this; linarith
+  by_cases hzI : z * I = 1
+  · -- then `z * J ≠ 1`; use `J`
+    have hzJ : z * J ≠ 1 := by
+      intro h'
+      have : z * J = 2 * (z * I) := by simp [J]; ring
+      rw [this, hzI] at h'; norm_num at h'
+    have := him z J hz0 hz1 hJ0 hJ1 hzJ
+    simp [J] at this
+    rw [hJ] at this
+    linarith
+  · have := him z I hz0 hz1 hI0 hI1 hzI
+    simp at this
+    linarith
+
+end QOU.Archimedean.BlochRigidity
