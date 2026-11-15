@@ -1233,6 +1233,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c581bbd5cb4f",
+          "ts": "e7d06596bdae",
+          "lean": "5e3e2a1274a5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:08.422Z",
+        "reviewed_sha": "696fcb0c271b0c732b90ecb27ea781f532908e27",
+        "severity": "major",
+        "evidence": "Lean proves items 1 and 4 only, over ℝ and only as q → 1⁺ (ℏ → 0, \\|Ω\\|→ ∞). Items 2 (d_q → d), 3 (R(q) → id⊗id), the claim 𝓛(A_q) = 𝒪(B_cl), and the Serre-duality descent are not encoded (docstring defers to a `braiding_trivializes` field). No `prf:` block",
+        "notes": "Hand review 2026-11-15 (statement vs Lean); issue #8020. "
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2474,6 +2492,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T07:10:18.192Z",
+  "updated_at": "2026-11-15T21:55:08.422Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
