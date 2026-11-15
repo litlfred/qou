@@ -454,7 +454,7 @@ def mode_extend(args):
             pn = z * n
             rows.append({"isotope": f"{z + n}{SYM.get(z, '?')}", "z": z, "n": n, "a": z + n,
                          "pn": pn, "max_cut_legs": w, "tr_markov_d": mp.nstr(v, 60),
-                         "seconds": round(time.time() - t0, 1)})
+                         "elapsed_sec": round(time.time() - t0, 1)})
             print(rows[-1], flush=True)
             if args.out:
                 json.dump({"description": "Convention-D Markov trace of the v9 nuclear element "
