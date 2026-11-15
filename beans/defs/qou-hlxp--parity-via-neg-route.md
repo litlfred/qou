@@ -10,7 +10,7 @@ tags:
     - parity
 parent: qou-qs0e
 created_at: 2026-11-15T10:00:00Z
-updated_at: 2026-11-15T10:00:00Z
+updated_at: 2026-11-15T18:35:00Z
 ---
 
 Owner decision D-H5 = D + C (relayed by coordinator 2026-11-15). This bean is (C).
@@ -34,3 +34,18 @@ Research questions (open; nothing adopted):
 3. The sign (−1)^length on odd words (P(e⁻) = −e⁻): is it observable? It negates traces.
 
 Anti-fit: no number may decide any of these.
+
+## 2026-11-15 exact pullback of the convention-D trace (PR #7960, issue #7959)
+
+Each letter map is a K-linear algebra isomorphism: neg and flip go H_n(q) → H_n(q⁻¹), and ι goes
+H_n(q) → H_n(q). Pull the convention-D Ocneanu trace back along each map (exact sympy, n = 2, 3, 4,
+`computations/probes/parity_neg_pullback_of_d_trace_probe.py`):
+- flip: gives the D trace exactly (z_D is bar-fixed).
+- neg and ι: give the Markov trace with z = −1/(q(q²+1)) = z_D(−1/q), the transposed convention. It
+  kills the q-symmetriser at n = 3, where D kills the q-antisymmetriser.
+Bearing on the research questions:
+- Q1: as a map H(q) → H(q⁻¹), neg is K-linear; no antilinear reading is needed.
+- Q3: the observable sign question is sharper than (−1)^length. P sends the D trace to a different
+  Markov trace, so tr_D∘P is not ±tr_D at any n ≥ 2.
+P is not a symmetry of the ruled trace. Status stays todo, since Q2 (P at the observable level) is
+open.

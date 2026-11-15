@@ -10,7 +10,7 @@ tags:
     - weak
 parent: qou-qs0e
 created_at: 2026-11-15T09:00:00Z
-updated_at: 2026-11-15T18:10:00Z
+updated_at: 2026-11-15T18:35:00Z
 ---
 
 Follow-up from qou-hlx6 (PR #7836). Corpus-grepped 2026-11-15 (beans, docs/audits,
@@ -154,3 +154,9 @@ docs/audits/2026-11-15-weak-vertex-left-projector.md.
 ## 2026-11-15 weak vertex = scalar times the symmetric crossing
 
 `QOU/QuarkState/WeakVertexMidpoint.lean` (PR #7948, sorry-free): for 1 < |q|, W = (2/(q²+1))·½(σ+σ⁻¹); for |q| ≤ 1 the scalar is 2q²/(q²+1). So the corpus hand-set u–d crossing ½(σ+σ⁻¹) (HeckeRational.crossing) is the weak vertex up to scale. Identity only, not a derivation of the strong crossing; D-H3 stays open. Asked for by the n–p splitting thread, which reports the scalar cancels in ΔΦ.
+
+## 2026-11-15 chirality parity of the u–d crossing (PR #7960)
+`ChiralityParityOfCrossing.lean`: on span{1, σ}, ι is −1 exactly on the multiples of ½(σ+σ⁻¹) and +1
+exactly on the multiples of 1. The n–p splitting thread's two shapes (−18.5 %, +20.8 %) are the two
+definite parities. The weak vertex is on the odd line. Which parity the nucleon crossing must have is not
+derived.
