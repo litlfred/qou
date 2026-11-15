@@ -29,7 +29,10 @@ export default proposition({
         "[`docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md). " +
         "Until resolved, this block's claim **\"genuine prediction " +
         "from two leptonic inputs only\"** is **conditional on the " +
-        "ansatz** $\\mathfrak{Q}_\\beta = |\\Delta(\\mathrm{net})| \\cdot \\mathfrak{E}_0$.",
+        "ansatz** $\\mathfrak{Q}_\\beta = |\\Delta(\\mathrm{net})| \\cdot \\mathfrak{E}_0$. " +
+        "**Update 2026-11-15 (owner: replace convention-C values with convention-D values even where worse).** " +
+        "The block now states the ruled base, the Markov trace at $z_D$, giving 0.4447 MeV (-43.16 %). " +
+        "The unweighted `net` sum above is the trace at $z = 1$ and is kept only as retired Form A.",
     },
   ],
   tags: [

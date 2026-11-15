@@ -18,7 +18,7 @@ The electron mass is an input. It fixes $\mu_{\mathfrak{u}}$ through the pair Sk
 
 *Hadrons (from pair Skein masses).*
 
-The proton and neutron rows derive from the LO $\rho_K$ assembly (witness: [`atomic-mass-via-rho-k.witness.json`](../../../computations/atomic-mass-via-rho-k.witness.json)). This assembly consumes $m_p$ and $m_n$ as CODATA inputs. It is tautological by construction. The $|\mathrm{tr}_M|$ factor cancels in $\rho_K^{\mathrm{LO}} \cdot m_e \cdot |\mathrm{tr}_M|$, reducing the output to $Z m_p + N m_n$. The FULL framework prediction requires the unified knot mass formula $M(\mathfrak{H}) = \rho \cdot [|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w) + \mathrm{tr}_M(C_{\dim_q})]$. This formula does not yet extend to the nucleon scale. The $n$–$p$ splitting emerges as a consequence of the FULL $\mathfrak{Q}_\beta$ chain ($\mathfrak{Q}_\beta + m_e \approx 1.293$ MeV).
+The proton and neutron rows derive from the LO $\rho_K$ assembly (witness: [`atomic-mass-via-rho-k.witness.json`](../../../computations/atomic-mass-via-rho-k.witness.json)). This assembly consumes $m_p$ and $m_n$ as CODATA inputs. It is tautological by construction. The $|\mathrm{tr}_M|$ factor cancels in $\rho_K^{\mathrm{LO}} \cdot m_e \cdot |\mathrm{tr}_M|$, reducing the output to $Z m_p + N m_n$. The FULL framework prediction requires the unified knot mass formula $M(\mathfrak{H}) = \rho \cdot [|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w) + \mathrm{tr}_M(C_{\dim_q})]$. This formula does not yet extend to the nucleon scale. The $n$–$p$ splitting emerges as a consequence of the FULL $\mathfrak{Q}_\beta$ chain ($\mathfrak{Q}_\beta + m_e \approx 0.9557$ MeV under the ruled convention-D base, against CODATA $1.2933$ MeV).
 
 See [Table 2](#tbl:mass-comparison-table-table2-data).
 
@@ -30,15 +30,15 @@ Per [`prop:neutron-qvalue-symbolic`](../nuclear-interactions/neutron-qvalue-symb
 
 $$
 \boxed{
-\mathfrak{Q}_\beta^{\text{pred}} = \frac{m_e \cdot |q_0^2 - 2q_0 - 1| \cdot (q_0 + 1)}{2 q_0^3} \approx 0.7836 \text{ MeV}
+\mathfrak{Q}_\beta^{\text{pred}} = \mathfrak{Q}_\beta^{z_D} = \Bigl|\tfrac{h^2}{2} - h\,z_D\Bigr|\,\frac{m_e}{q_0(q_0-1)} \approx 0.4447 \text{ MeV}
 }
 $$
 
-This compares to the CODATA value of $0.7823$ MeV ($+0.168\%$ error, $+1.31$ keV). At single wrap, the $L_\pm$ and $e^-$ contributions cancel exactly between proton and neutron. Thus $\Delta(\mathrm{net}) = h(h-2)/2$ with $h = q_0 - q_0^{-1}$. The entire Q-value lies in the $\gamma + \sigma_0 + \sigma_1$ channels.
+with $h = q_0 - q_0^{-1}$ and $z_D = q_0^3/(q_0^2+1)$. This is the ruled convention-D base: $\varepsilon$ is the Markov trace at $z_D$ (owner ruling 2026-09-08). It compares to the CODATA value of $0.7823$ MeV at $-43.16\%$ ($-337.6$ keV). The convention-D $c_k$ correction ladder that would act on this base is not yet derived, and the factor a cosine phase can supply is capped below $1$ ([cos-resummation](#prop:q-beta-cos-resummation)), so the miss is reported as it stands.
 
-The $n$-$p$ mass split follows: $\mathfrak{m}_n - \mathfrak{m}_p = \mathfrak{Q}_\beta + m_e \approx 1.295$ MeV. This compares to the CODATA value of $1.293$ MeV ($0.17\%$ error, no CODATA $m_n - m_p$ input).
+The $n$-$p$ mass split follows: $\mathfrak{m}_n - \mathfrak{m}_p = \mathfrak{Q}_\beta + m_e \approx 0.9557$ MeV. This compares to the CODATA value of $1.2933$ MeV ($-26.11\%$ error, no CODATA $m_n - m_p$ input).
 
-The $+1.31$ keV residual stems from the brane-tower truncation. The derived $E_0$ uses the single-level Planck-tick approximation. The exact tower-summed $E_0$ corrects this. The typed-crossings 6-term form yields a looser prediction of $0.7882$ MeV ($+0.747\%$ error). We keep this in the witness for cross-checks. Witness: [`q-beta-predicted.witness.json`](../../../computations/q-beta-predicted.witness.json).
+*Retired Form A (historical cross-check only).* The earlier closed form $m_e\,|q_0^2 - 2q_0 - 1|\,(q_0 + 1)/(2 q_0^3) \approx 0.7836$ MeV ($+0.168\%$, giving $m_n - m_p \approx 1.295$ MeV) evaluates $\varepsilon$ at $z = 1$, which is not an admissible Markov parameter under convention D. It is kept for comparison and is not the prediction. Witness: [`q-beta-predicted.witness.json`](../../../computations/q-beta-predicted.witness.json).
 
 *Light nuclei (from multi-body Skein).* 
 
