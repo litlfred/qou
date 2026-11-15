@@ -7,7 +7,7 @@ tags:
     - lean-foundations
     - devacuify
 created_at: 2026-11-15T14:05:00Z
-updated_at: 2026-11-15T17:39:33Z
+updated_at: 2026-11-15T20:47:32Z
 parent: qou-6qbv
 ---
 
@@ -68,3 +68,7 @@ Branch `claude/lean-devacuify-true-carriers-2026-11-15`, PR #7915.
   - `evenPower_necessary_for_blockPosSemidef` is false under its intended reading (the full twist (σ₁σ₂)³ is block-PSD). Removed; Lean cannot refute it because braidWordEval is opaque.
 - Three former axioms now proved: term_6_plus_term_7_eq_high_strata, descartes_elliptic_curve, habiro_step_zero.
 - Still open (checked, believed true; not proved): habiro_expansion_exists/unique (by triangularity), CategoricalQExtDeriv.exists, frobeniusForm_unique.
+
+## 2026-11-15: Habiro (e78dac67ac)
+Existence and uniqueness of the Habiro expansion are proved, so those two axioms are removed. The termination-bound axiom was FALSE: M(M+1) ≤ 2(deg p+1) fails at p = 1 − u, and the refutation is not_habiro_termination_bound_old. It is replaced by the proved bound M(M−1) ≤ 2 deg p.
+Next: CategoricalQExtDeriv.exists_axiom and frobeniusForm_unique.
