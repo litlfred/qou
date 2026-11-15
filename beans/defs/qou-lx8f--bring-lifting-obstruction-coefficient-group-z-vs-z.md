@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-10-12T19:14:41Z
-updated_at: 2026-10-12T19:14:41Z
+updated_at: 2026-11-15T11:50:00Z
 parent: qou-vo9t
 ---
 
@@ -79,3 +79,9 @@ A fourth reason, Hom(divisible, Z) = 0, holds only for divisible R. I scoped it 
 - Smooth category: every class is 0.
 
 **Verdict:** no reading built on T Σ₄ yields a perpetual obstruction. The surviving L = K reading would restate item 3 as a condition on d, which is an owner decision. Not Lean-checked; the closed-form arithmetic is a one-line `ring`.
+
+## 2026-11-15 — owner decision: item 3 is the degree condition
+
+Owner chose "restate item 3 of thm:qu-to-qou as a degree condition" in the project thread "Settle open-problem leftovers". On this branch item 3 already reads (since 2026-10-12): ξ has an n-th root iff n | χ(S), obstruction χ mod n ∈ H²(S, μ_n); for Bring n ∈ {1,2,3,6}. So the statement needs no further edit.
+
+**Open, owner call:** 66 files under `folio/` still say "perpetual obstruction", including `thm:motivic-perpetual-obstruction` and `axiom yekutieli_perpetual` (`climax-volume-mass/vertex-algebra-jet-relations.lean:146`, an `axiom`). Not swept: AGENTS.md §ASK THE OWNER.
