@@ -73,6 +73,30 @@ $$
 $$
 by induction on $\ell(\beta)$. The recursive algorithm realises this property automatically. The peeling phase strips $\beta$'s top generators $\sigma_{n-2}, \sigma_{n-3}, \ldots, \sigma_{k+2}$ in order. This contributes factors of $z$ that exactly match the standalone $\mathrm{tr}_M(\beta)$ computed in its own algebra $H_{n-k-1}$.
 
+## Which axioms the disjoint product actually needs
+
+The argument above is stated in terms of the Markov axiom and cyclicity, but it
+uses two further properties silently, and both are named in the correctness
+section: **normalisation** $\mathrm{tr}_M(1) = 1$, and **stability under the
+trivial embedding** — *"the Markov axiom yields the same value regardless of
+ambient algebra"*. Neither follows from stripping and cyclicity.
+
+Stripping and cyclicity alone admit a counter-model. Put $\mathrm{tr}_M$ on
+$H_n$ equal to $2^n$ for every word, with $z = 2$. Stripping holds, since
+$2^{n+1} = 2 \cdot 2^n$; cyclicity holds because both sides ignore the word.
+The product law fails at $k = 0$, $n = 2$, $\alpha = \beta = 1$, where the left
+side is $4$ and the right is $2^0 \cdot 2^1 = 2$. So a trace that grows with the
+ambient index alone is not excluded by stripping and rearrangement.
+
+With normalisation and stability added, the product law is a **consequence**
+rather than a further axiom: stability makes the value independent of the
+ambient index, stripping then peels one generator for a factor of $z$, and
+induction from the right gives $z^{\ell(\beta)}$ on both sides. The separating
+slot $\sigma_{k+1}$ plays no role in that argument, and the generator indices of
+$\beta$ must be non-negative for the peel to apply — a word on the upper cluster
+satisfies this, which is what the support condition $\{k+2, \ldots, n\}$ above
+amounts to in the index encoding.
+
 ## Empirical verification
 
 | atom | braid word | $H_n$ | $\mathrm{tr}_M(q_0)$ |
