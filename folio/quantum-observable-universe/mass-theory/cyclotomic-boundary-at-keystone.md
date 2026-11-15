@@ -100,7 +100,7 @@ magnitudes are not interpreted.
 
 **Partial formalization.** The Lean module
 [`QOU.Mass.CyclotomicBoundaryKeystone`](../lean/QOU/Mass/CyclotomicBoundaryKeystone.lean)
-formalizes what is honestly provable. *Sorry-free:* the Tier-1 base-case
+formalizes what is honestly provable. *Proved:* the Tier-1 base-case
 factorizations $D(4)=\Phi_1^2\Phi_3$ and $D(5)=2\,\Phi_1^2\Phi_2^2\Phi_3\Phi_6$
 (with the factors verified equal to Mathlib's cyclotomic polynomials); the
 palindrome identity $C_6(z)=z^4\,\tilde C(z+z^{-1})$; and the full n = 6

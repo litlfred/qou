@@ -222,7 +222,7 @@ $y_{(n-k,k)} = [\,n-2k+1\,]_q / [2]_q^{\,n}$.
 
 *Formal status.* The elimination above is
 `QOU.BraidsAndKnots.markovWeights_eq_jones_of_threeRow_eq_zero`
-(sorry-free, division-free, over a commutative domain), the spurious
+(division-free, over a commutative domain), the spurious
 branch is `markovWeights_degenerate_root`, and the fibre-side
 antecedent is `markovWeights_eq_jones_of_fibre_categorical`. The
 general-$n$ closed form is *not* proved by induction in Lean: what is

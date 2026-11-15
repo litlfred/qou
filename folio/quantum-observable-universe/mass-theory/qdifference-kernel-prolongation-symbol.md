@@ -71,7 +71,7 @@ local monodromy, not fitted numerically.
 > associated $q$-Riccati $(q^2x-1)a(qx)a(x) - (q-1)a(x) - (q-1) = 0$ has no
 > solution in $K(x)$, because the three terms of its cleared form have degrees
 > $1+2p$, $p+u$, $2u$ and the odd/even parity of the outer two forces the
-> maximum to be attained exactly once. Sorry-free in
+> maximum to be attained exactly once. Formalized in
 > [`QOU.Mass.BindingScalarKernelParityExclusion`](../lean/QOU/Mass/BindingScalarKernelParityExclusion.lean);
 > corroborated by the van der Put--Reversat classification
 > \cite{vanderput-reversat2007,vanderput2006} of pure modules of non-integral
@@ -113,7 +113,7 @@ local monodromy, not fitted numerically.
 > (shift $k$, multiplier $c$), which *is* its symbol on the punctured $t$-disk,
 > and symbols compose by adding shifts and multiplying multipliers along the
 > shift. Two exact facts then constrain any single-shift candidate $D_q$
-> (`QOU.Mathlib.RamifiedShiftCalculus`, sorry-free over a generic commutative
+> (`QOU.Mathlib.RamifiedShiftCalculus`, over a generic commutative
 > ring):
 >
 > 1. **Residue.** If $D_q$ annihilates constants, $c(-k) = 0$ — as every
@@ -187,7 +187,7 @@ local monodromy, not fitted numerically.
 > $s_{m} = (D_{q}^{m}X)_{t^{1}}$, since $r_{m+2} = c_{1}(-2)c_{2}(-1)\,s_{m}$;
 > each level's constraint reaches one new seed coefficient and none of them
 > reads the branch value $a_{0}$ (`QOU.Mass.C1KernelLevelReading`,
-> sorry-free, $q$ not a root of unity). On the actual seed — the branch-point
+> $q$ not a root of unity). On the actual seed — the branch-point
 > expansion of the colour cubic at its simple ramification point — neither
 > the Jackson nor the $q$-derivative tower, in either $q$-integer convention
 > and on either sheet, satisfies that recurrence at any tested $q$: the

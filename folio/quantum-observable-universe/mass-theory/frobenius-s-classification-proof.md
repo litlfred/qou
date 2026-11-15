@@ -83,7 +83,7 @@ The sign $\varepsilon$ cancels, so only homogeneity matters, not the parity of
 $n$. The identity holds in the field of rational functions and so at every
 evaluation point where both characters are nonzero. Taking
 $\log\lvert\cdot\rvert$ and summing over $i$ gives
-$\Phi_3(S(\beta)) = -\Phi_3(\beta)$, eigenvalue $-1$. (Lean, sorry-free over a
+$\Phi_3(S(\beta)) = -\Phi_3(\beta)$, eigenvalue $-1$. (Lean, over a
 generic field: `chi_swap`, `barHom_hmul`, `primitives_barHom`,
 `chiRatio_inverts`.)
 

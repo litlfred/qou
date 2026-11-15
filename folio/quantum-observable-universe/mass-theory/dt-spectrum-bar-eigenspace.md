@@ -58,4 +58,4 @@ carries the certified matrices `Splus0`/`Sminus0`, the split
 `barSwap_involutive`; the eigenspace laws `barEvenPair_fixed`,
 `barOddPair_negated`; the faithful reconstruction `barGrading_faithful`; the
 chirality witness `dtPair52_chiral` and grading `dtPair52_grading` $=(7,1)$; and
-`symmetric_scalar_blind_to_chirality`. All sorry-free (`lean`-direct exit 0).
+`symmetric_scalar_blind_to_chirality`.
