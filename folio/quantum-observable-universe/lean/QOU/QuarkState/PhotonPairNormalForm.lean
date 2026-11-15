@@ -70,6 +70,10 @@ section Generic
 
 variable {R : Type*} [CommRing R]
 
+/-- The unit `1` as an NF vector (local copy of `HeckeH3AlgebraLaws.unitNF`,
+kept local so this file's import cone is `MarkovTraceOnHecke` + Mathlib). -/
+def e0 : Fin 6 → R := ![1, 0, 0, 0, 0, 0]
+
 /-- `σ₀` as an NF vector on the basis `[1, σ₀, σ₁, σ₁σ₀, σ₀σ₁, σ₀σ₁σ₀]`. -/
 def s0 : Fin 6 → R := ![0, 1, 0, 0, 0, 0]
 /-- `σ₁` as an NF vector. -/
@@ -87,13 +91,17 @@ theorem s1_mul_s0 (h : R) : mulNF h s1 s0 = ![0, 0, 0, 1, 0, 0] := by
 /-- The photon with colour content: `γ(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁`,
 built with the algebra product (no basis label is trusted). -/
 def photon (h a0 a1 a2 : R) : Fin 6 → R :=
-  unitNF + a0 • s0 + a1 • s1 + a2 • mulNF h s0 s1
+  e0 + a0 • s0 + a1 • s1 + a2 • mulNF h s0 s1
+
+theorem photon_eq (h a0 a1 a2 : R) : photon h a0 a1 a2 = ![1, a0, a1, 0, a2, 0] := by
+  rw [photon, s0_mul_s1]
+  funext i; fin_cases i <;> simp [e0, s0, s1]
 
 /-- The flavour-flipped photon: every letter `σᵢ` replaced by
 `σᵢ⁻¹ = σᵢ − h` (the sign bit of `quark_template`). -/
 def photonBar (h a0 a1 a2 : R) : Fin 6 → R :=
-  unitNF + a0 • (s0 - h • unitNF) + a1 • (s1 - h • unitNF)
-    + a2 • mulNF h (s0 - h • unitNF) (s1 - h • unitNF)
+  e0 + a0 • (s0 - h • e0) + a1 • (s1 - h • e0)
+    + a2 • mulNF h (s0 - h • e0) (s1 - h • e0)
 
 /-- `NF(γ(φ)·γ(ψ))`. -/
 def pairNF (h a0 a1 a2 b0 b1 b2 : R) : Fin 6 → R :=
@@ -112,7 +120,7 @@ theorem pairNF_eq (h a0 a1 a2 b0 b1 b2 : R) :
         a2 * b0 + a1 * b2 + h * a2 * b2] := by
   funext i
   fin_cases i <;>
-    simp [pairNF, photon, mulNF, mulσ₀, mulσ₁, unitNF, s0, s1] <;> ring
+    simp [pairNF, photon, mulNF, mulσ₀, mulσ₁, e0, s0, s1] <;> ring
 
 /-- The order-`h¹` coefficient of `NF(γγ)`. -/
 def N1 (a0 a1 a2 b0 b1 b2 : R) : Fin 6 → R :=
@@ -167,7 +175,7 @@ theorem flavour_reaches_deg0 (h a0 a1 a2 b0 b1 b2 : R) :
     mulNF h (photon h a0 a1 a2) (photonBar h b0 b1 b2) 0
       - pairNF h a0 a1 a2 b0 b1 b2 0
       = h * (h * b2 - a0 * b2 - a1 * b2 - b0 - b1) := by
-  simp [pairNF, photon, photonBar, mulNF, mulσ₀, mulσ₁, unitNF, s0, s1]; ring
+  simp [pairNF, photon, photonBar, mulNF, mulσ₀, mulσ₁, e0, s0, s1]; ring
 
 /-- The witness: a horizontal photon `ψ = σ₀` against the bare core. The
 degree-0 coordinate moves by exactly `−h`, so "word degree 0 carries no
@@ -177,14 +185,14 @@ theorem flavour_reaches_deg0_witness (h : R) :
   rw [flavour_reaches_deg0]; ring
 
 /-- The word-degree ≥ 1 part. -/
-def degPos (v : Fin 6 → R) : Fin 6 → R := v - v 0 • unitNF
+def degPos (v : Fin 6 → R) : Fin 6 → R := v - v 0 • e0
 
 /-- **Requirement (3) fails as stated**: with `φ = 0` the degree ≥ 1 part of
 `NF(γγ)` is `ψ`'s own polarization, not `0`; a bilinear form vanishes at
 `φ = 0`. -/
 theorem degPos_not_bilinear [Nontrivial R] (h : R) :
     degPos (pairNF h 0 0 0 1 0 0) 1 ≠ 0 := by
-  simp [degPos, pairNF_eq, unitNF]
+  simp [degPos, pairNF_eq, e0]
 
 /-- The connected part `NF((γ(φ)−1)(γ(ψ)−1))` — explicit, homogeneous
 bilinear in `(φ, ψ)` — and `NF(γγ) = γ(φ) + γ(ψ) − 1 + connected`. -/
@@ -194,15 +202,16 @@ def connected (h a0 a1 a2 b0 b1 b2 : R) : Fin 6 → R :=
 
 theorem pairNF_eq_connected (h a0 a1 a2 b0 b1 b2 : R) :
     pairNF h a0 a1 a2 b0 b1 b2 =
-      photon h a0 a1 a2 + photon h b0 b1 b2 - unitNF + connected h a0 a1 a2 b0 b1 b2 := by
-  rw [pairNF_eq]
-  funext i; fin_cases i <;> simp [photon, mulNF, mulσ₀, mulσ₁, unitNF, s0, s1, connected] <;> ring
+      photon h a0 a1 a2 + photon h b0 b1 b2 - e0 + connected h a0 a1 a2 b0 b1 b2 := by
+  rw [pairNF_eq, photon_eq, photon_eq]
+  funext i; fin_cases i <;> simp [e0, connected] <;> ring
 
 theorem connected_eq_mulNF (h a0 a1 a2 b0 b1 b2 : R) :
     connected h a0 a1 a2 b0 b1 b2 =
-      mulNF h (photon h a0 a1 a2 - unitNF) (photon h b0 b1 b2 - unitNF) := by
+      mulNF h (photon h a0 a1 a2 - e0) (photon h b0 b1 b2 - e0) := by
+  rw [photon_eq, photon_eq]
   funext i; fin_cases i <;>
-    simp [connected, photon, mulNF, mulσ₀, mulσ₁, unitNF, s0, s1] <;> ring
+    simp [connected, mulNF, mulσ₀, mulσ₁, e0] <;> ring
 
 end Generic
 
@@ -231,7 +240,7 @@ theorem rho_mul (q : R) (hq : q ≠ 0) (u v : Fin 6 → R) :
     simp [rho, rA, rB, mulNF, mulσ₀, mulσ₁, Matrix.mul_apply, Fin.sum_univ_two] <;>
     field_simp <;> ring
 
-theorem rho_unit (q : R) : rho q unitNF = 1 := by simp [rho, unitNF]
+theorem rho_unit (q : R) : rho q e0 = 1 := by simp [rho, e0]
 
 /-- The quark state of the hypothesis: the `(2,1)` projection of the word-degree
 ≥ 1 part of `NF(γ(φ)γ(ψ))`. A DEFINITION under test, not an adopted one. -/
@@ -246,7 +255,7 @@ theorem rho_pairNF_split (q a0 a1 a2 b0 b1 b2 : R) :
   have : pairNF (q - q⁻¹) a0 a1 a2 b0 b1 b2 0 = 1 + a0 * b0 + a1 * b1 := by
     simp [pairNF_eq]
   simp only [quarkState, degPos, this]
-  ext i j; fin_cases i <;> fin_cases j <;> simp [rho, unitNF] <;> ring
+  ext i j; fin_cases i <;> fin_cases j <;> simp [rho, e0] <;> ring
 
 /-! ### `results.md:9-13` as theorems
 
@@ -254,31 +263,41 @@ A template letter is `ρ(σ_g) + c·h·1` (every `σ^{±1}` and every averaged p
 is of this form, since `σ⁻¹ = σ − h`). The nucleon word is the Borromean core
 `(σ₀σ₁⁻¹)³` followed by three quark letters on generators `0, 0, 1`. -/
 
-/-- A template letter. -/
-def letter (q : R) (M : Matrix (Fin 2) (Fin 2) R) (c : R) : Matrix (Fin 2) (Fin 2) R :=
-  M + (c * (q - q⁻¹)) • 1
+/-- Template letters, written out entrywise: `ρ(σ₀) + c·h·1` and
+`ρ(σ₁) + c·h·1` with `h = q − q⁻¹`. -/
+def lA (q c : R) : Matrix (Fin 2) (Fin 2) R :=
+  !![q + c * (q - q⁻¹), -q⁻¹; 0, -q⁻¹ + c * (q - q⁻¹)]
+def lB (q c : R) : Matrix (Fin 2) (Fin 2) R :=
+  !![-q⁻¹ + c * (q - q⁻¹), 0; -q, q + c * (q - q⁻¹)]
 
-/-- The core-plus-quarks word with quark shifts `c₁ c₂ c₃`. -/
+theorem lA_eq (q c : R) : lA q c = rA q + (c * (q - q⁻¹)) • 1 := by
+  ext i j; fin_cases i <;> fin_cases j <;> simp [lA, rA]
+theorem lB_eq (q c : R) : lB q c = rB q + (c * (q - q⁻¹)) • 1 := by
+  ext i j; fin_cases i <;> fin_cases j <;> simp [lB, rB]
+
+/-- The core-plus-quarks word `(σ₀σ₁⁻¹)³ · ℓ₀(c₁) ℓ₀(c₂) ℓ₁(c₃)`. -/
 def nucleonWord (q c1 c2 c3 : R) : Matrix (Fin 2) (Fin 2) R :=
-  (letter q (rA q) 0 * letter q (rB q) (-1)) * (letter q (rA q) 0 * letter q (rB q) (-1))
-    * (letter q (rA q) 0 * letter q (rB q) (-1))
-    * letter q (rA q) c1 * letter q (rA q) c2 * letter q (rB q) c3
+  lA q 0 * lB q (-1) * lA q 0 * lB q (-1) * lA q 0 * lB q (-1)
+    * lA q c1 * lA q c2 * lB q c3
 
 /-- **Order `t⁰`: flavour is invisible.** At `q = 1` the `(2,1)` character of
 the nucleon word is `0` for EVERY choice of quark shifts. -/
 theorem template_order_zero (c1 c2 c3 : R) :
     (nucleonWord (1 : R) c1 c2 c3).trace = 0 := by
-  simp [nucleonWord, letter, rA, rB, Matrix.trace_fin_two, Matrix.mul_fin_two]
+  simp only [nucleonWord, lA, lB, Matrix.mul_fin_two, Matrix.trace_fin_two,
+    Matrix.of_apply, Matrix.cons_val', Matrix.cons_val_zero, Matrix.cons_val_one,
+    Matrix.head_cons, Matrix.empty_val', Matrix.cons_val_fin_one, Matrix.head_fin_const,
+    inv_one]
   ring
 
+set_option maxHeartbeats 4000000 in
 /-- The flavour-blind template `S0` (all quark letters `σ`): character
 identically `0`. -/
 theorem template_S0_zero (q : R) (hq : q ≠ 0) :
     (nucleonWord q 0 0 0).trace = 0 := by
-  simp only [nucleonWord, letter, rA, rB, Matrix.trace_fin_two, Matrix.mul_fin_two,
-    Matrix.add_apply, Matrix.smul_apply, Matrix.one_apply, Matrix.of_apply,
-    Matrix.cons_val', Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons,
-    Matrix.empty_val', Matrix.cons_val_fin_one, Matrix.head_fin_const, smul_eq_mul]
+  simp only [nucleonWord, lA, lB, Matrix.mul_fin_two, Matrix.trace_fin_two,
+    Matrix.of_apply, Matrix.cons_val', Matrix.cons_val_zero, Matrix.cons_val_one,
+    Matrix.head_cons, Matrix.empty_val', Matrix.cons_val_fin_one, Matrix.head_fin_const]
   field_simp
   ring
 
@@ -288,14 +307,17 @@ noncomputable def gSplus (q : R) : R :=
     * (q ^ 12 - 2 * q ^ 10 + 2 * q ^ 8 - 3 * q ^ 6 + 2 * q ^ 4 - 2 * q ^ 2 + 1)
     / (4 * q ^ 9)
 
+set_option maxHeartbeats 4000000 in
 /-- **Order `t¹`: flavour is decided.** For the corpus template `S+ AVG` on the
 proton (shifts `0, −½, −½`) the `(2,1)` character is `(q − 1)·g(q)`. -/
 theorem template_SplusAVG_proton (q : R) (hq : q ≠ 0) (h2 : (2 : R) ≠ 0) :
     (nucleonWord q 0 (-1 / 2) (-1 / 2)).trace = (q - 1) * gSplus q := by
-  simp only [nucleonWord, letter, rA, rB, gSplus, Matrix.trace_fin_two, Matrix.mul_fin_two,
-    Matrix.add_apply, Matrix.smul_apply, Matrix.one_apply, Matrix.of_apply,
-    Matrix.cons_val', Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons,
-    Matrix.empty_val', Matrix.cons_val_fin_one, Matrix.head_fin_const, smul_eq_mul]
+  have h4 : (4 : R) ≠ 0 := by
+    have : (4 : R) = 2 * 2 := by norm_num
+    rw [this]; exact mul_ne_zero h2 h2
+  simp only [nucleonWord, lA, lB, gSplus, Matrix.mul_fin_two, Matrix.trace_fin_two,
+    Matrix.of_apply, Matrix.cons_val', Matrix.cons_val_zero, Matrix.cons_val_one,
+    Matrix.head_cons, Matrix.empty_val', Matrix.cons_val_fin_one, Matrix.head_fin_const]
   field_simp
   ring
 
