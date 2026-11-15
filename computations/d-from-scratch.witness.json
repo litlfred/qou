@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-15T07:55:32.756235+00:00",
-  "commitSha": "0b88920e3516ad7d6c2744ca4f7c49cad9a81029",
+  "computedAt": "2026-11-15T08:18:10.942957+00:00",
+  "commitSha": "bb74b000edb913689389e3e66bea468bc83ff3c2",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 17,
   "computation": "d-from-scratch",
   "scriptFile": "d_from_scratch.py",
-  "scriptHash": "47c658b4cf71",
-  "scriptCommitSha": "d9573481fce67572354918f91b289cf0995ab922",
+  "scriptHash": "247ead11c637",
+  "scriptCommitSha": "091f8fd1ec7bf560b4c119c9f7937d8a8eb766ab",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,6 +24,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
+    "cvxpy": "absent",
     "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
@@ -32,37 +33,38 @@
     ],
     "reproduce": "python3 -u computations/d_from_scratch.py"
   },
-  "description": "Deuteron binding from scratch using full canonical infra at 50 dps mpmath. Combines Habiro polynomial Markov trace values (exact at q_0 from habiro-coefficients-atomic.witness.json) for the atom-level tr_M with light_isotope_sweep f64 values for the free-nucleon disconnected baseline. Term 4 and Δm_shell computed exactly at 50 dps. NO Vol_hyp, NO BW (invalid at A=2), NO census.",
+  "description": "Deuteron binding from scratch using full canonical infra at 50 dps mpmath. Every trace in Term 1 (tr_M(p), tr_M(n), tr_M(D_atom), tr_M(D_free)) is the convention-D Markov trace on the ruled borromean words at the proton pin, read from atomic-tr-m-mpfr-50dps-proton and binding-canonical (since 2026-11-15; previously a float64 Plancherel character sum was subtracted from a convention-C Habiro trace). NO Vol_hyp, NO BW (invalid at A=2), NO census.",
   "contentBlock": "prop:atom-knot-mass-derivation",
   "parameters": {
     "q_0_mpf50": "1.1099785827513808075916690956107688798744991218736",
     "m_e_MeV": "0.5109989506900000000000000000000000000000000000000005654434719000544678",
     "Q_beta_n_MeV": "0.7823334093100000000000000000000000000000000000000326173041633116137717",
-    "E_0_MeV_per_cat": "7.66756263789581906801915569095060952149074445121355807729312"
+    "E_0_MeV_per_cat": "5.07366641293141138916423447700994656596239981233495166707181"
   },
   "data": {
-    "tr_M_habiro_50dps": {
-      "proton": "0.629328402202921905144397938208",
-      "neutron": "0.475133517155682211280693507071",
-      "D_atom": "0.151968339204231603731445448929"
+    "tr_M_canonical_50dps": {
+      "proton": "0.62932840220292191816534574677848592760021940063436",
+      "neutron": "0.47513351715568221250609023267500579955840763470875",
+      "D_atom": "0.15196833920423160759266569775106614127124096465526",
+      "D_free": "0.29901501718464007670216042677098383227494947439702"
     },
-    "tr_M_f64": {
-      "proton_free": "0.01256718186404071624189796055398690545063574845045491178189484576742306",
-      "neutron_free": "-0.0894643823051817567531264222962564057201441966019259336805486203651917",
-      "D_free": "-0.001100801954035509324444069393990295258742962315657648999787274941935357"
+    "tr_M_source": {
+      "functional": "convention-D Markov trace, borromean word, proton pin",
+      "proton/neutron/D_atom": "atomic-tr-m-mpfr-50dps-proton.witness.json",
+      "D_free": "binding-canonical.witness.json (checked == tr_M(p)·tr_M(n) to 1e-40)"
     },
     "terms_50dps": {
-      "Term_1_descended_MeV": "1.17366722775993007510808479437",
+      "Term_1_descended_MeV": "0.746065791202339394370901058174",
       "Term_4_frobenius_MeV": "1.63628711459308391713466039464",
-      "delta_m_shell_MeV": "0.0451556258655927481557207792354",
-      "B_pred_MeV": "2.85510996821860674039846596824",
+      "delta_m_shell_MeV": "0.0298797144710417575991926697404",
+      "B_pred_MeV": "2.41223262026646506910475412255",
       "B_AME_MeV": "2.2245662",
-      "err_pct": "28.3445719987387536679495520628530060531366475359081078437777",
-      "err_ppb": "283445719.987387536679495520628530060531366475359081078437777"
+      "err_pct": "8.43609060797853842716634472611474600066607773219564519065231",
+      "err_ppb": "84360906.0797853842716634472611474600066607773219564519065231"
     }
   },
   "caveats": [
-    "Free-nucleon Markov trace tr_M(D, include_inter=False) is computed at f64 via light_isotope_sweep — Habiro polynomial for this specific configuration is not yet in the witness. An end-to-end 50 dps result requires extending Habiro extraction to include_inter=False atom braids.",
+    "Δm_shell uses the typed σ_shell value 5.889176e-3 (A_magic = 2), which has no owning witness read here; its convention is not re-checked by this producer.",
     "Term 5 (BW) explicitly NOT included — BW formula is structurally invalid at A=2 (surface dominates volume; B_bulk(D) = -4.44 MeV negative)."
   ],
   "q0Anchor": "proton",
