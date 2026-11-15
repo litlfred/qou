@@ -145,3 +145,8 @@ docs/audits/2026-11-15-weak-vertex-left-projector.md.
   −q²/(q²+1)³ ≠ 0; right-line share −9.33 % at q₀. T(3,N): period 3, never zero.
 - Owner asked (decision card) how to record: proposition + negative (recommended) /
   conjecture / audit only. No PR without the owner's go.
+- 2026-11-15 owner routes 1+2+4. (1) prop:weak-vertex-left-projector + force-knot §III
+  sentence. (2) RightLineTraceObstruction.lean: on H₃ only the augmentation kills every
+  x·P_R (needs [3]_q ≠ 0); n=3 torus right part is period 3 (Lean). (4)
+  torus_word_right_line_share_probe.py, n ≤ 7 exact: share O(q^(−2N)), [3]_q:1 at N=0,
+  −1/(q²(q²+1)) at N=1 for every n; twist eigenvalue cited, checked n ≤ 7. Audit §6–§7.
