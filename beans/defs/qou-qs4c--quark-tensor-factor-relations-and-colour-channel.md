@@ -7,7 +7,7 @@ priority: normal
 tags:
     - quark-state
 created_at: 2026-11-15T08:00:00Z
-updated_at: 2026-11-15T09:30:00Z
+updated_at: 2026-11-15T09:50:00Z
 parent: qou-qs0e
 ---
 
@@ -21,3 +21,6 @@ Scope (a)/(b) discipline on any exclusion.
 
 ## 2026-11-15 — partial (PR #7823); stays open (colour factor's existence is open)
 `docs/audits/2026-11-15-quark-factor-relations-and-colour-channel.md` + `QOU/SchurWeyl/ColourChannelSpinStatistics.lean` (lean-direct exit 0, std axioms). Colour (1^3) forced given 4 S3 factors + Fermi + Delta++ (empirical); level 2 cannot host colour (wenzlWeight_eq_zero_iff). OPEN: does the substrate supply a separate colour factor (options A level-3 factor / B mu-bar / C none). Level-2 (2,1) = nucleon isospin channel, not a quark.
+
+## 2026-11-15 — owner: "try quark = strand, explore downstream" (PR #7823)
+`docs/audits/2026-11-15-quark-equals-strand-implications.md` + `QOU/SchurWeyl/QuarkStrandConsequences.lean` (lean-direct exit 0, std axioms). Proved: a factorised strand space (colour x spin x flavour) is not a Hecke rep at q>1 (crossing eigenvalues q^2,-1,q^-2 satisfy no quadratic) -> at most one factor is q-deformed; integer charge <-> triality (imported charges). Matches the constituent quark model at q=1; at q0 the corpus deforms isospin (conv D) while physics gauges colour. Nuclear ratio 33.7 = B_d / virtual-state energy: one-crossing ratio is (N+1)/(N-1) <= 3 in any SU(N) frame; owner decision (re-scope as ill-posed) framed in §4. Hypothesis, not a definition yet: quark = one strand's label.
