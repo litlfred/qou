@@ -1,6 +1,6 @@
 # Chapter 0 (Introduction) — Content-Alignment & One-Voice QA Review
 **Date:** 2026-04-25  
-**Chapter directory:** `/home/user/qou/content/quantum-observable-universe/introduction/`  
+**Chapter directory:** `/home/user/qou/folio/quantum-observable-universe/introduction/`  
 **Review scope:** SLOW, THOROUGH exhaustive audit of all `.md` and `.ts` files
 
 ---
@@ -17,9 +17,9 @@
 | Overview | `sec:introduction-overview` | 3 |
 
 **Block list:**
-1. `intro` (prose) — `/home/user/qou/content/quantum-observable-universe/introduction/intro.md`
-2. `roadmap-guide` (prose) — `/home/user/qou/content/quantum-observable-universe/introduction/roadmap-guide.md`
-3. `roadmap-diagram` (diagram) — `/home/user/qou/content/quantum-observable-universe/introduction/roadmap-diagram.md`
+1. `intro` (prose) — `/home/user/qou/folio/quantum-observable-universe/introduction/intro.md`
+2. `roadmap-guide` (prose) — `/home/user/qou/folio/quantum-observable-universe/introduction/roadmap-guide.md`
+3. `roadmap-diagram` (diagram) — `/home/user/qou/folio/quantum-observable-universe/introduction/roadmap-diagram.md`
 
 ---
 
@@ -82,7 +82,7 @@ Per the Pre-Commit Checklist in `one-voice.md` (lines 354–369) and the Editori
 
 #### 1. Editorializing: "it turns out that" (BLACKLIST)
 
-**Location:** `/home/user/qou/content/quantum-observable-universe/introduction/intro.md:230`
+**Location:** `/home/user/qou/folio/quantum-observable-universe/introduction/intro.md:230`
 
 **Offending phrase:**
 ```
@@ -98,7 +98,7 @@ the mechanics of a QOU turn out to be Turing complete —
 
 #### 2. Person violation: "The author" (FORBIDDEN)
 
-**Location:** `/home/user/qou/content/quantum-observable-universe/introduction/intro.md:355`
+**Location:** `/home/user/qou/folio/quantum-observable-universe/introduction/intro.md:355`
 
 **Offending phrase:**
 ```
@@ -348,10 +348,10 @@ a corresponding Lean 4 formalisation,
 
 **Report compiled:** 2026-04-25 (slow, thorough audit)  
 **Files audited:** 
-- `/home/user/qou/content/quantum-observable-universe/introduction/intro.md` (363 lines)
-- `/home/user/qou/content/quantum-observable-universe/introduction/roadmap-guide.md` (22 lines)
-- `/home/user/qou/content/quantum-observable-universe/introduction/roadmap-diagram.md` (54 lines)
-- `/home/user/qou/content/quantum-observable-universe/introduction/introduction.ts` (manifest)
-- `/home/user/qou/content/quantum-observable-universe/introduction/intro.ts` (manifest)
-- `/home/user/qou/content/quantum-observable-universe/introduction/roadmap-guide.ts` (manifest)
-- `/home/user/qou/content/quantum-observable-universe/introduction/roadmap-diagram.ts` (manifest)
+- `/home/user/qou/folio/quantum-observable-universe/introduction/intro.md` (363 lines)
+- `/home/user/qou/folio/quantum-observable-universe/introduction/roadmap-guide.md` (22 lines)
+- `/home/user/qou/folio/quantum-observable-universe/introduction/roadmap-diagram.md` (54 lines)
+- `/home/user/qou/folio/quantum-observable-universe/introduction/introduction.ts` (manifest)
+- `/home/user/qou/folio/quantum-observable-universe/introduction/intro.ts` (manifest)
+- `/home/user/qou/folio/quantum-observable-universe/introduction/roadmap-guide.ts` (manifest)
+- `/home/user/qou/folio/quantum-observable-universe/introduction/roadmap-diagram.ts` (manifest)

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0501112v3/sections/sec-010",
   "@type": [
     "doco:Section"
   ],
-  "title": "Normalized conjugacy class indicators. Let integer numbers",
-  "pageStart": 5,
-  "pageEnd": 5,
+  "title": "Elements of the group algebra as random variables",
+  "pageStart": 6,
+  "pageEnd": 7,
   "contains": [
     "library/arxiv-math-0501112v3/blocks/prose-sec-010"
   ],
-  "derivedFrom": "library/arxiv-math-0501112v3/manifest",
-  "sourceDocument": "library/arxiv-math-0501112v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0501112v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0501112v3",
   "provenance": "ingested"
 }

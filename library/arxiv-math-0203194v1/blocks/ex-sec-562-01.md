@@ -1,1 +1,0 @@
-Let us consider the usual absolute-value norm |·| ∞ on Z.

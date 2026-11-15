@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1006.1099v3/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "FLOER COHOMOLOGY AND PENCILS OF QUADRICS IV AN SMITH",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1006.1099v3",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1006.1099v3",
   "contains": [
     "library/arxiv-1006.1099v3/sections/sec-000",
     "library/arxiv-1006.1099v3/sections/sec-001",
@@ -40,8 +45,17 @@
     "library/arxiv-1006.1099v3/sections/sec-031"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1006.1099&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1006.1099v3",
+    "title_source": "slug",
     "source_file": "1006.1099v3.pdf",
     "source_sha256": "76c1c4173cdee9d815286487ea60a59bec6b901dc67941a4df9483f3e66d3808",
     "pages": 70,

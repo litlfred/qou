@@ -1,0 +1,18 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sec-p3-blowup-yekutieli-intro",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:p3-blowup-yekutieli-intro",
+  "kind": "prose",
+  "title": "Blowup as a finite obstruction level",
+  "text": "p3-blowup-yekutieli-intro.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1608.03227v4/sections/sec-058",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Braid complex",
+  "pageStart": 67,
+  "pageEnd": 68,
+  "contains": [
+    "library/arxiv-1608.03227v4/blocks/prose-sec-058"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.03227v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.03227v4",
+  "provenance": "ingested"
+}

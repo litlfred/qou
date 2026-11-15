@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-9811173v1/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-9811173v1/blocks/prose-sec-010",
   "kind": "prose",
-  "title": "Links whose volumes link Clausen values",
-  "pageStart": 8,
-  "pageEnd": 8,
-  "text": "../sections/sec-010-4-links-whose-volumes-link-clausen-values.md",
-  "derivedFrom": "library/arxiv-hep-th-9811173v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-9811173v1/manifest",
+  "title": "Dedekind zeta values from 12-crossing Feynman knots",
+  "pageStart": 21,
+  "pageEnd": 23,
+  "text": "../sections/sec-010-55-dedekind-zeta-values-from-12-crossing-feynman.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9811173v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9811173v1",
   "provenance": "ingested"
 }

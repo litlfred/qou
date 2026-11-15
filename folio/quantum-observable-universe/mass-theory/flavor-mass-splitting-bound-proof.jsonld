@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-flavor-mass-splitting-bound",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:flavor-mass-splitting-bound",
+  "kind": "proof",
+  "title": "Proof of flavor mass splitting bound",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-flavor-mass-splitting-bound"
+  ],
+  "text": "flavor-mass-splitting-bound-proof.md",
+  "provenance": "authored"
+}

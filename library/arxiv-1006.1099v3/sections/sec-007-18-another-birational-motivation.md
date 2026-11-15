@@ -8,23 +8,16 @@ pages: 7-7
 source_pdf: 1006.1099v3.pdf
 source_sha256: 76c1c4173cdee9d8
 doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS IV AN SMITH — There is a classical relationship in algebraic geometry bet ween a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
+text_source: latex
+latex_prose_ratio: 0.963
+latex_coverage_ratio: 0.99
 ---
-which, whilst not used in this paper, is undoubtedly related to the g = 2 case of Theorem 1.1, and
-provided motivation for the result. Let’s say that a line l⊂Q0∩Q1 is generic if its normal bundle
-is holomorphically trivial O⊕O (rather thanO(i)⊕O (−i). Recall that a genus 2 curve, whilst
-not a complete intersection, admits an embedding as a (2 , 3)-curve on a quadric hypersurface
-P1× P1⊂ P3.
-Lemma 1.11. The blow-up W→ M(Σ 2) at a generic line inside Q0∩Q1 is isomorphic to the
-blow-up W ′→ P3 along an embedded genus 2 curve of degree 5.
-A proof is given in [44]. The diagram P3← BlC (P3) = Bll(Q0∩Q1)→ Q0∩Q1 is also
-the simplest of the “ﬂip-diagrams” constructed using stable pairs b y Thaddeus in [101] (in this
-special case there are actually no ﬂips, see op. cit. section 3.19; the map to Q0∩Q1 is his
-non-abelian Abel-Jacobi map).
-If one believes that Fukaya categories should behave well under bir ational transformations – a
-view espoused by Katzarkov and his collaborators, see for instanc e [51], and encouraged by the
-particular cases treated in this paper – then one expects F(W ) to be built out of F(P1), which
-has two semisimple summands, and of F(M(Σ 2)), whilst F(W ′) should be assembled from F(P3)
-(four semisimple summands) and F(Σ 2). Equating F(W ) and F(W ′) would quickly give Theorem
-1.1 in the case g = 2. Whilst the argument we give is more roundabout, it seems technic ally
-simpler (because of its appeal to the special geometric features o f Lefschetz ﬁbrations), and also
-applies in greater generality ( g≥ 2).
+[]{#Sec:BirModel label="Sec:BirModel"} There is another description of $\EuScript{M}(\Sigma_2) = Q_0 \cap Q_1 \subset {\mathbb P}^5$ which, whilst not used in this paper, is undoubtedly related to the $g=2$ case of Theorem [\[Thm:Embed\]](#Thm:Embed){reference-type="ref" reference="Thm:Embed"}, and provided motivation for the result. Let's say that a line $l \subset Q_0\cap Q_1$ is *generic* if its normal bundle is holomorphically trivial $\mathcal{O} \oplus \mathcal{O}$ (rather than $\mathcal{O}(i) \oplus \mathcal{O}(-i)$. Recall that a genus 2 curve, whilst not a complete intersection, admits an embedding as a $(2,3)$-curve on a quadric hypersurface ${\mathbb P}^1\times {\mathbb P}^1 \subset {\mathbb P}^3$.
+
+::: Lemma
+The blow-up $W \rightarrow \EuScript{M}(\Sigma_2)$ at a generic line inside $Q_0\cap Q_1$ is isomorphic to the blow-up $W' \rightarrow {\mathbb P}^3$ along an embedded genus 2 curve of degree 5.
+:::
+
+A proof is given in [@GH]. The diagram ${\mathbb P}^3 \leftarrow Bl_C({\mathbb P}^3) = Bl_l(Q_0\cap Q_1) \rightarrow Q_0\cap Q_1$ is also the simplest of the "flip-diagrams\" constructed using stable pairs by Thaddeus in [@Thaddeus] (in this special case there are actually no flips, see *op. cit.* section 3.19; the map to $Q_0\cap Q_1$ is his non-abelian Abel-Jacobi map).
+
+If one believes that Fukaya categories should behave well under birational transformations -- a view espoused by Katzarkov and his collaborators, see for instance [@KKOY], and encouraged by the particular cases treated in this paper -- then one expects $\EuScript{F}(W)$ to be built out of $\EuScript{F}({\mathbb P}^1)$, which has two semisimple summands, and of $\EuScript{F}(\EuScript{M}(\Sigma_2))$, whilst $\EuScript{F}(W')$ should be assembled from $\EuScript{F}({\mathbb P}^3)$ (four semisimple summands) and $\EuScript{F}(\Sigma_2)$. Equating $\EuScript{F}(W)$ and $\EuScript{F}(W')$ would quickly give Theorem [\[Thm:Embed\]](#Thm:Embed){reference-type="ref" reference="Thm:Embed"} in the case $g=2$. Whilst the argument we give is more roundabout, it seems technically simpler (because of its appeal to the special geometric features of Lefschetz fibrations), and also applies in greater generality ($g \geq 2$).

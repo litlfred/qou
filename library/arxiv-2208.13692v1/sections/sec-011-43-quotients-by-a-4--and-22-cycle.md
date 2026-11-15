@@ -9,206 +9,49 @@ source_pdf: 2208.13692v1.pdf
 source_sha256: 567eff9fb44ef3e5
 doc_brief: "Bring's curve: old and new — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
 duplicate_of: "s40879-023-00706-0"
+text_source: latex
+latex_prose_ratio: 0.958
+latex_coverage_ratio: 0.962
 ---
-quotients we expect we shall now write them explicitly. We will begin with the 2,2-cycle
-corresponding to U 2 with the 4-cycle U arising in the discussion. Recall that we have
-U 2 : [X,Y,Z ]→ [X,Z,Y ], ψ (U 2) = (12)(34).
-The normaliser of ⟨(12)(34)⟩ in S5 is NS5(⟨(12)(34)⟩) = ⟨(12), (1324)⟩∼= D8. As we re-
-marked earlier, NS5(⟨(12)(34)⟩)/⟨(12)(34)⟩∼=V4 are symmetries which remain when we go
-to the quotient B/
-⟨
-U 2⟩
-and we expect the quotient genus-2 curve to have (at least) this
-V4 symmetry group. One of these involutions, which we will later see to be (12) = (34),15
-is the hyperelliptic involution of the quotient curve and so further quotienting by this sym-
-metry gives P1. Quotienting by the other two involutions will yield elliptic curves, and we
-will complete this construction now, both from the perspective of the HC-model, and the
-P4-model.
-Starting in the HC-model, in order to get the ﬁrst quotient B/
-⟨
-U 2⟩
-we express our curve
-in terms of the invariants of U 2: X, T :=Y +Z, and V :=YZ . Then
-0 =X(Y 5 +Z 5) + (XYZ )2−X 4YZ − 2(YZ )3,
-=X(T 5− 5T 3V + 5TV 2) +X 2V 2−X 4V− 2V 3.
-In P1,1,2 this is our genus-4 curve. Setting 16 T = 1 and viewing
-0 =X(1− 5V + 5V 2) +X 2V 2−X 4V− 2V 3
-as the aﬃne part of a projective curve we have (after a not-very-illuminating transformation,
-for which Maple was used) the hyperelliptic curve
-(10) C1 : B2 =A6 + 4A5 + 10A3 + 4A + 1.
-This is the genus-2 curve of [RR92] with automorphism group V4. Calculating the Igusa-
-Clebsch invariants (which give the Q-isomorphism class of a curve) and searching the
-LMFDB [LMF22] shows that this is a model for the modular curve X0(50), which we ver-
-ifying by directly calculating a model for X0(50) over Q using [Shi95]. The substitutions
-A = (2 +A′)/(2−A′), B = 4B′/(2−A′)3 make the V4 symmetry clearer, giving
-(B′)2 +
-[
-(A′)6− 5(A′)4− 40(A′)2− 80
-]
-= 0,
-where we have the hyperelliptic involution B′→− B′ and the map A′→− A′ generating
-V4. We shall now be explicit about how these work.
-15The ⟨(12)(34)⟩ cosets of the normaliser are {e, (12)(34)}, {(12), (34)}, {(13)(24), (14)(23))}, and
-{(1324), (1423)}.
-16Equally one may set X = 1 but we note that setting V = 1 yields a genus 4 curve as here V is not of
-weight 1.
-22 H. W. BRADEN AND LINDEN DISNEY-HOGG
-As previously mentioned, quotientingC1 by either of the two non-hyperelliptic involutions
-yields an elliptic curve, with each involution having two ﬁxed points from Riemann-Hurwitz.
-Quotienting by (B′,A′)→ (B′,−A′) by introducing A′′ =−(A′)2 yields
-(11) E1 : (B′)2 = (A′′)3− 5(A′′)2− 40(A′′)− 80 with j-invariant jE1 =−5× 293
-25 =j(τ0).
-The ﬁxed points are ( A′,B′) = (0 ,±√−80), corresponding to the two points ( X,V ) =
-([1±
-√
-5]/2,−1±
-√
-5/2), which are the images of the four vertices [1 : ±i :∓i :−1 : 0] and
-[1 :±i :−1∓i : 0] respectively, depending on sign. We recognise E1 to be the elliptic curve
-E1 in [RR92].
-We may also quotientC1 by (B′,A′)→ (−B′,−A′). To do this write C1 as
-(B′)2C 4 +
-[
-(A′)6− 5(A′)4C 2− 40(A′)2C 4− 80C 6]
-= 0,
-from where we see the same automorphism acts as C→−C. Quotienting by this action by
-introducing C′ =−C 2 yields
-(B′)2(C′)2 = (A′)6− 5(A′)4(C′)− 40(A′)2(C′)2− 80(C′)3.
-Setting A′ = 1 and taking B′′ =B′C′ gives the standard elliptic form
-(12) E2 : (B′′)2 = 1− 5(C′)− 40(C′)2− 80(C′)3, j E2 =−25
-2 =j(5τ0).
-The ﬁxed point of this involution is [ B′ :A′ :C] = [1 : 0 : 0]; this is a singular point where
-the desingularization corresponds to the 2 points at inﬁnity, or correspondingly ( X,V ) =
-(∓i/2−1/2, 1/4), which are the images of the two vertices [1 :−1 :±i :∓i : 0]. We recognise
-E2 to be E2 in [RR92].17
-Next let us quotient the P4-model directly by the action of (12)(34) and compare with
-these quotients just obtained from the HC-model. To this end we introduce semi-invariants
-of the action of (1324) = ψ(U), deﬁned by
-(s1,s 2,s 3,s 4)T =
-
-
-1 1 1 1
-1 −1 i −i
-1 1 −1 −1
-1 −1 −i i
-
- (x1,x 2,x 3,x 4)T.
-These are constructed such that U·sj = ij−1sj, and so we have U 2-invariants [s : t : u :
-v] := [s1 :s2s4 :s3 :s2
-4]∈ P1,2,1,2.18 In terms of these invariants we have
-H2 = 1
-4
-(
-5s2 +u2 + 2t
-)
-,
-H3 = 3
-16
-(
-−5s3 +su2 + t2u
-v + 2st +uv
-)
-.
-Eliminating t from these equations, and setting s = 1, we can use Maple to get the genus-2
-curve in Weierstrass form
-(13) C1 : y2 = 100− 25x2− 10x4−x6
-where x = u and y =−10 + 2uv. The roots of the sextic here are a M¨ obius transform
-of the curve C1 previously given (namely x↦→
-√
-20/x), so these curves are the same over
-Q[
-√
-5]. Note the reason we see Q[
-√
-5] here is that it is the degree-2 subﬁeld of Q[ζ], the
-17There is a typo in the constant term of R&R’s E2 if it is to have the stated j-invariant.
-18Note one could have instead taken v = s2
-2 for the last invariant, but the choice above happens to be
-better around the vertices that are the ﬁxed points of the 4-cycle. Moreover, recognise that the invariants
-taken are deﬁned over the ﬁeld extension Q[i] and not Q.
-BRING’S CUR VE: OLD AND NEW 23
-ﬁeld required to have equivalence of the Hulek-Craig and P4-models of Bring’s curve. We
-now aim to identify theV4 of this curve described earlier with the quotient of the normaliser
-⟨(12), (1324)⟩/⟨(12)(34)⟩. One can check that (12) : [ s : t : u : v]→ [s : t : u : t2/v]. This
-ﬁxes x, and so must be the automorphism y→−y; that is (12) = (34) is the hyperelliptic
-involution ofC1. Indeed one can check
-y =−10 + 2uv↦→− 10 + 2t2u
-v ,
-=−10− 2
-(
-−5 +u2 + 2t +uv
-)
-,
-=−10− 2
-(
-−10 +uv + (5 +u2 + 2t)
-)
-,
-= 10− 2uv =−y.
-Likewise, (1324) : [ s : t : u : v]→ [s : t :−u :−v], and so leads to the automorphism
-(x,y )→ (−x,y ). Now if x = x2, the elliptic curve y2 = 100 − 25x− 10x2− x3 has j-
-invariant−25/2 and so we may identify E2∼=B/⟨(12)(34), (1324)⟩ =B/⟨(1324)⟩. Similarly
-(13)(24) : [s :t :u :v]→ [s :t :−u :−t2/v] leads to (x,y )→ (−x,−y) and we may identify
-E1∼=B/⟨(12)(34), (13)(24)⟩. Note when we compare with [RR92], we diﬀer from R&R in
-the identiﬁcation of which quotient is being taken and their ascribing of τ0 and 5τ0. Our
-results agree with those of [Web05], wherein the author describes an order-4 rotation (which
-he calls φ, but we shall call ˜U), and calculates the quotient by its action T =B/
-⟨
-˜U
-⟩
-to be
-T : y2 = 4x3− 75x− 1475, j T =−25
-2 =j(5τ0).
-Note that our strategy of semi-invariants can be used directly to calculate the quotient by
-the 4-cycle (1324), something we were unable to do in the HC-model because of the non-
-linearity of the automorphism U. To do so introduce new variables invariant under (1324)
-(and so necessarily under (12)(34)) given by u′ = uv, v′ = v2. These let us rewrite the
-deﬁning equations of Bring’s curve as
-H2 = 1
-4
-(
-5s2 + (u′)2
-v′ + 2t
-)
-,
-H3 = 3
-16
-(
-−5s3 + s(u′)2
-v′ + t2u′
-v′ + 2st +u′
-)
-,
-and we can apply Maple to ﬁnd a Weierstrass form of the resulting elliptic curve. This is
-exactly the process of quotienting by (x,y )↦→ (−x,−y) as above, but in a diﬀerent language.
-Furthermore, from our previous investigation using group theory, we know that the quo-
-tientB/V4, where this V4 is the one containing only 2,2-cycles, can further be quotiented
-by (234) to giveB/A4. Rather than attempt to construct this quotient using the invariants
-previously calculated on the 2,2-quotient, we step back and recall that the invariant ring
-Q[x1,...,x n]An is generated by the symmetric polynomials sk =∑n
-i=1xk
-i for k = 1,...,n
-and the Vandermonde polynomial V =∏
-1≤i<j≤n(xj−xi). As generators of the invariant
-algebra we know that there must be a relation between V 2 and the other generators as V 2
-is an Sn-invariant, and theSn-invariant algebra is generated by thesk. Taking n = 4 in the
-case of Bring’s curve, the relations imposed from the curve are s2 +s2
-1 = 0 = s3−s3
-1, and
-this gives for the additional relation,
-(14) 4 s3
-4− 373
-16 s4
-1s2
-4 + 431
-8 s8
-1s4− 701
-16 s12
-1 +V 2 = 0.
-24 H. W. BRADEN AND LINDEN DISNEY-HOGG
-Settings1 = 1 (as we may do at all points on the quotient except those points coming from
-the vertices on Bring’s curve) we see this is clearly an elliptic curve E3 with hyperelliptic
-involutionV →−V , and for which we can calculate the j-invariant to be 2113×5
-215 =j(3τ0).19
-Further quotienting by the hyperelliptic involution then corresponds to the quotient B/S4,
-which is P1 as expected, being the quotient by a large automorphism group.
+[]{#subsec: quotients by 4 and 2-2 cycle label="subsec: quotients by 4 and 2-2 cycle"} Armed with the knowledge of the genus of the quotients we expect we shall now write them explicitly. We will begin with the 2,2-cycle corresponding to $U^2$ with the 4-cycle $U$ arising in the discussion. Recall that we have $$U^2:[X,Y,Z]\rightarrow [X,Z,Y], \quad \psi(U^2)=(12)(34)  .$$ The normaliser of $\left\langle (12)(34) \right\rangle$ in $S_5$ is $N_{S_5}(\left\langle (12)(34) \right\rangle)=\left\langle (12), (1324) \right\rangle\cong D_8$. As we remarked earlier, $N_{S_5}(\left\langle (12)(34) \right\rangle)/\left\langle (12)(34) \right\rangle\cong V_4$ are symmetries which remain when we go to the quotient $\mathcal{B}/\left\langle U^2 \right\rangle$ and we expect the quotient genus-2 curve to have (at least) this $V_4$ symmetry group. One of these involutions, which we will later see to be $\overline{(12)} = \overline{(34)}$,[^1] is the hyperelliptic involution of the quotient curve and so further quotienting by this symmetry gives $\mathbb{P}^1$. Quotienting by the other two involutions will yield elliptic curves, and we will complete this construction now, both from the perspective of the HC-model, and the $\mathbb{P}^4$-model.
+
+Starting in the HC-model, in order to get the first quotient $\mathcal{B}/\left\langle U^2 \right\rangle$ we express our curve in terms of the invariants of $U^2$: $X$, $T:=Y+Z$, and $V:=YZ$. Then $$\begin{aligned}
+ 0&= X(Y^5+Z^5) + (XYZ)^2 - X^4YZ -2(YZ)^3 ,   \\  &
+=X(T^5-5 T^3 V+5 T V^2)+ X^2 V^2 -X^4 V-2 V^3 . 
+\end{aligned}$$ In $\mathbb{P}\sp{1,1,2}$ this is our genus-$4$ curve. Setting[^2] $T=1$ and viewing $$0=X(1-5V+ 5V^2)+X^2 V^2 -X^4 V-2 V^3$$ as the affine part of a projective curve we have (after a not-very-illuminating transformation, for which Maple was used) the hyperelliptic curve $$\label{qc1} 
+\mathcal{C}_1:\  B^2 =A^6 +4 A^5 +10 A^3 + 4 A +1  .$$ This is the genus-2 curve of [@Riera1992] with automorphism group $V_4$. Calculating the Igusa-Clebsch invariants (which give the $\overline{\mathbb{Q}}$-isomorphism class of a curve) and searching the LMFDB [@LMFDB] shows that this is a model for the modular curve $X_0(50)$, which we verifying by directly calculating a model for $X_0(50)$ over $\mathbb{Q}$ using [@Shimura1995]. The substitutions $A=(2+A^\prime)/(2-A^\prime)$, $B=4  B'/(2-A^\prime)^3$ make the $V_4$ symmetry clearer, giving $$(B^\prime)^2 + \left[ (A^\prime)^6-5 (A^\prime)^4 -40 (A^\prime)^2 -80 \right] = 0  ,$$ where we have the hyperelliptic involution $B'\rightarrow -B'$ and the map $A^\prime \rightarrow -A^\prime$ generating $V_4$. We shall now be explicit about how these work.
+
+As previously mentioned, quotienting $\mathcal{C}_1$ by either of the two non-hyperelliptic involutions yields an elliptic curve, with each involution having two fixed points from Riemann-Hurwitz. Quotienting by $(B',A^\prime)\rightarrow (B',-A^\prime)$ by introducing $A^{\prime \prime} = -(A^\prime)^2$ yields $$\label{qe1} 
+\mathcal{E}_1: (B')^2=(A^{\prime \prime})^3-5 (A^{\prime \prime})^2 -40 (A^{\prime \prime}) -80\ \text{ with $j$-invariant } \ j_{\mathcal{E}_1 }=-\frac{5\times 29^3}{2^5} = j(\tau_0).$$ The fixed points are $(A^\prime, B^\prime)=(0, \pm\sqrt{-80})$, corresponding to the two points $(X,V)=([1\pm \sqrt{5}]/2, -1\pm \sqrt{5}/2)$, which are the images of the four vertices $[1: \pm i : \mp i : -1 : 0]$ and $[1: \pm i : -1 \mp i : 0]$ respectively, depending on sign. We recognise $\mathcal{E}_1$ to be the elliptic curve $E_1$ in [@Riera1992].
+
+We may also quotient $\mathcal{C}_1$ by $(B', A^\prime)\rightarrow (-B', -A^\prime)$. To do this write $\mathcal{C}_1$ as $$(B')^2 C^4 + \left[ (A^\prime)^6-5 (A^\prime)^4 C^2 -40 (A^\prime)^2 C^4 -80 C^6 \right] = 0  ,$$ from where we see the same automorphism acts as $C \to -C$. Quotienting by this action by introducing $C^\prime = -C^2$ yields $$(B')^2 (C^\prime)^2 =(A^\prime)^6-5 (A^\prime)^4 (C^\prime) -40 (A^\prime)^2 (C^\prime)^2 -80 (C^\prime)^3  .$$ Setting $A^\prime=1$ and taking $B^{\prime \prime} =  B^\prime C^\prime$ gives the standard elliptic form $$\label{qe2} 
+\mathcal{E}_2: (B^{\prime \prime})^2 =  1-5  (C^\prime) -40  (C^\prime)^2 -80 (C^\prime)^3 , \quad j_{\mathcal{E}_2 }=-\frac{25}{2} = j(5\tau_0).$$ The fixed point of this involution is $[B^\prime : A^\prime : C] = [1:0:0]$; this is a singular point where the desingularization corresponds to the 2 points at infinity, or correspondingly $(X,V)=(\mp i/2-1/2, 1/4)$, which are the images of the two vertices $[1:-1: \pm i : \mp i : 0]$. We recognise $\mathcal{E}_2$ to be $E_2$ in [@Riera1992].[^3]
+
+Next let us quotient the $\mathbb{P}^4$-model directly by the action of $(12)(34)$ and compare with these quotients just obtained from the HC-model. To this end we introduce semi-invariants of the action of $(1324) = \psi(U)$, defined by $$(s_1, s_2, s_3, s_4)^T = \begin{pmatrix}
+    1 & 1 & 1 & 1 \\ 1 & -1 & i & -i \\ 1 & 1 & -1 & -1 \\ 1 & -1 & -i & i
+    \end{pmatrix} (x_1, x_2, x_3, x_4)^T  .$$ These are constructed such that $U \cdot s_j = i^{j-1} s_j$, and so we have $U^2$-invariants $[s:t:u:v] := [s_1: s_2 s_4 : s_3 : s_4^2] \in \mathbb{P}^{1,2,1,2}$.[^4] In terms of these invariants we have $$\begin{aligned}
+    H_2 &= \frac{1}{4} \left( 5s^2 + u^2 + 2t \right)  , \\
+    H_3 &= \frac{3}{16} \left( -5 s^3 + su^2 + \frac{t^2u}{v} + 2st + uv \right)  .  
+\end{aligned}$$ Eliminating $t$ from these equations, and setting $s=1$, we can use Maple to get the genus-2 curve in Weierstrass form $$\label{qc1p} 
+\mathcal{C}_1:\  y^2 = 100-25x^2-10x^4-x^6$$ where $x=u$ and $y=-10+2uv$. The roots of the sextic here are a Möbius transform of the curve $\mathcal{C}_1$ previously given (namely $x \mapsto \sqrt{20}/x$), so these curves are the same over $\mathbb{Q}[\sqrt{5}]$. Note the reason we see $\mathbb{Q}[\sqrt{5}]$ here is that it is the degree-2 subfield of $\mathbb{Q}[\zeta]$, the field required to have equivalence of the Hulek-Craig and $\mathbb{P}^4$-models of Bring's curve. We now aim to identify the $V_4$ of this curve described earlier with the quotient of the normaliser $\left\langle (12), (1324) \right\rangle/\left\langle (12)(34) \right\rangle$. One can check that $(12) : [s:t:u:v] \to [s:t:u:t^2/v]$. This fixes $x$, and so must be the automorphism $y \to -y$; that is $\overline{(12)} = \overline{(34)}$ is the hyperelliptic involution of $\mathcal{C}_1$. Indeed one can check $$\begin{aligned}
+    y = -10 + 2uv &\mapsto -10 + 2\frac{t^2u}{v}  , \\
+    &= -10 - 2\left( -5 + u^2 + 2t + uv \right)  , \\
+    &= -10 - 2\left( -10 + uv + (5 + u^2 + 2t) \right)  , \\
+    &= 10-2uv = -y  . 
+\end{aligned}$$ Likewise, $(1324) : [s:t:u:v] \to [s:t:-u:-v]$, and so leads to the automorphism $(x,y) \to (-x,y)$. Now if $\mathsf{x}=x^2$, the elliptic curve $y^2 = 100-25\mathsf{x}-10\mathsf{x}^2-\mathsf{x}^3$ has $j$-invariant $-25/2$ and so we may identify $\mathcal{E}_2 \cong \mathcal{B}/\left\langle (12)(34), (1324) \right\rangle = \mathcal{B}/\left\langle (1324) \right\rangle$. Similarly $(13)(24) : [s:t:u:v] \to [s:t:-u:-t^2/v]$ leads to $(x,y) \to (-x,-y)$ and we may identify $\mathcal{E}_1 \cong \mathcal{B} / \left\langle (12)(34), (13)(24) \right\rangle$. Note when we compare with [@Riera1992], we differ from R&R in the identification of which quotient is being taken and their ascribing of $\tau_0$ and $5\tau_0$. Our results agree with those of [@Weber2005], wherein the author describes an order-4 rotation (which he calls $\phi$, but we shall call $\tilde{U}$), and calculates the quotient by its action $T=\mathcal{B}/\left\langle \tilde{U} \right\rangle$ to be $$T:\ y^2=4 x^3-75 x -1475,\quad j_T=-\frac{25}{2} = j(5 \tau_0)  .$$ Note that our strategy of semi-invariants can be used directly to calculate the quotient by the 4-cycle $(1324)$, something we were unable to do in the HC-model because of the non-linearity of the automorphism $U$. To do so introduce new variables invariant under $(1324)$ (and so necessarily under $(12)(34)$) given by $u^\prime = uv$, $v^\prime = v^2$. These let us rewrite the defining equations of Bring's curve as $$\begin{aligned}
+    H_2 &= \frac{1}{4} \left( 5s^2 + \frac{(u^\prime)^2}{v^\prime} + 2t \right)  , \\
+    H_3 &= \frac{3}{16} \left( -5 s^3 + \frac{s(u^\prime)^2}{v^\prime} + \frac{t^2u^\prime}{v^\prime} + 2st + u^\prime \right)  ,  
+\end{aligned}$$ and we can apply Maple to find a Weierstrass form of the resulting elliptic curve. This is exactly the process of quotienting by $(x,y) \mapsto (-x,-y)$ as above, but in a different language.
+
+Furthermore, from our previous investigation using group theory, we know that the quotient $\mathcal{B}/V_4$, where this $V_4$ is the one containing only 2,2-cycles, can further be quotiented by $(234)$ to give $\mathcal{B}/A_4$. Rather than attempt to construct this quotient using the invariants previously calculated on the 2,2-quotient, we step back and recall that the invariant ring $\mathbb{Q}[x_1, \dots, x_n]^{A_n}$ is generated by the symmetric polynomials $s_k = \sum_{i=1}^n x_i^k$ for $k=1, \dots, n$ and the Vandermonde polynomial $V = \prod_{1 \leq i < j \leq n} (x_j - x_i)$. As generators of the invariant algebra we know that there must be a relation between $V^2$ and the other generators as $V^2$ is an $S_n$-invariant, and the $S_n$-invariant algebra is generated by the $s_k$. Taking $n=4$ in the case of Bring's curve, the relations imposed from the curve are $s_2 + s_1^2 = 0 = s_3 - s_1^3$, and this gives for the additional relation, $$\label{ref: quotient by 3cycle}
+4 s_4^3 - \frac{373}{16} s_1^4 s_4^2 + \frac{431}{8} s_1^8 s_4 - \frac{701}{16} s_1^{12} + V^2 = 0 .$$ Setting $s_1=1$ (as we may do at all points on the quotient except those points coming from the vertices on Bring's curve) we see this is clearly an elliptic curve $\mathcal{E}_3$ with hyperelliptic involution $V \to -V$, and for which we can calculate the $j$-invariant to be $\frac{211^3 \times 5}{2^{15}} = j(3 \tau_0)$.[^5] Further quotienting by the hyperelliptic involution then corresponds to the quotient $\mathcal{B}/S_4$, which is $\mathbb{P}^1$ as expected, being the quotient by a large automorphism group.
+
+[^1]: The $\left\langle (12)(34) \right\rangle$ cosets of the normaliser are $\left\{ e, (1 2)(3 4) \right\}$, $\left\{ (12), (34) \right\}$, $\left\{ (13)(24), (14)(23)) \right\}$, and $\left\{ (1324), (1423) \right\}$.
+
+[^2]: Equally one may set $X=1$ but we note that setting $V=1$ yields a genus 4 curve as here $V$ is not of weight $1$.
+
+[^3]: There is a typo in the constant term of R&R's $E_2$ if it is to have the stated $j$-invariant.
+
+[^4]: Note one could have instead taken $v=s_2^2$ for the last invariant, but the choice above happens to be better around the vertices that are the fixed points of the 4-cycle. Moreover, recognise that the invariants taken are defined over the field extension $\mathbb{Q}[i]$ and not $\mathbb{Q}$.
+
+[^5]: This is the curve 15-isogenous to $\mathcal{E}_2$ noted by Serre, see §[\[subsec: period matrix\]](#subsec: period matrix){reference-type="ref" reference="subsec: period matrix"}.

@@ -321,6 +321,7 @@ def main() -> int:
     ms = (time.monotonic_ns() - t0) // 1_000_000
     out = {
         "computation": "m1-site-density-jensen-reduction",
+        "q0Anchor": "proton",
         "description": (
             "M_1>0 (qou-k5r5): the VKLS local drop density rho(u) = 1/2 - arcsin(u/2)/pi is "
             "strictly CONCAVE on (0,2) (rho'' = -u/(pi(4-u^2)^{3/2})), so by Jensen the "

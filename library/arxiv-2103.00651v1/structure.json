@@ -6,7 +6,11 @@
   "sha256": "c5505d3e4891168ebe4b1af35e678043473268ac95640eb4df131a6c2f13b40d",
   "bytes": 163368,
   "pages": 9,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -110,6 +114,51 @@
   "likely_scanned": false,
   "toc_entries": 4,
   "sections": 4,
-  "chars_total": 20349
+  "chars_total": 20349,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "mybibfile_elsevier.tex",
+   "tex_sections": 5,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-preliminaries-and-main-result",
+     "title": "Preliminaries and Main Result",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-proof-of-theorem-1-and-additional-results",
+     "title": "Proof of Theorem 1 and Additional Results",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-4-example",
+     "title": "Example",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

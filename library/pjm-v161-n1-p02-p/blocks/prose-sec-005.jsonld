@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-005",
   "kind": "prose",
   "title": "Admissible words. In this section we begin the new work needed",
   "pageStart": 12,
   "pageEnd": 15,
   "text": "../sections/sec-005-2-admissible-words-in-this-section-we-begin-the.md",
-  "derivedFrom": "library/pjm-v161-n1-p02-p/manifest",
-  "sourceDocument": "library/pjm-v161-n1-p02-p/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/pjm-v161-n1-p02-p",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/pjm-v161-n1-p02-p",
   "provenance": "ingested"
 }

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-graded-markov-trace-from-gs-filtration",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:graded-markov-trace-from-gs-filtration",
+  "kind": "proof",
+  "title": "Proof of graded markov trace from gs filtration",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-graded-markov-trace-from-gs-filtration"
+  ],
+  "text": "graded-markov-trace-from-gs-filtration-proof.md",
+  "provenance": "authored"
+}

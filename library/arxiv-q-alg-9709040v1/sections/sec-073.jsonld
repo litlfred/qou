@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-q-alg-9709040v1/sections/sec-073",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Bibiliography",
+  "pageStart": 45,
+  "pageEnd": 46,
+  "contains": [
+    "library/arxiv-q-alg-9709040v1/blocks/prose-sec-073"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-q-alg-9709040v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-q-alg-9709040v1",
+  "provenance": "ingested"
+}

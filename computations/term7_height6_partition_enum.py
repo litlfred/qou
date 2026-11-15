@@ -2,7 +2,7 @@
 
 First numerical attempt at Term 7's α_5 from the structural side.
 
-Per `conj:shell-correction-term-seven`, the shell-correction
+Per `shell-correction-term-seven`, the shell-correction
 projector is
 
   χ_5(T_w) := Σ_{λ ⊢ 3A,  ht(λ) = 6}  w_λ(q) · χ^λ(T_w)
@@ -26,6 +26,11 @@ specific atomic-knot operators — that requires the
 gb_filtration_jet_tracker output (extended in this PR for 4_1, 6_2,
 8_11) plus Hoefsmit seminormal forms.  It does provide the
 *partition basis* on which α_5 will be fit.
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir

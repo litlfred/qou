@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s0894-0347-00-00337-4/blocks/prose-sec-011",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/s0894-0347-00-00337-4/blocks/prose-sec-011",
   "kind": "prose",
-  "title": "Introduce the following kernel L:",
-  "pageStart": 9,
-  "pageEnd": 11,
-  "text": "../sections/sec-011-2-introduce-the-following-kernel-l.md",
-  "derivedFrom": "library/s0894-0347-00-00337-4/manifest",
-  "sourceDocument": "library/s0894-0347-00-00337-4/manifest",
+  "title": "Results and strategy of proof",
+  "pageStart": 19,
+  "pageEnd": 28,
+  "text": "../sections/sec-011-41-results-and-strategy-of-proof.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s0894-0347-00-00337-4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s0894-0347-00-00337-4",
   "provenance": "ingested"
 }

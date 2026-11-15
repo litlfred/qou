@@ -72,7 +72,7 @@ auto-derived at runtime.
 - **Files moved:** `topological-mass.ts`, `topological-mass.md`, `topological-mass.lean`, `topological-mass.qa.json` (via `git mv`, history preserved).
 - **Story:** the section already houses the theorem's proof (`topological-mass-proof`), conjecture-extension (`topological-mass-conjecture`), and a full family of eigenspace / holonomy / transient / dilogarithm variants. Reuniting the theorem statement with its proof and variants is the canonical home. Eliminates 8 H1 forward refs.
 - **Wall-direction:** `lifting-and-descent` sits before `braids-and-knots` in the paper manifest, so this is a move-earlier. The theorem's `uses[]` has no dependency back into `braids-and-knots`, so no new H2 forward edges emitted.
-- **Lean:** the `.lean` namespace `QOU.Torsion` stays unchanged; Lake builds the library tree under `content/quantum-observable-universe/lean/`, not chapter-dir siblings, so the file move is transparent to the Lake build.
+- **Lean:** the `.lean` namespace `QOU.Torsion` stays unchanged; Lake builds the library tree under `folio/quantum-observable-universe/lean/`, not chapter-dir siblings, so the file move is transparent to the Lake build.
 - **Watcher:** detangler-integration-watcher, branch `claude/amazing-hopper-c0MLc`, PR #884.
 
 ### P34 — `def:motivic-substrate` moved earlier (braids-and-knots → lifting-and-descent)
@@ -109,7 +109,7 @@ After Slot F batch ask (2026-05-22), all 7 risky cluster-1 moves executed with t
 
 **Actual graph delta (post-execution):** H1 685 → 620 (↓65 combined with P30/P34/P35); H2 unchanged (the predicted 11 new H2 edges did not surface as findings — likely the analyzer's H2 detector applies a filter that absorbs the consumer→producer reference pattern these moves create, or the cited deps are themselves earlier than the new home in the cross-chapter order). Either way: net positive on H1, no new H2 violations introduced. Acceptance §5 stands as a documented exception in case future analyzer changes re-surface the edges.
 
-**Lean:** namespaces preserved across all 7 file moves; Lake builds the library tree under `content/quantum-observable-universe/lean/` independently of chapter-dir siblings.
+**Lean:** namespaces preserved across all 7 file moves; Lake builds the library tree under `folio/quantum-observable-universe/lean/` independently of chapter-dir siblings.
 
 **Watcher:** detangler-integration-watcher, branch `claude/amazing-hopper-c0MLc`, PR #884.
 
@@ -431,6 +431,6 @@ hand-edited).
 
 The colocated per-block `.lean` files are **not** in the Lake source path —
 `lakefile.toml:54` roots the QOU library at
-`content/quantum-observable-universe/lean/` — so on inspection no move can
+`folio/quantum-observable-universe/lean/` — so on inspection no move can
 affect compilation. Not confirmed by a build: the orchestrator held a QOU build
 in this checkout and `lake` was not run.

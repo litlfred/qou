@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/disssubmission/blocks/prose-sec-029",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/disssubmission/blocks/prose-sec-029",
   "kind": "prose",
-  "title": "The Andr´e-Kahn quotient",
-  "pageStart": 40,
-  "pageEnd": 41,
-  "text": "../sections/sec-029-24-the-andre-kahn-quotient.md",
-  "derivedFrom": "library/disssubmission/manifest",
-  "sourceDocument": "library/disssubmission/manifest",
+  "title": "Singularities of type Ak",
+  "pageStart": 96,
+  "pageEnd": 101,
+  "text": "../sections/sec-029-46-singularities-of-type-ak.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/disssubmission",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/disssubmission",
   "provenance": "ingested"
 }

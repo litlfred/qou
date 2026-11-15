@@ -5,7 +5,7 @@
 # answer the owner question (2026-06-11): "what survives in the mass tower
 # End(A_n) at q = 1?"
 #
-# Ref: content/quantum-observable-universe/models-of-qous/yang-mills-mass-gap.md
+# Ref: folio/quantum-observable-universe/models-of-qous/yang-mills-mass-gap.md
 #      (categorical Yang–Mills mass-gap conjecture; lower bound
 #       Δ_q ≥ ½(q−q⁻¹)(q−1)², stated to vanish on μ₂ = {1,−1} ⊂ 𝔾_m)
 """Direct q → 1 evaluation of the mass-tower spectrum quantities.

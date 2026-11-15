@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-atom-knot-exists",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:atom-knot-exists",
+  "kind": "proposition",
+  "title": "Existence of the atom-knot for any (Z, N)",
+  "tags": [
+    "existence",
+    "atom-knot",
+    "borromean"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.AtomKnot.exists",
+  "text": "atom-knot-exists.md",
+  "leanSource": "atom-knot-exists.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-explicit-central-idempotent",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:explicit-central-idempotent",
+  "kind": "proposition",
+  "title": "Explicit central primitive idempotents $e_\\lambda$ via Murphy elements",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-jucys-murphy-central-elements-qou",
+    "papers/quantum-observable-universe/blocks/prop-hecke-baer-star-generic",
+    "papers/quantum-observable-universe/blocks/conj-explicit-central-idempotent"
+  ],
+  "tags": [
+    "central-idempotent",
+    "murphy-elements",
+    "lagrange-interpolation",
+    "hecke-algebra",
+    "explicit-formula",
+    "computability"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.ExplicitCentralIdempotent.explicit_central_idempotent_via_murphy",
+  "text": "explicit-central-idempotent.md",
+  "leanSource": "explicit-central-idempotent.lean",
+  "provenance": "authored"
+}

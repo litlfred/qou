@@ -297,7 +297,7 @@ def main() -> int:
                 "an error bar 32x the discrepancy."),
             "sites_to_rescope": [
                 "docs/coordination/ck-dk-canonical-registry.md (the surviving-fact line)",
-                "content/quantum-observable-universe/mass-theory/"
+                "folio/quantum-observable-universe/mass-theory/"
                 "rem-qstar-decay-sector-q0.md (same phrasing)",
             ],
         },

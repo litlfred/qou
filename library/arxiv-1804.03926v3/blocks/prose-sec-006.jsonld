@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1804.03926v3/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1804.03926v3/blocks/prose-sec-006",
   "kind": "prose",
-  "title": "Concentration inequalities",
-  "pageStart": 21,
-  "pageEnd": 28,
-  "text": "../sections/sec-006-4-concentration-inequalities.md",
-  "derivedFrom": "library/arxiv-1804.03926v3/manifest",
-  "sourceDocument": "library/arxiv-1804.03926v3/manifest",
+  "title": "Isoperimetric constant",
+  "pageStart": 20,
+  "pageEnd": 21,
+  "text": "../sections/sec-006-34-isoperimetric-constant.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1804.03926v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1804.03926v3",
   "provenance": "ingested"
 }

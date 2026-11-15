@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-skein-polynomial-transfer-matrix",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:skein-polynomial-transfer-matrix",
+  "kind": "proposition",
+  "title": "The nuclear Skein polynomial as a transfer matrix product in $q$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-markov-trace-factorization"
+  ],
+  "tags": [
+    "skein-polynomial",
+    "transfer-matrix",
+    "polynomial",
+    "jones-polynomial",
+    "hecke-algebra",
+    "nuclear",
+    "q-variable",
+    "factored-form"
+  ],
+  "leanRef": "qou:QOU.Archimedean.skein_polynomial_transfer_matrix",
+  "text": "skein-polynomial-transfer-matrix.md",
+  "leanSource": "skein-polynomial-transfer-matrix.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-shared-denominator-cusp-holonomy",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:shared-denominator-cusp-holonomy",
+  "kind": "conjecture",
+  "title": "Shared-denominator cusp holonomy: roots of $(x; q)_n$ enforce Thurston completeness",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-algebraic-geometric-dilog-equivalence"
+  ],
+  "cites": [
+    "references/thurston1978",
+    "references/neumann-zagier1985",
+    "references/kashaev1997",
+    "references/murakami-murakami2001"
+  ],
+  "tags": [
+    "q-pochhammer",
+    "thurston",
+    "cusp",
+    "holonomy",
+    "gluing-equations",
+    "newton-raphson",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.QPochhammer.shared_denominator_cusp_holonomy",
+  "text": "shared-denominator-cusp-holonomy.md",
+  "leanSource": "shared-denominator-cusp-holonomy.lean",
+  "provenance": "authored"
+}

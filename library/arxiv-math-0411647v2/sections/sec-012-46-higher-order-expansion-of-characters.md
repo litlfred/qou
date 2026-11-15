@@ -8,20 +8,14 @@ pages: 42-42
 source_pdf: 0411647v2.pdf
 source_sha256: d79f96b416cb28da
 doc_brief: "Asymptotics of characters of symmetric groups, genus expansion and free probability — The convolution of indicators of two conjugacy classes on the symmetric group Sq is usually a complicated linear"
+text_source: latex
+latex_prose_ratio: 0.825
+latex_coverage_ratio: 1.0
 ---
-stacles to repeat the reasoning from Section 4.5 for partiti ons with genus 2
-and in this way obtain higher order asymptotic expansions.
-The ﬁrst step is to enumerate all possible outcomes of the sim pliﬁcation
-algorithm. Theorem 4.10 shows that such outcome is a pair partition with at
-most 9 lines. The patience of the most human beings is not sufﬁcient enu-
-merate all such partitions, nevertheless the use of computer allows us to ﬁnd
-them all [ ´Sni04]. After removing cyclic rotations and mirror images t here
-are 61 such partitions—which is still an accessible number. By rev erting all
-three steps of the simpliﬁcation algorithm we could therefo re ﬁnd general
-patterns of evercrossing partitions with genus 2 and therefore express RJM
-n
-in terms of elements Σ .
-However, the above method seems to be far more complicated th an the
-result of Goulden and Rattan [GR05] who found an explicit formula for the
-general coefﬁcients of Kerov polynomials.
-5. P ROOFS OF TECHNICAL RESULTS
+In principle, there are no obstacles to repeat the reasoning from Section [\[sec:secondorderexp\]](#sec:secondorderexp){reference-type="ref" reference="sec:secondorderexp"} for partitions with genus $2$ and in this way obtain higher order asymptotic expansions.
+
+The first step is to enumerate all possible outcomes of the simplification algorithm. Theorem [\[theo:gorneszacowanie\]](#theo:gorneszacowanie){reference-type="ref" reference="theo:gorneszacowanie"} shows that such outcome is a pair partition with at most $9$ lines. The patience of the most human beings is not sufficient enumerate all such partitions, nevertheless the use of computer allows us to find them all [@Sniady2004table]. After removing cyclic rotations and mirror images there are $61$ such partitions---which is still an accessible number. By reverting all three steps of the simplification algorithm we could therefore find general patterns of evercrossing partitions with genus $2$ and therefore express $R^{\mathop{\mathrm{JM}}}_n$ in terms of elements $\Sigma$.
+
+However, the above method seems to be far more complicated than the result of Goulden and Rattan [@GouldenRattan05] who found an explicit formula for the general coefficients of Kerov polynomials.
+
+# Proofs of technical results {#sec:proofs}

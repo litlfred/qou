@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2604.16077v1/blocks/prose-sec-013",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2604.16077v1/blocks/prose-sec-013",
   "kind": "prose",
-  "title": "ST ´EPHANE BASEILHAC 1, F ATHI BEN ARIBI2",
-  "pageStart": 10,
-  "pageEnd": 10,
-  "text": "../sections/sec-013-10-st-ephane-baseilhac-1-f-athi-ben-aribi2.md",
-  "derivedFrom": "library/arxiv-2604.16077v1/manifest",
-  "sourceDocument": "library/arxiv-2604.16077v1/manifest",
+  "title": "Integral representation",
+  "pageStart": 33,
+  "pageEnd": 34,
+  "text": "../sections/sec-013-35-integral-representation.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2604.16077v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2604.16077v1",
   "provenance": "ingested"
 }

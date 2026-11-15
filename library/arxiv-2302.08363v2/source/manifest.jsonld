@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2302.08363v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2302.08363v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2302.08363v2",
+  "provenance": "ingested",
+  "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by-sa/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2302.08363&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2302.08363v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2302.08363v2",
+    "content_type": "application/gzip",
+    "sha256": "2aab44e245143fe3da3923b050b5604269b4426734a4f3d41eea070e639fc824",
+    "bytes": 557606,
+    "fetched": "2026-10-10T15:18:52+00:00",
+    "files": [
+      {
+        "path": "source/files/jheppub.sty",
+        "role": "sty",
+        "sha256": "6b65fc42f09fd3742c9260a8de6edb8102163bcdf6d1488038dbd81f768807f2",
+        "bytes": 11812
+      },
+      {
+        "path": "source/files/structurev2-1TR.bbl",
+        "role": "bbl",
+        "sha256": "1717ea52619dcb9a105531c8f0ede89a37cc51733a74d00f1c2298be4d2cf488",
+        "bytes": 13222
+      },
+      {
+        "path": "source/files/structurev2-1TR.tex",
+        "role": "tex",
+        "sha256": "7d72088fb97a4cc596dae64984030ef10189c357601576356ac7bb1fca3176d7",
+        "bytes": 110182
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

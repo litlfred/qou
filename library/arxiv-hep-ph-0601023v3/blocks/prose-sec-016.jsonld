@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-ph-0601023v3/blocks/prose-sec-016",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-ph-0601023v3/blocks/prose-sec-016",
   "kind": "prose",
-  "title": "R-parity violation and the decay of the proton",
-  "pageStart": 27,
-  "pageEnd": 28,
-  "text": "../sections/sec-016-41-r-parity-violation-and-the-decay-of-the-proto.md",
-  "derivedFrom": "library/arxiv-hep-ph-0601023v3/manifest",
-  "sourceDocument": "library/arxiv-hep-ph-0601023v3/manifest",
+  "title": "Proton Stability in Calabi-Yau Models",
+  "pageStart": 103,
+  "pageEnd": 111,
+  "text": "../sections/sec-016-71-proton-stability-in-calabi-yau-models.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-0601023v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-0601023v3",
   "provenance": "ingested"
 }

@@ -1,0 +1,96 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "garoufalidis-hodgson-rubinstein-segerman2015",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 239,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1303.5278v1/1303.5278v1.pdf"
+        },
+        "id": "garoufalidis-hodgson-rubinstein-segerman2015",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "JOIN CONFIRMED from front matter: the document self-identifies as arXiv:1303.5278v1, and its four-author byline and title match the registered entry. CITATION STATE: a true bib orphan \u2014 zero sites in content/ and zero in computations/. RELEVANCE: it promotes the 3D index from a triangulation-dependent collection of q-series to a topological invariant of oriented cusped hyperbolic 3-manifolds, by showing a triangulation admits an index structure iff it is 1-efficient and that hyperbolic manifolds carry a canonical family of such triangulations related by index-preserving 2-3 and 0-2 moves. QOU uses the 3d index directly: lean/QOU/QBeta/GZWeightSelection.lean:20-24 asserts the A_omega Stokes constant is the integer DT/BPS 3d-index count [q^0] Ind^rot_{4_1} = 3, citing garoufalidis-gu-marino2021 for the count but with no source for the index's well-definedness. This document is that missing source. Held at supporting because the QOU argument uses a specific coefficient rather than this invariance theorem, but the invariance is what licenses calling it 'the' index of 4_1.",
+          "keyResults": [
+            {
+              "locator": "\u00a71.2-1.3 (index structures and topological invariance)",
+              "statement": "An ideal triangulation admits an index structure iff it is 1-efficient; a hyperbolic cusped manifold has a canonical set of 1-efficient ideal triangulations related by 2-3 and 0-2 moves that preserve the 3D index, so the index is a topological invariant of the manifold.",
+              "useForFolio": "Licenses the phrase 'the 3d index of 4_1' used when reading off [q^0] Ind^rot = 3 in the Stokes-constant argument, which currently presumes triangulation-independence without a source.",
+              "targets": [
+                "folio/quantum-observable-universe/lean/QOU/QBeta/GZWeightSelection.lean"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "GZWeightSelection.lean reads a specific 3d-index coefficient off 4_1 as if the index were canonically attached to the manifold; that well-definedness is this document's theorem and is currently uncited anywhere in the corpus.",
+              "target": "folio/quantum-observable-universe/lean/QOU/QBeta/GZWeightSelection.lean",
+              "bean": "qou-p2o4"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "92e417c93f8b"
+        }
+      }
+    },
+    {
+      "position": 405,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/topologicalinvariance3dindex/topological.invariance.3Dindex.pdf"
+        },
+        "id": "garoufalidis-hodgson-rubinstein-segerman2015",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "JOIN CONFIRMED from the document's own title page: the four-author paper on 1-efficient triangulations and the index of a cusped hyperbolic 3-manifold, matching the seeded key. TWO SECONDARY FINDINGS. (1) DUPLICATE UPLOAD: the same paper is already in the tree as library/arxiv-1303.5278v1/1303.5278v1.pdf, which is the file the reference entry's own note names as its provenance; this is a second copy under a descriptive filename (the two shas differ, the paper is the same). (2) BIB ORPHAN: a repo-wide grep for the key returns references.ts, the ledger, and exactly one narrative mention in docs/audits/2026-07-18-g3-stokes-keystone-evidence-base.md - there is NO .md \\cite, NO .ts cites[] and NO Lean -- Ref: anywhere under content/. So the entry is registered and unused. On merits the paper is adjacent to work the corpus does do: it promotes the 3d index of an ideal triangulation to a topological invariant of the cusped hyperbolic 3-manifold, via the equivalence 'T admits an index structure iff T is 1-efficient' plus invariance under 2-3 and 0-2 moves, and the corpus computes 3d indices in computations/probes/borromean_3d_index.py and borromean_3d_index_graded.py. But those probes never invoke triangulation-independence, so no block currently consumes a result from it. Tangential against the corpus as it stands, scope-(a).",
+          "keyResults": [
+            {
+              "locator": "Main theorem (a)+(b)",
+              "statement": "An ideal triangulation T admits an index structure iff T is 1-efficient; a hyperbolic M has a canonical set of 1-efficient triangulations related by 2-3 and 0-2 moves preserving the 3d index, so the index is a topological invariant of M.",
+              "useForFolio": "Would license the corpus's Borromean 3d-index probes to speak of 'the 3d index of the manifold' rather than 'of this triangulation' - the step those probes currently leave implicit.",
+              "targets": [
+                "computations/probes/borromean_3d_index.py"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "The 3d-index probes compute an index from a specific triangulation and report it as a manifold invariant without citing the triangulation-independence theorem that licenses that. This registered-but-uncited entry is exactly the missing source.",
+              "target": "computations/probes/borromean_3d_index.py",
+              "bean": "qou-dyby"
+            },
+            {
+              "action": "no-action",
+              "rationale": "On the duplicate upload: both copies are the same paper and library/arxiv-1303.5278v1/1303.5278v1.pdf is the one the reference entry names, so this row simply records the duplication rather than proposing a deletion (branch/file removal is not this skill's business).",
+              "target": "library/topologicalinvariance3dindex/topological.invariance.3Dindex.pdf"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "22953b4eee66"
+        }
+      }
+    }
+  ]
+}

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1907.03683v4/blocks/prose-sec-013",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1907.03683v4/blocks/prose-sec-013",
   "kind": "prose",
-  "title": "Christoﬀel deformations of the Charlier ensemble and main result. We now",
-  "pageStart": 12,
-  "pageEnd": 13,
-  "text": "../sections/sec-013-32-christoﬀel-deformations-of-the-charlier-ensem.md",
-  "derivedFrom": "library/arxiv-1907.03683v4/manifest",
-  "sourceDocument": "library/arxiv-1907.03683v4/manifest",
+  "title": "Palm measures of the discrete Bessel point process",
+  "pageStart": 17,
+  "pageEnd": 18,
+  "text": "../sections/sec-013-34-palm-measures-of-the-discrete-bessel-point-pr.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1907.03683v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1907.03683v4",
   "provenance": "ingested"
 }

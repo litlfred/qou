@@ -33,7 +33,7 @@ block's `.ts` and `.md` each count -- and FIVE of those blocks are in
     the unit cannot drift silently a third time.
 
 TWO FINDINGS THAT CHANGE THE DECISION (checks 5 and 6, added 2026-09-05)
-    (5) The A+Z object HAS been built. `computations/_deprecated/
+    (5) The A+Z object HAS been built. `fsh-guts/deprecated/computations/
         atom_braid_electron.py` implements `H_{A+Z}(q)` with all six pair
         types including the three electronic ones (pe / ne / ee), and a
         committed witness references it. The first draft of the audit gave
@@ -127,7 +127,7 @@ def main() -> int:
                    "def:atomic-braid assembles Z of them"))
 
     # ---- 3. the definition's own table is 3/6 electronic ------------------
-    tbl = (REPO / "content/quantum-observable-universe/knots-particles-confinement"
+    tbl = (REPO / "folio/quantum-observable-universe/knots-particles-confinement"
            / "atomic-braid-table1-data.md").read_text()
     e_rows = [r for r in ("mathfrak{p}e", "mathfrak{n}e", "$ee$") if r in tbl]
     print(f"[3] def:atomic-braid Table 1 electronic pair rows present: {e_rows}")
@@ -141,7 +141,7 @@ def main() -> int:
     #        This check reports both; the earlier draft reported 24/7 as
     #        "blocks", which are the FILE figures.
     cite_files = sorted(
-        p for p in (REPO / "content/quantum-observable-universe").rglob("*")
+        p for p in (REPO / "folio/quantum-observable-universe").rglob("*")
         if p.suffix in (".md", ".ts") and "def:atomic-braid" in p.read_text(errors="ignore")
     )
     cite_blocks = sorted({p.with_suffix("") for p in cite_files})
@@ -168,10 +168,10 @@ def main() -> int:
 
     # ---- 5. the A+Z object WAS built -- the "never built" claim is false ---
     #        This retracts the first draft's evidence for option (b).
-    az = REPO / "computations/_deprecated/atom_braid_electron.py"
+    az = REPO / "fsh-guts/deprecated/computations/atom_braid_electron.py"
     az_src = az.read_text(errors="ignore") if az.exists() else ""
     az_rows = [r for r in ("pe ", "ne ", "ee ") if r in az_src]
-    print(f"[5] computations/_deprecated/atom_braid_electron.py exists: {az.exists()}")
+    print(f"[5] fsh-guts/deprecated/computations/atom_braid_electron.py exists: {az.exists()}")
     if az.exists():
         print(f"    docstring names H_{{A+Z}}(q): "
               f"{'H_{A+Z}(q)' in az_src}; electronic pair rows present: {az_rows}")
@@ -186,7 +186,7 @@ def main() -> int:
         for p in (REPO / "computations").rglob("*.py")
         # exclude THIS file: it carries the pattern in order to search for it,
         # so a naive scan reports itself as a third-convention producer.
-        if "_deprecated" not in str(p)
+        if ("_deprecated" not in str(p) and "fsh-guts" not in str(p))
         and p.resolve() != pathlib.Path(__file__).resolve()
         and re.search(r"3\s*\*?\s*A\s*\+\s*Z", p.read_text(errors="ignore"))
     )

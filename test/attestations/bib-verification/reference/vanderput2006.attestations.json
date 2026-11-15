@@ -1,0 +1,67 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "vanderput2006",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 452,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0612592v1/0612592v1.pdf"
+        },
+        "id": "vanderput2006",
+        "status": "uncited",
+        "note": "Identified from the title page (arXiv:math/0612592v1, math.AC, single author, 16 pp; the ingestion found no section breaks, so the single library section is the whole document). No ref() entry existed; vanderput2006 created 2026-09-07 by the triage. No citation site yet; one bean queued.",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "A survey (proofs deferred to [P-S] and [P-R] = vanderput-reversat2007, already registered) that states in English two results the corpus already uses under other names. (i) Thm 3.4/3.5: E(cz^{t/n}) is pure, irreducible, of slope t/n, every irreducible module is one of these, and the indecomposable pure modules are E(cz^{t/n}) tensor U_m with (t/n, c^n, m) unique \u2014 the E(r,d,b) irreducibility that BindingScalarKernelParityExclusion.lean, binding-genfun-qdifference.md and qdifference-kernel-prolongation-symbol.md attribute to 'the van der Put-Reversat structure theorem'. FINDING: the Lean file points that theorem at library/crmath-2011-349-19-20-1037-0/, which is Bugeaud 2011 (bugeaud2011), not van der Put-Reversat (library/afst-2007-6-16-3-665-0/); no bean tracked the mis-pointer before this triage. (ii) \u00a75: the difference Galois groups case by case \u2014 (1) regular singular Gal(M) = Hom(L, C*) times G_a when A is not semisimple, (5) 1 -> U_xi -> Gal(M) -> Gal(gr M) -> 1 with U_xi unipotent and the sequence a semi-direct product; Remarks 5.1: Gal(M)^o is solvable, and the computation is algorithmic given the global lattice. That is the torus-extended-by-unipotent shape QAlienBridgeEquation.lean calls 'the Levi decomposition of the local q-difference Galois group' with only RSZ as its source. Also read: Thm 3.2 (slope filtration), Thm 3.8 (split modules -> vector bundles on E_q), Thm 4.1 (moduli), \u00a76 and Thm 6.3 (universal Picard-Vessiot ring, generators f_{m,c,mu} algebraically independent). Not core: nothing in it is used that vanderput-reversat2007 does not also carry; its value is the English statement and the correct pointer. 'van der Put' greps: 5 content files (references.ts, the two .md blocks, the Lean file, the ledger), 1 audit (branch-selection-birkhoff-connection-matrix, which cites the AFST paper correctly).",
+          "keyResults": [
+            {
+              "locator": "Thm 3.4, Thm 3.5 (\u00a73)",
+              "statement": "E(cz^{t/n}) is pure, irreducible, of slope t/n; every irreducible module over C({z}) is of this form; the indecomposable pure modules are E(cz^{t/n}) tensor U_m with (t/n, c^n, m) unique.",
+              "useForFolio": "The E(r,d,b) irreducibility the parity-exclusion argument corroborates itself with, stated in English; fixes the mis-pointer at library/crmath-2011 (Bugeaud) in BindingScalarKernelParityExclusion.lean.",
+              "targets": [
+                "QOU.Mass.BindingScalarKernelParityExclusion",
+                "prop:binding-genfun-qdifference",
+                "def:qdifference-kernel-prolongation-symbol"
+              ]
+            },
+            {
+              "locator": "\u00a75 (1) and (5); Remarks 5.1",
+              "statement": "Regular singular: Gal(M) = Hom(L, C*) (times G_a if A is not semisimple). General: 1 -> U_xi -> Gal(M) -> Gal(gr M) -> 1, U_xi unipotent, a semi-direct product; Gal(M)^o is solvable.",
+              "useForFolio": "The literature statement of the Levi-decomposition shape (torus of characters extended by a unipotent part) that QAlienBridgeEquation.lean asserts in its docstring.",
+              "targets": [
+                "QOU.Mathlib.QAlienBridgeEquation"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry existed; created as vanderput2006 in this triage.",
+              "target": "folio/schema/references.ts"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "Fix the crmath-2011 (Bugeaud) pointer in the Lean file to vanderput-reversat2007 and cite Thm 3.4/3.5 here as the English locator; mirror in the two .md blocks; add \u00a75 (1),(5) at QAlienBridgeEquation.lean.",
+              "target": "folio/quantum-observable-universe/lean/QOU/Mass/BindingScalarKernelParityExclusion.lean",
+              "bean": "qou-86p5"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-09-07T08:38:46Z",
+          "source_sha": "a5d29fa15a0b"
+        }
+      }
+    }
+  ]
+}

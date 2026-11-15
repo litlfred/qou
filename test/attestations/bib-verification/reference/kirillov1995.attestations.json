@@ -1,0 +1,73 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "kirillov1995",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 334,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-hep-th-9408113v2/9408113v2.pdf"
+        },
+        "id": "kirillov1995",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "NOT AN ORPHAN -- the slice was seeded as orphan and that is wrong. This is the preprint of an entry that already exists in references.ts under the id kirillov1995 (same title, same author, published version in a 1995 supplement), and it is already cited four times by Lean -- Ref: markers in QOU/BraidKnot/Li2qUniqueness.lean. Checking those citations against the document surfaces a concrete defect. The paper's sectioning is 1.1-1.6 then 2.1 'Dilogarithm and partitions', 2.2 characters of affine Kac--Moody algebras, 2.3 dilogarithm identities and algebraic K-theory, 2.4 connection with crystal basis, 2.5 quantum dilogarithm; its numbered results are Propositions A-H plus Proposition 1 and Proposition 2. There is NO Proposition 2.1 and NO Proposition 2.3, yet the Lean file cites '[kirillov1995] Proposition 2.1' for the Briggs--Klein integral identity and '[kirillov1995] Proposition 2.3' for antiderivative uniqueness from the fundamental theorem of calculus. Separately, the Lean file's definition of the truncated symmetric q-dilogarithm sum z^n/(n [n]_q) carries '-- Ref: [kirillov1995] Sec. 2.1', but Sec. 2.1 is about partitions; the q-dilogarithm is Definition 9 in Sec. 2.5, and it is the ASYMMETRIC form sum x^n/(n(1-q^n)), a different normalisation from the corpus's symmetric [n]_q version. Three of the four citations therefore point at content that is not where they say it is, and one of them attributes a standard calculus fact to a named proposition. Beyond the defect, two sections are directly on-target and entirely unexploited: Sec. 2.3 relates dilogarithm identities to torsion in K_3(R), which is exactly the subject of conj:borromean-bloch-group-element and prop:borel-partial-resolution, and Sec. 2.5 Proposition 2 with Corollary 11 gives the functional equations and the five-term relation for the quantum dilogarithm with ab = qba -- literally the identity displayed in def:quantum-bloch-group, a block whose .ts carries no cites field at all.",
+          "keyResults": [
+            {
+              "locator": "Sec. 2.5, Definition 9, Proposition 2 and Corollary 11",
+              "statement": "The quantum dilogarithm Li_2(x;q) = sum x^n/(n(1-q^n)) satisfies functional equations under ab = qba and a five-term relation in the form H(Li_2(a;q), Li_2(b;q)) = H(Li_2(b;q), H(Li_2(-ba;q), Li_2(a;q))).",
+              "useForFolio": "The direct source for the pentagon/five-term identity that def:quantum-bloch-group displays with no citation, and the correct locator for the corpus's q-dilogarithm reference (currently pointed at Sec. 2.1, which is about partitions).",
+              "targets": [
+                "def:quantum-bloch-group",
+                "qou:QOU.BraidKnot.Li2qUniqueness"
+              ]
+            },
+            {
+              "locator": "Sec. 2.3, 'Dilogarithm identities and algebraic K-theory'",
+              "statement": "Dilogarithm identities of the form sum L(x_i) = c pi^2/6 with algebraic x_i and rational c are related to torsion in K_3 of the relevant ring, and the paper argues that essentially all such identities are consequences of the five-term relation alone.",
+              "useForFolio": "A structural prune in the sense of the formalize-first discipline: a candidate closed form built from Rogers-dilogarithm values at algebraic points must live in this classified family, which narrows the search space before any wide numerical scan is run.",
+              "targets": [
+                "conj:borromean-bloch-group-element",
+                "prop:borel-partial-resolution"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "def:quantum-bloch-group displays the Phi_q pentagon identity and its .ts has no cites field whatsoever, while Sec. 2.5 Prop. 2 / Cor. 11 of an already-registered reference is the source for exactly that identity.",
+              "target": "def:quantum-bloch-group",
+              "bean": "qou-tcgv"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "Sec. 2.3 relates dilogarithm identities to K_3 torsion, which is the subject of the Borromean Bloch-group conjecture and of the Borel-rank proposition; neither cites this already-registered reference.",
+              "target": "conj:borromean-bloch-group-element",
+              "bean": "qou-ir19"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Three of the four Lean -- Ref: locators in Li2qUniqueness.lean point at content that is not at the cited place (Propositions 2.1 and 2.3 do not exist under this paper's numbering; the q-dilogarithm is Definition 9 of Sec. 2.5, not Sec. 2.1, and in the asymmetric normalisation). The locators need correcting and the symmetric-versus-asymmetric normalisation difference needs stating. Deliberately NOT filed as aid-proof: the Sec. 2.3 classification looks like it could prune candidate dilogarithm closed forms, but I have not checked that the corpus's candidates satisfy its algebraicity and rationality hypotheses, so no claim is made that any gap closes.",
+              "target": "qou:QOU.BraidKnot.Li2qUniqueness",
+              "bean": "qou-6say"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "dadd96e1155e"
+        }
+      }
+    }
+  ]
+}

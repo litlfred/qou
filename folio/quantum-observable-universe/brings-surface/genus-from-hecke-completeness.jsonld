@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-genus-from-hecke-completeness",
+  "@type": [
+    "folio-assistant-core:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:genus-from-hecke-completeness",
+  "kind": "lemma",
+  "title": "Genus from Hecke completeness for torus knots",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-cohomological-embedding"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-genus-from-hecke-completeness"
+  ],
+  "tags": [
+    "torus-knot",
+    "hecke-algebra",
+    "completeness",
+    "genus"
+  ],
+  "leanRef": "qou:QOU.Archimedean.genus_from_hecke_completeness",
+  "text": "genus-from-hecke-completeness.md",
+  "provenance": "authored"
+}

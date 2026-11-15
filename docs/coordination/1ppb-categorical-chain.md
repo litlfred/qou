@@ -113,8 +113,8 @@ This **constrains** PR #781's Kashaev mass-table formula (ρ_F · Vol_hyp) — s
 Tensor-product baseline $Z \cdot \mathfrak{m}(\mathcal{B}_p) + N \cdot \mathfrak{m}(\mathcal{B}_n)$
 **in independent $H_3$ algebras** is structurally wrong. The categorically-correct composite is
 $$\mathcal{B}_K = \underbrace{\mathcal{B}_p^{(1)} \cdots \mathcal{B}_n^{(N)}}_{T_{\text{constit}}^K \text{ on disjoint strand blocks}} \cdot \bowtie_K \;\in\; H_{3(Z+N)}(q)$$
-per [`def:ew-interface-knot`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/ew-interface-knot.md)
-and [`prop:atomic-mass-gb-nf`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/atomic-mass-gb-nf.md).
+per [`def:ew-interface-knot`](https://github.com/litlfred/qou/blob/main/folio/quantum-observable-universe/braids-and-knots/ew-interface-knot.md)
+and [`prop:atomic-mass-gb-nf`](https://github.com/litlfred/qou/blob/main/folio/quantum-observable-universe/braids-and-knots/atomic-mass-gb-nf.md).
 Deuteron has $\bowtie_D = \sigma_3$ (the `+1` in $u_{\text{shift}} = 18Z + 21N + 1$). T, ³He, ⁴He each have their own $\bowtie_K$ characterising "what is involved in binding at that confinement level".
 
 **Resolution path (in flight):** Recompute $B(K) = \mathfrak{m}(\mathcal{B}_K) - \mathfrak{m}(T_{\text{constit}}^K)$ with both braids in the **same** Hecke algebra. Mass-endomorphism conditions (Markov-invariance term-by-term, $|S| \le 2$ R-side bound, symmetric $\mathrm{Li}_2^q$ form, spectral-sequence collapse, $B(p) = B(n) = 0$) satisfied by construction.
@@ -154,7 +154,7 @@ Deuteron has $\bowtie_D = \sigma_3$ (the `+1` in $u_{\text{shift}} = 18Z + 21N +
 
 **Structural finding (verified empirically at A=2,3 exact to 4 digits):** per-generator V̂ values at H_{3A} are A-INDEPENDENT for the disjoint Hecke product. Block factors v_p = 0.7084, v_n = 0.6005, |V^pp/nn_inter| = 0.1045, |V^pn_inter| = 0. Scales B(K) prediction to ALL atoms in microseconds — no H_{3A} character sum beyond H_6 / H_9 calibration. Conjecture content block + Lean class committed (`conj:block-multiplicativity-v-free`).
 
-**Open structural target (heavy-atom variance):** T3 pair-blowup grows as A² (number of interface-involving pairs ≈ 5A(A-1)/2). AME binding grows linearly in A. The mismatch may be resolved by switching from the mass-endomorphism blow-up tower (T1+T2+T3) to the **depth-stratified α_k · Φ_k formulation** for k ≥ 4 — where α_{k≥4} = m_e · 8G provides built-in damping at high curvature rank ([`prop:plancherel-term-7-formulation`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.md)). Cross-reference to PR #814's involution/Leibniz analysis of c_5's 1/2 fingerprint — same averaged-crossing mechanism plausibly drives the α_{k≥4} damping universal at depth k ≥ 4.
+**Open structural target (heavy-atom variance):** T3 pair-blowup grows as A² (number of interface-involving pairs ≈ 5A(A-1)/2). AME binding grows linearly in A. The mismatch may be resolved by switching from the mass-endomorphism blow-up tower (T1+T2+T3) to the **depth-stratified α_k · Φ_k formulation** for k ≥ 4 — where α_{k≥4} = m_e · 8G provides built-in damping at high curvature rank ([`prop:plancherel-term-7-formulation`](https://github.com/litlfred/qou/blob/main/folio/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.md)). Cross-reference to PR #814's involution/Leibniz analysis of c_5's 1/2 fingerprint — same averaged-crossing mechanism plausibly drives the α_{k≥4} damping universal at depth k ≥ 4.
 ## 2026-05-19 (evening) — Deprecated-but-valid catalog re-verification (branch `claude/update-deprecated-scripts-catalog-jvbyM`)
 
 | Date | Phase | Status | Cherry-pick |
@@ -163,7 +163,7 @@ Deuteron has $\bowtie_D = \sigma_3$ (the `+1` in $u_{\text{shift}} = 18Z + 21N +
 
 **Re-survey findings load-bearing for the 1 ppb / Δ_λ thread:**
 
-1. **No deprecated-script revivals** since #787 merged (`git log origin/main -- computations/_deprecated/` returns zero). The systemic paper↔compute wiring gap persists.
+1. **No deprecated-script revivals** since #787 merged (`git log origin/main -- fsh-guts/deprecated/computations/` returns zero). The systemic paper↔compute wiring gap persists.
 2. **4 propositions wired to *alternate* scripts**, not the catalog's deprecated ones — supersession-disposition still owed:
    - `prop:mass-endomorphism-tower` → `habiro_exact_mass_endomorphism.py` (337 LoC); 4 deprecated towers orphaned.
    - `prop:atomic-mass-gb-nf` → `canonical_mass_table_extended.py` (507 LoC); `anti_self_reciprocity_universality_probe.py` orphaned.
@@ -325,8 +325,8 @@ Neither candidate substitution recovers ~1836. Confirms `mass-endomorphism-tower
 - `_phi_q_util.py` (42 active callers in `computations/`) stays in the codebase — it is the legacy convention that actually produces 1.84% m_p/m_e, the best result currently available.
 
 **Where to look next** for the structural derivation:
-1. [`mass-endomorphism-tower.md`](../../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md) SUPERSEDED banner — text of the structural revision
-2. [`li2q-phiq-bar-symmetrization.md`](../../content/quantum-observable-universe/braids-and-knots/li2q-phiq-bar-symmetrization.md) — bar-symmetrization claim (Li_2^q = bar(Phi_q) under q ↔ q⁻¹); verifies why naive Li_2^q(z) does not reproduce Phi_q(z) numerically
+1. [`mass-endomorphism-tower.md`](../../folio/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md) SUPERSEDED banner — text of the structural revision
+2. [`li2q-phiq-bar-symmetrization.md`](../../folio/quantum-observable-universe/braids-and-knots/li2q-phiq-bar-symmetrization.md) — bar-symmetrization claim (Li_2^q = bar(Phi_q) under q ↔ q⁻¹); verifies why naive Li_2^q(z) does not reproduce Phi_q(z) numerically
 3. Per-isotope Borromean-tower extension (per `docs/precision-goals.md` Subgoal-1 closure path) — may be the right formal target for the operator-valued $A^\lambda_{\mu,\nu}(I)$
 
 **Surfacing on siblings:**
@@ -449,7 +449,7 @@ at the **full tr_M level**. This complements Phase 5b's $\alpha \approx [3]_q^2 
 | #806 (`lean-substantive-pass-2026-05-19`) | **closed unmerged** | dropped from scope. |
 | main | advanced by #816 + #833 (FSC/G + averaging-resonance) | no conflict — disjoint compute areas. |
 
-§3b-cond placeholder added in this branch: `HeckeSymmetricChannelCoshH` class (5e.3 stub) in [`alpha-cosh-h-z-step-correction.lean`](https://github.com/litlfred/qou/blob/claude/post-819-ledger-update/content/quantum-observable-universe/braids-and-knots/alpha-cosh-h-z-step-correction.lean) — provable theorem `cosh_h_eigenvalue_equals_alpha_factor` derives from the class with no sorry. The class instance itself is the conjectural input awaiting Brundan–Kleshchev FR on the symmetric channel.
+§3b-cond placeholder added in this branch: `HeckeSymmetricChannelCoshH` class (5e.3 stub) in [`alpha-cosh-h-z-step-correction.lean`](https://github.com/litlfred/qou/blob/claude/post-819-ledger-update/folio/quantum-observable-universe/braids-and-knots/alpha-cosh-h-z-step-correction.lean) — provable theorem `cosh_h_eigenvalue_equals_alpha_factor` derives from the class with no sorry. The class instance itself is the conjectural input awaiting Brundan–Kleshchev FR on the symmetric channel.
 
 CI green on #831 (`validate` ✓). One Copilot review comment on the ledger accepted in `02b3bcf75`.
 
@@ -457,9 +457,9 @@ Next concrete task on the queue: **5j** — promote tr_M Z-step factor = z·(2q 
 
 ## 2026-05-20 (late) — Phase 5j: constit-factor conjecture promoted to a content block ([PR #831](https://github.com/litlfred/qou/pull/831))
 
-New block: [`conj:constit-factor-2q-minus-1`](https://github.com/litlfred/qou/blob/claude/post-819-ledger-update/content/quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.md).
+New block: [`conj:constit-factor-2q-minus-1`](https://github.com/litlfred/qou/blob/claude/post-819-ledger-update/folio/quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.md).
 
-States the categorical identity $\rho_Z^{\mathrm{constit}}(q_0) = (2q - 1) + O(h^4)$ for the disjoint-Hecke-product per-Z step factor at the substrate point, matching empirically to **0.033 % rel. err.** (Phase 5g, 50 dps).  Combined with [`prop:interface-knot-markov-z`](https://github.com/litlfred/qou/blob/claude/post-819-ledger-update/content/quantum-observable-universe/braids-and-knots/interface-knot-markov-z.md) (interface factor $z$), this gives the full $\mathrm{tr}_M$-level per-Z step:
+States the categorical identity $\rho_Z^{\mathrm{constit}}(q_0) = (2q - 1) + O(h^4)$ for the disjoint-Hecke-product per-Z step factor at the substrate point, matching empirically to **0.033 % rel. err.** (Phase 5g, 50 dps).  Combined with [`prop:interface-knot-markov-z`](https://github.com/litlfred/qou/blob/claude/post-819-ledger-update/folio/quantum-observable-universe/braids-and-knots/interface-knot-markov-z.md) (interface factor $z$), this gives the full $\mathrm{tr}_M$-level per-Z step:
 
 $$\frac{\mathrm{tr}_M(\mathcal{B}_K^{Z+1, N})}{\mathrm{tr}_M(\mathcal{B}_K^{Z, N})} \;=\; \frac{2q - 1}{q^{1/2} + q^{-1/2}} + O(h^4) \quad\text{at }q_0.$$
 
@@ -545,12 +545,12 @@ Identity holds at **mpfr-50-dps precision** ($\sim 10^{-50}$ rel. err.) across t
 
 $$\frac{\mathrm{tr}_M(\mathcal{B}_K^{Z+1, N})}{\mathrm{tr}_M(\mathcal{B}_K^{Z, N})} \;=\; z(q) \cdot \mathrm{tr}_M^3(\mathcal{B}_p, q)$$
 
-at a p-* boundary, with $z(q)$ from [`prop:interface-knot-markov-z`](../../content/quantum-observable-universe/braids-and-knots/interface-knot-markov-z.md) (interface factor).
+at a p-* boundary, with $z(q)$ from [`prop:interface-knot-markov-z`](../../folio/quantum-observable-universe/braids-and-knots/interface-knot-markov-z.md) (interface factor).
 
 **Content blocks:**
 
-- NEW: [`prop:constit-factor-tau-M-proton-identity`](../../content/quantum-observable-universe/braids-and-knots/constit-factor-tau-M-proton-identity.md) — the structural identity, with Wenzl-derivation proof and 5-q empirical verification.
-- UPDATED: [`conj:constit-factor-2q-minus-1`](../../content/quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.md) — RESOLVED banner pointing to the proposition above; conjecture preserved as a record of the historical Phase 5g categorical-search result.
+- NEW: [`prop:constit-factor-tau-M-proton-identity`](../../folio/quantum-observable-universe/braids-and-knots/constit-factor-tau-M-proton-identity.md) — the structural identity, with Wenzl-derivation proof and 5-q empirical verification.
+- UPDATED: [`conj:constit-factor-2q-minus-1`](../../folio/quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.md) — RESOLVED banner pointing to the proposition above; conjecture preserved as a record of the historical Phase 5g categorical-search result.
 
 **Script:** [`computations/rho_constit_equals_tau_M_proton_phase5l.py`](../../computations/rho_constit_equals_tau_M_proton_phase5l.py).
 **Witness:** `rho-constit-equals-tau-M-proton-phase5l.witness.json` (1 assertion: max rel.err. < 1e-12, passes at ~1e-15).

@@ -6,7 +6,11 @@
   "sha256": "a5d29fa15a0b74ff6ee94ec5e079d7e36892341d0af54c3716fe1bb297ea476b",
   "bytes": 173905,
   "pages": 16,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "text-layer",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -93,6 +97,24 @@
   "likely_scanned": false,
   "toc_entries": 6,
   "sections": 1,
-  "chars_total": 32970
+  "chars_total": 32970,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 7,
+   "overlaid": 0,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-document",
+     "title": "Document",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

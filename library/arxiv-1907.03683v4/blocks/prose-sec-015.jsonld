@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1907.03683v4/blocks/prose-sec-015",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1907.03683v4/blocks/prose-sec-015",
   "kind": "prose",
-  "title": "Using the continuity of the determinant, we have established that, for all x̸ = y",
-  "pageStart": 14,
-  "pageEnd": 17,
-  "text": "../sections/sec-015-32-using-the-continuity-of-the-determinant-we-ha.md",
-  "derivedFrom": "library/arxiv-1907.03683v4/manifest",
-  "sourceDocument": "library/arxiv-1907.03683v4/manifest",
+  "title": "Palm measures of the z-measures",
+  "pageStart": 25,
+  "pageEnd": 26,
+  "text": "../sections/sec-015-42-palm-measures-of-the-z-measures.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1907.03683v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1907.03683v4",
   "provenance": "ingested"
 }

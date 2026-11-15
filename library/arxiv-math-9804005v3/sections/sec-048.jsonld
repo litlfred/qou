@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9804005v3/sections/sec-048",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Assume B is graded GKdim-Macaulay. Since A/(tn) is graded GKdim-Macaulay",
+  "pageStart": 28,
+  "pageEnd": 29,
+  "contains": [
+    "library/arxiv-math-9804005v3/blocks/prose-sec-048",
+    "library/arxiv-math-9804005v3/blocks/example-sec-048-01",
+    "library/arxiv-math-9804005v3/blocks/cor-sec-048-02",
+    "library/arxiv-math-9804005v3/blocks/cor-sec-048-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9804005v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9804005v3",
+  "provenance": "ingested"
+}

@@ -1,0 +1,109 @@
+%%%% Style file with James Pascaleff's customizations
+%%%% Best used with \documentclass{amsart}
+\ProvidesPackage{cp2-conic-line}
+
+%%%% Fonts
+
+\usepackage{amssymb} %% Required for \mathbb below
+\usepackage[mathcal]{euscript}
+%\usepackage{mathpazo}
+%\usepackage{mathrsfs}
+
+%%%% Theoremstyles
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}{Claim}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{fact}{Fact}
+\newtheorem{conjecture}{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{algorithm}{Algorithm}
+\newtheorem{question}{Question}
+\newtheorem{problem}{Problem}
+
+\theoremstyle{remark}
+\newtheorem{goal}{Goal}
+\newtheorem{remark}{Remark}
+\newtheorem{remarks}{Remarks}
+\newtheorem{example}{Example}
+\newtheorem{exercise}{Exercise}
+
+%\numberwithin{equation}{section}
+%\numberwithin{figure}{section}
+%\numberwithin{table}{section}
+
+%%%% Notations
+%% Number systems
+%\newcommand{\numbersystem}{\mathbf}
+\newcommand{\numbersystem}{\mathbb}
+\newcommand{\Z}{\numbersystem{Z}}
+\newcommand{\Q}{\numbersystem{Q}}
+\newcommand{\R}{\numbersystem{R}}
+\newcommand{\C}{\numbersystem{C}}
+\newcommand{\K}{\numbersystem{K}}
+
+%% Projective and affine spaces
+\newcommand{\RP}{\numbersystem{RP}}
+\newcommand{\CP}{\numbersystem{CP}}
+\newcommand{\PP}{\numbersystem{P}}
+\newcommand{\Af}{\numbersystem{A}}
+\newcommand{\GG}{\numbersystem{G}}
+
+%% Lie groups
+\newcommand{\liegroup}{\mathrm}
+\newcommand{\GL}{\liegroup{GL}}
+\newcommand{\SL}{\liegroup{SL}}
+\newcommand{\U}{\liegroup{U}}
+\newcommand{\SU}{\liegroup{SU}}
+\newcommand{\Orth}{\liegroup{O}}
+\newcommand{\SO}{\liegroup{SO}}
+\newcommand{\Spin}{\liegroup{Spin}}
+
+%% Caligraphic/script characters
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cP}{\mathcal{P}}
+
+%% Functors
+\newcommand{\functor}{\mathrm}
+\newcommand{\Hom}{\functor{Hom}}
+\newcommand{\RHom}{\functor{RHom}}
+%\newcommand{\hom}{\functor{hom}}
+\newcommand{\Ob}{\functor{Ob}}
+\newcommand{\Ext}{\functor{Ext}}
+
+%% Operators
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\image}{image}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Hess}{Hess}
+\DeclareMathOperator{\Supp}{supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\ind}{ind}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Coh}{Coh}
+
+\newcommand{\Fuk}{\mathcal{F}}
+\newcommand{\Aff}{\mathrm{Aff}}
+\newcommand{\trop}{\mathrm{trop}}
+% \newcommand{\condition}{\mathsf}
+% \newcommand{\Conv}{\condition{Conv}}
+% \newcommand{\an}{\mathrm{an}}
+% \newcommand{\Mod}{\mathrm{Mod}}
+\newcommand{\Crit}{\mathrm{Crit}}
+\newcommand{\Critv}{\mathrm{Critv}}
+\newcommand{\Log}{\mathrm{Log}}
+\newcommand{\hol}{\mathrm{hol}}
+\newcommand{\Tw}{\mathrm{Tw}}
+\newcommand{\PD}{\mathrm{PD}}

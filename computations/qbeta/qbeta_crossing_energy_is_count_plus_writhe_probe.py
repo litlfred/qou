@@ -3,8 +3,8 @@
 re-ranks candidates iff the writhe differs -- and it is not a braid invariant
 at all, unlike the observable it would be used to select for.
 
-# Ref: content/quantum-observable-universe/lean/QOU/Mass/CrossingEnergySelectionEqualsCount.lean
-# Ref: content/quantum-observable-universe/lean/QOU/Braiding/crossing_energy_channels.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/Mass/CrossingEnergySelectionEqualsCount.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/Braiding/crossing_energy_channels.lean
 # Ref: computations/qbeta/qbeta_crossing_energy_separates_the_gluon_probe.py  (the measured disagreement)
 # Ref: computations/qbeta/qbeta_cost_minimal_budget_under_reading3_probe.py   (count-minimal budget)
 # Ref: .beans/qou-99qc--...md

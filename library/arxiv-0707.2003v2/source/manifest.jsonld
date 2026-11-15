@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0707.2003v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "A geometric model for Hochschild homology of Soergel bimodules Introduction (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0707.2003v2",
+  "provenance": "ingested",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0707.2003&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0707.2003v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/0707.2003v2",
+    "content_type": "application/gzip",
+    "sha256": "75acae573c1d40227bd7207d4a935b1f7609d2459e15a8b8cda8d33201bf7899",
+    "bytes": 24401,
+    "fetched": "2026-10-10T14:59:55+00:00",
+    "files": [
+      {
+        "path": "source/files/hochschild-soergel.tex",
+        "role": "tex",
+        "sha256": "b83c7a512f2c60539f2a5cc6e988e5c31f6fee8259b75f584f8202e0d4b71885",
+        "bytes": 56070
+      },
+      {
+        "path": "source/files/wart.cls",
+        "role": "cls",
+        "sha256": "2c413ae248cb2043e3e13369a30f9ce718638e1292fa31622d2c383da1d117a3",
+        "bytes": 16519
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

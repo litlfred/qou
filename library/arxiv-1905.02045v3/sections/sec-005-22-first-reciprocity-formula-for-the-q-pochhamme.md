@@ -8,750 +8,150 @@ pages: 9-14
 source_pdf: 1905.02045v3.pdf
 source_sha256: 8e7eb17c7d1f4f4e
 doc_brief: "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM — We obtain an exact modularity relation for the q-Pochhammer symbol."
+text_source: latex
+latex_prose_ratio: 0.918
+latex_coverage_ratio: 0.919
 ---
-as follows. Let N,d ≥ 1 be coprime. Let α = p/q in reduced form, and γ =
-(
-p−q
-q p
-)
-for
-some (p,q) satisfying pp +qq = 1. Throughout the rest of Section 2.2, all error terms will be
-allowed to depend on d and γ (but not on N). We write h =Np−dq, k =Nq +dp, so that
-x = N
-d, γ (x) = Np−dq
-Nq +dp = h
-k
-and notice that this implies that ( h,k ) = 1 (since (h,k ) divides qh−pk =d and (d, (h,k )) =
-(p,q ) = 1) and
-h
-k = p
-q− d
-kq,(2.2)
-d
-kq + k
-dq = N
-d − h
-k + p +p
-q .(2.3)
-We also recall from [21, p.45] that the Dedekind sum s( α) is deﬁned by
-(2.4) s(α) =s(p,q ) :=
-q−1∑
-n=1
-n
-q
-((pn
-q
-))
-, where ( (x) ) ={x}− 1
-2,
-Forz∈ (C\ R)∪ (0, 1), we let
-(2.5) f(z) := log(1− e(z))
-taking the determination which is real on the positive imaginary axis. Notice that with this
-choice we have
-f(z) = f(1−z) +πi(2z− 1); (2.6)
-f(1 +z) = f(z), if Im(z)> 0; f(1 +z)− f(z) = 2πi, if Im(z)< 0;(2.7)
-f(z) = log(2 sin(πz)) +iπ(z− 1
-2) if z∈ (0, 1).(2.8)
-Moreover, if t∈ (0, 1), expanding the logarithm in its Taylor series
-(2.9)
-q∑
-g=1
-f
-(g−t
-q
-)
-=−
-q∑
-g=1
-∞∑
-m=1
-e(−tm/q) e(mg/q)
-m =
-∞∑
-m=1
-e(−mt)
-m = f(1−t)
-10 S. BETTIN AND S. DRAPPEAU
-and the same formula holds for t∈ (C\ R)∪ (0, 1) by analytic continuation. Finally, for λ∈
-(C\ R)∪ (0, 1), we let
-(2.10) L(λ) =
-∫ λ
-0
-f(1−t)dt− πi
-12.
-The function L is holomorphic in ( C\ R)∪ (0, 1). Note that Li 2(1) = π2/6, so that when-
-ever Im(λ)< 0,
-L(λ) =
-∫ λ
-0
-f(1−t)dt− πi
-12 = 1
-2πi
-∫ 1
-e(−λ)
-log(1−z)dz
-z + Li2(1)
-2πi = Li2(e(−λ))
-2πi .
-Before stating the main theorem of this section, we deﬁne
-(2.11) Hκ(u,v ) := lim
-ε→0+
-(
-i
-∫
-γε
-f(u−itκ)dt
-e(v)e2πt− 1−i
-∫
-γε
-f(u +itκ)dt
-e(−v)e2πt− 1
-)
-for κ> 0,u∈ [0, 1],v∈ R/Z. Notice that if v⁄∈ Z we have
-(2.12) Hκ(u,v ) =i
-∫ ∞
-0
-( f(u−itκ)
-e(v)e2πt− 1− f(u +itκ)
-e(−v)e2πt− 1
-)
-dt,
-whereas if v∈ Z and 0 <u< 1 then
-(2.13) Hκ(u, 0) =−1
-2 f(u) +i
-∫ ∞
-0
-f(u−itκ)− f(u +itκ)
-e2πt− 1 dt,
-as can seen by isolating the contribution of the two circular paths, which are both πi/2 times
-the residue at 0.
-Theorem 6. For 1≤r<k , letting L :=⌊rd/k⌋, and λ ={rd/k}, we have
-(e(γx))r e(γx
-24 )
-(e(x))L e( x
-24) = exp
-(πi(p +p)
-12q −πi s(p,q )− πi
-4 + 1
-2 logk
-d + k
-qd L(λ) +Er(λ,d/k )
-)
-,
-where s is the Dedekind sum [21, p.45] and for λ∈ [0, 1), κ> 0 and, for s∈ Z/qZ,
-Es(λ,κ ) :=−Hκ
-(⟨ps⟩− λ
-q , 0
-)
-−
-q∑
-g=1
-g⁄≡ps (mod q)
-i
-∫ ∞
-0
-( f(g−λ
-q −itκ)
-e(gp−s
-q )e2πt− 1
-−
-f(g−λ
-q +itκ)
-e(−gp−s
-q )e2πt− 1
-)
-dt,
-(2.14)
-with⟨n⟩ indicating the representative of n (mod q) in [1,q ]. Moreover, for all s (mod q)
-and κ∈ (0, 1], the function λ↦→E s(λ,κ ) is deﬁned and holomorphic in the strip {Re(λ)∈
-[0, 1)}, and
-Es(λ,κ )≪| log|1−λ|| + log(1/κ) (2.15)
-uniformly for Re(λ)∈ [0, 1) and Im(λ)≪ 1.
-Remark 4. If λ∈ (0, 1) or if s⁄≡ 0 (mod q) by (2.13) we can write Eλ as
-Es(λ,κ ) := 1
-2f
-(⟨ps⟩− λ
-q
-)
-−
-q∑
-g=1
-i
-∫ ∞
-0
-( f(g−λ
-q −itκ)
-e(gp−s
-q )e2πt− 1
-−
-f(g−λ
-q +itκ)
-e(−gp−s
-q )e2πt− 1
-)
-dt.(2.16)
-We remark that if (q,d ) = 1 (i.e. (k,d ) = 1), one cannot have{rd/k} = 0.
-Remark 5. Notice that by (2.3) we have e( γx
-24 )/e( x
-24)· exp(−πi(p+p)
-12q ) = exp(−πi
-12( d
-kq + k
-dq)).
-MODULARITY AND DISTRIBUTION OF QUANTUM KNOTS INV ARIANTS 11
-In order to prove Theorem 6, we require some properties of the function Hκ(u,v ).
-Lemma 3. We have :
-(1) Hκ(1−u,−v) +Hκ(u,v ) =−2πiB1(u) ˜B1(v) +πiκ ˜B2(v) for v /∈ Z,
-(2) Hκ(1,v )−Hκ(0,v ) = f({−v}) for v /∈ Z,
-(3) Hκ(1, 0) =− log(κ)
-2 − πi
-4 + πiκ
-12 .
-Proof. Let v /∈ Z. By (2.6), Lemma 2 and (2.8) we have
-Hκ(1−u,−v) +Hκ(u,v ) =i
-∫ ∞
-0
-( f(1−u−itκ)
-e(−v)e2πt− 1− f(1−u +itκ)
-e(v)e2πt− 1
-)
-dt +
-+i
-∫ ∞
-0
-( f(u−itκ)
-e(v)e2πt− 1− f(u +itκ)
-e(−v)e2πt− 1
-)
-dt
-=−
-∫ ∞
-0
-((1− 2u)π− 2πitκ
-e(−v)e2πt− 1 − (1− 2u)π + 2πitκ
-e(v)e2πt− 1
-)
-dt
-= 2πi(1− 2u) Im
-∫ ∞
-0
-dt
-e(v)e2πt− 1− 4πiκ Im
-∫ ∞
-0
-−itdt
-e(v)e2πt− 1
-=−2πiB1(u) ˜B1(v) +πiκ ˜B2(v).
-Also, by (2.7), we have
-Hκ(1,v )−Hκ(0,v ) =i
-∫ ∞
-0
-( f(1−itκ)
-e(v)e2πt− 1− f(1 +itκ)
-e(−v)e2πt− 1
-)
-dt +
-+i
-∫ ∞
-0
-( f(−itκ)
-e(v)e2πt− 1− f(itκ)
-e(−v)e2πt− 1
-)
-dt
-=−
-∫ ∞
-0
-2π
-e(v)e2πt− 1dt = f({−v}).
-Finally, by (2.6) and (2.7) as ε→ 0+ we have
-i
-∫
-γε
-f(1−itκ)dt
-e2πt− 1 −i
-∫
-γε
-f(1 +itκ)dt
-e2πt− 1
-=i
-∫
-γε
-f(itκ)dt
-e2πt− 1−i
-∫
-γε
-f(itκ)dt
-e2πt− 1−
-∫
-γε
-πdt
-e2πt− 1 +
-∫ ∞
-0
-2πitκdt
-e2πt− 1 +o(1).
-The last two integrals can be easily computed and contribute−iπ
-4 + log(2πε)
-2 and πiκ
-12 respectively.
-The contributions of the interval ( ε,∞) in the ﬁrst two integral cancel out. Thus, since
-f(itκ) = log(2πtκ) +o(1) as |t|→ 0 with −π/2 < argt < π/2, we have that the ﬁrst two
-integral contribute
-i
-∫
-Cε
-log(2πtκ)dt
-e2πt− 1 =−log(2πεκ)
-2 +o(1)
-where Cε is the semicircle centered at the origin going from −iε to iε counter-clockwise. We
-then have
-Hκ(1, 0) =−logκ
-2 − iπ
-4 + πiκ
-12 .
-□
-Lemma 4. Let 0<κ ≤ 1, Re(u)∈ [0, 1],v∈ R/Z with u⁄= 0, 1, and A≥ 1. Then
-Hκ(u,v ) =− log|u| +Ov,A(log(2/κ))
-12 S. BETTIN AND S. DRAPPEAU
-uniformly in u,κ with Im(u)≤A.
-Proof. The case v /∈ Z, Re(u)∈ [0, 1] is an easy consequence of the bound
-f(x +it)≪|t| +| log|t||, (x∈ [0, 1],t∈ R⁄=0).(2.17)
-Now assume v∈ Z and Re(u)∈ (0, 1/2]. We recall (2.13). By (2.17) the contribution to the
-integral from the interval [2A,∞) is O(log(2/κ)). Next, we write
-I(u,κ ) :=i
-∫ 2A
-0
-f(u−itκ)− f(u +itκ)
-e2πt− 1 dt =−πi
-∫ 2A
-0
-∫ u+itκ
-u−itκ
-(cot(πz) +i)dz dt
-e2πt− 1.
-Note that cot(πz) = 1/(πz)+O(1) uniformly for Re(z)∈ [0, 1/2], and that 1
-e2πt−1 = 1
-2πt +O(1)
-for t> 0. Therefore,
-I(u,κ ) = 1
-2πi
-∫ 2A
-0
-∫ u+itκ
-u−itκ
-dz
-z
-dt
-t +OA(log(2/κ)).
-Changing variables z←|u|z and t←t|u|/κ, we get
-I(u,κ ) = 1
-2πi
-∫ 2Aκ/|u|
-0
-∫ u′+it
-u′−it
-dz
-z
-dt
-t +OA(log(2/κ)),
-where|u′| = 1. For t≤ 1/2, we may bound the z-integral by O(t), while for t≥ 2, we
-have
-∫u′+it
-u′−it
-dz
-z =πi +O(1/t). We deduce
-I(u,κ ) = 1
-2πi
-∫ 2
-1/2
-∫ u′+it
-u′−it
-dz
-z
-dt
-t +OA(log(2/κ))− 1
-2 log|u|.
-The double integral here is bounded independently of u′, and so ﬁnally
-I(u,κ ) =OA(log(2/κ))− 1
-2 log|u|.
-We deduce Hκ(u, 0) = − log|u| +OA(log(2/κ)) for 0 ≤ Re(u)≤ 1/2, u⁄= 0. On the other
-hand, by computations similar to Lemma 3, we get
-Hκ(1−u, 0) +Hκ(u, 0) =−f(u)− πi
-2 (2u− 1)− πiκ
-6 ,
-from which we get the claimed behaviour for all u. □
-Proof of Theorem 6. For 0≤𝓁≤L, let r𝓁 =𝓁k/d. We split (e(γx))r as (e(γx))r =∏L
-𝓁=0PL
-𝓁 ,
-where for 0≤𝓁<L ,
-PL
-𝓁 =
-∏
-r𝓁<n≤r𝓁+1
-(
-1− e
-(nh
-k
-))
-and PL
-L =
-∏
-r𝓁<n≤r
-(
-1− e
-(nh
-k
-))
-.
-First we focus on the case 0 ≤𝓁<L . By (2.2) and by periodicity we have
-PL
-𝓁 =
-∏
-r𝓁<n≤r𝓁+1
-(
-1− e
-(np
-q − nd
-kq
-))
-=
-q∏
-a=1
-∏
-r𝓁−a
-q <m≤
-r𝓁+1−a
-q
-(
-1− e
-(ap
-q − d(a +mq)
-kq
-))
-=
-q∏
-a=1
-∏
-r𝓁−a
-q <m≤
-r𝓁+1−a
-q
-(
-1− e
-(ga
-q − d(a +mq)
-kq
-))
-,
-MODULARITY AND DISTRIBUTION OF QUANTUM KNOTS INV ARIANTS 13
-wherega is the representative of the class pa (mod q) contained in [𝓁 + 1,𝓁 +q], so that in the
-last line each e( ) is computed at a number in (0 , 1). It follows that we can write
-PL
-𝓁 = exp
-( q∑
-a=1
-∑
-r𝓁−a
-q <m≤
-r𝓁+1−a
-q
-f
-(ga
-q − d(a +mq)
-kq
-))
-and that 0 < ga
-q − dr𝓁+1
-kq < 1 whenever r𝓁+1−a
-q is an integer. We can then apply Abel-Plana
-formula in the form of Lemma 1. Note that
-q∑
-a=1
-∫ r𝓁+1−a
-q
-r𝓁−a
-q
-f
-(ga
-q − d(a +tq)
-kq
-)
-dt = k
-qd
-q∑
-a=1
-∫ 𝓁+1
-𝓁
-f
-(ga
-q − t
-q
-)
-dt
-= k
-qd
-q∑
-g=1
-∫ 1
-0
-f
-(g−t
-q
-)
-dt = k
-qd
-∫ 1
-0
-f(1−t)dt = 0
-by (2.9). Therefore, by Lemma 1, equation (2.11) and the deﬁnition of r𝓁,
-PL
-𝓁 = exp
-( q∑
-a=1
-Hd/k
-(ga
-q − 𝓁
-q,a
-q− 𝓁k
-qd
-)
-−
-q∑
-a=1
-Hd/k
-(ga
-q − 𝓁 + 1
-q ,a
-q− (𝓁 + 1)k
-qd
-))
-.
-Now, k
-qd = N
-d + p
-q and 1≤ga−𝓁≤q with pa≡ga (mod q), thus by a change of variable and
-multiplying this equality over 0≤𝓁<L , we get
-L−1∏
-𝓁=0
-PL
-𝓁 = exp
-(L−1∑
-𝓁=0
-( q∑
-g=1
-Hd/k
-(g
-q,gp
-q − 𝓁N
-d
-)
-−
-q−1∑
-g=0
-Hd/k
-(g
-q,gp
-q − (𝓁 + 1)N
-d
-)))
-= exp
-(L−1∑
-𝓁=0
-(
-Hd/k
-(
-1,−𝓁N
-d
-)
-−Hd/k
-(
-0,−(𝓁 + 1)N
-d
-))
-(2.18)
-+
-q−1∑
-g=1
-(
-Hd/k
-(g
-q,gp
-q
-)
-−Hd/k
-(g
-q,gp
-q − LN
-d
-)))
-.
-We treatPL
-L in the same way. First,
-PL
-L = exp
-( q∑
-a=1
-∑
-rL−a
-q <m≤r−a
-q
-f
-(ga
-q − d(a +mq)
-kq
-))
-.
-Note that by (2.9) and (2.10)
-q∑
-a=1
-∫ (r−a)/q
-(rL−a)/q
-f
-(ga
-q − d(a +qt)
-kq
-)
-dt = k
-qd
-q∑
-a=1
-∫ L+λ
-L
-f
-(ga
-q − t
-q
-)
-dt
-= k
-qd
-∫ λ
-0
-f(1−t)dt = k
-qd L(λ) + πik
-12qd
-where we recall that λ ={rd/k}. Applying Lemma 1, we therefore ﬁnd
-(2.19) PL
-L = exp
-( k
-qd L(λ) + πik
-12qd +
-q∑
-g=1
-(
-Hd/k
-(g
-q,gp
-q − LN
-d
-)
-−Hd/k
-(g−λ
-q ,gp−r
-q
-)))
-.
-14 S. BETTIN AND S. DRAPPEAU
-Multiplying the equalities (2.18) and (2.19) and recalling that (e(γx))r =∏L
-𝓁=0PL
-𝓁 , we obtain
-(e(γx))r = exp
-( k
-qd L(λ) + πik
-12qd +
-q−1∑
-g=1
-Hd/k
-(g
-q,gp
-q
-)
-−
-q∑
-g=1
-Hd/k
-(g−λ
-q ,gp−r
-q
-)
-+
-+Hd/k(1, 0) +
-∑
-1≤𝓁≤L
-(
-Hd/k(1,−𝓁N
-d )−Hd/k(0,−𝓁N
-d )
-))
-.
-By Lemma 3 (1) we have
-q−1∑
-g=1
-Hd/k
-(g
-q,gp
-q
-)
-=−πi
-q−1∑
-g=1
-˜B1
-(g
-q
-)
-˜B1
-(gp
-q
-)
-+ πid
-2k
-q−1∑
-g=1
-˜B2
-(g
-q
-)
-=−πi s(p,q ) + πid
-12kq− πid
-12k
-since∑q−1
-g=0B2(g/q) = 1
-6q andB2(0) = 1/6. Also, by Lemma 3 (3) and (2) we haveHd/k(1, 0) =
-log(k/d)
-2 − πi
-4 + πid
-12k and
-∑
-1≤𝓁≤L
-(
-Hd/k(1,−𝓁N
-d )−Hd/k(0,−𝓁N
-d )
-)
-=
-∑
-1≤𝓁≤L
-f({𝓁N/d}).
-Thus,
-(e(γx))r = (e(N/d))L exp
-( k
-qd L(λ) + 1
-2 logk
-d−
-q∑
-g=1
-Hd/k
-(g−λ
-q ,gp−r
-q
-)
-+
-−πi s(p,q )− πi
-4 + πid
-12kq + πik
-12qd
-)
-.
-By (2.3) and (2.12) we then obtain the claimed result. The bound (2.15) follows by Lemma 4.
-□
+[]{#ss:1rf label="ss:1rf"}
+
+We fix the notations as follows. Let $N, d\geq 1$ be coprime. Let $\alpha = p/q$ in reduced form, and $\gamma = \mathopen{}\mathclose\bgroup\originalleft( \begin{smallmatrix} p & -\overline{q} \\ q & \overline{p} \end{smallmatrix} \aftergroup\egroup\originalright)$ for some $(\overline{p}, \overline{q})$ satisfying $p\overline{p} + q\overline{q} = 1$. Throughout the rest of Section [\[ss:1rf\]](#ss:1rf){reference-type="ref" reference="ss:1rf"}, all error terms will be allowed to depend on $d$ and $\gamma$ (but not on $N$). We write $h=Np-d\overline{q}$, $k=Nq+d\overline{p}$, so that $$x = \frac Nd, \qquad \gamma(x) = \frac{Np-d\overline{q}}{Nq+d\overline{p}} = \frac hk$$ and notice that this implies that $(h,k)=1$ (since $(h,k)$ divides $qh-pk=d$ and $(d,(h,k))=(p,q)=1$) and $$\begin{aligned}
+  \frac{h}{k}&=\frac{p}{q}-\frac{d}{kq},\label{redeq}\\
+  \frac{d}{ kq}+\frac{k}{dq}&=\frac{N}{d}-\frac{h}k+\frac{p+\overline p}q.\label{expid}
+\end{aligned}$$
+
+We also recall from [@Iwaniec1997 p.45] that the Dedekind sum $\mathop{\mathrm{s}}(\alpha)$ is defined by $$s(\alpha)= s(p, q) := \sum_{n=1}^{q-1} \frac{n}q \mathopen{}\mathclose\bgroup\originalleft(\!\mathopen{}\mathclose\bgroup\originalleft(\frac{pn}{q}\aftergroup\egroup\originalright)\!\aftergroup\egroup\originalright), \qquad \text{where }\mathopen{}\mathclose\bgroup\originalleft(\!\mathopen{}\mathclose\bgroup\originalleft(x\aftergroup\egroup\originalright)\!\aftergroup\egroup\originalright) = \{x\} - \tfrac12,\label{eq:def-dedekind}$$
+
+For $z\in (\mathbb{C}\setminus \mathbb{R})\cup(0,1)$, we let $$\label{eq:deff}
+  {\mathfrak f}(z) := \log(1-\ifthenelse{\equal{z}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  z\aftergroup\egroup\originalright)}{( z)}{( z)}{( z)}})$$ taking the determination which is real on the positive imaginary axis. Notice that with this choice we have $$\begin{aligned}
+  &{\mathfrak f}(z)={\mathfrak f}(1-z)+\pi i (2z-1); &&\label{ff1}\\
+  &{\mathfrak f}(1+z)={\mathfrak f}(z), \  \text{if }\operatorname{Im}(z)>0; && {\mathfrak f}(1+z)-{\mathfrak f}(z)=2\pi i, \  \text{if }\operatorname{Im}(z)<0;\label{ff2}\\
+  &{\mathfrak f}(z)=\log(2\sin(\pi z))+ i\pi  (z-\tfrac12) \  \text{if }z\in(0,1).\label{ff3} 
+\end{aligned}$$ Moreover, if $t\in(0,1)$, expanding the logarithm in its Taylor series $$\label{ff4}
+  \sum_{g=1}^{q} {\mathfrak f}\Big(\frac{g-t}q\Big)=-\sum_{g=1}^{q}\sum_{m=1}^\infty\frac{\ifthenelse{\equal{-tm/q}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  -tm/q\aftergroup\egroup\originalright)}{( -tm/q)}{( -tm/q)}{( -tm/q)}}\ifthenelse{\equal{mg/q}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  mg/q\aftergroup\egroup\originalright)}{( mg/q)}{( mg/q)}{( mg/q)}}}{m}=\sum_{m=1}^\infty\frac{\ifthenelse{\equal{-mt}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  -mt\aftergroup\egroup\originalright)}{( -mt)}{( -mt)}{( -mt)}}}{m}={\mathfrak f}(1-t)$$ and the same formula holds for $t\in(\mathbb{C}\setminus \mathbb{R})\cup(0,1)$ by analytic continuation. Finally, for $\lambda\in(\mathbb{C}\setminus \mathbb{R})\cup(0,1)$, we let $$\label{dig}
+  \mathop{\mathrm{{\mathfrak L}}}(\lambda) = \int_0^\lambda {\mathfrak f}(1-t)\mathrm{d}t - \frac{\pi i}{12}.$$ The function $\mathop{\mathrm{{\mathfrak L}}}$ is holomorphic in $(\mathbb{C}\setminus \mathbb{R})\cup(0,1)$. Note that $\mathop{\mathrm{Li}}_2(1) = \pi^2/6$, so that whenever $\operatorname{Im}(\lambda)<0$, $$\mathop{\mathrm{{\mathfrak L}}}(\lambda) = \int_0^\lambda {\mathfrak f}(1-t)\mathrm{d}t - \frac{\pi i}{12} = \frac1{2\pi i}\int_{\ifthenelse{\equal{-\lambda}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  -\lambda\aftergroup\egroup\originalright)}{( -\lambda)}{( -\lambda)}{( -\lambda)}}}^1 \log(1-z) \frac{\mathrm{d}z}z + \frac{\mathop{\mathrm{Li}}_2(1)}{2\pi i} =\frac{\mathop{\mathrm{Li}}_2(\ifthenelse{\equal{-\lambda}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  -\lambda\aftergroup\egroup\originalright)}{( -\lambda)}{( -\lambda)}{( -\lambda)}})}{2\pi i}.$$
+
+Before stating the main theorem of this section, we define $$\label{defh}
+  H_\kappa(u, v) := 
+  \lim_{\varepsilon\to0^+}\bigg( i \int_{\gamma_\varepsilon}  \frac{{\mathfrak f}(u - it\kappa )\mathrm{d}{t}}{\ifthenelse{\equal{v}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  v\aftergroup\egroup\originalright)}{( v)}{( v)}{( v)}}\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}- i \int_{\overline{\gamma_\varepsilon}}  \frac{{\mathfrak f}(u + it\kappa)\mathrm{d}{t}}{\ifthenelse{\equal{-v}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  -v\aftergroup\egroup\originalright)}{( -v)}{( -v)}{( -v)}}\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}\bigg)$$ for $\kappa>0, u\in[0,1], v\in\mathbb{R}/\mathbb{Z}$. Notice that if $v\not\in\mathbb{Z}$ we have $$\label{sph1}
+  H_\kappa(u, v) = i
+  \int_{0}^\infty   \bigg( \frac{{\mathfrak f}(u - it\kappa )}{\ifthenelse{\equal{v}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  v\aftergroup\egroup\originalright)}{( v)}{( v)}{( v)}}\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}-   \frac{{\mathfrak f}(u + it\kappa )}{\ifthenelse{\equal{-v}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  -v\aftergroup\egroup\originalright)}{( -v)}{( -v)}{( -v)}}\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}\bigg)\mathrm{d}{t},$$ whereas if $v\in\mathbb{Z}$ and $0<u<1$ then $$\label{sph2}
+  H_{\kappa}(u, 0) = -\frac12 {\mathfrak f}(u) +i\int_{0}^\infty    \frac{{\mathfrak f}(u - it\kappa)-{\mathfrak f}(u + it \kappa)}{\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}\mathrm{d}{t} ,$$ as can seen by isolating the contribution of the two circular paths, which are both $\pi i/2$ times the residue at $0$.
+
+::: theorem
+[]{#th:Ir label="th:Ir"} For $1\leq r < k$, letting $L := \lfloor rd/k\rfloor$, and $\lambda = \{rd/k\}$, we have $$\begin{aligned}
+    \frac{(\ifthenelse{\equal{\gamma x}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \gamma x\aftergroup\egroup\originalright)}{( \gamma x)}{( \gamma x)}{( \gamma x)}})_r\ifthenelse{\equal{\frac{\gamma x}{24}}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \frac{\gamma x}{24}\aftergroup\egroup\originalright)}{( \frac{\gamma x}{24})}{( \frac{\gamma x}{24})}{( \frac{\gamma x}{24})}}}{(\ifthenelse{\equal{x}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  x\aftergroup\egroup\originalright)}{( x)}{( x)}{( x)}})_L\ifthenelse{\equal{\frac{x}{24} }{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \frac{x}{24} \aftergroup\egroup\originalright)}{( \frac{x}{24} )}{( \frac{x}{24} )}{( \frac{x}{24} )}}} =\exp\bigg(&
+    \frac{\pi i(p+\overline p)}{12q}-\pi i \mathop{\mathrm{s}}(p,q)-\frac{\pi i }4+\frac12 \log\frac kd+
+    \frac{k}{qd} \mathop{\mathrm{{\mathfrak L}}}(\lambda)+{\mathcal E}_r(\lambda,d/k)\bigg), 
+  
+\end{aligned}$$ where $\mathop{\mathrm{s}}$ is the Dedekind sum [@Iwaniec1997 p.45] and for $\lambda\in[0,1)$, $\kappa>0$ and, for $s\in\mathbb{Z}/q\mathbb{Z}$, $$\begin{aligned}
+    {\mathcal E}_s(\lambda,\kappa)&:=- H_{\kappa}\Big(\frac{\langle ps\rangle -\lambda}{q},0\Big)-\hspace{-1em} \sum_{\substack{g=1\\ g\not\equiv ps~\mathchoice{\mathopen{}\mathclose\bgroup\originalleft( \textnormal{mod}~q\aftergroup\egroup\originalright)}{(\textnormal{mod}~q)}{(\textnormal{mod}~q)}{(\textnormal{mod}~q)}}}^q i\int_{0}^\infty   \bigg( \frac{{\mathfrak f}(\frac{g-\lambda}q - it\kappa)}{\ifthenelse{\equal{ \frac{g\overline{p}-s}q}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(   \frac{g\overline{p}-s}q\aftergroup\egroup\originalright)}{(  \frac{g\overline{p}-s}q)}{(  \frac{g\overline{p}-s}q)}{(  \frac{g\overline{p}-s}q)}}\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}-   \frac{{\mathfrak f}(\frac{g-\lambda}q + it\kappa)}{\ifthenelse{\equal{- \frac{g\overline{p}-s}q}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  - \frac{g\overline{p}-s}q\aftergroup\egroup\originalright)}{( - \frac{g\overline{p}-s}q)}{( - \frac{g\overline{p}-s}q)}{( - \frac{g\overline{p}-s}q)}}\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}\bigg)\mathrm{d}{t}, 
+    \label{defg}
+  
+\end{aligned}$$ with $\langle n\rangle$ indicating the representative of $n~\mathchoice{\mathopen{}\mathclose\bgroup\originalleft( \textnormal{mod}~q\aftergroup\egroup\originalright)}{(\textnormal{mod}~q)}{(\textnormal{mod}~q)}{(\textnormal{mod}~q)}$ in $[1,q]$. Moreover, for all $s~\mathchoice{\mathopen{}\mathclose\bgroup\originalleft( \textnormal{mod}~q\aftergroup\egroup\originalright)}{(\textnormal{mod}~q)}{(\textnormal{mod}~q)}{(\textnormal{mod}~q)}$ and $\kappa\in(0, 1]$, the function $\lambda\mapsto {\mathcal E}_s(\lambda,\kappa)$ is defined and holomorphic in the strip $\{\operatorname{Re}(\lambda)\in[0, 1)\}$, and $$\begin{aligned}
+    {\mathcal E}_s(\lambda,\kappa)&\ll \mathopen{}\mathclose\bgroup\originalleft|\log\mathopen{}\mathclose\bgroup\originalleft|1-\lambda\aftergroup\egroup\originalright|\aftergroup\egroup\originalright| + \log(1/\kappa)
+    \label{bdfg}
+  
+\end{aligned}$$ uniformly for $\operatorname{Re}(\lambda)\in[0,1)$ and $\operatorname{Im}(\lambda)\ll 1$.
+:::
+
+::: remark
+If $\lambda\in(0,1)$ or if $s\not\equiv 0~\mathchoice{\mathopen{}\mathclose\bgroup\originalleft( \textnormal{mod}~q\aftergroup\egroup\originalright)}{(\textnormal{mod}~q)}{(\textnormal{mod}~q)}{(\textnormal{mod}~q)}$ by [\[sph2\]](#sph2){reference-type="eqref" reference="sph2"} we can write ${\mathcal E}_\lambda$ as $$\begin{aligned}
+    {\mathcal E}_s(\lambda,\kappa)&:= \frac12 f\Big(\frac{\langle ps\rangle-\lambda}q\Big)- \sum_{g=1}^q i\int_{0}^\infty   \bigg( \frac{{\mathfrak f}(\frac{g-\lambda}q - it\kappa)}{\ifthenelse{\equal{ \frac{g\overline{p}-s}q}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(   \frac{g\overline{p}-s}q\aftergroup\egroup\originalright)}{(  \frac{g\overline{p}-s}q)}{(  \frac{g\overline{p}-s}q)}{(  \frac{g\overline{p}-s}q)}}\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}-   \frac{{\mathfrak f}(\frac{g-\lambda}q + it\kappa)}{\ifthenelse{\equal{- \frac{g\overline{p}-s}q}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  - \frac{g\overline{p}-s}q\aftergroup\egroup\originalright)}{( - \frac{g\overline{p}-s}q)}{( - \frac{g\overline{p}-s}q)}{( - \frac{g\overline{p}-s}q)}}\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}\bigg)\mathrm{d}{t}.
+    \label{defg2}
+  
+\end{aligned}$$ We remark that if $(q,d)=1$ (i.e. $(k,d)=1$), one cannot have $\{rd/k\}=0$.
+:::
+
+::: remark
+[]{#remplr label="remplr"} Notice that by [\[expid\]](#expid){reference-type="eqref" reference="expid"} we have ${\ifthenelse{\equal{\frac{\gamma x}{24}}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \frac{\gamma x}{24}\aftergroup\egroup\originalright)}{( \frac{\gamma x}{24})}{( \frac{\gamma x}{24})}{( \frac{\gamma x}{24})}}}/{\ifthenelse{\equal{\frac{x}{24} }{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \frac{x}{24} \aftergroup\egroup\originalright)}{( \frac{x}{24} )}{( \frac{x}{24} )}{( \frac{x}{24} )}}}\cdot \exp( - \frac{\pi i(p+\overline p)}{12q} )=\exp(-\frac{\pi i}{12} (\frac{d}{ kq}+\frac{k}{dq}))$.
+:::
+
+In order to prove Theorem [\[th:Ir\]](#th:Ir){reference-type="ref" reference="th:Ir"}, we require some properties of the function $H_\kappa(u, v)$.
+
+::: lemma
+[]{#lemmah label="lemmah"} We have :
+
+1.  []{#prop-B-sym label="prop-B-sym"} ${H_\kappa(1-u, -v)} + H_\kappa(u, v)= - 2{\pi i} B_1(u)\tilde B_1(v) + \pi i\kappa \tilde B_2(v)$ for $v\notin\mathbb{Z}$,
+
+2.  []{#prop-B-f label="prop-B-f"} $H_\kappa(1, v) - H_\kappa(0, v) = {\mathfrak f}(\{-v\})$ for $v\notin\mathbb{Z}$,
+
+3.  []{#prop-B-pole label="prop-B-pole"} $H_\kappa(1, 0) =   - \frac{\log(  \kappa) }{2 }-   \frac{\pi  i   }{4  } + \frac{ \pi i \kappa}{12}$.
+:::
+
+::: proof
+*Proof.* Let $v\notin\mathbb{Z}$. By [\[ff1\]](#ff1){reference-type="eqref" reference="ff1"}, Lemma [\[lem:B-integral\]](#lem:B-integral){reference-type="ref" reference="lem:B-integral"} and [\[ff3\]](#ff3){reference-type="eqref" reference="ff3"} we have $$\begin{aligned}
+    {H_\kappa(1-u, -v)} + H_\kappa(u, v)&
+    =  i
+    \int_{0}^\infty   \bigg(\frac{{\mathfrak f}(1-u - it\kappa )}{\ifthenelse{\equal{-v}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  -v\aftergroup\egroup\originalright)}{( -v)}{( -v)}{( -v)}}\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}- \frac{{\mathfrak f}(1-u + it\kappa )}{\ifthenelse{\equal{v}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  v\aftergroup\egroup\originalright)}{( v)}{( v)}{( v)}}\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}\bigg)\mathrm{d}{t}+{}\\
+    &\quad +i
+    \int_{0}^\infty   \bigg(    \frac{{\mathfrak f}(u - it\kappa )}{\ifthenelse{\equal{v}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  v\aftergroup\egroup\originalright)}{( v)}{( v)}{( v)}}\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}-\frac{{\mathfrak f}(u + it\kappa )}{\ifthenelse{\equal{-v}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  -v\aftergroup\egroup\originalright)}{( -v)}{( -v)}{( -v)}}\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}\bigg)\mathrm{d}{t}\\
+    &= -\int_{0}^\infty   \bigg(\frac{(1- 2u)\pi   -  2\pi i t\kappa}{\ifthenelse{\equal{-v}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  -v\aftergroup\egroup\originalright)}{( -v)}{( -v)}{( -v)}}\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}- \frac{
+      (1- 2u)\pi   + 2\pi i t\kappa
+    }{\ifthenelse{\equal{v}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  v\aftergroup\egroup\originalright)}{( v)}{( v)}{( v)}}\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}\bigg)\mathrm{d}t\\
+    &=2\pi i(1- 2u) \operatorname{Im}\int_{0}^\infty    \frac{ \mathrm{d}t}{\ifthenelse{\equal{v}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  v\aftergroup\egroup\originalright)}{( v)}{( v)}{( v)}}\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}-4\pi i\kappa \operatorname{Im}\int_{0}^\infty   \frac{-i t\mathrm{d}t}{\ifthenelse{\equal{v}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  v\aftergroup\egroup\originalright)}{( v)}{( v)}{( v)}}\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}\\
+
+    &= -2{\pi i} B_1(u)\tilde B_1(v) +\pi i\kappa \tilde B_2(v).
+  
+\end{aligned}$$ Also, by [\[ff2\]](#ff2){reference-type="eqref" reference="ff2"}, we have $$\begin{aligned}
+    H_\kappa(1, v)-  H_\kappa(0, v) &= i
+    \int_{0}^\infty   \bigg( \frac{{\mathfrak f}(1 - it\kappa )}{\ifthenelse{\equal{v}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  v\aftergroup\egroup\originalright)}{( v)}{( v)}{( v)}}\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}-   \frac{{\mathfrak f}(1 + it\kappa )}{\ifthenelse{\equal{-v}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  -v\aftergroup\egroup\originalright)}{( -v)}{( -v)}{( -v)}}\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}\bigg)\mathrm{d}{t}+{}\\
+    &\quad + i \int_{0}^\infty   \bigg( \frac{{\mathfrak f}(- it\kappa )}{\ifthenelse{\equal{v}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  v\aftergroup\egroup\originalright)}{( v)}{( v)}{( v)}}\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}-   \frac{{\mathfrak f}( it\kappa )}{\ifthenelse{\equal{-v}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  -v\aftergroup\egroup\originalright)}{( -v)}{( -v)}{( -v)}}\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}\bigg)\mathrm{d}{t}\\
+    &=-\int_{0}^\infty    \frac{2\pi }{\ifthenelse{\equal{v}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  v\aftergroup\egroup\originalright)}{( v)}{( v)}{( v)}}\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}\mathrm{d}{t}={\mathfrak f}(\{-v\}).
+  
+\end{aligned}$$ Finally, by [\[ff1\]](#ff1){reference-type="eqref" reference="ff1"} and [\[ff2\]](#ff2){reference-type="eqref" reference="ff2"} as $\varepsilon\to0^+$ we have $$\begin{aligned}
+    & i \int_{\gamma_\varepsilon}  \frac{{\mathfrak f}(1 - it\kappa )\mathrm{d}{t}}{\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}- i \int_{\overline{\gamma_\varepsilon}}  \frac{{\mathfrak f}(1 + it\kappa)\mathrm{d}{t}}{\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}\\
+    &\qquad= i \int_{\gamma_\varepsilon}  \frac{{\mathfrak f}( it\kappa ) \mathrm{d}{t}}{\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}- i \int_{\overline{\gamma_\varepsilon}}  \frac{{\mathfrak f}( it\kappa)\mathrm{d}{t}}{\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}- \int_{{\gamma_\varepsilon}}  \frac{\pi  \mathrm{d}{t}}{\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1} + \int_{0}^\infty \frac{  2\pi it\kappa\mathrm{d}{t}}{\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}+o(1).
+  
+\end{aligned}$$ The last two integrals can be easily computed and contribute $-\frac{i\pi}4+\frac{\log(2\pi \varepsilon)}2$ and $\frac{\pi i \kappa}{12}$ respectively. The contributions of the interval $(\varepsilon,\infty)$ in the first two integral cancel out. Thus, since ${\mathfrak f}( it\kappa)=\log(2\pi  t \kappa)+o(1)$ as $|t|\to 0$ with $-\pi/2<\arg t<\pi/2$, we have that the first two integral contribute $$i \int_{C_\varepsilon}  \frac{\log(2\pi  t \kappa) \mathrm{d}{t}}{\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}=-\frac{\log(2\pi \varepsilon\kappa)}{2}+o(1)$$ where $C_\varepsilon$ is the semicircle centered at the origin going from $-i\varepsilon$ to $i\varepsilon$ counter-clockwise. We then have $$H_\kappa(1,0)=-\frac{\log \kappa}{2}-\frac{i\pi}4+\frac{\pi i \kappa}{12}.$$ ◻
+:::
+
+::: lemma
+[]{#lwb label="lwb"} Let $0<\kappa\leq1 , \operatorname{Re}(u)\in [0,1], v\in\mathbb{R}/\mathbb{Z}$ with $u\neq0,1$, and $A\geq 1$. Then $$H_\kappa(u,v) = -\log\mathopen{}\mathclose\bgroup\originalleft|u\aftergroup\egroup\originalright| + O_{v, A}(\log(2/\kappa))$$ uniformly in $u,\kappa$ with $\operatorname{Im}(u)\leq A$.
+:::
+
+::: proof
+*Proof.* The case $v\notin\mathbb{Z}$, $\operatorname{Re}(u)\in [0,1]$ is an easy consequence of the bound $$\begin{aligned}
+\label{tb}
+    {\mathfrak f}(x+it)\ll |t| +|\log |t||,\quad  (x\in[0, 1], t\in\mathbb{R}_{\neq 0}).
+  
+\end{aligned}$$ Now assume $v\in\mathbb{Z}$ and $\operatorname{Re}(u)\in(0, 1/2]$. We recall [\[sph2\]](#sph2){reference-type="eqref" reference="sph2"}. By [\[tb\]](#tb){reference-type="eqref" reference="tb"} the contribution to the integral from the interval $[2A,\infty)$ is $O(\log(2/\kappa))$. Next, we write $$I(u, \kappa) := i\int_{0}^{2A} \frac{{\mathfrak f}(u - it\kappa)-{\mathfrak f}(u + it \kappa)}{\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}\mathrm{d}{t} = -\pi i\int_0^{2A} \int_{u-it\kappa}^{u+it\kappa} (\cot(\pi z)+i)\mathrm{d}z \frac{\mathrm{d}t}{\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1}.$$ Note that $\cot(\pi z)  = 1/(\pi z) + O(1)$ uniformly for $\operatorname{Re}(z)\in[0, 1/2]$, and that $\frac1{\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi t}-1} = \frac1{2\pi t} + O(1)$ for $t>0$. Therefore, $$I(u, \kappa) = \frac{1}{2\pi i}\int_0^{2A} \int_{u-it\kappa}^{u+it\kappa} \frac{\mathrm{d}z}z \frac{\mathrm{d}t}{t} + O_A(\log(2/\kappa)).$$ Changing variables $z \gets \mathopen{}\mathclose\bgroup\originalleft|u\aftergroup\egroup\originalright| z$ and $t\gets t\mathopen{}\mathclose\bgroup\originalleft|u\aftergroup\egroup\originalright|/\kappa$, we get $$I(u, \kappa) = \frac{1}{2\pi i}\int_0^{2A \kappa / \mathopen{}\mathclose\bgroup\originalleft|u\aftergroup\egroup\originalright|} \int_{u'-it}^{u'+it} \frac{\mathrm{d}z}z \frac{\mathrm{d}t}{t} + O_A(\log(2/\kappa)),$$ where $\mathopen{}\mathclose\bgroup\originalleft|u'\aftergroup\egroup\originalright|=1$. For $t\leq 1/2$, we may bound the $z$-integral by $O(t)$, while for $t\geq 2$, we have $\int_{u'-it}^{u'+it} \frac{\mathrm{d}z}z = \pi i + O(1/t)$. We deduce $$I(u, \kappa) = \frac{1}{2\pi i}\int_{1/2}^{2} \int_{u'-it}^{u'+it} \frac{\mathrm{d}z}z \frac{\mathrm{d}t}{t} + O_A(\log(2/\kappa)) - \frac12\log\mathopen{}\mathclose\bgroup\originalleft|u\aftergroup\egroup\originalright|.$$ The double integral here is bounded independently of $u'$, and so finally $$I(u, \kappa) = O_A(\log(2/\kappa)) - \frac12\log\mathopen{}\mathclose\bgroup\originalleft|u\aftergroup\egroup\originalright|.$$ We deduce $H_\kappa(u, 0) = -\log\mathopen{}\mathclose\bgroup\originalleft|u\aftergroup\egroup\originalright| + O_A(\log(2/\kappa))$ for $0\leq\operatorname{Re}(u)\leq 1/2,$ $u\neq0$. On the other hand, by computations similar to Lemma [\[lemmah\]](#lemmah){reference-type="ref" reference="lemmah"}, we get $$H_\kappa(1-u, 0) + H_\kappa(u, 0) = -{\mathfrak f}(u) - \frac{\pi i}2 (2u-1) - \frac{\pi i \kappa}{6},$$ from which we get the claimed behaviour for all $u$. ◻
+:::
+
+::: proof
+*Proof of Theorem [\[th:Ir\]](#th:Ir){reference-type="ref" reference="th:Ir"}.* For $0\leq\ell\leq L$, let $r_\ell  = \ell k/d$. We split $(\ifthenelse{\equal{\gamma x}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \gamma x\aftergroup\egroup\originalright)}{( \gamma x)}{( \gamma x)}{( \gamma x)}})_r$ as $(\ifthenelse{\equal{\gamma x}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \gamma x\aftergroup\egroup\originalright)}{( \gamma x)}{( \gamma x)}{( \gamma x)}})_r=\prod_{\ell =0}^LP_\ell^L$, where for $0\leq \ell  < L$, $$P_\ell ^L = \prod_{r_\ell  < n \leq r_{\ell +1}} \bigg(1-\ifthenelse{\equal{\frac{nh}k}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \frac{nh}k\aftergroup\egroup\originalright)}{( \frac{nh}k)}{( \frac{nh}k)}{( \frac{nh}k)}}\bigg) \qquad \text{and} \qquad P_L^L = \prod_{r_\ell  < n \leq r} \bigg(1-\ifthenelse{\equal{\frac{nh}k}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \frac{nh}k\aftergroup\egroup\originalright)}{( \frac{nh}k)}{( \frac{nh}k)}{( \frac{nh}k)}}\bigg).$$ First we focus on the case $0\leq \ell<L$. By [\[redeq\]](#redeq){reference-type="eqref" reference="redeq"} and by periodicity we have $$\begin{aligned}
+    P_\ell ^L ={}&  \prod_{r_\ell  < n \leq r_{\ell +1} } \bigg(1-\ifthenelse{\equal{\frac{np}q - \frac{nd}{kq}}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \frac{np}q - \frac{nd}{kq}\aftergroup\egroup\originalright)}{( \frac{np}q - \frac{nd}{kq})}{( \frac{np}q - \frac{nd}{kq})}{( \frac{np}q - \frac{nd}{kq})}}\bigg) =\prod_{a=1}^{q}\prod_{\frac{r_\ell -a}q < m \leq \frac{r_{\ell +1}-a}q} \bigg(1-\ifthenelse{\equal{\frac{ap}q - \frac{d(a+mq)}{kq}}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \frac{ap}q - \frac{d(a+mq)}{kq}\aftergroup\egroup\originalright)}{( \frac{ap}q - \frac{d(a+mq)}{kq})}{( \frac{ap}q - \frac{d(a+mq)}{kq})}{( \frac{ap}q - \frac{d(a+mq)}{kq})}}\bigg) \\
+    ={}& \prod_{a=1}^{q}\prod_{\frac{r_\ell -a}q < m \leq \frac{r_{\ell +1}-a}q} \bigg(1-\ifthenelse{\equal{\frac{g_a}q - \frac{d(a+mq)}{kq}}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \frac{g_a}q - \frac{d(a+mq)}{kq}\aftergroup\egroup\originalright)}{( \frac{g_a}q - \frac{d(a+mq)}{kq})}{( \frac{g_a}q - \frac{d(a+mq)}{kq})}{( \frac{g_a}q - \frac{d(a+mq)}{kq})}}\bigg),
+  
+\end{aligned}$$ where $g_a$ is the representative of the class $pa~\mathchoice{\mathopen{}\mathclose\bgroup\originalleft( \textnormal{mod}~q\aftergroup\egroup\originalright)}{(\textnormal{mod}~q)}{(\textnormal{mod}~q)}{(\textnormal{mod}~q)}$ contained in $[\ell+1,\ell+q]$, so that in the last line each $\ifthenelse{\equal{\,}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \,\aftergroup\egroup\originalright)}{( \,)}{( \,)}{( \,)}}$ is computed at a number in $(0,1)$. It follows that we can write $$\begin{aligned}
+    P_\ell ^L ={}&\exp\bigg(\sum_{a=1}^{q}\sum_{\frac{r_\ell -a}q < m \leq \frac{r_{\ell +1}-a}q} f\bigg(\frac{g_a}q - \frac{d(a+mq)}{kq}\bigg) \bigg)
+  
+\end{aligned}$$ and that $0<\frac{g_a}q - \frac{dr_{\ell+1}}{kq}<1$ whenever $\frac{r_{\ell +1}-a}q$ is an integer. We can then apply Abel-Plana formula in the form of Lemma [\[lem:abelplana\]](#lem:abelplana){reference-type="ref" reference="lem:abelplana"}. Note that $$\begin{aligned}
+    \sum_{\substack{a=1}}^{q} \int_{\frac{r_\ell -a}q}^{\frac{r_{\ell +1}-a}q} f\Big(\frac{g_a}q- \frac{d(a+tq)}{kq}\Big)\mathrm{d}t &= \frac k{qd} \sum_{\substack{a=1}}^{q} \int_\ell ^{\ell +1} f\Big(\frac{g_a}q-\frac{t}q\Big)\mathrm{d}t \\
+    &=\frac k{qd} \sum_{\substack{g=1}}^{q} \int_0 ^{1} f\Big(\frac{g-t}q\Big)\mathrm{d}t=  \frac k{qd} \int_0 ^{1} {\mathfrak f}(1-t)\mathrm{d}t = 0
+  
+\end{aligned}$$ by [\[ff4\]](#ff4){reference-type="eqref" reference="ff4"}. Therefore, by Lemma [\[lem:abelplana\]](#lem:abelplana){reference-type="ref" reference="lem:abelplana"}, equation [\[defh\]](#defh){reference-type="eqref" reference="defh"} and the definition of $r_\ell$, $$P_\ell ^L = \exp\bigg(\sum_{\substack{a=1}}^{q} H_{d/k}\Big(\frac{g_a}q-\frac\ell q, \frac{a}q - \frac{\ell k}{qd}\Big) - \sum_{\substack{a=1}}^{q}  H_{d/k}\Big(\frac{g_a}q-\frac{\ell+1}q, \frac{a}q - \frac{(\ell +1)k}{qd}\Big)\bigg).$$ Now, $\frac{k}{qd}=\frac{N}{d}+\frac{\overline p}q$ and $1\leq g_a-\ell\leq q$ with $pa\equiv g_a~\mathchoice{\mathopen{}\mathclose\bgroup\originalleft( \textnormal{mod}~q\aftergroup\egroup\originalright)}{(\textnormal{mod}~q)}{(\textnormal{mod}~q)}{(\textnormal{mod}~q)}$, thus by a change of variable and multiplying this equality over $0\leq \ell <L$, we get $$\begin{aligned}
+    \prod_{\ell =0}^{L-1} P_\ell ^L ={}&\exp\bigg( \sum_{\ell =0}^{L-1}\bigg(\sum_{g=1}^{q} H_{d/k}\Big(\frac {g}q, \frac{g\overline p}q - \frac{\ell N}d\Big) - \sum_{g=0}^{q-1} H_{d/k}\Big(\frac {g}q, \frac{g\overline p}q - \frac{(\ell +1)N}d\Big) \bigg)\bigg) \\
+    ={}& \exp\bigg(\sum_{\ell =0}^{L-1} \Big(H_{d/k}\Big(1, -\frac{\ell N}d\Big) - H_{d/k}\Big(0, -\frac{(\ell +1)N}d\Big)\Big) \stepcounter{equation}\tag{\theequation}\label{eq:sumLinit}\\
+    & + \sum_{g=1}^{q-1} \Big( H_{d/k}\Big(\frac gq, \frac{g\overline{p}}q\Big) - H_{d/k}\Big(\frac gq, \frac{g\overline{p}}q - \frac{LN}d\Big) \Big)\bigg). 
+  
+\end{aligned}$$ We treat $P_L^L$ in the same way. First, $$P_L^L 
+  ={}\exp\bigg( \sum_{a=1}^{q}\sum_{\substack{\frac{r_L -a}q < m \leq \frac{r-a}q}} f\Big(\frac{g_a}q - \frac{d(a+mq)}{kq}\Big)\bigg).$$ Note that by [\[ff4\]](#ff4){reference-type="eqref" reference="ff4"} and [\[dig\]](#dig){reference-type="eqref" reference="dig"} $$\begin{aligned}
+    \sum_{a=1}^{q} \int_{(r_L -a)/q}^{(r-a)/q} f\Big(\frac{g_a}q - \frac{d(a+qt)}{kq}\Big)\mathrm{d}t  &= \frac k{qd} \sum_{\substack{a=1}}^{q} \int_L ^{L+\lambda} f\Big(\frac{g_a}q-\frac{t}q\Big)\mathrm{d}t \\
+    &=\frac k{qd}  \int_{0}^\lambda {\mathfrak f}(1-t)\mathrm{d}t= \frac k{qd}  \mathop{\mathrm{{\mathfrak L}}}(\lambda)+\frac{\pi i k }{12 qd}\\
+  
+\end{aligned}$$ where we recall that $\lambda = \{rd/k\}$. Applying Lemma [\[lem:abelplana\]](#lem:abelplana){reference-type="ref" reference="lem:abelplana"}, we therefore find $$\label{eq:sumLlast}
+    P_L^L = \exp\bigg(\frac k{qd}  \mathop{\mathrm{{\mathfrak L}}}(\lambda)+\frac{\pi i k }{12 qd} + \sum_{g=1}^{q} \Big(H_{d/k}\Big(\frac gq, \frac{g\overline{p}}q-\frac{LN}d\Big) - H_{d/k}\Big(\frac{g-\lambda}q, \frac{g\overline{p}-r}q\Big)\Big)\bigg).$$ Multiplying the equalities [\[eq:sumLinit\]](#eq:sumLinit){reference-type="eqref" reference="eq:sumLinit"} and [\[eq:sumLlast\]](#eq:sumLlast){reference-type="eqref" reference="eq:sumLlast"} and recalling that $(\ifthenelse{\equal{\gamma x}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \gamma x\aftergroup\egroup\originalright)}{( \gamma x)}{( \gamma x)}{( \gamma x)}})_r = \prod_{\ell =0}^L P_\ell^L$, we obtain $$\begin{aligned}
+    (\ifthenelse{\equal{\gamma x}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \gamma x\aftergroup\egroup\originalright)}{( \gamma x)}{( \gamma x)}{( \gamma x)}})_r
+    ={}& \exp\bigg(\frac k{qd}  \mathop{\mathrm{{\mathfrak L}}}(\lambda)+\frac{\pi i k }{12 qd} + \sum_{g=1}^{q-1} H_{d/k}\Big(\frac gq, \frac{g\overline{p}}q\Big) - \sum_{g=1}^q H_{d/k}\Big(\frac{g-\lambda}q, \frac{g\overline{p}-r}q\Big) +{} \\
+    {}& \hspace{3em} + H_{d/k}(1, 0)+ \sum_{1\leq \ell  \leq L} \Big(H_{d/k}(1, -\tfrac{\ell N}d) - H_{d/k}(0, -\tfrac{\ell N}d)\Big)\bigg) .
+  
+\end{aligned}$$ By Lemma [\[lemmah\]](#lemmah){reference-type="ref" reference="lemmah"} (1) we have $$\begin{aligned}
+    \sum_{g=1}^{q-1} H_{d/k}\Big(\frac gq, \frac{g\overline{p}}q\Big)&=-\pi i \sum_{g=1}^{q-1} \tilde B_1\Big(\frac gq\Big)\tilde B_1\Big( \frac{g\overline{p}}q\Big)+\frac{\pi i d}{2 k} \sum_{g=1}^{q-1}\tilde B_2\Big(\frac gq\Big)\\
+    &=-\pi i \mathop{\mathrm{s}}(p,q)+\frac{\pi i d}{12 kq}-\frac{\pi i d}{12 k}
+  
+\end{aligned}$$ since $\sum_{g=0}^{q-1}B_2(g/q)=\frac{1}{6q}$ and $B_2(0)=1/6$. Also, by Lemma [\[lemmah\]](#lemmah){reference-type="ref" reference="lemmah"} (3) and (2) we have $H_{d/k}(1, 0)=  \frac{\log(  k/d) }{2 }-   \frac{\pi  i   }{4  } + \frac{ \pi i d}{12k}$ and $$\sum_{1\leq \ell  \leq L} \Big(H_{d/k}(1, -\tfrac{\ell N}d) - H_{d/k}(0, -\tfrac{\ell N}d)\Big)= \sum_{1\leq \ell  \leq L}{\mathfrak f}(\{{\ell N}/{d}\}).$$ Thus, $$\begin{aligned}
+   (\ifthenelse{\equal{\gamma x}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \gamma x\aftergroup\egroup\originalright)}{( \gamma x)}{( \gamma x)}{( \gamma x)}})_r={} (\ifthenelse{\equal{N/d}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  N/d\aftergroup\egroup\originalright)}{( N/d)}{( N/d)}{( N/d)}})_L\exp\bigg(&\frac k{qd}  \mathop{\mathrm{{\mathfrak L}}}(\lambda)+\frac12 \log\frac kd  - \sum_{g=1}^q H_{d/k}\Big(\frac{g-\lambda}q, \frac{g\overline{p}-r}q\Big)+{}\\
+    &-\pi i \mathop{\mathrm{s}}(p,q)-\frac{\pi i }4+\frac{\pi i d}{12 kq}+\frac{\pi i k }{12 qd} \bigg).
+  
+\end{aligned}$$ By [\[expid\]](#expid){reference-type="eqref" reference="expid"} and [\[sph1\]](#sph1){reference-type="eqref" reference="sph1"} we then obtain the claimed result. The bound [\[bdfg\]](#bdfg){reference-type="eqref" reference="bdfg"} follows by Lemma [\[lwb\]](#lwb){reference-type="ref" reference="lwb"}. ◻
+:::

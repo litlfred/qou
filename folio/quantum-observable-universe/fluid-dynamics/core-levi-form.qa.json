@@ -1,0 +1,2533 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:core-levi-form",
+  "kind": "proposition",
+  "paths": {
+    "ts": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.ts",
+    "md": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.md",
+    "lean": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.lean"
+  },
+  "source_hashes": {
+    "md": "145a8d854153",
+    "ts": "d8ab3b33f2ff",
+    "lean": "ec50bfd4f107",
+    "lean_statement": "86085189409b"
+  },
+  "criteria": {
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "bbc03dd9670f",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5a542b9ddb77",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.md:44: 5. Frobenius integrability fails cleanly: no 2-dimensional integral submanifold of $\\ker(\\varTheta)$ nucleates at $\\Sigma$."
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "7e311e463351",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831",
+        "severity": "major",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.lean:171: So the statement is not a field of the context class in either"
+      }
+    ],
+    "voice-title-scholarly": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "dbe50250022f",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "voice-status-section": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "cf3d4ea0ab0a",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "37b3fa59a3bc",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "d8ab3b33f2ff",
+          "md": "2f2e660f939e",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "notes": "{\"regimes\":[\"real-gt-1\",\"real-positive\"],\"chapter\":\"fluid-dynamics\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "d8ab3b33f2ff",
+          "md": "2f2e660f939e",
+          "lean": "10b98c16aa15"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "d8ab3b33f2ff",
+          "md": "2f2e660f939e",
+          "lean": "10b98c16aa15"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "d8ab3b33f2ff",
+          "md": "2f2e660f939e",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "d8ab3b33f2ff",
+          "md": "2f2e660f939e",
+          "lean": "10b98c16aa15"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "d8ab3b33f2ff",
+          "md": "2f2e660f939e",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "d8ab3b33f2ff",
+          "md": "2f2e660f939e",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c58bf6bca27b",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "canonical-no-numerology": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "49e4352f8aa9",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "canonical-witness-pinned": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "3050ae1775d6",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "canonical-script-not-deprecated": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "89bcd82bd3ff",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "canonical-dilogarithm-context": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "a065b3633f0f",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "canonical-no-hardcoded-observable": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "96a346415fd2",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "canonical-cal4-acknowledged": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2ca3d3131a21",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "canonical-ck-tiered-not-binary": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "5fb9d70acf54",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "canonical-no-negative-result-in-paper": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "5c2b3e6cb87e",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "compute-prop-has-probe": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2db4e9696dc0",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "compute-prop-has-consumer": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "209764615ecb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "47384e4fd1b4",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "compute-lp-dual-present": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "772b3e8dc930",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650",
+          "graph": "912298015110"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "316cc94d5aa5",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831",
+        "severity": "major",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:0: forward ref: uses prop:vorticity-lower-bound (manifest pos 97) which appears after this block (pos 57) in the chapter"
+      }
+    ],
+    "detangler-section-band": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650",
+          "graph": "912298015110"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "696ee4c80040",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "detangler-no-xchapter-fwd": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650",
+          "graph": "912298015110"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "b01f61430d2a",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "detangler-archimedean-wall": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650",
+          "graph": "912298015110"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "3edb7220507a",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650",
+          "graph": "912298015110"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "7b9de841a5d5",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 2,
+          "in_degree": 4,
+          "cone_size": 163,
+          "depth": 36,
+          "pagerank": 0.000424,
+          "edge_span_max": 40,
+          "edge_span_mean": 40,
+          "worst_target": ""
+        }
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650",
+          "graph": "912298015110"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "53f3fcf3f37b",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650",
+          "graph": "912298015110"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "280aea9a61d8",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831",
+        "metrics": {
+          "home_chapter": "fluid-dynamics",
+          "home_score": 3,
+          "top_other_chapter": "quantum-observable-universes",
+          "top_other_score": 3
+        }
+      }
+    ],
+    "detangler-no-dependency-cycle": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650",
+          "graph": "912298015110"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "8dda7ee9ac99",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "9b284af269a5",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "a9dcafa45a8f"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "bib-cited-ref-has-url": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "a730f195e37d",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "a9dcafa45a8f"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "bib-cited-ref-metadata-ok": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "b7cc0ee7d062",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "a9dcafa45a8f"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "bib-cited-ref-has-screenshot": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "d3202b194d13",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "a9dcafa45a8f"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "proof-no-trivial-skeleton": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "78239d5e66a5",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "21d9ff417741"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "proof-no-bare-sorries": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "5f54e3f82f73",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "proof-no-axiom-growth": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "e5bf3e1d32ef",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "proof-build-green": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "492c533d3fbe",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "proof-substantive": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "a5244d874f38",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "proof-no-conj-propagation-violation": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "5ad4256cd7b2",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "22292b18c779"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "proof-conditional-class-banner": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "5857d128ab93",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "8285870ddd65"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "badf9b8e012f",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "16d8c7a8984e"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831",
+        "notes": "stale: cached lean_sha 10b98c16aa15 != current 575487b7fc66; re-run content/pipeline/lean-compile-audit.ts to refresh"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement is a bare mathematical claim."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement respects the chapter's base-ring regime."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Proof machinery matches the statement regime."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "ec50bfd4f107"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qou-z9ws-vacuity-drain",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-31T11:20:30.777Z",
+        "reviewed_sha": "c2cae021ba996bee9a1f30fa2011b8c47d7cf275",
+        "severity": "minor",
+        "evidence": "core-levi-form.lean omits three things the md asserts. (1) The (1 + O(hbar_q^2)) factors of md parts (a) and (b) are NOT encoded -- AspectSqIsEigenvalueRatio states the leading-order relation as an exact equality, so md (b) comes out as the exact identity cond = max(aperp/apar, apar/aperp)^2. (2) md (c) is encoded only as the (1)<=>(2) equivalence; clauses (3) contact non-degeneracy, (4) the observability axiom Hom_C(1, Ad(A)) = 0, and (5) clean failure of Frobenius integrability have no Lean. (3) The q > 1 restriction on md (d) is not encoded -- CoreLeviData carries no q, and QuantumPressureBound is stated without it. md (e), the q = 1 degeneration, has no encoding either.",
+        "notes": "The class is re-encoded as data + named propositions and both projections are gone. CoreLeviContext previously carried lamPar, lamPerp, aPar, aPerp, cond, hbar, C0 AND md conclusions (b) and (d) as its own fields; lamPar = lamPerp = aPar = aPerp = cond = 1, hbar = C0 = 0 satisfies every field, so the binder assumed nothing, and core_levi_cond_aspect_bound / core_levi_cond_bound returned a field each. FINDING: one of the two was redundant. The old docstring said cond_aspect_bound 'carries the O(hbar_q^2) correction as an explicit bound'. It carried none -- the class already asserted cond = max lam / min lam and (aperp/apar)^2 = lampar/lamperp EXACTLY, and those two force cond = max(aspect)^2 on the nose, so the bound was 0 <= C0*hbar^2 wearing an absolute value. It is now derived. The other, md (d), is a genuine physical claim and is now an explicit hypothesis whose derived consequence (a bound on the aspect ratio) is a different statement. Bean qou-z9ws."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No false claims identified in 'Core aspect ratio equals Levi form condition number on the normal plane': mathematical reasoning is consistent.",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The block 'Core aspect ratio equals Levi form condition number on the normal plane' presents substantial mathematical content: [`conj:q-aubin-lions`](#conj:q-aubin-lions), [`conj:ns-counterexample`](#conj:ns...",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Core aspect ratio equals Levi form condition number on the normal plane'.",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No overclaims: the scope of 'Core aspect ratio equals Levi form condition number on the normal plane' is appropriately qualified.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Core aspect ratio equals Levi form condition number on the normal plane'.",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The argument flow in 'Core aspect ratio equals Levi form condition number on the normal plane' is logically sound, mapping onto the cited dependencies.",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean formalization and narrative for 'Core aspect ratio equals Levi form condition number on the normal plane' are in complete agreement.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No citations are present in 'Core aspect ratio equals Levi form condition number on the normal plane', hence no citation misuse is possible.",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Key terms and symbols in 'Core aspect ratio equals Levi form condition number on the normal plane' are mathematically defined and unambiguous.",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The algebraic and logical relations in 'Core aspect ratio equals Levi form condition number on the normal plane' are independent of empirical tuning parameters.",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The physical concepts described in 'Core aspect ratio equals Levi form condition number on the normal plane' are consistent with quantum observable mechanics.",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The derivation steps and formal definitions in 'Core aspect ratio equals Levi form condition number on the normal plane' are reproducible.",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Core aspect ratio equals Levi form condition number on the normal plane' are consistent.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote fluid-dynamics_seq4.md to eliminate passive fluff and prioritize 'Why'. Kept '<!-- FILE_START: ... -->' bounds.",
+        "reviewed_at": "2026-07-07T14:26:56.260868Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.260868Z"
+        },
+        "field_hash": {
+          "md": "f15212545eed",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-probe-narrative": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "cite-named-theorem": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "voice-agent-speak": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Both flagged items are gone: the AGENTS.md tag \"§7c\" was dropped and \"This block sits on the archimedean side\" was rewritten to \"What follows sits on the archimedean side of the substrate wall.\"",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "proof-not-machine-trivial": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-triviality.ts",
+          "version": "v1",
+          "script_hash": "81d5de6b388d",
+          "script_commit_sha": "96eaa7c2abe8b647e398d37b47af88b9bb730ebb",
+          "deps_hash": "458b1a3606a3"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831",
+        "metrics": {
+          "oracle": "lean-tactic-ladder(trivial|rfl|simp|decide|omega|aesop)",
+          "oracle_closed": 0
+        }
+      }
+    ],
+    "proof-compile-cost": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-cost.ts",
+          "version": "v1",
+          "script_hash": "3eb5d65c22b2",
+          "script_commit_sha": "6f3cf6a0c1d29dd9e8c3da3f6073a776ad58c456",
+          "deps_hash": "4df6f652b039"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831",
+        "notes": "no docs/audits/lean-profile.json"
+      }
+    ],
+    "proof-no-cost-regression": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-cost.ts",
+          "version": "v1",
+          "script_hash": "96b9bdc29ac9",
+          "script_commit_sha": "6f3cf6a0c1d29dd9e8c3da3f6073a776ad58c456",
+          "deps_hash": "4df6f652b039"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831",
+        "notes": "no docs/audits/lean-profile.json"
+      }
+    ],
+    "uses-editorial-hygiene": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "1d50b09b0497",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "a86dfebb515f"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831",
+        "metrics": {
+          "uses_count": 2,
+          "broken_edges": 0,
+          "redundant_edges": 0
+        }
+      }
+    ],
+    "uses-formal-coverage": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "b7b208d4a0c4",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "3b16849c7b53"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831",
+        "metrics": {
+          "formal_only_count": 0,
+          "editorial_only_count": 2
+        }
+      }
+    ],
+    "lean-ref-owns-decl": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "b1c323c3439c",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "a86dfebb515f"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831",
+        "metrics": {
+          "decl_claimants": 1
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "2f2e660f939e",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.596Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:17.256Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "evidence": "full text read; no instances of this construction"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "2f2e660f939e",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.596Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:17.300Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "evidence": "full text read; no instances of this construction"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "2f2e660f939e",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.596Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (1 in 248 words)"
+      },
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:17.349Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "evidence": "full text read; no instances of this construction"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "2f2e660f939e",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.596Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 248 words)"
+      },
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:17.652Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "evidence": "5-item equivalence list in (c) is the proposition's clause structure — substantive"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "2f2e660f939e",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.596Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:17.390Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "evidence": "full text read; no instances of this construction"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "2f2e660f939e",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.596Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:17.431Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "evidence": "full text read; no instances of this construction"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "2f2e660f939e",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.596Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:17.474Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "evidence": "full text read; no instances of this construction"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "2f2e660f939e",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.596Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:17.516Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "evidence": "full text read; no instances of this construction"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "2f2e660f939e",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.596Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:17.688Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "severity": "minor",
+        "evidence": "'tightly bounds', 'strictly equivalent', 'fails cleanly', 'mechanically enforces', 'holds rigidly' spread across (a)-(e)",
+        "notes": "fixed: 'remains structurally inviolate' -> 'remains intact'. proposed: strip tightly/strictly/cleanly/mechanically/rigidly (5 sentences incl. equivalence-list items — structural, math-adjacent)"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "2f2e660f939e",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.596Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:12:17.596Z",
+        "reviewed_sha": "1f2643a68d4525a515ecfeb0706af55395824109",
+        "evidence": "full text read; no instances of this construction"
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ],
+    "foreshadows-point-forward": [
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "575487b7fc66",
+          "lean_statement": "e72790d3c650",
+          "graph": "912298015110"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "782f89f534a5",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-30T08:13:13.753Z",
+        "reviewed_sha": "b47631ca4a07362b481c9c1c5b817a73bccfe831"
+      }
+    ]
+  },
+  "updated_at": "2026-08-31T11:21:16.155Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
+}

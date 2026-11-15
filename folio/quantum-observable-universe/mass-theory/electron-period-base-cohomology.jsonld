@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-electron-period-base-cohomology",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:electron-period-base-cohomology",
+  "kind": "remark",
+  "title": "Cohomological role of CAL-1: $m_e$ as the $h^0$ scale of the $W$-Hodge plane",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-electron-period-base"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-electron-period-base",
+  "tags": [
+    "cal-1",
+    "electron-period",
+    "cohomology",
+    "w-hodge-plane",
+    "calibration"
+  ],
+  "text": "electron-period-base-cohomology.md",
+  "provenance": "authored"
+}

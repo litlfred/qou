@@ -6,7 +6,11 @@
   "sha256": "ceac22eb8ffe87e688b5a8fceeefa109974e8f2b434c263efabde4221d9b58e5",
   "bytes": 756140,
   "pages": 52,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -228,6 +232,104 @@
   "likely_scanned": false,
   "toc_entries": 11,
   "sections": 11,
-  "chars_total": 140604
+  "chars_total": 140604,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 10,
+   "overlaid": 10,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-0-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-1-dg-modules-and-their-resolutions",
+     "title": "DG Modules and their Resolutions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-2-cohomological-dimension",
+     "title": "Cohomological Dimension",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-3-reduction-and-lifting",
+     "title": "Reduction and Lifting",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-4-localization-of-commutative-dg-rings",
+     "title": "Localization of Commutative DG Rings",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-5-perfect-dg-modules",
+     "title": "Perfect DG Modules",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-6-tilting-dg-modules",
+     "title": "Tilting DG Modules",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-7-dualizing-dg-modules",
+     "title": "Dualizing DG Modules",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-8-cohen-macaulay-dg-modules",
+     "title": "Cohen-Macaulay DG Modules",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-9-rigid-dg-modules",
+     "title": "Rigid DG Modules",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

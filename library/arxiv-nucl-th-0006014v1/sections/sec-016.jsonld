@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-nucl-th-0006014v1/sections/sec-016",
   "@type": [
     "doco:Section"
   ],
-  "title": "(q′,q ) ≡ ⟨+ + |RJ(q′,q )| + +⟩",
-  "pageStart": 19,
-  "pageEnd": 19,
+  "title": "Potential parameters",
+  "pageStart": 32,
+  "pageEnd": 33,
   "contains": [
     "library/arxiv-nucl-th-0006014v1/blocks/prose-sec-016"
   ],
-  "derivedFrom": "library/arxiv-nucl-th-0006014v1/manifest",
-  "sourceDocument": "library/arxiv-nucl-th-0006014v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-nucl-th-0006014v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-nucl-th-0006014v1",
   "provenance": "ingested"
 }

@@ -1,18 +1,34 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1203.6531v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Groebner-Shirshov basis and reduced words for affine Weyl group A_n",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1203.6531v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1203.6531v1",
   "contains": [
+    "library/arxiv-1203.6531v1/sections/sec-front-matter",
     "library/arxiv-1203.6531v1/sections/sec-000",
     "library/arxiv-1203.6531v1/sections/sec-001",
-    "library/arxiv-1203.6531v1/sections/sec-002"
+    "library/arxiv-1203.6531v1/sections/sec-002",
+    "library/arxiv-1203.6531v1/sections/sec-003"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1203.6531&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1203.6531v1",
+    "title_source": "slug",
     "source_file": "1203.6531v1.pdf",
     "source_sha256": "29541f28c1c62d8f5172503dcc5ff03c3483fc67fb685c174d51074d3daf66d0",
     "pages": 11,

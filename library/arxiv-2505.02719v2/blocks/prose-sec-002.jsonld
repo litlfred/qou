@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2505.02719v2/blocks/prose-sec-002",
+  "kind": "prose",
+  "title": "Three families of knot energies on curves",
+  "pageStart": 2,
+  "pageEnd": 4,
+  "text": "../sections/sec-002-three-families-of-knot-energies-on-curves.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2505.02719v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2505.02719v2",
+  "provenance": "ingested"
+}

@@ -211,7 +211,7 @@ def emit_lean_module():
     lean = LEAN_TEMPLATE.replace("__TRM__",TRM)\
         .replace("__SIG0__",sigma(0)).replace("__SIG1__",sigma(1)).replace("__SIG2__",sigma(2))\
         .replace("__MULNF__","\n".join(nf_lines))
-    open("content/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceH4.lean","w").write(lean)
+    open("folio/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceH4.lean","w").write(lean)
     print("wrote MarkovTraceH4.lean")
 
 LEAN_TEMPLATE = r'''import Mathlib.Algebra.BigOperators.Fin

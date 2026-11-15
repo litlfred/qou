@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-knot-operator-basis-table",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:knot-operator-basis-table",
+  "kind": "remark",
+  "title": "Knot operator action on NF basis pairs (symbolic in $q$)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-hecke-operations",
+    "papers/quantum-observable-universe/blocks/prop-frobenius-gram-matrix"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-knot-operator-selection",
+  "tags": [
+    "hecke",
+    "knot-operator",
+    "normal-form",
+    "appendix",
+    "pair-production",
+    "frobenius-dual"
+  ],
+  "text": "knot-operator-basis-table.md",
+  "provenance": "authored"
+}

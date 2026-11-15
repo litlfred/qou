@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0605314v1/blocks/prose-sec-036",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0605314v1/blocks/prose-sec-036",
   "kind": "prose",
-  "title": "Colored Jones polynomials. Let L = L1∪···∪ Lm be an m-component,",
-  "pageStart": 19,
-  "pageEnd": 20,
-  "text": "../sections/sec-036-52-colored-jones-polynomials-let-l-l1-lm-be-an-m.md",
-  "derivedFrom": "library/arxiv-math-0605314v1/manifest",
-  "sourceDocument": "library/arxiv-math-0605314v1/manifest",
+  "title": "Applications to the Ohtsuki series",
+  "pageStart": 45,
+  "pageEnd": 48,
+  "text": "../sections/sec-036-1243-applications-to-the-ohtsuki-series.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0605314v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0605314v1",
   "provenance": "ingested"
 }

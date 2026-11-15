@@ -1,0 +1,52 @@
+---
+doc_id: arxiv-math-0309426v2
+doc_title: "arXiv:math/0309426v2 [math.RT] 1 Jul 2004"
+section_id: sec-007-acknowledgements
+section_title: "Acknowledgements"
+section_number: null
+pages: 19-20
+source_pdf: 0309426v2.pdf
+source_sha256: f2aa01164d9f243c
+toc_source: inferred
+---
+The authors would like to thank Adrian Williams for pointing out some errors
+in an earlier version of this manuscript.
+References
+[1] H. H. Andersen, Tilting modules for Algebraic Groups, in Algebraic Groups and their Rep-
+resentations, ed. by R. W. Carter and J. Saxl (1998), 25–42.
+[2] R. Dipper and G. James, Representations of Hecke algebras of general linear groups, Proc.
+L.M.S. (3), 52 (1986), 20–52.
+20
+MATTHIAS K¨UNZER AND ANDREW MATHAS
+[3]
+, Blocks and idempotents of Hecke algebras of general linear groups, Proc. L.M.S. (3),
+54 (1987), 57–82.
+[4]
+, Representations of Hecke algebras of type Bn, J. Algebra, 146 (1992), 454–481.
+[5] Donkin, Stephen, Symmetric and exterior powers, linear source modules and representations
+of Schur superalgebras, Proc. London Math. Soc., 83 (2001), 647–680.
+[6] G. James, The irreducible representations of the symmetric groups, Bull. L.M.S., 8 (1976),
+229–232.
+[7] G. D. James and A. Mathas, A q–analogue of the Jantzen–Schaper Theorem, Proc. L.M.S.
+(3), 74 (1997), 241–274.
+[8] M. K¨unzer and G. Nebe, Elementary divisors of Gram matrices of certain Specht modules,
+Comm. Alg., 31 (2003), 3377–3427.
+[9] Magma, computer algebra system, http://magma.maths.usyd.edu.au/.
+[10] A. Mathas, Hecke algebras and Schur algebras of the symmetric group, Univ. Lecture Notes,
+15, A.M.S. (1999).
+[11] G. E. Murphy, On the representation theory of the symmetric groups and associated Hecke
+algebras, J. Algebra, 152 (1992), 492–513.
+[12] M. Sch¨onert et al., Gap: groups, algorithms, and programming, Lehrstuhl D f¨ur Mathe-
+matik, RWTH Aachen, 3.4.4 ed., 1997.
+[13] M. Takeuchi, The group ring of GLn(q) and the q–Schur algebra, J. Math. Soc. Japan, 48
+(1996), 259-274.
+Abteilung Reine Mathematik,
+Universit¨at Ulm, D-89069 Ulm.
+kuenzer@mathematik.uni-ulm.de
+Germany.
+www.mathematik.uni-ulm.de/ReineM/kuenzer
+School of Mathematics and Statistics F07
+University of Sydney, Sydney N.S.W. 2006.
+mathas@maths.usyd.edu.au
+Australia.
+www.maths.usyd.edu.au/u/mathas/

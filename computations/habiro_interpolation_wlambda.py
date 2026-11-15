@@ -75,7 +75,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from mpmath import mp, mpf, mpc  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 from q0_stamp import pin_value_for_anchor  # noqa: E402
 from qou_substrate.witness import q0_comparison  # noqa: E402
 
@@ -328,20 +328,24 @@ def run():
             entry = {}
             for m in (1, 2):
                 ell = rotation_number(m, j)
-                pred = float(char_pred(alpha, j, ell))
-                got1 = float(abs(e1[m - 1]) / abs(ref1[m - 1]))
+                # mpf throughout: these are the RECORDED comparison values, and
+                # the tolerances below (0.06, 0.25) are far looser than f64, so
+                # nothing here needed the cast.
+                pred = char_pred(alpha, j, ell)
+                got1 = abs(e1[m - 1]) / abs(ref1[m - 1])
                 # second-pair reference for cross-check
                 ref2 = extract_amplitudes(1, j, *NP2)
-                got2 = float(abs(e2[m - 1]) / abs(ref2[m - 1]))
+                got2 = abs(e2[m - 1]) / abs(ref2[m - 1])
                 # flat-free (pred == 0) colors: the amplitude does not carry √N growth; the
                 # RATIO to the √N-growing reference collapses toward 0 as N grows — check < 0.25.
-                if pred == 0.0:
+                if pred == 0:
                     ok = got2 < 0.25
                 else:
                     ok = abs(got2 - pred) < 0.06 * (1 + pred)
                 factorization_ok = factorization_ok and ok
-                entry[f"m{m}"] = {"ell": ell, "predicted_char": pred,
-                                  "ratio_pair1": got1, "ratio_pair2": got2, "ok": bool(ok)}
+                entry[f"m{m}"] = {"ell": ell, "predicted_char": fmt(pred),
+                                  "ratio_pair1": fmt(got1), "ratio_pair2": fmt(got2),
+                                  "ok": bool(ok)}
             rows[str(alpha)] = entry
         ratio_tests[f"fibre{j}"] = rows
     out["factorization_ratio_tests"] = ratio_tests
@@ -355,16 +359,19 @@ def run():
     for name, p, ell in roots:
         tc = two_cos_root(p, ell)
         vals = {mk: qint_fold(mk, tc) for mk in range(1, 7)}
+        # D2f was declared mpf(0) and then accumulated float64 squares, so the
+        # mpf was decorative -- every added term had already been rounded.
         D2f = mpf(0)
         for mk in MARKS:
-            D2f += float(vals[mk].to_mpf()) ** 2
+            D2f += vals[mk].to_mpf() ** 2
         rows = []
         for lbl, mk in MCKAY_NODES:
             f_exact = (vals[mk] * vals[mk]) / (Q5(0) + sum(
                 (vals[m2] * vals[m2] for m2 in MARKS), Q5(0)))
-            f_num = (float(vals[mk].to_mpf()) ** 2) / float(D2f)
+            f_num = (vals[mk].to_mpf() ** 2) / D2f
             rows.append({"node": lbl, "mark": mk,
-                         "F_lambda_exact": repr(f_exact), "F_lambda_numeric": f_num})
+                         "F_lambda_exact": repr(f_exact),
+                         "F_lambda_numeric": fmt(f_num)})
         match[name] = rows
     out["candidate_match_table"] = match
 
@@ -387,19 +394,27 @@ def run():
         return (q ** m - q ** (-m)) / (q - q ** (-1))
 
     arch = {}
+    # mpf-valued twin, consumed by the cross-pin swing below and never
+    # serialized. The swing is a difference of the two q0 pins, which agree to
+    # ~8 digits, so computing it from the ROUNDED record (as this did) discards
+    # most of the quantity being reported.
+    arch_mp = {}
     for pin, q0 in (("muon_q0", Q0_MUON), ("proton_q0", Q0_PROTON)):
         vals = {mk: qint_real(mk, q0) for mk in range(1, 7)}
         D2 = mp.fsum(vals[mk] ** 2 for mk in MARKS)
-        arch[pin] = {"q0": float(q0),
-                     "F_lambda": {lbl: float(vals[mk] ** 2 / D2) for lbl, mk in MCKAY_NODES},
-                     "D2": float(D2)}
+        fl = {lbl: vals[mk] ** 2 / D2 for lbl, mk in MCKAY_NODES}
+        arch_mp[pin] = fl
+        arch[pin] = {"q0": fmt(q0),
+                     "F_lambda": {lbl: fmt(v) for lbl, v in fl.items()},
+                     "D2": fmt(D2)}
     # cross-pin swing per node
     swing = {}
     for lbl, mk in MCKAY_NODES:
-        a = arch["muon_q0"]["F_lambda"][lbl]
-        b = arch["proton_q0"]["F_lambda"][lbl]
-        swing[lbl] = {"muon": a, "proton": b, "abs_diff": abs(a - b),
-                      "rel_swing": abs(a - b) / a if a else None}
+        a = arch_mp["muon_q0"][lbl]
+        b = arch_mp["proton_q0"][lbl]
+        swing[lbl] = {"muon": fmt(a), "proton": fmt(b),
+                      "abs_diff": fmt(abs(a - b)),
+                      "rel_swing": fmt(abs(a - b) / a) if a else None}
     arch["cross_pin_swing"] = swing
     out["archimedean_F_lambda"] = arch
 
@@ -432,21 +447,25 @@ def report(res):
         for a, ent in rows.items():
             for m in ("m1", "m2"):
                 d = ent[m]
-                print(f"    α={a} {m} (ℓ={d['ell']}): pred |[α]_ζ|={d['predicted_char']:.4f}  "
-                      f"ratio={d['ratio_pair2']:.4f} (pair1 {d['ratio_pair1']:.4f})  ok={d['ok']}")
+                # display only -- these fields are now full-precision strings
+                print(f"    α={a} {m} (ℓ={d['ell']}): "
+                      f"pred |[α]_ζ|={float(d['predicted_char']):.4f}  "
+                      f"ratio={float(d['ratio_pair2']):.4f} "
+                      f"(pair1 {float(d['ratio_pair1']):.4f})  ok={d['ok']}")
     print(f"  factorization confirmed at orders 2,3,5: **{res['factorization_confirmed']}**\n")
     print("## (M) Candidate match table — F_λ(ζ) per node per root (exact)\n")
     for name in ("p2", "p3", "p5_m1", "p5_m2"):
         print(f"  {name}:")
         for r in res["candidate_match_table"][name]:
             print(f"    {r['node']:>4} (mark {r['mark']}): F_λ = {r['F_lambda_exact']:>18}  "
-                  f"≈ {r['F_lambda_numeric']:.5f}")
+                  f"≈ {float(r['F_lambda_numeric']):.5f}")
     print("\n## (Q) Archimedean F_λ(q₀) — REPORTED, not wired (μ–p tension NOT resolved)\n")
     print("  node (mark)         F_λ(muon q₀)   F_λ(proton q₀)   rel swing")
     for lbl, mk in MCKAY_NODES:
         s = res["archimedean_F_lambda"]["cross_pin_swing"][lbl]
-        rs = f"{s['rel_swing']:.2e}" if s["rel_swing"] is not None else "—"
-        print(f"  {lbl:>5} ({mk})        {s['muon']:.8f}     {s['proton']:.8f}    {rs}")
+        rs = f"{float(s['rel_swing']):.2e}" if s["rel_swing"] is not None else "—"
+        print(f"  {lbl:>5} ({mk})        {float(s['muon']):.8f}     "
+              f"{float(s['proton']):.8f}    {rs}")
     print("\n  electron = mark 6, muon class (3,2) = mark 5 (#3685 dictionary).")
     print("\nVERDICT: one uniform candidate F_λ = [mark]²/D² evaluates to the folded fibre")
     print("boundary data at every colored-fibre root of Σ(2,3,5) — the normalized squared")

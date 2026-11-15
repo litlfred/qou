@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-substrate-consistency-window",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:substrate-consistency-window",
+  "kind": "proposition",
+  "title": "Overdetermination of the substrate parameter",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-fine-structure-observation",
+    "papers/quantum-observable-universe/blocks/prop-crossing-energy-decomposition"
+  ],
+  "tags": [
+    "substrate-parameter",
+    "testable-prediction",
+    "consistency",
+    "fine-structure",
+    "mass-ratio",
+    "half-life",
+    "speed-of-light"
+  ],
+  "leanRef": "qou:QOU.Observations.substrate_consistency_window",
+  "text": "substrate-consistency-window.md",
+  "provenance": "authored"
+}

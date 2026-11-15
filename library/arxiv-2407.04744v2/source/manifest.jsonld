@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2407.04744v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2407.04744v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2407.04744v2",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2407.04744&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2407.04744v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2407.04744v2",
+    "content_type": "application/gzip",
+    "sha256": "c6acc6f85b4314f6b06e95e1fe4da60b5b7c265581b13ea2365ebcc8b26e698d",
+    "bytes": 8600624,
+    "fetched": "2026-10-10T15:20:29+00:00",
+    "files": [
+      {
+        "path": "source/files/bib_magn.bib",
+        "role": "bib",
+        "sha256": "2eea1d4eb998a307d17fef10ef3281f86eda3ab64d1d6633fd904cff56c140eb",
+        "bytes": 7038
+      },
+      {
+        "path": "source/files/biblio.bib",
+        "role": "bib",
+        "sha256": "68d1dff767e1fd6c5654eec31103d8f79bf7713e06b84ee90fb70cb3999d5abe",
+        "bytes": 172167
+      },
+      {
+        "path": "source/files/paper_v9.bbl",
+        "role": "bbl",
+        "sha256": "30e5d51e5f95c17661ce1ac0e9b44fdb1b21f7c2cb4be356978846a020ca270a",
+        "bytes": 98935
+      },
+      {
+        "path": "source/files/paper_v9.tex",
+        "role": "tex",
+        "sha256": "71ee9361f10dba60738564324bb08a5999124a2c43dc62bfcf2e93b6e32f7482",
+        "bytes": 124610
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

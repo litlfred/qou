@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0903.0853v3/blocks/prose-sec-048",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0903.0853v3/blocks/prose-sec-048",
   "kind": "prose",
-  "title": "CHAPTER 2. SOME GENERAL NONSENSE",
-  "pageStart": 24,
-  "pageEnd": 24,
-  "text": "../sections/sec-048-18-chapter-2-some-general-nonsense.md",
-  "derivedFrom": "library/arxiv-0903.0853v3/manifest",
-  "sourceDocument": "library/arxiv-0903.0853v3/manifest",
+  "title": "Formal solution",
+  "pageStart": 119,
+  "pageEnd": 122,
+  "text": "../sections/sec-048-2311-formal-solution.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0903.0853v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0903.0853v3",
   "provenance": "ingested"
 }

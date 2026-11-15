@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1304.2934v4/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1304.2934v4/blocks/prose-sec-007",
   "kind": "prose",
-  "title": "Gaussian integrals",
-  "pageStart": 13,
-  "pageEnd": 14,
-  "text": "../sections/sec-007-23-gaussian-integrals.md",
-  "derivedFrom": "library/arxiv-1304.2934v4/manifest",
-  "sourceDocument": "library/arxiv-1304.2934v4/manifest",
+  "title": "Basic examples of mod-convergence",
+  "pageStart": 9,
+  "pageEnd": 12,
+  "text": "../sections/sec-007-21-basic-examples-of-mod-convergence.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1304.2934v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1304.2934v4",
   "provenance": "ingested"
 }

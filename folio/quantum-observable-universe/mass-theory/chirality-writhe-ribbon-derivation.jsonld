@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-chirality-writhe-ribbon-derivation",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:chirality-writhe-ribbon-derivation",
+  "kind": "proposition",
+  "title": "Chirality factor $1 + w \\cdot h$ from ribbon-twist framing (writhe $w$)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-e-infinity-page-identifications"
+  ],
+  "tags": [
+    "chirality",
+    "writhe",
+    "ribbon",
+    "kauffman-framing",
+    "derivation",
+    "term-5"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.ChiralityWritheRibbon.chirality_writhe_ribbon",
+  "text": "chirality-writhe-ribbon-derivation.md",
+  "provenance": "authored"
+}

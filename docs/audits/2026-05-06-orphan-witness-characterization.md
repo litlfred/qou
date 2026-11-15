@@ -3,7 +3,7 @@
 **Date:** 2026-05-06
 **Audit baseline:** HEAD `bd3fe56d` (after `audit-wiring.ts` registry-aware
 patch and the bulk move of 328 dead-exploratory probes into
-`computations/_deprecated/`).
+`fsh-guts/deprecated/computations/`).
 
 ```
                  baseline    after registry/auditOnly patch    after deprecation move    after unwrap chains (this PR)
@@ -35,10 +35,10 @@ acknowledging the failure.
 
 | Witness | Assertion summary | Suggested action |
 |---|---|---|
-| [`chi-inter-and-nchir-rank`](../../computations/_deprecated/chi-inter-and-nchir-rank.witness.json) | 3 assertions, 1 failed: "D: dominant-block rank vs paper n_chir" | Wire to a `prop:` for `n_chir`; if no such prop exists, demote to `audit-only` with a probe-report MD |
-| [`level-k-binding`](../../computations/_deprecated/level-k-binding.witness.json) | 1/1 failed: "N≡N triple bond at k=3" | Likely paired with `molecular-binding-level-k`; investigate `level_k_binding.py` source |
-| [`molecular-binding-level-k`](../../computations/_deprecated/molecular-binding-level-k.witness.json) | 1/1 failed: "k=3 single bond" | See above — both target the level-k molecular-binding prediction |
-| [`proton-neutron-mass-error`](../../computations/_deprecated/proton-neutron-mass-error.witness.json) | 1/1 failed: "tower ratio m_n/m_p matches CODATA within 10%" | Cross-link to `categorical-proton g_A` audit (memory: borromean-axial-coupling.py:30-65); investigate if this is the same y_λ-weighted Markov-trace gap |
+| [`chi-inter-and-nchir-rank`](../../fsh-guts/deprecated/computations/chi-inter-and-nchir-rank.witness.json) | 3 assertions, 1 failed: "D: dominant-block rank vs paper n_chir" | Wire to a `prop:` for `n_chir`; if no such prop exists, demote to `audit-only` with a probe-report MD |
+| [`level-k-binding`](../../fsh-guts/deprecated/computations/level-k-binding.witness.json) | 1/1 failed: "N≡N triple bond at k=3" | Likely paired with `molecular-binding-level-k`; investigate `level_k_binding.py` source |
+| [`molecular-binding-level-k`](../../fsh-guts/deprecated/computations/molecular-binding-level-k.witness.json) | 1/1 failed: "k=3 single bond" | See above — both target the level-k molecular-binding prediction |
+| [`proton-neutron-mass-error`](../../fsh-guts/deprecated/computations/proton-neutron-mass-error.witness.json) | 1/1 failed: "tower ratio m_n/m_p matches CODATA within 10%" | Cross-link to `categorical-proton g_A` audit (memory: borromean-axial-coupling.py:30-65); investigate if this is the same y_λ-weighted Markov-trace gap |
 
 ## B. malformed (15) — body fails `JSON.parse`
 
@@ -135,6 +135,6 @@ bun run scripts/audit-wiring.ts --out-dir /tmp/audit-out
 column -t -s$'\t' /tmp/audit-out/orphans.tsv
 ```
 
-Witnesses moved to `computations/_deprecated/` are
+Witnesses moved to `fsh-guts/deprecated/computations/` are
 intentionally excluded from the audit glob (`*.witness.json` without
 `**/`); see `_deprecated/README.md` for the revival procedure.

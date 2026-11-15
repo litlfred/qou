@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/s10052-023-11923-y-a/sections/sec-005",
   "@type": [
     "doco:Section"
@@ -10,7 +15,7 @@
   "contains": [
     "library/s10052-023-11923-y-a/blocks/prose-sec-005"
   ],
-  "derivedFrom": "library/s10052-023-11923-y-a/manifest",
-  "sourceDocument": "library/s10052-023-11923-y-a/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s10052-023-11923-y-a",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s10052-023-11923-y-a",
   "provenance": "ingested"
 }

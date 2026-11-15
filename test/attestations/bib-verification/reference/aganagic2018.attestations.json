@@ -1,0 +1,48 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "aganagic2018",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 49,
+      "entry": {
+        "id": "aganagic2018",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T15:57:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 3,
+        "fix_commit": null,
+        "note": "PDF verified: 'Quantum q-Langlands Correspondence' by Aganagic et al., arXiv:1701.03146. Matches references.ts; q-Langlands is QOU-relevant.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/aganagic2018.pdf"
+        },
+        "local_pdf": "uploads/aganagic2018.pdf",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "FILE ABSENT from uploads/ and git; identity cannot be confirmed from front matter. CORPUS-SIDE AUDIT: five sites \u2014 q-gl-conjecture.ts:11 (a cites[] entry alongside frenkel2007) and QOU/QGeometricLanglands.lean:37, :142, :205, :418. All four Lean Refs are bare pointers with NO locator (no theorem or section number), so none makes a checkable claim about the source; they establish provenance for the q-Langlands framing rather than importing a result. Legitimate but weakly load-bearing. No key-spelling variants found.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "The citations are locator-free provenance pointers importing no result, so there is nothing to correct, and no verdict on the document is possible without the PDF.",
+              "target": "conj:q-gl-conjecture"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z"
+        }
+      }
+    }
+  ]
+}

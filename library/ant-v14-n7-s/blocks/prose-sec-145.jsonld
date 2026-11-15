@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ant-v14-n7-s/blocks/prose-sec-145",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ant-v14-n7-s/blocks/prose-sec-145",
   "kind": "prose",
-  "title": "Appendix",
-  "pageStart": 280,
-  "pageEnd": 281,
-  "text": "../sections/sec-145-appendix.md",
-  "derivedFrom": "library/ant-v14-n7-s/manifest",
-  "sourceDocument": "library/ant-v14-n7-s/manifest",
+  "title": "4B. The stratification in our setting",
+  "pageStart": 261,
+  "pageEnd": 263,
+  "text": "../sections/sec-145-4b-the-stratification-in-our-setting.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s",
   "provenance": "ingested"
 }

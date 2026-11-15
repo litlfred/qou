@@ -16,7 +16,7 @@ by distance below the top index.
     python3 scripts/gen-hecke-corner-column.py 2   # §4ad, 15 steps
     python3 scripts/gen-hecke-corner-column.py 3   # §4ae, 23 steps
 
-The output is pasted into `content/unital-groebner-bases/lean/UGB/GrobnerShirshov/
+The output is pasted into `folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/
 HeckeCompletion.lean`.  Checked by re-deriving §4ad, whose seventeen words and
 fifteen rules were worked out by hand first and agree exactly.
 

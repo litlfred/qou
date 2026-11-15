@@ -1,18 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ant-v14-n7-s-p05/sections/sec-009",
   "@type": [
     "doco:Section"
   ],
-  "title": "L⊗ p∗",
-  "pageStart": 27,
-  "pageEnd": 31,
+  "title": "Acknowledgements",
+  "pageStart": 50,
+  "pageEnd": 50,
   "contains": [
-    "library/ant-v14-n7-s-p05/blocks/prose-sec-009",
-    "library/ant-v14-n7-s-p05/blocks/rem-sec-009-01",
-    "library/ant-v14-n7-s-p05/blocks/ex-sec-009-02"
+    "library/ant-v14-n7-s-p05/blocks/prose-sec-009"
   ],
-  "derivedFrom": "library/ant-v14-n7-s-p05/manifest",
-  "sourceDocument": "library/ant-v14-n7-s-p05/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p05",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p05",
   "provenance": "ingested"
 }

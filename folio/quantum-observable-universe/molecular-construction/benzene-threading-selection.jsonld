@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-benzene-threading-selection",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:benzene-threading-selection",
+  "kind": "remark",
+  "title": "Why the threading link is LP-optimal, and the resonance energy",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-benzene-molecular-braid"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-benzene-threading-emergence",
+  "tags": [
+    "benzene",
+    "threading-link",
+    "resonance",
+    "LP-dual"
+  ],
+  "text": "benzene-threading-selection.md",
+  "provenance": "authored"
+}

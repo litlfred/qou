@@ -4,7 +4,7 @@
 This sharpens `scripts/keystone_eta_w_resolvent_probe.py` (which used abstract
 so3 rotations) by re-deriving the coaxial obstruction directly in the (η₁,η₂)
 ratios that the corpus actually uses
-([`rem:braid-group-action`](../content/quantum-observable-universe/brings-surface/braid-group-action.md)),
+([`rem:braid-group-action`](../folio/quantum-observable-universe/brings-surface/braid-group-action.md)),
 and pinpointing the single off-diagonal generator the resolvent must supply.
 
 Corpus actions on the spectral ratios η₁ = w₁/w₂, η₂ = w₃/w₄:

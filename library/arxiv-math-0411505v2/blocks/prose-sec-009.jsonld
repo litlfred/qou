@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0411505v2/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0411505v2/blocks/prose-sec-009",
   "kind": "prose",
   "title": "Cabling of the arc graph",
   "pageStart": 9,
   "pageEnd": 11,
   "text": "../sections/sec-009-6-cabling-of-the-arc-graph.md",
-  "derivedFrom": "library/arxiv-math-0411505v2/manifest",
-  "sourceDocument": "library/arxiv-math-0411505v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0411505v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0411505v2",
   "provenance": "ingested"
 }

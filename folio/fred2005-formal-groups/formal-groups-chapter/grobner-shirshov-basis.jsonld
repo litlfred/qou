@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/fred2005-formal-groups/blocks/def-grobner-shirshov-basis",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:grobner-shirshov-basis",
+  "kind": "definition",
+  "title": "Groebner--Shirshov basis",
+  "uses": [
+    "papers/fred2005-formal-groups/blocks/def-non-commutative-formal-group"
+  ],
+  "cites": [
+    "references/fred2005"
+  ],
+  "tags": [
+    "groebner-shirshov",
+    "normal-form",
+    "distribution-algebra"
+  ],
+  "leanRef": "fred2005:Fred2005.GrobnerShirshovBasis",
+  "text": "grobner-shirshov-basis.md",
+  "leanSource": "grobner-shirshov-basis.lean",
+  "provenance": "authored"
+}

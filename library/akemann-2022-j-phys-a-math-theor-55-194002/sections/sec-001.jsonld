@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-001",
   "@type": [
     "doco:Section"
   ],
-  "title": "School of Mathematics and Statistics, University of Melbourne, 813 Swanston",
-  "pageStart": 2,
-  "pageEnd": 2,
+  "title": "Introduction",
+  "pageStart": 3,
+  "pageEnd": 5,
   "contains": [
     "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-001"
   ],
-  "derivedFrom": "library/akemann-2022-j-phys-a-math-theor-55-194002/manifest",
-  "sourceDocument": "library/akemann-2022-j-phys-a-math-theor-55-194002/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/akemann-2022-j-phys-a-math-theor-55-194002",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/akemann-2022-j-phys-a-math-theor-55-194002",
   "provenance": "ingested"
 }

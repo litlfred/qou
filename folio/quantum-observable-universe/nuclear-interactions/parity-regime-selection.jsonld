@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-parity-regime-selection",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:parity-regime-selection",
+  "kind": "theorem",
+  "title": "Parity regime selection for Q-values",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-branching-qvalue-factorization",
+    "papers/quantum-observable-universe/blocks/prop-confinement-lp"
+  ],
+  "tags": [
+    "parity",
+    "regime-selection",
+    "sign",
+    "odd-even",
+    "q-value",
+    "mass-number"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.parity_regime_selection",
+  "text": "parity-regime-selection.md",
+  "provenance": "authored"
+}

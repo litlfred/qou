@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1912.13486v2/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1912.13486v2/blocks/prose-sec-001",
   "kind": "prose",
   "title": "Analysis on homological block and index of lens space theory",
   "pageStart": 9,
   "pageEnd": 21,
   "text": "../sections/sec-001-22-analysis-on-homological-block-and-index-of-le.md",
-  "derivedFrom": "library/arxiv-1912.13486v2/manifest",
-  "sourceDocument": "library/arxiv-1912.13486v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1912.13486v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1912.13486v2",
   "provenance": "ingested"
 }

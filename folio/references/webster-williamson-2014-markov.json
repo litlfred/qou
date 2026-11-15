@@ -1,0 +1,35 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "webster-williamson-2014-markov",
+  "library": {
+    "docId": "arxiv-0911.4494v2",
+    "dir": "library/arxiv-0911.4494v2",
+    "pdf": "library/arxiv-0911.4494v2/0911.4494v2.pdf",
+    "stage": "candidates",
+    "pages": 14,
+    "sections": 7,
+    "arxiv": "0911.4494v2"
+  },
+  "type": "article",
+  "title": "The geometry of Markov traces",
+  "author": [
+    {
+      "family": "Webster",
+      "given": "Ben"
+    },
+    {
+      "family": "Williamson",
+      "given": "Geordie"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2014
+      ]
+    ]
+  },
+  "container-title": "arXiv preprint",
+  "URL": "https://arxiv.org/abs/0911.4494",
+  "note": "arXiv:0911.4494, Duke Math. J. 2014. Added 2026-05-19 from library/ gap audit. DIRECT fit with QOU's Markov-trace content (jones-markov-trace.lean, markov-trace-*.lean). Potential citation target."
+}

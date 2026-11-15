@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0605314v1/sections/sec-017",
   "@type": [
     "doco:Section"
   ],
-  "title": "Ribbon structure for Uh. The Hopf algebra Uh has a ribbon Hopf algebra",
-  "pageStart": 11,
-  "pageEnd": 11,
+  "title": "Proof of Theorem",
+  "pageStart": 29,
+  "pageEnd": 30,
   "contains": [
     "library/arxiv-math-0605314v1/blocks/prose-sec-017"
   ],
-  "derivedFrom": "library/arxiv-math-0605314v1/manifest",
-  "sourceDocument": "library/arxiv-math-0605314v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0605314v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0605314v1",
   "provenance": "ingested"
 }

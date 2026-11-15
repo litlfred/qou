@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s0894-0347-00-00337-4/blocks/prose-sec-018",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/s0894-0347-00-00337-4/blocks/prose-sec-018",
   "kind": "prose",
-  "title": "Proof of Theorem 3. We refer the reader to Section 1.3 of the Introduction",
-  "pageStart": 14,
-  "pageEnd": 16,
-  "text": "../sections/sec-018-31-proof-of-theorem-3-we-refer-the-reader-to-sec.md",
-  "derivedFrom": "library/s0894-0347-00-00337-4/manifest",
-  "sourceDocument": "library/s0894-0347-00-00337-4/manifest",
+  "title": "References",
+  "pageStart": 33,
+  "pageEnd": 35,
+  "text": "../sections/sec-018-references.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s0894-0347-00-00337-4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s0894-0347-00-00337-4",
   "provenance": "ingested"
 }

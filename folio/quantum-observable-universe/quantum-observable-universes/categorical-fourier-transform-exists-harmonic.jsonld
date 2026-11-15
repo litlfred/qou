@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-categorical-fourier-exists-harmonic",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:categorical-fourier-exists-harmonic",
+  "kind": "remark",
+  "title": "Projections and harmonic analysis on $A$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-fourier"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-categorical-fourier-exists",
+  "tags": [
+    "fourier",
+    "peter-weyl",
+    "harmonic-analysis"
+  ],
+  "text": "categorical-fourier-transform-exists-harmonic.md",
+  "provenance": "authored"
+}

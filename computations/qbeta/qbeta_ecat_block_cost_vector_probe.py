@@ -3,9 +3,9 @@
 discretised `E_cat`, closing the last step between a separating scalar and the
 LP/SDP cost vector the operator-selection program takes.
 
-# Ref: content/quantum-observable-universe/lean/QOU/QBeta/ECatBlockDecomposition.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/QBeta/ECatBlockDecomposition.lean
 #      (blockDecomposition_of_linear -- the split is a THEOREM, from linearity alone)
-# Ref: content/quantum-observable-universe/lean/QOU/Mass/GammaGammaWordSelection.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/Mass/GammaGammaWordSelection.lean
 #      (the `cost : W -> R` socket)
 # Ref: computations/qbeta/qbeta_ecat_pair_kernel_probe.py   (the scalar total)
 # Ref: computations/homfly_ocneanu_trace.py                 (`_chi`, skein-validated)
@@ -42,8 +42,14 @@ algebraic identity, and check [A1] VERIFIES it by reassembling `tr_M(pair)` from
 the blocks and comparing against the independent `tr_at` engine, rather than
 assuming the assembly is right.
 
-CONVENTION D. `y_(1^3) = 0` by construction -- that vanishing IS convention D
-(`markovWeights_eq_jones_of_threeRow_eq_zero`). So the alternating block
+CONVENTION D. `y_(1^3) = 0` by construction -- that vanishing IS convention D.
+The direction used here is D ==> vanish, which is
+`FibreDimensionForcesTL.threeRow_eq_zero_of_jones_ocneanu` (or, for general `n`,
+`ocneanuWeight_conventionD_eq_zero_of_three_rows`). The CONVERSE, which is what
+makes it an "IS", is `markovWeights_eq_jones_of_threeRow_eq_zero` -- and that one
+additionally needs `hfaith : y_(2,1) != 0` (`markovWeights_degenerate_root` shows
+its conclusion is false without it). Naming only the converse, as this file did,
+cites one half of a biconditional for the half it does not use. So the alternating block
 contributes nothing to any such cost, and the cost vector is effectively
 2-dimensional at `n = 3`. Asserted in [A2] rather than left implicit, because a
 reader seeing a zero column should know it is the convention and not a bug.
@@ -139,7 +145,8 @@ def y_lambda():
     """Convention-D Markov weights at n = 3.
 
     `y_(1^3) = 0` is not a truncation applied here -- that vanishing IS
-    convention D. The other two are the closed forms, and [A2] checks they
+    convention D (D ==> vanish is `threeRow_eq_zero_of_jones_ocneanu`; the
+    converse is `markovWeights_eq_jones_of_threeRow_eq_zero` + `hfaith`). The other two are the closed forms, and [A2] checks they
     reproduce `tr_M(1) = y_(3) + 2 y_(2,1) = 1`.
     """
     q2 = Q0 ** 2
@@ -256,7 +263,8 @@ def main() -> int:
         "convention_D_kills_the_alternating_block_and_normalises_the_identity",
         y[(1, 1, 1)] == 0 and abs(unit - 1) < TOL,
         f"y_(1^3) = 0 exactly -- that vanishing IS convention D "
-        f"(markovWeights_eq_jones_of_threeRow_eq_zero), not a truncation "
+        f"(D => vanish is threeRow_eq_zero_of_jones_ocneanu; the converse is "
+        f"markovWeights_eq_jones_of_threeRow_eq_zero + hfaith), not a truncation "
         f"applied here -- and sum_lambda y_lambda dim_lambda = "
         f"{mp.nstr(unit, 20)} recovers tr_M(1) = 1. So the cost vector has a "
         f"structurally zero column at n = 3 and is effectively 2-dimensional. "

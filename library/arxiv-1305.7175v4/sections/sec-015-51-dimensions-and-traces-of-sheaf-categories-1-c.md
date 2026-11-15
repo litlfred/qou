@@ -8,86 +8,76 @@ pages: 30-31
 source_pdf: 1305.7175v4.pdf
 source_sha256: 5a09955f4fb6a57e
 doc_brief: "NONLINEAR TRACES — W e combine the theory of traces in homotopical algebra with s heaf theory in de- rived algebraic geometry to deduce general ﬁxed point and ch aracter formulas."
+text_source: latex
+latex_prose_ratio: 0.928
+latex_coverage_ratio: 0.929
 ---
-graph of a map of derived stacks f : X → Y provides a correspondence from X to Y and
-a correspondence from Y to X. We denote the respective induced maps by f∗ :S(X)→S (Y )
-andf ! :S(Y )→S (X). The functoriality of S concisely encodes base change for f∗ andf !. For
-π : X→ pt = Spec k, we denote by ωX = π!k∈S (X) the S-analogue of the dualizing sheaf,
-and by ω(X) = π∗ωX∈S (pt) = dgVect k theS-analogue of “global volume forms”.
-Next we will record formal consequences of our prior calculations d educed from the fact that
-a sheaf theory is symmetric monoidal.
-Proposition 5.2. Fix a sheaf theory S :Corrk→dgCatk, and X,Y ∈Corrk.
-(1)S(X)∈dgCatk is canonically self-dual, and for any f :X→Y , f ! :S(Y )→S (X) and
-f∗ :S(X)→S (Y ) are canonically transposes of each other.
-(2)S(X) is canonically symmetric monoidal with tensor product
-F⊗ !G = ∆ !(π!
-1F⊗ π!
-2G) F,G∈S (X)
-(3) For any f :X→Y , the projection formula holds:
-f∗F⊗ !G≃ f∗(F⊗ !f !G) F∈S (X),G∈S (Y )
-(4) There is a canonical equivalence of functors and integra l kernels
-HomdgCat k (S(X),S(Y ))≃S (X×Y )
-(5) The functor q∗p! :S(X)→S (Y ) associated to a correspondence
-X Z
-p/d111/d111 q /d47/d47Y
-is represented by the integral kernel (p×q)∗ωZ∈S (X×Y ).
-Proof. (1) Follows immediately from Proposition 4.1.
-(2) Follows immediately from the commutative algebra structure on X ∈ Corrk (in fact
-commutative coalgebra structure on X∈Stacksk) provided by the diagonal map.
-(3) Follows from base change for the diagram
-X
-id×f
-/d15/d15
-f /d47/d47Y
-∆
-/d15/d15
-X×Y
-f ×id /d47/d47Y×Y
-(4) SinceS is monoidal, we have
-S(X)⊗S (Y )≃S (X×Y )
-The self-duality of S(X) provides
-HomdgCat k (S(X),S(Y ))≃S (X)∨⊗S (Y )≃S (X)⊗S (Y )
-By construction, the composite identiﬁcation assigns the functor
-FK (F ) = π2∗ (π!
-1F⊗ !K) K∈S (X×Y )
-NONLINEAR TRACES 31
-(5) Follows from the projection formula: consider the diagram
-Z
-p
-/d123/d123✇✇✇✇✇✇✇✇✇
-q
-/d35/d35●●●●●●●●●
-Π
-/d15/d15
-X X ×Y
-π1/d111/d111 π2 /d47/d47Y
-where Π = p×q. Then we have
-q∗p!(−)≃π2∗Π ∗Π !π!
-1(−)≃π2∗Π ∗(ωZ⊗! Π !π!
-1(−))≃π2∗(Π ∗ωZ⊗!π!
-1(−))
-□
-Proposition 5.3. Fix a sheaf theory S :Corrk→dgCatk.
-(1) The S-dimension dim(S(X)) = HH ∗(S(X)) of any X ∈ Corrk is S1-equivariantly
-equivalent withS-global volume forms on the loop space
-dim(S(X))≃ω(LX).
-In particular, for G an aﬃne algebraic group, characters of S-valued G-representations are
-adjoint-equivariantS-global volume forms
-dim(S(BG))≃ω(G/G)
-(2) The S-trace of any endomorphism Z ∈ Corrk(X,X ) is equivalent to S-global volume
-forms on the restriction to the diagonal
-Tr(S(Z))≃ω(Z|∆ )
-In particular, the S-trace of a self-map f : X→ X is equivalent to S-global volume forms
-on the f -ﬁxed point locus
-Tr(f∗)≃ω(Xf )
-Proof. (1) Follows immediately from Proposition 4.1(1). To spell this out, usin g the previous
-proposition and base change, dim( S(X)) results from applying the composition
-π∗∆ !∆ ∗π!≃π∗p2∗p!
-1π!≃Lπ∗Lπ! :dgVectk /d47/d47dgVectk
-to the unit 1 dgVect k = k. Here π : X → pt and Lπ : Lx → pt are the maps to the
-point, and p1,p 2 :LX ≃ X×X×X X → X are the two natural projections. Thus we ﬁnd
-dim(S(X))≃L π∗Lπ!(k)≃ ω(LX). Furthermore, the S1-equivariance results from the one-
-dimensional cobordism hypothesis: the one-dimensional topologica l ﬁeld theory deﬁned by
-the dualizable object S(X)∈ dgCatk factors through that deﬁned by the dualizable object
-X∈Corrk. Moreover, we identiﬁed the S1-action on the dimension LX with loop rotation. 6
-(2) Similarly follows immediately from Proposition 4.1(2). □
+The graph of a map of derived stacks $f:X\to Y$ provides a correspondence from $X$ to $Y$ and a correspondence from $Y$ to $X$. We denote the respective induced maps by $f_{*}:\cS(X)\to \cS(Y)$ and $f^!:\cS(Y)\to \cS(X)$. The functoriality of $\cS$ concisely encodes base change for $f_{*}$ and $f^!$. For $\pi:X\to pt = \Spec k$, we denote by $\omega_{X}=\pi^! k\in \cS(X)$ the $\cS$-analogue of the dualizing sheaf, and by $\omega(X)=\pi_{*}\omega_{X} \in \cS(pt) = dgVect_k$ the $\cS$-analogue of "global volume forms\".
+
+Next we will record formal consequences of our prior calculations deduced from the fact that a sheaf theory is symmetric monoidal.
+
+::: prop
+[]{#basic integral transforms label="basic integral transforms"} Fix a sheaf theory $\cS:Corr_k\to dgCat_k$, and $X, Y\in Corr_k$.
+
+\(1\) $\cS(X) \in dgCat_k$ is canonically self-dual, and for any $f:X\to Y$, $f^!:\cS(Y) \to \cS(X)$ and $f_{*}:\cS(X)\to \cS(Y)$ are canonically transposes of each other.
+
+\(2\) $\cS(X)$ is canonically symmetric monoidal with tensor product $$\xymatrix{
+\cF\ot^!\cG=\Delta^!(\pi_1^! \cF\ot \pi_2^! \cG) & \cF, \cG\in \cS(X)
+}$$
+
+\(3\) For any $f:X\to Y$, the projection formula holds: $$\xymatrix{
+f_*\cF\ot^! \cG \simeq f_*(\cF\ot^! f^!\cG) & \cF\in \cS(X), \cG\in \cS(Y)
+}$$
+
+\(4\) There is a canonical equivalence of functors and integral kernels $$\Hom_{dgCat_k}(\cS(X),\cS(Y))\simeq \cS(X\times Y)$$
+
+\(5\) The functor $q_*p^!:\cS(X) \to \cS(Y)$ associated to a correspondence $$\xymatrix{X&\ar[l]_-{p} Z \ar[r]^-{q} &Y}$$ is represented by the integral kernel $(p\times q)_*\omega_Z \in \cS(X\times Y)$.
+:::
+
+::: proof
+*Proof.* (1) Follows immediately from Proposition [\[basic stack dimensions\]](#basic stack dimensions){reference-type="ref" reference="basic stack dimensions"}.
+
+\(2\) Follows immediately from the commutative algebra structure on $X\in Corr_k$ (in fact commutative coalgebra structure on $X\in Stacks_k$) provided by the diagonal map.
+
+\(3\) Follows from base change for the diagram $$\xymatrix{
+X\ar[d]_-{id\times f} \ar[r]^-{f} & Y\ar[d]^-{\Delta}\\
+X\times Y\ar[r]^-{f\times \id} & Y\times Y
+}$$
+
+\(4\) Since $\cS$ is monoidal, we have $$\cS(X)\ot \cS(Y)\simeq \cS(X \times Y)$$ The self-duality of $\cS(X)$ provides $$\Hom_{dgCat_k}(\cS(X),\cS(Y))\simeq \cS(X)^\vee\ot \cS(Y) \simeq \cS(X)\ot \cS(Y)$$ By construction, the composite identification assigns the functor $$\xymatrix{
+F_K(\cF)=\pi_{2_*}(\pi_1^!\cF\ot^! K)
+&
+K\in \cS(X\times Y)
+}$$
+
+\(5\) Follows from the projection formula: consider the diagram $$\xymatrix{
+& Z \ar[dl]_-{p} \ar[dr]^-{q} \ar[d]_-{\Pi}& \\
+X & \ar[l]_-{\pi_1} X\times Y \ar[r]^-{\pi_2} & Y
+}$$ where $\Pi=p\times q$. Then we have $$\xymatrix{
+q_*p^!(-)\simeq \pi_{2*} \Pi_* \Pi^! \pi_1^!(-) \simeq
+\pi_{2*} \Pi_* (\omega_Z \otimes^! \Pi^! \pi_1^!(-)) \simeq
+\pi_{2*} (\Pi_* \omega_Z \otimes^! \pi_1^!(-))
+}$$ ◻
+:::
+
+::: prop
+[]{#trace of integral transform label="trace of integral transform"} Fix a sheaf theory $\cS:Corr_k\to dgCat_k$.
+
+\(1\) The $\cS$-dimension $\dim(\cS(X)) =HH_*(\cS(X))$ of any $X\in Corr_k$ is $S^1$-equivariantly equivalent with $\cS$-global volume forms on the loop space $$\dim(\cS(X))\simeq \omega(\cL X).$$
+
+In particular, for $G$ an affine algebraic group, characters of $\cS$-valued $G$-representations are adjoint-equivariant $\cS$-global volume forms $$\dim(\cS(BG))\simeq \omega(G/G)$$
+
+\(2\) The $\cS$-trace of any endomorphism $Z\in Corr_k(X,X)$ is equivalent to $\cS$-global volume forms on the restriction to the diagonal $$\Tr(\cS(Z)) \simeq \omega(Z|_{\Delta})$$
+
+In particular, the $\cS$-trace of a self-map $f:X\to X$ is equivalent to $\cS$-global volume forms on the $f$-fixed point locus $$\Tr(f_{*})\simeq \omega(X^f)$$
+:::
+
+::: proof
+*Proof.* (1) Follows immediately from Proposition [\[basic stack dimensions\]](#basic stack dimensions){reference-type="ref" reference="basic stack dimensions"}(1). To spell this out, using the previous proposition and base change, $\dim (\cS(X))$ results from applying the composition $$\xymatrix{
+\pi_*\Delta^!\Delta_*\pi^! \simeq \pi_*p_{2*}p_1^!\pi^! \simeq \cL \pi_* \cL \pi^!:dgVect_k \ar[r] & dgVect_k
+}$$ to the unit $1_{dgVect_k} = k$. Here $\pi:X\to pt$ and $\cL \pi:\cL x\to pt$ are the maps to the point, and $p_1, p_2:\cL X \simeq X\times_{X\times X} X\to X$ are the two natural projections. Thus we find $\dim (\cS(X)) \simeq \cL \pi_* \cL \pi^!(k) \simeq \omega(\cL X)$. Furthermore, the $S^1$-equivariance results from the one-dimensional cobordism hypothesis: the one-dimensional topological field theory defined by the dualizable object $\cS(X)\in dgCat_k$ factors through that defined by the dualizable object $X\in Corr_k$. Moreover, we identified the $S^1$-action on the dimension $\cL X$ with loop rotation.[^1]
+
+\(2\) Similarly follows immediately from Proposition [\[basic stack dimensions\]](#basic stack dimensions){reference-type="ref" reference="basic stack dimensions"}(2). ◻
+:::
+
+[^1]: One can also check directly that the cyclic structure on the cyclic bar construction of the dg category $\cS(X)$ is induced by the cyclic structure of the loop space $\cL X$ under the identification $\omega(\cL X)\simeq \dim(\cS(X))$.

@@ -8,694 +8,866 @@ pages: 59-68
 source_pdf: 2205.06874v2.pdf
 source_sha256: 9b41365160c17ab4
 doc_brief: "State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg — We define a"
+text_source: latex
+latex_prose_ratio: 0.942
+latex_coverage_ratio: 0.698
 ---
-In this section we show how defect lines on trivial defect surfaces give rise to ribbon invariants. These surfaces
-are labeled by a spherical fusion categoryC as a (C,C)-bimodule category. AsC is a spherical fusion category,
-its centerZ(C) is a ribbon category, see for instance [TV10, Lemma 10.1]. By Example 1.10, the monoidal
-category EndC(C) is monoidally equivalent toZ(C). Under this monoidal equivalence, an object(a,σ−,a) of
-Z(C) corresponds to the(C,C)-bimodule functorF =a⊗− :C→C with coherence data
-sF
-c,c′ =ac,a,c′◦ (σ−1
-c,a⊗ 1c′)◦a−1
-a,c,c′ :a⊗ (c⊗c′)→ (a⊗c)⊗c′→ (c⊗a)⊗c′→c⊗ (a⊗c′), (104)
-tF
-c,c′ =aa,c,c′ : (a⊗c)⊗c′→a⊗ (c⊗c′)
-and a morphismα :a→b inZ(C) to the (C,C)-bimodule natural transformationν =α⊗− :a⊗−⇒ b⊗−
-from Example 1.10.
-Any diagram representing a ribbon tangle forZ(C) can be realised as a defect graph on a trivial defect disc.
-This amounts to replacing over- and undercrossings in the diagram with defect vertices labeled by (inverse)
-braidings and maxima and minima by defect vertices labeled with the (co)evaluations inZ(C). Every diagram
-D for a (0, 0)-ribbon tangle then defines a morphismα∈ EndZ(C)(e) and a bimodule natural transformation
-ν =α⊗− : idC⇒ idC with νx = tr(α)1x = ev(D)1x :x→x for everyx∈IC.
-Example 6.5. LetC be a spherical fusion category andt a tetrahedron as in Figure 2 (b) with a trivial defect
-surface that contains a diagramD for a (0, 0)-ribbon tangle labeled withZ(C). Then one has
-Z′(t,l∂M,b∂M ) = ev(D)· 6j(t′,l∂M,b∂M ),
-wheret′ is the tetrahedron with the same labels and without the defects andev(D)∈ C the evaluation ofD.
-Proof. The 6j symbol of the defect tetrahedront is obtained from the associated polygon diagram
-q
-nm
-p
-j
-D
-i
-α
-β
-γ
-δ
-where the dashed circle labeledD contains the diagramD. This diagram superimposes the 6j symbol fort′
-and the diagramD. By (104), overcrossings of the line labeledi over lines inD correspond to half-braidings
-σ±1
-i,a, while overcrossings of lines inD overj correspond to associators inC. The line labeledi describes the
-functor i⊗− :C→C and the line labeledj the functor−⊗ j :C→C . Identities(39) to (43) allow one to
-separate the two diagrams and yield the result.
-Example 6.5 shows that ribbon invariants can be realised as line and point defects on a trivial defect plane.
-However, this involves ribbon diagrams rather than ribbons in three-dimensional space, and the braidings are
-external input, namely defect data labeling vertices. We now show how ribbon invariants are obtained from
-line defects in a 3-ball that are not confined to a plane and where the braidings arise from the state sum.
-Example 6.6. LetC be spherical fusion category as a(C,C)-bimodule category andF =a⊗− :C→C and
-G =b⊗− :C→C the bimodule functors for(a,σ−,a), (b,σ−,b)∈ ObZ(C) with coherence data as in(104).
-We consider the following three tetrahedra labeled with objects inIC:
-p q
-m n
-j
-F
-i k
-p q
-m n
-j
-p q
-m n
-l
-G
-k
-59
-Glue the first tetrahedron to the second along the two faces labeled withj,m,n and j,p,q and the second
-to the third along the two faces labeled withk,m,p and k,n,q . This yields a triangulated 3-ballM with a
-one-holed torus as a trivial defect surface. Then the rescaled state sumZ′(M,l∂M,b∂M ) is the 6j symbol of
-the tetrahedron
-p q
-m n
-l
-G
-F
-i
-=
-b
-p
-p
-lq
-n
-m
-ia
-ν
-µ
-β
-δ
-where the crossing of the lines labeledF and G on the defect surface is assigned the(C,C)-bimodule natural
-transformationν =σ−1
-a,b⊗− : (b⊗a)▷−⇒ (a⊗b)▷−.
-Proof. The polygon diagram and the associated 6j symbols for the first tetrahedron are given by
-q
-nm
-p
-j
-i
-F
-α
-β
-γ
-δ
-p
-p
-j
-iF
-q
-n
-m
-α
-β
-γ
-δ
-p
-p
-q
-j
-n
-ia
-m
-α
-β
-γ
-δ
-where the first diagram for the 6j symbol is in the diagrammatic notation of the previous sections and the
-second the usual diagram for a spherical fusion category as in [TV92, BW96], with the objects fromZ(C)
-highlighted in colour. It is obtained from the second diagram by inserting the functor−⊗ j :C→C for the
-line labeledj and the functorF (i⊗− ) =a⊗ (i⊗− ) :C→C for the lines withF and i.
+In this section we show how defect lines on trivial defect surfaces give rise to ribbon invariants.  These surfaces are labeled by a spherical fusion category $\mac$ as a $(\mac,\mac)$-bimodule category.   As $\mac$ is a spherical fusion category, its center $\mathcal Z(\mac)$ is a  ribbon category, see for instance \cite[Lemma 10.1]{TVr}. By Example \ref{ex:modulefuncs}, the monoidal category $\End_\mac(\mac)$  is  monoidally equivalent to $\mathcal Z(\mac)$. 
+Under this monoidal equivalence, an object $(a, \sigma_{-,a})$ of $\mathcal Z(\mac)$  corresponds to the $(\mac,\mac)$-bimodule functor $F=a\oo -:\mac\to\mac$ with coherence data
+\begin{align}\label{eq:coeherencecenter}
+&s^F_{c,c'}=a_{c,a,c'}\circ (\sigma_{c,a}^\inv\oo 1_{c'})\circ a_{a,c,c'}^\inv: a\oo ( c\oo c')\to (a\oo c)\oo c'\to (c\oo a)\oo c'\to c\oo (a\oo c'),\\ 
+&t^F_{c,c'}=a_{a,c,c'}: (a\oo c)\oo c'\to a\oo (c\oo c')\nonumber
+\end{align}
+and a morphism $\alpha: a\to b$ in $\mathcal Z(\mac)$  to the $(\mac,\mac)$-bimodule natural transformation $\nu=\alpha\oo -: a\oo -\Rightarrow b\oo -$ from Example \ref{ex:modulefuncs}. 
+
+Any diagram representing a ribbon tangle for $\mathcal Z(\mac)$ can be realised as a defect graph on a trivial defect disc. This amounts to replacing
+over- and undercrossings in the diagram  with defect vertices labeled by (inverse) braidings
+and maxima and minima  by defect vertices labeled with the (co)evaluations in $\mathcal Z(\mac)$.
+Every  diagram $D$ for a $(0,0)$-ribbon tangle  then defines a morphism $\alpha\in \End_{\mathcal Z(\mac)}(e)$ and
+a  bimodule natural transformation $\nu=\alpha\oo -:\id_{\mac}\Rightarrow\id_\mac$  with
+ $\nu_x=\tr(\alpha) 1_x=\mathrm{ev}(D)1_x: x\to x$ for every  $x\in I_\mac$.
+
+
+\begin{example}\label{ex:ribbonplane} Let $\mac$ be a spherical fusion category and $t$ a tetrahedron as in Figure \ref{fig:dectet} (b) with a trivial defect surface that contains a diagram $D$ for a  $(0,0)$-ribbon tangle  labeled with  $\mathcal Z(\mac)$. 
+Then one has
+$$
+\mathcal Z'(t, l_{\partial M}, b_{\partial M})=\mathrm{ev}(D) \cdot \mathrm{6j}(t', l_{\partial M}, b_{\partial M}),
+$$
+where $t'$ is the tetrahedron with the same labels and without the defects and $\mathrm{ev}(D)\in\C$ the evaluation of $D$.
+\end{example}
+
+\begin{proof} The 6j symbol of the defect tetrahedron $t$ is obtained from the associated polygon diagram
+\begin{align*}
+\begin{tikzpicture}[scale=.3, baseline=(current bounding box.center)]
+\draw[line width=1pt, dotted] (-4,4)--(4,4)node[anchor=west]{$q$} --(4,-4) node[anchor=west]{$n$}--(-4,-4)node[anchor=east]{$m$}--(-4,4) node[anchor=east]{$p$};
+\draw[line width=.5pt, color=black] (0,4)--(0,-4) node[pos=.2, anchor=west]{$j$}node[sloped, pos=.2, allow upside down]{\arrowOut};
+\draw[color=white, fill=white] (0,0) circle (1.8); 
+\draw[line width=1pt, color=cyan, dashed] (0,0) node[anchor=south] {$D$} circle (1.5); 
+\draw[fill=white, color=white] (1.5,0) circle (.4);
+\draw[fill=white, color=white] (-1.5,0) circle (.4);
+\draw[line width=.5pt, color=black] (4,0)--(-4,0) node[pos=.8, anchor=north]{$i$}node[sloped, pos=.8, allow upside down]{\arrowOut};
+\draw[color=black, fill=black] (0,4) circle (.2) node[anchor=south]{$\alpha$};
+\draw[color=black, fill=black] (4,0) circle (.2) node[anchor=west]{$\beta$};
+\draw[color=black, fill=black] (0,-4) circle (.2) node[anchor=north]{$\gamma$};
+\draw[color=black, fill=black] (-4,0) circle (.2) node[anchor=east]{$\delta$};
+\end{tikzpicture}
+\end{align*}
+where the dashed circle labeled $D$ contains the diagram $D$. 
+This diagram superimposes the 6j symbol for  $t'$  and the  diagram  $D$.
+By \eqref{eq:coeherencecenter},  overcrossings of the line labeled $i$ over lines in $D$ correspond to half-braidings $\sigma_{i,a}^{\pm 1}$, while overcrossings of lines in $D$ over $j$ correspond to associators  in $\mac$. The line labeled $i$ describes the functor $i\oo -: \mac\to\mac$ and the line labeled $j$ the functor $-\oo j:\mac\to\mac$. Identities \eqref{pic:rm2} to \eqref{pic:bimodulenat}  allow one to separate the two diagrams and yield the result. 
+\end{proof}
+
+
+Example \ref{ex:ribbonplane} shows that ribbon invariants can be realised as line and point defects on a trivial defect plane. However, 
+this involves ribbon diagrams  rather than ribbons in three-dimensional space, and the braidings are external input, namely  defect data labeling vertices. We now show how ribbon invariants are obtained from line defects in a 3-ball that are not confined to a plane and where the braidings  arise from the   state sum. 
+
+
+
+\begin{example} \label{ex:braiding}Let $\mac$ be spherical fusion category  as a $(\mac,\mac)$-bimodule category and  $F=a\oo -:\mac\to\mac$ and $G=b\oo -:\mac\to \mac$  the bimodule functors  for  $(a, \sigma_{-,a}),(b, \sigma_{-,b})\in\mathcal \Ob \mathcal Z(\mac)$ with coherence data as in
+\eqref{eq:coeherencecenter}.
+We consider the following three tetrahedra labeled with objects  in $I_\mac$: 
+\begin{align*}
+\begin{tikzpicture}[scale=.5]
+\draw[line width=1pt, color=black] (-5,0)--(0,4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=south east]{$p$};
+\draw[line width=1pt, color=black] (5,0)--(0,4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=south west]{$q$};
+\draw[line width=1pt, color=black] (-5,0)--(0,-4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=north east]{$m$};
+\draw[line width=1pt, color=black] (5,0)--(0,-4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=north west]{$n$};
+\draw[line width=1pt, color=black] (-5,0)--(-.5,0)  node[sloped, pos=0.5, allow upside down]{\arrowIn} node[pos=.5, anchor=south]{$j$};
+\draw[line width=1pt, color=black] (.5,0)--(5,0)  ;
+\draw[draw=none, fill=white] (-2,0) circle(.3);
+\draw[draw=none, fill=white] (2,0) circle(.3);
+\draw[draw=none, fill=white] (0,1) circle(.3);
+\draw[line width=1pt, dotted] (-2,2.4)--(-2,-2.4)--(2,-2.4)--(2,2.4)--(-2,2.4);
+\draw[draw=none, fill=white] (0,2.4) circle(.5);
+\draw[draw=none, fill=white] (0,-2.4) circle(.5);
+\draw[color=cyan, line width=1pt] (2, 1)--(-2,1) node[sloped, pos=0.7, allow upside down]{\arrowIn} node[pos=.7, anchor=south]{$F$};
+\draw[draw=none, fill=white] (0,1) circle(.3);
+\draw[line width=1pt, color=black] (0,-4)--(0,4)  node[sloped, pos=0.3, allow upside down]{\arrowIn} node[pos=.3, anchor=east]{$i$};
+\draw[line width=.5pt, -stealth] (2,-1)--(2.5,-1.5);
+\end{tikzpicture}
+
+\qquad
+
+\begin{tikzpicture}[scale=.5]
+\draw[line width=1pt, color=black] (0,-4)--(0,4)  node[sloped, pos=0.3, allow upside down]{\arrowIn} node[pos=.3, anchor=east]{$k$};
+\draw[draw=none, fill=white] (0,2.4) circle(.3);
+\draw[draw=none, fill=white] (0,-2.4) circle(.3);
+\draw[line width=1pt, dotted] (-2,2.4)--(-2,-2.4)--(2,-2.4)--(2,2.4)--(-2,2.4);
+\draw[draw=none, fill=white] (-2,0) circle(.3);
+\draw[draw=none, fill=white] (2,0) circle(.3);
+\draw[line width=1pt, color=black] (-5,0)--(0,4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=south east]{$p$};
+\draw[line width=1pt, color=black] (5,0)--(0,4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=south west]{$q$};
+\draw[line width=1pt, color=black] (-5,0)--(0,-4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=north east]{$m$};
+\draw[line width=1pt, color=black] (5,0)--(0,-4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=north west]{$n$};
+\draw[draw=none, fill=white] (0,0) circle(.3);
+\draw[line width=1pt, color=black] (-5,0)--(5,0)  node[sloped, pos=0.2, allow upside down]{\arrowIn} node[pos=.2, anchor=south]{$j$};
+\draw[line width=.5pt, -stealth] (2,1)--(2.5,1.5);
+\end{tikzpicture}
+
+\qquad
+
+\begin{tikzpicture}[scale=.5]
+\draw[line width=1pt, color=black] (-5,0) --(0,4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=south east]{$p$};
+\draw[line width=1pt, color=black] (5,0)--(0,4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=south west]{$q$};
+\draw[line width=1pt, color=black] (-5,0)--(0,-4)   node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=north east]{$m$};
+\draw[line width=1pt, color=black] (5,0)--(0,-4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=north west]{$n$};
+\draw[line width=1pt, color=black] (-5,0)--(-.5,0)  node[sloped, pos=0.5, allow upside down]{\arrowIn} node[pos=.5, anchor=south]{$l$};
+\draw[line width=1pt, color=black] (.5,0)--(5,0)  ;
+\draw[draw=none, fill=white] (-2,0) circle(.3);
+\draw[draw=none, fill=white] (2,0) circle(.3);
+\draw[draw=none, fill=white] (1,0) circle(.3);
+\draw[line width=1pt, dotted] (-2,2.4)--(-2,-2.4)--(2,-2.4)--(2,2.4)--(-2,2.4);
+\draw[draw=none, fill=white] (0,2.4) circle(.5);
+\draw[draw=none, fill=white] (0,-2.4) circle(.5);
+\draw[color=magenta, line width=1pt] (1,2.4)--(1,-2.4) node[pos=.7, anchor=west]{$G$} node[sloped, pos=0.7, allow upside down]{\arrowIn} ;
+\draw[line width=1pt, color=black] (0,-4)--(0,4)  node[sloped, pos=0.3, allow upside down]{\arrowIn} node[pos=.3, anchor=east]{$k$};
+\draw[line width=.5pt, -stealth] (2,-1)--(2.5,-1.5);
+\end{tikzpicture}
+\end{align*}
+Glue the first tetrahedron  to the second along the two  faces labeled with  $j,m,n$ and $j, p, q$ and the second to the third along the two  faces labeled with  $k,m,p$ and $k,n,q$.  This yields a triangulated 3-ball $M$ with  a one-holed torus as a trivial defect surface. 
+Then the rescaled state sum  $\mathcal Z'(M, l_{\partial M}, b_{\partial M})$ is the 6j symbol of the  tetrahedron
+\begin{align*}
+\begin{tikzpicture}[scale=.5]
+\draw[line width=1pt, color=black] (-5,0)--(0,4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=south east]{$p$};
+\draw[line width=1pt, color=black] (5,0)--(0,4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=south west]{$q$};
+\draw[line width=1pt, color=black] (-5,0)--(0,-4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=north east]{$m$};
+\draw[line width=1pt, color=black] (5,0)--(0,-4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=north west]{$n$};
+\draw[line width=1pt, color=black] (-5,0)--(-.5,0)  node[sloped, pos=0.5, allow upside down]{\arrowIn} node[pos=.5, anchor=south]{$l$};
+\draw[line width=1pt, color=black] (.5,0)--(5,0)  ;
+\draw[draw=none, fill=white] (-2,0) circle(.3);
+\draw[draw=none, fill=white] (2,0) circle(.3);
+\draw[draw=none, fill=white] (0,1) circle(.3);
+\draw[draw=none, fill=white] (1,0) circle(.3);
+\draw[line width=1pt, dotted] (-2,2.4)--(-2,-2.4)--(2,-2.4)--(2,2.4)--(-2,2.4);
+\draw[draw=none, fill=white] (0,2.4) circle(.5);
+\draw[draw=none, fill=white] (0,-2.4) circle(.5);
+\draw[color=magenta, line width=1pt] (1,2.4)--(1,-2.4) node[pos=.7, anchor=west]{$G$} node[sloped, pos=0.7, allow upside down]{\arrowIn} ;
+\draw[draw=none, fill=white] (1,1) circle(.3);
+\draw[color=cyan, line width=1pt] (2, 1)--(-2,1) node[pos=.7, anchor=south]{$F$}node[sloped, pos=.7, allow upside down]{\arrowIn} ;
+\draw[draw=none, fill=white] (0,1) circle(.3);
+\draw[line width=1pt, color=black] (0,-4)--(0,4)  node[sloped, pos=.3, allow upside down]{\arrowIn} node[pos=.3, anchor=east]{$i$};
+\draw[line width=.5pt, -stealth] (2,-1)--(2.5,-1.5);
+\begin{scope}[shift={(12,0)}, scale=.8]
+\node at (-6,0)[anchor=east]{$=$};
+\draw[line width=1pt, color=magenta] (0,3) ..controls (-6,2) and (-6,0) .. (2,-1) node[midway, anchor=east]{$b$};
+\draw[color=white, fill=white]  (-1.4,-.4) circle (.3);
+\draw[color=white, fill=white]  (-2.4,-.2) circle (.3);
+\draw[line width=.5pt, color=black] (-1,5)--(1,5) node[anchor=west]{$p$};
+\draw[line width=.5pt] (0,5)--(0,3); 
+\draw[line width=.5pt, color=black] (-1,-5)--(1,-5) node[anchor=west]{$p$};
+\draw[line width=.5pt] (0,-5)--(0,-3); 
+\draw[line width=.5pt] (0,3)--(2,-1) node[midway, anchor=south west] {$l$};
+\draw[line width=.5pt] (0,3)--(-2,1) node[midway, anchor=east] {$q$};
+\draw[line width=.5pt] (-2,1)--(2,-1) node[midway, anchor=south] {$n$};
+\draw[line width=.5pt] (0,-3)--(2,-1) node[midway, anchor=north west] {$m$};
+\draw[line width=.5pt] (0,-3)--(-2,1) node[midway, anchor=north east] {$i$};
+
+\draw[line width=1pt, color=cyan] (-2,1) ..controls (-3,-2).. (0,-3) node[midway, anchor=east]{$a$};
+\draw[color=black, fill=black] (0,3) circle (.2) node[anchor=west]{$\;\nu$};
+\draw[color=black, fill=black] (2,-1) circle (.2) node[anchor=west]{$\;\mu$};
+\draw[color=black, fill=black] (-2,1) circle (.2) node[anchor=east]{$\beta\;$};
+\draw[color=black, fill=black] (0,-3) circle (.2) node[anchor=west]{$\;\delta$};
+\end{scope}
+\end{tikzpicture}
+\end{align*}
+where the crossing of the lines labeled $F$ and $G$ on the defect surface is assigned the $(\mac,\mac)$-bimodule natural transformation $\nu=\sigma_{a,b}^\inv\oo -: (b\oo a)\rhd -\Rightarrow (a\oo b)\rhd -$.
+\end{example}
+
+\begin{proof} The polygon diagram and the associated 6j symbols for the first tetrahedron are given by
+\begin{align*}
+\begin{tikzpicture}[scale=.4, baseline=(current bounding box.center)]
+\draw[line width=1pt, dotted] (-4,4)--(4,4)node[anchor=south west]{$q$} --(4,-4) node[anchor=north west]{$n$}--(-4,-4)node[anchor=north east]{$m$}--(-4,4) node[anchor=south east]{$p$};
+\draw[line width=.5pt, color=gray] (0,4)--(0,-4) node[pos=.2, anchor=west]{$j$}node[sloped, pos=.2, allow upside down]{\arrowOut};
+\draw[fill=white, color=white] (0,-.5) circle (1.2);
+\draw[line width=.5pt, color=black] (4,0) .. controls (0,-1.5) ..  (-4,0) node[pos=.8, anchor=north]{$i$}node[sloped, pos=.8, allow upside down]{\arrowOut};
+\draw[line width=1pt, color=cyan, dashed] (4,0)--(-4,0) node[pos=.8, anchor=south]{$F$}node[sloped, pos=.8, allow upside down]{\arrowIn};
+\draw[color=black, fill=black] (0,4) circle (.2) node[anchor=south]{$\alpha$};
+\draw[color=black, fill=black] (4,0) circle (.2) node[anchor=west]{$\beta$};
+\draw[color=black, fill=black] (0,-4) circle (.2) node[anchor=north]{$\gamma$};
+\draw[color=black, fill=black] (-4,0) circle (.2) node[anchor=east]{$\delta$};
+\end{tikzpicture}
+
+\qquad
+
+\begin{tikzpicture}[scale=.4, baseline=(current bounding box.center)]
+\draw[line width=1.5pt, color=black] (-1,5)--(1,5) node[anchor=west]{$p$};
+\draw[line width=1.5pt, color=black] (-1,-5)--(1,-5) node[anchor=west]{$p$};
+\draw[line width=1.5pt, color=black] (0,5)--(0,-5);
+\draw[line width=.5pt, color=gray] (0,3)  .. controls (-3,2) and (-3,0) .. (0,-1)  node[midway, anchor=east]{$j$};
+\draw[color=white, fill=white] (-2,0) circle (.4);
+\draw[color=white, fill=white] (-2.2,.2) circle (.4);
+\draw[line width=.5pt, color=black] (0,1)  .. controls (-3,0) and (-3,-2) .. (0,-3)  node[midway, anchor= east]{$i$};
+\draw[line width=1pt, color=cyan, dashed] (0,1)  .. controls (-5,0) and (-5,-2) .. (0,-3)  node[midway, anchor=south east]{$F$};
+\node at (0,2)[anchor=west, color=black] {$q$};
+\node at (0,0)[anchor=west, color=black] {$n$};
+\node at (0,-2)[anchor=west, color=black] {$m$};
+
+\draw[color=black, fill=black] (0,3) circle (.2) node[anchor=west]{$\;\alpha$};
+\draw[color=black, fill=black] (0,1) circle (.2) node[anchor=west]{$\;\beta$};
+\draw[color=black, fill=black] (0,-1) circle (.2) node[anchor=west]{$\;\gamma$};
+\draw[color=black, fill=black] (0,-3) circle (.2) node[anchor=west]{$\;\delta$};
+\end{tikzpicture}
+
+\qquad
+
+\begin{tikzpicture}[scale=.4, baseline=(current bounding box.center)]
+\draw[line width=.5pt, color=black] (-1,5)--(1,5) node[anchor=west]{$p$};
+\draw[line width=.5pt] (0,5)--(0,3); 
+\draw[line width=.5pt] (0,-5)--(0,-3); 
+\draw[line width=.5pt, color=black] (-1,-5)--(1,-5) node[anchor=west]{$p$};
+\draw[line width=.5pt] (0,3)--(-2,1) node[midway, anchor=south east]{$q$};
+\draw[line width=.5pt] (0,3)--(2,-1) node[midway, anchor=south west] {$j$};
+\draw[line width=.5pt] (-2,1)--(2,-1) node[midway, anchor=south]{$n$};
+\draw[line width=.5pt] (-2,1)--(0,-3) node[midway, anchor=north east]{$i$};  
+\draw[line width=1pt, color=cyan] (-2,1) ..controls (-3,-2).. (0,-3) node[midway, anchor=east]{$a$};
+\draw[line width=.5pt] (2,-1)--(0,-3) node[midway, anchor=north west]{$m$};    
+
+\draw[color=black, fill=black] (0,3) circle (.2) node[anchor=west]{$\;\alpha$};
+\draw[color=black, fill=black] (-2,1) circle (.2) node[anchor=east]{$\beta\;$};
+\draw[color=black, fill=black] (2,-1) circle (.2) node[anchor=west]{$\;\gamma$};
+\draw[color=black, fill=black] (0,-3) circle (.2) node[anchor=west]{$\;\delta$};
+\end{tikzpicture}
+\end{align*}
+where the first diagram for the 6j symbol is  in the diagrammatic notation of the previous sections and the second the usual diagram for a spherical fusion category as in \cite{TV, BW}, with the objects from $\mathcal Z(\mac)$ highlighted in colour. It is obtained from the second diagram by inserting the functor $-\oo j:\mac\to\mac$ for the  line labeled $j$ and the functor  $F(i\oo-)=a\oo (i\oo -):\mac\to\mac$ for the lines with $F$ and $i$. 
+
 The polygon diagram and 6j symbols for the second tetrahedron are given by
-m
-nq
-p
-j
-k
-ρ
-γ
-τ
-α
-p
-p
-j
-k
-m
-n
-q
-ρ
-γ
-τ
-α
-p
-p
-m
-k
-n
-j
-q
-ρ
-γ
-τ
-α
-Note that here the polygon diagram is viewed from the back, not the front, since the trivial defect plane is
-oriented in the opposite direction. Again, the second diagram for the 6j symbol is the standard diagram for a
-spherical fusion category obtained by inserting the functorsk⊗− :C→C and−⊗ j :C→C for the black
-line labeledk and the grey line labeledj in the second diagram.
-60
+\begin{align*}
+\begin{tikzpicture}[scale=.4, baseline=(current bounding box.center)]
+\draw[line width=1pt, dotted] (-4,4)--(4,4)node[anchor=south west]{$m$} --(4,-4) node[anchor=north west]{$n$}--(-4,-4)node[anchor=north east]{$q$}--(-4,4) node[anchor=south east]{$p$};
+\draw[line width=.5pt, color=gray] (4,0)--(-4,0) node[pos=.8, anchor=north]{$j$}node[sloped, pos=.8, allow upside down]{\arrowOut};
+\draw[fill=white, color=white] (0,0) circle (.4);
+\draw[line width=.5pt, color=black] (0,4)--(0,-4) node[pos=.8, anchor=west]{$k$}node[sloped, pos=.8, allow upside down]{\arrowOut};
+\draw[color=black, fill=black] (0,4) circle (.2) node[anchor=south]{$\rho$};
+\draw[color=black, fill=black] (4,0) circle (.2) node[anchor=west]{$\gamma$};
+\draw[color=black, fill=black] (0,-4) circle (.2) node[anchor=north]{$\tau$};
+\draw[color=black, fill=black] (-4,0) circle (.2) node[anchor=east]{$\alpha$};
+\end{tikzpicture}
+
+\qquad
+
+\begin{tikzpicture}[scale=.4, baseline=(current bounding box.center)]
+\draw[line width=1.5pt, color=black] (-1,5)--(1,5) node[anchor=west]{$p$};
+\draw[line width=1.5pt, color=black] (-1,-5)--(1,-5) node[anchor=west]{$p$};
+\draw[line width=1.5pt, color=black] (0,5)--(0,-5);
+\draw[line width=.5pt, color=gray] (0,1)  .. controls (-3,0) and (-3,-2) .. (0,-3)  node[midway, anchor= east]{$j$};
+\draw[color=white, fill=white] (-2,0) circle (.4);
+\draw[line width=.5pt, color=black] (0,3)  .. controls (-3,2) and (-3,0) .. (0,-1)  node[midway, anchor=east]{$k$};
+\node at (0,2)[anchor=west, color=black] {$m$};
+\node at (0,0)[anchor=west, color=black] {$n$};
+\node at (0,-2)[anchor=west, color=black] {$q$};
+
+\draw[color=black, fill=black] (0,3) circle (.2) node[anchor=west]{$\;\rho$};
+\draw[color=black, fill=black] (0,1) circle (.2) node[anchor=west]{$\;\gamma$};
+\draw[color=black, fill=black] (0,-1) circle (.2) node[anchor=west]{$\;\tau$};
+\draw[color=black, fill=black] (0,-3) circle (.2) node[anchor=west]{$\;\alpha$};
+\end{tikzpicture}
+
+\qquad
+
+\begin{tikzpicture}[scale=.4, baseline=(current bounding box.center)]
+\draw[line width=.5pt, color=black] (-1,5)--(1,5) node[anchor=west]{$p$};
+\draw[line width=.5pt] (0,5)--(0,3); 
+\draw[line width=.5pt] (0,-5)--(0,-3); 
+\draw[line width=.5pt, color=black] (-1,-5)--(1,-5) node[anchor=west]{$p$};
+\draw[line width=.5pt] (0,3)--(2,1) node[midway, anchor=south west]{$m$};
+\draw[line width=.5pt] (0,3)--(-2,-1) node[midway, anchor=south east] {$k$};
+\draw[line width=.5pt] (-2,-1)--(2,1) node[midway, anchor=south]{$n$};
+\draw[line width=.5pt] (2,1)--(0,-3) node[midway, anchor=north west]{$j$};  
+\draw[line width=.5pt] (-2,-1)--(0,-3) node[midway, anchor=north east]{$q$};    
+
+\draw[color=black, fill=black] (0,3) circle (.2) node[anchor=west]{$\;\rho$};
+\draw[color=black, fill=black] (2,1) circle (.2) node[anchor=west]{$\gamma\;$};
+\draw[color=black, fill=black] (-2,-1) circle (.2) node[anchor=east]{$\;\tau$};
+\draw[color=black, fill=black] (0,-3) circle (.2) node[anchor=west]{$\;\alpha$};
+\end{tikzpicture}
+\end{align*}
+Note that here the polygon diagram is viewed from the back, not the front, since the trivial defect plane is oriented in the opposite direction. Again, the second diagram for the 6j symbol is the standard diagram for a spherical fusion category obtained by inserting the functors $k\oo-: \mac\to\mac$ and $-\oo j:\mac\to\mac$ for the black line labeled $k$ and the grey line labeled $j$ in the second diagram. 
+
+
 The polygon diagram and the 6j symbols for the third tetrahedron are given by
-q
-nm
-p
-lG
-k
-ν
-τ
-µ
-ρ
-p
-p
-G l
-k
-q
-n
-m
-ν
-τ
-µ
-ρ
-b
-p
-p
-q l
-n
-k
-m
-ν
-τ
-µ
-ρ
-Here, the second 6j symbol is obtained from the first by inserting the functork⊗− :C→C for the black line
-labeled k and the functorG(−⊗ l) =b⊗ (−⊗ l) :C→C for the lines labeledG and l. The crossing in the
-second 6j symbol stands for the morphismσ−1
-k,b :b⊗k→k⊗b associated withb.
-The rescaled state sum is obtained by multiplying the three 6j symbols and the dimensions of the internal
-edges, summing over the labelsj,k∈IC and over the morphismsα,γ,ρ,τ assigned to the glued faces
-Z′(M,l∂M,b∂M ) =∑
-j,k
-α,γ,ρ,τ
-dim(j) dim(k)
-p
-p
-q
-j
-n
-ia
-m
-α
-β
-γ
-δ
-p
-p
-m
-k
-n
-j
-q
-ρ
-γ
-τ
-α
-b
-p
-p
-q l
-n
-k
-m
-ν
-τ
-µ
-ρ
-To compute this state sum we first use(66) to glue the polygon diagrams along the faces labeled by the
-objects k,m,p and q,j,p and the morphismsρ and α. We then simplify the resulting expressions with(64)
-and apply (2) together with the naturality of the half-braiding. This gives
-b
-Z′(M,l∂M,b∂M )
-(66)
-= ∑
-j,k
-γ,τ
-dim(j)
-dim(k)
-p
-p
-q l
-n
-k
-m
-n
-q j
-n
-m
-ia
-ν
-τ
-µ
-τ
-γ
-β
-γ
-δ
-b
-(64)
-= ∑
-k,τ dim(k)
-p
-p
-q l
-n
-k
-mq
-i
-n
-a
-ν
-τ
-µ
-τ
-β
-δ
-b
-(2)
-= ∑
-k,τ dim(k)
-p
-p
-q
-l
-n
-k
-mq
-i
-n
-a
-ν
-τ
-µ
-τ
-β
-δ
-61
-Applying again identities (64) and (2) together with the naturality of the half-braiding yields
-Z′(M,l∂M,b∂M )
-(64)
-=
-b
-p
-p
-lq
-m
-n
-ia
-ν
-µ
-β
-δ
-(2)
-=
-b
-p
-p
-lq
-n
-m
-ia
-ν
-µ
-β
-δ
-Example 6.6 allows one to construct any ribbon link invariant for the centreZ(C) of a spherical fusion
-categoryC from state sums that involve only defect surfaces and defect lines. This is achieved by considering
-a ribbon diagram and realising each crossing as in Example 6.6.
-Example 6.7. LetC be a spherical fusion category with centerZ(C) and L a ribbon link whose connected
-components are labeled by objects ofZ(C). LetM be the following triangulated 3-manifold with defect data:
-1. Realise a ribbon diagramDL for L as a PL diagram that is the horizontal and vertical composite of the
-following squares and the ones obtained by rotating them, reversing orientation in the third square and
-replacing an over- by an undercrossing in the last square
-a a
-b
-a
-2. Assign to a dashed line with label(a,σ−,a) inZ(C) the (C,C)-bimodule functorFa =a⊗− :C→C with
-coherence data as in(104), to a crossing with labelsa,b the bimodule natural transformation given by
-σ±1
-a,b, as in Example 6.6, and to the midpoint of the second and third diagram either the identity or the
-(co)units of the adjunctionFl
-a⊣Fa.
-3. Draw solid vertical and horizontal lines in each square that connect the midpoints of the boundary edges
-and end to the left of the dashed lines, viewed in the direction of their orientation. Let the vertical line
-cross under and the horizontal line over all other lines of the diagram.
-4. Label each vertex of the square and each solid line by a simple object ofC, such that the labels match at
-the vertices and edges where the squares are glued to form the diagramDL. Label each endpoint of lines
-at the boundary by a morphism in the appropriate morphism space inC
-q
-nm
-p
-j
-i
-α
-β
-γ
-δ
-q
-nm
-p
-j
-i
-a
-α
-β
-γ
-δ
-q
-nm
-p
-j
-i
-a
-α
-β
-γ
-δ
-b
-q
-nm
-p
-j
-i
-a
-α
-β
-γ
-δ
-5. Assign to each square in 4. a defect tetrahedron for the(C,C)-bimodule categoryC whose 6j symbol is
-the polygon diagram in 4. , as in Figure 13. Construct the last defect tetrahedron in Figure 13 as in
-Example 6.6 by gluing three tetrahedra with defect planes without crossings.
-62
-6. The polygon diagrams glue to a diagram that superimposesDL with additional edges labeled by objects
-ofC, whose endpoints are labeled by morphisms inC. This defines a gluing pattern for the associated
-tetrahedra, as in Figure 14, that yields a triangulated 3-ballM with a ribbon linkL′ in the interior.
-The state sum ofM is
-Z(M,l∂M,b∂M ) = ev(DL)·Z (M′,l∂M,b∂M ),
-whereZ(M′,l∂M,b∂M ) is the state sum of the 3-ballM′ with the same labels, but without defects.
-Proof. As the dimension factors for boundary edges and vertices coincide forM and M′, it is sufficient to
-consider the rescaled state sums. By Proposition 5.11 and Example 6.6, the rescaled state sum forM is the
-evaluation of the polygon diagram obtained by gluing all defect squares. This is the ribbon diagramDL,
-superimposed with a graph labeled byC, which is the dual of the triangulation on∂M.
-The evaluation of this polygon diagram is computed as in Example 6.5. By(104) overcrossings of solid
-lines over lines inT correspond to half-braidings of objects ofZ(C) with objects inC, while undercrossings
-correspond to associators inC. As all vertices involve only solid lines, one can use identities(39) to (43) to
-separate the graph labeled byC and the diagramDL. This yields the product of the rescaled state sum
-Z′(M′,l∂M,b∂M ) and the evaluation ofDL.
-Example 6.7 constructs a specific example of a triangulated 3-ball with a ribbon link as a defect. An analogous
-factorisation of the state sum is obtained for any ribbon link labeled byZ(C) in any triangulated 3-ball
-labeled byC. This follows from the triangulation independence of the state sum and the fact that it is
-invariant under∆-moves, which encode ambient isotopies of ribbon links.
-Proposition 6.8. LetM be a triangulated 3-ball labeled by a spherical fusion categoryC. LetL be a ribbon
-link in the interior ofM that is blackboard-framed with respect to a disc bisectingM and labeled byZ(C).
-Then the state sum is given by
-Z(M,l∂M,b∂M ) =Z(M′,l∂M,b∂M )· ev(DL),
-whereZ(M′,l∂M,b∂M ) is the state sum of the 3-ballM′ with the same labels, but without the link, andDL a
-ribbon diagram obtained by projectingL on the disc.
-Proof. 1. We first show that the state sum is invariant under PL ambient isotopy of the ribbon link. By a
-result of Graeub [G], see also Burde and Zieschang [BZ, Prop. 1.10] and Yetter [Y, Sec. 2.2], two PL links in
-a 3-ball are ambient isotopic iff they are related by a finite sequence of∆-moves. A ∆-move places a triangle
-on the link that intersects it only in one side and replaces this side by the other two sides of the triangle.
-∆
-An analogous result holds for ambient isotopies of blackboard-framed ribbon links if one restricts attention to
-∆-moves that respect the framing, that is, keep the links blackboard framed and can be realised without
-introducing kinks, see for instance [Y, Sec. 2.2]. Thus it is sufficient to show that the state sum is invariant
-under ∆-moves that respect the blackboard framing ofL.
-Consider a blackboard framed∆-move with a triangle∆. By Corollary 5.13 and Lemma 5.7, suppose without
-loss of generality that the tetrahedra intersecting∆ form a fine neighbourhood of∆ and that gluing all
-tetrahedra that intersect∆ yields a triangulated 3-ballB bisected by a defect plane that extends∆.
-By Proposition 5.11 the state sums forB before and after the∆-move are obtained by projecting the dual of
-its boundary triangulation on the defect plane and evaluating the resulting polygon diagram. This yields
-ribbon diagrams that superimpose a ribbon segment labeled byZ(C) with the boundary diagrams labeled by
-C. The polygon diagrams before and after the∆-move are related by a∆-move on the ribbon segment in the
-polygon. Identities (39) to (42) imply that the evaluations of these polygon diagrams are equal. AsM\B is
-not affected by the∆-move, the state sum ofM is invariant under the∆-move by Corollary 4.10.
-63
-p q
-m n
-j
-i
-q
-nm
-p
-j
-i
-α
-β
-γ
-δ
-p q
-m n
-j
-Fa
-i
-q
-nm
-p
-j
-i
-a
-α
-β
-γ
-δ
-p q
-m n
-j
-Fa
-i
-q
-nm
-p
-j
-i
-a
-α
-β
-γ
-δ
-p q
-m n
-j
-Fb
-Fa
-i b
-q
-nm
-p
-j
-i
-a
-α
-β
-γ
-δ
-Figure 13: Defect tetrahedra assigned to the square diagrams from Example 6.7. The last tetrahedron is
-obtained by gluing three tetrahedra without crossings as in Example 6.6.
-64
-p
-m n
-q
-b
-a
-i
-j
-q
-n s
-r
-c
-a
-i
-j′
-m
-k l
-n
-b
-d
-i′
-j
-n
-l t
-s
-c
-d
-i′
-j′
-p
-k t
-rq
-s
-l
-m
-d
-a
-cb
-i
-i′
-j j′
-Figure 14: Gluing four defect tetrahedra and the associated polygon diagram.
-2. By applying 2d isotopies to the ribbon diagramDL, one can transform it into a diagramD′ as in Example
-6.7 and construct a triangulated 3-ballN with a ribbon linkL′ in the interior that projects toD′ =DL′. By
-Example 6.7 one hasZ(N,l∂N,b∂N ) =Z(N′,l∂N,b∂N )· ev(DL′), whereN′ is the 3-ball withoutL′.
-As the boundary triangulations ofM and N are related by elementary shellings and inverse shellings with
-tetrahedra that do not intersectL and L′, it is sufficient to show thatZ(M,l∂M,b∂M ) =Z(N,l∂N,b∂N ), if
-the labeled boundary triangulations forM and N agree. As the link diagramsDL and DL′ are isotopic, one
-has ev(DL) = ev(DL′) and the linksL and L′ that project toDL and DL′ are ambient isotopic. This allows
-one to transformL intoL′ by a finite sequence of∆-moves. The first part of the proof implies that this does
-not affect the state sum. By the triangulation independence of the usual Turaev-Viro-Barrett-Westbury state
-sum, one hasZ(M′,l∂M,b∂M ) =Z(N′,l∂N,b∂N ), and with Theorem 5.16 this yields
-Z(M,l∂M,b∂M )
-1.
-=Z(N,l∂N,b∂N )
-6.7
-= ev(DL′)·Z (N′,l∂N,b∂N )
-5.16
-= ev( DL)·Z (M′,l∂M,b∂M ).
-Proposition 6.8 can be generalised to ribbon tangles realised as defect graphs on trivial defect surfaces. One
-can also generalise it to ribbon links embedded in more general 3-manifolds. Embedding a ribbon linkL
-labeled byZ(C) in a single tetrahedron labeled byC and gluing it to the tetrahedron with the opposite
-orientation along all four faces yields the state sum for a 3-sphereL in the interior
-Z(S3,L ) = ev(DL)
-dimC .
-This coincides with Turaev and Virelizier’s state sum graph TQFT for a 3-sphere containing a ribbon link
-in [TV17, Th. 16.1]. In fact, we expect that our state sums with defect lines and vertices on trivial defect
-surfaces always coincide with the corresponding graph TQFTs with ribbons from [TV17, Ch. 16] and [TV10].
-It would be nice to show this in full generality and to compare with the results by Balsam and Kirillov in
-[KB10, B10] that also involve ribbons labeled byZ(C).
-We also expect that our state sum is related to the modular functor constructed from bimodule categories
-over finite tensor categories by Fuchs et al. [FSS19] if one restricts the latter to our categorical data. However,
-is not clear to us how our construction is related to the work [LY20] by Lee and Yetter, which also constructs
-65
-triangulation independent state sums with defect surfaces. However, the defect surfaces in [LY20] are labeled
-with different categorical data, namely bicategories equipped with spherical duals and certain 2-functors.
-They should be thought of as defects with additional structure, according to the authors. We believe that
-this is a different type of defect that cannot be related directly to our construction.
-The examples in this section show that the state sum models with defects give relevant information about
-defect surfaces and are easy to compute for simple categorical data. It would be feasible to investigate further
-examples that involve defect lines and points on non-trivial defect surfaces, at least for spherical fusion
-categoriesC = VecG andD = VecG′ and bimodule categories defined by finite transitiveG×G′op-sets. In
-this case, the categorical defect data for defect lines and defect points can be worked out explicitly to describe
-defects of all codimensions for Dijkgraaf-Witten theory [DW90]. It would also be interesting to investigate
-knotted defect surfaces beyond the torus and with less trivial categorical data.
-With the results by Balsam and Kirillov [BK12, Kr11] on the relation between Turaev-Viro-Barrett-Westbury
-state sums, Levin-Wen models [LW05] and Kitaev’s quantum double models [Ki03], it should also be possible
-to apply our state sums with defects to those models and to make contact with the work [KK12] by Kitaev
-and Kong. In the long run it would be desirable to determine if our state sum model with defects defines a
-defect TQFT in the sense of the works [CMS20, CRS19] by Carqueville et al. and to relate it to the works
-[CRS18, KMRS21] by Carqueville et al. and by Koppen et al. on defects and domain walls in the context of
-Reshetikhin-Turaev TQFTs. We leave these questions for future work.
-Acknowledgements
-This article originated from discussions with John W. Barrett. We had originally planned to work on this
-project together, but this became impossible due to the Covid-19 pandemic and its impact on research and
-teaching. I am extremely grateful to him for helpful discussions, encouragement and comments on drafts of
-this article. I am also grateful to Gregor Schaumann for remarks and discussions on bimodule categories and
-bimodule traces, to Andreas Knauf for discussions and comments on drafts of this article and to the referee
-for helpful comments and suggestions.
-References
-[AC93] Daniel Altschuler and Antoine Coste. Invariants of three-manifolds from finite group cohomology.
-Journal of Geometry and Physics, 11(1):191– 203, 1993.
-[B10] Balsam, B. (2010). Turaev-Viro invariants as an extended TQFT III. arXiv preprint
-arXiv:1012.0560.
-[BK12] Balsam, B., & Kirillov Jr, A. (2012). Kitaev’s lattice model and Turaev-Viro TQFTs. arXiv
-preprint arXiv:1206.2308.
-[BMG07] Barrett, J. W., Faria Martins, J., & García-Islas, J. M. (2007). Observables in the Turaev-Viro
-and Crane-Yetter models. Journal of Mathematical Physics, 48(9), 093508.
-[BMS12] Barrett, J. W., Meusburger, C., & Schaumann, G. (2012). Gray categories with duals and their
-diagrams. arXiv preprint arXiv:1211.0529.
-[BW96] Barrett, J., & Westbury, B. (1996). Invariants of piecewise-linear 3-manifolds. Transactions of the
-American Mathematical Society, 348(10), 3997-4022.
-[BZ] Burde, G., & Zieschang, H. (2008, August). Knots. In Knots. de Gruyter.
-[CMS20] Carqueville, N., Meusburger, C., & Schaumann, G. (2020). 3-dimensional defect TQFTs and their
-tricategories. Advances in Mathematics, 364, 107024.
-[CRS18] Carqueville, N., Runkel, I., & Schaumann, G. (2018). Line and surface defects in Reshetikhin-
-Turaev TQFT. Quantum Topology, 10(3), 399-439.
-[CRS19] Carqueville, N., Runkel, I., & Schaumann, G. (2019). Orbifolds of n-dimensional defect TQFTs.
-Geometry & Topology, 23(2), 781-864.
-[C95] Casali, M. R.(1995). Anote about bistellar operations onPL-manifoldswith boundary. Geometriae
-Dedicata, 56(3), 257-262.
-[DSS20] Douglas, C., Schommer-Pries, C., & Snyder, N. (2020). Dualizable tensor categories (Vol. 268,
-No. 1308). American Mathematical Society.
-66
-[DW90] Dijkgraaf, R., & Witten, E. (1990). Topological gauge theories and group cohomology. Communi-
-cations in Mathematical Physics, 129(2), 393-429.
-[EGNO] Etingof, P., Gelaki, S., Nikshych, D., & Ostrik, V. (2016). Tensor categories (Vol. 205). American
-Mathematical Soc.
-[ENO05] Etingof, P., Nikshych, D., & Ostrik, V. (2005). On fusion categories. Annals of Mathematics,
-581-642.
-[E66] Epstein, D. B. (1966). Curves on 2-manifolds and isotopies. Acta Mathematica, 115, 83-107.
-[FSS19] Fuchs, J., Schaumann, G., & Schweigert, C. (2019). A modular functor from state sums for finite
-tensor categories and their bimodules. arXiv preprint arXiv:1911.06214.
-[G] Graeub, W. (1950). Die semilinearen Abbildungen. In Die semilinearen Abbildungen (pp. 3–70).
-Springer, Berlin, Heidelberg.
-[JS91] Joyal, A., & Street, R. (1991). The geometry of tensor calculus, I. Advances in mathematics,
-88(1), 55-112.
-[KS93] Karowski, M., & Schrader, R. (1993). A combinatorial approach to topological quantum field
-theories and invariants of graphs. Communications in mathematical physics, 151(2), 355-402.
-[KB10] Kirillov Jr, A., & Balsam, B. (2010). Turaev-Viro invariants as an extended TQFT. arXiv preprint
-arXiv:1004.1533
-[Kr11] Kirillov Jr, A. (2011). String-net model of Turaev-Viro invariants. arXiv preprint arXiv:1106.6033.
-[Ki03] Kitaev, A. Y. (2003). Fault-tolerant quantum computation by anyons. Annals of Physics, 303(1),
-2-30.
-[KK12] Kitaev, A., & Kong, L. (2012). Models for gapped boundaries and domain walls. Communications
-in Mathematical Physics, 313(2), 351-373.
-[KMRS21] Koppen, V., Mulevicius, V., Runkel, I., & Schweigert, C. (2021). Domain walls between 3d phases
-of Reshetikhin-Turaev TQFTs. arXiv preprint arXiv:2105.04613.
-[L] Lee, J. (2010). Introduction to topological manifolds (Vol. 202). Springer Science & Business
-Media.
-[LY20] Lee, I. J., & Yetter, D. N. (2020). Bicategories for TQFTs with Defects with Structure. arXiv
-preprint arXiv:2003.06538.
-[Li99] Lickorish, W. B. R. (1999). Simplicial moves on complexes and manifolds. Geometry and Topology
-Monographs, 2(299-320), 314.
-[LW05] Levin, M. A., & Wen, X. G. (2005). String-net condensation: A physical mechanism for topological
-phases. Physical Review B, 71(4), 045110.
-[Mu03] Mueger, M. From subfactors to categories and topology. I: Frobenius algebras in and Morita
-equivalence of tensor categories. J. Pure Appl. Algebra, 180(1-2):81–157, 2003.
-[P91] Pachner, U. (1991). PL homeomorphic manifolds are equivalent by elementary shellings. European
-journal of Combinatorics, 12(2), 129-145.
-[P90] Pachner, U. (1990). Shellings of simplicial balls and pl manifolds with boundary. Discrete
-mathematics, 81(1), 37-47.
-[RS] Rourke, C. P., & Sanderson, B. J. (2012). Introduction to piecewise-linear topology. Springer
-Science & Business Media.
-[Sa57] Sanderson, D. E. (1957). Isotopy in 3-Manifolds I. Isotopic Deformations of 2-Cells and 3-Cells.
-Proceedings of the American Mathematical Society, 8(5), 912-922.
-[S13] Schaumann, G. (2013). Traces on module categories over fusion categories. Journal of Algebra,
-379, 382-425.
-[S15] Schaumann, G. (2015). Pivotal tricategories and a categorification of inner-product modules.
-Algebras and Representation Theory, 18(6), 1407-1479.
-[ST] Birman, J. S., & Eisner, J. (1980). Seifert and Threlfall, A Textbook of Topology. Academic Press.
-[T] Turaev, V. G. (2020). Quantum invariants of knots and 3-manifolds (Vol. 18). Walter de Gruyter
-GmbH & Co KG.
-[TV10] Turaev, V., & Virelizier, A. (2010). On two approaches to 3-dimensional TQFTs. arXiv preprint
-arXiv:1006.3501.
-[TV17] Turaev, V., & Virelizier, A. (2017). Monoidal categories and topological field theory (Vol. 322, pp.
-xii+-523). Basel: Birkhäuser.
-67
-[TV92] Turaev, V. G., & Viro, O. Y. (1992). State sum invariants of 3-manifolds and quantum 6j-symbols.
-Topology, 31(4), 865-902.
-[Y] Yetter, D. N. (2001). Functorial Knot Theory: Categories of Tangles, Coherence, Categorical
-Deformations and Topological Invariants (Vol. 26). World Scientific.
-[Ze60] Zeeman, E. C. (1960). Unknotting spheres. Annals of Mathematics, 350-361.
-[Zi98] Ziegler, G. M. (1998). Shelling polyhedral 3-balls and 4-polytopes. Discrete & Computational
-Geometry, 19(2), 159-174.
-68
+\begin{align*}
+\begin{tikzpicture}[scale=.4, baseline=(current bounding box.center)]
+\draw[line width=1pt, dotted] (-4,4)--(4,4)node[anchor=south west]{$q$} --(4,-4) node[anchor=north west]{$n$}--(-4,-4)node[anchor=north east]{$m$}--(-4,4) node[anchor=south east]{$p$};
+\draw[line width=.5pt, color=gray] (0,4).. controls (1.5,0)..(0,-4) node[pos=.8, anchor=west]{$l$}node[sloped, pos=.8, allow upside down]{\arrowOut};
+\draw[line width=1pt, color=magenta, dashed] (0,4)--(0,-4) node[pos=.8, anchor=east]{$G$}node[sloped, pos=.8, allow upside down]{\arrowIn};
+\draw[fill=white, color=white] (.5,0) circle (.9);
+\draw[line width=.5pt, color=black] (4,0)--(-4,0) node[pos=.8, anchor=south]{$k$}node[sloped, pos=.8, allow upside down]{\arrowOut};
+\draw[color=black, fill=black] (0,4) circle (.2) node[anchor=south]{$\nu$};
+\draw[color=black, fill=black] (4,0) circle (.2) node[anchor=west]{$\tau$};
+\draw[color=black, fill=black] (0,-4) circle (.2) node[anchor=north]{$\mu$};
+\draw[color=black, fill=black] (-4,0) circle (.2) node[anchor=east]{$\rho$};
+\end{tikzpicture}
+
+\qquad
+
+\begin{tikzpicture}[scale=.4, baseline=(current bounding box.center)]
+\draw[line width=1.5pt, color=black] (-1,5)--(1,5) node[anchor=west]{$p$};
+\draw[line width=1.5pt, color=black] (-1,-5)--(1,-5) node[anchor=west]{$p$};
+\draw[line width=1.5pt, color=black] (0,5)--(0,-5);
+\draw[line width=1pt, color=magenta, dashed] (0,3)  .. controls (-5,2) and (-5,0) .. (0,-1)  node[midway, anchor= east]{$G$};
+\draw[line width=.5pt, color=gray] (0,3)  .. controls (-3,2) and (-3,0) .. (0,-1)  node[midway, anchor= east]{$l$};
+\draw[color=white, fill=white] (-2,0) circle (.4);
+\draw[color=white, fill=white] (-2.2,-.5) circle (.4);
+\draw[line width=.5pt, color=black] (0,1)  .. controls (-3,0) and (-3,-2) .. (0,-3)  node[midway, anchor= east]{$k$};
+\node at (0,2)[anchor=west, color=black] {$q$};
+\node at (0,0)[anchor=west, color=black] {$n$};
+\node at (0,-2)[anchor=west, color=black] {$m$};
+
+\draw[color=black, fill=black] (0,3) circle (.2) node[anchor=west]{$\;\nu$};
+\draw[color=black, fill=black] (0,1) circle (.2) node[anchor=west]{$\;\tau$};
+\draw[color=black, fill=black] (0,-1) circle (.2) node[anchor=west]{$\;\mu$};
+\draw[color=black, fill=black] (0,-3) circle (.2) node[anchor=west]{$\;\rho$};
+\end{tikzpicture}
+
+\qquad
+
+\begin{tikzpicture}[scale=.4, baseline=(current bounding box.center)]
+\draw[line width=1pt, color=magenta] (0,3) ..controls (-6,2) and (-6,0) .. (2,-1) node[midway, anchor=east]{$b$};
+\draw[color=white, fill=white] (-1.3,-.5) circle (.4);
+\draw[line width=.5pt, color=black] (-1,5)--(1,5) node[anchor=west]{$p$};
+\draw[line width=.5pt] (0,5)--(0,3); 
+\draw[line width=.5pt] (0,-5)--(0,-3); 
+\draw[line width=.5pt, color=black] (-1,-5)--(1,-5) node[anchor=west]{$p$};
+\draw[line width=.5pt] (0,3)--(-2,1) node[midway, anchor=east]{$q$};
+\draw[line width=.5pt] (0,3)--(2,-1) node[midway, anchor=south west] {$l$};
+\draw[line width=.5pt] (-2,1)--(2,-1) node[midway, anchor=south]{$n$};
+\draw[line width=.5pt] (-2,1)--(0,-3) node[midway, anchor=north east]{$k$};  
+\draw[line width=.5pt] (2,-1)--(0,-3) node[midway, anchor=north west]{$m$};    
+
+\draw[color=black, fill=black] (0,3) circle (.2) node[anchor=west]{$\;\nu$};
+\draw[color=black, fill=black] (-2,1) circle (.2) node[anchor=east]{$\tau\;$};
+\draw[color=black, fill=black] (2,-1) circle (.2) node[anchor=west]{$\;\mu$};
+\draw[color=black, fill=black] (0,-3) circle (.2) node[anchor=west]{$\;\rho$};
+\end{tikzpicture}
+\end{align*}
+Here, the second 6j symbol is obtained from the first by inserting the functor $k\oo -:\mac\to \mac$ for the black line labeled $k$ and the functor $G(-\oo l)=b\oo (-\oo l):\mac\to\mac$ for the
+lines labeled $G$ and $l$. The crossing in the second 6j symbol stands for the morphism $\sigma^\inv_{k,b}: b\oo k\to k\oo b$ associated with $b$.  
+
+The rescaled state sum is obtained by multiplying the three 6j symbols and the dimensions of the internal edges, summing over the labels $j,k\in I_\mac$  and over the morphisms $\alpha,\gamma,\rho,\tau$ assigned to the glued faces
+\begin{align*}
+&\begin{tikzpicture}[scale=.4, baseline=(current bounding box.center)]
+\node at (-5,0) [anchor=east]{$\mathcal Z'(M, l_{\partial M}, b_{\partial M})=\sum_{\substack{{j,k}\\{\alpha,\gamma,\rho,\tau}}} \dim(j)\dim(k)$};
+\begin{scope}[shift={(0,0)}]
+\draw[line width=.5pt, color=black] (-1,5)--(1,5) node[anchor=west]{$p$};
+\draw[line width=.5pt] (0,5)--(0,3); 
+\draw[line width=.5pt] (0,-5)--(0,-3); 
+\draw[line width=.5pt, color=black] (-1,-5)--(1,-5) node[anchor=west]{$p$};
+\draw[line width=.5pt] (0,3)--(-2,1) node[midway, anchor=south east]{$q$};
+\draw[line width=.5pt] (0,3)--(2,-1) node[midway, anchor=south west] {$j$};
+\draw[line width=.5pt] (-2,1)--(2,-1) node[midway, anchor=south]{$n$};
+\draw[line width=.5pt] (-2,1)--(0,-3) node[midway, anchor=north east]{$i$};  
+\draw[line width=1pt, color=cyan] (-2,1) ..controls (-3,-2).. (0,-3) node[midway, anchor=east]{$a$};
+\draw[line width=.5pt] (2,-1)--(0,-3) node[midway, anchor=north west]{$m$};    
+
+\draw[color=black, fill=black] (0,3) circle (.2) node[anchor=west]{$\;\alpha$};
+\draw[color=black, fill=black] (-2,1) circle (.2) node[anchor=east]{$\beta\;$};
+\draw[color=black, fill=black] (2,-1) circle (.2) node[anchor=west]{$\;\gamma$};
+\draw[color=black, fill=black] (0,-3) circle (.2) node[anchor=west]{$\;\delta$};
+\end{scope}
+
+\begin{scope}[shift={(8,0)}]
+\draw[line width=.5pt, color=black] (-1,5)--(1,5) node[anchor=west]{$p$};
+\draw[line width=.5pt] (0,5)--(0,3); 
+\draw[line width=.5pt] (0,-5)--(0,-3); 
+\draw[line width=.5pt, color=black] (-1,-5)--(1,-5) node[anchor=west]{$p$};
+\draw[line width=.5pt] (0,3)--(2,1) node[midway, anchor=south west]{$m$};
+\draw[line width=.5pt] (0,3)--(-2,-1) node[midway, anchor=south east] {$k$};
+\draw[line width=.5pt] (-2,-1)--(2,1) node[midway, anchor=south]{$n$};
+\draw[line width=.5pt] (2,1)--(0,-3) node[midway, anchor=north west]{$j$};  
+\draw[line width=.5pt] (-2,-1)--(0,-3) node[midway, anchor=north east]{$q$};    
+
+\draw[color=black, fill=black] (0,3) circle (.2) node[anchor=west]{$\;\rho$};
+\draw[color=black, fill=black] (2,1) circle (.2) node[anchor=west]{$\gamma\;$};
+\draw[color=black, fill=black] (-2,-1) circle (.2) node[anchor=east]{$\;\tau$};
+\draw[color=black, fill=black] (0,-3) circle (.2) node[anchor=west]{$\;\alpha$};
+\end{scope}
+
+\begin{scope}[shift={(17,0)}]
+\draw[line width=1pt, color=magenta] (0,3) ..controls (-6,2) and (-6,0) .. (2,-1) node[midway, anchor=east]{$b$};
+\draw[color=white, fill=white] (-1.3,-.5) circle (.4);
+\draw[line width=.5pt, color=black] (-1,5)--(1,5) node[anchor=west]{$p$};
+\draw[line width=.5pt] (0,5)--(0,3); 
+\draw[line width=.5pt] (0,-5)--(0,-3); 
+\draw[line width=.5pt, color=black] (-1,-5)--(1,-5) node[anchor=west]{$p$};
+\draw[line width=.5pt] (0,3)--(-2,1) node[midway, anchor=east]{$q$};
+\draw[line width=.5pt] (0,3)--(2,-1) node[midway, anchor=south west] {$l$};
+\draw[line width=.5pt] (-2,1)--(2,-1) node[midway, anchor=south]{$n$};
+\draw[line width=.5pt] (-2,1)--(0,-3) node[midway, anchor=north east]{$k$};  
+\draw[line width=.5pt] (2,-1)--(0,-3) node[midway, anchor=north west]{$m$};    
+
+\draw[color=black, fill=black] (0,3) circle (.2) node[anchor=west]{$\;\nu$};
+\draw[color=black, fill=black] (-2,1) circle (.2) node[anchor=east]{$\tau\;$};
+\draw[color=black, fill=black] (2,-1) circle (.2) node[anchor=west]{$\;\mu$};
+\draw[color=black, fill=black] (0,-3) circle (.2) node[anchor=west]{$\;\rho$};
+\end{scope}
+\end{tikzpicture}
+\end{align*}
+To  compute this state sum we first use   \eqref{pic:gluepoly} to glue the polygon diagrams along the faces labeled by the objects $k,m,p$ and $q,j,p$  and the morphisms $\rho$ and $\alpha$. 
+ We then  simplify the resulting expressions with  \eqref{eq:traceout}  and  apply  \eqref{eq:snake} together with the naturality of the half-braiding. This gives
+\begin{align*}
+
+&\begin{tikzpicture}[scale=.4, baseline=(current bounding box.center)]
+\draw[line width=1pt, color=magenta] (0,3) ..controls (-6,2) and (-6,0) .. (2,-1) node[midway, anchor=east]{$b$};
+\draw[color=white, fill=white] (-2,-.2) circle(.4);
+\node at (-3,-3) [anchor=east]{$\mathcal Z'(M, l_{\partial M}, b_{\partial M})\stackrel{\eqref{pic:gluepoly}}=\sum_{\substack{{j,k}\\{\gamma,\tau}}} \dim(j)$};
+\node at (-3,-4)[anchor=east]{$\dim(k)$};
+\draw[line width=.5pt, color=black] (-1,5)--(1,5) node[anchor=west]{$p$};
+\draw[line width=.5pt] (0,5)--(0,3); 
+\draw[line width=.5pt] (0,-11)--(0,-13); 
+\draw[line width=.5pt, color=black] (-1,-13)--(1,-13) node[anchor=west]{$p$};
+\draw[line width=.5pt] (0,3)--(-2,1) node[midway, anchor=east]{$q$};
+\draw[line width=.5pt] (0,3)--(2,-1) node[midway, anchor=south west] {$l$};
+\draw[line width=.5pt] (-2,1)--(2,-1) node[midway, anchor=south]{$n$};
+\draw[line width=.5pt] (-2,1)--(-2,-5) node[midway, anchor=north east]{$k$};  
+\draw[line width=.5pt] (2,-1)--(2,-3) node[midway, anchor=west]{$m$};  
+\draw[line width=.5pt] (2,-3)--(-2,-5) node[midway, anchor=south]{$n$};    
+\draw[line width=.5pt] (-2,-5)--(-2,-7) node[midway, anchor=east]{$q$};  
+\draw[line width=.5pt] (2,-3)--(2,-9) node[midway, anchor=west]{$j$};  
+\draw[line width=.5pt] (-2,-7)--(2,-9) node[midway, anchor=south]{$n$};  
+\draw[line width=.5pt] (0,-11)--(2,-9) node[midway, anchor=north west]{$m$};  
+\draw[line width=.5pt] (0,-11)--(-2,-7) node[midway, anchor=north east]{$i$};  
+
+
+\draw[line width=1pt, color=cyan] (-2,-7) ..controls (-3,-10).. (0,-11) node[midway, anchor=east]{$a$};
+\draw[color=black, fill=black] (0,3) circle (.2) node[anchor=west]{$\;\nu$};
+\draw[color=black, fill=black] (-2,1) circle (.2) node[anchor=east]{$\tau\;$};
+\draw[color=black, fill=black] (2,-1) circle (.2) node[anchor=west]{$\;\mu$};
+\draw[color=black, fill=black] (-2,-5) circle (.2) node[anchor=east]{$\tau\;$};
+\draw[color=black, fill=black] (2,-3) circle (.2) node[anchor=west]{$\;\gamma$};
+\draw[color=black, fill=black] (-2,-7) circle (.2) node[anchor=east]{$\;\beta$};
+\draw[color=black, fill=black] (2,-9) circle (.2) node[anchor=west]{$\;\gamma$};
+\draw[color=black, fill=black] (0,-11) circle (.2) node[anchor=west]{$\;\delta$};
+
+\begin{scope}[shift={(13,0)}]
+\draw[line width=1pt, color=magenta] (0,3) ..controls (-6,2) and (-6,0) .. (2,-1) node[midway, anchor=east]{$b$};
+\draw[color=white, fill=white] (-2,-.2) circle(.4);
+\node at (-3,-3) [anchor=east]{$\stackrel{\eqref{eq:traceout}}=\sum_{k,\tau} \dim(k)$};
+\draw[line width=.5pt, color=black] (-1,5)--(1,5) node[anchor=west]{$p$};
+\draw[line width=.5pt] (0,5)--(0,3); 
+\draw[line width=.5pt] (0,-11)--(0,-13); 
+\draw[line width=.5pt, color=black] (-1,-13)--(1,-13) node[anchor=west]{$p$};
+\draw[line width=.5pt] (0,3)--(-2,1) node[midway, anchor=east]{$q$};
+\draw[line width=.5pt] (0,3)--(2,-1) node[midway, anchor=south west] {$l$};
+\draw[line width=.5pt] (-2,1)--(2,-1) node[midway, anchor=south]{$n$};
+\draw[line width=.5pt] (-2,1)--(-2,-5) node[midway, anchor=north east]{$k$};  
+\draw[line width=.5pt] (2,-1)--(0,-11) node[midway, anchor=west]{$m$};  
+\draw[line width=.5pt] (-2,-5)--(-2,-7) node[midway, anchor=east]{$q$};   
+\draw[line width=.5pt] (0,-11)--(-2,-7) node[midway, anchor=north east]{$i$}; 
+ 
+ \draw[line width=.5pt] (-2,-7).. controls (-1,-8) and (0,-8).. (0,-7);
+ \draw[line width=.5pt] (-2,-5).. controls (-1,-4) and (0,-4).. (0,-5); 
+ \draw[line width=.5pt] (0,-7)--(0,-5) node[midway, anchor=east]{$n$} node[sloped, pos=.5, allow upside down]{\arrowOut};
+
+
+\draw[line width=1pt, color=cyan] (-2,-7) ..controls (-3,-10).. (0,-11) node[midway, anchor=east]{$a$};
+\draw[color=black, fill=black] (0,3) circle (.2) node[anchor=west]{$\;\nu$};
+\draw[color=black, fill=black] (-2,1) circle (.2) node[anchor=east]{$\tau\;$};
+\draw[color=black, fill=black] (2,-1) circle (.2) node[anchor=west]{$\;\mu$};
+\draw[color=black, fill=black] (-2,-5) circle (.2) node[anchor=east]{$\tau\;$};
+\draw[color=black, fill=black] (-2,-7) circle (.2) node[anchor=east]{$\;\beta$};
+\draw[color=black, fill=black] (0,-11) circle (.2) node[anchor=west]{$\;\delta$};
+\end{scope}
+
+\begin{scope}[shift={(24.5,0)}]
+\draw[line width=1pt, color=magenta] (0,3) ..controls (-6,2) and (-6,0) .. (2,-1) node[midway, anchor=east]{$b$};
+\draw[color=white, fill=white] (-1.4,-.4) circle(.4);
+\draw[color=white, fill=white] (.4,-.8) circle(.4);
+\node at (-3,-3) [anchor=east]{$\stackrel{\eqref{eq:snake}}=\sum_{k,\tau} \dim(k)$};
+\draw[line width=.5pt, color=black] (-1,5)--(1,5) node[anchor=west]{$p$};
+\draw[line width=.5pt] (0,5)--(0,3); 
+\draw[line width=.5pt] (0,-11)--(0,-13); 
+\draw[line width=.5pt, color=black] (-1,-13)--(1,-13) node[anchor=west]{$p$};
+\draw[line width=.5pt] (0,3)--(-2,-2) node[midway, anchor=east]{$q$};
+\draw[line width=.5pt] (0,3)--(2,-1) node[midway, anchor=south west] {$l$};
+\draw[line width=.5pt] (-2,-2).. controls (-.2,-5) and (.2,2).. (2,-1) node[midway, anchor=north west]{$n$} node[sloped, pos=.5, allow upside down]{\arrowOut};
+\draw[line width=.5pt] (-2,-2)--(-2,-5) node[pos=.3, anchor=north east]{$k$};  
+\draw[line width=.5pt] (2,-1)--(0,-11) node[midway, anchor=west]{$m$};  
+\draw[line width=.5pt] (-2,-5)--(-2,-7) node[midway, anchor=east]{$q$};   
+\draw[line width=.5pt] (0,-11)--(-2,-7) node[midway, anchor=north east]{$i$}; 
+ 
+ \draw[line width=.5pt] (-2,-7).. controls (-1,-8) and (0,-8).. (0,-7);
+ \draw[line width=.5pt] (-2,-5).. controls (-1,-4) and (0,-4).. (0,-5); 
+ \draw[line width=.5pt] (0,-7)--(0,-5) node[midway, anchor=east]{$n$} node[sloped, pos=.5, allow upside down]{\arrowOut};
+
+
+\draw[line width=1pt, color=cyan] (-2,-7) ..controls (-3,-10).. (0,-11) node[midway, anchor=east]{$a$};
+\draw[color=black, fill=black] (0,3) circle (.2) node[anchor=west]{$\;\nu$};
+\draw[color=black, fill=black] (-2,-2) circle (.2) node[anchor=east]{$\tau\;$};
+\draw[color=black, fill=black] (2,-1) circle (.2) node[anchor=west]{$\;\mu$};
+\draw[color=black, fill=black] (-2,-5) circle (.2) node[anchor=east]{$\tau\;$};
+\draw[color=black, fill=black] (-2,-7) circle (.2) node[anchor=east]{$\;\beta$};
+\draw[color=black, fill=black] (0,-11) circle (.2) node[anchor=west]{$\;\delta$};
+\end{scope}
+\end{tikzpicture}
+\end{align*}
+Applying again identities \eqref{eq:traceout}  and  \eqref{eq:snake} together with the naturality of the half-braiding   yields
+\begin{align*}
+\begin{tikzpicture}[scale=.4, baseline=(current bounding box.center)]
+\node at (-5,0) [anchor=east]{$\mathcal Z'(M, l_{\partial M}, b_{\partial M})\stackrel{\eqref{eq:traceout}}=$};
+\begin{scope}[scale=.7, shift={(0,2)}]
+\draw[line width=1pt, color=magenta] (0,3) ..controls (-6,2) and (-6,0) .. (2,-1) node[midway, anchor=east]{$b$};
+\draw[color=white, fill=white] (-1.7,-.3) circle(.4);
+\draw[color=white, fill=white] (.2,-.7) circle(.4);
+\draw[line width=.5pt, color=black] (-1.5,5)--(1.5,5) node[anchor=west]{$p$};
+\draw[line width=.5pt] (0,5)--(0,3); 
+\draw[line width=.5pt, color=black] (-1.5,-9)--(1.5,-9) node[anchor=west]{$p$};
+\draw[line width=.5pt] (0,-7)--(0,-9); 
+\draw[line width=.5pt] (0,3)--(2,-1) node[midway, anchor=south west] {$l$};
+\draw[line width=.5pt] (0,3)--(-3,-3) node[pos=.3, anchor=east]{$q$};
+\draw[line width=.5pt] (0,-7)--(2,-1) node[midway, anchor=north west]{$m$};
+\draw[line width=.5pt]  (-3,-3).. controls (-1,-6.5) and  (0,2.5) ..  (2,-1) node[pos=.5, anchor=east]{$n$} node[sloped, pos=.5, allow upside down]{\arrowOut};
+
+\draw[line width=.5pt] (0,-7)--(-3,-3) node[pos=.3, anchor=south west]{$i$}; 
+\draw[line width=1pt, color=cyan] (-3,-3) ..controls (-4,-6).. (0,-7) node[midway, anchor=east]{$a$};
+
+\draw[color=black, fill=black] (0,3) circle (.28) node[anchor=west]{$\;\nu$};
+\draw[color=black, fill=black] (2,-1) circle (.28) node[anchor=west]{$\;\mu$};
+\draw[color=black, fill=black] (-3,-3) circle (.28) node[anchor=east]{$\beta\;$};
+\draw[color=black, fill=black] (0,-7) circle (.28) node[anchor=west]{$\;\delta$};
+\end{scope}
+
+\begin{scope}[shift={(11,0)}]
+\node at (-6,0)[anchor=east]{$\stackrel{\eqref{eq:snake}}=$};
+\draw[line width=1pt, color=magenta] (0,3) ..controls (-6,2) and (-6,0) .. (2,-1) node[midway, anchor=east]{$b$};
+\draw[color=white, fill=white]  (-1.4,-.4) circle (.3);
+\draw[color=white, fill=white]  (-2.4,-.2) circle (.3);
+\draw[line width=.5pt, color=black] (-1,5)--(1,5) node[anchor=west]{$p$};
+\draw[line width=.5pt] (0,5)--(0,3); 
+\draw[line width=.5pt, color=black] (-1,-5)--(1,-5) node[anchor=west]{$p$};
+\draw[line width=.5pt] (0,-5)--(0,-3); 
+\draw[line width=.5pt] (0,3)--(2,-1) node[midway, anchor=south west] {$l$};
+\draw[line width=.5pt] (0,3)--(-2,1) node[midway, anchor=east] {$q$};
+\draw[line width=.5pt] (-2,1)--(2,-1) node[midway, anchor=south] {$n$};
+\draw[line width=.5pt] (0,-3)--(2,-1) node[midway, anchor=north west] {$m$};
+\draw[line width=.5pt] (0,-3)--(-2,1) node[midway, anchor=north east] {$i$};
+
+\draw[line width=1pt, color=cyan] (-2,1) ..controls (-3,-2).. (0,-3) node[midway, anchor=east]{$a$};
+\draw[color=black, fill=black] (0,3) circle (.2) node[anchor=west]{$\;\nu$};
+\draw[color=black, fill=black] (2,-1) circle (.2) node[anchor=west]{$\;\mu$};
+\draw[color=black, fill=black] (-2,1) circle (.2) node[anchor=east]{$\beta\;$};
+\draw[color=black, fill=black] (0,-3) circle (.2) node[anchor=west]{$\;\delta$};
+\end{scope}
+\end{tikzpicture}
+\end{align*}
+\end{proof}
+
+
+Example \ref{ex:braiding} allows one to construct any  ribbon link invariant for the centre $\mathcal Z(\mac)$ of a spherical fusion category $\mac$ from state sums that involve only defect surfaces and defect lines. This is achieved by considering a  ribbon diagram and realising each crossing as in Example \ref{ex:braiding}.  
+
+
+\begin{example}\label{ex:tangleex} Let $\mac$ be a spherical fusion category with center $\mathcal Z(\mac)$ and $L$ a ribbon link whose connected components are labeled by objects of $\mathcal Z(\mac)$.  Let $M$ be the following triangulated 3-manifold with defect data:
+\begin{enumerate}
+\item  Realise a  ribbon diagram $D_L$ for $L$  as a  
+PL diagram  that is the horizontal and vertical composite of the following squares  and the ones obtained by rotating them, reversing orientation in the third square and replacing an over- by an undercrossing in the last square 
+\begin{align*}
+\begin{tikzpicture}[scale=.3]
+\draw[line width=1pt, dotted] (-4,4)--(4,4) --(4,-4)--(-4,-4)--(-4,4);
+\end{tikzpicture}
+\qquad
+\begin{tikzpicture}[scale=.3]
+\draw[line width=1pt, dotted] (-4,4)--(4,4) --(4,-4)--(-4,-4)--(-4,4);
+\draw[line width=1pt, color=cyan, style=dashed] (4,0)--(-4,0) node[pos=.5, anchor=north] {$a$} node[sloped, pos=.5, allow upside down]{\arrowIn};
+\end{tikzpicture}
+\qquad
+\begin{tikzpicture}[scale=.3]
+\draw[line width=1pt, dotted] (-4,4)--(4,4) --(4,-4)--(-4,-4)--(-4,4);
+\draw[line width=1pt, color=cyan, style=dashed] (0,4)--(0,0)--(-4,0) node[pos=.6, anchor=north] {$a$} node[sloped, pos=.6, allow upside down]{\arrowIn};
+\end{tikzpicture}
+\qquad
+\begin{tikzpicture}[scale=.3]
+\draw[line width=1pt, dotted] (-4,4)--(4,4) --(4,-4)--(-4,-4)--(-4,4);
+\draw[line width=1pt, color=magenta, style=dashed] (0,4)--(0,-4) node[pos=.8, anchor=west] {$b$} node[sloped, pos=.8, allow upside down]{\arrowIn};
+\draw[fill=white, color=white] (0,0) circle (1.2);
+\draw[line width=1pt, color=cyan, style=dashed] (4,0)--(-4,0) node[pos=.7, anchor=north] {$a$} node[sloped, pos=.7, allow upside down]{\arrowIn};
+\end{tikzpicture}
+ \end{align*}
+
+
+
+\item  Assign to a  dashed line with label $(a,\sigma_{-,a})$ in $\mathcal Z(\mac)$   the $(\mac,\mac)$-bimodule functor $F_a=a\oo -: \mac\to\mac$  with coherence data as in \eqref{eq:coeherencecenter}, to a crossing with labels $a,b$  the bimodule natural transformation given by  $\sigma_{a,b}^{\pm 1}$, as in Example \ref{ex:braiding}, and to the midpoint of the second  and  third diagram either the identity or  the (co)units  of the  adjunction $F_a^l\dashv F_a$. 
+
+\item Draw solid vertical and horizontal lines in each square that connect the midpoints of the boundary edges and end to the left of the dashed lines, viewed in the direction of their orientation. Let the vertical  line cross under and the horizontal  line over all other lines of the diagram. 
+
+\item 
+Label each vertex of the square and each solid line  by a simple object of $\mac$, such that the labels match at the vertices and edges where the squares are glued to form the  diagram $D_L$. Label each  endpoint of lines at the boundary  by a morphism in the appropriate morphism space in $\mac$
+\begin{align*}
+&\begin{tikzpicture}[scale=.3, baseline=(current bounding box.center)]
+\draw[line width=1pt, dotted] (-4,4)--(4,4)node[anchor=south west]{$q$} --(4,-4) node[anchor=north west]{$n$}--(-4,-4)node[anchor=north east]{$m$}--(-4,4) node[anchor=south east]{$p$};
+\draw[line width=.5pt, color=black] (0,4)--(0,-4) node[pos=.2, anchor=west]{$j$}node[sloped, pos=.2, allow upside down]{\arrowOut};
+\draw[fill=white, color=white] (0,0) circle (1.2);
+\draw[line width=.5pt, color=black] (4,0) --(-4,0) node[pos=.8, anchor=north]{$i$}node[sloped, pos=.8, allow upside down]{\arrowOut};
+\draw[color=black, fill=black] (0,4) circle (.2) node[anchor=south]{$\alpha$};
+\draw[color=black, fill=black] (4,0) circle (.2) node[anchor=west]{$\beta$};
+\draw[color=black, fill=black] (0,-4) circle (.2) node[anchor=north]{$\gamma$};
+\draw[color=black, fill=black] (-4,0) circle (.2) node[anchor=east]{$\delta$};
+\end{tikzpicture}
+
+&
+&\begin{tikzpicture}[scale=.3, baseline=(current bounding box.center)]
+\draw[line width=1pt, dotted] (-4,4)--(4,4)node[anchor=south west]{$q$} --(4,-4) node[anchor=north west]{$n$}--(-4,-4)node[anchor=north east]{$m$}--(-4,4) node[anchor=south east]{$p$};
+\draw[line width=.5pt, color=black] (0,4)--(0,-4) node[pos=.2, anchor=west]{$j$}node[sloped, pos=.2, allow upside down]{\arrowOut};
+\draw[fill=white, color=white] (0,-.5) circle (1.2);
+\draw[line width=.5pt, color=black] (4,0) .. controls (0,-1.5) ..  (-4,0) node[pos=.8, anchor=north]{$i$}node[sloped, pos=.8, allow upside down]{\arrowOut};
+\draw[line width=1pt, color=cyan, dashed] (4,0)--(-4,0) node[pos=.8, anchor=south]{$a$}node[sloped, pos=.8, allow upside down]{\arrowIn};
+\draw[color=black, fill=black] (0,4) circle (.2) node[anchor=south]{$\alpha$};
+\draw[color=black, fill=black] (4,0) circle (.2) node[anchor=west]{$\beta$};
+\draw[color=black, fill=black] (0,-4) circle (.2) node[anchor=north]{$\gamma$};
+\draw[color=black, fill=black] (-4,0) circle (.2) node[anchor=east]{$\delta$};
+\end{tikzpicture}
+
+&
+&\begin{tikzpicture}[scale=.3, baseline=(current bounding box.center)]
+\draw[line width=1pt, dotted] (-4,4)--(4,4)node[anchor=south west]{$q$} --(4,-4) node[anchor=north west]{$n$}--(-4,-4)node[anchor=north east]{$m$}--(-4,4) node[anchor=south east]{$p$};
+\draw[line width=.5pt, color=black] (0,4)--(0,-4) node[pos=.2, anchor=west]{$j$}node[sloped, pos=.2, allow upside down]{\arrowOut};
+\draw[fill=white, color=white] (0,0) circle (1.2);
+\draw[line width=.5pt, color=black] (4,0) --(-4,0) node[pos=.8, anchor=north]{$i$}node[sloped, pos=.8, allow upside down]{\arrowOut};
+\draw[line width=1pt, color=cyan, dashed] (0,4).. controls (-1,1).. (-4,0) node[pos=.8, anchor=south]{$a$}node[sloped, pos=.8, allow upside down]{\arrowIn};
+\draw[color=black, fill=black] (0,4) circle (.2) node[anchor=south]{$\alpha$};
+\draw[color=black, fill=black] (4,0) circle (.2) node[anchor=west]{$\beta$};
+\draw[color=black, fill=black] (0,-4) circle (.2) node[anchor=north]{$\gamma$};
+\draw[color=black, fill=black] (-4,0) circle (.2) node[anchor=east]{$\delta$};
+\end{tikzpicture}
+
+&
+&\begin{tikzpicture}[scale=.3, baseline=(current bounding box.center)]
+\draw[line width=1pt, color=magenta, dashed] (0,4)--(0,-4) node[pos=.8, anchor=east]{$b$}node[sloped, pos=.8, allow upside down]{\arrowIn};
+\draw[line width=1pt, dotted] (-4,4)--(4,4)node[anchor=south west]{$q$} --(4,-4) node[anchor=north west]{$n$}--(-4,-4)node[anchor=north east]{$m$}--(-4,4) node[anchor=south east]{$p$};
+\draw[line width=.5pt, color=black] (0,4).. controls (1.5,0) ..(0,-4) node[pos=.2, anchor=west]{$j$}node[sloped, pos=.2, allow upside down]{\arrowOut};
+\draw[fill=white, color=white] (.5,-.5) circle (1.2);
+\draw[line width=.5pt, color=black] (4,0) .. controls (0,-1.5) ..  (-4,0) node[pos=.8, anchor=north]{$i$}node[sloped, pos=.8, allow upside down]{\arrowOut};
+\draw[line width=1pt, color=cyan, dashed] (4,0)--(-4,0) node[pos=.8, anchor=south]{$a$}node[sloped, pos=.8, allow upside down]{\arrowIn};
+\draw[color=black, fill=black] (0,4) circle (.2) node[anchor=south]{$\alpha$};
+\draw[color=black, fill=black] (4,0) circle (.2) node[anchor=west]{$\beta$};
+\draw[color=black, fill=black] (0,-4) circle (.2) node[anchor=north]{$\gamma$};
+\draw[color=black, fill=black] (-4,0) circle (.2) node[anchor=east]{$\delta$};
+\end{tikzpicture}                                             
+\end{align*}
+
+\item Assign to  each  square in 4.~a defect tetrahedron for the $(\mac,\mac)$-bimodule category $\mac$ whose 6j symbol is the polygon diagram in 4.~,  as in Figure \ref{fig:basictets}. Construct the last defect tetrahedron in Figure \ref{fig:basictets} as in Example \ref{ex:braiding} by gluing three tetrahedra with defect planes without crossings.
+
+\item The polygon diagrams glue to a diagram that superimposes $D_L$ with additional edges labeled by objects of $\mac$, whose endpoints  are labeled by morphisms in $\mac$. This defines a gluing pattern for the associated tetrahedra, as   in Figure \ref{fig:braidingtet}, that yields  a triangulated 3-ball $M$ with a ribbon link $L'$ in the interior.
+\end{enumerate}
+The state sum of $M$ is  
+\begin{align*}
+\mathcal Z(M, l_{\partial M}, b_{\partial M})=\mathrm{ev}(D_L)\cdot\mathcal Z(M', l_{\partial M}, b_{\partial M}) ,
+\end{align*}
+where $\mathcal Z(M', l_{\partial M}, b_{\partial M})$ is the  state sum of the 3-ball $M'$ with the same labels, but without  defects.
+\end{example}
+
+\begin{figure}
+\begin{align*}
+&\begin{tikzpicture}[scale=.5]
+\draw[line width=1pt, color=black] (-5,0)--(0,4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=south east]{$p$};
+\draw[line width=1pt, color=black] (5,0)--(0,4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=south west]{$q$};
+\draw[line width=1pt, color=black] (-5,0)--(0,-4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=north east]{$m$};
+\draw[line width=1pt, color=black] (5,0)--(0,-4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=north west]{$n$};
+\draw[line width=1pt, color=black] (-5,0)--(-.5,0)  node[sloped, pos=0.5, allow upside down]{\arrowIn} node[pos=.5, anchor=south]{$j$};
+\draw[line width=1pt, color=black] (.5,0)--(5,0)  ;
+\draw[draw=none, fill=white] (-2,0) circle(.3);
+\draw[draw=none, fill=white] (2,0) circle(.3);
+\draw[draw=none, fill=white] (0,1) circle(.3);
+\draw[line width=1pt, dotted] (-2,2.4)--(-2,-2.4)--(2,-2.4)--(2,2.4)--(-2,2.4);
+\draw[draw=none, fill=white] (0,2.4) circle(.5);
+\draw[draw=none, fill=white] (0,-2.4) circle(.5);
+\draw[draw=none, fill=white] (0,1) circle(.3);
+\draw[line width=1pt, color=black] (0,-4)--(0,4)  node[sloped, pos=0.3, allow upside down]{\arrowIn} node[pos=.3, anchor=east]{$i$};
+\draw[line width=.5pt, -stealth] (2,-1)--(2.5,-1.5);
+\begin{scope}[shift={(12,0)}, scale=.7]
+\draw[line width=1pt, dotted] (-4,4)--(4,4)node[anchor=south west]{$q$} --(4,-4) node[anchor=north west]{$n$}--(-4,-4)node[anchor=north east]{$m$}--(-4,4) node[anchor=south east]{$p$};
+\draw[line width=.5pt, color=black] (0,4)--(0,-4) node[pos=.2, anchor=west]{$j$}node[sloped, pos=.2, allow upside down]{\arrowOut};
+\draw[fill=white, color=white] (0,0) circle (1.2);
+\draw[line width=.5pt, color=black] (4,0) --(-4,0) node[pos=.8, anchor=north]{$i$}node[sloped, pos=.8, allow upside down]{\arrowOut};
+\draw[color=black, fill=black] (0,4) circle (.2) node[anchor=south]{$\alpha$};
+\draw[color=black, fill=black] (4,0) circle (.2) node[anchor=west]{$\beta$};
+\draw[color=black, fill=black] (0,-4) circle (.2) node[anchor=north]{$\gamma$};
+\draw[color=black, fill=black] (-4,0) circle (.2) node[anchor=east]{$\delta$};
+\end{scope}
+\end{tikzpicture}
+\\
+&\begin{tikzpicture}[scale=.5]
+\draw[line width=1pt, color=black] (-5,0)--(0,4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=south east]{$p$};
+\draw[line width=1pt, color=black] (5,0)--(0,4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=south west]{$q$};
+\draw[line width=1pt, color=black] (-5,0)--(0,-4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=north east]{$m$};
+\draw[line width=1pt, color=black] (5,0)--(0,-4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=north west]{$n$};
+\draw[line width=1pt, color=black] (-5,0)--(-.5,0)  node[sloped, pos=0.5, allow upside down]{\arrowIn} node[pos=.5, anchor=south]{$j$};
+\draw[line width=1pt, color=black] (.5,0)--(5,0)  ;
+\draw[draw=none, fill=white] (-2,0) circle(.3);
+\draw[draw=none, fill=white] (2,0) circle(.3);
+\draw[draw=none, fill=white] (0,1) circle(.3);
+\draw[line width=1pt, dotted] (-2,2.4)--(-2,-2.4)--(2,-2.4)--(2,2.4)--(-2,2.4);
+\draw[draw=none, fill=white] (0,2.4) circle(.5);
+\draw[draw=none, fill=white] (0,-2.4) circle(.5);
+\draw[color=cyan, line width=1pt] (2, 1)--(-2,1) node[sloped, pos=0.7, allow upside down]{\arrowIn} node[pos=.7, anchor=south]{$F_a$};
+\draw[draw=none, fill=white] (0,1) circle(.3);
+\draw[line width=1pt, color=black] (0,-4)--(0,4)  node[sloped, pos=0.3, allow upside down]{\arrowIn} node[pos=.3, anchor=east]{$i$};
+\draw[line width=.5pt, -stealth] (2,-1)--(2.5,-1.5);
+\begin{scope}[shift={(12,0)}, scale=.7]
+\draw[line width=1pt, dotted] (-4,4)--(4,4)node[anchor=south west]{$q$} --(4,-4) node[anchor=north west]{$n$}--(-4,-4)node[anchor=north east]{$m$}--(-4,4) node[anchor=south east]{$p$};
+\draw[line width=.5pt, color=black] (0,4)--(0,-4) node[pos=.2, anchor=west]{$j$}node[sloped, pos=.2, allow upside down]{\arrowOut};
+\draw[fill=white, color=white] (0,-.5) circle (1.2);
+\draw[line width=.5pt, color=black] (4,0) .. controls (0,-1.5) ..  (-4,0) node[pos=.8, anchor=north]{$i$}node[sloped, pos=.8, allow upside down]{\arrowOut};
+\draw[line width=1pt, color=cyan, dashed] (4,0)--(-4,0) node[pos=.8, anchor=south]{$a$}node[sloped, pos=.8, allow upside down]{\arrowIn};
+\draw[color=black, fill=black] (0,4) circle (.2) node[anchor=south]{$\alpha$};
+\draw[color=black, fill=black] (4,0) circle (.2) node[anchor=west]{$\beta$};
+\draw[color=black, fill=black] (0,-4) circle (.2) node[anchor=north]{$\gamma$};
+\draw[color=black, fill=black] (-4,0) circle (.2) node[anchor=east]{$\delta$};
+\end{scope}
+\end{tikzpicture}
+\\
+&\begin{tikzpicture}[scale=.5]
+\draw[line width=1pt, color=black] (-5,0)--(0,4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=south east]{$p$};
+\draw[line width=1pt, color=black] (5,0)--(0,4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=south west]{$q$};
+\draw[line width=1pt, color=black] (-5,0)--(0,-4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=north east]{$m$};
+\draw[line width=1pt, color=black] (5,0)--(0,-4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=north west]{$n$};
+\draw[line width=1pt, color=black] (-5,0)--(-.5,0)  node[sloped, pos=0.5, allow upside down]{\arrowIn} node[pos=.5, anchor=south]{$j$};
+\draw[line width=1pt, color=black] (.5,0)--(5,0)  ;
+\draw[draw=none, fill=white] (-2,0) circle(.3);
+\draw[draw=none, fill=white] (2,0) circle(.3);
+\draw[draw=none, fill=white] (0,1) circle(.3);
+\draw[line width=1pt, dotted] (-2,2.4)--(-2,-2.4)--(2,-2.4)--(2,2.4)--(-2,2.4);
+\draw[draw=none, fill=white] (0,2.4) circle(.5);
+\draw[draw=none, fill=white] (0,-2.4) circle(.5);
+\draw[color=cyan, line width=1pt] (1, 1)--(-2,1) node[sloped, pos=0.7, allow upside down]{\arrowIn} node[pos=.7, anchor=south]{$F_a$};
+\draw[color=cyan, line width=1pt] (1, 2.4)--(1,1) node[sloped, pos=0.7, allow upside down]{\arrowIn};
+\draw[draw=none, fill=white] (0,1) circle(.3);
+\draw[line width=1pt, color=black] (0,-4)--(0,4)  node[sloped, pos=0.3, allow upside down]{\arrowIn} node[pos=.3, anchor=east]{$i$};
+\draw[line width=.5pt, -stealth] (2,-1)--(2.5,-1.5);
+\begin{scope}[shift={(12,0)}, scale=.7]
+ \draw[line width=1pt, dotted] (-4,4)--(4,4)node[anchor=south west]{$q$} --(4,-4) node[anchor=north west]{$n$}--(-4,-4)node[anchor=north east]{$m$}--(-4,4) node[anchor=south east]{$p$};
+\draw[line width=.5pt, color=black] (0,4)--(0,-4) node[pos=.2, anchor=west]{$j$}node[sloped, pos=.2, allow upside down]{\arrowOut};
+\draw[fill=white, color=white] (0,0) circle (1.2);
+\draw[line width=.5pt, color=black] (4,0) --(-4,0) node[pos=.8, anchor=north]{$i$}node[sloped, pos=.8, allow upside down]{\arrowOut};
+\draw[line width=1pt, color=cyan, dashed] (0,4).. controls (-1,1).. (-4,0) node[pos=.8, anchor=south]{$a$}node[sloped, pos=.8, allow upside down]{\arrowIn};
+\draw[color=black, fill=black] (0,4) circle (.2) node[anchor=south]{$\alpha$};
+\draw[color=black, fill=black] (4,0) circle (.2) node[anchor=west]{$\beta$};
+\draw[color=black, fill=black] (0,-4) circle (.2) node[anchor=north]{$\gamma$};
+\draw[color=black, fill=black] (-4,0) circle (.2) node[anchor=east]{$\delta$};
+\end{scope}
+\end{tikzpicture}
+\\
+&\begin{tikzpicture}[scale=.5]
+\draw[line width=1pt, color=black] (-5,0)--(0,4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=south east]{$p$};
+\draw[line width=1pt, color=black] (5,0)--(0,4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=south west]{$q$};
+\draw[line width=1pt, color=black] (-5,0)--(0,-4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=north east]{$m$};
+\draw[line width=1pt, color=black] (5,0)--(0,-4)  node[sloped, pos=0.4, allow upside down]{\arrowIn} node[pos=.4, anchor=north west]{$n$};
+\draw[line width=1pt, color=black] (-5,0)--(-.5,0)  node[sloped, pos=0.5, allow upside down]{\arrowIn} node[pos=.5, anchor=south]{$j$};
+\draw[line width=1pt, color=black] (.5,0)--(5,0)  ;
+\draw[draw=none, fill=white] (-2,0) circle(.3);
+\draw[draw=none, fill=white] (2,0) circle(.3);
+\draw[draw=none, fill=white] (0,1) circle(.3);
+\draw[draw=none, fill=white] (1,0) circle(.3);
+\draw[line width=1pt, dotted] (-2,2.4)--(-2,-2.4)--(2,-2.4)--(2,2.4)--(-2,2.4);
+\draw[draw=none, fill=white] (0,2.4) circle(.5);
+\draw[draw=none, fill=white] (0,-2.4) circle(.5);
+\draw[color=magenta, line width=1pt] (1,2.4)--(1,-2.4) node[pos=.7, anchor=west]{$F_b$} node[sloped, pos=0.7, allow upside down]{\arrowIn} ;
+\draw[draw=none, fill=white] (1,1) circle(.3);
+\draw[color=cyan, line width=1pt] (2, 1)--(-2,1) node[pos=.7, anchor=south]{$F_a$}node[sloped, pos=.7, allow upside down]{\arrowIn} ;
+\draw[draw=none, fill=white] (0,1) circle(.3);
+\draw[line width=1pt, color=black] (0,-4)--(0,4)  node[sloped, pos=.3, allow upside down]{\arrowIn} node[pos=.3, anchor=east]{$i$};
+\draw[line width=.5pt, -stealth] (2,-1)--(2.5,-1.5);
+\begin{scope}[shift={(12,0)}, scale=.7]
+\draw[line width=1pt, color=magenta, dashed] (0,4)--(0,-4) node[pos=.8, anchor=east]{$b$}node[sloped, pos=.8, allow upside down]{\arrowIn};
+\draw[line width=1pt, dotted] (-4,4)--(4,4)node[anchor=south west]{$q$} --(4,-4) node[anchor=north west]{$n$}--(-4,-4)node[anchor=north east]{$m$}--(-4,4) node[anchor=south east]{$p$};
+\draw[line width=.5pt, color=black] (0,4).. controls (1.5,0) ..(0,-4) node[pos=.2, anchor=west]{$j$}node[sloped, pos=.2, allow upside down]{\arrowOut};
+\draw[fill=white, color=white] (.5,-.5) circle (1.2);
+\draw[line width=.5pt, color=black] (4,0) .. controls (0,-1.5) ..  (-4,0) node[pos=.8, anchor=north]{$i$}node[sloped, pos=.8, allow upside down]{\arrowOut};
+\draw[line width=1pt, color=cyan, dashed] (4,0)--(-4,0) node[pos=.8, anchor=south]{$a$}node[sloped, pos=.8, allow upside down]{\arrowIn};
+\draw[color=black, fill=black] (0,4) circle (.2) node[anchor=south]{$\alpha$};
+\draw[color=black, fill=black] (4,0) circle (.2) node[anchor=west]{$\beta$};
+\draw[color=black, fill=black] (0,-4) circle (.2) node[anchor=north]{$\gamma$};
+\draw[color=black, fill=black] (-4,0) circle (.2) node[anchor=east]{$\delta$};
+\end{scope}
+\end{tikzpicture}
+\end{align*}
+\caption{Defect tetrahedra assigned to the square diagrams from Example \ref{ex:tangleex}. The last tetrahedron is obtained by gluing three tetrahedra without crossings as in Example \ref{ex:braiding}.}
+ \label{fig:basictets}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\def\svgwidth{.8\columnwidth}
+ 
+ \end{center}
+\caption{Gluing four defect tetrahedra and the associated polygon diagram.}
+ \label{fig:braidingtet}
+\end{figure}
+
+
+\begin{proof} As the dimension factors for boundary edges and vertices coincide for $M$ and $M'$, it is sufficient to consider the rescaled state sums. 
+By Proposition \ref{th:topological invariance} and Example \ref{ex:braiding}, the rescaled state sum for $M$ is the evaluation of the polygon diagram obtained by gluing all defect squares. This is the ribbon diagram $D_L$, superimposed with a graph labeled by  $\mac$,  which  is the dual of the triangulation on $\partial M$. 
+
+The evaluation of this polygon diagram is computed as in Example \ref{ex:ribbonplane}. By \eqref{eq:coeherencecenter}   overcrossings of solid lines over lines in $T$ correspond to half-braidings of objects of $\mathcal Z(\mac)$ with objects in $\mac$, while undercrossings correspond to associators  in $\mac$.  As all vertices involve only solid lines,  one can use  identities \eqref{pic:rm2} to \eqref{pic:bimodulenat} to separate the graph labeled by $\mac$ and the 
+ diagram  $D_L$. This yields the product of  the rescaled state sum $\mathcal Z'(M',l_{\partial M}, b_{\partial M})$ and the  evaluation of $D_L$.
+\end{proof}
+
+
+Example \ref{ex:tangleex} constructs a specific example of a triangulated  3-ball with a ribbon link as a defect. An analogous factorisation of the state sum is obtained for any  ribbon link labeled by $\mathcal Z(\mac)$   in any triangulated 3-ball labeled by $\mac$. This follows from the triangulation independence of the state sum and the fact that it is invariant under $\Delta$-moves, which encode ambient isotopies of ribbon links.
+
+
+\begin{proposition}\label{prop:ribbonball} Let $M$ be a triangulated 3-ball labeled by a spherical fusion category $\mac$.  Let $L$ be a ribbon link in the interior of $M$ that is blackboard-framed with respect to a disc bisecting $M$ and labeled by $\mathcal Z(\mac)$. Then the state sum is given by
+$$
+\mathcal Z(M,l_{\partial M}, b_{\partial M})=\mathcal Z(M', l_{\partial M}, b_{\partial M})\cdot \mathrm{ev}(D_L),
+$$
+where $\mathcal Z(M', l_{\partial M}, b_{\partial M})$ is the state sum of the 3-ball $M'$  with the same labels, but  without the link, and $D_L$ a ribbon diagram obtained by projecting $L$ on the disc.
+\end{proposition}
+
+\begin{proof} 1.~We first show that the state sum is invariant under PL ambient isotopy of the ribbon link. By a result of Graeub \cite{Gr}, see also Burde and Zieschang \cite[Prop.~1.10]{BZ}
+and Yetter \cite[Sec.~2.2]{Y}, two PL links in a 3-ball are ambient isotopic iff they are related by  a finite sequence of $\Delta$-moves. 
+A $\Delta$-move 
+places a triangle on the link that intersects it only  in one side and replaces this side by the other two sides of the triangle. 
+\begin{center}
+\begin{tikzpicture}[scale=.4]
+\draw[line width=1pt] (0,1)--(5,1);
+\draw[line width=1pt] (0,1)--(-1,.5);
+\draw[line width=1pt] (5,1)--(6,.5);
+\draw[line width=1pt, style=dashed] (0,1)--(2.5,3.5);
+\draw[line width=1pt, style=dashed] (5,1)--(2.5,3.5);
+
+\draw[line width=1pt, -stealth] (7.5,2)--(9.5,2) node[midway, anchor=south]{$\Delta$};
+
+\begin{scope}[shift={(12,0)}]
+\draw[line width=1pt] (0,1)--(-1,.5);
+\draw[line width=1pt] (5,1)--(6,.5);
+\draw[line width=1pt, ] (0,1)--(2.5,3.5);
+\draw[line width=1pt, ] (5,1)--(2.5,3.5);
+\draw[line width=1pt, style=dashed] (0,1)--(5,1);
+\end{scope}
+\end{tikzpicture}
+\end{center}
+
+
+An analogous result holds for ambient isotopies of blackboard-framed  ribbon links if one restricts attention to $\Delta$-moves that respect the framing, that is, keep the links blackboard framed  and can be realised without introducing kinks, see for instance \cite[Sec.~2.2]{Y}. Thus it is sufficient to show that the state sum is invariant under $\Delta$-moves that respect the blackboard framing of $L$. 
+
+
+
+Consider a blackboard framed $\Delta$-move with a triangle $\Delta$.  By Corollary \ref{cor:pachner} and Lemma \ref{lem:finetriang}, suppose without loss of generality  that the tetrahedra intersecting $\Delta$ form a fine neighbourhood of $\Delta$ and that  gluing all tetrahedra that intersect $\Delta$ yields a triangulated 3-ball $B$ bisected by a defect plane that extends $\Delta$.
+
+By Proposition \ref{th:topological invariance} the state sums for $B$ before and after the $\Delta$-move are obtained by projecting the dual of its boundary triangulation on the defect plane and evaluating the resulting polygon diagram. This yields ribbon diagrams that superimpose a ribbon segment labeled by $\mathcal Z(\mac)$ with the boundary diagrams labeled by $\mac$. The polygon diagrams before and after the $\Delta$-move are related by a $\Delta$-move on the ribbon segment in the polygon. Identities \eqref{pic:rm2} to \eqref{pic:natfuncconst}  imply that the evaluations of these polygon diagrams are equal.  As $M\setminus B$ is not affected by the $\Delta$-move,  the state sum of $M$ is invariant under the $\Delta$-move by Corollary \ref{cor:gluing}. 
+
+2.~By applying 2d isotopies to the ribbon diagram $D_L$, one can transform it into a diagram $D'$ as in Example \ref{ex:tangleex} and construct a triangulated 3-ball $N$ with a ribbon link $L'$ in the interior that projects to $D'=D_{L'}$.  By Example \ref{ex:tangleex} one has
+$\mathcal Z(N, l_{\partial N}, b_{\partial N})=\mathcal Z(N', l_{\partial N}, b_{\partial N})\cdot \mathrm{ev}(D_{L'})$, where $N'$ is the 3-ball  without $L'$.  
+
+As the boundary triangulations of $M$ and $N$ are related by elementary shellings and inverse shellings with tetrahedra that do not intersect $L$ and $L'$, it is sufficient to show that  $\mathcal Z(M, l_{\partial M}, b_{\partial M})=\mathcal Z(N, l_{\partial N}, b_{\partial N})$, if the labeled boundary triangulations for $M$ and $N$ agree. 
+As the link diagrams $D_L$ and $D_{L'}$ are isotopic, one has $\mathrm{ev}(D_{L})=\mathrm{ev}(D_{L'})$ and the links $L$ and $L'$ that project to $D_L$ and $D_{L'}$ are ambient isotopic. This allows one to transform $L$ into $L'$ by a finite sequence of $\Delta$-moves. The first part of the proof implies that this does not affect the state sum. By the triangulation independence of the usual Turaev-Viro-Barrett-Westbury state sum, one has $\mathcal Z(M', l_{\partial M}, b_{\partial M})=\mathcal Z(N', l_{\partial N}, b_{\partial N})$, and with
+Theorem \ref{th:fulltopinv} this yields
+$$\mathcal Z(M, l_{\partial M}, b_{\partial M})\stackrel{1.}=\mathcal Z(N, l_{\partial N}, b_{\partial N})\stackrel{\ref{ex:tangleex}}=\mathrm{ev}(D_{L'})\cdot \mathcal Z(N', l_{\partial N}, b_{\partial N})\stackrel{\ref{th:fulltopinv}}=\mathrm{ev}(D_{L})\cdot \mathcal Z(M', l_{\partial M}, b_{\partial M}).$$
+\end{proof}
+
+Proposition \ref{prop:ribbonball} can be generalised  to  ribbon tangles realised as defect graphs on trivial defect surfaces. One can also generalise it to ribbon links embedded  in more general 3-manifolds. Embedding a ribbon link $L$ labeled by $\mathcal Z(\mac)$ in a single tetrahedron labeled by $\mac$ and gluing it to the  tetrahedron with the opposite orientation  along all four faces yields the state sum for a 3-sphere  $L$  in the interior
+$$\mathcal Z(S^3,L)=\frac{\mathrm{ev}(D_L)} {\dim \mac}.$$
+This coincides with Turaev and Virelizier's  state sum graph TQFT  for a 3-sphere containing a ribbon link in  \cite[Th.~16.1]{TVbook}.  In fact, we expect that our state sums with defect lines and vertices on trivial defect surfaces always coincide with the corresponding  graph TQFTs with ribbons from \cite[Ch.~16]{TVbook} and \cite{TVr}.  It would  be nice to show this in full generality and  to compare with the results by Balsam and Kirillov in  \cite{KB,B} that also involve ribbons labeled by $\mathcal Z(\mac)$. 
+
+
+We also expect that our state sum is  related  to the modular functor constructed from bimodule categories over finite tensor categories by Fuchs et al.~\cite{FSS} if one restricts the latter to our categorical data. However,  is not clear to us  how our construction is related to the work \cite{LY} by Lee and Yetter, which also constructs triangulation independent state sums with defect surfaces. However, the defect surfaces in \cite{LY} are labeled with different categorical data, namely  bicategories equipped with spherical duals and certain 2-functors. They  should be thought of as defects with additional structure, according to the authors. We believe that this is a different type of defect that cannot be related directly to our construction.
+
+The examples in this section show that the  state sum models with defects give relevant information about defect surfaces and are easy to compute for simple categorical data. It would be feasible to investigate further examples that involve defect lines and points on non-trivial defect surfaces,  at least for spherical fusion categories $\mac=\mathrm{Vec}_G$ and $\mad=\mathrm{Vec}_{G'}$ and bimodule categories defined by finite transitive $G\times G'^{op}$-sets. In this case, the categorical defect data for defect lines and defect points  can be worked out explicitly to describe defects of all codimensions for Dijkgraaf-Witten theory \cite{DW}. It would also be interesting to investigate knotted defect surfaces beyond the torus and with less trivial categorical data.
+
+With the results by Balsam and Kirillov \cite{BK,Kr}  on the relation between  Turaev-Viro-Barrett-Westbury state sums, Levin-Wen models \cite{LW} and Kitaev's quantum double models \cite{Kit}, it should also be possible to  apply our state sums with defects to those models and to make contact 
+with the  work \cite{KK}  by Kitaev and Kong.
+In the long run it would be desirable to determine if  our state sum model with defects defines a defect TQFT in the sense of  the works \cite{CMS,CRS2} by Carqueville et al.~and to relate it to the works \cite{CRS,domwall} by Carqueville et al.~and by Koppen et al.~on defects  and domain walls in the context of Reshetikhin-Turaev TQFTs. We leave these questions for future work.
+
+
+
+\subsection{Acknowledgements} 
+This article originated from discussions with John W.~Barrett. We had originally planned to work on this project together, but this became impossible due to the Covid-19 pandemic and its impact on  research and teaching. I am extremely grateful to him for helpful discussions, encouragement and comments on drafts of this article. 
+I am also  grateful to Gregor Schaumann for  remarks and discussions on bimodule categories and bimodule traces,  to Andreas Knauf for discussions  and  comments on drafts of this article and to the referee for helpful comments and suggestions.

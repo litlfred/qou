@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1208.2521v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "On q-analogues of the Fourier and Hankel transforms",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1208.2521v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1208.2521v1",
   "contains": [
     "library/arxiv-1208.2521v1/sections/sec-000",
     "library/arxiv-1208.2521v1/sections/sec-001",
@@ -26,8 +31,17 @@
     "library/arxiv-1208.2521v1/sections/sec-017"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1208.2521&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1208.2521v1",
+    "title_source": "slug",
     "source_file": "1208.2521v1.pdf",
     "source_sha256": "8d0281aa84043865a2268ae04a97c395a9e97d630c05f973c6a43a0d850ddae8",
     "pages": 20,

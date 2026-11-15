@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-neutron-proton-mass-splitting",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:neutron-proton-mass-splitting",
+  "kind": "proposition",
+  "title": "Neutron--proton mass splitting from quark crossing change",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-wedderburn-mass-formula"
+  ],
+  "leanRef": "qou:QOU.NeutronProtonSplitting.splitting_value",
+  "text": "neutron-proton-mass-splitting.md",
+  "leanSource": "neutron-proton-mass-splitting.lean",
+  "provenance": "authored"
+}

@@ -1,8 +1,8 @@
 {
   "engine": "python-exact",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T20:31:04.694348+00:00",
-  "commitSha": "fa25498fec56c7b3e80b1f539c01dbe57be3ef81",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T11:59:47.866321+00:00",
+  "commitSha": "8f1b70555159d7e170bef87c379448651b822c55",
   "assertions": [
     {
       "name": "flavor_split_pair_product_half_ceiling",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 6,
   "computation": "flavor-split-pair-product-half-ceiling",
   "scriptFile": "flavor_split_pair_product_half_ceiling_probe.py",
-  "scriptHash": "e92923f7fc39",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptHash": "e41ecc7caa53",
+  "scriptCommitSha": "dc0990ef2f2f82fb6b87d54e35bcc69082ac2664",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,14 +26,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -43,8 +43,8 @@
   },
   "description": "Flavor-split second-order coefficient alpha ≈ 0.929254 EXCLUDES the positive-weight multiplicative pair-product mechanism: for any positive weights s_k with Σs_k=leading, α=(Σ_{k<l}s_k s_l)/(Σs_k)² is MAXIMIZED at equal split, value (m-1)/(2m) < 1/2, and unequal weighting lowers it — so α>1/2 cannot arise from such a product (Lean-proved invariant QOU.FlavorDressing.pairSum_lt_half_sq: 2·Σ_{k<l}s_k s_l < (Σs)²). Sharpens the partial-derivation audit Part 2a (equal-split-only; 'swapped pair dominates' moves α the wrong way). α remains UNDERIVED; the derivation must live on the self-energy/geometric side (α=1), not pair-count. scope-(b) exclusion; no fit; nothing wired; L2 unchanged (2/7).",
   "data": {
-    "alpha_target_proton": "0.92948913398539878549797776941",
-    "alpha_target_muon": "0.92925292541598847328998544981",
+    "alpha_target_proton": "0.929489133985398796745154146917",
+    "alpha_target_muon": "0.929252925415988544786149028677",
     "alpha_gt_half": true,
     "pair_product_sup_ratio": "0.5",
     "positive_pair_product_excluded": true,
@@ -53,8 +53,8 @@
   },
   "q0Anchor": "comparison",
   "q0Values": {
-    "muon": "1.109978595642739040982860387885011732578277587890625",
-    "proton": "1.109978582751380837834176418255083262920379638671875"
+    "muon": "1.109978595642739046681795129380001752700065561029000",
+    "proton": "1.109978582751380807591669095610768879874499121873600"
   },
   "q0AnchorReason": "alpha_target evaluated at both pins on purpose (anchor-robustness of the > 1/2 exclusion); the proton (default) leg is the scored one"
 }

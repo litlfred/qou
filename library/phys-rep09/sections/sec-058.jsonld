@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/phys-rep09/sections/sec-058",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Stochastic differential equations",
+  "pageStart": 78,
+  "pageEnd": 80,
+  "contains": [
+    "library/phys-rep09/blocks/prose-sec-058"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/phys-rep09",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/phys-rep09",
+  "provenance": "ingested"
+}

@@ -8,26 +8,26 @@ pages: 5-5
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
 doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
+text_source: latex
+latex_prose_ratio: 0.981
+latex_coverage_ratio: 0.806
 ---
-but since the diﬀerence between T+ and T− just has the eﬀect of introducing signs into various
-formulae, it can safely be ignored at ﬁrst reading.
-2.4. Twisted torus. Let us again ﬁx a lattice Γ ∼= Z⊕n equipped with a skew-symmetric form
-⟨−,−⟩. The torus T+ acts freely and transitively on the twisted torus T− via
-(f· g)(γ) = f (γ)· g(γ)∈ C∗, f ∈ T+, g ∈ T−.
-Choosing a base-point g0∈ T− therefore gives a bijection
-θg0 : T+→ T−, f ↦→f· g0. (5)
-We can use the identiﬁcation θg0 to give T− the structure of an algebraic variety. The result
-is independent of the choice of base-point g0∈ T−, since the translation maps on T+ are alge-
-braic. Similarly, the Poisson structure (
-4) on T+ is invariant under translations, and hence can be
-transferred to T− via the map ( 5).
-The co-ordinate ring of T− is spanned as a vector space by the functions
-xγ : T−→ C∗, x γ(g) = g(γ)∈ C∗,
-which we refer to as twisted characters. Thus
-C[T−] =
-⨁
-γ∈Γ
-C· xγ, x γ1· xγ2 = (−1)⟨γ1,γ2⟩· xγ1+γ2. (6)
-The Poisson bracket on C[T−] is given on twisted characters by
-{xα, xβ} =⟨α, β⟩· xα· xβ. (7)
-From now on we shall denote the twisted torus T− simply by T.
+Let us again fix a lattice $\Gamma\isom \bZ^{\oplus n}$ equipped with a skew-symmetric form $\<-,-\>$.
+The torus $\bT_+$ acts freely and transitively on the twisted torus $\bT_-$  via
+\[(f\cdot g)(\gamma)=f(\gamma)\cdot g(\gamma)\in \bC^*, \quad f\in \bT_+, \quad  g\in \bT_-.\]
+Choosing a base-point $g_0\in \bT_-$ therefore gives a bijection \begin{equation}
+\label{bloxy}\theta_{g_0}\colon \bT_+\to \bT_-, \qquad f\mapsto f\cdot g_0.\end{equation}
+We can use the identification $\theta_{g_0}$ to give $\bT_-$ the structure of an algebraic variety. The result is independent of the choice of base-point $g_0\in \bT_-$, since the translation maps on $\bT_+$ are algebraic.  
+Similarly, the Poisson structure \eqref{poisson} on $\bT_+$  is invariant under translations, and hence can be transferred to $\bT_-$ via the map \eqref{bloxy}.
+
+ 
+
+The co-ordinate ring of $\bT_-$ is spanned as a vector space by the functions
+\[x_\gamma\colon \bT_-\to \bC^*, \qquad x_\gamma(g)=g(\gamma)\in \bC^*,\]
+which we  refer to as twisted characters.  Thus
+\begin{equation}\bC[\bT_-]=\bigoplus_{\gamma\in \Gamma} \bC\cdot x_\gamma, \qquad x_{\gamma_1}\cdot x_{\gamma_2}=(-1)^{\<\gamma_1,\gamma_2\>}\cdot x_{\gamma_1+\gamma_2}.\end{equation}
+
+The Poisson bracket on $\bC[\bT_-]$ is given on twisted characters by 
+ \begin{equation}
+\label{poisson2}\{x_{\alpha}, x_{\beta}\}= \<\alpha,\beta\>\cdot x_{\alpha}\cdot x_{\beta}.\end{equation}
+From now on we shall denote the twisted torus $\bT_-$ simply by $\bT$.

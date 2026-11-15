@@ -8,11 +8,10 @@ pages: 34-34
 source_pdf: 0808.2716v4.pdf
 source_sha256: ea66f7ddcf9e9fe6
 doc_brief: "CUSP AREAS OF F AREY MANIFOLDS — This paper gives the ﬁrst explicit, two–sided estimates on t he cusp area of once– punctured torus bundles, 4–punctured sphere bundles, and 2 –bridge link"
+text_source: latex
+latex_prose_ratio: 0.914
+latex_coverage_ratio: 1.0
 ---
-In this section, we will apply the previous results to the Jon es polynomial of a closed 3–
-braid. We begin by relating the Jones polynomial of a closed 3 –braid to the Schreier normal
-form of the braid. By applying Theorem 5.6, we will show in The orem 6.6 that certain
-coeﬃcients of the Jones polynomial are bounded in terms of th e volume. At the end of the
-section, we will prove Theorem 6.8, which shows that no funct ion of βK andβ′
-K can coarsely
-predict the volume of all hyperbolic knots.
+[]{#sec:jones3braids label="sec:jones3braids"}
+
+In this section, we will apply the previous results to the Jones polynomial of a closed 3--braid. We begin by relating the Jones polynomial of a closed $3$--braid to the Schreier normal form of the braid. By applying Theorem [\[thm:3braid-volume\]](#thm:3braid-volume){reference-type="ref" reference="thm:3braid-volume"}, we will show in Theorem [\[thm:relations\]](#thm:relations){reference-type="ref" reference="thm:relations"} that certain coefficients of the Jones polynomial are bounded in terms of the volume. At the end of the section, we will prove Theorem [\[thm:counterexample\]](#thm:counterexample){reference-type="ref" reference="thm:counterexample"}, which shows that no function of $\beta_K$ and $\beta'_K$ can coarsely predict the volume of all hyperbolic knots.

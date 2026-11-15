@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-9905032v2/blocks/prose-sec-013",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-9905032v2/blocks/prose-sec-013",
   "kind": "prose",
-  "title": "Correlation functions of the measures M θ",
-  "pageStart": 11,
-  "pageEnd": 11,
-  "text": "../sections/sec-013-2-correlation-functions-of-the-measures-m-θ.md",
-  "derivedFrom": "library/arxiv-math-9905032v2/manifest",
-  "sourceDocument": "library/arxiv-math-9905032v2/manifest",
+  "title": "Results and strategy of proof",
+  "pageStart": 24,
+  "pageEnd": 25,
+  "text": "../sections/sec-013-41-results-and-strategy-of-proof.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9905032v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9905032v2",
   "provenance": "ingested"
 }

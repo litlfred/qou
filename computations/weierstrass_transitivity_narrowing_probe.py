@@ -65,7 +65,7 @@ witness.
 Sources for the classical inputs, all held in `library/`:
   * S. Reyes-Carocca & P. Speziali, "Infinitely many Riemann surfaces with a
     transitive action on the Weierstrass points", arXiv:2211.08164v2 --
-    `library/arxiv-2211.08164v2/`, registered in `content/schema/references.ts`,
+    `library/arxiv-2211.08164v2/`, registered in `folio/schema/references.ts`,
     `library/INDEX.md:364`.  Section 1 item 1: the Accola-Maclachlan curve of
     genus g >= 2 is transitive.  Section 4: Laing & Singerman assumed simplicity
     "additionally"; the K_3 dichotomy (long simple orbit vs short double orbit
@@ -398,7 +398,7 @@ def main() -> int:
             "which is a genericity condition anti-correlated with symmetry."),
         "bean": "qou-qhcr",
         "leanCompanion": (
-            "content/quantum-observable-universe/lean/QOU/BringsSurface/"
+            "folio/quantum-observable-universe/lean/QOU/BringsSurface/"
             "WeierstrassTransitivityNotForced.lean"),
         "T1_total_weight": {str(g): total_weight(g) for g in range(2, 13)},
         "T1_max_weight": {str(g): max_weight(g) for g in range(2, 13)},

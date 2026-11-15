@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-figure-8-archimedean-illustration",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:figure-8-archimedean-illustration",
+  "kind": "remark",
+  "title": "Figure-8 knot $4_1$ as illustration of the algebraic / archimedean dichotomy",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-archimedean-functor-uniqueness"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-archimedean-functor-uniqueness",
+  "cites": [
+    "references/thurston1978",
+    "references/suslin1991",
+    "references/kashaev1997",
+    "references/murakami-murakami2001"
+  ],
+  "tags": [
+    "figure-8-knot",
+    "amphichiral",
+    "hyperbolic-volume",
+    "archimedean",
+    "motivic",
+    "hecke-normal-form",
+    "bloch-wigner",
+    "clausen",
+    "illustration"
+  ],
+  "text": "figure-8-archimedean-illustration.md",
+  "provenance": "authored"
+}

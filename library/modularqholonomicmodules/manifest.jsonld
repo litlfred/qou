@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/modularqholonomicmodules/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "MODULAR q-HOLONOMIC MODULES",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/modularqholonomicmodules",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "modularqholonomicmodules",
   "contains": [
     "library/modularqholonomicmodules/sections/sec-000",
     "library/modularqholonomicmodules/sections/sec-001",
@@ -38,8 +43,10 @@
     "library/modularqholonomicmodules/sections/sec-029"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "modularqholonomicmodules",
+    "title_source": "slug",
     "source_file": "modular.qholonomic.modules.pdf",
     "source_sha256": "640303a68dd7545347b94932242213e84d9d2dc61108478938372a2de176a84b",
     "pages": 66,

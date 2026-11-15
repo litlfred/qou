@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/candetgl/manifest",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/candetgl",
   "@type": [
-    "folio:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics",
   "contains": [
+    "library/candetgl/sections/sec-front-matter",
     "library/candetgl/sections/sec-000",
     "library/candetgl/sections/sec-001",
     "library/candetgl/sections/sec-002",
@@ -23,11 +29,23 @@
     "library/candetgl/sections/sec-014",
     "library/candetgl/sections/sec-015",
     "library/candetgl/sections/sec-016",
-    "library/candetgl/sections/sec-017"
+    "library/candetgl/sections/sec-017",
+    "library/candetgl/sections/sec-018",
+    "library/candetgl/sections/sec-019",
+    "library/candetgl/sections/sec-020",
+    "library/candetgl/sections/sec-021",
+    "library/candetgl/sections/sec-022",
+    "library/candetgl/sections/sec-023",
+    "library/candetgl/sections/sec-024",
+    "library/candetgl/sections/sec-025"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "candetgl",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "candetgl.pdf",
     "source_sha256": "d788af715428b8b2cafabe8caf6e8c0df32f5c04a12006778221c189a7701efc",
     "pages": 31,

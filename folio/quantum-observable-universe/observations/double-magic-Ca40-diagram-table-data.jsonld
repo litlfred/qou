@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-double-magic-Ca40-diagram-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:double-magic-Ca40-diagram-table-data",
+  "kind": "table",
+  "title": "Data table from ex:double-magic-Ca40-diagram",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-double-magic-Ca40-diagram"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "double-magic-Ca40-diagram-table-data.md",
+  "provenance": "authored"
+}

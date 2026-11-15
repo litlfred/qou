@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/blocks/prose-sec-012",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/blocks/prose-sec-012",
   "kind": "prose",
   "title": "Under a change of homology basis A shifts by an even half point, defined below",
   "pageStart": 17,
   "pageEnd": 18,
   "text": "../sections/sec-012-2-under-a-change-of-homology-basis-a-shifts-by-a.md",
-  "derivedFrom": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/manifest",
-  "sourceDocument": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari",
   "provenance": "ingested"
 }

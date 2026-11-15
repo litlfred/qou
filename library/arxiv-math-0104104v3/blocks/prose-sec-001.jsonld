@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0104104v3/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0104104v3/blocks/prose-sec-001",
   "kind": "prose",
-  "title": "Introduction",
-  "pageStart": 1,
-  "pageEnd": 2,
-  "text": "../sections/sec-001-1-introduction.md",
-  "derivedFrom": "library/arxiv-math-0104104v3/manifest",
-  "sourceDocument": "library/arxiv-math-0104104v3/manifest",
+  "title": "Quatrisson and tetraplectic structures",
+  "pageStart": 4,
+  "pageEnd": 10,
+  "text": "../sections/sec-001-3-quatrisson-and-tetraplectic-structures.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0104104v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0104104v3",
   "provenance": "ingested"
 }

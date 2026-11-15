@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/phys-rep09/blocks/prose-sec-043",
+  "kind": "prose",
+  "title": "Chebyshev approximation",
+  "pageStart": 62,
+  "pageEnd": 63,
+  "text": "../sections/sec-043-chebyshev-approximation.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/phys-rep09",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/phys-rep09",
+  "provenance": "ingested"
+}

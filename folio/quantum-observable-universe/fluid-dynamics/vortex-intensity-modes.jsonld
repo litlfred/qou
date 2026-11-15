@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-vortex-intensity-modes",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:vortex-intensity-modes",
+  "kind": "remark",
+  "title": "Vortex intensity modes: from classical fluids to $q$-deformation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/sec-brane-fluid",
+    "papers/quantum-observable-universe/blocks/rem-geodesic-vortices",
+    "papers/quantum-observable-universe/blocks/rem-planck-reynolds",
+    "papers/quantum-observable-universe/blocks/rem-primordial-vortex"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-substrate-parameter",
+  "tags": [
+    "vortex",
+    "fluid-dynamics",
+    "modes",
+    "classical-bridge"
+  ],
+  "text": "vortex-intensity-modes.md",
+  "provenance": "authored"
+}

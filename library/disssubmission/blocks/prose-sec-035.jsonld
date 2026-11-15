@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/disssubmission/blocks/prose-sec-035",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/disssubmission/blocks/prose-sec-035",
   "kind": "prose",
-  "title": "The main argument 39",
-  "pageStart": 47,
-  "pageEnd": 50,
-  "text": "../sections/sec-035-27-the-main-argument-39.md",
-  "derivedFrom": "library/disssubmission/manifest",
-  "sourceDocument": "library/disssubmission/manifest",
+  "title": "The upper bound W(E6)",
+  "pageStart": 123,
+  "pageEnd": 127,
+  "text": "../sections/sec-035-55-the-upper-bound-we6.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/disssubmission",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/disssubmission",
   "provenance": "ingested"
 }

@@ -1,5 +1,7 @@
 {
   "computation": "qbeta-wedderburn-bridge",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal",
   "assertions": [
     {
       "name": "the_opaque_declaration_is_deleted",
@@ -109,9 +111,9 @@
   ],
   "allPassed": true,
   "parameters": {
-    "lean_source": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/Wedderburn.lean",
-    "block": "content/quantum-observable-universe/mass-theory/unified-iterative-correction-proof.md",
-    "construction": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/WedderburnConstruction.lean",
+    "lean_source": "folio/quantum-observable-universe/lean/QOU/HeckeAlgebra/Wedderburn.lean",
+    "block": "folio/quantum-observable-universe/mass-theory/unified-iterative-correction-proof.md",
+    "construction": "folio/quantum-observable-universe/lean/QOU/HeckeAlgebra/WedderburnConstruction.lean",
     "axiom_footprint_before_2026_09_05": "[propext, Classical.choice, Quot.sound, QOU.HeckeAlgebra.Wedderburn.wedderburnEmbed]",
     "axiom_footprint_now": "[propext, Classical.choice, Quot.sound]",
     "note": "documentary + mechanical measurement; no Lean theorem is offered, and the docstring says why. Two of the three original facts are retired by construction (beans qou-usol, qou-kp2z); the shape objection stands and is what keeps the (2,1) clause an open obligation"
@@ -128,8 +130,8 @@
     "signature": "noncomputable def wedderburnEmbedOf {n : ℕ} (h : RSKDimIdentity n) (x : WedderburnDecomposition n) : Matrix (Fin (heckeDim n)) (Fin (heckeDim n)) ℝ := Matrix.reindex (regIndexEquiv h) (regIndexEquiv h) (blockDiagonal x) /-- And it is injective, so it deserves the name \"embedding\". -/ theorem wedderburnEmbedOf_injective {n"
   },
   "provenance": {
-    "headSha": "d1b2aa8e50193d63b75808799c42f024439eb455",
+    "headSha": "eb645d81e7fe1646342513e676f6498caab4a229",
     "producer": "computations/qbeta/qbeta_wedderburn_bridge_probe.py",
-    "elapsed_s": 20.949
+    "elapsed_s": 5.591
   }
 }

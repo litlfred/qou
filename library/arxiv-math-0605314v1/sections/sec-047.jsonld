@@ -1,17 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0605314v1/sections/sec-047",
   "@type": [
     "doco:Section"
   ],
-  "title": "KAZUO HABIRO",
-  "pageStart": 24,
-  "pageEnd": 24,
+  "title": "The WRT invariants as limiting values of holomorphic functions",
+  "pageStart": 61,
+  "pageEnd": 62,
   "contains": [
-    "library/arxiv-math-0605314v1/blocks/prose-sec-047",
-    "library/arxiv-math-0605314v1/blocks/rem-sec-047-01"
+    "library/arxiv-math-0605314v1/blocks/prose-sec-047"
   ],
-  "derivedFrom": "library/arxiv-math-0605314v1/manifest",
-  "sourceDocument": "library/arxiv-math-0605314v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0605314v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0605314v1",
   "provenance": "ingested"
 }

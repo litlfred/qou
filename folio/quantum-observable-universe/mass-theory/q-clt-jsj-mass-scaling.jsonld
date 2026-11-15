@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-clt-jsj-mass-scaling",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-clt-jsj-mass-scaling",
+  "kind": "remark",
+  "title": "q-CLT / JSJ volume scaling for heavy isotopes",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-jsj-decomposition-linearity"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-jsj-decomposition-linearity",
+  "tags": [
+    "q-clt",
+    "jsj",
+    "mass-scaling",
+    "heavy-isotopes",
+    "binding"
+  ],
+  "text": "q-clt-jsj-mass-scaling.md",
+  "provenance": "authored"
+}

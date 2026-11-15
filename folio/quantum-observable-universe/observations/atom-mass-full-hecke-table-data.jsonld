@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-atom-mass-full-hecke-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:atom-mass-full-hecke-table-data",
+  "kind": "table",
+  "title": "Data table from rem:atom-mass-full-hecke",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-atom-mass-full-hecke"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "atom-mass-full-hecke-table-data.md",
+  "provenance": "authored"
+}

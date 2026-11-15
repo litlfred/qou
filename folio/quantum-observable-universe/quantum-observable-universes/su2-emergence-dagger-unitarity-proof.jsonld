@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-su2-emergence-dagger-unitarity",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:su2-emergence-dagger-unitarity",
+  "kind": "proof",
+  "title": "Proof: Frobenius dagger forces $G \\subseteq \\mathrm{U}(2)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-su2-emergence-dagger-unitarity"
+  ],
+  "text": "su2-emergence-dagger-unitarity-proof.md",
+  "provenance": "authored"
+}

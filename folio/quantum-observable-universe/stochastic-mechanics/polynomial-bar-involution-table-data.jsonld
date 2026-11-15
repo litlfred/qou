@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-polynomial-bar-involution-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:polynomial-bar-involution-table-data",
+  "kind": "table",
+  "title": "Data table from prop:polynomial-bar-involution",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-polynomial-bar-involution"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "polynomial-bar-involution-table-data.md",
+  "provenance": "authored"
+}

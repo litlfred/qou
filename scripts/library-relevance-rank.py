@@ -59,11 +59,13 @@ import math
 import os
 import re
 import glob
+import sys
 from collections import Counter
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LIB = os.path.join(REPO, "library")
-REFS = os.path.join(REPO, "content", "schema", "references.ts")
+sys.path.insert(0, os.path.join(REPO, "scripts", "lib"))
+import references_dir  # noqa: E402  -- folio/references/<id>.json (bean qou-l7pj)
 TRIAGE = os.path.join(REPO, "docs", "audits", "2026-08-15-library-uncited-triage.md")
 
 # Words that are technical but say nothing about *which* technical area.
@@ -85,39 +87,24 @@ def cited_docs() -> set[str]:
     `cites: [...]` in a `.ts` manifest, and a Lean `-- Ref: [key]`. Reading
     only the first would call a document uncited when a proof cites it.
     """
-    refs = open(REFS, encoding="utf-8").read()
-    # entry id -> doc-id, taken from each entry's `library:` block. Read by
-    # brace-matching from `ref({` rather than by a flat regex: `id` and
-    # `docId` sit in different nested objects, and a file-wide scan pairs
-    # them across entry boundaries.
+    # entry id -> doc-id, from each entry's `library` block
+    # (folio/references/<id>.json since bean qou-l7pj).
     id_to_doc: dict[str, str] = {}
-    for m in re.finditer(r"\bref\(\{", refs):
-        i = refs.index("{", m.start())
-        depth = 0
-        blk = ""
-        for j in range(i, len(refs)):
-            if refs[j] == "{":
-                depth += 1
-            elif refs[j] == "}":
-                depth -= 1
-                if depth == 0:
-                    blk = refs[i:j + 1]
-                    break
-        a = re.search(r'\bid:\s*"([^"]+)"', blk)
-        b = re.search(r'docId:\s*"([^"]+)"', blk)
-        if a and b:
-            id_to_doc[a.group(1)] = b.group(1)
+    for e in references_dir.entries(REPO):
+        d = (e.get("library") or {}).get("docId")
+        if d:
+            id_to_doc[e["id"]] = d
 
     keys: set[str] = set()
-    for path in glob.glob(os.path.join(REPO, "content", "**", "*.md"), recursive=True):
+    for path in glob.glob(os.path.join(REPO, "folio", "**", "*.md"), recursive=True):
         t = open(path, encoding="utf-8", errors="replace").read()
         for m in re.finditer(r"\\cite[tp]?\*?(?:\[[^\]]*\])*\{([^}]*)\}", t):
             keys.update(k.strip() for k in m.group(1).split(","))
-    for path in glob.glob(os.path.join(REPO, "content", "**", "*.ts"), recursive=True):
+    for path in glob.glob(os.path.join(REPO, "folio", "**", "*.ts"), recursive=True):
         t = open(path, encoding="utf-8", errors="replace").read()
         for m in re.finditer(r"cites:\s*\[([^\]]*)\]", t):
             keys.update(k.strip().strip("\"'") for k in m.group(1).split(","))
-    for path in glob.glob(os.path.join(REPO, "content", "**", "*.lean"), recursive=True):
+    for path in glob.glob(os.path.join(REPO, "folio", "**", "*.lean"), recursive=True):
         t = open(path, encoding="utf-8", errors="replace").read()
         keys.update(re.findall(r"--\s*Ref:\s*\[([^\]]+)\]", t))
     keys.discard("")
@@ -127,7 +114,7 @@ def cited_docs() -> set[str]:
 def corpus_vocabulary() -> Counter:
     """Terms this corpus uses, with frequencies, from titles and defines[]."""
     vocab: Counter[str] = Counter()
-    for path in glob.glob(os.path.join(REPO, "content", "**", "*.ts"), recursive=True):
+    for path in glob.glob(os.path.join(REPO, "folio", "**", "*.ts"), recursive=True):
         try:
             text = open(path, encoding="utf-8", errors="replace").read()
         except Exception:
@@ -140,7 +127,7 @@ def corpus_vocabulary() -> Counter:
     # earlier version tokenised the whole file, which dragged its prose
     # ("sits", "unless", "earlier") into the vocabulary and let plain
     # English words outrank topical ones on library-IDF alone.
-    for path in glob.glob(os.path.join(REPO, "content", "**", "notation*.md"), recursive=True):
+    for path in glob.glob(os.path.join(REPO, "folio", "**", "notation*.md"), recursive=True):
         try:
             for line in open(path, encoding="utf-8", errors="replace"):
                 if line.lstrip().startswith("|"):

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/disssubmission/blocks/prose-sec-038",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/disssubmission/blocks/prose-sec-038",
   "kind": "prose",
-  "title": "Vanishing theorems revisited 45",
-  "pageStart": 53,
-  "pageEnd": 54,
-  "text": "../sections/sec-038-31-vanishing-theorems-revisited-45.md",
-  "derivedFrom": "library/disssubmission/manifest",
-  "sourceDocument": "library/disssubmission/manifest",
+  "title": "The difference morphism",
+  "pageStart": 135,
+  "pageEnd": 139,
+  "text": "../sections/sec-038-58-the-difference-morphism.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/disssubmission",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/disssubmission",
   "provenance": "ingested"
 }

@@ -34,7 +34,7 @@ docs/audits/2026-06-06-thread2-deuteron-perknot-gating.md.
 Ref: docs/audits/2026-06-06-thread2-deuteron-perknot-gating.md
 Ref: docs/audits/2026-06-04-option-a-vol-per-knot-scoping.md
 Ref: docs/audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md
-Ref: content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.md
+Ref: folio/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.md
 """
 from __future__ import annotations
 
@@ -97,7 +97,7 @@ S3_ROWS = [
     ("3He", "L6a4", "5.33349"),
 ]
 S3_SOURCE = (
-    "content/quantum-observable-universe/mass-theory/"
+    "folio/quantum-observable-universe/mass-theory/"
     "conj-canonical-knot-id-sdp.md §Historical evidence (volume matching)"
 )
 

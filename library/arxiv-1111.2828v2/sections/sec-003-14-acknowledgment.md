@@ -8,8 +8,12 @@ pages: 8-8
 source_pdf: 1111.2828v2.pdf
 source_sha256: 90e2f5a9b978d403
 doc_brief: "THE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — For a compact 3-manifold M with arbitrary (possibly empty) boundary, we give a parametrization of the set of conjugacy classes of"
+text_source: latex
+latex_prose_ratio: 0.829
+latex_coverage_ratio: 1.0
 ---
-and Walter Neumann for stimulating conversations. We are pa rticularly grateful to Matthias Go-
-erner for a computer implementation of our formulas, and for supplying our theory with computa-
-tional data for more than 20000 manifolds. The software has b een incorporated into SnapPy [ 9],
-and computational data can be found at http://unhyperbolic.org/ptolemy.html.
+The authors wish to thank Ian Agol, Johan Dupont, Matthias Goerner and 
+Walter Neumann for stimulating conversations. We are particularly grateful 
+to Matthias Goerner for a computer implementation of our formulas, and for
+supplying our theory with computational data for more than 20000 manifolds.
+The software has been incorporated into SnapPy~\cite{SnapPy}, and computational data can be found at \url{http://unhyperbolic.org/ptolemy.html}.

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/maximal-hoermander-q-var-revised-v03/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/maximal-hoermander-q-var-revised-v03/blocks/prose-sec-004",
   "kind": "prose",
   "title": "q-variational inequalities",
   "pageStart": 13,
   "pageEnd": 16,
   "text": "../sections/sec-004-q-variational-inequalities.md",
-  "derivedFrom": "library/maximal-hoermander-q-var-revised-v03/manifest",
-  "sourceDocument": "library/maximal-hoermander-q-var-revised-v03/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/maximal-hoermander-q-var-revised-v03",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/maximal-hoermander-q-var-revised-v03",
   "provenance": "ingested"
 }

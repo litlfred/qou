@@ -8,151 +8,116 @@ pages: 42-44
 source_pdf: 0508291v1.pdf
 source_sha256: d2d541426aaec742
 doc_brief: "Stein’s Method and Random Character Ratios — Stein’s method is used to prove limit theorems for random character ratios."
+text_source: latex
+latex_prose_ratio: 0.94
+latex_coverage_ratio: 0.957
 ---
-liminaries about association schemes, using notation from [MaSl]. Another
-useful reference is [BaI], and what we call association sche mes some authors
-call symmetric association schemes.
-Deﬁnition . An association scheme with n classes consists of a ﬁnite set
-X with n + 1 relations R0, · · ·,R n deﬁned on X which satisfy:
-(1) Each Ri is symmetric: ( x,y ) ∈Ri ⇒ (y,x ) ∈Ri.
-(2) For every x,y ∈X, one has that ( x,y ) ∈Ri for exactly one i.
-(3) R0 = {(x,x ) : x ∈X} is the identity relation.
-(4) If ( x,y ) ∈ Rk, the number of z ∈ X such that ( x,z ) ∈ Ri and
-(y,z ) ∈ Rj is a constant cijk depending on i,j,k but not on the
-particular choice of x and y.
-The adjacency matrix Di corresponding to the relation Ri is the |X| × |X|
-matrix with rows and columns labeled by the points of X deﬁned by
-(Di)x,y =
-{
-1 if ( x,y ) ∈Ri
-0 otherwise.
-The Bose-Melner algebra is deﬁned to be the vector space cons isting of
-all matrices ∑ n
-i=0aiDi with ai real. Since the matrices in the Bose-Melner
-algebra are symmetric and commute with each other (by parts 1 and 4 of the
-deﬁnition of an association scheme), the Bose-Melner algeb ra is semisimple
-and has a distinguished basis of primitive idempotents J0, · · ·,J n satisfying
-(1) J 2
-i =Ji i = 0, · · ·,n .
-(2) JiJk = 0 i ⁄=k.
-(3) ∑ n
-i=0Ji =I.
-43
-Here I is the identity matrix.
-The D’s are also a basis of the Bose-Melner algebra, so one can writ e
-Ds =
-n∑
-i=0
-φs(i)Ji, s = 0, · · ·,n
-where the φs(i) are real numbers. Since DsJi = φs(i)Ji, the φs(i) are the
-eigenvalues of Ds. For later use note that since D0 and∑ n
-i=0Ji are both
-the identity matrix, φ0(j) = 1 for all j.
-Letµi be the rank of Ji. For all s, this is the multiplicity of the eigenvalue
-φs(i) of Ds. We deﬁne the Plancherel measure of the association scheme t o
-be the probability measure on {0, · · ·,n } which chooses i with probability
-µ i
-|X| .
-Lemmas 6.1 and 6.2 are the orthogonality relations for eigen values of
-association schemes. To state them it is helpful to deﬁne vi =cii0, so that
-for any x, one has that vi is the number of pairs ( x,y ) ∈ Ri. Clearly∑ n
-i=0vi = |X|.
-Lemma 6.1. ([MaSl], page 655) For 0 ≤k,l ≤n,
-n∑
-r=0
-φr(k)φr(l)
-vr
-= |X|
-µk
-δk,l.
-Lemma 6.2. ([MaSl], page 655) For 0 ≤k,l ≤n,
-n∑
-i=0
-µiφk(i)φl(i) = |X|vkδk,l.
-Lemma 6.3 will be crucial.
-Lemma 6.3. The coeﬃcient of Dl in Ds1 · · ·Dsm is equal to
-1
-vl
-n∑
-i=0
-µi
-|X|φs1(i) · · ·φsm(i)φl(i).
-In particular, the coeﬃcient of Dl in (Ds)m is
-1
-vl
-E[φs(i)mφl(i)],
-wheres is random from Plancherel measure of the association scheme .
-Proof. Since Ds =∑ n
-i=0φs(i)Ji, one knows that
-Ds1 · · ·Dsm =
-n∑
-i=0
-φs1(i) · · ·φsm(i)Ji.
-By pages 654 and 655 of [MaSl],
-Ji = 1
-|X|
-n∑
-l=0
-µiφl(i)
-vl
-Dl.
-The result follows. □
-44
-Let pm(r) denote vr
-(vs)m multiplied by the coeﬃcient of Dr in (Ds)m. It
-follows from the deﬁnitions that pm(r) admits the following probabilistic
-interpretation. Start from some point x0 ∈ X, move to a random x1 ∈ X
-such that ( x0,x 1) ∈ Rs, then to a random x2 ∈ X such that ( x1,x 2) ∈
-Rs, and so on until one obtains xm. Then pm(r) is the probability that
-(x0,x m) ∈Rr.
-The following fact will be useful.
-Lemma 6.4. (1) p4(0) =∑ n
-r=0
-p2(r)2
-vr .
-(2) p3(s) = vs
-∑ n
-r=0
-p2(r)2
-vr
-.
-Proof. The ﬁrst assertion is clear from the probabilistic interpre tation of
-pm(r). For an analytic proof, note that by Lemma 6.3 (in the ﬁrst an d
-fourth equalities) and Lemma 6.1 (in the second and third equ alities)
-n∑
-r=0
-p2(r)2
-vr
-=
-n∑
-r=0
-1
-vr
-(
-1
-(vs)2
-n∑
-i=0
-µi
-|X|φs(i)2φr(i)
-) 2
-= 1
-(vs)4
-n∑
-r=0
-1
-vr
-n∑
-i=0
-(µi)2
-|X|2φs(i)4φr(i)2
-= 1
-(vs)4
-n∑
-i=0
-µi
-|X|φs(i)4
-= p4(0).
-The second assertion follows from the ﬁrst assertion since p3(s) = vsp4(0),
-as can be seen either by the probabilistic interpretation of pm(r) or by
-computing both sides of the equation using Lemma 6.3. □
+\label{rtassoc}
+
+	This subsection gives preliminaries about association
+	schemes, using notation from \cite{MS}. Another useful
+	reference is \cite{BI}, and what we call association schemes
+	some authors call symmetric association schemes.
+
+	{\bf Definition}. An association scheme with $n$ classes
+	consists of a finite set $X$ with $n+1$
+	relations $R_0,\cdots,R_n$ defined on $X$ which satisfy:
+
+\begin{enumerate}
+\item Each $R_i$ is symmetric: $(x,y) \in R_i \Rightarrow (y,x) \in R_i$.
+\item For every $x,y \in X$, one has that $(x,y) \in R_i$ for exactly one $i$.
+\item $R_0=\{(x,x):x \in X\}$ is the identity relation.
+\item If $(x,y) \in R_k$, the number of $z \in X$ such that $(x,z) \in R_i$ and $(y,z) \in R_j$ is a constant $c_{ijk}$ depending on $i,j,k$ but not on the particular choice of $x$ and $y$. 
+\end{enumerate}
+
+	The adjacency matrix $D_i$ corresponding to the relation $R_i$
+	is the $|X| \times |X|$ matrix with rows and columns labeled
+	by the points of $X$ defined by \[ (D_i)_{x,y} = \left\{
+	\begin{array}{ll} 1 & \mbox{if $(x,y) \in R_i$}\\ 0 &
+	\mbox{otherwise.} \end{array} \right.\] The Bose-Melner
+	algebra is defined to be the vector space consisting of all
+	matrices $\sum_{i=0}^n a_i D_i$ with $a_i$ real. Since the
+	matrices in the Bose-Melner algebra are symmetric and commute
+	with each other (by parts 1 and 4 of the definition of an
+	association scheme), the Bose-Melner algebra is semisimple and
+	has a distinguished basis of primitive idempotents
+	$J_0,\cdots,J_n$ satisfying \begin{enumerate} \item
+	$J_i^2=J_i$ \ \ \ $i=0,\cdots,n$.  \item $J_i J_k=0$ \ \ \ $i
+	\neq k$.  \item $\sum_{i=0}^n J_i = I.$ \end{enumerate} Here I
+	is the identity matrix.
+
+ 	The $D$'s are also a basis of the Bose-Melner algebra, so one
+	can write \[ D_s = \sum_{i=0}^n \phi_s(i) J_i, \ \ \ s = 0,
+	\cdots,n\] where the $\phi_s(i)$ are real numbers. Since $D_s
+	J_i = \phi_s(i) J_i$, the $\phi_s(i)$ are the eigenvalues of
+	$D_s$. For later use note that since $D_0$
+	and $\sum_{i=0}^n J_i$ are both the identity matrix,
+	$\phi_0(j)=1$ for all $j$.
+
+	 Let $\mu_i$ be the rank of $J_i$. For all $s$, this is the
+	multiplicity of the eigenvalue $\phi_s(i)$ of $D_s$. We define
+	the Plancherel measure of the association scheme to be the
+	probability measure on $\{0,\cdots,n \}$ which chooses $i$
+	with probability $\frac{\mu_i}{|X|}$.
+	
+	Lemmas \ref{asorthog1} and \ref{asorthog2} are the
+	orthogonality relations for eigenvalues of association
+	schemes. To state them it is helpful to define
+	$v_i=c_{ii0}$, so that for any $x$, one has that $v_i$ is the
+	number of pairs $(x,y) \in R_i$. Clearly $\sum_{i=0}^n v_i =
+	|X|$.
+
+
+\begin{lemma}
+ \label{asorthog1} (\cite{MS}, page 655) For $0 \leq k,l \leq n$, \[
+ \sum_{r=0}^n \frac{\phi_r(k) \phi_r(l)}{v_r} = \frac{|X|}{\mu_k}
+ \delta_{k,l}.\]
+\end{lemma}
+
+\begin{lemma} \label{asorthog2} (\cite{MS}, page 655)  For $0 \leq k,l \leq n$, \[ \sum_{i=0}^n \mu_i \phi_k(i) \phi_l(i) = |X| v_k \delta_{k,l}.\]
+\end{lemma}
+
+	Lemma \ref{ascountsol} will be crucial.
+
+\begin{lemma}
+ \label{ascountsol} The coefficient of $D_l$ in $D_{s_1} \cdots
+ D_{s_m}$ is equal to \[ \frac{1}{v_l} \sum_{i=0}^n \frac{\mu_i}{|X|} \phi_{s_1}(i)
+ \cdots \phi_{s_m}(i) \phi_l(i).\] In particular, the coefficient of $D_l$ in
+ $(D_s)^m$ is \[ \frac{1}{v_l} \ee[ \phi_s(i)^m \phi_l(i)], \] where $s$ is
+ random from Plancherel measure of the association scheme.
+\end{lemma}
+
+\begin{proof} Since $D_s = \sum_{i=0}^n \phi_s(i) J_i$, one knows that \[ D_{s_1} \cdots D_{s_m} = \sum_{i=0}^n \phi_{s_1}(i) \cdots \phi_{s_m}(i) J_i.\] By pages 654 and 655 of \cite{MS}, \[ J_i = \frac{1}{|X|} \sum_{l=0}^n \frac{\mu_i \phi_l(i)}{v_l} D_l.\] The result follows. \end{proof}
+
+	Let $p_m(r)$ denote $\frac{v_r}{(v_s)^m}$ multiplied by the
+	coefficient of $D_r$ in $(D_s)^m$. It follows from the
+	definitions that $p_m(r)$ admits the following probabilistic
+	interpretation. Start from some point $x_0 \in X$, move to a
+	random $x_1 \in X$ such that $(x_0,x_1) \in R_s$, then to a
+	random $x_2 \in X$ such that $(x_1,x_2) \in R_s$, and so on
+	until one obtains $x_m$. Then $p_m(r)$ is the probability that
+	$(x_0,x_m) \in R_r$.
+
+	The following fact will be useful.
+
+\begin{lemma} \label{asrel}
+\begin{enumerate}
+\item $p_4(0) = \sum_{r=0}^n \frac{p_2(r)^2}{v_r}$.
+\item $p_3(s) = v_s  \sum_{r=0}^n \frac{p_2(r)^2}{v_r}$. 
+\end{enumerate}
+\end{lemma}
+
+\begin{proof} The first assertion is clear from the probabilistic interpretation of
+$p_m(r)$. For an analytic proof, note that by Lemma \ref{ascountsol} (in
+the first and fourth equalities) and Lemma \ref{asorthog1} (in the
+second and third equalities) \begin{eqnarray*} \sum_{r=0}^n
+\frac{p_2(r)^2}{v_r} & = & \sum_{r=0}^n \frac{1}{v_r}
+\left( \frac{1}{(v_s)^2} \sum_{i=0}^n \frac{\mu_i}{|X|} \phi_s(i)^2 \phi_r(i) \right)^2\\
+& = & \frac{1}{(v_s)^4} \sum_{r=0}^n \frac{1}{v_r} \sum_{i=0}^n \frac{(\mu_i)^2}{|X|^2}
+\phi_s(i)^4 \phi_r(i)^2\\ & = & \frac{1}{(v_s)^4} \sum_{i=0}^n \frac{\mu_i}{|X|}
+\phi_s(i)^4 \\ & = & p_4(0). \end{eqnarray*}
+
+	The second assertion follows from the first assertion since
+$p_3(s)=v_s p_4(0)$, as can be seen either by the probabilistic
+interpretation of $p_m(r)$ or by computing both sides of the equation
+using Lemma \ref{ascountsol}. \end{proof}

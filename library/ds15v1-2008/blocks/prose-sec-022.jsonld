@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ds15v1-2008/blocks/prose-sec-022",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ds15v1-2008/blocks/prose-sec-022",
   "kind": "prose",
-  "title": "Mod 15 Identities",
-  "pageStart": 20,
-  "pageEnd": 20,
-  "text": "../sections/sec-022-215-mod-15-identities.md",
-  "derivedFrom": "library/ds15v1-2008/manifest",
-  "sourceDocument": "library/ds15v1-2008/manifest",
+  "title": "Mod 108 Identities",
+  "pageStart": 32,
+  "pageEnd": 32,
+  "text": "../sections/sec-022-mod-108-identities.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ds15v1-2008",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ds15v1-2008",
   "provenance": "ingested"
 }

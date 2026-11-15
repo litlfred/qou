@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0903.0853v3/blocks/prose-sec-060",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0903.0853v3/blocks/prose-sec-060",
   "kind": "prose",
-  "title": "APPLICATION TO THE ANALYTIC ISOFORMAL CLASSIFICATION 23",
-  "pageStart": 29,
-  "pageEnd": 30,
-  "text": "../sections/sec-060-23-application-to-the-analytic-isoformal-classif.md",
-  "derivedFrom": "library/arxiv-0903.0853v3/manifest",
-  "sourceDocument": "library/arxiv-0903.0853v3/manifest",
+  "title": "Modular relations",
+  "pageStart": 134,
+  "pageEnd": 135,
+  "text": "../sections/sec-060-262-modular-relations.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0903.0853v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0903.0853v3",
   "provenance": "ingested"
 }

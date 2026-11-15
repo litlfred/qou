@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s10955-022-02992-6/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/s10955-022-02992-6/blocks/prose-sec-007",
   "kind": "prose",
   "title": "Combinatorial Lemmas: Proof of Theorems 2.1, 2.6, and 2.7",
   "pageStart": 14,
   "pageEnd": 14,
   "text": "../sections/sec-007-3-combinatorial-lemmas-proof-of-theorems-21-26-a.md",
-  "derivedFrom": "library/s10955-022-02992-6/manifest",
-  "sourceDocument": "library/s10955-022-02992-6/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s10955-022-02992-6",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s10955-022-02992-6",
   "provenance": "ingested"
 }

@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-organic-chain-taxonomy",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:organic-chain-taxonomy",
+  "kind": "remark",
+  "title": "Organic chain taxonomy from bond-order patterns",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-molecular-hopf-ring",
+    "papers/quantum-observable-universe/blocks/rem-carbon-valence"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-molecular-hopf-chain",
+  "tags": [
+    "alkane",
+    "alkene",
+    "alkyne",
+    "bond-order",
+    "taxonomy",
+    "organic",
+    "chain",
+    "saturated",
+    "unsaturated"
+  ],
+  "text": "organic-chain-taxonomy.md",
+  "provenance": "authored"
+}

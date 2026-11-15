@@ -8,243 +8,43 @@ pages: 25-28
 source_pdf: 1601.02479v5.pdf
 source_sha256: 52c2dcd4adf2e72b
 doc_brief: "Cohomological Donaldson-Thomas theory of a quiver with potential and quantum enveloping algebras — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and"
+text_source: latex
+latex_prose_ratio: 0.959
+latex_coverage_ratio: 0.965
 ---
-we brieﬂy recall. Let Q = ( Q0, Q1, s, t) denote a quiver, that is, a pair of ﬁnite
-sets Q0 and Q1, and a pair of maps s : Q1 → Q0 and t : Q1 → Q0, taking an arrow
-to its source and target, respectively. Denote by CQ the free path category of Q
-over C. Alternatively we may think of CQ as the free path algebra of Q, with a
-distinguished family of mutually orthogonal idempotents ei in bijection with the
-vertices Q0, summing to 1 CQ.
-Let Sch C be the category of schemes over Spec( C). For S ∈ SchC we denote by
-Vectf.d.
-S the category of ﬁnite rank vector bundles over S. Let d ∈ NQ0 be a dimen-
-sion vector. We denote by Md the groupoid valued functor on Sch C that assigns to
-S ∈ SchC the groupoid obtained from forgetting the non-invertible morphism s in
-the full subcategory of functors in Fun( CQ, Vectf.d.
-S ) such that i ∈ Q0 is sent to a
-vector bundle of dimension di. This prestack is an Artin stack, as it is represented
-by the following global quotient stack. First deﬁne
-(36) Xd :=
-∏
-a∈Q1
-Hom(Cds(a) , Cdt(a) ).
-This aﬃne space carries the change of basis action of
-Gd :=
-∏
-i∈Q0
-Aut(Cdi),
-and there is an equivalence of stacks Md ∼
-= Xd/Gd. We denote by M the union∐
-d∈NQ0 Md, the stack of ﬁnite-dimensional representations of Q, which by the
-equivalences just given is a countable disjoint union of ﬁnite type glob al quotient
-Artin stacks.
-In numerous instances we wish to take cohomology of sheaves rest ricted to a
-substack of Md. To that end, we assume that for each d ∈ NQ0 we are given
-reduced subschemes
-(37) X S
-d ⊂ Xd
-which are preserved by the action of Gd, and such that the set S of CQ-representations
-that are isomorphic to representations parametrised by points of X S =∐ X S
-d are
-the objects in a Serre subcategory of the category of ﬁnite-dime nsional CQ repre-
-sentations. In other words, if
-(38) 0 →ρ′ →ρ →ρ′′ → 0
-is a short exact sequence of CQ-representations,ρ′ and ρ′′ are in S if and only if
-ρ is in S. We set MS ⊂ M to be the reduced substack, the closed points of which
-correspond to modules in S. Then MS
-d = X S
-d /Gd. We denote by
-ωd : X S
-d → Xd
-ωd : MS
-d → Md
-the natural inclusions.
-26 BEN DA VISON AND SVEN MEINHARDT
-For the rest of the paper, Xd and X S
-d will be as in (36) and (37) respectively.
-Where we wish to be speciﬁc regarding the quiver with respect to whic h these
-spaces are deﬁned, we will instead use the notation X(Q)d or X(Q)S
-d.
-For d′ + d′′ = d ∈ NQ0 let Md′,d′′ (S) be the groupoid of triples ( F ′, F, ι), where
-F ′, F ∈ Fun(CQ, Vectf.d.
-S ) and ι : F ′ → F is a natural transformation, such that
-rank(F ′(i)) = d′
-i, rank( F (i)) = di, and ι(i) is injective, with locally free cokernel,
-for every i. Again, Md′,d′′ is a ﬁnite type Artin stack, which can be described
-as follows. Let Xd′,d′′ ⊂ Xd be the subspace of representations such that the
-ﬂag Cd′
-i ⊂ Cdi is preserved for all i ∈ Q0, and let Gd′,d′′ ⊂ Gd be the subgroup
-preserving these same ﬂags. Then
-Md′,d′′ ∼
-= Xd′,d′′ /Gd′,d′′ .
-We likewise deﬁne MS
-d′,d′′ ⊂ Md′,d′′ to be the reduced substack of the stack
-parametrising triples as above, for which the d-dimensional CQ-representation Fx
-corresponding to each of the closed points x are elements of S. For each such x
-there is a short exact sequence
-0 → F ′
-x → Fx → F ′′
-x → 0
-and our condition is equivalent to asking that F ′
-x and F ′′
-x are in S, since S deﬁnes
-a Serre property. So we have
-MS
-d′,d′′ ∼
-= X S
-d′,d′′ /Gd′,d′′
-where
-X S
-d′,d′′ := Xd′,d′′ ∩ X S
-d .
-A tuple ζ = (ζi)i∈Q0 ∈ HQ0
-+ := {r exp(+√
-−1πφ ) ∈ C | r > 0, 0 <φ ≤ 1}Q0 ⊂
-CQ0 provides a Bridgeland stability condition , as deﬁned in [6], with central charge
-deﬁned on ﬁnite-dimensional CQ-modules
-Z :ρ ↦→ζ · dim(ρ) =
-∑
-i∈Q0
-ζi dim(ρi).
-We deﬁne the slope of a nonzero representation ρ by setting
-Ξζ (ρ) :=
-{
-−ℜe(Z(ρ))/ℑm(Z(ρ)) if ℑm(Z(ρ)) ⁄= 0
-∞ if ℑm(Z(ρ)) = 0 .
-Likewise we deﬁne Ξ ζ (d), for d ∈ NQ0 \ {0}, to be the slope of any representation
-ρ of dimension d. A CQ-representation ρ is called ζ-semistable if for all proper
-submodules ρ′ ⊂ ρ we have Ξ ζ (ρ′) ≤ Ξζ (ρ), and is ζ-stable if instead we have
-Ξζ (ρ′) < Ξζ (ρ) for every proper submodule. To simplify notation in what follows,
-we will assume that all representations satisfy Ξ ζ (ρ) < ∞ in this paper. In other
-words, we choose our Bridgeland stability conditions to belong to
-{r exp(+
-√
-−1πφ ) ∈ C | r > 0, 0 <φ < 1}Q0 ⊂ HQ0
-+ .
-We deﬁne two pairings on ZQ0 :
-(d, e) :=
-∑
-i∈Q0
-di ei −
-∑
-a∈Q1
-ds(a) et(a)
-and
-⟨d, e⟩ := (d, e) − (e, d).
-Note that ( d, d) = − dim Md.
-As in the introduction, for every µ ∈ (−∞, ∞) we denote by Λζ
-µ ⊂ NQ0 the
-submonoid of dimension vectors d which are either zero, or have slope µ with
-respect to the stability condition ζ.
-COHAS AND QUANTUM ENVELOPING ALGEBRAS 27
-Deﬁnition 3.1. We say ζ is µ -generic if d, e ∈Λζ
-µ implies ⟨d, e⟩ = 0 . We say ζ
-is generic if it is µ -generic for all µ .
-We say that ζ is a King stability condition if ℑm(ζi) = 1 and ℜe(ζi) ∈ Q for all
-i ∈ Q0. Given a King stability condition ζ, we can ﬁx m ∈ N such that mℜe(ζi) ∈ Z
-for every i. We linearize the Gd-action on Xd via the trivial line bundle on Xd and
-the character
-χ d : Gd → C∗(39)
-(gi)i∈Q0 ↦→
-∏
-i∈Q0
-det(gi)mℜe(ζ i ),
-and deﬁne Xζ -ss
-d to be the variety of semistable points with respect to this lin-
-earization. By [27], using the constructions and deﬁnitions of [36], th e GIT quo-
-tient Xζ -ss
-d / /χ dGd provides a coarse moduli space of ζ-semistable representations of
-dimension d, which we denote Mζ -ss
-d . Similarly we deonote by Mζ -ss,S
-d the scheme
-Xζ -ss,S
-d / /χ dGd, and we denote by
-(40) ˜ ωζ
-d : Mζ -ss,S
-d → Mζ -ss
-d
-the natural inclusion.
-Remark 3.2. Fix a dimension vector d ∈ NQ0 of slope µ , for a µ -generic stability
-conditionζ. Then we can always ﬁnd a µ ′-generic King stability condition ζ′ such
-that a d-dimensional CQ-module is ζ-stable if and only if it is ζ′-stable, by [12,
-Lem.4.21], where µ ′ is the slope of d with respect to ζ′. By construction, a d-
-dimensional CQ-module isζ′-semistable if and only if it is ζ-semistable. We deduce
-that for every µ -generic Bridgeland stability condition ζ and every dimension vector
-d of slope µ , there is a coarse moduli space Mζ -ss
-d of d-dimensional ζ-semistable
-CQ-modules.
-Remark 3.3. Pick a rational slope µ ∈ (−∞, ∞). Then we can deﬁne a maximally
-degenerate stability King condition, for which every CQ-module is automatically
-semistable, by ﬁxing ζi = +√
-−1−µ for all i ∈ Q0. In this case we have Λζ
-µ = NQ0 ,
-and M = Mζ -ss
-µ . As a result, all the results in this paper in which we do not as sume
-that we are working with a generic stability condition apply to the case in which
-we do not impose any stability condition. In addition, those results in which we
-do impose a genericity assumption on ζ apply to the case in which we impose no
-stability condition and Q is symmetric, since in this case maximally degenerate
-stability conditions are still generic in the sense of Deﬁni tion 3.1.
-We write Md for the coarse moduli space, taken with respect to the above
-degenerate stability condition. Then explicitly
-Md = Spec
-(
-Γ(X(Q)d)Gd
-)
-and the closed points of Md are in bijection with isomorphism classes of d-dimensional
-semisimple CQ-representations.
-For a slope µ , we deﬁne
-(41) Mζ -ss,S
-µ =
-∐
-d∈Λ ζ
-µ
-Mζ -ss,S
-d
-and
-(42) Mζ -ss,S
-µ =
-∐
-d∈Λ ζ
-µ
-Mζ -ss,S
-d .
-28 BEN DA VISON AND SVEN MEINHARDT
-We denote by
-(43) pζ ,S
-d : Mζ -ss,S
-d → Mζ -ss,S
-d
-and
-(44) pζ ,S
-µ : Mζ -ss,S
-µ → Mζ -ss,S
-µ
-the maps from the stacks to their respective coarse moduli space s, and by
-(45) qζ ,S
-d : Mζ -ss,S
-d → M S
-d
-and
-(46) qζ ,S
-µ : Mζ -ss,S
-µ → M S
-µ
-the maps to the subschemes of points in the union of the aﬃnizations Mµ corre-
-sponding to representations in S. Deleting all superscripts S in the above deﬁnitions
-we obtain morphisms pζ
-d, qζ
-d etc.
-If d′, d′′ ∈Λζ
-µ for some µ ∈ (−∞, ∞), we denote by Mζ -ss,S
-d′,d′′ the stack of short
-exact sequences as in (38) such that dim( ρ′) = d′, dim(ρ′′) = d′′ andρ ∈ S . There
-is an isomorphism of stacks
-Mζ -ss,S
-d′,d′′ ∼
-=
-(
-Xd′,d′′ ∩ Xζ -ss,S
-d′ + d′′
-)
-/Gd′,d′′.
+[]{#Bassection label="Bassection"}We will use the notations and conventions from [@DaMe4], which we briefly recall. Let $Q=(Q_0,Q_1,s,t)$ denote a quiver, that is, a pair of finite sets $Q_0$ and $Q_1$, and a pair of maps $s\colon Q_1\rightarrow Q_0$ and $t\colon Q_1\rightarrow Q_0$, taking an arrow to its source and target, respectively. Denote by $\mathbb{C} Q$ the free path category of $Q$ over $\mathbb{C}$. Alternatively we may think of $\mathbb{C} Q$ as the free path algebra of $Q$, with a distinguished family of mutually orthogonal idempotents $e_i$ in bijection with the vertices $Q_0$, summing to $1_{\mathbb{C} Q}$.
+
+Let $\mathop{\mathrm{Sch}}_{\mathbb{C}}$ be the category of schemes over $\mathop{\mathrm{Spec}}(\mathbb{C})$. For $S\in\mathop{\mathrm{Sch}}_{\mathbb{C}}$ we denote by $\mathop{\mathrm{Vect}}_{S}^{\mathop{\mathrm{f.d.}}}$ the category of finite rank vector bundles over $S$. Let $\mathop{\mathrm{\mathbf{d}}}\in\mathbb{N}^{Q_0}$ be a dimension vector. We denote by $\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}$ the groupoid valued functor on $\mathop{\mathrm{Sch}}_{\mathbb{C}}$ that assigns to $S\in\mathop{\mathrm{Sch}}_{\mathbb{C}}$ the groupoid obtained from forgetting the non-invertible morphisms in the full subcategory of functors in $\mathop{\mathrm{Fun}}(\mathbb{C} Q,\mathop{\mathrm{Vect}}_{S}^{\mathop{\mathrm{f.d.}}})$ such that $i\in Q_0$ is sent to a vector bundle of dimension $\mathop{\mathrm{\mathbf{d}}}_i$. This prestack is an Artin stack, as it is represented by the following global quotient stack. First define $$\label{Xdef}
+X_{\mathop{\mathrm{\mathbf{d}}}}\colonequals \prod_{a\in Q_1}\mathop{\mathrm{Hom}}(\mathbb{C}^{\mathop{\mathrm{\mathbf{d}}}_{s(a)}},\mathbb{C}^{\mathop{\mathrm{\mathbf{d}}}_{t(a)}}).$$ This affine space carries the change of basis action of $$G_{\mathop{\mathrm{\mathbf{d}}}}\colonequals \prod_{i\in Q_0}\mathop{\mathrm{Aut}}(\mathbb{C}^{\mathop{\mathrm{\mathbf{d}}}_i}),$$ and there is an equivalence of stacks $\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}\cong X_{\mathop{\mathrm{\mathbf{d}}}}/G_{\mathop{\mathrm{\mathbf{d}}}}$. We denote by $\mathfrak{M}$ the union $\coprod_{\mathop{\mathrm{\mathbf{d}}}\in\mathbb{N}^{Q_0}} \mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}$, the stack of finite-dimensional representations of $Q$, which by the equivalences just given is a countable disjoint union of finite type global quotient Artin stacks. In numerous instances we wish to take cohomology of sheaves restricted to a substack of $\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}$. To that end, we assume that for each $\mathop{\mathrm{\mathbf{d}}}\in\mathbb{N}^{Q_0}$ we are given reduced subschemes $$\label{Xspdef}
+X^{\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}}\subset X_{\mathop{\mathrm{\mathbf{d}}}}$$ which are preserved by the action of $G_{\mathop{\mathrm{\mathbf{d}}}}$, and such that the set $\mathcal{S}$ of $\mathbb{C}Q$-representations that are isomorphic to representations parametrised by points of $X^{\mathcal{S}}=\coprod X_{\mathop{\mathrm{\mathbf{d}}}}^{\mathcal{S}}$ are the objects in a Serre subcategory of the category of finite-dimensional $\mathbb{C}Q$ representations. In other words, if $$\label{rhoses}
+0\rightarrow \uprho'\rightarrow \uprho\rightarrow\uprho''\rightarrow 0$$ is a short exact sequence of $\mathbb{C}Q$-representations, $\uprho'$ and $\uprho''$ are in $\mathcal{S}$ if and only if $\uprho$ is in $\mathcal{S}$. We set $\mathfrak{M}^{\mathcal{S}}\subset \mathfrak{M}$ to be the reduced substack, the closed points of which correspond to modules in $\mathcal{S}$. Then $\mathfrak{M}^{\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}}=X^{\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}}/G_{\mathop{\mathrm{\mathbf{d}}}}$. We denote by $$\begin{aligned}
+\omega_{\mathop{\mathrm{\mathbf{d}}}}\colon &X_{\mathop{\mathrm{\mathbf{d}}}}^{\mathcal{S}}\rightarrow X_{\mathop{\mathrm{\mathbf{d}}}}\\
+\overline{\omega}_{\mathop{\mathrm{\mathbf{d}}}}\colon &\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\mathcal{S}}\rightarrow\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}
+\end{aligned}$$ the natural inclusions. For the rest of the paper, $X_{\mathop{\mathrm{\mathbf{d}}}}$ and $X^{\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}}$ will be as in ([\[Xdef\]](#Xdef){reference-type="ref" reference="Xdef"}) and ([\[Xspdef\]](#Xspdef){reference-type="ref" reference="Xspdef"}) respectively. Where we wish to be specific regarding the quiver with respect to which these spaces are defined, we will instead use the notation $X(Q)_{\mathop{\mathrm{\mathbf{d}}}}$ or $X(Q)^{\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}}$. For $\mathop{\mathrm{\mathbf{d}}}'+\mathop{\mathrm{\mathbf{d}}}''=\mathop{\mathrm{\mathbf{d}}}\in\mathbb{N}^{Q_0}$ let $\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}(S)$ be the groupoid of triples $(F',F,\iota)$, where $F',F\in\mathop{\mathrm{Fun}}(\mathbb{C}Q,\mathop{\mathrm{Vect}}_S^{\mathop{\mathrm{f.d.}}})$ and $\iota\colon F'\rightarrow F$ is a natural transformation, such that $\mathop{\mathrm{rank}}(F'(i))=\mathop{\mathrm{\mathbf{d}}}'_i$, $\mathop{\mathrm{rank}}(F(i))=\mathop{\mathrm{\mathbf{d}}}_i$, and $\iota(i)$ is injective, with locally free cokernel, for every $i$. Again, $\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}$ is a finite type Artin stack, which can be described as follows. Let $X_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}\subset X_{\mathop{\mathrm{\mathbf{d}}}}$ be the subspace of representations such that the flag $\mathbb{C}^{\mathop{\mathrm{\mathbf{d}}}'_i}\subset \mathbb{C}^{\mathop{\mathrm{\mathbf{d}}}_i}$ is preserved for all $i\in Q_0$, and let $G_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}\subset G_{\mathop{\mathrm{\mathbf{d}}}}$ be the subgroup preserving these same flags. Then $$\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}\cong X_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}/G_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}.$$ We likewise define $\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}^{\mathcal{S}}\subset\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}$ to be the reduced substack of the stack parametrising triples as above, for which the $\mathop{\mathrm{\mathbf{d}}}$-dimensional $\mathbb{C} Q$-representation $F_x$ corresponding to each of the closed points $x$ are elements of $\mathcal{S}$. For each such $x$ there is a short exact sequence $$0\rightarrow F'_x\rightarrow F_x\rightarrow F''_x\rightarrow 0$$ and our condition is equivalent to asking that $F'_x$ and $F''_x$ are in $\mathcal{S}$, since $\mathcal{S}$ defines a Serre property. So we have $$\mathfrak{M}^{\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}\cong X^{\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}/G_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}$$ where $$X^{\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}\colonequals X_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}\cap X^{\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}}.$$
+
+A tuple $\upzeta=(\upzeta_i)_{i\in Q_0}\in \mathbb{H}_+^{Q_0}\colonequals \{r\exp(+\sqrt{-1}\uppi\hspace{0.05em}\upphi)\in \mathbb{C}\mid r>0, 0<\upphi\le 1\}^{Q_0}\subset \mathbb{C}^{Q_0}$ provides a *Bridgeland stability condition*, as defined in [@Bridgeland02], with central charge defined on finite-dimensional $\mathbb{C}Q$-modules $$Z\colon\uprho\mapsto\upzeta\cdot \dim (\uprho)=\sum_{i\in Q_0}\upzeta_i\dim (\uprho_i).$$ We define the *slope* of a nonzero representation $\uprho$ by setting $$\Xi^{\upzeta}(\uprho)\colonequals\begin{cases}- \Re e (Z(\uprho))/ \Im m (Z(\uprho))&\textrm{if }\Im m (Z(\uprho))\neq 0\\\infty&\textrm{if }\Im m (Z(\uprho))=0.\end{cases}$$ Likewise we define $\Xi^{\upzeta}(\mathop{\mathrm{\mathbf{d}}})$, for $\mathop{\mathrm{\mathbf{d}}}\in\mathbb{N}^{Q_0}\setminus\{0\}$, to be the slope of any representation $\uprho$ of dimension $\mathop{\mathrm{\mathbf{d}}}$. A $\mathbb{C} Q$-representation $\uprho$ is called $\upzeta$*-semistable* if for all proper submodules $\uprho'\subset\uprho$ we have $\Xi^{\upzeta}(\uprho')\leq\Xi^{\upzeta}(\uprho)$, and is $\upzeta$*-stable* if instead we have $\Xi^{\upzeta}(\uprho')<\Xi^{\upzeta}(\uprho)$ for every proper submodule. To simplify notation in what follows, we will assume that all representations satisfy $\Xi^{\upzeta}(\uprho)<\infty$ in this paper. In other words, we choose our Bridgeland stability conditions to belong to $$\{r\exp(+\sqrt{-1}\uppi\hspace{0.05em}\upphi)\in \mathbb{C}\mid r>0, 0<\upphi< 1\}^{Q_0}\subset\mathbb{H}_+^{Q_0}.$$ We define two pairings on $\mathbb{Z}^{Q_0}$: $$(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{e}}})\colonequals \sum_{i\in Q_0} \mathop{\mathrm{\mathbf{d}}}_i \mathop{\mathrm{\mathbf{e}}}_i-\sum_{a\in Q_1}\mathop{\mathrm{\mathbf{d}}}_{s(a)}\mathop{\mathrm{\mathbf{e}}}_{t(a)}$$ and $$\langle \mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{e}}}\rangle\colonequals (\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{e}}})-(\mathop{\mathrm{\mathbf{e}}},\mathop{\mathrm{\mathbf{d}}}).$$ Note that $(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{d}}})=-\dim \mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}$. As in the introduction, for every $\upmu\in (-\infty,\infty)$ we denote by $\Uplambda_{\upmu}^{\upzeta}\subset\mathbb{N}^{Q_0}$ the submonoid of dimension vectors $\mathop{\mathrm{\mathbf{d}}}$ which are either zero, or have slope $\upmu$ with respect to the stability condition $\upzeta$.
+
+::: definition
+[]{#genericityDef label="genericityDef"} We say $\upzeta$ is $\upmu$-generic if $\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{e}}}\in\Uplambda_{\upmu}^{\upzeta}$ implies $\langle \mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{e}}}\rangle=0$. We say $\upzeta$ is generic if it is $\upmu$-generic for all $\upmu$.
+:::
+
+We say that $\upzeta$ is a King stability condition if $\Im m(\upzeta_i)=1$ and $\Re e(\upzeta_i)\in\mathbb{Q}$ for all $i\in Q_0$. Given a King stability condition $\upzeta$, we can fix $m\in\mathbb{N}$ such that $m\Re e(\upzeta_i)\in\mathbb{Z}$ for every $i$. We linearize the $G_{\mathop{\mathrm{\mathbf{d}}}}$-action on $X_{\mathop{\mathrm{\mathbf{d}}}}$ via the trivial line bundle on $X_{\mathop{\mathrm{\mathbf{d}}}}$ and the character $$\begin{aligned}
+\label{charDef}
+\upchi_{\mathop{\mathrm{\mathbf{d}}}}\colon &G_{\mathop{\mathrm{\mathbf{d}}}}\rightarrow \mathbb{C}^*\\&(g_i)_{i\in Q_0}\mapsto \prod_{i\in Q_0}\det(g_i)^{m\Re e(\upzeta_i)}, \nonumber
+\end{aligned}$$ and define $X_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}$ to be the variety of semistable points with respect to this linearization. By [@King], using the constructions and definitions of [@MFK94], the GIT quotient $X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}/\!\!/_{\upchi_{\mathop{\mathrm{\mathbf{d}}}}} G_{\mathop{\mathrm{\mathbf{d}}}}$ provides a coarse moduli space of $\upzeta$-semistable representations of dimension ${\mathop{\mathrm{\mathbf{d}}}}$, which we denote $\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}$. Similarly we deonote by $\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}}$ the scheme $X^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}}/\!\!/_{\upchi_{\mathop{\mathrm{\mathbf{d}}}}} G_{\mathop{\mathrm{\mathbf{d}}}}$, and we denote by $$\label{tomdef}
+\tilde{\omega}^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}}\colon\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}}\rightarrow\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}$$ the natural inclusion.
+
+::: remark
+[]{#BtoK label="BtoK"} Fix a dimension vector $\mathop{\mathrm{\mathbf{d}}}\in\mathbb{N}^{Q_0}$ of slope $\upmu$, for a $\upmu$-generic stability condition $\upzeta$. Then we can always find a $\upmu'$-generic King stability condition $\upzeta'$ such that a $\mathop{\mathrm{\mathbf{d}}}$-dimensional $\mathbb{C} Q$-module is $\upzeta$-stable if and only if it is $\upzeta'$-stable, by [@DMSS15 Lem.4.21], where $\upmu'$ is the slope of $\mathop{\mathrm{\mathbf{d}}}$ with respect to $\upzeta'$. By construction, a $\mathop{\mathrm{\mathbf{d}}}$-dimensional $\mathbb{C}Q$-module is $\upzeta'$-semistable if and only if it is $\upzeta$-semistable. We deduce that for every $\upmu$-generic Bridgeland stability condition $\upzeta$ and every dimension vector $\mathop{\mathrm{\mathbf{d}}}$ of slope $\upmu$, there is a coarse moduli space $\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}$ of $\mathop{\mathrm{\mathbf{d}}}$-dimensional $\upzeta$-semistable $\mathbb{C}Q$-modules.
+:::
+
+::: remark
+Pick a rational slope $\upmu\in (-\infty,\infty)$. Then we can define a maximally degenerate stability King condition, for which every $\mathbb{C}Q$-module is automatically semistable, by fixing $\upzeta_i=+\sqrt{-1}-\upmu$ for all $i\in Q_0$. In this case we have $\Uplambda_{\upmu}^{\upzeta}=\mathbb{N}^{Q_0}$, and $\mathfrak{M}=\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\upmu}$. As a result, all the results in this paper in which we do not assume that we are working with a generic stability condition apply to the case in which we do not impose any stability condition. In addition, those results in which we do impose a genericity assumption on $\upzeta$ apply to the case in which we impose no stability condition and $Q$ is symmetric, since in this case maximally degenerate stability conditions are still generic in the sense of Definition [\[genericityDef\]](#genericityDef){reference-type="ref" reference="genericityDef"}.
+:::
+
+We write $\mathcal{M}_{\mathop{\mathrm{\mathbf{d}}}}$ for the coarse moduli space, taken with respect to the above degenerate stability condition. Then explicitly $$\mathcal{M}_{\mathop{\mathrm{\mathbf{d}}}}=\mathop{\mathrm{Spec}}\left(\Upgamma(X(Q)_{\mathop{\mathrm{\mathbf{d}}}})^{G_{\mathop{\mathrm{\mathbf{d}}}}}\right)$$ and the closed points of $\mathcal{M}_{\mathop{\mathrm{\mathbf{d}}}}$ are in bijection with isomorphism classes of $\mathop{\mathrm{\mathbf{d}}}$-dimensional semisimple $\mathbb{C}Q$-representations. For a slope $\upmu$, we define $$\mathcal{M}_{\upmu}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}=\coprod_{\mathop{\mathrm{\mathbf{d}}}\in\Uplambda_{\upmu}^{\upzeta}}\mathcal{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}$$ and $$\mathfrak{M}_{\upmu}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}=\coprod_{\mathop{\mathrm{\mathbf{d}}}\in \Uplambda_{\upmu}^{\upzeta}}\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}.$$ We denote by $$\label{pdef}
+p_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta,\mathcal{S}}\colon \mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}}\rightarrow \mathcal{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}}$$ and $$p_{\upmu}^{\upzeta,\mathcal{S}}\colon \mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\upmu}\rightarrow \mathcal{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\upmu}$$ the maps from the stacks to their respective coarse moduli spaces, and by $$\label{qdef}
+q_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta,\mathcal{S}}\colon \mathcal{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}}\rightarrow \mathcal{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\mathcal{S}}$$ and $$\label{qmudef}
+q_{\upmu}^{\upzeta,\mathcal{S}}\colon \mathcal{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\upmu}\rightarrow \mathcal{M}_{\upmu}^{\mathcal{S}}$$ the maps to the subschemes of points in the union of the affinizations $\mathcal{M}_{\upmu}$ corresponding to representations in $\mathcal{S}$. Deleting all superscripts $\mathcal{S}$ in the above definitions we obtain morphisms $p^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}},q^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}}$ etc.
+
+If $\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''\in\Uplambda_{\upmu}^{\upzeta}$ for some $\upmu\in(-\infty,\infty)$, we denote by $\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}$ the stack of short exact sequences as in ([\[rhoses\]](#rhoses){reference-type="ref" reference="rhoses"}) such that $\dim(\uprho')=\mathop{\mathrm{\mathbf{d}}}'$, $\dim(\uprho'')=\mathop{\mathrm{\mathbf{d}}}''$ and $\uprho\in\mathcal{S}$. There is an isomorphism of stacks $$\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}\cong \left(X_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}\cap X_{\mathop{\mathrm{\mathbf{d}}}'+\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}\right)/G_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}.$$

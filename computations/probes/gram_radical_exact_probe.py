@@ -210,7 +210,7 @@ def _g_inv_consumers() -> dict:
                              capture_output=True, text=True).stdout.splitlines()
         me = str(pathlib.Path(__file__).resolve())
         return [ln for ln in out
-                if "_deprecated" not in ln and not ln.startswith(me)]
+                if ("_deprecated" not in ln and "fsh-guts" not in ln) and not ln.startswith(me)]
 
     pk = str(REPO / "tools" / "pyhecke" / "python" / "pyhecke")
     mentions = {}

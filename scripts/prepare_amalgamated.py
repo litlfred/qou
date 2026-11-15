@@ -1,7 +1,7 @@
 import os, glob, re, shutil
 
 def run():
-    base_dir = "/Users/litlfred/space_cats/qou/content/quantum-observable-universe"
+    base_dir = "/Users/litlfred/space_cats/qou/folio/quantum-observable-universe"
     out_dir = "/Users/litlfred/space_cats/qou/amalgamated_input"
     if os.path.exists(out_dir):
         shutil.rmtree(out_dir)

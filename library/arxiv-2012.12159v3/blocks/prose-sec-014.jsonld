@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2012.12159v3/blocks/prose-sec-014",
+  "kind": "prose",
+  "title": "Mahler volumes of every Funk scale",
+  "pageStart": 22,
+  "pageEnd": 26,
+  "text": "../sections/sec-014-7-mahler-volumes-of-every-funk-scale.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2012.12159v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2012.12159v3",
+  "provenance": "ingested"
+}

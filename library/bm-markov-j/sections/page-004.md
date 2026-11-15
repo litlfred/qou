@@ -1,0 +1,51 @@
+---
+doc_id: bm-markov-j
+doc_title: "Journal of Knot Theory and Its Ramifications, Vol. 11, No. 3 (2002) 295-310 © World Scientific Publishing Company"
+section_id: page-004
+section_title: "Page 4"
+section_number: null
+pages: 4-4
+source_pdf: bm-markov-j.pdf
+source_sha256: ffc46b9daf7dc858
+toc_source: undetermined
+---
+298 J. S. Birman & W. W. Menasco
+
++ side
+of S
+
+- side
+
++ vertex - vertex of S
+
+viewed on F viewed in 3-space (b)
+
+(a)
+
+(c) (d)
+
+Figure 2: (a)Foliation of F near a vertex; (b) Foliation of F near X = OF;
+
+(c) a-arcs and b-arcs, viewed on F; (d) a-arcs and b-arcs, viewed on a fiber
+Ag.
+
+of Hg with the surface F. We may assume that each leaf is an arc. For
+details on this assertion and others like it see [4]. Leaves are singular if they
+contain a singularity of the foliation, otherwise they are non-singular. The
+singularities may be assumed to be finite in number and to occur on distinct
+fibers of #. Every singularity may be assumed to result from a saddle point
+tangency between F and a fiber of #. Non-singular leaves are said to be type
+a (respectively type 6) if they are arcs which have one endpoint on ANF and
+the other on X = OF (respectively both endpoints on ANF). See Figure
+2(c) and (d). Leaves which have both their endpoints on X do not occur
+because F is orientable (see Lemma 1.1 of [4]). When the foliation of F has
+all of these properties we call F a Markov surface.
+
+If a vertex is the endpoint of an a-arc, it is always positive (as indicated
+in Figure 2(a), but it could be either positive or negative at the endpoint of a
+b-arc. To indicate these differences we will sometimes show a point where the
+axis pierces F as as a circle with a + sign inside it. Another way to think of
+the signs on the vertices is that they are positive or negative according as the
+outward-drawn oriented normal to F has the same or opposite orientation
+as the braid axis at the vertex. This means that when we view the positive
+side of F, the sense of increasing 6 around a vertex will be counterclockwise

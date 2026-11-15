@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1611.09182v1/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1611.09182v1/blocks/prose-sec-009",
   "kind": "prose",
   "title": "Summary and outlook",
   "pageStart": 15,
   "pageEnd": 16,
   "text": "../sections/sec-009-24-summary-and-outlook.md",
-  "derivedFrom": "library/arxiv-1611.09182v1/manifest",
-  "sourceDocument": "library/arxiv-1611.09182v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1611.09182v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1611.09182v1",
   "provenance": "ingested"
 }

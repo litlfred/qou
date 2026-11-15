@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/2018sorus020/blocks/prose-sec-035",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/2018sorus020/blocks/prose-sec-035",
   "kind": "prose",
-  "title": "Third deﬁnition : torsion of an exact complex (Cayley",
-  "pageStart": 45,
-  "pageEnd": 48,
-  "text": "../sections/sec-035-153-third-deﬁnition-torsion-of-an-exact-complex.md",
-  "derivedFrom": "library/2018sorus020/manifest",
-  "sourceDocument": "library/2018sorus020/manifest",
+  "title": "Interpretation of the Theorem : singularities and Alexander module",
+  "pageStart": 58,
+  "pageEnd": 65,
+  "text": "../sections/sec-035-232-interpretation-of-the-theorem-singularities.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/2018sorus020",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/2018sorus020",
   "provenance": "ingested"
 }

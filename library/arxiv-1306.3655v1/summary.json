@@ -2,23 +2,50 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1306.3655v1",
  "source_sha256": "45dd8bd55687ecce",
- "brief": "The Murnaghan-Nakayama rule and some virtual Sn characters — 1 sections: Define the virtual Sn character ψν",
- "extended": "**The Murnaghan-Nakayama rule and some virtual Sn characters**\n\n*Amitai Regev*\n\n11 pp, 1 sections.\n\n**Outline.** 4 Define the virtual Sn character ψν,n as foll",
+ "brief": "The Murnaghan-Nakayama rule and some virtual S n characters — We construct certain virtual characters for the symmetric groups, then compute a formula which calculates the values of these virtual",
+ "extended": "**The Murnaghan-Nakayama rule and some virtual S n characters**\n\n*Amitai Regev*\n\n11 pp, 6 sections.\n\n**Abstract.** We construct certain virtual characters for the symmetric groups, then compute a formula which calculates the values of these virtual characters.\n\n**Outline.** Front matter; 1 Introduction; 2.1 The general construction; 3.1 The proof of Theorem 3.1; 3.2 Applications; 4 Final remarks\n\n**Extracted claims (proposals, not verified).**\n- Lemma: [\\[uniqueness1\\]](#uniqueness1){reference-type=\"ref\" reference=\"uniqueness1\"} allows us to prove the following formula.",
  "tokens": {
-  "brief": 26,
-  "extended": 39
+  "brief": 48,
+  "extended": 144
  },
  "sections": [
   {
-   "id": "sec-000-define-the-virtual-sn-character-n-as-follows",
-   "title": "Define the virtual Sn character ψν,n as follows:",
-   "pages": "3-11"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-21-the-general-construction",
+   "title": "The general construction",
+   "pages": "2-7"
+  },
+  {
+   "id": "sec-002-31-the-proof-of-theorem-31",
+   "title": "The proof of Theorem 3.1",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-003-32-applications",
+   "title": "Applications",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-004-4-final-remarks",
+   "title": "Final remarks",
+   "pages": "9-11"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles"
+   "abstract",
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

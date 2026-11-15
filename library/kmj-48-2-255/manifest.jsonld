@@ -1,32 +1,29 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/kmj-48-2-255/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "A formula for the colored Jones polynomial of 2-bridge knots",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/kmj-48-2-255",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "A Formula for the Colored Jones Polynomial of 2-Bridge Knots",
   "contains": [
+    "library/kmj-48-2-255/sections/sec-front-matter",
     "library/kmj-48-2-255/sections/sec-000",
     "library/kmj-48-2-255/sections/sec-001",
     "library/kmj-48-2-255/sections/sec-002",
-    "library/kmj-48-2-255/sections/sec-003",
-    "library/kmj-48-2-255/sections/sec-004",
-    "library/kmj-48-2-255/sections/sec-005",
-    "library/kmj-48-2-255/sections/sec-006",
-    "library/kmj-48-2-255/sections/sec-007",
-    "library/kmj-48-2-255/sections/sec-008",
-    "library/kmj-48-2-255/sections/sec-009",
-    "library/kmj-48-2-255/sections/sec-010",
-    "library/kmj-48-2-255/sections/sec-011",
-    "library/kmj-48-2-255/sections/sec-012",
-    "library/kmj-48-2-255/sections/sec-013",
-    "library/kmj-48-2-255/sections/sec-014",
-    "library/kmj-48-2-255/sections/sec-015",
-    "library/kmj-48-2-255/sections/sec-016"
+    "library/kmj-48-2-255/sections/sec-003"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "kmj-48-2-255",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "KMJ-48-2-255.pdf",
     "source_sha256": "720279042c6d762b98e252c2e19ad62426c8716b734b8284d8aeff7b79e388d8",
     "pages": 26,

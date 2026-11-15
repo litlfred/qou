@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-quantum-ideal-gas-law",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:quantum-ideal-gas-law",
+  "kind": "proof",
+  "title": "Proof of quantum ideal gas law",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-quantum-ideal-gas-law"
+  ],
+  "text": "quantum-ideal-gas-law-proof.md",
+  "provenance": "authored"
+}

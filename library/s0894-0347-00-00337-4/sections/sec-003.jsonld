@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/s0894-0347-00-00337-4/sections/sec-003",
   "@type": [
     "doco:Section"
   ],
-  "title": "Jy+ 1",
+  "title": "Asymptotics in the bulk of the spectrum",
   "pageStart": 4,
-  "pageEnd": 4,
+  "pageEnd": 6,
   "contains": [
     "library/s0894-0347-00-00337-4/blocks/prose-sec-003"
   ],
-  "derivedFrom": "library/s0894-0347-00-00337-4/manifest",
-  "sourceDocument": "library/s0894-0347-00-00337-4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s0894-0347-00-00337-4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s0894-0347-00-00337-4",
   "provenance": "ingested"
 }

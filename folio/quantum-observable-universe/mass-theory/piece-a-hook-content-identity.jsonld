@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-piece-a-hook-content-identity",
+  "@type": [
+    "folio-assistant-core:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:piece-a-hook-content-identity",
+  "kind": "lemma",
+  "title": "Piece A — the hook–content identity $\\sum_{\\square} h(\\square)^2 = \\sum_{\\square} c(\\square)^2 + n^2$",
+  "cites": [
+    "references/macdonald1995",
+    "references/stanley1999"
+  ],
+  "tags": [
+    "piece-a",
+    "hook-length",
+    "cell-content",
+    "young-diagram",
+    "identity-i",
+    "hlf-free",
+    "plancherel"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.PieceA.pieceA",
+  "text": "piece-a-hook-content-identity.md",
+  "provenance": "authored"
+}

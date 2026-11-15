@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-tower-geometric-lower-bound",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:tower-geometric-lower-bound",
+  "kind": "proposition",
+  "title": "Brane-tower growth above the containment threshold (GAP-A-3)",
+  "tags": [
+    "binding",
+    "brane-tower",
+    "level-selection",
+    "gap-a-3",
+    "plancherel"
+  ],
+  "leanRef": "qou:QOU.Mass.WStd.wStd_geometric_from_three",
+  "text": "tower-geometric-lower-bound.md",
+  "provenance": "authored"
+}

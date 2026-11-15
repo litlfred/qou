@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-coxeter-strong-exchange",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:coxeter-strong-exchange",
+  "kind": "proposition",
+  "title": "Strong exchange for Coxeter systems, via the reflection cocycle",
+  "cites": [
+    "references/kassel1995",
+    "references/jones1987"
+  ],
+  "tags": [
+    "coxeter",
+    "hecke-algebra",
+    "exchange-property",
+    "reflection-cocycle"
+  ],
+  "leanRef": "qou:QOU.Machinery.CoxeterParabolic.strong_exchange",
+  "text": "coxeter-strong-exchange.md",
+  "provenance": "authored"
+}

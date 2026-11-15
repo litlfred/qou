@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-015",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-015",
   "kind": "prose",
-  "title": "Universal Picard-Vessiot extensions",
-  "pageStart": 30,
-  "pageEnd": 33,
-  "text": "../sections/sec-015-51-universal-picard-vessiot-extensions.md",
-  "derivedFrom": "library/afst-2007-6-16-3-665-0/manifest",
-  "sourceDocument": "library/afst-2007-6-16-3-665-0/manifest",
+  "title": "Realizing q-diﬀerence modules over K as connections",
+  "pageStart": 39,
+  "pageEnd": 47,
+  "text": "../sections/sec-015-6-realizing-q-diﬀerence-modules-over-k-as-connec.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/afst-2007-6-16-3-665-0",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/afst-2007-6-16-3-665-0",
   "provenance": "ingested"
 }

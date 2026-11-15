@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/topologicalinvariance3dindex/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/topologicalinvariance3dindex/blocks/prose-sec-005",
   "kind": "prose",
   "title": "A review of the index of an ideal triangulation",
   "pageStart": 16,
   "pageEnd": 16,
   "text": "../sections/sec-005-4-a-review-of-the-index-of-an-ideal-triangulatio.md",
-  "derivedFrom": "library/topologicalinvariance3dindex/manifest",
-  "sourceDocument": "library/topologicalinvariance3dindex/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/topologicalinvariance3dindex",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/topologicalinvariance3dindex",
   "provenance": "ingested"
 }

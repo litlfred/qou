@@ -10,7 +10,7 @@ WHY THIS FILE EXISTS AT ALL
 `markov-trace-assembly-proton.derivation.json` was an ORPHAN: consumed by live
 code (`applied_uniqueness_mass_table.py`, `braid_encoding_audit.py`,
 `markov/assembly_chain_11_letter_recompute_probe.py`) while its only builder sat
-in `computations/_deprecated/`. Its neutron and deuteron siblings both had live
+in `fsh-guts/deprecated/computations/`. Its neutron and deuteron siblings both had live
 builders and were regenerated canonical on 2026-09-13, so the cluster went
 mixed-frame: proton grouped at 1.14575969…, the other two canonical. An 82 %
 disagreement inside one table, gated red in `applied_uniqueness_mass_table`.
@@ -79,7 +79,25 @@ OUTPUT = _pb.witness_path("markov-trace-assembly-proton.derivation.json", HERE)
 # its siblings did.
 from canonical_trm_reference import tr_m_nucleon  # noqa: E402
 
-PROTON_TR_M_Q0 = float(tr_m_nucleon("proton"))
+from _precision import fmt  # noqa: E402
+
+# NO `float()` HERE. `tr_m_nucleon` returns an mpf carrying 60 digits
+# (0.629328402202921918165345746778485927600219400634359762811677); the cast
+# this line used to make kept 16 and wrote the result into
+# `markov-trace-assembly-proton.derivation.json` as a raw JSON float, which the
+# raw-float64 ratchet counts. Bean `qou-btqh` had already drained that exact
+# field 6 -> 0 (PR #6569) and removed its baseline row; this builder was written
+# fresh nine days later under `qou-nhkv` and reintroduced the cast, so the
+# reappearance surfaces as NEW rather than REGRESSED.
+#
+# Keep the mpf for arithmetic and serialize ONCE with `_precision.fmt`. Every
+# consumer already parses through `mp.mpf(str(...))` and two of them gain by it:
+# `assembly_chain_11_letter_recompute_probe` derives its tolerance from the
+# stored precision, so a full-precision string tightens that check by ~44 orders
+# rather than loosening anything. `float()` survives below only inside f-strings,
+# which is display (bean `qou-ejfy`).
+PROTON_TR_M_Q0 = tr_m_nucleon("proton")
+PROTON_TR_M_Q0_STR = fmt(PROTON_TR_M_Q0)
 
 
 def _canonical_word():
@@ -229,7 +247,7 @@ def build() -> DerivationChain:
         ),
         inputs=["tr_M_proton_symbolic"],
         output_name="tr_M_proton_q0",
-        output_value=PROTON_TR_M_Q0,
+        output_value=PROTON_TR_M_Q0_STR,
         trust_basis=TrustBasis.COMPUTATIONAL,
         jet_order=0,
         gb_filtration_level=0,
@@ -245,14 +263,14 @@ def build() -> DerivationChain:
 
     return DerivationChain(
         target="tr_M(p, q_0)  [canonical Wenzl-bridge, canonical 11-letter element]",
-        target_value=PROTON_TR_M_Q0,
+        target_value=PROTON_TR_M_Q0_STR,
         target_tolerance=1e-9,
         content_block="prop:full-pole-structure-mass-trace",
         description=(
             "Markov-trace assembly chain for the proton on the CANONICAL "
             "11-letter element: convention-D Wedderburn weights + seminormal "
             "characters + the finite-Jones axiom, giving tr_M(p, q_0) ≈ "
-            f"{PROTON_TR_M_Q0:.10f}. Written 2026-09-13 (bean qou-nhkv) to "
+            f"{float(PROTON_TR_M_Q0):.10f}. Written 2026-09-13 (bean qou-nhkv) to "
             "replace an ORPHAN artifact whose only builder was deprecated and "
             "which had been left in the grouped-era frame while its neutron "
             "and deuteron siblings moved to canonical. Unlike those siblings "

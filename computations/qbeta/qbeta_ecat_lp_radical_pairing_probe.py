@@ -3,7 +3,7 @@
 and it is a NEGATIVE. The geometric cost does NOT escape the LP degeneracy on
 the block basis, and it fails for a structural reason.
 
-# Ref: content/quantum-observable-universe/lean/QOU/QBeta/ECatLPDualRadical.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/QBeta/ECatLPDualRadical.lean
 #      (dual_price_determined_by_radical; dual_price_zero_of_cost_orthogonal_to_radical)
 # Ref: computations/nucleus_sdp_assembly.py   (`gram` = diag(y_lambda * dim_lambda))
 # Ref: computations/qbeta/qbeta_ecat_block_cost_vector_probe.py  (the cost t_lambda)
@@ -27,7 +27,9 @@ corpus's Gram is DIAGONAL (`nucleus_sdp_assembly.CostGram.gram` is literally
 
     G = diag( y_(3)*1 , y_(2,1)*2 , y_(1^3)*1 )
 
-Under convention D `y_(1^3) = 0` -- that vanishing IS convention D -- so `G`
+Under convention D `y_(1^3) = 0` -- that vanishing IS convention D
+(`threeRow_eq_zero_of_jones_ocneanu` for D ==> vanish;
+`markovWeights_eq_jones_of_threeRow_eq_zero` + `hfaith` for the converse) -- so `G`
 is singular and its radical is exactly the `(1^3)` coordinate direction,
 `v = (0, 0, 1)`.
 
@@ -204,7 +206,9 @@ def main() -> int:
         f"nucleus_sdp_assembly.CostGram.gram IS np.diag(frob_diag) with "
         f"frob_diag = y_lambda * dim_lambda, so the Gram is diagonal and its "
         f"radical is the coordinate direction v = (0, 0, 1). Under convention "
-        f"D y_(1^3) = 0 -- that vanishing IS convention D -- so the "
+        f"D y_(1^3) = 0 -- that vanishing IS convention D "
+        f"(threeRow_eq_zero_of_jones_ocneanu; converse is "
+        f"markovWeights_eq_jones_of_threeRow_eq_zero + hfaith) -- so the "
         f"singularity is structural, not a numerical rank drop",
         w,
     )

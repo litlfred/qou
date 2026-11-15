@@ -22,7 +22,15 @@ What is **NOT** there: any construction of `T_w(Z,N) ∈ H_{3A}(q)`, any sub-alg
 
 ## Why a single-session attempt won't close
 
-1. **Mathlib has no relevant high-level infrastructure.** No KLR algebras, no Hoefsmit seminormal basis, no Kashiwara crystals on Type-A KLR, no Type-B folding functor. Even Mathlib's `CoxeterSystem` order-accessor API is in flux. See `2026-05-30-klr-dialog-assessment.md` (0/6 productive on a KLR re-pitch).
+1. **Mathlib has no relevant high-level infrastructure.** No KLR algebras, no Hoefsmit seminormal basis, no Kashiwara crystals on Type-A KLR, no Type-B folding functor. See `2026-05-30-klr-dialog-assessment.md` (0/6 productive on a KLR re-pitch).
+
+   > **Correction 2026-10-10 (bean `qou-t88s`) — one clause of this bullet was stale and is removed.** It read *"Even Mathlib's `CoxeterSystem` order-accessor API is in flux."* That is no longer true and should not be cited as a reason this work is blocked.
+   >
+   > **Checkable from inside this repo, which is what settles it:** `QOU/MathlibExt/IwahoriHeckeAlgebra.lean:3` **imports `Mathlib.GroupTheory.Coxeter.Basic`** and builds against it. An API the corpus compiles against is not in flux. That file's own docstring states the position precisely — Mathlib *has* `CoxeterMatrix` and `CoxeterSystem` but **no Hecke algebra of any kind**, with `CoxeterSystem` used as the *positive control* for that negative (it occurs in three modules; `Hecke` in one, and that one is `Mathlib/NumberTheory/FLT/Basic`, a docstring mention of Hecke *operators*).
+   >
+   > Bean `qou-t88s` additionally measured `Mathlib/GroupTheory/Coxeter/` at **1612 lines across four files** against pinned mathlib `f897ebcf72cd` (v4.24.0) on 2026-09-04. **That figure is carried from the bean, not re-measured here** — mathlib source is absent from this container, which `IwahoriHeckeAlgebra.lean` itself notes is normal ("the source is not present in every container"). The import above does not depend on it.
+   >
+   > **The rest of the bullet re-measures as correct and stays.** KLR algebras, Hoefsmit seminormal basis, Kashiwara crystals, Type-B folding — none exist in Mathlib. Do not read this correction as weakening the bullet's conclusion: the load-bearing blocker is Step 4 below, not the Coxeter API.
 2. **The structural content lives in Step 4.** The 5-step sketch in the file's docstring (lines 161–210) is honest about LOC, but **Step 4** ("inter-nucleon Avg crossings preserve Boolean grading") is genuine new representation theory, not chaining of binomial identities. This is the load-bearing lemma.
 3. **Prerequisite sprints not on this branch's base.** Sprints 2–5 of the IwahoriHecke plan have varying status:
    - [`content/quantum-observable-universe/lean/QOU/IwahoriHecke/Defn.lean`](../../content/quantum-observable-universe/lean/QOU/IwahoriHecke/Defn.lean) — Sprint 1, on this branch (`opaque` type + `sorry` instances).

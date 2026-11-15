@@ -39,7 +39,7 @@ conjecture's own table).
 
 Ref: docs/audits/2026-06-06-thread2-deuteron-perknot-gating.md
 Ref: docs/audits/2026-06-12-knot-id-volume-match-adjudication.md
-Ref: content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.md
+Ref: folio/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.md
 """
 from __future__ import annotations
 

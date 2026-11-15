@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0903.0853v3/blocks/prose-sec-020",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0903.0853v3/blocks/prose-sec-020",
   "kind": "prose",
-  "title": "CHAPTER 1. INTRODUCTION",
-  "pageStart": 12,
-  "pageEnd": 12,
-  "text": "../sections/sec-020-6-chapter-1-introduction.md",
-  "derivedFrom": "library/arxiv-0903.0853v3/manifest",
-  "sourceDocument": "library/arxiv-0903.0853v3/manifest",
+  "title": "Formal case",
+  "pageStart": 26,
+  "pageEnd": 27,
+  "text": "../sections/sec-020-531-formal-case.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0903.0853v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0903.0853v3",
   "provenance": "ingested"
 }

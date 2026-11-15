@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/monodromyhitchiny/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/monodromyhitchiny/blocks/prose-sec-000",
   "kind": "prose",
-  "title": "YVES LASZLO, CHRISTIAN PAULY, AND CHRISTOPH SORGER",
-  "pageStart": 2,
-  "pageEnd": 2,
-  "text": "../sections/sec-000-2-yves-laszlo-christian-pauly-and-christoph-sorg.md",
-  "derivedFrom": "library/monodromyhitchiny/manifest",
-  "sourceDocument": "library/monodromyhitchiny/manifest",
+  "title": "ON THE MONODROMY OF THE HITCHIN CONNECTION",
+  "pageStart": 1,
+  "pageEnd": 14,
+  "text": "../sections/sec-000-on-the-monodromy-of-the-hitchin-connection.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/monodromyhitchiny",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/monodromyhitchiny",
   "provenance": "ingested"
 }

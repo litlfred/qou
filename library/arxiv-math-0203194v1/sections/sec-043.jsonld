@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0203194v1/sections/sec-043",
   "@type": [
     "doco:Section"
   ],
-  "title": "In the previous example, it is easily seen that rank-one vect or bundles",
-  "pageStart": 23,
-  "pageEnd": 23,
+  "title": "Review of complex orbifolds.",
+  "pageStart": 162,
+  "pageEnd": 165,
   "contains": [
     "library/arxiv-math-0203194v1/blocks/prose-sec-043"
   ],
-  "derivedFrom": "library/arxiv-math-0203194v1/manifest",
-  "sourceDocument": "library/arxiv-math-0203194v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203194v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203194v1",
   "provenance": "ingested"
 }

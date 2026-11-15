@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2205.07095v1/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2205.07095v1/blocks/prose-sec-006",
   "kind": "prose",
   "title": "Construction of expansion for correlation functions in the density parameter  .",
   "pageStart": 8,
   "pageEnd": 8,
   "text": "../sections/sec-006-4-construction-of-expansion-for-correlation-func.md",
-  "derivedFrom": "library/arxiv-2205.07095v1/manifest",
-  "sourceDocument": "library/arxiv-2205.07095v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2205.07095v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2205.07095v1",
   "provenance": "ingested"
 }

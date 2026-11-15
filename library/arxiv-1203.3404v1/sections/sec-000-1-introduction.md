@@ -8,430 +8,111 @@ pages: 1-7
 source_pdf: 1203.3404v1.pdf
 source_sha256: 2318b14fb2702665
 doc_brief: "On local solutions of the Ramanujan equation and their connection formulae — We show connection formulae of local solutions of the Ramanu jan equation between the origin and the inﬁnity."
+text_source: latex
+latex_prose_ratio: 0.993
+latex_coverage_ratio: 0.988
 ---
-In this papar, we show two essentially diﬀerent connection formulae of some
-basic hypergeometric series between the origin and the inﬁnity. In 1 846,
-E. Heine [5] introduced the basic hypergeometric series 2ϕ 1(a,b ;c;q,x ) as
-follows;
-2ϕ 1(a,b ;c;q,x ) :=
-∑
-n≥0
-(a,b ;q)n
-(c;q)n(q;q)n
-xn, c ⁄∈q−N. (1)
-Here, (a;q)n is the q-shifted factorial;
-(a;q)n :=
-{
-1, n = 0,
-(1 −a)(1 −aq)... (1 −aqn−1), n ≥ 1,
-moreover, (a;q)∞ := lim n→∞(a;q)n and
-(a1,a 2,...,a m;q)∞ := (a1;q)∞(a2;q)∞... (am;q)∞.
-∗ Graduate School of Information Science and Technology, Osaka U niversity, 1-1
-Machikaneyama-machi, Toyonaka, 560-0043, Japan.
-1
-The q-shifted factorial (a;q)n is a q-analogue of the shifted factorial ( α )n;
-(α )n :=
-{
-1, n = 0,
-α (α + 1)... {α + (n − 1)}, n ≥ 1.
-The basic hypergeometric series (1) is a q-analogue of the hypergeometric
-series 2F1(α,β ;γ,z )[3];
-2F1(α,β ;γ,z ) :=
-∑
-n≥0
-(α )n(β )n
-(γ)nn! zn. (2)
-This series (2) has the following famous degeneration diagram
-Gauss Kummer
-Bessel
-Weber
-Airy✲ ✟✟✟✟ ✯
-❍❍❍❍ ❥✟✟✟✟ ✯
-❍❍❍❍ ❥
-(3)
-Recently, Y. Ohyama [11] shows that there exists “the digeneratio n dia-
-gram” of Heine’s series (1) as follows:
-2ϕ 1(a,b ;c;z) 1ϕ 1(a;c;z)
-1ϕ 1(a; 0;z)
-J (3)
-ν
-J (1)
-ν ,J (2)
-ν
-q-Airy
-Ramanujan
-✲ ✑✑✑ ✸
-✲
-✲
-◗◗◗ s ✟✟ ✯
-PPP q
-We remark that there exist three diﬀerent q-Bessel functionsJ (j)
-ν ,j = 1, 2, 3[2]
-and two q-analogues of the Airy function. In this point, this diagram is
-essentially diﬀerent from the diagram (3).
-Ismail has pointed out that the Ramanujan function is one of q-analogues
-of the Airy function [6]. The Ramanujan function appears in the third iden-
-tity on p.57 of Ramanujan’s “Lost notebook” [12] as follows (with x replaced
-byq):
-Aq(−a) =
-∑
-n≥0
-anqn2
-(q;q)n
+In this papar, we show two essentially different connection formulae of some basic hypergeometric series between the origin and the infinity. In 1846, E. Heine [@hein] introduced the basic hypergeometric series ${}_2\varphi_1(a,b;c;q,x)$ as follows; $${}_2\varphi_1(a,b;c;q,x):=\sum_{n\ge 0}\frac{(a,b;q)_n}{(c;q)_n(q;q)_n}x^n,\quad c\not \in q^{-\mathbb{N}}.
+\label{heine}$$ Here, $(a;q)_n$ is the $q$-shifted factorial; $$(a;q)_n:=
+\begin{cases}
+1, &n=0, \\
+(1-a)(1-aq)\dots (1-aq^{n-1}), &n\ge 1,
+\end{cases}$$ moreover, $(a;q)_\infty :=\lim_{n\to \infty}(a;q)_n$ and $$(a_1,a_2,\dots ,a_m;q)_\infty:=(a_1;q)_\infty (a_2;q)_\infty \dots (a_m;q)_\infty.$$ The $q$-shifted factorial $(a;q)_n$ is a $q$-analogue of the shifted factorial $(\alpha )_n$; $$(\alpha )_n:=
+\begin{cases}1, &n=0,\\
+\alpha (\alpha +1)\dots \{\alpha +(n-1)\}, &n\ge 1.
+\end{cases}$$ The basic hypergeometric series [\[heine\]](#heine){reference-type="eqref" reference="heine"} is a $q$-analogue of the hypergeometric series ${}_2F_1(\alpha ,\beta ;\gamma ,z)$[@Gauss13]; $${}_2F_1(\alpha ,\beta ;\gamma ,z):=\sum_{n\ge 0}\frac{(\alpha )_n(\beta )_n}{(\gamma )_nn!}z^n.\label{gauss}$$ This series [\[gauss\]](#gauss){reference-type="eqref" reference="gauss"} has the following famous degeneration diagram $$\begin{picture}(370,70)(0,0)
+        \put(35,30){{  Gauss } }
+        
+        \put(120,30){{  Kummer }}
+        
+        \put(205,0){{  Bessel}}
+        
+        \put(205,65){{  Weber}}
+        
+        \put(270,30){{  Airy}}
+        
+        \put(80,32){\vector(1,0){38}}
+        \put(180,36){\vector(2,1){38}}
+        \put(180,30){\vector(2,-1){38}}
+        \put(225,10){\vector(2,1){38}}
+        \put(225,56){\vector(2,-1){38}}
+     \end{picture}\label{digconti}$$
+
+Recently, Y. Ohyama [@Ohyama] shows that there exists "the digeneration diagram" of Heine's series [\[heine\]](#heine){reference-type="eqref" reference="heine"} as follows: $$\begin{picture}(370,70)(0,0)
+        \put(20,30){{  $ _2 \varphi_1(a,b;c;z)$ } }
+        \put(110,30){{ $ _1 \varphi_1(a;c;z)$   }}
+        \put(200,5){{ $ _1 \varphi_1(a;0;z)$   }}
+        \put(205,55){{ $J_\nu^{(3)}$  }}
+        
+        \put(205,30){{$J_\nu^{(1)},J_{\nu}^{(2)} $}}
+        \put(270,55){{  $q$-Airy}}
+        \put(270,18){{ Ramanujan}}
+        \put(90,32){\vector(1,0){20}}
+        \put(170,36){\vector(3,2){27}}
+        \put(170,32){\vector(1,0){27}}
+        \put(230,55){\vector(1,0){27}}
+        \put(170,28){\vector(3,-2){27}}
+        \put(260,8){\vector(2,1){12}}
+        \put(244,32){\vector(3,-1){27}}
+     \end{picture}$$ We remark that there exist three different $q$-Bessel functions $J_\nu^{(j)},j=1,2,3$[@GR] and two $q$-analogues of the Airy function. In this point, this diagram is essentially different from the diagram [\[digconti\]](#digconti){reference-type="eqref" reference="digconti"}.
+
+Ismail has pointed out that the Ramanujan function is one of $q$-analogues of the Airy function [@Is]. The Ramanujan function appears in the third identity on p.$57$ of Ramanujan's "Lost notebook" [@Ramanujan] as follows (with $x$ replaced by $q$): $$\operatorname{A}_q(-a)=\sum_{n\ge 0}\frac{a^nq^{n^2}}{(q;q)_n}=
+\prod_{n\ge 1}\left(1+\frac{aq^{2n-1}}{1-q^ny_1-q^{2n}y_2-q^{3n}y_3-\cdots }\right)$$ where $$\begin{aligned}
+y_1&=\frac{1}{(1-q)\psi^2(q)},\\
+y_2&=0,\\
+y_3&=\frac{q+q^3}{(1-q)(1-q^2)(1-q^3)\psi^2(q)}
+-\frac{\sum_{n\ge 0}\frac{(2n+1)q^{2n+1}}{1-q^{2n+1}}}{(1-q)^3\psi^6(q)},\\
+y_4&=y_1y_3,\\
+\psi (q)&=\sum_{n\ge 0}q^{\frac{n(n+1)}{2}}=\frac{(q^2;q^2)_\infty}{(q;q^2)_\infty}.\\
+\end{aligned}$$ To be precise, the Ramanujan function is given by $$A_q(x):=\sum_{n\ge 0}\frac{q^{n^2}}{(q;q)_n}(-x)^n.$$ This function satisfies the following second order linear $q$-difference equation; $$qxu(q^2x)-u(qx)+u(x)=0.
+\label{ramanujaneq}$$ The equation [\[ramanujaneq\]](#ramanujaneq){reference-type="eqref" reference="ramanujaneq"} has another solution which is given by a divergent series $$\theta_q(x){}_2\varphi_0\left(0,0;-;q,-\frac{x}{q}\right)
+=\theta_q(x)\sum_{n\ge 0}\frac{1}{(q;q)_n}\left\{(-1)^nq^{\frac{n(n-1)}{2}}\right\}^{-1}\left(-\frac{x}{q}\right)^n.$$ Here, $\theta_q(\cdot )$ is the theta function of Jacobi (see the section 2).
+
+An asymptotic formula for the Ramanujan function is obtained by M. E. H. Ismail and C. Zhang as follows[@IZ]; $$\operatorname{A}_q(x)=\frac{(qx,q/x;q^2)_\infty}{(q;q^2)_\infty}{}_1\varphi_1\left(0;q;q^2,\frac{q^2}{x}\right)-\frac{q(q^2x,1/x;q^2)_\infty}{(1-q)(q;q^2)_\infty}{}_1\varphi_1\left(0;q^3;q^2,\frac{q^3}{x}\right).
+\label{Is-Zh}$$ From the viewpoint of connection problems on $q$-difference equations, we can regard the formula [\[Is-Zh\]](#Is-Zh){reference-type="eqref" reference="Is-Zh"} as one of connection formulae of the Ramanujan function.
+
+The other $q$-analogue of the Airy function is known as the $q$-Airy function $\operatorname{Ai}_q(\cdot )$. The $q$-Airy function has found in the study of the second $q$-Painlevé equation[@hama]. The function $\operatorname{Ai}_q(\cdot )$ is defined by $$\operatorname{Ai}_q(x):=\sum_{n\ge 0}\frac{1}{(-q;q)_n(q;q)_n}\left\{(-1)^nq^{\frac{n(n-1)}{2}}\right\}(-x)^n$$ and satisfies the following $q$-difference equation $$u(q^2x)+xu(qx)-u(x)=0.\label{qairy}$$ The other solution of the equation [\[qairy\]](#qairy){reference-type="eqref" reference="qairy"} around the origin is given by $$u(x)=\frac{\theta_q(q^2x)}{\theta_q(-q^2x)}\operatorname{Ai}_q(-x).$$ Ismail also has pointed out the Ramanujan function and the $q$-Airy function are different. But the relation between them has not known. In the section 3, we give the connection formula between these functions with using the $q$-Borel-Laplace transformations of the second kind.
+
+**Theorem** *For any* $x\in\mathbb{C}^*$, we have $$\operatorname{A}_{q^2}\left(-\frac{q^3}{x^2}\right)
 =
-∏
-n≥1
-(
-1 + aq2n−1
-1 −qny1 −q2ny2 −q3ny3 − · · ·
-)
-2
-where
-y1 = 1
-(1 −q)ψ 2(q),
-y2 = 0,
-y3 = q +q3
-(1 −q)(1 −q2)(1 −q3)ψ 2(q) −
-∑
-n≥0
-(2n+1)q2n+1
-1−q2n+1
-(1 −q)3ψ 6(q) ,
-y4 =y1y3,
-ψ (q) =
-∑
-n≥0
-q
-n(n+1)
-2 = (q2;q2)∞
-(q;q2)∞
-.
-To be precise, the Ramanujan function is given by
-Aq(x) :=
-∑
-n≥0
-qn2
-(q;q)n
-(−x)n.
-This function satisﬁes the following second order linear q-diﬀerence equation;
-qxu(q2x) −u(qx) +u(x) = 0. (4)
-The equation (4) has another solution which is given by a divergent se ries
-θq(x)2ϕ 0
-(
-0, 0; −;q, −x
-q
-)
-=θq(x)
-∑
-n≥0
-1
-(q;q)n
-{
-(−1)nq
-n(n− 1)
-2
-} −1(
-−x
-q
-) n
-.
-Here, θq(·) is the theta function of Jacobi (see the section 2).
-An asymptotic formula for the Ramanujan function is obtained by M. E. H. Is-
-mail and C. Zhang as follows[7];
-Aq(x) = (qx,q/x ;q2)∞
-(q;q2)∞
-1ϕ 1
-(
-0;q;q2, q2
-x
-)
-−q(q2x, 1/x ;q2)∞
-(1 −q)(q;q2)∞
-1ϕ 1
-(
-0;q3;q2, q3
-x
-)
-.
-(5)
-From the viewpoint of connection problems on q-diﬀerence equations, we
-can regard the formula (5) as one of connection formulae of the Ra manujan
-function.
-3
-The other q-analogue of the Airy function is known as the q-Airy function
-Aiq(·). The q-Airy function has found in the study of the second q-Painlev´ e
-equation[4]. The function Ai q(·) is deﬁned by
-Aiq(x) :=
-∑
-n≥0
-1
-(−q;q)n(q;q)n
-{
-(−1)nq
-n(n− 1)
-2
-}
-(−x)n
-and satisﬁes the following q-diﬀerence equation
-u(q2x) +xu(qx) −u(x) = 0. (6)
-The other solution of the equation (6) around the origin is given by
-u(x) = θq(q2x)
-θq(−q2x) Aiq(−x).
-Ismail also has pointed out the Ramanujan function and the q-Airy function
-are diﬀerent. But the relation between them has not known. In the section
-3, we give the connection formula between these functions with usin g the
-q-Borel-Laplace transformations of the second kind.
-Theorem For any x ∈ C∗, we have
-Aq2
-(
-−q3
-x2
-)
-= 1
-(q, −1;q)∞
-{
-θ
-(x
-q
-)
-Aiq(−x) +θ
-(
-−x
-q
-)
-Aiq(x)
-}
-.
-Connection problems on linear q-diﬀerence equations between the origin
-and the inﬁnity are studied by G. D. Birkhoﬀ [1]. The ﬁrst example of th e
-connection formula was found by G. N. Watson [14] in 1912. This form ula is
-known as “Watson’s formula for 2ϕ 1(a,b ;c;q,x )” as follows [2];
-2ϕ 1 (a,b ;c;q;x) = (b,c/a ;q)∞(ax,q/ax ;q)∞
-(c,b/a ;q)∞(x,q/x ;q)∞
-2ϕ 1 (a,aq/c ;aq/b ;q;cq/abx )
-+ (a,c/b ;q)∞(bx,q/bx ;q)∞
-(c,a/b ;q)∞(x,q/x ;q)∞
-2ϕ 1 (b,bq/c ;bq/a ;q;cq/abx ).
-(7)
-But other connection formulae had not found for a long time. Recen tly,
-C. Zhang gives connection formulae for some conﬂuent type basic h yper-
-geometric series [15, 16, 17]. In [16], Zhang gives a connection formu la of
-Jackson’s ﬁrst and second q-Bessel function J (j)
-ν (x;q), (j = 1, 2);
-J (1)
-ν (x;q) := (qν+1;q)∞
-(q;q)∞
-(x
-2
-) ν∑
-n≥0
-1
-(qν+1;q)n
-(
-−x2
-4
-) n
-4
-and
-J (2)
-ν (x;q) := (qν+1;q)∞
-(q;q)∞
-(x
-2
-) ν∑
-n≥0
-qn2
-(qν+1;q)n
-(
-−qνx2
-4
-) n
-with using the q-Borel-Laplace transformations of the second kind B−
-q and
-L−
-q . These transformations are deﬁned for a formal power series f (x) =∑
-n≥0anxn, a0 = 1 as follow;
-1. The q-Borel transformation of the second kind is
-(B−
-qf )(ξ) :=
-∑
-n≥0
-anq− n(n− 1)
-2 ξn (=:g(ξ)).
-2. The q-Laplace transformation of the second kind is
-(
-L−
-qg
-)
-(x) := 1
-2πi
-∫
-|ξ|=r
-g(ξ)θq
-(x
-ξ
-) dξ
-ξ ,
-where r >0 is enough small number.
-In [9] and [10], we obtained connection formulae of the Hahn-Exton q-
-Bessel function
-J (3)
-ν (x;q) := (qν+1;q)∞
-(q;q)∞
-xν
-∑
-n≥0
-q
-n(n+1)
-2
-(qν+1;q)n
-(
-−x2) n
-and the q-conﬂuent type basic hypergeometric function
-1ϕ 1(a;b;q,x ) :=
-∑
-n≥0
-(a;q)n
-(b;q)n(q;q)n
-(−1)nq
-n(n− 1)
-2 xn
-by these transformations. In section 3, we use these transform ations to obtain
-connection formula between the Ramanujan function and the q-Airy function.
-On the other hand, the q-Borel-Laplace transformations of the ﬁrst kind
-are deﬁned for a formal power series as follow;
-1. The q-Borel transformation of the ﬁrst kind is
-(
-B+
-qf
-)
-(ξ) :=
-∑
-n≥0
-anq
-n(n− 1)
-2 ξn (=:ϕ (ξ)).
-5
-2. The q-Laplace transformation of the ﬁrst kind is
-(
-L+
-qϕ
-)
-(x) := 1
-1 −q
-∫ λ ∞
-0
-ϕ (ξ)
-θq
-(ξ
-x
-) dqξ
-ξ =
-∑
-n∈Z
-ϕ (λq n)
-θq
-(λq n
-x
-) ,
-here, this transformation is given by Jackson’s q-integral [2].
-These two diﬀerent types of q-Borel-Laplace transformations are introduced
-by J. Sauloy [13] and stusied by C. Zhang. We remark that each q-Borel
-transformation is formal inverse of each q-Laplace transformation, i.e.,
-L±
-q ◦ B±
-qf =f.
-The application of the q-Borel-Laplace transformations of the ﬁrst kind is
-found in [15, 17]. Zhang gives the connection formula of the divergen t basic
-hypergeometric series 2ϕ 0(a,b ; −;q,x ) as follows;
-Theorem (Zhang, [15]) For any x ∈ C∗, we have
-2f0(a,b ;λ,q,x )
-= (b;q)∞
-(b/a ;q)∞
-θq(aλ)
-θq(λ)
-θq(qax/λ )
-θq(λ/x ) 2ϕ 1
-(
-a, 0;aq
-b ;q, q
-abx
-)
-+ (a;q)∞
-(a/b ;q)∞
-θq(bλ)
-θq(λ)
-θq(qbx/λ )
-θq(λ/x )
-2ϕ 1
-(
-b, 0;bq
-a ;q, q
-abx
-)
-whereλ ∈ C∗ \ {−qn;n ∈ Z}.
-Here, 2f0(a,b ;λ,q,x ) in the left-hand side is the q-Borel-Laplace trans-
-form of the function 2ϕ 0(a,b ; −;q,x ). But other application of this method
-(of the ﬁrst kind ) has not known. In the section 4, we show the con nection
-formula of the divergent series
-2ϕ 0(a,b ; −;q,x ) =
-∑
-n≥0
-1
-(q;q)n
-{
-(−1)nq
-n(n− 1)
-2
-} −1
-xn.
-This formula is given by the following theorem;
-Theorem For any x ∈ C∗ \ [−λ;q],
-θq(x)2f0
-(
-0, 0; −;q, −x
-q
-)
-= (q;q)∞
-θq(x)θq2
-(
-− λ 2
-qx
-)
-θq
-(
-− λ
-q
-)
-θq
-(λ
-x
-) 1ϕ 1
-(
-0;q;q2, q2
-x
-)
-+ (q;q)∞
-1 −q
-θq(x)θq2
-(
-− λ 2
-x
-)
-θq
-(
-− λ
-q
-)
-θq
-(λ
-x
-)
-λ
-x 1ϕ 1
-(
-0;q3;q2, q3
-x
-)
-.
-6
+\frac{1}{(q,-1;q)_\infty}\left\{\theta\left(\frac{x}{q}\right)\operatorname{Ai}_q(-x)
++\theta \left(-\frac{x}{q}\right)\operatorname{Ai}_q (x)\right\}.$$
+
+Connection problems on linear $q$-difference equations between the origin and the infinity are studied by G. D. Birkhoff [@Birkhoff]. The first example of the connection formula was found by G. N. Watson [@W] in 1912. This formula is known as "Watson's formula for ${}_2\varphi_1(a,b;c;q,x)$" as follows [@GR]; $$\begin{aligned}
+\label{wato}
+{}_2 \varphi_1\left(a,b;c;q;x \right)= 
+\frac{(b,c/a;q)_\infty (a x,q/ a x;q)_\infty }{(c, b/a;q)_\infty (  x,q/   x;q)_\infty } 
+{}_2 \varphi_1\left(a,aq/c;aq/b;q;cq/abx \right) \nonumber \\+ 
+\frac{(a,c/b;q)_\infty (b x, q/ b x;q)_\infty }{(c, a/b;q)_\infty (  x,q/   x;q)_\infty } 
+{}_2 \varphi_1\left(b, bq/c; bq/a; q; cq/abx \right).
+\end{aligned}$$ But other connection formulae had not found for a long time. Recently, C. Zhang gives connection formulae for some confluent type basic hypergeometric series [@Z0; @Z1; @Z2]. In [@Z1], Zhang gives a connection formula of Jackson's first and second $q$-Bessel function $J_\nu^{(j)}(x;q), (j=1,2)$; $$J_\nu^{(1)}(x;q):=\frac{(q^{\nu +1};q)_\infty}{(q;q)_\infty}\left(\frac{x}{2}\right)^\nu\sum_{n\ge 0}\frac{1}{(q^{\nu +1};q)_n}\left(-\frac{x^2}{4}\right)^n$$and $$J_\nu^{(2)}(x;q):=\frac{(q^{\nu +1};q)_\infty}{(q;q)_\infty}\left(\frac{x}{2}\right)^\nu\sum_{n\ge 0}\frac{q^{n^2}}{(q^{\nu +1};q)_n}\left(-\frac{q^\nu x^2}{4}\right)^n$$ with using the $q$-Borel-Laplace transformations of the second kind $\mathcal{B}_q^-$ and $\mathcal{L}_q^-$. These transformations are defined for a formal power series $f(x)=\sum_{n\ge 0}a_nx^n$, $a_0=1$ as follow;
+
+1.  The $q$-Borel transformation of the second kind is $$(\mathcal{B}_q^-f)(\xi ):=\sum_{n\ge 0}a_nq^{-\frac{n(n-1)}{2}}\xi^n\left(=:g(\xi )\right).$$
+
+2.  The $q$-Laplace transformation of the second kind is $$\left(\mathcal{L}_q^-g\right)(x):=\frac{1}{2\pi i}\int_{|\xi |=r}g(\xi )\theta_q\left(\frac{x}{\xi }\right)\frac{d\xi}{\xi},$$ where $r>0$ is enough small number.
+
+In [@M0] and [@M1], we obtained connection formulae of the Hahn-Exton $q$-Bessel function $$J_\nu^{(3)}(x;q):=\frac{(q^{\nu +1};q)_\infty}{(q;q)_\infty}x^\nu\sum_{n\ge 0}\frac{q^{\frac{n(n+1)}{2}}}{(q^{\nu +1};q)_n}\left(-x^2\right)^n$$ and the $q$-confluent type basic hypergeometric function $${}_1\varphi_1(a;b;q,x):=\sum_{n\ge 0}\frac{(a;q)_n}{(b;q)_n(q;q)_n}(-1)^nq^{\frac{n(n-1)}{2}}x^n$$ by these transformations. In section 3, we use these transformations to obtain connection formula between the Ramanujan function and the $q$-Airy function.
+
+On the other hand, the $q$-Borel-Laplace transformations of the first kind are defined for a formal power series as follow;
+
+1.  The $q$-Borel transformation of the first kind is $$\left(\mathcal{B}_q^+f\right)(\xi ):=\sum_{n\ge 0}a_nq^{\frac{n(n-1)}{2}}\xi^n\left(=:\varphi (\xi )\right).$$
+
+2.  The $q$-Laplace transformation of the first kind is $$\left(\mathcal{L}_q^+\varphi\right)(x):=
+    \frac{1}{1-q}\int_0^{\lambda\infty}\frac{\varphi (\xi )}{\theta_q\left(\frac{\xi}{x}\right)}\frac{d_q\xi}{\xi}=\sum_{n\in\mathbb{Z}}\frac{\varphi (\lambda q^n)}{\theta_q\left(\frac{\lambda q^n}{x}\right)},$$ here, this transformation is given by Jackson's $q$-integral [@GR].
+
+These two different types of $q$-Borel-Laplace transformations are introduced by J. Sauloy [@sauloy] and stusied by C. Zhang. We remark that each $q$-Borel transformation is formal inverse of each $q$-Laplace transformation, i.e., $$\mathcal{L}_q^{\pm}\circ\mathcal{B}_q^{\pm}f=f.$$ The application of the $q$-Borel-Laplace transformations of the first kind is found in [@Z0; @Z2]. Zhang gives the connection formula of the divergent basic hypergeometric series ${}_2\varphi_0(a,b;-;q,x)$ as follows;
+
+**Theorem** (Zhang, [@Z0]) *For any $x\in\mathbb{C}^*$, we have* $$\begin{aligned}
+{}_2f_0&(a,b;\lambda ,q,x)\\
+=&\frac{(b;q)_\infty}{(b/a;q)_\infty}\frac{\theta_q(a\lambda )}{\theta_q(\lambda )}\frac{\theta_q(qax/\lambda )}{\theta_q(\lambda /x)}{}_2\varphi_1\left(a,0;\frac{aq}{b};q,\frac{q}{abx}\right)\\
++&\frac{(a;q)_\infty}{(a/b;q)_\infty}\frac{\theta_q(b\lambda )}{\theta_q(\lambda )}\frac{\theta_q(qbx/\lambda )}{\theta_q(\lambda /x)}{}_2\varphi_1\left(b,0;\frac{bq}{a};q,\frac{q}{abx}\right)
+\end{aligned}$$ *where $\lambda\in\mathbb{C}^*\setminus \{-q^n;n\in\mathbb{Z}\}$.*
+
+Here, ${}_2f_0(a,b;\lambda ,q,x)$ in the left-hand side is the $q$-Borel-Laplace transform of the function ${}_2\varphi_0(a,b;-;q,x)$. But other application of this method (of the first kind ) has not known. In the section 4, we show the connection formula of the divergent series $${}_2\varphi_0(a,b;-;q,x)=\sum_{n\ge 0}\frac{1}{(q;q)_n}\left\{(-1)^nq^{\frac{n(n-1)}{2}}\right\}^{-1}x^n.$$ This formula is given by the following theorem;
+
+**Theorem** *For any $x\in\mathbb{C}^*\setminus [-\lambda ;q]$,* $$\begin{aligned}
+\theta_q(x){}_2f_0\left(0,0;-;q,-\frac{x}{q}\right)&=(q;q)_\infty\frac{\theta_q(x) \theta_{q^2}\left(-\frac{\lambda^2}{qx}\right)}{\theta_q\left(-\frac{\lambda}{q}\right)\theta_q\left(\frac{\lambda}{x}\right)}
+{}_1\varphi_1\left(0;q;q^2,\frac{q^2}{x}\right)\\
+&+\frac{(q;q)_\infty}{1-q}\frac{\theta_q(x) \theta_{q^2}\left(-\frac{\lambda^2}{x}\right)}{\theta_q\left(-\frac{\lambda}{q}\right)\theta_q\left(\frac{\lambda}{x}\right)}\frac{\lambda}{x}
+{}_1\varphi_1\left(0;q^3;q^2,\frac{q^3}{x}\right).
+\end{aligned}$$

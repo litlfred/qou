@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1901.01312v1/blocks/prose-sec-012",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1901.01312v1/blocks/prose-sec-012",
   "kind": "prose",
-  "title": "Helon braids as the basis states of minimal left ideals of C𝓁(6)",
-  "pageStart": 6,
-  "pageEnd": 6,
-  "text": "../sections/sec-012-51-helon-braids-as-the-basis-states-of-minimal-l.md",
-  "derivedFrom": "library/arxiv-1901.01312v1/manifest",
-  "sourceDocument": "library/arxiv-1901.01312v1/manifest",
+  "title": "Discussion",
+  "pageStart": 9,
+  "pageEnd": 9,
+  "text": "../sections/sec-012-7-discussion.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1901.01312v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1901.01312v1",
   "provenance": "ingested"
 }

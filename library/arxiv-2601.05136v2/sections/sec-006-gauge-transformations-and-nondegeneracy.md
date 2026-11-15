@@ -8,102 +8,69 @@ pages: 6-8
 source_pdf: 2601.05136v2.pdf
 source_sha256: cee15456257d3028
 doc_brief: "State integrals for the quantized SL₂(ℂ) Chern–Simons invariant — Previous work of the author and N."
+text_source: latex
+latex_prose_ratio: 0.973
+latex_coverage_ratio: 0.856
 ---
-Thediagram D determinesasemi-idealtriangulation TD ofS3\K (withtwonon-idealpoints)
-called theoctahedral decomposition; we refer to [KKY18] for a detailed discussion and [McP22;
-McP25b]fortherelationshiptoourparameters. TD assignseachcrossingof D fourtetrahedra,
-withoneineachcornerofthecrossing. Thesegmentparametersnaturallyparametrizehyperbolic
-structuresonthesetetrahedraintermsof shape parameterszk. Labelingthesegmentsandcorners
-ofacrossingas
-(2.6)
-2
-2′1
-1′
-N
-W
-S
-E
-2. Preliminaries 6
-5 Strictly speaking a shape parameterz =
-z0 corresponds to a pair of edges of a vertex-
-orderedtetrahedron,withtheotheredgepairs
-assignedz1 = 1/(1−z0)andz2 = 1−1/z0.
-Admissibilitymeansthataparticularpreferred
-edgepairisnot 0or∞.
-[KC26]S.KimandP.Choi, Diagram.site: Bound-
-ary parabolic representations for knots
-6 Moreformallytheassociatedoctahedralde-
-compositionisessential.
-theshapeparametersofthetetrahedraaregivenby
-(2.7)
-zN =
-b2′
-b1
-ϵ
-zS =
-b2
-b1′
-ϵ
-zW =
- b2
-mb1
-ϵ
-zE =
-mb2′
-b1′
-ϵ
-whereϵisthesignofthecrossing. Theshapeparametersariseascrossratiosofthepositionsofthe
-verticesin CP1. Inparticularatetrahedronisgeometricallydegeneratewhenitsshapeparameter
-liesin{0, 1,∞}.
-Ifashadowcoloringisadmissibleasdeﬁnedabovethennoneoftheshapeparametersof TD are
-0or∞.5 Thisisanecessaryconditiontodeﬁne Zψ
-N,andeveryrepresentation ρisgauge-equivalent
-toanadmissibleone. Since Zψ
-N isgauge-invariantthisallowsustodeﬁneitforany ρ.
-Deﬁnition2.7([McP25b,Section4]) .Let (ρ,u )beashadowcoloringof D withsegmentcolors
-i7→ (gi, [vi])andregioncolors j7→uj. Agauge transformationofitisacoloringoftheform
-(A) i7→ (h−1gih,Lih)andj7→h−1uj
-(B) i7→ (gi,Li)andj7→h−1uj
-for someh∈ SL2(C). We say the new colorings are the images oftype (A)and type (B)gauge
-transformationsbyh.
-Lemma2.8([McP25b,Theorem2]) .Letρbeadecoratedrepresentationand D anopendiagram
-ofK. Any shadow coloring(ρ,u ) ofD is gauge-equivalent to one with an admissible shadow
-coloring. ⌟
-Whilewecanensuretheshapeparametersliein C\{0}wecannotnecessarilyensuretheyavoid
-1. Havingshapeparameter 1isindependentofthechoiceofshadowcoloringandisequivalenttoa
-naturalconditiononthedecoratedrepresentation:
-Deﬁnition2.9.Acrossingwithadecorated SL2(C)-coloring
-(g2, [v2])
-(g2′, [v2′])(g1, [v1])
-(g1′, [v1′])
-ispinchedif [v1] = [v2],equivalently [vi] = [vj]foranypair (i,j )ofadjacentsegments. (Notethat
-thisconditiondoesnotdependonachoiceofshadowcoloring.) Acoloringofadiagramispinched
-ifanyofitscrossingsare. If ρisadecoratedrepresentationof K andD anopendiagramof K we
-sayD isρ-pinchedifthecoloringinducedby ρispinched(andconverselythat ρisD-pinched). If
-nocrossingispinchedwesay (D,ρ )issmooth.
-Anugatorycrossingisalwayspinched. If D isacrossing-minimaldiagramithasnonugatory
-crossingsandinthiscasemost(butnotall)nontrivialrepresentations ρareD-smooth. Forexample,
-uptogaugetransformationthe 85 knothas 11boundary-parabolicrepresentations[KKY18]. In
-the standard diagramD [KKY18, Figure 28] of this knot10 are smooth and1 is pinched.85 is
-hyperbolic and its discrete faithful representation isD-smooth. According to the database of
-boundary-parabolic representations computed by Kim and Choi [KC26] this pattern holds in
-general: forcrossing-minimalDmostbutnotallrepresentationsare D-smooth,butthehyperbolic
-holonomyrepresentationisalwayssmooth.
-Inthestandardterminologyanot ρhyp-pincheddiagramissaidtobe essential.6 By[McP25b,
-2. Preliminaries 7
-7 We denote these byai because they corre-
-spondtoratiosoftheregionparameters aj.
-Theorem3]beingessentialisequivalenttoapurelygroup-theoreticconditioncalled arc-faithfulness.
-Itisnothardtoseethatif Disnotarc-faithfulthenitispinchedforeverydecoratedrepresentation
-ρ. Itisnaturaltoconjecture(see[McP25b,Section5])thatanyhyperbolicknothasanarc-faithful
-diagram. Itisknownthatanyreducedalternatingdiagramofahyperbolicknotisarc-faithful.
-At any pinched crossing the shape parameters are1 so theR-matrix elements deﬁningZψ
-N
-encounterthepolesandzerosofthequantumdilogarithm. Onecanshowthatthesecancel,butin
-adelicatewaythatpreventsourstateintegralsfrombeingwell-deﬁned. Moregenerallytoavoid
-thesingularitiesweneedtoensurethatnoshapeparameterhasnorm 1,andifnocrossingsare
-pinchedthenwecanachievethisviaagaugetransformation.
-Lemma 2.10 ([McP25b, Corollary 5.3]).Letρ be a decorated representation of a knotK andD
-be an open diagram ofK. Suppose thatD is notρ-pinched. Then there is a representationρ′
-gauge-equivalentto ρandashadowcoloring (ρ′,u )ofD inwhichnoshapeparameterhasnorm
-1. Inthiscasewesay (ρ′,u )avoids the unit circle. ⌟
+[]{#sec:Gauge transformations and admissibility label="sec:Gauge transformations and admissibility"}
+
+The diagram $D$ determines a semi-ideal triangulation $\mathcal{T}_{D}$ of $\comp{K}$ (with two non-ideal points) called the ; we refer to [@Kim2018] for a detailed discussion and [@McphailSnyder2022hyperbolicstructureslinkcomplements; @McphailSnyder2024octahedralcoordinateswirtingerpresentation] for the relationship to our parameters. $\mathcal{T}_{D}$ assigns each crossing of $D$ four tetrahedra, with one in each corner of the crossing. The segment parameters naturally parametrize hyperbolic structures on these tetrahedra in terms of $z_{k}$. Labeling the segments and corners of a crossing as $$\label{eq:crossing labeled}
+  \begin{tikzpicture}[line width=1, baseline=30, scale=1]
+    \draw[->] (0,0) node[left] {\({2}\)} to [out=00,in=180](1.5,1) node[right] {\({2'}\)};
+    
+    
+    \draw[->] (0,1) node[left] {\({1}\)} to [out=00,in=180](1.5,0) node[right] {\({1'}\)};
+    \draw (0.75,1) node {\(\lN\)};
+    \draw (0,0.5) node {\(\lW\)};
+    \draw (0.75,0) node {\(\lS\)};
+    \draw (1.5,0.5) node {\(\lE\)};
+  \end{tikzpicture}$$ the shape parameters of the tetrahedra are given by $$\label{eq:shape parameters}
+  \begin{aligned}
+    z_{\operatorname{N}} &= \left( \frac{b_{2'}}{b_{1}} \right)^{\epsilon}
+    &
+    z_{\operatorname{S}} &= \left( \frac{b_{2}}{b_{1'}}\right)^{\epsilon}
+    \\
+    z_{\operatorname{W}} &= \left(\frac{b_{2}}{m b_{1}}\right)^{\epsilon}
+    &
+    z_{\operatorname{E}} &= \left(\frac{m b_{2'}}{b_{1'}}\right)^{\epsilon}
+  \end{aligned}$$ where $\epsilon$ is the sign of the crossing. The shape parameters arise as cross ratios of the positions of the vertices in $\pjsp$. In particular a tetrahedron is geometrically degenerate when its shape parameter lies in $\left\{ \def\given{\ \middle| \ }  0, 1, \infty \right\}$.
+
+If a shadow coloring is admissible as defined above then none of the shape parameters of $\mathcal{T}_{D}$ are $0$ or $\infty$. This is a necessary condition to define $\qinv{}$, and every representation $\rho$ is gauge-equivalent to an admissible one. Since $\qinv{}$ is gauge-invariant this allows us to define it for any $\rho$.
+
+::: definition
+[]{#def:gauge transformation label="def:gauge transformation"} Let $(\rho, u)$ be a shadow coloring of $D$ with segment colors $i \mapsto (g_{i}, [v_{i}])$ and region colors $j \mapsto u_{j}$. A of it is a coloring of the form
+
+-   $i \mapsto (h^{-1} g_i h, L_i h)$ and $j \mapsto h^{-1} u_j$
+
+-   $i \mapsto (g_i, L_i)$ and $j \mapsto h^{-1} u_j$
+
+for some $h \in \slg$. We say the new colorings are the images of and gauge transformations .
+:::
+
+::: lemma
+Let $\rho$ be a decorated representation and $D$ an open diagram of $K$. Any shadow coloring $(\rho, u)$ of $D$ is gauge-equivalent to one with an admissible shadow coloring.
+:::
+
+While we can ensure the shape parameters lie in $\mathbb{C}\setminus
+\left\{ \def\given{\ \middle| \ }  0 \right\}$ we cannot necessarily ensure they avoid $1$. Having shape parameter $1$ is independent of the choice of shadow coloring and is equivalent to a natural condition on the decorated representation:
+
+::: definition
+A crossing with a decorated $\slg$-coloring $$\begin{tikzpicture}[line width=1, baseline=30, scale=1]
+      \draw[->] (0,0) node[left] {\((g_{2}, [v_{2}])\)} to [out=00,in=180](1.5,1)
+      node[right] {\((g_{2'}, [v_{2'}])\)};
+      
+      
+      \draw[->] (0,1) node[left] {\((g_{1}, [v_{1}])\)} to [out=00,in=180](1.5,0)
+      node[right] {\((g_{1'}, [v_{1'}])\)};
+    \end{tikzpicture}$$ is if $[v_{1}] = [v_{2}]$, equivalently $[v_{i}] = [v_{j}]$ for any pair $(i,j)$ of adjacent segments. (Note that this condition does not depend on a choice of shadow coloring.) A coloring of a diagram is pinched if any of its crossings are. If $\rho$ is a decorated representation of $K$ and $D$ an open diagram of $K$ we say $D$ is if the coloring induced by $\rho$ is pinched (and conversely that $\rho$ is ). If no crossing is pinched we say $(D, \rho)$ is .
+:::
+
+A nugatory crossing is always pinched. If $D$ is a crossing-minimal diagram it has no nugatory crossings and in this case most (but not all) nontrivial representations $\rho$ are $D$-smooth. For example, up to gauge transformation the $8_{5}$ knot has $11$ boundary-parabolic representations [@Kim2018]. In the standard diagram $D$ [@Kim2018 Figure 28] of this knot $10$ are smooth and $1$ is pinched. $8_{5}$ is hyperbolic and its discrete faithful representation is $D$-smooth. According to the database of boundary-parabolic representations computed by @DiagramSite [@DiagramSite] this pattern holds in general: for crossing-minimal $D$ most but not all representations are $D$-smooth, but the hyperbolic holonomy representation is always smooth.
+
+In the standard terminology a not $\rho_{\mathop{\mathrm{hyp}}}$-pinched diagram is said to be . By [@McphailSnyder2024octahedralcoordinateswirtingerpresentation Theorem 3] being essential is equivalent to a purely group-theoretic condition called . It is not hard to see that if $D$ is not arc-faithful then it is pinched for every decorated representation $\rho$. It is natural to conjecture (see [@McphailSnyder2024octahedralcoordinateswirtingerpresentation Section 5]) that any hyperbolic knot has an arc-faithful diagram. It is known that any reduced alternating diagram of a hyperbolic knot is arc-faithful.
+
+At any pinched crossing the shape parameters are $1$ so the $R$-matrix elements defining $\qinv{}$ encounter the poles and zeros of the quantum dilogarithm. One can show that these cancel, but in a delicate way that prevents our state integrals from being well-defined. More generally to avoid the singularities we need to ensure that no shape parameter has norm $1$, and if no crossings are pinched then we can achieve this via a gauge transformation.
+
+::: lemma
+[]{#thm:avoid unit circle label="thm:avoid unit circle"} Let $\rho$ be a decorated representation of a knot $K$ and $D$ be an open diagram of $K$. Suppose that $D$ is not $\rho$-pinched. Then there is a representation $\rho'$ gauge-equivalent to $\rho$ and a shadow coloring $(\rho', u)$ of $D$ in which no shape parameter has norm $1$. In this case we say $(\rho', u)$ .
+:::

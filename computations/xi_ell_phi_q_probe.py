@@ -3,7 +3,7 @@
 ξ_ℓ probe — compact q-dilog Φ_q tower vs symmetric (Rogers) Li_2^q tower.
 
 Tests the Phase-4 obstruction's indicated resolution
-(`content/quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.md`
+(`folio/quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.md`
 §"Two-constraint obstruction"): the symmetric Li_2^q tower gives
 O(1) lepton mass ratios because Li_2^q(z) = Σ z^n/(n[n]_q) → Li_2(z)
 as q→1 — NO 1/ℏ enhancement. The compact quantum dilogarithm

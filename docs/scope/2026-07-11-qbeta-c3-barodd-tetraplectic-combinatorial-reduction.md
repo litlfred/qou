@@ -34,8 +34,8 @@ fit anything.
 | artifact | what it supplies | status |
 |---|---|---|
 | [`phi_b_evaluator.py`](../../computations/qbeta/phi_b_evaluator.py) | validated Faddeev integral `log Φ_b(z)=∫_{ℝ+iδ} e^{−2izw}/(4w·sinh(wb)·sinh(w/b)) dw`; V1–V6 battery, literature-verified vs Hikami math/0604094 | **built** |
-| [`FaddeevModularDouble.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/FaddeevModularDouble.lean) | structural axiomatisation: modular invariance `Φ_b=Φ_{1/b}`, Faddeev inversion, σ-unitary phase lemmas | **sorry-free** |
-| [`prop:phi-b-unitary-bar-odd`](../../content/quantum-observable-universe/mass-theory/phi-b-unitary-bar-odd.md) | `|Φ_b|=1` on the fibre saddle ⇒ `Φ_b` is a bar-ODD (phase) carrier | content block |
+| [`FaddeevModularDouble.lean`](../../folio/quantum-observable-universe/lean/QOU/QBeta/FaddeevModularDouble.lean) | structural axiomatisation: modular invariance `Φ_b=Φ_{1/b}`, Faddeev inversion, σ-unitary phase lemmas | **sorry-free** |
+| [`prop:phi-b-unitary-bar-odd`](../../folio/quantum-observable-universe/mass-theory/phi-b-unitary-bar-odd.md) | `|Φ_b|=1` on the fibre saddle ⇒ `Φ_b` is a bar-ODD (phase) carrier | content block |
 | [channel-separation spec](2026-07-07-qbeta-fmap-phi-b-channel-separation-spec.md) | the `c_3` swing is a **phase-channel** quantity; PR #1821's smooth-real wall is magnitude-channel only | scope-(a) |
 | [`…-barodd-sleak-phib-target.md`](../audits/2026-07-11-qbeta-c3-barodd-sleak-phib-target.md) | the exact target: `S(muon)=+0.00968298`, `S(proton)=−0.03945936`, sign-flip | measurement |
 
@@ -141,7 +141,7 @@ Step 3 of the canonical chain (`substrate q₀ → 𝐂 → Yekutieli non-abelia
 Stokes → H_n(q) Hecke`). The Faddeev `Φ_b` is the **q-holonomy** the non-abelian
 Stokes theorem integrates around the braid closure; its residue/partition
 expansion is the state-sum. Under
-[`genus-filtration-derivation-chain`](../../content/quantum-observable-universe/brings-surface/genus-filtration-derivation-chain.md)
+[`genus-filtration-derivation-chain`](../../folio/quantum-observable-universe/brings-surface/genus-filtration-derivation-chain.md)
 the **bar-odd (sinh / `σ`-antisymmetric) part is the Yekutieli obstruction class
 `κ_n ≠ 0`** (`d_q² ≠ 0`) — the decay/CS face — while the bar-even
 (cosh) part is the smooth-liftable mass face. This is the structural

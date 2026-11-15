@@ -44,8 +44,13 @@ Conclusion (preview): the Δ_n² discharge is a structural improvement
 but does NOT fix the neutron 8.3% error (the latter is the
 σ↔σ⁻¹-asymmetry T1 issue per Phase 1.7).  The genuine discharge is
 naturally subsumed by term7-alpha5's iterative LP-dual unification
-(prop:mass-formula-iterative-lp-dual: 𝔪 = Σ_l u^{(l)*}, where Δ_n² is
+(`mass-formula-iterative-lp-dual`: 𝔪 = Σ_l u^{(l)*}, where Δ_n² is
 the saturated-shell limit at high jet order).
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 
@@ -187,7 +192,7 @@ whose rows carry a different schema entirely. The resolved formula
 fields are legacy-only by construction.
 
 This audit is therefore dead by construction. Disposition (deprecate to
-computations/_deprecated/, or delete) is an owner decision; bean `qou-s1yn`.""")
+fsh-guts/deprecated/computations/, or delete) is an owner decision; bean `qou-s1yn`.""")
     s3 = record_upstream(s3_path, _UPSTREAM_RECORDS)
     rows = {r["atom"]: r for r in s3["data"]["rows"]}
 

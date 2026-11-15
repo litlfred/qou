@@ -1,5 +1,7 @@
 {
   "computation": "qbeta-covariance-kernel-exact-variance",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal",
   "assertions": [
     {
       "name": "variance_matches_closed_form",
@@ -69,8 +71,8 @@
     }
   },
   "provenance": {
-    "headSha": "b7f9bee43d3cdcf52a725fd9d938927163fff837",
+    "headSha": "eb645d81e7fe1646342513e676f6498caab4a229",
     "producer": "computations/qbeta/qbeta_covariance_kernel_exact_variance_probe.py",
-    "elapsed_s": 3.018
+    "elapsed_s": 2.677
   }
 }

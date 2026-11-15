@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/s0894-0347-08-00618-8/sections/sec-010",
   "@type": [
     "doco:Section"
   ],
-  "title": "Graphs, Laplacians, spanning trees and the random cluster model",
-  "pageStart": 18,
-  "pageEnd": 20,
+  "title": "Determinantal probability measures",
+  "pageStart": 17,
+  "pageEnd": 18,
   "contains": [
     "library/s0894-0347-08-00618-8/blocks/prose-sec-010"
   ],
-  "derivedFrom": "library/s0894-0347-08-00618-8/manifest",
-  "sourceDocument": "library/s0894-0347-08-00618-8/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s0894-0347-08-00618-8",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s0894-0347-08-00618-8",
   "provenance": "ingested"
 }

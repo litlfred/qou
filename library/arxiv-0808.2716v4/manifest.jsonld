@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0808.2716v4/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "CUSP AREAS OF F AREY MANIFOLDS",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0808.2716v4",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-0808.2716v4",
   "contains": [
     "library/arxiv-0808.2716v4/sections/sec-000",
     "library/arxiv-0808.2716v4/sections/sec-001",
@@ -31,8 +36,17 @@
     "library/arxiv-0808.2716v4/sections/sec-022"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0808.2716&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-0808.2716v4",
+    "title_source": "slug",
     "source_file": "0808.2716v4.pdf",
     "source_sha256": "ea66f7ddcf9e9fe68292d8334dd47fe60f8a1debcb453f00ac35a8dc183165f8",
     "pages": 44,

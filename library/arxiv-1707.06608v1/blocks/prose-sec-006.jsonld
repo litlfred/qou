@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1707.06608v1/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1707.06608v1/blocks/prose-sec-006",
   "kind": "prose",
   "title": "Degrees 3 and 4",
   "pageStart": 11,
   "pageEnd": 18,
   "text": "../sections/sec-006-431-degrees-3-and-4.md",
-  "derivedFrom": "library/arxiv-1707.06608v1/manifest",
-  "sourceDocument": "library/arxiv-1707.06608v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1707.06608v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1707.06608v1",
   "provenance": "ingested"
 }

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2203.17029v1/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2203.17029v1/blocks/prose-sec-007",
   "kind": "prose",
   "title": "An algorithm for a fundamental matrix",
   "pageStart": 13,
   "pageEnd": 14,
   "text": "../sections/sec-007-22-an-algorithm-for-a-fundamental-matrix.md",
-  "derivedFrom": "library/arxiv-2203.17029v1/manifest",
-  "sourceDocument": "library/arxiv-2203.17029v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2203.17029v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2203.17029v1",
   "provenance": "ingested"
 }

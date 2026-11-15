@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T06:39:14.038077+00:00",
-  "commitSha": "bff4027fcd14b70ea3d8fabf53c527ac8f08c5b4",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T15:53:09.889599+00:00",
+  "commitSha": "eb645d81e7fe1646342513e676f6498caab4a229",
   "assertions": [
     {
       "name": "closed_form_matches_brute_force_exactly",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 339,
+  "durationMs": 423,
   "computation": "syt-12-relation-closed-form",
   "scriptFile": "syt_12_relation_closed_form_probe.py",
-  "scriptHash": "5bc100b27def",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a43acbdc4bc7",
+  "scriptCommitSha": "b66bb4547db13638c8099f077e34464f80e426d1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,13 +30,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -61,13 +62,15 @@
     "timing_at_n": {
       "n": 12,
       "partitions": 77,
-      "brute_total_s": "0.3024",
-      "closed_total_s": "0.002107",
-      "speedup_x": "143.5",
-      "worst_partition": "(5, 3, 2, 1, 1)",
-      "worst_brute_s": "0.0153"
+      "brute_total_s": "0.3842",
+      "closed_total_s": "0.002420",
+      "speedup_x": "158.8",
+      "worst_partition": "(4, 3, 2, 2, 1)",
+      "worst_brute_s": "0.0188"
     },
-    "verdict": "VERIFIED on all 138 partitions of n=1..10: the closed form reproduces the brute-force counts EXACTLY (0 mismatches), and the 'mix' branch never fires (0 nonzero) — confirming it is structurally unreachable, since 1 sits at (0,0) and 2 must take (0,1) or (1,0). At n=12 the enumeration costs 0.302s across 77 partitions against 0.00211s closed-form — 144x, and the gap widens factorially with n (the atoms run to n=3A, so 7Li is n=21). Replacing the enumeration is exact, not approximate."
+    "verdict": "VERIFIED on all 138 partitions of n=1..10: the closed form reproduces the brute-force counts EXACTLY (0 mismatches), and the 'mix' branch never fires (0 nonzero) — confirming it is structurally unreachable, since 1 sits at (0,0) and 2 must take (0,1) or (1,0). At n=12 the enumeration costs 0.384s across 77 partitions against 0.00242s closed-form — 159x, and the gap widens factorially with n (the atoms run to n=3A, so 7Li is n=21). Replacing the enumeration is exact, not approximate."
   },
-  "auditOnly": true
+  "auditOnly": true,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"
 }

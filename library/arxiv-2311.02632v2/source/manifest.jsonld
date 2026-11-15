@@ -1,0 +1,64 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2311.02632v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2311.02632v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2311.02632v2",
+  "provenance": "ingested",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2311.02632&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2311.02632v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2311.02632v2",
+    "content_type": "application/gzip",
+    "sha256": "1efba0324ce22f80806b21b6262bebb23c1d084411544e3205db6bb4afff1568",
+    "bytes": 680733,
+    "fetched": "2026-10-10T15:19:20+00:00",
+    "files": [
+      {
+        "path": "source/files/contents.tex",
+        "role": "tex",
+        "sha256": "3c8a6f9fd139976b775494271c06fd2ece4554a6ba2ceebe3589ec1de83941d8",
+        "bytes": 97656
+      },
+      {
+        "path": "source/files/main.bbl",
+        "role": "bbl",
+        "sha256": "c87867b909a818014edd2285c4232fb933f32c5a210c954b5c377ac682418888",
+        "bytes": 7333
+      },
+      {
+        "path": "source/files/main.bib",
+        "role": "bib",
+        "sha256": "079893ed6c384138fdae1a377300b0b8fd899af17e994b791f8ac7e668a9ade9",
+        "bytes": 15451
+      },
+      {
+        "path": "source/files/main.tex",
+        "role": "tex",
+        "sha256": "96c5e990c2f3a626c4dd3067563421194ccd9618811108cb0602fe8bbf1a4932",
+        "bytes": 2197
+      },
+      {
+        "path": "source/files/mystyle.sty",
+        "role": "sty",
+        "sha256": "6bf24f2441adfe90afc9f7587954b70b3f167d1cff36d87059fee8315e6388bd",
+        "bytes": 2143
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

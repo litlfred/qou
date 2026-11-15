@@ -1,0 +1,31 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "lu-1999-canonical-bundles",
+  "library": {
+    "docId": "arxiv-math-9911033v1",
+    "dir": "library/arxiv-math-9911033v1",
+    "pdf": "library/arxiv-math-9911033v1/9911033v1.pdf",
+    "stage": "candidates",
+    "pages": 34,
+    "sections": 18,
+    "arxiv": "math/9911033v1"
+  },
+  "type": "article",
+  "title": "On the lower bound estimates of sections of the canonical bundles over a Riemann surface",
+  "author": [
+    {
+      "family": "Lu",
+      "given": "Zhiqin"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        1999
+      ]
+    ]
+  },
+  "container-title": "arXiv preprint",
+  "URL": "https://arxiv.org/abs/math/9911033",
+  "note": "arXiv:math/9911033. Added 2026-05-19 from library/ gap audit. Possible fit with QOU's Riemann-surface / Bring's-surface geometry (archimedean-universe chapters) but no obvious citation target found in current QOU prose; mark pending-placement."
+}

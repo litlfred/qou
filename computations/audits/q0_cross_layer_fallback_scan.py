@@ -150,7 +150,7 @@ def main(argv=None) -> int:
     for p in sorted(REPO.rglob("*.py")):
         if ".git" in p.parts:
             continue
-        if not args.include_deprecated and "_deprecated" in p.parts:
+        if not args.include_deprecated and ("_deprecated" in p.parts or "fsh-guts" in p.parts):
             continue
         try:
             src = p.read_text(encoding="utf-8")

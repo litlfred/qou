@@ -1,0 +1,21 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "hatcher2002",
+  "type": "book",
+  "title": "Algebraic Topology",
+  "author": [
+    {
+      "family": "Hatcher",
+      "given": "Allen"
+    }
+  ],
+  "publisher": "Cambridge University Press",
+  "issued": {
+    "date-parts": [
+      [
+        2002
+      ]
+    ]
+  },
+  "note": "Added 2026-10-05 so a Lean `-- Ref:` key resolves (C9, issue #7528; owner ruling). Metadata written by an agent from standard bibliographic knowledge and NOT checked against the source in this session; review status stays unreviewed until a human validates it."
+}

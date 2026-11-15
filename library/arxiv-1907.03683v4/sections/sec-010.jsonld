@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1907.03683v4/sections/sec-010",
   "@type": [
     "doco:Section"
   ],
-  "title": "Palm measures of determinantal point processes. We here give a probabilistic",
-  "pageStart": 10,
+  "title": "The Charlier ensemble and a deformation of the Plancherel measure",
+  "pageStart": 11,
   "pageEnd": 11,
   "contains": [
     "library/arxiv-1907.03683v4/blocks/prose-sec-010"
   ],
-  "derivedFrom": "library/arxiv-1907.03683v4/manifest",
-  "sourceDocument": "library/arxiv-1907.03683v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1907.03683v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1907.03683v4",
   "provenance": "ingested"
 }

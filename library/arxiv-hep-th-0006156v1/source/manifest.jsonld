@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-th-0006156v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-hep-th-0006156v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0006156v1",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-th/0006156&metadataPrefix=arXiv), submitted 2000-06-20, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-hep-th-0006156v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/hep-th/0006156v1",
+    "content_type": "application/gzip",
+    "sha256": "ef95af2bac305c41fe50c0d1a53b871b3d7bfdc19720a399d880a864a7ec6924",
+    "bytes": 22145,
+    "fetched": "2026-10-10T15:24:51+00:00",
+    "files": [
+      {
+        "path": "source/files/main.tex",
+        "role": "tex",
+        "sha256": "40c501bbf19edf61c10c6cd9cb12746b52a49d2f98626172ff721ecf1d735cdb",
+        "bytes": 60204
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

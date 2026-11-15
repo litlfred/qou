@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/0309214v3/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/0309214v3/blocks/prose-sec-009",
   "kind": "prose",
   "title": "Upper bounds for initial conditions",
   "pageStart": 18,
   "pageEnd": 19,
   "text": "../sections/sec-009-52-upper-bounds-for-initial-conditions.md",
-  "derivedFrom": "library/0309214v3/manifest",
-  "sourceDocument": "library/0309214v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0309214v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0309214v3",
   "provenance": "ingested"
 }

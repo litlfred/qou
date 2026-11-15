@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-gl-obstruction-calc",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-gl-obstruction-calc",
+  "kind": "proposition",
+  "title": "Obstruction to $q$-flatness",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-flat-connection"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-q-gl-obstruction-calc"
+  ],
+  "tags": [
+    "geometric-langlands",
+    "yekutieli",
+    "obstruction"
+  ],
+  "leanRef": "qou:QOU.q_gl_obstruction_calc",
+  "text": "q-gl-obstruction-calc.md",
+  "provenance": "authored"
+}

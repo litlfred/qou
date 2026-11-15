@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1208.1663v2/blocks/prose-sec-015",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1208.1663v2/blocks/prose-sec-015",
   "kind": "prose",
   "title": "An ideal triangulation of m136",
   "pageStart": 21,
   "pageEnd": 21,
   "text": "../sections/sec-015-63-an-ideal-triangulation-of-m136.md",
-  "derivedFrom": "library/arxiv-1208.1663v2/manifest",
-  "sourceDocument": "library/arxiv-1208.1663v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1208.1663v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1208.1663v2",
   "provenance": "ingested"
 }

@@ -229,7 +229,7 @@ def _find_module(modname: str) -> pathlib.Path | None:
     stem = modname.split('.')[-1]
     for r in (pathlib.Path('computations'), pathlib.Path('tools')):
         for cand in r.rglob(f'{stem}.py'):
-            if '_deprecated' not in str(cand):
+            if ('_deprecated' not in str(cand) and 'fsh-guts' not in str(cand)):
                 return cand
     return None
 
@@ -381,7 +381,7 @@ def main() -> int:
             # test_q_int_quantum_integers` was in the denominator.  A test
             # ASSERTS a bracket; it does not DEFINE one, and the two audits
             # disagreeing about that is a difference with no reason behind it.
-            if any(k in str(p) for k in ('_deprecated', '/tests/', '.lake',
+            if any(k in str(p) for k in ('_deprecated', 'fsh-guts', '/tests/', '.lake',
                                          'node_modules')):
                 continue
             try:

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/chinta-2025-j-phys-a-math-theor-58-035203/sections/sec-006",
   "@type": [
     "doco:Section"
   ],
-  "title": "The building block of heat kernels of graphs",
-  "pageStart": 7,
-  "pageEnd": 8,
+  "title": "Application 3: asymptotics by passing from the discrete to the continuous",
+  "pageStart": 15,
+  "pageEnd": 16,
   "contains": [
     "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-006"
   ],
-  "derivedFrom": "library/chinta-2025-j-phys-a-math-theor-58-035203/manifest",
-  "sourceDocument": "library/chinta-2025-j-phys-a-math-theor-58-035203/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/chinta-2025-j-phys-a-math-theor-58-035203",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/chinta-2025-j-phys-a-math-theor-58-035203",
   "provenance": "ingested"
 }

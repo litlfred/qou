@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/agt-v12-n2-p04-s/sections/sec-002",
   "@type": [
     "doco:Section"
@@ -9,12 +14,12 @@
   "pageEnd": 8,
   "contains": [
     "library/agt-v12-n2-p04-s/blocks/prose-sec-002",
-    "library/agt-v12-n2-p04-s/blocks/rem-sec-002-01",
-    "library/agt-v12-n2-p04-s/blocks/rem-sec-002-02",
-    "library/agt-v12-n2-p04-s/blocks/rem-sec-002-03",
-    "library/agt-v12-n2-p04-s/blocks/ex-sec-002-04"
+    "library/agt-v12-n2-p04-s/blocks/remark-sec-002-01",
+    "library/agt-v12-n2-p04-s/blocks/remark-sec-002-02",
+    "library/agt-v12-n2-p04-s/blocks/remark-sec-002-03",
+    "library/agt-v12-n2-p04-s/blocks/example-sec-002-04"
   ],
-  "derivedFrom": "library/agt-v12-n2-p04-s/manifest",
-  "sourceDocument": "library/agt-v12-n2-p04-s/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/agt-v12-n2-p04-s",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/agt-v12-n2-p04-s",
   "provenance": "ingested"
 }

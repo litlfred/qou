@@ -140,6 +140,7 @@ def main() -> int:
     out = HERE / "qbeta-covariance-kernel-extend.witness.json"
     out.write_text(json.dumps({
         "computation": "qbeta-covariance-kernel-extend",
+        "q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal",
         "assertions": a, "allPassed": bool(ok),
         "parameters": {"limit": limit, "epic": "qou-x631",
                        "conjecture": "cov(k) = sum_lam (f^lam)^3 (sum c^2 - C(k,2)) <= 0",

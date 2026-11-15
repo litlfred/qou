@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1203.6531v1/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1203.6531v1/blocks/prose-sec-001",
   "kind": "prose",
-  "title": "Counting Reduced Words",
-  "pageStart": 7,
-  "pageEnd": 10,
-  "text": "../sections/sec-001-3-counting-reduced-words.md",
-  "derivedFrom": "library/arxiv-1203.6531v1/manifest",
-  "sourceDocument": "library/arxiv-1203.6531v1/manifest",
+  "title": "Gröbner-Shirshov Basis and Reduced Words",
+  "pageStart": 3,
+  "pageEnd": 7,
+  "text": "../sections/sec-001-2-gröbner-shirshov-basis-and-reduced-words.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1203.6531v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1203.6531v1",
   "provenance": "ingested"
 }

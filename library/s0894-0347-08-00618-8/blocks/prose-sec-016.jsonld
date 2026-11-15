@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s0894-0347-08-00618-8/blocks/prose-sec-016",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/s0894-0347-08-00618-8/blocks/prose-sec-016",
   "kind": "prose",
-  "title": "Almost exchangeable measures",
-  "pageStart": 33,
-  "pageEnd": 41,
-  "text": "../sections/sec-016-6-almost-exchangeable-measures.md",
-  "derivedFrom": "library/s0894-0347-08-00618-8/manifest",
-  "sourceDocument": "library/s0894-0347-08-00618-8/manifest",
+  "title": "Stochastic domination and truncations",
+  "pageStart": 25,
+  "pageEnd": 29,
+  "text": "../sections/sec-016-43-stochastic-domination-and-truncations.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s0894-0347-08-00618-8",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s0894-0347-08-00618-8",
   "provenance": "ingested"
 }

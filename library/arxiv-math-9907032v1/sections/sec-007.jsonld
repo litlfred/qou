@@ -1,17 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-9907032v1/sections/sec-007",
   "@type": [
     "doco:Section"
   ],
-  "title": "A NETWORK FLOW APPROACH",
-  "pageStart": 13,
-  "pageEnd": 16,
+  "title": "Delaunay triangulations of infinite sets of points",
+  "pageStart": 16,
+  "pageEnd": 19,
   "contains": [
-    "library/arxiv-math-9907032v1/blocks/prose-sec-007",
-    "library/arxiv-math-9907032v1/blocks/thm-sec-007-01"
+    "library/arxiv-math-9907032v1/blocks/prose-sec-007"
   ],
-  "derivedFrom": "library/arxiv-math-9907032v1/manifest",
-  "sourceDocument": "library/arxiv-math-9907032v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9907032v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9907032v1",
   "provenance": "ingested"
 }

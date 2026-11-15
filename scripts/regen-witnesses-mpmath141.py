@@ -84,7 +84,7 @@ def _py_index() -> dict[str, list[pathlib.Path]]:
         idx: dict[str, list[pathlib.Path]] = {}
         for p in REPO.rglob("*.py"):
             sp = str(p)
-            if "_deprecated" in sp or ".lake" in sp or "/_internal/" in sp \
+            if ("_deprecated" in sp or "fsh-guts" in sp) or ".lake" in sp or "/_internal/" in sp \
                     or "/.git/" in sp:
                 continue
             idx.setdefault(p.name, []).append(p)
@@ -127,7 +127,7 @@ def main() -> int:
     todo: dict[str, list[str]] = {}
     unresolved = 0
     for p in sorted((REPO / "computations").rglob("*.witness.json")):
-        if "_deprecated" in str(p):
+        if ("_deprecated" in str(p) or "fsh-guts" in str(p)):
             continue
         try:
             d = json.loads(p.read_text())

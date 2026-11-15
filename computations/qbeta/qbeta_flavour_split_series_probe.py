@@ -196,6 +196,7 @@ def main() -> int:
 
     witness = {
         "computation": "qbeta-flavour-split-series",
+        "q0Anchor": "proton",
         "assertions": a,
         "allPassed": bool(ok),
         "parameters": {"q0": mp.nstr(Q0, 30), "dps": DPS,

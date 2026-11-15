@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/oberwolfachreports1223-v20120708-9-40/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Class VII surfaces (not classiﬁed yet) VI I⊃VI Ib2>0",
+  "pageStart": 49,
+  "pageEnd": 67,
+  "contains": [
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/prose-sec-009"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/oberwolfachreports1223-v20120708-9-40",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/oberwolfachreports1223-v20120708-9-40",
+  "provenance": "ingested"
+}

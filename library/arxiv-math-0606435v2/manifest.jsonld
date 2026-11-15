@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0606435v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "PROPERTIES OF CLOSED 3-BRAIDS",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0606435v2",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0606435v2",
   "contains": [
+    "library/arxiv-math-0606435v2/sections/sec-front-matter",
     "library/arxiv-math-0606435v2/sections/sec-000",
     "library/arxiv-math-0606435v2/sections/sec-001",
     "library/arxiv-math-0606435v2/sections/sec-002",
@@ -41,45 +47,26 @@
     "library/arxiv-math-0606435v2/sections/sec-032",
     "library/arxiv-math-0606435v2/sections/sec-033",
     "library/arxiv-math-0606435v2/sections/sec-034",
-    "library/arxiv-math-0606435v2/sections/sec-035",
-    "library/arxiv-math-0606435v2/sections/sec-036",
-    "library/arxiv-math-0606435v2/sections/sec-037",
-    "library/arxiv-math-0606435v2/sections/sec-038",
-    "library/arxiv-math-0606435v2/sections/sec-039",
-    "library/arxiv-math-0606435v2/sections/sec-040",
-    "library/arxiv-math-0606435v2/sections/sec-041",
-    "library/arxiv-math-0606435v2/sections/sec-042",
-    "library/arxiv-math-0606435v2/sections/sec-043",
-    "library/arxiv-math-0606435v2/sections/sec-044",
-    "library/arxiv-math-0606435v2/sections/sec-045",
-    "library/arxiv-math-0606435v2/sections/sec-046",
-    "library/arxiv-math-0606435v2/sections/sec-047",
-    "library/arxiv-math-0606435v2/sections/sec-048",
-    "library/arxiv-math-0606435v2/sections/sec-049",
-    "library/arxiv-math-0606435v2/sections/sec-050",
-    "library/arxiv-math-0606435v2/sections/sec-051",
-    "library/arxiv-math-0606435v2/sections/sec-052",
-    "library/arxiv-math-0606435v2/sections/sec-053",
-    "library/arxiv-math-0606435v2/sections/sec-054",
-    "library/arxiv-math-0606435v2/sections/sec-055",
-    "library/arxiv-math-0606435v2/sections/sec-056",
-    "library/arxiv-math-0606435v2/sections/sec-057",
-    "library/arxiv-math-0606435v2/sections/sec-058",
-    "library/arxiv-math-0606435v2/sections/sec-059",
-    "library/arxiv-math-0606435v2/sections/sec-060",
-    "library/arxiv-math-0606435v2/sections/sec-061",
-    "library/arxiv-math-0606435v2/sections/sec-062",
-    "library/arxiv-math-0606435v2/sections/sec-063",
-    "library/arxiv-math-0606435v2/sections/sec-064",
-    "library/arxiv-math-0606435v2/sections/sec-065",
-    "library/arxiv-math-0606435v2/sections/sec-066",
-    "library/arxiv-math-0606435v2/sections/sec-067",
-    "library/arxiv-math-0606435v2/sections/sec-068"
+    "library/arxiv-math-0606435v2/sections/sec-035"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0606435&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-math-0606435v2",
-    "source_file": "0606435v2 (1).pdf",
+    "title_source": "slug",
+    "source_file": "0606435v2.pdf",
     "source_sha256": "6dddaf838a19f0f5c366a60f27b03a782dc04ea8ba2b8e968de0159f01a55b34",
     "pages": 68,
     "arxiv": {

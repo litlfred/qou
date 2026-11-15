@@ -58,7 +58,7 @@ Honest predictions at q_0:
 
 The framework's PROVABLE accuracy at this layer is ~3 %, not 1 ppb.
 The Bring-Bloch identity
-(`conj:lambda-scale-bring-bloch-identity`) is the open R&D path
+(`lambda-scale-bring-bloch-identity`) is the open R&D path
 for closing the residual gap categorically (Tier0-5 PSLQ negative
 to date).
 
@@ -102,7 +102,7 @@ violation.
 Numerical verification of the Borromean baryon mass formula at q_0.
 
 Tests
-[`conj:borromean-baryon-mass-formula`](../../content/quantum-observable-universe/braids-and-knots/borromean-baryon-mass-formula.md)
+[`conj:borromean-baryon-mass-formula`](../../folio/quantum-observable-universe/braids-and-knots/borromean-baryon-mass-formula.md)
 against CODATA proton + neutron masses at MPFR 50 dps.
 
 ## The formula (canonical, post-PR #1080)
@@ -154,6 +154,11 @@ NOT as a separate λ_scale closure.
       correction lacks Lean backing
     - q_0 substrate value (CAL-2 from m_μ/m_e): numerical anchor, no
       Lean theorem
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 
@@ -583,7 +588,7 @@ def main() -> int:
         "proton": "qou:QOU.BraidKnot.PeriodicTableUniqueness.h_uniqueness_closed",
         "neutron": "qou:QOU.BraidKnot.nucleus_uniqueness_closed (n=3)",
         "framework_doc":
-            "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+            "folio/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
         "note": (
             "These theorems certify T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). The real per-nucleus SDP (multi-term cost + non-empty constraints) is per-nucleus substantive open work. Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
         ),

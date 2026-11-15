@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-categorical-connection-exists",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:categorical-connection-exists",
+  "kind": "proposition",
+  "title": "Existence of categorical connections",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-connection"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-categorical-connection-exists"
+  ],
+  "tags": [
+    "existence",
+    "connection"
+  ],
+  "leanRef": "qou:QOU.CategoricalConnection.exists",
+  "text": "categorical-connection-exists.md",
+  "leanSource": "categorical-connection-exists.lean",
+  "provenance": "authored"
+}

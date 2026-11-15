@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1304.2934v4/blocks/prose-sec-015",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1304.2934v4/blocks/prose-sec-015",
   "kind": "prose",
-  "title": "Precise deviations for random variables with control on cumulants",
-  "pageStart": 39,
-  "pageEnd": 43,
-  "text": "../sections/sec-015-52-precise-deviations-for-random-variables-with.md",
-  "derivedFrom": "library/arxiv-1304.2934v4/manifest",
-  "sourceDocument": "library/arxiv-1304.2934v4/manifest",
+  "title": "Berry-Esseen estimates",
+  "pageStart": 26,
+  "pageEnd": 29,
+  "text": "../sections/sec-015-41-berry-esseen-estimates.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1304.2934v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1304.2934v4",
   "provenance": "ingested"
 }

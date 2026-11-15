@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1006.1099v3/blocks/prose-sec-020",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1006.1099v3/blocks/prose-sec-020",
   "kind": "prose",
   "title": "Hyperelliptic curves and quadrics",
   "pageStart": 33,
   "pageEnd": 36,
   "text": "../sections/sec-020-42-hyperelliptic-curves-and-quadrics.md",
-  "derivedFrom": "library/arxiv-1006.1099v3/manifest",
-  "sourceDocument": "library/arxiv-1006.1099v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1006.1099v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1006.1099v3",
   "provenance": "ingested"
 }

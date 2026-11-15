@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1304.2934v4/sections/sec-016",
   "@type": [
     "doco:Section"
   ],
-  "title": "Link with the Cramér-Petrov expansion",
-  "pageStart": 43,
-  "pageEnd": 45,
+  "title": "Deviations at scale O(tn)",
+  "pageStart": 29,
+  "pageEnd": 30,
   "contains": [
     "library/arxiv-1304.2934v4/blocks/prose-sec-016"
   ],
-  "derivedFrom": "library/arxiv-1304.2934v4/manifest",
-  "sourceDocument": "library/arxiv-1304.2934v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1304.2934v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1304.2934v4",
   "provenance": "ingested"
 }

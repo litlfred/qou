@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1108.4389v1/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1108.4389v1/blocks/prose-sec-001",
   "kind": "prose",
-  "title": "California Institute of Technology, Pasadena, CA 91125, USA",
-  "pageStart": 1,
-  "pageEnd": 1,
-  "text": "../sections/sec-001-2-california-institute-of-technology-pasadena-ca.md",
-  "derivedFrom": "library/arxiv-1108.4389v1/manifest",
-  "sourceDocument": "library/arxiv-1108.4389v1/manifest",
+  "title": "Geometry of 3-manifolds",
+  "pageStart": 8,
+  "pageEnd": 8,
+  "text": "../sections/sec-001-2-geometry-of-3-manifolds.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1108.4389v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1108.4389v1",
   "provenance": "ingested"
 }

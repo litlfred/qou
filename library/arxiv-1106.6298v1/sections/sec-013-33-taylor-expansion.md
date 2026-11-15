@@ -8,20 +8,25 @@ pages: 13-14
 source_pdf: 1106.6298v1.pdf
 source_sha256: 23b0754067873a04
 doc_brief: "ON THE UNIFICATION OF QUANTUM 3–MANIFOLD INVARIANTS — In 2006 Habiro initiated a construction of generating functions for Witten– Reshetikhin–Turaev (WRT) invariants known as uniﬁed WRT invariant s."
+text_source: latex
+latex_prose_ratio: 0.889
+latex_coverage_ratio: 0.833
 ---
-R[q]{n} = lim←−−k
-R[q]
-(Φ k
-n(q)) .
-Suppose Z ⊂ R ⊂ Q, then the natural algebra homomorphism
-h : R[q]
-(Φ k
-n(q)) → R[en][q]
-((q − en)k)
-can be proved to be injective. Taking the inverse limit, we see that th ere is a natural
-injective algebra homomorphism
-h : R[q]{n} → R[en][[q − en]].
-Suppose n ∈ S. Combining h and ρS,{n} : R[q]S → R[q]{n}, we get an algebra map
-tn : R[q]S → R[en][[q − en]].
-If f ∈ R[q]S, then tn(f ) is called the Taylor expansion of f at en.
-14 ANNA BELIAKOV A AND THANG LE
+Fix a natural number $n$, then we have
+$$ R[q]^{\{n\}} =
+\lim_{\overleftarrow{\hspace{2mm}k\hspace{2mm}}}
+\frac{R[q]}{(\Phi^k_n(q))}\; .$$
+Suppose $ \Z \subset R \subset \Q$, then the natural algebra homomorphism
+
+$$ h: \frac{R[q]}{(\Phi^k_n(q))} \to \frac{R[e_n][q]}{((q-e_n)^k)}$$
+can be proved to be
+ injective. Taking the inverse limit, we see that there is a natural injective algebra homomorphism
+
+$$ h : R[q]^{\{n\}} \to R[e_n][[q-e_n]].$$
+
+Suppose $n \in S$. Combining $h$ and $\rho_{S, \{n\}}: R[q]^S \to R[q]^{\{n\}}$, we get an algebra map
+
+\newcommand{\TT}{{\mathfrak t}}
+
+$$ \TT_n: R[q]^S \to R[e_n][[q-e_n]].$$
+If $f\in R[q]^S$, then $\TT_n(f)$ is called the Taylor expansion of $f$ at $e_n$.

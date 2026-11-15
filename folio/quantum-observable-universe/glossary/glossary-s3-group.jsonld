@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-glossary-s3-group",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:glossary-s3-group",
+  "kind": "remark",
+  "title": "Symmetric group $S_3$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-braid-group"
+  ],
+  "tags": [
+    "glossary",
+    "symmetric-group",
+    "group-theory"
+  ],
+  "defines": [
+    "s3-group"
+  ],
+  "leanRef": "qou:QOU.S3Group",
+  "text": "glossary-s3-group.md",
+  "leanSource": "glossary-s3-group.lean",
+  "provenance": "authored"
+}

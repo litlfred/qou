@@ -8,9 +8,10 @@ pages: 10-10
 source_pdf: 2412.02281v1.pdf
 source_sha256: ac4127cf4994b2ba
 doc_brief: "Explicit evaluation of the q-Stokes matrices for certain confluent hypergeometric q-difference equations — We prove a connection formula for the basic hypergeomtric fu nction nϕn−1 (a1,...,a n−1"
+text_source: latex
+latex_prose_ratio: 0.844
+latex_coverage_ratio: 1.0
 ---
-This section computes explicitly the connection matrix and q-Stokes matrix of the system (2). In particular,
-Section 3.1 introduces the connection matrix and q-Stokes matrix of the systems (2). Section 3.2 gives a gauge
-transformation that diagonalizes the upper left block of th e system (2). Sections 3.3–3.5 derive the explicit
-expressions of the connection matrix and q-Stokes matrix of the system after the gauge transformation . Section
-3.6 then obtains the connection matrix and q-Stokes matrix of the system (2).
+\label{main section}
+This section computes explicitly the  connection matrix and $q$-Stokes matrix of the  system \eqref{qdes}. In particular, Section \ref{sec:sol zero inf} introduces the connection matrix and $q$-Stokes matrix of the systems \eqref{qdes}. Section \ref{sec:diag}  
+gives a gauge transformation that diagonalizes the upper left block of the system \eqref{qdes}. Sections \ref{sec:diagsol}--\ref{sec:diagqdes} derive the explicit expressions of the connection matrix and $q$-Stokes matrix of the system after the gauge transformation. Section \ref{sec:qdes} then obtains the connection matrix and   $q$-Stokes matrix of the system \eqref{qdes}.

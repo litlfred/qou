@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1202.4698v3/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1202.4698v3/blocks/prose-sec-005",
   "kind": "prose",
-  "title": "Relations to three-dimensional hyperbolic geometry",
-  "pageStart": 8,
+  "title": "A new integral formula for the b-6j symbols",
+  "pageStart": 7,
   "pageEnd": 8,
-  "text": "../sections/sec-005-3-relations-to-three-dimensional-hyperbolic-geom.md",
-  "derivedFrom": "library/arxiv-1202.4698v3/manifest",
-  "sourceDocument": "library/arxiv-1202.4698v3/manifest",
+  "text": "../sections/sec-005-25-a-new-integral-formula-for-the-b-6j-symbols.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1202.4698v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1202.4698v3",
   "provenance": "ingested"
 }

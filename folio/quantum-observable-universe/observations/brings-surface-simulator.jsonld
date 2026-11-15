@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sim-brings-surface",
+  "@type": [
+    "folio-assistant-core:Simulator"
+  ],
+  "label": "sim:brings-surface",
+  "kind": "simulator",
+  "title": "Bring's Surface Simulator",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quaternionic-spectral-resolvents"
+  ],
+  "tags": [
+    "brings-surface",
+    "spectral-resolvent",
+    "3d",
+    "simulation"
+  ],
+  "text": "brings-surface-simulator.md",
+  "provenance": "authored"
+}

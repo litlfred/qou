@@ -88,38 +88,25 @@ PRODUCER = os.path.join(os.path.dirname(REPO), "folio-assistant",
 FIELDS = ("title", "title_lines", "authors_raw", "abstract", "arxiv", "doi")
 
 OVERRIDES = os.path.join(REPO, "docs", "audits", "library-title-overrides.json")
-REFS = os.path.join(REPO, "content", "schema", "references.ts")
+sys.path.insert(0, os.path.join(REPO, "scripts", "lib"))
+import references_dir  # noqa: E402  -- folio/references/<id>.json (bean qou-l7pj)
 
 
 def registered_titles() -> dict[str, str]:
-    """docId -> title, for every references.ts entry naming a library copy.
+    """docId -> title, for every bibliography entry naming a library copy.
 
-    Brace-matched rather than line-scanned: an entry's fields are indented
-    and its `title` and `docId` sit in different nested objects, so a
-    regex over the whole file pairs a title with the wrong document about
-    as often as not.
+    Read from the parsed entry files (folio/references/<id>.json, bean
+    qou-l7pj), so `title` and `docId` always come from the same entry.
     """
     try:
-        src = open(REFS, encoding="utf-8").read()
-    except Exception:
+        entries = references_dir.entries(REPO)
+    except SystemExit:
         return {}
     out: dict[str, str] = {}
-    for m in re.finditer(r"\bref\(\{", src):
-        i = src.index("{", m.start())
-        depth = 0
-        block = ""
-        for j in range(i, len(src)):
-            if src[j] == "{":
-                depth += 1
-            elif src[j] == "}":
-                depth -= 1
-                if depth == 0:
-                    block = src[i:j + 1]
-                    break
-        d = re.search(r'docId:\s*"([^"]+)"', block)
-        t = re.search(r'title:\s*"((?:[^"\\]|\\.)*)"', block)
-        if d and t:
-            out[d.group(1)] = t.group(1).replace('\\"', '"')
+    for e in entries:
+        d = (e.get("library") or {}).get("docId")
+        if d and e.get("title"):
+            out[d] = e["title"]
     return out
 
 

@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-y-lambda-cyclotomic-factorization",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:y-lambda-cyclotomic-factorization",
+  "kind": "proposition",
+  "title": "Cyclotomic factorisation of $y_\\lambda$ at $H_n(R, q)$ for small $n$ via Wenzl-bridge",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-y-lambda-closed-form-wenzl-bridge"
+  ],
+  "cites": [
+    "references/wenzl1988",
+    "references/macdonald1995"
+  ],
+  "tags": [
+    "y-lambda",
+    "cyclotomic-polynomial",
+    "schur-element",
+    "closed-form",
+    "wenzl-bridge",
+    "q-rational",
+    "principal-specialization"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.y_lambda_cyclotomic_factorization",
+  "text": "y-lambda-cyclotomic-factorization.md",
+  "leanSource": "y-lambda-cyclotomic-factorization.lean",
+  "provenance": "authored"
+}

@@ -86,7 +86,8 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(REPO, "uploads")
 LIB = os.path.join(REPO, "library")
 LIBNAME = "library"
-LEDGER = os.path.join(REPO, "content", "bib-qa-verifications.json")
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "lib"))
+import bib_ledger  # noqa: E402  -- the source ledger's reader (attestation store, legacy fallback)
 
 TEXT_EXT = {".md", ".ts", ".py", ".json", ".sh", ".tex", ".lean", ".yml", ".yaml", ".txt"}
 SKIP_DIRS = {".git", "node_modules", ".lake", "uploads", "library", ".venv", "__pycache__"}
@@ -288,11 +289,11 @@ def rewrite_refs(mapping: dict[str, str], apply: bool,
     a live reference at all -- it is PROSE describing the earlier migration,
     and rewriting it corrupts the record.  Measured that day, three files:
 
-      .beans/qou-4lbh          "uploads/roth_lemma.pdf ->
+      beans/defs/qou-4lbh          "uploads/roth_lemma.pdf ->
                                 library/roth-lemma/roth_lemma.pdf"
                                 became "library/... -> library/...",
                                 an arrow from a thing to itself;
-      .beans/qou-cvx9          "the first draft wrote `uploads/1808.02836v2.pdf`
+      beans/defs/qou-cvx9          "the first draft wrote `uploads/1808.02836v2.pdf`
                                 as a literal" became a claim about a path the
                                 draft never wrote -- a FALSIFIED record, which
                                 is worse than a dangling link because it is
@@ -327,6 +328,15 @@ def rewrite_refs(mapping: dict[str, str], apply: bool,
     # per-basename patterns above had missed. A mention this loop does not
     # match is a mention with no known target -- leave it alone.
     files_changed = subs = 0
+    # An `id: null` source-ledger row is FILED BY ITS SOURCE PATH in the
+    # attestation store (test/attestations/bib-verification/source/<file>...).
+    # Rewriting `source.file` inside it in place would leave the row under a
+    # path that no longer names it, and the ledger reader refuses such a file
+    # as corrupt. So those files are not rewritten here; they are reported,
+    # and the row is re-filed by the platform's ledger writer.
+    orphan_prefix = os.path.relpath(
+        os.path.join(bib_ledger.attestations_root(REPO), "bib-verification", "source"), REPO) + os.sep
+    held_back: list[str] = []
     for rel in tracked_text_files():
         path = os.path.join(REPO, rel)
         try:
@@ -339,11 +349,20 @@ def rewrite_refs(mapping: dict[str, str], apply: bool,
         for rx, repl in pats:
             new, k = rx.subn(repl, new)
             n += k
+        if n and rel.startswith(orphan_prefix):
+            held_back.append(rel)
+            continue
         if n:
             files_changed += 1
             subs += n
             if apply:
                 open(path, "w", encoding="utf-8", errors="surrogateescape").write(new)
+    if held_back:
+        print(f"source-ledger rows with no reference id naming a moved file: {len(held_back)} "
+              "(NOT rewritten: such a row is filed by its path; re-file it with the platform "
+              "ledger writer, writeSourceLedger in folio-assistant/cat-harness-tools/schemas/library/bib-attestations.ts)")
+        for rel in held_back[:5]:
+            print(f"    {rel}")
     return files_changed, subs
 
 
@@ -411,8 +430,9 @@ def verify(mapping: dict[str, str]) -> int:
           + ("  (pre-existing: never committed)" if absent else ""))
     problems += len(repairable)
 
-    if os.path.exists(LEDGER):
-        led = json.load(open(LEDGER))
+    led, note = bib_ledger.read_source_ledger(REPO)
+    print(note)
+    if led.get("entries"):
         rows = led["entries"].values() if isinstance(led["entries"], dict) else led["entries"]
         bad = 0
         for r in rows:
@@ -663,7 +683,7 @@ def main() -> int:
         print("\nThese are NOT ingested. Moving them would create a directory the\n"
               "corpus holds and cannot read — invisible at every tier of\n"
               "corpus-grep path 5. Ingest them first, then re-run:\n"
-              "    python3 folio-assistant/scripts/pdf-structure.py --outdir library <pdf>\n"
+              "    python3 folio-assistant/cat-harness-tools/scripts/pdf-structure.py --outdir library <pdf>\n"
               "    python3 scripts/summarize-library.py --apply")
 
     if not args.apply:

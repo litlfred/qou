@@ -8,149 +8,174 @@ pages: 7-9
 source_pdf: 1202.0067v3.pdf
 source_sha256: 2ce621c8982ee764
 doc_brief: "CHARACTER DEFLATIONS AND A GENERALIZATION OF THE MURNAGHAN–NAKAYAMA RULE ANTON EVSEEV, ROWENA PAGET AND MARK WILDON — 8 sections: Introduction; Deflation by averaging; Skew characters"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-Let m, n ∈ N. We shall think of Sm o Sn as the group of permutations of
-{1, . . . , m} × {1, . . . , n}
-that leaves invariant the set of blocks of the form ∆j = {(1, j), . . . , (m, j)},
-1 ≤ j ≤ n. Given h1 , . . . , hn ∈ Sm and g ∈ Sn , we write (h1 , . . . , hn ; g) for
-the permutation which sends (i, j) to (hgj i, gj). This left action is equivalent
-to the action defined in [8, 4.1.18]. Let B = Sm × · · · × Sm denote the base
-group in the wreath product. As shorthand, if k = (h1 , . . . , hn ) ∈ B then
-we shall write (k ; g) for (h1 , . . . , hn ; g).
-Lemma 2.1. Let m, n ∈ N, let ϑ be an irreducible character of Sm , and
-×n Inf Sm oSn χν for some
-let ξ be an irreducible character of Sm o Sn . If ξ = ϑg
-Sn
-partition ν of n then
-1 X
-×n (k ; g) = χν (g),
-ξ(k ; g)ϑg
-|B|
-k∈B
+\label{sec:averaging}
 
-and if ξ ∈ Irr(Sm o Sn ) is not of this form then the left-hand side is zero.
-×n of
-Proof. Suppose that the left-hand side is non-zero. The character ϑg
-Sm o Sn restricts to the irreducible character ϑ × · · · × ϑ of B. Hence,
-by
-applied with G = Sm o Sn and N = B, we have
-E
-D [7, Lemma 8.14(b)],
-g
-×n
-6= 0. It follows by Frobenius Reciprocity that ξ is a
-ResB ξ, ResB ϑ
-constituent of
-X
-×n Inf Sm oSn χν ,
-IndSBm oSn (ϑ × · · · × ϑ) =
-χν (1)ϑg
-Sn
-ν
 
-where the sum is over all partitions ν of n. Since ξ is irreducible we must
-×n Inf Sm oSn χν for some ν. Therefore the left-hand side in the
-have ξ = ϑg
-Sn
-lemma is
-2
-χν (g) X g
-ϑ×n (k ; g)
-|B|
-k∈B
+Let $m$, $n \in \N$. 
+We shall think
+of $S_m \wr S_n$ as the group of permutations of
+\[ \{1,\ldots, m\} \times \{1,\ldots, n\} \]
+that leaves invariant the set of blocks of the form $\Delta_j = \{(1,j), \ldots, (m,j)\}$, 
+$1 \le j \le n$.					
+Given $h_1, \ldots, h_n \in S_m$ and $g \in S_n$, we
+write $(h_1,\ldots,h_n;g)$
+for the permutation which sends $(i,j)$ 
+to $(h_{gj} i,gj)$. 
+This left action is equivalent to the action
+defined in \hbox{\cite[4.1.18]{JK}}. 
+Let $B = S_m \times \cdots \times S_m$ denote
+the base group in the wreath product. As shorthand,
+if $k = (h_1,\ldots,h_n) \in B$ 
+then we shall write $(k\,;g)$ for $(h_1,\ldots,h_n;g)$.
 
-which is equal to χν (g) by [7, Lemma 8.14(c)].
 
-
+\begin{lemma}\label{lemma:sum}
+Let $m$, $n \in \mathbf{N}$, let $\theta$ be an irreducible character of $S_m$, 
+and let $\xi$ be an irreducible character of $S_m \wr S_n$. 
+ If $\xi = \widetilde{\theta^{\times n}} \Inf_{S_n}^{S_m \wr S_n}\!\chi^\nu$ for some partition $\nu$ of $n$ then 
+ \[ \frac{1}{|B|} \sum_{k \in B} \xi (k\, ;g) 
+ \widetilde{\theta^{\times n}} (k\, ;g) = \chi^\nu(g), \]
+and if $\xi\in \Irr(S_m \wr S_n)$ is not of this form then the left-hand side is zero.
+\end{lemma}
 
-×n Inf Sm oSn χν )(g) = χν (g) for all
-By Definition 1.1, we have DefresϑSn (ϑg
-Sn
-g ∈ Sn . The next proposition therefore follows immediately from Lemma 2.1.
+\begin{proof}
+Suppose that the left-hand side is non-zero. The character
+$\widetilde{\theta^{\times n}}$ of $S_m \wr S_n$ restricts to
+the irreducible character $\theta \times \cdots \times \theta$ of $B$.
+Hence,
+by  \cite[Lemma 8.14(b)]{IsaacsChars}, applied with $G = S_m \wr S_n$
+and $N = B$, we have
+$\left<\Res_B \xi, \Res_B \widetilde{\theta^{\times n}}\right> \not=0$.
+It follows by Frobenius Reciprocity that $\xi$ is a constituent of
+\[ \Ind_{B}^{S_m \wr S_n} (\theta \times \cdots \times \theta) = 
+\sum_{\nu} \chi^\nu(1) \widetilde{\theta^{\times n}} \Inf_{S_n}^{S_m \wr S_n}\!\chi^\nu ,\]
+where the sum is over all partitions $\nu$ of $n$.
+Since $\xi$ is irreducible 
+we must have $\xi =  \widetilde{\theta^{\times n}}\Inf_{S_n}^{S_m \wr S_n}\!\chi^\nu$ for some 
+$\nu$. Therefore the left-hand side in the lemma is  
+\[ \frac{\chi^\nu(g)}{|B|} \sum_{k \in B}
+\bigl( \widetilde{\theta^{\times n}}(k\, ;g) \bigr)^2 \]
+which is equal to $\chi^\nu(g)$ by \cite[Lemma 8.14(c)]{IsaacsChars}.
+\end{proof}
 
-
-8
 
-ANTON EVSEEV, ROWENA PAGET AND MARK WILDON
 
-Proposition 2.2. Let m, n ∈ N, let ϑ be an irreducible character of Sm ,
-and let ψ be a character of Sm o Sn . If g ∈ Sn then
-1 X
-×n (k ; g).
-(Def ϑSn ψ)(g) =
-ψ(k ; g)ϑg
-
-|B|
-k∈B
+By Definition~\ref{def:def}, 
+we have $\Defres^\theta_{S_n}
+(\widetilde{\theta^{\times n}} \Inf_{S_n}^{S_m \wr S_n}\!\chi^\nu)(g) = 
+\chi^\nu(g)$ for all $g\in S_n$. The next proposition therefore
+follows immediately from Lemma~\ref{lemma:sum}. 
 
-Corollary 2.3. Let m, n ∈ N, let ϑ be an irreducible character of Sm , and
-let ψ be a character of Sm o Sn . If g ∈ Sn is an n-cycle then
-1 X
-(Def ϑSn ψ)(g) =
-ψ(h, 1, . . . , 1; g)ϑ(h).
-m!
-h∈Sm
+\begin{proposition}\label{prop:deflation}
+Let $m$, $n \in \N$, let $\theta$ be an irreducible
+character of $S_m$, and let $\psi$ be a character of $S_m \wr S_n$.
+If $g \in S_n$ then
+\begin{flalign*}
+    &&(\Def^\theta_{S_n} \psi)(g) = 
+\frac{1}{|B|} \sum_{k \in B} 
+\psi (k\, ;g) \widetilde{\theta^{\times n}} (k\,;g). && \qed  
+\end{flalign*}
+\end{proposition}
 
-Proof. Suppose that g is the n-cycle (x1 x2 . . . xn ). By [8, 4.2.8], the permutations (h1 , . . . , hn ; g) and (h01 , . . . , h0n ; g) ∈ Sm o Sn are conjugate in Sm o Sn
-if and only if the elements hxn hxn−1 . . . hx1 and h0xn h0xn−1 . . . h0x1 are conjugate in Sm . In particular, each conjugacy class of Sm o Sn which meets
-{(k ; g) : k ∈ B} has a representative of the form (h, 1, . . . , 1; g). Moreover, the number of elements (h1 , h2 , . . . , hn ; g) conjugate to (h, 1, . . . , 1; g)
-is m!n−1 |hSm |, since h2 , . . . , hn may be chosen arbitrarily, and then h1 must
-be chosen so that hxn hxn−1 · · · hx1 ∈ hSm . It follows that
-X
-X
-×n (k ; g) = m!n−1
-×n (h, 1, . . . , 1; g)
-ψ(k ; g)ϑg
-ψ(h, 1, . . . , 1; g)ϑg
-k∈B
 
-h∈Sm
 
-= m!n−1
+\begin{corollary}\label{cor:deflation}
+Let $m$, $n \in \N$, let $\theta$ be an irreducible
+character of $S_m$, and let $\psi$ be a character of $S_{m} \wr S_n$.
+If  $g \in S_n$ is an $n$-cycle then
+\[ (\Def^\theta_{S_n} \psi)(g) =
+\frac{1}{m!} \sum_{h \in S_m} \psi (h,1,\ldots,1;g)\theta(h).\]
+\end{corollary}
 
-X
+\begin{proof}
+Suppose that $g$ is the $n$-cycle $(x_1 \, x_2 \, \ldots \, x_n)$. 
+By~\cite[4.2.8]{JK}, the permutations $(h_1,\ldots,h_n;g)$ and
+$(h_1',\ldots,h_n';g) \in S_m \wr S_n$ are conjugate
+in $S_m \wr S_n$ if and only if 
+the elements $h_{x_n} h_{x_{n-1}}\ldots h_{x_1}$ and   $h'_{x_n} h'_{x_{n-1}}\ldots h'_{x_1}$ are conjugate in $S_m$.
+In particular, each conjugacy class of $S_m \wr S_n$ 
+which meets $\{(k\,; g) : k \in B\}$ has 
+a representative of the form $(h,1,\ldots,1;g)$. Moreover,
+the number of elements $(h_1,h_2,\ldots,h_n;g)$ conjugate
+to $(h,1,\ldots,1;g)$ is
+$m!^{n-1} |h^{S_m}|$,
+since $h_2, \ldots, h_n$ may be chosen arbitrarily, 
+and then 
+$h_1$ must be chosen so that 
+$h_{x_n} h_{x_{n-1}}\cdots h_{x_1} \in h^{S_m}$.
+It follows that
+\begin{align*}
+\sum_{k \in B} \psi(k\, ;g) \widetilde{\theta^{\times n}}(k\, ;g)  &= 
+m!^{n-1} \sum_{h \in S_m}
+ \psi (h,1,\ldots,1;g) \widetilde{\theta^{\times n}}(h,1,\ldots
+,1;g) \\
+&= m!^{n-1} \sum_{h \in S_m} \psi (h,1,\ldots,1;g) \theta(h)
+\end{align*}
+where the second equality uses~\cite[Lemma 4.3.9]{JK}. 
+Now apply Proposition~\ref{prop:deflation} to the left-hand side.
+\end{proof}
 
-ψ(h, 1, . . . , 1; g)ϑ(h)
+The following definition and lemma allow for a more convenient
+statement of Corollary~\ref{cor:deflation}.
 
-h∈Sm
+\begin{definition}\label{def:omega}
+Let $m$, $n \in \N$, let $g \in S_n$ be
+an $n$-cycle, and
+let $\psi$ be a character of $S_m \wr S_n$. We define
+$\omega(\psi)$ to be the 
+ class function on $S_m$ such that
+\[ \omega(\psi) (h) = \psi(h,1,\ldots,1;g)  \]
+for all $h \in S_m$.
+\end{definition}
 
-where the second equality uses [8, Lemma 4.3.9]. Now apply Proposition 2.2
-to the left-hand side.
-
-The following definition and lemma allow for a more convenient statement
-of Corollary 2.3.
-Definition 2.4. Let m, n ∈ N, let g ∈ Sn be an n-cycle, and let ψ be a
-character of Sm o Sn . We define ω(ψ) to be the class function on Sm such
-that
-ω(ψ)(h) = ψ(h, 1, . . . , 1; g)
-for all h ∈ Sm .
-Lemma 2.5. Let m, n ∈ N. If g ∈ Sn is an n-cycle and h ∈ Sm has cycle
-type α then (h, 1, . . . , 1; g) ∈ Sm o Sn has cycle type nα.
-Proof. It suffices to show that if O is an orbit of h on {1, 2, . . . , m} then
-O × {1, . . . , n} is an orbit of (h, 1, . . . , 1; g) in its action on {1, . . . , m} ×
-{1, . . . , n}. We leave this to the reader as an easy exercise.
-
-The next proposition follows easily from Lemma 2.5 and Corollary 2.3.
+\begin{lemma}\label{lemma:cycles}
+Let $m$, $n \in \N$. If $g\in S_n$ is an $n$-cycle
+and $h \in S_m$ has cycle
+type $\alpha$ 
+then $(h,1,\ldots,1;g) \in S_m \wr S_n$ has cycle
+type $n\alpha$.
+\end{lemma}
 
-
-CHARACTER DEFLATIONS
+\begin{proof}
+It suffices to show that if $\mathcal{O}$ is an orbit
+of $h$ on $\{1,2,\ldots,m\}$ then $\mathcal{O} \times \{1,\ldots,n\}$
+is an orbit of $(h,1,\ldots,1;g)$ in its action on 
+$\{1,\ldots,m\} \times \{1,\ldots,n\}$.
+We leave this to the reader as an easy exercise. 
+\end{proof}
 
-9
 
-Proposition 2.6. Let m, n ∈ N, and let χ be a character of Smn .
-(i) If α is a partition of m then
-ω(ResSm oSn χ)(gα ) = χ(gnα ).
-(ii) If ϑ is an irreducible character of Sm and g ∈ Sn is an n-cycle then
-(DefresϑSn χ)(g) = hω(ResSm oSn χ), ϑi
-X χ(gnα )
-=
-ϑ(gα )
-zα
-α
-where the sum is over all partitions α of m.
+The next proposition follows easily from
+ Lemma~\ref{lemma:cycles} and
+Corollary~\ref{cor:deflation}.
 
-
+\vbox{
+\begin{proposition}\label{prop:omega}
+Let $m$, $n \in \N$, and let $\chi$ be a character of $S_{mn}$. 
 
-The character value χ(gnα ) in part (i) is the subject of Theorem 3.3; we
-shall see that combining this theorem with part (ii) gives Equation (8) in §4
-below. Note also that part (ii) of the proposition implies Equation (3) in §2.
+\begin{thmlist}
+\item
+If
+$\alpha$ is a partition of $m$ then
+\[ \omega(\Res_{S_m \wr S_n} \chi) (g_\alpha) = \chi(g_{n\alpha}).\]
+\item If $\theta$ is an irreducible
+character of $S_m$ and $g \in S_n$ is an $n$-cycle then
+\begin{align*} (\Defres^\theta_{S_n} \chi)(g) &= 
+\left< \omega(\Res_{S_m \wr S_n} \chi), \theta  \right> \\
+&= \sum_{\alpha} 
+\frac{\chi(g_{n\alpha})}{z_\alpha} \theta(g_\alpha) \end{align*}
+where the sum is over all partitions $\alpha$ of $m$.\hfill$\qed$
+\end{thmlist}
+\end{proposition}}
+
+The character
+value $\chi(g_{n\alpha})$ in part (i) is the subject of
+Theorem~\ref{thm:ind}; we shall see that
+combining this theorem with part (ii) gives
+Equation~\eqref{eq:omegares} in \S\ref{sec:proof} below. 
+Note also that part~(ii) of the proposition
+implies Equation~\eqref{eq:cycle_deflation} in~\S 2.

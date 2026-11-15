@@ -5,21 +5,35 @@
   "file": "ant-v14-n7-s-p08.pdf",
   "sha256": "81b8f00fe5fbd0f6b46f6fbc9dfc991ff3617dd879a73ac462c47b53e8df5ca2",
   "bytes": 552616,
-  "pages": 42
+  "pages": 42,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:18Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.2140/ant.2020.14.1911",
   "title": "Burgess bounds for short character sums evaluated at forms",
   "authors_raw": "Lillian B. Pierce and Junyan Xu",
+  "title_lines": [
+   "Burgess bounds for",
+   "short character sums evaluated at forms"
+  ],
   "abstract": null,
   "docinfo": {
    "Producer": "pypdf"
   },
-  "title_lines": [
-   "Burgess bounds for",
-   "short character sums evaluated at forms"
-  ]
+  "title_raw": "Burgess bounds for short character sums evaluated at forms",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "msp",
+   "text": "Burgess bounds for short character sums evaluated at forms",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -27,88 +41,537 @@
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "1911"
   },
   {
    "level": 1,
    "title": "Method of proof: an overview",
    "page": 8,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "1918"
   },
   {
    "level": 1,
    "title": "Preliminaries",
    "page": 11,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "1921"
   },
   {
    "level": 1,
-   "title": "Fa2",
-   "page": 11,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "The stratiﬁcation of complete character sums",
+   "title": "The strati\ufb01cation of complete character sums",
    "page": 15,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "1925"
   },
   {
    "level": 1,
    "title": "Initiation of the Burgess argument",
    "page": 21,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "1931"
   },
   {
    "level": 1,
-   "title": "Stratiﬁcation and a Menshov–Rademacher argument",
+   "title": "Strati\ufb01cation and a Menshov\u2013Rademacher argument",
    "page": 25,
    "source": "inferred",
-   "number": "6"
+   "number": "6",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "1935"
   },
   {
    "level": 1,
    "title": "Conclusion of the Burgess argument",
    "page": 31,
    "source": "inferred",
-   "number": "7"
-  },
-  {
-   "level": 1,
-   "title": "H1q−1/(2r)≤ P≤ H1q−1/(2r). (7-2)",
-   "page": 31,
-   "source": "inferred",
-   "number": "2"
+   "number": "7",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "1941"
   },
   {
    "level": 1,
    "title": "Appendix",
    "page": 36,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "1946"
   },
   {
    "level": 1,
    "title": "Acknowledgements",
    "page": 39,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "1949"
   },
   {
    "level": 1,
    "title": "References",
    "page": 39,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "1949"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1911",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "1912",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "1913",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "1914",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "1915",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "1916",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "1917",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "1918",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "1919",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "1920",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "1921",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "1922",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "1923",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "1924",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "1925",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "1926",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "1927",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "1928",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "1929",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "1930",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "1931",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "1932",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "1933",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "1934",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "1935",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "1936",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "1937",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "1938",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "1939",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "1940",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "1941",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "1942",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "1943",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "1944",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "1945",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "1946",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "1947",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "1948",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "1949",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "1950",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "1951",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 767,
+   "n_words": 117,
+   "label_start": "1911",
+   "label_end": "1911"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -116,8 +579,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 8,
-   "n_chars": 19257,
-   "n_words": 3353
+   "n_chars": 19613,
+   "n_words": 3712,
+   "label_start": "1911",
+   "label_end": "1918"
   },
   {
    "id": "sec-001-2-method-of-proof-an-overview",
@@ -126,8 +591,10 @@
    "level": 1,
    "page_start": 8,
    "page_end": 11,
-   "n_chars": 8184,
-   "n_words": 1464
+   "n_chars": 8268,
+   "n_words": 1568,
+   "label_start": "1918",
+   "label_end": "1921"
   },
   {
    "id": "sec-002-3-preliminaries",
@@ -135,106 +602,112 @@
    "title": "Preliminaries",
    "level": 1,
    "page_start": 11,
-   "page_end": 11,
-   "n_chars": 315,
-   "n_words": 57
-  },
-  {
-   "id": "sec-003-1-fa2",
-   "number": "1",
-   "title": "Fa2",
-   "level": 1,
-   "page_start": 11,
    "page_end": 15,
-   "n_chars": 11045,
-   "n_words": 2053
+   "n_chars": 11673,
+   "n_words": 2418,
+   "label_start": "1921",
+   "label_end": "1925"
   },
   {
-   "id": "sec-004-4-the-stratiﬁcation-of-complete-character-sums",
+   "id": "sec-003-4-the-strati\ufb01cation-of-complete-character-sums",
    "number": "4",
-   "title": "The stratiﬁcation of complete character sums",
+   "title": "The strati\ufb01cation of complete character sums",
    "level": 1,
    "page_start": 15,
    "page_end": 21,
-   "n_chars": 17516,
-   "n_words": 3167
+   "n_chars": 17968,
+   "n_words": 3622,
+   "label_start": "1925",
+   "label_end": "1931"
   },
   {
-   "id": "sec-005-5-initiation-of-the-burgess-argument",
+   "id": "sec-004-5-initiation-of-the-burgess-argument",
    "number": "5",
    "title": "Initiation of the Burgess argument",
    "level": 1,
    "page_start": 21,
    "page_end": 25,
-   "n_chars": 6156,
-   "n_words": 1198
+   "n_chars": 6310,
+   "n_words": 1360,
+   "label_start": "1931",
+   "label_end": "1935"
   },
   {
-   "id": "sec-006-6-stratiﬁcation-and-a-menshovrademacher-argument",
+   "id": "sec-005-6-strati\ufb01cation-and-a-menshovrademacher-argument",
    "number": "6",
-   "title": "Stratiﬁcation and a Menshov–Rademacher argument",
+   "title": "Strati\ufb01cation and a Menshov\u2013Rademacher argument",
    "level": 1,
    "page_start": 25,
    "page_end": 31,
-   "n_chars": 12022,
-   "n_words": 2186
+   "n_chars": 12415,
+   "n_words": 2588,
+   "label_start": "1935",
+   "label_end": "1941"
   },
   {
-   "id": "sec-007-7-conclusion-of-the-burgess-argument",
+   "id": "sec-006-7-conclusion-of-the-burgess-argument",
    "number": "7",
    "title": "Conclusion of the Burgess argument",
    "level": 1,
    "page_start": 31,
-   "page_end": 31,
-   "n_chars": 642,
-   "n_words": 114
-  },
-  {
-   "id": "sec-008-2-h1q12r-p-h1q12r-7-2",
-   "number": "2",
-   "title": "H1q−1/(2r)≤ P≤ H1q−1/(2r). (7-2)",
-   "level": 1,
-   "page_start": 31,
    "page_end": 36,
-   "n_chars": 9281,
-   "n_words": 1838
+   "n_chars": 10217,
+   "n_words": 2226,
+   "label_start": "1941",
+   "label_end": "1946"
   },
   {
-   "id": "sec-009-appendix",
+   "id": "sec-007-appendix",
    "number": null,
    "title": "Appendix",
    "level": 1,
    "page_start": 36,
    "page_end": 39,
-   "n_chars": 6147,
-   "n_words": 1127
+   "n_chars": 6250,
+   "n_words": 1244,
+   "label_start": "1946",
+   "label_end": "1949"
   },
   {
-   "id": "sec-010-acknowledgements",
+   "id": "sec-008-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
    "level": 1,
    "page_start": 39,
    "page_end": 39,
    "n_chars": 335,
-   "n_words": 53
+   "n_words": 53,
+   "label_start": "1949",
+   "label_end": "1949"
   },
   {
-   "id": "sec-011-references",
+   "id": "sec-009-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 39,
    "page_end": 42,
-   "n_chars": 8635,
-   "n_words": 1348
+   "n_chars": 8645,
+   "n_words": 1358,
+   "label_start": "1949",
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 1,
   "likely_scanned": false,
-  "toc_entries": 12,
-  "sections": 12,
-  "chars_total": 99535
+  "toc_entries": 10,
+  "toc_inferred_entries": 10,
+  "toc_inferred_mean_confidence": 0.73,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 11,
+  "chars_total": 102461
  }
 }

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-inductive-gb-reduction",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:inductive-gb-reduction",
+  "kind": "proof",
+  "title": "Proof of inductive gb reduction",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-inductive-gb-reduction"
+  ],
+  "text": "inductive-gb-reduction-proof.md",
+  "provenance": "authored"
+}

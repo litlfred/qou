@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-cond-mat-9811142v1/blocks/prose-sec-010",
+  "kind": "prose",
+  "title": "Empirical density of eigenvalues at the soft edge",
+  "pageStart": 32,
+  "pageEnd": 33,
+  "text": "../sections/sec-010-55-empirical-density-of-eigenvalues-at-the-soft.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-cond-mat-9811142v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-cond-mat-9811142v1",
+  "provenance": "ingested"
+}

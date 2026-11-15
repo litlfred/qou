@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1908.07065v3/manifest",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1908.07065v3",
   "@type": [
-    "folio:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "Non-perturbative approaches to the quantum Seiberg–Witten curve",
   "contains": [
+    "library/arxiv-1908.07065v3/sections/sec-front-matter",
     "library/arxiv-1908.07065v3/sections/sec-000",
     "library/arxiv-1908.07065v3/sections/sec-001",
     "library/arxiv-1908.07065v3/sections/sec-002",
@@ -19,11 +25,24 @@
     "library/arxiv-1908.07065v3/sections/sec-010",
     "library/arxiv-1908.07065v3/sections/sec-011",
     "library/arxiv-1908.07065v3/sections/sec-012",
-    "library/arxiv-1908.07065v3/sections/sec-013"
+    "library/arxiv-1908.07065v3/sections/sec-013",
+    "library/arxiv-1908.07065v3/sections/sec-014",
+    "library/arxiv-1908.07065v3/sections/sec-015"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1908.07065&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1908.07065v3",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1908.07065v3.pdf",
     "source_sha256": "c43e413aed71aef141585a5ccace94def4cd6e215f3467c5393633b38fcae402",
     "pages": 47,

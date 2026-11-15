@@ -12,7 +12,7 @@ the remaining **169** have lost their producer while still being *consumed*.
 
 | Class | Count | Disposition |
 |---|---:|---|
-| Dead — no producer, no consumer, no doc reference | **13** | **Deprecated** (`git mv` to `computations/_deprecated/`) |
+| Dead — no producer, no consumer, no doc reference | **13** | **Deprecated** (`git mv` to `fsh-guts/deprecated/computations/`) |
 | False orphan — producer on disk, tool could not see it | **4** | **Categorizer fixed** (no witness touched) |
 | Live consumers, lost producer | 147 | **Keep** — see §3, needs its own workstream |
 | Prose/doc reference only | 17 | **Keep / freeze** — historical evidence (precedent below) |
@@ -386,6 +386,17 @@ is live at `computations/probes/rho_k_markov_multiplicativity_probe.py`, and it
 carries two passing assertions (`wenzl_branching_identity_machine_precision`,
 `branching_verified_all_lambda_6`).
 
+> **Identifier update, 2026-09-14 (bean `qou-840k`).** The first of those two is
+> now named **`wenzl_branching_identity_arithmetic_floor`**. The rename is not a
+> re-adjudication of anything in this section — both assertions still pass and the
+> shape this section calls correct is unchanged. It happened because the probe's
+> `~1e-14` was the **complex128 floor of its own character path**, not a property
+> of the identity: the producer called `char_fast.chi_lambda_fast` (numpy,
+> `dtype=complex`) rather than the mpmath sibling it has always had. On the
+> mpmath path the residue is **3.02e-70**, 56 orders lower, so "machine
+> precision" had become the wrong word for it. Only the identifier is corrected
+> here; the analysis above stands as written.
+
 The content is also accurate about what it rests on. `rho-k-graded-expansion.md`
 says the witness *"numerically verifies the [Wenzl 1988] branching identity"* —
 the **proof** is Wenzl 1988 Theorem 5, cited as such; the witness is
@@ -396,7 +407,7 @@ warranted.
 
 `witness_producer_executes_audit.resolve()` requires a **unique** hit. The
 producer exists at **both** `computations/probes/` and
-`computations/_deprecated/` — a live script and its retired twin — so the
+`fsh-guts/deprecated/computations/` — a live script and its retired twin — so the
 uniqueness test rejected the match and the producer resolved to `None`.
 
 A `_deprecated/` copy is **by definition not the producer**. Every other scan in

@@ -1,0 +1,45 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-nucl-th-0507033v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Cluster Formation and The Virial Equation of State of Low-Density Nuclear Matter (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-nucl-th-0507033v2",
+  "provenance": "ingested",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:nucl-th/0507033&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-nucl-th-0507033v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/nucl-th/0507033v2",
+    "content_type": "application/gzip",
+    "sha256": "c342b5f8909f83e7b3729e3b66155e5b786a0ac064819d1a65aa192cf5dd7164",
+    "bytes": 294916,
+    "fetched": "2026-10-10T15:31:57+00:00",
+    "files": [
+      {
+        "path": "source/files/virial_nuc_rev2.tex",
+        "role": "tex",
+        "sha256": "08e66ae08b3884ccecdc6e8b764b937d0349421b6e7a503cff817851e0fcc6bc",
+        "bytes": 75633
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

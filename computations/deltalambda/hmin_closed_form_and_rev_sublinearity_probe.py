@@ -298,7 +298,7 @@ def main() -> int:
         "bean": "qou-hok7",
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "q0Value": mp.nstr(Q0, 50),
-        "q0_anchor": "physical_proton",
+        "q0_anchor": "physical_proton", "q0Anchor": "proton",
         "dps": mp.dps,
         "H_min_closed_form": "H_min(n) = 2n - 1 + sum_{k>=2, T_k <= n-1} (n - T_k)",
         "H_min_asymptotic": "(2 sqrt2 / 3) n^{3/2} + O(n)",

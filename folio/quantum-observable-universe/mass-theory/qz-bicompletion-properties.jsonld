@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-qz-bicompletion-properties",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:qz-bicompletion-properties",
+  "kind": "remark",
+  "title": "Cyclotomic apex, conjectural mass element, and open questions for the $(q,z)$-bicompletion",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-qz-bicompletion",
+    "papers/quantum-observable-universe/blocks/def-habiro-ring",
+    "papers/quantum-observable-universe/blocks/def-z-habiro-ring",
+    "papers/quantum-observable-universe/blocks/conj-mass-endomorphism",
+    "papers/quantum-observable-universe/blocks/conj-brane-tower-z-habiro",
+    "papers/quantum-observable-universe/blocks/prop-quantum-dilogarithm-stratified",
+    "papers/quantum-observable-universe/blocks/def-motivic-substrate"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-qz-bicompletion",
+  "tags": [
+    "habiro-ring",
+    "bicompletion",
+    "cyclotomic-completion",
+    "brane-tower",
+    "colored-jones",
+    "open-construction"
+  ],
+  "text": "qz-bicompletion-properties.md",
+  "provenance": "authored"
+}

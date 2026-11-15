@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-hecke-radical-is-temperley-lieb",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:hecke-radical-is-temperley-lieb",
+  "kind": "remark",
+  "title": "The radical is the Temperley--Lieb ideal: $\\sum \\dim^{2}$ over the surviving blocks is $C_n$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-convention-d-kills-antisymmetriser"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-convention-d-kills-antisymmetriser",
+  "tags": [
+    "temperley-lieb",
+    "catalan",
+    "radical",
+    "convention-d",
+    "trace-convention"
+  ],
+  "leanRef": "qou:QOU.QBeta.TemperleyLiebTower.catalan_five",
+  "text": "hecke-radical-is-temperley-lieb.md",
+  "provenance": "authored"
+}

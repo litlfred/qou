@@ -1,0 +1,26 @@
+{
+  "$schema": "folio-reference/v1",
+  "_comment": [
+    "Key in .lean files reads \"borel1986\"; this is the Borel-Wallach",
+    "1980 monograph (Annals Studies 94). The year mismatch is preserved",
+    "as-is so the .lean citation resolves without per-file rewrites."
+  ],
+  "id": "borel1986",
+  "type": "article-journal",
+  "title": "Cohomologie de SL_n et valeurs de fonctions zêta aux points entiers",
+  "author": [
+    {
+      "family": "Borel",
+      "given": "Armand"
+    }
+  ],
+  "container-title": "Annales Scientifiques de l'École Normale Supérieure",
+  "issued": {
+    "date-parts": [
+      [
+        1977
+      ]
+    ]
+  },
+  "note": "Cited in QOU .lean files as 'Borel-Zagier' for hyperbolic-volume / regulator content (see Descartes/HyperbolicVolumeTranscendence.lean). Previously entry was Borel-Wallach 'Continuous Cohomology' (Annals Studies 94, 1980) — wrong work; replaced 2026-05-19 per bib audit triage."
+}

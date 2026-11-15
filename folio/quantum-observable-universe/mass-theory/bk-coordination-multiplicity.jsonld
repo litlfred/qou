@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-bk-coordination-multiplicity",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:bk-coordination-multiplicity",
+  "kind": "remark",
+  "title": "The light-nucleus binding multiplicity is the coordination number of $\\mathcal{B}_K$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-binding-manybody-eq-jet-filtration",
+    "papers/quantum-observable-universe/blocks/prop-magic-A-binding-formula"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-binding-manybody-eq-jet-filtration",
+  "cites": [
+    "references/bezdek-reid2013",
+    "references/hales-etal2010"
+  ],
+  "tags": [
+    "binding",
+    "many-body",
+    "coordination-number",
+    "link-volume",
+    "alpha-cluster",
+    "isospin",
+    "exploratory"
+  ],
+  "text": "bk-coordination-multiplicity.md",
+  "provenance": "authored"
+}

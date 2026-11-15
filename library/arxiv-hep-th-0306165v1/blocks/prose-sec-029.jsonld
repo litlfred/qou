@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-0306165v1/blocks/prose-sec-029",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-0306165v1/blocks/prose-sec-029",
   "kind": "prose",
-  "title": "The A-Polynomial and the Generalized Volume Conjectur e",
-  "pageStart": 38,
-  "pageEnd": 41,
-  "text": "../sections/sec-029-52-the-a-polynomial-and-the-generalized-volume-c.md",
-  "derivedFrom": "library/arxiv-hep-th-0306165v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-0306165v1/manifest",
+  "title": "References",
+  "pageStart": 62,
+  "pageEnd": 67,
+  "text": "../sections/sec-029-references.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0306165v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0306165v1",
   "provenance": "ingested"
 }

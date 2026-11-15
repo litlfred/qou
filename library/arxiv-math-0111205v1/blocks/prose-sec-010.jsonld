@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0111205v1/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0111205v1/blocks/prose-sec-010",
   "kind": "prose",
-  "title": "E is uniquely determined up to equivalence by the above proper ties. Isomorphic",
-  "pageStart": 7,
-  "pageEnd": 7,
-  "text": "../sections/sec-010-8-e-is-uniquely-determined-up-to-equivalence-by.md",
-  "derivedFrom": "library/arxiv-math-0111205v1/manifest",
-  "sourceDocument": "library/arxiv-math-0111205v1/manifest",
+  "title": "Invariants of 3-manifolds",
+  "pageStart": 50,
+  "pageEnd": 52,
+  "text": "../sections/sec-010-82-invariants-of-3-manifolds.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0111205v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0111205v1",
   "provenance": "ingested"
 }

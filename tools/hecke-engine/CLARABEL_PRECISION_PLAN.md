@@ -474,7 +474,7 @@ Same braids, two scales:
 
 - **H_6**: ²H Hopf-link binding (`[1, -2, 1, 3, -2, 3]` family,
   precise word from
-  [`confined-particle.md`](../../content/quantum-observable-universe/braids-and-knots/confined-particle.md))
+  [`confined-particle.md`](../../folio/quantum-observable-universe/braids-and-knots/confined-particle.md))
 - **H_9**: nucleon = 3 quarks (`H_3^{⊗ 3}` Borromean tensor, word
   per the same registry)
 
@@ -869,8 +869,8 @@ upstream-independent.
 
 ## Cross-references
 
-- [`prop:joint-tower-sdp-confinement`](../../content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md) — design spec
-- [`prop:atom-knot-mass-derivation`](../../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md) — consumer
+- [`prop:joint-tower-sdp-confinement`](../../folio/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md) — design spec
+- [`prop:atom-knot-mass-derivation`](../../folio/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md) — consumer
 - [`R5_FULL_PLAN.md`](R5_FULL_PLAN.md) — phase R5.6/R5.7 unblocked by this
 - [`R5_5_BUG_REPORT.md`](R5_5_BUG_REPORT.md) — svec post-mortem (resolved at f64; high-prec validates)
 - [`RUST_INTEGRATION.md`](RUST_INTEGRATION.md) — parent integration plan

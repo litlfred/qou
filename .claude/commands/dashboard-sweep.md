@@ -27,5 +27,5 @@ Render the script's three markdown tables (Binding / Error / Mass) directly.
 - Raise `--max-strands` (e.g. `--max-strands 27` for A ≤ 9) to compute more
   trace rows — slower (the tr_M sweep is seconds at A=7, minutes by A=12).
 - Same engine + caveats as `/dashboard-low`; forms defined in
-  [`standard-part-functor.md`](../../content/quantum-observable-universe/appendix-surreals-archimedean/standard-part-functor.md).
+  [`standard-part-functor.md`](../../folio/quantum-observable-universe/appendix-surreals-archimedean/standard-part-functor.md).
   **Exploratory** — no production rewire, no fit.

@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-gl-classical-limit-sketch",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-gl-classical-limit-sketch",
+  "kind": "remark",
+  "title": "Proof sketch for classical recovery",
+  "interprets": "papers/quantum-observable-universe/blocks/conj-q-gl-classical-limit",
+  "tags": [
+    "geometric-langlands",
+    "proof-sketch"
+  ],
+  "text": "q-gl-classical-limit-proof.md",
+  "provenance": "authored"
+}

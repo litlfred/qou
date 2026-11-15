@@ -1,15 +1,15 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-14T06:12:18.996490+00:00",
-  "commitSha": "8b367484edaa71a1a4f1b7ec9b1b13d6cf0a08a6",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T15:16:29.197744+00:00",
+  "commitSha": "266c147ee39666e932727287228d9e48d3b84a5c",
   "assertions": [
     {
       "name": "y_1cubed_vanishes_under_convention_D",
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "y_(3) + 2 y_(2,1) = 1 to 0.0, and the three block dimensions are 1, 2, 1 -- so y_(1^3) = 0 EXACTLY. This is the two-row truncation that defines convention D (markovWeights_eq_jones_of_threeRow_eq_zero), not a numerical accident of the pin. It is why reading 3 cannot see the alternating block at all"
+      "source": "y_(3) + 2 y_(2,1) = 1 to 0.0, and the three block dimensions are 1, 2, 1 -- so y_(1^3) = 0 EXACTLY. This is the two-row truncation that defines convention D (D => vanish is threeRow_eq_zero_of_jones_ocneanu; the converse is markovWeights_eq_jones_of_threeRow_eq_zero + hfaith), not a numerical accident of the pin. It is why reading 3 cannot see the alternating block at all"
     },
     {
       "name": "chi21_of_the_identity_is_the_block_dimension",
@@ -62,11 +62,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1826,
+  "durationMs": 2385,
   "computation": "qbeta-reading3-does-not-constrain-the-budget",
   "scriptFile": "qbeta_reading3_does_not_constrain_the_budget_probe.py",
-  "scriptHash": "2adc4b2ed555",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d832bf18c2b8",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -74,14 +74,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -186,5 +186,7 @@
     },
     "q0_pin": "proton",
     "q0_value": "1.1099785827513808075916690956107688798744991218736"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

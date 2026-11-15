@@ -2,7 +2,7 @@
 """The eigenphase exclusion extends from Laurent to ALGEBRAIC (bean `qou-cds1`).
 
 Exact companion to
-`content/quantum-observable-universe/lean/QOU/QBeta/BraidImageEigenphaseAlgebraic.lean`
+`folio/quantum-observable-universe/lean/QOU/QBeta/BraidImageEigenphaseAlgebraic.lean`
 (sorry-free), which closes the sub-case that
 `BraidImageEigenphaseExclusion.lean` explicitly left open:
 

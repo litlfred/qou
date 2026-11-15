@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-dilog-habiro-ring",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-dilog-habiro-ring",
+  "kind": "remark",
+  "title": "Native algebraic home of $\\mathrm{Li}_2^q$: the Habiro ring",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-dilogarithm",
+    "papers/quantum-observable-universe/blocks/def-habiro-ring"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-dilogarithm",
+  "tags": [
+    "hopf-algebra",
+    "dilogarithm",
+    "habiro-ring",
+    "q-series"
+  ],
+  "text": "q-dilog-habiro-ring.md",
+  "provenance": "authored"
+}

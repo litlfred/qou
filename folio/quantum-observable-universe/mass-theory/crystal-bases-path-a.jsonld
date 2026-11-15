@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-crystal-bases-path-a",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:crystal-bases-path-a",
+  "kind": "remark",
+  "title": "Crystal bases: GS-reduction-free pole-order verification of $\\mathrm{shift}_{\\mathrm{NF}}(\\beta_K) = 18Z + 21N + 1$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-per-nucleon-shift-additive-linearity",
+    "papers/quantum-observable-universe/blocks/prop-crystal-isospin-degeneracy"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-per-nucleon-shift-additive-linearity",
+  "cites": [
+    "references/kashiwara1991",
+    "references/lecouvey2007",
+    "references/brundankleshchev2009"
+  ],
+  "tags": [
+    "crystal-bases",
+    "kashiwara",
+    "path-a",
+    "pole-order",
+    "u-pole",
+    "gs-reduction",
+    "compute-optimization",
+    "shift-derivation",
+    "h-followup"
+  ],
+  "text": "crystal-bases-path-a.md",
+  "provenance": "authored"
+}

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0606435v2/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0606435v2/blocks/prose-sec-004",
   "kind": "prose",
-  "title": "Positivity of 3-braid links 26",
-  "pageStart": 2,
-  "pageEnd": 2,
-  "text": "../sections/sec-004-5-positivity-of-3-braid-links-26.md",
-  "derivedFrom": "library/arxiv-math-0606435v2/manifest",
-  "sourceDocument": "library/arxiv-math-0606435v2/manifest",
+  "title": "Braids and braid words",
+  "pageStart": 8,
+  "pageEnd": 9,
+  "text": "../sections/sec-004-24-braids-and-braid-words.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0606435v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0606435v2",
   "provenance": "ingested"
 }

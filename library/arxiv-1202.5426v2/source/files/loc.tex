@@ -1,0 +1,40 @@
+\subsection{%Right-hand side estimate:
+Proof of Lemma~\ref{la:rhsests}}
+Plugging together \eqref{eq:antisympde}, Lemma \ref{lem:CriticalTerm}, and Lemma \ref{la:lhs}
+we get for small $s$ and some $\theta >0$ that
+\begin{align*}
+ &\int \dsolnt_i \omega_{ij}\ \lapv \dsolnt_j\ \lapv \varphi \\
+ &\aleq \vrac {\varphi}_{\infty}\ \vrac{\Gamma}_{1,B_r}
++ \vrac{\lapms{s} \lapv \varphi}_{(\frac{2}{1-2s},1)} \cdot\\
+&\qquad{}\cdot\brac{r^{\fracm{2}} + 
+\|\lapv  \dsolnt\|_{(2,\infty),B_{\Lambda r}}^2 + \norm{\lapv  \dsolnt}_{(2,\infty),\R}
+    \sum_{k=2}^\infty \Lambda^{-\theta (k-1)} \|\lapv   \dsolnt\|_{(2,\infty), B_{\Lambda^kr}} 
+}.
+\end{align*}
+By the estimate of $\Gamma$ from Lemma \ref{la:T2est}, for $F := \sabs{\lapv \dsolnt}$,
+\[
+\begin{ma}
+ \vrac{\Gamma}_{1,B_r} &\aleq& \Vrac {\sabs{\lapms{\frac{1}{12}} \sabs{F}}^2\ \lapms{\frac{1}{3}}\sabs{F}+\lapms{\frac{1}{12}} \sabs{F}\ \lapms{\frac{1}{4}}\br{\sabs{\lapms{\frac{1}{12}} \sabs{F}}^2} }_{1,B_r}\\
+&\aleq& \Theta\  \brac{\Vrac{\lapms{\frac{1}{3}}\sabs{F}}_{(6,\infty),B_r} + \Vrac{\lapms{\frac{1}{12}}\sabs{F}}_{(\frac{12}{5},\infty),B_r}},
+\end{ma}
+\]
+where
+\[
+ \Theta := \Vrac{\lapms{\frac{1}{12}} \sabs{F}}_{(\frac{12}{5},2),B_r}^2 + \Vrac{ \lapms{\frac{1}{4}} \br{\sabs{\lapms{\frac{1}{12}} \sabs{F}}^2}  }_{(\frac{12}{7},1),B_r}.
+\]
+Observe,
+\[
+\begin{ma}
+ \vrac{ \lapms{\frac{1}{3}} {F}}_{(6,\infty)} &\aleq& \Vert F \Vert_{(2,\infty)} \\
+\vrac{ \lapms{\frac{1}{12}} {F}}_{(\frac{12}{5},2)} &\aleq& \Vert F \Vert_{2},
+\end{ma}
+\]
+and because $\frac{5}{12} + \frac{5}{12} + \frac{1}{6} = 1$,
+\[
+\begin{ma}
+\vrac{ \lapms{\frac{1}{12}} {F}}_{(\frac{12}{5},q)} &\aleq& \Vert F \Vert_{(2,q)}, \\
+\vrac{ \lapms{\frac{1}{4}}\sabs{\lapms{\frac{1}{12}} {F}}^2 }_{(\frac{12}{7},1)} &\aleq& \vrac{\sabs{\lapms{\frac{1}{12}} {F}}^2 }_{(\frac{6}{5},1)} = \vrac{\sabs{\lapms{\frac{1}{12}} {F}} }_{(\frac{12}{5},2)}^2 \aleq \Vert F \Vert_2.
+\end{ma}
+\]
+Consequently, $\Theta$ is uniformly small, if $r$ is small enough. 
+In order to conclude, it only remains to apply Lemma~\ref{lem:QuasiLocalityOfNorms} to $f:= \sabs{F}$.\qed

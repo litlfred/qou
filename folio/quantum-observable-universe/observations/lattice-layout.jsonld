@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-lattice-layout",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:lattice-layout",
+  "kind": "remark",
+  "title": "Lattice layout and quantum resonance implications",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-q-reeb-flow",
+    "papers/quantum-observable-universe/blocks/def-q-harmonic-form"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-harmonic-form",
+  "tags": [
+    "lattice",
+    "resonance",
+    "observation"
+  ],
+  "text": "lattice-layout.md",
+  "provenance": "authored"
+}

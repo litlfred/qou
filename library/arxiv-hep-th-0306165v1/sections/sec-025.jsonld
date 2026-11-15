@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-hep-th-0306165v1/sections/sec-025",
   "@type": [
     "doco:Section"
   ],
-  "title": "T opological Quantum Field Theory and Invariants of Three -Manifolds",
-  "pageStart": 34,
-  "pageEnd": 34,
+  "title": "A Contribution of the “Hyperbolic” Flat Connection",
+  "pageStart": 50,
+  "pageEnd": 53,
   "contains": [
     "library/arxiv-hep-th-0306165v1/blocks/prose-sec-025"
   ],
-  "derivedFrom": "library/arxiv-hep-th-0306165v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-0306165v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0306165v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0306165v1",
   "provenance": "ingested"
 }

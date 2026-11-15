@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-knot-operator-bring-action",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:knot-operator-bring-action",
+  "kind": "remark",
+  "title": "Knot-operator actions on the Bring surface and $\\mathrm{SO}(3)$ structure",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-hecke-quandle",
+    "papers/quantum-observable-universe/blocks/prop-markov-trace-ratio-exact"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-brings-surface",
+  "cites": [
+    "references/jones1987",
+    "references/reshetikhin1991"
+  ],
+  "tags": [
+    "bring-surface",
+    "knot-operator",
+    "so3",
+    "gram-matrix",
+    "color-tube",
+    "mass-tower"
+  ],
+  "text": "knot-operator-bring-action.md",
+  "provenance": "authored"
+}

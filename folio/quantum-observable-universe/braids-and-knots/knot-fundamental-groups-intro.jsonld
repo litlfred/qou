@@ -1,0 +1,20 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sec-knot-fundamental-groups",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:knot-fundamental-groups",
+  "kind": "prose",
+  "text": "knot-fundamental-groups-intro.md",
+  "meta": {
+    "position": "opening"
+  },
+  "provenance": "authored"
+}

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1705.10485v2/blocks/prose-sec-023",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1705.10485v2/blocks/prose-sec-023",
   "kind": "prose",
-  "title": "Bounds on the Kolmogorov distance",
-  "pageStart": 17,
-  "pageEnd": 17,
-  "text": "../sections/sec-023-25-bounds-on-the-kolmogorov-distance.md",
-  "derivedFrom": "library/arxiv-1705.10485v2/manifest",
-  "sourceDocument": "library/arxiv-1705.10485v2/manifest",
+  "title": "The case of linear functionals of the empirical measure",
+  "pageStart": 49,
+  "pageEnd": 53,
+  "text": "../sections/sec-023-55-the-case-of-linear-functionals-of-the-empiric.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1705.10485v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1705.10485v2",
   "provenance": "ingested"
 }

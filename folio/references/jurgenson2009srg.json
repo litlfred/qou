@@ -1,0 +1,43 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "jurgenson2009srg",
+  "library": {
+    "docId": "arxiv-0905.1873v2",
+    "dir": "library/arxiv-0905.1873v2",
+    "pdf": "library/arxiv-0905.1873v2/0905.1873v2.pdf",
+    "stage": "candidates",
+    "pages": 4,
+    "sections": 3,
+    "arxiv": "0905.1873v2"
+  },
+  "type": "article-journal",
+  "title": "Evolution of nuclear many-body forces with the similarity renormalization group",
+  "author": [
+    {
+      "family": "Jurgenson",
+      "given": "E. D."
+    },
+    {
+      "family": "Navrátil",
+      "given": "P."
+    },
+    {
+      "family": "Furnstahl",
+      "given": "R. J."
+    }
+  ],
+  "container-title": "Physical Review Letters",
+  "issued": {
+    "date-parts": [
+      [
+        2009
+      ]
+    ]
+  },
+  "volume": "103",
+  "issue": "8",
+  "page": "082501",
+  "DOI": "10.1103/PhysRevLett.103.082501",
+  "URL": "https://arxiv.org/abs/0905.1873",
+  "note": "PDF library/arxiv-0905.1873v2/ — joined 2026-08-16. This branch had drafted a separate entry [jurgenson-navratil-roth2009] for the same paper from the library copy; main registered it independently with fuller metadata, so that draft was dropped and the library join moved here. arXiv:0905.1873v2; from library/arxiv-0905.1873v2/0905.1873v2.pdf. Registered 2026-08-15 to give a bib key to the four-nucleon-force magnitude scale that QOU.MassTheory.TjonSimplexForm's mu4_target_exceeds_n3lo_bound and computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py certify against; both had cited it by bare arXiv number. The abstract's own wording is that ⁴He shows 'a small net contribution of the induced four-body force' — the ~50 keV SRG-induced figure at λ = 2 fm⁻¹ and the 'few hundred keV' N³LO long-range estimate are the scale the corpus target μ₄ = −4.591 (in units of B(D) = 2.224566 MeV, i.e. 10.2 MeV) exceeds by 34×. Note the two figures are different objects: the SRG-induced 4N force is an artifact of the unitary evolution, not a chiral-EFT 4N interaction. Cite for the magnitude scale only."
+}

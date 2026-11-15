@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1304.0323v3/blocks/prose-sec-022",
+  "kind": "prose",
+  "title": "A.3. Central objects",
+  "pageStart": 69,
+  "pageEnd": 70,
+  "text": "../sections/sec-022-a3-central-objects.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1304.0323v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1304.0323v3",
+  "provenance": "ingested"
+}

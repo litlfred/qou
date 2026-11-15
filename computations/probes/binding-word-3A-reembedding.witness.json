@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-12T07:45:12.450948+00:00",
-  "commitSha": "45257b8d50584ec5188aca7b00f11cc5287f93a4",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T11:59:47.538956+00:00",
+  "commitSha": "8f1b70555159d7e170bef87c379448651b822c55",
   "assertions": [
     {
       "name": "binding word couples EVERY nucleon pair: inter letters = C(A,2), all pairs distinct (A = 2..6, measured from _step_chain_generic)",
@@ -141,7 +141,7 @@
       "source": "binding_word_3A_reembedding_probe"
     },
     {
-      "name": "the collapse has a measured price at A = 3: the level-local mass word costs 0.335 s over all 30 partitions of 9 while the conjugated binding word, in the SAME algebra over the SAME partitions, costs 41.685 s (124x) -- the path sum has degenerated to the dense seminormal trace the route was meant to avoid",
+      "name": "the collapse has a measured price at A = 3: the level-local mass word costs 0.435 s over all 30 partitions of 9 while the conjugated binding word, in the SAME algebra over the SAME partitions, costs 46.163 s (106x) -- the path sum has degenerated to the dense seminormal trace the route was meant to avoid",
       "computed": "1",
       "expected": "1",
       "passed": true,
@@ -150,11 +150,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 15,
   "computation": "binding-word-3A-reembedding",
   "scriptFile": "binding_word_3A_reembedding_probe.py",
-  "scriptHash": "fa6b5a33b43f",
-  "scriptCommitSha": "7160dfb856103d6156939aad6e6e1216a8d05da8",
+  "scriptHash": "04101b58993f",
+  "scriptCommitSha": "d71811a5d8f358eccb0e2edb5f29b0f4c7a904df",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -162,14 +162,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -570,8 +570,8 @@
       }
     ],
     "A2_path_sum_cost_s": {
-      "fixed_Hk": "0.124648386999979265965521335601806640625000000000000000000000",
-      "three_A": "0.0148198269998829346150159835815429687500000000000000000000000"
+      "fixed_Hk": "0.15681736300030025",
+      "three_A": "0.0246751959998619"
     }
   },
   "caveats": [

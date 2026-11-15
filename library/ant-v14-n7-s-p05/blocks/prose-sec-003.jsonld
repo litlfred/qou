@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ant-v14-n7-s-p05/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ant-v14-n7-s-p05/blocks/prose-sec-003",
   "kind": "prose",
-  "title": "TX/B(1X×B X))≃πX♯6−TX/B p1♯(1X×B X)≃πX! p1♯ p∗",
-  "pageStart": 10,
-  "pageEnd": 13,
-  "text": "../sections/sec-003-1-txb1xb-xπx6txb-p11xb-xπx-p1-p.md",
-  "derivedFrom": "library/ant-v14-n7-s-p05/manifest",
-  "sourceDocument": "library/ant-v14-n7-s-p05/manifest",
+  "title": "SL-oriented motivic spectra",
+  "pageStart": 13,
+  "pageEnd": 21,
+  "text": "../sections/sec-003-3-sl-oriented-motivic-spectra.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p05",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p05",
   "provenance": "ingested"
 }

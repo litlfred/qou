@@ -669,7 +669,7 @@ def main() -> int:
     })
     w.add_data("denominator_is_two_to_the_averaged_crossing_count", {
         "rule": "denominator = 2^(number of d=-h/2 averaged crossings)",
-        "published_as": ("content/quantum-observable-universe/"
+        "published_as": ("folio/quantum-observable-universe/"
                          "appendix-nf-witnesses/witness-computation-method.md "
                          "states poly / 2^{p_n} for the RUST hecke-engine; "
                          "this reproduces it from the independent Python "

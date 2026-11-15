@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-alpha-em-derivation-exploration-options-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:alpha-em-derivation-exploration-options-table-data",
+  "kind": "table",
+  "title": "Natural QOU sources for each ingredient of the $1/\\alpha_{EM}$ derivation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-alpha-em-derivation-exploration-options"
+  ],
+  "tags": [
+    "alpha-em",
+    "derivation-map",
+    "summary-table"
+  ],
+  "text": "alpha-em-derivation-exploration-options-table-data.md",
+  "provenance": "authored"
+}

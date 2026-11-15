@@ -1,0 +1,215 @@
+\subsection{%Essential Euler-Lagrange estimate:
+Proof of Lemma~\ref{la:lhs}}
+
+The main idea is to use $\phi$ as the derivative of a test function for the 
+Euler-Lagrange equation. Of course this is not possible generally, but with some
+precaution we can actually do it up to a benign error term:
+For $\phi \in C^\infty_0 ((4/10,6/10))$ we set
+\begin{equation*}
+   h(u):= \int_0^u \phi(v) dv - a u 
+\end{equation*}
+where $a=\int_0^1 \phi(v) dv$  is chosen such that $ h(0)= h(1)$. 
+Hence, if we set
+\begin{align*}
+h_\pi(k+t) := h(t), \quad \forall t\in [0,1) , k \in \mathbb Z, \\
+\phi_\pi(k+t) := \phi(t), \quad \forall t\in [0,1) , k \in \mathbb Z,
+\end{align*}
+$h_\pi$ is a smooth one periodic function satisfying
+\begin{equation*}
+    h_\pi'(u) =  \phi_\pi  - a.
+\end{equation*}
+and, as we assume in Lemma~\ref{la:lhs} that $\left\langle\phi,\gamma'\right\rangle \equiv 0$, also
+\begin{equation*}
+ \left\langle \phi_\pi , \gamma'\right \rangle \equiv 0.
+\end{equation*}
+
+Since $\gamma$ is a stationary point of the M\"obius energy, testing the 
+equation \eqref{eq:knotPDE} with $h_\pi$, (recall \eqref{eq:defT1}, \eqref{eq:defT2},\eqref{eq:defQeps}) 
+\begin{equation}\label{eq:ourELeqn}
+ Q(\gamma,h_\pi) := \lim_{\varepsilon \to 0} Q_\varepsilon(\gamma,h_\pi)
+= T_1(\gamma,h_\pi) + T_2(\gamma,h_\pi).
+\end{equation}
+
+As $\phi_\pi$ is perpendicular to $\gamma'$ we can estimate the term $T_1(\gamma,h_\pi)$
+by
+\begin{align}
+ T_1(\gamma,h_\pi) &= \int_{-1}^1 \int_{-1/2}^{1/2}
+   \left\langle \gamma'(u),\phi_\pi(u) - a \right\rangle 
+  \left(\frac 1 {|\gamma(u+w)- \gamma(u)|^2} - \frac 1 {w^2} \right)\nonumber\\
+  &\leq |a|\ E^{(2)}(\gamma) \leq C \|\phi\|_{L^1} \leq C \|\phi\|_{L^2}.\label{eq:toRT1}
+\end{align}
+As for the remaining terms $Q(\gamma,h_\pi)$ and $T_2(\gamma,h_\pi)$, we will identify them essentially with the left-hand side of \eqref{eq:el-est} and the $\Gamma$-term on the right-hand side of \eqref{eq:el-est}, respectively. 
+A technical detail one has to take into account here, is that the domain of \eqref{eq:ourELeqn} is the torus $\R / \Z$, whereas the respective domain in \eqref{eq:el-est} is the real line $\R$.
+To estimate the other terms, let us introduce for 
+$f_1, f_2 \in H^{3/2}_{loc}(\mathbb R, \mathbb R^n)$
+the operators
+\begin{align*}
+ \tilde{Q}_\varepsilon (f_1,f_2)& :=  
+ \int_{0}^{1}\int_{\tilde I_\varepsilon}
+  \left(\left\langle f_1'(u),\ f_2'(u) \right\rangle -
+  \frac { \left\langle f_1(u+w)-f(u), f_2(u+w) -f_2(u) 
+  \right\rangle}{w^2} \right) \frac {dw}{w^2}\ du\\
+& = \int_{0}^{1}\int_{\tilde I_\varepsilon} \int_0^1 \int_0^1
+  \frac {\left( \left\langle f_1'(u),\ f_2'(u) \right\rangle- \left\langle f'_1(u+s_1w), f'_2(u+s_2w)
+  \right\rangle	\right) }{w^2} ds_1 ds_2 dw\ du,
+\end{align*}
+where $\tilde I_\varepsilon := [-1/4, 1/4]\setminus [-\varepsilon, \varepsilon]$,
+\[ \tilde Q := \lim_{\eps\searrow0} \tilde Q_\eps, \]
+and
+\begin{equation}
+\begin{aligned}
+ &\tilde {T}_2(f_1,f_2) \\ &:=  \int_{0}^{1}\int_{-1/4}^{1/4}
+  \left\langle f_1(u+w)-f_1(u),\ f_2(u+w)-f_2(u) \right\rangle \left(\frac 1  {|\gamma(u+w)-\gamma(u)|^4}-
+ \frac1{|w|^4}\ \right) dw\ du \\
+&= \int_{0}^{1}\int_{-1/4}^{1/4} \int_0^1 \int_0^1 
+  \left\langle f_1'(u+s_1 w),\ f_2'(u+s_2 w) \right\rangle w^2\left( \frac 1 {|\gamma(u+w)-\gamma(u)|^4}
+- \frac1{|w|^4}\ \right) ds_1\ ds_2\ dw\ du.
+\end{aligned}
+\end{equation}
+
+Recall that $[-\frac{1}{2},\frac{1}{2}]\backslash (-\varepsilon,\varepsilon)$ is used for the definition of $Q$ %, $T_1$,$T_2$,
+and $\tilde I_\varepsilon := [-1/4, 1/4]\setminus [-\varepsilon, \varepsilon]$ is used for $\tilde{Q}$, %$\tilde{T}_1$,$\tilde{T}_2$,
+so the difference only contains the set where $\abs{w} > \fracm{4}$, thus $\abs{w}^{-2}$ is not singular. Quantitatively, this reads as
+\begin{equation} \label{eq:toRtilde}
+ |\tilde Q(\gamma,h) - Q(\gamma,h)| + |\tilde T_2 (\gamma,h) - T_2(\gamma,h)| 
+\leq C \|\gamma'\|_{L^2} \|h'\|_{L^2} \leq C \|\gamma'\|_{L^2} \|\phi\|_{L^2},
+\end{equation}
+where we have used that $\gamma$ is bi-Lipschitz in order to deal with $T_2$.
+
+We now compute
+\begin{align}
+ \tilde{Q}_\eps(\gamma,h_\pi) &=\int_{0}^{1}\int_{\tilde I_\varepsilon} \int_0^1 \int_0^1
+  \br{\left\langle \gamma'(u),\ h_\pi'(u)\right\rangle - \left\langle \gamma'(u+s_1w), h'_\pi(u+s_2w)
+  \right\rangle} \d s_1\d s_2\frac{dw}{w^2}\ du \nonumber  \\
+ &= \int_{0}^{1}\int_{\tilde I_\varepsilon} \int_0^1 \int_0^1
+  \br{\left\langle \gamma'(u),\ \phi_{\pi} \right\rangle - \left\langle \gamma'(u+s_1w),  \phi_\pi(u+s_2w)
+  \right\rangle} \d s_1\d s_2\frac{dw}{w^2}\ du \nonumber \\
+&\quad - \int_{0}^{1}\int_{\tilde I_\varepsilon} \int_0^1 \int_0^1
+  \br{\left\langle \gamma'(u),\ a \right\rangle -\left\langle \gamma'(u+s_1w), a
+  \right\rangle} \d s_1\d s_2\frac{dw}{w^2}\ du \label{eq:qtildenullterm} \\
+&= \int_{0}^{1}\int_{\tilde I_\varepsilon} \int_0^1 \int_0^1
+  \br{\left\langle g'(u),\ \phi(u) \right\rangle - \left\langle g'(u+s_1w), \phi(u+s_2w)
+  \right\rangle} \d s_1\d s_2\frac{dw}{w^2}\ du . \label{eq:qtilderhs}
+\end{align}
+Here we have used that $\int_0^1 \gamma'(u+\tilde w) du =0$ for all $\tilde{w}$, i.e., the term \eqref{eq:qtildenullterm} is constantly zero for any $w$. The term \eqref{eq:qtilderhs} essentially is the $L^2$-pairing of $\lapv g'$ and $\lapv \phi$: More precisely we will show
+\begin{equation} \label{eq:toRQ}
+ |\tilde{Q}(\gamma,h_\pi) - \int_{\mathbb R} \lapv g' \lapv \phi | \leq C_\gamma \|\phi\|_{L^2}.
+\end{equation}
+\begin{proof}[Proof of \eqref{eq:toRQ}]
+% 
+% It was shown by He~\cite{He2000} that for a constant $\alpha$ and any $f_1,f_2 \in C_0^\infty(\R)$,
+% \begin{equation*}
+% \begin{aligned}
+%  &\int_{\mathbb R} \lapv f_1' \lapv f_2' du \\
+%  &= \alpha \lim_{\eps\searrow0}\int_{\mathbb R} \int_{\mathbb R\setminus [-\varepsilon, \varepsilon]} \left(\left\langle f_1'(u), f_2'(u) \right\rangle
+%  - \frac {\left\langle f_1(u+w)-f(u), f_2(u+2)-f_2(u) \right\rangle} {w^2} \right) \frac {dw}{|w|^2} 
+%   du
+% \end{aligned}
+% \end{equation*}
+Using~\eqref{eq:FormulaForNorm}, we have for any $f_1,f_2 \in C_0^\infty(\R)$ as $\eps \to 0$
+\begin{equation}\label{eq:Heidentity}
+\begin{aligned}
+  &\int_{\mathbb R} \lapv f_1' \lapv f_2' du + o(1) \\
+ &= c\int_{\mathbb R} \int_{\mathbb R \setminus [-\varepsilon, \varepsilon]} \int_0^1 \int_0^1
+  \left(\left\langle f_1'(u), f_2'(u) \right\rangle
+ - \left\langle f'_1(u+s_1w), f'_2(u+s_2w) \right\rangle  \right) 
+\d s_1\d s_2\frac {dw}{|w|^2} du.
+\end{aligned}
+\end{equation}
+We now connect and \eqref{eq:Heidentity} and \eqref{eq:qtilderhs}. The technical problem is, that the integral of $\phi$ is not a feasible test-function for \eqref{eq:Heidentity}. Let therefore for $\eta_{[-10,10]} \in C_0^\infty ((-11,11))$ and $\eta_{[-10,10]} \equiv 1$ in $[-10,10]$,
+\[
+ \psi := \brac{u \mapsto \eta_{[-10,10]} \int_0^u \phi} \in C_0^\infty(\R).
+\]
+Thus, $\psi$ is a feasible test-function for \eqref{eq:Heidentity}, which $\phi$ is not. Moreover,
+\begin{equation}\label{eq:l42:psip}
+ \psi' = \eta_{[-10,10]} \phi + \eta'_{[-10,10]} \int_0^u \phi \overset{\supp \phi}{\equiv } \phi + \eta'_{[-10,10]} \int_0^u \phi.
+\end{equation}
+We thus arrive at
+\begin{align*}
+ \tilde{Q}_\varepsilon(\gamma,h) \;
+ &\refeq{qtilderhs}
+ \int_{0}^{1}\int_{\tilde I_\varepsilon} \int_0^1 \int_0^1
+  \br{\left\langle g'(u),\ \phi(u) \right\rangle - \left\langle g'(u+s_1w), \phi(u+s_2w)
+  \right\rangle} \d s_1\d s_2\frac{dw}{w^2}\ du\\
+ &\stackrl{$\supp \phi$, $\abs{w}$,\eqref{eq:l42:psip}}\qquad
+ \int_\R \int_{\tilde I_\varepsilon} \int_0^1 \int_0^1
+  \br{\left\langle g'(u),\ \psi'(u) \right\rangle - \left\langle g'(u+s_1w), \psi'(u+s_2w)
+  \right\rangle} \d s_1\d s_2\frac{dw}{w^2}\ du\\ 
+ &= \int_\R \int_{\R \backslash [-\varepsilon,\varepsilon]} \int_0^1 \int_0^1
+  \br{\left\langle g'(u),\ \psi'(u) \right\rangle - \left\langle g'(u+s_1w), \psi'(u+s_2w)
+  \right\rangle} \d s_1\d s_2\frac{dw}{w^2}\ du\\
+&\qquad{} - \int_\R \int_{\abs{w} > \fracm{4}} \int_0^1 \int_0^1
+  \br{\left\langle g'(u),\ \psi'(u) \right\rangle - \left\langle g'(u+s_1w), \psi'(u+s_2w)
+  \right\rangle} \d s_1\d s_2\frac{dw}{w^2}\ du\\
+%
+  &\refeq{Heidentity}
+  \int \langle \lapv g', \lapv \psi' \rangle\\
+&\qquad{} - \int_\R \int_{\abs{w} > \fracm{4}} \int_0^1 \int_0^1
+  \br{\left\langle g'(u),\ \psi'(u) \right\rangle - \left\langle g'(u+s_1w), \psi'(u+s_2w)
+  \right\rangle} \d s_1\d s_2\frac{dw}{w^2}\ du\\
+  &\qquad{} + o(1)\\
+&\refeq{l42:psip}
+\int \langle \lapv g', \lapv \phi \rangle + \int \langle \lapv g', \lapv (\eta'_{[-10,10]} \int_0^{\cdot} \phi) \rangle\\
+&\qquad{} - \int_\R \int_{\abs{w} > \fracm{4}} \int_0^1 \int_0^1
+  \br{\left\langle g'(u),\ \psi'(u) \right\rangle - \left\langle g'(u+s_1w), \psi'(u+s_2w)
+  \right\rangle} \d s_1\d s_2\frac{dw}{w^2}\ du\\
+  &\qquad{} + o(1).
+\end{align*}
+Now, by usual interpolation and/or imbedding of Sobolev spaces, see, e.g. \cite{Tartar2007,Schikorra-Doktor},
+\[
+ \vrac{ \lapv f}_{2,\R} \aleq \vrac{f}_{2,\R} + \vrac{f'}_{2,\R},
+\]
+we have
+\[
+ \| \lapv (\eta'_{[-10,10]} \int_0^{\cdot} \phi) \|_{2,\R} \aleq \vrac{\phi}_1 + \vrac{\phi}_2 \overset{\supp \phi}{\aleq} \vrac{\phi}_2.
+\]
+Moreover,
+\[
+\begin{ma}
+ &&\int_\R \int_{\abs{w} > \fracm{4}} \int_0^1 \int_0^1
+  \br{\left\langle g'(u),\ \psi'(u) \right\rangle - \left\langle g'(u+s_1w), \psi'(u+s_2w)
+  \right\rangle} \d s_1\d s_2\frac{dw}{w^2}\ du \\
+  &\aleq& \int_{\abs{w} > \fracm{4}} \abs{w}^{-2}\ \vrac{g'}_{2} \vrac{\psi'}_{2}\\
+  &\overset{\eqref{eq:l42:psip}}{\aleq}& \vrac{g'}_{2,\R} \brac{\vrac{\phi}_{1,\R} + \vrac{\phi}_{2,\R}} \overset{\supp g}{\aleq} C_\gamma\ \vrac{\phi}_{2,\R}.
+ \end{ma}
+\]
+Thus, we have shown that \eqref{eq:toRQ} holds.
+\end{proof}
+
+
+To estimate $\tilde T_2 (\gamma,h)$ we calculate
+\begin{align*}
+ \tilde T_2(\gamma,h)
+ &= \int_{0}^{1}\int_{-1/4}^{1/4} \int_0^1 \int_0^1
+  \left\langle \gamma'(u+s_1 w),\  \phi_\pi(u+s_2 w) 
+  + a\right\rangle w^2\cdot\\
+  &\qquad\qquad\qquad\qquad{}\cdot\left( \frac 1 {|\gamma(u+w)-\gamma(u)|^4}-
+ \frac1{|w|^4}\ \right) ds_1\ ds_2\ dw\ du\\
+ &= \int_{0}^{1}\int_{-1/4}^{1/4} \int_0^1 \int_0^1
+  \left\langle \gamma'(u+s_1 w),\ \phi(u+s_2 w)- \phi(u+s_1 w) 
++ a \right\rangle w^2 \cdot\\
+&\qquad\qquad\qquad\qquad{}\left( \frac 1 {|\gamma(u+w)-\gamma(u)|^4}-
+ \frac1{|w|^4}\ \right) ds_1\ ds_2\ dw\ du
+\end{align*}
+and using
+\begin{align*}
+ w^2 \left( \frac 1 {|\gamma(u+w)-\gamma(u)|^4}- \frac 1 {|w|^4} \right) 
+  & = \frac {w^4} {|\gamma(u+w)-\gamma(u)|^4} 
+      \left( \frac {1 - \frac {|\gamma(u+w)- \gamma(u)|^4} {w^4}}{w^2}\right) \\
+ & \leq C \frac {1 - \frac {|\gamma(u+w)- \gamma(u)|^2} {w^2}}{w^2} \\
+ &  = \frac C 2 \int_{0}^1 \int_0^1 \frac {|\gamma'(u+s_3 w) - \gamma'(u+s_4 w)|^2}{w^2}ds_3 \ ds_4
+\end{align*}
+we get
+\begin{equation} \label{eq:toRT2}
+\begin{aligned}
+ &|\tilde T_2(\gamma,h)|  \leq \abs a E^{(2)} (\gamma) \\ &\quad  + \int_{0}^{1}\int_{-1/4}^{1/4} \int_{(0,1)^4}
+ \frac{ |\gamma'(u+s_1 w)-\gamma'(u+s_2w)| \ |\gamma'(u+s_3 w) - \gamma'(u+s_4 w)|^2 \ 
+|\phi(u+s_2 w)|}{w^2}  dsdw\ du \\
+& \leq C \|\phi\|_{L^2} + \int_{0}^{1}\int_{-1/4}^{1/4} \int_{(-1,1)^3}
+ \frac{ |\gamma'(u+s_1 w)-\gamma'(u)| \ |\gamma'(u+s_3 w) - \gamma'(u+s_4 w)|^2 \ 
+|\phi(u)|}{w^2}  dsdw\ du.
+\end{aligned}
+\end{equation}
+
+From \eqref{eq:toRtilde},\eqref{eq:toRT1},\eqref{eq:toRQ}, and \eqref{eq:toRT2} 
+one gets the claim, since $\gamma' = g'$ on $[-1/4,5/4]$.

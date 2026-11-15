@@ -8,7 +8,7 @@ LP=""
 for d in $(find .lake/packages -path '*/.lake/build/lib' -type d 2>/dev/null); do
   if [ -d "$d/lean" ]; then LP="$LP:$d/lean"; else LP="$LP:$d"; fi
 done
-QD="content/quantum-observable-universe/lean/.lake/build/lib"
+QD="folio/quantum-observable-universe/lean/.lake/build/lib"
 LP="$LP:$QD:$QD/lean"
 export LEAN_PATH="${LP#:}"
 F="$1"

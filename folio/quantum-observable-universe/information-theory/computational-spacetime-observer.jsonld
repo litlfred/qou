@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-computational-spacetime-observer",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:computational-spacetime-observer",
+  "kind": "remark",
+  "title": "Computational spacetime and the observer",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-information-theoretic-time",
+    "papers/quantum-observable-universe/blocks/def-brings-surface",
+    "papers/quantum-observable-universe/blocks/thm-jones-markov-trace"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-information-theoretic-time",
+  "tags": [
+    "computational-time",
+    "observer",
+    "categorical-dynamics",
+    "planck-step",
+    "brings-surface",
+    "interpretation"
+  ],
+  "leanRef": "qou:QOU.computationalDistance",
+  "text": "computational-spacetime-observer.md",
+  "leanSource": "computational-spacetime-observer.lean",
+  "provenance": "authored"
+}

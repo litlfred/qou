@@ -1,0 +1,45 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-cond-mat-0112325v6/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Knots in Condensed Matters (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-cond-mat-0112325v6",
+  "provenance": "ingested",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:cond-mat/0112325&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-cond-mat-0112325v6",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/cond-mat/0112325v6",
+    "content_type": "application/gzip",
+    "sha256": "cdca6d17222c5236d4c001e9598aac73bd8e246b3a89bb00ffbd6ad854589e2f",
+    "bytes": 175622,
+    "fetched": "2026-10-10T15:23:36+00:00",
+    "files": [
+      {
+        "path": "source/files/cm9.tex",
+        "role": "tex",
+        "sha256": "309df24b181515b43679df23ff818c61697d15ce0fb0762ea03ee52851468283",
+        "bytes": 44291
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

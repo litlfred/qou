@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-glossary-weierstrass-projection",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:glossary-weierstrass-projection",
+  "kind": "remark",
+  "title": "Weierstrass projection $\\wp_q(z)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-descartes-elliptic-curve"
+  ],
+  "tags": [
+    "glossary",
+    "weierstrass",
+    "elliptic-function",
+    "descartes",
+    "projection",
+    "lattice"
+  ],
+  "defines": [
+    "weierstrass-projection"
+  ],
+  "leanRef": "qou:QOU.Archimedean.WeierstrassProjection.weierstrassProjection",
+  "text": "glossary-weierstrass-projection.md",
+  "provenance": "authored"
+}

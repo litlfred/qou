@@ -1,0 +1,39 @@
+Affine Hecke algebras 425
+where [α*} are dual weights ((αi, α*) =- Si, for the Kronecker symbol Sii), μ is the
+multiplicity of α; in α. We put Da - Z.(u, aα)ra, where αe a E+, a is a subset in R".
+Definition 3.1 The set (r} is a classical A-valued r-matrix of type An, : . : , G2, if
+rw(a) = Vo(w)ravo(w)-1 for αeZ, weW, (3.3)
+[Di, D] = O, = Rαi + Rαj. (3.4)
+Here (αi, αj) runs over all classes of pairs of simple roots modulo the action of
+W on the latter (one pair for A2, B2, C2, G2, two for An, Dn, E6-8, three for B3, C3
+four for Bn, Cn, F4, n > 2).
+Proposition 3.2 (see [Ch 1, Ch 2]) Elements {Du, uE Cn} are pairwise commutative
+for (r.} from Definition 3.1.
+Proof. It is sufficient to consider the elements Di, : : : , Dn. One has:
+[Di, D;] =da, dä= μμ[ra, r],
+α, βe+
+where + = a  Z+, ^ runs over all two-dimensional subspaces in Rn. Indeed, only
+trivial pairs {α = β) can belong to some  a' for a + 2'. Let ,  be the pair of
+simple roots in a+ = ^ Z+ (if the latter is two-dimensional) and a, , be the
+multiplicities of , S in αe a+ respectively. Then μa = aμ, + S。μ. Hence,
+da = Z (, +)(βu, + p)[ra, rp]
+α, βe^+
+= μi,μj[D1, D1] + μou[D2, D2] +(u, μ - μjμ)[D1, D2] ,
+where D1, D2 are from (3.2) but for a+ and (?, 3) in place of E+ and {α1, . . . , αn)
+Therefore the identity [Di, D2J = O is sufficient to prove the proposition.
+The roots y,  can be included into the system of simple roots corresponding to
+a certain Weyl chamber (see [Bo]). Hence,  = w(αs),  = w(αm) for a suitable
+we W and appropriate simple αk, αm. We arrive at (3.4). 
+Proposition 3.3 [Ch 1] Let {Ra, αE E}  A* be a quantum W-invariant R-matrix in
+def
+the sense of [Ch 5], ie. the set {R.} satisfies conditions (3.3) and t;  R;vo(si)e A*
+for R; =- Ra, satisfy the braid relations (1.1). Assume that R depend on some parameter
+heC and
+R; = 1 + hr; + o(h), 1 ≤i≤n, riEA, (3.5)
+in a neighbourhood of h = O. Let [Ra, R] = O if (α, β) = O. In the case of G2 we
+suppose additionally that R Ra+pRp = RgRa+pRa for long positive roots α, β, α + β.
+Then (ri, 1 ≤i ≤ n) can be uniquely extended to a classical r-matrix (ra, aeE) by
+means of (3.3).
+Proof. The cases A2, B2, G2 are enough to consider. Let α = α1, β = α2. For A2
+one has the following (quantum Yang-Baxter) identity
+R.Ra+βR = RpRα+βRα '

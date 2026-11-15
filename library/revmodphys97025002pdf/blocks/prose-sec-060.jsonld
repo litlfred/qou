@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/revmodphys97025002pdf/blocks/prose-sec-060",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/revmodphys97025002pdf/blocks/prose-sec-060",
   "kind": "prose",
   "title": "B. Notable features of the CODATA 2022 adjustment",
   "pageStart": 54,
   "pageEnd": 54,
   "text": "../sections/sec-060-b-notable-features-of-the-codata-2022-adjustment.md",
-  "derivedFrom": "library/revmodphys97025002pdf/manifest",
-  "sourceDocument": "library/revmodphys97025002pdf/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/revmodphys97025002pdf",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/revmodphys97025002pdf",
   "provenance": "ingested"
 }

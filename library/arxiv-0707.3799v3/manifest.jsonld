@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0707.3799v3",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Equivariant Satake category and Kostant-Whittaker reduction",
+  "contains": [
+    "library/arxiv-0707.3799v3/sections/sec-front-matter",
+    "library/arxiv-0707.3799v3/sections/sec-000",
+    "library/arxiv-0707.3799v3/sections/sec-001",
+    "library/arxiv-0707.3799v3/sections/sec-002",
+    "library/arxiv-0707.3799v3/sections/sec-003",
+    "library/arxiv-0707.3799v3/sections/sec-004",
+    "library/arxiv-0707.3799v3/sections/sec-005",
+    "library/arxiv-0707.3799v3/sections/sec-006",
+    "library/arxiv-0707.3799v3/sections/sec-007",
+    "library/arxiv-0707.3799v3/sections/sec-008",
+    "library/arxiv-0707.3799v3/sections/sec-009",
+    "library/arxiv-0707.3799v3/sections/sec-010",
+    "library/arxiv-0707.3799v3/sections/sec-011",
+    "library/arxiv-0707.3799v3/sections/sec-012",
+    "library/arxiv-0707.3799v3/sections/sec-013",
+    "library/arxiv-0707.3799v3/sections/sec-014",
+    "library/arxiv-0707.3799v3/sections/sec-015",
+    "library/arxiv-0707.3799v3/sections/sec-016",
+    "library/arxiv-0707.3799v3/sections/sec-017",
+    "library/arxiv-0707.3799v3/sections/sec-018",
+    "library/arxiv-0707.3799v3/sections/sec-019"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0707.3799&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0707.3799v3",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "0707.3799v3.pdf",
+    "source_sha256": "0b29cbced7939f7265a53bdefb095c3f72162f1f526e4460631d4a3602b6ed3a",
+    "pages": 32,
+    "arxiv": {
+      "id": "0707.3799",
+      "version": "3",
+      "primary_class": "math.RT",
+      "stamp_date": "25 Feb 2026"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

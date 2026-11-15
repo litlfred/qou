@@ -7,7 +7,11 @@
   "bytes": 284274,
   "pages": 9,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,11 +21,10 @@
    "stamp_date": "9 Mar 2000"
   },
   "doi": null,
-  "title": "Microscopic Universality and the Chiral Phase Transition in two Flavor QCD F. Farchioni",
-  "authors_raw": "Deutsches Elektronen-Synchrotron DESY, Notkestr. 85, D-22603 Hamburg, Germany",
+  "title": "arXiv:hep-lat/9912004v2 9 Mar 2000",
+  "authors_raw": "F. Farchioni",
   "title_lines": [
-   "Microscopic Universality and the Chiral Phase Transition in two Flavor QCD",
-   "F. Farchioni"
+   "Microscopic Universality and the Chiral Phase Transition in two Flavor QCD"
   ],
   "abstract": null,
   "docinfo": {
@@ -29,171 +32,541 @@
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "CreationDate": "D:20181013000636-04'00'"
+  },
+  "title_raw": "Microscopic Universality and the Chiral Phase Transition in two Flavor QCD",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:hep-lat/9912004v2 9 Mar 2000",
+   "heading": "Microscopic Universality and the Chiral Phase Transition in two Flavor QCD",
+   "text": "Microscopic Universality and the Chiral Phase Transition in two Flavor QCD",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Hip",
+   "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "I"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "1"
   },
   {
-   "level": 1,
-   "title": "B. Lang",
+   "level": 2,
+   "title": "Chiral Random Matrix Theory",
    "page": 1,
    "source": "inferred",
-   "number": "C"
+   "number": "1.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "1"
   },
   {
-   "level": 1,
-   "title": "INTRODUCTION",
-   "page": 1,
-   "source": "inferred",
-   "number": "I"
-  },
-  {
-   "level": 1,
-   "title": "EXPECTATIONS FROM CHRMT",
+   "level": 2,
+   "title": "Temperature transition",
    "page": 2,
    "source": "inferred",
-   "number": "II"
+   "number": "1.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
   },
   {
    "level": 1,
-   "title": "GAUGE FIELD CONFIGURATIONS AND",
+   "title": "Expectations from chRMT",
+   "page": 2,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
+  },
+  {
+   "level": 1,
+   "title": "Gauge field configurations and analysis",
    "page": 3,
    "source": "inferred",
-   "number": "III"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "3"
   },
   {
    "level": 1,
-   "title": "REPORTING THE RESULTS",
+   "title": "Reporting the results",
    "page": 4,
    "source": "inferred",
-   "number": "IV"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "4"
   },
   {
-   "level": 1,
+   "level": 2,
+   "title": "Eigenvalue density",
+   "page": 4,
+   "source": "inferred",
+   "number": "4.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "4"
+  },
+  {
+   "level": 2,
+   "title": "Level spacing distribution",
+   "page": 6,
+   "source": "inferred",
+   "number": "4.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "6"
+  },
+  {
+   "level": 2,
    "title": "Soft inner edge",
    "page": 7,
    "source": "inferred",
-   "number": "C"
+   "number": "4.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "7"
   },
   {
    "level": 1,
-   "title": "SUMMARY AND CONCLUSIONS",
+   "title": "Summary and conclusions",
    "page": 8,
    "source": "inferred",
-   "number": "V"
-  },
-  {
-   "level": 1,
-   "title": "Acknowledgments",
-   "page": 8,
-   "source": "inferred",
-   "number": null
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "8"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Histograms for the 10 (or 8) smallest eigenvalues. The contribution from the 10th (8th) eigenvalue is indicated",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Histograms",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Histograms for the 2nd smallest eigenvalue for",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Histograms for the distribution of (a) the \ufb01rst 9",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "The behavior of the average distance from the",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "The",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-i-hip",
-   "number": "I",
-   "title": "Hip",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 84,
-   "n_words": 12
+   "n_chars": 689,
+   "n_words": 89,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-001-c-b-lang",
-   "number": "C",
-   "title": "B. Lang",
-   "level": 1,
+   "id": "sec-000-11-chiral-random-matrix-theory",
+   "number": "1.1",
+   "title": "Chiral Random Matrix Theory",
+   "level": 2,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 905,
-   "n_words": 128
+   "n_chars": 521,
+   "n_words": 78,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-002-i-introduction",
-   "number": "I",
-   "title": "INTRODUCTION",
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 5330,
-   "n_words": 888
+   "n_chars": 3413,
+   "n_words": 564,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
-   "id": "sec-003-ii-expectations-from-chrmt",
-   "number": "II",
-   "title": "EXPECTATIONS FROM CHRMT",
+   "id": "sec-002-12-temperature-transition",
+   "number": "1.2",
+   "title": "Temperature transition",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1890,
+   "n_words": 321,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-003-2-expectations-from-chrmt",
+   "number": "2",
+   "title": "Expectations from chRMT",
    "level": 1,
    "page_start": 2,
-   "page_end": 3,
-   "n_chars": 5843,
-   "n_words": 1012
-  },
-  {
-   "id": "sec-004-iii-gauge-field-configurations-and",
-   "number": "III",
-   "title": "GAUGE FIELD CONFIGURATIONS AND",
-   "level": 1,
-   "page_start": 3,
    "page_end": 4,
-   "n_chars": 2604,
-   "n_words": 470
+   "n_chars": 8484,
+   "n_words": 1487,
+   "label_start": "2",
+   "label_end": "4"
   },
   {
-   "id": "sec-005-iv-reporting-the-results",
-   "number": "IV",
-   "title": "REPORTING THE RESULTS",
+   "id": "sec-004-4-reporting-the-results",
+   "number": "4",
+   "title": "Reporting the results",
    "level": 1,
    "page_start": 4,
-   "page_end": 7,
-   "n_chars": 13039,
-   "n_words": 2267
+   "page_end": 4,
+   "n_chars": 501,
+   "n_words": 84,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
-   "id": "sec-006-c-soft-inner-edge",
-   "number": "C",
+   "id": "sec-005-41-eigenvalue-density",
+   "number": "4.1",
+   "title": "Eigenvalue density",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 9023,
+   "n_words": 1586,
+   "label_start": "4",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-006-42-level-spacing-distribution",
+   "number": "4.2",
+   "title": "Level spacing distribution",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 3461,
+   "n_words": 590,
+   "label_start": "6",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-007-43-soft-inner-edge",
+   "number": "4.3",
    "title": "Soft inner edge",
-   "level": 1,
+   "level": 2,
    "page_start": 7,
    "page_end": 8,
    "n_chars": 3362,
-   "n_words": 637
+   "n_words": 637,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
-   "id": "sec-007-v-summary-and-conclusions",
-   "number": "V",
-   "title": "SUMMARY AND CONCLUSIONS",
-   "level": 1,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 2860,
-   "n_words": 467
-  },
-  {
-   "id": "sec-008-acknowledgments",
-   "number": null,
-   "title": "Acknowledgments",
+   "id": "sec-008-5-summary-and-conclusions",
+   "number": "5",
+   "title": "Summary and conclusions",
    "level": 1,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 3584,
-   "n_words": 650
+   "n_chars": 6461,
+   "n_words": 1118,
+   "label_start": "8",
+   "label_end": "9"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 9,
-  "sections": 9,
-  "chars_total": 37611
+  "toc_entries": 10,
+  "toc_inferred_entries": 10,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 6,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 10,
+  "chars_total": 37805,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "paper-rev.tex",
+   "tex_sections": 10,
+   "overlaid": 7,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-11-chiral-random-matrix-theory",
+     "title": "Chiral Random Matrix Theory",
+     "prose_ratio": 0.233,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.46,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-002-12-temperature-transition",
+     "title": "Temperature transition",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-2-expectations-from-chrmt",
+     "title": "Expectations from chRMT",
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.998,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-4-reporting-the-results",
+     "title": "Reporting the results",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-41-eigenvalue-density",
+     "title": "Eigenvalue density",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-42-level-spacing-distribution",
+     "title": "Level spacing distribution",
+     "prose_ratio": 0.93,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-43-soft-inner-edge",
+     "title": "Soft inner edge",
+     "prose_ratio": 0.943,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-5-summary-and-conclusions",
+     "title": "Summary and conclusions",
+     "prose_ratio": 0.909,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "latex"
+    }
+   ]
+  }
  }
 }

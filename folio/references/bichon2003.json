@@ -1,0 +1,24 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "bichon2003",
+  "type": "article-journal",
+  "title": "The representation category of the quantum group of a non-degenerate bilinear form",
+  "author": [
+    {
+      "family": "Bichon",
+      "given": "Julien"
+    }
+  ],
+  "container-title": "Communications in Algebra",
+  "volume": "31",
+  "issue": "10",
+  "page": "4831-4851",
+  "issued": {
+    "date-parts": [
+      [
+        2003
+      ]
+    ]
+  },
+  "note": "Classifies the fibre functors of $\\mathrm{Rep}(\\mathrm{SL}_q(2))$: for $E \\in \\mathrm{GL}_n(k)$, $n \\ge 2$, with $\\mathrm{tr}(E^{-1}E^{t}) = -q - q^{-1}$, the comodule category of the bilinear-form quantum group $B(E)$ is monoidally equivalent to that of $\\mathcal{O}_q(\\mathrm{SL}_2)$, the fundamental going to an $n$-dimensional comodule. Consumed by the eightfold front-2 result that a fibre functor changes dimensions but not fusion rules (FibreFunctorDimensionNotCategorical.lean; fibre_functor_dimension_not_categorical_probe.py). Added 2026-09-03. NO DOI RECORDED and volume/issue/pages NOT verified against the publisher record: doi.org and arxiv.org are blocked by the sandbox egress proxy in this session; the arXiv preprint is math/0207256. Verify before citing in print."
+}

@@ -3,7 +3,7 @@
 
 An agent verdict with no ``field_hash`` records no block version, so it cannot be
 resolved against any content and adjudicates nothing. The drain queue already
-knows this --- ``content/pipeline/qa-agent-drain-queue.ts`` computes ``fresh`` as
+knows this --- ``folio/pipeline/qa-agent-drain-queue.ts`` computes ``fresh`` as
 ``e.field_hash?.md === curmd``, and a missing hash is ``undefined``, never equal
 --- so every affected block is already re-queued for review.
 
@@ -65,7 +65,7 @@ def dumps_like(original: str, doc: object) -> str:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--root", default="content")
+    ap.add_argument("--root", default="folio")
     ap.add_argument("--apply", action="store_true", help="write (default: dry-run)")
     args = ap.parse_args()
 

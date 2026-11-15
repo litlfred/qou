@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ant-v14-n7-s-p05/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ant-v14-n7-s-p05/blocks/prose-sec-001",
   "kind": "prose",
-  "title": "TX/B(1X×B X)",
-  "pageStart": 9,
-  "pageEnd": 10,
-  "text": "../sections/sec-001-1-txb1xb-x.md",
-  "derivedFrom": "library/ant-v14-n7-s-p05/manifest",
-  "sourceDocument": "library/ant-v14-n7-s-p05/manifest",
+  "title": "X+ ∈SH(k) is dualizable. In particular, we can associate to X a natural Euler characteristic χ(X/k) ∈EndSH(k)(1k), deﬁned as the composition",
+  "pageStart": 1,
+  "pageEnd": 4,
+  "text": "../sections/sec-001-t-x-shk-is-dualizable-in-particular-we-can-assoc.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p05",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p05",
   "provenance": "ingested"
 }

@@ -253,6 +253,7 @@ def main() -> int:
     out = HERE / "qbeta-covariance-kernel-monotone.witness.json"
     out.write_text(json.dumps({
         "computation": "qbeta-covariance-kernel-monotone",
+        "q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal",
         "assertions": a, "allPassed": bool(ok),
         "parameters": {"epic": "qou-x631", "bean": "qou-dnev",
                        "claim": "conditional-mean monotonicity of E[f|C_2] is false at "

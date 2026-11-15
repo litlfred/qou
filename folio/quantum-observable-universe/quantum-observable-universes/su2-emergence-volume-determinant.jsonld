@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-su2-emergence-volume-determinant",
+  "@type": [
+    "folio-assistant-core:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:su2-emergence-volume-determinant",
+  "kind": "lemma",
+  "title": "Volume constraint forces $\\det(g_V) = 1$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-su2-emergence"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-su2-emergence-volume-determinant"
+  ],
+  "tags": [
+    "tannaka-krein",
+    "volume-constraint",
+    "determinant",
+    "sl2"
+  ],
+  "leanRef": "qou:QOU.su2_emergence_volume_determinant",
+  "text": "su2-emergence-volume-determinant.md",
+  "provenance": "authored"
+}

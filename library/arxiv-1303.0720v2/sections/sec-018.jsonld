@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1303.0720v2/sections/sec-018",
   "@type": [
     "doco:Section"
   ],
-  "title": "The polyanalytic Bergman spaces and Landau levels. The polyanalytic spaces PA2",
-  "pageStart": 11,
+  "title": "Assumptions on the potential",
+  "pageStart": 12,
   "pageEnd": 13,
   "contains": [
     "library/arxiv-1303.0720v2/blocks/prose-sec-018"
   ],
-  "derivedFrom": "library/arxiv-1303.0720v2/manifest",
-  "sourceDocument": "library/arxiv-1303.0720v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.0720v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.0720v2",
   "provenance": "ingested"
 }

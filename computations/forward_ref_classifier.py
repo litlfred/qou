@@ -98,17 +98,17 @@ import sys
 
 def _find_base():
     # `computations/` is one level below the repo root, so walk up from this
-    # file until we find `content/quantum-observable-universe` rather than
+    # file until we find `folio/quantum-observable-universe` rather than
     # hard-coding a `..` count (the previous two-`..` overshot the repo root,
     # e.g. to /home/user/ instead of /home/user/qou/, and the tool crashed).
     d = os.path.dirname(os.path.abspath(__file__))
     for _ in range(8):
-        cand = os.path.join(d, "content", "quantum-observable-universe")
+        cand = os.path.join(d, "folio", "quantum-observable-universe")
         if os.path.isdir(cand):
             return cand
         d = os.path.dirname(d)
     return os.path.normpath(os.path.join(
-        os.path.dirname(__file__), "..", "content", "quantum-observable-universe"))
+        os.path.dirname(__file__), "..", "folio", "quantum-observable-universe"))
 
 
 BASE = _find_base()

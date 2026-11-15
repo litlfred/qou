@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/zhao-standard-2010/sections/sec-016",
   "@type": [
     "doco:Section"
   ],
-  "title": "The structure of MPVs and some examples",
-  "pageStart": 17,
-  "pageEnd": 17,
+  "title": "Computational results in weight three, four and five",
+  "pageStart": 29,
+  "pageEnd": 34,
   "contains": [
     "library/zhao-standard-2010/blocks/prose-sec-016"
   ],
-  "derivedFrom": "library/zhao-standard-2010/manifest",
-  "sourceDocument": "library/zhao-standard-2010/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/zhao-standard-2010",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/zhao-standard-2010",
   "provenance": "ingested"
 }

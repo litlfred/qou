@@ -1,16 +1,41 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/procrsoclondona92/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Helicity and the Calugareanu invariant",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/procrsoclondona92",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "procrsoclondona92",
   "contains": [
-    "library/procrsoclondona92/sections/sec-000"
+    "library/procrsoclondona92/sections/page-001",
+    "library/procrsoclondona92/sections/page-002",
+    "library/procrsoclondona92/sections/page-003",
+    "library/procrsoclondona92/sections/page-004",
+    "library/procrsoclondona92/sections/page-005",
+    "library/procrsoclondona92/sections/page-006",
+    "library/procrsoclondona92/sections/page-007",
+    "library/procrsoclondona92/sections/page-008",
+    "library/procrsoclondona92/sections/page-009",
+    "library/procrsoclondona92/sections/page-010",
+    "library/procrsoclondona92/sections/page-011",
+    "library/procrsoclondona92/sections/page-012",
+    "library/procrsoclondona92/sections/page-013",
+    "library/procrsoclondona92/sections/page-014",
+    "library/procrsoclondona92/sections/page-015",
+    "library/procrsoclondona92/sections/page-016",
+    "library/procrsoclondona92/sections/page-017",
+    "library/procrsoclondona92/sections/page-018",
+    "library/procrsoclondona92/sections/page-019"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "procrsoclondona92",
+    "title_source": "slug",
     "source_file": "procrsoclondona92.pdf",
     "source_sha256": "3d48c956e2e5408d54eef125666685f56fa1decfbe8365f1efc6544cf5d7b554",
     "pages": 19,

@@ -1,19 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-2109.04664v4/sections/sec-004",
   "@type": [
     "doco:Section"
   ],
-  "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
-  "pageStart": 6,
-  "pageEnd": 7,
+  "title": "Topological interpretations",
+  "pageStart": 14,
+  "pageEnd": 14,
   "contains": [
-    "library/arxiv-2109.04664v4/blocks/prose-sec-004",
-    "library/arxiv-2109.04664v4/blocks/rem-sec-004-01",
-    "library/arxiv-2109.04664v4/blocks/prop-sec-004-02",
-    "library/arxiv-2109.04664v4/blocks/lem-sec-004-03"
+    "library/arxiv-2109.04664v4/blocks/prose-sec-004"
   ],
-  "derivedFrom": "library/arxiv-2109.04664v4/manifest",
-  "sourceDocument": "library/arxiv-2109.04664v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2109.04664v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2109.04664v4",
   "provenance": "ingested"
 }

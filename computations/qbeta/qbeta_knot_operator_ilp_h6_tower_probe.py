@@ -50,7 +50,7 @@ is 16, and all 11 blocks cost 0.02 s.
 
 Beans qou-99qc, qou-ales.
 
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/Mass/GammaGammaH6Interface.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/Mass/GammaGammaH6Interface.lean
 -- Ref: [manuscript] docs/audits/2026-05-25-h3-vs-h3a-legacy-bug-audit.md
 -- Ref: [manuscript] computations/qbeta/qbeta_knot_operator_ilp_ohara_cost_probe.py
 """
@@ -201,7 +201,8 @@ def main() -> int:
             ok2 = False
     check("A2", ok2,
           "y_lambda > 0 EXACTLY on partitions of <= 2 rows -- that vanishing IS "
-          "convention D, and it is why reading 3 binds on 4 blocks here and 2 "
+          "convention D (general n: ocneanuWeight_conventionD_eq_zero_of_three_rows), "
+          "and it is why reading 3 binds on 4 blocks here and 2 "
           "at H_3 (not 11 and 3)")
 
     print()

@@ -3,7 +3,7 @@
 
 **Date:** 2026-04-25  
 **Scope:** Comprehensive one-voice & notational audit  
-**Directory:** `content/quantum-observable-universe/molecular-construction/`
+**Directory:** `folio/quantum-observable-universe/molecular-construction/`
 
 ---
 
@@ -246,7 +246,7 @@ None detected. All language is objective.
 
 ### Relationship to molecular-construction/
 
-**Separate directory:** `/content/quantum-observable-universe/organic-chemistry/` contains 13 blocks (11 `.md` files + `.ts` manifests + 5 `.lean` proofs).
+**Separate directory:** `/folio/quantum-observable-universe/organic-chemistry/` contains 13 blocks (11 `.md` files + `.ts` manifests + 5 `.lean` proofs).
 
 **Key blocks in organic-chemistry/:**
 - `carbon-valence.md` — electron configuration of carbon

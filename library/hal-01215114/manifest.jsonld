@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/hal-01215114/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "FPSAC 2011, Reykjavík, Iceland DMTCS proc. AO, 2011, 317–328 Dual combinatorics of zonal polynomials",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hal-01215114",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "hal-01215114",
   "contains": [
     "library/hal-01215114/sections/sec-000",
     "library/hal-01215114/sections/sec-001",
@@ -26,8 +31,10 @@
     "library/hal-01215114/sections/sec-017"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "hal-01215114",
+    "title_source": "slug",
     "source_file": "hal-01215114.pdf",
     "source_sha256": "c70f8b04a5542a1f7ca757bcc435276bab7992822a8fad87de813dd54d1739a1",
     "pages": 12,

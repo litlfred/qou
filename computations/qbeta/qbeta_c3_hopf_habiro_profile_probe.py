@@ -27,7 +27,7 @@ verified that the c_3 rung is **NOT** the cinquefoil T(2,5) — that is the
 *muon* particle-knot (`lepton_t2n_torus_tower.py`). The structural source
 of c_3 is the **Hopf link**: `c_3 = J_Hopf(q=1) = -2`, proven
 categorically in
-`content/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.md`
+`folio/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.md`
 (2-strand sub-braid windings; Facts 1-4). The shared `/25` is a
 coincident *fibre constant* `[5]_q²|_{q=1}`, not a shared knot.
 

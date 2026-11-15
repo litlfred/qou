@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/np-b250-1985-465/blocks/prose-sec-014",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/np-b250-1985-465/blocks/prose-sec-014",
   "kind": "prose",
   "title": "M 2 M~-\" M~} f-\"- ,13M2,71n.. +M~ln--~ . (10.27) C2- 167r2F ~ M~-M;~I. M~,",
   "pageStart": 30,
   "pageEnd": 34,
   "text": "../sections/sec-014-1-m-2-m--m-f---13m271n-mln---1027-c2--167r2f-m-m.md",
-  "derivedFrom": "library/np-b250-1985-465/manifest",
-  "sourceDocument": "library/np-b250-1985-465/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/np-b250-1985-465",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/np-b250-1985-465",
   "provenance": "ingested"
 }

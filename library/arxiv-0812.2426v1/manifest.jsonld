@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0812.2426v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "CATEGORICAL CENTERS AND RESHETIKHIN-TURAEV INVARIANTS",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0812.2426v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-0812.2426v1",
   "contains": [
+    "library/arxiv-0812.2426v1/sections/sec-front-matter",
     "library/arxiv-0812.2426v1/sections/sec-000",
     "library/arxiv-0812.2426v1/sections/sec-001",
     "library/arxiv-0812.2426v1/sections/sec-002",
@@ -35,25 +41,20 @@
     "library/arxiv-0812.2426v1/sections/sec-026",
     "library/arxiv-0812.2426v1/sections/sec-027",
     "library/arxiv-0812.2426v1/sections/sec-028",
-    "library/arxiv-0812.2426v1/sections/sec-029",
-    "library/arxiv-0812.2426v1/sections/sec-030",
-    "library/arxiv-0812.2426v1/sections/sec-031",
-    "library/arxiv-0812.2426v1/sections/sec-032",
-    "library/arxiv-0812.2426v1/sections/sec-033",
-    "library/arxiv-0812.2426v1/sections/sec-034",
-    "library/arxiv-0812.2426v1/sections/sec-035",
-    "library/arxiv-0812.2426v1/sections/sec-036",
-    "library/arxiv-0812.2426v1/sections/sec-037",
-    "library/arxiv-0812.2426v1/sections/sec-038",
-    "library/arxiv-0812.2426v1/sections/sec-039",
-    "library/arxiv-0812.2426v1/sections/sec-040",
-    "library/arxiv-0812.2426v1/sections/sec-041",
-    "library/arxiv-0812.2426v1/sections/sec-042",
-    "library/arxiv-0812.2426v1/sections/sec-043"
+    "library/arxiv-0812.2426v1/sections/sec-029"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0812.2426&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-0812.2426v1",
+    "title_source": "slug",
     "source_file": "0812.2426v1.pdf",
     "source_sha256": "df1eb953bc2c6c6362957715c74150736e41354b93e6d84166e669f4693ea198",
     "pages": 19,

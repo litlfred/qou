@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-borromean-hopf-energy-crossover",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:borromean-hopf-energy-crossover",
+  "kind": "proposition",
+  "title": "Energy crossover between Borromean and Hopf-diquark phases",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-hopf-diquark"
+  ],
+  "tags": [
+    "borromean",
+    "hopf",
+    "diquark",
+    "energy-crossover",
+    "critical-density",
+    "phase-transition",
+    "color-superconductivity"
+  ],
+  "leanRef": "qou:QOU.Archimedean.borromean_hopf_energy_crossover",
+  "text": "borromean-hopf-energy-crossover.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-quantum-dilogarithm-stratified",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:quantum-dilogarithm-stratified",
+  "kind": "proposition",
+  "title": "Quantum dilogarithm stratifies by partition GB-depth",
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-quantum-dilogarithm-stratified"
+  ],
+  "tags": [
+    "quantum-dilogarithm",
+    "brane-tower",
+    "centre-stratification",
+    "spectral-sequence"
+  ],
+  "leanRef": "qou:QOU.WedderburnMass.phi_q_frobenius_truncation",
+  "text": "quantum-dilogarithm-stratified.md",
+  "leanSource": "quantum-dilogarithm-stratified.lean",
+  "provenance": "authored"
+}

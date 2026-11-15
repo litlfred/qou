@@ -8,176 +8,21 @@ pages: 3-5
 source_pdf: 1601.02479v5.pdf
 source_sha256: 52c2dcd4adf2e72b
 doc_brief: "Cohomological Donaldson-Thomas theory of a quiver with potential and quantum enveloping algebras — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and"
+text_source: latex
+latex_prose_ratio: 0.977
+latex_coverage_ratio: 0.988
 ---
-Thomas theory and cohomological Hall algebras associated to quive rs, a vital role
-is always played by the grading by NQ0 , the semigroup of dimension vectors, which
-should be seen as a weight space decomposition in the language of Lie a lgebras and
-quantum groups. As an illustration, consider the case in which we for get about po-
-tentials and stability conditions, set S to be the category of all ﬁnite-dimensional
-CQ-modules, and consider the NQ0 -graded vector space
-(2)
-⨁
-d∈NQ0
-H(Md, Q[dim(Md)]).
-4 BEN DA VISON AND SVEN MEINHARDT
-Considering the resulting cohomology as a NQ0 × Z-graded vector space, where
-the extra Z factor keeps track of cohomological degree, each graded piece is ﬁnite-
-dimensional. The initial role of the NQ0 grading is to break the above inﬁnite-
-dimensional vector space into inﬁnitely many manageable, ﬁnite-dime nsional pieces.
-Moreover, the cohomological Hall algebra structure respects th e NQ0 × Z-grading,
-so that this grading provides a route to understanding this algebra .
-Choosing a bijection between the vertices Q0 and the numbers {1, . . . , n}, motivic
-DT partition functions are expressed as formal power series in var iables q1/2, x1, . . . , xn.
-For d = (d1, . . . ,dn) the coeﬃcient of
-xd :=
-∏
-i∈Q0
-xdi
-i
-is a formal Laurent power series in q1/2, given by the characteristic function of
-the dth graded piece of the right hand side of (2) — for now q1/2 records the
-cohomological degree. These power series may have ﬁnite order po les at q1/2 = 0,
-due to the shifts appearing in (2). In the general case this formal Laurent power
-series is replaced by a formal Laurent power series recording the ﬁ nite dimensions
-of the weight ﬁltration of an inﬁnite-dimensional NQ0 -graded (monodromic) mixed
-Hodge structure associated to the quiver Q, a potential W and a stability condition
-ζ — in the ﬁnal version of the theory, q1/2 records weights.
-In order to make the presentation in this paper conceptually unifor m, we slightly
-change the perspective on the NQ0 -grading. We consider NQ0 -graded vector spaces
-(respectively, mixed Hodge structures) as sheaves of vector sp aces (respectively,
-mixed Hodge modules) on the monoid NQ0 , considered as a scheme with inﬁnitely
-many components, each isomorphic to Spec( C). Then our main object of study (1)
-can be thought of as the direct image of the restriction to the stac k of modules in
-S of
-(3) ICζ
-W,µ :=
-⨁
-d∈Λ ζ
-µ
-L− dim(Mζ -ss
-d )/2 ⊗φ Tr(W )ζ
-µ
-QMζ -ss, S
-d
-along the map
-Dim : Mζ -ss
-µ →Λζ
-µ
-taking each component of the moduli stack to the dimension vector of the modules
-it parametrises.Instead of studying this direct image directly, we st udy the direct
-image
-(4) H(Aζ
-W,µ ) := H
-(
-(Mζ -ss
-µ
-pζ
-µ
-− − → Mζ -ss
-µ )∗ICζ
-W,µ
-)
-where the map pζ
-µ takes a CQ-module to its semisimpliﬁcation in the category of
-ζ-semistable CQ-modules, i.e. the associated polystable object. Since Dim factors
-through pζ
-µ , understanding the direct image along pζ
-µ turns out to be the key to
-understanding the direct image along Dim.
-We ﬂag at the outset the curious role of the symbol H on the right hand side
-of (4). Firstly, its purpose is to make our lives simpler: we will not actu ally give
-a deﬁnition of the pushforward of ICζ
-W,µ , nor indeed of ICζ
-W,µ itself, and we only
-deﬁne the result of applying the total cohomology functor to this p ushforward,
-i.e. we deﬁne the right hand side of (4) without deﬁning its constituen t pieces.
-This apparent bug turns out to be a feature; because of this extr a H, taking the
-dual compactly supported hypercohomology of the right hand side of (4) does not
-produce something that is a priori isomorphic to the right hand side o f (1), and the
-comparison between them turns out to be a central aspect of the paper. In brief: the
-compactly supported hypercohomology of the right hand side of (4 ) is the associated
-COHAS AND QUANTUM ENVELOPING ALGEBRAS 5
-graded of the perverse ﬁltration of H
-(
-Aζ ,S
-W,µ
-)
-. This perverse ﬁltration is one of the
-central structures that we introduce in order to understand th e cohomological Hall
-algebra.
-Here and elsewhere, if L ∈ D is an element of a triangulated category with a
-t-structure (for example the bounded derived category of an Ab elian category A,
-such as the category of monodromic mixed Hodge modules on Mζ -ss
-µ ) then
-H(L) :=
-⨁
-n∈Z
-Hi(L)[−i],
-considered as an element in D with zero diﬀerential. If moreover D has inﬁnite
-coproducts (for example, the unbounded derived category of A as above) then the
-natural functor from Z-graded objects in A to the essential image of the functor H
-is an embedding of categories; it is bijective on isomorphism classes of objects and
-faithful, but not full in general.
-Note that Dim ζ
-µ = dimζ
-µ pζ
-µ , where dim ζ
-µ : Mζ
-µ → Λζ
-µ is the natural map. We
-furthermore prove that there is an isomorphism of cohomologically g raded mon-
-odromic mixed Hodge modules
-H
-(
-Dimζ
-µ ,∗ ICζ
-W,µ
-)
-∼
-= H
-(
-dimζ
-µ ,∗ H
-(
-(Mζ -ss
-µ
-pζ
-µ
-− − → Mζ -ss
-µ )∗ICζ
-W,µ
-))
-(5)
-= H
-(
-dimζ
-µ ,∗ H
-(
-Aζ
-W,µ
-))
-in Section 4, so that an understanding of (4) can indeed be used to g ain an under-
-standing of the left hand side of (5). As noted above, because of t he second H on
-the right hand side of (5), this isomorphism would not follow directly fr om the usual
-six functor formalism for monodromic mixed Hodge modules on stacks , but instead
-relies essentially on the “hidden properness” of the morphism pζ
-µ . The key obser-
-vation is that pζ
-µ , while not proper or representable, is in some sense approximated
-by proper maps of schemes (see Section 4.1).
-Working over the base Mζ -ss
-µ instead of Λζ
-µ is what we mean by the relative
-theory. The payoﬀ for working in the relative setting is that we obta in more reﬁned
-results, which are nevertheless easier to prove, since in this relativ e setting, because
-of hidden properness, we are able to make extensive use of Morihiko Saito’s version
-[40, 42, 43] of the famous decomposition theorem of Beilinson, Bern stein, Deligne
-and Gabber [3], as well as the rest of Saito’s theory of mixed Hodge mo dules.
-The idea of proving local results on Mζ -ss
-µ to deduce global results about Donaldson–
-Thomas invariants was already present in the work of Joyce and Son g [25], and later
-the proof of the integrality conjecture for path algebras in the ab sence of a potential
-by the second author and Markus Reineke [35], which utilised Eﬁmov’s t heorem [16]
-on free supercommutativity for cohomological Hall algebras withou t potentials to
-understand the local behaviour of the morphism pζ
-µ .
+[]{#abvsrel label="abvsrel"} For the Donaldson--Thomas theory and cohomological Hall algebras associated to quivers, a vital role is always played by the grading by $\mathbb{N}^{Q_0}$, the semigroup of dimension vectors, which should be seen as a weight space decomposition in the language of Lie algebras and quantum groups. As an illustration, consider the case in which we forget about potentials and stability conditions, set $\mathcal{S}$ to be the category of all finite-dimensional $\mathbb{C}Q$-modules, and consider the $\mathbb{N}^{Q_0}$-graded vector space $$\label{baby}
+\bigoplus_{\mathop{\mathrm{\mathbf{d}}}\in\mathbb{N}^{Q_0}}\mathop{\mathrm{H}}(\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}},\mathbb{Q}[\dim(\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}})]).$$ Considering the resulting cohomology as a $\mathbb{N}^{Q_0}\times\mathbb{Z}$-graded vector space, where the extra $\mathbb{Z}$ factor keeps track of cohomological degree, each graded piece is finite-dimensional. The initial role of the $\mathbb{N}^{Q_0}$ grading is to break the above infinite-dimensional vector space into infinitely many manageable, finite-dimensional pieces. Moreover, the cohomological Hall algebra structure respects the $\mathbb{N}^{Q_0}\times\mathbb{Z}$-grading, so that this grading provides a route to understanding this algebra. Choosing a bijection between the vertices $Q_0$ and the numbers $\{1,\ldots,n\}$, motivic DT partition functions are expressed as formal power series in variables $q^{1/2},x_1,\ldots,x_{n}$. For $\mathop{\mathrm{\mathbf{d}}}=(\mathop{\mathrm{\mathbf{d}}}_1,\ldots,\mathop{\mathrm{\mathbf{d}}}_n)$ the coefficient of $$x^{\mathop{\mathrm{\mathbf{d}}}}\colonequals \prod_{i\in Q_0}x_i^{\mathop{\mathrm{\mathbf{d}}}_i}$$ is a formal Laurent power series in $q^{1/2}$, given by the characteristic function of the $\mathop{\mathrm{\mathbf{d}}}$th graded piece of the right hand side of ([\[baby\]](#baby){reference-type="ref" reference="baby"}) --- for now $q^{1/2}$ records the cohomological degree. These power series may have finite order poles at $q^{1/2}=0$, due to the shifts appearing in ([\[baby\]](#baby){reference-type="ref" reference="baby"}). In the general case this formal Laurent power series is replaced by a formal Laurent power series recording the finite dimensions of the weight filtration of an infinite-dimensional $\mathbb{N}^{Q_0}$-graded (monodromic) mixed Hodge structure associated to the quiver $Q$, a potential $W$ and a stability condition $\upzeta$ --- in the final version of the theory, $q^{1/2}$ records weights.
+
+In order to make the presentation in this paper conceptually uniform, we slightly change the perspective on the $\mathbb{N}^{Q_0}$-grading. We consider $\mathbb{N}^{Q_0}$-graded vector spaces (respectively, mixed Hodge structures) as sheaves of vector spaces (respectively, mixed Hodge modules) on the monoid $\mathbb{N}^{Q_0}$, considered as a scheme with infinitely many components, each isomorphic to $\mathop{\mathrm{Spec}}(\mathbb{C})$. Then our main object of study ([\[ua\]](#ua){reference-type="ref" reference="ua"}) can be thought of as the direct image of the restriction to the stack of modules in $\mathcal{S}$ of $$\label{ICSTintro}
+\mathfrak{IC}_{W,\upmu}^{\upzeta}\colonequals \bigoplus_{\mathop{\mathrm{\mathbf{d}}}\in\Uplambda_{\upmu}^{\upzeta}}\mathbb{L}^{-\dim(\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}})/2}\otimes\upphi_{\mathfrak{Tr}(W)^{\upzeta}_{\upmu}}\mathbb{Q}_{\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}}}$$ along the map $$\mathop{\mathrm{\mathrm{Dim}}}\colon\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\upmu}\rightarrow \Uplambda_{\upmu}^{\upzeta}$$ taking each component of the moduli stack to the dimension vector of the modules it parametrises. Instead of studying this direct image directly, we study the direct image $$\label{intermCo}
+\mathop{\mathrm{\mathcal{H}}}(\mathcal{A}_{W,\upmu}^{\upzeta})\colonequals \mathop{\mathrm{\mathcal{H}}}\left((\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\upmu}\xrightarrow{p^{\upzeta}_{\upmu}}\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\upmu})_*\mathfrak{IC}_{W,\upmu}^{\upzeta}\right)$$ where the map $p^{\upzeta}_{\upmu}$ takes a $\mathbb{C}Q$-module to its semisimplification in the category of $\upzeta$-semistable $\mathbb{C}Q$-modules, i.e. the associated polystable object. Since $\mathop{\mathrm{\mathrm{Dim}}}$ factors through $p^{\upzeta}_{\upmu}$, understanding the direct image along $p^{\upzeta}_{\upmu}$ turns out to be the key to understanding the direct image along $\mathop{\mathrm{\mathrm{Dim}}}$. We flag at the outset the curious role of the symbol $\mathop{\mathrm{\mathcal{H}}}$ on the right hand side of [\[intermCo\]](#intermCo){reference-type="eqref" reference="intermCo"}. Firstly, its purpose is to make our lives simpler: we will not actually give a definition of the pushforward of $\mathfrak{IC}_{W,\upmu}^{\upzeta}$, nor indeed of $\mathfrak{IC}_{W,\upmu}^{\upzeta}$ itself, and we *only* define the result of applying the total cohomology functor to this pushforward, i.e. we define the right hand side of [\[intermCo\]](#intermCo){reference-type="eqref" reference="intermCo"} without defining its constituent pieces. This apparent bug turns out to be a feature; because of this extra $\mathop{\mathrm{\mathcal{H}}}$, taking the dual compactly supported hypercohomology of the right hand side of [\[intermCo\]](#intermCo){reference-type="eqref" reference="intermCo"} does not produce something that is a priori isomorphic to the right hand side of [\[ua\]](#ua){reference-type="eqref" reference="ua"}, and the comparison between them turns out to be a central aspect of the paper. In brief: the compactly supported hypercohomology of the right hand side of [\[intermCo\]](#intermCo){reference-type="eqref" reference="intermCo"} is the associated graded of the perverse filtration of $\mathop{\mathrm{H}}\left(\mathop{\mathrm{\mathcal{A}}}_{W,\upmu}^{\upzeta,\mathcal{S}}\right)$. This perverse filtration is one of the central structures that we introduce in order to understand the cohomological Hall algebra.
+
+Here and elsewhere, if $\mathcal{L}\in\mathcal{D}$ is an element of a triangulated category with a t-structure (for example the bounded derived category of an Abelian category $\mathcal{A}$, such as the category of monodromic mixed Hodge modules on $\mathcal{M}_{\upmu}^{\upzeta\mathop{\mathrm{-ss}}}$) then $$\mathop{\mathrm{\mathcal{H}}}(\mathcal{L})\colonequals \bigoplus_{n\in\mathbb{Z}}\mathcal{H}^i(\mathcal{L})[-i],$$ considered as an element in $\mathcal{D}$ with zero differential. If moreover $\mathcal{D}$ has infinite coproducts (for example, the unbounded derived category of $\mathcal{A}$ as above) then the natural functor from $\mathbb{Z}$-graded objects in $\mathcal{A}$ to the essential image of the functor $\mathop{\mathrm{\mathcal{H}}}$ is an embedding of categories; it is bijective on isomorphism classes of objects and faithful, but not full in general.
+
+Note that $\mathop{\mathrm{\mathrm{Dim}}}^{\upzeta}_{\upmu}=\dim^{\upzeta}_{\upmu}p^{\upzeta}_{\upmu}$, where $\dim^{\upzeta}_{\upmu}\colon\mathcal{M}_{\upmu}^{\upzeta}\rightarrow\Uplambda_{\upmu}^{\upzeta}$ is the natural map. We furthermore prove that there is an isomorphism of cohomologically graded monodromic mixed Hodge modules $$\begin{aligned}
+\label{fullCo}
+\mathop{\mathrm{\mathcal{H}}}\left(\mathop{\mathrm{\mathrm{Dim}}}^{\upzeta}_{\upmu,*}\mathfrak{IC}_{W,\upmu}^{\upzeta}\right)\cong &\mathop{\mathrm{\mathcal{H}}}\left(\dim_{\upmu,*}^{\upzeta}\mathop{\mathrm{\mathcal{H}}}\left((\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\upmu}\xrightarrow{p^{\upzeta}_{\upmu}}\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\upmu})_*\mathfrak{IC}_{W,\upmu}^{\upzeta}\right)\right)\\
+=&\mathop{\mathrm{\mathcal{H}}}\left(\dim_{\upmu,*}^{\upzeta}\mathop{\mathrm{\mathcal{H}}}\left(\mathcal{A}_{W,\upmu}^{\upzeta}\right)\right)\nonumber
+\end{aligned}$$ in Section [\[CoDTSec\]](#CoDTSec){reference-type="ref" reference="CoDTSec"}, so that an understanding of ([\[intermCo\]](#intermCo){reference-type="ref" reference="intermCo"}) can indeed be used to gain an understanding of the left hand side of ([\[fullCo\]](#fullCo){reference-type="ref" reference="fullCo"}). As noted above, because of the second $\mathop{\mathrm{\mathcal{H}}}$ on the right hand side of [\[fullCo\]](#fullCo){reference-type="eqref" reference="fullCo"}, this isomorphism would not follow directly from the usual six functor formalism for monodromic mixed Hodge modules on stacks, but instead relies essentially on the "hidden properness" of the morphism $p^{\upzeta}_{\upmu}$. The key observation is that $p^{\upzeta}_{\upmu}$, while not proper or representable, is in some sense approximated by proper maps of schemes (see Section [\[cohaDT\]](#cohaDT){reference-type="ref" reference="cohaDT"}). Working over the base $\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\upmu}$ instead of $\Uplambda_{\upmu}^{\upzeta}$ is what we mean by the relative theory. The payoff for working in the relative setting is that we obtain more refined results, which are nevertheless easier to prove, since in this relative setting, because of hidden properness, we are able to make extensive use of Morihiko Saito's version [@Sai88; @Saito1; @Saito89] of the famous decomposition theorem of Beilinson, Bernstein, Deligne and Gabber [@BBD], as well as the rest of Saito's theory of mixed Hodge modules. The idea of proving local results on $\mathcal{M}_{\upmu}^{\upzeta\mathop{\mathrm{-ss}}}$ to deduce global results about Donaldson--Thomas invariants was already present in the work of Joyce and Song [@JoyceDT], and later the proof of the integrality conjecture for path algebras in the absence of a potential by the second author and Markus Reineke [@Meinhardt14], which utilised Efimov's theorem [@Efimov] on free supercommutativity for cohomological Hall algebras without potentials to understand the local behaviour of the morphism $p^{\upzeta}_{\upmu}$.

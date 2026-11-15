@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1608.07308v1/blocks/prose-sec-045",
+  "kind": "prose",
+  "title": "Eigenobjects",
+  "pageStart": 53,
+  "pageEnd": 57,
+  "text": "../sections/sec-045-73-eigenobjects.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.07308v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.07308v1",
+  "provenance": "ingested"
+}

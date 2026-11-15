@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0911.1038v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-0911.1038v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0911.1038v2",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0911.1038&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0911.1038v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/0911.1038v2",
+    "content_type": "application/gzip",
+    "sha256": "c68b981687c6027b1842128424782307e41da622931c0af9afd56b38e9b7b2b0",
+    "bytes": 24786,
+    "fetched": "2026-10-10T15:02:41+00:00",
+    "files": [
+      {
+        "path": "source/files/lassalle-first-conjecture01.bbl",
+        "role": "bbl",
+        "sha256": "a3ae82a46a37067945dd7e0ec78bbede5954791f6eb326360ea241a7718d4581",
+        "bytes": 4370
+      },
+      {
+        "path": "source/files/lassalle-first-conjecture01.tex",
+        "role": "tex",
+        "sha256": "2a22449f2771b8875f9f646026e3988e8740d38adef0a65c64d53a9c2a633159",
+        "bytes": 81688
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

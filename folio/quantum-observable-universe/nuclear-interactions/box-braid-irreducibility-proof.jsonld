@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-box-braid-irreducibility",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:box-braid-irreducibility",
+  "kind": "proof",
+  "title": "Proof of box braid irreducibility",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-box-braid-irreducibility"
+  ],
+  "text": "box-braid-irreducibility-proof.md",
+  "provenance": "authored"
+}

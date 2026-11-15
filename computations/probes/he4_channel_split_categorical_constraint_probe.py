@@ -7,7 +7,7 @@ PR #1675 Item 3 verdict: localizing the +5.87% gap to a single
 trace-dominant channel ((9,3)) is underdetermined. Σ_λ frac_λ·ρ_F^λ
 = ρ_F_req = 1.889 is one equation in many unknowns.
 
-conj:psd-trace-orthogonality (content/quantum-observable-universe/
+conj:psd-trace-orthogonality (folio/quantum-observable-universe/
 mass-theory/conj-psd-trace-orthogonality.md) gives a CATEGORICAL
 structural constraint: the binding-energy gap lives in the trace-
 dominant family (2-row partitions), NOT in PSD-dominant family

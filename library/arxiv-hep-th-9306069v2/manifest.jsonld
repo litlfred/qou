@@ -1,41 +1,37 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-9306069v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "The stretched horizon and black hole complementarity",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9306069v2",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-hep-th-9306069v2",
   "contains": [
+    "library/arxiv-hep-th-9306069v2/sections/sec-front-matter",
     "library/arxiv-hep-th-9306069v2/sections/sec-000",
     "library/arxiv-hep-th-9306069v2/sections/sec-001",
     "library/arxiv-hep-th-9306069v2/sections/sec-002",
     "library/arxiv-hep-th-9306069v2/sections/sec-003",
     "library/arxiv-hep-th-9306069v2/sections/sec-004",
     "library/arxiv-hep-th-9306069v2/sections/sec-005",
-    "library/arxiv-hep-th-9306069v2/sections/sec-006",
-    "library/arxiv-hep-th-9306069v2/sections/sec-007",
-    "library/arxiv-hep-th-9306069v2/sections/sec-008",
-    "library/arxiv-hep-th-9306069v2/sections/sec-009",
-    "library/arxiv-hep-th-9306069v2/sections/sec-010",
-    "library/arxiv-hep-th-9306069v2/sections/sec-011",
-    "library/arxiv-hep-th-9306069v2/sections/sec-012",
-    "library/arxiv-hep-th-9306069v2/sections/sec-013",
-    "library/arxiv-hep-th-9306069v2/sections/sec-014",
-    "library/arxiv-hep-th-9306069v2/sections/sec-015",
-    "library/arxiv-hep-th-9306069v2/sections/sec-016",
-    "library/arxiv-hep-th-9306069v2/sections/sec-017",
-    "library/arxiv-hep-th-9306069v2/sections/sec-018",
-    "library/arxiv-hep-th-9306069v2/sections/sec-019",
-    "library/arxiv-hep-th-9306069v2/sections/sec-020",
-    "library/arxiv-hep-th-9306069v2/sections/sec-021",
-    "library/arxiv-hep-th-9306069v2/sections/sec-022",
-    "library/arxiv-hep-th-9306069v2/sections/sec-023",
-    "library/arxiv-hep-th-9306069v2/sections/sec-024",
-    "library/arxiv-hep-th-9306069v2/sections/sec-025"
+    "library/arxiv-hep-th-9306069v2/sections/sec-006"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-th/9306069&metadataPrefix=arXiv), submitted 1993-06-28, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-hep-th-9306069v2",
+    "title_source": "slug",
     "source_file": "9306069v2.pdf",
     "source_sha256": "a140d10424f732333b390701057b3dbc73d34eb7871ea46d85ee4f7c50285d3a",
     "pages": 48,

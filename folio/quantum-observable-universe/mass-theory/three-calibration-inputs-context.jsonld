@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-three-calibration-inputs-context",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:three-calibration-inputs-context",
+  "kind": "remark",
+  "title": "Calibration observables, allowed/forbidden substitutions, and cohomological alignment",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-three-calibration-inputs",
+    "papers/quantum-observable-universe/blocks/prop-three-parameters-wedderburn"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-three-calibration-inputs",
+  "tags": [
+    "calibration",
+    "mass",
+    "prediction",
+    "falsifiability",
+    "wedderburn",
+    "substrate-parameter"
+  ],
+  "text": "three-calibration-inputs-context.md",
+  "provenance": "authored"
+}

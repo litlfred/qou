@@ -66,7 +66,7 @@ from mpmath import mp, mpf, pi as mp_pi, sqrt as mp_sqrt  # noqa: E402
 from _phi_q_util import phi_q  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 
@@ -116,6 +116,14 @@ def main() -> int:
         engine="mpmath",
     )
 
+    # `q_parameter.Q` is `float(_d["q"])` — a float64 module constant, so the
+    # old `mpf(Q)` was a round-trip capping every candidate at ~17 digits.
+    # Read the pin as the SOURCE STRING and build the mpf here, i.e. AFTER
+    # `set_compute_dps()`.  Do NOT substitute the module-level `Q_MP`:
+    # `q_parameter` builds it at `mp.dps = 50`, so it is a 50-digit cap,
+    # BELOW `OUTPUT_DPS = 60`.  Measured against the exact 50-digit decimal
+    # in `Fraction` arithmetic, `mpf(Q_50_DIGIT_STR)` built at dps 70 sits
+    # 4.594e-72 from it and `Q_MP` sits 2.015e-50.
     q = mpf(Q_50_DIGIT_STR)
     pi_sq = mp_pi ** 2
     pi_sq_720 = pi_sq / 720
@@ -174,9 +182,9 @@ def main() -> int:
         rel_residue = abs(candidate_value - pi_sq_720) / pi_sq_720
         candidates.append({
             "form": name,
-            "raw_value": float(val),
-            "casimir_candidate": float(candidate_value),
-            "rel_residue_vs_pi_sq_720": float(rel_residue),
+            "raw_value": val,
+            "casimir_candidate": candidate_value,
+            "rel_residue_vs_pi_sq_720": rel_residue,
         })
 
     # Also try without the π²/6 multiplier — direct match candidates
@@ -193,9 +201,13 @@ def main() -> int:
         rel_residue = abs(val - pi_sq_720) / pi_sq_720
         direct_candidates.append({
             "form": name,
-            "value": float(val),
-            "rel_residue_vs_pi_sq_720": float(rel_residue),
+            "value": val,
+            "rel_residue_vs_pi_sq_720": rel_residue,
         })
+
+    def _ser(c: dict) -> dict:
+        """Serialize one candidate for the witness: mpf -> 60-dps string."""
+        return {k: (fmt(v) if k != "form" else v) for k, v in c.items()}
 
     # ─── Best matches ───
     sub_one_pct = [
@@ -227,48 +239,48 @@ def main() -> int:
             "primitive at substrate q_0)."
         )
         .set_content_block("conj:casimir-epsilon-vacuum")
-        .add_parameter("substrate_q", float(q))
-        .add_parameter("target_pi_sq_720", float(pi_sq_720))
+        .add_parameter("substrate_q", fmt(q))
+        .add_parameter("target_pi_sq_720", fmt(pi_sq_720))
         .add_data(
             "phi_q_evaluations",
             {
-                "phi_q_at_1": float(phi_q_at_1),
-                "phi_q_at_q_half": float(phi_q_at_qhalf),
-                "phi_q_at_q_inv": float(phi_q_at_q_inv),
-                "log_phi_q_at_1": float(log_phi_q_at_1),
+                "phi_q_at_1": fmt(phi_q_at_1),
+                "phi_q_at_q_half": fmt(phi_q_at_qhalf),
+                "phi_q_at_q_inv": fmt(phi_q_at_q_inv),
+                "log_phi_q_at_1": fmt(log_phi_q_at_1),
             },
         )
         .add_data(
             "markov_parameters",
             {
-                "z_M_v1": float(z_M_v1),
-                "z_M_v2": float(z_M_v2),
-                "z_M_v3": float(z_M_v3),
+                "z_M_v1": fmt(z_M_v1),
+                "z_M_v2": fmt(z_M_v2),
+                "z_M_v3": fmt(z_M_v3),
             },
         )
         .add_data(
             "extended_q_zeta",
             {
-                "heine_zeta_neg3": float(heine_neg3),
-                "tsumura_style": float(tsumura_neg3),
+                "heine_zeta_neg3": fmt(heine_neg3),
+                "tsumura_style": fmt(tsumura_neg3),
             },
         )
-        .add_data("geom_multiplied_candidates", candidates)
-        .add_data("direct_candidates", direct_candidates)
+        .add_data("geom_multiplied_candidates", [_ser(c) for c in candidates])
+        .add_data("direct_candidates", [_ser(c) for c in direct_candidates])
         .add_data(
             "best_geom_multiplied",
             {
                 "form": best_geom["form"],
-                "value": best_geom["casimir_candidate"],
-                "rel_residue": best_geom["rel_residue_vs_pi_sq_720"],
+                "value": fmt(best_geom["casimir_candidate"]),
+                "rel_residue": fmt(best_geom["rel_residue_vs_pi_sq_720"]),
             },
         )
         .add_data(
             "best_direct",
             {
                 "form": best_direct["form"],
-                "value": best_direct["value"],
-                "rel_residue": best_direct["rel_residue_vs_pi_sq_720"],
+                "value": fmt(best_direct["value"]),
+                "rel_residue": fmt(best_direct["rel_residue_vs_pi_sq_720"]),
             },
         )
         .add_assertion(

@@ -2,7 +2,7 @@
 """Corner-removal induction step for Piece A, checked exhaustively.
 
 Backs `lem:piece-a-corner-removal-obligation` and its proof block in
-`content/quantum-observable-universe/mass-theory/`.
+`folio/quantum-observable-universe/mass-theory/`.
 
 Piece A is the per-partition hook-content identity
 `Sum_c h(c)^2 = Sum_c content(c)^2 + n^2`.  Lean proves it by the arm-leg /

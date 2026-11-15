@@ -1,24 +1,24 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T11:19:33.364072+00:00",
-  "commitSha": "79aa1eb4bc090278a12041c8b3e9a5804daed3f2",
+  "computedAt": "2026-11-15T08:24:36.382306+00:00",
+  "commitSha": "bb74b000edb913689389e3e66bea468bc83ff3c2",
   "assertions": [
     {
       "name": "deuteron_f_is_unity",
-      "computed": "0.998077447384867516004940626148",
-      "expected": 1.0,
-      "passed": true,
+      "computed": "4.04018192636953934225839091235",
+      "expected": "1.0",
+      "passed": false,
       "tolerance": "0.01",
       "source": "B(D) = m_e·8G·Δtr → f(D)=1 (Borromean volume, +0.19%)"
     }
   ],
-  "allPassed": true,
-  "durationMs": 5,
+  "allPassed": false,
+  "durationMs": 69,
   "computation": "binding-factor-f-decomposition",
   "scriptFile": "binding_factor_f_decomposition.py",
-  "scriptHash": "1dae90660628",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptHash": "9f58af188ff5",
+  "scriptCommitSha": "d9573481fce67572354918f91b289cf0995ab922",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,14 +26,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -43,45 +44,64 @@
   },
   "data": {
     "scale_m_e_8G_MeV": "3.74445965994161032476174167348",
+    "trace_frame": {
+      "intra_ordering": "borromean (owner ruling qou-hu1f)",
+      "markov_convention": "D, z = q^3/(q^2+1) (ruling 2026-08-15)",
+      "q0Anchor": "proton",
+      "sources": [
+        "atomic-tr-m-mpfr-50dps-proton.witness.json (via canonical_trm_reference.tr_m_nucleon): p, n, D, T, 3He",
+        "canonical-tr-m-via-chi-cache.witness.json: 4He",
+        "free trace = |tr_M(p)|^Z |tr_M(n)|^N; cross-checked against binding-canonical.witness.json to 1e-40"
+      ],
+      "superseded": "hardcoded grouped-word / convention-C table (deuteron 0.38829, free 0.98353) removed 2026-11-15"
+    },
     "rows": [
       {
         "atom": "D",
         "Z": 1,
         "N": 1,
         "A": 2,
-        "delta_tr": "0.59523971037093235",
+        "tr_M_free": "0.29901501718464007670216042677098383227494947439703",
+        "tr_M_atom": "0.15196833920423160759266569775106614127124096465526",
+        "delta_tr": "0.14704667798040846910949472902",
         "B_AME_MeV": "2.224566",
-        "f_AME_extracted": "0.998077447384867516004940626148"
+        "f_AME_extracted": "4.04018192636953934225839091235"
       },
       {
         "atom": "T",
         "Z": 1,
         "N": 2,
         "A": 3,
-        "delta_tr": "0.80397200110983656",
+        "tr_M_free": "0.14207205679730479747049860425505585620688877446834",
+        "tr_M_atom": "0.029144042360972065357254218791869844065838803564741",
+        "delta_tr": "0.112928014436332732113244385463",
         "B_AME_MeV": "8.481798",
-        "f_AME_extracted": "2.81746055555549374265434121569"
+        "f_AME_extracted": "20.0584364491332484463288218692"
       },
       {
         "atom": "3He",
         "Z": 2,
         "N": 1,
         "A": 3,
-        "delta_tr": "0.84121570901936135",
+        "tr_M_free": "0.18817864299948877926347903714586689992069257358944",
+        "tr_M_atom": "0.058596253654436380218956715452130256830877107284187",
+        "delta_tr": "0.129582389345052399044522321694",
         "B_AME_MeV": "7.718043",
-        "f_AME_extracted": "2.45025149861481185163179425524"
+        "f_AME_extracted": "15.906405662844109259206614303"
       },
       {
         "atom": "4He",
         "Z": 2,
         "N": 2,
         "A": 4,
-        "delta_tr": "0.91197540464277041",
+        "tr_M_free": "0.089409980501930600382047565819885657048241375217184",
+        "tr_M_atom": "0.011237417659767421564199549374410607269662696081262",
+        "delta_tr": "0.0781725628421631788178480164455",
         "B_AME_MeV": "28.295673",
-        "f_AME_extracted": "8.2860537443522878472181955525"
+        "f_AME_extracted": "96.6666173098990266054921300974"
       }
     ],
-    "mirror_split_T_minus_He3": "0.367209056940681891022546960452",
+    "mirror_split_T_minus_He3": "4.15203078628913918712220756623",
     "bondcount_test": {
       "model": "f = A(A-1)/2 - kappa*Z(Z-1)/2, kappa from A=3 mirror",
       "rows": [
@@ -90,36 +110,36 @@
           "A": 2,
           "pairs": 1,
           "f_pred_bondcount": "1.0",
-          "f_extracted": "0.998077447384867516",
-          "err_pct": -0.1922552615132484
+          "f_extracted": "4.0401819263695393423",
+          "err_pct": "304.01819263695393423"
         },
         {
           "atom": "T",
           "A": 3,
           "pairs": 3,
           "f_pred_bondcount": "3.0",
-          "f_extracted": "2.8174605555554937427",
-          "err_pct": -6.084648148150208
+          "f_extracted": "20.058436449133248446",
+          "err_pct": "568.61454830444161488"
         },
         {
           "atom": "3He",
           "A": 3,
           "pairs": 3,
-          "f_pred_bondcount": "2.632790943059318109",
-          "f_extracted": "2.4502514986148118516",
-          "err_pct": -6.933305696972445
+          "f_pred_bondcount": "-1.1520307862891391871",
+          "f_extracted": "15.906405662844109259",
+          "err_pct": "-1480.7274816049824768"
         },
         {
           "atom": "4He",
           "A": 4,
           "pairs": 6,
-          "f_pred_bondcount": "5.632790943059318109",
-          "f_extracted": "8.2860537443522878472",
-          "err_pct": 47.10387493720675
+          "f_pred_bondcount": "1.8479692137108608129",
+          "f_extracted": "96.666617309899026605",
+          "err_pct": "5130.9647039944570976"
         }
       ],
-      "verdict": "FALSIFIED at 4He (+47%); f tracks magic-shell closure, not pairwise bonds"
+      "verdict": "canonical traces: D err 304.0%, 4He err 5131.0%. The model asserts f(D) = 1 by construction (pairs = 1, no pp pair)."
     },
-    "finding": "Vol(K_bind) = 8G·f(Z,N); f={D:1.00,T:2.82,3He:2.45,4He:8.29} (AME-extracted). Pairwise-bond model f=pairs−κ·pp fits D (−0.19%) but FAILS 4He (+47%): doubly-magic 4He binds collectively. f is a magic-shell-closure quantity (#1417 per-magic-closure), to derive from Demazure crystal closure — NOT pairwise bonds. f NOT yet derived; not fittable from 4 points — open Barrier-1."
+    "finding": "Vol(K_bind) = 8G·f(Z,N); f={D:4.04, T:20.06, 3He:15.91, 4He:96.67} (AME-extracted, canonical borromean/D/proton traces). f is NOT derived and NOT fittable from 4 points — open Barrier-1. The earlier f={D:1.00,T:2.82,3He:2.45,4He:8.29} was the retired grouped/C frame."
   }
 }

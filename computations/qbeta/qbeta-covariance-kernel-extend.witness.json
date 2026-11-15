@@ -1,5 +1,7 @@
 {
   "computation": "qbeta-covariance-kernel-extend",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal",
   "assertions": [
     {
       "name": "hook_formula_reproduces_sum_of_squares_eq_factorial",
@@ -85,8 +87,8 @@
     }
   },
   "provenance": {
-    "headSha": "32413bc00c5c2c5d94335fd9695b3b3e5b388244",
+    "headSha": "eacf7ca73101030f04c9f788e9f705839bef23c3",
     "producer": "computations/qbeta/qbeta_covariance_kernel_extend_probe.py",
-    "elapsed_s": 43.198
+    "elapsed_s": 38.562
   }
 }

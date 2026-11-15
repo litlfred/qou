@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1810.11563v1/blocks/prose-sec-043",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1810.11563v1/blocks/prose-sec-043",
   "kind": "prose",
   "title": "Geometric Interpretation of Uncomplexity",
   "pageStart": 77,
   "pageEnd": 84,
   "text": "../sections/sec-043-232-geometric-interpretation-of-uncomplexity.md",
-  "derivedFrom": "library/arxiv-1810.11563v1/manifest",
-  "sourceDocument": "library/arxiv-1810.11563v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1810.11563v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1810.11563v1",
   "provenance": "ingested"
 }

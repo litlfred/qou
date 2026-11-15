@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sec-archimedean-condition-genus-completeness-genus-ideal-characterisation-preamble",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:archimedean-condition-genus-completeness-genus-ideal-characterisation-preamble",
+  "kind": "prose",
+  "text": "archimedean-condition-genus-completeness-genus-ideal-characterisation-intro.md",
+  "provenance": "authored"
+}

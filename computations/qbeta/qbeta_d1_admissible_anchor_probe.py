@@ -38,7 +38,7 @@ which could not be RUN until PR #5943 fixed its import bootstrap.
 
 SCOPE-(a).  No c_k is proposed, no element is adjudicated, nothing is wired.
 
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/QBeta/ConventionDAdmissibleRoots.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/QBeta/ConventionDAdmissibleRoots.lean
 -- Ref: [manuscript] .beans/qou-99qc (the admissible set is COMPLETE, solved not sampled)
 -- Ref: [manuscript] computations/qbeta/qbeta_delta_element_fork_pricing_probe.py (PR #5897, tr_M(Delta_L))
 -- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors", Invent. Math. 92 (1988) 349-383.

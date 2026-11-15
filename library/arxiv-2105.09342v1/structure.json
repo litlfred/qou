@@ -6,7 +6,12 @@
   "sha256": "57ae12327da7b9a10608fe57ddb8ac5c02bff552aee0fd71dd66b04b04a7dc7c",
   "bytes": 718004,
   "pages": 31,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:21Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,13 +26,28 @@
   "title_lines": [
    "A Unitary Matrix Model for q-deformed Plancherel Growth"
   ],
-  "abstract": "In this paper we construct a unitary matrix model that captures the asymptotic growth of Young diagrams under q-deformed Plancherel measure. The matrix model is a q analog of Gross-Witten-Wadia (GWW) matrix model. In the large N limit the model exhibits a third order phase transition between no-gap and gapped phases, which is a q-deformed version of the GWW phase transition. We show that the no-gap phase of this matrix model captures the asymptotic growth of Young diagrams equipped with q-deformed Plancherel measure. The no-gap solutions also satis\ufb01es a di\ufb00erential equation which is theq-analogue of the automodel equation. We further provide a droplet description for these growing Young diagrams. Quantising these droplets we identify the Young diagrams with coherent states in the Hilbert space. We also elaborate the connection between moments of Young diagrams and the in\ufb01nite number of commuting Hamiltonians obtained from the largeN droplets and explicitly compute the moments for asymptotic Young diagrams.",
+  "abstract": "In this paper we construct a unitary matrix model that captures the asymptotic growth of Young diagrams under q-deformed Plancherel measure. The matrix model is a q analog of Gross-Witten-Wadia (GWW) matrix model. In the large N limit the model exhibits a third order phase transition between no-gap and gapped phases, which is a q-deformed version of the GWW phase transition. We show that the no-gap phase of this matrix model captures the asymptotic growth of Young diagrams equipped with q-deformed Plancherel measure. The no-gap solutions also satis\ufb01es a di\ufb00erential equation which is the q-analogue of the automodel equation. We further provide a droplet description for these growing Young diagrams. Quantising these droplets we identify the Young diagrams with coherent states in the Hilbert space. We also elaborate the connection between moments of Young diagrams and the in\ufb01nite number of commuting Hamiltonians obtained from the large N droplets and explicitly compute the moments for asymptotic Young diagrams.",
   "docinfo": {
+   "Title": "A Unitary Matrix Model for q-deformed Plancherel Growth",
    "Author": "Suvankar Dutta; Debangshu Mukherjee; Neetu; Sanhita Parihar; ",
-   "CreationDate": "D:20210521003113Z",
-   "Creator": "LaTeX with hyperref",
    "Producer": "pdfTeX-1.40.21",
-   "Title": "A Unitary Matrix Model for q-deformed Plancherel Growth"
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20210521003113Z"
+  },
+  "title_raw": "A Unitary Matrix Model for q-deformed Plancherel Growth",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "A Unitary Matrix Model for q-deformed Plancherel Growth",
+   "heading": "A Unitary Matrix Model for q -deformed Plancherel Growth",
+   "outline": "1 Introduction",
+   "text": "A Unitary Matrix Model for q-deformed Plancherel Growth",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -36,109 +56,448 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "q-deformed Plancherel growth",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "A unitary matrix model for q-deformed Plancherel growth",
    "page": 7,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Solution class 1: No-gap solution",
    "page": 10,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "q-deformed automodel class",
    "page": 12,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The unitary matrix model from the droplet picture",
    "page": 12,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Asymptotic analysis of q-deformed Plancherel growth of second kind",
    "page": 15,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The Hilbert space",
    "page": 17,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Moments of Young diagrams and conserved charges",
    "page": 18,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Conclusion",
    "page": 19,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Appendix  A q analog of GWW phase transition",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Appendix  B Explicit computation of the partition function",
    "page": 22,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Appendix  C Calculation of automodel density for the second class \u00e0 la Strahov",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Appendix  C.1 Computing Hconst(h), H(h) and Hseries(h)",
    "page": 25,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Appendix  D Droplet quantisation",
    "page": 26,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "2D Crystal growth and growth of rotated Young diagrams. A crystal unit is compared with a single box in the Young diagram. Single crystals are falling from sky under gravity and being deployed at possible stable positions",
+   "page": 3,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "A typical Young diagrams written in the Russian convention",
+   "page": 6,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The deformed contour of integration for (3.21) has a logarithmic branch cut extending from wa",
+   "page": 11,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The limit shape for a q-deformed (\u03bb = 0.8) Plancherel growth process (green curve) and its q \u21921 (\u03bb \u21920) limit (orange curve) for comparison",
+   "page": 12,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "The limit shape for a q-deformed (\u03bb = 0.97) Plancherel growth process (green curve) and its q \u21921 (\u03bb \u21920) limit (orange curve) for comparison",
+   "page": 17,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1490,
+   "n_words": 215,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -146,8 +505,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 8814,
-   "n_words": 1482
+   "n_chars": 8820,
+   "n_words": 1487,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-q-deformed-plancherel-growth",
@@ -156,8 +517,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 7,
-   "n_chars": 4460,
-   "n_words": 773
+   "n_chars": 4503,
+   "n_words": 816,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-3-a-unitary-matrix-model-for-q-deformed-plancher",
@@ -166,8 +529,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 10,
-   "n_chars": 4834,
-   "n_words": 901
+   "n_chars": 4875,
+   "n_words": 942,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-31-solution-class-1-no-gap-solution",
@@ -176,8 +541,10 @@
    "level": 2,
    "page_start": 10,
    "page_end": 12,
-   "n_chars": 1745,
-   "n_words": 351
+   "n_chars": 1797,
+   "n_words": 403,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-32-q-deformed-automodel-class",
@@ -186,8 +553,10 @@
    "level": 2,
    "page_start": 12,
    "page_end": 12,
-   "n_chars": 1052,
-   "n_words": 196
+   "n_chars": 1061,
+   "n_words": 205,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-33-the-unitary-matrix-model-from-the-droplet-pic",
@@ -196,8 +565,10 @@
    "level": 2,
    "page_start": 12,
    "page_end": 15,
-   "n_chars": 4598,
-   "n_words": 841
+   "n_chars": 4630,
+   "n_words": 873,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-4-asymptotic-analysis-of-q-deformed-plancherel-g",
@@ -206,8 +577,10 @@
    "level": 1,
    "page_start": 15,
    "page_end": 17,
-   "n_chars": 3842,
-   "n_words": 774
+   "n_chars": 3939,
+   "n_words": 871,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-007-5-the-hilbert-space",
@@ -216,8 +589,10 @@
    "level": 1,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 2806,
-   "n_words": 523
+   "n_chars": 2807,
+   "n_words": 523,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-008-51-moments-of-young-diagrams-and-conserved-charg",
@@ -226,8 +601,10 @@
    "level": 2,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 1269,
-   "n_words": 228
+   "n_chars": 1280,
+   "n_words": 239,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-009-6-conclusion",
@@ -236,15 +613,116 @@
    "level": 1,
    "page_start": 19,
    "page_end": 31,
-   "n_chars": 22069,
-   "n_words": 4024
+   "n_chars": 22416,
+   "n_words": 4373,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 15,
-  "sections": 10,
-  "chars_total": 55489
+  "toc_inferred_entries": 0,
+  "figure_entries": 5,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 11,
+  "chars_total": 57618,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "Qdeformed_Plancherel_note.tex",
+   "tex_sections": 10,
+   "overlaid": 7,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.918,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-q-deformed-plancherel-growth",
+     "title": "q-deformed Plancherel growth",
+     "prose_ratio": 0.905,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-a-unitary-matrix-model-for-q-deformed-plancher",
+     "title": "A unitary matrix model for q-deformed Plancherel growth",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-31-solution-class-1-no-gap-solution",
+     "title": "Solution class 1: No-gap solution",
+     "prose_ratio": 0.554,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-32-q-deformed-automodel-class",
+     "title": "q-deformed automodel class",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-33-the-unitary-matrix-model-from-the-droplet-pic",
+     "title": "The unitary matrix model from the droplet picture",
+     "prose_ratio": 0.894,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-4-asymptotic-analysis-of-q-deformed-plancherel-g",
+     "title": "Asymptotic analysis of q-deformed Plancherel growth of second kind",
+     "prose_ratio": 0.907,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-5-the-hilbert-space",
+     "title": "The Hilbert space",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-51-moments-of-young-diagrams-and-conserved-charg",
+     "title": "Moments of Young diagrams and conserved charges",
+     "prose_ratio": 0.928,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-6-conclusion",
+     "title": "Conclusion",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.279,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

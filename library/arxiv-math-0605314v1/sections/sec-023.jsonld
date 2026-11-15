@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0605314v1/sections/sec-023",
   "@type": [
     "doco:Section"
   ],
-  "title": "Braided Hopf algebra structure for Uh. Let ModUh denote the category",
-  "pageStart": 12,
-  "pageEnd": 13,
+  "title": "Some remarks",
+  "pageStart": 35,
+  "pageEnd": 36,
   "contains": [
     "library/arxiv-math-0605314v1/blocks/prose-sec-023"
   ],
-  "derivedFrom": "library/arxiv-math-0605314v1/manifest",
-  "sourceDocument": "library/arxiv-math-0605314v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0605314v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0605314v1",
   "provenance": "ingested"
 }

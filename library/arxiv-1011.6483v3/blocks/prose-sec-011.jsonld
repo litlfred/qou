@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1011.6483v3/blocks/prose-sec-011",
+  "kind": "prose",
+  "title": "Review of topological chiral homology à la Lurie",
+  "pageStart": 40,
+  "pageEnd": 43,
+  "text": "../sections/sec-011-51-review-of-topological-chiral-homology-à-la-lu.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1011.6483v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1011.6483v3",
+  "provenance": "ingested"
+}

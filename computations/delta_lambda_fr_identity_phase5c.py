@@ -33,9 +33,14 @@ Compares both:
 The difference between (a) and (b) is the interface-knot contribution
 Δ_I^K from PR #801.
 
-  Ref: [manuscript] conj:delta-lambda-categorical-closure
+  Ref: [manuscript] `delta-lambda-categorical-closure`
   Ref: docs/audits/2026-05-19-delta-lambda-phase5-alpha-derivation-progress.md
   Ref: PR #801 (interface-knot Δ_I^K binding)
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 
@@ -441,7 +446,7 @@ def main() -> int:
 
         "framework_doc":
 
-            "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+            "folio/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
 
         "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md.",
 

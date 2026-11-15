@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1106.2975v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "The Polyanalytic Ginibre Ensembles (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1106.2975v1",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1106.2975&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1106.2975v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1106.2975v1",
+    "content_type": "application/gzip",
+    "sha256": "1c8346bc0acea970b576c856c7496fca4b40ff4bbbd9f78a9a7c7100de916485",
+    "bytes": 71862,
+    "fetched": "2026-10-10T15:04:54+00:00",
+    "files": [
+      {
+        "path": "source/files/birkart.cls",
+        "role": "cls",
+        "sha256": "93c997125026bda56ece78fce1aadefd0d1197bb9375010a4b0765e87c7be8fe",
+        "bytes": 42169
+      },
+      {
+        "path": "source/files/polyanalytic1.tex",
+        "role": "tex",
+        "sha256": "c18acef802d3ddbdd7592796c391f9e23c6c1783c65d2cdd28b5b2ad203c94f0",
+        "bytes": 103764
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

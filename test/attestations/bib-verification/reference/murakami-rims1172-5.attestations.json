@@ -1,0 +1,46 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "murakami-rims1172-5",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 228,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/1172-5/1172-5.pdf"
+        },
+        "id": "murakami-rims1172-5",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "Article 5 of RIMS Kokyuroku 1172 (2000), pp. 70-79 (H. Murakami): 'optimistic' asymptotics of the WRT SU(2) invariants for the CLOSED 3-manifolds obtained from the figure-eight knot by integral Dehn surgeries p = 0..10, extracting volumes and Chern-Simons invariants of those closed manifolds, with a conjecture that the same holds generally. The corpus's figure-eight work is entirely on the COMPLEMENT (Vol + i CS of 4_1, the Kashaev/colored-Jones asymptotic, the Ohtsuki tower, the 3D-index of m004); it carries no surgered-closed-manifold object and no 'optimistic limit' method -- greps for 'optimistic' in content/ and docs/ return nothing. So the surgery table is same-field data with no consumer. Recorded as tangential, scope-(a). Worth noting for the merge: uploads/1172-1..5.pdf are five articles of the same Kokyuroku volume, fetched together; see the corpus note below.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Closed surgered manifolds are outside the corpus's 4_1-complement scope; no block or script consumes surgery Vol/CS values.",
+              "target": "computations/figure_eight_kashaev_volume.py"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "21b7a0e13bd2"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

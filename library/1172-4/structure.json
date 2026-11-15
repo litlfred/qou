@@ -5,27 +5,38 @@
   "file": "1172-4.pdf",
   "sha256": "ffc47732ce0138e9fa08c0fd2598331679a94590b150f5a4f120b8c26f4f56ee",
   "bytes": 1594675,
-  "pages": 26
+  "pages": 26,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:17Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Notes on Construction of the Knot Invariant from Quantum Dilogarithm Function",
-  "authors_raw": null,
-  "abstract": null,
-  "docinfo": {
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": "",
-   "Producer": "dvipdfm 0.13.2c-j-p1d, Copyright © 1998, by Mark A. Wicks",
-   "CreationDate": "D:20080313235932+09'00'"
-  },
+  "title": "Notes on Construction of the Knot Invariant from $\\mathrm{O}\\mathrm{u}\\mathrm{a}\\mathrm{n}\\mathrm{t}\\mathrm{u}\\sim \\mathrm{m}$ Dilogarithm Function \u6771\u4eac\u5927\u5b66\u5927\u5b66\u9662\u88e1\u638c\u91ce\u7814\u7a76\u79d1\u7269\u88e1\u5b66\u5c08\u653b",
+  "authors_raw": "Kazuhiro HIKAMI",
   "title_lines": [
    "Notes on Construction of the Knot Invariant from",
-   "$\\mathrm{O}\\mathrm{u}\\mathrm{a}\\mathrm{n}\\mathrm{t}\\mathrm{u}\\sim \\mathrm{m}$Dilogarithm Function",
-   "El5~Bg3XBg3X1!N#>8Ln8&5f2JJ*N#3XUs96"
+   "$\\mathrm{O}\\mathrm{u}\\mathrm{a}\\mathrm{n}\\mathrm{t}\\mathrm{u}\\sim \\mathrm{m}$ Dilogarithm Function",
+   "\u6771\u4eac\u5927\u5b66\u5927\u5b66\u9662\u88e1\u638c\u91ce\u7814\u7a76\u79d1\u7269\u88e1\u5b66\u5c08\u653b"
   ],
-  "title_prev": "Notes on Construction of the Knot Invariant from $\\mathrm{O}\\mathrm{u}\\mathrm{a}\\mathrm{n}\\mathrm{t}\\mathrm{u}\\sim \\mathrm{m}$Dilogarithm Function El5~Bg3XBg3X1!N#>8Ln8&5f2JJ*N#3XUs96"
+  "abstract": null,
+  "docinfo": {
+   "Producer": "dvipdfm 0.13.2c-j-p1d, Copyright \u00a9 1998, by Mark A. Wicks",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20080313235932+09'00'"
+  },
+  "title_raw": "Notes on Construction of the Knot Invariant from $\\mathrm{O}\\mathrm{u}\\mathrm{a}\\mathrm{n}\\mathrm{t}\\mathrm{u}\\sim \\mathrm{m}$ Dilogarithm Function \u6771\u4eac\u5927\u5b66\u5927\u5b66\u9662\u88e1\u638c\u91ce\u7814\u7a76\u79d1\u7269\u88e1\u5b66\u5c08\u653b",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Notes on Construction of the Knot Invariant from $ \\mathrm{O}\\mathrm{u}\\mathrm{a}\\mathrm{n}\\mathrm{t}\\mathrm{u}\\sim \\mathrm{m}$ Dilogarithm Function Introduction",
+   "text": "Notes on Construction of the Knot Invariant from $\\mathrm{O}\\mathrm{u}\\mathrm{a}\\mathrm{n}\\mathrm{t}\\mathrm{u}\\sim \\mathrm{m}$ Dilogarithm Function \u6771\u4eac\u5927\u5b66\u5927\u5b66\u9662\u88e1\u638c\u91ce\u7814\u7a76\u79d1\u7269\u88e1\u5b66\u5c08\u653b",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -33,231 +44,451 @@
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Dilogarithm Function",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Quantum Dilogarithm Function II",
-   "page": 6,
-   "source": "inferred",
-   "number": "4"
+   "number": "1",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "44"
   },
   {
    "level": 1,
    "title": "Representation",
    "page": 9,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "52"
   },
   {
    "level": 2,
    "title": "Momentum Space",
    "page": 9,
    "source": "inferred",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "52"
   },
   {
    "level": 2,
-   "title": "Asymptotic Behavior",
-   "page": 11,
-   "source": "inferred",
-   "number": "5.2"
-  },
-  {
-   "level": 1,
-   "title": "Knot Invariant",
+   "title": "Braid",
    "page": 13,
    "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 2,
-   "title": "Braid $G$roup",
-   "page": 13,
-   "source": "inferred",
-   "number": "6.1"
-  },
-  {
-   "level": 2,
-   "title": "Three Dlmenslonal Picture",
-   "page": 14,
-   "source": "inferred",
-   "number": "6.2"
+   "number": "6.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "56"
   },
   {
    "level": 1,
    "title": "Simple Examples",
    "page": 19,
    "source": "inferred",
-   "number": "7"
+   "number": "7",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "62"
   },
   {
    "level": 2,
-   "title": "Figure-Eight Knot",
-   "page": 19,
-   "source": "inferred",
-   "number": "7.1"
-  },
-  {
-   "level": 1,
-   "title": "Concluding Remarks",
+   "title": "Acknowledgement",
    "page": 22,
    "source": "inferred",
-   "number": "8"
+   "number": null,
+   "confidence": 0.55,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": "65"
   },
   {
    "level": 1,
    "title": "References",
    "page": 22,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.55,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": "65"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "64",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "65",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "68",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "69",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-2-dilogarithm-function",
-   "number": "2",
-   "title": "Dilogarithm Function",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 69,
-   "n_words": 5
+   "n_chars": 197,
+   "n_words": 18,
+   "label_start": "44",
+   "label_end": "44"
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 6,
-   "n_chars": 9088,
-   "n_words": 970
-  },
-  {
-   "id": "sec-002-4-quantum-dilogarithm-function-ii",
-   "number": "4",
-   "title": "Quantum Dilogarithm Function II",
-   "level": 1,
-   "page_start": 6,
    "page_end": 9,
-   "n_chars": 7287,
-   "n_words": 680
+   "n_chars": 16567,
+   "n_words": 1823,
+   "label_start": "44",
+   "label_end": "52"
   },
   {
-   "id": "sec-003-5-representation",
+   "id": "sec-001-5-representation",
    "number": "5",
    "title": "Representation",
    "level": 1,
    "page_start": 9,
    "page_end": 9,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 3,
+   "n_words": 1,
+   "label_start": "52",
+   "label_end": "52"
   },
   {
-   "id": "sec-004-51-momentum-space",
+   "id": "sec-002-51-momentum-space",
    "number": "5.1",
    "title": "Momentum Space",
    "level": 2,
    "page_start": 9,
-   "page_end": 11,
-   "n_chars": 3150,
-   "n_words": 245
-  },
-  {
-   "id": "sec-005-52-asymptotic-behavior",
-   "number": "5.2",
-   "title": "Asymptotic Behavior",
-   "level": 2,
-   "page_start": 11,
    "page_end": 13,
-   "n_chars": 3722,
-   "n_words": 245
+   "n_chars": 6959,
+   "n_words": 538,
+   "label_start": "52",
+   "label_end": "56"
   },
   {
-   "id": "sec-006-6-knot-invariant",
-   "number": "6",
-   "title": "Knot Invariant",
-   "level": 1,
-   "page_start": 13,
-   "page_end": 13,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-007-61-braid-group",
+   "id": "sec-003-61-braid",
    "number": "6.1",
-   "title": "Braid $G$roup",
+   "title": "Braid",
    "level": 2,
    "page_start": 13,
-   "page_end": 14,
-   "n_chars": 1777,
-   "n_words": 199
-  },
-  {
-   "id": "sec-008-62-three-dlmenslonal-picture",
-   "number": "6.2",
-   "title": "Three Dlmenslonal Picture",
-   "level": 2,
-   "page_start": 14,
    "page_end": 19,
-   "n_chars": 5785,
-   "n_words": 672
+   "n_chars": 7662,
+   "n_words": 936,
+   "label_start": "56",
+   "label_end": "62"
   },
   {
-   "id": "sec-009-7-simple-examples",
+   "id": "sec-004-7-simple-examples",
    "number": "7",
    "title": "Simple Examples",
    "level": 1,
    "page_start": 19,
-   "page_end": 19,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-010-71-figure-eight-knot",
-   "number": "7.1",
-   "title": "Figure-Eight Knot",
-   "level": 2,
-   "page_start": 19,
    "page_end": 22,
-   "n_chars": 2695,
-   "n_words": 282
+   "n_chars": 3970,
+   "n_words": 462,
+   "label_start": "62",
+   "label_end": "65"
   },
   {
-   "id": "sec-011-8-concluding-remarks",
-   "number": "8",
-   "title": "Concluding Remarks",
-   "level": 1,
+   "id": "sec-005-acknowledgement",
+   "number": null,
+   "title": "Acknowledgement",
+   "level": 2,
    "page_start": 22,
    "page_end": 22,
-   "n_chars": 1300,
-   "n_words": 156
+   "n_chars": 82,
+   "n_words": 11,
+   "label_start": "65",
+   "label_end": "65"
   },
   {
-   "id": "sec-012-references",
+   "id": "sec-006-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 22,
    "page_end": 26,
-   "n_chars": 6261,
-   "n_words": 762
+   "n_chars": 6290,
+   "n_words": 791,
+   "label_start": "65",
+   "label_end": "69"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 13,
-  "sections": 13,
-  "chars_total": 41134
+  "toc_entries": 7,
+  "toc_inferred_entries": 7,
+  "toc_inferred_mean_confidence": 0.707,
+  "toc_inferred_empty_share": 0.143,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 41730
  }
 }

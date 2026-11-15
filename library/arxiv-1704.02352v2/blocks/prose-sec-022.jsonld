@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1704.02352v2/blocks/prose-sec-022",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1704.02352v2/blocks/prose-sec-022",
   "kind": "prose",
-  "title": "Convergence of densities, in probability.",
-  "pageStart": 39,
-  "pageEnd": 41,
-  "text": "../sections/sec-022-56-convergence-of-densities-in-probability.md",
-  "derivedFrom": "library/arxiv-1704.02352v2/manifest",
-  "sourceDocument": "library/arxiv-1704.02352v2/manifest",
+  "title": "Technical results",
+  "pageStart": 29,
+  "pageEnd": 29,
+  "text": "../sections/sec-022-4-technical-results.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1704.02352v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1704.02352v2",
   "provenance": "ingested"
 }

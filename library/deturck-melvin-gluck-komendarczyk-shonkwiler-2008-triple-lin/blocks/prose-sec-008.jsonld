@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/prose-sec-008",
   "kind": "prose",
   "title": "Completing the proof of Theorem B",
   "pageStart": 26,
   "pageEnd": 33,
   "text": "../sections/sec-008-completing-the-proof-of-theorem-b.md",
-  "derivedFrom": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/manifest",
-  "sourceDocument": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin",
   "provenance": "ingested"
 }

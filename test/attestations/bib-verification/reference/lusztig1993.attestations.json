@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "lusztig1993",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 26,
+      "entry": {
+        "id": "lusztig1993",
+        "status": "partial",
+        "verified_at": "2026-05-19T07:00:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 17,
+        "fix_commit": "(this commit)",
+        "note": "Lusztig, 'Introduction to Quantum Groups', Birkh\u00e4user 1993 (DOI 10.1007/978-0-8176-4717-9). 17 bare-URL Refs \u2192 title+publisher. No local PDF (Birkh\u00e4user paywalled). Partial.",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1007/978-0-8176-4717-9"
+        }
+      }
+    }
+  ]
+}

@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-ph-0003017v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Random Matrix Theory and Chiral Symmetry in QCD J.J.M. Verbaarschot",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-0003017v2",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-hep-ph-0003017v2",
   "contains": [
+    "library/arxiv-hep-ph-0003017v2/sections/sec-front-matter",
     "library/arxiv-hep-ph-0003017v2/sections/sec-000",
     "library/arxiv-hep-ph-0003017v2/sections/sec-001",
     "library/arxiv-hep-ph-0003017v2/sections/sec-002",
@@ -13,11 +19,56 @@
     "library/arxiv-hep-ph-0003017v2/sections/sec-004",
     "library/arxiv-hep-ph-0003017v2/sections/sec-005",
     "library/arxiv-hep-ph-0003017v2/sections/sec-006",
-    "library/arxiv-hep-ph-0003017v2/sections/sec-007"
+    "library/arxiv-hep-ph-0003017v2/sections/sec-007",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-008",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-009",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-010",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-011",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-012",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-013",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-014",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-015",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-016",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-017",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-018",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-019",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-020",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-021",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-022",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-023",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-024",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-025",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-026",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-027",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-028",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-029",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-030",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-031",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-032",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-033",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-034",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-035",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-036",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-037",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-038",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-039",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-040",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-041",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-042",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-043"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-ph/0003017&metadataPrefix=arXiv), submitted 2000-06-26, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-hep-ph-0003017v2",
+    "title_source": "slug",
     "source_file": "0003017v2.pdf",
     "source_sha256": "1660907865346bdf43c71b3529e742cb4d7031983c99012027040e80c7bef132",
     "pages": 61,

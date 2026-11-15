@@ -84,6 +84,7 @@ set_compute_dps(50)
 # Reuse the MERGED probe's own constructors so the numbers are provably the same
 # objects, not a re-implementation that could drift from what #7162 recorded.
 from deuterium_is_the_untested_exact_point_probe import (  # noqa: E402
+    B_AME_D,
     CATALAN,
     M_E_MEV,
     Q_PROTON,
@@ -241,9 +242,9 @@ def main() -> int:
           f"max deviation {mp.nstr(worst, 4)}")
 
     print("\nCHECK 6 -- the scoping sentences are IN the blocks (not my paraphrase)")
-    stmt = (REPO / "content/quantum-observable-universe/mass-theory"
+    stmt = (REPO / "folio/quantum-observable-universe/mass-theory"
                    "/wedderburn-mass-formula.md").read_text()
-    proof = (REPO / "content/quantum-observable-universe/mass-theory"
+    proof = (REPO / "folio/quantum-observable-universe/mass-theory"
                     "/wedderburn-mass-formula-proof.md").read_text()
     quotes = [
         ("statement", stmt, "three extremal invariants as the leading-order formula"),
@@ -266,7 +267,7 @@ def main() -> int:
     for seq in seqs:
         p1, p2, p3 = phis(seq, H, Z_D, Q_PROTON)
         corr = M_E_MEV * 8 * CATALAN * (p1 - 2 * T3Q * p2 + H ** 2 * p3)
-        rel = (corr - (-mp.mpf("2.224566"))) / mp.mpf("2.224566") * 100
+        rel = (corr - (-B_AME_D)) / B_AME_D * 100   # registry AME, not a truncated literal
         if best is None or abs(rel) < abs(best):
             best = rel
     check("matches PR #7162 to the recorded precision",

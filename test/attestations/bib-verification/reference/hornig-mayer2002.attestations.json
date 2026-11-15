@@ -1,0 +1,59 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "hornig-mayer2002",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 146,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-physics-0203048v1/0203048v1.pdf"
+        },
+        "id": "hornig-mayer2002",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "JOIN CONFIRMED against the document's front matter. BUT THE CITATION STATUS IN MY SLICE IS WRONG: this is a BIB ORPHAN, not a cited reference. `rg` over content/ and computations/ returns exactly ONE hit \u2014 the `ref()` entry itself at references.ts:8152. `rg` over docs/ returns ZERO. The paper HAS been read carefully and its findings ARE recorded \u2014 but entirely inside the reference's own `note` field, plus prose-only mentions in `docs/audits/2026-08-01-em-linking-reads-round1.md` \u00a7Round 4 that never write the refid. I verified both quoted claims in that note against the PDF and both are exact: p. 715\u2013716, 'Unfortunately, the antisymmetry of H^(3)(B1,B2,B3) seems to be one of the key problems for a further generalization analogous to helicity'; p. 709, 'it is clear that only expressions quadratic and cubic in magnetic flux [can be obtained]'. So the scholarship is sound; the defect is that a load-bearing negative \u2014 an independent physics-side confirmation of the antisymmetry obstruction \u2014 lives only in bibliography metadata, where no `uses[]` walk, no proof-gap audit and no watcher will reach it.",
+          "keyResults": [
+            {
+              "locator": "Conclusions, p. 715\u2013716",
+              "statement": "'the antisymmetry of H^(3)(B1,B2,B3) seems to be one of the key problems for a further generalization analogous to helicity' \u2014 an independent physics-side confirmation of the antisymmetry obstruction.",
+              "useForFolio": "Corroborates obstruction O1 for the third-order-helicity / EM-linking route; belongs in a durable content or audit artifact, not a bib note.",
+              "targets": [
+                "docs/audits/2026-08-01-em-linking-reads-round1.md"
+              ]
+            },
+            {
+              "locator": "Conclusions, p. 709",
+              "statement": "'only expressions quadratic and cubic in magnetic flux' can be obtained; the quadratic slot is occupied by cross-helicity, which vanishes for Brunnian configurations.",
+              "useForFolio": "The scaling trap: a Coulomb-like pair energy needs Flux\u00b2, which the third-order invariant cannot supply.",
+              "targets": [
+                "docs/audits/2026-08-01-em-linking-reads-round1.md"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "Move the two verified findings out of the references.ts note and into a refid-keyed citation site so they are discoverable by the dependency graph. The audit doc discusses them in prose but never writes the key, so no grep finds them.",
+              "target": "docs/audits/2026-08-01-em-linking-reads-round1.md",
+              "bean": "qou-1aof"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "47204f32280e"
+        }
+      }
+    }
+  ]
+}

@@ -43,7 +43,7 @@ This is the same parity wall that killed the cos/cosh avatars (#1866):
 a bar-even object has zero odd content. So the **only** parity-admissible
 Reeb source for c_3 is the `sinh` component. That is a Lean-checkable
 statement (`Real.cosh` even, `Real.sinh` odd), formalized in
-[`QBetaReebSinhParity.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaReebSinhParity.lean)
+[`QBetaReebSinhParity.lean`](../../folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaReebSinhParity.lean)
 on this branch — three `simp`/`ring`-level lemmas off Mathlib's
 `Real.cosh_neg` / `Real.sinh_neg`.
 

@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0905.0228v4/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "A CURIOUS q-ANALOGUE OF HERMITE POLYNOMIALS",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0905.0228v4",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-0905.0228v4",
   "contains": [
     "library/arxiv-0905.0228v4/sections/sec-000",
     "library/arxiv-0905.0228v4/sections/sec-001",
@@ -16,8 +21,17 @@
     "library/arxiv-0905.0228v4/sections/sec-007"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0905.0228&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-0905.0228v4",
+    "title_source": "slug",
     "source_file": "0905.0228v4.pdf",
     "source_sha256": "1744545d0f21094990dbcd087d38a50947a3ee737f2c10f89264512848d8b721",
     "pages": 19,

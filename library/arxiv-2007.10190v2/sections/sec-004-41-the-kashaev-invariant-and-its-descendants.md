@@ -8,90 +8,146 @@ pages: 7-9
 source_pdf: 2007.10190v2.pdf
 source_sha256: 37bcbd3a343bb21a
 doc_brief: "THE RESURGENT STRUCTURE OF QUANTUM KNOT INVARIANTS — The asymptotic expansion of quantum knot invariants in complex Chern-Simons theory gives rise to factorially divergent formal power series."
+text_source: latex
+latex_prose_ratio: 0.968
+latex_coverage_ratio: 0.917
 ---
-saddle-point expansion of the state integral appeared originally in the asymptotic expansion
-of the Kashaev invariant [Kas95]. In the case of the 4 1 knot, the Kashaev invariant is given
-by
-J(41)(q) =
-∞∑
-n=0
-(q;q)n(q−1;q−1)n. (30)
-The above expression can be evaluated when q is a root of unity. The Volume Conjecture
-of Kashaev [Kas97] (and its extension to all orders [Guk05]) asserts that J(41)(e2πi/N) has an
-asymptotic expansion for N large of the form
-J(41)(e2πi/N)∼N 3/2 Φσ1
-( 1
-N
-)
-. (31)
-We now explain a relation discovered in [GZc] between the formula for the Kashaev in-
-variant (30) and the algebraic equation (7).
-Following [GZc], we deﬁne the descendantsJ(41)
-m (q) of the Kashaev invariant of the 41 knot
-by
-J(41)
-m (q) =
-∞∑
-n=0
-(q;q)n(q−1;q−1)nqmn, (m∈ Z ). (32)
-Then, the sequence J(41)
-m (q) is a solution to a linear q-diﬀerence equation
-qm+1Jm(q) + (1− 2qm)Jm(q) +qm−1Jm−1(q) = 1, (m∈ Z ). (33)
-8 STA VROS GAROUF ALIDIS, JIE GU, AND MARCOS MARI ˜NO
+\label{sub.k41}
+
+The series $\Phi_{\s_1} (\tau)$ appearing in the saddle-point
+expansion of the state integral appeared originally in the asymptotic
+expansion of the Kashaev invariant \cite{K95}. In the case of the
+$4_1$ knot, the Kashaev invariant is given by
+
+\begin{equation}
+\label{J41}
+\J^{(4_1)}(q) = \sum_{n=0}^\infty (q;q)_n (q^{-1};q^{-1})_n \,.
+\end{equation}
+The above expression can be evaluated when $q$ is a root of unity. The
+Volume Conjecture of Kashaev~\cite{kas-volume} (and its extension to all orders \cite{gukov}) 
+asserts that $\J^{(4_1)}(\re^{2 \pi \ri/N})$ has
+an asymptotic expansion for $N$ large of the form
+
+\begin{equation}
+\label{J41Phi}
+\J^{(4_1)}(\re^{2 \pi \ri/N}) \sim N^{3/2}\,
+\Phi_{\s_1}\left(\frac{1}{N}\right). 
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+We now explain a relation discovered in~\cite{GZ:kashaev} 
+between the formula for the Kashaev invariant~\eqref{J41} and the
+algebraic equation~\eqref{41xi}.
+
+Following~\cite{GZ:kashaev}, we define the descendants
+$\J^{(4_1)}_m(q)$ of the Kashaev invariant of the $4_1$ knot by
+\begin{equation}
+\label{J41m}
+\J^{(4_1)}_m(q) = \sum_{n=0}^\infty (q;q)_n (q^{-1};q^{-1})_n \, q^{m n},
+\qquad (m \in \BZ) \,.
+\end{equation}
+Then, the sequence $\J^{(4_1)}_m(q)$ is a solution to a linear $q$-difference
+equation
+\begin{equation}
+\label{qdiffJ}
+q^{m+1} \J_m(q) + (1-2q^m)\J_m(q) + q^{m-1} \J_{m-1}(q) =1,
+\qquad (m \in \BZ) \,.
+\end{equation}
 This can be seen as follows: let
-an,m(q) = (q;q)n(q−1;q−1)nqmn (34)
-denote the summand of (32). It follows that
-an+1,m(q) = (1−q−n−1)(1−qn+1)an,m(q) (35a)
-=qm(2−qn+1−q−n−1)an,m(q) (35b)
-=qm(2−qan,m+1(q)−q−1an,m−1(q)). (35c)
-Summing over n≥ 0 and taking into account the boundary term a0,m(q) = 1 on the left
-hand side of the above equation concludes the proof of Equation (33).
-Using the operators E and Q that act on sequences (ym) by
-(Ey)m =ym+1, (Qy)m =qmym, EQ =qQE (36)
-it follows that we can write (33) in the form
-(Q(1−qE)(1−q−1E−1)−I)Jm(q) = 1. (37)
-The homogeneous part of the above operator can be obtained by replacing x in the left hand
-side of Equation (7) x byqE, and replacing the right hand side of Equation (7) by Q−1.
-4.2. The q-series (G0
-0,G 1
-0) and their descendants. We now discuss an appearance of the
-formal power series Φ(τ) in the radial asymptotics of some q-series, following [GZb].
-By q-series we mean formal Laurent series in a variable q with integer coeﬃcients, i.e.,
-elements of Z ((q)). All the q-series below will deﬁne holomorphic functions in the punctured
-unit disk with (perhaps) a pole at the origin. We now recall how the radial asymptotics of
-the q-series (G0
-0,G 1
-0) is given by Φ( τ). The ﬁrst series G0
-0(q) was found quite by accident
-to have radial asymptotics expressed in terms of the series Φ( τ) [GZb], whereas the second
-series was found systematically by expressing the state integral invariant of the 4 1 knot in
-terms of products of q-series and ˜q-series [GK17].
-Below, we will use capital letters for q-series and small letters for the corresponding func-
-tions on the upper half-plane, e.g., g0
-m(τ) = G0
-m(q) for q = e 2πiτ. In [GZb] it was observed
-that we have an asymptotic expansion
-( 1√τg0
-0(τ)√τg 1
-0(τ)
-)
-∼
-(
-1 −1
-1 1
-)
-Φ(τ) (38)
-to all orders in τ, as τ tends to 0 along a ray in the ﬁrst quadrant of the upper half-
-plane. The above asymptotic expansion requires some explanation since on a ﬁxed ray in
-the ﬁrst quadrant, Φσ1(τ) is exponentially larger than Φ σ2(τ). Nonetheless, the asymptotic
-expansion (38) makes sense theoretically and computationally if we use a reﬁned optimal
-truncation explained in detail in [GZc] and applied in [GZb]. The numerical computations
-of [GZb] hinted that the matrix in Equation (38) is the constant term of a matrix of ˜q series.
-Given the deﬁnition ofG0
-0(q) andG1
-0(q) from [GZb] and [GK17], it was relatively straight-
-forward to add the variable qmn and arrive to formulas (13a) and (13b) which deﬁne the
-descendants of the pair (G0
-0(q),G 1
-0(q)).
-THE RESURGENT STRUCTURE OF QUANTUM KNOT INV ARIANTS 9
+\begin{equation}
+\label{anm41}
+a_{n,m}(q)=
+(q;q)_n (q^{-1};q^{-1})_n q^{m n}
+\end{equation}
+denote the summand of~\eqref{J41m}. It follows that
+\begin{subequations}
+  \begin{align}
+    \label{ap1}
+    a_{n+1,m}(q) &= (1-q^{-n-1})(1-q^{n+1}) \,a_{n,m}(q) \\
+    \label{ap2}
+    &= q^m(2-q^{n+1}-q^{-n-1}) \, a_{n,m}(q) \\
+    \label{ap3}
+  &= q^m(2-q \, a_{n,m+1}(q)-q^{-1} a_{n,m-1}(q)) \,.
+\end{align}
+\end{subequations}
+Summing over $n \geq 0$ and taking into account the boundary term
+$a_{0,m}(q)=1$ on the left hand side of the above equation concludes the
+proof of Equation~\eqref{qdiffJ}.
+
+Using the operators $E$ and $Q$ that act on sequences $(y_m)$ by
+\begin{equation}
+\label{EQ}
+(Ey)_m=y_{m+1}, \qquad (Qy)_m=q^m y_m, \qquad EQ=qQE
+\end{equation}
+it follows that we can write~\eqref{qdiffJ} in the form
+\begin{equation}
+\label{qdiffJ2}
+( Q(1-qE)(1-q^{-1}E^{-1}) - I) \J_m(q) = 1 \,.
+\end{equation}
+The homogeneous part of the above operator can be obtained by
+replacing $x$ in the left hand side of Equation~\eqref{41xi} $x$ by
+$qE$, and replacing the right hand side of Equation~\eqref{41xi} by
+$Q^{-1}$.
+
+
+\subsection{The $q$-series $(G^0_0,G^1_0)$ and their
+  descendants}
+\label{sub.gG41}
+
+We now discuss an appearance of the formal power series $\Phi(\tau)$
+in the radial asymptotics of some $q$-series, following~\cite{GZ:qseries}.
+
+By $q$-series we mean formal Laurent series in a variable $q$ with
+integer coefficients, i.e., elements of $\BZ((q))$.  All the
+$q$-series below will define holomorphic functions in the punctured
+unit disk with (perhaps) a pole at the origin.  We now recall how the
+radial asymptotics of the $q$-series $(G^0_0,G^1_0)$ is given by
+$\Phi(\tau)$. The first series $G^0_0(q)$ was found quite by accident
+to have radial asymptotics expressed in terms of the series
+$\Phi(\tau)$~\cite{GZ:qseries}, whereas the second series was found
+systematically by expressing the state integral invariant of the $4_1$
+knot in terms of products of $q$-series and
+$\tq$-series~\cite{GK:qseries}.
+
+Below, we will use capital letters for $q$-series and small letters
+for the corresponding functions on the upper half-plane, e.g.,
+$g^0_m(\tau)=G^0_m(q)$ for $q=\re^{2\pi
+  \ri\tau}$. In~\cite{GZ:qseries} it was observed that we have an
+asymptotic expansion
+
+\begin{equation}
+\label{gGtau}
+\begin{pmatrix} \frac{1}{\sqrt{\tau}} g^0_0(\tau) \\
+  \sqrt{\tau} g^1_0(\tau)
+\end{pmatrix} \sim \begin{pmatrix} 1 & -1 \\ 1 & 1 \end{pmatrix}
+  \Phi( \tau) 
+\end{equation}
+
+to all orders in $\tau$, as $\tau$ tends to $0$ along a ray in the
+first quadrant of the upper half-plane. The above asymptotic expansion
+requires some explanation since on a fixed ray in the first quadrant,
+$\Phi_{\s_1}( \tau)$ is exponentially larger than
+$\Phi_{\s_2}(\tau)$. Nonetheless, the asymptotic
+expansion~\eqref{gGtau} makes sense theoretically and computationally
+if we use a refined optimal truncation explained in detail
+in~\cite{GZ:kashaev} and applied in~\cite{GZ:qseries}. The numerical
+computations of~\cite{GZ:qseries} hinted that the matrix in
+Equation~\eqref{gGtau} is the constant term of a matrix of $\tq$
+series.
+
+Given the definition of $G^0_0(q)$ and $G^1_0(q)$ from~\cite{GZ:qseries}
+and~\cite{GK:qseries}, it was relatively straightforward to add the
+variable $q^{m n}$ and arrive to formulas~\eqref{gm} and~\eqref{Gm}
+which define the descendants of the pair $(G^0_0(q),G^1_0(q))$.

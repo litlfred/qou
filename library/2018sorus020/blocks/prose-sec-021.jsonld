@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/2018sorus020/blocks/prose-sec-021",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/2018sorus020/blocks/prose-sec-021",
   "kind": "prose",
-  "title": "Link of a vertex and ends of the tree",
-  "pageStart": 31,
-  "pageEnd": 31,
-  "text": "../sections/sec-021-132-link-of-a-vertex-and-ends-of-the-tree.md",
-  "derivedFrom": "library/2018sorus020/manifest",
-  "sourceDocument": "library/2018sorus020/manifest",
+  "title": "The Reidemeister torsion",
+  "pageStart": 43,
+  "pageEnd": 43,
+  "text": "../sections/sec-021-15-the-reidemeister-torsion.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/2018sorus020",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/2018sorus020",
   "provenance": "ingested"
 }

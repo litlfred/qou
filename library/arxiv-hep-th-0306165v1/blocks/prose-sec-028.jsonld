@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-0306165v1/blocks/prose-sec-028",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-0306165v1/blocks/prose-sec-028",
   "kind": "prose",
-  "title": "A Brief Review of the Volume Conjecture",
-  "pageStart": 37,
-  "pageEnd": 38,
-  "text": "../sections/sec-028-51-a-brief-review-of-the-volume-conjecture.md",
-  "derivedFrom": "library/arxiv-hep-th-0306165v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-0306165v1/manifest",
+  "title": "Quantization for Torus Knots",
+  "pageStart": 59,
+  "pageEnd": 62,
+  "text": "../sections/sec-028-b-quantization-for-torus-knots.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0306165v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0306165v1",
   "provenance": "ingested"
 }

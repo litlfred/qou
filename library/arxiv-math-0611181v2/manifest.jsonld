@@ -1,18 +1,37 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0611181v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Proof of the volume conjecture for Whitehead chains",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0611181v2",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0611181v2",
   "contains": [
     "library/arxiv-math-0611181v2/sections/sec-000",
     "library/arxiv-math-0611181v2/sections/sec-001",
     "library/arxiv-math-0611181v2/sections/sec-002"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0611181&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-math-0611181v2",
+    "title_source": "slug",
     "source_file": "0611181v2.pdf",
     "source_sha256": "6931e3ebca584de90bfb4efe82875c3f342a15db7e492c2956c70b53a7141b60",
     "pages": 13,

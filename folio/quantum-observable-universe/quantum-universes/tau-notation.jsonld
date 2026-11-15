@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sec-tau-notation",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:tau-notation",
+  "kind": "prose",
+  "title": "Notation: the forgetful functor $\\tau$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-universe"
+  ],
+  "tags": [
+    "notation",
+    "functor",
+    "tannaka-krein"
+  ],
+  "text": "tau-notation.md",
+  "provenance": "authored"
+}

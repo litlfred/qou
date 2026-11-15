@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tm-inductive-construction",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "tm-inductive-construction",
+  "kind": "prose",
+  "title": "Inductive construction ($A \\to A+1$)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-shell-closure-stability",
+    "papers/quantum-observable-universe/blocks/prop-generator-volume-decomposition"
+  ],
+  "tags": [
+    "transfer-matrix",
+    "inductive",
+    "shell-closure",
+    "shell-folding",
+    "complexity",
+    "magic-numbers",
+    "groebner",
+    "appendix"
+  ],
+  "text": "tm-inductive-construction.md",
+  "provenance": "authored"
+}

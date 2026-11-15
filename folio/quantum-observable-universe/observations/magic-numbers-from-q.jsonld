@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-magic-numbers-from-q",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:magic-numbers-from-q",
+  "kind": "conjecture",
+  "title": "Some functional of the Wedderburn-weighted Hoefsmit character data at $q_0$ carries nuclear shell structure",
+  "tags": [
+    "magic-numbers",
+    "shell-closure",
+    "hoefsmit",
+    "wedderburn",
+    "seminormal-form",
+    "block-diagonal"
+  ],
+  "leanRef": "qou:QOU.AtomicMass.magic_numbers_from_q",
+  "text": "magic-numbers-from-q.md",
+  "leanSource": "magic-numbers-from-q.lean",
+  "provenance": "authored"
+}

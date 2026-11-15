@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0707.2340v2/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0707.2340v2/blocks/prose-sec-007",
   "kind": "prose",
-  "title": "Determinantal Probability Measures",
-  "pageStart": 17,
-  "pageEnd": 20,
-  "text": "../sections/sec-007-33-determinantal-probability-measures.md",
-  "derivedFrom": "library/arxiv-0707.2340v2/manifest",
-  "sourceDocument": "library/arxiv-0707.2340v2/manifest",
+  "title": "Negative Dependence in Mathematics and Physics",
+  "pageStart": 13,
+  "pageEnd": 13,
+  "text": "../sections/sec-007-3-negative-dependence-in-mathematics-and-physics.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0707.2340v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0707.2340v2",
   "provenance": "ingested"
 }

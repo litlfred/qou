@@ -8,129 +8,57 @@ pages: 24-27
 source_pdf: 1305.7175v4.pdf
 source_sha256: 5a09955f4fb6a57e
 doc_brief: "NONLINEAR TRACES — W e combine the theory of traces in homotopical algebra with s heaf theory in de- rived algebraic geometry to deduce general ﬁxed point and ch aracter formulas."
+text_source: latex
+latex_prose_ratio: 0.982
+latex_coverage_ratio: 0.913
 ---
-work in the symmetric monoidal ( ∞, 1)-category Stacksk of derived stacks over Spec k. It is
-worth pointing out that the constructions of this section apply in an y presentable∞-category
-with the Cartesian symmetric monoidal structure.
-LetCorrk denote the symmetric monoidal ∞-category of correspondences in Stacksk. Thus
-morphisms are given by the classifying space of correspondences
-X Z/d111/d111 /d47/d47Y
-so all higher morphisms are isomorphisms. Composition of correspon dences is given by the
-derived ﬁber product. The based loop category
-ΩCorrk = EndCorr k(Speck)≃Stacksk
-is again derived stacks, regarded as self-correspondences of th e point Spec k.
-NONLINEAR TRACES 25
-We will also enhance Corrk to the symmetric monoidal (∞, 2)-categoryCorrk where we now
-allow noninvertible maps of correspondences
-Z
-/d126/d126⑥⑥⑥⑥⑥⑥⑥⑥
-/d32/d32❆❆❆❆❆❆❆❆
-/d15/d15
-X Y
-W
-/d96/d96❇❇❇❇❇❇❇❇
-/d62/d62⑥⑥⑥⑥⑥⑥⑥⑥
-In other words, the morphisms Corrk(X,Y ) now form the ∞-category Stacks/X×Y of stacks
-overX×Y with arbitrary morphisms rather than isomorphisms as in Corrk(X,Y ).
-We will also have need to restrict the class of morphisms of correspo ndences to some sub-
-category of Stacks/X×Y . In particular, we will consider the subcategory Corrprop
-k in which we
-only allow proper maps of correspondences.
-4.2. T races of correspondences. Given a map Z → X, it is convenient to introduce the
-symmetric presentation of the based loop space
-LZX =Z×Z×XZ
-Note the two natural identiﬁcation with the traditional based loop s pace
-LX×X Z≃X×X×XZ Z ×Z×X Z∼/d111/d111 ∼ /d47/d47Z×X×XX≃Z×XLX
-There is a natural rotational equivalence LX×X Z≃ Z×XLX that makes the above two
-identiﬁcations coincide. (It does not preserve base points and is no t given by swapping the
-factors). Thus we can unambiguously identify all of the above vers ions of the based loop space.
-Proposition 4.1. (1) Any derived stack X is dualizable as an object of Corrk, with dual X ∨
-identiﬁed with X itself, and dimension dim(X) identiﬁed with the loop space
-LX =XS1
-≃X×X×XX
-regarded as a self-correspondence of pt = Speck.
-(2) The transpose of any correspondence X← Z→ Y is identiﬁed with the reverse corre-
-spondenceY ←Z→X. The trace of a self-correspondence X←Z→X is identiﬁed with the
-based loop space
-Tr(Z)≃Z|∆ X =Z×X×XX≃L ZX
-regarded as a self-correspondence of pt = Speck.
-In particular, the trace of the graph Γf→X×X of a self-map f :X→X is identiﬁed with
-the ﬁxed point locus
-Tr(f )≃ Γf|∆ X = Γf×X×XX≃Xf
-Proof. The evaluation and coevaluation presenting the self-duality of X are both given by X
-itself as a correspondence between pt = Speck andX×X via the diagonal map. The standard
-identities follow from the calculation of the ﬁber product of the two d iagonal maps
-X ∆ 12×X×X×X ∆ 23X≃X
-26 DA VID BEN-ZVI AND DA VID NADLER
-Thus the dimension of X is the loop space
-LX
-/d123/d123✇✇✇✇✇✇✇✇✇
-/d35/d35●●●●●●●●●
-X
-/d127/d127⑦⑦⑦⑦⑦⑦⑦⑦
-/d35/d35●●●●●●●●● X
-/d123/d123✇✇✇✇✇✇✇✇✇
-/d31/d31❅❅❅❅❅❅❅❅
-pt X ×X pt
-By deﬁnition, the transpose of a correspondence X←Z→Y is identiﬁed with Y←Z→X
-by checking the deﬁnition
-Z
-/d118/d118♥♥♥♥♥♥♥♥♥♥♥♥♥
-/d39/d39PPPPPPPPPPPPP
-Y×Z
-/d120/d120♣♣♣♣♣♣♣♣♣♣♣
-/d39/d39PPPPPPPPPPPP Z×X
-/d119/d119♥♥♥♥♥♥♥♥♥♥♥♥
-/d38/d38◆◆◆◆◆◆◆◆◆◆◆
-Y×X
-/d123/d123①①①①①①①①①
-/d38/d38◆◆◆◆◆◆◆◆◆◆◆ Y×Z×X
-/d119/d119♥♥♥♥♥♥♥♥♥♥♥♥
-/d39/d39PPPPPPPPPPPP Y×X
-/d120/d120♣♣♣♣♣♣♣♣♣♣♣
-/d35/d35●●●●●●●●●
-Y Y ×X×X Y ×Y×X X
-The trace of a self-correspondence X←Z→X is then calculated by the composition
-Z×Z×X Z
-/d120/d120qqqqqqqqqqq
-/d38/d38▼▼▼▼▼▼▼▼▼▼▼
-Z
-/d123/d123✇✇✇✇✇✇✇✇✇
-/d38/d38◆◆◆◆◆◆◆◆◆◆◆ Z
-/d120/d120♣♣♣♣♣♣♣♣♣♣♣
-/d35/d35●●●●●●●●●
-X
-/d127/d127⑦⑦⑦⑦⑦⑦⑦⑦
-/d35/d35❋❋❋❋❋❋❋❋❋ Z×X
-/d120/d120qqqqqqqqqqq
-/d38/d38▼▼▼▼▼▼▼▼▼▼▼ X
-/d123/d123①①①①①①①①①
-/d31/d31❅❅❅❅❅❅❅❅
-pt X ×X X ×X pt
-Finally, the case of the graph Z = Γf of a self-map gives the ﬁxed point locus by deﬁnition.
-□
-Remark 4.2 (Cyclic version). The identiﬁcation dim(X)≃LX above is naturallyS1-equivariant
-for the standard loop rotation on LX and the cyclic symmetry of dim( X) provided by the
-cobordism hypothesis. To see this it is useful to consider X as anE∞-algebra object in Stacksop
-k
-via the diagonal map (or as an En-object for any n). In other words, for n = 1 we identify
-stacks and correspondences with objects and morphisms in the Mo rita category Alg(Stacksop
-k ).
-It follows from the properties of topological chiral homology [L2, Th eorem 5.3.3.8] that for
-a (constant) commutative algebra A its topological chiral homology over a manifold is given
-by the tensoring of commutative algebras over simplicial sets
-∫
-MA = M⊗A. In particular
-(passing back from the opposite category to stacks) we have
-∫
-S1X =XS1
-=LX. Moreover this
-identiﬁcation holds not just for a ﬁxed circle but over the moduli spa ce of circles BDiff (S1)∼
-BS 1, i.e. equivariantly for rotation. We also know from [L2, Example 5.3.3.14 ] or [L3, Example
-NONLINEAR TRACES 27
-4.2.2] that the S1-action on the dimension of an associative algebra A (given classically by
-the cyclic structure on the Hochschild chain complex) is given by the r otation S1-action on
-the topological chiral homology
-∫
-S1A, i.e., the family of topological chiral homologies over the
-moduli space of circles. In our case this recovers the rotation act ion on the loop space.
+For concreteness, we fix a base commutative ring, and work in the symmetric monoidal $(\oo,1)$-category $Stacks_k$ of derived stacks over $\Spec k$. It is worth pointing out that the constructions of this section apply in any presentable $\oo$-category with the Cartesian symmetric monoidal structure.
+
+Let $Corr_k$ denote the symmetric monoidal $\oo$-category of correspondences in $Stacks_k$. Thus morphisms are given by the classifying space of correspondences $$\xymatrix{X&\ar[l]\ar[r] Z & Y}$$ so all higher morphisms are isomorphisms. Composition of correspondences is given by the derived fiber product. The based loop category $$\Omega Corr_k=\End_{Corr_k}(\Spec k)\simeq Stacks_k$$ is again derived stacks, regarded as self-correspondences of the point $\Spec k$.
+
+We will also enhance $Corr_k$ to the symmetric monoidal $(\oo,2)$-category $\ul{Corr}_k$ where we now allow noninvertible maps of correspondences $$\xymatrix{& Z \ar[ld]\ar[rd] \ar[dd] &\\
+X & & Y\\
+& W\ar[ul]\ar[ur] &}$$ In other words, the morphisms $\ul{Corr}_k(X,Y)$ now form the $\oo$-category $Stacks_{/X\times Y}$ of stacks over $X\times Y$ with arbitrary morphisms rather than isomorphisms as in $Corr_k(X,Y)$.
+
+We will also have need to restrict the class of morphisms of correspondences to some subcategory of $Stacks_{/X\times Y}$. In particular, we will consider the subcategory $\ul{Corr}_k^{prop}$ in which we only allow proper maps of correspondences.
+
+## Traces of correspondences
+
+Given a map $Z\to X$, it is convenient to introduce the symmetric presentation of the based loop space $$\cL_Z X
+= Z\times_{Z\times X} Z$$ Note the two natural identification with the traditional based loop space $$\xymatrix{
+  \cL X \times_X Z \simeq X \times_{X \times X} Z & \ar[l]_-\sim  Z\times_{Z\times X} Z  \ar[r]^-\sim & Z \times_{X \times X} X \simeq Z \times_X \cL X
+}$$ There is a natural rotational equivalence $\cL X \times_X Z \simeq Z \times_X \cL X$ that makes the above two identifications coincide. (It does not preserve base points and is not given by swapping the factors). Thus we can unambiguously identify all of the above versions of the based loop space.
+
+::: prop
+[]{#basic stack dimensions label="basic stack dimensions"}
+
+\(1\) Any derived stack $X$ is dualizable as an object of $Corr_k$, with dual $X^\vee$ identified with $X$ itself, and dimension $\dim(X)$ identified with the loop space $$\cL X= X^{S^1}\simeq X\times_{X\times X} X$$ regarded as a self-correspondence of $pt=\Spec k$.
+
+\(2\) The transpose of any correspondence $X\leftarrow Z\to  Y$ is identified with the reverse correspondence $Y \leftarrow Z \to  X$. The trace of a self-correspondence $X\leftarrow Z\to X$ is identified with the based loop space $$\xymatrix{ 
+\Tr(Z)\simeq Z|_{\Delta_X} = Z\times_{X\times X} X \simeq \cL_Z X
+ }$$ regarded as a self-correspondence of $pt=\Spec k$.
+
+In particular, the trace of the graph $\Gamma_f \to X\times X$ of a self-map $f:X\to X$ is identified with the fixed point locus $$\xymatrix{
+\Tr(f) \simeq  \Gamma_f|_{\Delta_X} = \Gamma_f \times_{X\times X} X \simeq X^f  
+}$$
+:::
+
+::: proof
+*Proof.* The evaluation and coevaluation presenting the self-duality of $X$ are both given by $X$ itself as a correspondence between $pt=\Spec k$ and $X\times X$ via the diagonal map. The standard identities follow from the calculation of the fiber product of the two diagonal maps $$X{}_{\Delta_{12}}\times_{X\times X\times X}{}_{\Delta_{23}} X\simeq X$$ Thus the dimension of $X$ is the loop space $$\xymatrix{&&\cL X \ar[ld]\ar[rd]&&\\
+&X\ar[ld]\ar[rd]&&X\ar[ld]\ar[rd]& \\
+pt&&X \times X&&pt}$$
+
+By definition, the transpose of a correspondence $X\leftarrow Z\to  Y$ is identified with $Y\leftarrow Z\to  X$ by checking the definition $$\xymatrix{&&& Z \ar[ld]\ar[rd] &&&\\
+&& Y \times Z \ar[ld]\ar[rd]   && Z  \ar[ld]\ar[rd] \times X && \\
+&Y \times X\ar[ld]\ar[rd]&& Y \times Z \times X \ar[ld]\ar[rd] && Y \times X\ar[ld]\ar[rd]& \\
+Y&&Y \times X \times X&&Y \times Y \times X && X}$$ The trace of a self-correspondence $X\leftarrow Z\to  X$ is then calculated by the composition $$\xymatrix{&&& Z\times_{Z\times X} Z \ar[ld]\ar[rd] &&&\\
+&&  Z\ar[ld]\ar[rd]   &&   \ar[ld]\ar[rd] Z  && \\
+&X \ar[ld]\ar[rd]&&Z \times X \ar[ld]\ar[rd] &&  X\ar[ld]\ar[rd]& \\
+pt&&X \times X &&X \times X && pt}$$
+
+Finally, the case of the graph $Z=\Gamma_f$ of a self-map gives the fixed point locus by definition. ◻
+:::
+
+::: remark
+[]{#rem: cyclic label="rem: cyclic"} The identification $\dim(X)\simeq \cL X$ above is naturally $S^1$-equivariant for the standard loop rotation on $\cL X$ and the cyclic symmetry of $\dim(X)$ provided by the cobordism hypothesis. To see this it is useful to consider $X$ as an $E_\infty$-algebra object in $Stacks_k^{op}$ via the diagonal map (or as an $E_n$-object for any $n$). In other words, for $n=1$ we identify stacks and correspondences with objects and morphisms in the Morita category $Alg(Stacks_k^{op})$. It follows from the properties of topological chiral homology [@HA Theorem 5.3.3.8] that for a (constant) commutative algebra $A$ its topological chiral homology over a manifold is given by the tensoring of commutative algebras over simplicial sets $\int_M A= M\ot A$. In particular (passing back from the opposite category to stacks) we have $\int_{S^1} X = X^{S^1}=\cL X$. Moreover this identification holds not just for a fixed circle but over the moduli space of circles $BDiff(S^1)\sim BS^1$, i.e. equivariantly for rotation. We also know from [@HA Example 5.3.3.14] or [@TFT Example 4.2.2] that the $S^1$-action on the dimension of an associative algebra $A$ (given classically by the cyclic structure on the Hochschild chain complex) is given by the rotation $S^1$-action on the topological chiral homology $\int_{S^1} A$, i.e., the family of topological chiral homologies over the moduli space of circles. In our case this recovers the rotation action on the loop space.
+:::

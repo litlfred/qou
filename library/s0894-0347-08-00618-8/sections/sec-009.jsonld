@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/s0894-0347-08-00618-8/sections/sec-009",
   "@type": [
     "doco:Section"
   ],
-  "title": "Determinantal probability measures",
-  "pageStart": 17,
-  "pageEnd": 18,
+  "title": "Hadamard-Fischer inequalities and GKK-matrices",
+  "pageStart": 15,
+  "pageEnd": 17,
   "contains": [
     "library/s0894-0347-08-00618-8/blocks/prose-sec-009"
   ],
-  "derivedFrom": "library/s0894-0347-08-00618-8/manifest",
-  "sourceDocument": "library/s0894-0347-08-00618-8/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s0894-0347-08-00618-8",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s0894-0347-08-00618-8",
   "provenance": "ingested"
 }

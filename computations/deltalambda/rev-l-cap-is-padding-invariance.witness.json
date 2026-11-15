@@ -1,14 +1,16 @@
 {
   "schema": "qou-witness/v1",
-  "computedAt": "2026-09-13T12:29:11.087359+00:00",
+  "computedAt": "2026-10-13T15:11:45.872897+00:00",
   "computation": "rev_l_cap_is_padding_invariance_probe",
   "bean": "qou-hok7",
   "anchor": "physical_proton",
+  "q0Anchor": "proton",
+  "scriptFile": "rev_l_cap_is_padding_invariance_probe.py",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "description": "Withdraws PR #7294's 'l-cap censoring' caveat. Above the maximiser's row count l*, the beta-frame padding L is invisible to the objective -- proved in Lean as QOU.BraidKnot.HookSum.betaSide_eq_hookSum (sorry-free), measured here at 1e-49 residual at mp.dps = 50. The three 'censored' excesses do not move under a 4x wider l-scan. Corrects a committed artifact: the best_l column of rev-excess-scaling-exponent.witness.json is plateau rounding noise, not a row count; the true threshold l* is k+2 at all three points.",
   "lean": {
     "theorem": "QOU.BraidKnot.HookSum.betaSide_eq_hookSum",
-    "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/HookSumBetaCoordinates.lean",
+    "file": "folio/quantum-observable-universe/lean/QOU/BraidKnot/HookSumBetaCoordinates.lean",
     "companion": "QOU.BraidKnot.HookSum.betaSide_padding_invariant",
     "axioms": [
       "propext",

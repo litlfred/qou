@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-descent",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:descent",
+  "kind": "proof",
+  "title": "Proof of Descent preserves the quantum observable universe",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-descent"
+  ],
+  "text": "descent-lemma-proof.md",
+  "provenance": "authored"
+}

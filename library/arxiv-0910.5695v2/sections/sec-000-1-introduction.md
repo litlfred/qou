@@ -8,36 +8,16 @@ pages: 1-1
 source_pdf: 0910.5695v2.pdf
 source_sha256: 703c2a2f1f9380b1
 doc_brief: "ON BLOCKS OF DELIGNE’S CATEGORY Rep(St) — We describe blocks in Deligne’s category Re p(St)."
+text_source: latex
+latex_prose_ratio: 0.686
+latex_coverage_ratio: 0.978
 ---
-LetF be a ﬁeld of characteristic zero and t∈F . Recently P. Deligne introduced
-the tensor category Re p(St) which in a certain precise sense interpolates the cate-
-gories Rep(Sd) ofF−linear representations of the symmetric groupsSd, see [Del07].
-In general, the category Rep(St) is additive but not abelian; however it is proved in
-[Del07, Th´ eor` eme 2.18] that fort which is not a nonnegative integer the category
-Rep(St) is semisimple (and hence abelian).
-The goal of this paper is to get a better understanding of the additive cate-
-gory Re p(St) in the case when it is not semisimple. To this end we employ the
-usual strategy from representation theory: we split our category into blocks (see
-§5.1) and analyze the blocks separately. In order to split a category into blocks,
-it is a standard technique to study the endomorphism ring of the identity functor
-in this category (recall that for an algebra A the endomorphism ring of the iden-
-tity functor of the category of A−modules is precisely the center of A). Thus we
-start by constructing many nontrivial endomorphisms of the identity functor of the
-category Rep(St) (see§4) and studying how these endomorphisms act on the inde-
-composable objects of the category Re p(St). In §5 we show that this is suﬃcient
-for describing all the blocks in the category Re p(St); in particular we give a new
-proof of [Del07, Th´ eor` eme 2.18], see Corollary 5.23. In general we ﬁnd that the
-category Rep(St) contains inﬁnitely many trivial blocks (they are equivalent to the
-category of ﬁnite dimensional F−vector spaces as additive categories) and ﬁnitely
-many non-semisimple blocks. In §6 we show that all these non-semisimple blocks
-are equivalent to each other as additive categories and give a description of this
-category via quiver with relations.
-One of the very interesting results of [Del07] is a construction of an abelian
-tensor category Re pab(St) and fully faithful tensor functor Re p(St)→ Repab(St),
-see [Del07, Proposition 8.19]. In a subsequent publication we plan to apply the
-results of the present paper to the study of Re pab(St); in particular we plan to
-prove its universal property as in [Del07, Conjecture 8.21]. In another direction,
-F. Knop signiﬁcantly generalized Deligne’s construction in [Kno07]; we hope that
-our approach will be useful in the study of tensor categories from loc. cit.
-The paper is organized as follows. Sections 2 and 3 are mostly expository. In
-Section 2 we give a detailed construction of category Re p(St) with emphasis on
+Let $F$ be a field of characteristic zero and $t\in F$. Recently P. Deligne introduced the tensor category $\underline{\operatorname{Re}}\!\operatorname{p}(S_t)$ which in a certain precise sense interpolates the categories $\operatorname{Rep}(S_d)$ of $F-$linear representations of the symmetric groups $S_d$, see [@Del07]. In general, the category $\underline{\operatorname{Re}}\!\operatorname{p}(S_t)$ is additive but not abelian; however it is proved in [@Del07 Théorème 2.18] that for $t$ which is not a nonnegative integer the category $\underline{\operatorname{Re}}\!\operatorname{p}(S_t)$ is semisimple (and hence abelian).
+
+The goal of this paper is to get a better understanding of the additive category $\underline{\operatorname{Re}}\!\operatorname{p}(S_t)$ in the case when it is not semisimple. To this end we employ the usual strategy from representation theory: we split our category into *blocks* (see §[\[blocksdef\]](#blocksdef){reference-type="ref" reference="blocksdef"}) and analyze the blocks separately. In order to split a category into blocks, it is a standard technique to study the endomorphism ring of the identity functor in this category (recall that for an algebra $A$ the endomorphism ring of the identity functor of the category of $A-$modules is precisely the center of $A$). Thus we start by constructing many nontrivial endomorphisms of the identity functor of the category $\underline{\operatorname{Re}}\!\operatorname{p}(S_t)$ (see §[\[endId\]](#endId){reference-type="ref" reference="endId"}) and studying how these endomorphisms act on the indecomposable objects of the category $\underline{\operatorname{Re}}\!\operatorname{p}(S_t)$. In §[\[blocks\]](#blocks){reference-type="ref" reference="blocks"} we show that this is sufficient for describing all the blocks in the category $\underline{\operatorname{Re}}\!\operatorname{p}(S_t)$; in particular we give a new proof of [@Del07 Théorème 2.18], see Corollary [\[ss\]](#ss){reference-type="ref" reference="ss"}. In general we find that the category $\underline{\operatorname{Re}}\!\operatorname{p}(S_t)$ contains infinitely many *trivial* blocks (they are equivalent to the category of finite dimensional $F-$vector spaces as additive categories) and finitely many non-semisimple blocks. In §[\[blockquiver\]](#blockquiver){reference-type="ref" reference="blockquiver"} we show that all these non-semisimple blocks are equivalent to each other as additive categories and give a description of this category via quiver with relations.
+
+One of the very interesting results of [@Del07] is a construction of an *abelian* tensor category $\underline{\operatorname{Re}}\!\operatorname{p}^{ab}(S_t)$ and fully faithful tensor functor $\underline{\operatorname{Re}}\!\operatorname{p}(S_t)\to \underline{\operatorname{Re}}\!\operatorname{p}^{ab}(S_t)$, see [@Del07 Proposition 8.19]. In a subsequent publication we plan to apply the results of the present paper to the study of $\underline{\operatorname{Re}}\!\operatorname{p}^{ab}(S_t)$; in particular we plan to prove its universal property as in [@Del07 Conjecture 8.21]. In another direction, F. Knop significantly generalized Deligne's construction in [@MR2349713]; we hope that our approach will be useful in the study of tensor categories from *loc. cit.*
+
+The paper is organized as follows. Sections 2 and 3 are mostly expository. In Section 2 we give a detailed construction of category $\underline{\operatorname{Re}}\!\operatorname{p}(S_t)$ with emphasis on motivation. In Section 3 we give a classification of indecomposable objects in the category $\underline{\operatorname{Re}}\!\operatorname{p}(S_t)$ and discuss the relation of $\underline{\operatorname{Re}}\!\operatorname{p}(S_d)$ and $\operatorname{Rep}(S_d)$ (this is closely related with [@Del07 §5-6]). In Section 4 we construct many endomorphisms of the identity functor of the category $\underline{\operatorname{Re}}\!\operatorname{p}(S_t)$; this is the main technical tool of this paper. In Section 5 we give a complete classification of the blocks in the category $\underline{\operatorname{Re}}\!\operatorname{p}(S_t)$. Finally in Section 6 we give a quiver description of the non-semisimple blocks in the category $\underline{\operatorname{Re}}\!\operatorname{p}(S_t)$.
+
+It is a great pleasure to thank here Alexander Kleshchev who suggested we study the category $\underline{\operatorname{Re}}\!\operatorname{p}(S_t)$ and taught us about representation theory of the symmetric group. V.O. also acknowledges inspiring conversations with Pierre Deligne and Pavel Etingof. J.C. is indebted to Anne Henke and Friederike Stoll for their comments on improving the paper. Both authors are grateful to the referee for carefully reading the paper and providing useful suggestions. Part of the work on this paper was done when the second author enjoyed hospitality of the Institute for Advanced Study; he is happy to thank this institution for the excellent research conditions. This work was partially supported by the NSF grant DMS-0602263.

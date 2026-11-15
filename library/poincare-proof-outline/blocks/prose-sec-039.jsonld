@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/poincare-proof-outline/blocks/prose-sec-039",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/poincare-proof-outline/blocks/prose-sec-039",
   "kind": "prose",
-  "title": "Betweeness of x-axis intersection",
-  "pageStart": 96,
-  "pageEnd": 97,
-  "text": "../sections/sec-039-betweeness-of-x-axis-intersection.md",
-  "derivedFrom": "library/poincare-proof-outline/manifest",
-  "sourceDocument": "library/poincare-proof-outline/manifest",
+  "title": "Some more properties of h-betweenness.",
+  "pageStart": 94,
+  "pageEnd": 96,
+  "text": "../sections/sec-039-some-more-properties-of-h-betweenness.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/poincare-proof-outline",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/poincare-proof-outline",
   "provenance": "ingested"
 }

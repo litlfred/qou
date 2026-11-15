@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-bw-mass-decomposition-dictionary",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:bw-mass-decomposition-dictionary",
+  "kind": "remark",
+  "title": "Empirical Bethe–Weizsäcker terms as Schur–Weyl strata",
+  "interprets": "papers/quantum-observable-universe/blocks/prop-schur-weyl-mass-decomposition",
+  "tags": [
+    "bethe-weizsacker",
+    "schur-weyl",
+    "mass-formula",
+    "dictionary",
+    "nuclear-physics",
+    "interpretation"
+  ],
+  "text": "bw-mass-decomposition-dictionary.md",
+  "provenance": "authored"
+}

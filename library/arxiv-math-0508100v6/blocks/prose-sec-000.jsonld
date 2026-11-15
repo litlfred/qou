@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0508100v6/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0508100v6/blocks/prose-sec-000",
   "kind": "prose",
   "title": "Asymptotics of the colored Jones function of a knot",
   "pageStart": 1,
   "pageEnd": 1,
   "text": "../sections/sec-000-11-asymptotics-of-the-colored-jones-function-of.md",
-  "derivedFrom": "library/arxiv-math-0508100v6/manifest",
-  "sourceDocument": "library/arxiv-math-0508100v6/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0508100v6",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0508100v6",
   "provenance": "ingested"
 }

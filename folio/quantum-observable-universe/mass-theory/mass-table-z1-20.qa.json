@@ -1,0 +1,1872 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:mass-table-z1-20",
+  "kind": "remark",
+  "paths": {
+    "ts": "folio/quantum-observable-universe/mass-theory/mass-table-z1-20.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/mass-table-z1-20.md"
+  },
+  "source_hashes": {
+    "md": "36ffc29c852f",
+    "ts": "2f07fe35bcd0"
+  },
+  "criteria": {
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82",
+        "severity": "major",
+        "evidence": "folio/quantum-observable-universe/mass-theory/mass-table-z1-20.md:64: So the convention accounts for nearly all of the change and the base-mass"
+      }
+    ],
+    "voice-title-scholarly": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82",
+        "severity": "major",
+        "evidence": "folio/quantum-observable-universe/mass-theory/mass-table-z1-20.md:71: P4:date-ref: 2026-08-15 on other grounds, and a table that fits better in the superseded"
+      }
+    ],
+    "voice-status-section": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "2f07fe35bcd0",
+          "md": "3168e9add5b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "2f07fe35bcd0",
+          "md": "3168e9add5b1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "2f07fe35bcd0",
+          "md": "3168e9add5b1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "2f07fe35bcd0",
+          "md": "3168e9add5b1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "2f07fe35bcd0",
+          "md": "3168e9add5b1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "2f07fe35bcd0",
+          "md": "3168e9add5b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "2f07fe35bcd0",
+          "md": "3168e9add5b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "canonical-no-numerology": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "canonical-witness-pinned": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "canonical-script-not-deprecated": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "canonical-dilogarithm-context": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "canonical-no-hardcoded-observable": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "canonical-ck-tiered-not-binary": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "canonical-no-negative-result-in-paper": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "compute-lp-dual-present": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "detangler-section-band": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "detangler-no-xchapter-fwd": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "detangler-archimedean-wall": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 1,
+          "in_degree": 1,
+          "cone_size": 92,
+          "depth": 24,
+          "pagerank": 0.00014,
+          "edge_span_max": 394,
+          "edge_span_mean": 394,
+          "worst_target": ""
+        }
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "detangler-no-dependency-cycle": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3",
+          "deps_hash": "fd9d657a0056"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "bib-cited-ref-has-url": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3",
+          "deps_hash": "fd9d657a0056"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "bib-cited-ref-metadata-ok": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3",
+          "deps_hash": "fd9d657a0056"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "bib-cited-ref-has-screenshot": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3",
+          "deps_hash": "fd9d657a0056"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "proof-no-trivial-skeleton": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3",
+          "deps_hash": "21d9ff417741"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:57.834Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound empirical formulation structurally demonstrating explicit constants successfully across parameters.",
+        "reviewed_at": "2026-07-08T14:54:14.000Z",
+        "reviewed_sha": "6e8bba804a0f2db185ea05834cb560056c0ea3fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:43.864Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No false claims identified in 'Predicted vs observed masses, $Z = 1$--$20$': mathematical reasoning is consistent in prose.",
+        "severity": "minor",
+        "evidence": "mass-table-z1-20.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound empirical formulation structurally demonstrating explicit constants successfully across parameters.",
+        "reviewed_at": "2026-07-08T14:54:14.000Z",
+        "reviewed_sha": "6e8bba804a0f2db185ea05834cb560056c0ea3fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:43.870Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The block 'Predicted vs observed masses, $Z = 1$--$20$' presents substantial mathematical content: '1. Extract the braid $\\beta_{Z, N}$ from the knot--particle dictionary'.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound empirical formulation structurally demonstrating explicit constants successfully across parameters.",
+        "reviewed_at": "2026-07-08T14:54:14.000Z",
+        "reviewed_sha": "6e8bba804a0f2db185ea05834cb560056c0ea3fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:43.876Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Predicted vs observed masses, $Z = 1$--$20$'.",
+        "severity": "minor",
+        "evidence": "mass-table-z1-20.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound empirical formulation structurally demonstrating explicit constants successfully across parameters.",
+        "reviewed_at": "2026-07-08T14:54:14.000Z",
+        "reviewed_sha": "6e8bba804a0f2db185ea05834cb560056c0ea3fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:43.882Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The remarks and narrative scope in 'Predicted vs observed masses, $Z = 1$--$20$' are appropriately qualified.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound empirical formulation structurally demonstrating explicit constants successfully across parameters.",
+        "reviewed_at": "2026-07-08T14:54:14.000Z",
+        "reviewed_sha": "6e8bba804a0f2db185ea05834cb560056c0ea3fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:43.888Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Predicted vs observed masses, $Z = 1$--$20$'.",
+        "severity": "minor",
+        "evidence": "mass-table-z1-20.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound empirical formulation structurally demonstrating explicit constants successfully across parameters.",
+        "reviewed_at": "2026-07-08T14:54:14.000Z",
+        "reviewed_sha": "6e8bba804a0f2db185ea05834cb560056c0ea3fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:43.895Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The prose arguments in 'Predicted vs observed masses, $Z = 1$--$20$' proceed logically through the stated steps.",
+        "severity": "minor",
+        "evidence": "mass-table-z1-20.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound empirical formulation structurally demonstrating explicit constants successfully across parameters.",
+        "reviewed_at": "2026-07-08T14:54:14.000Z",
+        "reviewed_sha": "6e8bba804a0f2db185ea05834cb560056c0ea3fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:43.901Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No Lean sibling required; narrative matches the expected configuration.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound empirical formulation structurally demonstrating explicit constants successfully across parameters.",
+        "reviewed_at": "2026-07-08T14:54:14.000Z",
+        "reviewed_sha": "6e8bba804a0f2db185ea05834cb560056c0ea3fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:43.907Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No citations are present in 'Predicted vs observed masses, $Z = 1$--$20$', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "mass-table-z1-20.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound empirical formulation structurally demonstrating explicit constants successfully across parameters.",
+        "reviewed_at": "2026-07-08T14:54:14.000Z",
+        "reviewed_sha": "6e8bba804a0f2db185ea05834cb560056c0ea3fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:43.913Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in 'Predicted vs observed masses, $Z = 1$--$20$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "mass-table-z1-20.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound empirical formulation structurally demonstrating explicit constants successfully across parameters.",
+        "reviewed_at": "2026-07-08T14:54:14.000Z",
+        "reviewed_sha": "6e8bba804a0f2db185ea05834cb560056c0ea3fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:43.919Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The empirical claims in 'Predicted vs observed masses, $Z = 1$--$20$' are structurally anchored to the QOU mass framework and are stable.",
+        "severity": "minor",
+        "evidence": "mass-table-z1-20.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound empirical formulation structurally demonstrating explicit constants successfully across parameters.",
+        "reviewed_at": "2026-07-08T14:54:14.000Z",
+        "reviewed_sha": "6e8bba804a0f2db185ea05834cb560056c0ea3fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:43.925Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Predicted vs observed masses, $Z = 1$--$20$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "mass-table-z1-20.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound empirical formulation structurally demonstrating explicit constants successfully across parameters.",
+        "reviewed_at": "2026-07-08T14:54:14.000Z",
+        "reviewed_sha": "6e8bba804a0f2db185ea05834cb560056c0ea3fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:43.932Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The derivation steps and formal definitions in 'Predicted vs observed masses, $Z = 1$--$20$' are reproducible.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound empirical formulation structurally demonstrating explicit constants successfully across parameters.",
+        "reviewed_at": "2026-07-08T14:54:14.000Z",
+        "reviewed_sha": "6e8bba804a0f2db185ea05834cb560056c0ea3fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:43.938Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Predicted vs observed masses, $Z = 1$--$20$' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound empirical formulation structurally demonstrating explicit constants successfully across parameters.",
+        "reviewed_at": "2026-07-08T14:54:14.000Z",
+        "reviewed_sha": "6e8bba804a0f2db185ea05834cb560056c0ea3fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:33:54.919Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound empirical formulation structurally demonstrating explicit constants successfully across parameters.",
+        "reviewed_at": "2026-07-08T14:54:14.000Z",
+        "reviewed_sha": "6e8bba804a0f2db185ea05834cb560056c0ea3fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-probe-narrative": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "cite-named-theorem": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "voice-agent-speak": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "uses-editorial-hygiene": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "51e33f456ef9",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "c7f602946422"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82",
+        "metrics": {
+          "uses_count": 1,
+          "broken_edges": 0,
+          "redundant_edges": 0
+        }
+      }
+    ],
+    "uses-formal-coverage": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "51e33f456ef9",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "f9b547e15cfd"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "lean-ref-owns-decl": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "51e33f456ef9",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "c7f602946422"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82"
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.554Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:09.831Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read. 'No continuous integration, no dilogarithm evaluation; the dependence on q_0 is confined to step 3 alone' is a substantive method statement — it says what the algebraic path avoids and is the point of the section."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.554Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:09.898Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No setup-then-reframe."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.554Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (3 in 199 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:09.959Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "One em-dash in 211 words, introducing the reason a claim fails ('not currently reproducible — the referenced witness is absent')."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.554Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 199 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:10.027Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'nucleons at +2.89%; D/T/3He at ~1-3%; A >= 4 at +5-20%' is a real three-tier error breakdown by method, each with its own figure."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.554Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:10.095Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes on what would be needed for a reproducible table (a derived SDP atom-to-knot rule), which is a work statement."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.554Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:10.155Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The closing caveat paragraph is a substantive scientific caveat about reproducibility and applicability, which AGENTS.md section 4d explicitly keeps in prose rather than migrating to authorNotes. It is not status-narration.",
+        "notes": "Credit where due: this block is unusually honest — it states that the witness is absent, that the live pipelines give substantially larger errors, and that 'zero fitted parameters' does not hold for the census / alpha-cluster methods. The +2.89% nucleon figure matches the AGENTS.md canonical m_p gap."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.554Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:10.200Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No terminal restatement."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.554Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:10.267Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.554Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:10.327Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No inflation; the block de-claims rather than over-claims."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.554Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "3168e9add5b1",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:10.382Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Speakable.",
+        "notes": "Scope gap worth closing: the caveat lives here, but the 20-row table is a SEPARATE block (tbl:mass-table-z1-20-table-data) that carries no caveat of its own and will be read standalone in the rendered document and by any consumer that joins on the table label. Suggest either an inline note in the table block or a caption carrying the non-reproducibility flag."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "36ffc29c852f",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-30T03:18:57.502Z",
+        "reviewed_sha": "3c5a23778017dbaf4f9053e4dc614dfd12e65a82",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "7e420178e51b",
+          "ts": "2f07fe35bcd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-25T18:56:29.626Z",
+        "reviewed_sha": "b5eae9385f60dc7cbb37c293615eea75e6cf4995"
+      }
+    ],
+    "foreshadows-point-forward": [
+      {
+        "field_hash": {
+          "md": "7e420178e51b",
+          "ts": "2f07fe35bcd0",
+          "graph": "d71d81d0d810"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "782f89f534a5",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-25T18:56:29.626Z",
+        "reviewed_sha": "b5eae9385f60dc7cbb37c293615eea75e6cf4995"
+      }
+    ]
+  },
+  "updated_at": "2026-08-30T03:18:57.502Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
+}

@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-hecke-blitvic-pair-partition-mechanism",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:hecke-blitvic-pair-partition-mechanism",
+  "kind": "remark",
+  "title": "Pair-partition mechanism behind the Blitvić hypothesis",
+  "interprets": "papers/quantum-observable-universe/blocks/prop-hecke-satisfies-blitvic-hypothesis",
+  "tags": [
+    "hecke",
+    "blitvic",
+    "pair-partition",
+    "markov-trace"
+  ],
+  "text": "hecke-blitvic-pair-partition-mechanism.md",
+  "provenance": "authored"
+}

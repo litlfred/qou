@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/kirbycal/blocks/prose-page-013",
+  "kind": "prose",
+  "title": "Page 13",
+  "pageStart": 13,
+  "pageEnd": 13,
+  "text": "../sections/page-013.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/kirbycal",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/kirbycal",
+  "provenance": "ingested"
+}

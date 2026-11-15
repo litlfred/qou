@@ -1,0 +1,23 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "drinfeld1985",
+  "type": "article-journal",
+  "title": "Hopf algebras and the quantum Yang–Baxter equation",
+  "author": [
+    {
+      "family": "Drinfeld",
+      "given": "V. G."
+    }
+  ],
+  "container-title": "Soviet Mathematics Doklady",
+  "volume": "32",
+  "page": "254-258",
+  "issued": {
+    "date-parts": [
+      [
+        1985
+      ]
+    ]
+  },
+  "note": "PLACEHOLDER: Drinfeld's 1985 Doklady paper introducing the quantum Yang–Baxter / Hopf-algebra framework. Cited in R-matrix work; verify whether the QOU Lean Ref intends the 1985 Doklady note or the 1986 ICM (Berkeley) address 'Quantum Groups'."
+}

@@ -8,88 +8,64 @@ pages: 11-12
 source_pdf: 1208.1663v2.pdf
 source_sha256: 87e94e429d58386c
 doc_brief: "The 3D index of an ideal triangulation and angle structures — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of ideal triangulations of 3-manifolds with r torii boundary"
+text_source: latex
+latex_prose_ratio: 0.923
+latex_coverage_ratio: 0.857
 ---
-discrete integer variables e,m which satisﬁes Equations (3.1a) and 3.1b. Section 4.1 implies
-that f(0,e ) satisﬁes the 3-term recursion
-(4.1) f(0,e )− (2−qe−1)f(0,e− 1) +f(0,e− 2) = 0
-for all integers e. It follows that for every integer e, f(0,e ) is a Z[q±1]-linear combination
-of A and B where f(0, 0) = A and f(0, 1) = B. An induction on e <0 using the recursion
-relation (4.1) shows that for all e< 0 we have
-f(0,e ) =q−e2
-2−e
-2 (p1(e)A +p2(e)B)
-wherep1(e),p 2(e)∈ Z[q] are polynomials of maximumq-degreee2/2+e/2 and constant term
-(−1)e−1 and (−1)e respectively. For example, we have:
-f(0,−1) = A−B
-qf (0,−2) = A(−1 +q) +B(1− 2q)
-q3f(0,−3) = A
-(
-1−q− 2q2 +q3)
-+B
-(
-−1 + 2q + 2q2− 3q3)
-q6f(0,−4) = A
-(
-−1 +q + 2q2 +q3− 2q4− 3q5 +q6)
-+B
-(
-1− 2q− 2q2 +q3 + 4q4 + 3q5− 4q6)
-q10f(0,−5) = A
-(
-1−q− 2q2−q3 + 5q5 + 3q6 +q7− 3q8− 4q9 +q10)
-+B
-(
-−1 + 2q + 2q2−q3− 2q4− 7q5 + 3q7 + 6q8 + 4q9− 5q10)
-Let us write
-A =
-∞∑
-n=0
-anqn B =
-∞∑
-n=0
-bnqn.
-If we assume thatf(0,e )∈ Z[[q]], this imposes a system of linear equations on the coeﬃcients
-an and bn of A and B. In fact, for ﬁxed e< 0, the system of equations coeﬀ( f(0,e ),qj) = 0
-forj =−e2/2−e/2,..., −2,−1 is a triangular system of linear equations with unknowns bj
-forj = 0, 1,...,e 2/2−e/2− 1 where all diagonal entries of the coeﬃcient matrix are 1. For
-example, we have:
-
-
-1 0 0 0 0 0
-−2 1 0 0 0 0
-−2 −2 1 0 0 0
-1 −2 −2 1 0 0
-4 1 −2 −2 1 0
-3 4 1 −2 −2 1
-
-
-
-
-b0
-b1
-b2
-b3
-b4
-b5
-
-
+[]{#sub.rankV+ label="sub.rankV+"}
+
+Consider a function $f(m,e)$ of two discrete integer variables $e,m$ which satisfies Equations [\[eq.rec1\]](#eq.rec1){reference-type="eqref" reference="eq.rec1"} and [\[eq.rec2\]](#eq.rec2){reference-type="ref" reference="eq.rec2"}. Section [\[sub.partd\]](#sub.partd){reference-type="ref" reference="sub.partd"} implies that $f(0,e)$ satisfies the 3-term recursion $$\label{eq.recI2}
+f(0, e) - (2 - q^{e-1}) f(0, e - 1) + f(0, e - 2)=0$$ for all integers $e$. It follows that for every integer $e$, $f(0,e)$ is a $\mathbb Z[q^{\pm 1}]$-linear combination of $A$ and $B$ where $f(0,0)=A$ and $f(0,1)=B$. An induction on $e<0$ using the recursion relation [\[eq.recI2\]](#eq.recI2){reference-type="eqref" reference="eq.recI2"} shows that for all $e<0$ we have $$f(0,e) = q^{-\frac{e^2}{2}-\frac{e}{2}} \left( p_1(e) A + p_2(e) B \right)$$ where $p_1(e), p_2(e) \in \mathbb Z[q]$ are polynomials of maximum $q$-degree $e^2/2+e/2$ and constant term $(-1)^{e-1}$ and $(-1)^e$ respectively. For example, we have:
+
+$$\begin{aligned}
+f(0,-1)&=& A-B \\
+q f(0,-2) &=&
+A (-1+q) + B (1-2 q)
+\\
+q^3 f(0,-3) &=&
+A \left(1-q-2 q^2+q^3\right) + B \left(-1+2 q+2 q^2-3 q^3\right)
+\\
+q^6 f(0,-4) &=&
+A \left(-1+q+2 q^2+q^3-2 q^4-3 q^5+q^6\right) \\ & & 
++B \left(1-2 q-2 q^2+q^3+4 q^4+3 q^5-4 q^6\right)
+\\
+q^{10} f(0,-5) &=&
+A \left(1-q-2 q^2-q^3+5 q^5+3 q^6+q^7-3 q^8-4 q^9+q^{10}\right) \\ & & 
++B \left(-1+2 q+2 q^2-q^3-2 q^4-7 q^5+3 q^7+6 q^8+4 q^9-5 q^{10}\right)
+\end{aligned}$$ Let us write $$A=\sum_{n=0}^\infty a_n q^n  \qquad
+B=\sum_{n=0}^\infty b_n q^n \,.$$ If we assume that $f(0,e) \in \mathbb Z[[q]]$, this imposes a system of linear equations on the coefficients $a_n$ and $b_n$ of $A$ and $B$. In fact, for fixed $e <0$, the system of equations $\mathrm{coeff}(f(0,e),q^j)=0$ for $j=-e^2/2-e/2, \dots, -2,-1$ is a triangular system of linear equations with unknowns $b_j$ for $j=0,1,\dots,e^2/2-e/2-1$ where all diagonal entries of the coefficient matrix are $1$. For example, we have: $$\left(
+\begin{array}{cccccc}
+ 1 & 0 & 0 & 0 & 0 & 0 \\
+ -2 & 1 & 0 & 0 & 0 & 0 \\
+ -2 & -2 & 1 & 0 & 0 & 0 \\
+ 1 & -2 & -2 & 1 & 0 & 0 \\
+ 4 & 1 & -2 & -2 & 1 & 0 \\
+ 3 & 4 & 1 & -2 & -2 & 1 \\
+\end{array}
+\right) 
+\left(
+\begin{array}{c}
+b_0 \\
+b_1 \\
+b_2 \\
+b_3 \\
+b_4 \\
+b_5
+\end{array}
+\right)
 =
-
-
-−a0
-a0−a1
-2a0 +a1−a2
-a0 + 2a1 +a2−a3
-−2a0 +a1 + 2a2 +a3−a4
-−3a0− 2a1 +a2 + 2a3 +a4−a5
-
-
-It follows that bn is a Z-linear combination of ak fork≤n. This proves that the rank of the
-Z[[q]]-module V+ is at most 1. Since I∆∈V+ (as follows from the proof of Theorem 3.7), it
-follows that the rank of the Z[[q]]-module V+ is exactly 1. This proves part (b) of Theorem
-3.2. □
-12 STA VROS GAROUF ALIDIS
-Corollary 4.1. The above proof implies that f∈ V+ is uniquely determined by its initial
-condition f(0, 0)∈ Z[[q]]. It follows that if f,g ∈V+, then
-(4.2) g(0, 0)f(m,e ) =f(0, 0)g(m,e )
-for all integers m and e.
+\left(
+\begin{array}{c}
+ -a_{0} \\
+ a_{0}-a_{1} \\
+ 2 a_{0}+a_{1}-a_{2} \\
+ a_{0}+2 a_{1}+a_{2}-a_{3} \\
+ -2 a_{0}+a_{1}+2 a_{2}+a_{3}-a_{4} \\
+ -3 a_{0}-2 a_{1}+a_{2}+2 a_{3}+a_{4}-a_{5} \\
+\end{array}
+\right)$$ It follows that $b_n$ is a $\mathbb Z$-linear combination of $a_k$ for $k \leq n$. This proves that the rank of the $\mathbb Z[[q]]$-module $V_+$ is at most $1$. Since $I_{\Delta}\in V_+$ (as follows from the proof of Theorem [\[thm.2\]](#thm.2){reference-type="ref" reference="thm.2"}), it follows that the rank of the $\mathbb Z[[q]]$-module $V_+$ is exactly $1$. This proves part (b) of Theorem [\[thm.1\]](#thm.1){reference-type="ref" reference="thm.1"}. 0◻
+
+::: corollary
+[]{#cor.V+ label="cor.V+"} The above proof implies that $f \in V_+$ is uniquely determined by its initial condition $f(0,0) \in \mathbb Z[[q]]$. It follows that if $f,g \in V_+$, then $$\label{eq.fg00}
+g(0,0)f(m,e)=f(0,0)g(m,e)$$ for all integers $m$ and $e$.
+:::

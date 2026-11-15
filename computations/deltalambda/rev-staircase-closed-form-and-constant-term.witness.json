@@ -1,14 +1,16 @@
 {
   "schema": "qou-witness/v1",
-  "computedAt": "2026-09-13T12:53:54.351811+00:00",
+  "computedAt": "2026-10-13T15:11:47.298733+00:00",
   "computation": "rev_staircase_closed_form_and_constant_term_probe",
   "bean": "qou-hok7",
   "anchor": "physical_proton",
+  "q0Anchor": "proton",
+  "scriptFile": "rev_staircase_closed_form_and_constant_term_probe.py",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "description": "The staircase leg of M_n is closed form: V(delta_k) = A*k - B - F(n) up to a remainder decaying at the derived rate q0^4 per unit k, where A = sum_j eps(2j-1), B = sum_j (j-1)eps(2j-1). Follows from betaSide_eq_hookSum (the objective is cell-local in the hook length) plus the staircase hook multiset '2j-1 with multiplicity k+1-j'. Because k + 1/2 = sqrt(2n + 1/4) exactly at triangular n, the result is an IDENTITY rather than an asymptotic: M_n = A*sqrt(2n + 1/4) - A/2 - B - C + e_n + two exponentially small remainders, together 5.1e-16 at n = 3916. The entire gap to a closed asymptotic is the single sequence e_n; kappa = -A/2 - B - C + e_inf.",
   "lean": {
     "theorem": "QOU.BraidKnot.HookSum.betaSide_eq_hookSum",
-    "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/HookSumBetaCoordinates.lean",
+    "file": "folio/quantum-observable-universe/lean/QOU/BraidKnot/HookSumBetaCoordinates.lean",
     "role": "makes the objective a sum over cells of a function of the hook length"
   },
   "constants": {

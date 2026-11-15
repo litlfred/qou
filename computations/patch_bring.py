@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import os
 
-lean_root = '/home/litlfred/space_cats/qou/content/quantum-observable-universe/lean'
+lean_root = '/home/litlfred/space_cats/qou/folio/quantum-observable-universe/lean'
 src_file = os.path.join(lean_root, 'QOU/Archimedean/EmCouplingBringZeroMode.lean')
 
 with open(src_file, 'r') as f:

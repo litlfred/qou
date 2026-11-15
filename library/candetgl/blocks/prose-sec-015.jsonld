@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/candetgl/blocks/prose-sec-015",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/candetgl/blocks/prose-sec-015",
   "kind": "prose",
-  "title": "PROOF OF THEOREM D",
-  "pageStart": 23,
-  "pageEnd": 25,
-  "text": "../sections/sec-015-vii-proof-of-theorem-d.md",
-  "derivedFrom": "library/candetgl/manifest",
-  "sourceDocument": "library/candetgl/manifest",
+  "title": "PROOF OF THEOREM B",
+  "pageStart": 15,
+  "pageEnd": 15,
+  "text": "../sections/sec-015-v-proof-of-theorem-b.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/candetgl",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/candetgl",
   "provenance": "ingested"
 }

@@ -1,0 +1,86 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "jacoby-lawrence2004",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 407,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/04procbryden/04procbryden.pdf"
+        },
+        "id": "jacoby-lawrence2004",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Identified from front matter as a conference-proceedings article on computations of the Ohtsuki series Z_inf(M) = sum lambda_m (q-1)^m of integer homology 3-spheres (NOT the figure-eight Kashaev kappa-tower that the corpus calls 'the Ohtsuki tower' in QOU/QBeta/OhtsukiTowerBarParity.lean \u2014 two distinct objects both named after Ohtsuki; conflating them is the main hazard when reading this document into the corpus). It is core because of Sigma(2,3,5) = S^3/2I, the corpus's own keystone manifold: the paper states the exact closed form of its Ohtsuki series and the growth rate of its coefficients, both of which are directly checkable against the live keystone probes computations/probes/keystone_colored_sigma235_wrt.py and computations/lr_modulus_identification_sigma235.py. Citation status checked all three ways: no ref() id matches (481 ids enumerated; nothing for Jacoby, Lawrence-Rozansky, or Ohtsuki's lambda_n papers \u2014 only lawrence-zagier-1999 and hikami2005brieskorn are registered), no cite{} in content/**/*.md, no '-- Ref:' in content/**/*.lean; grep for the surnames and for the filename stem returns only the ledger row. Corpus-grep for the gap this closes (docs/audits/, content/, computations/, docs/coordination/) finds no lambda_n / Casson-invariant / Ohtsuki-series axis anywhere: every 'Casson' hit in the tree is Casson-Rivin angle-structure duality, an unrelated object, and docs/audits/2026-05-19-delta-lambda-thread-closure.md line 64 records Seifert-piece Casson-type invariants as explicitly 'not in main'. Scope note on the 5_2 gap: this paper's family K(S/T) does include 5_2 at (S,T)=(3,2) and it prints 21 coefficients of Z_inf for the manifold obtained by +3/2 surgery on 5_2 (section 4.1, p.64), but that is the Ohtsuki series of a surgered 3-manifold, NOT the 5_2 knot's state-integral / Kashaev asymptotics. It is therefore NOT an independent source for the corpus's 5_2 DT-spectrum data (QOU/QBeta/FiveTwoDTSpectrumSplit.lean, GGM eqs 96/97/98) and must not be presented as one.",
+          "keyResults": [
+            {
+              "locator": "Section 1, p. 55",
+              "statement": "q(q-1) Z_inf(Sigma(2,3,5))(q) = 1 - (1/2) sum_{n>=1} chi(n) q^{(n^2-1)/120}, where chi : Z/60Z -> {-1,0,1} is odd and takes the value +1 precisely at 1, 11, 19, 29 and nowhere else.",
+              "useForFolio": "Independently confirms the support set {1,11,19,29} that computations/probes/keystone_colored_sigma235_wrt.py hardcodes, and simultaneously pins the exponent normalisation as (n^2-1)/120 \u2014 which makes every exponent an integer (n=1,11,19,29 give 0,1,3,7) \u2014 whereas that probe uses Psi(q) = sum chi(n) q^{n^2/120}. The two differ by an overall q^{-1/120}; at the probe's evaluation point that is a factor ~1.00088, i.e. it moves the operational number Psi(1/q0) = 2.32958 in its fourth significant digit. This is a normalisation cross-check to run, not a number to adopt.",
+              "targets": [
+                "computations/probes/keystone_colored_sigma235_wrt.py",
+                "computations/lr_modulus_identification_sigma235.py"
+              ]
+            },
+            {
+              "locator": "Section 4.3, p. 65",
+              "statement": "Defines the slope sigma(M) = lim_{n->inf} lambda_n(M) / (n lambda_{n-1}(M)); cites Lawrence-Rozansky that the slope exists for Seifert fibred manifolds and equals sigma(Sigma(Q_1/P_1,...,Q_N/P_N)) = \u00b1P/pi^2 = \u00b1(1/pi^2)(sum_i Q_i/P_i)^{-1}, so pi^2 sigma(M) is in Q for such manifolds and in Z when they are additionally integer homology spheres.",
+              "useForFolio": "For Sigma(2,3,5) both readings of P give |pi^2 sigma| = 30 = p1 p2 p3, the same 30 the keystone's McKay 2I <-> affine E8 derivation uses as h(E8) = sum of Coxeter marks (docs/coordination/s5-so3-keystone.md, 2026-07-12 row). So the growth rate of the perturbative coefficients is that same P: lambda_n grows like (30/pi^2)^n n!, i.e. Z_inf(Sigma(2,3,5)) is Gevrey-1 with zero radius of convergence. That is a quantitative reason why the keystone's h = q-1 expansion cannot simply be evaluated at the substrate (h_0 ~ 0.11) and why the bar-involution route into the disk (q -> 1/q, where the false theta converges) is the correct one \u2014 it corroborates a route the ledger already chose, and supplies the divergence rate the ledger currently does not record.",
+              "targets": [
+                "docs/coordination/s5-so3-keystone.md",
+                "computations/probes/keystone_colored_sigma235_wrt.py"
+              ]
+            },
+            {
+              "locator": "Section 4.2, p. 64-65",
+              "statement": "Z_K(Mbar)(q) = Z_K(M)(q^{-1}) at all roots of unity, hence Z_inf(Mbar) is obtained from Z_inf(M) by q -> q^{-1}, i.e. h -> -h/(1+h); together with lambda_1 = 6 lambda_Casson and explicit degree-2m polynomials for lambda_m(S,T).",
+              "useForFolio": "States the q -> q^{-1} bar involution at the level of the 3-manifold WRT/Ohtsuki series itself, which is exactly the involution the keystone uses to move from q0 ~ 1.10998 to 1/q0 ~ 0.901. Gives the keystone's bar step a literature statement at the right level of generality (manifold invariant, not just the false theta), and supplies the orientation-reversal bookkeeping any lambda_n cross-check needs.",
+              "targets": [
+                "docs/coordination/s5-so3-keystone.md"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Orphan with no ref() entry, and it is the only registered-or-unregistered source in the tree stating the Sigma(2,3,5) Ohtsuki series in closed form with an explicit normalisation. Per the skill, creating the ref() entry is the first action, not the last; metadata (title, authors, year, venue) goes in folio/schema/references.ts, never here.",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-eohf"
+            },
+            {
+              "action": "compute-check",
+              "rationale": "Cross-check the probe's Psi(q) = sum chi(n) q^{n^2/120} against this paper's q(q-1) Z_inf = 1 - (1/2) sum chi(n) q^{(n^2-1)/120}. The support set agrees (independent confirmation); the exponent offset q^{-1/120} and the q(q-1) prefactor do not obviously agree, and they move the operational Psi(1/q0) = 2.32958 in the fourth digit. A disagreement is a normalisation bug in the transcription; an agreement is an independent confirmation. Either way the external number is never adopted \u2014 only compared.",
+              "target": "computations/probes/keystone_colored_sigma235_wrt.py",
+              "bean": "qou-t8mi"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Record in the keystone ledger that the Ohtsuki series of Sigma(2,3,5) is Gevrey-1 with slope pi^2 sigma = \u00b130 = P = h(E8), so the h-expansion has zero radius of convergence and the bar-involution route into the disk is forced rather than merely convenient. This interprets an external result for the folio; it does not discharge any Lean hypothesis, so it is a remark and not an aid-proof.",
+              "target": "docs/coordination/s5-so3-keystone.md",
+              "bean": "qou-wupb"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-09T00:10:43.091Z",
+          "source_sha": "8baffbc6542c"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

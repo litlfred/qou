@@ -7,7 +7,11 @@
   "bytes": 285143,
   "pages": 21,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +21,7 @@
    "stamp_date": "19 May 2000"
   },
   "doi": null,
-  "title": "Low-lying Eigenvalues of the QCD Dirac Operator at Finite Temperature",
+  "title": "arXiv:hep-lat/0003021v3 19 May 2000",
   "authors_raw": "P.H. Damgaarda, U.M. Hellerb, R. Niclasena and K. Rummukainenc,d",
   "title_lines": [
    "Low-lying Eigenvalues of the QCD Dirac Operator",
@@ -29,86 +33,632 @@
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "CreationDate": "D:20181029090146-04'00'"
+  },
+  "title_raw": "Low-lying Eigenvalues of the QCD Dirac Operator at Finite Temperature",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:hep-lat/0003021v3 19 May 2000",
+   "heading": "Low-lying Eigenvalues of the QCD Dirac Operator at Finite Temperature",
+   "text": "Low-lying Eigenvalues of the QCD Dirac Operator at Finite Temperature",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Abstract",
-   "page": 1,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
    "title": "Introduction",
    "page": 2,
    "source": "inferred",
-   "number": null
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "1"
+  },
+  {
+   "level": 1,
+   "title": "Quenched QCD at high temperature",
+   "page": 4,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "3"
+  },
+  {
+   "level": 1,
+   "title": "QCD with four dynamical fermions at high temperature",
+   "page": 9,
+   "source": "inferred",
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "8"
+  },
+  {
+   "level": 1,
+   "title": "Random Matrix Theory",
+   "page": 14,
+   "source": "inferred",
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "Conclusions",
    "page": 19,
    "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 20,
-   "source": "inferred",
-   "number": null
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "18"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Details of our quenched ensembles",
+   "page": 5,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The measured distribution of the 50 lowest eigenvalues in quenched QCD at \ufb01nite tempera-",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The density of the smallest eigenvalues in the high temperature phase of quenched QCD, at",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Distributions of the unfolded level spacings between the \ufb01rst few eigenvalues for \u03b2 = 5.75",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The lowest eigenvalue, averaged over 5 con\ufb01gurations, on an 83 \u00d74 lattice with amq = 0.025 as a function of \u03b2. One sees a clear change in behavior around \u03b2 \u223c5.02, indicating the restoration of chiral symmetry around this temperature. Just this \ufb01rst Dirac operator eigenvalue can thus serve as an exce",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "Details of our ensembles with dynamical fermions",
+   "page": 10,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Quenched spectrum of \u03b2 = 5.9 and a dynamical spectrum at \u03b2 = 5.4 with amq = 0.025,",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "table",
+   "number": "3",
+   "title": "The dependence of the \ufb01tted power on the \u03bb where the small-\u03bb tail is cut o\ufb00. The data are",
+   "page": 11,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "The density of the 50 smallest eigenvalues in the high temperature phase, \u03b2 = 5.2 and",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "The density of the 50 smallest eigenvalues at \u03b2",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Power \ufb01t to the spectral density for \u03b2 = 5.2 with amq = 0.025 on an 83 \u00d7 4 lattice with cut at 0.1 (see Table 3). Also included is the distribution of the \ufb01rst eigenvalue. The distribution of this smallest eigenvalue is very di\ufb00erent from that demanded by the Airy-function behavior (see below)",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Comparison of the spectral density for \u03b2 = 5.2, amq = 0.025 on a 83 \u00d7 4 lattice, with the Random Matrix Theory prediction for a soft edge, as in eq. (5)",
+   "page": 15,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "Distributions of the unfolded level spacings between the \ufb01rst few eigenvalues in the dynamical case, compared to the Wigner surmise. As in the quenched case, we \ufb01nd a small disagreement for the \ufb01rst eigenvalues. But in contrast to the quenched case the agreement sets in after almost just the 2nd eig",
+   "page": 15,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "Full spectra of 200 \u00d7 200 matrices at T = 0, 0.5, 0.75, 1.0, 1.2, 2.0. In this simple model a gap indeed develops around \u03bb = 0 at T = 1",
+   "page": 17,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "16"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "A blowup of the graphs in Fig. 11. The microscopic spectrum changes smoothly from Bessel-type behavior to Airy-type behavior, going through an intermediate \u201ccritical\u201d distribution at",
+   "page": 18,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "17"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "A blowup of a T = 3 spectrum compared with the Airy-prediction. There is nice agreement near the edge",
+   "page": 19,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "18"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-abstract",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Abstract",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 902,
-   "n_words": 145
+   "n_chars": 1326,
+   "n_words": 202,
+   "label_start": null,
+   "label_end": "1"
   },
   {
-   "id": "sec-001-introduction",
-   "number": null,
+   "id": "sec-000-1-introduction",
+   "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 2,
-   "page_end": 19,
-   "n_chars": 35542,
-   "n_words": 6321
+   "page_end": 4,
+   "n_chars": 10182,
+   "n_words": 1664,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
-   "id": "sec-002-conclusions",
-   "number": null,
+   "id": "sec-001-2-quenched-qcd-at-high-temperature",
+   "number": "2",
+   "title": "Quenched QCD at high temperature",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 9,
+   "n_chars": 7972,
+   "n_words": 1450,
+   "label_start": "3",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-002-3-qcd-with-four-dynamical-fermions-at-high-tempe",
+   "number": "3",
+   "title": "QCD with four dynamical fermions at high temperature",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 14,
+   "n_chars": 6803,
+   "n_words": 1275,
+   "label_start": "8",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-003-4-random-matrix-theory",
+   "number": "4",
+   "title": "Random Matrix Theory",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 19,
+   "n_chars": 10399,
+   "n_words": 1902,
+   "label_start": "13",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-004-5-conclusions",
+   "number": "5",
    "title": "Conclusions",
    "level": 1,
    "page_start": 19,
-   "page_end": 20,
-   "n_chars": 2669,
-   "n_words": 423
-  },
-  {
-   "id": "sec-003-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 20,
    "page_end": 21,
-   "n_chars": 3797,
-   "n_words": 630
+   "n_chars": 6478,
+   "n_words": 1054,
+   "label_start": "18",
+   "label_end": "20"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 4,
-  "sections": 4,
-  "chars_total": 42910
+  "toc_entries": 5,
+  "toc_inferred_entries": 5,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 16,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 6,
+  "chars_total": 43160,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "finiteTemp.tex",
+   "tex_sections": 5,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-quenched-qcd-at-high-temperature",
+     "title": "Quenched QCD at high temperature",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-qcd-with-four-dynamical-fermions-at-high-tempe",
+     "title": "QCD with four dynamical fermions at high temperature",
+     "prose_ratio": 0.69,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-4-random-matrix-theory",
+     "title": "Random Matrix Theory",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.704,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-5-conclusions",
+     "title": "Conclusions",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.685,
+     "result": "overlaid",
+     "converter": "latex"
+    }
+   ]
+  }
  }
 }

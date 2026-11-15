@@ -24,7 +24,7 @@ step and made everything else conditional on it: *are `M_{n,q}` and the corpus's
 That audit asserted *"`q-Plancherel` appears nowhere in `computations/`,
 `content/` or `docs/`. This is a genuine gap, not a re-derivation."* Measured
 with `grep -ril "q-plancherel\|q_plancherel"`, excluding this probe's own
-files: **202 live files**, plus 8 under `computations/_deprecated/` and 16
+files: **202 live files**, plus 8 under `fsh-guts/deprecated/computations/` and 16
 beans. The corpus does not merely mention it — it carries content blocks named
 `prop:q-plancherel-asymptotic-skeleton` / `conj:q-plancherel-asymptotic-
 skeleton`, and `computations/deltalambda/` uses a weight it calls *"Ocneanu /
@@ -85,11 +85,15 @@ particular weight system does not supply `m`.
 
 It closes something wider, and that is the part worth carrying forward. Any
 weight system arising from a trace that VANISHES on non-identity braid elements
-yields `z = 0` by the same one-line argument. The interface needs a trace with a
-Markov property; the regular trace is explicitly not one. So the search should
-be restricted to Markov traces (or their deformations) from the outset, which
-excludes the whole regular-trace/Plancherel family — including, by the same
-argument, the classical `q → 1` Plancherel measure `(dim λ)²/n!`.
+yields `z = 0` by the same one-line argument. CORRECTED 2026-10-10 (bean
+`qou-we2d`): this used to say the regular trace "is explicitly not" a Markov
+trace. It IS one, with parameter `z = 0` — `x·σ_n` has no identity component,
+so `τ(x·σ_n) = 0 = 0·τ(x)` — and its weights are the Molien weights
+(`QOU.SchurWeyl.MolienSymmetrisingTrace`). What the interface needs is a Markov
+trace with `z ≠ 0`, so the search should be restricted to Markov traces with
+non-zero parameter, which excludes the whole regular-trace/Plancherel family —
+including, by the same argument, the classical `q → 1` Plancherel measure
+`(dim λ)²/n!`. The conclusion is unchanged; only the reason was misstated.
 
 **(4) The corpus's own "q-Plancherel" is a different deformation, and it is
 not normalized.** `computations/deltalambda/` uses
@@ -106,7 +110,7 @@ which is why both carry the name. Two consequences:
   exactly, at every `n` and every `Q`.
 - 🛑 **That is NOT a defect, and an earlier draft of this file said it was.**
   The owner ruled on 2026-08-16, in
-  `content/quantum-observable-universe/notation/notation-collisions.md`, that
+  `folio/quantum-observable-universe/notation/notation-collisions.md`, that
   `Σ_λ w_λ(q) ≠ 1` at `q ≠ 1` **by design** — *"Never write a normalisation
   claim on bare `w_λ`"* — quoting 0.987 at `n = 3` and 1.051 at `n = 8`. The
   measurements above reproduce that independently (0.98744, and the `n = 8`

@@ -19,7 +19,7 @@ Usage:
     w.save()  # writes my-computation.witness.json
 
 The output conforms to the ComputationWitness interface in
-folio-assistant/schemas/types.ts.
+folio-assistant/cat-harness/schemas/types.ts.
 
 @module qou_substrate.witness
 """
@@ -632,6 +632,11 @@ def file_content_hash(path: str, length: int = 12) -> str:
 
 # ── Environment capture (software/library versions) ──────────────
 
+# Value recorded under ``environment["cvxpy"]`` when cvxpy is not installed.
+# See `capture_environment`.
+CVXPY_ABSENT = "absent"
+
+
 def capture_environment() -> dict:
     """Capture the interpreter + numeric-library versions that produced a
     witness.
@@ -653,6 +658,25 @@ def capture_environment() -> dict:
         except Exception:
             # Not installed / no metadata — omit rather than guess.
             pass
+
+    # `cvxpy` is recorded EVEN WHEN ABSENT, unlike the libraries above,
+    # because its absence changes numbers rather than merely speed.
+    # `hecke_core_legacy.binding_energy` runs an SDP leg that falls back to 0
+    # when cvxpy cannot be imported, and measured (PR #7796) the deuteron
+    # binding is -15.8142 MeV without cvxpy and +0.5381 MeV with it — a sign
+    # flip from the import alone. Omitting the key would make "absent" and
+    # "not recorded" (every witness written before this line) the same
+    # record, which is exactly the ambiguity that left binding witnesses
+    # untraceable to the branch that produced them.
+    #
+    # The sentinel orders BELOW every real version under `_version_tuple`
+    # (`_version_tuple("absent") == ()`), so the environment guard reads
+    # installed -> absent as a downgrade (a cvxpy-less run cannot silently
+    # replace a cvxpy run's block) and absent -> installed as a repair.
+    try:
+        env["cvxpy"] = _md.version("cvxpy")
+    except Exception:
+        env["cvxpy"] = CVXPY_ABSENT
 
     # `pyhecke_native` is built from this repo's own `tools/hecke-engine`
     # and is NOT published, so its version string is a hand-maintained crate

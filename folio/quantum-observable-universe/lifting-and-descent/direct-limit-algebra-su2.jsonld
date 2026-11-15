@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-direct-limit-algebra-su2",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:direct-limit-algebra-su2",
+  "kind": "example",
+  "title": "Direct limit algebra for $\\mathrm{SU}(2)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-direct-limit-algebra",
+    "papers/quantum-observable-universe/blocks/ex-recursive-brane-tower-su2"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-direct-limit-algebra",
+  "tags": [
+    "su2",
+    "direct-limit",
+    "differential-operators"
+  ],
+  "text": "direct-limit-algebra-su2.md",
+  "provenance": "authored"
+}

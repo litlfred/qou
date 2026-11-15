@@ -159,7 +159,7 @@ def _producers(root: Path):
     out = {}
     for wf in root.rglob("*.witness.json"):
         s = str(wf)
-        if "_deprecated" in s or "/data/" in s:
+        if ("_deprecated" in s or "fsh-guts" in s) or "/data/" in s:
             continue
         try:
             d = json.loads(wf.read_text())

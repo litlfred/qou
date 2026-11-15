@@ -1,0 +1,51 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "dgkmsv2013",
+  "library": {
+    "docId": "arxiv-1101.3374v1",
+    "dir": "library/arxiv-1101.3374v1",
+    "pdf": "library/arxiv-1101.3374v1/1101.3374v1.pdf",
+    "stage": "candidates",
+    "pages": 60,
+    "sections": 3,
+    "arxiv": "1101.3374v1"
+  },
+  "type": "article",
+  "title": "Pontryagin invariants and integral formulas for Milnor's triple linking number",
+  "author": [
+    {
+      "family": "DeTurck",
+      "given": "Dennis"
+    },
+    {
+      "family": "Gluck",
+      "given": "Herman"
+    },
+    {
+      "family": "Komendarczyk",
+      "given": "Rafal"
+    },
+    {
+      "family": "Melvin",
+      "given": "Paul"
+    },
+    {
+      "family": "Shonkwiler",
+      "given": "Clayton"
+    },
+    {
+      "family": "Vela-Vick",
+      "given": "David Shea"
+    }
+  ],
+  "container-title": "arXiv preprint",
+  "issued": {
+    "date-parts": [
+      [
+        2011
+      ]
+    ]
+  },
+  "URL": "https://arxiv.org/abs/1101.3374",
+  "note": "arXiv:1101.3374 (full version of dgkmsv2009). Theorem B gives μ̄₁₂₃ as a two-point Biot--Savart-shaped double integral over T³×T³ — the helicity of the characteristic field. Caveat established on reading: the additive per-pair form of F does NOT survive into the integrand (the ‖F‖³ normalization couples the pairs), so the paper supplies no per-pair splitting. Read in full 2026-08-01."
+}

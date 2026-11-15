@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-recursive-brane-tower",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:recursive-brane-tower",
+  "kind": "definition",
+  "title": "Recursive Brane Tower",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-jet-prolongation"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-recursive-brane-tower-su2"
+  ],
+  "tags": [
+    "brane-tower",
+    "jet-bundle",
+    "frobenius-hopf"
+  ],
+  "leanRef": "qou:QOU.RecursiveBraneTower",
+  "text": "recursive-brane-tower.md",
+  "leanSource": "recursive-brane-tower.lean",
+  "provenance": "authored"
+}

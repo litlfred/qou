@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "On the Garoufalidis-Kashaev state-integral invariant",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/on-the-garoufalidis-kashaev-state-integral-invariant",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "on-the-garoufalidis-kashaev-state-integral-invariant",
   "contains": [
     "library/on-the-garoufalidis-kashaev-state-integral-invariant/sections/sec-000",
     "library/on-the-garoufalidis-kashaev-state-integral-invariant/sections/sec-001",
@@ -69,8 +74,10 @@
     "library/on-the-garoufalidis-kashaev-state-integral-invariant/sections/sec-060"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "on-the-garoufalidis-kashaev-state-integral-invariant",
+    "title_source": "slug",
     "source_file": "On the Garoufalidis-Kashaev State-Integral Invariant.pdf",
     "source_sha256": "eda230da2a59678389765c3278df09072ad4a9fba65241af6fafc19b9a4ca463",
     "pages": 61,

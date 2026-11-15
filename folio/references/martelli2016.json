@@ -1,0 +1,31 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "martelli2016",
+  "library": {
+    "docId": "arxiv-1610.02592v3",
+    "dir": "library/arxiv-1610.02592v3",
+    "pdf": "library/arxiv-1610.02592v3/1610.02592v3.pdf",
+    "stage": "candidates",
+    "pages": 494,
+    "sections": 68,
+    "arxiv": "1610.02592v3"
+  },
+  "type": "book",
+  "title": "An Introduction to Geometric Topology",
+  "author": [
+    {
+      "family": "Martelli",
+      "given": "Bruno"
+    }
+  ],
+  "publisher": "arXiv (self-published textbook)",
+  "issued": {
+    "date-parts": [
+      [
+        2016
+      ]
+    ]
+  },
+  "URL": "https://arxiv.org/abs/1610.02592",
+  "note": "arXiv:1610.02592 (math.GT; v1 Oct 2016, v3 5 Apr 2022; 494 pp, 68 sections). Graduate textbook on surfaces and 3-manifolds through geometrisation. The chapters this folio can cite: §13.1 (Thm 13.1.3 Vol(Δ) = Λ(α)+Λ(β)+Λ(γ) for an ideal tetrahedron, Cor 13.1.4 the regular ideal tetrahedron is maximal — the Λ-form of the Vol(4_1) = 6Λ(π/3) = 2 Cl_2(π/3) guard); §14.1 (ideal triangulations, Thurston's consistency and completeness equations, Prop 14.1.7 a solution with Im z_i > 0 gives a complete finite-volume hyperbolic structure, Prop 14.1.8 + Fig 14.7 the two-tetrahedron valence-6 triangulation at z = e^{iπ/3} is the figure-eight complement, §14.1.7 SnapPea); §15.2 (Prop 15.2.1 #edges = #tetrahedra, Cor 15.2.8 rk A = 2n − c, Prop 15.2.9/15.2.11 the rows of the incidence matrix generate a Lagrangian subspace — the Neumann–Zagier symplectic structure — and the solution space as a complex manifold parametrised by peripheral holonomy); §15.1 the hyperbolic Dehn filling theorem with the figure-eight's exceptional surgeries (Table 15.1); §11.4 torus bundles and Anosov monodromy (Prop 11.4.14). Recorded as the held textbook source behind the NZ-from-braid audit (docs/audits/2026-09-06-nz-gluing-data-from-braid-monodromy.md, beans qou-n2cl / qou-yvyd); the two-bridge layering itself is not in this book (that is Guéritaud / Futer–Kalfagianni–Purcell, library arxiv-0808.2716v4). Ingested 2026-09-06 (e5afe5ea7b); triage: docs/audits/2026-09-06-uploads-triage-eight-documents.md."
+}

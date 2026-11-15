@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2106.01332v4
-doc_title: "Braided matter interactions in quantum gravity via 1-handle attachment"
+doc_title: "Braided matter interactions in quantum gravity via 1 -handle attachment"
 section_id: sec-000-acknowledgement
 section_title: "Acknowledgement"
 section_number: null
 pages: 15-15
 source_pdf: 2106.01332v4.pdf
 source_sha256: 44c19a99624997bf
-doc_brief: "Braided matter interactions in quantum gravity via 1-handle attachment — 9 sections: INTRODUCTION; (for C𝓁(6)) and B3 (for C𝓁(4)). In; THEORIES ON RIBBON GRAPHS"
+toc_source: outline
 ---
 We thank the anonymous Referee for comments and suggestions that helped improve the manuscript. NG was
 supported by the Natural Science Foundation of the Jiangsu Higher Education Institutions of China Programme Grant
@@ -19,7 +19,7 @@ the grant No. JJH1512105. EZ was supported by the Estonian Research Council thro
 and Quantum Gravity 24, no. 16 (2007): 3975.
 [3] Bilson-Thompson, Sundance, Jonathan Hackett, Louis Kauﬀman, and Yidun Wan. Emergent braided matter of quantum
 geometry. SIGMA. Symmetry, Integrability and Geometry: Methods and Applications 8 (2012): 014.
-[4] Kauﬀman, Louis H., and S´ ostenes Lins. Temperley-Lieb Recoupling Theory and Invariants of 3-Manifolds (AM-134),
+[4] Kauﬀman, Louis H., and S´ostenes Lins. Temperley-Lieb Recoupling Theory and Invariants of 3-Manifolds (AM-134),
 Volume 134. Princeton University Press, 2016.
 [5] Gresnigt, Niels G. Braids, normed division algebras, and standard model symmetries. Physics Letters B 783 (2018):
 212-221.
@@ -27,7 +27,7 @@ Volume 134. Princeton University Press, 2016.
 Cliﬀord algebras. The European Physical Journal C 80, no. 6 (2020): 1-7.
 [7] Gresnigt, Niels G. A topological model of composite preons from the minimal ideals of two Cliﬀord algebras. Physics
 Letters B 808 (2020): 135687.
-[8] Hackett, Jonathan. Locality and translations in braided ribbon networks. Classical and Quantum Gravity24, no. 23 (2007):
+[8] Hackett, Jonathan. Locality and translations in braided ribbon networks. Classical and Quantum Gravity 24, no. 23 (2007):
 5757.
 [9] Smolin, Lee, and Yidun Wan. Propagation and interaction of chiral states in quantum gravity. Nuclear physics B 796, no.
 1-2 (2008): 331-359.
@@ -50,7 +50,7 @@ Journal of Mathematical Physics 50, no. 11 (2009): 113505.
 [20] Lickorish, WB Raymond. A representation of orientable combinatorial 3-manifolds. Annals of Mathematics (1962): 531-540.
 [21] Kirby, Robion. A calculus for framed links in S3. Inventiones mathematicae 45, no. 1 (1978): 35-56.
 [22] Kosinski, Antoni A. Diﬀerential manifolds. Courier Corporation, 2013.
-[23] Gompf, Robert E., Andr´ as I. Stipsicz. 4-manifolds and Kirby calculus. No. 20. American Mathematical Soc., 1999.
+[23] Gompf, Robert E., Andr´as I. Stipsicz. 4-manifolds and Kirby calculus. No. 20. American Mathematical Soc., 1999.
 [24] Yokota, Yoshiyuki. Topological invariants of graphs in 3-space. Topology 35, no. 1 (1996): 77–87.
 [25] Mizusawa, Atsuhiko and Jun Murakami. Invariants of handlebody-knots via Yokota’s invariants. Journal of Knot Theory
 and Its Ramiﬁcations 22, no. 11 (2013): 1350068.

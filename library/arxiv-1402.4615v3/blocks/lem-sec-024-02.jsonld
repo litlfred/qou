@@ -1,8 +1,14 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+    }
+  ],
   "@id": "library/arxiv-1402.4615v3/blocks/lem-sec-024-02",
   "@type": [
-    "folio:Lemma",
+    "folio-assistant-sci:Lemma",
     "doco:Section"
   ],
   "kind": "lemma",
@@ -10,6 +16,6 @@
   "pageEnd": 50,
   "text": "lem-sec-024-02.md",
   "derivedFrom": "library/arxiv-1402.4615v3/sections/sec-024",
-  "sourceDocument": "library/arxiv-1402.4615v3/manifest",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1402.4615v3",
   "provenance": "ingested"
 }

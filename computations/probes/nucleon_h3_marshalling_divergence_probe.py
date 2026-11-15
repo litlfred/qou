@@ -92,10 +92,15 @@ importers and a 46-module `closed_form_tau_M` cone including
 binding path. Re-pointing it moves every closed-form nucleon and atom trace in
 the corpus, which is an owner decision, not an agent's.
 
-Ref: prop:constit-factor-tau-M-proton-identity
+Ref: `constit-factor-tau-M-proton-identity`
 Ref: closed_form_tau_M.py (compute_tau_M_nucleon_H3)
 Ref: canonical_braid_marshalling.py (marshal_to_chi_lambda_braid)
 Ref: chi_monotone_transfer.py (chi_all_lambda, the d-preserving path)
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 

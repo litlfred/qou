@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T12:45:36.298745+00:00",
-  "commitSha": "204f641df9c8a9c528657935ec972968d40015e3",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T15:16:21.721159+00:00",
+  "commitSha": "266c147ee39666e932727287228d9e48d3b84a5c",
   "assertions": [
     {
       "name": "reproduces_the_corpus_h3_trace_vector",
@@ -41,11 +41,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2576,
+  "durationMs": 2623,
   "computation": "qbeta-ocneanu-trace-general-n",
   "scriptFile": "qbeta_ocneanu_trace_general_n_probe.py",
   "scriptHash": "6371ab4612ad",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -53,14 +53,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -102,5 +102,7 @@
     "q0_pin": "proton",
     "q0_value": "1.1099785827513808075916690956107688798744991218736",
     "z_convention": "D, z_D = q^3/(q^2+1)"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

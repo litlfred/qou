@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0605314v1/blocks/prose-sec-028",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0605314v1/blocks/prose-sec-028",
   "kind": "prose",
-  "title": "KAZUO HABIRO",
-  "pageStart": 16,
-  "pageEnd": 16,
-  "text": "../sections/sec-028-16-kazuo-habiro.md",
-  "derivedFrom": "library/arxiv-math-0605314v1/manifest",
-  "sourceDocument": "library/arxiv-math-0605314v1/manifest",
+  "title": "Connected sum and orientation reversal",
+  "pageStart": 39,
+  "pageEnd": 40,
+  "text": "../sections/sec-028-121-connected-sum-and-orientation-reversal.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0605314v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0605314v1",
   "provenance": "ingested"
 }

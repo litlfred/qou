@@ -55,7 +55,7 @@ The residual `E_both - E_top - E_bot` is the whole question.  Every value is the
 Proton-pinned; exact integer arithmetic at scale 1e-40; mpmath dps 60 for the tables.  No
 float64.
 
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/BraidKnot/HookSumElasticity.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/BraidKnot/HookSumElasticity.lean
 """
 
 from __future__ import annotations
@@ -436,6 +436,10 @@ _out = {
     "computation": "rev_edge_separability_probe.py",
     "bean": "qou-hok7",
     "anchor": "physical_proton",
+    # Canonical anchor key read by the q0 audits/ratchet (the "anchor" key above is
+    # a near-miss spelling they cannot see), plus scriptFile provenance.
+    "q0Anchor": "proton",
+    "scriptFile": os.path.basename(__file__),
     "q0Value": Q_50_DIGIT_STR,
     "description":
         "Tests whether e_k is ADDITIVE over its two edges.  The cost is exactly separable once "

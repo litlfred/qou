@@ -191,7 +191,13 @@ def main() -> int:
     }
     gg_delta_net = coord_sum(word_nf(canonical_letters("n"))) \
         - coord_sum(word_nf(canonical_letters("p")))
-    want = mp.mpf("-0.2331977113156587020400640333246765343358")
+    # READ from the committed census witness rather than typed (witness-value copy
+    # ratchet): this check is "reproduces the COMMITTED census", so it must
+    # track that witness if the census is ever re-run.
+    import json as _json
+    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                           "qbeta-delta-candidate-census.witness.json"), encoding="utf-8") as _fh:
+        want = mp.mpf(_json.load(_fh)["data"]["nuc11_gen_grouped_nucleon_gen_chains/net_at_q0"])
     check("gen_grouped_coordinate_sum_matches_census",
           abs(gg_delta_net - want) < mp.mpf("1e-30"),
           f"{mp.nstr(gg_delta_net, 25)}")

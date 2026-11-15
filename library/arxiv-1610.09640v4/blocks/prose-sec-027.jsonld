@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/blocks/prose-sec-027",
+  "kind": "prose",
+  "title": "DG Functors",
+  "pageStart": 64,
+  "pageEnd": 65,
+  "text": "../sections/sec-027-35-dg-functors.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "provenance": "ingested"
+}

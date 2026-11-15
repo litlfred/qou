@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2211.12836v2/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2211.12836v2/blocks/prose-sec-010",
   "kind": "prose",
   "title": "Noncolliding particles on a circle and eigenvalues of unitary matrices",
   "pageStart": 21,
   "pageEnd": 22,
   "text": "../sections/sec-010-4-noncolliding-particles-on-a-circle-and-eigenva.md",
-  "derivedFrom": "library/arxiv-2211.12836v2/manifest",
-  "sourceDocument": "library/arxiv-2211.12836v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2211.12836v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2211.12836v2",
   "provenance": "ingested"
 }

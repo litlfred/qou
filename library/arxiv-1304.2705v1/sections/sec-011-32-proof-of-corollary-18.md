@@ -8,97 +8,69 @@ pages: 14-15
 source_pdf: 1304.2705v1.pdf
 source_sha256: cb07e66e418e11f2
 doc_brief: "FROM STATE INTEGRALS TO q-SERIES — It is well-known to the experts that multi-dimensional state integra ls of prod- ucts of Faddeev’s quantum dilogarithm which arise in Quantum Topolog y can be"
+text_source: latex
+latex_prose_ratio: 0.867
+latex_coverage_ratio: 0.875
 ---
-1
-(b(1 − eb−1w))3 = − 1
-w3 + 3b−1
-2w2 − b−2
-w + O(1)
-(φm(bw))3 = 1 − 3E(m)
-1 (q) bw + 3
-2
-(
-3E(m)2
-1 (q) − E(m)
-2 (q)
-)
-b2w2 + O(w3)
-(~φn(b−1w))3 = 1 + 3~E(n)
-1 (˜q) b−1w + 3
-2
-(
-3~E(n)2
-1 (˜q) + ~E(n)
-2 (˜q)
-)
-b−2w2 + O(w3)
-e
-2
-4πi w2+2w(b(m+1/2)+b−1(n+1/2)) = 1 +
-(
-(1 + 2m)b + (1 + 2n)b−1)
-w+
-(
-1 + b2 + b−2
-2 + 1
-2πi + 2b2m2 + 2b−2n2 + 4mn
-+2(1 + b2)m + 2(1 + b−2)n
-)
-w2 + O(w3)
-If R = Res w=0(F2,3,m,n(w)), then
-Rm,n = − b2
-2
-(
-1 + 4m + 4m2 − 6E(m)
-1 (q) − 12mE(m)
-1 (q) + 9E(m)2
-1 (q) − 3E(m)
-2 (q)
-)
-− 1
-2πi + 1
-2
-(
-1 + 2m − 3E(m)
-1 (q)
-)(
-1 + 2n − 6E(n)
-1 (˜q)
-)
-+ b−2
-2
-(
-−n − n2 − 6E(0)
-2 (˜q) + 3E(n)
-1 (˜q) + 6nE(n)
-1 (˜q) − 9E(n)2
-1 (˜q) + 3E(n)
-2 (˜q)
-)
-,
-This proves part (a) of Corollary 1.8. Part (b) follows from Equation ( 11) for ( A, B) = (2 , 3)
-and ( A, B) = (1 , 3). Note that Theorem 1.1 states that
-I2,3(q) = −e
-3πi
-4 ⟨P2,3(F~F )⟩(46)
-FROM STATE INTEGRALS TO q-SERIES 15
-where
-P2,3 = −b2
-2
-(
-1 + 4δ + 4δ2 − 6δ1 − 12δδ1 + 9δ2
-1 − 3~δ2
-)
-+ 1
-2
-(
-1 + 2δ + i
-π + 2~δ + 4δ~δ − 3δ1 − 6~δδ1 − 6e2(˜q) − 6~δ1 − 12δ~δ1 + 18δ1~δ1
-)
-+ b−2
-2
-(
-−~δ −~δ2 + 3~δ1 + 6~δ~δ1 − 9~δ2
-1 + 3~δ2
-)
-.
+\lbl{sub.cor52}
+
+Assume now that $(A,B)=(2,3)$. Then,
+\begin{align*}
+\frac{1}{(b(1-e^{b^{-1}w}))^3} &= -\frac{1}{w^3} +\frac{3b^{-1}}{2w^2} 
+-\frac{b^{-2}}{w} 
++O(1)
+\\
+\left( \phi_m(b w) \right)^3 &=
+1-3 E^{(m)}_1(q) \, b w + \frac{3}{2} \left(3 E^{(m)2}_1(q) -
+E^{(m)}_2(q)\right) \, b^2 w^2 + O(w^3) \\
+(\ti \phi_n(b^{-1} w))^3 &= 
+1+3 \ti E^{(n)}_1(\tq) \, b^{-1} w
++ \frac{3}{2} \left(3 \ti E^{(n)2}_1(\tq) +
+\ti E^{(n)}_2(\tq)\right) \, b^{-2} w^2 + O(w^3)
+\\
+e^{\frac{2}{4 \pi i} w^2 + 2 w (b (m+1/2) + b^{-1} (n+1/2))} &=
+1+\left((1+2m)b  +(1 + 2 n) b^{-1}\right) w + \\
+& \left(1 + \frac{b^2+b^{-2}}{2} +\frac{1}{2 \pi i} + 2 b^2 m^2 + 2 b^{-2} n^2
++ 4 m n \right. \\
+& \left. + 2(1+b^2) m + 2(1+b^{-2}) n \right) w^2 + O(w^3) 
+\end{align*}
+If $R=\Res_{w=0}(F_{2,3,m,n}(w))$, then
+{\small
+\begin{align*}
+R_{m,n} &= -\frac{b^2}{2} \left(
+1 + 4 m + 4 m^2   - 6 E^{(m)}_1(q) - 12 m  E^{(m)}_1(q) + 9 E^{(m)2}_1(q) - 3 
+E^{(m)}_2(q) \right)
+\\
+& - \frac{1}{2 \pi i} +  \frac{1}{2}
+\left(1 + 2 m - 3 E^{(m)}_1(q)\right)\left(1 + 2 n -6 E^{(n)}_1(\tq)\right) 
+\\
+& + \frac{b^{-2}}{2} \left( - n - n^2 -6 E^{(0)}_2(\tq) + 3 E^{(n)}_1(\tq) 
++6 n E^{(n)}_1(\tq) - 9 E^{(n)2}_1(\tq) + 3 E^{(n)}_2(\tq) \right) \,,
+\end{align*}
+}
+This proves part (a) of Corollary \ref{cor.52}. Part (b) follows from
+Equation \eqref{eq.FABrec} for $(A,B)=(2,3)$ and $(A,B)=(1,3)$.
+Note that Theorem \ref{thm.1} states that
+\begin{align}
+\lbl{eq.52R}
+\calI_{2,3}(q)& = 
+-e^{\frac{3 \pi i}{4}} \la P_{2,3} (F \ti F) \ra
+\end{align}
+where 
+\begin{align*}
+P_{2,3} &= -\frac{b^2}{2} 
+\left( 
+1+4 \d+4 \d^2-6 \d_1-12 \d \d_1+9 \d_1^2-3 \ti\d_2
+\right)
+\\
+& + \frac{1}{2} 
+\left( 
+1+2 \d+\frac{i}{\pi} +2 \ti\d+4 \d \ti\d-3 \d_1-6 \ti\d \d_1
+-6 e_2(\tq)-6 \ti\d_1-12 \d \ti\d_1+18 \d_1 \ti\d_1
+\right)
+\\
+& + \frac{b^{-2}}{2}
+\left( 
+-\ti\d-\ti\d^2+3 \ti\d_1+6 \ti\d \ti\d_1-9 \ti\d_1^2+3 \ti\d_2
+\right) \,.
+\end{align*}

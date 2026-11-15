@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/2018sorus020/blocks/prose-sec-020",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/2018sorus020/blocks/prose-sec-020",
   "kind": "prose",
-  "title": "The tree",
-  "pageStart": 30,
-  "pageEnd": 31,
-  "text": "../sections/sec-020-131-the-tree.md",
-  "derivedFrom": "library/2018sorus020/manifest",
-  "sourceDocument": "library/2018sorus020/manifest",
+  "title": "Reducible character in components of irreducible type of the character variety",
+  "pageStart": 39,
+  "pageEnd": 43,
+  "text": "../sections/sec-020-141-reducible-character-in-components-of-irreduc.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/2018sorus020",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/2018sorus020",
   "provenance": "ingested"
 }

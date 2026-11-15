@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-archimedean-functor-uniqueness-context",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:archimedean-functor-uniqueness-context",
+  "kind": "remark",
+  "title": "Pre-archimedean separation, corollaries, and open problems for the archimedean functor uniqueness",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-archimedean-functor-uniqueness"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-archimedean-functor-uniqueness",
+  "cites": [
+    "references/suslin1991",
+    "references/bloch2000"
+  ],
+  "tags": [
+    "archimedean",
+    "realization-functor",
+    "bloch-wigner",
+    "pentagon-identity",
+    "pre-archimedean",
+    "alpha-em"
+  ],
+  "text": "archimedean-functor-uniqueness-context.md",
+  "provenance": "authored"
+}

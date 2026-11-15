@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0606222v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0606222v2",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0606222v2",
   "contains": [
     "library/arxiv-math-0606222v2/sections/sec-000",
     "library/arxiv-math-0606222v2/sections/sec-001",
@@ -27,8 +32,22 @@
     "library/arxiv-math-0606222v2/sections/sec-018"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0606222&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-math-0606222v2",
+    "title_source": "slug",
     "source_file": "0606222v2.pdf",
     "source_sha256": "5c2a45596d04dd07859d65fb200db8cacad17d1ef95b2d278997a79600e358f5",
     "pages": 41,

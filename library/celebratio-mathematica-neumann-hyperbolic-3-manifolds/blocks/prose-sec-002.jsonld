@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/blocks/prose-sec-002",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/blocks/prose-sec-002",
   "kind": "prose",
   "title": "The Bloch group and the extended Bloch group",
   "pageStart": 9,
   "pageEnd": 12,
   "text": "../sections/sec-002-3-the-bloch-group-and-the-extended-bloch-group.md",
-  "derivedFrom": "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/manifest",
-  "sourceDocument": "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/celebratio-mathematica-neumann-hyperbolic-3-manifolds",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/celebratio-mathematica-neumann-hyperbolic-3-manifolds",
   "provenance": "ingested"
 }

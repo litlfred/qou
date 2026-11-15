@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0409593v1/blocks/prose-sec-003",
+  "kind": "prose",
+  "title": "Applications",
+  "pageStart": 4,
+  "pageEnd": 6,
+  "text": "../sections/sec-003-22-applications.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0409593v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0409593v1",
+  "provenance": "ingested"
+}

@@ -27,6 +27,10 @@ table in step — this file's disagreed until 2026-08-31 and `AGENTS.md`'s until
 
 2026-09-07: four PRs "measured CLEAN by `merge-tree`" were already rebase-merged (`merge-tree --write-tree` is vacuous for an applied patch). Before any checkout/rebase/push: `git fetch origin refs/pull/N/head:refs/remotes/pr/N`, then `git cherry origin/main pr/N` (`-` = upstream) and `scripts/verify-merge-replay.py --branch pr/N --merged origin/main`. A rebase that skips everything and leaves HEAD == `origin/main` is the same signal — stop. I force-pushed a merged branch to main's tip once and had to restore it.
 
+## TRAP — the same staleness reads as a phantom CONFLICT, not just a false clean
+
+2026-09-26, the inverse of the entry above. Rebase-merge rewrites every sha, so a merged branch's leftover ref is **not** an ancestor of `main`: `--is-ancestor` returns FALSE and `merge-tree --write-tree` reports **add/add CONFLICT** on every file it created. Measured on four leftovers — all read NOT-merged with real-looking conflicts, **all four PRs had merged**; one conflicting file's theorem bodies were byte-identical to main's and the whole 26-line "conflict" was docstring. Leftovers are the NORMAL state (deletion is forbidden) and `session-start-coord-sweep.sh` lists exactly them, so this reading is available on every sibling, every session. **Resolve branch → PR state before reading git ancestry as coordination signal:** `GET /pulls?state=all&head=litlfred:<branch>` — `state=open` alone returns `[]` and looks like "no PR ever". Detail + the four shas: [`stale-merged-branch-phantom-conflict.md`](stale-merged-branch-phantom-conflict.md).
+
 ## TRAP — worktree hook refuses variables · MCP "connected" but toolless · gates exit 2
 
 Recipes: [`worktree-hook-and-rest-recipes.md`](worktree-hook-and-rest-recipes.md).
@@ -186,3 +190,6 @@ Lean resolves a module by the FIRST `LEAN_PATH` root whose `QOU/` directory exis
 ## TRAP — `qa-staleness.ts` says `fresh: 0` of 3557 blocks; that is not evidence about a PR
 
 Its `want_criteria` list carries watcher criteria the reactive sweep never populates, so every block is "stale_or_partial" corpus-wide. Measure a PR's sidecars directly: `source_hashes.md/ts` vs sha256 of the files, then the LAST verdict per criterion, then the same criterion on `origin/main`'s copy (`git show`) — a `fail` that is also `fail` on main is inherited, not a regression (6 of 7 on #7426). And a dependency-cycle `fail` can be FRESH on its own md/ts hashes and stale on `field_hash.graph`: fixing the cycle in the OTHER blocks leaves this block's verdict saying `fail`; re-run that one criterion (`qa-sweep <stem> --only detangler-no-dependency-cycle` → pass, 0 findings).
+
+## TRAP — pushing a clean merge-from-main makes GitHub refuse "rebase" (405)
+Verify a clean PR against main LOCALLY and do not push the merge commit: once a merge commit is on the head, GitHub answers `405 This branch can't be rebased` (or `rebaseable: false`) and only the merge-commit method remains. Push the merge only when there is a real conflict, and say in the PR comment why it went in as a merge commit. Measured on #7583 / #7734, 2026-10-12.

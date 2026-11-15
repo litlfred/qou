@@ -1,22 +1,60 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/aif-2000-50-4-1021-0/manifest",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/aif-2000-50-4-1021-0",
   "@type": [
-    "folio:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "Systèmes aux q-différences singuliers réguliers : classification, matrice de connexion et monodromie",
   "contains": [
+    "library/aif-2000-50-4-1021-0/sections/sec-front-matter",
     "library/aif-2000-50-4-1021-0/sections/sec-000",
     "library/aif-2000-50-4-1021-0/sections/sec-001",
     "library/aif-2000-50-4-1021-0/sections/sec-002",
     "library/aif-2000-50-4-1021-0/sections/sec-003",
     "library/aif-2000-50-4-1021-0/sections/sec-004",
     "library/aif-2000-50-4-1021-0/sections/sec-005",
-    "library/aif-2000-50-4-1021-0/sections/sec-006"
+    "library/aif-2000-50-4-1021-0/sections/sec-006",
+    "library/aif-2000-50-4-1021-0/sections/sec-007",
+    "library/aif-2000-50-4-1021-0/sections/sec-008",
+    "library/aif-2000-50-4-1021-0/sections/sec-009",
+    "library/aif-2000-50-4-1021-0/sections/sec-010",
+    "library/aif-2000-50-4-1021-0/sections/sec-011",
+    "library/aif-2000-50-4-1021-0/sections/sec-012",
+    "library/aif-2000-50-4-1021-0/sections/sec-013",
+    "library/aif-2000-50-4-1021-0/sections/sec-014",
+    "library/aif-2000-50-4-1021-0/sections/sec-015",
+    "library/aif-2000-50-4-1021-0/sections/sec-016",
+    "library/aif-2000-50-4-1021-0/sections/sec-017",
+    "library/aif-2000-50-4-1021-0/sections/sec-018",
+    "library/aif-2000-50-4-1021-0/sections/sec-019",
+    "library/aif-2000-50-4-1021-0/sections/sec-020",
+    "library/aif-2000-50-4-1021-0/sections/sec-021",
+    "library/aif-2000-50-4-1021-0/sections/sec-022",
+    "library/aif-2000-50-4-1021-0/sections/sec-023",
+    "library/aif-2000-50-4-1021-0/sections/sec-024",
+    "library/aif-2000-50-4-1021-0/sections/sec-025",
+    "library/aif-2000-50-4-1021-0/sections/sec-026",
+    "library/aif-2000-50-4-1021-0/sections/sec-027",
+    "library/aif-2000-50-4-1021-0/sections/sec-028",
+    "library/aif-2000-50-4-1021-0/sections/sec-029",
+    "library/aif-2000-50-4-1021-0/sections/sec-030",
+    "library/aif-2000-50-4-1021-0/sections/sec-031",
+    "library/aif-2000-50-4-1021-0/sections/sec-032",
+    "library/aif-2000-50-4-1021-0/sections/sec-033",
+    "library/aif-2000-50-4-1021-0/sections/sec-034",
+    "library/aif-2000-50-4-1021-0/sections/sec-035"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "aif-2000-50-4-1021-0",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "AIF_2000__50_4_1021_0.pdf",
     "source_sha256": "a7ca398590a266d8753d1b7ccbcb80c47bb38d937e3a86113aade5f13342e4dc",
     "pages": 52,

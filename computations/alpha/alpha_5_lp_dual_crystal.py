@@ -24,7 +24,7 @@ P_5, then SOLVES via lp_dual_solver.solve_operator_selection_lp.
 The LP-dual variables u_λ* are the **shadow prices** of the
 Frobenius-positivity constraints — these are the "α_5" entries
 in the iterative LP-dual mass formula
-(`prop:mass-formula-iterative-lp-dual`).
+(`mass-formula-iterative-lp-dual`).
 
 Tests two questions:
   Q1 (atom-independence): is u_0* (binding-energy shadow price)
@@ -38,6 +38,11 @@ Cherry-picks #619's y_λ + χ^λ caches via
 `wedderburn_jones_markov.global_wedderburn_sum_q_hecke_seminormal`.
 
 Output: `alpha-5-lp-dual-crystal.witness.json`.
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 

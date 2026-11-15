@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ant-v14-n7-s-p10/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ant-v14-n7-s-p10/blocks/prose-sec-007",
   "kind": "prose",
-  "title": "The map x2 − 1",
-  "pageStart": 13,
-  "pageEnd": 15,
-  "text": "../sections/sec-007-7-the-map-x2-1.md",
-  "derivedFrom": "library/ant-v14-n7-s-p10/manifest",
-  "sourceDocument": "library/ant-v14-n7-s-p10/manifest",
+  "title": "Acknowledgements",
+  "pageStart": 17,
+  "pageEnd": 18,
+  "text": "../sections/sec-007-acknowledgements.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p10",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p10",
   "provenance": "ingested"
 }

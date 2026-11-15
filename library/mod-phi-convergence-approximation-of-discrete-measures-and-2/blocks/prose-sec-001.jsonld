@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-001",
   "kind": "prose",
   "title": "Poisson approximation of lattice-valued random variables",
   "pageStart": 3,
   "pageEnd": 84,
   "text": "../sections/sec-001-11-poisson-approximation-of-lattice-valued-rando.md",
-  "derivedFrom": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/manifest",
-  "sourceDocument": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/mod-phi-convergence-approximation-of-discrete-measures-and-2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/mod-phi-convergence-approximation-of-discrete-measures-and-2",
   "provenance": "ingested"
 }

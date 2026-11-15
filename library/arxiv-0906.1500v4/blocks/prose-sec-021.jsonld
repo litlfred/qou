@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0906.1500v4/blocks/prose-sec-021",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0906.1500v4/blocks/prose-sec-021",
   "kind": "prose",
-  "title": "Proof of Theorem 5. We begin by introducing the complexes needed in the proof",
-  "pageStart": 16,
-  "pageEnd": 18,
-  "text": "../sections/sec-021-62-proof-of-theorem-5-we-begin-by-introducing-th.md",
-  "derivedFrom": "library/arxiv-0906.1500v4/manifest",
-  "sourceDocument": "library/arxiv-0906.1500v4/manifest",
+  "title": "Proof from one variable to two variables",
+  "pageStart": 22,
+  "pageEnd": 23,
+  "text": "../sections/sec-021-732-proof-from-one-variable-to-two-variables.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0906.1500v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0906.1500v4",
   "provenance": "ingested"
 }

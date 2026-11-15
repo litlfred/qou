@@ -42,8 +42,21 @@ consumers assume — it is the phase *formula* that re-derives, giving the `−h
 `z_D` satisfies the Jones/Temperley–Lieb pin exactly: `z_D·[2]_q = q²`
 (`z_D = q²/[2]_q`, `zD_eq_qsq_div_bracketTwo`) — the mirror of
 `decayLadder_zC_not_jones` (C **fails** the pin). So under D the decay trace
-factors through TL: `markovWeights_eq_jones_of_threeRow_eq_zero` forces the
+factors through TL: `threeRow_eq_zero_of_jones_ocneanu` forces the
 Jones-closure weight vector, solved symbolically over ℚ(q) by S2:
+
+> **🛑 Citation corrected 2026-09-26 (bean `qou-6moa`).** This sentence cited
+> `markovWeights_eq_jones_of_threeRow_eq_zero`, which runs the **other way**: it
+> has `y_(1³) = 0` as its *hypothesis* and `z·(q+qi) = q²` as its *conclusion*,
+> i.e. **TL ⟹ D**, and it additionally carries `hfaith : y_(2,1) ≠ 0` without
+> which its conclusion is false (`markovWeights_degenerate_root`). The inference
+> made here is **D ⟹ TL**, whose lemma is
+> `FibreDimensionForcesTL.threeRow_eq_zero_of_jones_ocneanu`
+> (`FibreDimensionForcesTL.lean:179`, same `q, qi` frame, division-free over
+> `[CommRing R] [IsDomain R]`). The *conclusion* of this section is unaffected —
+> only the lemma named for it was. Do not cite
+> `conventionD_kills_antisymmetriser` here instead: it lives in
+> `section PinningOrdered` and needs an **ordered** field.
 
 | λ | rows | `y_λ` under D | sign, `q>1` |
 |---|---|---|---|

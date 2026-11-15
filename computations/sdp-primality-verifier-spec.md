@@ -1,7 +1,7 @@
 # SDP infrastructure for algebraic-primality verifier — roadmap and energy framing
 
 This document specifies the four-layer SDP infrastructure needed to
-verify [`conj:algebraic-primality-equals-empirical-at-q0`](../../content/quantum-observable-universe/particle-interactions/algebraic-primality-equals-empirical-at-q0.md),
+verify [`conj:algebraic-primality-equals-empirical-at-q0`](../../folio/quantum-observable-universe/particle-interactions/algebraic-primality-equals-empirical-at-q0.md),
 records the energy-minimisation framing of the demand vector, and
 cross-references the parallel work on the
 [`claude/tier3-math-audit-B0wyO`](https://github.com/litlfred/qou/tree/claude/tier3-math-audit-B0wyO)
@@ -75,7 +75,7 @@ the **target of an energy-minimisation process**. Detailed framing:
 - **Dynamics**: the system evolves by acting with a *discrete* set
   of allowable knot operators (e.g., the 6-basis
   $\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$ from
-  [`prop:knot-operator-selection`](../../content/quantum-observable-universe/particle-interactions/knot-operator-selection.md)).
+  [`prop:knot-operator-selection`](../../folio/quantum-observable-universe/particle-interactions/knot-operator-selection.md)).
   Discrete = ILP, not LP.
 - **Termination**: stable configuration = local minimum of the
   energy. Iterative reduction continues until no single available
@@ -127,13 +127,13 @@ by available knot operators. The gap between them is the
 A shell at strand count $n$ is **magic** iff the ILP-stable state
 (reached by iteration above) is *atomic* — cannot be reduced to a
 tensor product of stable states at smaller $n$. Equivalently
-([def:algebraic-primality](../../content/quantum-observable-universe/particle-interactions/algebraic-primality.md)):
+([def:algebraic-primality](../../folio/quantum-observable-universe/particle-interactions/algebraic-primality.md)):
 the canonical state $\psi_n(q)$ is not in the closed span of
 $\psi_{n_1} \otimes \cdots \otimes \psi_{n_k}$ for any non-trivial
 decomposition.
 
 This iterative-minimisation reading aligns with
-[`conj:magic-from-iterative-brane-tower`](../../content/quantum-observable-universe/lifting-and-descent/magic-from-iterative-brane-tower.md):
+[`conj:magic-from-iterative-brane-tower`](../../folio/quantum-observable-universe/lifting-and-descent/magic-from-iterative-brane-tower.md):
 each magic $n$ is a **threshold-crossing** event in the
 energy-reduction iteration, where the ILP fails to factor the
 ground state into smaller magic atoms.
@@ -182,7 +182,7 @@ $$
 $$
 
 This is the **dual-side certificate** of
-[`conj:sdp-rank-collapse-magic-shell`](../../content/quantum-observable-universe/particle-interactions/sdp-rank-collapse-magic-shell.md):
+[`conj:sdp-rank-collapse-magic-shell`](../../folio/quantum-observable-universe/particle-interactions/sdp-rank-collapse-magic-shell.md):
 read off a single integer from solver output instead of computing
 matrix rank of the primal optimum.
 
@@ -226,7 +226,7 @@ SDP optimum, indicating the discrete process can't reach the
 continuous-relaxation ground state.
 
 This is conjecturally equivalent to
-[`def:algebraic-primality`](../../content/quantum-observable-universe/particle-interactions/algebraic-primality.md):
+[`def:algebraic-primality`](../../folio/quantum-observable-universe/particle-interactions/algebraic-primality.md):
 zero-gap ⇔ no decomposition of $\psi_n$ into smaller-$n$ tensor
 products ⇔ algebraically prime.
 
@@ -345,7 +345,7 @@ for the SDP / LR-fusion verifier:
 ### 1. Bring 6-knot basis (genus-4 bound)
 
 The Bring-shell-binding picture
-([prop:torus-knot-shell-binding](../../content/quantum-observable-universe/archimedean-universe/torus-knot-shell-binding.md))
+([prop:torus-knot-shell-binding](../../folio/quantum-observable-universe/archimedean-universe/torus-knot-shell-binding.md))
 restricts the active operator basis to combinations of **6**
 specific torus knots ($T_{2,3}$, $T_{2,5}$, $T_{2,7}$, $T_{3,4}$,
 $T_{2,9}$, $T_{3,5}$). The genus-4 bound is structural, not a
@@ -359,7 +359,7 @@ on the basis-selection step.
 
 ### 2. $\Delta i \leq 1$ rule for double-magic LR-fusion
 
-[`conj:double-magic-delta-i-bound`](../../content/quantum-observable-universe/observations/double-magic-delta-i-bound.md)
+[`conj:double-magic-delta-i-bound`](../../folio/quantum-observable-universe/observations/double-magic-delta-i-bound.md)
 proves (on empirical data, conjectures generally) that doubly-magic
 isotopes satisfy $|i_N - i_Z| \leq 1$ across Bring shell indices.
 
@@ -372,7 +372,7 @@ work.
 
 For $n \geq 50$, restrict the SDP basis to self-conjugate
 partitions $\lambda = \lambda'$ — required by
-[`conj:categorical-neutrality-saturated-shells`](../../content/quantum-observable-universe/braids-and-knots/categorical-neutrality-saturated-shells.md).
+[`conj:categorical-neutrality-saturated-shells`](../../folio/quantum-observable-universe/braids-and-knots/categorical-neutrality-saturated-shells.md).
 Counts: $q(82) = 881$ vs $p(82) = 1.2 \times 10^7$ — a $\sim 10^4 \times$
 reduction.
 

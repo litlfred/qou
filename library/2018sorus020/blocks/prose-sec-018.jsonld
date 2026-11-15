@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/2018sorus020/blocks/prose-sec-018",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/2018sorus020/blocks/prose-sec-018",
   "kind": "prose",
-  "title": "Twisted cohomology",
-  "pageStart": 27,
-  "pageEnd": 30,
-  "text": "../sections/sec-018-12-twisted-cohomology.md",
-  "derivedFrom": "library/2018sorus020/manifest",
-  "sourceDocument": "library/2018sorus020/manifest",
+  "title": "The non-split case",
+  "pageStart": 37,
+  "pageEnd": 39,
+  "text": "../sections/sec-018-137-the-non-split-case.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/2018sorus020",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/2018sorus020",
   "provenance": "ingested"
 }

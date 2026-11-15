@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-su2-emergence",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:su2-emergence",
+  "kind": "example",
+  "title": "Emergence of $\\mathrm{SU}(2)$: the full chain",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-su2-emergence",
+    "papers/quantum-observable-universe/blocks/ex-dagger-su2"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-su2-emergence",
+  "tags": [
+    "su2",
+    "emergence"
+  ],
+  "leanRef": "qou:QOU.Examples.su2Emergence",
+  "text": "su2-emergence-example.md",
+  "leanSource": "su2-emergence-example.lean",
+  "provenance": "authored"
+}

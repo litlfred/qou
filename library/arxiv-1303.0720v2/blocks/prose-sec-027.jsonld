@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1303.0720v2/blocks/prose-sec-027",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1303.0720v2/blocks/prose-sec-027",
   "kind": "prose",
-  "title": "The local asymptotics for the weighted Bergman kernel: the corrective algorithm. We",
-  "pageStart": 18,
-  "pageEnd": 20,
-  "text": "../sections/sec-027-66-the-local-asymptotics-for-the-weighted-bergma.md",
-  "derivedFrom": "library/arxiv-1303.0720v2/manifest",
-  "sourceDocument": "library/arxiv-1303.0720v2/manifest",
+  "title": "Bi-negligible amplitudes",
+  "pageStart": 22,
+  "pageEnd": 23,
+  "text": "../sections/sec-027-74-bi-negligible-amplitudes.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.0720v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.0720v2",
   "provenance": "ingested"
 }

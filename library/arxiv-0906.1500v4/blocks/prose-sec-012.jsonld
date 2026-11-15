@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0906.1500v4/blocks/prose-sec-012",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0906.1500v4/blocks/prose-sec-012",
   "kind": "prose",
-  "title": "Assumption on SL2(C)-representations. It is required for an SL 2(C)-representation",
-  "pageStart": 8,
-  "pageEnd": 9,
-  "text": "../sections/sec-012-313-assumption-on-sl2c-representations-it-is-req.md",
-  "derivedFrom": "library/arxiv-0906.1500v4/manifest",
-  "sourceDocument": "library/arxiv-0906.1500v4/manifest",
+  "title": "Examples of computations",
+  "pageStart": 12,
+  "pageEnd": 13,
+  "text": "../sections/sec-012-4-examples-of-computations.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0906.1500v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0906.1500v4",
   "provenance": "ingested"
 }

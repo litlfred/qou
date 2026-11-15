@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/roth-lemma/sections/sec-002",
   "@type": [
     "doco:Section"
@@ -10,7 +15,7 @@
   "contains": [
     "library/roth-lemma/blocks/prose-sec-002"
   ],
-  "derivedFrom": "library/roth-lemma/manifest",
-  "sourceDocument": "library/roth-lemma/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/roth-lemma",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/roth-lemma",
   "provenance": "ingested"
 }

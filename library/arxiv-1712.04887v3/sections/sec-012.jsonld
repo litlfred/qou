@@ -1,19 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1712.04887v3/sections/sec-012",
   "@type": [
     "doco:Section"
   ],
-  "title": "Local Chern class maps",
-  "pageStart": 21,
-  "pageEnd": 23,
+  "title": "Proof of Theorem 1.5",
+  "pageStart": 20,
+  "pageEnd": 21,
   "contains": [
-    "library/arxiv-1712.04887v3/blocks/prose-sec-012",
-    "library/arxiv-1712.04887v3/blocks/lem-sec-012-01",
-    "library/arxiv-1712.04887v3/blocks/prop-sec-012-02",
-    "library/arxiv-1712.04887v3/blocks/rem-sec-012-03"
+    "library/arxiv-1712.04887v3/blocks/prose-sec-012"
   ],
-  "derivedFrom": "library/arxiv-1712.04887v3/manifest",
-  "sourceDocument": "library/arxiv-1712.04887v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1712.04887v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1712.04887v3",
   "provenance": "ingested"
 }

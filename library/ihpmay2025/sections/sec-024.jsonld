@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ihpmay2025/sections/sec-024",
   "@type": [
     "doco:Section"
   ],
-  "title": "The classification of hyperbolic 3-manifolds",
-  "pageStart": 34,
-  "pageEnd": 35,
+  "title": "A covering theorem for hyperbolic 3-manifolds",
+  "pageStart": 32,
+  "pageEnd": 34,
   "contains": [
     "library/ihpmay2025/blocks/prose-sec-024"
   ],
-  "derivedFrom": "library/ihpmay2025/manifest",
-  "sourceDocument": "library/ihpmay2025/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ihpmay2025",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ihpmay2025",
   "provenance": "ingested"
 }

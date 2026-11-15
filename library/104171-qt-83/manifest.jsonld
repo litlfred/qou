@@ -1,8 +1,13 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/104171-qt-83/manifest",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/104171-qt-83",
   "@type": [
-    "folio:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "On the asymptotic expansion of the Kashaev invariant of the 5_2 knot",
   "contains": [
@@ -12,8 +17,11 @@
     "library/104171-qt-83/sections/sec-003"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "104171-qt-83",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "10.4171-qt-83.pdf",
     "source_sha256": "d95b9363de2766d21f1e6a4e059d54e9bed0d31d7ebf061bc237e991e71e5378",
     "pages": 67,

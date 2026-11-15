@@ -1,17 +1,37 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-ph-0405028v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "On the quantum invariant for the Brieskorn homology spheres",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-ph-0405028v2",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-ph-0405028v2",
   "contains": [
+    "library/arxiv-math-ph-0405028v2/sections/sec-front-matter",
     "library/arxiv-math-ph-0405028v2/sections/sec-000",
     "library/arxiv-math-ph-0405028v2/sections/sec-001"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math-ph/0405028&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-math-ph-0405028v2",
+    "title_source": "slug",
     "source_file": "0405028v2.pdf",
     "source_sha256": "90a0e4ba456988d608c908778e7474b47792557e4efaba699484ac7ea9cca35a",
     "pages": 26,

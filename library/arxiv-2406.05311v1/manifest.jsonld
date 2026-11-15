@@ -1,20 +1,53 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2406.05311v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "A QUANTUM MURNAGHAN–NAKAYAMA RULE FOR THE FLAG MANIFOLD C. BENEDETTI, N. BERGERON, L. COLMENAREJO, F. SALIOLA, AND F. SOTTILE",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2406.05311v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2406.05311v1",
   "contains": [
+    "library/arxiv-2406.05311v1/sections/sec-front-matter",
     "library/arxiv-2406.05311v1/sections/sec-000",
     "library/arxiv-2406.05311v1/sections/sec-001",
     "library/arxiv-2406.05311v1/sections/sec-002",
     "library/arxiv-2406.05311v1/sections/sec-003",
-    "library/arxiv-2406.05311v1/sections/sec-004"
+    "library/arxiv-2406.05311v1/sections/sec-004",
+    "library/arxiv-2406.05311v1/sections/sec-005",
+    "library/arxiv-2406.05311v1/sections/sec-006",
+    "library/arxiv-2406.05311v1/sections/sec-007",
+    "library/arxiv-2406.05311v1/sections/sec-008",
+    "library/arxiv-2406.05311v1/sections/sec-009",
+    "library/arxiv-2406.05311v1/sections/sec-010",
+    "library/arxiv-2406.05311v1/sections/sec-011",
+    "library/arxiv-2406.05311v1/sections/sec-012",
+    "library/arxiv-2406.05311v1/sections/sec-013",
+    "library/arxiv-2406.05311v1/sections/sec-014",
+    "library/arxiv-2406.05311v1/sections/sec-015",
+    "library/arxiv-2406.05311v1/sections/sec-016",
+    "library/arxiv-2406.05311v1/sections/sec-017",
+    "library/arxiv-2406.05311v1/sections/sec-018",
+    "library/arxiv-2406.05311v1/sections/sec-019",
+    "library/arxiv-2406.05311v1/sections/sec-020",
+    "library/arxiv-2406.05311v1/sections/sec-021",
+    "library/arxiv-2406.05311v1/sections/sec-022"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2406.05311&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-2406.05311v1",
+    "title_source": "slug",
     "source_file": "A_quantum_Murnaghan--Nakayama_rule_for_the_flag_ma.pdf",
     "source_sha256": "c431fca1503295472c64e8a979468af083bd75329242fd3d137f28ae81422b6b",
     "pages": 34,
@@ -25,8 +58,8 @@
       "stamp_date": "8 Jun 2024"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

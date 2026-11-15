@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s0894-0347-00-00337-4/blocks/prose-sec-012",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/s0894-0347-00-00337-4/blocks/prose-sec-012",
   "kind": "prose",
-  "title": "J|y|+ 1",
-  "pageStart": 11,
-  "pageEnd": 11,
-  "text": "../sections/sec-012-2-jy-1.md",
-  "derivedFrom": "library/s0894-0347-00-00337-4/manifest",
-  "sourceDocument": "library/s0894-0347-00-00337-4/manifest",
+  "title": "Appendix A. General properties of determinantal point processes",
+  "pageStart": 28,
+  "pageEnd": 28,
+  "text": "../sections/sec-012-appendix-a-general-properties-of-determinantal-p.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s0894-0347-00-00337-4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s0894-0347-00-00337-4",
   "provenance": "ingested"
 }

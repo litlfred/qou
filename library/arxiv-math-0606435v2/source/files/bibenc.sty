@@ -1,0 +1,38 @@
+% enhancement for \cite and \bibitem :
+% report warnings on \bibitem's not being previously
+% cited in the document
+
+\let\o@citex\@citex
+\def\@citex[#1]#2{\o@citex[#1]{#2}\@addcite{#2}}
+\def\@citelabels{}
+\def\@@addcite#1{\ea\gdef\ea\@citelabels\ea{\@citelabels,#1}}
+% lazy version - same ref stored mutiply
+% better version - check for duplications in to-be-added refs
+%
+\def\@addcite#1{%
+  \def\@tempa{\@optimizecits#1,\@endncl,}%
+  \ea\@tempa\@citelabels,\@endcl
+  % \ea\ea\ea\xdef\ea\ea\ea\@citelabels\ea\ea\ea{%
+  % \ea\@tempa\@citelabels,\@endcl}%
+  % \show\@citelabels
+}
+\def\@chkcit#1,#2\@endcl{%
+  \def\@@chkcit##1,#1,##2\@endcl
+  {\@ifempty{##2}{\@@addcite{#1}}{}\@optimizecits#2\@endcl}%
+  \@@chkcit,#2#1,\@endcl
+}
+% \def\@optimizecits{\@ifnextchar\@endncl{\@endopt}{\@chkcit}}
+\def\@optimizecits#1\@endncl,#2,\@endcl{%
+   \@ifempty{#1}{}{\@chkcit#1\@endncl,#2,\@endcl}}
+% \def\@endopt\@endncl,#1,\@endcl{#1}
+%
+\let\o@bibitem\bibitem
+\def\bibitem{\@ifnextchar[{\@bix}{\@biy}}%]
+\def\@bix[#1]#2{\o@bibitem[#1]{#2}\bib@chk{#2}}
+\def\@biy#1{\o@bibitem{#1}\bib@chk{#1}}
+\def\bib@chk#1{%
+        \def\@bib@chk##1,#1,##2\@endcl
+        {\@ifempty{##2}{\@warning{citation `#1' unused}}{}}%
+        \ea\@bib@chk\ea,\@citelabels,#1,\@endcl
+}
+ 

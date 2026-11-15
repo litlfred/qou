@@ -1,5 +1,6 @@
 {
   "computation": "qbeta-isospin-class-singleton",
+  "q0Anchor": "proton",
   "assertions": [
     {
       "name": "p_of_four_is_five",
@@ -397,8 +398,8 @@
     "m_e_H_q_MeV": "6.2893003220583245126"
   },
   "provenance": {
-    "headSha": "6a3a356d9acef6aacfc4c289ebfa52788e04011f",
+    "headSha": "eb645d81e7fe1646342513e676f6498caab4a229",
     "producer": "computations/qbeta/qbeta_isospin_class_singleton_probe.py",
-    "elapsed_s": 0.095
+    "elapsed_s": 0.007
   }
 }

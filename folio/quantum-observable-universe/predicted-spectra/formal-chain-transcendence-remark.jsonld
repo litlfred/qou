@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-formal-chain-transcendence",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:formal-chain-transcendence",
+  "kind": "remark",
+  "title": "The formal derivation chain does not depend on transcendence status",
+  "interprets": "papers/quantum-observable-universe/blocks/conj-hyperbolic-volume-transcendence",
+  "tags": [
+    "ground-ring",
+    "laurent-polynomial",
+    "formal-chain",
+    "symbolic-computation"
+  ],
+  "text": "formal-chain-transcendence-remark.md",
+  "provenance": "authored"
+}

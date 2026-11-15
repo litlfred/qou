@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1103.4815v3/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Four Equivalent Versions of Non-Abelian Gerbes",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1103.4815v3",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1103.4815v3",
   "contains": [
     "library/arxiv-1103.4815v3/sections/sec-000",
     "library/arxiv-1103.4815v3/sections/sec-001",
@@ -26,8 +31,17 @@
     "library/arxiv-1103.4815v3/sections/sec-017"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1103.4815&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1103.4815v3",
+    "title_source": "slug",
     "source_file": "1103.4815v3.pdf",
     "source_sha256": "28647b02ea1441e38e2dd7192885b9b64840b290b7f43aafeb1c48e27206ed23",
     "pages": 65,

@@ -704,7 +704,7 @@ def main() -> int:
                     "conjugation-invariant tr(Omega^k) for the cross-gauge comparison; "
                     "Ad(B)^-1 Omega' - Omega for the explicitly-known gauge")
     w.add_parameter("lean_file",
-                    "content/quantum-observable-universe/lean/QOU/MassTheory/"
+                    "folio/quantum-observable-universe/lean/QOU/MassTheory/"
                     "GermConnectionGaugeCovariance.lean")
     for k, v in results.items():
         w.add_data(k, f64_json(v))

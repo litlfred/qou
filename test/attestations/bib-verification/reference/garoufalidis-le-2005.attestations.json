@@ -1,0 +1,51 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "garoufalidis-le-2005",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 158,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/0309214v3/0309214v3.pdf"
+        },
+        "id": "garoufalidis-le-2005",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "JOIN CONFIRMED from the article's own header, which matches the registered entry's venue, volume and page range, and from its title page matching the entry's subject. CITATION STATE: zero sites in content/ \u2014 no .md, no .ts cites array, no .lean. Its only uses in the repo are in the compute layer: computations/probes/qlift_routeC_homogenized_factor_probe.py:8 and the matching witness JSON, where it is cited for the minimality of the inhomogeneous order-2 recurrence ('minimality per garoufalidis-le-2005 (cited, not re-proved)'). So a probe leans on it while no content block does \u2014 the paper layer carries no record of the recurrence-minimality input the compute layer assumes. That is the substantive finding: load-bearing in computations/, invisible in content/.",
+          "keyResults": [
+            {
+              "locator": "Abstract / Thm 1",
+              "statement": "The colored Jones function of a knot is q-holonomic: it satisfies a finite set of linear q-difference recursions with polynomial coefficients.",
+              "useForFolio": "Supplies the existence-and-minimality frame the q-lift Route C probe already assumes when it certifies an order-2 inhomogeneous recurrence; a content block stating that recursion should carry it.",
+              "targets": [
+                "prop:q-beta-c-k-recursion-from-habiro-q-difference"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "The recurrence-minimality assumption used by computations/probes/qlift_routeC_homogenized_factor_probe.py has no counterpart in the paper layer. Cite it at the block stating the Habiro q-difference recursion so the assumption is visible at the proposition, not only in a probe docstring.",
+              "target": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
+              "bean": "qou-6824"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "53967ef30b0a"
+        }
+      }
+    }
+  ]
+}

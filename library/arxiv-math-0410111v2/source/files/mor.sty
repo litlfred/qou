@@ -1,0 +1,468 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                             %
+%  This is mor.sty prepared by Nimrod Megiddo, June 21, 2004  %
+%                                      revised June 29, 2004  %
+%  Please start your .tex file with:                          %
+%                                                             %
+%    \documentclass[twoside]{article}                         %
+%    \usepackage{mor}                                         %
+%                                                             %
+%  This style uses the packages:                              %
+%   theorem, amssymb, graphicx, hyperref                      %
+%                                                             %
+%  If you have to use additional packages, please place all   %
+%  the \usepackage{} commands  BEFORE  \usepackage{mor}       %
+%                                                             %
+%                                                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{theorem,amssymb,graphicx}
+\usepackage[colorlinks=false,urlcolor=blue,citecolor=blue,linkcolor=blue,bookmarks=true,
+     bookmarksopen=false,pdftitle=created by dvipdf,pdfcreator=NM,
+     pdfauthor=Megiddo,pdfsubject=mor.sty:6.29.04]{hyperref}
+
+
+\long\def\omitthis#1{}
+
+%  page
+
+\evensidemargin 0in 
+\oddsidemargin  0in
+\setlength\headsep{20pt}
+\setlength{\headheight}{30pt}
+\setlength{\footskip}{30pt}
+\setlength{\textwidth}{6.3 truein}
+\setlength{\textheight}{9.5 truein}
+\setlength{\topmargin}{-1  truein}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\flushbottom \sloppy
+
+\newcommand{\chapter}
+{\newpage\setcounter{section}{0}
+\setcounter{subsection}{0}\setcounter{subsubsection}{0}}
+\def\addcontentsline#1#2#3{}
+
+  \gdef\@thevolume{}
+  \gdef\@theissue{}
+  \gdef\@thepages{}
+  
+%  editor's inserts
+
+\newcounter{accepted}
+\setcounter{accepted}{0}
+\newcommand{\isaccepted}{\setcounter{accepted}{1}}
+\newcommand{\received} [1]{\def\@datereceived{#1}}
+\newcommand{\revised}  [1]{\def\@datesrevised{#1}}
+\newcommand{\pubyear}  [1]{\def\@theyear{#1}}
+\newcommand{\pubmonth} [1]{\def\@themonth{#1}}
+\newcommand{\volume}   [1]{\def\@thevolume{#1}}                              
+\newcommand{\issue}    [1]{\def\@theissue{#1}}
+\newcommand{\pages}    [1]{\def\@thepages{#1}}
+\newcommand{\firstpage}[1]{\def\@thefirstpage{#1}}
+\newcommand{\DOI}      [1]{\def\@theDOI{#1}}
+
+\newcommand{\evenhead} [1]{\def\@evenhead{#1}}
+\newcommand{\oddhead}  [1]{\def\@oddhead{#1}}
+\newcommand{\updatemarkboth}{\markboth
+   { \hfill
+   \mbox{${ \hfill \mbox{\scriptsize{\bf\@shortauthors:} {\it\@shorttitle}} \atop
+             \mbox{\hfill~~~~~~~~~~~~~~~\scriptsize \rm Mathematics of Operations Research \@thevolume(\@theissue), pp.\ \@thepages, \copyright20\@theyear\ INFORMS}}$}}
+   {\mbox{${\mbox{\scriptsize{\bf\@shortauthors:} {\it\@shorttitle}} \hfill \atop
+           \mbox{\scriptsize \rm Mathematics of Operations Research \@thevolume(\@theissue), pp.\ \@thepages, \copyright20\@theyear\ INFORMS}~~~~~~~~~~~~~~~~~~~~~\hfill}$}
+    \hfill }
+    \evenhead{\parbox{\textwidth}{\thepage\hfil\slshape\leftmark\hrule} }%
+    \oddhead {\parbox{\textwidth}{{\slshape\rightmark}\hfil\thepage\hrule}}%
+    }
+
+\newcommand{\runninghead}[1]{\def\@runninghead{#1}}
+
+\pagestyle{myheadings}
+  
+  \global\let\@runninghead\@empty
+  \global\let\runninghead\relax
+
+
+%  title
+
+\font\titler ptmr at 15 pt
+\font\titlei ptmri at 15 pt
+
+\def\maketitle{
+\updatemarkboth
+\setcounter{page}{\c@thestartpagenumber}
+\thispagestyle{plain}
+\ifnum \c@copyeditor=1 \large\fi
+\par 
+\begingroup
+\ifnum \c@accepted=1
+\parindent=0pt
+\parbox[t]{3in}{\ \\ %
+\font\helvfont phvb at 8pt
+{\helvfont MATHEMATICS OF OPERATIONS RESEARCH}\\
+\scriptsize 
+Vol.\ \@thevolume, No.\ \@theissue, \@themonth\ 20\@theyear, pp.\ \@thepages\\
+\baselineskip 10pt
+{\tiny ISSN} 0364-765X $|$ {\tiny EISSN}
+ 1526-5471 $|$\@theyear$|$\@thevolume 0\@theissue$|$\@thefirstpage 
+}
+\hfill 
+\parbox[t]{2in}{%
+\baselineskip=-6pt\ \\ %
+$~~~~~~~~~~~~$\hfill\includegraphics{INFORMS.eps}\\
+$~~~~~~~$\hfill{\tiny DOI }\small\@theDOI \\
+$~~~~~~~~~$\hfill {\scriptsize\copyright20\@theyear\ INFORMS}}
+\par \vskip 40pt
+\fi
+\@maketitle \@thanks%
+\endgroup
+\let\maketitle\relax \let\@maketitle\relax
+
+\gdef\@thanks{}\gdef\@author{}\gdef\@title{}\gdef\@shorttitle{}\gdef\@shortauthors{}
+\let\thanks\relax
+}
+
+%  authors
+
+\author{%
+\ifx\@URLi\@empty
+   \ifx\@emaili\@empty
+   \@authori\\
+   \else
+      \href{mailto:\@emaili}{\@authori}\\
+   \fi
+\else
+    \href{\@URLi}{\@authori} \\
+\fi
+{\small \@addressi \\
+\ifx\@emaili\@empty\else
+email: \href{mailto:\@emaili}{\@emaili}\fi
+\ifx\@URLi\@empty\else
+\ifx\@emaili\@empty\else\quad\fi\url{\@URLi}\fi}
+%
+\ifnum \c@numAuthors>1  \and
+\ifx\@URLii\@empty
+   \ifx\@emailii\@empty
+   \@authorii\\
+   \else
+      \href{mailto:\@emailii}{\@authorii}\\
+   \fi
+\else
+    \href{\@URLii}{\@authorii} \\
+\fi
+{\small \@addressii \\
+\ifx\@emailii\@empty\else
+email: \href{mailto:\@emailii}{\@emailii}\fi
+\ifx\@URLii\@empty\else
+\ifx\@emailii\@empty\else\quad\fi\url{\@URLii}\fi}
+%
+\ifnum \c@numAuthors>2  \and
+\ifx\@URLiii\@empty
+   \ifx\@emailiii\@empty
+   \@authoriii\\
+   \else
+      \href{mailto:\@emailiii}{\@authoriii}\\
+   \fi
+\else
+    \href{\@URLiii}{\@authoriii} \\
+\fi
+{\small \@addressiii \\
+\ifx\@emailiii\@empty \else
+email: \href{mailto:\@emailiii}{\@emailiii}\fi
+\ifx\@URLiii\@empty\else
+\ifx\@emailiii\@empty\else\quad\fi\url{\@URLiii}\fi}
+%
+\ifnum \c@numAuthors>3  \and
+\ifx\@URLiv\@empty
+   \ifx\@emailiv\@empty
+   \@authoriv\\
+   \else
+      \href{mailto:\@emailiv}{\@authoriv}\\
+   \fi
+\else
+    \href{\@URLiv}{\@authoriv} \\
+\fi
+{\small \@addressiv\\
+\ifx\@emailiv\@empty\else
+email: \href{mailto:\@emailiv}{\@emailiv}\fi
+\ifx\@URLiv\@empty\else
+\ifx\@emailiv\@empty\else\quad\fi\url{\@URLiv}\fi}
+%
+\ifnum \c@numAuthors>4  \and
+\ifx\@URLv\@empty
+   \ifx\@emailv\@empty
+   \@authorv\\
+   \else
+      \href{mailto:\@emailv}{\@authorv}\\
+   \fi
+\else
+    \href{\@URLv}{\@authorv} \\
+\fi
+{\small \@addressv\\
+\ifx\@emailv\@empty\else
+email: \href{mailto:\@emailv}{\@emailv}\fi
+\ifx\@URLv\@empty\else
+\ifx\@emailv\@empty\else\quad\fi\url{\@URLv}\fi}
+\fi\fi\fi\fi}
+
+\def\@maketitle{
+\vbox{\hsize\textwidth\linewidth\hsize 
+\centering
+{\def\it{\titlei}%
+\titler\@title}\par 
+\large\baselineskip=12pt%
+\rule{\z@}{24pt}%
+\def\and{\vskip 2mm \par}%
+\def\And{\vskip 2mm \par}%
+\def\AND{\vskip 2mm \par}%
+\@author% 
+\vskip 0.1in}
+}
+
+
+%  author's inserts
+\gdef\@emaili{}\gdef\@emailii{}\gdef\@emailiii{}\gdef\@emailiv{}\gdef\@emailv{}
+\gdef\@URLi{}\gdef\@URLii{}\gdef\@URLiii{}\gdef\@URLiv{}\gdef\@URLv{}
+
+
+
+\newcounter{numAuthors}
+
+\newcommand{\ShortTitle}   [1] {\def\@shorttitle{#1}}
+\newcommand{\ShortAuthors} [1] {\def\@shortauthors{#1}}
+\newcommand{\NumberOfAuthors}[1]{\setcounter{numAuthors}{#1}}
+
+\newcommand{\FirstAuthor}  [1]{\def\@authori{#1}}
+\newcommand{\SecondAuthor} [1]{\def\@authorii{#1}}
+\newcommand{\ThirdAuthor}  [1]{\def\@authoriii{#1}}
+\newcommand{\FourthAuthor} [1]{\def\@authoriv{#1}}
+\newcommand{\FifthAuthor}  [1]{\def\@authorv{#1}}
+
+\newcommand{\FirstAuthorAddress}  [1]{\def\@addressi{#1}}
+\newcommand{\SecondAuthorAddress} [1]{\def\@addressii{#1}}
+\newcommand{\ThirdAuthorAddress}  [1]{\def\@addressiii{#1}}
+\newcommand{\FourthAuthorAddress} [1]{\def\@addressiv{#1}}
+\newcommand{\FifthAuthorAddress}  [1]{\def\@addressv{#1}}
+
+\newcommand{\FirstAuthorURL}  [1]{\def\@URLi{#1}}
+\newcommand{\SecondAuthorURL} [1]{\def\@URLii{#1}}
+\newcommand{\ThirdAuthorURL}  [1]{\def\@URLiii{#1}}
+\newcommand{\FourthAuthorURL} [1]{\def\@URLiv{#1}}
+\newcommand{\FifthAuthorURL}  [1]{\def\@URLv{#1}}
+
+\newcommand{\FirstAuthorEmail}   [1]{\def\@emaili{#1}}
+\newcommand{\SecondAuthorEmail}  [1]{\def\@emailii{#1}}
+\newcommand{\ThirdAuthorEmail}   [1]{\def\@emailiii{#1}}
+\newcommand{\FourthAuthorEmail}  [1]{\def\@emailiv{#1}}
+\newcommand{\FifthAuthorEmail}   [1]{\def\@emailv{#1}}
+
+\newcommand{\keywords} [1]{\def\@thekeywords{#1}}
+\newcommand{\MSCcodes} [1]{\def\@theMSCcodes{#1}}
+\newcommand{\ORMScodes}[1]{\def\@theORMScodes{#1}}
+
+
+
+\renewenvironment{abstract}{\small\parindent 0pt}
+{\par \vskip 5pt
+\parskip=2pt \hangindent=15pt
+  {\it Key words}: \@thekeywords
+  \par\vskip 3pt \hangindent=15pt
+  {\it MSC2000 Subject Classification}: \@theMSCcodes
+  \par \vskip 3pt \hangindent=15pt
+  {\it OR/MS subject classification}: \@theORMScodes
+   \par \vskip 3pt \hangindent=15pt
+\ifnum \c@accepted=1%   
+{\it History}: Received: \@datereceived; revised: \@datesrevised.\par\fi
+ \vskip 0.75 ex
+ \hrule height 1pt
+ \vskip 1 ex
+ }
+
+
+
+\renewcommand\thesection {\@arabic\c@section}
+\renewcommand\thesubsection   {\thesection.\@arabic\c@subsection}
+\renewcommand\thesubsubsection{\thesubsection.\@arabic\c@subsubsection}
+\renewcommand\theparagraph    {\thesubsubsection.\@arabic\c@paragraph}
+\renewcommand\thesubparagraph {\theparagraph.\@arabic\c@subparagraph}
+\newcounter{nowappendix}
+\setcounter{nowappendix}{0}
+\newcounter{copyeditor}
+\setcounter{copyeditor}{0}
+\newcommand{\forcopyeditor}{\linespread{2.0} \setcounter{copyeditor}{1} }
+\newcounter{thestartpagenumber}
+\newcommand{\startpagenumber}[1]{\setcounter{thestartpagenumber}{#1}}
+            
+\newcommand{\qed}{\hskip 10pt $\Box$}
+
+\newenvironment{proof}{\par {\sc Proof.\hskip 5pt}}{\hfill \qed \par}
+\newenvironment{proofof}[1]{\par {\sc Proof of #1.} \hskip 5pt}{\hfill\qed\par}
+
+
+\renewcommand\section{\@startsection{section}{1}{\z@}
+                     {1.5ex plus 0.05ex minus 0.2ex}{-1em}
+                     {\ifnum\c@copyeditor=0\normalsize\else\large\fi\bf\boldmath}}
+
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}
+                     {1.5ex plus 0.5ex minus .2ex}{-1em}
+                     {\ifnum\c@copyeditor=0\normalsize\else\large\fi\bf\boldmath}}
+
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}
+                     {1.5ex plus 0.5ex minus .2ex}{-1em}
+                     {\ifnum\c@copyeditor=0\normalsize\else\large\fi\bf\boldmath}}
+
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}
+                     {1.5ex plus 0.5ex minus .2ex}{-1em}
+                     {\ifnum\c@copyeditor=0\normalsize\else\large\fi\bf\boldmath}}
+
+\renewcommand\subparagraph{\@startsection{subparagraph}{5}{\z@}
+                     {1.5ex plus 0.5ex minus .2ex}{-1em}
+                     {\ifnum\c@copyeditor=0\normalsize\else\large\fi\bf\boldmath}}
+ 
+ 
+ 
+\def\@startsection#1#2#3#4#5#6{\if@noskipsec \leavevmode \fi
+   \par \@tempskipa #4\relax
+   \@afterindenttrue
+   \ifdim \@tempskipa <\z@ \@tempskipa -\@tempskipa \@afterindentfalse\fi
+   \if@nobreak \everypar{}\else
+     \addpenalty{\@secpenalty}\addvspace{\@tempskipa}\fi \@ifstar
+     {\@ssect{#2}{#3}{#4}{#5}{#6}}{\@dblarg{\@sect{#1}{#2}{#3}{#4}{#5}{#6}}}}
+     \def\@startsection#1#2#3#4#5#6{\if@noskipsec \leavevmode \fi
+   \par \@tempskipa #4\relax
+   \@afterindenttrue
+   \ifdim \@tempskipa <\z@ \@tempskipa -\@tempskipa \@afterindentfalse\fi
+   \if@nobreak \everypar{}\else
+     \addpenalty{\@secpenalty}\addvspace{\@tempskipa}\fi \@ifstar
+     {\@ssect{#2}{#3}{#4}{#5}{#6}}{\@dblarg{\@sect{#1}{#2}{#3}{#4}{#5}{#6}}}}
+
+\def\@sect#1#2#3#4#5#6[#7]#8{\ifnum #2>\c@secnumdepth
+     \def\@svsec{}\else 
+     \refstepcounter{#1}\edef\@svsec{\indent\ifnum \c@nowappendix=1 \ifnum#2=1{Appendix~}\fi\fi
+     \csname the#1\endcsname \ifnum#2=1.\fi \hskip 5pt }\fi
+     \@tempskipa #5\relax
+      \ifdim \@tempskipa>\z@ 
+        \begingroup #6\relax
+          \@hangfrom{\hskip #3\relax\@svsec}{\interlinepenalty \@M {#8}\par}%
+        \endgroup
+       \csname #1mark\endcsname{#7}\addcontentsline
+         {toc}{#1}{\ifnum #2>\c@secnumdepth \else
+                      \protect\numberline{\csname the#1\endcsname}\fi
+                    #7}\else
+        \def\@svsechd{#6\hskip #3\relax  %%
+                   \@svsec {#8}\csname #1mark\endcsname
+                      {#7}\addcontentsline
+                           {toc}{#1}{\ifnum #2>\c@secnumdepth \else
+                             \protect\numberline{\csname the#1\endcsname}\fi
+                       #7}}\fi
+     \@xsect{#5}}
+\def\@ssect#1#2#3#4#5#6{\@tempskipa #4\relax 
+   \ifdim \@tempskipa>\z@
+     \begingroup #5\@hangfrom{\hskip #2}{\interlinepenalty \@M \indent#6\par}\endgroup
+   \else \def\@svsechd{#5\hskip #2\relax \indent#6}\fi
+    \@xsect{#4}}
+
+\renewcommand{\appendix}{\par
+  \setcounter{section}{0}%
+  \setcounter{subsection}{0}%
+  \gdef\thesection{\@Alph\c@section}
+  \setcounter{nowappendix}{1} }
+
+% Footnotes
+
+\renewcommand{\thanks}{\par \vskip 12pt
+{\LARGE \bf Please do not use the \verb+\thanks+ command. Use the Acknowledgements section.}
+\vskip 20pt\par}
+
+% Lists and paragraphs
+
+\linespread{1.1}
+\renewcommand{\theenumi}{{\rm(}\roman{enumi}{\/\rm)}}
+\def\labelenumi{\theenumi}
+
+\parindent 12pt
+\topsep 2pt plus 1pt minus 2pt
+\partopsep 1pt plus 0.5pt minus 0.5pt
+\itemsep 1pt plus 1pt minus 0.5pt
+\parsep 2pt plus 1pt minus 0.5pt
+\parskip .5pc
+
+
+%\leftmargin2em 
+\leftmargin3pc
+\leftmargini\leftmargin \leftmarginii 2em
+\leftmarginiii 1.5em \leftmarginiv 1.0em \leftmarginv .5em 
+
+%\labelsep \labelsep 5pt
+
+\def\@listi{\leftmargin\leftmargini}
+\def\@listii{\leftmargin\leftmarginii
+   \labelwidth\leftmarginii\advance\labelwidth-\labelsep
+   \topsep 2pt plus 1pt minus 0.5pt
+   \parsep 1pt plus 0.5pt minus 0.5pt
+   \itemsep \parsep}
+\def\@listiii{\leftmargin\leftmarginiii
+    \labelwidth\leftmarginiii\advance\labelwidth-\labelsep
+    \topsep 1pt plus 0.5pt minus 0.5pt 
+    \parsep \z@ \partopsep 0.5pt plus 0pt minus 0.5pt
+    \itemsep \topsep}
+\def\@listiv{\leftmargin\leftmarginiv
+     \labelwidth\leftmarginiv\advance\labelwidth-\labelsep}
+\def\@listv{\leftmargin\leftmarginv
+     \labelwidth\leftmarginv\advance\labelwidth-\labelsep}
+\def\@listvi{\leftmargin\leftmarginvi
+     \labelwidth\leftmarginvi\advance\labelwidth-\labelsep}
+
+\abovedisplayskip 7pt plus2pt minus5pt%
+\belowdisplayskip \abovedisplayskip
+\abovedisplayshortskip  0pt plus3pt%
+\belowdisplayshortskip  4pt plus3pt minus3pt%
+
+
+%  sizes
+
+\def\normalsize{\@setsize\normalsize{11pt}\xpt\@xpt}
+\def\small{\@setsize\small{9pt}\ixpt\@ixpt}
+\def\scriptsize{\@setsize\scriptsize{8pt}\viipt\@viipt}
+\def\tiny{\@setsize\tiny{8pt}\vipt\@vipt}
+\def\large{\@setsize\large{13pt}\xiipt\@xiipt}
+\def\Large{\@setsize\Large{18pt}\xivpt\@xivpt}
+\def\LARGE{\@setsize\LARGE{20pt}\xxpt\@xxpt}
+\def\huge{\@setsize\huge{23pt}\xxpt\@xxpt}
+\def\Huge{\@setsize\Huge{28pt}\xxvpt\@xxvpt}
+
+
+
+
+%  theorems
+
+\newtheorem{theorem}{\sc Theorem}[section]
+
+\newtheorem{assumption}{\sc Assumption}[section]
+\newtheorem{corollary}{\sc Corollary}[section]
+\newtheorem{definition}{\sc Definition}[section]
+\newtheorem{example}{\sc Example}[section]
+\newtheorem{lemma}{\sc Lemma}[section]
+\newtheorem{proposition}{\sc Proposition}[section]
+\newtheorem{remark}{\sc Remark}[section]
+
+\def\mAth{\mathsurround=0pt}
+\def\eqalign#1{\,\vcenter{\openup1\jot \mAth
+  \ialign{\strut\hfil$\displaystyle{##}$&$\displaystyle{{}##}$\hfil
+    \crcr#1\crcr}}\,}
+
+%  acknowledgements
+\newcommand{\acknowledgment}[1]{\section*{Acknowledgment.} #1}
+\newcommand{\acknowledgments}[1]{\section*{Acknowledgments.} #1}
+
+%  bibliography
+\newcommand{\bysame}{\underline{$\;\;\;\;\;\;\;\;\;\;\;\;$}}
+
+
+
+\renewcommand\sectionautorefname{Section}
+\renewcommand\subsectionautorefname{Section}
+\renewcommand\subsubsectionautorefname{Section}
+\newcommand\lemmaautorefname{Lemma}
+\newcommand\propositionautorefname{Proposition}
+\newcommand\corollaryautorefname{Corollary}

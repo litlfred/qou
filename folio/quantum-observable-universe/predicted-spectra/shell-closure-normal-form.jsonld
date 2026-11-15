@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-shell-closure-normal-form",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:shell-closure-normal-form",
+  "kind": "proposition",
+  "title": "Shell closure as symmetric Poincaré distribution in the Hecke normal form",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-skein-polynomial-transfer-matrix"
+  ],
+  "tags": [
+    "shell-closure",
+    "normal-form",
+    "hecke-algebra",
+    "poincare-polynomial",
+    "magic-numbers",
+    "bruhat-order",
+    "nuclear-structure",
+    "groebner-basis"
+  ],
+  "leanRef": "qou:QOU.Archimedean.sequential_build_always_normal_form",
+  "text": "shell-closure-normal-form.md",
+  "leanSource": "shell-closure-normal-form.lean",
+  "provenance": "authored"
+}

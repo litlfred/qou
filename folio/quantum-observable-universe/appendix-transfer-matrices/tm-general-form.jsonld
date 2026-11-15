@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tm-general-form",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "tm-general-form",
+  "kind": "prose",
+  "title": "The general transfer matrix",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-transfer-matrix-operator"
+  ],
+  "tags": [
+    "transfer-matrix",
+    "hecke-algebra",
+    "crossing-coefficients",
+    "appendix"
+  ],
+  "text": "tm-general-form.md",
+  "provenance": "authored"
+}

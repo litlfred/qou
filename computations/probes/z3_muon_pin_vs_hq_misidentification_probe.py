@@ -38,7 +38,7 @@ muon-pinned value needs no anchor check -- precisely inverting the action the
 directive requires. The guidance is harmful in the one situation it exists for.
 
 AND THE EXTENT IS SMALL -- reported as measured, not inflated. Five files carry
-the literal: THREE are under `computations/_deprecated/` (not live, and excluded
+the literal: THREE are under `fsh-guts/deprecated/computations/` (not live, and excluded
 by the consumer audit), and the other TWO are the audit doc and the bean that
 carry the misidentification itself. ZERO live producers or witnesses hold a
 muon-pinned `z_3`. So this is a documentation correction, not a drain. The

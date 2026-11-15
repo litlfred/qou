@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-archimedean-yekutieli",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:archimedean-yekutieli",
+  "kind": "example",
+  "title": "Bring's surface and $q$-flatness obstructions",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-mass-geometric-drag",
+    "papers/quantum-observable-universe/blocks/rem-chirality-trefoil",
+    "papers/quantum-observable-universe/blocks/rem-kummer-tower"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-qu-to-qou",
+  "tags": [
+    "archimedean-universe",
+    "yekutieli",
+    "brings-surface",
+    "motivic-galois"
+  ],
+  "text": "archimedean-yekutieli.md",
+  "provenance": "authored"
+}

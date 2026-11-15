@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1304.0323v3/sections/sec-012",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Action of Khovanov-Lauda-Rouquier algebras on V\"0362V",
+  "pageStart": 27,
+  "pageEnd": 31,
+  "contains": [
+    "library/arxiv-1304.0323v3/blocks/prose-sec-012",
+    "library/arxiv-1304.0323v3/blocks/remark-sec-012-01",
+    "library/arxiv-1304.0323v3/blocks/remark-sec-012-02",
+    "library/arxiv-1304.0323v3/blocks/thm-sec-012-03",
+    "library/arxiv-1304.0323v3/blocks/thm-sec-012-04",
+    "library/arxiv-1304.0323v3/blocks/thm-sec-012-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1304.0323v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1304.0323v3",
+  "provenance": "ingested"
+}

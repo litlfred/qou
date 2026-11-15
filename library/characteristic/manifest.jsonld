@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/characteristic/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "On the characteristic and deformation varieties of a knot",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/characteristic",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "characteristic",
   "contains": [
+    "library/characteristic/sections/sec-front-matter",
     "library/characteristic/sections/sec-000",
     "library/characteristic/sections/sec-001",
     "library/characteristic/sections/sec-002",
@@ -14,11 +20,18 @@
     "library/characteristic/sections/sec-005",
     "library/characteristic/sections/sec-006",
     "library/characteristic/sections/sec-007",
-    "library/characteristic/sections/sec-008"
+    "library/characteristic/sections/sec-008",
+    "library/characteristic/sections/sec-009",
+    "library/characteristic/sections/sec-010",
+    "library/characteristic/sections/sec-011",
+    "library/characteristic/sections/sec-012",
+    "library/characteristic/sections/sec-013"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "characteristic",
+    "title_source": "slug",
     "source_file": "characteristic.pdf",
     "source_sha256": "42bd31da2754488ff0cf30260bd1af7524dad89655d910d1cdd33c4f54968806",
     "pages": 13,

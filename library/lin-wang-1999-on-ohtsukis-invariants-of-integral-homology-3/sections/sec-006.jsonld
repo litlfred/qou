@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/sections/sec-006",
   "@type": [
     "doco:Section"
@@ -10,7 +15,7 @@
   "contains": [
     "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-006"
   ],
-  "derivedFrom": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/manifest",
-  "sourceDocument": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3",
   "provenance": "ingested"
 }

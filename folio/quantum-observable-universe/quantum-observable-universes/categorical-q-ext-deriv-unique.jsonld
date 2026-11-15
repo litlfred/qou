@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-categorical-q-ext-deriv-unique",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:categorical-q-ext-deriv-unique",
+  "kind": "proposition",
+  "title": "Uniqueness of the categorical $q$-exterior derivative",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-q-ext-deriv-exists"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-categorical-q-ext-deriv-unique"
+  ],
+  "tags": [
+    "uniqueness",
+    "q-ext-deriv"
+  ],
+  "leanRef": "qou:QOU.CategoricalQExtDeriv.unique",
+  "text": "categorical-q-ext-deriv-unique.md",
+  "leanSource": "categorical-q-ext-deriv-unique.lean",
+  "provenance": "authored"
+}

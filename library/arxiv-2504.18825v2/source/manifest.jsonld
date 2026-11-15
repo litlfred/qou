@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2504.18825v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2504.18825v2",
+  "provenance": "ingested",
+  "license": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2504.18825&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2504.18825v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2504.18825v2",
+    "content_type": "application/gzip",
+    "sha256": "78c99712bfa8541836a7c8e70ec5cb94443fbfd80021fd25613a5d7b15ba164b",
+    "bytes": 53225,
+    "fetched": "2026-10-10T15:21:12+00:00",
+    "files": [
+      {
+        "path": "source/files/main.tex",
+        "role": "tex",
+        "sha256": "14ad8c02a5bc7cf07296f9f349e014081c1ec3838e351bc3ac0c8ff3625f0433",
+        "bytes": 211471
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

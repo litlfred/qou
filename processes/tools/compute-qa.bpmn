@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  qou — compute-QA: the precision, staleness, LP-dual, float64 and
+  word-provenance gates over computations/.
+
+  Source of truth: this file. Story TOOLS T7 (bean qou-4dj1). Open it in
+  bpmn.io or any BPMN 2.0 tool.
+
+  Every gate is one row of the table in scripts/compute-qa.py, and each row is
+  a Tool in tool-defs/ (`compute-qa-<gate>`). The four workflow files that used
+  to hold these steps inline now call that script, and each step names its
+  activity here with a `# bpmn-node:` comment.
+-->
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+                  xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+                  xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+                  xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+                  xmlns:bootstrap.processes="https://litlfred.github.io/bootstrap/0.1.0/processes/ns#"
+                  xmlns:cat-harness.processes="https://litlfred.github.io/cat-harness/0.1.0/processes/ns#"
+                  id="Definitions_ComputeQA"
+                  targetNamespace="https://litlfred.github.io/qou/workflows"
+                  exporter="qou" exporterVersion="1">
+
+  <bpmn:collaboration id="Collaboration_ComputeQA">
+    <bpmn:participant id="Participant_ComputeQA" name="compute-QA: are the computations and witnesses sound?" processRef="Process_ComputeQA" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_ComputeQA" name="compute-QA: are the computations and witnesses sound?" isExecutable="false">
+    <bpmn:documentation>Run qou's compute-QA gates over `computations/` and its witnesses, and publish one verdict per gate to the `qa-reports` branch.
+
+WHY ONE PROCESS. The gates used to live as inline steps in four workflow files, so nothing named them as a set, and the order an agent ran them in locally was whatever it remembered. They are now one table (`scripts/compute-qa.py`) and this one diagram; the workflows call the table, and each step carries a `# bpmn-node:` back-reference here.
+
+THE COMMANDS DID NOT CHANGE. Each gate runs the exact command the workflow step ran, with the same exit-code handling: a strict gate fails on a non-zero exit, a warn or advisory gate never fails the run and its output is the report; when it exits non-zero its verdict is WARN rather than PASS, so a finding is not recorded as green. Measured on `main` before the move and after it, every gate's exit codes and output are identical.
+
+QA IS AGENT-OWNED; CI IS A BACKUP. These workflows are dispatch-only (owner directive 2026-06-30, Actions billing), and several have never run. So the normal way through this process is an agent running `python3 scripts/compute-qa.py` before it commits, not CI. The lane says who runs a gate, not where.
+
+THREE OUTCOMES. A gate whose script cannot start (a missing module or binary) is UNKNOWN and never a pass. A failing self-test fails its gate whatever the gate's mode, because a detector that has stopped matching its known positive reports everything clean.
+
+VERDICTS ARE NOT COMMITTED. Each gate writes `test/results/compute-qa/&lt;gate&gt;.json`, which is gitignored and is the layout `bun run qa:publish` reads.</bpmn:documentation>
+    <bpmn:extensionElements>
+      <cat-harness.processes:policy enforcement="strict" />
+    </bpmn:extensionElements>
+    <bpmn:laneSet id="Process_ComputeQA_LaneSet">
+      <bpmn:lane id="Lane_Pipeline" name="Gate runner (an agent before commit, or CI on dispatch)">
+        <bpmn:documentation>Runs each gate's command and records the verdict. The same command runs in both places, so a verdict means the same thing whoever produced it.</bpmn:documentation>
+        <bpmn:extensionElements><bootstrap.processes:role ref="build-pipeline"/></bpmn:extensionElements>
+        <bpmn:flowNodeRef>StartEvent_Change</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_Fork</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_Precision</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_Staleness</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_LpDual</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_Probe</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_Words</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_Join</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_Publish</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_Verdict</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>EndEvent_Green</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>EndEvent_Red</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>EndEvent_Unknown</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+
+    <bpmn:startEvent id="StartEvent_Change" name="A change touches computations/&#10;or a witness, or a dispatch">
+      <bpmn:outgoing>Flow_1</bpmn:outgoing>
+    </bpmn:startEvent>
+
+    <bpmn:parallelGateway id="Gateway_Fork">
+      <bpmn:incoming>Flow_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_P</bpmn:outgoing>
+      <bpmn:outgoing>Flow_S</bpmn:outgoing>
+      <bpmn:outgoing>Flow_L</bpmn:outgoing>
+      <bpmn:outgoing>Flow_F</bpmn:outgoing>
+      <bpmn:outgoing>Flow_W</bpmn:outgoing>
+    </bpmn:parallelGateway>
+
+    <bpmn:serviceTask id="Task_Precision" name="Precision gates&#10;(NO-FLOAT64 family)">
+      <bpmn:documentation>Gates mpf-float-source, import-time-dps, never-raises-dps, float64-padding, mpf-context-dps, module-const, raw-float64 (strict, each with its self-test) and no-free-parameter (warn). From witness-staleness.yml.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <bootstrap.processes:skill ref="compute-audit" />
+        <cat-harness.processes:bean op="note" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_P</bpmn:incoming>
+      <bpmn:outgoing>Flow_P2</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:serviceTask id="Task_Staleness" name="Staleness and&#10;anchor gates">
+      <bpmn:documentation>Gates staleness-report (warn), q0-anchor-flip, q0-value-drift and authors-note-coverage (strict). From witness-staleness.yml.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <bootstrap.processes:skill ref="compute-audit" />
+        <cat-harness.processes:bean op="note" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_S</bpmn:incoming>
+      <bpmn:outgoing>Flow_S2</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:serviceTask id="Task_LpDual" name="LP/SDP dual gates">
+      <bpmn:documentation>Gates lp-dual-backend (the MPFR LP binary must be built first), pyhecke-tests and lp-dual-wired (strict), and lp-dual-survey (advisory). From lp-dual-gate.yml.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <bootstrap.processes:skill ref="compute-audit" />
+        <cat-harness.processes:bean op="note" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_L</bpmn:incoming>
+      <bpmn:outgoing>Flow_L2</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:serviceTask id="Task_Probe" name="Probe float64&#10;entry points">
+      <bpmn:documentation>Gates probe-float64-diff (strict, on the changed .py files) and probe-float64-survey (advisory). From probe-float64-gate.yml.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <bootstrap.processes:skill ref="compute-audit" />
+        <cat-harness.processes:bean op="note" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_F</bpmn:incoming>
+      <bpmn:outgoing>Flow_F2</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:serviceTask id="Task_Words" name="Braid-word&#10;provenance">
+      <bpmn:documentation>Gates word-provenance-selftest and word-provenance-diff (strict) and word-provenance-survey (advisory). From word-provenance-gate.yml.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <bootstrap.processes:skill ref="compute-audit" />
+        <cat-harness.processes:bean op="note" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_W</bpmn:incoming>
+      <bpmn:outgoing>Flow_W2</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:parallelGateway id="Gateway_Join">
+      <bpmn:incoming>Flow_P2</bpmn:incoming>
+      <bpmn:incoming>Flow_S2</bpmn:incoming>
+      <bpmn:incoming>Flow_L2</bpmn:incoming>
+      <bpmn:incoming>Flow_F2</bpmn:incoming>
+      <bpmn:incoming>Flow_W2</bpmn:incoming>
+      <bpmn:outgoing>Flow_2</bpmn:outgoing>
+    </bpmn:parallelGateway>
+
+    <bpmn:serviceTask id="Task_Publish" name="Publish verdicts&#10;to qa-reports">
+      <bpmn:documentation>Publish `test/results/compute-qa/*.json` with `bun run qa:publish`, keyed by commit. The verdicts are derived, so they go to the orphan qa-reports branch and are never committed.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <bootstrap.processes:skill ref="qa-reports" />
+        <cat-harness.processes:bean op="note" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_2</bpmn:incoming>
+      <bpmn:outgoing>Flow_3</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:exclusiveGateway id="Gateway_Verdict" name="Worst verdict?">
+      <bpmn:incoming>Flow_3</bpmn:incoming>
+      <bpmn:outgoing>Flow_Green</bpmn:outgoing>
+      <bpmn:outgoing>Flow_Red</bpmn:outgoing>
+      <bpmn:outgoing>Flow_Unknown</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+
+    <bpmn:endEvent id="EndEvent_Green" name="No gate failed&#10;(warns are reported)">
+      <bpmn:incoming>Flow_Green</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:endEvent id="EndEvent_Red" name="A gate failed: fix at the&#10;producer, never widen a baseline">
+      <bpmn:documentation>Fix at the producer: carry the value as mpmath.mpf and serialise with _precision.fmt. Adding a file to a ratchet baseline or hand-editing a number defeats the gate. Baselines drain, never grow.</bpmn:documentation>
+      <bpmn:incoming>Flow_Red</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:endEvent id="EndEvent_Unknown" name="Unknown: a gate could&#10;not start (not a pass)">
+      <bpmn:incoming>Flow_Unknown</bpmn:incoming>
+    </bpmn:endEvent>
+
+    <bpmn:sequenceFlow id="Flow_1" sourceRef="StartEvent_Change" targetRef="Gateway_Fork" />
+    <bpmn:sequenceFlow id="Flow_P" sourceRef="Gateway_Fork" targetRef="Task_Precision" />
+    <bpmn:sequenceFlow id="Flow_S" sourceRef="Gateway_Fork" targetRef="Task_Staleness" />
+    <bpmn:sequenceFlow id="Flow_L" sourceRef="Gateway_Fork" targetRef="Task_LpDual" />
+    <bpmn:sequenceFlow id="Flow_F" sourceRef="Gateway_Fork" targetRef="Task_Probe" />
+    <bpmn:sequenceFlow id="Flow_W" sourceRef="Gateway_Fork" targetRef="Task_Words" />
+    <bpmn:sequenceFlow id="Flow_P2" sourceRef="Task_Precision" targetRef="Gateway_Join" />
+    <bpmn:sequenceFlow id="Flow_S2" sourceRef="Task_Staleness" targetRef="Gateway_Join" />
+    <bpmn:sequenceFlow id="Flow_L2" sourceRef="Task_LpDual" targetRef="Gateway_Join" />
+    <bpmn:sequenceFlow id="Flow_F2" sourceRef="Task_Probe" targetRef="Gateway_Join" />
+    <bpmn:sequenceFlow id="Flow_W2" sourceRef="Task_Words" targetRef="Gateway_Join" />
+    <bpmn:sequenceFlow id="Flow_2" sourceRef="Gateway_Join" targetRef="Task_Publish" />
+    <bpmn:sequenceFlow id="Flow_3" sourceRef="Task_Publish" targetRef="Gateway_Verdict" />
+    <bpmn:sequenceFlow id="Flow_Green" name="all pass or warn" sourceRef="Gateway_Verdict" targetRef="EndEvent_Green" />
+    <bpmn:sequenceFlow id="Flow_Red" name="any fail" sourceRef="Gateway_Verdict" targetRef="EndEvent_Red" />
+    <bpmn:sequenceFlow id="Flow_Unknown" name="none fail, one unknown" sourceRef="Gateway_Verdict" targetRef="EndEvent_Unknown" />
+  </bpmn:process>
+
+  <bpmndi:BPMNDiagram id="BPMNDiagram_ComputeQA">
+    <bpmndi:BPMNPlane id="BPMNPlane_ComputeQA" bpmnElement="Collaboration_ComputeQA">
+      <bpmndi:BPMNShape id="Participant_ComputeQA_di" bpmnElement="Participant_ComputeQA" isHorizontal="true">
+        <dc:Bounds x="100" y="40" width="1000" height="560" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Pipeline_di" bpmnElement="Lane_Pipeline" isHorizontal="true">
+        <dc:Bounds x="130" y="40" width="970" height="560" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_Change_di" bpmnElement="StartEvent_Change">
+        <dc:Bounds x="172" y="302" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_Fork_di" bpmnElement="Gateway_Fork">
+        <dc:Bounds x="250" y="295" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_Precision_di" bpmnElement="Task_Precision">
+        <dc:Bounds x="350" y="60" width="130" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_Staleness_di" bpmnElement="Task_Staleness">
+        <dc:Bounds x="350" y="170" width="130" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_LpDual_di" bpmnElement="Task_LpDual">
+        <dc:Bounds x="350" y="280" width="130" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_Probe_di" bpmnElement="Task_Probe">
+        <dc:Bounds x="350" y="390" width="130" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_Words_di" bpmnElement="Task_Words">
+        <dc:Bounds x="350" y="500" width="130" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_Join_di" bpmnElement="Gateway_Join">
+        <dc:Bounds x="540" y="295" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_Publish_di" bpmnElement="Task_Publish">
+        <dc:Bounds x="640" y="280" width="130" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_Verdict_di" bpmnElement="Gateway_Verdict" isMarkerVisible="true">
+        <dc:Bounds x="820" y="295" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_Green_di" bpmnElement="EndEvent_Green">
+        <dc:Bounds x="962" y="192" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_Red_di" bpmnElement="EndEvent_Red">
+        <dc:Bounds x="962" y="302" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_Unknown_di" bpmnElement="EndEvent_Unknown">
+        <dc:Bounds x="962" y="412" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1_di" bpmnElement="Flow_1"><di:waypoint x="208" y="320" /><di:waypoint x="250" y="320" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_P_di" bpmnElement="Flow_P"><di:waypoint x="275" y="295" /><di:waypoint x="275" y="100" /><di:waypoint x="350" y="100" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_S_di" bpmnElement="Flow_S"><di:waypoint x="275" y="295" /><di:waypoint x="275" y="210" /><di:waypoint x="350" y="210" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_L_di" bpmnElement="Flow_L"><di:waypoint x="300" y="320" /><di:waypoint x="350" y="320" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_F_di" bpmnElement="Flow_F"><di:waypoint x="275" y="345" /><di:waypoint x="275" y="430" /><di:waypoint x="350" y="430" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_W_di" bpmnElement="Flow_W"><di:waypoint x="275" y="345" /><di:waypoint x="275" y="540" /><di:waypoint x="350" y="540" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_P2_di" bpmnElement="Flow_P2"><di:waypoint x="480" y="100" /><di:waypoint x="565" y="100" /><di:waypoint x="565" y="295" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_S2_di" bpmnElement="Flow_S2"><di:waypoint x="480" y="210" /><di:waypoint x="565" y="210" /><di:waypoint x="565" y="295" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_L2_di" bpmnElement="Flow_L2"><di:waypoint x="480" y="320" /><di:waypoint x="540" y="320" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_F2_di" bpmnElement="Flow_F2"><di:waypoint x="480" y="430" /><di:waypoint x="565" y="430" /><di:waypoint x="565" y="345" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_W2_di" bpmnElement="Flow_W2"><di:waypoint x="480" y="540" /><di:waypoint x="565" y="540" /><di:waypoint x="565" y="345" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_2_di" bpmnElement="Flow_2"><di:waypoint x="590" y="320" /><di:waypoint x="640" y="320" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_3_di" bpmnElement="Flow_3"><di:waypoint x="770" y="320" /><di:waypoint x="820" y="320" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_Green_di" bpmnElement="Flow_Green"><di:waypoint x="845" y="295" /><di:waypoint x="845" y="210" /><di:waypoint x="962" y="210" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_Red_di" bpmnElement="Flow_Red"><di:waypoint x="870" y="320" /><di:waypoint x="962" y="320" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_Unknown_di" bpmnElement="Flow_Unknown"><di:waypoint x="845" y="345" /><di:waypoint x="845" y="430" /><di:waypoint x="962" y="430" /></bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

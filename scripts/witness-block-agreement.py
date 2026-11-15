@@ -173,7 +173,7 @@ from pathlib import Path
 getcontext().prec = 80          # comfortably past the corpus's 50-dps witnesses
 
 ROOT = Path(__file__).resolve().parent.parent
-CONTENT = ROOT / "content"
+CONTENT = ROOT / "folio"
 PUB = re.compile(r"\d+\.\d{6,}")      # published figures worth tracing
 SRC = re.compile(r"\d+\.\d{3,}")      # witness values, possibly shorter
 LABEL = re.compile(r'label:\s*"([^"]+)"')
@@ -249,7 +249,7 @@ def asserted(figure: str, paths) -> bool:
 def witnesses_by_block() -> dict[str, list[Path]]:
     out: dict[str, list[Path]] = defaultdict(list)
     for w in (ROOT / "computations").rglob("*.witness.json"):
-        if "_deprecated" in str(w):
+        if ("_deprecated" in str(w) or "fsh-guts" in str(w)):
             continue
         try:
             d = json.loads(w.read_text(encoding="utf-8", errors="replace"))

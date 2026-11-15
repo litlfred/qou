@@ -8,434 +8,132 @@ pages: 23-28
 source_pdf: 2404.03933v2.pdf
 source_sha256: 48aff6e97e1f1267
 doc_brief: "TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2) AT EVEN ROOTS OF UNITY — We study the decomposition of tensor powers of two dimensional irreducible rep- resentations of quantum sl2 at even roots of"
+text_source: latex
+latex_prose_ratio: 0.995
+latex_coverage_ratio: 0.987
 ---
-In this section we will compute the asymptotic of the character and the Plancherel measures
-on tilting submodules of T (1)⊗N whenN→∞ . We will start with computing the asymptotic
-of the multiplicity of T (k)⊂T (1)⊗N.
-9.1. The asymptotic of the multiplicity function. Note that in the tensor productT (1)⊗N
-only submodules T (k) with k≡N mod 2 can occur. For sufficiently large k the decomposition
-of T (1)⊗T (k) is 2l periodic. This is why it is natural to write N in base 2l:
-N = 2lN1 +N0, N 0 = 0, 1,..., 2l− 1.
-Writingk =lk1 +k0 we see that N =k mod 2 have the following implication:
-• N0 is even and k≡ 0 mod 2 orN0 is odd and k≡ 1 mod 2 implyk0≡N0 mod 2
-• N0 is even and k≡ 1 mod 2 orN0 is odd and k≡ 0 mod 2 implyk0≡ (N0 + 1) mod 2
-Let us define a parameter
-γ =
-(
-1, if k0≡ (N0 + 1) mod 2,
-0, if k0≡N0 mod 2.
-In the limit N→∞ k0 remains discrete, and its parity is controlled by γ. Later we will see
-that limiting distribution is independent of both N0 and γ.
+[]{#as9 label="as9"} In this section we will compute the asymptotic of the character and the Plancherel measures on tilting submodules of $T(1)^{\otimes N}$ when $N\to \infty$. We will start with computing the asymptotic of the multiplicity of $T(k)\subset T(1)^{\otimes N}$.
+
+## The asymptotic of the multiplicity function
+
+Note that in the tensor product $T(1)^{\otimes N}$ only submodules $T(k)$ with $k\equiv N \,\mathrm{mod}\,2$ can occur. For sufficiently large $k$ the decomposition of $T(1)\otimes T(k)$ is $2l$ periodic. This is why it is natural to write $N$ in base $2l$: $$N=2lN_1+N_0,\quad N_0=0,1,\ldots,2l-1.$$ Writing $k=lk_1+k_0$ we see that $N=k\,\mathrm{mod}\,2$ have the following implication:
+
+-   $N_0$ is even and $k\equiv 0\,\mathrm{mod}\,2$ or $N_0$ is odd and $k\equiv 1\,\mathrm{mod}\,2$ imply $k_0\equiv N_0\,\mathrm{mod}\,2$
+
+-   $N_0$ is even and $k\equiv 1\,\mathrm{mod}\,2$ or $N_0$ is odd and $k\equiv 0\,\mathrm{mod}\,2$ imply $k_0\equiv (N_0+1)\,\mathrm{mod}\,2$
+
+Let us define a parameter $$\gamma=
+\begin{cases}
+1,&\text{if $k_0\equiv (N_0+1)\,\mathrm{mod}\,2$,}\\
+0,&\text{if $k_0\equiv N_0\,\mathrm{mod}\,2$.}
+\end{cases}$$ In the limit $N\to\infty$ $k_0$ remains discrete, and its parity is controlled by $\gamma$. Later we will see that limiting distribution is independent of both $N_0$ and $\gamma$.
+
 The following theorem describes the pointwise asymptotic of the multiplicity function
-Theorem 9.1. Assume that N = 2lN1 +N0, k = k1l +k0, N1→∞ , k1→∞ such that l,
-N0 = 0,..., 2l− 1, k0 = 0,...,l − 1 and ξ = k1
-2N1
-remain fixed. Then the asymptotic of the
-multiplicity has the following form:
-(11) M (l)
-T (k)(N) =
-µ(l)
-k0 (ξ,N 0,γ )√2π 2lN1
-exp(2lN1S(ξ))
-
-1 +O
- 1
-N1
-
-where
-S(ξ) =−
-1−ξ
-2
-
-ln
-1−ξ
-2
-
-−
-1 +ξ
-2
-
-ln
-1 +ξ
-2
-
-,
-and if k0̸=l− 1
-µ(l)
-k0 (ξ,N 0,γ ) = 22+N0ξp
-(1−ξ2)1+N0
-1−ξ
-1 +ξ
-γl
-2
-1
-1+ξ
-
-1+ξ
-1−ξ
-l−k0
-2
-− 1
-1−ξ
-
-1+ξ
-1−ξ
-−l−k0
-2
-
-1+ξ
-1−ξ
-l
-2
-−
-
-1+ξ
-1−ξ
-−l
-2
-,
-if k0 =l− 1
-µ(l)
-k0 (ξ,N 0,γ ) = 22+N0ξp
-(1−ξ2)1+N0
-1
-1 +ξ
-1−ξ
-1 +ξ
-l(1+γ)−1
-2
-.
-24 ANNA LACHOWSKA, OLGA POSTNOV A, NICOLAI RESHETIKHIN, AND DMITRY SOLOVYEV
-The proof of this theorem is presented in Appendix C.1.
-9.2. The pointwise asymptotic of the character measure density. Now let us find the
-asymptotic of the character measure density function p(l)
-N (k;t) when k, N→∞ in the same
-way as in Theorem 9.1. All we have to do is to combine the results of Theorem 9.1 with the
-asymptotical expansions of characters.
-Using explicit formulae for characters we find that when k0̸=l− 1
-chT (k)(et)
-(chT (1)(et))N = (et(k0+1) +e−t(k0+1))(etk1l−e−tk1l)
-et−e−t
-e2t−e−2t
-et−e−t
-−N
-=
-= (et(k0+1) +e−t(k0+1))etγl
-(et−e−t)(et +e−t)N0
- eξt
-et +e−t
-2lN1
-(1 +o(1)),
-and when k0 =l− 1
-chT (lk1+l−1)(et)
-(chT (1)(et))N = etl(1+γ)
-(et−e−t)(et +e−t)N0
- eξt
-et +e−t
-2lN1
-(1 +o(1)).
-Combining these formulae with the results of Theorem 9.1 we obtain that if N = 2N1l +N0,
-k = k1l +k0, and N1, k1→∞ such that l, k0, N0, t and ξ = k1
-2N1
-remain fixed we have the
-following pointwise asymptotic for the probability measure density function
-(12) p(l)
-N (k;t) =
-ν(l)
-k0 (ξ,N 0,γ ;t)√2π 2lN1
-exp(2lN1(S(ξ)−f(t) +tξ))
-
-1 +O
- 1
-N1
-
-,
-where
-f(t) = ln(et +e−t),
-and if k0̸=l− 1
-ν(l)
-k0 (ξ,N 0,γ ;t) = etγl (et(k0+1)+e−t(k0+1))
-(et−e−t)(et+e−t)N0
-22+N0ξ√
-(1−ξ2)1+N0
-
-1−ξ
-1+ξ
-γl
-2
-1
-1+ξ
-
-1+ξ
-1−ξ
-l−k02
-− 1
-1−ξ
-
-1+ξ
-1−ξ
-−l−k02
-
-1+ξ
-1−ξ
-l
-2
-−
-
-1+ξ
-1−ξ
-−l
-2
-,
-if k0 =l− 1
-ν(l)
-k0 (ξ,N 0,γ ;t) = etl(1+γ)
-(et−e−t)(et +e−t)N0
-22+N0ξp
-(1−ξ2)1+N0
-1
-1 +ξ
-1−ξ
-1 +ξ
-l(1+γ)−1
-2
-.
-By definition ξ∈ [0, 1). Note that the function S(ξ), the large deviation rate function has
-its maximum at the isolated critical point ξ0, i.e.
-∂
-∂ξ (S(ξ)−f(t) +tξ) = 0
-has a unique solution
-(13) ξ0 = et−e−t
-et +e−t.
-In addition, S(ξ0) = 0.
-TENSOR POWERS 25
-Thus, we have a typical large deviation behavior of the density function p(l)
-N (k;t): it is
-exponentially decaying when ξ̸=ξ0 and it decays as N
-− 1
-2
-1 when ξ =ξ0. Thus, asymptotically,
-the character measure concentrates in the neighborhood of ξ =ξ0.
-9.3. The asymptotic of the character measure for Uq(sl2). The following theorem de-
-scribes the weak limit of the character probability measure for Uq(sl2).
-Theorem 9.2. Letξ0 be as in (13), N = 2lN1 +N0 and N1→∞ such that N0, l, t are fixed.
-Then for k = k1l +k0, random variables k0 and α = k1−2N1ξ0√2N1
-converge to random variables
-on{0,...,l − 1}× R and the character probability distribution weakly converges to the tensor
-product of two distributions p1(•;t)⊗p2(•;t) on{0,...,l − 1}× R. The distribution p1(•;t) is
-a discrete probability distribution on k0 = 0, 1,...,l − 1 with density given by
-(14) p1(k0;t) =
-( (et(k0+1)+e−t(k0+1))(et(l−1−k0)−e−t(l−1−k0))
-l(etl−e−tl) , if k0 = 0,...,l − 2,
-1
-l, if k0 =l− 1.
-The distribution p2(•;t) is a Gaussian distribution on R with density given by
-(15) p2(α;t) =
-r
-l
-2π cosh(t)e−α2l
-2 (cosh(t))2
-.
-The proof of this theorem is presented in Appendix C.2. The meaning of weak convergence
-is also recalled there.
-Note that the asymptotic of the character measure is derived for N0 being fixed, but it does
-not depend on N0. The only dependence is the condition N =k mod 2. It implies that:
-• for even N0 the summation over k =k1l +k0 amounts for the summation over k0 and
-k1 of the same parity,
-• for odd N0 the summation over k = k1l +k0 amounts for the summation over k0 and
-k1 of the opposite parity.
-In the limit N1→∞ this dependence on N0 disappears. Dependence on γ disappears as well.
-Period 2l coversk1, k1 + 1, which for any k1 includes all values of k0 = 0,...,l − 1, so parity
-of k0 doesn’t have to be controlled.
-This is why we conjecture that the asymptotic does not depend on N0. To be precise,
-consider a sequence
-N (p) = 2lN (p)
-1 +N (p)
-0 , N (p)
-1 →∞ as p→∞,
-and N (p)
-0 = 0, 1,..., 2l− 1. For each p∈ Z>0 let k = lk1 +k0∈ Z≥0 be the random variable
-distributed with respect to the character measure p(l)
-N (p)(k;t). We expect the following is true.
-As p→∞ with l, t being fixed and k = 2N (p)
-1 ξ0 +
-q
-2N (p)
-1 α, α∈ R, the character measure
-converges to the measure on{0,...,l − 1}× R with the density p1(k0;t)p2(α;t) as above, and
-the limit does not depend on the choice of sequences {N (p)
-1 }p∈Z≥0,{N (p)
-0 }p∈Z≥0.
-26 ANNA LACHOWSKA, OLGA POSTNOV A, NICOLAI RESHETIKHIN, AND DMITRY SOLOVYEV
-9.4. The asymptotic of the Placherel measure. Now let us find the asymptotic of the
-Plancherel measure whenN→∞ andl is fixed. From definition 8.2 it is evident that the same
-ideas as explored in Subsection 9.3 are applicable to the Plancherel measure.
-In the considered limit we have the following asymptotical expression for dimensions when
-k0̸=l− 1
-dimT (k)
-(dimT (1))N = 22−N0ξlN1
-22lN1
-
-1 +O
- 1
-N1
-
-,
-and when k0 =l− 1
-dimT (lk1 +l− 1)
-(dimT (1))N = 21−N0ξlN1
-22lN1
-
-1 +O
- 1
-N1
-
-.
-We obtain the following pointwise asymptotic for the probability measure distribution
-(16) p(l)
-N (k) =
-ν(l)
-k0 (ξ,N 0,γ )√2π 2lN1
-exp(2lN1(S(ξ)− ln2))
-
-1 +O
- 1
-N1
-
-,
-where if k0̸=l− 1
-ν(l)
-k0 (ξ,N 0,γ ) = 16ξ2lN1p
-(1−ξ2)1+N0
-1−ξ
-1 +ξ
-γl
-2
-1
-1+ξ
-
-1+ξ
-1−ξ
-l−k0
-2
-− 1
-1−ξ
-
-1+ξ
-1−ξ
-−l−k0
-2
-
-1+ξ
-1−ξ
-l
-2
-−
-
-1+ξ
-1−ξ
-−l
-2
-,
-and if k0 =l− 1
-ν(l)
-k0 (ξ,N 0,γ ) = 8ξ2lN1p
-(1−ξ2)1+N0
-1
-1 +ξ
-1−ξ
-1 +ξ
-l(1+γ)−1
-2
-Similarly to the character measure, the large deviation rate function S(ξ) for the Plancherel
-measure has its maximum at the isolated critical point ξ0, i.e.
-∂
-∂ξ (S(ξ)− ln2) = 0
-has a unique solutionξ0 = 0, where the Plancherel measure concentrates asymptotically. Thus,
-we have the following theorem.
-Theorem 9.3. LetN = 2lN1+N0 andN1→∞ such thatN0,l are fixed. Then for k =k1l+k0,
-random variablesk0 andα = k1√2N1
-converge to random variables on{0,...,l −1}× R≥0 and the
-Plancherel probability distribution weakly converges to the tensor product of two distributions
-p1(•)⊗p2(•) on{0,...,l −1}× R≥0. The distribution p1(•) is a discrete probability distribution
-on k0 = 0, 1,...,l − 1 with density given by
-p1(k0) =
-( 2(l−1−k0)
-l2 , if k0 = 0,...,l − 2,
-1
-l, if k0 =l− 1 ,
-The distribution p2(•) is a radial part of the Gaussian distribution on R3 with density given by
-p2(α) =
-r
-2
-πl
-3
-2α2e−α2l
-2 .
-TENSOR POWERS 27
-The proof of this theorem is presented in Appendix C.3.
-This asymptotic does not depend on N0, γ. This is why we expect that the theorem holds
-for any sequence{N (p)}p∈Z≥0 with N (p)→∞ as p→∞ .
-9.5. The near Plancherel asymptotic of the character measure. Now consider the
-character measure but assume that t = u√2N1
-as N1→∞ . In this case the character measure
-weakly converges to a deformation of a limiting measure obtained in Theorem 9.3.
-Theorem 9.4. Let N = 2lN1 +N0 and N1→∞ such that N0, l are fixed and t = u√2N1
-.
-Then for k = k1l +k0, random variables k0 and b = k1√2N1
-converge to random variables on
-{0,...,l − 1}× R≥0 and the character probability distribution weakly converges to the tensor
-product of two distributions p1(•)⊗p2(•;u) on{0,...,l − 1}× R≥0. The distribution p1(•) is
-a discrete probability distribution on k0 = 0, 1,...,l − 1 with density given by
-p1(k0) =
-( 2(l−1−k0)
-l2 , if k0 = 0,...,l − 2,
-1
-l, if k0 =l− 1 ,
-The distribution p2(•;u) is a distribution on R≥0 with density given by
-p2(b,u ) = b
-u
-r
-l
-2π (elbu−e−lbu)e−u2l
-2 e−b2l
-2 .
-The proof of this theorem is presented in Appendix D. Analogously, we expect that this
-theorem holds for any sequence of {N (p)}p∈Z≥0, where N (p)→∞ as p→∞ .
-9.6. The Poisson asymptotic of the character measure. There is the limit whenN→∞
-andt→∞ such that the random walk induced by the Markov process for the character measure
-is drifted with the critical slope, meaning, the limit shape ξ0 is on the right boundary of the
-Weyl alcove. It turns out that when t increases logarithmically as N → ∞the character
-probability distribution weakly converges to a Poisson distribution in the vicinity of the right
-boundary of the Weyl alcove.
-The following theorem gives the pointwise asymptotic of the multiplicity function in the
-limit when N→∞ , k→∞ such that N−k is fixed.
-Theorem 9.5. Assume that N = 2lN1 +N0, k = k1l +k0, N1→∞ , k1→∞ , such that l,
-N0 = 0,..., 2l− 1, k0 = 0,...,l − 1 remain fixed, N−k = 2s for some s∈ Z≥0. Then the
-asymptotic of M (l)
-T (k)(N) is given by
-M (l)
-T (k)(N) = N
-N−k
-2
- N−k
-2
-
-!
-
-1 +o(1)
-
-.
-The proof of this theorem is presented in Appendix E.1.
-Using results of the Theorem 9.5, we obtain the following limiting probability distribution
-for the character measure near the right boundary.
-Theorem 9.6. Let N = 2lN1 +N0 and N1 → ∞, such that N0, l are fixed. If t → ∞
-such that θ = Ne−2t is fixed, then for k = k1l +k0, random variable s = N−k
-2 converges to
-28 ANNA LACHOWSKA, OLGA POSTNOV A, NICOLAI RESHETIKHIN, AND DMITRY SOLOVYEV
-a random variable on Z≥0 and the character probability distribution weakly converges to the
-Poisson distribution on Z≥0 with density given by
-p(s;θ) = θse−θ
-s! .
-The proof of this theorem is presented in Appendix E.2. This result coincides with the one
-for classical Lie algebra sl2.
+
+::: theorem
+[]{#multasymptmain label="multasymptmain"} Assume that $N=2lN_1+N_0$, $k=k_1l+k_0$, $N_1\to\infty$, $k_1\to\infty$ such that $l$, $N_0=0, \ldots, 2l-1$, $k_0=0, \ldots, l-1$ and $\xi=\frac{k_1}{2N_1}$ remain fixed. Then the asymptotic of the multiplicity has the following form: $$\label{mass}
+        M^{(l)}_{T(k)}(N)=\frac{\mu_{k_0}^{(l)}(\xi,N_0,\gamma)}{\sqrt{2\pi\, 2lN_1}}\mathrm{exp}(2lN_1 S(\xi))\left(1+O\left(\frac{1}{N_1}\right)\right)$$ where $$S(\xi)=-\left(\frac{1-\xi}{2}\right)\mathrm{ln}\left(\frac{1-\xi}{2}\right)-\left(\frac{1+\xi}{2}\right)\mathrm{ln}\left(\frac{1+\xi}{2}\right),$$ and if $k_0\neq l-1$ $$\mu_{k_0}^{(l)}(\xi,N_0,\gamma)=\frac{2^{2+N_0}\xi}{\sqrt{(1-\xi^2)^{1+N_0}}}\Big(\frac{1-\xi}{1+\xi}\Big)^{\frac{\gamma l}{2}}\frac{\frac{1}{1+\xi}\Big(\frac{1+\xi}{1-\xi}\Big)^{\frac{l-k_0}{2}}-\frac{1}{1-\xi}\Big(\frac{1+\xi}{1-\xi}\Big)^{-\frac{l-k_0}{2}}}{\Big(\frac{1+\xi}{1-\xi}\Big)^{\frac{l}{2}}-\Big(\frac{1+\xi}{1-\xi}\Big)^{-\frac{l}{2}}},$$ if $k_0=l-1$ $$\mu_{k_0}^{(l)}(\xi,N_0,\gamma)=\frac{2^{2+N_0}\xi}{\sqrt{(1-\xi^2)^{1+N_0}}}\frac{1}{1+\xi}\Big(\frac{1-\xi}{1+\xi}\Big)^{\frac{l(1+\gamma)-1}{2}}.$$
+:::
+
+The proof of this theorem is presented in Appendix [\[apmultas\]](#apmultas){reference-type="ref" reference="apmultas"}.
+
+## The pointwise asymptotic of the character measure density
+
+Now let us find the asymptotic of the character measure density function $p^{(l)}_N(k;t)$ when $k$, $N\to\infty$ in the same way as in Theorem [\[multasymptmain\]](#multasymptmain){reference-type="ref" reference="multasymptmain"}. All we have to do is to combine the results of Theorem [\[multasymptmain\]](#multasymptmain){reference-type="ref" reference="multasymptmain"} with the asymptotical expansions of characters.
+
+Using explicit formulae for characters we find that when $k_0\neq l-1$ $$\begin{aligned}
+    \frac{\mathrm{ch}_{T(k)}(e^t)}{(\mathrm{ch}_{T(1)}(e^t))^N}=\frac{(e^{t(k_0+1)}+e^{-t(k_0+1)})(e^{tk_1l}-e^{-tk_1l})}{e^{t}-e^{-t}}\Big(\frac{e^{2t}-e^{-2t}}{e^{t}-e^{-t}}\Big)^{-N}=\\
+    =\frac{(e^{t(k_0+1)}+e^{-t(k_0+1)})e^{t \gamma l}}{(e^{t}-e^{-t})(e^t+e^{-t})^{N_0}}\Big(\frac{e^{\xi t}}{e^{t}+e^{-t}}\Big)^{2lN_1}(1+o(1)),\nonumber
+\end{aligned}$$ and when $k_0=l-1$ $$\begin{aligned}
+    \frac{\mathrm{ch}_{T(lk_1+l-1)}(e^t)}{(\mathrm{ch}_{T(1)}(e^t))^N}=\frac{e^{tl(1+\gamma)}}{(e^{t}-e^{-t})(e^{t}+e^{-t})^{N_0}}\Big(\frac{e^{\xi t}}{e^{t}+e^{-t}}\Big)^{2lN_1}(1+o(1)).
+\end{aligned}$$
+
+Combining these formulae with the results of Theorem [\[multasymptmain\]](#multasymptmain){reference-type="ref" reference="multasymptmain"} we obtain that if $N=2N_1l+N_0$, $k=k_1l+k_0$, and $N_1$, $k_1\to\infty$ such that $l$, $k_0$, $N_0$, $t$ and $\xi=\frac{k_1}{2N_1}$ remain fixed we have the following pointwise asymptotic for the probability measure density function $$\label{charas}
+    p^{(l)}_N(k;t)=\frac{\nu_{k_0}^{(l)}(\xi,N_0,\gamma;t)}{\sqrt{2\pi\, 2lN_1}}\mathrm{exp}(2lN_1 (S(\xi)-f(t)+t\xi))\left(1+O\left(\frac{1}{N_1}\right)\right),$$ where $$f(t)=\mathrm{ln}(e^t+e^{-t}),$$ and if $k_0\neq l-1$ $$\begin{aligned}
+    &\nu_{k_0}^{(l)}(\xi,N_0,\gamma;t)=\frac{e^{t\gamma l}(e^{t(k_0+1)}+e^{-t(k_0+1)})}{(e^{t}-e^{-t})(e^t+e^{-t})^{N_0}}\frac{2^{2+N_0}\xi}{\sqrt{ (1-\xi^2)^{1+N_0}}}\Big(\frac{1-\xi}{1+\xi}\Big)^{\frac{\gamma l}{2}}\frac{\frac{1}{1+\xi}\Big(\frac{1+\xi}{1-\xi}\Big)^{\frac{l-k_0}{2}}-\frac{1}{1-\xi}\Big(\frac{1+\xi}{1-\xi}\Big)^{-\frac{l-k_0}{2}}}{\Big(\frac{1+\xi}{1-\xi}\Big)^{\frac{l}{2}}-\Big(\frac{1+\xi}{1-\xi}\Big)^{-\frac{l}{2}}},
+\end{aligned}$$ if $k_0=l-1$ $$\nu_{k_0}^{(l)}(\xi,N_0,\gamma;t)=\frac{e^{tl(1+\gamma)}}{(e^{t}-e^{-t})(e^t+e^{-t})^{N_0}}\frac{2^{2+N_0}\xi}{\sqrt{(1-\xi^2)^{1+N_0}}} \frac{1}{1+\xi}\Big(\frac{1-\xi}{1+\xi}\Big)^{\frac{l(1+\gamma)-1}{2}}.$$
+
+By definition $\xi\in[0,1)$. Note that the function $S(\xi)$, the large deviation rate function has its maximum at the isolated critical point $\xi_0$, i.e. $$\frac{\partial}{\partial\xi}(S(\xi)-f(t)+t\xi)=0$$ has a unique solution $$\label{xi0}
+\xi_0=\frac{e^t-e^{-t}}{e^t+e^{-t}}.$$ In addition, $S(\xi_0)=0$.
+
+Thus, we have a typical large deviation behavior of the density function $p^{(l)}_N(k;t)$: it is exponentially decaying when $\xi\neq\xi_0$ and it decays as $N_1^{-\frac{1}{2}}$ when $\xi=\xi_0$. Thus, asymptotically, the character measure concentrates in the neighborhood of $\xi=\xi_0$.
+
+## The asymptotic of the character measure for $U_q(\mathfrak{sl}_2)$ {#aschar}
+
+The following theorem describes the weak limit of the character probability measure for $U_q(\mathfrak{sl}_2)$.
+
+::: theorem
+[]{#theomch label="theomch"} Let $\xi_0$ be as in ([\[xi0\]](#xi0){reference-type="ref" reference="xi0"}), $N=2lN_1+N_0$ and $N_1\to\infty$ such that $N_0$, $l$, $t$ are fixed. Then for $k=k_1l+k_0$, random variables $k_0$ and $\alpha=\frac{k_1-2N_1 \xi_0}{\sqrt{2N_1}}$ converge to random variables on $\{0,\ldots,l-1\}\times\mathbb{R}$ and the character probability distribution weakly converges to the tensor product of two distributions $p_1(\bullet;t)\otimes p_2(\bullet;t)$ on $\{0,\ldots,l-1\}\times\mathbb{R}$. The distribution $p_1(\bullet;t)$ is a discrete probability distribution on $k_0=0,1,\ldots,l-1$ with density given by $$\label{p1}
+        p_1(k_0;t)=\begin{cases}
+            \frac{(e^{t(k_0+1)}+e^{-t(k_0+1)})(e^{t(l-1-k_0)}-e^{-t(l-1-k_0)})}{l(e^{tl}-e^{-tl})},& \textit{if $k_0=0,\ldots,l-2$},\\
+            \frac{1}{l},& \textit{if $k_0=l-1$}.
+        \end{cases}$$ The distribution $p_2(\bullet;t)$ is a Gaussian distribution on $\mathbb{R}$ with density given by $$\label{p2}
+        p_2(\alpha;t)=\sqrt{\frac{l}{2\pi}}\mathrm{cosh}(t)e^{-\frac{\alpha^2l}{2}\left(\mathrm{cosh}(t)\right)^2}.$$
+:::
+
+The proof of this theorem is presented in Appendix [\[approofchar\]](#approofchar){reference-type="ref" reference="approofchar"}. The meaning of weak convergence is also recalled there.
+
+Note that the asymptotic of the character measure is derived for $N_0$ being fixed, but it does not depend on $N_0$. The only dependence is the condition $N=k\,\mathrm{mod}\,2$. It implies that:
+
+-   for even $N_0$ the summation over $k=k_1 l+k_0$ amounts for the summation over $k_0$ and $k_1$ of the same parity,
+
+-   for odd $N_0$ the summation over $k=k_1 l+k_0$ amounts for the summation over $k_0$ and $k_1$ of the opposite parity.
+
+In the limit $N_1\to\infty$ this dependence on $N_0$ disappears. Dependence on $\gamma$ disappears as well. Period $2l$ covers $k_1$, $k_1+1$, which for any $k_1$ includes all values of $k_0=0,\ldots,l-1$, so parity of $k_0$ doesn't have to be controlled.
+
+This is why we conjecture that the asymptotic does not depend on $N_0$. To be precise, consider a sequence $$N^{(p)}=2lN_1^{(p)}+N_0^{(p)},\quad N_1^{(p)}\to\infty\text{ as }p\to\infty,$$ and $N_0^{(p)}=0,1,\ldots,2l-1$. For each $p\in\mathbb{Z}_{>0}$ let $k=lk_1+k_0\in\mathbb{Z}_{\geq 0}$ be the random variable distributed with respect to the character measure $p_{N^{(p)}}^{(l)}(k;t)$. We expect the following is true. As $p\to\infty$ with $l$, $t$ being fixed and $k=2N_1^{(p)}\xi_0+\sqrt{2N_1^{(p)}}\alpha$, $\alpha\in\mathbb{R}$, the character measure converges to the measure on $\{0,\ldots,l-1\}\times\mathbb{R}$ with the density $p_1(k_0;t)p_2(\alpha;t)$ as above, and the limit does not depend on the choice of sequences $\{N_1^{(p)}\}_{p\in\mathbb{Z}_{\geq 0}}$, $\{N_0^{(p)}\}_{p\in\mathbb{Z}_{\geq 0}}$.
+
+## The asymptotic of the Placherel measure
+
+Now let us find the asymptotic of the Plancherel measure when $N\to\infty$ and $l$ is fixed. From definition [\[planchdef\]](#planchdef){reference-type="ref" reference="planchdef"} it is evident that the same ideas as explored in Subsection [0.3](#aschar){reference-type="ref" reference="aschar"} are applicable to the Plancherel measure.
+
+In the considered limit we have the following asymptotical expression for dimensions when $k_0\neq l-1$ $$\frac{\dim T(k)}{(\dim  T(1))^N}=\frac{2^{2-N_0}\xi l N_1}{2^{2lN_1}}\left(1+O\left(\frac{1}{N_1}\right)\right),$$ and when $k_0=l-1$ $$\frac{\dim T(lk_1+l-1)}{(\dim  T(1))^N}=\frac{2^{1-N_0}\xi l N_1}{2^{2lN_1}}\left(1+O\left(\frac{1}{N_1}\right)\right).$$
+
+We obtain the following pointwise asymptotic for the probability measure distribution $$\label{Planchas}
+    p^{(l)}_N(k)=\frac{\nu^{(l)}_{k_0}(\xi,N_0,\gamma)}{\sqrt{2\pi\,2lN_1}}\mathrm{exp}(2lN_1(S(\xi)-\mathrm{ln}2))\left(1+O\left(\frac{1}{N_1}\right)\right),$$ where if $k_0\neq l-1$ $$\nu^{(l)}_{k_0}(\xi,N_0,\gamma)=\frac{16\xi^2lN_1}{\sqrt{(1-\xi^2)^{1+N_0}}}\Big(\frac{1-\xi}{1+\xi}\Big)^{\frac{\gamma l}{2}}\frac{\frac{1}{1+\xi}\Big(\frac{1+\xi}{1-\xi}\Big)^{\frac{l-k_0}{2}}-\frac{1}{1-\xi}\Big(\frac{1+\xi}{1-\xi}\Big)^{-\frac{l-k_0}{2}}}{\Big(\frac{1+\xi}{1-\xi}\Big)^{\frac{l}{2}}-\Big(\frac{1+\xi}{1-\xi}\Big)^{-\frac{l}{2}}},$$ and if $k_0=l-1$ $$\nu^{(l)}_{k_0}(\xi,N_0,\gamma)=\frac{8\xi^2 lN_1}{\sqrt{(1-\xi^2)^{1+N_0}}}\frac{1}{1+\xi}\Big(\frac{1-\xi}{1+\xi}\Big)^{\frac{l(1+\gamma)-1}{2}}$$
+
+Similarly to the character measure, the large deviation rate function $S(\xi)$ for the Plancherel measure has its maximum at the isolated critical point $\xi_0$, i.e. $$\frac{\partial}{\partial\xi}(S(\xi)-\mathrm{ln}2)=0$$ has a unique solution $\xi_0=0$, where the Plancherel measure concentrates asymptotically. Thus, we have the following theorem.
+
+::: theorem
+[]{#planchfluct label="planchfluct"} Let $N=2lN_1+N_0$ and $N_1\to\infty$ such that $N_0$, $l$ are fixed. Then for $k=k_1l+k_0$, random variables $k_0$ and $\alpha=\frac{k_1}{\sqrt{2N_1}}$ converge to random variables on $\{0,\ldots,l-1\}\times \mathbb{R}_{\geq 0}$ and the Plancherel probability distribution weakly converges to the tensor product of two distributions $p_1(\bullet)\otimes p_2(\bullet)$ on $\{0,\ldots,l-1\}\times \mathbb{R}_{\geq 0}$. The distribution $p_1(\bullet)$ is a discrete probability distribution on $k_0=0,1,\ldots,l-1$ with density given by $$p_1(k_0)=\begin{cases}
+    \frac{2(l-1-k_0)}{l^2},& \textit{if $k_0=0,\ldots,l-2$},\\
+    \frac{1}{l},& \textit{if $k_0=l-1$}
+    \end{cases},$$ The distribution $p_2(\bullet)$ is a radial part of the Gaussian distribution on $\mathbb{R}^3$ with density given by $$p_2(\alpha)=\sqrt{\frac{2}{\pi}}l^{\frac{3}{2}}\alpha^2e^{-\frac{\alpha^2 l}{2}}.$$
+:::
+
+The proof of this theorem is presented in Appendix [\[approofplanch\]](#approofplanch){reference-type="ref" reference="approofplanch"}.
+
+This asymptotic does not depend on $N_0$, $\gamma$. This is why we expect that the theorem holds for any sequence $\{N^{(p)}\}_{p\in\mathbb{Z}_{\geq 0}}$ with $N^{(p)}\to\infty$ as $p\to\infty$.
+
+## The near Plancherel asymptotic of the character measure
+
+Now consider the character measure but assume that $t=\frac{u}{\sqrt{2N_1}}$ as $N_1\to\infty$. In this case the character measure weakly converges to a deformation of a limiting measure obtained in Theorem [\[planchfluct\]](#planchfluct){reference-type="ref" reference="planchfluct"}.
+
+::: theorem
+[]{#intermsc label="intermsc"} Let $N=2lN_1+N_0$ and $N_1\to\infty$ such that $N_0$, $l$ are fixed and $t=\frac{u}{\sqrt{2N_1}}$. Then for $k=k_1l+k_0$, random variables $k_0$ and $b=\frac{k_1}{\sqrt{2N_1}}$ converge to random variables on $\{0,\ldots,l-1\}\times \mathbb{R}_{\geq 0}$ and the character probability distribution weakly converges to the tensor product of two distributions $p_1(\bullet)\otimes p_2(\bullet;u)$ on $\{0,\ldots,l-1\}\times \mathbb{R}_{\geq 0}$. The distribution $p_1(\bullet)$ is a discrete probability distribution on $k_0=0,1,\ldots,l-1$ with density given by $$p_1(k_0)=\begin{cases}
+    \frac{2(l-1-k_0)}{l^2},& \textit{if $k_0=0,\ldots,l-2$},\\
+    \frac{1}{l},& \textit{if $k_0=l-1$}
+    \end{cases},$$ The distribution $p_2(\bullet;u)$ is a distribution on $\mathbb{R}_{\geq 0}$ with density given by $$p_2(b,u)=\frac{b}{u}\sqrt{\frac{l}{2\pi}}(e^{lbu}-e^{-lbu})e^{-\frac{u^2l}{2}} e^{-\frac{b^2l}{2}}.$$
+:::
+
+The proof of this theorem is presented in Appendix [\[proofintermsc\]](#proofintermsc){reference-type="ref" reference="proofintermsc"}. Analogously, we expect that this theorem holds for any sequence of $\{N^{(p)}\}_{p\in\mathbb{Z}_{\geq 0}}$, where $N^{(p)}\to\infty$ as $p\to\infty$.
+
+## The Poisson asymptotic of the character measure
+
+There is the limit when $N\to\infty$ and $t\to\infty$ such that the random walk induced by the Markov process for the character measure is drifted with the critical slope, meaning, the limit shape $\xi_0$ is on the right boundary of the Weyl alcove. It turns out that when $t$ increases logarithmically as $N\to\infty$ the character probability distribution weakly converges to a Poisson distribution in the vicinity of the right boundary of the Weyl alcove.
+
+The following theorem gives the pointwise asymptotic of the multiplicity function in the limit when $N\to\infty$, $k\to\infty$ such that $N-k$ is fixed.
+
+::: theorem
+[]{#multdrift label="multdrift"} Assume that $N=2lN_1+N_0$, $k=k_1l+k_0$, $N_1\to\infty$, $k_1\to\infty$, such that $l$, $N_0=0,\dots,2l-1$, $k_0=0,\dots,l-1$ remain fixed, $N-k=2s$ for some $s\in\mathbb{Z}_{\geq 0}$. Then the asymptotic of $M^{(l)}_{T(k)}(N)$ is given by $$M^{(l)}_{T(k)}(N)=\frac{N^\frac{N-k}{2}}{\big(\frac{N-k}{2}\big)!}\Big(1+o(1)\Big).$$
+:::
+
+The proof of this theorem is presented in Appendix [\[poisproof1\]](#poisproof1){reference-type="ref" reference="poisproof1"}.
+
+Using results of the Theorem [\[multdrift\]](#multdrift){reference-type="ref" reference="multdrift"}, we obtain the following limiting probability distribution for the character measure near the right boundary.
+
+::: theorem
+[]{#mesdrift label="mesdrift"} Let $N=2lN_1+N_0$ and $N_1\to\infty$, such that $N_0$, $l$ are fixed. If $t\to\infty$ such that $\theta=Ne^{-2t}$ is fixed, then for $k=k_1l+k_0$, random variable $s=\frac{N-k}{2}$ converges to a random variable on $\mathbb{Z}_{\geq 0}$ and the character probability distribution weakly converges to the Poisson distribution on $\mathbb{Z}_{\geq 0}$ with density given by $$p(s;\theta)=\frac{\theta^{s}e^{-\theta}}{s!}.$$
+:::
+
+The proof of this theorem is presented in Appendix [\[poisproof2\]](#poisproof2){reference-type="ref" reference="poisproof2"}. This result coincides with the one for classical Lie algebra $\mathfrak{sl}_2$.

@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-shell-structure-eigenvalues",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:shell-structure-eigenvalues",
+  "kind": "proposition",
+  "title": "Orbital shells from eigenvalues of the photon-electron transfer matrix",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-borromean-quark",
+    "papers/quantum-observable-universe/blocks/def-transfer-matrix-operator"
+  ],
+  "tags": [
+    "shell",
+    "orbital",
+    "eigenvalue",
+    "transfer-matrix",
+    "chebyshev",
+    "rydberg",
+    "hydrogen",
+    "photon",
+    "electron",
+    "recurrence"
+  ],
+  "leanRef": "qou:QOU.Archimedean.shell_structure_eigenvalues",
+  "text": "shell-structure-eigenvalues.md",
+  "leanSource": "shell-structure-eigenvalues.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-chirality-trefoil",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:chirality-trefoil",
+  "kind": "remark",
+  "title": "Chirality and trefoil subgroups",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-genus-maximal-descent"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-genus-maximal-descent",
+  "tags": [
+    "archimedean-universe",
+    "chirality",
+    "trefoil",
+    "color-charge"
+  ],
+  "text": "chirality-trefoil.md",
+  "provenance": "authored"
+}

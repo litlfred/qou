@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-9609174v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Universality of random matrices in the microscopic limit and the Dirac operator spectrum",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9609174v2",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-hep-th-9609174v2",
   "contains": [
+    "library/arxiv-hep-th-9609174v2/sections/sec-front-matter",
     "library/arxiv-hep-th-9609174v2/sections/sec-000",
     "library/arxiv-hep-th-9609174v2/sections/sec-001",
     "library/arxiv-hep-th-9609174v2/sections/sec-002",
@@ -13,14 +19,20 @@
     "library/arxiv-hep-th-9609174v2/sections/sec-004",
     "library/arxiv-hep-th-9609174v2/sections/sec-005",
     "library/arxiv-hep-th-9609174v2/sections/sec-006",
-    "library/arxiv-hep-th-9609174v2/sections/sec-007",
-    "library/arxiv-hep-th-9609174v2/sections/sec-008",
-    "library/arxiv-hep-th-9609174v2/sections/sec-009",
-    "library/arxiv-hep-th-9609174v2/sections/sec-010"
+    "library/arxiv-hep-th-9609174v2/sections/sec-007"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-th/9609174&metadataPrefix=arXiv), submitted 1996-09-23, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-hep-th-9609174v2",
+    "title_source": "slug",
     "source_file": "9609174v2.pdf",
     "source_sha256": "87885f4d03661f26747d265ab45a37952535091439d3affc200cc844565c95e8",
     "pages": 18,

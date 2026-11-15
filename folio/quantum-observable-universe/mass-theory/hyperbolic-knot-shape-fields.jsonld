@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-hyperbolic-knot-shape-fields",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:hyperbolic-knot-shape-fields",
+  "kind": "proposition",
+  "title": "Shape fields of hyperbolic knot triangulations, with the gluing equations verified exactly",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-thurston-volume-additivity"
+  ],
+  "cites": [
+    "references/thurston1978",
+    "references/neumann-zagier1985",
+    "references/martelli2016"
+  ],
+  "tags": [
+    "hyperbolic-volume",
+    "gluing-equations",
+    "shape-field",
+    "invariant-trace-field",
+    "ideal-triangulation",
+    "number-field"
+  ],
+  "leanRef": "qou:QOU.Knot.GeneratedGluing.K61.edge_0",
+  "text": "hyperbolic-knot-shape-fields.md",
+  "provenance": "authored"
+}

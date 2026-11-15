@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-genus-filtration-ideal",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:genus-filtration-ideal",
+  "kind": "proposition",
+  "title": "Genus-filtration ideal and the Chebyshev obstruction for $T_{2,p}$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-cohomological-embedding",
+    "papers/quantum-observable-universe/blocks/prop-categorical-dq-squared"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-genus-filtration-ideal"
+  ],
+  "cites": [
+    "references/yekutieli2010"
+  ],
+  "tags": [
+    "torus-knot",
+    "ideal",
+    "chebyshev",
+    "yekutieli",
+    "obstruction",
+    "genus",
+    "hecke-algebra",
+    "completeness"
+  ],
+  "leanRef": "qou:QOU.Archimedean.genus_filtration_ideal",
+  "text": "genus-filtration-ideal.md",
+  "leanSource": "genus-filtration-ideal.lean",
+  "provenance": "authored"
+}

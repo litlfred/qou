@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/blocks/prose-sec-000",
   "kind": "prose",
-  "title": "An ideal tetrahedral decomposition of a hyperbolic 3-manifold with",
+  "title": "An ideal tetrahedral decomposition of a hyperbolic 3-manifold with two torus cusps.",
   "pageStart": 2,
-  "pageEnd": 2,
+  "pageEnd": 10,
   "text": "../sections/sec-000-1-an-ideal-tetrahedral-decomposition-of-a-hyperb.md",
-  "derivedFrom": "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/manifest",
-  "sourceDocument": "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma",
   "provenance": "ingested"
 }

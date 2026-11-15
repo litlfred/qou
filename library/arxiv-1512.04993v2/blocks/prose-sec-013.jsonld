@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1512.04993v2/blocks/prose-sec-013",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1512.04993v2/blocks/prose-sec-013",
   "kind": "prose",
   "title": "Testing our conjectures with black holes",
   "pageStart": 22,
   "pageEnd": 22,
   "text": "../sections/sec-013-4-testing-our-conjectures-with-black-holes.md",
-  "derivedFrom": "library/arxiv-1512.04993v2/manifest",
-  "sourceDocument": "library/arxiv-1512.04993v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1512.04993v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1512.04993v2",
   "provenance": "ingested"
 }

@@ -70,7 +70,7 @@ stamp it", and it says nothing about whether re-running is SAFE. Measured over
     script uses to classify it into bucket C. AGENTS.md's "bare producers"
     hazard. **FIXED for all 5** by having each producer emit those three keys
     itself; 4 of them then stamped cleanly. (The fix also repaired 2 DANGLING
-    `auditOnly` pointers: both targets had moved to `docs/audits/_deprecated/`
+    `auditOnly` pointers: both targets had moved to `fsh-guts/deprecated/docs/audits/`
     and nothing checks that the path resolves.)
   * **4 move numbers** -- `qou-fl9i`'s `mp.dps = 50` -> `set_compute_dps()` fix
     landed in the producers and their witnesses were never regenerated.
@@ -184,7 +184,7 @@ def build_py_index() -> dict:
         p = _REPO / rel
         idx[p.name].append(p)
     for name in idx:
-        idx[name].sort(key=lambda p: ("_deprecated" in str(p), len(str(p))))
+        idx[name].sort(key=lambda p: (("_deprecated" in str(p) or "fsh-guts" in str(p)), len(str(p))))
     return {k: v[0] for k, v in idx.items()}
 
 

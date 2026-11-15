@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/zagier-the-dilogarithm-function-copy-b/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/zagier-the-dilogarithm-function-copy-b/blocks/prose-sec-001",
   "kind": "prose",
-  "title": "The dilogarithm function in geometry and number theory 5",
-  "pageStart": 1,
-  "pageEnd": 1,
-  "text": "../sections/sec-001-i-the-dilogarithm-function-in-geometry-and-numbe.md",
-  "derivedFrom": "library/zagier-the-dilogarithm-function-copy-b/manifest",
-  "sourceDocument": "library/zagier-the-dilogarithm-function-copy-b/manifest",
+  "title": "Functional equations",
+  "pageStart": 6,
+  "pageEnd": 11,
+  "text": "../sections/sec-001-2-functional-equations.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/zagier-the-dilogarithm-function-copy-b",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/zagier-the-dilogarithm-function-copy-b",
   "provenance": "ingested"
 }

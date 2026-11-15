@@ -1,0 +1,328 @@
+\documentclass{amsart}
+\usepackage[title,titletoc,toc]{appendix}
+\flushbottom \topmargin -.5in
+\headheight 30pt \headsep 30pt \oddsidemargin .50in \evensidemargin .50in
+\textheight 7.5in \textwidth 5.5in
+%format paragraphs
+%\usepackage{titlesec}
+%\titleformat{\paragraph}[runin]{\normalfont\normalsize\itshape}{\theparagraph}{}{}[.] %format paragraph italic and ser a period after it
+%\titlespacing{\paragraph}{0pt}{0pt}{*1} %remove spacing and add one characterspace after paragraph
+\usepackage{ifthen,amsthm,srcltx,amsopn,amssymb,amsfonts}
+\usepackage{amssymb,color}
+\usepackage{colordvi,fancyhdr}
+\usepackage{pdfpages}
+%\usepackage[colorlinks=black]{hyperref}
+\definecolor{Gris}{cmyk}{0.1,0.1,0.1,.75}
+\usepackage[colorlinks=true,citecolor=Gris,linkcolor=Gris,filecolor=Gris,urlcolor=Gris]{hyperref}
+\usepackage{asymptote}
+\usepackage{amscd}
+\usepackage[english]{babel}
+\RequirePackage{graphics,epsfig,psfrag}%,picins}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+%\usepackage{psfrag}
+\usepackage{delarray,graphicx}
+\usepackage{comment}
+%\usepackage[small,nohug]{diagrams}
+\usepackage{tikz}
+\usepackage[all,cmtip]{xy}
+%\usepackage{epsfig,graphics}
+\usepackage{graphicx}
+
+\usepackage{amssymb,latexsym}
+%\usepackage{color}
+
+\usepackage{amsthm}
+\usepackage{eucal}
+
+\usepackage{multirow}
+\usepackage{lscape}
+\usepackage{array}
+
+\newcommand{\showcomments}{no}
+\renewcommand{\showcomments}{no}
+
+\newsavebox{\commentbox}
+\newenvironment{com}%
+% begin comment
+{\ifthenelse{\equal{\showcomments}{no}}%
+% then begin comment in margin
+{\footnotemark
+        \begin{lrbox}{\commentbox}
+        \begin{minipage}[t]{1.25in}\raggedright\sffamily\tiny
+        \footnotemark[\arabic{footnote}]}
+% else eat contents of the environment
+{\begin{lrbox}{\commentbox}}}%
+% end comment
+{\ifthenelse{\equal{\showcomments}{no}}%
+% then end comment
+{\end{minipage}\end{lrbox}\marginpar{\usebox{\commentbox}}}
+% else finish eating
+{\end{lrbox}}}
+
+
+%\usepackage{pdfsync}
+
+\title[]{Representations of fundamental groups of 3-manifolds into $\PGL(3,\bC)$: Exact computations in low complexity. }
+
+%
+%
+\author{E. Falbel, P.-V. Koseleff and F. Rouillier}
+\thanks{This work was supported in part by the ANR through the project "Structures G\'eom\'etriques et Triangulations".}
+\address{Institut de Math\'ematiques de Jussieu \\
+%Unit\'e Mixte de Recherche 7586 du CNRS \\
+CNRS UMR 7586 and INRIA EPI-OURAGAN \\
+Universit\'e Pierre et Marie Curie \\
+4, place Jussieu 75252 Paris Cedex 05, France \\}
+\email{}
+\urladdr{}
+
+
+\DeclareFontFamily{OT1}{rsfs}{}
+\newcommand{\tors}{\mathrm{tors}}
+\DeclareFontShape{OT1}{rsfs}{n}{it}{<-> rsfs10}{}
+\DeclareMathAlphabet{\mathscr}{OT1}{rsfs}{n}{it}
+\newcommand{\Cinf}{V_0}
+\newcommand{\detp}{\det{}'}
+\newcommand{\prodalt}{ \prod \- {}^*}
+\newcommand{\atr}{\mathfrak{a}_{0\R}}
+\newcommand{\Bbull}{B^{\ast}}
+\newcommand{\image}{\mathrm{image}}
+\newcommand{\free}{\mathrm{free}}
+\newcommand{\DkE}{\bigwedge^k \mathfrak{p}^* \otimes E}
+\newcommand{\LS}{^{L}{}S}
+\newcommand{\mass}{\mathrm{mass}}
+\newcommand{\Fpbar}{\overline{\mathbb{F}_p}}
+\newcommand{\Tr}{\mathrm{tr}}
+\newcommand{\Zpbar}{\overline{\mathbb{Z}_p}}
+\newcommand{\Qvbar}{\overline{\Q_v}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\tx}{\tilde{x}}
+\newcommand{\Mring}{R_{\sigma}}
+\newcommand{\Abull}{A^{\ast}}
+\newcommand{\Qbar}{\bar{\Q}}
+\newcommand{\GEQ}{\mathrm{Gal}(E/\Q)}
+\newcommand{\kvec}{\underline{k}}
+\newcommand{\bfx}{\mathbf{x}}
+\newcommand{\Nbar}{\bar{N}}
+\newcommand{\Fp}{\mathbb{F}_p}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\LB}{{}^LB}
+\newcommand{\Spec}{\mathrm{Spec}}
+\newcommand{\LT}{{}^LT}
+\newcommand{\rhobar}{\overline{\rho}}
+\newcommand{\LG}{{}^{L}G}
+%\newcommand{\C}{\mathbb{C}}
+\newcommand{\W}{\mathcal{W}}
+\newcommand{\Res}{\mathrm{Res}}
+\newcommand{\fffseL}{\mathrm{PGL}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\ord}{\mathrm{ord}}
+\newcommand{\Sym}{\mathrm{Sym}}
+\newcommand{\Reg}{\mathcal{R}}
+\newcommand{\bt}{\mathfrak{b}}
+\newcommand{\muP}{\mu_{\mathrm{Planch}}}
+\newcommand{\at}{\mathfrak{a}_0}
+\newcommand{\fix}{\mathrm{fix}}
+\newcommand{\sgn}{\mathrm{sgn}}
+%\newcommand{\B}{\mathbf{B}}
+\newcommand{\T}{\mathbf{T}}
+\newcommand{\Ad}{\mathrm{Ad}}
+\newcommand{\sign}{\mathrm{sign}}
+\newcommand{\Qpbar}{\overline{\mathbb{Q}_p}}
+\newcommand{\adele}{\mathbb{A}}
+\newcommand{\localsystem}{\mathscr{W}}
+\newcommand{\data}{\mathscr{D}}
+\newcommand{\f}{a([\mathfrak{p}])}
+\newcommand{\trace}{\mathrm{tr}{\ }}
+\newcommand{\valuefield}{E}
+\newcommand{\ft}{[\mathfrak{p}]^{\star}}
+\newcommand{\m}{\mathfrak{m}}
+\newcommand{\Sha}{\fontencoding{OT2}\selectfont{SH}}
+\renewcommand{\a}{\mathfrak{a}}
+\newcommand{\p}{\mathfrak{p}}
+\newcommand{\g}{\mathfrak{g}}
+\newcommand{\Mp}{\mathrm{Mp}}
+\newcommand{\kirill}{\mathscr{K}}
+\newcommand{\order}{\mathscr{O}}
+%
+\newcommand{\gcompact}{\mathfrak{u}}
+\newcommand{\Heckering}{\mathscr{H}}
+\newcommand{\psix}{\psi_{\mathbf{x}}}
+\newcommand{\Gal}{\mathrm{Gal}}
+\newcommand{\GalQ}{\mathrm{Gal}{\bar{\Q}/\Q}}
+\renewcommand{\H}{\mathbb{H}}
+\newcommand{\Rep}{\mathrm{Rep}}
+\newcommand{\n}{\mathfrak{n}}
+\newcommand{\fHt}{\Psi_H}
+\newcommand{\mut}{\mu^{(2)}}
+\newcommand{\meast}{\meas^{(2)}}
+\newcommand{\Norm}{\mathrm{N}}
+%\newcommand{\OO}{\mathcal{O}}
+\newcommand{\period}{\mathcal{P}}
+\newcommand{\hatT}{T^{\vee}}
+\newcommand{\hatB}{B^{\vee}}
+\newcommand{\hatG}{\hat{G}}
+\newcommand{\cond}{\mathfrak{p}}
+\newcommand{\scriptsiegel}{\mathscr{S}}
+\newcommand{\quot}{\mathbf{X}}
+\DeclareFontFamily{OT1}{rsfs}{}
+\newcommand{\Dcomplex}{\underline{D}}
+\DeclareFontShape{OT1}{rsfs}{n}{it}{<-> rsfs10}{}
+\DeclareMathAlphabet{\mathscr}{OT1}{rsfs}{n}{it}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\renewcommand{\tan}{\tau^{\mathrm{an}}}
+\newcommand{\G}{\mathbf{G}}
+\renewcommand{\k}{\mathfrak{k}}
+\newcommand{\D}{\mathbf{D}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\SO}{\mathrm{SO}}
+\newcommand{\Sp}{\mathrm{Sp}}
+\newcommand{\Complex}{\underline{C}}
+\newcommand{\OO}{\mathrm{O}}
+\newcommand{\GSpin}{\mathrm{GSpin}}
+\newcommand{\Spin}{\mathrm{Spin}}
+
+
+\newcommand{\Aut}{\mathrm{Aut}}
+\newcommand{\rank}{\mathrm{rank}}
+ \newcommand{\Ext}{\mathrm{Ext}}
+ \newcommand{\test}{\mathcal{Q}}
+\swapnumbers
+\newtheorem{theorem}[subsection]{Theorem}
+\newtheorem{lemma}[subsection]{Lemma}
+\newtheorem{proposition}[subsection]{Proposition}
+\newtheorem{fact}[subsection]{Fact}
+\newtheorem{cor}[subsection]{Corollary}
+\newtheorem{appl}{Application}[section]
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{appl*}{Application}
+\newtheorem{corollary}[subsection]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[subsection]{Definition}
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem{example}{Example}[section]
+
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{note}{Note}
+\newtheorem{case}{Case}
+
+\newcommand\bZ{\mathbb{Z}}
+\newcommand\bC{\mathbb{C}}
+\newcommand\bR{\mathbb{R}}
+\newcommand\bS{\mathbb{S}}
+\newcommand\SL{\textrm{SL}}
+\newcommand\PGL{\textrm{PGL}}
+\newcommand\PU{\textrm{PU}}
+\newcommand\Fl{\mathcal{F}l}%variété des drapeaux
+\newcommand\AFl{\mathcal{AF}l}%variété des drapeaux affines
+\renewcommand\P{\mathbb{P}}
+\newcommand\C{\mathcal{C}}%espace de configuration
+\newcommand\pB{\mathcal{P}}%PreBloch
+\newcommand\B{\mathcal{B}}%Bloch
+\newcommand\Vol{\textrm{Vol}}
+
+\newcommand{\bbl}{\mathbb{L}}
+\numberwithin{equation}{subsection}
+
+\newcommand{\N}{\mathbb N}
+\newcommand{\A}{\mathbb A}
+
+%
+\newcommand{\RP}{\mathbb{RP}}
+\newcommand{\CP}{\mathbb{CP}}
+%\renewcommand{\H}{\mathbb H}  %
+\newcommand{\Hbar}{\overline{\H}}
+
+%
+\newcommand{\cal}{\mathcal}
+\newcommand{\GL}{\mathrm{GL}}
+%\newcommand{\SL}{\mathrm{SL}}
+\newcommand{\logdet}{\mathrm{logdet}}
+\newcommand{\tr}{\mathrm{trace}}
+\newcommand{\End}{\mathrm{End}}
+\newcommand{\SU}{\mathrm{SU}}
+\newcommand{\Lie}{\mathrm{Lie}}
+%\newcommand{\PGL}{\mathrm{PGL}}
+\newcommand{\dist}{\mathrm{dist}}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\Ghat}{\hat{G}}
+\newcommand{\PSL}{\mathrm{PSL}}
+%
+%--Fractions
+\def\frac#1#2{{\textstyle{{#1} \overwithdelims.. {#2}}}}
+\def\Frac#1#2{{\displaystyle{{#1} \overwithdelims.. {#2}}}}
+\def\cZ{{\cal Z}}
+\def\cS{{\cal S}}
+\def\Mod#1{{\, (\mathrm{mod}\, #1)}}
+\def\abs#1{\left \vert #1 \right \vert}
+\def\t#1{\hbox{}^{t}\! #1}
+\def\Re{\mathrm{Re}\,}
+\def\Im{\mathrm{Im}\,}
+%
+\def\adots{\mathinner{\mkern2mu\raise1pt\hbox{.}
+\mkern3mu\raise4pt\hbox{.}\mkern1mu\raise7pt\hbox{.}}}
+
+%macros texmacs
+\newcommand{\mathbbm}{\mathbb}
+\newcommand{\nocomma}{}
+\newcommand{\tmem}{\em}
+\newcommand{\tmop}{}
+
+\setcounter{tocdepth}{1}
+%\usepackage{showlabels}
+%\def\comm#1{\textcolor{red}{\label{ZZ}[#1]}}
+
+\begin{document}
+
+\begin{abstract}
+In this paper we are interested in computing representations
+of the fundamental group of a 3-manifold  into $\PGL(3,\bC)$ (in particular in $\PGL(2,\bC),
+\PGL(3,\bR)$ and $\PU(2,1)$).  The representations are obtained
+by gluing decorated tetrahedra of flags as in \cite{falbeleight, BFG}.  We list complete computations (giving 0-dimensional or 1-dimensional solution sets (for unipotent boundary holonomy)
+for the first complete hyperbolic non-compact manifolds with finite volume which are obtained gluing less than three tetrahedra with a description of the computer methods used to find them.
+The methods we use work for non-unipotent boundary holonomy as shown in some examples.
+\end{abstract}
+
+\maketitle
+\begin{center}
+\parbox{12cm}{\small
+\tableofcontents
+}
+\end{center}
+\input calculs0-I.tex
+\input calculs0-II.tex
+\input calculs0-III.tex
+%\input calculs0-IIIb.tex
+%\input calculs0-IV.tex
+
+\bibliography{bibli-1}
+\bibliographystyle{plain}
+
+\end{document}
+\bibitem{Snappea}
+\newblock J. Weeks.
+\newblock SnapPea. \href{http://www.geometrygames.org/SnapPea/}{http://www.geometrygames.org/SnapPea/}
+\bibitem{Snappy}
+\newblock M. Culler,  N. Dunfield.
+\newblock SnapPea. \href{http://www.math.uic.edu/t3m/SnapPy/doc/}{http://www.math.uic.edu/t3m/SnapPy/doc/}
+
+\bibitem{maple}
+%\newblock M. Culler,  N. Dunfield.
+\newblock Maple. \href{http://www.maplesoft.com/}{http://www.maplesoft.com/}
+http://www.unhyperbolic.org/ptolemy.html
+
+\bibitem{Ptolemy}
+\newblock M. Goerner.
+\newblock \href{http://www.unhyperbolic.org/ptolemy.html}{http://www.unhyperbolic.org/ptolemy.html}
+
+\bibitem{sgt}
+\newblock Agence Nationale de la Recherche,
+Structures Géométriques \& Triangulations (ANR SGT)
+\href{https://who.rocq.inria.fr/Fabrice.Rouillier/SGT/Home_page.html}{https://who.rocq.inria.fr/Fabrice.Rouillier/SGT/Home\_page.html}
+\end{thebibliography}
+

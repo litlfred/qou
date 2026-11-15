@@ -5,7 +5,11 @@
   "file": "0709.3157v1.pdf",
   "sha256": "22a0d9a93c9dcb8d0677f1ff4e0cc10b6c519fbe5b3c667be77dc9879375db59",
   "bytes": 71982,
-  "pages": 7
+  "pages": 7,
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -155,6 +159,75 @@
   "likely_scanned": false,
   "toc_entries": 7,
   "sections": 7,
-  "chars_total": 14137
+  "chars_total": 14137,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 7,
+   "overlaid": 7,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-qcd-in-the-presence-of-external-sources",
+     "title": "QCD in the presence of external sources",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-chiral-building-blocks",
+     "title": "Chiral building blocks",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-the-chiral-lagrangian",
+     "title": "The chiral Lagrangian",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-two-comments-on-tensor-sources",
+     "title": "Two comments on tensor sources",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-tensor-sources-in-the-resonance-chiral-theory-an",
+     "title": "Tensor sources in the Resonance chiral theory and the radiative pion decay",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-conclusions",
+     "title": "Conclusions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

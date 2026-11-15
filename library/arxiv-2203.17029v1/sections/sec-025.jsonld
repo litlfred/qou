@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-2203.17029v1/sections/sec-025",
   "@type": [
     "doco:Section"
@@ -12,7 +17,7 @@
     "library/arxiv-2203.17029v1/blocks/lem-sec-025-01",
     "library/arxiv-2203.17029v1/blocks/lem-sec-025-02"
   ],
-  "derivedFrom": "library/arxiv-2203.17029v1/manifest",
-  "sourceDocument": "library/arxiv-2203.17029v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2203.17029v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2203.17029v1",
   "provenance": "ingested"
 }

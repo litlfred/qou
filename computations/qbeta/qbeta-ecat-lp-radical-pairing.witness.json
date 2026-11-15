@@ -1,15 +1,15 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-14T19:25:38.066924+00:00",
-  "commitSha": "d91b96314531c50819b4fff9f09c7c935eee7a5a",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T15:13:29.800832+00:00",
+  "commitSha": "266c147ee39666e932727287228d9e48d3b84a5c",
   "assertions": [
     {
       "name": "the_block_gram_is_singular_and_its_radical_is_the_alternating_block",
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "exactly one diagonal entry vanishes, at (1, 1, 1). nucleus_sdp_assembly.CostGram.gram IS np.diag(frob_diag) with frob_diag = y_lambda * dim_lambda, so the Gram is diagonal and its radical is the coordinate direction v = (0, 0, 1). Under convention D y_(1^3) = 0 -- that vanishing IS convention D -- so the singularity is structural, not a numerical rank drop"
+      "source": "exactly one diagonal entry vanishes, at (1, 1, 1). nucleus_sdp_assembly.CostGram.gram IS np.diag(frob_diag) with frob_diag = y_lambda * dim_lambda, so the Gram is diagonal and its radical is the coordinate direction v = (0, 0, 1). Under convention D y_(1^3) = 0 -- that vanishing IS convention D (threeRow_eq_zero_of_jones_ocneanu; converse is markovWeights_eq_jones_of_threeRow_eq_zero + hfaith) -- so the singularity is structural, not a numerical rank drop"
     },
     {
       "name": "the_radical_pairing_hypothesis_holds",
@@ -41,11 +41,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 208,
+  "durationMs": 149,
   "computation": "qbeta-ecat-lp-radical-pairing",
   "scriptFile": "qbeta_ecat_lp_radical_pairing_probe.py",
-  "scriptHash": "177480ab44bc",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "9c31b5300ab7",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -53,14 +53,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -102,5 +102,7 @@
     },
     "q0_pin": "proton",
     "q0_value": "1.1099785827513808075916690956107688798744991218736"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

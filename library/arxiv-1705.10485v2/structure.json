@@ -6,7 +6,12 @@
   "sha256": "b33759def53c6a439a547da2da9a5cf31af3de94f9e429022bc6c54a82009378",
   "bytes": 1421939,
   "pages": 53,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:20Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -22,11 +27,22 @@
    "Mod-\u03c6 convergence, II: Estimates on the speed of",
    "convergence"
   ],
-  "abstract": "In this paper, we give estimates for the speed of convergence towards a limiting stable law in the recently introduced setting of mod-\u03c6 convergence. Namely, we de\ufb01ne a notion ofzone of control, closely related to mod-\u03c6 convergence, and we prove estimates of Berry\u2013Esseen type under this hypothesis. Applications include: \u2022 the winding number of a planar Brownian motion; \u2022 classical approximations of stable laws by compound Poisson laws; \u2022 examples stemming from determinantal point processes (characteristic polynomials of random matri- ces and zeroes of random analytic functions); \u2022 sums of variables with an underlying dependency graph (for which we recover a result of Rinott, obtained by Stein\u2019s method); \u2022 the magnetization in thed-dimensional Ising model; \u2022 and functionals of Markov chains.",
+  "abstract": "In this paper, we give estimates for the speed of convergence towards a limiting stable law in the recently introduced setting of mod-\u03c6 convergence. Namely, we de\ufb01ne a notion of zone of control, closely related to mod-\u03c6 convergence, and we prove estimates of Berry\u2013Esseen type under this hypothesis. Applications include: \u2022 the winding number of a planar Brownian motion; \u2022 classical approximations of stable laws by compound Poisson laws; \u2022 examples stemming from determinantal point processes (characteristic polynomials of random matri- ces and zeroes of random analytic functions); \u2022 sums of variables with an underlying dependency graph (for which we recover a result of Rinott, obtained by Stein\u2019s method); \u2022 the magnetization in the d-dimensional Ising model; \u2022 and functionals of Markov chains.",
   "docinfo": {
-   "CreationDate": "D:20181005104522Z",
+   "Producer": "pdfTeX-1.40.17",
    "Creator": "TeX",
-   "Producer": "pdfTeX-1.40.17"
+   "CreationDate": "D:20181005104522Z"
+  },
+  "title_raw": "Mod-\u03c6 convergence, II: Estimates on the speed of convergence",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Mod- \u03c6 convergence, II: Estimates on the speed of convergence",
+   "text": "Mod-\u03c6 convergence, II: Estimates on the speed of convergence",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -35,1064 +51,1359 @@
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "1"
   },
   {
    "level": 2,
-   "title": "Mod-\u03c6 convergence",
+   "title": "Mod-$\\phi$ convergence",
    "page": 1,
    "source": "inferred",
-   "number": "1.1"
-  },
-  {
-   "level": 1,
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
+   "number": "1.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Results and outline of the paper",
    "page": 2,
    "source": "inferred",
-   "number": "1.2"
-  },
-  {
-   "level": 1,
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "page": 4,
-   "source": "inferred",
-   "number": "4"
+   "number": "1.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Stable distributions and mod-stable convergence",
    "page": 5,
    "source": "inferred",
-   "number": "1.3"
-  },
-  {
-   "level": 1,
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "page": 6,
-   "source": "inferred",
-   "number": "6"
+   "number": "1.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Speed of convergence estimates",
    "page": 6,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "The notion of zone of control",
    "page": 7,
    "source": "inferred",
-   "number": "2.1"
-  },
-  {
-   "level": 1,
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "page": 8,
-   "source": "inferred",
-   "number": "8"
+   "number": "2.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Spaces of test functions",
    "page": 8,
    "source": "inferred",
-   "number": "2.2"
-  },
-  {
-   "level": 1,
-   "title": "(R) of",
-   "page": 9,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "page": 10,
-   "source": "inferred",
-   "number": "10"
-  },
-  {
-   "level": 1,
-   "title": "(R)",
-   "page": 10,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "page": 12,
-   "source": "inferred",
-   "number": "12"
+   "number": "2.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Estimates for test functions",
    "page": 12,
    "source": "inferred",
-   "number": "2.3"
-  },
-  {
-   "level": 1,
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "page": 14,
-   "source": "inferred",
-   "number": "14"
+   "number": "2.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Smoothing techniques",
    "page": 14,
    "source": "inferred",
-   "number": "2.4"
-  },
-  {
-   "level": 1,
-   "title": "The kernel\u03c1 is non-negative, with",
-   "page": 14,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "The functions\u03c1 and \u02c6\u03c1 are even, and",
-   "page": 14,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "(2\u2212|\u03be|)+. Finally,sinc(x)\u2264 min(1, 1",
-   "page": 14,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "One hasf1(x) = 1\u2212f1(\u2212x), and for allK\u2265 0,",
-   "page": 15,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "page": 16,
-   "source": "inferred",
-   "number": "16"
+   "number": "2.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Bounds on the Kolmogorov distance",
    "page": 17,
    "source": "inferred",
-   "number": "2.5"
-  },
-  {
-   "level": 1,
-   "title": "Then, there exists a constantC(\u03b1,c,v,K,K 1) such that",
-   "page": 17,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "page": 18,
-   "source": "inferred",
-   "number": "18"
-  },
-  {
-   "level": 1,
-   "title": "(mod-Gaussian convergence), andv = w = 3. The maximal value",
-   "page": 18,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "K1 + 1",
-   "page": 18,
-   "source": "inferred",
-   "number": "2"
+   "number": "2.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "17"
   },
   {
    "level": 1,
    "title": "Examples with an explicit Fourier transform",
    "page": 18,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "Sums of independent random variables",
    "page": 18,
    "source": "inferred",
-   "number": "3.1"
-  },
-  {
-   "level": 1,
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "page": 20,
-   "source": "inferred",
-   "number": "20"
+   "number": "3.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "Winding number of a planar Brownian motion",
    "page": 20,
    "source": "inferred",
-   "number": "3.2"
-  },
-  {
-   "level": 1,
-   "title": "V . F\u00c9RA Y, P .-L. M\u00c9LIOT, AND A. NIKEGHBALI",
-   "page": 21,
-   "source": "inferred",
-   "number": "14"
-  },
-  {
-   "level": 1,
-   "title": "Therefore,",
-   "page": 21,
-   "source": "inferred",
-   "number": "2"
+   "number": "3.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "Approximation of a stable law by compound Poisson laws",
    "page": 21,
    "source": "inferred",
-   "number": "3.3"
-  },
-  {
-   "level": 1,
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "page": 22,
-   "source": "inferred",
-   "number": "22"
-  },
-  {
-   "level": 1,
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "page": 24,
-   "source": "inferred",
-   "number": "24"
+   "number": "3.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "21"
   },
   {
    "level": 2,
-   "title": "Convergence of Ornstein\u2013Uhlenbeck processes to stable laws",
+   "title": "Convergence of Ornstein--Uhlenbeck processes to stable laws",
    "page": 24,
    "source": "inferred",
-   "number": "3.4"
-  },
-  {
-   "level": 1,
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "page": 26,
-   "source": "inferred",
-   "number": "26"
+   "number": "3.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "24"
   },
   {
    "level": 2,
    "title": "Logarithms of characteristic polynomials of random matrices",
    "page": 26,
    "source": "inferred",
-   "number": "3.5"
-  },
-  {
-   "level": 1,
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "page": 28,
-   "source": "inferred",
-   "number": "28"
+   "number": "3.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "26"
   },
   {
    "level": 1,
    "title": "Cumulants and dependency graphs",
    "page": 28,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "28"
   },
   {
    "level": 2,
    "title": "Cumulants, zone of control and Kolmogorov bound",
    "page": 28,
    "source": "inferred",
-   "number": "4.1"
-  },
-  {
-   "level": 1,
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "page": 30,
-   "source": "inferred",
-   "number": "30"
+   "number": "4.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "28"
   },
   {
    "level": 2,
    "title": "Dependency graphs",
    "page": 31,
    "source": "inferred",
-   "number": "4.2"
-  },
-  {
-   "level": 1,
-   "title": "IfDn =O((Nn)1/2\u2212\u03b5) for \u03b5> 0, thenYn = Sn\u221aNn",
-   "page": 35,
-   "source": "inferred",
-   "number": "1"
+   "number": "4.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "31"
   },
   {
    "level": 2,
    "title": "Unbounded random variables and truncation methods",
    "page": 35,
    "source": "inferred",
-   "number": "4.3"
-  },
-  {
-   "level": 1,
-   "title": "Otherwise, using H\u00f6lder and Bienaym\u00e9-Chebyshev inequalities,",
-   "page": 37,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "( D",
-   "page": 39,
-   "source": "inferred",
-   "number": "2"
+   "number": "4.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "35"
   },
   {
    "level": 1,
    "title": "Ising model and Markov chains",
    "page": 40,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "40"
   },
   {
    "level": 2,
    "title": "Weighted graphs and spanning trees",
    "page": 40,
    "source": "inferred",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "40"
   },
   {
    "level": 2,
    "title": "Uniform weighted dependency graphs",
    "page": 41,
    "source": "inferred",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "41"
   },
   {
    "level": 2,
    "title": "Magnetization of the Ising model",
    "page": 42,
    "source": "inferred",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "42"
   },
   {
    "level": 2,
    "title": "Functionals of Markov chains",
    "page": 44,
    "source": "inferred",
-   "number": "5.4"
-  },
-  {
-   "level": 1,
-   "title": "Kr (\u03b8P )tr\u2212t1,",
-   "page": 44,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(\u03b8P )tr\u2212t1",
-   "page": 46,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(\u03b8P )tr\u2212t1. \u2293 \u2294",
-   "page": 46,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "When Var(Sn)",
-   "page": 48,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "This convergence in law happens as soon asVar(Sn)",
-   "page": 49,
-   "source": "inferred",
-   "number": "2"
+   "number": "5.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "44"
   },
   {
    "level": 2,
    "title": "The case of linear functionals of the empirical measure",
    "page": 49,
    "source": "inferred",
-   "number": "5.5"
-  },
-  {
-   "level": 1,
-   "title": "Setf(1) = 1, f(2) =\u22121 and f(3) = 0;",
-   "page": 50,
-   "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 52,
-   "source": "inferred",
-   "number": null
+   "number": "5.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "49"
   }
  ],
  "toc_source": "inferred",
- "sections": [
+ "toc_undetermined_reason": null,
+ "figures": [
   {
-   "id": "sec-000-11-mod-\u03c6-convergence",
-   "number": "1.1",
-   "title": "Mod-\u03c6 convergence",
-   "level": 2,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 11,
-   "n_words": 1
+   "kind": "figure",
+   "number": "4",
+   "title": "For all a, \u03b5, fa,\u03b5 is an approximation of the Heaviside function 1(\u2212\u221e,a], and one has the following properties: Proposition 18. The function fa,\u03b5 is a smooth test distribution in T1(R) whose derivative \u2202fa,\u03b5 has its",
+   "page": 14,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "14"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "id": "sec-001-2-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan-n",
-   "number": "2",
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 809,
-   "n_words": 122
+   "n_chars": 930,
+   "n_words": 140,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-002-1-introduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 3718,
-   "n_words": 592
+   "n_chars": 3763,
+   "n_words": 637,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
-   "id": "sec-003-12-results-and-outline-of-the-paper",
+   "id": "sec-001-12-results-and-outline-of-the-paper",
    "number": "1.2",
    "title": "Results and outline of the paper",
    "level": 2,
    "page_start": 2,
-   "page_end": 4,
-   "n_chars": 4898,
-   "n_words": 789
-  },
-  {
-   "id": "sec-004-4-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan-n",
-   "number": "4",
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "level": 1,
-   "page_start": 4,
    "page_end": 5,
-   "n_chars": 4170,
-   "n_words": 682
+   "n_chars": 9190,
+   "n_words": 1549,
+   "label_start": "2",
+   "label_end": "5"
   },
   {
-   "id": "sec-005-13-stable-distributions-and-mod-stable-convergen",
+   "id": "sec-002-13-stable-distributions-and-mod-stable-convergen",
    "number": "1.3",
    "title": "Stable distributions and mod-stable convergence",
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 1433,
-   "n_words": 251
+   "n_chars": 2036,
+   "n_words": 406,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
-   "id": "sec-006-6-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan-n",
-   "number": "6",
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 496,
-   "n_words": 101
-  },
-  {
-   "id": "sec-007-2-speed-of-convergence-estimates",
+   "id": "sec-003-2-speed-of-convergence-estimates",
    "number": "2",
    "title": "Speed of convergence estimates",
    "level": 1,
    "page_start": 6,
    "page_end": 6,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
-   "id": "sec-008-21-the-notion-of-zone-of-control",
+   "id": "sec-004-21-the-notion-of-zone-of-control",
    "number": "2.1",
    "title": "The notion of zone of control",
    "level": 2,
    "page_start": 6,
    "page_end": 8,
-   "n_chars": 5283,
-   "n_words": 893
+   "n_chars": 5645,
+   "n_words": 1008,
+   "label_start": "6",
+   "label_end": "8"
   },
   {
-   "id": "sec-009-8-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan-n",
-   "number": "8",
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "level": 1,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 254,
-   "n_words": 45
-  },
-  {
-   "id": "sec-010-22-spaces-of-test-functions",
+   "id": "sec-005-22-spaces-of-test-functions",
    "number": "2.2",
    "title": "Spaces of test functions",
    "level": 2,
    "page_start": 8,
-   "page_end": 9,
-   "n_chars": 2475,
-   "n_words": 414
-  },
-  {
-   "id": "sec-011-0-r",
-   "number": "0",
-   "title": "(R)",
-   "level": 1,
-   "page_start": 9,
-   "page_end": 9,
-   "n_chars": 637,
-   "n_words": 103
-  },
-  {
-   "id": "sec-012-0-r-of",
-   "number": "0",
-   "title": "(R) of",
-   "level": 1,
-   "page_start": 9,
-   "page_end": 10,
-   "n_chars": 2511,
-   "n_words": 407
-  },
-  {
-   "id": "sec-013-10-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
-   "number": "10",
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "level": 1,
-   "page_start": 10,
    "page_end": 12,
-   "n_chars": 3525,
-   "n_words": 694
+   "n_chars": 10989,
+   "n_words": 2166,
+   "label_start": "8",
+   "label_end": "12"
   },
   {
-   "id": "sec-014-12-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
-   "number": "12",
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "level": 1,
-   "page_start": 12,
-   "page_end": 12,
-   "n_chars": 1375,
-   "n_words": 251
-  },
-  {
-   "id": "sec-015-23-estimates-for-test-functions",
+   "id": "sec-006-23-estimates-for-test-functions",
    "number": "2.3",
    "title": "Estimates for test functions",
    "level": 2,
    "page_start": 12,
    "page_end": 14,
-   "n_chars": 2280,
-   "n_words": 402
+   "n_chars": 2370,
+   "n_words": 452,
+   "label_start": "12",
+   "label_end": "14"
   },
   {
-   "id": "sec-016-14-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
-   "number": "14",
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 14,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-017-24-smoothing-techniques",
+   "id": "sec-007-24-smoothing-techniques",
    "number": "2.4",
    "title": "Smoothing techniques",
    "level": 2,
    "page_start": 14,
-   "page_end": 14,
-   "n_chars": 264,
-   "n_words": 42
-  },
-  {
-   "id": "sec-018-1-the-kernel\u03c1-is-non-negative-with",
-   "number": "1",
-   "title": "The kernel\u03c1 is non-negative, with",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 14,
-   "n_chars": 83,
-   "n_words": 17
-  },
-  {
-   "id": "sec-019-3-the-functions\u03c1-and-\u02c6\u03c1-are-even-and",
-   "number": "3",
-   "title": "The functions\u03c1 and \u02c6\u03c1 are even, and",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 14,
-   "n_chars": 492,
-   "n_words": 119
-  },
-  {
-   "id": "sec-020-2-2\u03be-finallysincx-min1-1",
-   "number": "2",
-   "title": "(2\u2212|\u03be|)+. Finally,sinc(x)\u2264 min(1, 1",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 15,
-   "n_chars": 792,
-   "n_words": 129
-  },
-  {
-   "id": "sec-021-2-one-hasf1x-1f1x-and-for-allk-0",
-   "number": "2",
-   "title": "One hasf1(x) = 1\u2212f1(\u2212x), and for allK\u2265 0,",
-   "level": 1,
-   "page_start": 15,
-   "page_end": 16,
-   "n_chars": 1478,
-   "n_words": 283
-  },
-  {
-   "id": "sec-022-16-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
-   "number": "16",
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "level": 1,
-   "page_start": 16,
    "page_end": 17,
-   "n_chars": 2221,
-   "n_words": 425
+   "n_chars": 5734,
+   "n_words": 1220,
+   "label_start": "14",
+   "label_end": "17"
   },
   {
-   "id": "sec-023-25-bounds-on-the-kolmogorov-distance",
+   "id": "sec-008-25-bounds-on-the-kolmogorov-distance",
    "number": "2.5",
    "title": "Bounds on the Kolmogorov distance",
    "level": 2,
    "page_start": 17,
-   "page_end": 17,
-   "n_chars": 399,
-   "n_words": 65
-  },
-  {
-   "id": "sec-024-3-then-there-exists-a-constantc\u03b1cvkk-1-such-that",
-   "number": "3",
-   "title": "Then, there exists a constantC(\u03b1,c,v,K,K 1) such that",
-   "level": 1,
-   "page_start": 17,
    "page_end": 18,
-   "n_chars": 746,
-   "n_words": 151
+   "n_chars": 2197,
+   "n_words": 491,
+   "label_start": "17",
+   "label_end": "18"
   },
   {
-   "id": "sec-025-18-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
-   "number": "18",
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "level": 1,
-   "page_start": 18,
-   "page_end": 18,
-   "n_chars": 74,
-   "n_words": 23
-  },
-  {
-   "id": "sec-026-2-mod-gaussian-convergence-andv-w-3-the-maximal",
-   "number": "2",
-   "title": "(mod-Gaussian convergence), andv = w = 3. The maximal value",
-   "level": 1,
-   "page_start": 18,
-   "page_end": 18,
-   "n_chars": 180,
-   "n_words": 37
-  },
-  {
-   "id": "sec-027-2-k1-1",
-   "number": "2",
-   "title": "K1 + 1",
-   "level": 1,
-   "page_start": 18,
-   "page_end": 18,
-   "n_chars": 531,
-   "n_words": 114
-  },
-  {
-   "id": "sec-028-3-examples-with-an-explicit-fourier-transform",
+   "id": "sec-009-3-examples-with-an-explicit-fourier-transform",
    "number": "3",
    "title": "Examples with an explicit Fourier transform",
    "level": 1,
    "page_start": 18,
    "page_end": 18,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "18",
+   "label_end": "18"
   },
   {
-   "id": "sec-029-31-sums-of-independent-random-variables",
+   "id": "sec-010-31-sums-of-independent-random-variables",
    "number": "3.1",
    "title": "Sums of independent random variables",
    "level": 2,
    "page_start": 18,
    "page_end": 20,
-   "n_chars": 2966,
-   "n_words": 607
+   "n_chars": 4208,
+   "n_words": 918,
+   "label_start": "18",
+   "label_end": "20"
   },
   {
-   "id": "sec-030-20-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
-   "number": "20",
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "level": 1,
-   "page_start": 20,
-   "page_end": 20,
-   "n_chars": 622,
-   "n_words": 122
-  },
-  {
-   "id": "sec-031-2-therefore",
-   "number": "2",
-   "title": "Therefore,",
-   "level": 1,
-   "page_start": 20,
-   "page_end": 20,
-   "n_chars": 478,
-   "n_words": 98
-  },
-  {
-   "id": "sec-032-32-winding-number-of-a-planar-brownian-motion",
+   "id": "sec-011-32-winding-number-of-a-planar-brownian-motion",
    "number": "3.2",
    "title": "Winding number of a planar Brownian motion",
    "level": 2,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 718,
-   "n_words": 131
+   "n_chars": 1965,
+   "n_words": 438,
+   "label_start": "20",
+   "label_end": "21"
   },
   {
-   "id": "sec-033-14-v-f\u00e9ra-y-p--l-m\u00e9liot-and-a-nikeghbali",
-   "number": "14",
-   "title": "V . F\u00c9RA Y, P .-L. M\u00c9LIOT, AND A. NIKEGHBALI",
-   "level": 1,
-   "page_start": 21,
-   "page_end": 21,
-   "n_chars": 2432,
-   "n_words": 567
-  },
-  {
-   "id": "sec-034-33-approximation-of-a-stable-law-by-compound-poi",
+   "id": "sec-012-33-approximation-of-a-stable-law-by-compound-poi",
    "number": "3.3",
    "title": "Approximation of a stable law by compound Poisson laws",
    "level": 2,
    "page_start": 21,
-   "page_end": 22,
-   "n_chars": 92,
-   "n_words": 16
-  },
-  {
-   "id": "sec-035-22-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
-   "number": "22",
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "level": 1,
-   "page_start": 22,
-   "page_end": 24,
-   "n_chars": 3627,
-   "n_words": 792
-  },
-  {
-   "id": "sec-036-24-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
-   "number": "24",
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "level": 1,
-   "page_start": 24,
-   "page_end": 24,
-   "n_chars": 581,
-   "n_words": 118
-  },
-  {
-   "id": "sec-037-34-convergence-of-ornsteinuhlenbeck-processes-to",
-   "number": "3.4",
-   "title": "Convergence of Ornstein\u2013Uhlenbeck processes to stable laws",
-   "level": 2,
-   "page_start": 24,
    "page_end": 26,
-   "n_chars": 3499,
-   "n_words": 600
+   "n_chars": 8428,
+   "n_words": 1809,
+   "label_start": "21",
+   "label_end": "26"
   },
   {
-   "id": "sec-038-26-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
-   "number": "26",
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "level": 1,
-   "page_start": 26,
-   "page_end": 26,
-   "n_chars": 185,
-   "n_words": 45
-  },
-  {
-   "id": "sec-039-35-logarithms-of-characteristic-polynomials-of-r",
+   "id": "sec-013-35-logarithms-of-characteristic-polynomials-of-r",
    "number": "3.5",
    "title": "Logarithms of characteristic polynomials of random matrices",
    "level": 2,
    "page_start": 26,
    "page_end": 28,
-   "n_chars": 3965,
-   "n_words": 764
+   "n_chars": 4275,
+   "n_words": 889,
+   "label_start": "26",
+   "label_end": "28"
   },
   {
-   "id": "sec-040-28-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
-   "number": "28",
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "level": 1,
-   "page_start": 28,
-   "page_end": 28,
-   "n_chars": 150,
-   "n_words": 20
-  },
-  {
-   "id": "sec-041-4-cumulants-and-dependency-graphs",
+   "id": "sec-014-4-cumulants-and-dependency-graphs",
    "number": "4",
    "title": "Cumulants and dependency graphs",
    "level": 1,
    "page_start": 28,
    "page_end": 28,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "28",
+   "label_end": "28"
   },
   {
-   "id": "sec-042-41-cumulants-zone-of-control-and-kolmogorov-boun",
+   "id": "sec-015-41-cumulants-zone-of-control-and-kolmogorov-boun",
    "number": "4.1",
    "title": "Cumulants, zone of control and Kolmogorov bound",
    "level": 2,
    "page_start": 28,
-   "page_end": 30,
-   "n_chars": 3308,
-   "n_words": 620
-  },
-  {
-   "id": "sec-043-30-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
-   "number": "30",
-   "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
-   "level": 1,
-   "page_start": 30,
    "page_end": 31,
-   "n_chars": 2780,
-   "n_words": 532
+   "n_chars": 6268,
+   "n_words": 1278,
+   "label_start": "28",
+   "label_end": "31"
   },
   {
-   "id": "sec-044-42-dependency-graphs",
+   "id": "sec-016-42-dependency-graphs",
    "number": "4.2",
    "title": "Dependency graphs",
    "level": 2,
    "page_start": 31,
    "page_end": 35,
-   "n_chars": 7608,
-   "n_words": 1375
+   "n_chars": 8211,
+   "n_words": 1661,
+   "label_start": "31",
+   "label_end": "35"
   },
   {
-   "id": "sec-045-1-ifdn-onn12\u03b5-for-\u03b5-0-thenyn-snnn",
-   "number": "1",
-   "title": "IfDn =O((Nn)1/2\u2212\u03b5) for \u03b5> 0, thenYn = Sn\u221aNn",
-   "level": 1,
-   "page_start": 35,
-   "page_end": 35,
-   "n_chars": 322,
-   "n_words": 49
-  },
-  {
-   "id": "sec-046-43-unbounded-random-variables-and-truncation-met",
+   "id": "sec-017-43-unbounded-random-variables-and-truncation-met",
    "number": "4.3",
    "title": "Unbounded random variables and truncation methods",
    "level": 2,
    "page_start": 35,
-   "page_end": 37,
-   "n_chars": 3871,
-   "n_words": 712
-  },
-  {
-   "id": "sec-047-0-otherwise-using-h\u00f6lder-and-bienaym\u00e9-chebyshev",
-   "number": "0",
-   "title": "Otherwise, using H\u00f6lder and Bienaym\u00e9-Chebyshev inequalities,",
-   "level": 1,
-   "page_start": 37,
-   "page_end": 39,
-   "n_chars": 4041,
-   "n_words": 779
-  },
-  {
-   "id": "sec-048-2-d",
-   "number": "2",
-   "title": "( D",
-   "level": 1,
-   "page_start": 39,
    "page_end": 40,
-   "n_chars": 144,
-   "n_words": 27
+   "n_chars": 8306,
+   "n_words": 1718,
+   "label_start": "35",
+   "label_end": "40"
   },
   {
-   "id": "sec-049-5-ising-model-and-markov-chains",
+   "id": "sec-018-5-ising-model-and-markov-chains",
    "number": "5",
    "title": "Ising model and Markov chains",
    "level": 1,
    "page_start": 40,
    "page_end": 40,
-   "n_chars": 477,
-   "n_words": 72
+   "n_chars": 479,
+   "n_words": 74,
+   "label_start": "40",
+   "label_end": "40"
   },
   {
-   "id": "sec-050-51-weighted-graphs-and-spanning-trees",
+   "id": "sec-019-51-weighted-graphs-and-spanning-trees",
    "number": "5.1",
    "title": "Weighted graphs and spanning trees",
    "level": 2,
    "page_start": 40,
    "page_end": 41,
-   "n_chars": 1507,
-   "n_words": 286
+   "n_chars": 1545,
+   "n_words": 324,
+   "label_start": "40",
+   "label_end": "41"
   },
   {
-   "id": "sec-051-52-uniform-weighted-dependency-graphs",
+   "id": "sec-020-52-uniform-weighted-dependency-graphs",
    "number": "5.2",
    "title": "Uniform weighted dependency graphs",
    "level": 2,
    "page_start": 41,
    "page_end": 42,
-   "n_chars": 4139,
-   "n_words": 695
+   "n_chars": 4247,
+   "n_words": 818,
+   "label_start": "41",
+   "label_end": "42"
   },
   {
-   "id": "sec-052-53-magnetization-of-the-ising-model",
+   "id": "sec-021-53-magnetization-of-the-ising-model",
    "number": "5.3",
    "title": "Magnetization of the Ising model",
    "level": 2,
    "page_start": 42,
    "page_end": 44,
-   "n_chars": 4417,
-   "n_words": 737
+   "n_chars": 4515,
+   "n_words": 834,
+   "label_start": "42",
+   "label_end": "44"
   },
   {
-   "id": "sec-053-54-functionals-of-markov-chains",
+   "id": "sec-022-54-functionals-of-markov-chains",
    "number": "5.4",
    "title": "Functionals of Markov chains",
    "level": 2,
    "page_start": 44,
-   "page_end": 44,
-   "n_chars": 2023,
-   "n_words": 317
-  },
-  {
-   "id": "sec-054-2-kr-\u03b8p-trt1",
-   "number": "2",
-   "title": "Kr (\u03b8P )tr\u2212t1,",
-   "level": 1,
-   "page_start": 44,
-   "page_end": 46,
-   "n_chars": 3812,
-   "n_words": 644
-  },
-  {
-   "id": "sec-055-2-\u03b8p-trt1",
-   "number": "2",
-   "title": "(\u03b8P )tr\u2212t1",
-   "level": 1,
-   "page_start": 46,
-   "page_end": 46,
-   "n_chars": 20,
-   "n_words": 5
-  },
-  {
-   "id": "sec-056-2-\u03b8p-trt1",
-   "number": "2",
-   "title": "(\u03b8P )tr\u2212t1. \u2293 \u2294",
-   "level": 1,
-   "page_start": 46,
-   "page_end": 48,
-   "n_chars": 5713,
-   "n_words": 1041
-  },
-  {
-   "id": "sec-057-1-when-varsn",
-   "number": "1",
-   "title": "When Var(Sn)",
-   "level": 1,
-   "page_start": 48,
    "page_end": 49,
-   "n_chars": 251,
-   "n_words": 50
+   "n_chars": 14290,
+   "n_words": 2855,
+   "label_start": "44",
+   "label_end": "49"
   },
   {
-   "id": "sec-058-2-this-convergence-in-law-happens-as-soon-asvars",
-   "number": "2",
-   "title": "This convergence in law happens as soon asVar(Sn)",
-   "level": 1,
-   "page_start": 49,
-   "page_end": 49,
-   "n_chars": 1922,
-   "n_words": 332
-  },
-  {
-   "id": "sec-059-55-the-case-of-linear-functionals-of-the-empiric",
+   "id": "sec-023-55-the-case-of-linear-functionals-of-the-empiric",
    "number": "5.5",
    "title": "The case of linear functionals of the empirical measure",
    "level": 2,
    "page_start": 49,
-   "page_end": 50,
-   "n_chars": 1691,
-   "n_words": 296
-  },
-  {
-   "id": "sec-060-5-setf1-1-f2-1-and-f3-0",
-   "number": "5",
-   "title": "Setf(1) = 1, f(2) =\u22121 and f(3) = 0;",
-   "level": 1,
-   "page_start": 50,
-   "page_end": 52,
-   "n_chars": 4048,
-   "n_words": 718
-  },
-  {
-   "id": "sec-061-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 52,
    "page_end": 53,
-   "n_chars": 8591,
-   "n_words": 1172
+   "n_chars": 14527,
+   "n_words": 2341,
+   "label_start": "49",
+   "label_end": "53"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 62,
-  "sections": 62,
-  "chars_total": 121135
+  "toc_entries": 26,
+  "toc_inferred_entries": 26,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.125,
+  "toc_inferred_method": "latex",
+  "figure_entries": 1,
+  "figure_sequence_gaps": [
+   "figure 1",
+   "figure 2",
+   "figure 3"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 25,
+  "chars_total": 124118,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "speed_wide.tex",
+   "tex_sections": 26,
+   "overlaid": 20,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-12-results-and-outline-of-the-paper",
+     "title": "Results and outline of the paper",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-13-stable-distributions-and-mod-stable-convergen",
+     "title": "Stable distributions and mod-stable convergence",
+     "prose_ratio": 0.771,
+     "coverage_ratio": 0.936,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-2-speed-of-convergence-estimates",
+     "title": "Speed of convergence estimates",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-21-the-notion-of-zone-of-control",
+     "title": "The notion of zone of control",
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.573,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-22-spaces-of-test-functions",
+     "title": "Spaces of test functions",
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-23-estimates-for-test-functions",
+     "title": "Estimates for test functions",
+     "prose_ratio": 0.928,
+     "coverage_ratio": 0.887,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-24-smoothing-techniques",
+     "title": "Smoothing techniques",
+     "prose_ratio": 0.886,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-25-bounds-on-the-kolmogorov-distance",
+     "title": "Bounds on the Kolmogorov distance",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-3-examples-with-an-explicit-fourier-transform",
+     "title": "Examples with an explicit Fourier transform",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-010-31-sums-of-independent-random-variables",
+     "title": "Sums of independent random variables",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-32-winding-number-of-a-planar-brownian-motion",
+     "title": "Winding number of a planar Brownian motion",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-33-approximation-of-a-stable-law-by-compound-poi",
+     "title": "Approximation of a stable law by compound Poisson laws",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-35-logarithms-of-characteristic-polynomials-of-r",
+     "title": "Logarithms of characteristic polynomials of random matrices",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-4-cumulants-and-dependency-graphs",
+     "title": "Cumulants and dependency graphs",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-015-41-cumulants-zone-of-control-and-kolmogorov-boun",
+     "title": "Cumulants, zone of control and Kolmogorov bound",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-42-dependency-graphs",
+     "title": "Dependency graphs",
+     "prose_ratio": 0.908,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-43-unbounded-random-variables-and-truncation-met",
+     "title": "Unbounded random variables and truncation methods",
+     "prose_ratio": 0.92,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-5-ising-model-and-markov-chains",
+     "title": "Ising model and Markov chains",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-019-51-weighted-graphs-and-spanning-trees",
+     "title": "Weighted graphs and spanning trees",
+     "prose_ratio": 0.822,
+     "coverage_ratio": 0.952,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-52-uniform-weighted-dependency-graphs",
+     "title": "Uniform weighted dependency graphs",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-53-magnetization-of-the-ising-model",
+     "title": "Magnetization of the Ising model",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-022-54-functionals-of-markov-chains",
+     "title": "Functionals of Markov chains",
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-55-the-case-of-linear-functionals-of-the-empiric",
+     "title": "The case of linear functionals of the empirical measure",
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.486,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/modularqholonomicmodules/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/modularqholonomicmodules/blocks/prose-sec-001",
   "kind": "prose",
   "title": "Summary",
   "pageStart": 1,
   "pageEnd": 3,
   "text": "../sections/sec-001-11-summary.md",
-  "derivedFrom": "library/modularqholonomicmodules/manifest",
-  "sourceDocument": "library/modularqholonomicmodules/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/modularqholonomicmodules",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/modularqholonomicmodules",
   "provenance": "ingested"
 }

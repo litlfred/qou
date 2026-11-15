@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-ph-9308276v1/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-ph-9308276v1/blocks/prose-sec-006",
   "kind": "prose",
-  "title": "BµνT r",
-  "pageStart": 6,
-  "pageEnd": 6,
-  "text": "../sections/sec-006-2-bµνt-r.md",
-  "derivedFrom": "library/arxiv-hep-ph-9308276v1/manifest",
-  "sourceDocument": "library/arxiv-hep-ph-9308276v1/manifest",
+  "title": "Appendix B",
+  "pageStart": 18,
+  "pageEnd": 19,
+  "text": "../sections/sec-006-appendix-b.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-9308276v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-9308276v1",
   "provenance": "ingested"
 }

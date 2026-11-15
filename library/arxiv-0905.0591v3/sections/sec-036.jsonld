@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-0905.0591v3/sections/sec-036",
   "@type": [
     "doco:Section"
@@ -10,13 +15,13 @@
   "contains": [
     "library/arxiv-0905.0591v3/blocks/prose-sec-036",
     "library/arxiv-0905.0591v3/blocks/thm-sec-036-01",
-    "library/arxiv-0905.0591v3/blocks/rem-sec-036-02",
-    "library/arxiv-0905.0591v3/blocks/rem-sec-036-03",
+    "library/arxiv-0905.0591v3/blocks/remark-sec-036-02",
+    "library/arxiv-0905.0591v3/blocks/remark-sec-036-03",
     "library/arxiv-0905.0591v3/blocks/thm-sec-036-04",
     "library/arxiv-0905.0591v3/blocks/thm-sec-036-05",
     "library/arxiv-0905.0591v3/blocks/thm-sec-036-06"
   ],
-  "derivedFrom": "library/arxiv-0905.0591v3/manifest",
-  "sourceDocument": "library/arxiv-0905.0591v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0905.0591v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0905.0591v3",
   "provenance": "ingested"
 }

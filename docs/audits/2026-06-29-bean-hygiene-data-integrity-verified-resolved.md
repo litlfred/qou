@@ -16,7 +16,7 @@ this pass — this is bookkeeping against the current `origin/main`
 | `t2vq` | `delta_lambda_empirical_tabulation.py` ImportError (`m_n_derived_3input` unexported) | `experimental_constants.py:88` exports `m_n_derived_3input`; the consumer imports it (`:100`) and the file parses cleanly (commit `6e233cf0`) | **completed** |
 
 The only residual CODATA-2018 m_e literals (`0.5109989461`) are in
-`computations/_deprecated/` (3 files) — off-limits by policy, correctly
+`fsh-guts/deprecated/computations/` (3 files) — off-limits by policy, correctly
 untouched.
 
 ## Re-scoped (half-resolved)

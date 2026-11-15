@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1304.3481v1/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1304.3481v1/blocks/prose-sec-003",
   "kind": "prose",
   "title": "Appendix A. Rectangle-colored invariants of (2,m) torus knots",
   "pageStart": 68,
   "pageEnd": 75,
   "text": "../sections/sec-003-appendix-a-rectangle-colored-invariants-of-2m-to.md",
-  "derivedFrom": "library/arxiv-1304.3481v1/manifest",
-  "sourceDocument": "library/arxiv-1304.3481v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1304.3481v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1304.3481v1",
   "provenance": "ingested"
 }

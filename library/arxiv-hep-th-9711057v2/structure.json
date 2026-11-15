@@ -7,7 +7,11 @@
   "bytes": 202929,
   "pages": 12,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +21,7 @@
    "stamp_date": "30 Apr 1998"
   },
   "doi": null,
-  "title": "The microscopic spectrum of the QCD Dirac operator with finite quark masses",
+  "title": "arXiv:hep-th/9711057v2 30 Apr 1998",
   "authors_raw": "T. Wilke1, T. Guhr1, and T. Wettig2",
   "title_lines": [
    "The microscopic spectrum of the QCD Dirac operator with finite quark masses"
@@ -28,137 +32,539 @@
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "CreationDate": "D:20181031110744-04'00'"
+  },
+  "title_raw": "The microscopic spectrum of the QCD Dirac operator with finite quark masses",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:hep-th/9711057v2 30 Apr 1998",
+   "heading": "The microscopic spectrum of the QCD Dirac operator with \ufb01nite quark masses neous breaking of chiral symmetry in QCD. In Euclidean space, the Dirac operator reads i / D = i / \u2202 + g ( \u03bb a / 2) / A a , where eigenvalue equation is i / D\u03c8 i = \u03bb i \u03c8 i with real eigenvalues \u03bb i . Because the Dirac operato",
+   "text": "The microscopic spectrum of the QCD Dirac operator with finite quark masses",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "INTRODUCTION",
+   "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "I"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "1"
   },
   {
    "level": 1,
-   "title": "RANDOM-MATRIX THEORY FOR FINITE QUARK MASSES",
+   "title": "Random-matrix theory for finite quark masses",
    "page": 2,
    "source": "inferred",
-   "number": "II"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
+  },
+  {
+   "level": 2,
+   "title": "Formulation of the model",
+   "page": 2,
+   "source": "inferred",
+   "number": "2.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
+  },
+  {
+   "level": 2,
+   "title": "Construction of orthogonal polynomials",
+   "page": 4,
+   "source": "inferred",
+   "number": "2.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "4"
+  },
+  {
+   "level": 2,
+   "title": "A duality of matrix ensembles",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "5"
   },
   {
    "level": 1,
-   "title": "CALCULATION OF OBSERVABLES",
+   "title": "Calculation of observables",
    "page": 6,
    "source": "inferred",
-   "number": "III"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "6"
   },
   {
-   "level": 1,
-   "title": "INf (\u2212m1) \u00b7 \u00b7 \u00b7 mNf",
+   "level": 2,
+   "title": "Microscopic spectral correlators and density",
    "page": 6,
    "source": "inferred",
-   "number": "1"
+   "number": "3.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "6"
   },
   {
-   "level": 1,
-   "title": "(z)",
-   "page": 7,
+   "level": 2,
+   "title": "Distribution of the smallest eigenvalue",
+   "page": 8,
    "source": "inferred",
-   "number": "1"
+   "number": "3.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "8"
   },
   {
    "level": 1,
-   "title": "DISCUSSION",
+   "title": "Discussion",
    "page": 9,
    "source": "inferred",
-   "number": "IV"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "9"
   },
   {
    "level": 1,
    "title": "Acknowledgments",
    "page": 10,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "10"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Microscopic spectral density for two degenerate \ufb02avors of rescaled mass m = 5 (solid line), in the chiral limit (short dashes), and in the quenched approximation (long dashes)",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Distribution of the smallest eigenvalue for two degenerate \ufb02avors of rescaled mass m = 5 (solid line), in the chiral limit (short dashes), and in the quenched approximation (long dashes)",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-i-introduction",
-   "number": "I",
-   "title": "INTRODUCTION",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 817,
+   "n_words": 112,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
    "level": 1,
    "page_start": 1,
    "page_end": 2,
    "n_chars": 8212,
-   "n_words": 1372
+   "n_words": 1372,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
-   "id": "sec-001-ii-random-matrix-theory-for-finite-quark-masses",
-   "number": "II",
-   "title": "RANDOM-MATRIX THEORY FOR FINITE QUARK MASSES",
+   "id": "sec-001-2-random-matrix-theory-for-finite-quark-masses",
+   "number": "2",
+   "title": "Random-matrix theory for finite quark masses",
    "level": 1,
    "page_start": 2,
-   "page_end": 6,
-   "n_chars": 10671,
-   "n_words": 2076
+   "page_end": 2,
+   "n_chars": 371,
+   "n_words": 61,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
-   "id": "sec-002-iii-calculation-of-observables",
-   "number": "III",
-   "title": "CALCULATION OF OBSERVABLES",
+   "id": "sec-002-21-formulation-of-the-model",
+   "number": "2.1",
+   "title": "Formulation of the model",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 3104,
+   "n_words": 624,
+   "label_start": "2",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-003-22-construction-of-orthogonal-polynomials",
+   "number": "2.2",
+   "title": "Construction of orthogonal polynomials",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2928,
+   "n_words": 565,
+   "label_start": "4",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-004-23-a-duality-of-matrix-ensembles",
+   "number": "2.3",
+   "title": "A duality of matrix ensembles",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 4162,
+   "n_words": 810,
+   "label_start": "5",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-005-3-calculation-of-observables",
+   "number": "3",
+   "title": "Calculation of observables",
    "level": 1,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 2116,
-   "n_words": 419
+   "n_chars": 183,
+   "n_words": 28,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
-   "id": "sec-003-1-inf-m1-mnf",
-   "number": "1",
-   "title": "INf (\u2212m1) \u00b7 \u00b7 \u00b7 mNf",
-   "level": 1,
+   "id": "sec-006-31-microscopic-spectral-correlators-and-density",
+   "number": "3.1",
+   "title": "Microscopic spectral correlators and density",
+   "level": 2,
    "page_start": 6,
-   "page_end": 7,
-   "n_chars": 720,
-   "n_words": 149
+   "page_end": 8,
+   "n_chars": 5610,
+   "n_words": 1117,
+   "label_start": "6",
+   "label_end": "8"
   },
   {
-   "id": "sec-004-1-z",
-   "number": "1",
-   "title": "(z)",
-   "level": 1,
-   "page_start": 7,
+   "id": "sec-007-32-distribution-of-the-smallest-eigenvalue",
+   "number": "3.2",
+   "title": "Distribution of the smallest eigenvalue",
+   "level": 2,
+   "page_start": 8,
    "page_end": 9,
-   "n_chars": 6919,
-   "n_words": 1379
+   "n_chars": 3938,
+   "n_words": 805,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
-   "id": "sec-005-iv-discussion",
-   "number": "IV",
-   "title": "DISCUSSION",
+   "id": "sec-008-4-discussion",
+   "number": "4",
+   "title": "Discussion",
    "level": 1,
    "page_start": 9,
    "page_end": 10,
    "n_chars": 3907,
-   "n_words": 609
+   "n_words": 609,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
-   "id": "sec-006-acknowledgments",
+   "id": "sec-009-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 1,
    "page_start": 10,
    "page_end": 12,
    "n_chars": 2717,
-   "n_words": 449
+   "n_words": 449,
+   "label_start": "10",
+   "label_end": "12"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 7,
-  "sections": 7,
-  "chars_total": 35262
+  "toc_entries": 10,
+  "toc_inferred_entries": 10,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 2,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 11,
+  "chars_total": 35949,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "wgw.tex",
+   "tex_sections": 10,
+   "overlaid": 10,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-random-matrix-theory-for-finite-quark-masses",
+     "title": "Random-matrix theory for finite quark masses",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-21-formulation-of-the-model",
+     "title": "Formulation of the model",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-22-construction-of-orthogonal-polynomials",
+     "title": "Construction of orthogonal polynomials",
+     "prose_ratio": 0.947,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-23-a-duality-of-matrix-ensembles",
+     "title": "A duality of matrix ensembles",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-3-calculation-of-observables",
+     "title": "Calculation of observables",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-31-microscopic-spectral-correlators-and-density",
+     "title": "Microscopic spectral correlators and density",
+     "prose_ratio": 0.916,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-32-distribution-of-the-smallest-eigenvalue",
+     "title": "Distribution of the smallest eigenvalue",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-4-discussion",
+     "title": "Discussion",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-acknowledgments",
+     "title": "Acknowledgments",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    }
+   ]
+  }
  }
 }

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2502.06229v5/sections/sec-016",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "More remarks from the viewpoint of Doplicher-Roberts reconstruction in AQFT on the relevance of duality for the fundamental representation in the construction of quantum gauge group",
+  "pageStart": 26,
+  "pageEnd": 27,
+  "contains": [
+    "library/arxiv-2502.06229v5/blocks/prose-sec-016"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2502.06229v5",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2502.06229v5",
+  "provenance": "ingested"
+}

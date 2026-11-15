@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-energy-terms-and-limits",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-energy-terms-and-limits",
+  "kind": "remark",
+  "title": "The three energy terms, classical/deep-quantum limits, and crossing-energy relation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-energy",
+    "papers/quantum-observable-universe/blocks/def-crossing-energy",
+    "papers/quantum-observable-universe/blocks/prop-categorical-mass-markov",
+    "papers/quantum-observable-universe/blocks/prop-topological-mass-formula",
+    "papers/quantum-observable-universe/blocks/conj-mass-endomorphism"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-energy",
+  "tags": [
+    "energy",
+    "q-deformed",
+    "categorical-action",
+    "crossing",
+    "mass-energy",
+    "limits"
+  ],
+  "text": "q-energy-terms-and-limits.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-explicit-alpha-k-h3",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:explicit-alpha-k-h3",
+  "kind": "proposition",
+  "title": "Explicit α_k at H_3(R, q): structural prefactors closed form",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-spectral-sequence-h3-explicit"
+  ],
+  "tags": [
+    "spectral-sequence",
+    "alpha-k",
+    "hecke-algebra",
+    "markov-trace",
+    "jones-markov",
+    "h3",
+    "structural-derivation",
+    "q-algebraic"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.explicit_alpha_k_h3",
+  "text": "explicit-alpha-k-h3.md",
+  "leanSource": "explicit-alpha-k-h3.lean",
+  "provenance": "authored"
+}

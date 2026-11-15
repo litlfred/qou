@@ -60,7 +60,7 @@ What is now exact is the staircase *baseline* it is measured against.
 Proton-pinned; no Markov parameter in this cone, so convention C/D does not arise.  Exact
 integers for hooks/H.  mpmath at dps 60; no float64.
 
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/BraidKnot/HookSumBetaCoordinates.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/BraidKnot/HookSumBetaCoordinates.lean
 """
 
 from __future__ import annotations
@@ -325,6 +325,10 @@ _w = {
     "computation": "rev_staircase_closed_form_and_constant_term_probe",
     "bean": "qou-hok7",
     "anchor": "physical_proton",
+    # Canonical anchor key read by the q0 audits/ratchet (the "anchor" key above is
+    # a near-miss spelling they cannot see), plus scriptFile provenance.
+    "q0Anchor": "proton",
+    "scriptFile": os.path.basename(__file__),
     "q0Value": Q_50_DIGIT_STR,
     "description": (
         "The staircase leg of M_n is closed form: V(delta_k) = A*k - B - F(n) up to a remainder "
@@ -338,7 +342,7 @@ _w = {
     ),
     "lean": {
         "theorem": "QOU.BraidKnot.HookSum.betaSide_eq_hookSum",
-        "file": ("content/quantum-observable-universe/lean/QOU/BraidKnot/"
+        "file": ("folio/quantum-observable-universe/lean/QOU/BraidKnot/"
                  "HookSumBetaCoordinates.lean"),
         "role": "makes the objective a sum over cells of a function of the hook length",
     },

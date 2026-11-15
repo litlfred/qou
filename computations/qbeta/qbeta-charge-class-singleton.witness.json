@@ -1,5 +1,6 @@
 {
   "computation": "qbeta-charge-class-singleton",
+  "q0Anchor": "proton",
   "assertions": [
     {
       "name": "the_charge_class_is_the_singleton_one_one",
@@ -144,8 +145,8 @@
     ]
   },
   "provenance": {
-    "headSha": "4b56b76c8f8430064d41e77bc11c7f36bab4c7db",
+    "headSha": "eb645d81e7fe1646342513e676f6498caab4a229",
     "producer": "computations/qbeta/qbeta_charge_class_singleton_probe.py",
-    "elapsed_s": 0.223
+    "elapsed_s": 0.161
   }
 }

@@ -3,7 +3,7 @@
 
 Beans `qou-fi93` (what does the bar-odd channel couple to?) and `qou-hjs8`
 (is the theta_res^2 overshoot real?).  Lean, on `main`, sorry-free:
-`content/quantum-observable-universe/lean/QOU/Observations/CrossingDiscriminantThetaFree.lean`
+`folio/quantum-observable-universe/lean/QOU/Observations/CrossingDiscriminantThetaFree.lean`
   -> `crossingDisc_norm_theta_free`
 
 WHY THIS EXISTS.  `qou-hjs8` established that the CP discriminant is
@@ -71,6 +71,7 @@ import mpmath as mp  # noqa: E402
 import sympy as sp  # noqa: E402
 
 from qou_substrate.constants import q_at  # noqa: E402
+from qou_substrate.codata import value_str  # noqa: E402
 
 mp.mp.dps = 60
 
@@ -123,7 +124,9 @@ print("  theta = 1e-2, 1e-4, 1e-8: discriminant unchanged to 1e-55  (theta-free)
 # ---------------------------------------------------------------- section 2
 hdr("[2] cp-violation-evidence.md line 27: the stated 10^-3 is off by 1/alpha_EM")
 
-ALPHA = mp.mpf("7.2973525643e-3")   # CODATA 2022 fine-structure constant
+# CODATA 2022 fine-structure constant, read from the vendored CODATA table
+# rather than typed (witness-value copy ratchet).
+ALPHA = mp.mpf(value_str("fine-structure constant"))
 stated = d_cp_tanh * ALPHA           # the block's "theta_res ~ tanh(ln q).alpha_EM"
 print("  block:  'If theta_res ~ tanh(ln q) . alpha_EM, then delta_CP ~ 10^-3.")
 print("           This matches kaon systems'")

@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-dilog-saddle-regime",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:dilog-saddle-regime",
+  "kind": "remark",
+  "title": "Dilog saddle regime: the $\\theta = \\pi/3$ saddle of $\\mathrm{Im}\\,\\mathrm{Li}_2(e^{i\\theta})$ and $\\mathrm{Vol}(4_1)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-kashaev-volume-conjecture"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-kashaev-volume-conjecture",
+  "cites": [
+    "references/kashaev1997",
+    "references/murakami-murakami2001",
+    "references/thurston1978"
+  ],
+  "tags": [
+    "kashaev",
+    "saddle-point",
+    "dilogarithm",
+    "clausen",
+    "hyperbolic-volume",
+    "figure-8-knot",
+    "consolidation-home"
+  ],
+  "text": "dilog-saddle-regime.md",
+  "provenance": "authored"
+}

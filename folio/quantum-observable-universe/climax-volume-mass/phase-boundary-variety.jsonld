@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-phase-boundary-variety",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:phase-boundary-variety",
+  "kind": "proposition",
+  "title": "Phase-boundary variety $\\mathcal{B}$ is Zariski-closed and measure-zero",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-local-shadow-ordering"
+  ],
+  "tags": [
+    "phase-boundary",
+    "zariski-closed",
+    "measure-zero",
+    "shadow-price"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.PhaseBoundaryVariety",
+  "text": "phase-boundary-variety.md",
+  "leanSource": "phase-boundary-variety.lean",
+  "provenance": "authored"
+}

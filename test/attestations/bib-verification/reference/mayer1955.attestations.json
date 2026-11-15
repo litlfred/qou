@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "mayer1955",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 90,
+      "entry": {
+        "id": "mayer1955",
+        "status": "partial",
+        "verified_at": "2026-05-19T16:00:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 1,
+        "fix_commit": "(this commit)",
+        "note": "1 bare-URL Ref upgraded with title+author+year form.",
+        "source": {
+          "kind": "external",
+          "url": ""
+        }
+      }
+    }
+  ]
+}

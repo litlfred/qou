@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0203194v1/blocks/prose-sec-035",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0203194v1/blocks/prose-sec-035",
   "kind": "prose",
-  "title": "(S,s )→ AutC((M⊗O S,s)∇)",
-  "pageStart": 21,
-  "pageEnd": 21,
-  "text": "../sections/sec-035-1-ss-autcmo-ss.md",
-  "derivedFrom": "library/arxiv-math-0203194v1/manifest",
-  "sourceDocument": "library/arxiv-math-0203194v1/manifest",
+  "title": "More on the topological fundamental group.",
+  "pageStart": 116,
+  "pageEnd": 123,
+  "text": "../sections/sec-035-131-more-on-the-topological-fundamental-group.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203194v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203194v1",
   "provenance": "ingested"
 }

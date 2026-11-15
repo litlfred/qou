@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2509.04267v3/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "QUANTUM COCYCLE INVARIANTS OF KNOTS FROM YANG-BAXTER COHOMOLOGY",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2509.04267v3",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Quantum Cocycle Invariants of Knots from Yang-Baxter Cohomology",
   "contains": [
+    "library/arxiv-2509.04267v3/sections/sec-front-matter",
     "library/arxiv-2509.04267v3/sections/sec-000",
     "library/arxiv-2509.04267v3/sections/sec-001",
     "library/arxiv-2509.04267v3/sections/sec-002",
@@ -19,14 +25,21 @@
     "library/arxiv-2509.04267v3/sections/sec-010",
     "library/arxiv-2509.04267v3/sections/sec-011",
     "library/arxiv-2509.04267v3/sections/sec-012",
-    "library/arxiv-2509.04267v3/sections/sec-013",
-    "library/arxiv-2509.04267v3/sections/sec-014",
-    "library/arxiv-2509.04267v3/sections/sec-015",
-    "library/arxiv-2509.04267v3/sections/sec-016"
+    "library/arxiv-2509.04267v3/sections/sec-013"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2509.04267&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-2509.04267v3",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "2509.04267v3.pdf",
     "source_sha256": "9843b9dd71d1ec7453c4c83a98a954871870e6ba7425e9cc155b09298751596e",
     "pages": 33,

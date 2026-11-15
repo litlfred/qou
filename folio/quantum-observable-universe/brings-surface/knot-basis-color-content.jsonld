@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-knot-basis-color-content",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:knot-basis-color-content",
+  "kind": "remark",
+  "title": "Color content as formal linear combination in $H_3(q)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-cohomological-embedding"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-cohomological-embedding",
+  "tags": [
+    "photon",
+    "color-content",
+    "polarization",
+    "hecke-algebra",
+    "normal-form",
+    "hopf-link"
+  ],
+  "text": "knot-basis-color-content.md",
+  "provenance": "authored"
+}

@@ -8,69 +8,17 @@ pages: 12-13
 source_pdf: 1303.6444v3.pdf
 source_sha256: 4f12ace2197f70ca
 doc_brief: "VIRIAL EXPANSION BOUNDS — In the 1960s, the technique of using cluster expansion bounds in order to achieve bounds on the virial expansion was developed by Lebowitz and Penrose (1964) and Ruelle"
+text_source: latex
+latex_prose_ratio: 0.987
+latex_coverage_ratio: 0.867
 ---
-This approach would be better for potentials whereζR(β)<C (β), for someζ representing
-the quotient of the coeﬃcients f1
-f2
-, where:
-f1 :=e−4βB
-(
-W
-(
-e
-1+e2βB
-)
-− 1
-)2
-W
-(
-e
-1+e2βB
-) (7.1)
-f2 :=
-(
-W
-(
-eβB+1
-1+eβB
-)
-− 1
-)2
-W
-(
-eβB+1
-1+eβB
-) (7.2)
-f2 is actually smaller than f1, as detailed in Figure 3. This would only be an improvement
-if the R(β) factor compensates. In the case of a hard-core contribution, both R(β) and
-C(β) are the same, and so are the fi factors. The use of the integrand β|U(y)| rather than
-|e−βU(y)− 1| is better for potentials with attractive parts. For β = 0, the coeﬃcients f1 and
-f2 are precisely the same.
-The comparison between the optimised bound in (7.1) and the bound achieved from these
-diﬀerent cluster coeﬃcient bounds based on tree graph identities ( f2) is shown in Figure 3.
-This gives us that as soon as 1.6R(β)<C (β) this other version of bounds is better. This is
-due to the fact that
-C(β)
-R(β) > 1.6> f1
-f2
-(7.3)
-and so
-f2R(β)−1 >f 1C(β)−1 (7.4)
-We also note thatR(β) should be a better bound, for large β or small temperature, since
-it is linear in β, whereas C(β) is exponential in β and that this ζ(β) could be understood
-better to explore the comparison of these two bounds. It also only depends on the potential
-Φ through the stability parameter B.
-VIRIAL EXPANSION BOUNDS 13
-0.2 0.4 0.6 0.8 1.0
-e- 2 b B
-1.1
-1.2
-1.3
-1.4
-1.5
-f1
-f2
-Figure 3. Quotient f1
-f2
-(7.3) of the Optimised Penrose-Lebowitz Bound
-(f1) (7.1) over the New Bound (f2) (7.2)
+[]{#sec: comparison label="sec: comparison"} This approach would be better for potentials where $\zeta R(\beta) < C(\beta)$, for some $\zeta$ representing the quotient of the coefficients $\frac{f_1}{f_2}$, where: $$\begin{aligned}
+ f_1&:=e^{-4\beta B}\frac{\left(W\left(\frac{e}{1+e^{2\beta B}}\right)-1\right)^2}{W\left(\frac{e}{1+e^{2\beta B}}\right)} \label{f1} \\
+f_2&:=\frac{\left(W\left(\frac{e^{\beta B+1}}{1+e^{\beta B}}\right)-1\right)^2}{W\left(\frac{e^{\beta B+1}}{1+e^{\beta B}}\right)} \label{f2}
+\end{aligned}$$ $f_2$ is actually smaller than $f_1$, as detailed in Figure [1](#fig:quotient){reference-type="ref" reference="fig:quotient"}. This would only be an improvement if the $R(\beta)$ factor compensates. In the case of a hard-core contribution, both $R(\beta)$ and $C(\beta)$ are the same, and so are the $f_i$ factors. The use of the integrand $\beta |U(y)|$ rather than $|e^{-\beta U(y)}-1|$ is better for potentials with attractive parts. For $\beta=0$, the coefficients $f_1$ and $f_2$ are precisely the same.
+
+The comparison between the optimised bound in [\[f1\]](#f1){reference-type="eqref" reference="f1"} and the bound achieved from these different cluster coefficient bounds based on tree graph identities ($f_2$) is shown in Figure [1](#fig:quotient){reference-type="ref" reference="fig:quotient"}. This gives us that as soon as $1.6 R(\beta) < C(\beta)$ this other version of bounds is better. This is due to the fact that $$\frac{C(\beta)}{R(\beta)}> 1.6> \frac{f_1}{f_2} \label{compare2}$$ and so $$f_2 R(\beta)^{-1} > f_1 C(\beta)^{-1}$$
+
+We also note that $R(\beta)$ should be a better bound, for large $\beta$ or small temperature, since it is linear in $\beta$, whereas $C(\beta)$ is exponential in $\beta$ and that this $\zeta(\beta)$ could be understood better to explore the comparison of these two bounds. It also only depends on the potential $\Phi$ through the stability parameter $B$.
+
+![Quotient $\frac{f_1}{f_2}$ [\[compare2\]](#compare2){reference-type="eqref" reference="compare2"} of the Optimised Penrose-Lebowitz Bound ($f_1$) [\[f1\]](#f1){reference-type="eqref" reference="f1"} over the New Bound ($f_2$) [\[f2\]](#f2){reference-type="eqref" reference="f2"} ](quotient.pdf){#fig:quotient}

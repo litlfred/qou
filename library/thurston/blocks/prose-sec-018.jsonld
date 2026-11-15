@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/thurston/blocks/prose-sec-018",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/thurston/blocks/prose-sec-018",
   "kind": "prose",
   "title": "X?andY?are parallel",
   "pageStart": 29,
   "pageEnd": 30,
   "text": "../sections/sec-018-265-xandyare-parallel.md",
-  "derivedFrom": "library/thurston/manifest",
-  "sourceDocument": "library/thurston/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/thurston",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/thurston",
   "provenance": "ingested"
 }

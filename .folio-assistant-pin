@@ -13,7 +13,26 @@
 # single session, and two agents spent a round disagreeing about which baseline
 # was real. Neither was wrong; the baseline was not well-defined. See bean `vbase`.
 #
-# Bumping the platform is now a deliberate, reviewable edit to this one line.
+# Bumping the platform is TWO lines, not one, and this file used to say one.
+#
+# `.github/workflows/build.yml` selects the platform for the PUBLISHED build via
+# its `uses:` line. That line read `@main` until 2026-09-26, so this pin governed
+# only what agents measured locally while the published artifact tracked platform
+# main — two platforms, one repo, no signal when they disagreed. It is now pinned
+# to the same sha as the last line of this file (bean `qou-pwp9`).
+#
+# So when you bump: edit the sha here AND in `build.yml`, in the same commit, and
+# keep them byte-identical. Checkable, so the rule is not only these comments:
+#
+#     bash scripts/folio-pin-coupling-check.sh      # exit 0 = the two agree
+#
+# It asserts only that the two LOCAL declarations agree — a drifted pair is a
+# defect, an OLD pair is a choice, and it deliberately does not judge currency.
+# It is NOT wired into any hook: adding one changes commit-path behaviour, which
+# is the owner's call (cf. the 2026-08-25 precision hook, offered blocking and
+# declined in favour of warn-only).
+#
+# Bumping the platform is a deliberate, reviewable edit to those two lines.
 # When you bump it, state the before/after issue counts in the commit message —
 # a change in count is a platform behaviour change and should be looked at, not
 # absorbed silently.
@@ -22,7 +41,7 @@
 #     FOLIO_ASSISTANT_REF=<branch|tag|sha> scripts/setup-folio-assistant.sh
 #
 # Pinned 2026-08-08 at 428ca5c. Against that platform, corpus 9d6fa7f2c8 measured
-# `run-validate content/quantum-observable-universe` → 4 issue(s) (all warnings).
+# `run-validate folio/quantum-observable-universe` → 4 issue(s) (all warnings).
 #
 # BUMPED 2026-09-07 to df28d02. Both platforms measured against the SAME corpus
 # (the 2026-09-07 main, not the 9d6fa7f2c8 above, which is long superseded — a
@@ -53,4 +72,208 @@
 # Also in this bump: litlfred/folio-assistant#167, which stops
 # `split_sections` silently discarding every character before the first located
 # heading. 18 of 623 library documents were keeping under 50% of their text.
-df28d02dcd3e3f51aad4690c56b2348ab52efd4c
+#
+# BUMPED 2026-09-26 to 37a36ce — and this one was NOT a one-line edit.
+#
+# 4553 commits since df28d02 (~19 days). In that window the platform RESTRUCTURED:
+# `schemas/`, `content/pipeline/`, `adapters/`, `src/` and `viewer/` no longer exist
+# at its top level — everything moved under `cat-harness/`. Measured: all five paths
+# GONE on main, `cat-harness/schemas` and `cat-harness/content/pipeline` PRESENT.
+#
+# 147 qou files referenced the old paths (schemas 73, folio/pipeline 54, adapters 4,
+# src 9, viewer 7). 77 code/config files were re-pointed to
+# `folio-assistant/cat-harness/<x>` IN THE SAME COMMIT as this bump, because the
+# rewrite is invalid at the old pin and the old paths are invalid at the new one —
+# they cannot land separately.
+#
+# One hazard checked and found ABSENT: moving the checkout leaves untracked residue
+# behind (`schemas/references.ts`, `content/pipeline/script-sidecars/`), so an old
+# import path could in principle resolve to 19-day-old code and appear to work.
+# Measured: 4 residue files, ZERO stale `.ts`, so the old imports fail loudly. If a
+# future bump leaves `.ts` behind, delete it before trusting any green result.
+#
+# Also found: `qa-sweep` WRITES provenance stamps into the platform checkout
+# (30 `content/pipeline/script-sidecars/*.script.json` were dirty). qou cannot push
+# there, so that provenance is unrecoverable and the tree is permanently dirty —
+# which also blocks `git checkout` of a new pin until stashed. Stashed, not discarded.
+#
+# BUMPED 2026-09-30 to 378a100 (folio-assistant#1591 merged) — a one-import
+# edit beside the two lines, and the count only holds WITH it.
+#
+# Same corpus (origin/main 67c957f42), `run-validate folio/quantum-observable-universe`:
+#
+#     37a36ce                       →  "4 issue(s)", valid
+#     378a100, qou unchanged        →  "21 issue(s)", INVALID — 17 new errors
+#     378a100, + the import below   →  "4 issue(s)", valid; the 4 lines IDENTICAL to 37a36ce's
+#
+# The 17 were one class: "Definition … requires Lean formalization", each naming
+# a `.lean` that EXISTS (e.g. QOU/AppendixSurreals/BirthdayGrading.lean). Platform
+# 422d4c482 moved the lean.ref grammar into folio-assistant-sci: the resolver is
+# now a LAYER installed by importing `cat-harness/content/pipeline/lean-formal-ref`,
+# and importing `configureLeanPackages` from `cat-harness/schemas/lean-packages`
+# (as run-validate.ts and preload-registry.ts did) configures the packages but
+# installs no resolver, so every formal reference resolves to `undefined`. Both
+# now import it from `lean-formal-ref`, which re-exports it. The platform prints
+# a warning naming exactly this; qou's scripts did not surface it.
+#
+# Why this bump: #1591 brings the Liquid value resolver
+# (`{{ qou.<declared-dir>.<entry>.<path> }}`, one syntax for PDF/blueprint/site)
+# and the CODATA 2022 library dataset — the platform half of retiring `:val` and
+# the stale CODATA literals. Both are unusable here until the pin passes it.
+#
+# BUMPED 2026-09-30 to cb194b1 (folio-assistant#1620 merged): the platform
+# VALIDATES Liquid {{ … }} references by the :val rules (val-resolves,
+# val-precision-bounded, val-filter, val-block-computation). Needed before
+# this repo's :val -> Liquid migration: at 378a100 the 58 migrated references
+# would have lost their validation. run-validate at cb194b1, same corpus: the
+# same 4 issues as at 37a36ce and 378a100.
+#
+#
+# BUMPED 2026-10-04 to 26c5d37b9 (platform main) — story S1 of the migration epic
+# qou-n4r9, together with the qou.json / qou.config.json re-declaration.
+# Same corpus (qou main 2301b1a11), `run-validate folio/quantum-observable-universe`:
+#
+#     cb194b1c5  →  "4 issue(s)", valid
+#     26c5d37b9  →  "5 issue(s)", valid — the same 4 lines, plus one new warning:
+#        no-orphan-sidecar could not check test/results/block-qa (absent here; the
+#        derived QA corpus lives on the cat-harness qa-reports branch, owner ruling
+#        2026-10-04). Informational, not a content change.
+#
+# Platform main now carries bootstrap and bootstrap-tools as git SUBMODULES, so the
+# clone needs `git submodule update --init` (setup-folio-assistant.sh does this now).
+#
+# BUMPED 2026-10-04 to 5693b174e (folio-assistant#2129 merged) — story TOOLS T2,
+# beans qou-qb6t / qou-4r5m: the platform now registers the `computation-witness`
+# graph kind, and qou.json declares `computations/` with it in the same commit.
+# Same corpus (qou branch claude/migration-wave12-2026-10-04),
+# `run-validate folio/quantum-observable-universe`:
+#
+#     26c5d37b9  →  "5 issue(s)", valid
+#     5693b174e  →  "5 issue(s)", valid; the 5 issue lines IDENTICAL
+#
+# New at this pin: `bun run witness:conformance` (via folio-assistant/). Over
+# computations/: 3,839 witnesses, 0 malformed, 5 not strict JSON (all in
+# _deprecated/, NaN/Infinity), 1,685 of 3,834 meet the producer contract. The
+# rest are findings against their producers; no witness was edited.
+#
+# BUMPED 2026-10-05 to 483ed296b (platform main) — beans rva2 / j9cs, the
+# lake-cache family migration (owner: "migratez qou"). qou.json now declares the
+# `lake-cache` directory with storage.keyedBy "family", which 5693b174e's schema
+# does not accept: measured, the new qou.json FAILS to parse at the old pin and
+# parses at this one. So the declaration and the bump cannot land separately.
+#
+# Same corpus (qou 6cfeab8de + this branch's scripts), `run-validate
+# folio/quantum-observable-universe`, each pin run with the qou.json it can parse:
+#
+#     5693b174e, qou.json @ HEAD  →  "6 issue(s)", valid
+#     483ed296b, qou.json @ new   →  "9 issue(s)", valid — the same 6 lines, plus
+#        3 [unlisted-block] warnings (qbeta-toroidal-harmonics-basis,
+#        atomic-q-reeb-universal-rho, delta-max-numerical-scale): blocks that sit
+#        in a chapter directory but no section lists. A NEW platform check over
+#        pre-existing corpus state, not a content change.
+#
+# Trap, measured: running the OLD pin against the NEW qou.json reports
+# "✗ Invalid — 55 issue(s)" — 17 Lean siblings, witnesses and simulator assets
+# all "missing". None are. `findContentRepoRoot` walks up from cwd, the
+# unparseable declaration makes qou a non-candidate, and it falls back to the
+# platform's own tree, so every corpus path resolves into the wrong root. A
+# platform/declaration mismatch presents as a broken corpus.
+#
+# BUMPED 2026-10-05 to 3f72f018a (platform main, after #2200 and #2216) — and the
+# declaration change cannot land separately, again.
+#
+# #2200 renamed the <instance>.json field `graphKinds` -> `graphTypologies` as a
+# HARD rename with no alias (owner, 2026-10-05). Its shim accepts only the older
+# `graphs` spelling, so at the new platform qou.json fails to parse ("graphTypologies:
+# expected array, received undefined") and every platform script that reads the
+# declaration stops. qou.json and beans/beans.json are renamed in this commit (the
+# `_graphKinds_comment` keys with them; no value changed).
+#
+# Same corpus (qou main 61e7b10d7), `run-validate folio/quantum-observable-universe`:
+#
+#     483ed296b, qou.json @ main     ->  "9 issue(s)", valid
+#     3f72f018a, qou.json @ renamed  ->  "9 issue(s)", valid; the 9 lines IDENTICAL
+#     483ed296b, qou.json @ renamed  ->  "58 issue(s)", INVALID (the old pin cannot
+#        read the new spelling, the same misrooting trap recorded above)
+#
+# Three sites carry the sha and move together: this file, build.yml's `uses:`, and
+# qou.config.json's folio-assistant-sci `ref`.
+#
+# BUMPED 2026-10-05 to 717aa19a6 (folio-assistant#2232 merged): the bibliography
+# ledgers' new home, the `attestations` graph (C9 stories B3/B4). The pin moves in
+# the same commit that deletes folio/bib-qa-verifications.json and
+# folio/schema/references.review.json, because two qou readers
+# (bib-agent-backfill.ts, bib-photo-ingestion-watcher.ts) import the shared module
+# that only exists from #2232, while the platform readers at the old pin still read
+# the legacy files.
+#
+# Same corpus (qou branch claude/bib-attestations-2026-10-05),
+# `run-validate folio/quantum-observable-universe`:
+#
+#     3f72f018a  ->  "9 issue(s)", valid
+#     717aa19a6  ->  "9 issue(s)", valid; the 9 lines IDENTICAL
+#
+# Before the removal: bib_ledger.py --parity identical on both ledgers, and
+# bib:attestations:migrate --check byte-identical (456 rows / 423 files; 2 reviews).
+#
+# BUMPED 2026-10-11 to c56b73b80 (folio-assistant#2535 merged) — past the platform's
+# LAYER SPLIT, and the only qou change it needs is in setup-folio-assistant.sh.
+#
+# Platform main no longer carries cat-harness, cat-harness-tools,
+# folio-assistant-core, folio-assistant-sci, bootstrap, ... in-tree: they are
+# remote mounts recorded in its index.lock.json. setup-folio-assistant.sh now
+# runs the platform's own .github/mount-from-lock.sh after checkout, so the
+# `folio-assistant/cat-harness/...` paths qou already uses resolve unchanged.
+# Measured: of 71 distinct `folio-assistant/...` paths qou references, none
+# that exists at 717aa19 is gone at the new pin (survey by
+# session_01V4jKAVshqv4wPErr8o8myk), so no import rewrites.
+#
+# Why this bump: #2535 pins cat-harness 81a9db4e0 = a89998b + the validator fix
+# from cat-harness-tools #85 ("collect subsection labels so a #sec: link to a
+# nested section resolves"). Owner, 2026-10-11: "repins ok", "do qou side too".
+#
+# Same corpus (qou origin/main), `run-validate folio/quantum-observable-universe`:
+#
+#     717aa19a6  ->  "11 issue(s)", valid
+#     c56b73b80  ->  "9 issue(s)", valid. The two lines that clear are exactly
+#        [intro] sec:introduction-substrate-parameter and [chapter-overview]
+#        sec:introduction-mathematics-measurement (links into subsections).
+#        One line is reworded (`bun run qa:fetch` -> `bun run cat qa:fetch`);
+#        nothing new appears.
+#
+# Measured against platform c03d809bd, the PR head that rebase-merged as
+# c56b73b80 (same tree). A fresh setup-folio-assistant.sh clone at that pin laid
+# down all 11 layers (~607 MB).
+#
+#
+# BUMPED 2026-10-30 to b61e856 (folio-assistant#2774 merged), bean 8lcl: the
+# cat-harness schemas code moved to cat-harness-tools (cat-harness#773,
+# cat-harness-tools#952; owner card "A. One coordinated move"). qou's imports
+# of folio-assistant/cat-harness/schemas/<x> now name
+# folio-assistant/cat-harness-tools/schemas/<group>/<x>, in the same commit,
+# because neither spelling resolves at the other pin. No maths content changed.
+#
+#
+# BUMPED 2026-11-15 to 82b389982 (platform main), bean qou-4jhp, owner ruling P1 = B
+# relayed by the qou-s4ws coordinator. Why: at b61e856 qa-sweep cannot load. The lock
+# mounts folio-assistant-sci@1e31c506, which still imports
+# cat-harness/schemas/kg/cat-harness (moved by 8lcl); the sci fix 689a0e7 first
+# enters a platform lock at a6e58846b.
+#
+# Same corpus (qou 4d63b18f5), `run-validate folio/quantum-observable-universe`:
+#
+#     b61e856, qou unchanged          ->  "16 issue(s)"
+#     82b389982, qou unchanged        ->  CRASH: lean-formal-ref moved
+#                                          cat-harness-tools/pipeline -> folio-assistant-sci/pipeline
+#     82b389982, + the 2 imports below ->  "16 issue(s)", the 16 lines IDENTICAL to b61e856's
+#
+# Re-pointed in the same commit (neither spelling resolves at the other pin):
+# scripts/run-validate.ts, scripts/preload-registry.ts (lean-formal-ref) and
+# folio/pipeline/qa-agent-entry.ts (lean-signature), all to folio-assistant-sci/pipeline/.
+#
+# KNOWN BREAK, not present at a6e58846b: platform 0c5468ac46 (2026-11-10) DELETED
+# .github/workflows/publish.yml, so build.yml's `uses:` below names a file that does
+# not exist at this sha. build.yml is dispatch-only and its last run (2026-06-30)
+# failed, so nothing runs it today, but it is qou's only paper-render entry point.
+#
+82b389982a73701b77f723d34d42c77acf41b5b4

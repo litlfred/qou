@@ -8,120 +8,30 @@ pages: 59-60
 source_pdf: 0908.3425v1.pdf
 source_sha256: 5e88d45bbc1c1b9b
 doc_brief: "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer — We provide an introduction to the basic concepts of chiral pe rturbation theory and discuss some"
+text_source: latex
+latex_prose_ratio: 0.98
+latex_coverage_ratio: 0.96
 ---
-We have seen that the modiﬁed minimal subtraction scheme ~MS does not produce the desired power
-counting. We will discuss the power-counting problem in ter ms of the dimensionally regularized one-loop
-integral
-H(p2,m 2,M 2;n) ≡ − i
-∫ dnk
-(2π)n
-1
-[(k −p)2 −m2 +i0+](k2 −M 2 +i0+)
-= −i
-∫ dnk
-(2π)n
-1
-[k2 − 2p ·k + (p2 −m2) +i0+](k2 −M 2 +i0+). (214)
-We are interested in nucleon four-momenta close to the mass- shell condition, p2 ≈m2, counting p2 −m2
-as O(q) and M 2 as O(q2). In order to conform with Ref. [Becher and Leutwyler, 1999] , we have omitted
-the factor µ4−n and have reversed the overall sign in comparison with our pre vious deﬁnition of IN π. Let
-us turn to the discussion of H(p2,m 2,M 2;n). To that end, we make use of the Feynman parametrization
-1
-ab =
-∫ 1
-0
-dz 1
-[az +b(1 −z)]2 (215)
-witha = (k −p)2 −m2 +i0+ andb =k2 −M 2 +i0+, interchange the order of integrations, and perform
-the shift k →k +zp, to obtain
-H(p2,m 2,M 2;n) = −i
-∫ 1
-0
-dz
-∫ dnk
-(2π)n
-1
-[k2 −A(z) +i0+]2,
-where
-A(z) = z2p2 −z(p2 −m2 +M 2) +M 2.
-Making use of
-∫ dnk
-(2π)n
-(k2)p
-(k2 −A)q = i(−)p−q
-(4π)
-n
-2
-Γ
-(
-p + n
-2
-)
-Γ
-(
-q −p − n
-2
-)
-Γ
-(
-n
-2
-)
-Γ(q)
-Ap+ n
-2 −q
-with p = 0 and q = 2, we ﬁnd
-H(p2,m 2,M 2;n) = 1
-(4π)
-n
-2
-Γ
-(
-2 −n
-2
-)∫ 1
-0
-dz[A(z) −i0+]
-n
-2 −2. (216)
-The relevant properties can nicely be displayed at the thres hold p2
-thr = (m + M)2, where A(z) =
-[z(m +M) −M]2 is particularly simple. The small imaginary part can be drop ped in this case, because
-A(z) is never negative. Splitting the integration interval int o [0,z 0] and [z0, 1] with z0 =M/(m +M),
-we have, for n> 3,
-∫ 1
-0
-dz[A(z)]
-n
-2 −2 =
-∫ z0
-0
-dz[M −z(m +M)]n−4 +
-∫ 1
-z0
-dz[z(m +M) −M]n−4
-= 1
-(n − 3)(m +M) (M n−3 +mn−3),
-yielding, through analytic continuation, for arbitrary n
-H((m +M)2,m 2,M 2;n) =
-Γ
-(
-2 − n
-2
-)
-(4π)
-n
-2 (n − 3)
-(
-M n−3
-m +M + mn−3
-m +M
-)
-. (217)
-The ﬁrst term, proportional to M n−3, is deﬁned as the so-called infrared singular part I. Since M → 0
-impliesp2
-thr →m2 this term is singular for n ≤ 3. The second term, proportional to mn−3, is deﬁned as
-the infrared regular part R. Note that for non-integer n the infrared singular part contains non-integer
-powers of M, while an expansion of the regular part always contains non- negative integer powers of M
-only.
-59
+[]{#subsubsection_master_integral label="subsubsection_master_integral"} We have seen that the modified minimal subtraction scheme $\widetilde{\rm MS}$ does not produce the desired power counting. We will discuss the power-counting problem in terms of the dimensionally regularized one-loop integral $$\begin{aligned}
+\label{4:3:2:Hdef}
+H(p^2,m^2,M^2;n)
+&\equiv& -i\int \frac{\mbox{d}^n
+k}{(2\pi)^n} \frac{1}{[(k-p)^2-m^2+i0^+](k^2-M^2+i0^+)}\nonumber\\
+&=&-i\int \frac{\mbox{d}^n k}{(2\pi)^n} \frac{1}{[k^2-2p\cdot k
++(p^2-m^2)+i0^+](k^2-M^2+i0^+)}.
+\end{aligned}$$ We are interested in nucleon four-momenta close to the mass-shell condition, $p^2\approx m^2$, counting $p^2-m^2$ as ${\cal O}(q)$ and $M^2$ as ${\cal O}(q^2)$. In order to conform with Ref. [@Becher:1999he], we have omitted the factor $\mu^{4-n}$ and have reversed the overall sign in comparison with our previous definition of $I_{N\pi}$. Let us turn to the discussion of $H(p^2,m^2,M^2;n)$. To that end, we make use of the Feynman parametrization $$\label{4:3:2:feynmanparh}
+{1\over ab}=\int_0^1 \mbox{d}z  {1\over [az+b(1-z)]^2}$$ with $a=(k-p)^2-m^2+i0^+$ and $b=k^2-M^2+i0^+$, interchange the order of integrations, and perform the shift $k\to k+zp$, to obtain $$H(p^2,m^2,M^2;n)=-i \int_0^1 \mbox{d}z\int\frac{\mbox{d}^n
+k}{(2\pi)^n}\frac{1}{[k^2-A(z) +i0^+]^2},$$ where $$A(z)=z^2 p^2-z(p^2-m^2+M^2)+M^2.$$ Making use of $$\int \frac{\mbox{d}^n k}{(2\pi)^n} \frac{(k^2)^p}{(k^2-A)^q}
+=\frac{i(-)^{p-q}}{(4\pi)^{\frac{n}{2}}}
+\frac{\Gamma\left(p+\frac{n}{2}\right)\Gamma\left(q-p-\frac{n}{2}\right)}{
+\Gamma\left(\frac{n}{2}\right)\Gamma(q)} A^{p+\frac{n}{2}-q}$$ with $p=0$ and $q=2$, we find $$\label{4:3:2:HPmMn}
+H(p^2,m^2,M^2;n)=\frac{1}{(4\pi)^{\frac{n}{2}}}
+\Gamma\left(2-\frac{n}{2}\right) \int_0^1 \mbox{d}z
+[A(z)-i0^+]^{\frac{n}{2}-2}.$$ The relevant properties can nicely be displayed at the threshold $p^2_{\rm thr}=(m+M)^2$, where $A(z)=[z(m+M)-M]^2$ is particularly simple. The small imaginary part can be dropped in this case, because $A(z)$ is never negative. Splitting the integration interval into $[0,z_0]$ and $[z_0,1]$ with $z_0=M/(m+M)$, we have, for $n>3$, $$\begin{aligned}
+\int_0^1 \mbox{d}z [A(z)]^{\frac{n}{2}-2}&=&\int_0^{z_0}\mbox{d}z [M-z(m+M)]^{n-4}
++\int_{z_0}^1\mbox{d}z [z(m+M)-M]^{n-4}\\
+&=&\frac{1}{(n-3)(m+M)}(M^{n-3}+m^{n-3}),
+\end{aligned}$$ yielding, through analytic continuation, for arbitrary $n$ $$\label{4:3:2:defhthr}
+ H((m+M)^2,m^2,M^2;n)=
+\frac{\Gamma\left(2-\frac{n}{2}\right)}{(4\pi)^{\frac{n}{2}}(n-3)}
+\left(\frac{M^{n-3}}{m+M}+\frac{m^{n-3}}{m+M}\right).$$ The first term, proportional to $M^{n-3}$, is defined as the so-called infrared singular part $I$. Since $M\to 0$ implies $p^2_{\rm thr} \to m^2$ this term is singular for $n\leq 3$. The second term, proportional to $m^{n-3}$, is defined as the infrared regular part $R$. Note that for non-integer $n$ the infrared singular part contains non-integer powers of $M$, while an expansion of the regular part always contains non-negative integer powers of $M$ only.

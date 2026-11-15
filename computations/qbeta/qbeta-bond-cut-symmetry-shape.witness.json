@@ -1,5 +1,6 @@
 {
   "computation": "qbeta-bond-cut-symmetry-shape",
+  "q0Anchor": "proton",
   "assertions": [
     {
       "name": "cut_identity_exact_on_four_count_triples",
@@ -238,7 +239,7 @@
     "flavour_tilt": "0.00034392770175677400214"
   },
   "provenance": {
-    "headSha": "a61496dbc82ea710c35ac1ad7b09b913e1e12d7d",
+    "headSha": "eacf7ca73101030f04c9f788e9f705839bef23c3",
     "producer": "computations/qbeta/qbeta_bond_cut_symmetry_shape_probe.py",
     "elapsed_s": 0.006
   }

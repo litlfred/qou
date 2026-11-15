@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2605.20846v1/blocks/prose-sec-008",
+  "kind": "prose",
+  "title": "No Internal Relations",
+  "pageStart": 46,
+  "pageEnd": 49,
+  "text": "../sections/sec-008-no-internal-relations.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2605.20846v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2605.20846v1",
+  "provenance": "ingested"
+}

@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-reeb-decomposition",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:reeb-decomposition",
+  "kind": "example",
+  "title": "Reeb decomposition",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-c-quantum-universe"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-weight-decomposition",
+  "tags": [
+    "reeb",
+    "archimedean"
+  ],
+  "leanRef": "qou:QOU.ReebDecomposition",
+  "text": "reeb-decomposition.md",
+  "leanSource": "reeb-decomposition.lean",
+  "provenance": "authored"
+}

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/zagier-the-dilogarithm-function/sections/sec-002",
   "@type": [
     "doco:Section"
   ],
-  "title": "The Bloch-Wigner function D(z) and its generalizations . . . . . . . . . . . . 10",
-  "pageStart": 1,
-  "pageEnd": 1,
+  "title": "Volumes of hyperbolic 3-manifolds",
+  "pageStart": 11,
+  "pageEnd": 14,
   "contains": [
     "library/zagier-the-dilogarithm-function/blocks/prose-sec-002"
   ],
-  "derivedFrom": "library/zagier-the-dilogarithm-function/manifest",
-  "sourceDocument": "library/zagier-the-dilogarithm-function/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/zagier-the-dilogarithm-function",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/zagier-the-dilogarithm-function",
   "provenance": "ingested"
 }

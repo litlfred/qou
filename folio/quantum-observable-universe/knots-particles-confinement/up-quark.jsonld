@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-up-quark",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:up-quark",
+  "kind": "definition",
+  "title": "Up quark",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-borromean-quark"
+  ],
+  "tags": [
+    "quark",
+    "up",
+    "unknot",
+    "borromean",
+    "fermion",
+    "color-tube"
+  ],
+  "leanRef": "qou:QOU.Archimedean.UpQuark",
+  "text": "up-quark.md",
+  "leanSource": "up-quark.lean",
+  "provenance": "authored"
+}

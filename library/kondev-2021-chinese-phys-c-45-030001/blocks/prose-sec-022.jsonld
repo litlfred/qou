@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-022",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-022",
   "kind": "prose",
-  "title": "Acknowledgments",
-  "pageStart": 15,
-  "pageEnd": 15,
-  "text": "../sections/sec-022-5-acknowledgments.md",
-  "derivedFrom": "library/kondev-2021-chinese-phys-c-45-030001/manifest",
-  "sourceDocument": "library/kondev-2021-chinese-phys-c-45-030001/manifest",
+  "title": "FGK208 IJ",
+  "pageStart": 123,
+  "pageEnd": 181,
+  "text": "../sections/sec-022-06-fgk208-ij.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/kondev-2021-chinese-phys-c-45-030001",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/kondev-2021-chinese-phys-c-45-030001",
   "provenance": "ingested"
 }

@@ -1,21 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-2008.09788v2/sections/sec-005",
   "@type": [
     "doco:Section"
   ],
-  "title": "On the algorithmic undecidability of the embeddability problem for algebraic varieties over a field of characteristic zero",
-  "pageStart": 25,
-  "pageEnd": 28,
+  "title": "Finite Gröbner basis algebras with unsolvable nilpotency problem and zero divisors problem",
+  "pageStart": 23,
+  "pageEnd": 25,
   "contains": [
-    "library/arxiv-2008.09788v2/blocks/prose-sec-005",
-    "library/arxiv-2008.09788v2/blocks/lem-sec-005-01",
-    "library/arxiv-2008.09788v2/blocks/lem-sec-005-02",
-    "library/arxiv-2008.09788v2/blocks/thm-sec-005-03",
-    "library/arxiv-2008.09788v2/blocks/lem-sec-005-04",
-    "library/arxiv-2008.09788v2/blocks/thm-sec-005-05"
+    "library/arxiv-2008.09788v2/blocks/prose-sec-005"
   ],
-  "derivedFrom": "library/arxiv-2008.09788v2/manifest",
-  "sourceDocument": "library/arxiv-2008.09788v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2008.09788v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2008.09788v2",
   "provenance": "ingested"
 }

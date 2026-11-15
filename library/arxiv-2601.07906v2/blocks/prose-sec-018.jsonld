@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2601.07906v2/blocks/prose-sec-018",
+  "kind": "prose",
+  "title": "Discussion",
+  "pageStart": 73,
+  "pageEnd": 79,
+  "text": "../sections/sec-018-discussion.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2601.07906v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2601.07906v2",
+  "provenance": "ingested"
+}

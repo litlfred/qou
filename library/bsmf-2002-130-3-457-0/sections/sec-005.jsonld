@@ -1,22 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/bsmf-2002-130-3-457-0/sections/sec-005",
   "@type": [
     "doco:Section"
   ],
-  "title": "T 𝓁t",
-  "pageStart": 21,
-  "pageEnd": 25,
+  "title": "Spaces of polyhedra",
+  "pageStart": 10,
+  "pageEnd": 15,
   "contains": [
-    "library/bsmf-2002-130-3-457-0/blocks/prose-sec-005",
-    "library/bsmf-2002-130-3-457-0/blocks/lem-sec-005-01",
-    "library/bsmf-2002-130-3-457-0/blocks/lem-sec-005-02",
-    "library/bsmf-2002-130-3-457-0/blocks/lem-sec-005-03",
-    "library/bsmf-2002-130-3-457-0/blocks/lem-sec-005-04",
-    "library/bsmf-2002-130-3-457-0/blocks/lem-sec-005-05",
-    "library/bsmf-2002-130-3-457-0/blocks/lem-sec-005-06"
+    "library/bsmf-2002-130-3-457-0/blocks/prose-sec-005"
   ],
-  "derivedFrom": "library/bsmf-2002-130-3-457-0/manifest",
-  "sourceDocument": "library/bsmf-2002-130-3-457-0/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bsmf-2002-130-3-457-0",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bsmf-2002-130-3-457-0",
   "provenance": "ingested"
 }

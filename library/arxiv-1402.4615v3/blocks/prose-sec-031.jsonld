@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1402.4615v3/blocks/prose-sec-031",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1402.4615v3/blocks/prose-sec-031",
   "kind": "prose",
   "title": "A.2. Linear terms in Kerov polynomials",
   "pageStart": 60,
   "pageEnd": 62,
   "text": "../sections/sec-031-a2-linear-terms-in-kerov-polynomials.md",
-  "derivedFrom": "library/arxiv-1402.4615v3/manifest",
-  "sourceDocument": "library/arxiv-1402.4615v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1402.4615v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1402.4615v3",
   "provenance": "ingested"
 }

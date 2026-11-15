@@ -1,0 +1,33 @@
+{
+ "url": "https://arxiv.org/e-print/1112.5179v1",
+ "content_type": "application/gzip",
+ "sha256": "e1a59aabb1a36981c37fa7b167ae52d1f790af2b7e5f73838b6daa17465cd946",
+ "bytes": 1085876,
+ "fetched": "2026-10-10T15:05:49+00:00",
+ "files": [
+  {
+   "path": "files/indexbox.bbl",
+   "role": "bbl",
+   "sha256": "4521422067cdce6acf5baa73630ed5e1858305dccfc366be85e9fd7f4af162e7",
+   "bytes": 15873
+  },
+  {
+   "path": "files/indexbox.tex",
+   "role": "tex",
+   "sha256": "f1b6eeb300096d6acf613f8a3f1fc3dc32ecf798b16197fa40a337190f6080fb",
+   "bytes": 237560
+  },
+  {
+   "path": "files/jheppub.sty",
+   "role": "sty",
+   "sha256": "df00feea9c12f61474e4c029e3c80db0df37266467209cfa43ff04877499cd02",
+   "bytes": 10882
+  },
+  {
+   "path": "files/wrapfig.sty",
+   "role": "sty",
+   "sha256": "4695b760c84ded2507b1ddc33e15e299c718f9a556cd330983f0a000f0d10de7",
+   "bytes": 26220
+  }
+ ]
+}

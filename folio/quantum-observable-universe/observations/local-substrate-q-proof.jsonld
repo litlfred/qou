@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-local-substrate-q",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:local-substrate-q",
+  "kind": "proof",
+  "title": "Proof of Local Value of the Substrate Parameter",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-local-substrate-q",
+    "papers/quantum-observable-universe/blocks/prf-knot-volumes-verification"
+  ],
+  "cites": [
+    "references/kashaev1997",
+    "references/murakami-murakami2001"
+  ],
+  "text": "local-substrate-q-proof.md",
+  "provenance": "authored"
+}

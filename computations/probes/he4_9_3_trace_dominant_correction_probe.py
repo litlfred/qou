@@ -6,7 +6,7 @@ CONTEXT.
 PR #1673 Probe 2 empirically refuted the "(4,4,4) PSD-dominant"
 framing for tr_M(β_⁴He): (4,4,4)'s contribution is ≤ 4.28e-51.
 
-`conj:psd-trace-orthogonality` (content/quantum-observable-universe/
+`conj:psd-trace-orthogonality` (folio/quantum-observable-universe/
 mass-theory/conj-psd-trace-orthogonality.md) explicitly states the
 SAME finding from the structural side:
   - (4,4,4) is PSD-dominant (LP-cone-obstruction-carrier)

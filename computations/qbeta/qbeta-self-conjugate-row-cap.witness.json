@@ -1,5 +1,7 @@
 {
   "computation": "qbeta-self-conjugate-row-cap",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal",
   "assertions": [
     {
       "name": "exactly_three_self_conjugate_shapes_survive_the_row_cap",
@@ -218,8 +220,8 @@
     ]
   },
   "provenance": {
-    "headSha": "cd2b7eaa62c8c82e6e141b828d5813f1f92abee7",
+    "headSha": "eacf7ca73101030f04c9f788e9f705839bef23c3",
     "producer": "computations/qbeta/qbeta_self_conjugate_row_cap_probe.py",
-    "elapsed_s": 0.2
+    "elapsed_s": 0.203
   }
 }

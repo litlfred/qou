@@ -1,23 +1,33 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0006051v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Finite and p-adic polylogarithms",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0006051v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0006051v1",
   "contains": [
+    "library/arxiv-math-0006051v1/sections/sec-front-matter",
     "library/arxiv-math-0006051v1/sections/sec-000",
     "library/arxiv-math-0006051v1/sections/sec-001",
-    "library/arxiv-math-0006051v1/sections/sec-002",
-    "library/arxiv-math-0006051v1/sections/sec-003",
-    "library/arxiv-math-0006051v1/sections/sec-004",
-    "library/arxiv-math-0006051v1/sections/sec-005",
-    "library/arxiv-math-0006051v1/sections/sec-006",
-    "library/arxiv-math-0006051v1/sections/sec-007"
+    "library/arxiv-math-0006051v1/sections/sec-002"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0006051&metadataPrefix=arXiv), submitted 2000-06-07, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-math-0006051v1",
+    "title_source": "slug",
     "source_file": "0006051v1.pdf",
     "source_sha256": "10483e75bd3655eaef5e621e7c4090525ffd11939c2e0f0fd711740e72419769",
     "pages": 8,

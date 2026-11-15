@@ -109,7 +109,7 @@ non-comparison; 4 unjustified.**
 > **`BLOCKED on C by design (registry)`** bucket, which formalises the floor/queue
 > distinction we both arrived at separately. Deliberate C-named comparisons: 50.
 > **Item 2.7 (the 269-file `braid-registry` surface) is DONE** — #5767 took it and
-> retired the directory to `computations/_deprecated/braid-registry/` with a README;
+> retired the directory to `fsh-guts/deprecated/computations/braid-registry/` with a README;
 > confirmed present on this tree after rebase.
 >
 > Two details from #5767 worth keeping, neither of which I had:

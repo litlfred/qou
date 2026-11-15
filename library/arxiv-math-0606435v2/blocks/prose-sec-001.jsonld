@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0606435v2/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0606435v2/blocks/prose-sec-001",
   "kind": "prose",
-  "title": "Preliminaries, basic deﬁnitions and conventions 5",
-  "pageStart": 1,
-  "pageEnd": 1,
-  "text": "../sections/sec-001-2-preliminaries-basic-deﬁnitions-and-conventions.md",
-  "derivedFrom": "library/arxiv-math-0606435v2/manifest",
-  "sourceDocument": "library/arxiv-math-0606435v2/manifest",
+  "title": "Links and link diagrams",
+  "pageStart": 5,
+  "pageEnd": 6,
+  "text": "../sections/sec-001-21-links-and-link-diagrams.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0606435v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0606435v2",
   "provenance": "ingested"
 }

@@ -67,7 +67,7 @@ SUSPECT = re.compile(r"base_gen\s*=\s*(?!3\s*\*\s*k)|strand_of\s*\(|interleav", 
 def scan():
     contiguous, suspects = [], []
     for p in sorted(ROOT.glob("computations/**/*.py")):
-        if "_deprecated" in p.parts:
+        if ("_deprecated" in p.parts or "fsh-guts" in p.parts):
             continue
         try:
             txt = p.read_text(errors="replace")

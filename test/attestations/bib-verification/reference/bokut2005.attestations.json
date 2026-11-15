@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "bokut2005",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 114,
+      "entry": {
+        "id": "bokut2005",
+        "status": "uncited",
+        "verified_at": "2026-05-19T17:20:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "fix_commit": null,
+        "note": "Bokut \u2014 Gr\u00f6bner-Shirshov for groups/semigroups/Lie algebras. Bib orphan (0 cites).",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1142/9789812790019_0003"
+        }
+      }
+    }
+  ]
+}

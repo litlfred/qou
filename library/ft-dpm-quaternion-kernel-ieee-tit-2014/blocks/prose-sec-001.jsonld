@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ft-dpm-quaternion-kernel-ieee-tit-2014/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ft-dpm-quaternion-kernel-ieee-tit-2014/blocks/prose-sec-001",
   "kind": "prose",
-  "title": "(x)φ1(y) + φH",
-  "pageStart": 7,
-  "pageEnd": 7,
-  "text": "../sections/sec-001-1-xφ1y-φh.md",
-  "derivedFrom": "library/ft-dpm-quaternion-kernel-ieee-tit-2014/manifest",
-  "sourceDocument": "library/ft-dpm-quaternion-kernel-ieee-tit-2014/manifest",
+  "title": "INCE",
+  "pageStart": 1,
+  "pageEnd": 2,
+  "text": "../sections/sec-001-s-ince.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ft-dpm-quaternion-kernel-ieee-tit-2014",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ft-dpm-quaternion-kernel-ieee-tit-2014",
   "provenance": "ingested"
 }

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0707.2052v1/blocks/prose-sec-014",
+  "kind": "prose",
+  "title": "The Mukai pairing and adjoint kernels",
+  "pageStart": 20,
+  "pageEnd": 21,
+  "text": "../sections/sec-014-the-mukai-pairing-and-adjoint-kernels.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0707.2052v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0707.2052v1",
+  "provenance": "ingested"
+}

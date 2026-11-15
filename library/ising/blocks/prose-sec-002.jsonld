@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ising/blocks/prose-sec-002",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ising/blocks/prose-sec-002",
   "kind": "prose",
-  "title": "Weighted dependency graphs. The theory of weighted dependency graphs, recently intro-",
-  "pageStart": 3,
-  "pageEnd": 4,
-  "text": "../sections/sec-002-12-weighted-dependency-graphs-the-theory-of-weig.md",
-  "derivedFrom": "library/ising/manifest",
-  "sourceDocument": "library/ising/manifest",
+  "title": "Weighted dependency graph for the σi’s and central limit theorem for the magnetization.",
+  "pageStart": 16,
+  "pageEnd": 19,
+  "text": "../sections/sec-002-41-weighted-dependency-graph-for-the-σis-and-cen.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ising",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ising",
   "provenance": "ingested"
 }

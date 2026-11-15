@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/nrarith/sections/sec-002",
   "@type": [
     "doco:Section"
   ],
-  "title": "Trace-ﬁelds",
-  "pageStart": 4,
-  "pageEnd": 4,
+  "title": "Quaternion algebras",
+  "pageStart": 7,
+  "pageEnd": 9,
   "contains": [
     "library/nrarith/blocks/prose-sec-002"
   ],
-  "derivedFrom": "library/nrarith/manifest",
-  "sourceDocument": "library/nrarith/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/nrarith",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/nrarith",
   "provenance": "ingested"
 }

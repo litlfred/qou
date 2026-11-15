@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-lepton-number-categorical-properties",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:lepton-number-categorical-properties",
+  "kind": "remark",
+  "title": "Conservation, $\\mathbb{Z}$-grading, and the $\\chi = -6$ constraint on lepton number",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-lepton-number-categorical",
+    "papers/quantum-observable-universe/blocks/def-beta-decay-skein",
+    "papers/quantum-observable-universe/blocks/prop-torus-knot-generators"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-lepton-number-categorical",
+  "tags": [
+    "lepton-number",
+    "skein-relation",
+    "smoothing",
+    "conservation-law",
+    "categorical",
+    "weak-force"
+  ],
+  "text": "lepton-number-categorical-properties.md",
+  "provenance": "authored"
+}

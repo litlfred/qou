@@ -26,7 +26,7 @@ conventions are reused without modification.
 ## Coordination message (for the illustrations author)
 
 Hi — this branch added a new "Encounter" chapter
-([`content/quantum-observable-universe/encounter/`](https://github.com/litlfred/qou/tree/claude/improve-paper-exposition-4a0OT/content/quantum-observable-universe/encounter))
+([`folio/quantum-observable-universe/encounter/`](https://github.com/litlfred/qou/tree/claude/improve-paper-exposition-4a0OT/folio/quantum-observable-universe/encounter))
 slotted between Ch. *particle-interactions* and Ch. *observations*,
 and split `prop:confinement-sdp` into a slim statement plus four
 companion remarks. Below is a list of recommended SVGs in the same
@@ -49,7 +49,7 @@ F13. Notation register applies as usual
 ### F13E.1 (P0) — The encounter sequence: approach → crossing → merge
 
 - **Where**:
-  [`encounter/approach-to-exceptional-divisor.md`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/content/quantum-observable-universe/encounter/approach-to-exceptional-divisor.md),
+  [`encounter/approach-to-exceptional-divisor.md`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/folio/quantum-observable-universe/encounter/approach-to-exceptional-divisor.md),
   immediately after the three-moment list.
 - **What**: A three-panel cartoon (left → right):
   *(a) Approach* — two vortex tubes $\varrho_1, \varrho_2$
@@ -84,7 +84,7 @@ F13. Notation register applies as usual
 ### F13E.3 (P0) — Thurston relaxation as a Newton flow seeded by $q$-Pochhammer poles
 
 - **Where**:
-  [`encounter/thurston-relaxation.md`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/content/quantum-observable-universe/encounter/thurston-relaxation.md),
+  [`encounter/thurston-relaxation.md`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/folio/quantum-observable-universe/encounter/thurston-relaxation.md),
   after the bullet list.
 - **What**: A landscape diagram. Top edge: a horizontal row of
   filled dots labelled $x = q^{-k}$ for $k = 0, \dots, n-1$
@@ -102,7 +102,7 @@ F13. Notation register applies as usual
 ### F13E.4 (P0) — SDP/LP dictionary across the Archimedean wall
 
 - **Where**:
-  [`encounter/sdp-as-thimble-flow.md`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/content/quantum-observable-universe/encounter/sdp-as-thimble-flow.md),
+  [`encounter/sdp-as-thimble-flow.md`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/folio/quantum-observable-universe/encounter/sdp-as-thimble-flow.md),
   alongside the dictionary table.
 - **What**: A two-column figure with a vertical bar between them
   labelled "$\tau_{\mathrm{arch}}$ — Archimedean realisation".
@@ -120,7 +120,7 @@ F13. Notation register applies as usual
 ### F13E.5 (P0) — Mostow rigidity locking the volume spectrum
 
 - **Where**:
-  [`encounter/mostow-confinement.md`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/content/quantum-observable-universe/encounter/mostow-confinement.md),
+  [`encounter/mostow-confinement.md`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/folio/quantum-observable-universe/encounter/mostow-confinement.md),
   immediately after the three-part proposition statement.
 - **What**: A staircase. Horizontal axis labelled
   "$\mathrm{Vol}_{\mathrm{hyp}}(U \setminus K)$"; vertical axis
@@ -138,7 +138,7 @@ F13. Notation register applies as usual
 ### F13E.6 (P1) — Algebraic ↔ geometric rigidity pairing
 
 - **Where**:
-  [`encounter/algebraic-geometric-rigidity-pairing.md`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/content/quantum-observable-universe/encounter/algebraic-geometric-rigidity-pairing.md),
+  [`encounter/algebraic-geometric-rigidity-pairing.md`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/folio/quantum-observable-universe/encounter/algebraic-geometric-rigidity-pairing.md),
   alongside the column-table.
 - **What**: Two parallel rectangles, vertically stacked.
   Top: "**Algebraic side** — `SDPSlaterUniqueness`, primal $\Phi^\ast$
@@ -157,7 +157,7 @@ F13. Notation register applies as usual
 ### F13E.7 (P1) — The Archimedean wall
 
 - **Where**:
-  [`encounter/pre-tau-vs-post-tau.md`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/content/quantum-observable-universe/encounter/pre-tau-vs-post-tau.md),
+  [`encounter/pre-tau-vs-post-tau.md`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/folio/quantum-observable-universe/encounter/pre-tau-vs-post-tau.md),
   before the wall-discipline table.
 - **What**: A vertical wall down the middle of the figure
   labelled "**Archimedean wall**". Left side: stacked tags
@@ -177,7 +177,7 @@ F13. Notation register applies as usual
 ### F13E.8 (P2) — Literature precedent map
 
 - **Where**:
-  [`encounter/encounter-literature-bridge.md`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/content/quantum-observable-universe/encounter/encounter-literature-bridge.md).
+  [`encounter/encounter-literature-bridge.md`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/folio/quantum-observable-universe/encounter/encounter-literature-bridge.md).
 - **What**: A radial diagram. Centre: "QOU encounter picture".
   Five outer satellites, each labelled with citation key:
   "Mostow 1968" (rigidity arrow),
@@ -203,7 +203,7 @@ remarks. Two are likely candidates for figures.
 ### F12.4 (P1) — Hecke spectral gap and deconfinement
 
 - **Where**:
-  [`particle-interactions/confinement-sdp-spectral-gap.md`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/content/quantum-observable-universe/particle-interactions/confinement-sdp-spectral-gap.md).
+  [`particle-interactions/confinement-sdp-spectral-gap.md`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/folio/quantum-observable-universe/particle-interactions/confinement-sdp-spectral-gap.md).
 - **What**: A complex-$q$ plane with the unit circle drawn.
   Mark the points $q = \pm i$ (Kauffman degeneracy) with
   thick red dots; shade a wedge labelled "feasible cone" away
@@ -218,7 +218,7 @@ remarks. Two are likely candidates for figures.
 ### F12.5 (P1) — Active dual support as binding multiplicity
 
 - **Where**:
-  [`particle-interactions/confinement-sdp-multi-operator.md`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/content/quantum-observable-universe/particle-interactions/confinement-sdp-multi-operator.md).
+  [`particle-interactions/confinement-sdp-multi-operator.md`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/folio/quantum-observable-universe/particle-interactions/confinement-sdp-multi-operator.md).
 - **What**: A bar chart. Horizontal axis: Wedderburn blocks
   $\lambda_1, \lambda_2, \dots$. Vertical axis: shadow-price
   $u_\lambda^\ast$. Bars at active blocks coloured solid; bars at
@@ -247,7 +247,7 @@ slate would be 57 figures (21 P0, 26 P1, 10 P2).
   `docs/illustration-recommendations.md` mirroring the entries
   above (cite this ledger as the source).
 - [ ] Drop the per-chapter `rendered/` directory at
-  `content/quantum-observable-universe/encounter/rendered/` and
+  `folio/quantum-observable-universe/encounter/rendered/` and
   embed each SVG via `![](rendered/<slug>.svg)` at the indicated
   block.
 - [ ] Author F12.4 and F12.5 once Chapter 12 figures are otherwise

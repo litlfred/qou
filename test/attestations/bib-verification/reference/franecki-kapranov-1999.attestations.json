@@ -1,0 +1,49 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "franecki-kapranov-1999",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 131,
+      "entry": {
+        "id": "franecki-kapranov-1999",
+        "status": "pending-placement",
+        "verified_at": "2026-05-19T23:58:55Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "fix_commit": "(this commit)",
+        "note": "Franecki-Kapranov constructible sheaves Riemann-Roch. No QOU citation site located on full-tree grep. Status: defer to author.",
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-9909088v1/9909088v1.pdf"
+        },
+        "local_pdf": "library/arxiv-math-9909088v1/9909088v1.pdf",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "Join CORRECT (arXiv:math/9909088v1, Franecki-Kapranov, matching the registered entry's title, authors and URL). BIB ORPHAN: a full-tree grep for the key across content/ (.md, .lean, .ts) returns zero citation sites; the only hits anywhere are three docs/ mentions that themselves record it as uncited (docs/coordination/2026-05-19-bib-audit-summary.md:207 lists it as one of two uncited orphans; docs/workplans/2026-06-08-uploaded-paper-results-ingestion-backlog.md:59 records 'none'; docs/audits/2026-06-04-kontsevich-soibelman-0811.2435-qou-comparison.md:283 discusses its reference status). So its uncited state is already known and recorded - this triage confirms it rather than discovering it. The paper proves a noncompact Riemann-Roch formula for constructible sheaves on semiabelian varieties via a Gauss-map degree gdeg(Z), with the corollary that a perverse sheaf on such a group has non-negative Euler characteristic. A grep of content/ for 'perverse', 'constructible sheaf' and 'Gauss map' returns nothing, so there is currently no block that would consume it. Scope-(a): this document, as read, has no target in the present corpus; that is not a claim that microlocal/characteristic-cycle methods are irrelevant to the framework.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Registered, uncited, and with no block in the corpus that its results bear on. Leave the entry in place; re-triage if a characteristic-cycle or Euler-characteristic-positivity block is ever written.",
+              "target": "folio/schema/references.ts"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "52cfb568951f"
+        }
+      }
+    }
+  ]
+}

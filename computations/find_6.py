@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import os
 
-content_root = '/home/litlfred/space_cats/qou/content/quantum-observable-universe'
+content_root = '/home/litlfred/space_cats/qou/folio/quantum-observable-universe'
 
 targets = [
     'shell-transition-knot',

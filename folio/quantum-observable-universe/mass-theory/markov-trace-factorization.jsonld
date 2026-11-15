@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-markov-trace-factorization",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:markov-trace-factorization",
+  "kind": "theorem",
+  "title": "Exact factorization of the nuclear Markov trace",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-generator-volume-decomposition"
+  ],
+  "tags": [
+    "markov-trace",
+    "factorization",
+    "jones-polynomial",
+    "link-invariant",
+    "hecke-algebra",
+    "chebyshev",
+    "generator-volume",
+    "nuclear"
+  ],
+  "leanRef": "qou:QOU.Archimedean.markov_trace_factorization",
+  "text": "markov-trace-factorization.md",
+  "leanSource": "markov-trace-factorization.lean",
+  "provenance": "authored"
+}

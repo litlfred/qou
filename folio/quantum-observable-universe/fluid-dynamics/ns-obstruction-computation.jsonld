@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-ns-obstruction-computation",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:ns-obstruction-computation",
+  "kind": "proposition",
+  "title": "Computation of the NS obstruction for the Descartes universe",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-ns-obstruction-tower",
+    "papers/quantum-observable-universe/blocks/rem-body-asymptotics-catalog"
+  ],
+  "tags": [
+    "computation",
+    "obstruction",
+    "descartes",
+    "euler-characteristic",
+    "brings-surface"
+  ],
+  "leanRef": "qou:QOU.FluidDynamics.ns_obstruction_computation",
+  "text": "ns-obstruction-computation.md",
+  "provenance": "authored"
+}

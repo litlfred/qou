@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/nrarith/manifest",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/nrarith",
   "@type": [
-    "folio:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "Arithmetic of Hyperbolic Manifolds",
   "contains": [
+    "library/nrarith/sections/sec-front-matter",
     "library/nrarith/sections/sec-000",
     "library/nrarith/sections/sec-001",
     "library/nrarith/sections/sec-002",
@@ -16,36 +22,15 @@
     "library/nrarith/sections/sec-007",
     "library/nrarith/sections/sec-008",
     "library/nrarith/sections/sec-009",
-    "library/nrarith/sections/sec-010",
-    "library/nrarith/sections/sec-011",
-    "library/nrarith/sections/sec-012",
-    "library/nrarith/sections/sec-013",
-    "library/nrarith/sections/sec-014",
-    "library/nrarith/sections/sec-015",
-    "library/nrarith/sections/sec-016",
-    "library/nrarith/sections/sec-017",
-    "library/nrarith/sections/sec-018",
-    "library/nrarith/sections/sec-019",
-    "library/nrarith/sections/sec-020",
-    "library/nrarith/sections/sec-021",
-    "library/nrarith/sections/sec-022",
-    "library/nrarith/sections/sec-023",
-    "library/nrarith/sections/sec-024",
-    "library/nrarith/sections/sec-025",
-    "library/nrarith/sections/sec-026",
-    "library/nrarith/sections/sec-027",
-    "library/nrarith/sections/sec-028",
-    "library/nrarith/sections/sec-029",
-    "library/nrarith/sections/sec-030",
-    "library/nrarith/sections/sec-031",
-    "library/nrarith/sections/sec-032",
-    "library/nrarith/sections/sec-033",
-    "library/nrarith/sections/sec-034",
-    "library/nrarith/sections/sec-035"
+    "library/nrarith/sections/sec-010"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "nrarith",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "nrarith.pdf",
     "source_sha256": "085ec9541ddc6cd4b52b6af8b268b5d325b9df86e9a253e2d64bdf058bccdcc8",
     "pages": 38,

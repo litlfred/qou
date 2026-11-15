@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-lepton-discrepancies",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:lepton-discrepancies",
+  "kind": "remark",
+  "title": "Electron--muon discrepancies",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter",
+    "papers/quantum-observable-universe/blocks/rem-symmetry-preserving-leptons"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-categorical-reeb",
+  "tags": [
+    "lepton",
+    "anomaly",
+    "observation"
+  ],
+  "text": "lepton-discrepancies.md",
+  "provenance": "authored"
+}

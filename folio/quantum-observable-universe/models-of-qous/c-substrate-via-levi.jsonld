@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-c-substrate-via-levi",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:c-substrate-via-levi",
+  "kind": "remark",
+  "title": "Archimedean substrate via the Levi form",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-instanton",
+    "papers/quantum-observable-universe/blocks/ex-self-dual-curvature"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-substrate-parameter",
+  "tags": [
+    "substrate",
+    "levi-form",
+    "archimedean"
+  ],
+  "text": "c-substrate-via-levi.md",
+  "provenance": "authored"
+}

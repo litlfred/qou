@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/quaternioms/sections/sec-017",
   "@type": [
     "doco:Section"
@@ -13,7 +18,7 @@
     "library/quaternioms/blocks/thm-sec-017-02",
     "library/quaternioms/blocks/cor-sec-017-03"
   ],
-  "derivedFrom": "library/quaternioms/manifest",
-  "sourceDocument": "library/quaternioms/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/quaternioms",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/quaternioms",
   "provenance": "ingested"
 }

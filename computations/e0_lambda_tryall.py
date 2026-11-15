@@ -169,7 +169,7 @@ def hook_lengths_at(lam, r, c):
 def particle_struct_masses() -> dict:
     """{particle: {block_name: m^block (cat units)}} for e⁻, p, n.
     block_name ∈ {sym, std, alt}.  From _deprecated/per_block_phi_q."""
-    dep = HERE / "_deprecated"
+    dep = HERE.parent / "fsh-guts" / "deprecated" / "computations"
     if str(dep) not in sys.path:
         sys.path.insert(0, str(dep))
     import per_block_phi_q as pbq  # noqa

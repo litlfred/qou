@@ -5,7 +5,11 @@
   "file": "1512.04993v2.pdf",
   "sha256": "b8047bc3d3815406ddc69a4c17fe8d9f80a16c0dc235e5dbeb242259e451d8d3",
   "bytes": 7886590,
-  "pages": 70
+  "pages": 70,
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +21,7 @@
   "doi": null,
   "title": "Complexity, action, and black holes",
   "authors_raw": "Adam R. Browna, Daniel A. Robertsb, Leonard Susskinda",
-  "abstract": "Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a region in the bulk (the “Wheeler-DeWitt” patch). We provide calculations for the results quoted in that paper, explain how it ﬁts into a broader (tensor) network of ideas, and elaborate on the hypothesis that black holes are the fastest computers in nature. arXiv:1512.04993v2 [hep-th] 10 May 2016",
+  "abstract": "Our earlier paper \u201cComplexity Equals Action\u201d conjectured that the quantum computational complexity of a holographic state is given by the classical action of a region in the bulk (the \u201cWheeler-DeWitt\u201d patch). We provide calculations for the results quoted in that paper, explain how it \ufb01ts into a broader (tensor) network of ideas, and elaborate on the hypothesis that black holes are the fastest computers in nature. arXiv:1512.04993v2 [hep-th] 10 May 2016",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20160512002330Z",
@@ -778,6 +782,329 @@
   "likely_scanned": false,
   "toc_entries": 47,
   "sections": 41,
-  "chars_total": 132894
+  "chars_total": 132894,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "ComplexityLong.tex",
+   "tex_sections": 48,
+   "overlaid": 32,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.798,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-11-complexity-equals-action",
+     "title": "Complexity equals action",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-2-bounds-on-information-storage-and-processing",
+     "title": "Bounds on information storage and processing",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-22-bounds-on-information-scrambling-or-chaos",
+     "title": "Bounds on information scrambling or chaos",
+     "prose_ratio": 0.919,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-23-bounds-on-quantum-evolution",
+     "title": "Bounds on quantum evolution",
+     "prose_ratio": 0.488,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-24-complexity",
+     "title": "Complexity",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.39,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-006-25-conjectured-complexity-growth-bound",
+     "title": "Conjectured complexity growth bound",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-26-bound-on-complexity-growth-with-a-conserved-c",
+     "title": "Bound on complexity growth with a conserved charge",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-3-action-growth-of-black-holes",
+     "title": "Action growth of black holes",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-31-action-of-an-uncharged-black-hole",
+     "title": "Action of an uncharged black hole",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-32-action-of-a-charged-black-hole",
+     "title": "Action of a charged black hole",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-33-action-of-a-rotating-btz-black-hole",
+     "title": "Action of a rotating BTZ black hole",
+     "prose_ratio": 0.909,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-42-rotating-btz-black-holes",
+     "title": "Rotating BTZ black holes",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-013-4-testing-our-conjectures-with-black-holes",
+     "title": "Testing our conjectures with black holes",
+     "prose_ratio": 0.683,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-43-small-charged-black-holes",
+     "title": "Small charged black holes",
+     "prose_ratio": 0.213,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-015-41-neutral-static-black-holes",
+     "title": "Neutral static black holes",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.652,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-44-intermediate-and-large-charged-black-holes",
+     "title": "Intermediate and large charged black holes",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-017-45-discussion",
+     "title": "Discussion",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-018-46-superconducting-black-holes",
+     "title": "Superconducting black holes",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-019-5-testing-our-conjecture-with-static-shells",
+     "title": "Testing our conjecture with static shells",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-020-6-testing-our-conjecture-with-shock-waves",
+     "title": "Testing our conjecture with shock waves",
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-021-61-one-shock",
+     "title": "One shock",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-022-62-finite-energy-shocks",
+     "title": "Finite energy shocks",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-023-63-multiple-shocks",
+     "title": "Multiple shocks",
+     "prose_ratio": 0.847,
+     "coverage_ratio": 0.948,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-024-64-localized-shocks",
+     "title": "Localized shocks",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.882,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-025-65-comment-on-transparency",
+     "title": "Comment on transparency",
+     "prose_ratio": 0.914,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-026-8-discussion",
+     "title": "Discussion",
+     "prose_ratio": 0.123,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-027-82-open-questions",
+     "title": "Open questions",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-028-81-comparing-ca-duality-and-cv-duality",
+     "title": "Comparing CA-duality and CV-duality",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.728,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-029-822-ca-duality-as-a-diagnostic-tool",
+     "title": "CA-duality as a diagnostic tool",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-030-823-diagnosing-transparency-of-horizons",
+     "title": "Diagnosing transparency of horizons",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-031-824-weak-coupling-and-stringy-corrections",
+     "title": "Weak coupling and stringy corrections",
+     "prose_ratio": 0.835,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-032-825-regularizing-the-action",
+     "title": "Regularizing the action",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.915,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-033-826-action-from-near-the-singularity",
+     "title": "Action from near the singularity",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-034-827-boundary-terms",
+     "title": "Boundary terms",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-035-828-theories-without-action-formulations",
+     "title": "Theories without action formulations",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-036-829-very-early-times",
+     "title": "Very early times",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-037-8210-very-late-times",
+     "title": "Very late times",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-038-8211-principle-of-least-computation",
+     "title": "Principle of least computation",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.34,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-039-a1-comments-on-hamiltonian-locality-and-gate-sim",
+     "title": "A.1 Comments on Hamiltonian locality and gate simplicity",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-040-c-the-past-wedge",
+     "title": "C The past wedge",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

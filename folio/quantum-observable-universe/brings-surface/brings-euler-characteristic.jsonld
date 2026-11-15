@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-brings-euler-characteristic",
+  "@type": [
+    "folio-assistant-core:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:brings-euler-characteristic",
+  "kind": "lemma",
+  "title": "Euler characteristic of Bring's surface",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-euler-char-stability",
+    "papers/quantum-observable-universe/blocks/rem-hkr-theorem"
+  ],
+  "foreshadows": [
+    "papers/quantum-observable-universe/blocks/rem-three-euler-characteristics",
+    "papers/quantum-observable-universe/blocks/rem-euler-characteristic-of-the-regular-representation"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-brings-euler-characteristic"
+  ],
+  "tags": [
+    "euler-characteristic",
+    "brings-surface",
+    "categorical-trace",
+    "descartes-substrate"
+  ],
+  "leanRef": "qou:QOU.ArchimedeanUniverse.brings_euler_characteristic",
+  "text": "brings-euler-characteristic.md",
+  "provenance": "authored"
+}

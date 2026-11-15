@@ -6,7 +6,12 @@
   "sha256": "7a425e51860c37a43daf1d19b07152ab2602948c242ce3343aa9da49c118dc8c",
   "bytes": 774894,
   "pages": 60,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:19Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -16,18 +21,28 @@
    "stamp_date": "31 May 2012"
   },
   "doi": null,
-  "title": "DERIVED HIGHER HOCHSCHILD HOMOLOGY",
-  "authors_raw": "TOPOLOGICAL CHIRAL HOMOLOGY ANDF ACTORIZATION",
+  "title": "DERIVED HIGHER HOCHSCHILD HOMOLOGY, TOPOLOGICAL CHIRAL HOMOLOGY AND FACTORIZATION ALGEBRAS",
+  "authors_raw": "GR\u00c9GORY GINOT, THOMAS TRADLER, AND MAHMOUD ZEINALIAN",
   "title_lines": [
-   "DERIVED HIGHER HOCHSCHILD HOMOLOGY"
+   "DERIVED HIGHER HOCHSCHILD HOMOLOGY",
+   "TOPOLOGICAL CHIRAL HOMOLOGY AND FACTORIZATION",
+   "ALGEBRAS"
   ],
-  "abstract": "W e study the higher Hochschild chain functor, factorizatio n alge- bras and their relationship with topological chiral homolo gy. To this end, we emphasize that the higher Hochschild complex is a ( \u221e ,1)-functor sSet\u221e \u00d7 CDGA \u221e where sSet\u221e and CDGA \u221e are the ( \u221e ,1)-categories of simplicial sets and commutative di\ufb00erential graded algebras, and give an axiomatic char- acterization of this functor. From the axioms, we deduce sev eral properties and computational tools for this functor. W e study the relation ship between the higher Hochschild functor and factorization algebras by sh owing that, in good cases, the Hochschild functor determines a constant commut ative factoriza- tion algebra. Conversely, every constant commutative fact orization algebra is naturally equivalent to a Hochschild chain factorization a lgebra. Similarly, we study the relationship between the above concepts and topol ogical chiral ho- mology. In particular, we show that on their common domains o f de\ufb01nition, the higher Hochschild functor is naturally equivalent to topol ogical chiral homol- ogy. A byproduct of our proof yields a similar statement abou t the relationship between the blob complex and topological chiral homology of unoriented man- ifolds. Finally, we prove that topological chiral homology determines a locally constant factorization algebra and, further, that this fun ctor induces an equiv- alence between locally constant factorization algebras on a manifold and (local system of) En-algebras.W e also deduce that Hochschild chains and topolo gical chiral homology satis\ufb01es an exponential law, i.e., a Fubini type Theorem to compute them on products of manifolds.",
+  "abstract": "We study the higher Hochschild chain functor, factorization alge- bras and their relationship with topological chiral homology. To this end, we emphasize that the higher Hochschild complex is a (\u221e, 1)-functor sSet\u221e\u00d7 CDGA\u221ewhere sSet\u221eand CDGA\u221eare the (\u221e, 1)-categories of simplicial sets and commutative di\ufb00erential graded algebras, and give an axiomatic char- acterization of this functor. From the axioms, we deduce several properties and computational tools for this functor. We study the relationship between the higher Hochschild functor and factorization algebras by showing that, in good cases, the Hochschild functor determines a constant commutative factoriza- tion algebra. Conversely, every constant commutative factorization algebra is naturally equivalent to a Hochschild chain factorization algebra. Similarly, we study the relationship between the above concepts and topological chiral ho- mology. In particular, we show that on their common domains of de\ufb01nition, the higher Hochschild functor is naturally equivalent to topological chiral homol- ogy. A byproduct of our proof yields a similar statement about the relationship between the blob complex and topological chiral homology of unoriented man- ifolds. Finally, we prove that topological chiral homology determines a locally constant factorization algebra and, further, that this functor induces an equiv- alence between locally constant factorization algebras on a manifold and (local system of) En-algebras.We also deduce that Hochschild chains and topological chiral homology satis\ufb01es an exponential law, i.e., a Fubini type Theorem to compute them on products of manifolds.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20180523023300-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20180523023300-04'00'"
+  },
+  "title_raw": "DERIVED HIGHER HOCHSCHILD HOMOLOGY, TOPOLOGICAL CHIRAL HOMOLOGY AND FACTORIZATION ALGEBRAS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "DERIVED HIGHER HOCHSCHILD HOMOLOGY, TOPOLOGICAL CHIRAL HOMOLOGY AND FACTORIZATION ALGEBRAS Contents Introduction Preliminary de\ufb01nitions and notation Simplicial sets Commutative Di\ufb00erential Graded Algebras Dwyer-Kan localization and ( \u221e , 1)-categories Derived higher Hochschild functor Naive axiomati",
+   "outline": "1. Introduction",
+   "text": "DERIVED HIGHER HOCHSCHILD HOMOLOGY, TOPOLOGICAL CHIRAL HOMOLOGY AND FACTORIZATION ALGEBRAS",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -36,144 +51,662 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Preliminary definitions and notation",
    "page": 6,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Simplicial sets",
    "page": 7,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Commutative Differential Graded Algebras",
    "page": 8,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Dwyer-Kan localization and (,1)-categories",
    "page": 8,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "Derived higher Hochschild functor",
    "page": 10,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Naive axiomatic approach to higher Hochschild homology",
    "page": 10,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Higher Hochschild as an (, 1)-functor",
    "page": 15,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Pointed simplicial sets and modules",
    "page": 22,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 1,
    "title": "Factorization algebras and derived Hochschild functor over spaces",
    "page": 25,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 2,
    "title": "The Hochschild (,1)-functor in Top",
    "page": 25,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 2,
    "title": "(Pre)Factorization algebras",
    "page": 28,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
   },
   {
    "level": 2,
    "title": "Locally constant factorization algebras and En-algebras",
    "page": 37,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "37"
   },
   {
    "level": 1,
    "title": "Relationship with topological chiral homology",
    "page": 40,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   },
   {
    "level": 2,
    "title": "Review of topological chiral homology \u00e0 la Lurie",
    "page": 40,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   },
   {
    "level": 2,
    "title": "Locality axiom and the equivalence of topological chiral homology with higher Hochschild functor for CDGAs",
    "page": 43,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Relation with the Blob complex",
    "page": 47,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Topological chiral homology as a factorization algebra",
    "page": 49,
    "source": "outline",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Some applications",
    "page": 55,
    "source": "outline",
-   "number": "5.5"
+   "number": "5.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 59,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 48,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 49,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 50,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 51,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 52,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 53,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 54,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 55,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 56,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 57,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 58,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 59,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 60,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1857,
+   "n_words": 257,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -181,8 +714,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 6,
-   "n_chars": 16564,
-   "n_words": 2773
+   "n_chars": 16416,
+   "n_words": 2694,
+   "label_start": null,
+   "label_end": "6"
   },
   {
    "id": "sec-001-2-preliminary-definitions-and-notation",
@@ -191,8 +726,10 @@
    "level": 1,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 232,
-   "n_words": 39
+   "n_chars": 228,
+   "n_words": 35,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
    "id": "sec-002-21-simplicial-sets",
@@ -200,106 +737,354 @@
    "title": "Simplicial sets",
    "level": 2,
    "page_start": 6,
-   "page_end": 10,
-   "n_chars": 13211,
-   "n_words": 2328
+   "page_end": 8,
+   "n_chars": 3867,
+   "n_words": 757,
+   "label_start": "6",
+   "label_end": "8"
   },
   {
-   "id": "sec-003-3-derived-higher-hochschild-functor",
+   "id": "sec-003-22-commutative-differential-graded-algebras",
+   "number": "2.2",
+   "title": "Commutative Differential Graded Algebras",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 9251,
+   "n_words": 1538,
+   "label_start": "8",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-004-3-derived-higher-hochschild-functor",
    "number": "3",
    "title": "Derived higher Hochschild functor",
    "level": 1,
    "page_start": 10,
    "page_end": 10,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
-   "id": "sec-004-31-naive-axiomatic-approach-to-higher-hochschild",
+   "id": "sec-005-31-naive-axiomatic-approach-to-higher-hochschild",
    "number": "3.1",
    "title": "Naive axiomatic approach to higher Hochschild homology",
    "level": 2,
    "page_start": 10,
    "page_end": 22,
-   "n_chars": 32436,
-   "n_words": 6028
+   "n_chars": 32038,
+   "n_words": 5767,
+   "label_start": "10",
+   "label_end": "22"
   },
   {
-   "id": "sec-005-33-pointed-simplicial-sets-and-modules",
+   "id": "sec-006-33-pointed-simplicial-sets-and-modules",
    "number": "3.3",
    "title": "Pointed simplicial sets and modules",
    "level": 2,
    "page_start": 22,
-   "page_end": 37,
-   "n_chars": 37598,
-   "n_words": 7181
+   "page_end": 25,
+   "n_chars": 6215,
+   "n_words": 1172,
+   "label_start": "22",
+   "label_end": "25"
   },
   {
-   "id": "sec-006-43-locally-constant-factorization-algebras-and-e",
+   "id": "sec-007-4-factorization-algebras-and-derived-hochschild",
+   "number": "4",
+   "title": "Factorization algebras and derived Hochschild functor over spaces",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 28,
+   "n_chars": 7117,
+   "n_words": 1353,
+   "label_start": "25",
+   "label_end": "28"
+  },
+  {
+   "id": "sec-008-42-prefactorization-algebras",
+   "number": "4.2",
+   "title": "(Pre)Factorization algebras",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 37,
+   "n_chars": 23729,
+   "n_words": 4485,
+   "label_start": "28",
+   "label_end": "37"
+  },
+  {
+   "id": "sec-009-43-locally-constant-factorization-algebras-and-e",
    "number": "4.3",
    "title": "Locally constant factorization algebras and En-algebras",
    "level": 2,
    "page_start": 37,
    "page_end": 40,
-   "n_chars": 10069,
-   "n_words": 1782
+   "n_chars": 10155,
+   "n_words": 1919,
+   "label_start": "37",
+   "label_end": "40"
   },
   {
-   "id": "sec-007-5-relationship-with-topological-chiral-homology",
+   "id": "sec-010-5-relationship-with-topological-chiral-homology",
    "number": "5",
    "title": "Relationship with topological chiral homology",
    "level": 1,
    "page_start": 40,
-   "page_end": 43,
-   "n_chars": 8066,
-   "n_words": 1440
+   "page_end": 40,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "40",
+   "label_end": "40"
   },
   {
-   "id": "sec-008-52-locality-axiom-and-the-equivalence-of-topolog",
+   "id": "sec-011-51-review-of-topological-chiral-homology-\u00e0-la-lu",
+   "number": "5.1",
+   "title": "Review of topological chiral homology \u00e0 la Lurie",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 43,
+   "n_chars": 7985,
+   "n_words": 1496,
+   "label_start": "40",
+   "label_end": null
+  },
+  {
+   "id": "sec-012-52-locality-axiom-and-the-equivalence-of-topolog",
    "number": "5.2",
    "title": "Locality axiom and the equivalence of topological chiral homology with higher Hochschild functor for CDGAs",
    "level": 2,
    "page_start": 43,
    "page_end": 47,
-   "n_chars": 12789,
-   "n_words": 2437
+   "n_chars": 12890,
+   "n_words": 2566,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-009-53-relation-with-the-blob-complex",
+   "id": "sec-013-53-relation-with-the-blob-complex",
    "number": "5.3",
    "title": "Relation with the Blob complex",
    "level": 2,
    "page_start": 47,
-   "page_end": 55,
-   "n_chars": 22269,
-   "n_words": 4057
+   "page_end": 49,
+   "n_chars": 4143,
+   "n_words": 706,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-010-55-some-applications",
+   "id": "sec-014-54-topological-chiral-homology-as-a-factorizatio",
+   "number": "5.4",
+   "title": "Topological chiral homology as a factorization algebra",
+   "level": 2,
+   "page_start": 49,
+   "page_end": 55,
+   "n_chars": 18174,
+   "n_words": 3533,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-015-55-some-applications",
    "number": "5.5",
    "title": "Some applications",
    "level": 2,
    "page_start": 55,
    "page_end": 59,
-   "n_chars": 8897,
-   "n_words": 1586
+   "n_chars": 8892,
+   "n_words": 1609,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-011-references",
+   "id": "sec-016-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 59,
    "page_end": 60,
-   "n_chars": 4862,
-   "n_words": 734
+   "n_chars": 4808,
+   "n_words": 680,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 20,
-  "sections": 12,
-  "chars_total": 166993
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 0,
+    "items": []
+   },
+   "found_not_listed": {
+    "count": 1,
+    "items": [
+     "5.2 Locality axiom and the equivalence of topological chiral homology with higher Hochschild functor for CDGAs. In view of Proposition 11 and"
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 18,
+  "chars_total": 167765,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 25,
+   "overlaid": 13,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-preliminary-definitions-and-notation",
+     "title": "Preliminary definitions and notation",
+     "prose_ratio": 0.291,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-21-simplicial-sets",
+     "title": "Simplicial sets",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.62,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-22-commutative-differential-graded-algebras",
+     "title": "Commutative Differential Graded Algebras",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.954,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-3-derived-higher-hochschild-functor",
+     "title": "Derived higher Hochschild functor",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-31-naive-axiomatic-approach-to-higher-hochschild",
+     "title": "Naive axiomatic approach to higher Hochschild homology",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-33-pointed-simplicial-sets-and-modules",
+     "title": "Pointed simplicial sets and modules",
+     "prose_ratio": 0.903,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-4-factorization-algebras-and-derived-hochschild",
+     "title": "Factorization algebras and derived Hochschild functor over spaces",
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-42-prefactorization-algebras",
+     "title": "(Pre)Factorization algebras",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-43-locally-constant-factorization-algebras-and-e",
+     "title": "Locally constant factorization algebras and En-algebras",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-5-relationship-with-topological-chiral-homology",
+     "title": "Relationship with topological chiral homology",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-51-review-of-topological-chiral-homology-\u00e0-la-lu",
+     "title": "Review of topological chiral homology \u00e0 la Lurie",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-52-locality-axiom-and-the-equivalence-of-topolog",
+     "title": "Locality axiom and the equivalence of topological chiral homology with higher Hochschild functor for CDGAs",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-53-relation-with-the-blob-complex",
+     "title": "Relation with the Blob complex",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-54-topological-chiral-homology-as-a-factorizatio",
+     "title": "Topological chiral homology as a factorization algebra",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-55-some-applications",
+     "title": "Some applications",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

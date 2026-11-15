@@ -2,7 +2,7 @@
 """qbeta_signed_vs_abs_tower_diagnostic.py — concrete numerical test of
 the user's question (2026-06-01): "do we need the |...|?"
 
-Per `prop:li2q-phiq-bar-symmetrization`: binding (Q_β) uses Li_2^q
+Per `li2q-phiq-bar-symmetrization`: binding (Q_β) uses Li_2^q
 without |...|; MASS absolutes (m_p, m_n, m_atom) use Φ_q with |...|.
 The user asked whether the |...| is necessary.
 
@@ -12,6 +12,11 @@ whether the difference is structurally meaningful for the c_3 saga.
 
 DISCIPLINE. This is a DIAGNOSTIC, not a new candidate. The c_3 saga
 stays open per PR #1626 + #1630 (cross-anchor under-diagnostic).
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 

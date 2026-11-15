@@ -1,0 +1,35 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "hornig-mayer2002",
+  "library": {
+    "docId": "arxiv-physics-0203048v1",
+    "dir": "library/arxiv-physics-0203048v1",
+    "pdf": "library/arxiv-physics-0203048v1/0203048v1.pdf",
+    "stage": "candidates",
+    "pages": 14,
+    "sections": 10,
+    "arxiv": "physics/0203048v1"
+  },
+  "type": "article",
+  "title": "Towards a third-order topological invariant for magnetic fields",
+  "author": [
+    {
+      "family": "Hornig",
+      "given": "Gunnar"
+    },
+    {
+      "family": "Mayer",
+      "given": "Christoph"
+    }
+  ],
+  "container-title": "arXiv preprint",
+  "issued": {
+    "date-parts": [
+      [
+        2002
+      ]
+    ]
+  },
+  "URL": "https://arxiv.org/abs/physics/0203048",
+  "note": "arXiv:physics/0203048. Read in full 2026-08-01. Constructs $H^{(3)}=\\int A^1\\cdot A^2\\times A^3$ via the SU(2) Chern–Simons split (not Massey products). Independently confirms obstruction O1 from the physics side, naming it outright: 'the antisymmetry of H⁽³⁾ seems to be one of the key problems'. Its Conclusions also state the scaling trap — 'only expressions quadratic and cubic in magnetic flux can be obtained' — with the quadratic slot occupied by cross-helicity, which vanishes for Brunnian configurations. No energy content; requires a simply-connected domain with boundary, so it does not address O2. Uploaded library/arxiv-physics-0203048v1/0203048v1.pdf."
+}

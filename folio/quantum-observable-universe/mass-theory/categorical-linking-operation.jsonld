@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-categorical-linking-operation",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:categorical-linking-operation",
+  "kind": "conjecture",
+  "title": "Categorical linking operation $\\mathrm{Lk}_R$: ribbon-category dual of topological linking number",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-categorical-higgs-mechanism"
+  ],
+  "tags": [
+    "ribbon-category",
+    "linking-number",
+    "categorical-physics",
+    "braided-monoidal",
+    "trace-cut",
+    "knot-vs-link",
+    "open-problem",
+    "tier-a"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.CategoricalLinkingOperation",
+  "text": "categorical-linking-operation.md",
+  "leanSource": "categorical-linking-operation.lean",
+  "provenance": "authored"
+}

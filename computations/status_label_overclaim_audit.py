@@ -111,7 +111,7 @@ def main() -> int:
     strict = "--strict" in sys.argv
     as_json = "--json" in sys.argv
     hits = []
-    for ts in sorted(glob.glob(os.path.join(ROOT, "content", "**", "*.ts"),
+    for ts in sorted(glob.glob(os.path.join(ROOT, "folio", "**", "*.ts"),
                                recursive=True)):
         if "/schema/" in ts or "/pipeline/" in ts or ts.endswith(".d.ts"):
             continue

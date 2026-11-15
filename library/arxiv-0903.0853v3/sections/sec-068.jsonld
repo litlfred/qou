@@ -1,18 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-0903.0853v3/sections/sec-068",
   "@type": [
     "doco:Section"
   ],
-  "title": "Extension classes of analytic q-diﬀerence modules. — From",
-  "pageStart": 35,
-  "pageEnd": 35,
+  "title": "Extensions of difference modules",
+  "pageStart": 151,
+  "pageEnd": 155,
   "contains": [
-    "library/arxiv-0903.0853v3/blocks/prose-sec-068",
-    "library/arxiv-0903.0853v3/blocks/thm-sec-068-01",
-    "library/arxiv-0903.0853v3/blocks/lem-sec-068-02"
+    "library/arxiv-0903.0853v3/blocks/prose-sec-068"
   ],
-  "derivedFrom": "library/arxiv-0903.0853v3/manifest",
-  "sourceDocument": "library/arxiv-0903.0853v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0903.0853v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0903.0853v3",
   "provenance": "ingested"
 }

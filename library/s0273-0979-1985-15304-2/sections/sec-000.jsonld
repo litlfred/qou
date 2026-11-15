@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/s0273-0979-1985-15304-2/sections/sec-000",
   "@type": [
     "doco:Section"
   ],
-  "title": "Rudolf [21]. Also, if the condition of the theorem holds, we conclude",
-  "pageStart": 3,
-  "pageEnd": 8,
+  "title": "-iyr",
+  "pageStart": 7,
+  "pageEnd": 9,
   "contains": [
     "library/s0273-0979-1985-15304-2/blocks/prose-sec-000"
   ],
-  "derivedFrom": "library/s0273-0979-1985-15304-2/manifest",
-  "sourceDocument": "library/s0273-0979-1985-15304-2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s0273-0979-1985-15304-2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s0273-0979-1985-15304-2",
   "provenance": "ingested"
 }

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/1-s20-s0166864101002632-main/blocks/prose-sec-001",
+  "kind": "prose",
+  "title": "The lemmas",
+  "pageStart": 3,
+  "pageEnd": 7,
+  "text": "../sections/sec-001-2-the-lemmas.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1-s20-s0166864101002632-main",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1-s20-s0166864101002632-main",
+  "provenance": "ingested"
+}

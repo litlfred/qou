@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/di-cairano-2022-j-phys-commun-6-015002/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/di-cairano-2022-j-phys-commun-6-015002/blocks/prose-sec-005",
   "kind": "prose",
   "title": "Formal derivation of a nonlinear GLE",
   "pageStart": 6,
   "pageEnd": 6,
   "text": "../sections/sec-005-2-formal-derivation-of-a-nonlinear-gle.md",
-  "derivedFrom": "library/di-cairano-2022-j-phys-commun-6-015002/manifest",
-  "sourceDocument": "library/di-cairano-2022-j-phys-commun-6-015002/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/di-cairano-2022-j-phys-commun-6-015002",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/di-cairano-2022-j-phys-commun-6-015002",
   "provenance": "ingested"
 }

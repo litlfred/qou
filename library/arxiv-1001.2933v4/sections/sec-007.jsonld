@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1001.2933v4/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Comparing Compact And Complex Lie Groups",
+  "pageStart": 17,
+  "pageEnd": 20,
+  "contains": [
+    "library/arxiv-1001.2933v4/blocks/prose-sec-007"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1001.2933v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1001.2933v4",
+  "provenance": "ingested"
+}

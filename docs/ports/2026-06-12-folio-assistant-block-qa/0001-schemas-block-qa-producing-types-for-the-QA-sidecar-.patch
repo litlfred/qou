@@ -261,7 +261,7 @@ index 0000000..4b50d8b
 +   * Repo-relative paths to extra inputs the checker consults beyond
 +   * the block under audit — for example, cached audit witnesses
 +   * (`docs/audits/*.json`), the bibliography database
-+   * (`content/schema/references.ts`), or cross-block manifests.
++   * (`folio/schema/references.ts`), or cross-block manifests.
 +   * Concatenated content of these files is hashed into `deps_hash`
 +   * on the entry. Changes invalidate the entry.
 +   */

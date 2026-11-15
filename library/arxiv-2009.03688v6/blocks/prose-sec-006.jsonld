@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2009.03688v6/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2009.03688v6/blocks/prose-sec-006",
   "kind": "prose",
-  "title": "T A(z), A",
-  "pageStart": 7,
-  "pageEnd": 14,
-  "text": "../sections/sec-006-4-t-az-a.md",
-  "derivedFrom": "library/arxiv-2009.03688v6/manifest",
-  "sourceDocument": "library/arxiv-2009.03688v6/manifest",
+  "title": "A diﬀerent construction: E8-singularity from",
+  "pageStart": 39,
+  "pageEnd": 46,
+  "text": "../sections/sec-006-4-a-diﬀerent-construction-e8-singularity-from.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2009.03688v6",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2009.03688v6",
   "provenance": "ingested"
 }

@@ -83,15 +83,33 @@ def _git_show(ref: str, path: str) -> str | None:
     return proc.stdout if proc.returncode == 0 else None
 
 
+# The paper tree was renamed `content/` -> `folio/` on main (2026-09-29, #7485).
+# A single hardcoded prefix matches NOTHING on the other side of that rename, and
+# `git ls-tree` does not error on a pathspec absent from the tree -- it prints
+# nothing.  So the pre-rename spelling did not make this gate fail, it made it
+# scan zero sidecars and report "0 agent entries missing", which reads as a pass.
+# Accept every known spelling so a comparison spanning the rename still sees both
+# sides, and refuse an empty scan rather than certify it.
+_TREE_ALIASES = ("folio/", "content/")
+
+
 def _sidecars_at(ref: str) -> list[str]:
     proc = subprocess.run(
-        ["git", "ls-tree", "-r", "--name-only", ref, "content/"],
+        ["git", "ls-tree", "-r", "--name-only", ref, *_TREE_ALIASES],
         cwd=REPO,
         capture_output=True,
         text=True,
         check=True,
     )
-    return [p for p in proc.stdout.splitlines() if p.endswith(".qa.json")]
+    found = [p for p in proc.stdout.splitlines() if p.endswith(".qa.json")]
+    if not found:
+        raise SystemExit(
+            f"qa-sidecar-agent-union: no .qa.json found at {ref} under any of "
+            f"{', '.join(_TREE_ALIASES)} -- refusing to report a clean union on "
+            f"an empty scan.  If the paper tree moved again, add the new prefix "
+            f"to _TREE_ALIASES."
+        )
+    return found
 
 
 def _identity(entry: dict) -> tuple:

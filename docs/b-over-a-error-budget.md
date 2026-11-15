@@ -32,7 +32,7 @@ E_2** for semisimple H_n(q) at generic q.
 | (6) Categorical mass invariant M(𝔥) = ρ · tr_M(T_w) ∈ ℚ(q) | ρ structural integer (multiplicity in SDP solution) |
 | (7) Archimedean realization functor at q = q_0, multiply by m_e | gives B(𝔥) ∈ ℝ (MeV) |
 
-Reference blocks: [`prop:atom-knot-mass-derivation`](https://github.com/litlfred/qou/blob/da3fd4c36ac84c4aa157dcb5663087276e5f3ade/content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md), [`prop:joint-tower-sdp-confinement`](https://github.com/litlfred/qou/blob/da3fd4c36ac84c4aa157dcb5663087276e5f3ade/content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md) (commits `7588970f`, `fdc51078`).
+Reference blocks: [`prop:atom-knot-mass-derivation`](https://github.com/litlfred/qou/blob/da3fd4c36ac84c4aa157dcb5663087276e5f3ade/folio/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md), [`prop:joint-tower-sdp-confinement`](https://github.com/litlfred/qou/blob/da3fd4c36ac84c4aa157dcb5663087276e5f3ade/folio/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md) (commits `7588970f`, `fdc51078`).
 
 ### Family specializations of the canonical chain
 
@@ -79,7 +79,7 @@ which costs Σ_λ dim(λ)² · L = polynomial in p(n) · L.
 ### 1.2  GB-filtration page-truncation bound (mostly trivial after E_2 collapse)
 
 The Gröbner–Shirshov spectral sequence on H_n(q) **collapses at E_2** for
-semisimple q (per [`prop:spectral-sequence-collapse`](../content/quantum-observable-universe/braids-and-knots/spectral-sequence-collapse.md)).
+semisimple q (per [`prop:spectral-sequence-collapse`](../folio/quantum-observable-universe/braids-and-knots/spectral-sequence-collapse.md)).
 This means d_r = 0 for r ≥ 3 and the E_∞-page identifies with the
 Wedderburn decomposition.
 
@@ -216,7 +216,7 @@ status table.
 
 This PR (#442) originally contained:
 
-- `content/quantum-observable-universe/braids-and-knots/b-over-a-spectral-decomposition.{md,ts,lean}`
+- `folio/quantum-observable-universe/braids-and-knots/b-over-a-spectral-decomposition.{md,ts,lean}`
 - `computations/b_over_a_evaluator_v2.py`
 - `computations/b-over-a-witness-v2.json`
 
@@ -247,11 +247,11 @@ Per the watched-branch's [methodology-deprecation.witness.json](https://github.c
 
 ### Why ⁴He "reuses ³He's L6a4" — it doesn't
 
-Per [`recursive-atom-knot-atlas.md:26`](https://github.com/litlfred/qou/blob/da3fd4c36ac84c4aa157dcb5663087276e5f3ade/content/quantum-observable-universe/braids-and-knots/recursive-atom-knot-atlas.md#L26): *"`magic-A-formula`: algebraic shell-closure formula `A · 8G` for double-magic light nuclei; **no single hyperbolic knot**. Used for: ⁴He."*
+Per [`recursive-atom-knot-atlas.md:26`](https://github.com/litlfred/qou/blob/da3fd4c36ac84c4aa157dcb5663087276e5f3ade/folio/quantum-observable-universe/braids-and-knots/recursive-atom-knot-atlas.md#L26): *"`magic-A-formula`: algebraic shell-closure formula `A · 8G` for double-magic light nuclei; **no single hyperbolic knot**. Used for: ⁴He."*
 
-The ⁴He formula `B = 2 · m_e · 4 · Vol(L6a4)` in [`binding_ladder_catalog.py:63`](../computations/binding_ladder_catalog.py#L63) writes `Vol(L6a4)` because **`Vol(L6a4) = 8G` is an exact identity** ([`building-block-knots.lean:62`](../content/quantum-observable-universe/observations/building-block-knots.lean#L62) and standard hyperbolic geometry: the Borromean rings complement = 2 ideal octahedra each of volume 4G, total 8G where G = Catalan's constant).
+The ⁴He formula `B = 2 · m_e · 4 · Vol(L6a4)` in [`binding_ladder_catalog.py:63`](../computations/binding_ladder_catalog.py#L63) writes `Vol(L6a4)` because **`Vol(L6a4) = 8G` is an exact identity** ([`building-block-knots.lean:62`](../folio/quantum-observable-universe/observations/building-block-knots.lean#L62) and standard hyperbolic geometry: the Borromean rings complement = 2 ideal octahedra each of volume 4G, total 8G where G = Catalan's constant).
 
-The structural content of the ⁴He formula is `α = m_e · 8G` (universal residue prefactor from [`binding-scale-catalan.md`](../content/quantum-observable-universe/braids-and-knots/binding-scale-catalan.md), `prop:gravity-spectral-prefactor`), which derives from the hyperbolic volume of the proton/neutron's internal Borromean three-quark topology — **not** from L6a4 as ³He's atomic-level knot. Both happen to numerically equal 8G because both reduce to the same hyperbolic Borromean structure (the proton/neutron internal vs the ³He-body link).
+The structural content of the ⁴He formula is `α = m_e · 8G` (universal residue prefactor from [`binding-scale-catalan.md`](../folio/quantum-observable-universe/braids-and-knots/binding-scale-catalan.md), `prop:gravity-spectral-prefactor`), which derives from the hyperbolic volume of the proton/neutron's internal Borromean three-quark topology — **not** from L6a4 as ³He's atomic-level knot. Both happen to numerically equal 8G because both reduce to the same hyperbolic Borromean structure (the proton/neutron internal vs the ³He-body link).
 
 So ⁴He's `Vol(L6a4)` is a **notational handle** for the Catalan-G coupling, not a knot reuse.
 

@@ -1,0 +1,62 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "belaey2025",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 312,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2507.13873v1/2507.13873v1.pdf"
+        },
+        "id": "belaey2025",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Probes a 2d sinh dilaton gravity model whose asymptotic region geometrises the global symmetry of a q-deformed CFT, and finds q-deformed hyperbolic disk isometries emerging at the level of the two-point correlator. Two features make it more than topical for this folio. First, the deformation parameter is written q = e^{i pi b}, and the paper solves the SAME set of q-Ward identities in two separate ranges -- q on the unit circle and 0 < q < 1 -- obtaining different solutions in each. That two-regime structure is the corpus's own fibre-versus-observable split and its two-saddle reading of one object (rem:phi-b-bar-parity-interpretation: real-q Rogers saddle for mass, root-of-unity Faddeev saddle for decay), arrived at independently in a holographic setting. Second, the folio's gravity-spacetime chapter is explicitly a comparison chapter (rem:lqg-adm-ashtekar-comparison and its intro block compare against ADM, Ashtekar, LQG) and does not mention any q-deformed holography programme. Supporting: no result here is consumed by any derivation, and the two settings are only structurally analogous.",
+          "keyResults": [
+            {
+              "locator": "Sect. 2 (Correlation functions on the quantum disk)",
+              "statement": "The q-Ward identities for the two-point function admit distinct solutions depending on the range of q -- one for q = e^{i pi b} on the unit circle (analytic continuation to non-integer conformal weight), another for 0 < q < 1 -- with q-deformed hyperbolic disk isometries emerging in both.",
+              "useForFolio": "An independent instance of one q-object having two archimedean realisations selected by whether q sits on the unit circle or the real interval, which is the corpus's two-lens claim. What would need checking before any stronger statement: whether their b relates to the corpus's b = sqrt(t/2pi) e^{i pi/4} branch, and whether their two solutions are two faces of one function or two genuinely different objects.",
+              "targets": [
+                "rem:phi-b-bar-parity-interpretation"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry; the gravity-spacetime comparison chapter is silent on q-deformed holography, which is the nearest live external programme to the folio's own q-deformed-geometry thesis.",
+              "target": "rem:lqg-adm-ashtekar-comparison",
+              "bean": "qou-hm8u"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "A comparison remark in gravity-spacetime placing q-deformed holography alongside the existing ADM/Ashtekar/LQG entries. Kept as new-remark, not cite-in-block on rem:phi-b-bar-parity-interpretation, because the two-regime parallel is structural only and asserting more without checking the b conventions would be exactly the kind of resemblance-as-evidence the corpus rules against.",
+              "target": "rem:lqg-adm-ashtekar-comparison",
+              "bean": "qou-20eh"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "fa1d38d08dc4"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

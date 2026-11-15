@@ -6,565 +6,2165 @@
   "sha256": "29b14ce8a7c0ecac5ffaa01d621ff2cfad96e6dec96a0a5d28fa7355a5482664",
   "bytes": 1861547,
   "pages": 181,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:25Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.1088/1674-1137/abddae",
-  "title": "The NUBASE2020 evaluation of nuclear physics properties",
+  "title": "The NUBASE2020 evaluation of nuclear physics properties *",
   "authors_raw": "View the article online for updates and enhancements",
   "title_lines": [
    "Chinese Physics C",
-   "PAPER • OPEN ACCESS",
+   "PAPER \u2022 OPEN ACCESS",
    "The NUBASE2020 evaluation of nuclear physics",
    "properties *",
    "To cite this article: F.G. Kondev et al 2021 Chinese Phys. C 45 030001"
   ],
   "abstract": null,
   "docinfo": {
-   "CreationDate": "D:20210302073335-06'00'",
+   "Producer": "pdfTeX-1.40.21; modified using iText\u00ae 5.5.13.5 \u00a92000-2026 iText Group NV (IOP Publishing Ltd; licensed version)",
    "Creator": "TeX",
-   "Producer": "pdfTeX-1.40.21; modified using iText® 5.5.13.5 ©2000-2026 iText Group NV (IOP Publishing Ltd; licensed version)"
+   "CreationDate": "D:20210302073335-06'00'"
   },
-  "title_prev": "Chinese Physics C PAPER • OPEN ACCESS The NUBASE2020 evaluation of nuclear physics properties * To cite this article: F.G. Kondev et al 2021 Chinese Phys. C 45 030001"
+  "title_raw": "Chinese Physics C PAPER \u2022 OPEN ACCESS The NUBASE2020 evaluation of nuclear physics properties * To cite this article: F.G. Kondev et al 2021 Chinese Phys. C 45 030001",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "The NUBASE2020 evaluation of nuclear physics properties *",
+   "text": "Chinese Physics C PAPER \u2022 OPEN ACCESS The NUBASE2020 evaluation of nuclear physics properties * To cite this article: F.G. Kondev et al 2021 Chinese Phys. C 45 030001",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
-  {
-   "level": 1,
-   "title": "Physics Division, Argonne National Laboratory, Lemont, IL 60439, USA",
-   "page": 2,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Institute of Modern Physics, Chinese Academy of Sciences, Lanzhou 730000, China",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Advanced Energy Science and Technology Guangdong Laboratory, Huizhou 516003, China",
-   "page": 2,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "Max-Planck-Institut f¨ur Kernphysik, Saupfercheckweg 1, 69117 Heidelberg, Germany",
-   "page": 2,
-   "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "Universit´e Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France",
-   "page": 2,
-   "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "RIKEN Nishina Center, Wako, Saitama 351-0198, Japan",
-   "page": 2,
-   "source": "inferred",
-   "number": "7"
-  },
   {
    "level": 1,
    "title": "Introduction",
    "page": 2,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Mass excess",
    "page": 3,
    "source": "inferred",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Isomers",
    "page": 3,
    "source": "inferred",
-   "number": "2.2"
-  },
-  {
-   "level": 3,
-   "title": "Isobaric analog states",
-   "page": 6,
-   "source": "inferred",
-   "number": "2.2.1"
+   "number": "2.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Half-life",
    "page": 6,
    "source": "inferred",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Spin and parity",
    "page": 8,
    "source": "inferred",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Decay modes and their intensities",
    "page": 11,
    "source": "inferred",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Isotopic abundances",
    "page": 13,
    "source": "inferred",
-   "number": "2.6"
+   "number": "2.6",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Y ear of discovery",
+   "title": "Year of discovery",
    "page": 13,
    "source": "inferred",
-   "number": "2.7"
+   "number": "2.7",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "References and Dissemination",
    "page": 13,
    "source": "inferred",
-   "number": "2.8"
+   "number": "2.8",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Trends in neighboring nuclei (TNN)",
    "page": 13,
    "source": "inferred",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "A veraging procedure and uncertainties",
+   "title": "Averaging procedure and uncertainties",
    "page": 13,
    "source": "inferred",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Symmetrization of asymmetric uncertainties",
    "page": 14,
    "source": "inferred",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Rounding policy",
    "page": 14,
    "source": "inferred",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Conclusions and outlook",
    "page": 14,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Acknowledgments",
    "page": 15,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
   },
   {
-   "level": 1,
+   "level": 2,
    "title": "References",
    "page": 15,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "G. Audi, F.G. Kondev, M. Wang, B. Pfeiffer, X. Sun,",
-   "page": 15,
+   "title": "MMC12 J",
+   "page": 26,
    "source": "inferred",
-   "number": "3"
+   "number": "15",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "G. Audi, F.G. Kondev, M. Wang, W.J. Huang, S. Naimi,",
-   "page": 15,
+   "title": "AHW",
+   "page": 34,
    "source": "inferred",
-   "number": "4"
+   "number": "17",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "M.P. Unterweger and R. Fitzgerald, Appl. Radiat. Isot. 87",
-   "page": 16,
+   "title": "MMC12 J",
+   "page": 37,
    "source": "inferred",
-   "number": "11"
+   "number": "06",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "A. MacDonald, B. Karamy, K. Setoodehnia, B.Singh,",
-   "page": 16,
+   "title": "MMC12 J",
+   "page": 42,
    "source": "inferred",
-   "number": "14"
+   "number": "10",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "IAEA Coordinated Research Project on a reference",
-   "page": 16,
+   "title": "FGK208 JD",
+   "page": 79,
    "source": "inferred",
-   "number": "19"
+   "number": "95",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "9"
   },
   {
    "level": 1,
-   "title": "J. Meija, T.B. Coplen, M. Berglund, W.A. Brand, P. De",
-   "page": 16,
+   "title": "FGK205 EJ",
+   "page": 97,
    "source": "inferred",
-   "number": "20"
+   "number": "17",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "M. Thoennessen, “The Discovery of Isotopes: A Com-",
-   "page": 16,
+   "title": "FGK208 IJ",
+   "page": 123,
    "source": "inferred",
-   "number": "21"
-  },
-  {
-   "level": 1,
-   "title": "B. Pritychenko, E. B ˇet´ak, M.A. Kellett, B. Singh and",
-   "page": 16,
-   "source": "inferred",
-   "number": "22"
+   "number": "06",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Nuclear chart displaying the mass-excess uncertainties for all nuclei in their ground state",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Nuclear chart displaying isomeric states with T1/2\u2265100 ns. For a given isotope where multiple isomers exist, only the longest-lived state is plotted",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Nuclear chart displaying the ground-state half-lives for all nuclei",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Nuclear chart displaying the measured ground-state spins",
+   "page": 9,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Nuclear chart displaying the measured isomeric-state spins",
+   "page": 10,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Nuclear chart displaying the main decay mode for nuclei in their ground state",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "(dashed black) original Normal distributions, N(X,b) (left on X) and N(X,a) (right on X), associated with the measured",
+   "page": 15,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "5",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "6",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "9",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "10",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "11",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "12",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "13",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "14",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 60,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 61,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "4",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "5",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "6",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 68,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 69,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 70,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 71,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 72,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 73,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 74,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 75,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 76,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 77,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 78,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 79,
+   "label": "9",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 80,
+   "label": "10",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 81,
+   "label": "11",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 82,
+   "label": "12",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 83,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 84,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 85,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 86,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 87,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 88,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 89,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 90,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 91,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 92,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 93,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 94,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 95,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 96,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 97,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 98,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 99,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 100,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 101,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 102,
+   "label": "9",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 103,
+   "label": "10",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 104,
+   "label": "11",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 105,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 106,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 107,
+   "label": "14",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 108,
+   "label": "15",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 109,
+   "label": "16",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 110,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 111,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 112,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 113,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 114,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 115,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 116,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 117,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 118,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 119,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 120,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 121,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 122,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 123,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 124,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 125,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 126,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 127,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 128,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 129,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 130,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 131,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 132,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 133,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 134,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 135,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 136,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 137,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 138,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 139,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 140,
+   "label": "4",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 141,
+   "label": "5",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 142,
+   "label": "6",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 143,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 144,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 145,
+   "label": "9",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 146,
+   "label": "10",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 147,
+   "label": "11",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 148,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 149,
+   "label": "13",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 150,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 151,
+   "label": "15",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 152,
+   "label": "16",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 153,
+   "label": "17",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 154,
+   "label": "18",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 155,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 156,
+   "label": "20",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 157,
+   "label": "21",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 158,
+   "label": "22",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 159,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 160,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 161,
+   "label": "6",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 162,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 163,
+   "label": "8",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 164,
+   "label": "9",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 165,
+   "label": "10",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 166,
+   "label": "11",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 167,
+   "label": "12",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 168,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 169,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 170,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 171,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 172,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 173,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 174,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 175,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 176,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 177,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 178,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 179,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 180,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 181,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-1-physics-division-argonne-national-laboratory-l",
-   "number": "1",
-   "title": "Physics Division, Argonne National Laboratory, Lemont, IL 60439, USA",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
    "level": 1,
-   "page_start": 2,
+   "page_start": 1,
    "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 2154,
+   "n_words": 321,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-2-institute-of-modern-physics-chinese-academy-of",
-   "number": "2",
-   "title": "Institute of Modern Physics, Chinese Academy of Sciences, Lanzhou 730000, China",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 108,
-   "n_words": 16
-  },
-  {
-   "id": "sec-002-4-advanced-energy-science-and-technology-guangdo",
-   "number": "4",
-   "title": "Advanced Energy Science and Technology Guangdong Laboratory, Huizhou 516003, China",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-003-5-max-planck-institut-fur-kernphysik-saupferchec",
-   "number": "5",
-   "title": "Max-Planck-Institut f¨ur Kernphysik, Saupfercheckweg 1, 69117 Heidelberg, Germany",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-004-6-universite-paris-saclay-cnrsin2p3-ijclab-91405",
-   "number": "6",
-   "title": "Universit´e Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-005-7-riken-nishina-center-wako-saitama-351-0198-jap",
-   "number": "7",
-   "title": "RIKEN Nishina Center, Wako, Saitama 351-0198, Japan",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 996,
-   "n_words": 134
-  },
-  {
-   "id": "sec-006-1-introduction",
-   "number": "1",
-   "title": "Introduction",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 113,
-   "n_words": 18
-  },
-  {
-   "id": "sec-007-22-isomers",
+   "id": "sec-000-22-isomers",
    "number": "2.2",
    "title": "Isomers",
    "level": 2,
    "page_start": 2,
-   "page_end": 3,
-   "n_chars": 5676,
-   "n_words": 866
+   "page_end": 2,
+   "n_chars": 73,
+   "n_words": 9,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-21-mass-excess",
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 5830,
+   "n_words": 868,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-21-mass-excess",
    "number": "2.1",
    "title": "Mass excess",
    "level": 2,
    "page_start": 3,
    "page_end": 5,
-   "n_chars": 3734,
-   "n_words": 691
+   "n_chars": 3731,
+   "n_words": 688,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-009-23-half-life",
+   "id": "sec-003-23-half-life",
    "number": "2.3",
    "title": "Half-life",
    "level": 2,
    "page_start": 5,
-   "page_end": 6,
-   "n_chars": 4284,
-   "n_words": 730
-  },
-  {
-   "id": "sec-010-221-isobaric-analog-states",
-   "number": "2.2.1",
-   "title": "Isobaric analog states",
-   "level": 3,
-   "page_start": 6,
    "page_end": 8,
-   "n_chars": 6475,
-   "n_words": 1124
+   "n_chars": 10766,
+   "n_words": 1832,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-011-24-spin-and-parity",
+   "id": "sec-004-24-spin-and-parity",
    "number": "2.4",
    "title": "Spin and parity",
    "level": 2,
    "page_start": 8,
    "page_end": 11,
-   "n_chars": 3161,
-   "n_words": 584
+   "n_chars": 3160,
+   "n_words": 580,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-012-25-decay-modes-and-their-intensities",
+   "id": "sec-005-25-decay-modes-and-their-intensities",
    "number": "2.5",
    "title": "Decay modes and their intensities",
    "level": 2,
    "page_start": 11,
    "page_end": 13,
-   "n_chars": 5834,
-   "n_words": 1024
+   "n_chars": 5828,
+   "n_words": 1015,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-013-26-isotopic-abundances",
+   "id": "sec-006-26-isotopic-abundances",
    "number": "2.6",
    "title": "Isotopic abundances",
    "level": 2,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 336,
-   "n_words": 69
+   "n_chars": 337,
+   "n_words": 67,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-014-27-y-ear-of-discovery",
+   "id": "sec-007-27-year-of-discovery",
    "number": "2.7",
-   "title": "Y ear of discovery",
+   "title": "Year of discovery",
    "level": 2,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 314,
-   "n_words": 52
+   "n_chars": 317,
+   "n_words": 52,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-015-28-references-and-dissemination",
+   "id": "sec-008-28-references-and-dissemination",
    "number": "2.8",
    "title": "References and Dissemination",
    "level": 2,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 1638,
-   "n_words": 289
+   "n_chars": 1620,
+   "n_words": 268,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-016-31-trends-in-neighboring-nuclei-tnn",
+   "id": "sec-009-31-trends-in-neighboring-nuclei-tnn",
    "number": "3.1",
    "title": "Trends in neighboring nuclei (TNN)",
    "level": 2,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 1143,
-   "n_words": 189
+   "n_chars": 1144,
+   "n_words": 187,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-017-32-a-veraging-procedure-and-uncertainties",
+   "id": "sec-010-32-averaging-procedure-and-uncertainties",
    "number": "3.2",
-   "title": "A veraging procedure and uncertainties",
+   "title": "Averaging procedure and uncertainties",
    "level": 2,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 2695,
-   "n_words": 490
+   "n_chars": 2684,
+   "n_words": 476,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-018-33-symmetrization-of-asymmetric-uncertainties",
+   "id": "sec-011-33-symmetrization-of-asymmetric-uncertainties",
    "number": "3.3",
    "title": "Symmetrization of asymmetric uncertainties",
    "level": 2,
    "page_start": 14,
    "page_end": 14,
-   "n_chars": 1964,
-   "n_words": 381
+   "n_chars": 1931,
+   "n_words": 345,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-019-34-rounding-policy",
+   "id": "sec-012-34-rounding-policy",
    "number": "3.4",
    "title": "Rounding policy",
    "level": 2,
    "page_start": 14,
    "page_end": 14,
-   "n_chars": 743,
-   "n_words": 124
+   "n_chars": 739,
+   "n_words": 119,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-020-4-conclusions-and-outlook",
+   "id": "sec-013-4-conclusions-and-outlook",
    "number": "4",
    "title": "Conclusions and outlook",
    "level": 1,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 1033,
-   "n_words": 168
+   "n_chars": 1022,
+   "n_words": 157,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-021-references",
+   "id": "sec-014-references",
    "number": null,
    "title": "References",
-   "level": 1,
+   "level": 2,
    "page_start": 15,
    "page_end": 15,
-   "n_chars": 938,
-   "n_words": 145
+   "n_chars": 935,
+   "n_words": 141,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-022-5-acknowledgments",
+   "id": "sec-015-5-acknowledgments",
    "number": "5",
    "title": "Acknowledgments",
    "level": 1,
    "page_start": 15,
-   "page_end": 15,
-   "n_chars": 935,
-   "n_words": 153
+   "page_end": 26,
+   "n_chars": 31168,
+   "n_words": 5553,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-023-3-g-audi-fg-kondev-m-wang-b-pfeiffer-x-sun",
-   "number": "3",
-   "title": "G. Audi, F.G. Kondev, M. Wang, B. Pfeiffer, X. Sun,",
+   "id": "sec-016-15-mmc12-j",
+   "number": "15",
+   "title": "MMC12 J",
    "level": 1,
-   "page_start": 15,
-   "page_end": 15,
-   "n_chars": 57,
-   "n_words": 11
+   "page_start": 26,
+   "page_end": 34,
+   "n_chars": 25656,
+   "n_words": 4753,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-024-4-g-audi-fg-kondev-m-wang-wj-huang-s-naimi",
-   "number": "4",
-   "title": "G. Audi, F.G. Kondev, M. Wang, W.J. Huang, S. Naimi,",
+   "id": "sec-017-17-ahw",
+   "number": "17",
+   "title": "AHW",
    "level": 1,
-   "page_start": 15,
-   "page_end": 16,
-   "n_chars": 607,
-   "n_words": 105
+   "page_start": 34,
+   "page_end": 37,
+   "n_chars": 12409,
+   "n_words": 2413,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-025-11-mp-unterweger-and-r-fitzgerald-appl-radiat-is",
-   "number": "11",
-   "title": "M.P. Unterweger and R. Fitzgerald, Appl. Radiat. Isot. 87",
+   "id": "sec-018-06-mmc12-j",
+   "number": "06",
+   "title": "MMC12 J",
    "level": 1,
-   "page_start": 16,
-   "page_end": 16,
-   "n_chars": 200,
-   "n_words": 35
+   "page_start": 37,
+   "page_end": 42,
+   "n_chars": 17133,
+   "n_words": 3242,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-026-14-a-macdonald-b-karamy-k-setoodehnia-bsingh",
-   "number": "14",
-   "title": "A. MacDonald, B. Karamy, K. Setoodehnia, B.Singh,",
+   "id": "sec-019-10-mmc12-j",
+   "number": "10",
+   "title": "MMC12 J",
    "level": 1,
-   "page_start": 16,
-   "page_end": 16,
-   "n_chars": 313,
-   "n_words": 59
+   "page_start": 42,
+   "page_end": 79,
+   "n_chars": 138152,
+   "n_words": 26305,
+   "label_start": null,
+   "label_end": "9"
   },
   {
-   "id": "sec-027-19-iaea-coordinated-research-project-on-a-refere",
-   "number": "19",
-   "title": "IAEA Coordinated Research Project on a reference",
+   "id": "sec-020-95-fgk208-jd",
+   "number": "95",
+   "title": "FGK208 JD",
    "level": 1,
-   "page_start": 16,
-   "page_end": 16,
-   "n_chars": 444,
-   "n_words": 66
+   "page_start": 79,
+   "page_end": 97,
+   "n_chars": 70099,
+   "n_words": 13400,
+   "label_start": "9",
+   "label_end": null
   },
   {
-   "id": "sec-028-20-j-meija-tb-coplen-m-berglund-wa-brand-p-de",
-   "number": "20",
-   "title": "J. Meija, T.B. Coplen, M. Berglund, W.A. Brand, P. De",
+   "id": "sec-021-17-fgk205-ej",
+   "number": "17",
+   "title": "FGK205 EJ",
    "level": 1,
-   "page_start": 16,
-   "page_end": 16,
-   "n_chars": 122,
-   "n_words": 21
+   "page_start": 97,
+   "page_end": 123,
+   "n_chars": 100245,
+   "n_words": 19480,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-029-21-m-thoennessen-the-discovery-of-isotopes-a-com",
-   "number": "21",
-   "title": "M. Thoennessen, “The Discovery of Isotopes: A Com-",
+   "id": "sec-022-06-fgk208-ij",
+   "number": "06",
+   "title": "FGK208 IJ",
    "level": 1,
-   "page_start": 16,
-   "page_end": 16,
-   "n_chars": 118,
-   "n_words": 8
-  },
-  {
-   "id": "sec-030-22-b-pritychenko-e-b-ˇetak-ma-kellett-b-singh-an",
-   "number": "22",
-   "title": "B. Pritychenko, E. B ˇet´ak, M.A. Kellett, B. Singh and",
-   "level": 1,
-   "page_start": 16,
+   "page_start": 123,
    "page_end": 181,
-   "n_chars": 614377,
-   "n_words": 126042
+   "n_chars": 211424,
+   "n_words": 40161,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 31,
-  "sections": 31,
-  "chars_total": 658358
+  "toc_entries": 23,
+  "toc_inferred_entries": 23,
+  "toc_inferred_mean_confidence": 0.754,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 7,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 24,
+  "chars_total": 648557
  }
 }

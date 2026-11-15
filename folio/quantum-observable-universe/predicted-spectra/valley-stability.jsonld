@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sim-valley-stability",
+  "@type": [
+    "folio-assistant-core:Simulator"
+  ],
+  "label": "sim:valley-stability",
+  "kind": "simulator",
+  "title": "Valley of stability: beta-stability curve vs integer lattice",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-valley-table"
+  ],
+  "tags": [
+    "simulator",
+    "valley-of-stability",
+    "diophantine",
+    "coulomb",
+    "nuclear",
+    "interactive"
+  ],
+  "text": "valley-stability.md",
+  "provenance": "authored"
+}

@@ -3,9 +3,9 @@
 last commit is newer than its olean, or the olean is missing, or any import is
 dirty. Prints the dirty modules in topological order (deps first).
 
-Run from content/quantum-observable-universe/lean after
+Run from folio/quantum-observable-universe/lean after
   git log --since=<date well before the cache seed> --format=%ct --name-only origin/main \
-      -- content/quantum-observable-universe/lean/QOU > /tmp/src_times.txt
+      -- folio/quantum-observable-universe/lean/QOU > /tmp/src_times.txt
 and with /tmp/full_topo_all.txt holding the full topological order of QOU/**.
 Measured 2026-09-04: 158 of 2,597 (63 source-newer, 52 missing, 43 dependents),
 against 1,494 for a single seed-commit criterion — the difference is the 25
@@ -16,8 +16,8 @@ for l in open('/tmp/src_times.txt'):
     l = l.rstrip('\n')
     if not l: continue
     if l.isdigit(): t = int(l); continue
-    if l.endswith('.lean') and l.startswith('content/quantum-observable-universe/lean/QOU/'):
-        m = l[len('content/quantum-observable-universe/lean/'):-5].replace('/', '.')
+    if l.endswith('.lean') and l.startswith('folio/quantum-observable-universe/lean/QOU/'):
+        m = l[len('folio/quantum-observable-universe/lean/'):-5].replace('/', '.')
         last[m] = max(last.get(m, 0), t)
 order = [l.strip() for l in open('/tmp/full_topo_all.txt') if l.strip()]
 mods = {}

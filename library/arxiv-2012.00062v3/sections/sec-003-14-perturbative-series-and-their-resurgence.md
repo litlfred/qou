@@ -8,122 +8,197 @@ pages: 6-8
 source_pdf: 2012.00062v3.pdf
 source_sha256: 2aacb7fa43f5e0da
 doc_brief: "PEACOCK PATTERNS AND RESURGENCE IN COMPLEX CHERN-SIMONS THEORY — The partition function of complex Chern-Simons theory on a 3-manifold with torus boundary reduces to a ﬁnite dimensional"
+text_source: latex
+latex_prose_ratio: 0.965
+latex_coverage_ratio: 0.882
 ---
-erties of the asymptotic expansion of the state-integralZM(u;τ). Once we ﬁx an integral
-presentation ofZM(u;τ), the critical points of the integrand are described by an aﬃne curve
-S deﬁned by a polynomial equation
-S :p(x,y ) = 0. (11)
-We denote byP the labeling set of the branchesy =yσ(x) ofS. The perturbative expansion
-of the state-integral has the form
-Φ(x,y ;τ) = e
-V (u,v)
-2πiτ ϕ(x,y ;τ), ϕ (x,y ;τ)∈ 1√
-iδ
-Q [x±,y±,δ−1][[2πiτ]] (12)
-whereV :S∗→ C /(2πi),S∗ is the exponentiated deﬁned byp(x,y ) = 0 withx = eu,y =−ev
-and δ∈ Q (x,y ) is the so-called 1-loop invariant. The asymptotic seriesϕ(x,y ;τ) satisﬁes
-ϕ(x,y ; 0) = 1. The 8-th root of unity that appears as a prefactor inφ(x,y ;τ) exactly matches
-withoneappearingintheasymptoticsoftheKashaevinvariantnoticedin[GZb, Sec.1]. After
-choosing local branches, we deﬁne the vectorϕ(x;τ) = (ϕσ(x;τ))σ∈P = (ϕ(x,yσ(x);τ))σ∈P
-of asymptotic series. Recall the vector of holomorphic blocksB(x;q) from (4). We now
-discuss the relation between the asymptotics ofB(x;q) when q = e 2πiτ and τ approaches
-zero (in sectors) and the Borel resummations(Φ) of the vector of power seriesΦ(x;τ).
-The next conjecture summarizes the singularities ofΦ(x;τ) in the Borel plane, the relation
-between the asymptotics of the holomorphic blocks with the Borel resummationsθ(Φ)(x;τ)
-as well as the properties of the Stockes automorphism matricesS, whose detailed deﬁnition
-is given in Section 2.
-Conjecture 3.(a) The singularities ofΦσ(x;τ) in the Borel plane are a subset of
-{ι(𝓁,k)
-σ,σ′ | σ′∈P , k,𝓁∈ Z , k =O(𝓁2)} (13)
-where
-ι(𝓁,k)
-σ,σ′ = V (σ)−V (σ′)
-2πi + 2πik +𝓁 logx (σ,σ′∈P , k,𝓁∈ Z ). (14)
-In particular, the set of trans-series is labeled by three indices,σ∈P andk,𝓁∈ Z, and they
-are of the formΦσ(τ)˜qk˜x𝓁.
-(b) On each rayρ in the complement of the singularities ofΦ(x;τ) in Borel plane, there exist
-a matrixMρ(˜x; ˜q) with entries inZ [˜x±][[˜q]] such that
-∆(τ)B(x;τ) =Mρ(˜x; ˜q)sρ(Φ)(x;τ). (15)
-(c) The Stokes matricesS+(x,q ), S−(x,q−1) are given by
-S+(x;q)
-·
-=W−1(x−1;q−1)·W−1(x;q)T, S−(x;q−1)
-·
-=W−1(x;q)·W−1(x−1;q−1)T (16)
-where
-·
-= means equality up to multiplication on the left and on the right by a matrix in
-GL(r, Z [x±]).
-(d) The Stokes matrixS uniquely determines the Stokes matrices at each Stokes ray, and
-the Stokes constants are integers corresponding to the Donaldson–Thomas invariants in
-PEACOCK PATTERNS AND RESURGENCE IN COMPLEX CHERN-SIMONS THEORY 7
-[KS11, KS14, KS] and the BPS degeneracies in [GMN10, GMN13].
-(e) The Stokes matrices satisfy the inversion relation
-S+(x;q)T S−(x−1;q) = 1. (17)
-The Stokes automorphism matrix has an interesting connection to physics which we now
-discuss. Given a hyperbolic knot K in S3, one can construct a three-dimensionalN = 2
-supersymmetric theory TM associated to the knot complementM = S3\K [DGG14] (see
-also [TY13]), whose BPS invariants are conjectured to coincide with the Stokes constants of
-s(Φ)(x;τ). This conjecture can be made more precise in the following manner. The BPS
-invariantsof TM areencodedinthe3D-index IK(m,e )(q)labeledbytwointegers (m,e )called
-magnetic and electric ﬂuxes respectively [DGG14]. One can further deﬁne the 3D-index in
-the fugacity basis (also known as the rotated index) by [DGG13]
-Indrot
-K (m,ζ ;q) =
-∑
-e∈Z
-IK(m,e )(q)ζe. (18)
-The 3D-index is a topological invariant of hyperbolic 3-manifolds with at least one cusp
-(see [GHRS15]). And it can be evaluated using holomorphic blocksBα
-K(x;q) by [BDP14]
-Indrot
-K (m,ζ ;q) =
-∑
-α
-Bα
-K(qm/2ζ;q)Bα
-K(qm/2ζ−1;q−1). (19)
-We have observed the following relation between the Stokes matrix and the rotated 3D-index,
-and have proven it for the case of the41 and 52 knots using the explicit formulas for the
-Stokes matrices.
-Conjecture 4.For every hyperbolic knotK, we have
-S+(x;q)
-··
-=
-(
-Indrot
-K (j−i,q
-j+i
-2 x;q)
-)
-i,j=0,1,...
-(20)
-where
-··
-= means equality up to multiplication on the left and on the right by a matrix in
-GL(r, Z (x,q )). In particular, we ﬁnd
-S+
-σ1σ1(x;q) = Indrot
-K (0,x ;q), (21)
-where the equality is exact. This holds true for the41 and the 52 knots.
-One consequence of (15) is that (after multiplying both terms of (15) by the inverse of
-MR(˜x; ˜q)), we can express the Borel resummation of the factorially divergent seriesΦ(τ)
-in terms of descendant state-integrals which are holomorphic functions in the cut plane
-C ′ = C \ (−∞, 0].
-Another consequence of theq-holonomic module deﬁned by the annihilation idealIM is a
-reﬁnement of theˆA-polynomial of a knot as well as a newˆB-polynomial whose classical limit
-is new. The reﬁnement comes in the form of a new variableqm where m is the descendant
-variable, whose geometric meaning is not understood but might be related to some kind
-of quantum K-theory, or perhaps related to the Weil-Gelfand-Zak transform of [AK]. This
-reﬁnement does not seem to be directly related to other reﬁnements of theˆA-polynomial, as
-those considered in [AV12, FGS13, GLL18]. At any rate, theq-holonomic idealIM contains
-unique polynomials ˆAM(Sx,x,q m,q )∈W and ˆBM(Sm,qm,x,q ) (of lowest degree, content-
-free) that annihilate the functionszM,m,k(u;τ) in the variables(m,x ).
-8 STA VROS GAROUF ALIDIS, JIE GU, AND MARCOS MARIÑO
-Conjecture 5.When M =S3\K is the complement of a knotK, then
-(a) ˆAM(Sx,x, 1,q )isthehomogeneous ˆA-polynomialoftheknot[Gar04]and ˆAM(Sx,x, 1, 1)
-is the A-polynomial of the knot with meridian variablex2 and longitude variable
-Sx [CCG+94]
-(b) ˆBM(y,x, 1, 1) is the deﬁning polynomial of the curveS.
-In theorems 17 and 25 we prove the following.
-Theorem 6.Conjecture 5 holds for the41 and 52 knots.
+\label{sub.pert}
+
+We now discuss the resurgence properties of the asymptotic
+expansion of the state-integral $Z_M(u;\tau)$. Once we fix an
+integral presentation of $Z_M(u;\tau)$, the critical points of
+the integrand are described by an affine curve $S$ defined
+by a polynomial equation
+\begin{equation}
+\label{S}
+S: p(x,y)=0 \,.
+\end{equation}
+We denote by $\calP$ the labeling set of the branches
+$y=y_\s(x)$ of $S$. The perturbative expansion of the
+state-integral  has the form
+\begin{equation}
+  \label{Phix}
+  \Phi(x,y;\tau) =
+  \re^{\frac{V(u,v)}{2\pi \ri \tau}} \varphi(x,y;\tau), \qquad
+  \varphi(x,y;\tau) \in \frac{1}{\sqrt{\ri\delta}} \BQ[x^\pm, y^\pm,
+  \delta^{-1}][[2\pi \ri \tau]]
+\end{equation}
+where $V: S^* \to \BC/(2\pi \ri)$, $S^*$ is the exponentiated defined
+by $p(x,y)=0$ with $x=\re^{u}$, $y=-\re^{v}$ and
+$\delta \in \BQ(x,y)$ is the so-called 1-loop invariant.  
+The asymptotic series $\varphi(x,y;\tau)$ satisfies
+$\varphi(x,y;0) = 1$.  The 8-th root of unity that appears as a
+prefactor in $\phi(x,y;\tau)$ exactly matches with one appearing in
+the asymptotics of the Kashaev invariant noticed
+in~\cite[Sec.1]{GZ:kashaev}. After choosing local branches, we define
+the vector
+$\varphi(x;\tau)=(\varphi_\s(x;\tau))_{\s\in\calP} =
+(\varphi(x,y_\s(x);\tau))_{\s \in \calP}$ of asymptotic series.
+Recall the vector of holomorphic blocks $B(x;q)$ from~\eqref{ZM-desc}.
+We now discuss the relation between the asymptotics of
+$B(x;q)$ when $q=\re^{2\pi \ri \tau}$ and $\tau$ approaches zero (in
+sectors) and the Borel resummation $s(\Phi)$ of the vector of power
+series $\Phi(x;\tau)$.
+
+The next conjecture summarizes the singularities of $\Phi(x;\tau)$
+in the Borel plane, the relation between the asymptotics of the
+holomorphic blocks with the Borel resummation $s_\th(\Phi)(x;\tau)$
+as well as the properties of the Stockes automorphism matrices
+$\ms{S}$, whose detailed definition is given in Section~\ref{sec.borel}.
+
+\begin{conjecture}
+  \label{conj.asy}
+  \rm{(a)} The singularities of $\Phi_{\s}(x;\tau)$ in the Borel plane
+  are a subset of
+  \begin{equation}
+    \label{Phising}
+    \{ \iota_{\s,\s'}^{(\ell,k)} \,\, |
+    \,\, \s' \in \calP, \,\, k, \ell \in \BZ, \,\, k=O(\ell^2) \} 
+  \end{equation}
+  where
+  \begin{equation}
+    \label{iota}
+    \iota_{\s,\s'}^{(\ell,k)} = \frac{V(\s) - V(\s')}{2\pi\ri} +
+    2\pi\ri k + \ell \log x \qquad (\s,\s' \in \calP, \,\, k, \ell \in \BZ) \,.
+  \end{equation}
+  In particular, the set of trans-series is labeled by three indices,
+  $\sigma \in \calP$ and $k, \ell \in \IZ$, and they are of the form
+  $\Phi_\s(\tau) \tq^k \tx^\ell$.  \newline
+  \rm{(b)} On each ray $\rho$ in the complement of the singularities
+  of $\Phi(x;\tau)$ in Borel plane, there exist a matrix
+  $M_\rho(\tx;\tq)$ with entries in $\BZ[\tx^{\pm}][[\tq]]$ such that
+
+  \begin{equation}
+    \label{abrelx}
+    \Delta(\tau) B(x;\tau) = M_\rho(\tx;\tq) s_\rho(\Phi)(x;\tau) \,. 
+  \end{equation}
+
+  \rm{(c)} The Stokes matrices $\ms{S}^{+}(x,q)$, $\ms{S}^{-}(x,q^{-1})$
+  are given by
+  \begin{equation}
+  \label{2S}
+  \ms{S}^{+}(x;q) \stackrel{\cdot}=
+  W_{-1}(x^{-1};q^{-1})\cdot W_{-1}(x;q)^T, \qquad
+  \ms{S}^{-}(x;q^{-1}) \stackrel{\cdot}= W_{-1}(x;q)\cdot W_{-1}(x^{-1};q^{-1})^T
+  \end{equation}
+  where $\stackrel{\cdot}=$ means equality up to multiplication on the
+  left and on the right by a matrix in $\GL(r,\BZ[x^\pm])$.  \newline
+  \rm{(d)} The Stokes matrix $\ms{S}$ uniquely determines the Stokes
+  matrices at each Stokes ray, and the Stokes constants are integers
+  corresponding to the Donaldson--Thomas invariants in
+  \cite{KS,KS:wall-crossing,KS:stability} and the BPS degeneracies 
+  in \cite{gmn,gmn2}.  \newline
+  \rm{(e)} The Stokes matrices satisfy the inversion relation
+    \begin{equation}
+    \label{Ssym}
+    \ms{S}^+(x;q)^T \ms{S}^-(x^{-1};q) = \md{1}\,.
+  \end{equation}
+\end{conjecture}
+
+The Stokes automorphism matrix has an interesting
+connection to physics which we now discuss.  Given a hyperbolic knot
+$K$ in $S^3$, one can construct a three-dimensional $\mc{N}=2$
+supersymmetric theory $T_M$ associated to the knot complement
+$M = S^3\backslash K$ \cite{DGG1} (see also~\cite{ter-yama}), whose
+BPS invariants are conjectured to coincide with the Stokes constants
+of $s(\Phi)(x;\tau)$.  This conjecture can be made more precise in the
+following manner. The BPS invariants of $T_M$ are encoded in the
+3D-index $\mc{I}_{K}(m,e)(q)$ labeled by two integers $(m,e)$ called
+magnetic and electric fluxes respectively~\cite{DGG1}. One can further
+define the 3D-index in the fugacity basis (also known as the rotated
+index) by~\cite{DGG2}
+\begin{equation}
+  \text{Ind}^{\text{rot}}_{K}(m,\zeta;q) =
+  \sum_{e\in\IZ}\mc{I}_{K}(m,e)(q)\zeta^e.
+\end{equation}
+The 3D-index is a topological invariant of hyperbolic 3-manifolds with
+at least one cusp (see~\cite{GHRS}).  And it can be evaluated using
+holomorphic blocks $B_{K}^\alpha(x;q)$ by \cite{Beem}
+\begin{equation}
+  \text{Ind}_{K}^{\text{rot}}(m,\zeta;q) = \sum_{\alpha}
+  B_K^\alpha(q^{m/2}\zeta;q)B_K^\alpha(q^{m/2}\zeta^{-1};q^{-1}).
+  \label{eq:IndB}
+\end{equation}
+
+
+
+
+We have observed the following relation between the Stokes
+matrix and the rotated 3D-index, and have proven it for the case of
+the $\knot{4}_1$ and $\knot{5}_2$ knots using the explicit formulas
+for the Stokes matrices.
+
+\begin{conjecture}
+  \label{conj.S3D}
+  For every hyperbolic knot $K$, we have
+  \begin{equation}
+    \ms{S}^+(x;q) \stackrel{\cdot\cdot}=
+    \left(\text{Ind}^{\text{rot}}_K(j-i,q^{\frac{j+i}{2}}x;q)
+    \right)_{i,j=0,1,\ldots}
+    \label{eq:SInd}
+  \end{equation}
+  where $\stackrel{\cdot\cdot}=$ means equality up to multiplication
+  on the left and on the right by a matrix in $\GL(r,\BZ(x,q))$.  In
+  particular, we find
+  \begin{equation}
+    \label{S3Dx}
+    \ms{S}^+_{\s_1\s_1}(x;q) =
+    \text{Ind}^{\text{rot}}_{K}(0,x;q)
+    \,,
+  \end{equation}
+  where the equality is exact.  This holds true for the $\knot{4}_1$
+  and the $\knot{5}_2$ knots.
+\end{conjecture}
+
+One consequence of~\eqref{abrelx} is that (after multiplying both
+terms of~\eqref{abrelx} by the inverse of $M_R(\tx;\tq)$), we can
+express the Borel resummation of the factorially divergent series
+$\Phi(\tau)$ in terms of descendant state-integrals which are
+holomorphic functions in the cut plane
+$\BC'=\BC\setminus (-\infty,0]$.
+
+Another consequence of the $q$-holonomic module defined by the
+annihilation ideal $\calI_M$ is a refinement of the $\Ahat$-polynomial
+of a knot as well as a new $\Bhat$-polynomial whose classical limit is
+new.  The refinement comes in the form of a new variable $q^m$ where
+$m$ is the descendant variable, whose geometric meaning is not
+understood but might be related to some kind of quantum K-theory, or
+perhaps related to the Weil-Gelfand-Zak transform of~\cite{AK:new}.
+This refinement does not seem to be directly related to other refinements
+of the $\Ahat$-polynomial, as those considered in
+\cite{av-knots,super,GLL:HOMFLY}. At any rate, the $q$-holonomic ideal
+$\calI_M$ contains unique
+polynomials $\Ahat_M(S_x,x,q^m,q) \in \calW$ and $\Bhat_M(S_m,q^m,x,q)$
+(of lowest degree, content-free) that annihilate the functions
+$z_{M,m,k}(u;\tau)$ in the variables $(m,x)$.
+
+\begin{conjecture}
+  \label{conj.ann}
+  When $M=S^3\setminus K$ is the complement of a knot $K$, then
+  \begin{itemize}
+  \item[(a)] $\Ahat_M(S_x,x,1,q)$ is the homogeneous
+    $\Ahat$-polynomial of the knot~\cite{Ga:AJ} and
+    $\Ahat_M(S_x,x,1,1)$ is the $A$-polynomial of the knot with
+    meridian variable $x^2$ and longitude variable $S_x$~\cite{CCGLS}
+  \item[(b)] $\Bhat_M(y,x,1,1)$ is the defining polynomial of the curve
+    $S$.
+  \end{itemize}
+\end{conjecture}
+
+In theorems~\ref{thm.41c} and~\ref{thm.52c} we prove the following.
+
+\begin{theorem}
+  \label{thm.4152ann}
+  Conjecture~\ref{conj.ann} holds for the $\knot{4}_1$ and
+  $\knot{5}_2$ knots.
+\end{theorem}

@@ -1,0 +1,71 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "mellor-melvin2003",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 143,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/0110001v3/0110001v3.pdf"
+        },
+        "id": "mellor-melvin2003",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Reinterprets Milnor's triple linking number mu-bar(ijk) of a 3-component sub-link as a Seifert-surface count: mu-bar(ijk) = m(F) - t(F) mod delta, where t(F) is the signed count of triple points of three Seifert surfaces in general position, m(F) is a Magnus-coefficient sum read off the double-point words on the boundaries, and delta is the gcd of the three pairwise linking numbers. It generalises the classical 'algebraic count of triple points' formula, which the paper recovers as the special case where the pairwise linkings vanish (the Brunnian/baryon regime the corpus works in). The corpus already runs a substantial mu-bar program: MilnorIndeterminacyGate.lean encodes exactly the same mod-delta indeterminacy (ZMod (gcd) residue; ZMod 1 subsingleton on a Hopf-linked spectator, ZMod 0 = Z on a Brunnian triple), the Magnus route is implemented in computations/deltalambda (binding_mn_milnor_linking / mixed_multibond_mubar_integrality_probe), and docs/audits/2026-07-11-gap2-borromean-triple-count.md localises the 3-body term M3(K) as the mu-bar-irreducible triple count. So the document corroborates and independently derives machinery the corpus already has, and adds a second, geometric computation route. It is NOT load-bearing: the corpus computes mu-bar by Magnus expansion on braid words and has no Seifert-surface layer, so nothing here is currently consumed. Recorded as a scope-(a) reading: this document, as read, adds an alternate route and a corroborating derivation of the mod-delta convention, not a result that closes anything open.",
+          "keyResults": [
+            {
+              "locator": "Theorem (p. 561), parts (1)-(3)",
+              "statement": "For any choice of Seifert surfaces F for three components, mu-bar(ijk) = m(ijk)(F) - t(ijk)(F) mod delta, and one may choose F making either t(F) = 0 or m(F) = 0 mod delta.",
+              "useForFolio": "A geometric (triple-point-count) computation of the same mu-bar the corpus computes by Magnus expansion, and an independent derivation of the mod-delta well-definedness that MilnorIndeterminacyGate.lean encodes as a modelling choice rather than a proved statement.",
+              "targets": [
+                "QOU.Mass.MilnorIndeterminacyGate",
+                "computations/deltalambda/mixed_multibond_mubar_integrality_probe.py"
+              ]
+            },
+            {
+              "locator": "p. 562, remark following the Theorem",
+              "statement": "When the boundary of F is disjoint from the double-point set (possible only if all pairwise linkings vanish) mu-bar(ijk) = -t(ijk)(F), a pure signed triple-point count.",
+              "useForFolio": "The Brunnian-case corollary is the geometric form of the 'Milnor-irreducible triple' the GAP-2 audit uses to define M3(K); it gives a surface-level object to count rather than a braid-word Magnus coefficient.",
+              "targets": [
+                "computations/gap2_borromean_triple_count.py"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Relevant, no ref() entry; the corpus's mu-bar cluster (milnor1954, habegger-masbaum2000, meilhan-yasuhara) has no entry for the Seifert-surface computation route.",
+              "target": "QOU.Mass.MilnorIndeterminacyGate",
+              "bean": "qou-yv1h"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "The GAP-2 audit's M3(K) = mu-bar-irreducible triple count is currently defined only combinatorially on the contact graph. A remark recording the geometric triple-point form of the same count would make the definition checkable on an explicit link realisation. What would need checking first: the corpus's contact graphs are not currently realised as links with Seifert surfaces, so the translation is not automatic.",
+              "target": "computations/gap2_borromean_triple_count.py",
+              "bean": "qou-urt1"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "f30f603ac1c5"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-feynman-markov-identification",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:feynman-markov-identification",
+  "kind": "proof",
+  "title": "Proof that the eigenbasis amplitude equals the Markov trace",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-feynman-markov-identification"
+  ],
+  "text": "feynman-markov-identification-proof.md",
+  "provenance": "authored"
+}

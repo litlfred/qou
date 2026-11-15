@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1204.5807v1/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1204.5807v1/blocks/prose-sec-006",
   "kind": "prose",
-  "title": "Hopf algebras. We use standard notation for Hopf algebras (always",
-  "pageStart": 3,
-  "pageEnd": 4,
-  "text": "../sections/sec-006-13-hopf-algebras-we-use-standard-notation-for-ho.md",
-  "derivedFrom": "library/arxiv-1204.5807v1/manifest",
-  "sourceDocument": "library/arxiv-1204.5807v1/manifest",
+  "title": "Spherical Hopf algebras",
+  "pageStart": 5,
+  "pageEnd": 7,
+  "text": "../sections/sec-006-2-spherical-hopf-algebras.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1204.5807v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1204.5807v1",
   "provenance": "ingested"
 }

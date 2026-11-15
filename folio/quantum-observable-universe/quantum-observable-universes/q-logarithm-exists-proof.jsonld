@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-q-logarithm-exists",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:q-logarithm-exists",
+  "kind": "proof",
+  "title": "Proof of existence of the $q$-logarithm primitive",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-logarithm-exists"
+  ],
+  "text": "q-logarithm-exists-proof.md",
+  "provenance": "authored"
+}

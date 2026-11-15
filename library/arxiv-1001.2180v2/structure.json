@@ -6,7 +6,11 @@
   "sha256": "f4225d7b024940aa3f6c183ce1aefeac7b1675c5272732c6c1827a4cd813d52f",
   "bytes": 459178,
   "pages": 27,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -520,6 +524,220 @@
   "likely_scanned": false,
   "toc_entries": 30,
   "sections": 27,
-  "chars_total": 74964
+  "chars_total": 74964,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "qplancherel.tex",
+   "tex_sections": 40,
+   "overlaid": 20,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-background",
+     "title": "Background",
+     "prose_ratio": 0.434,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-12-results",
+     "title": "Results",
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.707,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-14-some-open-questions",
+     "title": "Some open questions",
+     "prose_ratio": 0.902,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-2-the-q-plancherel-measure",
+     "title": "The q-Plancherel measure",
+     "prose_ratio": 0.014,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-15-outline-of-the-paper",
+     "title": "Outline of the paper",
+     "prose_ratio": 0.5,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-13-tools",
+     "title": "Tools",
+     "prose_ratio": 0.31,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-22-link-with-representation-of-the-hecke-algebra",
+     "title": "Link with representation of the Hecke algebras",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-23-interpretation-in-the-representation-theory-o",
+     "title": "Interpretation in the representation theory of GLn(Fq)",
+     "prose_ratio": 0.713,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-32-normalized-characters",
+     "title": "Normalized characters",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.545,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-33-normalized-conjugacy-classes-in-symmetric-gro",
+     "title": "Normalized conjugacy classes in symmetric group algebras",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-34-products-of-normalized-characters",
+     "title": "Products of normalized characters",
+     "prose_ratio": 0.936,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-35-another-product",
+     "title": "Another product",
+     "prose_ratio": 0.884,
+     "coverage_ratio": 0.952,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-36-q-characters",
+     "title": "q-characters",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-4-first-order-asymptotics",
+     "title": "First order asymptotics",
+     "prose_ratio": 0.562,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-015-41-convergence-of-power-sums",
+     "title": "Convergence of power sums",
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.954,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-42-convergence-of-row-lengths",
+     "title": "Convergence of row lengths",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-43-link-with-the-representation-theory-of-the-in",
+     "title": "Link with the representation theory of the infinite symmetric group",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-5-second-order-asymptotics",
+     "title": "Second order asymptotics",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.954,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-019-51-bound-for-cumulants",
+     "title": "Bound for cumulants",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-52-computation-of-covariances",
+     "title": "Computation of covariances",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-53-fluctuations-of-rows",
+     "title": "Fluctuations of rows",
+     "prose_ratio": 0.894,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-022-6-schur-weyl-representations",
+     "title": "Schur-Weyl representations",
+     "prose_ratio": 0.931,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-61-decomposition-of-tensor-representations",
+     "title": "Decomposition of tensor representations",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-024-62-asymptotic-shape-of-the-diagrams",
+     "title": "Asymptotic shape of the diagrams",
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-025-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-026-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

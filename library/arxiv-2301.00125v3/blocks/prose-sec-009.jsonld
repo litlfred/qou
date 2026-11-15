@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2301.00125v3/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2301.00125v3/blocks/prose-sec-009",
   "kind": "prose",
   "title": "B.1 Mathematical physics and probability developments",
   "pageStart": 21,
   "pageEnd": 22,
   "text": "../sections/sec-009-b1-mathematical-physics-and-probability-developm.md",
-  "derivedFrom": "library/arxiv-2301.00125v3/manifest",
-  "sourceDocument": "library/arxiv-2301.00125v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2301.00125v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2301.00125v3",
   "provenance": "ingested"
 }

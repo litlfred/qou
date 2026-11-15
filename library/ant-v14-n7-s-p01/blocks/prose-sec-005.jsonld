@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ant-v14-n7-s-p01/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ant-v14-n7-s-p01/blocks/prose-sec-005",
   "kind": "prose",
-  "title": "(YQ,1(m2N), Z) and HBM",
-  "pageStart": 17,
-  "pageEnd": 17,
-  "text": "../sections/sec-005-2-yq1m2n-z-and-hbm.md",
-  "derivedFrom": "library/ant-v14-n7-s-p01/manifest",
-  "sourceDocument": "library/ant-v14-n7-s-p01/manifest",
+  "title": "The p-adic Asai L-function",
+  "pageStart": 27,
+  "pageEnd": 30,
+  "text": "../sections/sec-005-6-the-p-adic-asai-l-function.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p01",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p01",
   "provenance": "ingested"
 }

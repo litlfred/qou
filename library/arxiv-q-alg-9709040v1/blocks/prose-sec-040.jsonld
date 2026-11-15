@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-q-alg-9709040v1/blocks/prose-sec-040",
+  "kind": "prose",
+  "title": "First subcase of S1: n2 = 2",
+  "pageStart": 25,
+  "pageEnd": 26,
+  "text": "../sections/sec-040-6411-first-subcase-of-s1-n2-2.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-q-alg-9709040v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-q-alg-9709040v1",
+  "provenance": "ingested"
+}

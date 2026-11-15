@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-010",
   "kind": "prose",
   "title": "Continuous Virasoro constraints for the V = X3",
   "pageStart": 2,
   "pageEnd": 2,
   "text": "../sections/sec-010-27-continuous-virasoro-constraints-for-the-v-x3.md",
-  "derivedFrom": "library/arxiv-hep-th-9303139v2/manifest",
-  "sourceDocument": "library/arxiv-hep-th-9303139v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9303139v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9303139v2",
   "provenance": "ingested"
 }

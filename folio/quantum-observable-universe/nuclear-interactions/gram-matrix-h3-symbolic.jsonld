@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-gram-matrix-h3-symbolic",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:gram-matrix-h3-symbolic",
+  "kind": "proposition",
+  "title": "The H_3(q) Hoefsmit-seminormal Gram matrix on the 6-element normal-form basis, with the Markov weight $z$ carried symbolically: its determinant factors so that the canonical weight $z = q^3/(q^2+1)$ is a root, hence the canonical Gram is singular with the three-strand $q$-antisymmetriser as its radical.",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-hecke-normal-form"
+  ],
+  "cites": [
+    "references/halverson_ram_1998"
+  ],
+  "tags": [
+    "gram-matrix",
+    "hoefsmit",
+    "h3",
+    "symbolic",
+    "option-e-phase-1b",
+    "categorical",
+    "frobenius"
+  ],
+  "leanRef": "qou:QOU.Interactions.GramMatrixH3Symbolic.gramMatrix",
+  "text": "gram-matrix-h3-symbolic.md",
+  "provenance": "authored"
+}

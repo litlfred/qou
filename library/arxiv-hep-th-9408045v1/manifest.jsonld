@@ -1,21 +1,37 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-9408045v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Constrained analysis of topologically massive gravity",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9408045v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-hep-th-9408045v1",
   "contains": [
+    "library/arxiv-hep-th-9408045v1/sections/sec-front-matter",
     "library/arxiv-hep-th-9408045v1/sections/sec-000",
     "library/arxiv-hep-th-9408045v1/sections/sec-001",
     "library/arxiv-hep-th-9408045v1/sections/sec-002",
     "library/arxiv-hep-th-9408045v1/sections/sec-003",
     "library/arxiv-hep-th-9408045v1/sections/sec-004",
-    "library/arxiv-hep-th-9408045v1/sections/sec-005"
+    "library/arxiv-hep-th-9408045v1/sections/sec-005",
+    "library/arxiv-hep-th-9408045v1/sections/sec-006"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-th/9408045&metadataPrefix=arXiv), submitted 1994-08-08, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-hep-th-9408045v1",
+    "title_source": "slug",
     "source_file": "9408045v1.pdf",
     "source_sha256": "a9786c0f44a4e659f489f2928f53c5ba3f1cf53f057f9b018ed14697c32c74ce",
     "pages": 15,

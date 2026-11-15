@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0605314v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0605314v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0605314v1",
   "contains": [
+    "library/arxiv-math-0605314v1/sections/sec-front-matter",
     "library/arxiv-math-0605314v1/sections/sec-000",
     "library/arxiv-math-0605314v1/sections/sec-001",
     "library/arxiv-math-0605314v1/sections/sec-002",
@@ -55,67 +61,25 @@
     "library/arxiv-math-0605314v1/sections/sec-046",
     "library/arxiv-math-0605314v1/sections/sec-047",
     "library/arxiv-math-0605314v1/sections/sec-048",
-    "library/arxiv-math-0605314v1/sections/sec-049",
-    "library/arxiv-math-0605314v1/sections/sec-050",
-    "library/arxiv-math-0605314v1/sections/sec-051",
-    "library/arxiv-math-0605314v1/sections/sec-052",
-    "library/arxiv-math-0605314v1/sections/sec-053",
-    "library/arxiv-math-0605314v1/sections/sec-054",
-    "library/arxiv-math-0605314v1/sections/sec-055",
-    "library/arxiv-math-0605314v1/sections/sec-056",
-    "library/arxiv-math-0605314v1/sections/sec-057",
-    "library/arxiv-math-0605314v1/sections/sec-058",
-    "library/arxiv-math-0605314v1/sections/sec-059",
-    "library/arxiv-math-0605314v1/sections/sec-060",
-    "library/arxiv-math-0605314v1/sections/sec-061",
-    "library/arxiv-math-0605314v1/sections/sec-062",
-    "library/arxiv-math-0605314v1/sections/sec-063",
-    "library/arxiv-math-0605314v1/sections/sec-064",
-    "library/arxiv-math-0605314v1/sections/sec-065",
-    "library/arxiv-math-0605314v1/sections/sec-066",
-    "library/arxiv-math-0605314v1/sections/sec-067",
-    "library/arxiv-math-0605314v1/sections/sec-068",
-    "library/arxiv-math-0605314v1/sections/sec-069",
-    "library/arxiv-math-0605314v1/sections/sec-070",
-    "library/arxiv-math-0605314v1/sections/sec-071",
-    "library/arxiv-math-0605314v1/sections/sec-072",
-    "library/arxiv-math-0605314v1/sections/sec-073",
-    "library/arxiv-math-0605314v1/sections/sec-074",
-    "library/arxiv-math-0605314v1/sections/sec-075",
-    "library/arxiv-math-0605314v1/sections/sec-076",
-    "library/arxiv-math-0605314v1/sections/sec-077",
-    "library/arxiv-math-0605314v1/sections/sec-078",
-    "library/arxiv-math-0605314v1/sections/sec-079",
-    "library/arxiv-math-0605314v1/sections/sec-080",
-    "library/arxiv-math-0605314v1/sections/sec-081",
-    "library/arxiv-math-0605314v1/sections/sec-082",
-    "library/arxiv-math-0605314v1/sections/sec-083",
-    "library/arxiv-math-0605314v1/sections/sec-084",
-    "library/arxiv-math-0605314v1/sections/sec-085",
-    "library/arxiv-math-0605314v1/sections/sec-086",
-    "library/arxiv-math-0605314v1/sections/sec-087",
-    "library/arxiv-math-0605314v1/sections/sec-088",
-    "library/arxiv-math-0605314v1/sections/sec-089",
-    "library/arxiv-math-0605314v1/sections/sec-090",
-    "library/arxiv-math-0605314v1/sections/sec-091",
-    "library/arxiv-math-0605314v1/sections/sec-092",
-    "library/arxiv-math-0605314v1/sections/sec-093",
-    "library/arxiv-math-0605314v1/sections/sec-094",
-    "library/arxiv-math-0605314v1/sections/sec-095",
-    "library/arxiv-math-0605314v1/sections/sec-096",
-    "library/arxiv-math-0605314v1/sections/sec-097",
-    "library/arxiv-math-0605314v1/sections/sec-098",
-    "library/arxiv-math-0605314v1/sections/sec-099",
-    "library/arxiv-math-0605314v1/sections/sec-100",
-    "library/arxiv-math-0605314v1/sections/sec-101",
-    "library/arxiv-math-0605314v1/sections/sec-102",
-    "library/arxiv-math-0605314v1/sections/sec-103",
-    "library/arxiv-math-0605314v1/sections/sec-104",
-    "library/arxiv-math-0605314v1/sections/sec-105"
+    "library/arxiv-math-0605314v1/sections/sec-049"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0605314&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-math-0605314v1",
+    "title_source": "slug",
     "source_file": "0605314v1.pdf",
     "source_sha256": "5fb8b89b432401ea28d10e34d348c5cdebe43cf3ddb95c0475aaee869fa276fc",
     "pages": 66,

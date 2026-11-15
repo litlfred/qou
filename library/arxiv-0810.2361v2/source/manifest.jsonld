@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0810.2361v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-0810.2361v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0810.2361v2",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0810.2361&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0810.2361v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/0810.2361v2",
+    "content_type": "application/gzip",
+    "sha256": "47dd19417626bdf600689bc682ac68f9a1f105ff95cf8cb92aa9cfedbc2551a9",
+    "bytes": 75387,
+    "fetched": "2026-10-10T15:01:28+00:00",
+    "files": [
+      {
+        "path": "source/files/grpd-2vect.bbl",
+        "role": "bbl",
+        "sha256": "2053d290a55c41b5fb194686dbaf9e7dc236a289b2265985c6176c7bde44edbf",
+        "bytes": 3388
+      },
+      {
+        "path": "source/files/grpd-2vect.tex",
+        "role": "tex",
+        "sha256": "d5a10e7f1fba0133a80358aa1f6987bbe1c9d0300283c95614c7762492bb2288",
+        "bytes": 134321
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

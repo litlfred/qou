@@ -1,0 +1,31 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "khesin2003",
+  "library": {
+    "docId": "helicity03mmj",
+    "dir": "library/helicity03mmj",
+    "pdf": "library/helicity03mmj/helicity03mmj.pdf",
+    "stage": "candidates",
+    "pages": 23,
+    "sections": 13
+  },
+  "type": "article-journal",
+  "title": "Geometry of higher helicities",
+  "author": [
+    {
+      "family": "Khesin",
+      "given": "Boris A."
+    }
+  ],
+  "container-title": "Moscow Mathematical Journal",
+  "volume": "3",
+  "page": "989-1011",
+  "issued": {
+    "date-parts": [
+      [
+        2003
+      ]
+    ]
+  },
+  "note": "Read in full 2026-08-01; the most productive source of the EM-linking sweep. Rmk 4.8 EXPLAINS obstruction O1 structurally (linking forms are symmetric/antisymmetric by the parity of the product of codimensions — 1-forms in 3D force antisymmetry). Rmk 3.4 diagnoses that signed invariants cancel between oppositely-linked pairs, and Rmk 3.5 names the fix: the Freedman–He asymptotic CROSSING NUMBER — symmetric (a norm), nonzero when lk = 0, Flux²-scaling. Thm 3.6 carries a Flux²·Vol^{−1/3} energy template. Also flags Laurence–Stredulinsky as the only Borromean-specific energy result. Uploaded library/helicity03mmj/helicity03mmj.pdf. SCOPE CORRECTION 2026-08-01 (round 5): Thm 3.6 is the bound for a SINGLE knotted torus, and its Vol^{−1/3} must NOT be read as the Freedman–He template for a multi-component link — the link bound (Komendarczyk eq. 43) has a constant prefactor and no volume. An earlier note here claimed Thm 3.6's template 'converges with' the corpus's empirical κ ~ A^{−1/3}; that claimed convergence is RETRACTED as a misattribution. Note also that Khesin never writes ac(·,·): his Rmk 3.5 minimisation 'over all homotopies of two given space curves' is a survey gloss on the two-curve warm-up, not the invariant used in the link bound."
+}

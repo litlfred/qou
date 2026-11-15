@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0203206v1/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0203206v1/blocks/prose-sec-009",
   "kind": "prose",
-  "title": "If C is braided, cf. Section 6, then Nk",
-  "pageStart": 5,
-  "pageEnd": 6,
-  "text": "../sections/sec-009-5-if-c-is-braided-cf-section-6-then-nk.md",
-  "derivedFrom": "library/arxiv-math-0203206v1/manifest",
-  "sourceDocument": "library/arxiv-math-0203206v1/manifest",
+  "title": "Conjugates for Representations and Corepresentations",
+  "pageStart": 17,
+  "pageEnd": 20,
+  "text": "../sections/sec-009-33-conjugates-for-representations-and-corepresen.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203206v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203206v1",
   "provenance": "ingested"
 }

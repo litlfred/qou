@@ -1,8 +1,13 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/crmath-2011-349-19-20-1037-0/manifest",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/crmath-2011-349-19-20-1037-0",
   "@type": [
-    "folio:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières",
   "contains": [
@@ -15,8 +20,11 @@
     "library/crmath-2011-349-19-20-1037-0/sections/sec-006"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "crmath-2011-349-19-20-1037-0",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "CRMATH_2011__349_19-20_1037_0.pdf",
     "source_sha256": "fd5bd0558dfe892ff754e9644533d840342740970953c355d70ae60f7afa6a30",
     "pages": 3,

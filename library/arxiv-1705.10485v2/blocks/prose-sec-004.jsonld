@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1705.10485v2/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1705.10485v2/blocks/prose-sec-004",
   "kind": "prose",
-  "title": "Valentin Féray, Pierre-Loïc Méliot, and Ashkan Nikeghbali",
-  "pageStart": 4,
-  "pageEnd": 5,
-  "text": "../sections/sec-004-4-valentin-féray-pierre-loïc-méliot-and-ashkan-n.md",
-  "derivedFrom": "library/arxiv-1705.10485v2/manifest",
-  "sourceDocument": "library/arxiv-1705.10485v2/manifest",
+  "title": "The notion of zone of control",
+  "pageStart": 6,
+  "pageEnd": 8,
+  "text": "../sections/sec-004-21-the-notion-of-zone-of-control.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1705.10485v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1705.10485v2",
   "provenance": "ingested"
 }

@@ -73,7 +73,7 @@ Precision: mpmath end to end at the repo compute dps; no float() anywhere on a
 computed path, per AGENTS.md NO-FLOAT64 (which binds probes as hard as
 producers).
 
--- Ref: [manuscript] content/quantum-observable-universe/mass-theory/unified-iterative-correction.md
+-- Ref: [manuscript] folio/quantum-observable-universe/mass-theory/unified-iterative-correction.md
 """
 from __future__ import annotations
 
@@ -93,6 +93,10 @@ import hecke_core_legacy as H  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
+
+# Module-scope constants below are built at import time; mpmath's default is
+# 15 dps, so raise it first (import-time dps ratchet).
+set_compute_dps()
 
 ATOMS = [(1, 1, "2H"), (1, 2, "3H"), (2, 1, "3He"), (2, 2, "4He"), (3, 3, "6Li")]
 CAPS_2H = (6, 8, 10)

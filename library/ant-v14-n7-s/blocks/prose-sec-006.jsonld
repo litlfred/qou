@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ant-v14-n7-s/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ant-v14-n7-s/blocks/prose-sec-006",
   "kind": "prose",
-  "title": "2B. Locally symmetric spaces",
-  "pageStart": 7,
-  "pageEnd": 9,
-  "text": "../sections/sec-006-2b-locally-symmetric-spaces.md",
-  "derivedFrom": "library/ant-v14-n7-s/manifest",
-  "sourceDocument": "library/ant-v14-n7-s/manifest",
+  "title": "2A. Basic notation",
+  "pageStart": 6,
+  "pageEnd": 7,
+  "text": "../sections/sec-006-2a-basic-notation.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s",
   "provenance": "ingested"
 }

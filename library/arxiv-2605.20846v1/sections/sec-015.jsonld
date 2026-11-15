@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2605.20846v1/sections/sec-015",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Presentations of a Category",
+  "pageStart": 90,
+  "pageEnd": 92,
+  "contains": [
+    "library/arxiv-2605.20846v1/blocks/prose-sec-015",
+    "library/arxiv-2605.20846v1/blocks/def-sec-015-01",
+    "library/arxiv-2605.20846v1/blocks/def-sec-015-02",
+    "library/arxiv-2605.20846v1/blocks/def-sec-015-03",
+    "library/arxiv-2605.20846v1/blocks/thm-sec-015-04",
+    "library/arxiv-2605.20846v1/blocks/lem-sec-015-05",
+    "library/arxiv-2605.20846v1/blocks/def-sec-015-06",
+    "library/arxiv-2605.20846v1/blocks/prop-sec-015-07",
+    "library/arxiv-2605.20846v1/blocks/def-sec-015-08",
+    "library/arxiv-2605.20846v1/blocks/remark-sec-015-09",
+    "library/arxiv-2605.20846v1/blocks/def-sec-015-10",
+    "library/arxiv-2605.20846v1/blocks/def-sec-015-11"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2605.20846v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2605.20846v1",
+  "provenance": "ingested"
+}

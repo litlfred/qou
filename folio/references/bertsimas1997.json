@@ -1,0 +1,27 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "bertsimas1997",
+  "type": "book",
+  "title": "Introduction to Linear Optimization",
+  "author": [
+    {
+      "family": "Bertsimas",
+      "given": "Dimitris"
+    },
+    {
+      "family": "Tsitsiklis",
+      "given": "John N."
+    }
+  ],
+  "publisher": "Athena Scientific",
+  "publisher-place": "Belmont, MA",
+  "issued": {
+    "date-parts": [
+      [
+        1997
+      ]
+    ]
+  },
+  "note": "Verified 2026-06-23 (doth): Introduction to Linear Optimization, Bertsimas & Tsitsiklis, Athena Scientific 1997, ISBN 1-886529-19-1 (978-1-886529-19-9) — confirmed via publisher (athenasc.com) + ISBN registries. Cited in BindingConcentration.lean for LP concentration/duality. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §D.",
+  "ISBN": "978-1-886529-19-9"
+}

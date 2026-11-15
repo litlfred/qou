@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-yekutieli-lifting-condition",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:yekutieli-lifting-condition",
+  "kind": "definition",
+  "title": "Quantum Lifting Condition",
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-yekutieli-lifting-condition-su2"
+  ],
+  "cites": [
+    "references/yekutieli2010"
+  ],
+  "tags": [
+    "yekutieli",
+    "gerbe",
+    "cohomology",
+    "lifting"
+  ],
+  "leanRef": "qou:QOU.YekutieliLiftingCondition",
+  "text": "yekutieli-lifting-condition.md",
+  "leanSource": "yekutieli-lifting-condition.lean",
+  "provenance": "authored"
+}

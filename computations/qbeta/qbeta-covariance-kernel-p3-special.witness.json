@@ -1,5 +1,7 @@
 {
   "computation": "qbeta-covariance-kernel-p3-special",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal",
   "assertions": [
     {
       "name": "two_independent_implementations_agree_on_p3",
@@ -109,8 +111,8 @@
     }
   },
   "provenance": {
-    "headSha": "5c3aeb9a57171b490057aaeed0ea23abb12f9202",
+    "headSha": "eb645d81e7fe1646342513e676f6498caab4a229",
     "producer": "computations/qbeta/qbeta_covariance_kernel_p3_special_probe.py",
-    "elapsed_s": 0.043
+    "elapsed_s": 0.027
   }
 }

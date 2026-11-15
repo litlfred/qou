@@ -7,7 +7,11 @@
   "bytes": 222709,
   "pages": 7,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:22Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -28,188 +32,441 @@
    "Author": "Zoltan Bajnok; Bercel Boldis; Dennis le Plat",
    "Producer": "pikepdf 8.15.1",
    "Creator": "arXiv GenPDF (tex2pdf:)"
+  },
+  "title_raw": "Universality in the resurgence of generalized Tracy-Widom distributions",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Universality in the resurgence of generalized Tracy-Widom distributions",
+   "heading": "Universality in the resurgence of generalized Tracy-Widom distributions",
+   "text": "Universality in the resurgence of generalized Tracy-Widom distributions",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Abstract",
-   "page": 1,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Observables",
    "page": 1,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Trans-series expansion",
    "page": 2,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
   },
   {
    "level": 2,
-   "title": "Resurgence relations between D{} and D{1}",
+   "title": "Resurgence relations between ${\\cal D}^{\\{\\}}$ and ${\\cal D}^{\\{1\\}}$",
    "page": 3,
    "source": "inferred",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Generic relations",
    "page": 4,
    "source": "inferred",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Example",
    "page": 5,
    "source": "inferred",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Conclusions",
    "page": 5,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Acknowledgements",
    "page": 5,
    "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 6,
-   "source": "inferred",
-   "number": null
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "5"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "The determinant (1) corresponds to various observables in four dimensional supersymmetric gauge theories [21]. The octagon form factor is related to the four-point function of infinitely heavy half BPS operators and the parameters y,\u03be are the parametrizations of the conformal cross-ratios",
+   "page": 2,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Asymptotic behaviour of D{}",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Cut structure on the Borel plane of B[D{}](s) for a symbol with {x1,x2,x3|y1,y2}. We indicated the branch points of the cuts, while the other branch point is at infinity",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Cut structure on the Borel plane of B[D{1}](s) for a symbol with {x1,x2,x3|y1,y2}. This is the same cut structure we would have for {x2,x3|x1,y1,y2}",
+   "page": 4,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Non-perturbative corrections for {x1,x2,x3|y1,...} and their resurgence relations",
+   "page": 5,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-abstract",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Abstract",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 803,
-   "n_words": 112
+   "n_chars": 1163,
+   "n_words": 157,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-2-observables",
+   "id": "sec-000-2-observables",
    "number": "2",
    "title": "Observables",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-1-introduction",
+   "id": "sec-001-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
    "page_end": 2,
    "n_chars": 4806,
-   "n_words": 774
+   "n_words": 774,
+   "label_start": null,
+   "label_end": "2"
   },
   {
-   "id": "sec-003-3-trans-series-expansion",
+   "id": "sec-002-3-trans-series-expansion",
    "number": "3",
    "title": "Trans-series expansion",
    "level": 1,
    "page_start": 2,
-   "page_end": 3,
-   "n_chars": 3939,
-   "n_words": 709
-  },
-  {
-   "id": "sec-004-31-resurgence-relations-between-d-and-d1",
-   "number": "3.1",
-   "title": "Resurgence relations between D{} and D{1}",
-   "level": 2,
-   "page_start": 3,
    "page_end": 4,
-   "n_chars": 2541,
-   "n_words": 446
+   "n_chars": 6528,
+   "n_words": 1162,
+   "label_start": "2",
+   "label_end": "4"
   },
   {
-   "id": "sec-005-32-generic-relations",
+   "id": "sec-003-32-generic-relations",
    "number": "3.2",
    "title": "Generic relations",
    "level": 2,
    "page_start": 4,
    "page_end": 5,
    "n_chars": 3258,
-   "n_words": 554
+   "n_words": 554,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
-   "id": "sec-006-33-example",
+   "id": "sec-004-33-example",
    "number": "3.3",
    "title": "Example",
    "level": 2,
    "page_start": 5,
    "page_end": 5,
    "n_chars": 651,
-   "n_words": 90
+   "n_words": 90,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
-   "id": "sec-007-4-conclusions",
+   "id": "sec-005-4-conclusions",
    "number": "4",
    "title": "Conclusions",
    "level": 1,
    "page_start": 5,
    "page_end": 5,
    "n_chars": 1478,
-   "n_words": 225
+   "n_words": 225,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
-   "id": "sec-008-5-acknowledgements",
+   "id": "sec-006-5-acknowledgements",
    "number": "5",
    "title": "Acknowledgements",
    "level": 1,
    "page_start": 5,
-   "page_end": 6,
-   "n_chars": 407,
-   "n_words": 60
-  },
-  {
-   "id": "sec-009-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 6,
    "page_end": 7,
-   "n_chars": 6487,
-   "n_words": 863
+   "n_chars": 6906,
+   "n_words": 924,
+   "label_start": "5",
+   "label_end": "7"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 10,
-  "sections": 10,
-  "chars_total": 24370
+  "toc_entries": 8,
+  "toc_inferred_entries": 8,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.143,
+  "toc_inferred_method": "latex",
+  "figure_entries": 5,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 24790,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "paper.tex",
+   "tex_sections": 8,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-2-observables",
+     "title": "Observables",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.853,
+     "coverage_ratio": 0.649,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-trans-series-expansion",
+     "title": "Trans-series expansion",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-32-generic-relations",
+     "title": "Generic relations",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-33-example",
+     "title": "Example",
+     "prose_ratio": 0.941,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-4-conclusions",
+     "title": "Conclusions",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-5-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.116,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

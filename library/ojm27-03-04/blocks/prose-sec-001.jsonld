@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ojm27-03-04/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ojm27-03-04/blocks/prose-sec-001",
   "kind": "prose",
   "title": "Preliminaries",
   "pageStart": 3,
-  "pageEnd": 3,
+  "pageEnd": 11,
   "text": "../sections/sec-001-1-preliminaries.md",
-  "derivedFrom": "library/ojm27-03-04/manifest",
-  "sourceDocument": "library/ojm27-03-04/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ojm27-03-04",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ojm27-03-04",
   "provenance": "ingested"
 }

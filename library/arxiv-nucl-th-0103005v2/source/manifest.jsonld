@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-nucl-th-0103005v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-nucl-th-0103005v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-nucl-th-0103005v2",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:nucl-th/0103005&metadataPrefix=arXiv), submitted 2001-03-06, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-nucl-th-0103005v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/nucl-th/0103005v2",
+    "content_type": "application/gzip",
+    "sha256": "fa42c262ad1199961fc9a110ae89e1bae5b84b86b58922fae1c2a315c46b275e",
+    "bytes": 163252,
+    "fetched": "2026-10-10T15:31:47+00:00",
+    "files": [
+      {
+        "path": "source/files/ar209.sty",
+        "role": "sty",
+        "sha256": "22c880e1632b293cf760f63f9ac0f81ac92cece8956ee74513c2d917b5b67c30",
+        "bytes": 22889
+      },
+      {
+        "path": "source/files/review-posted.tex",
+        "role": "tex",
+        "sha256": "4e9035f2ef91998fd6f7fd2dbd309ca40a53ba4e991cce7bffabfda133ded2f1",
+        "bytes": 121042
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

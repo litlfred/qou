@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "geckpfeiffer2000",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 74,
+      "entry": {
+        "id": "geckpfeiffer2000",
+        "status": "partial",
+        "verified_at": "2026-05-19T15:57:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 2,
+        "fix_commit": "(this commit)",
+        "note": "2 bare-URL Refs upgraded with title+publisher form.",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1093/oso/9780198502500.001.0001"
+        }
+      }
+    }
+  ]
+}

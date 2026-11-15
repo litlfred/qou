@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-t-duality-color-tube",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:t-duality-color-tube",
+  "kind": "remark",
+  "title": "T-duality in color tube coordinates",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-t-duality-elliptic",
+    "papers/quantum-observable-universe/blocks/rem-color-tube-cubic"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-color-tube-coordinates",
+  "text": "t-duality-color-tube.md",
+  "provenance": "authored"
+}

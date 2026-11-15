@@ -1,0 +1,26 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "zagier2010",
+  "type": "chapter",
+  "title": "Quantum Modular Forms",
+  "author": [
+    {
+      "family": "Zagier",
+      "given": "Don"
+    }
+  ],
+  "container-title": "Quanta of Maths",
+  "publisher": "American Mathematical Society",
+  "publisher-place": "Providence, RI",
+  "issued": {
+    "date-parts": [
+      [
+        2010
+      ]
+    ]
+  },
+  "page": "659-675",
+  "collection-title": "Clay Mathematics Proceedings",
+  "collection-number": 11,
+  "note": "Foundational definition of quantum modular forms — functions on ℚ whose obstruction to modularity under SL₂(ℤ) (esp. $x \\mapsto -1/x$) extends analytically; for knots the Kashaev / colored-Jones asymptotics near roots of unity are quantum-modular. The $q \\mapsto \\tilde{q}$ modular-partner transformation + the $\\sqrt{2\\pi/\\hbar}$ radial-asymptotic prefactor are the conjectural frame for the QOU $Q_\\beta$ $c_k$ $\\sqrt{u}/\\varepsilon$ bar-involution (the bar-odd $a_1$ as the odd part under the modular S-transform). See docs/audits/2026-06-13-qbeta-heat-fmap-symbolic-and-literature.md."
+}

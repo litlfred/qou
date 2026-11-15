@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2503.08846v1/blocks/prose-sec-010",
+  "kind": "prose",
+  "title": "TQFT in the Semiclassical Limit",
+  "pageStart": 23,
+  "pageEnd": 24,
+  "text": "../sections/sec-010-tqft-in-the-semiclassical-limit.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2503.08846v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2503.08846v1",
+  "provenance": "ingested"
+}

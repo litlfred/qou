@@ -7,10 +7,33 @@ PR #546 derives:
 
 This probe:
 
-  (1) Independent NUMERICAL VERIFICATION via the existing
-      `char_fast.chi_lambda_fast` Hoefsmit infrastructure +
-      Plancherel weights at multiple q values. Confirms polynomial
-      to machine precision.
+  (1) Independent NUMERICAL CHECK via the existing
+      `char_fast.chi_lambda_fast_mp` Hoefsmit infrastructure +
+      Plancherel weights at seven q values.
+
+      🛑 **It does NOT confirm the polynomial.** This paragraph read
+      "Confirms polynomial to machine precision" until 2026-09-14,
+      and the probe's own printed output has always contradicted it:
+      the numeric trace and the claimed closed form differ by a
+      factor of **3.35 at the substrate q₀** and **12.48 at q = 2**,
+      so the control flow has always fallen into the
+      "⚠ Significant deviation — possibly a different normalization
+      or convention" branch, never the "✅ VERIFIED" one. The witness
+      carried no assertion that could fail, because it is written
+      with `json.dumps` + `stamp_staleness_metadata` rather than
+      `WitnessBuilder.save`, so nothing flagged the contradiction.
+
+      The disagreement is **O(1) and not a precision artifact**:
+      unchanged to ten displayed figures after this probe was moved
+      off `chi_lambda_fast` (numpy, `dtype=complex`, so complex128
+      whatever `q_val` it got) onto the mpmath sibling at
+      `_precision.COMPUTE_DPS`. Which of the two objects is the
+      intended `tr_M(proton)` is NOT adjudicated here and is
+      untouched by that move; the probe's own "different
+      normalization or convention" is the live reading.
+
+      Legs (2) and (3) below are sympy-exact, independent of this,
+      and do hold.
 
   (2) Anti-self-reciprocity proof: shows the polynomial satisfies
       q^20 · p(1/q) = -p(q), a symmetry that follows categorically
@@ -47,14 +70,22 @@ from pathlib import Path
 import sympy as sp
 import mpmath as mp
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
-from char_fast import chi_lambda_fast  # noqa: E402
+# `chi_lambda_fast_mp`, NOT `chi_lambda_fast`.  The double-precision entry point
+# lambdifies to numpy and builds its σ_i matrices `dtype=complex`, so every
+# character came back in complex128 whatever `q_val` was handed to it.  That
+# mattered here specifically because of the `mp.lu_solve` below: its comment
+# claims it "honours the mp.dps precision floor rather than np.linalg.solve which
+# bottlenecks at float64", and with complex128 matrix ENTRIES that claim was
+# false — the solve was exact arithmetic on already-rounded inputs, which buys
+# nothing.  With the mpmath character path the comment is now true.
+from char_fast import chi_lambda_fast_mp  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
 
 q_sym = sp.symbols("q", positive=True)
@@ -105,13 +136,18 @@ def derive_h3_plancherel_weights_at_q(q_val):
     """
     # Per partitions:
     parts = [(3,), (2, 1), (1, 1, 1)]
-    chi_id = {p: chi_lambda_fast(p, [], q_val=q_val).real for p in parts}
+    # Word coefficients written as INTEGERS, not `1.0`/`0.0`.  `chi_lambda_fast_mp`
+    # lifts them with `mp.mpf(c)`, and 1.0/0.0 happen to be exact doubles so
+    # nothing was lost — but an integer says "this is a braid generator, coefficient
+    # one" rather than inviting the next non-exact coefficient to be written as a
+    # float.
+    chi_id = {p: chi_lambda_fast_mp(p, [], q_val).real for p in parts}
     # σ_1 word: [(c, d, gen_idx)] = [(1, 0, 0)]
-    chi_s1 = {p: chi_lambda_fast(p, [(1.0, 0.0, 0)], q_val=q_val).real for p in parts}
+    chi_s1 = {p: chi_lambda_fast_mp(p, [(1, 0, 0)], q_val).real for p in parts}
     # σ_1 σ_2 word: [(1, 0, 0), (1, 0, 1)]
-    chi_s1_s2 = {p: chi_lambda_fast(p, [(1.0, 0.0, 0), (1.0, 0.0, 1)], q_val=q_val).real for p in parts}
+    chi_s1_s2 = {p: chi_lambda_fast_mp(p, [(1, 0, 0), (1, 0, 1)], q_val).real for p in parts}
     # σ_1 σ_2 σ_1 = trefoil
-    chi_tre = {p: chi_lambda_fast(p, [(1.0, 0.0, 0), (1.0, 0.0, 1), (1.0, 0.0, 0)], q_val=q_val).real for p in parts}
+    chi_tre = {p: chi_lambda_fast_mp(p, [(1, 0, 0), (1, 0, 1), (1, 0, 0)], q_val).real for p in parts}
 
     z = q_val**3 / (q_val**2 + 1)
 
@@ -126,9 +162,14 @@ def derive_h3_plancherel_weights_at_q(q_val):
         [chi_s1[p] for p in parts],
         [chi_s1_s2[p] for p in parts],
     ])
-    b_vec = mp.matrix([mp.mpf(1), mp.mpf(z), mp.mpf(z) ** 2])
+    # `z` is already mpf (q_val is mpf and the arithmetic above is mpf), so the
+    # `mp.mpf(z)` lift is now a no-op rather than the recovery of a double.
+    b_vec = mp.matrix([mp.mpf(1), z, z ** 2])
     y_vec = mp.lu_solve(M_mat, b_vec)
-    return {p: float(y_vec[i, 0]) for i, p in enumerate(parts)}, {
+    # mpf-valued, NOT float().  These weights are multiplied against the
+    # characters in `proton_tr_m_numeric`, so the old cast was upstream of
+    # arithmetic, not at a recording boundary — it capped the whole trace.
+    return {p: y_vec[i, 0] for i, p in enumerate(parts)}, {
         "chi_id": chi_id, "chi_s1": chi_s1, "chi_s1_s2": chi_s1_s2,
         "chi_trefoil": chi_tre,
     }
@@ -138,8 +179,8 @@ def proton_tr_m_numeric(q_val):
     """Compute tr_M(proton) numerically via χ^λ + y_λ summation."""
     y_lambda, _ = derive_h3_plancherel_weights_at_q(q_val)
     parts = [(3,), (2, 1), (1, 1, 1)]
-    proton_word = [(1.0, 0.0, 0)] * 7 + [(1.0, 0.0, 1)] * 4
-    chi_p = {p: chi_lambda_fast(p, proton_word, q_val=q_val).real for p in parts}
+    proton_word = [(1, 0, 0)] * 7 + [(1, 0, 1)] * 4
+    chi_p = {p: chi_lambda_fast_mp(p, proton_word, q_val).real for p in parts}
     return sum(y_lambda[p] * chi_p[p] for p in parts), chi_p, y_lambda
 
 
@@ -155,21 +196,31 @@ def main() -> int:
     print(f"  {'q':<14} {'tr_M(p) numeric':>20} {'PR #546 closed form':>22} {'rel diff':>14}")
     print("  " + "-" * 76)
 
-    q_test_values = [1.05, 1.10, float(Q_MP), 1.15, 1.20, 1.50, 2.00]
+    # mpf from decimal STRINGS, and `Q_MP` itself rather than `float(Q_MP)`.  The
+    # old list was seven Python floats — so the probe imported the 50-digit pin and
+    # then cast it straight back down to a double, and the six comparison points
+    # were binary approximations of the decimals written here (1.05 is not
+    # representable in binary64).
+    q_test_values = [
+        mp.mpf("1.05"), mp.mpf("1.10"), Q_MP,
+        mp.mpf("1.15"), mp.mpf("1.20"), mp.mpf("1.50"), mp.mpf("2.00"),
+    ]
     verification_data = []
-    max_rel_diff = 0.0
+    max_rel_diff = mp.mpf(0)
     for q_val in q_test_values:
         try:
             tr_num, chi_p, y_lambda = proton_tr_m_numeric(q_val)
             tr_pr546 = pr546_closed_form(q_val)
-            rel_diff = abs(tr_num - tr_pr546) / abs(tr_pr546) if tr_pr546 != 0 else 0
+            rel_diff = (abs(tr_num - tr_pr546) / abs(tr_pr546)
+                        if tr_pr546 != 0 else mp.mpf(0))
             max_rel_diff = max(max_rel_diff, rel_diff)
             print(f"  {q_val:<14.6f} {tr_num:>20.10f} {tr_pr546:>22.10f} {rel_diff:>14.2e}")
+            # `fmt` at the recording boundary; every value here is mpf above.
             verification_data.append({
-                "q": q_val,
-                "tr_M_numeric": tr_num,
-                "tr_M_pr546_closed_form": tr_pr546,
-                "rel_diff": rel_diff,
+                "q": fmt(q_val),
+                "tr_M_numeric": fmt(tr_num),
+                "tr_M_pr546_closed_form": fmt(tr_pr546),
+                "rel_diff": fmt(rel_diff),
             })
         except Exception as exc:
             print(f"  {q_val:<14.6f} ERROR: {type(exc).__name__}: {exc}")
@@ -245,12 +296,28 @@ def main() -> int:
         "computation": "poly-q-proof",
         "contentBlock": "prop:markov-trace-antipode-polynomial-symmetry",
         "description": (
-            "Independent verification of PR #546's claimed closed form "
+            "Independent CHECK of PR #546's claimed closed form "
             "tr_M(proton) = (q^20 + q^18 + 2q^12 - 2q^8 - q^2 - 1) / "
-            "(12 q^10) via numerical Plancherel-weight Markov trace at "
-            "multiple q values, plus structural proofs: anti-self-"
-            "reciprocity q^20·p(1/q) = -p(q) (Frobenius/antipode "
-            "symmetry), pole order 10 with leading coefficient -1/12."
+            "(12 q^10) against a numerical Plancherel-weight Markov trace at "
+            "seven q values.  THE NUMERICAL LEG DOES NOT CONFIRM IT: the two "
+            "disagree by a factor of 3.35 at the substrate q_0 and by 12.48 at "
+            "q = 2, so max_relative_diff_across_q is 12.48, not a residual.  "
+            "This field read 'Independent verification of ...' until 2026-09-14 "
+            "while carrying exactly these numbers; the word 'verification' was "
+            "describing the probe's intent rather than its result, and the "
+            "witness has no assertion that could fail (it is written with "
+            "json.dumps + stamp_staleness_metadata, not WitnessBuilder.save, so "
+            "neither the assertion machinery nor the raw-float64 guard runs on "
+            "it).  The disagreement is O(1) and NOT a precision artifact — it is "
+            "unchanged to ten displayed figures after this probe was moved off "
+            "the complex128 character path onto mpmath at COMPUTE_DPS.  The "
+            "probe's own printout has always said 'possibly a different "
+            "normalization or convention', which is the live reading; nothing "
+            "here adjudicates which of the two objects is the intended "
+            "tr_M(proton), and that question is untouched by this drain.  The "
+            "two STRUCTURAL legs are unaffected and do hold exactly, in sympy: "
+            "anti-self-reciprocity q^20·p(1/q) = -p(q) (Frobenius/antipode "
+            "symmetry), and pole order 10 with leading coefficient -1/12."
         ),
         "reference_blocks": [
             "prop:atomic-mass-gb-nf",
@@ -261,7 +328,19 @@ def main() -> int:
         "claimed_polynomial": "q^20 + q^18 + 2*q^12 - 2*q^8 - q^2 - 1",
         "claimed_denominator": "12 * q^10",
         "numerical_verification": verification_data,
-        "max_relative_diff_across_q": max_rel_diff,
+        "max_relative_diff_across_q": fmt(max_rel_diff),
+        # An explicit verdict field, so a consumer reading this witness
+        # programmatically cannot mistake the "verification" in the name for a
+        # pass.  Deliberately NOT written as an `assertions` entry: this witness
+        # is hand-serialized rather than emitted by WitnessBuilder, and
+        # hand-rolling that schema here would put an unvalidated assertion block
+        # into the corpus.  That the numerical leg has no failable assertion is
+        # itself recorded in the description.
+        "numerical_leg_confirms_closed_form": bool(max_rel_diff < mp.mpf("1e-6")),
+        "numerical_leg_reading": (
+            "DISAGREES by O(1) — see description.  Structural legs "
+            "(anti-self-reciprocity, pole order) are independent of this and hold."
+        ),
         "anti_self_reciprocal_proved": bool(anti_self_reciprocal),
         "pole_order_at_zero": 10,
         "leading_coefficient_at_zero": "-1/12",

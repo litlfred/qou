@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-symmetric-point-channel-collapse",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:symmetric-point-channel-collapse",
+  "kind": "proposition",
+  "title": "Channel collapse at the symmetric point",
+  "tags": [
+    "symmetric-point",
+    "hecke",
+    "degeneration"
+  ],
+  "leanRef": "qou:QOU.symmetric_point_channel_collapse",
+  "text": "symmetric-point-channel-collapse.md",
+  "leanSource": "symmetric-point-channel-collapse.lean",
+  "provenance": "authored"
+}

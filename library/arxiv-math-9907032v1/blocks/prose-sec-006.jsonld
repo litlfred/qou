@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-9907032v1/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-9907032v1/blocks/prose-sec-006",
   "kind": "prose",
-  "title": "Some corollaries and reﬁnements",
-  "pageStart": 11,
-  "pageEnd": 13,
-  "text": "../sections/sec-006-41-some-corollaries-and-reﬁnements.md",
-  "derivedFrom": "library/arxiv-math-9907032v1/manifest",
-  "sourceDocument": "library/arxiv-math-9907032v1/manifest",
+  "title": "A network flow approach",
+  "pageStart": 13,
+  "pageEnd": 16,
+  "text": "../sections/sec-006-5-a-network-flow-approach.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9907032v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9907032v1",
   "provenance": "ingested"
 }

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1303.0720v2/sections/sec-028",
   "@type": [
     "doco:Section"
   ],
-  "title": "The kernel expansion algorithm for bianalytic functions",
-  "pageStart": 20,
-  "pageEnd": 20,
+  "title": "The characterization of bi-negligible amplitudes",
+  "pageStart": 23,
+  "pageEnd": 24,
   "contains": [
     "library/arxiv-1303.0720v2/blocks/prose-sec-028"
   ],
-  "derivedFrom": "library/arxiv-1303.0720v2/manifest",
-  "sourceDocument": "library/arxiv-1303.0720v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.0720v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.0720v2",
   "provenance": "ingested"
 }

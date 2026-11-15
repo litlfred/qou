@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/motivicperiodsandp1minus3pointsv3/sections/sec-006",
   "@type": [
     "doco:Section"
   ],
-  "title": "Motivic periods. Let T be a neutral Tannakian category over Q with",
-  "pageStart": 3,
-  "pageEnd": 4,
+  "title": "−→UΓ −→GΓ −→S −→1",
+  "pageStart": 22,
+  "pageEnd": 23,
   "contains": [
     "library/motivicperiodsandp1minus3pointsv3/blocks/prose-sec-006"
   ],
-  "derivedFrom": "library/motivicperiodsandp1minus3pointsv3/manifest",
-  "sourceDocument": "library/motivicperiodsandp1minus3pointsv3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/motivicperiodsandp1minus3pointsv3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/motivicperiodsandp1minus3pointsv3",
   "provenance": "ingested"
 }

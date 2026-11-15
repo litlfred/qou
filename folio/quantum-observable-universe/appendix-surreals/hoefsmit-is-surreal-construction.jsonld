@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-hoefsmit-is-surreal-construction",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:hoefsmit-is-surreal-construction",
+  "kind": "proposition",
+  "title": "Hoefsmit seminormal form is Conway's $\\{L \\mid R\\}$ construction",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-sign-sequence-of-braid"
+  ],
+  "cites": [
+    "references/gonshor1986",
+    "references/conway1976"
+  ],
+  "tags": [
+    "surreal-numbers",
+    "hoefsmit",
+    "hecke-eigenspace",
+    "conway-construction",
+    "L-R-split",
+    "bridge"
+  ],
+  "leanRef": "qou:QOU.AppendixSurreals.hoefsmit_is_surreal_construction",
+  "text": "hoefsmit-is-surreal-construction.md",
+  "provenance": "authored"
+}

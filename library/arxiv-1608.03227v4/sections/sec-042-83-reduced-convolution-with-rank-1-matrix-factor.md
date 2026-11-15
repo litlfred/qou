@@ -8,64 +8,18 @@ pages: 46-47
 source_pdf: 1608.03227v4.pdf
 source_sha256: c71128e9a6c35343
 doc_brief: "January 30, 2018 — For each braid β ∈ Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗ × C∗ - equivariant sheaves on the non-commutative nested Hilbert scheme Hilb f ree 1,n ."
+text_source: latex
+latex_prose_ratio: 0.915
+latex_coverage_ratio: 0.97
 ---
-theorems is the case m = k + 1, that is when one of the matrix factorizations in ¯⋆ product is lifted from
-the space X 2(G2), we call such matrix factorization rank 1 matrix factorization. In this case the pull back
-functor (¯π12×Bm−k+1 ¯π23)∗ could be made very explicit. We do not provide the details of the compu tation,
-we essentially just follow the method of proposition 5.4.
-Let us ﬁx notations. Let F = ( M1,D 1,∂ ′
-l,∂ ′
-r) ∈ MFsc
-Bn×B2 (X 2(Gn),W ), G = ( M2,D 2,∂ ′′
-l,∂ ′′
-r ) ∈
-MFsc
-B2×Bn (X 2(G2),W ), B2 in both cases is the image of the embedding ik,k+1 : B2 → Bn. Since the
-Lie algebra n2 is one-dimensional n2 =⟨e⟩ the corresponding n2-equivariant structure is given by the maps
-the even maps
-∂′
-r∈Hom C[X 2(Gn)](M1,M 1),∂ ′′
-l ∈Hom C[X 2(G2)](M2,M 2).
-Respectively
-(8.29) (¯ π12⊗Bm−k+1 ¯π23)∗(F ⊠G) = (¯π∗
-12(M1)⊗ ¯π∗
-23(M2),D 1 +D2;∂′
-l,∂ ′
-r +∂′′
-l +∂rl,∂ ′
-r),
-where the diﬀerential ∂rl is given by the formula
-(8.30) ∂rl = ¯π∗
-12
-Å ∂D1
-∂Yk,k+1
-ã
-( ˜Y 2
-k+1,k+1− ˜Y 2
-k,k) + ¯π∗
-23
-Å ∂D2
-∂Xkk
-− ∂D2
-∂Xk+1,k+1
-ã
-˜X 2
-k+1,k,
-where ˜X 2 = Ad −1
-g12 (X) and ˜Y 2 = Ad g12 (Y ).
-In the other case
-F = (M1,D 1,∂ ′
-l,∂ ′
-r)∈ MFsc
-Bn×B2 (X 2(G2),W ),
-G = (M2,D 2,∂ ′′
-l,∂ ′′
-r )∈ MFsc
-B2×Bn (X 2(Gn),W )
-and the expressions for (¯π12×Bm−k+1 ¯π23)∗(F ⊠G) is given by the same formulas (8.29), (8.30).
-Remark 8.5. As one can see, if we work with B2-equivariant matrix factorizations on Z with B2-invariant
-potential then all the technicalities that are discussed in the ﬁrst few sections are unnecessary since MFstr
-B2 (Z,F ) =
-MFsc
-B2 (Z,F ).
-46
+[]{#ssec: conv rk 1 label="ssec: conv rk 1"} The most important case of these theorems is the case $m=k+1$, that is when one of the matrix factorizations in $\bar{\star}$ product is lifted from the space $\calXr_2(G_2)$, we call such matrix factorization rank $1$ matrix factorization. In this case the pull back functor $(\bar{\pi}_{12}\times_{B_{m-k+1}}\bar{\pi}_{23})^*$ could be made very explicit. We do not provide the details of the computation, we essentially just follow the method of proposition [\[prop: Knorrer factor\]](#prop: Knorrer factor){reference-type="ref" reference="prop: Knorrer factor"}.
+
+Let us fix notations. Let $\calF=(M_1,D_1,\partial'_l,\partial'_r)\in \MF_{B_n\times B_2}(\calXr_2(G_n),\Wr)$, $\calG=(M_2,D_2,\partial''_l,\partial''_r)\in \MF_{B_2\times B_n}(\calXr_2(G_2),\Wr)$, $B_2$ in both cases is the image of the embedding $i_{k,k+1}: B_2\to B_n$. Since the Lie algebra $\frn_2$ is one-dimensional $\frn_2=\langle e \rangle$ the corresponding $\frn_2$-equivariant structure is given by the maps the even maps $$\partial'_r\in Hom_{\CC[\calXr_2(G_n)]}(M_1, M_1), \partial''_l\in Hom_{\CC[\calXr_2(G_2)]}(M_2, M_2).$$ Respectively $$\label{eq: pi12Bpi23 1}
+ (\bar{\pi}_{12}\otimes_{B_{m-k+1}}\bar{\pi}_{23})^*(\calF\boxtimes \calG)=(\bar{\pi}_{12}^*(M_1)\otimes\bar{\pi}_{23}^*(M_2),D_1+D_2;\partial'_l,\partial'_r+\partial''_l+\partial_{rl},\partial'_r),$$ where the differential $\partial_{rl}$ is given by the formula $$\label{eq: pi12Bpi23 2}
+\partial_{rl}=\bar{\pi}_{12}^*\left(\frac{\partial D_1}{\partial Y_{k,k+1}}\right)(\tilde{Y}^2_{k+1,k+1}-\tilde{Y}^2_{k,k})+ \bar{\pi}_{23}^*\left(\frac{\partial D_2}{\partial X_{kk}}-\frac{\partial D_2}{\partial X_{k+1,k+1}}\right) \tilde{X}^2_{k+1,k},$$ where $\tilde{X}^2=\Ad_{g_{12}}^{-1}(X)$ and $\tilde{Y}^2=\Ad_{g_{12}}(Y)$.
+
+In the other case $$\calF=(M_1,D_1,\partial'_l,\partial'_r)\in \MF_{B_n\times B_2}(\calXr_2(G_2),\Wr),$$ $$\calG=(M_2,D_2,\partial''_l,\partial''_r)\in \MF_{B_2\times B_n}(\calXr_2(G_n),\Wr)$$ and the expressions for $(\bar{\pi}_{12}\times_{B_{m-k+1}}\bar{\pi}_{23})^*(\calF\boxtimes \calG)$ is given by the same formulas ([\[eq: pi12Bpi23 1\]](#eq: pi12Bpi23 1){reference-type="ref" reference="eq: pi12Bpi23 1"}), ([\[eq: pi12Bpi23 2\]](#eq: pi12Bpi23 2){reference-type="ref" reference="eq: pi12Bpi23 2"}).
+
+::: remark
+As one can see, if we work with $B_2$-equivariant matrix factorizations on $Z$ with $B_2$-invariant potential then all the technicalities that are discussed in the first few sections are unnecessary since $\MFs_{B_2}^{str}(Z,F)=\MF_{B_2}(Z,F)$.
+:::

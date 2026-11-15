@@ -9,183 +9,238 @@ source_pdf: 2203.17029v1.pdf
 source_sha256: 5557f7f272cb8a43
 doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised"
 duplicate_of: "modularqholonomicmodules"
+text_source: latex
+latex_prose_ratio: 0.937
+latex_coverage_ratio: 0.984
 ---
-What does it take to solve a q-diﬀerence equation?
-Solving a linear equation usually means giving a basis of solutions, say at t = 0 and
-t = ∞ (the only two canonical points, ﬁxed under the shift transformat ion t ↦→qt), and
-to compute the monodromy (i.e., the connection) between t = 0 and t = ∞ in terms of
-“known” functions. This problem has a rich history with an interestin g balance between
-concrete special functions and the abstract, which the reader m ay consult in Okounkov’s
-talks and their references.
-A key to the solution is to choose linear q-diﬀerence equations of natural origin, for instance
-the ones appearing in quantum cohomology [ 55], in Kontsevich’s talks on resurgence [ 43], or
-in quantum topology and Chern–Simons theory [ 21, 30].
-Recently, it was observed that the solutions of some linear q-diﬀerence equations con-
-cerning quantum knot invariants [ 32, 33] or resurgence and Borel resummation of pertur-
-bative Chern–Simons theory [ 22, 23, 24], have an improved analyticity property. Roughly
-speaking, this means that some holomorphic functions on /BV \ /CA extend on the cut plane
-/BV
-′ = /BV \ (−∞, 0]. This extension property has been formalised recently by Zagier a s holo-
-morphic quantum modular forms [ 64].
-Our attempt to understand the mechanism behind this property ab stractly led us to the
-notion of a modular q-holonomic module. Quite by accident, this suggests an answer to th e
-question posed above, namely:
-Modularity can solve eﬀectively a q-diﬀerence equation.
-1.3. Deﬁnition and properties. To explain the new concept, consider the linear q-diﬀerence
-equation
-σX = AX (3)
-for a vector-valued function X = X(t, q), where ( σX )(t, q) = X(qt, q) denotes the shift
-operator, A(t, q) ∈ GLr( /C9 (t, q)) and q is a nonzero complex number with |q| ⁄= 1. Fix a
-fundamental matrix solution U to ( 3) at t = 0, which we assume is ﬁltration-preserving and
-of weight κU = diag(τ κU, 1, . . . , τκU,r ) and deﬁne
-Ω U,γ = (U|κU γ)U −1, γ =
-( a b
-c d
-)
-∈ SL2( /CI ) (4)
-where the slash operator |κU γ is deﬁned in Section 2.4 below. The map γ ↦→Ω U,γ is a cocycle
-of SL 2( /CI ), i.e., it satisﬁes
-Ω U,γγ ′(z, τ ) = Ω U,γ(γ′(z, τ ))Ω U,γ′(z, τ ) (5)
-for all γ, γ ′ ∈ SL2( /CI ). Likewise, let V denote a ﬁltration-preserving fundamental solution at
-t = ∞, and
-− →
-M = V −1U denote the monodromy matrix (often called “connection matrix”).
-The monodromy is always an elliptic function (i.e., σ-invariant). If it satisﬁes the equation
-− →
-M = ∆ κV ,γ(
-− →
-M|κU γ), γ =
-( a b
-c d
-)
-∈ SL2( /CI ) (6)
-4 STA VROS GAROUF ALIDIS AND CAMPBELL WHEELER
-for some γ =
-( a b
-c d
-)
-∈ SL2(
-/CI ) then the cocycle matrices associated to U and V are equal:
-Ω U,γ = Ω V,γ γ =
-( a b
-c d
-)
-∈ SL2( /CI ) . (7)
-(The converse holds, too, and the equivalence of ( 7) and ( 6) holds for each ﬁxed γ). A priori,
-Ω γ = Ω U,γ = Ω V,γ is a holomorphic function of τ ∈ /BV \ /CA and a meromorphic function of
-z (with t = e(z)) with poles in a ﬁnite union of translates of the lattice /CI + τ /CI . For an
-element γ =
-( a b
-c d
-)
-∈ SL2( /CI ), we let /BV
-γ denote the cut plane /BV \ (−∞, −d/c] (if c > 0),
-/BV \ [−d/c, ∞) (if c < 0) and /BV \ /CA when c = 0. The next deﬁnition concerns an improved
-analytic property of Ω γ.
-Deﬁnition 1.1. We say that a q-diﬀerence equation is modular if for all γ ∈ SL2( /CI ), its
-cocycle Ω γ extends to a meromorphic function of ( z, τ ) ∈ /BV × /BV
-γ with potential poles at
-z ∈ Sγ + /CI + τ /CI for a ﬁnite set Sγ.
-We make several comments concerning this deﬁnition.
-1. For a modular q-diﬀerence equation, the two sides of τ ∈
-/BV \ /CA communicate: the restric-
-tion of Ω γ on the one side of the plane Im( τ ) > 0 uniquely determines (and is determined
-by) the function on the other side Im( τ ) < 0.
-2. In a sense, our notion of modular linear q-diﬀerence equation is a q-analogue of the
-second, third and fourth order modular linear diﬀerential equation s studied by Kaneko,
-Nagatomo, Zagier and others [ 4, 40, 41] in relation to Conformal Field Theory and Vertex
-Operator Algebras. The characters of a VOA (under a mild C2-condition) are solutions to
-a modular linear diﬀerential equation [ 15, 66]. An alternative title of our paper could be
-“Modular linear q-diﬀerence equations” in direct analogy with the modular linear diﬀere ntial
-equations of CFTs and VOAs. On the other hand, the current title e mphasises the “module”
-aspect as opposed to the “equation aspect”.
-3. Our notion explains conceptually the improved analyticity propert ies conjectured in
-relation to the structure of exact and perturbative invariants of Chern–Simons theory [
-22,
-23, 24, 32, 33], as well as the work of Gukov et al relating logarithmic CFTs and VOAs to
-Chern–Simons theory [ 10].
-4. Modular linear diﬀerential equations seem rare. On the other han d, modular linear q-
-diﬀerence equations appear abundant: we conjecture (see the e nd of Section 1) that the
-ˆA-polynomial of a knot (i.e., the linear q-diﬀerence equation satisﬁed by the colored Jones
-polynomial of a knot [ 30]) is a modular linear q-diﬀerence equation. This brings a new
-perspective to the Jones polynomial of a knot.
-5. The modularity of the monodromy for modular q-holonomic modules is a restricted condi-
-tion, which leads to the complete determination of the monodromy ev en when a fundamental
-solution is deﬁned by q-Borel resummation. This in turn completely determines the so-calle d
-q-Stokes phenomenon coming from the change of the ray of the q-Laplace transform.
-6. The cocycle Ω U,γ as a function of a fundamental solution of a linear q-diﬀerence equation
-appears new and diﬀerent from the matrices considered in Etingof [
-18] that generate the
-Galois group of the equation.
-7. The above deﬁnition involves all elements of SL 2(
-/CI ), although it imposes no improved
-extension when γ2,1 = 0. The third part of the next theorem (under the hypothesis tha t
-Ω T = I which is satisﬁed in all of our examples), rephrases the modularity of Deﬁnition 1.1
-MODULAR q-HOLONOMIC MODULES 5
-in terms of Ω S alone, where S =
-( 0 −1
-1 0
-)
-and T =
-( 1 1
-0 1
-)
-of SL2(
-/CI ) are the standard generators
-of SL 2( /CI ). Recall that /BV
-′ = /BV
-S = /BV \ (−∞, 0].
-Theorem 1.2. (a) If Equation (6) for the monodromy holds for γ = S and γ = T , then it
-holds for all γ ∈ SL2( /CI ).
-(b) If Ω is an SL2( /CI )-cocycle with Ω T = I, then Ω S satisﬁes the 4-term and the 3-term
-functional equations
-1 = Ω S
-(
-− z
-τ , − 1
-τ
-)
-Ω S (−z, τ ) Ω S
-( z
-τ , − 1
-τ
-)
-Ω S(z, τ ) (8a)
-Ω S(z, τ ) = Ω S
-( z
-τ + 1 , τ
-τ + 1
-)
-Ω S(z, τ + 1) . (8b)
-Conversely, given Ω T = I and Ω S that satisﬁes the above functional equations, there is a
-SL2( /CI )-cocycle with those values.
-(c) If Ω is a cocycle such that Ω T = I and Ω S extends as a meromorphic function of (z, τ ) ∈
-/BV × /BV
-′, then Ω γ extends as a meromorphic function of (z, τ ) ∈ /BV × /BV
-γ for all γ ∈ SL2( /CI ).
+In a recent talk~\cite{Okounkov:talk,Okounkov:notes}, Okounkov asked the
+question:
+
+\begin{center}
+\emph{What does it take to solve a $q$-difference equation?}
+\end{center}
+
+Solving a linear equation usually means giving a basis of solutions,
+say at $t=0$ and $t=\infty$ (the only two canonical points, fixed under the
+shift transformation
+$t \mapsto q t$), and to compute the monodromy (i.e., the connection)
+between $t=0$ and $t=\infty$ in
+terms of ``known'' functions. This problem has a rich history
+with an interesting balance between concrete special functions and the abstract,
+which the reader may consult in Okounkov's talks and their references.
+
+A key to the solution is to choose linear $q$-difference equations of natural
+origin, for instance the ones appearing in quantum cohomology~\cite{OP},
+in Kontsevich's talks on resurgence~\cite{Kontsevich:talks}, or in
+quantum topology and Chern--Simons theory~\cite{Ga:CS,GL}.
+
+Recently, it was observed that the solutions of some 
+linear $q$-difference equations concerning quantum knot invariants
+~\cite{GZ:qseries,GZ:kashaev} or resurgence and Borel resummation of
+perturbative Chern--Simons theory~\cite{GGM:peacock,GGM,GGMW:trivial}, have
+an improved analyticity property. Roughly speaking, this means that 
+some holomorphic functions on $\BC\setminus\BR$ extend on the cut plane
+$\BC'=\BC\setminus (-\infty,0]$. This extension property has been formalised recently
+by Zagier as holomorphic quantum modular forms~\cite{Z:HQMF}.
+
+Our attempt to understand the mechanism behind this property abstractly led
+us to the notion of a modular $q$-holonomic module. Quite by accident, this
+suggests an answer to the question posed above, namely:
+
+\begin{center}
+\emph{Modularity can solve effectively a $q$-difference equation}. 
+\end{center}
+
+
+\subsection{Definition and properties}
+\label{sub.def}
+
+To explain the new concept, consider the linear $q$-difference equation
+\be
+\label{qdiff}
+\s X = A X
+\ee
+for a vector-valued function $X=X(t,q)$, where $(\s X)(t,q)=X(qt,q)$ denotes the
+shift operator, $A(t,q) \in \GL_r(\BQ(t,q))$ and $q$ is a nonzero complex number
+with $|q|\neq1$. 
+Fix a fundamental matrix solution $U$ to~\eqref{qdiff} at $t=0$, which we assume
+is filtration-preserving and of weight $\kappa_{U}=\diag(\tau^{\kappa_{U,1}},\dots,
+\tau^{\kappa_{U,r}})$ and define 
+\be
+\label{Om}
+\Om_{U,\gamma} =(U|_{\kappa_{U}}\gamma)U^{-1},
+\qquad \gamma=\sma abcd \in \SL_2(\BZ)
+\ee
+where the slash operator $|_{\kappa_{U}}\gamma$ is defined in Section~\ref{sub.slash}
+below. The map $\gamma \mapsto \Om_{U,\gamma}$ is a cocycle of $\SL_2(\BZ)$, i.e.,
+it satisfies
+\be
+\label{Omcoc}
+\Om_{U,\gamma \gamma'}(z,\tau)
+= \Om_{U,\gamma}(\gamma'(z,\tau))  \Om_{U,\gamma'}(z,\tau) 
+\ee
+for all $\gamma, \gamma' \in \SL_2(\BZ)$.
+Likewise, let $V$ denote a filtration-preserving fundamental solution at $t=\infty$,
+and $\vM=V^{-1}U$ denote the monodromy matrix (often called ``connection matrix'').
+The monodromy is always an elliptic function (i.e., $\s$-invariant).
+If it satisfies the equation
+\be
+\label{Mmod}
+\vM = \Delta_{\kappa_V,\gamma} (\vM|_{\kappa_U} \gamma),
+\qquad \gamma=\sma abcd \in \SL_2(\BZ)
+\ee
+for some $\gamma=\sma abcd \in \SL_2(\BZ)$ then the cocycle matrices associated to
+$U$ and $V$ are equal: 
+\be
+\label{OmUV}
+\Om_{U,\gamma} = \Om_{V,\gamma} \qquad \gamma=\sma abcd \in \SL_2(\BZ) \,.
+\ee
+(The converse holds, too, and the equivalence of~\eqref{OmUV} and~\eqref{Mmod}
+holds for each fixed $\gamma$). A priori, $\Om_{\gamma}=\Om_{U,\gamma}=\Om_{V,\gamma}$
+is a holomorphic function of $\tau \in \BC\setminus\BR$ and a
+meromorphic function of $z$ (with $t=\e(z)$) with poles in a finite union of
+translates of the lattice $\BZ+\tau\BZ$. For an element
+$\gamma=\sma abcd \in \SL_2(\BZ)$, we let $\BC_\gamma$ denote the cut
+plane $\BC\setminus (-\infty,-d/c]$ (if $c>0$),
+$\BC\setminus [-d/c,\infty)$ (if $c<0$) and $\BC\setminus\BR$ when $c=0$. 
+The next definition concerns an improved analytic property of $\Om_{\gamma}$.
+\begin{definition}
+  \label{def.qmm}
+  We say that a $q$-difference equation is \emph{modular} if for all $\gamma
+  \in \SL_2(\BZ)$, its cocycle $\Om_{\gamma}$ extends to a meromorphic function
+  of $(z,\tau)\in\BC\times\BC_\gamma$ with potential poles at
+  $z \in S_\gamma + \BZ + \tau \BZ$ for a finite set $S_\gamma$. 
+\end{definition}
+
+\noindent
+We make several comments concerning this definition. 
+
+\noindent 1. 
+For a modular $q$-difference equation, the two sides of $\tau \in \BC\setminus\BR$
+communicate: the restriction of $\Om_{\gamma}$ on the one side of the plane
+$\Im(\tau)>0$ uniquely determines (and is determined by) the function on the
+other side $\Im(\tau)<0$.
+
+\noindent 2. 
+In a sense, our notion of modular linear $q$-difference equation is a $q$-analogue
+of the second, third and fourth order modular linear differential 
+equations studied by Kaneko, Nagatomo, Zagier and others~\cite{Arike:fourth-order, 
+Kaneko:third-order,Kaneko-Zagier} in relation to Conformal Field Theory 
+and Vertex Operator Algebras. The characters of a VOA (under a mild $C_2$-condition)
+are solutions to a modular linear differential equation
+~\cite{Dong:modular-invariance,Zhu:modular-invariance}. An alternative title of
+our paper could be
+``Modular linear $q$-difference equations'' in direct analogy with the
+modular linear differential equations of CFTs and VOAs. On the other hand, the
+  current title emphasises the ``module'' aspect as opposed to the ``equation
+  aspect''. 
+
+\noindent 3. 
+Our notion explains conceptually the improved analyticity properties conjectured
+in relation to the structure of exact and perturbative invariants of Chern--Simons
+theory~\cite{GGM:peacock,GGM,GGMW:trivial,GZ:qseries,GZ:kashaev}, as well as the
+work of Gukov et al relating logarithmic CFTs and VOAs to Chern--Simons
+theory~\cite{Cheng:VOA}. 
+  
+\noindent 4. 
+Modular linear differential equations seem rare. On the other hand,
+modular linear $q$-difference equations appear abundant: we conjecture
+(see the end of Section~\ref{sec.intro}) that the $\hat A$-polynomial of a knot
+(i.e., the linear $q$-difference equation satisfied by the colored Jones polynomial
+of a knot~\cite{GL}) is a modular linear $q$-difference equation. This brings
+a new perspective to the Jones polynomial of a knot.
+
+\noindent 5. 
+The modularity of the monodromy for modular $q$-holonomic modules is a restricted
+condition, which leads to the complete determination of the monodromy even when a
+fundamental solution is defined by $q$-Borel resummation. This in turn
+completely determines the so-called $q$-Stokes phenomenon coming from the
+change of the ray of the $q$-Laplace transform.
+
+\noindent 6. 
+The cocycle $\Omega_{U,\gamma}$ as a function of a fundamental solution of a
+linear $q$-difference equation appears new and different from the matrices
+considered in Etingof~\cite{Etingof} that generate the Galois group of the equation.
+
+\noindent 7. 
+The above definition involves all elements of $\SL_2(\BZ)$, although it
+imposes no improved extension when $\gamma_{2,1}=0$.  The third part of the next
+theorem (under the hypothesis that $\Om_T=I$ which is satisfied in all of our
+examples), rephrases the modularity of Definition~\ref{def.qmm}
+in terms of $\Om_S$ alone, where $S=\sma 0{-1}10$ and $T=\sma 1101$ of
+$\SL_2(\BZ)$ are the standard generators of $\SL_2(\BZ)$. Recall that
+$\BC'=\BC_S=\BC\setminus(-\infty,0]$.  
+
+\begin{theorem}
+\label{thm.ST}
+{\rm (a)} If Equation~\eqref{Mmod} for the monodromy holds for $\gamma=S$
+and $\gamma=T$, then it holds for all $\gamma \in \SL_2(\BZ)$.
+\newline
+{\rm (b)} If $\Om$ is an $\SL_2(\BZ)$-cocycle with $\Om_T=I$, then $\Om_S$
+satisfies the 4-term and the 3-term functional equations
+
+\begin{subequations}
+\begin{align}
+  \label{OmS1}
+  1 &= 
+  \Om_S\left(-\frac{z}{\tau},-\frac{1}{\tau}\right)
+  \Om_S\left(-z,\tau\right)
+  \Om_S\left(\frac{z}{\tau},-\frac{1}{\tau}\right)
+  \Om_S(z,\tau) \\
+  \label{OmS2}
+  \Om_S(z,\tau) &= \Om_S\left(\frac{z}{\tau+1}, \frac{\tau}{\tau+1}\right)
+  \Om_S(z,\tau+1) \,.
+\end{align}
+\end{subequations}
+Conversely, given $\Om_T=I$ and $\Om_S$ that satisfies the above functional
+equations, there is a $\SL_2(\BZ)$-cocycle with those values.
+\newline
+{\rm (c)} If $\Omega$ is a cocycle such that $\Om_T=I$ and $\Om_S$ extends as
+a meromorphic function of $(z,\tau) \in \BC \times \BC'$, then $\Om_\gamma$
+extends as a meromorphic function of $(z,\tau) \in \BC \times \BC_\gamma$
+for all $\gamma \in \SL_2(\BZ)$. 
+\end{theorem}
+
 Note that with the assumptions of part (c) above, we have
-Ω −I(z, τ ) = Ω S
-( z
-τ , − 1
-τ
-)
-Ω S(z, τ ) (9)
-which is meromorphic on /BV ×( /BV \ /CA ), in general does not extend any further; see for instance
-the cocycle of Theorem 1.5 below.
-8. Our ﬁnal comment concerns the distinction between a linear q-diﬀerence equation to a
-q-holonomic module. A linear q-diﬀerence equation leads to a pair ( M, e) of a q-holonomic
-module M over the q-Weyl algebra W = /C9 (q, t)⟨σ⟩/(σt − qtσ) and a cyclic vector e of M.
-The category M of q-holonomic modules is an abelian category, which admits a multivariable
-extension closed under the usual operations on sheaves. For a de tailed introduction, see [ 12]
-and [ 59], and also [ 29]. Whereas D-modules over the Weyl algebra have only one dual (see
-for example, [ 61, Sec.2.2]), modules over the q-Weyl algebra have two duals M ∧ (the usual
-Hom-dual as in the case of D-modules) and a dual M ∨ coming from the involution q ↦→q−1,
-discussed in Section 2.5 below. The next lemma summarises some categorical properties of
-modular q-holonomic modules.
-Lemma 1.3. (a) Modularity of a q-holonomic module is independent of the choice of a cyclic
-vector.
-(b) If 0 → M ′ → M → M ′′ → 0 is a short exact sequence of q-holonomic modules and M is
-modular, then M and M ′ are also modular.
-(c) M is a modular, then M ∧ and M ∨ are modular with cocycles given by
-Ω ∧(z, τ ) := Ω( z, −τ ), and Ω ∨ = (Ω −1)t (10)
-where Ω is a cocycle of M.
+\be
+\label{Om-I}
+\Om_{-I}(z,\tau) = \Om_S\left(\frac{z}{\tau},-\frac{1}{\tau}\right)
+\Om_S(z,\tau)
+\ee
+which is meromorphic on $\BC\times (\BC\setminus\BR)$, in general does not extend
+any further; see for instance the cocycle of Theorem~\ref{thm.ex1} below.
+
+\noindent 8. 
+Our final comment concerns the distinction between a linear $q$-difference equation
+to a $q$-holonomic module. A linear $q$-difference equation leads to a pair
+$(M,e)$ of a $q$-holonomic module $M$ over the $q$-Weyl algebra
+$\calW=\BQ(q,t) \langle \s \rangle/(\s t-q t \s)$ and a cyclic vector $e$ of $M$. 
+The category $\calM$ of $q$-holonomic modules is an abelian category,
+which admits a multivariable extension closed under the usual operations on sheaves.
+For a detailed introduction, see~\cite{Coutinho} and~\cite{Sabbah}, and
+also~\cite{GL:survey}. Whereas $D$-modules over the Weyl algebra have
+only one dual (see for example, ~\cite[Sec.2.2]{Singer:galois-differential}), modules
+over the $q$-Weyl algebra have two duals $M^{\wedge}$ (the usual $\mathrm{Hom}$-dual
+as in the case of $D$-modules) and a dual $M^{\vee}$ coming from the involution
+$q \mapsto q^{-1}$, discussed in Section~\ref{sub.duality} below.
+
+The next lemma summarises some categorical properties of modular $q$-holonomic
+modules.
+
+\begin{lemma}
+\label{lem.cat}
+  \rm{(a)} Modularity of a $q$-holonomic module is independent of the choice
+  of a cyclic vector.
+  \newline
+  \rm{(b)} If $0 \to M' \to M \to M'' \to 0$ is a short exact sequence of
+  $q$-holonomic modules and $M$ is modular, then $M$ and $M'$ are also modular.
+  \newline
+  \rm{(c)} $M$ is a modular, then $M^\wedge$ and $M^\vee$ are modular with
+  cocycles given by
+  \be
+\label{Omduals}
+\Om^\wedge(z,\tau):=\Om(z,-\tau), \qquad \text{and}
+\qquad \Om^\vee=(\Om^{-1})^t
+\ee
+where $\Om$ is a cocycle of $M$. 
+\end{lemma}

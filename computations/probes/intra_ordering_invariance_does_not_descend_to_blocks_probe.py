@@ -3,7 +3,7 @@
 WHAT THE CORPUS ALREADY PROVES
 ------------------------------
 `QOU.Mass.IntraOrdering.chainRatio_eq_of_intra`
-(`content/quantum-observable-universe/lean/QOU/Mass/IntraOrderingInvariance.lean`,
+(`folio/quantum-observable-universe/lean/QOU/Mass/IntraOrderingInvariance.lean`,
 sorry-free) proves that the chain ratio cannot see the intra-nucleon ordering:
 if the trace factors as `tr_M(W_atom) = F · P` and `tr_M(W_free) = F`, then
 

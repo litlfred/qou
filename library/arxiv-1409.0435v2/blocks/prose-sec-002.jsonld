@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1409.0435v2/blocks/prose-sec-002",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1409.0435v2/blocks/prose-sec-002",
   "kind": "prose",
-  "title": "I′",
-  "pageStart": 18,
-  "pageEnd": 18,
-  "text": "../sections/sec-002-2-i.md",
-  "derivedFrom": "library/arxiv-1409.0435v2/manifest",
-  "sourceDocument": "library/arxiv-1409.0435v2/manifest",
+  "title": "Application 2: sine kernel determinants",
+  "pageStart": 5,
+  "pageEnd": 6,
+  "text": "../sections/sec-002-application-2-sine-kernel-determinants.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1409.0435v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1409.0435v2",
   "provenance": "ingested"
 }

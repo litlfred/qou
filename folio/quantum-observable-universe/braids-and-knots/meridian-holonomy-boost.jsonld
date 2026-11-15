@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-meridian-holonomy-boost",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:meridian-holonomy-boost",
+  "kind": "proposition",
+  "title": "Meridian holonomy is a boost: $\\mathrm{barEven}(q)^2 - \\mathrm{barOdd}(q)^2 = 4$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-cusp-shape-bar-parity"
+  ],
+  "tags": [
+    "meridian",
+    "holonomy",
+    "boost",
+    "rapidity",
+    "bar-parity",
+    "hyperbolic-rotation",
+    "cusp-shape"
+  ],
+  "leanRef": "qou:QOU.Knot.CuspShapeBarParity.holonomy_hyperbola",
+  "text": "meridian-holonomy-boost.md",
+  "provenance": "authored"
+}

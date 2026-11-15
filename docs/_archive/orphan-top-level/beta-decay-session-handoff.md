@@ -42,7 +42,7 @@ Engine: hecke-engine 0.8.0
 - Transfer matrix gives V̂_i(q) symbolically for any A in O(A²)
 - The Q-value polynomial difference is exact in q
 - Evaluate at q₀ with error propagation from Q_ERR in q_parameter.py
-- Format: `content/quantum-observable-universe/appendix-qvalues/`
+- Format: `folio/quantum-observable-universe/appendix-qvalues/`
 
 ### 2. NF appendix with color content
 - Each nucleus: observable(q), color(q), tr_alt(q), net(q)

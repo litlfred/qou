@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T10:13:26.296951+00:00",
-  "commitSha": "92d46000f691a683917a23310b049548e9f2a091",
+  "computedAt": "2026-09-27T10:54:59.890183+00:00",
+  "commitSha": "e10bbd62f3182f36f3774b09f287027dd67b27eb",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "ab-methodology-metrics",
   "scriptFile": "ab_methodology_metrics.py",
-  "scriptHash": "5c7e078c7040",
-  "scriptCommitSha": "865ab46c3f4ecade9794437c1166fd19259dc858",
+  "scriptHash": "cf11f11b7cfd",
+  "scriptCommitSha": "c9ce7e21f1a8255292142925f7602f0b242e9909",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -20,9 +20,10 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -34,14 +35,15 @@
   "exploratory": true,
   "scope_doc": "docs/workplans/2026-06-11-ab-methodology-metrics-scope.md",
   "data": {
-    "n_first_verdicts": 12615,
-    "n_blocks": 3532,
+    "n_first_verdicts": 12817,
+    "n_blocks": 3577,
     "adoption_dates": {
       "proof-build-green": "2026-07-13T00:59:15.685Z",
       "proof-claims-unencoded": "2026-07-04T00:30:14.885Z",
       "proof-compile-cost": "2026-08-09T12:59:50.164Z",
       "proof-conditional-class-banner": "2026-07-13T00:59:15.685Z",
       "proof-dependent-conjecture-not-conditional": "2026-06-26T14:30:00.000Z",
+      "proof-docstring-sorry-mismatch": "2026-09-03T04:38:38.063Z",
       "proof-lean-compiles": "2026-07-13T00:59:15.685Z",
       "proof-narrative-lean-equiv": "2026-06-24T12:30:00.000Z",
       "proof-no-axiom-growth": "2026-07-13T00:59:15.685Z",
@@ -64,50 +66,83 @@
       "proof-substantive": "2026-07-13T00:59:15.685Z"
     },
     "criteria_counts": {
-      "proof-no-trivial-skeleton": 3532,
-      "proof-no-bare-sorries": 1193,
-      "proof-lean-compiles": 1193,
-      "proof-build-green": 1021,
-      "proof-compile-cost": 987,
-      "proof-no-axiom-growth": 744,
-      "proof-substantive": 744,
-      "proof-no-conj-propagation-violation": 744,
-      "proof-conditional-class-banner": 744,
-      "proof-not-machine-trivial": 730
+      "proof-no-trivial-skeleton": 3577,
+      "proof-no-bare-sorries": 1209,
+      "proof-lean-compiles": 1209,
+      "proof-build-green": 1035,
+      "proof-compile-cost": 1003,
+      "proof-no-axiom-growth": 752,
+      "proof-substantive": 752,
+      "proof-conditional-class-banner": 752,
+      "proof-no-conj-propagation-violation": 751,
+      "proof-not-machine-trivial": 739
     },
     "cohort_table": [
       {
         "cohort": "2026-06",
         "n_blocks": 145,
-        "M1_pass_pct": "75.0000000000000000000000000000000000000000000000000000000000",
-        "M1_n": 8,
+        "M1_pass_pct": "40.0000000000000000000000000000000000000000000000000000000000",
+        "M1_n": 15,
         "M2_mean_score": null,
         "M2_n": 0,
         "M4_median_revisions_to_green": "1.00000000000000000000000000000000000000000000000000000000000",
-        "M5_pass_pct": "52.0000000000000000000000000000000000000000000000000000000000"
+        "M5_pass_pct": null,
+        "M5_n": 275
       },
       {
         "cohort": "2026-07",
-        "n_blocks": 68,
+        "n_blocks": 66,
         "M1_pass_pct": "100.000000000000000000000000000000000000000000000000000000000",
         "M1_n": 1,
         "M2_mean_score": "0.850000000000000000000000000000000000000000000000000000000000",
         "M2_n": 3,
         "M4_median_revisions_to_green": "1.00000000000000000000000000000000000000000000000000000000000",
-        "M5_pass_pct": "69.8412698412698412698412698412698412698412698412698412698413"
+        "M5_pass_pct": null,
+        "M5_n": 60
       },
       {
         "cohort": "2026-08",
-        "n_blocks": 3319,
+        "n_blocks": 3225,
+        "M1_pass_pct": "12.5000000000000000000000000000000000000000000000000000000000",
+        "M1_n": 16,
+        "M2_mean_score": null,
+        "M2_n": 0,
+        "M4_median_revisions_to_green": "1.00000000000000000000000000000000000000000000000000000000000",
+        "M5_pass_pct": null,
+        "M5_n": 1487
+      },
+      {
+        "cohort": "2026-09",
+        "n_blocks": 141,
         "M1_pass_pct": null,
         "M1_n": 0,
         "M2_mean_score": null,
         "M2_n": 0,
         "M4_median_revisions_to_green": "1.00000000000000000000000000000000000000000000000000000000000",
-        "M5_pass_pct": "62.2263914946841776110068792995622263914946841776110068792996"
+        "M5_pass_pct": null,
+        "M5_n": 139
       }
     ],
+    "insufficient": {
+      "M5": {
+        "reported": null,
+        "reason": "M5 aggregates 2 criteria and 1 of them has no checker: an unconditional `n/a` stub contributes 0 passes by construction, so any M5 rate is a weighted average of the real criterion and zero. Reported as insufficient rather than diluted (owner decision 2026-09-27, bean qou-306p).",
+        "stub_criteria": {
+          "proof-no-axiom-growth": "checkProofNoAxiomGrowth (qa-checkers-extended.ts:2783) is a bare `return {result: \"n/a\", hits: []}`; its one parameter is underscore-prefixed and unread"
+        },
+        "first_verdicts_by_criterion": {
+          "proof-no-axiom-growth": 752,
+          "proof-no-bare-sorries": 1209
+        },
+        "unblocked_by": "implementing or retiring the upstream checkers",
+        "beans": [
+          "qou-306p",
+          "folio-assistant-89wq"
+        ]
+      }
+    },
     "caveats": [
+      "M5 publishes no number: one of its two criteria is an unconditional-n/a platform stub (see data.insufficient.M5)",
       "cohort key is the block's earliest proof verdict (proxy for creation until the v2 git walk)",
       "M3 + survivorship deferred to v2",
       "model-version stratification deferred to v2 (needs #2115 archive metadata)"

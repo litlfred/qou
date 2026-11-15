@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-trefoil-knot-group",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:trefoil-knot-group",
+  "kind": "remark",
+  "title": "Trefoil knot group",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-braid-group"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-braid-group",
+  "tags": [
+    "trefoil",
+    "knot-group",
+    "braid-group"
+  ],
+  "text": "trefoil-knot-group.md",
+  "provenance": "authored"
+}

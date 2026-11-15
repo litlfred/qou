@@ -1,0 +1,451 @@
+
+\bs\bs\ni{\bf 3.3. Reduction and cabling}
+
+We give two ways to produce new planar algebras from a given one.
+The first is a reduction process which makes ``irreducible" planar
+algebras --- those with dim $P_1=1$ --- the focus of study.
+A planar algebra is not reconstructible in any simple way from its
+irreducible reductions, though, as can be seen from example 2
+where the irreducible reductions would be trivial.
+
+Given a general planar algebra $P$ presented on itself by $\Phi$,
+and an idempotent $p\in  P_1$, we define the {\it reduced} general
+planar algebra $pPp$ (by $p$) as follows: for each $k$ we let
+$p_k$ be the element
+\[
+        \input{xfig/pic81}
+\]
+\ni of $P_k$ (illustrated when $k$ is odd) and we set
+$(pPp)_k =p_k(P_k)p_k$ with identity $p_k$, and unital
+inclusion  $P_k\hookrightarrow P_{k+1}$ given by
+$p_kxp_k\hookrightarrow p_{k+1}xp_{k+1}$ (note
+$p_{k+1}p_k=p_kp_{k+1}=p_{k+1}$). We make $pPp$ into a planar
+algebra on $P$ as follows. Given a tangle $T\in{\cal P(P)}$, define
+the tangle ${}_pT_p\in {\cal P}(P)$ by inserting  $\boxa{p}$ in
+every string of $TG$. Then
+$p\Phi p:{\cal P}(L)\to pPp$ is $p\Phi p(T)=\Phi(pTp)$.
+Since $p$ is idempotent, $p\Phi p$ is a filtered algebra
+homomorphism with annular invariance, obviously surjective, so
+$pPp$ is a general planar algebra. Planarity is inherited from $P$
+and $pPp$ has parameters
+$Z(\blrighto{p}\ )$ and $Z(\bllefto{p}\ )$, provided these
+are nonzero. If $P$ is a $C^*$-planar algebra and $p$ is a
+projection
+$(p=p^2=p^*)$, $pPp$ is clearly also a $C^*$-planar algebra,
+spherical if $P$ is.
+
+\medskip{\bf Note.} We have used the canonical labelling set for $P$
+to define $pPp$. If were given another specific
+other labelling set $L$, it is not clear that the homomorphism
+obtained in the same way from $\cal P(L)$ to $pPp$ is surjective. We
+do not have any example of this phenomenon.
+
+
+
+\bs To use the reduction process we require dim $P_1 >1$. But even
+``irreducible" planar
+ algebras can yield this situation by cabling, i.e. grouping
+several strings together. The term is borrowed from knot theory.
+Given a general planar algebra $P$ we define the $n^{\text{th}}$
+cabled (general) planar algebra $\cal C_n(P)$ by ${\cal C}_n(P)_k=P_{nk}$ 
+which we endow with a planar algebra structure as
+follows. If $\Phi$ presents $P$ on itself, we define
+${\cal C}_n(\Phi):{\cal P}({\cal C}_n(P))\to{\cal C}_n(P)$ by taking a
+labelled $k$-tangle $T$ in ${\cal P}({\cal C}_n(P))$ and constructing
+an $nk$-tangle $\tilde T$ in ${\cal P}(P)$ with the same labels on
+boxes, but where every boundary point in $TG$ (both on internal and
+external boxes) is replaced by $n$ boundary points, and of course
+orientations alternate. Every string in $T$ is then replaced by $n$
+parallel strings. The procedure is illustrated in Figure 3.4.1,
+where $k=3$ and $n=2$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\[
+        \input{xfig/pic82}
+\]
+\begin{center}
+Figure 3.4.1
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bs\ni Then we define ${\cal C}_n(\Phi)(T)$ to be $\Phi(\tilde T)$.
+It is clear that ${\cal C}_n(\Phi)$ is a general planar algebra,
+connected and multiplicative if $P$ is, with parameters
+$(\d_1\d_2)^{\big[\frac n2\big]}\d_1^{n-\big[\frac n2\big]}$,
+$(\d_1\d_2)^{\big[\frac n2\big]}\d_2^{n-\big[\frac n2\big]}$,
+(where $\d_1$ and $\d_2$ are the parameters of the planar algebra
+$P$ and $\big[\frac n2\big]$ is the  integer part of
+$\big[\frac n2\big]$). Also ${\cal C}_n(P)$ is a $C^*$-planar algebra
+if $P$ is, spherical if $P$ is.
+
+
+\bs\bs\ni{\bf 3.4. Tensor product}
+
+Let $P^1=\cup_k P^1_k$ and $P^2=\cup_k P^2_k$ be
+general planar algebras. We will endow the filtered algebra
+$P^1\otimes P^2=\cup_k P^1_k\otimes P^2_k$ with a
+general planar algebra structure on the labelling set
+$L=\coprod_{i\geq 1} P^1_i\x P^2_i$. Consider $P^1$ and $P^2$
+presented on themselves by $\Phi_1$ and $\Phi_2$ respectively.
+First define a linear map ${\cal L}:{\cal P}(L)\to{\cal P}(P_1)\otimes
+{\cal P}(P_2)$ by ${\cal L}(T)=T_1\otimes T_2$ where $T$ is a tangle
+labelled by $f:{\text{Boxes}}(T)\to P_1\x P_2$, \ $T_i$ have the
+same unlabelled tangle as $T$ and they are labelled by $f$ composed
+with the projection $P_1\x P_2\to P_i$, $i=1,2$. This ${\cal L}$ is
+well defined since the isotopy classes of labelled tangles are a
+basis of ${\cal P}(L)$. Now define the presenting map
+$\Phi^{P_1\otimes P_2}:{\cal P}(L)\to P_1\otimes P_2$ by
+$$
+\Phi^{P_1\otimes P_2}=(\Phi_1\otimes\Phi_2)\circ{\cal L} \ .
+$$
+This obviously gives a homomorphism of filtered algebras.
+It is surjective because we may consider the tangle \
+$\tangle{}$ labelled by $x\x y$ for an arbitrary pair
+$(x,y)$ in $P^1_k\x P^2_k$. This will be sent on to $x\otimes y\in
+P^1_k\x P^2_k$. Thus we need only show the annular invariance of
+ker $\Phi^{P_1\otimes P_2}$. But if $A$ is an annular tangle in
+${\cal A}(L)$ then it is easy to see that 
+${\cal L}\circ\pi_A=\pi_{A_1}\otimes \pi_{A_2}\circ{\cal L}$ where $A_1$ and
+$A_2$ are the annular tangles having the same unlabelled tangle as
+$A$ but labelled by the first and second components of the labels
+of $A$ respectively. So if
+\begin{eqnarray*}
+&x\in{\op{ker}}\in \Phi^{P_1\otimes P_2}\ , \\
+&\Phi^{P_1\otimes P_2} \pi_A(x)  = \Phi_1\otimes\Phi_2
+(\pi_{A_1}\otimes \pi_{A_2}({\cal L}(x)))  
+=\pi_{A_1}\otimes \pi_{A_2}(\Phi_1\otimes\Phi_2({\cal L}(x)))\\ 
+&= \pi_{A_1}\otimes \pi_{A_2}(\Phi^{P_1\otimes P_2}(x))=0
+\end{eqnarray*}
+So $P_1\otimes P_2$ is a general planar algebra.
+
+It is clear that $P_1\otimes P_2$ is connected iff both $P_1$ and
+$P_2$ are and that $Z_{P_1\otimes P_2}=Z_{P_1}Z_{P_2}$ in the sense
+that a network labelled with $P_1\x P_2$ is the same as two
+networks  labelled with $P_1$ and $P_2$ respectively.
+Thus $P_1\otimes P_2$ is a planar algebra if $P_1$ and $P_2$ are.
+Moreover, nondegeneracy, $*$ structure, positivity and sphericity
+are inherited by $P_1\otimes P_2$ from $P_1$ and $P_2$. So the
+tensor product of two $C^*$-planar algebras is a $C^*$-planar
+algebra.
+
+\bs{\bf Notes.} (i) By representing elements of $P_1$ and $P_2$  by
+tangles, one may think of the tensor product planar structure as
+being a copy of $P_1$ and one of $P_2$ sitting in boxes on
+parallel planes, with no topological interaction between them.
+This corresponds to presenting
+$P_1\otimes P_2$  on the labelling set ${\cal P}(P_1)\x{\cal P}(P_2)$
+in the obvious way.
+
+(ii) It is clear that $P_1\otimes P_2\approx P_2\otimes P_1$ as
+(general) planar algebras.
+
+\bs\bs\ni{\bf 3.5. Free product}
+
+The notion of free product of planar algebras was developed in
+collaboration with D.~Bisch and will be presented in a future
+paper. The free product $P^1\x P^2$ of two planar algebras
+$P^1$ and $P^2$ is by definition the subalgebra of the tensor
+product linearly spanned by (images of) $T_1$ consisting of a pair
+$T_1\in P^1_k$, \ $T_2\in P^2_k$ which can be drawn in a single
+$2k-1$-box, with boundary points in pairs, alternately
+corresponding to $P^1$ and $P^2$, so that the two tangles
+$T_1$ and $T_2$ are disjoint. An example is given by Figure 3.5.1
+where we have used the ``colours" to indicate boundary points
+belonging to $P_1$ and $P_2$.
+\[
+        \input{xfig/pic83}
+\]
+S. Gnerre defined in [Gn] a notion of free product using
+detailed connection calculations in the paragroup 
+formalism.
+
+\bs The most interesting result so far of the work with Bisch is a
+formula, at least for finite dimensional  $C^*$-planar algebras,
+for the Poincar\'e series of $P^1\x P^2$ in terms of those of
+$P^1$ and $P^2$, using Voiculescu's free multiplicative convolution
+([V]).
+
+\bs
+\ni{\bf 3.6. Fusion algebra}
+
+The reduced subalgebras of the cables on a planar algebra form a
+``fusion algebra" along the lines of [Bi]. This is to be
+thought of as part of the {\it graded algebra} structure given by a
+planar algebra and will be treated in detail in a future paper with
+D.~Bisch.
+
+\bs\bs
+\noindent{\large\bf  4. Planar algebras and subfactors}
+
+In this section we show that the centralizer tower for an extremal
+finite index type II${}_1$ subfactor admits the structure of a
+ spherical $C^*$-planar algebra, and vice versa. We need
+several results from subfactors, some of which are well known.
+
+\medskip\ni{\bf 4.1 \ Some facts about subfactors}
+
+Let $N\subset M$ be II${}_1$ factors with $\tau^{-1}=[M:N] < \i$.
+We adopt standard notation so that $M_i$, $i=0,1,2,\dots$ is the
+tower of [J1] with $M_0=M$, \ $M_1=\< M,e_n\>$, \
+$M_{i+1}=\< M_i,e_{i+1}\>$ where $e_i: L^2(M_{i-1})\to
+L^2(M_{i-2})$ is orthogonal projection, $e_N=e_1$. Let $B=\{b\}$ be
+a finite subset of $M$ (called a basis) with
+\[
+(4.1.1)\ \ \   \sum_{b\in B}  be_1b^*=1 \ . %\tag 4.1.1
+\]
+
+Then by [PP] and [Bi],
+$$
+(4.1.2)\ \ \ \ \ x(\sum_b be_1b^*)= (\sum_b be_1b^*)x=x \quad {\mbox{for}} \ x\in M.
+%\tag 4.1.2
+$$
+$$
+(4.1.3)\ \ \ \ \ \sum_b bb^*=\tau^{-1} %\tag 4.1.3
+$$
+$$
+(4.1.4)\ \ \ \ \ \sum_b bE_N(b^*x)=x=\sum_b E_N(xb)b^* \quad {\mbox{for}} \ x\in M.
+%\tag 4.1.4
+$$
+$$
+(4.1.5)\ \ \ \  {\mbox{For}} \ x\in N' \ ({\mbox{on}} \ L^2(M)), \ \ \
+\tau\sum_b bxb^*=E_{M'}(x) \ . %\tag 4.1.5
+$$
+
+\noindent{\bf 4.1.6} \ Recall that the subfactor is called {\it
+extremal} if the normalized traces on $N'$ and $M$ coincide on
+$N'\cap M$ in which case the traces on $N'\cap M_k$, realized on
+$L^2(M)$, coming from $M_k$ and $N'$ coincide for all $k$,
+and $E_{M'}(e_1)=\tau$.
+
+\medskip\ni {\bf 4.1.7} \ By standard convex averaging procedures on
+$L^2(M_k)$, given a finite subset $X=\{x\}$ of $M_k$ and
+$\e >0$, there is a finite set $U=\{u\}$ of unitaries in $M$ and
+$\l_u\in\Bbb R^+$, \ $\sum_{u\in U}\l_u=1$ with
+$$
+\|\sum_u\l_u uxu^*-E_{M'}(x)\|_2 < \e \quad {\mbox{for}} \ x\in X.
+$$
+Further averaging does not make the estimate worse, so by averaging
+again with $\sum_u \l_u {\op{Ad}} \ u^*$ and gathering together
+repeated terms if necessary, we may assume
+$U^*=U$ and $\l_{u^*}=\l_u$.
+
+It will be convenient to renormalize the $e_i$'s so we set
+$E_i=\d e_i$ with $\d^2\tau=1$ $(\d >0)$. (Note that there is a
+very slight notational clash with $\S$2, but we will show it to be
+consistent.) We then have the formulae
+$$
+(4.1.8)\ \ \ \ \ E^2_i =\d E_i \ , \quad
+E_iE_j=E_jE_i \  \ {\text{if}} \ |i-j|\geq 2, \quad
+E_iE_{i\pm 1}E_i=E_i \ , %\tag 4.1.8
+$$
+$E_1xE_1\!=\d E_N(a)E_1$ and $\sum_b bE_1e_2E_1b^*\!=1$
+so that $\{bE_1\mid b\!\in\! B\}$ is a basis for $M_1$ over~$M$.
+
+\bs{\bf Definition 4.1.9.} For $k=1,2,3,\dots$ let
+$v_k=E_kE_{k-1}\dots E_1\in N'\cap M_k$.\newline
+(Note $v_kxv^*_k=\d E_N(x)E_k$ for $x\in M$, \
+$v^*_kv_k=\d E_1$.)
+
+\bs\ni
+{\bs Theorem 4.1.10} If $x_i$, $i=1,\dots ,k+1$ are elements
+of $M$ then $x_1v_1x_2v_2\dots v_kx_{k+1}=x_1v^*_kx_2v^*_{k-1}\dots
+v^*_1x_{k+1}$, and the map $x_1\otimes x_2\otimes\dots\otimes
+x_{k+1}\mapsto x_1v_1x_2v_2\dots v_kx_{k+1}$ defines an $M-M$
+bimodule isomorphism, written $\th$, from $M\otimes_{\!N}
+M\otimes_{\!N}
+\dots\otimes_{\!N} M$ (with $k+1$ \ $M$'s), written
+$\bigotimes^{k+1}_N M$, onto $M_k$.
+
+\bs
+{\sc Proof.} See [J5], Corollary 11.
+
+\bs Recall that if $R$ is a ring and $B$ is an $R-R$ bimodule, an
+element $b$ of $B$ is called {\it central} if
+$rb=br$ \ $\forall \ r\in R$.
+
+\bs\ni
+{\bf Corollary 4.1.11} The centralizer $N'\cap M_k$ is
+isomorphic under $\th$ to the vector space $V_{k+1}$
+of central vectors in the $N-N$ bimodule $\bigotimes^{k+1}_N M$.
+
+\bs
+We now define the most interesting ``new" algebraic ingredient of
+subfactors seen from the planar point of view. It is the
+``rotation", known to Ocneanu and rediscovered by the author in
+specific models. See also [BJ1].
+
+\bs{\bf Definition 4.1.12.} For $x\in M_k$ we define
+$$
+\rho(x)=\d^2 E_{M_k} (v_{k+1} \ E_{M'}(xv_{k+1}))
+$$
+
+\bs\ni
+{\bf Proposition 4.1.13} $\rho(M_k)\subseteq N'\cap M_k$
+and if $B$ is a basis, $\rho$ coincides on $N'\cap M_k$
+with $r:M_k\to M_k$, \ $r(x)=E_{M_k} (v_{k+1} \sum_{b\in B}
+bx v_{k+1}b^*)$.
+
+\bigskip
+{\sc Proof.} This is immediate from 4.1.5. \qed
+
+\bs\ni
+{\bf Lemma 4.1.14} With $\th$ as above,
+$$
+\th^{-1}r\th(x_1\otimes x_2\otimes\dots\otimes x_{k+1}) =
+\sum_{b\in B} E_N(bx_1)x_2\otimes x_3\otimes\dots\otimes
+x_{k+1}\otimes b^*
+$$
+
+\bigskip
+{\sc Proof.}
+\begin{eqnarray*}
+r(x_1v_1x_2v_2\dots v_kx_{k+1}) &  = &
+\sum_b E_{M_k}  (v_{k+1}bx_1 v^*_{k+1}x_2v^*_k\dots v^*_1b^*) \\
+& = & \d\sum_b E_{M_k} (E_{k+1}E_N(bx_1)x_2v_k^*\dots v^*_1b^*) \ \
+{\text{(by (4.1.9))}} \\
+& = & \sum_b E_N(bx_1)x_2v^*_k \dots v^*_1b^* \\
+& = & \sum_b\th(E_N(bx_1)x_2\otimes x_3\otimes\dots \otimes
+x_{k+1}\otimes b^*)
+\end{eqnarray*}
+\qed
+Note that the rotation on $\bigotimes^{k+1}_{\Bbb C} M$ does {\it
+not} pass to the quotient $\bigotimes^{k+1}_N M$, however we have
+the following.
+
+{\bf Lemma 4.1.15} Suppose $N\subset M$ is extremal, then
+$$
+\rho(\th(x_1\otimes x_2\otimes\dots\otimes x_{k+1})) =
+E_{N'}(\th(x_2\otimes x_3\otimes\dots\otimes x_{k+1}
+\otimes x_1))
+$$
+
+\bigskip
+{\sc Proof.} If $x=\th(x_1\otimes x_2\otimes\dots\otimes
+x_{k+1})$ and $y=\th(x_2\otimes x_3\otimes\dots\otimes
+x_1)$, it suffices to show that
+tr$(\rho(x)a)={\op{tr}}(ya)$ for all $a$ in $N'\cap M_k$.
+Let $\e > 0$ be given and choose by 4.1.7 a finite set $U$
+of unitaries in $M$, with $U=U^*$, and $\l_u\in\Bbb R^+$,
+$\sum_{u\in U}\l_u=1$, \ $\l_{u^*}=\l_u$ so that
+$$
+\|\sum_u \l_u v_{k+1} uxv_{k+1}u^* -
+v_{k+1}E_{M'} (xv_{k+1})\|_{{}_2} < \e \ ,
+$$
+and, by extremality, $\|\sum_u \l_u uE_1u^*-\d^{-1}\|_{{}_2} < \e$.
+So, if $y\in M$,
+$$
+(4.1.16)\ \ \ \ |\sum_u \l_u uE_N(u^*y)-\tau y\|_{{}_2} < \e\|y\|
+\qquad {\text{(by (4.1.8) and}} \ \|ab\|_2\leq \|a\| \
+\|b\|_{{}_2}.  %\tag 4.1.16
+$$
+So
+\begin{eqnarray*}
+|{\op{tr}}((\rho(x)-y)a| & =  & |{\op{tr}}(\d^2 E_{M_k}(v_{k+1}E_{M'}(xv_{k+1}))-y)a| \\ 
+& < & |{\op{tr}}(\d^2 E_{M_k}(v_{k+1}\sum_u \l_u uxv_{k+1}u^*) -y)a| +\d^2\e\|a\|_{{}_2} \\ 
+& = & |{\op{tr}}(\d^2 \sum_u \l_u E_N(ux_1)\th(x_2\otimes x_3\otimes\dots\otimes x_{k+1}\otimes u^*)-y)a| +\d^2\e\|a\|_{{}_2}\\ 
+&  & \qquad {\mbox{(as in the proof of 4.11)}}\\
+& = & |\d^2 \big(\big({\op{tr}} \sum_u \l_u \th
+(x_2\otimes
+x_3\otimes\dots\otimes x_{k+1}\otimes u^* E_N(u x_1))-\th
+(y)\big)a\big)+\d^2\e\|a\|_{{}_2} \\
+&  &  \qquad  {\mbox{(since}} \ a\in N')\\
+&  = & |\d^2{\op{tr}}(\th(x_2\otimes 
+x_3\otimes\dots\otimes x_{k+1}\otimes (\sum_u
+\l_u uE_N(u^*x_1)-x_1))a)\|_{{}_2} +\d^2\e\|a\|_{{}_2} \\
+&  &  \qquad  {\mbox{(since}} \ U=U^*, \ \ \l_u=\l_{u^*}) \ .
+\end{eqnarray*}
+For fixed $x_1,x_2,\dots ,x_{k+1}$ and $a$, this can clearly be
+made as small as desired by 4.1.16, by choosing $\e$ small. \qed
+
+\medskip
+{\bf Corollary 4.1.17} If $x\in N$ and $\xi\in L^2(M_k)$,
+\ $\rho(x\xi-\xi x)=0$.
+
+\bigskip
+{\sc Proof.} By its definition, $\rho$ extends to a bounded linear
+map from $L^2(M_k)$ to itself, so it suffices to show the formula
+for $\xi$ of the form $\th(x_1\otimes
+x_2\otimes\dots\otimes x_{k+1})$. But if $n\in N$, \
+$E_{N'}(\th(x_2\otimes\dots\otimes x_{k+1}\otimes nx_1))=
+E_{N'}(\th(x_2\otimes\dots\otimes x_{k+1}n\otimes x_1))$,  so by
+4.1.15 we are done. \qed
+
+\medskip
+{\bf Theorem 4.1.18}
+If $N \subset M$ is extremal,
+$\rho^{k+1}={\op{id}}$ \ on \ $N'\cap M_k$.
+
+{\sc Proof.}  Recall that if ${\cal H}$ is an $N-N$ bimodule
+(correspondence as in [Co]) then
+$\<\eta,x\xi-\xi x\>=\<x^*\eta-\eta x^*,\xi\>$ for $x\in N$
+and $\xi,\eta\in{\cal H}$. So $\eta$ is central iff it is orthogonal
+to commutators.
+
+Hence Lemma 4.1.15 reads
+$$
+\rho(\th(x_1\otimes x_2\otimes\dots\otimes x_{k+1}))  =
+\th(x_2\otimes x_3\otimes\dots\otimes x_1) +\xi
+$$
+where $\xi\in \kappa$, which we define to be the closure of the
+linear span of commutators in the $N-N$ correspondence $L^2(M_k)$.
+Applying $\rho$ to both sides of this equation, and 4.1.17, we
+obtain
+$$
+\rho(\th(x_1\otimes \dots\otimes x_{k+1}))  -
+\th(x_3\otimes x_4\otimes\dots\otimes x_1\otimes x_2) \in \kappa
+$$
+and continuing,
+$$
+\rho^{k+1}(\th(x_1\otimes\dots\otimes x_{k+1}))
+-\th(x_1\otimes x_2\otimes\dots\otimes x_{k+1})\in \kappa \ .
+$$
+So, by linearity, if $x\in N'\cap M_k$, \
+$\rho^{k+1}(x)-x\in \kappa$. But both $\rho^{k+1}(x)$ and $x$ are
+central, so orthogonal to $\kappa$ and
+$\rho^{k+1}(x)=x$. \qed
+
+\bs We now define five types of maps between centralizers using the
+isomorphism $\th$. Choose a basis $B$.
+
+\bs {\bf Definition 4.1.19.} If \ $x=
+x_1\otimes x_2\otimes\dots\otimes x_k\in \bigotimes^k_N M$,
+\begin{verse}
+(1) For $j=2,3,\dots ,k$, \newline
+$a_j(x)=\d(x_1\otimes x_2\otimes\dots\otimes x_{j-1}
+E(x_j)\otimes\dots\otimes x_k)\in \bigotimes^{k-1}_N M$,\newline
+ and \ $a_1(x)=\d E(x_1)x_2 \otimes\dots\otimes x_k$.
+
+(2) For $j=2,3,\dots ,k$, \newline
+$\mu_j(x)=x_1\otimes x_2\otimes\dots\otimes x_{j-1}x_j
+\otimes\dots\otimes x_k)\in \bigotimes^{k-1}_N M$
+
+(3) For $j=2,3,\dots ,k$, \newline
+$\eta_j(x)=x_1\otimes x_2\otimes\dots\otimes x_{j-1}\otimes 1
+\otimes x_j
+\otimes\dots\otimes x_k)\in \bigotimes^{k-1}_N M$,\newline
+and \ $\eta_1(x) = 1\otimes x_1\otimes\dots\otimes x_k$.
+
+(4) For $j=1,2,\dots ,k$,\newline
+$\kappa_j(x)=\d^{-1}\sum_{b\in B}
+x_1\otimes\dots\otimes x_jb\otimes b^*\otimes
+x_{j+1}\otimes\dots\otimes x_k)\in \bigotimes^{k-1}_N M$
+
+(5) If \ $\th(c)\in N'\cap M_{n-1}$ \ define \
+$\a_{j,k}\otimes^k_N M\to\otimes^{k+n}_N M$ \ by\newline
+$\a_{j,c}(x)=x_1\otimes\dots\otimes x_{j-1}\otimes c
+\otimes x_j\otimes\dots\otimes x_k$\newline
+$(\a_{1,c}(x)=c\otimes x$, $\a_{k+1,c}(x)=x\otimes c$.
+Note also $\a_{j,1}=\eta_j$.)
+\end{verse}
+Note all these maps are $N$ middle linear (for (5)
+this requires $b$ to be central; for (4) we use 4.1.2),
+so they are defined on the tensor product over $N$.
+They are all $N\!-\!N$ bimodule for maps so they preserve central
+vectors and are thus defined on the space $V_k$ of $N$-central
+elements of $\otimes^k_N M$ ($=\th^{-1}(N'\cap M_{k-1}))$.
+We will use the same notation for the restrictions
+of these maps to the $V_k$. Note that $\kappa_j$ does not depend on the
+basis, indeed $\kappa_j(x)=\mu_{j+1}\a_{j+1,{\text{id}}}(x)$ where
+$\th$(id) is the identity of $N'\cap M$, is a basis-independent
+formula for $\kappa_j$.
+
+
+

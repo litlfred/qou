@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-q-alg-9709040v1/sections/sec-062",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Compatibility of U with cup-products",
+  "pageStart": 37,
+  "pageEnd": 37,
+  "contains": [
+    "library/arxiv-q-alg-9709040v1/blocks/prose-sec-062"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-q-alg-9709040v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-q-alg-9709040v1",
+  "provenance": "ingested"
+}

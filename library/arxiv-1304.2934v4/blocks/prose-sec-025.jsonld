@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1304.2934v4/blocks/prose-sec-025",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1304.2934v4/blocks/prose-sec-025",
   "kind": "prose",
-  "title": "Background: central limit theorem from location of zeros",
-  "pageStart": 64,
-  "pageEnd": 64,
-  "text": "../sections/sec-025-81-background-central-limit-theorem-from-locatio.md",
-  "derivedFrom": "library/arxiv-1304.2934v4/manifest",
-  "sourceDocument": "library/arxiv-1304.2934v4/manifest",
+  "title": "A precise upper bound",
+  "pageStart": 46,
+  "pageEnd": 47,
+  "text": "../sections/sec-025-62-a-precise-upper-bound.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1304.2934v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1304.2934v4",
   "provenance": "ingested"
 }

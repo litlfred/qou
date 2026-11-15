@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/cor-spectral-decomposition-qvalue",
+  "@type": [
+    "folio-assistant-core:Corollary",
+    "doco:Section"
+  ],
+  "label": "cor:spectral-decomposition-qvalue",
+  "kind": "corollary",
+  "title": "Spectral decomposition of the $\\mathcal{Q}_q$-value over the torus knot basis of $\\Sigma_4$",
+  "tags": [
+    "shell-binding",
+    "torus-knot",
+    "transfer-matrix",
+    "q-value",
+    "beta-decay",
+    "spectral-decomposition",
+    "jet-bundle",
+    "exceptional-divisor",
+    "representation-theory",
+    "young-symmetrizer",
+    "pauli-exclusion",
+    "self-duality",
+    "hilbert-space-completeness"
+  ],
+  "leanRef": "qou:QOU.Archimedean.spectral_decomposition_qvalue",
+  "text": "spectral-decomposition-qvalue.md",
+  "leanSource": "spectral-decomposition-qvalue.lean",
+  "provenance": "authored"
+}

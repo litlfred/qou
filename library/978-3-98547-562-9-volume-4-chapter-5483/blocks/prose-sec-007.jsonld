@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/978-3-98547-562-9-volume-4-chapter-5483/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/978-3-98547-562-9-volume-4-chapter-5483/blocks/prose-sec-007",
   "kind": "prose",
   "title": "References",
   "pageStart": 18,
   "pageEnd": 22,
   "text": "../sections/sec-007-references.md",
-  "derivedFrom": "library/978-3-98547-562-9-volume-4-chapter-5483/manifest",
-  "sourceDocument": "library/978-3-98547-562-9-volume-4-chapter-5483/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/978-3-98547-562-9-volume-4-chapter-5483",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/978-3-98547-562-9-volume-4-chapter-5483",
   "provenance": "ingested"
 }

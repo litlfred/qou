@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-mn-classical-parity-blind-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:mn-classical-parity-blind-table-data",
+  "kind": "table",
+  "title": "Data table from rem:mn-classical-parity-blind",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-mn-classical-parity-blind"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "mn-classical-parity-blind-table-data.md",
+  "provenance": "authored"
+}

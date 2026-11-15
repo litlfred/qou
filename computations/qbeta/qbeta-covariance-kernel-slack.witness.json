@@ -1,5 +1,7 @@
 {
   "computation": "qbeta-covariance-kernel-slack",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal",
   "assertions": [
     {
       "name": "cancellation_ratio_is_bounded_and_flat",
@@ -396,8 +398,8 @@
     }
   },
   "provenance": {
-    "headSha": "e41b647561499c5f54c3b63f31655ca74f55fbc0",
+    "headSha": "eb645d81e7fe1646342513e676f6498caab4a229",
     "producer": "computations/qbeta/qbeta_covariance_kernel_slack_probe.py",
-    "elapsed_s": "5.590"
+    "elapsed_s": "5.053"
   }
 }

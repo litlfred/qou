@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-q-momentum",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:q-momentum",
+  "kind": "definition",
+  "title": "$q$-Momentum from the braid writhe",
+  "tags": [
+    "momentum",
+    "q-deformed",
+    "writhe",
+    "braid",
+    "hecke",
+    "crossing",
+    "kinematic"
+  ],
+  "leanRef": "qou:QOU.Archimedean.QMomentum",
+  "text": "q-momentum.md",
+  "leanSource": "q-momentum.lean",
+  "provenance": "authored"
+}

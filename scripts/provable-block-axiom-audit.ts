@@ -39,12 +39,12 @@
  * handed, is not an axiom and is not reported here. Use the vacuity audit for
  * those.
  */
-import { loadBlocksUnder } from "../folio-assistant/content/pipeline/block-module";
+import { loadBlocksUnder } from "../folio-assistant/cat-harness-tools/pipeline/block-module";
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join, resolve } from "node:path";
 
 const REPO = resolve(import.meta.dir, "..");
-const ROOT = join(REPO, "content/quantum-observable-universe");
+const ROOT = join(REPO, "folio/quantum-observable-universe");
 const LIB = join(ROOT, "lean");
 const PROVABLE = new Set(["theorem", "proposition", "lemma", "corollary"]);
 const KINDS = ["axiom", "theorem", "lemma", "def", "abbrev", "class",

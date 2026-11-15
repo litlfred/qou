@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-ph-0601023v3/blocks/prose-sec-020",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-ph-0601023v3/blocks/prose-sec-020",
   "kind": "prose",
-  "title": "Eﬀect of CP violating phases on proton lifetime",
-  "pageStart": 36,
-  "pageEnd": 40,
-  "text": "../sections/sec-020-43-eﬀect-of-cp-violating-phases-on-proton-lifeti.md",
-  "derivedFrom": "library/arxiv-hep-ph-0601023v3/manifest",
-  "sourceDocument": "library/arxiv-hep-ph-0601023v3/manifest",
+  "title": "Discrete Symmetries and proton stability",
+  "pageStart": 124,
+  "pageEnd": 127,
+  "text": "../sections/sec-020-79-discrete-symmetries-and-proton-stability.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-0601023v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-0601023v3",
   "provenance": "ingested"
 }

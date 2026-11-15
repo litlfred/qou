@@ -1,0 +1,43 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fulltext",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "The Dilogarithm Function",
+  "contains": [
+    "library/fulltext/sections/sec-front-matter",
+    "library/fulltext/sections/sec-000",
+    "library/fulltext/sections/sec-001",
+    "library/fulltext/sections/sec-002",
+    "library/fulltext/sections/sec-003",
+    "library/fulltext/sections/sec-004",
+    "library/fulltext/sections/sec-005",
+    "library/fulltext/sections/sec-006",
+    "library/fulltext/sections/sec-007",
+    "library/fulltext/sections/sec-008",
+    "library/fulltext/sections/sec-009",
+    "library/fulltext/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "meta": {
+    "doc_id": "fulltext",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "fulltext.pdf",
+    "source_sha256": "05079cf525c6ba0f0d00b5c0d948bad202d291bc4910149d5d4abbab0515e7a0",
+    "pages": 63,
+    "arxiv": null,
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

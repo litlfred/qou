@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1908.07065v3/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1908.07065v3/blocks/prose-sec-006",
   "kind": "prose",
-  "title": "Solving the TBA equations in the strong coupling region",
-  "pageStart": 18,
-  "pageEnd": 20,
-  "text": "../sections/sec-006-33-solving-the-tba-equations-in-the-strong-coupl.md",
-  "derivedFrom": "library/arxiv-1908.07065v3/manifest",
-  "sourceDocument": "library/arxiv-1908.07065v3/manifest",
+  "title": "Weak coupling region",
+  "pageStart": 15,
+  "pageEnd": 18,
+  "text": "../sections/sec-006-322-weak-coupling-region.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1908.07065v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1908.07065v3",
   "provenance": "ingested"
 }

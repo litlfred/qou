@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9909027v1/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Binunitaries",
+  "pageStart": 54,
+  "pageEnd": 67,
+  "contains": [
+    "library/arxiv-math-9909027v1/blocks/prose-sec-004"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9909027v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9909027v1",
+  "provenance": "ingested"
+}

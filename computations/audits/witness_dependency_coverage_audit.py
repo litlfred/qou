@@ -81,7 +81,7 @@ def scan_witnesses(root: Path) -> dict:
 
     for wf in sorted(root.rglob("*.witness.json")):
         # Skip deprecated directories
-        if "_deprecated" in str(wf):
+        if ("_deprecated" in str(wf) or "fsh-guts" in str(wf)):
             continue
         # Skip audit-exempt
         name = wf.name

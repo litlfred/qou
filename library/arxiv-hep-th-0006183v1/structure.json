@@ -1,0 +1,619 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-th-0006183v1",
+ "source": {
+  "file": "0006183v1.pdf",
+  "sha256": "2c9c4d97ce4f71a3a81787ba64e8b40b6fadab8d118259340a5932e8262751ae",
+  "bytes": 259347,
+  "pages": 22,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-11T05:48:35Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-th/0006183",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "23 Jun 2000"
+  },
+  "doi": null,
+  "title": "arXiv:hep-th/0006183v1 23 Jun 2000",
+  "authors_raw": "M. Bonini and E. Tricarico",
+  "title_lines": [
+   "Fine-tuning and the Wilson renormalization group"
+  ],
+  "abstract": "We use the Wilson renormalization group (RG) formulation to solve the \ufb01ne-tuning proce- dure needed in renormalization schemes breaking the gauge symmetry. To illustrate this method we systematically compute the non-invariant couplings of the ultraviolet action of the SU(2) pure Yang-Mills theory at one-loop order.",
+  "docinfo": {
+   "Title": "arXiv:hep-th/0006183v1  23 Jun 2000",
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20210723172524-04'00'"
+  },
+  "title_raw": "Fine-tuning and the Wilson renormalization group",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:hep-th/0006183v1 23 Jun 2000",
+   "heading": "Fine-tuning and the Wilson renormalization group",
+   "text": "Fine-tuning and the Wilson renormalization group",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.55,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "1"
+  },
+  {
+   "level": 1,
+   "title": "Renormalization group \ufb02ow",
+   "page": 3,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "2"
+  },
+  {
+   "level": 1,
+   "title": "E\ufb00ective ST identity",
+   "page": 4,
+   "source": "inferred",
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "3"
+  },
+  {
+   "level": 1,
+   "title": "One-loop computations",
+   "page": 5,
+   "source": "inferred",
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "4"
+  },
+  {
+   "level": 1,
+   "title": "Conclusions",
+   "page": 15,
+   "source": "inferred",
+   "number": "5",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "14"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A",
+   "page": 16,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "15"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 21,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "20"
+  }
+ ],
+ "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Graphical contribution to the A-c-vertex of \u02c6\u2206\u0393. The curly and dashed line denotes the gluon and ghost \ufb01eld respectively; the double lines represent the BRS source associated to the \ufb01eld depicted by the top line. All momenta are incoming",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "One-loop values of the couplings \u03c31 and \u03c32 for three di\ufb00erent cuto\ufb00functions (r =",
+   "page": 9,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Graphical contribution to the A-A-c-vertex of \u02c6\u2206\u0393",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "One-loop values of the coupling \u03c33 for three di\ufb00erent cuto\ufb00functions (r =",
+   "page": 11,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "table",
+   "number": "3",
+   "title": "One-loop values of the couplings \u03c35 and \u03c36 for three di\ufb00erent cuto\ufb00functions (r =",
+   "page": 12,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Graphical contribution to the w-c-c-vertex of \u02c6\u2206\u0393",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Graphical contribution to the w-c-c-A-vertex of \u02c6\u2206\u0393",
+   "page": 14,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "",
+   "page": 16,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "15"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Graphical contribution to the A-A-A-c vertex of \u02c6\u2206\u0393",
+   "page": 18,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "17"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Graphical contribution to the A-A-A-c vertex of \u02c6\u2206\u0393",
+   "page": 20,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "19"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 236,
+   "n_words": 33,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 442,
+   "n_words": 59,
+   "label_start": null,
+   "label_end": "1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 3350,
+   "n_words": 555,
+   "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-002-2-renormalization-group-\ufb02ow",
+   "number": "2",
+   "title": "Renormalization group \ufb02ow",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 4449,
+   "n_words": 876,
+   "label_start": "2",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-003-3-e\ufb00ective-st-identity",
+   "number": "3",
+   "title": "E\ufb00ective ST identity",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2685,
+   "n_words": 490,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-004-4-one-loop-computations",
+   "number": "4",
+   "title": "One-loop computations",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 15,
+   "n_chars": 11538,
+   "n_words": 2317,
+   "label_start": "4",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-005-5-conclusions",
+   "number": "5",
+   "title": "Conclusions",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 4490,
+   "n_words": 731,
+   "label_start": "14",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-006-appendix-a",
+   "number": null,
+   "title": "Appendix A",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 21,
+   "n_chars": 5785,
+   "n_words": 1187,
+   "label_start": "15",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-007-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 1706,
+   "n_words": 273,
+   "label_start": "20",
+   "label_end": "21"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 8,
+  "toc_inferred_entries": 8,
+  "toc_inferred_mean_confidence": 0.725,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 10,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 9,
+  "chars_total": 34681
+ },
+ "structure_note": "Sectioning: split by hand at the paper's numbered section headings (automatic heading inference picked display-math lines)."
+}

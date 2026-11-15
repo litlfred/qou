@@ -136,8 +136,24 @@ _HERE = os.path.dirname(os.path.abspath(__file__))
 _COMPUTATIONS = os.path.dirname(_HERE)
 if _COMPUTATIONS not in sys.path:
     sys.path.insert(0, _COMPUTATIONS)
+import _path_bridge  # noqa: E402, F401 -- puts substrate/ (where _precision lives) on sys.path
 
 from mpmath import mp  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+
+# RAISE PRECISION AT MODULE SCOPE, ABOVE EVERY CONSTANT BELOW. This file
+# previously never raised dps at all, so it built its mpf constants — and ran
+# its whole comparison — at mpmath's default 15. `RECORDED_DIFF` is a 40-digit
+# literal and was therefore WRONG THE MOMENT IT WAS BUILT:
+#
+#   literal          0.0198162676389039602300948111946348416306
+#   built at dps=15  0.0198162676389039595081786870878204354085…
+#                                     ^ diverges at the 18th significant digit
+#
+# rel err 3.64e-17 — real, though below the L1 1 ppQ (1e-15) target, so this is
+# not a claim that L1 was threatened. `set_compute_dps()` is idempotent and safe
+# alongside any later call.
+set_compute_dps()
 
 # --------------------------------------------------------------------------------------------
 # Load the COMMITTED definitions.  `rev_e_infinity_edge_limit_probe.py` has no `__main__` guard
@@ -165,6 +181,14 @@ from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
 
 # the corpus's recorded figure, which this probe withdraws
 RECORDED_S = 13
+# Pin the precision explicitly before building a 40-digit literal.  The `exec` above already
+# sets `mp.dps = 60` — measured, and all 40 digits round-trip exactly with residual 0.0, so this
+# changes no number — but that is a side effect of ANOTHER FILE's source several lines up, and
+# reordering the two would truncate this constant to 15 digits with no error and no diff.  It is
+# also what `module_const_precision_audit` keys on: an AST scan of this file's own text cannot
+# see a precision raise that happens inside an `exec`, so the audit reported the only LOSSY
+# constant in the corpus here and was right to, whatever the runtime value turned out to be.
+mp.dps = 60
 RECORDED_DIFF = mp.mpf("0.0198162676389039602300948111946348416306")
 
 # cap settings to sweep.  (BMAX, BUMAX); the second row is the committed one.
@@ -426,6 +450,10 @@ _wit = {
         "script": "computations/deltalambda/rev_e_infinity_g1_bottom_edge_cap_probe.py"},
     "bean": "qou-hok7",
     "anchor": "physical_proton",
+    # Canonical anchor key read by the q0 audits/ratchet (the "anchor" key above is
+    # a near-miss spelling they cannot see), plus scriptFile provenance.
+    "q0Anchor": "proton",
+    "scriptFile": os.path.basename(__file__),
     "q0Value": Q_50_DIGIT_STR,
     "description": (
         "G1 -- Xbot(s) <= Xblock(s), the last conditionality on e_inf -- has one recorded "

@@ -7,7 +7,7 @@ started)
 ## 0. Context and the resolved dichotomy
 
 Two candidate routes were proposed for making the
-[`conj:yang-mills-mass-gap`](../../content/quantum-observable-universe/models-of-qous/yang-mills-mass-gap.md)
+[`conj:yang-mills-mass-gap`](../../folio/quantum-observable-universe/models-of-qous/yang-mills-mass-gap.md)
 claim rigorous:
 
 - **Route 1** — prove the gap at |q| ≠ 1, then transfer it through q → 1
@@ -149,7 +149,7 @@ conditional — never as a unified multi-problem claim.
 ## 4. Lean keystone skeleton (S1a) — **LANDED 2026-06-12, sorry-free**
 
 Landed as
-[`QOU.BraidKnot.MassGapKeystone`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/MassGapKeystone.lean)
+[`QOU.BraidKnot.MassGapKeystone`](../../folio/quantum-observable-universe/lean/QOU/BraidKnot/MassGapKeystone.lean)
 (all three skeleton `sorry`s discharged; `lake build
 QOU.BraidKnot.MassGapKeystone` green on v4.24.0 via the lake-cache
 restore). The same module also delivers **Step 2** (the ε³ lemma) in

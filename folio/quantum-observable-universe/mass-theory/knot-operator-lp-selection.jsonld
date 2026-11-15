@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-knot-operator-lp-selection",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:knot-operator-lp-selection",
+  "kind": "proposition",
+  "title": "Knot operators are selected per confinement by the Frobenius Gram-inverse LP/SDP dual basis",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-gram-matrix-spectral-connection",
+    "papers/quantum-observable-universe/blocks/conj-weak-spectral-completeness"
+  ],
+  "tags": [
+    "lp-dual",
+    "sdp",
+    "gram-inverse",
+    "knot-operator",
+    "operator-selection",
+    "active-set",
+    "confinement",
+    "shadow-price"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.knot_operator_lp_selection",
+  "text": "knot-operator-lp-selection.md",
+  "leanSource": "knot-operator-lp-selection.lean",
+  "provenance": "authored"
+}

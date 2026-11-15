@@ -1,0 +1,420 @@
+% Introduction
+
+% Motivation
+\subsection{Motivation}
+
+%% SPK suggested first few sentences (with modifications):
+
+The interplay between geometry and topology is an important theme in
+the study of 3--manifolds.  Since Thurston's work in the late 1970's,
+it has been known that any Haken 3--manifold has a geometric
+decomposition \cite{thurston}.  Recently Perelman has announced a
+proof that any closed, orientable 3--manifold has such a decomposition
+(the geometrization conjecture).  However, it is important not only to
+know the existence of a geometric structure on a 3--manifold, but also
+to understand the relation between that structure and the topological
+description of the manifold.
+
+Often a 3--manifold is described topologically, for example by a
+combinatorial diagram indicating a knot complement in $S^3$, or a Dehn
+filling description (see Definition \ref{def:dehn} below).  However,
+relating this topological description to the geometry of the manifold
+seems to be very difficult, and remains an important problem in the
+area.  There are few tools available to give geometric data from
+topological information.  In this paper, we present a new such tool.
+
+We are particularly interested in topological descriptions of
+3--manifolds with torus boundary.  These include all knot and link
+complements in $S^3$, as well as knot and link complements in other
+3--manifolds.  It is a classic result due to Wallace and Lickorish
+that every closed, orientable 3--manifold is given by a Dehn filling
+on a link complement in $S^3$ (\cite{wallace}, \cite{lickorish}).
+Thus these manifolds are of fundamental importance in the subject.
+
+We will also focus only on those manifolds which are hyperbolic.  The
+link complements of Wallace and Lickorish above can be taken to be
+hyperbolic.  Thurston showed that on any such cusped hyperbolic
+manifold ``most'' Dehn fillings are hyperbolic.  That is, only a
+finite number of slopes per link component need be excluded, then any
+Dehn filling on remaining slopes yields a hyperbolic manifold
+\cite{thurston}.  Additionally, for knots in $S^3$, any knot that is
+not a torus or satellite knot is known to be hyperbolic
+\cite{thurston:bulletin}.  Therefore in some sense, most 3--manifolds
+are hyperbolic.  Mostow--Prasad rigidity implies that the hyperbolic
+structure on these finite volume manifolds is unique \cite{mostow},
+\cite{prasad}.  However, this unique structure is little understood.
+
+Given a hyperbolic manifold with torus boundary components, i.e. given
+a \emph{cusped} hyperbolic manifold, the geometric structure on the
+manifold allows us to associate a Euclidean similarity structure,
+called a cusp shape, to each boundary component.  The cusp shapes of a
+manifold are geometric quantities which we will relate to a manifold's
+topological description.
+
+There are several reasons one might be interested in knowing the cusp
+shape of a manifold.  Cusp shape is an interesting piece of geometric
+information by itself.  It also can be used to give a rough lower
+bound on the volume of the manifold, by calculating cusp volumes and
+using packing arguments such as those of B{\"o}r{\"o}czky
+\cite{boroczky}.  (See however \cite{eudave-munoz-luecke}: this lower
+bound may not be very sharp.)  More importantly, knowing the cusp
+shape, we also obtain information on the geometry of manifolds
+obtained by Dehn filling.  For example, we can find all filling slopes
+which might not yield a hyperbolic manifold \cite{agol:bounds},
+\cite{lackenby:surg}, \cite{hk:univ}.
+
+Our main results give explicit bounds on the change in cusp shape of a
+3--manifold with multiple cusps under all but finitely many Dehn
+fillings, where one cusp is left unfilled.  This is essentially the
+content of Theorems \ref{thm:main-cusp}, \ref{thm:main-norm-length},
+and \ref{thm:main-norm-height} below.  The first, Theorem
+\ref{thm:main-cusp}, is the most general, bounding cusp information.
+In Theorem \ref{thm:main-norm-length}, we give a differential
+inequality bounding the normalized lengths of curves on cusps.  In
+Theorem \ref{thm:main-norm-height}, we bound the change in height of
+the cusp shape.
+
+We also apply these results to the case of knots in $S^3$.  Given only
+a diagram of a large class of knots, we are able to determine bounds
+on the height of cusps.  This is the content of Theorem
+\ref{thm:main-knot-cusp}.  Note that similar results, relating the
+geometry of a knot to its diagram, are rare.  In fact, we know only of
+results relating volumes to a diagram.  Lackenby found lower bounds on
+volumes of alternating knots based on a condition of a diagram, and
+upper bounds for general knots \cite{lackenby:alt-volume}.  The lower
+bounds were improved by Agol, Storm and Thurston \cite{ast:volumes},
+and the upper by Agol and D. Thurston in an appendix to Lackenby's
+paper \cite{lackenby:alt-volume}.  Using cone deformations, we found
+similar bounds on volumes for another class of knots
+\cite{purcell:volume}.  Using negatively curved metrics, we recently
+improved these results with Futer and Kalfagianni \cite{fkp:volumes}.
+
+However, as far as we are aware, the results of this paper are the
+first of their kind giving actual geometric bounds on cusp shape based
+only on a diagram.
+
+
+\subsection{Cone deformations}
+
+Our primary technique is cone deformation, which we will now describe.
+Using properties of cone deformations, we obtain geometric information
+on the topological process of Dehn filling.
+
+\begin{define}
+  Given a manifold $M$ with torus boundary $\partial M$ and specified
+  slope $s$ on $\partial M$, we obtain a new manifold by gluing a
+  solid torus to $\partial M$ such that $s$ bounds a disk in the solid
+  torus.  This is called the \emph{Dehn filling of $M$ along $s$}, or
+  sometimes \emph{Dehn surgery}, and the resulting manifold is denoted
+  $M(s)$.  More generally, if $M$ has $n$ torus boundary components
+  with slopes $s_1, \dots, s_n$, then we obtain $M(s_1, \dots, s_n)$
+  in the same manner.
+\label{def:dehn}
+\end{define}
+
+A geometric description of Dehn filling was investigated by Thurston
+\cite{thurston}.  Given a complete hyperbolic structure on a manifold
+$M$ with torus boundary, he showed the structure could be deformed
+through incomplete hyperbolic structures with singularities at the
+core of the added solid torus to structures whose completion is again
+non-singular.  These structures are exactly hyperbolic structures on
+Dehn filled manifolds $M(s)$.  The space of deformations is called
+hyperbolic Dehn surgery space.
+
+We restrict our attention to particular paths through hyperbolic Dehn
+surgery space in which the incomplete hyperbolic manifolds are all
+cone manifolds.  That is, the completion gives a manifold with cone
+singularities along the core of the added solid torus, with cone angle
+$\alpha$.  (A more complete definition of a cone deformation is given
+in Definition \ref{def:cone-deform} below.)
+
+We have some control over cone deformations.  Local rigidity results
+due to Hodgson and Kerckhoff \cite{hk:cone-rigid}, extended by
+Bromberg in the case of geometrically finite manifolds
+\cite{bromberg:cone-rigid}, give control on the change in geometry of
+the entire manifold, knowing only information on the change in a
+neighborhood of the singular locus.
+
+This geometric control has been used recently to prove several
+interesting results in 3--manifold theory.  Hodgson and Kerckhoff used
+it to give universal bounds on the number of exceptional Dehn surgery
+slopes for finite volume manifolds \cite{hk:univ}.  In the infinite
+volume case, cone deformations lie at the heart of drilling and
+grafting theorems, described by Bromberg in \cite{bromberg:cone}.
+These have recently been used to resolve problems in the field of
+Kleinian groups, such as the Bers density conjecture
+\cite{brock-bromberg:density}, and existence of type preserving
+sequences of Kleinian groups \cite{brock-bromberg-evans-souto:tame}.
+This paper gives another application of cone deformations, to finite
+volume manifolds with cusps.
+
+\subsection{Cusp shapes}
+
+Let $M$ be a manifold admitting a hyperbolic structure, with a torus
+boundary component $T$. Under the hyperbolic structure on $M$, $T$
+will be a cusp.  We take a horoball neighborhood of this cusp.  Its
+boundary is a horospherical torus, which inherits a Euclidean
+structure from the hyperbolic structure on $M$.  The structure is
+independent of choice of horoball neighborhood, up to scaling of the
+Euclidean metric.  Thus we obtain a class of Euclidean similarity
+structures on $T$, which we call the \emph{cusp shape} of the torus
+$T$.
+
+Now, suppose the hyperbolic structure of $M$ is changing under a cone
+deformation with singularities along a link $\Sigma$ in $M$ disjoint
+from $T$.  $\Sigma$ is called the singular locus of the deformation.
+$T$ will remain a cusp throughout the deformation, and its cusp shape
+will be changing with the change of geometry of $M$.  We bound this
+change in terms of the change in geometry in a neighborhood of
+$\Sigma$.
+
+\begin{theorem}  Suppose we have the following:
+  \begin{itemize}
+  \item $M$ a complete finite volume hyperbolic 3--manifold with a
+    cusp $T$.
+  \item $X=X_0$ a complete finite volume hyperbolic 3--manifold which
+    can be joined to $M=X_\tau$ by a smooth one--parameter family of
+    hyperbolic cone manifolds $X_t$, such that cone angles go from $0$
+    at time $t=0$ to $2\pi$ at time $\tau$.
+  \item A singular locus, say with $n$ components, such that the tube
+    radius about each component is larger than $R_1\geq 0.56$ for all
+    $t$.
+  \item A horoball neighborhood $U_t$ of the cusp of $X_t$ which
+    deforms to $T$ at time $\tau$.  Let $\gamma(t)$ denote the path
+    $\partial U_t$ travels through the Teichm{\"u}ller space of the
+    torus, endowed with Teichm{\"u}ller metric $\| \cdot \|$.
+  \end{itemize}
+	Then there exists a parameterization of the deformation such that
+  we have the following bound for $\partial U_t$:
+  $$2\,\|\gamma'(t)\|^2 \mbox{Area}(\partial U_t) \leq n\,C(R_1)$$
+  Here $C(R_1)$ is a strictly decreasing function of $R_1$ which
+  approaches $0$ as $R_1$ approaches infinity.
+  Moreover, we can assume $\tau \leq (2\pi)^2$.
+\label{thm:main-cusp}
+\end{theorem}
+
+
+Also interesting is the application of Theorem \ref{thm:main-cusp}
+to lengths of curves on the cusp in question.  Let $\beta$ be a slope
+on the cusp torus, and again let $\gamma(t)$ be the path that the cusp
+shape $\partial U_t$ traces through the {T}eichm{\"u}ller space of the
+torus.  Let $L_t$ be the normalized length of $\beta$ under the
+deformation, with derivative $\dot{L} = \frac{d}{dt}L_t$ (see
+section \ref{sec:normlength} for more information).  Then $L_t$ will
+satisfy:
+\begin{equation}
+  -\|\gamma'(t)\|\, L_t \leq \dot{L} \leq
+   \|\gamma'(t)\|\, L_t.
+  \label{eq:norm-length-change}
+\end{equation}
+
+Combining equation (\ref{eq:norm-length-change}) with the result of
+Theorem \ref{thm:main-cusp}, we may bound the change in normalized
+length of a curve under a cone deformation.
+
+\begin{theorem}
+Let the set up be as in Theorem \ref{thm:main-cusp} above.  Let $L_t$
+be the normalized length of a slope on a cusp torus under the cone
+deformation, with derivative $\dot{L} = \frac{d}{dt}L_t$.  Then
+%% Aug 6, 2007: note parameterization
+there exists a parameterization of the cone deformation such that
+%%
+the change in $L_t$ is bounded by the following inequality:
+$$ -\left(\sqrt{\frac{n\,C(R_1)}{2\mbox{Area}(\partial U_t)}}\right)
+\, L_t \leq \dot{L} \leq
+\left(\sqrt{\frac{n\,C(R_1)}{2\mbox{Area}(\partial U_t)}}\right) \,
+L_t
+$$
+\label{thm:main-norm-length}
+\end{theorem}
+
+Finally, we use Theorem \ref{thm:main-norm-length} to bound the
+normalized length of the arc perpendicular to the shortest curve on
+the cusp torus, and then bound the length of this shortest curve
+below.  We then obtain an estimate that is independent of time.
+
+\begin{theorem}
+  Let the notation be as in Theorem \ref{thm:main-cusp} above.  Denote
+  by $h(M)$ the normalized \emph{height} of the cusp torus $\partial
+  U_\tau$.  That is, $h(M)$ is the normalized length of the arc
+  perpendicular to the shortest curve on $\partial U_\tau$ that runs
+  from the shortest curve back to the shortest curve (this arc might
+  not be closed).  Similarly, let $h(X)$ denote the normalized height
+  of $\partial U_0$.  Then
+%% Aug 6, 2007:  Parameterization
+	there exists a parameterization of the cone deformation such that
+%%
+	the change in normalized height is bounded in terms of $R_1$ alone:
+$$-(2\pi)^2\frac{\sqrt{n\,C(R_1)}}{(1-e^{-2R_1})\sqrt{2}} \leq
+ h(M) - h(X) \leq
+(2\pi)^2\frac{\sqrt{n\,C(R_1)}}{(1-e^{-2R_1})\sqrt{2}}.$$
+\label{thm:main-norm-height}
+\end{theorem}
+
+%% Aug 17:  point out that bound on R_1 can be ensured throughout the
+%% deformation by selecting slopes with long normalized lengths?
+
+%% Our hyperbolic cone deformation in the above theorems is a hyperbolic
+%% Dehn filling along slopes $s_1, \dots, s_n$.  Fix $R_1 \geq 0.56$.
+%% Due to work of Hodgson and Kerckhoff \cite[see proof of Theorem
+%% 	5.7]{hk:univ}, we can ensure the tube radius about the singular
+%% locus is larger than $R_1$ throughout the deformation by selecting the
+%% slopes $s_1, \dots, s_n$ to have sufficiently long normalized
+%% lengths.  Thus Theorems \ref{thm:main-cusp},
+%% \ref{thm:main-norm-length}, and \ref{thm:main-norm-height} could be
+%% rewritten in terms of normalized lengths of Dehn filling slopes.  We
+%% use these ideas for applications to knot theory.
+
+% Intro to results:  Application to knot theory
+
+\subsection{Applications to knot theory}
+
+In the last part of this paper we give specific applications of
+Theorem \ref{thm:main-norm-height}.  We determine bounds on the cusp
+shape of a knot based solely on a diagram of that knot.
+
+Before we state the results, we review some definitions.
+
+\begin{define}
+  Let $K \subset S^3$ be a knot with diagram $D(K)$.  Define a
+  \emph{twist region} to be a region of $D(K)$ where two strands of
+  the diagram twist around each other maximally.  Precisely, if $D(K)$
+  is viewed as a 4--valent planar graph with over--under crossing
+  information at each vertex, then a twist region is a maximal string
+  of bigons in the complement of the graph arranged end to end, or a
+  single vertex of the graph adjacent to no bigons.  
+\end{define}
+
+We also require the diagram to be reduced, in the sense of the
+following two definitions.  These definitions are illustrated
+elsewhere (see e.g. \cite{lackenby:surg}, \cite{futer-purcell}).
+
+\begin{define}
+  A diagram $D(K)$ is \emph{prime} if when any simple closed curve
+  $\gamma$ intersects $D(K)$ transversely in two points in the
+  interiors of edges, then $\gamma$ bounds a subdiagram containing no
+  crossings of the original diagram.
+	\label{def:prime}
+\end{define}
+
+\begin{define}
+  The diagram $D(K)$ is \emph{twist reduced} if when any simple closed
+  curve $\gamma$ intersects $D(K)$ transversely in four points in the
+  interiors of edges, with two of these points adjacent to one
+  crossing and two others adjacent to another crossing, then $\gamma$
+  bounds a subdiagram consisting of a (possibly empty) collection of
+  bigons arranged end to end between these two crossings.
+	\label{def:twred}
+\end{define}
+
+Any diagram of a prime knot or link can be simplified into a prime,
+twist reduced diagram.  If the diagram is not prime, then crossings on
+one side of a simple closed curve are extraneous and can be removed.
+If the diagram is not twist reduced, then performing flypes will
+amalgamate two twist regions adjacent to a simple closed curve into
+one, reducing the number of twist regions.
+
+For a hyperbolic knot complement, we can choose a horoball
+neighborhood about the cusp such that a meridian on the boundary of
+that horoball has length $1$ (see e.g. \cite{adams:waist}).  Consider
+the geodesic arc orthogonal to the meridian which runs from meridian
+to meridian on this horospherical torus.  Define the length of this
+arc to be the \emph{height} of the cusp.  Note that when the meridian
+is the shortest curve on the cusp (as will be the case in the knots of
+this paper), this definition of height agrees with that in Theorem
+\ref{thm:main-norm-height}.
+
+Let $K$ be a knot in $S^3$ which admits a prime, twist reduced diagram
+with at least $2$ twist regions, with each twist region containing at
+least $6$ crossings.  Then it was shown in \cite{futer-purcell} that
+$S^3-K$ is hyperbolic.  The following theorem gives bounds on the
+cusp shape.
+
+\begin{theorem}
+  Let $K$ be a knot in $S^3$ which admits a prime, twist reduced
+  diagram with a total of $n\geq 2$ twist regions, with each twist
+  region containing at least $c\geq 116$ crossings.  In a hyperbolic
+  structure on $S^3-K$, take a horoball neighborhood $U$ about $K$.
+  Normalize so that the meridian on $\partial U$ has length $1$.  Then
+  the height $H$ of the cusp of $S^3-K$ satisfies:
+  $$H\geq n\,(1-f(c))^2.$$
+  Here $f(c)$ is a positive function of $c$ which approaches $0$ as
+  $c$ increases to infinity.
+
+  Additionally, $H\leq n(\sqrt{n-1} + f(c))^2$.
+\label{thm:main-knot-cusp}
+\end{theorem}
+
+The function $f$ is given explicitly in Section \ref{sec:knots}.  We
+can plug in values of $c$ to obtain more specific estimates.  For
+example, in Corollary \ref{cor:0.8} we let $c=145$.  Then $1-f(c)$ is
+approximately $0.8154$.
+
+Note that the shortest non-meridional slope on the cusp of $S^3-K$
+will have length at least that of the height.  So Theorem
+\ref{thm:main-knot-cusp} implies that in this case, the shortest
+non-meridional slope has length at least $n\,(1-f(c))^2$.
+
+By results of Hodgson and Kerckhoff \cite{hk:univ}, Dehn filling along
+a slope with normalized length at least $7.515$ results in a hyperbolic
+manifold.  Corollary \ref{cor:0.8} implies that for a complicated
+knot, the shortest non-meridional slope will have normalized length at
+least $\sqrt{n}(0.8154)$.  Thus the normalized length of a slope will
+be larger than $7.515$ whenever $n\geq 85$.  Thus we have the
+following corollary to Theorem \ref{thm:main-knot-cusp}:
+
+\begin{corollary}
+  Let $K$ be a knot in $S^3$ which admits a prime, twist reduced
+  diagram with at least $85$ twist regions and at least $145$
+  crossings per twist region.  Then any non-trivial {D}ehn filling of
+  $S^3-K$ is hyperbolic.
+\label{cor:knot-cusp}
+\end{corollary}
+
+Corollary \ref{cor:knot-cusp} is proven without any reference to the
+geometrization conjecture.  If we assume that conjecture, then we
+recently proved (with Futer \cite{futer-purcell}) that the numbers
+$85$ and $145$ could be reduced to $4$ and $6$ respectively.  However,
+note the proof of that result gives no geometric information on cusp
+geometry.
+
+
+The numbers of crossings, 116 and 145, can be reduced significantly
+for certain classes of knots.  We illustrate this in section
+\ref{subsec:2bridge} for 2--bridge knots.
+
+
+\subsection{Organization of this paper}
+\label{sec:organize}
+
+In Section \ref{sec:deform-cone}, we review background information on
+cone deformations.
+
+In Section \ref{sec:cusp-est}, we begin the proofs of Theorems
+\ref{thm:main-cusp}, \ref{thm:main-norm-length}, and
+\ref{thm:main-norm-height} using information set up in Section
+\ref{sec:deform-cone}.  This leads us to results which contain certain
+boundary terms.
+
+In Section \ref{sec:bdrybound}, we give bounds on these boundary
+terms, which allow us to conclude the proof of Theorems
+\ref{thm:main-cusp} and \ref{thm:main-norm-length}.
+
+We complete the proof of \ref{thm:main-norm-height} in Section
+\ref{sec:merbound}.
+
+Finally, in Section \ref{sec:knots} we apply the results of the
+previous sections to knots, and present the proof of Theorem
+\ref{thm:main-knot-cusp}.
+
+\subsection{Acknowledgments}
+
+We would like to thank Steve Kerckhoff for many helpful conversations.
+We lean heavily on his results with Craig Hodgson.  His willingness to
+clarify, explain, and correct has made this paper possible.  We would
+also like to thank the referee for very carefully reading this paper,
+and for many helpful suggestions, corrections, and comments.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0203194v1/blocks/prose-sec-021",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0203194v1/blocks/prose-sec-021",
   "kind": "prose",
-  "title": "The construction of (strictly) analytic K-spaces by gluing aﬃnoid",
-  "pageStart": 19,
-  "pageEnd": 20,
-  "text": "../sections/sec-021-136-the-construction-of-strictly-analytic-k-spac.md",
-  "derivedFrom": "library/arxiv-math-0203194v1/manifest",
-  "sourceDocument": "library/arxiv-math-0203194v1/manifest",
+  "title": "A stroll in the crystalline world.",
+  "pageStart": 79,
+  "pageEnd": 82,
+  "text": "../sections/sec-021-8-a-stroll-in-the-crystalline-world.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203194v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203194v1",
   "provenance": "ingested"
 }

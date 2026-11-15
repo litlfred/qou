@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ihpmay2025/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ihpmay2025/blocks/prose-sec-005",
   "kind": "prose",
-  "title": "Basic definitions",
+  "title": "Convex cocompact hyperbolic 3-manifolds",
   "pageStart": 7,
-  "pageEnd": 10,
-  "text": "../sections/sec-005-11-basic-definitions.md",
-  "derivedFrom": "library/ihpmay2025/manifest",
-  "sourceDocument": "library/ihpmay2025/manifest",
+  "pageEnd": 7,
+  "text": "../sections/sec-005-1-convex-cocompact-hyperbolic-3-manifolds.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ihpmay2025",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ihpmay2025",
   "provenance": "ingested"
 }

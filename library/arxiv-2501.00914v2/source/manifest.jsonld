@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2501.00914v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "L-spaces and knot traces (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2501.00914v2",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2501.00914&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2501.00914v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2501.00914v2",
+    "content_type": "application/gzip",
+    "sha256": "84c32b2e2301d8be709aa0e8667d8a17af2356d3153866416cf00aadb47bbe4a",
+    "bytes": 80558,
+    "fetched": "2026-10-10T15:21:01+00:00",
+    "files": [
+      {
+        "path": "source/files/0-traces-v4.tex",
+        "role": "tex",
+        "sha256": "b84d0bec850840c95977db691bf878c285bbf8b039f9aed24eb1bd2efb9bb890",
+        "bytes": 130868
+      },
+      {
+        "path": "source/files/References.bib",
+        "role": "bib",
+        "sha256": "8505c01c7c70b1b775b7e9987dfb7adb009955600ac5008ac9241744e681350b",
+        "bytes": 171183
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

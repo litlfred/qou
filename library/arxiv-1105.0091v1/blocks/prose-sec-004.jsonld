@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1105.0091v1/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1105.0091v1/blocks/prose-sec-004",
   "kind": "prose",
   "title": "Pitman operators and a link with conditioned random walks and brownian matrices",
   "pageStart": 42,
   "pageEnd": 57,
   "text": "../sections/sec-004-6-pitman-operators-and-a-link-with-conditioned-r.md",
-  "derivedFrom": "library/arxiv-1105.0091v1/manifest",
-  "sourceDocument": "library/arxiv-1105.0091v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1105.0091v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1105.0091v1",
   "provenance": "ingested"
 }

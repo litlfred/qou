@@ -415,7 +415,7 @@ def main():
         "arithmetic": "exact (sympy Rational + symbolic z); no float64 in the derivation",
         "source_of_truth": (
             "generator actions and TRM4 transcribed from "
-            "content/quantum-observable-universe/lean/QOU/Machinery/"
+            "folio/quantum-observable-universe/lean/QOU/Machinery/"
             "HeckeH4StabilizationRung.lean"
         ),
         "presentation_check": {k: bool(v) for k, v in pres.items()},

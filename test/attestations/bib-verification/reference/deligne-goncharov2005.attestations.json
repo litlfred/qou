@@ -1,0 +1,94 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "deligne-goncharov2005",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 151,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0302267v2/0302267v2.pdf"
+        },
+        "id": "deligne-goncharov2005",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "The corpus runs an entire research programme in Goncharov's name \u2014 conj:gb-depth-period-correspondence ('GS-depth <-> Goncharov period-depth'), conj:qou-infra-discharges-goncharov-zeta5, prop:borel-partial-resolution, prop:depth-2-identification-bloch-suslin, rem:transcendental-accounting (which cites Goncharov's 22-term relation for Li_3 at 5th roots) \u2014 and references.ts contains NO Goncharov entry at all (grep 'Goncharov' in references.ts = 0 hits; 37 hits across content/*.md). Those blocks currently cite bloch2000, suslin1991, zagier1986, kontsevich1995 as proxies. This paper is the foundational construction of the objects those blocks name: the tannakian category MT(O_S) of mixed Tate motives over the S-integers, the unipotent motivic fundamental group, and \u2014 \u00a75 \u2014 the motivic pi_1 of P^1 minus {0, infinity, mu_N}, i.e. precisely the punctured-line-with-N-th-roots-of-unity setting in which QOU's zeta_5 / Li_3(zeta_5^k) depth-3 statements live. Most directly, \u00a76 DEFINES the depth filtration D, which is the 'Goncharov period-depth' side of the corpus's keystone correspondence; the corpus currently uses that notion without a definition source.",
+          "keyResults": [
+            {
+              "locator": "\u00a76.1, eqs. (6.1.1)-(6.1.2)",
+              "statement": "The depth filtration D on the motivic fundamental group of X = P^1 minus {0, infinity, mu_N}: D^0 pi_1 = pi_1, D^1 pi_1 = ker(pi_1(X,x) -> pi_1(A*,x)), and D^n the n-th lower central series term of D^1; induced on Lie algebras, enveloping algebras and torsor affine algebras.",
+              "useForFolio": "This is the definition of the 'Goncharov period-depth' half of conj:gb-depth-period-correspondence, which the corpus's keystone correlates with GS-depth. The conjecture is currently stated against an undefined-in-corpus notion of depth; citing \u00a76.1 fixes what the right-hand side of the correspondence means, including the caveat (\u00a76.2) that the D-degree grading exists only in the omega-realisation and is not stable under u -> u^{-1}.",
+              "targets": [
+                "conj:gb-depth-period-correspondence",
+                "rem:transcendental-accounting"
+              ]
+            },
+            {
+              "locator": "\u00a75 (motivic pi_1 of P^1 \\ {0, infinity, mu_N}); Introduction p. 2",
+              "statement": "Construction of the motivic unipotent fundamental group of the projective line punctured at 0, infinity and the N-th roots of unity, with the structure of the motivic Galois action on it; for N = 1 this yields Terasoma's upper bound in Zagier's conjecture on the number of Q-independent weight-w multiple zeta values.",
+              "useForFolio": "The mu_N setting is exactly where conj:qou-infra-discharges-goncharov-zeta5 (F = Q(zeta_5), depth 3) and conj:bring-trilog-depth-3-witness (the four values Li_3(zeta_5^k), k = 1..4) live. Citing \u00a75 gives those blocks the actual motivic framework their statements presuppose, and the N = 1 / Zagier-bound remark is the correct source for rem:transcendental-accounting's MZV-dimension bookkeeping (currently unattributed).",
+              "targets": [
+                "conj:qou-infra-discharges-goncharov-zeta5",
+                "conj:bring-trilog-depth-3-witness",
+                "rem:transcendental-accounting"
+              ]
+            },
+            {
+              "locator": "\u00a71 (esp. 1.6) and \u00a72",
+              "statement": "Definition of the tannakian category MT(O_S) of mixed Tate motives over the ring of S-integers of a number field as a subcategory of MT(k), and its tannakian formalism; Ext groups of Q(0) by Q(n) match K-theory of k.",
+              "useForFolio": "prop:borel-partial-resolution reasons about K_5^{ind}(Q(zeta_5)) tensor Q having rank 2 and about a regulator into P_3/P_2. The Ext/K-theory dictionary in \u00a71 is the statement that licenses moving between the K-group and the motivic side; the block currently cites only bloch2000/suslin1991.",
+              "targets": [
+                "prop:borel-partial-resolution",
+                "prop:depth-2-identification-bloch-suslin"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "Highest-value orphan in this slice: the corpus names a Goncharov conjecture in a block label and has zero Goncharov references. Create the ref() entry first.",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-531i"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "conj:gb-depth-period-correspondence correlates GS-depth with 'Goncharov period-depth' but no block defines or sources the latter; \u00a76.1 is the definition.",
+              "target": "conj:gb-depth-period-correspondence",
+              "bean": "qou-0qds"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "The zeta_5 / mu_N depth-3 blocks presuppose the motivic pi_1 of P^1 \\ {0, infinity, mu_N} constructed in \u00a75.",
+              "target": "conj:qou-infra-discharges-goncharov-zeta5",
+              "bean": "qou-wqsn"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Record the \u00a76.2 caveat that the D-degree grading refining the depth filtration exists only in the omega-realisation and is not stable under the involution u -> u^{-1} \u2014 relevant to whether the corpus's GS-depth <-> period-depth correspondence should be stated at the level of the filtration or the grading. This is a caveat to flag, not a proof aid; I have not checked which side the corpus intends.",
+              "target": "conj:gb-depth-period-correspondence",
+              "bean": "qou-25oc"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T16:12:29.859Z",
+          "source_sha": "c09c8cabd5f9"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

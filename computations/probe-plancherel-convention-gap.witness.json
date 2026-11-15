@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-04T02:29:12.148714+00:00",
-  "commitSha": "1c13fbe0671e37418f7eb2176d9b75f062ed5c15",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-10-13T14:20:20.269103+00:00",
+  "commitSha": "d3fc1984798d417519e0e0a4d07c80a6e62169b6",
   "assertions": [
     {
       "name": "selfnormalized_is_a_measure",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 10,
   "computation": "probe-plancherel-convention-gap",
   "scriptFile": "probe_plancherel_convention_gap.py",
-  "scriptHash": "242171a92070",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "24f39715ba6d",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,12 +42,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -102,5 +104,7 @@
   "caveats": [
     "The reconstruction's inputs (per-atom self-normalized ratios, recorded textbook max/min) are READ FROM a prior run of fr_pullback_borromean_h3a_test, not recomputed here — that would need the ~25-minute H_12 character leg. The scaling law itself (assertion 2) is computed from scratch and is what carries the finding; the reconstruction is a consistency check on top of it.",
     "Those recorded ratios come from a run at the RETIRED muon-era pin A, while c_n here is computed at the current proton pin. The 11.5 ppb pin difference is ~7 orders below the effect being measured (a 53% inflation), so it cannot affect the conclusion — but the reconstruction is therefore a cross-pin comparison and its 5.5e-5 residual should not be read as a precision claim."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

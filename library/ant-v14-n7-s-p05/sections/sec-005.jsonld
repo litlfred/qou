@@ -1,19 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ant-v14-n7-s-p05/sections/sec-005",
   "@type": [
     "doco:Section"
   ],
-  "title": "Projective pushforward in twisted cohomology",
-  "pageStart": 21,
-  "pageEnd": 25,
+  "title": "Motivic Gauss–Bonnet",
+  "pageStart": 25,
+  "pageEnd": 27,
   "contains": [
-    "library/ant-v14-n7-s-p05/blocks/prose-sec-005",
-    "library/ant-v14-n7-s-p05/blocks/lem-sec-005-01",
-    "library/ant-v14-n7-s-p05/blocks/rem-sec-005-02",
-    "library/ant-v14-n7-s-p05/blocks/lem-sec-005-03"
+    "library/ant-v14-n7-s-p05/blocks/prose-sec-005"
   ],
-  "derivedFrom": "library/ant-v14-n7-s-p05/manifest",
-  "sourceDocument": "library/ant-v14-n7-s-p05/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p05",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p05",
   "provenance": "ingested"
 }

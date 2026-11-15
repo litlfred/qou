@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2301.02038v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Vinogradov's Cohomological Geometry of Partial Differential Equations",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2301.02038v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2301.02038v1",
   "contains": [
     "library/arxiv-2301.02038v1/sections/sec-000",
     "library/arxiv-2301.02038v1/sections/sec-001",
@@ -19,8 +24,17 @@
     "library/arxiv-2301.02038v1/sections/sec-010"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2301.02038&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-2301.02038v1",
+    "title_source": "slug",
     "source_file": "2301.02038v1.pdf",
     "source_sha256": "27b303939826ab393daeb77ab186311fc7a7ada9d47f6f830bfeafcf14aedb9a",
     "pages": 26,

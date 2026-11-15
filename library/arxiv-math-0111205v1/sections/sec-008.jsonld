@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0111205v1/sections/sec-008",
   "@type": [
     "doco:Section"
   ],
-  "title": "J and J are mutual two-sided duals, i.e. there are 2-morphisms",
-  "pageStart": 7,
-  "pageEnd": 7,
+  "title": "The quantum double of a braided category",
+  "pageStart": 44,
+  "pageEnd": 49,
   "contains": [
     "library/arxiv-math-0111205v1/blocks/prose-sec-008"
   ],
-  "derivedFrom": "library/arxiv-math-0111205v1/manifest",
-  "sourceDocument": "library/arxiv-math-0111205v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0111205v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0111205v1",
   "provenance": "ingested"
 }

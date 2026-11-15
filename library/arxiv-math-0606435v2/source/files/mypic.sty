@@ -1,0 +1,579 @@
+\typeout{File : `mypic.sty' some PS graphic extensions to LaTeX's}
+\typeout{       picture environment <12.3.96> (AS)}
+
+
+\let\ea\expandafter
+ 
+% ----------------------------------------------------------------------
+
+
+%\def\underwave#1{{\setbox0=\hbox{#1}%\dp0=Opt\relax%
+%\parbox[t]{\wd0}{\vtop{\baselineskip0.4em\relax\advance\baselineskip by \dp0\relax
+%\copy0\hbox to \wd0{\cleaders\hbox{$\scriptstyle\sim$}\hfil}}}}}
+
+
+\def\underwave#1{{\leavevmode\setbox0=\hbox{#1}%
+%\parbox[t]{\wd0}
+\ifdim\baselineskip>\z@\relax\@tempdima\baselineskip\else
+\@tempdima2.0\ht\@arstrutbox\relax\fi{\vtop{%
+\copy0\kern-\@tempdima\kern\dp0\kern2pt\hbox to \wd0{\wavefill}\kern0.8pt}}}}
+
+
+\def\wavefill{{\footnotesize\llap{%
+\wdt@PSunit{\@ww}\pic@pss{2 : /@ww ed}\wdt@PSunit{\@wt}%
+\pic@pss{/@wt ed}}\z@k\strut\z@k
+\pic@pss{pt}\hfil\pic@pss{gs t @wt @ww : sw @ww d S pt p 2 : cvi 0 0 m
+{1 1 2 q 225 315 A pt t 1 -1 S} R s gr}}}
+
+\def\wavewidth#1{\def\@ww{#1}}
+\def\wavethickness#1{\def\@wt{#1}}
+
+\def\wdt@PSunit#1{\hbox{\pic@pss{pt p}\z@k\rx{#1}\z@k%
+\rx{#1}\z@k\pic@pss{pt p x -}}}
+
+\def\htt@PSunit#1{{\parskip0pt\vbox{\pic@pss{pt x p}%
+\ry{#1}\pic@pss{pt x p -}}}}
+
+
+\wavewidth{0.3ex}
+\wavethickness{0.1ex}
+
+
+
+\def\rx#1{\rule{#1}{0pt}}
+\def\ry#1{\rule{0pt}{#1}}
+
+\def\pss#1{\special{ps:#1}}
+
+\newif\ifput
+\putfalse
+
+\long\def\pic@put#1{\ifput #1 \else\put(0,0){\puttrue #1\putfalse}\fi}
+
+\newcount\pic@level
+\pic@level0
+\def\pic@st{\relax%
+%\pss{piclevel ist \the\pic@level}%
+\advance\pic@level by 1%
+\relax%\pss{piclevel ist \the\pic@level}
+\ifnum\pic@level=1{\pss{@picbegin}}\fi}
+
+\def\pic@end{\relax%
+%\pss{piclevel_ist \the\pic@level}
+\advance\pic@level by -1%
+\relax%\pss{piclevel_ist \the\pic@level}
+\ifnum\pic@level=0{\pss{@picend}}\fi}
+
+\def\pic@pss#1{\pic@st\pss{#1}\pic@end}
+
+\def\@original#1{\ifnum\pic@level>0{\pic@level0\pss
+{@picend}#1\pss{@picbegin}}\else #1\fi}
+
+
+
+\newcount\pic@grlevel
+\pic@grlevel0
+\def\pic@grst{\advance\pic@grlevel by 1%
+\relax%
+\ifnum\the\pic@grlevel=1{\pic@pss{pic@grstart}}\fi
+\pic@put{\@chkset}}
+\def\pic@grend{\advance\pic@grlevel by -1%
+\relax%
+\ifnum\the\pic@grlevel=0{\pic@pss{pic@grend}}\fi}
+
+% \def\gr@original#1{\pic@st\ifnum\pic@grlevel>0\relax%
+% \pss{pic@grend}#1%
+% \pss{pic@grstart}\else #1\fi\pic@end}
+
+
+\def\z@k{\kern0pt}
+\let\zker=\z@k
+
+
+\special{header=mypic.psh}
+
+\def\wdtoPSunit#1{\put(0,0){\@original{\hbox{\pic@pss{pt p}\z@k\rx{#1}\z@k%
+\pic@pss{pt p x -}}}}}
+
+\def\httoPSunit#1{\put(0,0){\@original{{\parskip0pt\vbox{\pic@pss{pt x p}%
+\ry{#1}\pic@pss{pt x p -}}}}}}
+
+\def\pic@origin{\put(0,0){\pic@pss{pt}}}
+
+\def\pic@setupvals{%
+\pic@origin\httoPSunit{\unitlength}\wdtoPSunit{\unitlength}%
+\pic@put{\pic@pss{/pic@unitx ed /pic@unity ed /pic@originy ed /pic@originx ed}}%
+\gdef\pic@glset{@lw@@ld@@gc@@fg@@vl@@vw@@vf@@sl@@}
+\edef\pic@lcset{\pic@glset}
+\pic@pss{/pic@grsetup d d ld x {}b}
+% temporarily switch off pic@grsetup until default values for
+% dash width of lines and gray color are stored
+\piclinewidth{30}
+\piclinedash{}{0}
+\picgraycol{0} 
+\picfillgraycol{1}
+\picveclength{0.2}
+\picvecwidth{0.06}
+\novecfill
+\noscalelines
+\picPSgraphics{b cm /pic@matrix ed}%
+% restore original pic@grsetup and save initial matrix of the
+% coord. system of the picture environment as pic@matrix
+}
+
+\def\picinit{%
+\pic@setupvals
+\pic@st\pic@grst
+%\pic@put{\typeout{\the\pic@level\space\the\pic@grlevel}}%
+}
+
+\def\pictail{
+\pic@grend\pic@end
+\pic@put{\pic@pss{40 dc pic@newtmp}}%
+}
+
+\def\piclinewidth#1{\pic@setup{lw}{#1}%
+\pic@put{\pic@pss{ 1 #1 : /pic@linew ed pic@grsetup}}}
+
+\def\picnolines{\piclinewidth{0 x}}
+
+\def\piclinedash#1#2{\pic@setup{ld}{#1,#2}%
+\pic@put{\pic@pss{ [[#1] #2] /pic@lined ed pic@grsetup}}}
+
+\def\picgraycol#1{\pic@setup{gc}{#1}%
+\pic@put{\pic@pss{ [#1] /pic@graycol ed pic@grsetup}}}
+
+\def\picfillgraycol#1{\pic@setup{fg}{#1}%
+\pic@put{\pic@pss{ /pic@fillgraycol [#1] D }}}
+
+\def\picveclength#1{\pic@setup{vl}{#1}%
+\pic@put{\pic@pss{ /pic@veclength #1 D }}}
+
+\def\picvecwidth#1{\pic@setup{vw}{#1}%
+\pic@put{\pic@pss{ /pic@vecwidth #1 D }}}
+
+\def\picvecfill#1{\pic@setup{vf}{#1}%
+\pic@put{\pic@pss{ /pic@vecfill #1 D }}}
+
+\def\picscalelines#1{\pic@setup{sl}{#1}%
+\pic@put{\pic@pss{ /pic@sclines #1 D }}}
+
+
+\def\noscalelines{\picscalelines{F}}
+\def\scalelines{\picscalelines{T}}
+\def\vecfill{\picvecfill{T}}
+\def\novecfill{\picvecfill{F}}
+
+
+% macros for controlling settings within {}-groups
+
+\def\pic@setup#1#2{%
+\def\@lookup##1@#1@##2@##3\@@{##1@#1@#2@##3}%
+\edef\pic@lcset{\ea\@lookup\pic@lcset\@@}%
+\xdef\pic@glset{\ea\@lookup\pic@glset\@@}%
+}
+
+\def\@chkset{\ea\ea\ea\@mforl@@p\ea\@gobble\pic@lcset\@nil\@@}
+
+%\def\@brace{\futurelet\@tempg\@@brace}
+%\def\@@brace{\ifx\@tempg\bgroup\let\@tempe\@empty\else\let\@tempe\egroup\bgroup\@tempg}
+
+\def\@mforl@@p #1@#2@#3\@@{\@@@exec{#1}{#2}\ifx#3\@nil\let
+\@nextwhile\@gobbletwo\else\let\@nextwhile\@mforl@@p\fi
+\@nextwhile #3\@@}
+
+\def\@@@exec#1#2{\def\@tempf ##1@#1@##2@##3\@@{##2}%
+\edef\@tempg{\ea\@tempf\pic@glset\@@}%
+\def\@temph{#2}%
+\ifx\@temph\@tempg\else\@empty \csname pic@#1\endcsname #2,\fi}
+
+
+\def\pic@lw#1,{\piclinewidth{#1}}
+\def\pic@ld#1,#2,{\piclinedash{#1}{#2}}
+\def\pic@gc#1,{\picgraycol{#1}}
+\def\pic@fg#1,{\picfillgraycol{#1}}
+\def\pic@vl#1,{\picveclength{#1}}
+\def\pic@vw#1,{\picvecwidth{#1}}
+\def\pic@wf#1,{\picvecfill{#1}}
+\def\pic@sl#1,{\picscalelines{#1}}
+
+
+% here some macros for text
+
+
+
+
+%\def\pictext#1#2#3{% text position alignment
+%{\setbox0=\hbox{#1}\wdtoPSunit{\wd0}\httoPSunit{\ht0}%
+%\pic@put{\gr@original{%
+%\pss{gs #3 3 -1 r * 3 1 r * x
+%#2 pic@unity * x pic@unitx * x 3 -1 r + 3 1 r + x t }%
+%\@original{\box0}\pss{gr}}}}}
+
+
+
+
+
+\long\def\pictext#1#2#3{% text position alignment
+{\pic@put{\pic@st\pic@grst\pss{
+gs #2 t 1 pic@unitx : 1 pic@unity : S
+/a{2{x N}R t/a{p p}b}b}\null
+{\setbox0=\hbox{#1}\wdtoPSunit{\wd0}\httoPSunit{\ht0}%
+\pss{#3 3 -1 r * 3 1 r * x t }%
+\@original{\box0}}\pss{gr}\pic@grend\pic@end}}}
+
+%here a more convenient macro for placing text
+%type \picputtext[dl]{0 0}{text}
+%  and the the down-left-corner of the text is placed in (0,0).
+%  Valid vaules for the option are : 'u', 'd', 'l', 'r', 'm'(default),
+%  'ul', 'ur', 'dl' and 'dr'.
+
+\long\def\@pictext#1#2#3{\pictext{#3}{#2}{#1}}
+
+\def\picputtext{\@ifnextchar [\@pictextopts{\@pictext{-0.5 -0.5}}}
+\def\@pictextopts[#1]{\ea\@pictext@udopts\ea{#1}}
+\def\@pictext@udopts#1{%
+\@ifnextchar u%
+ {\def\@tempf{-1}\ea\@pictext@lropts\@gobble}%
+ {\@ifnextchar d{\def\@tempf{0}\ea\@pictext@lropts\@gobble}%
+		{\def\@tempf{-0.5}\@pictext@lropts}%
+ }#1
+}
+\def\@pictext@lropts{\def\@tempg{\ea\ea\ea\@pictext\ea\ea\ea{\ea\@tempf\ea}\@gobble}%
+\@ifnextchar l%
+ {\edef\@tempf{0 \@tempf}\@tempg}
+ {\@ifnextchar r{\edef\@tempf{-1 \@tempf}\@tempg}
+		{\@ifnextchar m{\edef\@tempf{-0.5 \@tempf}\@tempg}
+			       {\edef\@tempf{-0.5 \@tempf}\ea\@pictext\ea{\@tempf}%
+%\@latexerr{invalid alignment sprecification in
+%\noexpand\picputtext -- \char13
+%valid vaules are : 'u', 'd', 'l', 'r', 'm', 'ul', 'ur', 'dl' and 'dr'}
+%\@eha
+			       }
+		}
+ }%
+}
+% \def\pictext#1#2#3{% text position alignment
+% {\setbox0=\hbox{#1}\wdtoPSunit{\wd0}\httoPSunit{\ht0}%
+% \put(0,0){\gr@original{%
+% \pss{gs #3 3 -1 r * 3 1 r * x
+% #2 pic@unity * x pic@unitx * x 3 -1 r + 3 1 r + x t }%
+% \@original{\box0}%
+% \pss{gr}}}}}
+
+
+% puts text with the initial PS coordinates
+\long\def\pictrueputtext#1#2{
+  \picputtext[dl]{0 0}{
+    \picPSgraphics{
+      @picbegin gs pt cm mr defaultmatrix sm #1 m sm
+      pt 3 2 r - 3 1 r x - x t @picend
+    }
+    #2
+    \picPSgraphics{grestore}
+  }
+}
+
+
+\def\picbox#1#2#3{% #1=cx cy,#2=dx dy,#3=text
+\picPSgraphics{#1 #2 box}
+\pictext{#3}{#1}{-0.5 -0.5}
+}
+
+\def\picfilledbox#1#2#3{% #1=cx cy,#2=dx dy,#3=text
+\picPSgraphics{#1 #2 filledbox}
+\pictext{#3}{#1}{-0.5 -0.5}
+}
+
+\def\picovalbox#1#2#3#4{%#1=cx cy,#2=dx dy,#3=rad,#4=text
+\picPSgraphics{#1 #2 #3 ovalbox}
+\pictext{#4}{#1}{-0.5 -0.5}
+}
+
+\def\picfilledovalbox#1#2#3#4{%#1=cx cy,#2=dx dy,#3=rad,#4=text
+\picPSgraphics{#1 #2 #3 filledovalbox}
+\pictext{#4}{#1}{-0.5 -0.5}
+}
+
+\def\picline#1#2{\picPSgraphics{#1 m #2 line}}
+\def\picrline#1#2{\picPSgraphics{#1 m #2 rline}}
+\def\piccurve#1#2#3#4{\picPSgraphics{#1 m #2 #3 #4 curve}}
+
+\def\picvecline#1#2{\picPSgraphics{#1 m #2 vecline}}
+\def\picvecrline#1#2{\picPSgraphics{#1 m #2 vecrline}}
+\def\picveccurve#1#2#3#4{\picPSgraphics{#1 m #2 #3 #4 veccurve}}
+
+\def\piclineto#1{\picPSgraphics{#1 line}}
+\def\picrlineto#1{\picPSgraphics{#1 rline}}
+\def\piccurveto#1#2#3{\picPSgraphics{#1 #2 #3 curve}}
+
+\def\picveclineto#1{\picPSgraphics{#1 vecline}}
+\def\picvecrlineto#1{\picPSgraphics{#1 vecrline}}
+\def\picveccurveto#1#2#3{\picPSgraphics{#1 #2 #3 veccurve}}
+
+
+% \pic[multi][r][vec]arcangle[to] 
+% set of 16 macros, yet to be tested !!
+
+
+\def\picarcangle#1#2#3#4{\picPSgraphics{#1 m #2 #3 #4 arcangle}}
+\def\picarcangleto#1#2#3{\picPSgraphics{#1 #2 #3 arcangle}}
+
+\def\picrarcangle#1#2#3#4{\picPSgraphics{cm #1 t 0 0 m #2 #3 #4 arcangle sm}}
+\def\picrarcangleto#1#2#3{\picPSgraphics{cm pt t #1 #2 #3 arcangle sm}}
+
+\def\picarc#1#2#3{\picPSgraphics{#1 m #2 #3 picarcto}}
+\def\picarcto#1#2{\picPSgraphics{#1 #2 picarcto}}
+
+\def\picvecarcangle#1#2#3#4{\picPSgraphics{#1 m #2 #3 #4 vecarcangle}}
+\def\picvecarcangleto#1#2#3{\picPSgraphics{#1 #2 #3 vecarcangle}}
+
+\def\picrvecarcangle#1#2#3#4{\picPSgraphics{cm #1 t 0 0 m #2 #3 #4 vecarcangle sm}}
+\def\picrvecarcangleto#1#2#3{\picPSgraphics{cm pt t #1 #2 #3 vecarcangle sm}}
+
+
+\def\picmultiarcangle#1#2#3#4#5{\picPSgraphics{ [#1] #2 m #3 #4 #5 multiarcangle}}
+\def\picmultiarcangleto#1#2#3#4{\picPSgraphics{ [#1] #2 #3 #4 multiarcangle}}
+
+\def\picmultirarcangle#1#2#3#4#5{\picPSgraphics{
+cm [#1] #2 t 0 0 m #3 #4 #5 multiarcangle sm}}
+\def\picmultirarcangleto#1#2#3#4{\picPSgraphics{
+cm [#1] pt t #2 #3 #4 multiarcangle sm}}
+
+
+\def\picmultivecarcangle#1#2#3#4#5{\picPSgraphics{
+[#1] #2 m #3 #4 #5 multivecarcangle}}
+\def\picmultivecarcangleto#1#2#3#4{\picPSgraphics{
+[#1] #2 #3 #4 multivecarcangle}}
+
+\def\picmultirvecarcangle#1#2#3#4#5{\picPSgraphics{
+cm [#1] #2 t 0 0 m #3 #4 #5 multivecarcangle sm}}
+\def\picmultirvecarcangleto#1#2#3#4{\picPSgraphics{
+cm [#1] pt t #2 #3 #4 multivecarcangle sm}}
+
+
+
+
+
+
+
+
+
+
+
+\def\picellipsearc#1#2#3{\picPSgraphics{#1 #2 #3 ellipsearc}}
+\def\picellipseinvarc#1#2#3{\picPSgraphics{#1 #2 #3 ellipseinvarc}}
+\def\picellipsevecarc#1#2#3{\picPSgraphics{#1 #2 #3 ellipsevecarc}}
+
+\def\picellipse#1#2#3{\picPSgraphics{#1 #2 #3 ellipse}
+\pictext{#3}{#1}{-0.5 -0.5}
+}
+\def\picfilledellipse#1#2#3{\picPSgraphics{#1 #2 filledellipse}
+\pictext{#3}{#1}{-0.5 -0.5}
+}
+
+\def\piccirclearc#1#2#3{\picPSgraphics{#1 #2 #3 circlearc}}
+\def\piccircleinvarc#1#2#3{\picPSgraphics{#1 #2 #3 circleinvarc}}
+
+\def\piccirclevecarc#1#2#3{\picPSgraphics{#1 #2 #3 circlevecarc}}
+\def\piccircle#1#2#3{\picPSgraphics{#1 #2 circle}
+\pictext{#3}{#1}{-0.5 -0.5}
+}
+\def\picfilledcircle#1#2#3{\picPSgraphics{#1 #2 filledcircle}
+\pictext{#3}{#1}{-0.5 -0.5}
+}
+
+\def\picmultiline#1#2#3{\picPSgraphics{#2 m [#1] #3 multiline}}
+\def\picmultirline#1#2#3{\picPSgraphics{#2 m [#1] #3 multirline}}
+\def\picmulticurve#1#2#3#4#5{\picPSgraphics{#2 m [#1] #3 #4 #5 multicurve}}
+\def\picmultivecline#1#2#3{\picPSgraphics{#2 m [#1] #3 multivecline}}
+\def\picmultivecrline#1#2#3{\picPSgraphics{#2 m [#1] #3 multivecrline}}
+\def\picmultiveccurve#1#2#3#4#5{\picPSgraphics{#2 m [#1] #3 #4 #5
+  multiveccurve}}
+
+\def\picmultilineto#1#2{\picPSgraphics{[#1] #2 multiline}}
+\def\picmultirlineto#1#2{\picPSgraphics{[#1] #2 multirline}}
+\def\picmulticurveto#1#2#3#4{\picPSgraphics{[#1] #2 #3 #4 multicurve}}
+
+\def\picmultiveclineto#1#2{\picPSgraphics{[#1] #2 multivecline}}
+\def\picmultivecrlineto#1#2{\picPSgraphics{[#1] #2 multivecrline}}
+\def\picmultiveccurveto#1#2#3#4{\picPSgraphics{[#1] #2 #3 #4
+  multiveccurve}}
+
+
+% yet 2 B implemented
+\def\picmultiellipse#1#2#3{\picPSgraphics{[#1] #2 #3 multiellipse}}
+% \\picmulticircle
+\def\picmulticirclearc#1#2#3#4{\picPSgraphics{[#1] #2 #3 #4
+multicirclearc}}
+\def\picmultiellipsearc#1#2#3#4{\picPSgraphics{[#1] #2 #3 #4
+multiellipsearc}}
+% \\picmulticirclearc
+\def\picmultiellipsevecarc#1#2#3#4{\picPSgraphics{[#1] #2 #3 #4
+multiellipsevecarc}}
+% \\picmulticirclevecarc
+
+
+\def\picPS#1{\pss{MyPiCDict begin #1 e}}
+
+\def\picPSgraphics#1{\pic@put{\pic@st\pic@grst\pss{#1}\pic@grend\pic@end}}
+%\def\picPSgraphics#1{\pic@put{\pic@st\pic@grst\pss{#1}\pic@grend\pic@end}}
+
+\def\picclip#1#2{\pic@put{\pic@st\pic@grst\pss{gs np
+[/@strokeproc d d ld x{}b/D ld]$ /@tstr ed}
+#1\pss{@tstr cl np}#2\pss{gr}\pic@grend\pic@end}}
+
+\def\picfill#1{\pic@put{\pic@st\pic@grst\pss{gs np
+[/@strokeproc d d ld x{}b/D ld]$ /@tstr ed}
+#1\pss{@tstr @fillproc gr}\pic@grend\pic@end}}
+
+\def\picstroke#1{\pic@put{\pic@st\pic@grst\pss{gs np
+[/@strokeproc d d ld x{}b/D ld]$ /@tstr ed}
+#1\pss{@tstr @strokeproc gr}\pic@grend\pic@end}}
+
+\def\picfillnostroke#1{\pic@put{\pic@st\pic@grst\pss{gs np
+[/@strokeproc d d ld x{}b/D ld]$ /@tstr ed}
+#1\pss{@tstr @fl gr}\pic@grend\pic@end}}
+
+
+% straffieren 
+\def\picshade#1#2#3{% boundary-path angle distance_of_lines
+\picclip{%
+#1\pss{ gs #2 rt pb 4 ar as $ /@temp ed gr}}{%
+  \picrotate{#2}{\pss{@temp x #3 @corlw x
+  [ 5 3 r 1 i - /gs ld /m ld 0 4 3 r /rl ld /@s $ /gr ld ] $ f
+  }}}
+}
+
+
+
+% \def\pictranslate#1#2{\pic@put{\pic@st\gr@original{\pss{gs #1
+% pic@unity * x pic@unitx * x t }} #2 \gr@original{\pss{gr}}%
+% \pic@end}}
+% 
+% \def\picrotate#1#2{\pic@put{\pic@st\gr@original{\pss{gs pic@originx 
+% pic@originy t #1 N rt pic@originx N pic@originy N t }}#2\gr@original{\pss{gr}}%
+% \pic@end}}
+% 
+% \def\picscale#1#2{\pic@put{\pic@st\gr@original{\pss{gs pic@originx
+% pic@originy t #1 S pic@originx N pic@originy N t }} #2 \gr@original{\pss{gr}}%
+% \pic@end}}
+% 
+% \def\picmultigraphics#1#2#3{%
+% \pic@put{\pic@st\pss{gs #1 myparse gs}#3\pss{gr}\gr@original{\pss{#2 
+% pic@unity * x pic@unitx * x t}}%
+% \pss{endmyparse R gr}\pic@end}}
+
+
+
+
+\def\pic@action#1#2#3{%
+\pic@put{\pic@st\pic@grst\pss{gs #1 #3}#2\pss{gr}\pic@grend\pic@end}}
+
+\def\pictranslate#1#2{\pic@action{#1}{#2}{t}}
+\def\picrotate#1#2{\pic@action{#1}{#2}{rt}}
+\def\picscale#1#2{\pic@action{#1}{#2}{S}}
+
+\def\picmultigraphics{%
+\@ifnextchar[{\@pmg}{\@pmg[t]}}
+
+\def\@pmg[#1]#2#3#4{%
+\pic@put{\pic@st\pic@grst\pss{gs #2 myparse gs}#4\@chkset
+\pss{gr #3 #1 endmyparse R gr}\pic@grend\pic@end}}
+
+
+
+
+\def\trefoil{\picPSgraphics{trefoilknot}}
+\def\rtrefoil{\picPSgraphics{rtrefoilknot}}
+\def\fig8knot{\picPSgraphics{figure8knot}}
+\def\braid#1#2{\picPSgraphics{#1 #2 braid}}
+\def\rbraid#1#2{\picPSgraphics{#1 #2 rbraid}}
+\def\lbraid#1#2{\picPSgraphics{#1 #2 lbraid}}
+
+
+% \drawYoung{3 2 1 1} gives ayoung tableau with row lengths 3 2 1 1
+\def\drawYoung#1{\picPSgraphics{[#1] drawYoung}}
+% \Young{4,2,1}
+% \Young[1cm]{4,2,1}
+\def\Young{\bgroup %ended in \@Young
+  \@ifnextchar[{\@@Young}{\Young@}% ]
+}
+\def\@@Young[#1]{\Youngunitlength#1\relax\Young@}
+\newcount\Youngwidth
+\newcount\Youngdepth
+\newlength\Youngunitlength
+\Youngunitlength 2mm\relax
+\def\Young@#1{\@Ysl #1,.\@Young#1,,}
+\def\@Ysl #1,#2.{\Youngwidth#1\relax
+    \Youngdepth 0\relax
+    \def\@Youngtxt{}%
+}
+\def\@Young#1,{%
+  \@ifempty{#1}{%
+    \unskip\mbox{\diag{\Youngunitlength}{\Youngwidth}{\Youngdepth}%
+       {\piclinewidth{35}\ea\drawYoung\ea{\@Youngtxt}}}\egroup
+  }{%
+   \advance\Youngdepth by 1\relax
+   \ea\def\ea\@Youngtxt\ea{\@Youngtxt #1 }%
+   \@Young
+  }%
+}
+% {\tm
+% \Young[2mm]{4,2,1}
+% \Young{3,2,1}
+% }
+
+
+% ----------------------------------------------------------------------
+
+% \immediate\write16{\pic@put{\pic@put{o}}}
+
+%\def\waveinit{\wavethickness{0.1ex}%
+%\wavewidth{0.3ex}}
+
+\newdimen\my@dim
+
+\def\placetext{\@ifnextchar [{\ea\@placetext\@prepbrac}{\@placetext{}}}
+\def\@prepbrac[#1]{{[#1]}}
+\def\diag{\@ifnextchar [{\ea\@diag\@prepbrac}{\@diag{}}}
+
+\long\def\@placetext#1#2#3#4#5#6{%
+\mbox{{\setbox0=\hbox{#6}%
+\my@dim=\ht0\advance\my@dim by #4\advance\my@dim by #5%
+\rx{#2}\zker\parbox#1{\wd0}{\rule[-#4]{0pt}{\my@dim}\zker\box0}\zker\rx{#3}}}}
+
+% \diag[t] & \diag[b] call \parbox[t] & \parbox[b] !
+\long\def\@diag#1#2#3#4#5{%
+\@placetext{#1}{0.1ex}{0.1ex}{0.2ex}{0.2ex}{%
+\unitlength#2%
+\begin{picture}(#3,#4)%
+\picinit
+#5%
+\pictail
+\end{picture}%
+}}
+
+\newenvironment{pict}[3]
+{\@placetext{[t]}{-0.3ex}{-0.3ex}{0.2ex}{0.2ex}\bgroup
+\unitlength#1%
+\begin{picture}(#2,#3)%
+\picinit}{\pictail%
+\end{picture}\egroup}
+
+\@ifundefined{@tempboxb}{\newbox\@tempboxb}{}
+\def\epsfdiag#1#2#3{%
+% this puts a graphics in and calls a \diag over it to put text etc.
+% args: #1 the epsf inclusion command (sth like "\epsfs{3cm}{pict.eps}")
+% #2 the unitlength of the \diag, #3 content of diag; the xy-size of
+% \diag is adjusted automatically
+  \setbox\@tempboxa=\hbox{#1}%
+  \@tempdima=\dp\@tempboxa
+  \setbox\@tempboxb=\hbox{\raise\@tempdima \box\@tempboxa}
+  \@tempdima=\ht\@tempboxb
+  \setbox\@tempboxa=\hbox to \wd\@tempboxb{\vbox to \@tempdima{%
+    \vss\diag[b]{#2}{1}{1}{%
+    \picputtext[dl]{0 0}{\box\@tempboxb}#3}}\hss}%
+  \box\@tempboxa
+}
+  

@@ -1,22 +1,22 @@
 {
   "engine": "python-stdlib",
-  "computedAt": "2026-09-14T06:23:27.209622+00:00",
+  "computedAt": "2026-10-10T12:49:03.477864+00:00",
   "computation": "codata-truncation-audit",
   "scriptFile": "codata_truncation_audit.py",
   "description": "Hand-typed CODATA/substrate constants that are a short prefix of the canonical value, and so compute a different number. Separates that class from exact duplication, which is qou-46ke's original and much larger scope. Canonical values are read from codata_constants / q_parameter at run time, never typed here.",
   "min_shared_digits": 6,
-  "truncated_total": 114,
+  "truncated_total": 113,
   "truncated_files": 100,
   "divergent_total": 90,
   "divergent_files": 72,
   "rounded_total": 11,
   "rounded_files": 10,
-  "blocking_total": 215,
+  "blocking_total": 214,
   "by_constant": {
     "m_e": 13,
     "q0": 69,
     "q0_muon_live": 11,
-    "q0_muon": 50,
+    "q0_muon": 49,
     "B_2H": 27,
     "B_3H": 6,
     "B_4He": 17,
@@ -25,7 +25,7 @@
     "m_mu": 2,
     "m_n": 1
   },
-  "exact_duplicates": 295,
+  "exact_duplicates": 292,
   "declared_intentional": 1,
   "findings": [
     {
@@ -678,7 +678,7 @@
     },
     {
       "file": "computations/per_atom_rho_deviation.py",
-      "line": 66,
+      "line": 89,
       "constant": "B_2H",
       "literal": "2.22456612",
       "canonical": "2.2245662",
@@ -687,7 +687,7 @@
     },
     {
       "file": "computations/per_atom_rho_deviation.py",
-      "line": 67,
+      "line": 90,
       "constant": "B_3H",
       "literal": "8.4817984",
       "canonical": "8.4817962",
@@ -696,7 +696,7 @@
     },
     {
       "file": "computations/per_atom_rho_deviation.py",
-      "line": 70,
+      "line": 93,
       "constant": "B_4He",
       "literal": "28.2956912",
       "canonical": "28.2956624",
@@ -1470,16 +1470,7 @@
     },
     {
       "file": "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stage_b_unblocked_probe.py",
-      "line": 81,
-      "constant": "q0_muon",
-      "literal": "1.10997859555",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stage_b_unblocked_probe.py",
-      "line": 85,
+      "line": 106,
       "constant": "q0",
       "literal": "1.10997858",
       "canonical": "1.1099785827513808075916690956107688798744991218736",
@@ -1965,8 +1956,8 @@
     }
   ],
   "scriptHash": "221384543fdb",
-  "scriptCommitSha": "61acb71c31584ac324197b5bde586adb5828a502",
-  "commitSha": "606a711778e4229098a387dc4024a0b10de8b7f1",
+  "scriptCommitSha": "16ca52cc51c47489866e36bc4172cbfb0b2a93f3",
+  "commitSha": "cdc7aa505599d464f7c53a592dab9c5c365c7cf1",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

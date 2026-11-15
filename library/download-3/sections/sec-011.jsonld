@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/download-3/sections/sec-011",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The Space of \"Nonlinear Frames.\" In this subsection, we will replace the",
+  "pageStart": 23,
+  "pageEnd": 24,
+  "contains": [
+    "library/download-3/blocks/prose-sec-011"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/download-3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/download-3",
+  "provenance": "ingested"
+}

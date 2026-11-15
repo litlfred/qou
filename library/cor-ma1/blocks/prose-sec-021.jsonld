@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/cor-ma1/blocks/prose-sec-021",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/cor-ma1/blocks/prose-sec-021",
   "kind": "prose",
   "title": "References",
   "pageStart": 26,
   "pageEnd": 26,
   "text": "../sections/sec-021-references.md",
-  "derivedFrom": "library/cor-ma1/manifest",
-  "sourceDocument": "library/cor-ma1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cor-ma1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cor-ma1",
   "provenance": "ingested"
 }

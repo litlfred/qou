@@ -1,8 +1,14 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+    }
+  ],
   "@id": "library/arxiv-1511.00400v2/blocks/cor-sec-023-07",
   "@type": [
-    "folio:Corollary",
+    "folio-assistant-sci:Corollary",
     "doco:Section"
   ],
   "kind": "corollary",
@@ -10,6 +16,6 @@
   "pageEnd": 41,
   "text": "cor-sec-023-07.md",
   "derivedFrom": "library/arxiv-1511.00400v2/sections/sec-023",
-  "sourceDocument": "library/arxiv-1511.00400v2/manifest",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1511.00400v2",
   "provenance": "ingested"
 }

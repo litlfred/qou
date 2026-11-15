@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1702.00039v1/blocks/prose-sec-025",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1702.00039v1/blocks/prose-sec-025",
   "kind": "prose",
   "title": "Step 2",
   "pageStart": 25,
   "pageEnd": 26,
   "text": "../sections/sec-025-442-step-2.md",
-  "derivedFrom": "library/arxiv-1702.00039v1/manifest",
-  "sourceDocument": "library/arxiv-1702.00039v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1702.00039v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1702.00039v1",
   "provenance": "ingested"
 }

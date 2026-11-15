@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1303.0720v2/sections/sec-037",
   "@type": [
     "doco:Section"
   ],
-  "title": "Bergman kernels: from local to global",
+  "title": "The basic pointwise estimate",
   "pageStart": 33,
-  "pageEnd": 33,
+  "pageEnd": 35,
   "contains": [
     "library/arxiv-1303.0720v2/blocks/prose-sec-037"
   ],
-  "derivedFrom": "library/arxiv-1303.0720v2/manifest",
-  "sourceDocument": "library/arxiv-1303.0720v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.0720v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.0720v2",
   "provenance": "ingested"
 }

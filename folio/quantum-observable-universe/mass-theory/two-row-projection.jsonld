@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-two-row-projection",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:two-row-projection",
+  "kind": "definition",
+  "title": "Two-row projection $\\pi_{\\mathrm{2-row}}$ onto the two-row Wedderburn subalgebra",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-two-row-stratum",
+    "papers/quantum-observable-universe/blocks/prop-wedderburn-weight-canonical"
+  ],
+  "tags": [
+    "wedderburn-decomposition",
+    "su2-schur-weyl",
+    "two-row",
+    "projection"
+  ],
+  "defines": [
+    "two-row-projection"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.TwoRowStratum.HasTwoRowProjection",
+  "text": "two-row-projection.md",
+  "leanSource": "two-row-projection.lean",
+  "provenance": "authored"
+}

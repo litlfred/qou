@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-hep-ph-0503213v2/sections/sec-002",
   "@type": [
     "doco:Section"
   ],
-  "title": "PHENOMENOLOGY OF THE HELON",
-  "pageStart": 2,
-  "pageEnd": 4,
+  "title": "Unresolved issues",
+  "pageStart": 5,
+  "pageEnd": 6,
   "contains": [
     "library/arxiv-hep-ph-0503213v2/blocks/prose-sec-002"
   ],
-  "derivedFrom": "library/arxiv-hep-ph-0503213v2/manifest",
-  "sourceDocument": "library/arxiv-hep-ph-0503213v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-0503213v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-0503213v2",
   "provenance": "ingested"
 }

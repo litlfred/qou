@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2306.13098v2/blocks/prose-sec-011",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2306.13098v2/blocks/prose-sec-011",
   "kind": "prose",
   "title": "Discussion",
   "pageStart": 14,
   "pageEnd": 18,
   "text": "../sections/sec-011-discussion.md",
-  "derivedFrom": "library/arxiv-2306.13098v2/manifest",
-  "sourceDocument": "library/arxiv-2306.13098v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2306.13098v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2306.13098v2",
   "provenance": "ingested"
 }

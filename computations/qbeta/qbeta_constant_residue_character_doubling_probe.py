@@ -34,10 +34,11 @@ separates `c_3` across these anchors cannot separate `c` at all.  **Do not read
 the agreement as evidence that `c` is anchor-independent** -- it is evidence
 that this test has no power here.  Reported as a failed prune, not a finding.
 
-(The `c_3` swing is taken from AGENTS.md's recorded extractions, and reproduces
-its recorded 2.3912 %.  My own first re-derivation of `c_3` gave -2710 -- I had
-divided by the bare base where the corpus divides by the N=2 ladder value -- so
-the recorded pair is used rather than a fresh one.)
+(The proton `c_3` is the canonical extraction `qbeta_ck_cache.py` performs,
+recomputed via `qbeta_utils.c3_proton_extracted` -- dividing by the N=2 ladder
+value, not the bare base; my own first re-derivation divided by the bare base and
+gave -2710.  The muon `c_3` is AGENTS.md's recorded CODATA-2022 extraction.  The
+swing reproduces the recorded 2.3912 %.)
 
 ## 2. The prune that WORKS: the cosh doubling identity
 
@@ -104,14 +105,15 @@ from mpmath import mp  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402
 from q_parameter import q_at, q_muon_at  # noqa: E402
+from qbeta_utils import c3_proton_extracted  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 DPS = 60
 _EXPECTED_PREFIX = "0.651856310060"
 
-# AGENTS.md's recorded c_3 extractions (see docstring section 1 for why these
-# are used rather than a fresh re-derivation).
-C3_PROTON = "-2.0693425728"
+# Proton c_3: recomputed by the canonical extraction inside main() (a typed copy
+# carried here until 2026-10-13 is reproduced by no producer). Muon: AGENTS.md's
+# recorded CODATA-2022 extraction (see docstring section 1).
 C3_MUON_2022 = "-2.01986031"
 
 def _dashboard_qbeta_mev():
@@ -191,10 +193,10 @@ def main() -> int:
         rel = abs(cp - cm) / abs(cp)
         amp_rows.append({"quantity": nm, "proton": fmt(cp), "muon": fmt(cm),
                          "rel_swing": fmt(rel), "amplification": fmt(rel / rel_dq)})
-    c3p, c3m = mp.mpf(C3_PROTON), mp.mpf(C3_MUON_2022)
+    c3p, c3m = c3_proton_extracted(DPS), mp.mpf(C3_MUON_2022)
     rel_c3 = abs(c3p - c3m) / abs(c3p)
     amp_c3 = rel_c3 / rel_dq
-    amp_rows.append({"quantity": "c_3 (recorded)", "proton": C3_PROTON,
+    amp_rows.append({"quantity": "c_3 (recorded)", "proton": fmt(c3p),
                      "muon": C3_MUON_2022, "rel_swing": fmt(rel_c3),
                      "amplification": fmt(amp_c3)})
 

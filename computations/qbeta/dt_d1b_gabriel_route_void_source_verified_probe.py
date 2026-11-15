@@ -380,7 +380,7 @@ def main() -> int:
         "P3_max_omega_exceeds_one": max_abs > 1,
     })
     wb.add_data("wall_crossing_scaffolding_is_orphaned", {
-        "module": "content/quantum-observable-universe/lean/QOU/Mathlib/"
+        "module": "folio/quantum-observable-universe/lean/QOU/Mathlib/"
                   "WallCrossing.lean",
         "carries": "ChargeLattice (antisymmetric integral Euler pairing), "
                    "CentralCharge, BPSState, BPSSpectrum, Wall, KSWallCrossing",
@@ -393,7 +393,7 @@ def main() -> int:
             "though it were a finding; it is not. Measured over the QOU tree: "
             "866 of 2566 modules (33.8%) are never imported anywhere, and this "
             "is a long-tracked class with its own detector "
-            "(content/pipeline/lean-orphan-audit.ts, beans qou-orph / "
+            "(folio/pipeline/lean-orphan-audit.ts, beans qou-orph / "
             "qou-kljb). Being unimported makes this module ORDINARY. The "
             "library is glob-declared so it still compiles",
         "what_is_actually_specific": "ZERO INSTANCES of ChargeLattice and "
@@ -421,7 +421,7 @@ def main() -> int:
     for ok, name, detail in checks:
         wb.add_assertion(name, computed="PASS" if ok else "FAIL",
                          expected="PASS", tolerance="exact", source=detail)
-    wb.save()
+    wb.save({"q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"})
 
     n_ok = sum(1 for ok, _, _ in checks if ok)
     print(f"\n  {n_ok}/{len(checks)} checks passed")

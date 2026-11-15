@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-hopf-ring-rigidity",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:hopf-ring-rigidity",
+  "kind": "remark",
+  "title": "Crossing-energy efficiency and rigidity of the Hopf ring",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-molecular-hopf-ring",
+    "papers/quantum-observable-universe/blocks/def-threading-link"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-molecular-hopf-ring",
+  "tags": [
+    "molecular",
+    "hopf-ring",
+    "crossing-energy",
+    "alexander-polynomial",
+    "rigidity",
+    "non-local"
+  ],
+  "text": "hopf-ring-rigidity.md",
+  "provenance": "authored"
+}

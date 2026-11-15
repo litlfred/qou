@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-012",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-012",
   "kind": "prose",
-  "title": "Residues and ﬁxed points",
-  "pageStart": 19,
-  "pageEnd": 21,
-  "text": "../sections/sec-012-36-residues-and-ﬁxed-points.md",
-  "derivedFrom": "library/arxiv-hep-th-0206161v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-0206161v1/manifest",
+  "title": "The ﬁrst three nonabelian instantons",
+  "pageStart": 21,
+  "pageEnd": 22,
+  "text": "../sections/sec-012-37-the-ﬁrst-three-nonabelian-instantons.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0206161v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0206161v1",
   "provenance": "ingested"
 }

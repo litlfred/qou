@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-brings-is-qou",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:brings-is-qou",
+  "kind": "proof",
+  "title": "Proof of Bring's surface is a quantum observable universe",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-brings-is-qou",
+    "papers/quantum-observable-universe/blocks/lem-brings-euler-characteristic",
+    "papers/quantum-observable-universe/blocks/lem-brings-riemann-hurwitz"
+  ],
+  "cites": [
+    "references/woronowicz1987-twisted-su2"
+  ],
+  "text": "brings-is-qou-proof.md",
+  "provenance": "authored"
+}

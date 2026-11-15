@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-demazure-fiber-markov-trace",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:demazure-fiber-markov-trace",
+  "kind": "proposition",
+  "title": "Demazure-fiber Markov-trace functional $T^{\\mathrm{Dem}}(\\lambda; w) = y_\\lambda \\cdot D_w(\\lambda) / D_{w_0}(\\lambda)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-macdonald-hook-telescope"
+  ],
+  "cites": [
+    "references/kashiwara1991",
+    "references/lecouvey2007"
+  ],
+  "tags": [
+    "demazure",
+    "markov-trace",
+    "resonance",
+    "kashiwara-graph",
+    "weight-lattice",
+    "wenzl-bridge",
+    "crystal-basis-shortcut"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.demazure_fiber_markov_trace",
+  "text": "demazure-fiber-markov-trace.md",
+  "leanSource": "demazure-fiber-markov-trace.lean",
+  "provenance": "authored"
+}

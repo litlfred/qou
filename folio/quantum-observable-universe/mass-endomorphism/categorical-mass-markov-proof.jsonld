@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-categorical-mass-markov",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:categorical-mass-markov",
+  "kind": "proof",
+  "title": "Proof of categorical mass markov",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-mass-markov"
+  ],
+  "text": "categorical-mass-markov-proof.md",
+  "provenance": "authored"
+}

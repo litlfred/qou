@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1702.00039v1/blocks/prose-sec-032",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1702.00039v1/blocks/prose-sec-032",
   "kind": "prose",
   "title": "One color light leaves",
   "pageStart": 34,
   "pageEnd": 35,
   "text": "../sections/sec-032-53-one-color-light-leaves.md",
-  "derivedFrom": "library/arxiv-1702.00039v1/manifest",
-  "sourceDocument": "library/arxiv-1702.00039v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1702.00039v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1702.00039v1",
   "provenance": "ingested"
 }

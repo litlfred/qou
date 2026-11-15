@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0902.0350v1/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Part 2. Addendum to and Errata in the Original Proof",
+  "pageStart": 22,
+  "pageEnd": 22,
+  "contains": [
+    "library/arxiv-0902.0350v1/blocks/prose-sec-008"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0902.0350v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0902.0350v1",
+  "provenance": "ingested"
+}

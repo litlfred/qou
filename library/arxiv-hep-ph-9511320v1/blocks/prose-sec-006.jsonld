@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-006",
   "kind": "prose",
-  "title": "M 2",
-  "pageStart": 6,
-  "pageEnd": 8,
-  "text": "../sections/sec-006-4-m-2.md",
-  "derivedFrom": "library/arxiv-hep-ph-9511320v1/manifest",
-  "sourceDocument": "library/arxiv-hep-ph-9511320v1/manifest",
+  "title": "On the Equivalence from Dual Transformations",
+  "pageStart": 22,
+  "pageEnd": 26,
+  "text": "../sections/sec-006-b-on-the-equivalence-from-dual-transformations.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-9511320v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-9511320v1",
   "provenance": "ingested"
 }

@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1203.6551v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "On the number of hyperbolic 3-manifolds of a given volume",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1203.6551v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1203.6551v1",
   "contains": [
     "library/arxiv-1203.6551v1/sections/sec-000",
     "library/arxiv-1203.6551v1/sections/sec-001",
@@ -14,8 +19,17 @@
     "library/arxiv-1203.6551v1/sections/sec-005"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1203.6551&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1203.6551v1",
+    "title_source": "slug",
     "source_file": "1203.6551v1.pdf",
     "source_sha256": "a8e84f8ed63dbccaa746be61f166bedf3f49ac9e57743dbea492c5cfdd606b9f",
     "pages": 25,

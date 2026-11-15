@@ -62,7 +62,7 @@ every `k <= 12`, and E5 widens every one of its bounds to check none is binding.
 Proton-pinned; exact integer arithmetic at scale 1e-40; mpmath dps 60 for the tables.  No
 float64.
 
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/BraidKnot/HookSumElasticity.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/BraidKnot/HookSumElasticity.lean
 """
 
 from __future__ import annotations
@@ -884,6 +884,10 @@ _wit = {
     "computation": {"script": "computations/deltalambda/rev_e_infinity_edge_limit_probe.py"},
     "bean": "qou-hok7",
     "anchor": "physical_proton",
+    # Canonical anchor key read by the q0 audits/ratchet (the "anchor" key above is
+    # a near-miss spelling they cannot see), plus scriptFile provenance.
+    "q0Anchor": "proton",
+    "scriptFile": os.path.basename(__file__),
     "q0Value": Q_50_DIGIT_STR,
     "description": (
         "e_inf, the last unknown constant in the REV_n asymptotics, as a three-piece "

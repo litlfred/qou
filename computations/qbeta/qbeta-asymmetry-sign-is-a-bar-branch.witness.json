@@ -1,5 +1,6 @@
 {
   "computation": "qbeta-asymmetry-sign-is-a-bar-branch",
+  "q0Anchor": "proton",
   "assertions": [
     {
       "name": "the_splitting_is_exactly_two_log_q_symbolically",
@@ -83,8 +84,8 @@
     "delta_net": "-0.1883"
   },
   "provenance": {
-    "headSha": "eac40e0c91b21f935050ae473122d14c60a20aa3",
+    "headSha": "eb645d81e7fe1646342513e676f6498caab4a229",
     "producer": "computations/qbeta/qbeta_asymmetry_sign_is_a_bar_branch_probe.py",
-    "elapsed_s": 0.727
+    "elapsed_s": 0.8
   }
 }

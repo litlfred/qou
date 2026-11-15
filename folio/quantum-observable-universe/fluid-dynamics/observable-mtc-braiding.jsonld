@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-observable-mtc-braiding",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:observable-mtc-braiding",
+  "kind": "remark",
+  "title": "Braiding non-symmetry and the commutative limit of the observable MTC",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-observable-mtc"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-observable-mtc",
+  "cites": [
+    "references/moore-seiberg1989",
+    "references/kitaev2006"
+  ],
+  "text": "observable-mtc-braiding.md",
+  "provenance": "authored"
+}

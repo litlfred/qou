@@ -8,822 +8,1361 @@ pages: 35-43
 source_pdf: 1409.1198v1.pdf
 source_sha256: 13ecb6c28bab6744
 doc_brief: "TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR — Categoriﬁcation is a process of lifting structures to a high er categorical level."
+text_source: latex
+latex_prose_ratio: 0.935
+latex_coverage_ratio: 0.891
 ---
-Let us deﬁne the current algebra U(sln[t]) = U(sln ⊗ /C9 [t]). This algebra is generated over /CZ by
-x+
-i,r, x−
-i,s and ξi,k for r,s,k ∈ /C6 ∪ {0} and 1 ≤i<n modulo the following relations:
-C1: Fori,j inI and r,s ∈ /C6 ∪ {0}
-[ξi,r,ξ j,s] = 0
-C2: For any i,j ∈I and k ∈ /C6 ∪ {0},
-[ξi,0,x ±
-j,k] = ±aijx±
-j,k
-C3: For any i,j ∈I and r,k ∈ /C6 ∪ {0},
-[ξi,r,x ±
-j,k] = ±aijx±
-j,r+k
-C4: Fori,j ∈I and k,ℓ ∈ /C6 ∪ {0}
-[x±
-i,k+1,x ±
-j,ℓ] = [x±
-i,k,x ±
-j,ℓ+1]
-C5: Fori,j ∈I and k,ℓ ∈ /C6 ∪ {0}
-[x+
-i,k,x −
-j,ℓ] = δi,jξi,k+ℓ
-C6: Let i ⁄=j and set m = 1 −aij. For every k1,...,k m ∈ /C6 ∪ {0} and ℓ ∈ /C6 ∪ {0}
-∑
-π∈Sm
-m∑
-s=0
-(−1)s
-( m
-s
-)
-x±
-i,kπ (1)
-...x ±
-i,kπ (s)
-x±
-j,ℓx±
-i,kπ (s+1)
-...x ±
-i,kπ (m)
-= 0.
-For more on the relationship between the current algebra and spec ializations of the Yangian see [3].
-Recall that we denote by ˙U(sln[t]) the idempotented form of the current algebra.
-Exercise 22. Show for t = 1 that the current algebra relations restrict to the deﬁning r elations for
-U(sln).
-The next proposition is a step towards generalizing Theorem 5.1.
-Proposition 23. Let Ei,r, Fj,s, Hi,r denote the generators of Tr(U ∗(sln)):
-Ei,r1λ :=
-
-
-λ
-/d79/d79•r
-i
-
-, Fj,s1λ :=
-
-
-λ
-/d15/d15
-j
-•s
-
-, Hi,r1λ := [pi,r(λ) Id 1λ ],
-where pi,r(λ) was deﬁned in equation 4.36. For any choice of scalars Q with t2
-ij = t2
-ji = tij−1tji = 1
-for i ⁄=j, there is a well deﬁned homomorphism
-(5.7) h : ˙U(sln[t]) − →Tr(U ∗(sln)),
-36 ANNA BELIAKOV A, ZAUR GULIYEV, KAZUO HABIRO, AND AARON D. L AUDA
+\label{current-sln}
+
+
+
+
+
+We expect to be able to generalize Theorem~\ref{qqq} to $\fsl_n$.
+
+
+Let us define the current algebra
+${\bf U}(\fsl_n[t])={\bf U}(\fsl_n\otimes\Q[t])$. This algebra is generated over $\k$ by
+$x^+_{i,r}$, $x^-_{i,s}$ and $\xi_{i,k}$ for $r,s,k\in \N\cup\{0\}$ and $1\leq i<n$
+modulo the following relations:
+\begin{description}
+  \item[C1] For $i,j$ in $I$ and $r,s \in \N\cup\{0\}$
+\[
+[ \xi_{i,r}, \xi_{j,s} ] = 0
+\]
+
+  \item[C2] For any $i,j \in I$ and $k \in \N\cup\{0\}$,
+\[
+ [ \xi_{i,0}, x^{\pm}_{j,k} ] = \pm a_{ij}x^{\pm}_{j,k}
+\]
+
+  \item[C3] For any $i,j \in I$ and $r,k \in \N\cup\{0\}$,
+\[
+ [\xi_{i,r}, x^{\pm}_{j,k} ] = \pm a_{ij} x^{\pm}_{j, r+k}
+\]
+
+  \item[C4] For $i,j \in I$ and $k, \ell \in \N\cup\{0\}$
+\[
+[x^\pm_{i, k+1}, x^\pm_{j,\ell}]=[x^\pm_{i,k}, x^\pm_{j,\ell+1}]
+\]
+  \item[C5] For $i,j \in I$ and $k,\ell \in \N\cup\{0\}$
+\[
+ [x^+_{i,k}, x^-_{j,\ell}] = \delta_{i,j} \xi_{i, k+\ell}
+\]
+  \item[C6] Let $i \neq j$ and set $m=1-a_{ij}$.  For every $k_1, \dots, k_m \in \N\cup\{0\}$ and $\ell \in \N\cup\{0\}$
+\[
+ \sum_{\pi \in S_m} \sum_{s=0}^{m} (-1)^s
+ \binom{m}{s} x^{\pm}_{i, k_{\pi(1)}} \dots x^{\pm}_{i, k_{\pi(s)}}
+ x^{\pm}_{j, \ell} x^{\pm}_{i, k_{\pi(s+1)}} \dots x^{\pm}_{i, k_{\pi(m)}} = 0.
+\]
+\end{description}
+For more on the relationship between the current algebra and specializations of the Yangian see \cite{Bag}.
+Recall that we denote by $\dot{\bfU}(\fsl_n[t])$ the idempotented form of the current algebra.
+
+\begin{exercise}
+Show for $t=1$ that the current algebra relations restrict to the defining relations
+for ${\bf U}(\fsl_n)$.
+\end{exercise}
+
+The next proposition is
+ a step towards generalizing Theorem~\ref{qqq}.
+
+\begin{proposition}\label{prop-cur}
+Let \(\mathsf{E}_{i,r}, \mathsf{F}_{j,s}, \mathsf{H}_{i,r}\) denote  the generators of \(\Tr(\U^\ast(\fsl_n))\):
+\[\mathsf{E}_{i,r}1_{\lambda}:=  \left[
+\xy 0;/r.18pc/:
+  (10,6)*{\lambda};
+  (0,0)*{\bbe{}};
+  (0,2)*{\bullet}+(3,1)*{r};
+  (-8,6)*{ }; (12,-7)*{}; (2,-7)*{\scs i};
+ \endxy
+\right],  \quad \quad
+\mathsf{F}_{j,s}1_{\lambda}:=  \left[
+\xy 0;/r.18pc/:
+  (10,6)*{\lambda};
+  (0,0)*{\bbf{}};
+  (2,-7)*{\scs j};
+  (0,4)*{\bullet}+(3,1)*{s};
+   (-8,6)*{ }; (12,-7)*{};
+ \endxy
+\right],\quad \quad
+  \mathsf{H}_{i,r}1_{\lambda}:= \left[
+ p_{i,r}(\lambda)\; \Id_{\onel}
+\right],\]where $p_{i,r}(\l)$ was defined in equation~\ref{eq_defpil}.
+For any choice of scalars $Q$ with $t_{ij}^2=t_{ji}^2=t_ij^{-1}t_{ji}=1$ for $i \neq j$, there is a well defined homomorphism
+\begin{equation} \label{eq_sln-homo}
+ h \maps \dot{\bfU}(\fsl_n[t]) \longrightarrow \Tr(\U^\ast(\fsl_n)),
+\end{equation}
 given by
-(5.8) x+
-i,r1λ ↦→(−1)(i+1)r Ei,r1λ, x −
-j,s1λ ↦→(−1)(j+1)s Fj,s1λ, ξ i,r1λ ↦→(−1)(i+1)r Hi,r1λ.
-Proof. To prove this proposition we verify the current algebra relations us ing the relations in the 2-
-category U ∗(sln). We only need to consider the case i ⁄= j, since the relations in U ∗(sl2) have been
-proven in [8]. C1 is clear, since multiplication by a bubble is a commutative operation. We p rove the
-equality C3 for the case j =i ± 1. For convenience we will only depict the interior of the annulus for
-diagrams on the annulus in our calculation below where vij :=t−1
-ij tji.
-Hi,aEj,b1λ =
-a∑
-k=0
-k
-i
-/d15/d15/d77/d77
-•
-♠+k
-i
-/d81/d81/d15/d15
-•
-♠+a−k
-j
-/d15/d15/d77/d77
-•
-b
-λ
-(4.32) a∑
-k=0
-k
-i
-/d81/d81/d15/d15
-•
-♠+a−k
-i
-/d15/d15/d77/d77
-•
-♠+k
-λ
-/d15/d15/d79/d79
-j
-•
-b
-+ vij
-a∑
-k=0
-k
-i
-/d81/d81/d15/d15
-•
-♠+a−k
-i
-/d15/d15/d77/d77
-•
-♠+k−1
-λ
-/d15/d15/d79/d79
-j
-•
-b+1
-(4.34) a∑
-k=0
-a−k∑
-ℓ=0
-k (−vij)ℓ i
-/d15/d15/d77/d77
-•
-♠+k
-i
-/d81/d81/d15/d15
-•
-♠+a−k−ℓ
-λ
-/d15/d15/d79/d79
-j
-•
-ℓ+b
-+ vij
-a∑
-k=0
-a−k∑
-ℓ=0
-k (−vij)ℓ i
-/d15/d15/d77/d77
-•
-♠+k−1
-i
-/d81/d81/d15/d15
-•
-♠+a−k−ℓ
-λ
-/d15/d15/d79/d79
-j
-•
-ℓ+b+1
-=
-a∑
-ℓ=0
-a−ℓ∑
-k=0
-k (−vij)ℓ i
-/d15/d15/d77/d77
-•
-♠+k
-i
-/d81/d81/d15/d15
-•
-♠+a−k−ℓ
-λ
-/d15/d15/d79/d79
-j
-•
-ℓ+b
-+vij
-a∑
-ℓ=0
-a−ℓ−1∑
-k=0
-(k+1) (−vij)ℓ i
-/d15/d15/d77/d77
-•
-♠+k
-i
-/d81/d81/d15/d15
-•
-♠+a−k−ℓ−1
-λ
-/d15/d15/d79/d79
-j
-•
-ℓ+b+1
-TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR 37
-(4.36) a∑
-ℓ=0
-(−vij)ℓ
-λ
-Hi,a−ℓ /d15/d15/d79/d79
-j
-•
-ℓ+b
-−
-a+1∑
-ℓ=1
-a−ℓ∑
-k=0
-(k + 1) ( −vij)ℓ i
-/d15/d15/d77/d77
-•
-♠+k
-i
-/d81/d81/d15/d15
-•
-♠+a−k−ℓ
-λ
-/d15/d15/d79/d79
-j
-•
-ℓ+b
-Pulling oﬀ k of the summands in the second term and observing that the ℓ =a + 1 term vanishes we
-have
-=
-a∑
-ℓ=0
-(−vij)ℓ
-λ
-Hi,a−ℓ /d15/d15/d79/d79
-j
-•
-ℓ+b
-−
-a∑
-ℓ=1
-(−vij)ℓ
-λ
-Hi,a−ℓ /d15/d15/d79/d79
-j
-•
-ℓ+b
-−
-a∑
-ℓ=1
-a−ℓ∑
-k=0
-(−vij)ℓ i
-/d15/d15/d77/d77
-•
-♠+k
-i
-/d81/d81/d15/d15
-•
-♠+a−k−ℓ
-λ
-/d15/d15/d79/d79
-j
-•
-ℓ+b
-=
-λ
-Hi,a /d15/d15/d79/d79
-j
-•
-b
-−
-a∑
-ℓ=1
-(−vij)ℓ
-λ
-δa−ℓ,0 /d15/d15/d79/d79
-j
-•
-ℓ+b
-=
-λ
-Hi,a /d15/d15/d79/d79
-j
-•
-b
-− (−vij)a λ /d15/d15/d79/d79
-j
-•
-a+b
-= Ej,bHi,a1λ − (−vij)a Ej,a+b1λ.
-By choosing vij = 1, we get
-[Hi,a, Ej,b]1λ = −(−1)aEj,a+b1λ.
+\begin{equation} \label{homomorp}
+x^{+}_{i, r} 1_{\lambda} \mapsto
+(-1)^{(i+1)r}\,\mathsf{E}_{i,r}1_{\lambda}
+
+
+ 
+  
+ 
+ 
+ 
+
+ ,\quad \quad
+x^{-}_{j, s} 1_{\lambda}\mapsto
+(-1)^{(j+1)s}\,\mathsf{F}_{j,s}1_{\lambda}
+
+
+
+  
+  
+  
+   
+ 
+
+,\quad \quad
+\xi_{i, r} 1_{\lambda}\mapsto
+  (-1)^{(i+1)r}\,\mathsf{H}_{i,r}1_{\lambda}.
+ 
+ 
+
+\end{equation}
+
+\end{proposition}
+
+\begin{proof}
+To prove this proposition we verify the current algebra relations  using the relations in the 2-category $\U^\ast(\fsl_n)$. We only need
+to consider the case \(i\neq j\), since the relations in $\U^\ast(\fsl_2)$ have been proven in \cite{BHLZ}.
+\textbf{C1} is clear, since multiplication by a bubble is a commutative operation. We prove  the equality \textbf{C3} for the case \(j=i\pm1\).
+For convenience we will only depict the interior of the annulus for diagrams on the annulus in our calculation below where $v_{ij}:= t_{ij}^{-1}t_{ji}$.
+\[ \mathsf{H}_{i,a}\mathsf{E}_{j,b} 1_\lambda\;\;= \;\;
+\sum^a_{k=0} k \; \;
+ \xy
+   (-12,-2)*{\icbub{\spadesuit+k}{i}};
+   (0,-2)*{\iccbub{\spadesuit+a-k}{i}};
+  (12,-2)*{\icbub{b}{j}};
+    (12,1)*{\lambda}; (12,-3)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+ \endxy
+ \]
+\[ \refequal{\eqref{c_slide_right}} \;\;
+\sum^a_{k=0} k \; \;
+ \xy
+   (-18,-2)*{\iccbub{\spadesuit+a-k}{i}};
+   (-1,-2)*{\icbub{\spadesuit+k}{i}};
+  (0,6.5)*{\lambda};(5,3)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+    (-10,0)*{}="t1";  (10,0)*{}="t2";
+  "t2";"t1" **\crv{(10,14) & (-10,14)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(10,-14) & (-10,-14)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(1,-3)*{\scs b};
+   \endxy
+   \;\;+\;\; v_{ij} \; \sum^a_{k=0} k \;
+ \xy
+   (-18,-2)*{\iccbub{\spadesuit+a-k}{i}};
+   (-1,-1)*{\icbub{\spadesuit+k-1}{i}};
+  (1,6.5)*{\lambda};(5,3)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+    (-10,0)*{}="t1";  (10,0)*{}="t2";
+  "t2";"t1" **\crv{(10,14) & (-10,14)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(10,-14) & (-10,-14)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(1,-3)*{\scs b+1};
+   \endxy
+ \]
+\[\refequal{\eqref{cc_slide_right}}
+\sum^a_{k=0}\;\sum^{a-k}_{\ell=0} k \; (-v_{ij})^{\ell}\;
+ \xy
+   (-6,-2)*{\icbub{\spadesuit+k}{i}};
+   (8,-2)*{\iccbub{\spadesuit+a-k-\ell}{i}};
+  (8,8)*{\lambda};(4,8)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+    (-20,0)*{}="t1";  (20,0)*{}="t2";
+  "t2";"t1" **\crv{(20,24) & (-20,24)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(20,-24) & (-20,-24)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs \ell+b};
+   \endxy \;\; +\;\;v_{ij}\;\sum^a_{k=0}\;\sum^{a-k}_{\ell=0} k \; (-v_{ij})^{\ell}\;
+ \xy
+   (-6,-2)*{\icbub{\spadesuit+k-1}{i}};
+   (8,-2)*{\iccbub{\spadesuit+a-k-\ell}{i}};
+  (8,8)*{\lambda}; (4,8)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+    (-20,0)*{}="t1";  (20,0)*{}="t2";
+  "t2";"t1" **\crv{(20,24) & (-20,24)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(20,-24) & (-20,-24)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs \ell+b+1};
+   \endxy
+\]
+\[  =\;\; \sum^a_{\ell=0}\;\sum^{a-\ell}_{k=0} k \; (-v_{ij})^{\ell}\;
+ \xy
+   (-9,-2)*{\icbub{\spadesuit+k}{i}};
+   (5,-2)*{\iccbub{\spadesuit+a-k-\ell}{i}};
+  (8,8)*{\lambda};(4,8)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+    (-20,0)*{}="t1";  (20,0)*{}="t2";
+  "t2";"t1" **\crv{(20,24) & (-20,24)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(20,-24) & (-20,-24)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(1,-3)*{\scs \ell+b};
+   \endxy \;\; +\;v_{ij}\;\sum^a_{\ell=0}\;\sum^{a-\ell-1}_{k=0} (k+1) \; (-v_{ij})^{\ell}\;
+ \xy
+   (-9,-2)*{\icbub{\spadesuit+k}{i}};
+   (6,-2)*{\iccbub{\spadesuit+a-k-\ell-1}{i}};
+  (8,8)*{\lambda};(4,8)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+    (-20,0)*{}="t1";  (20,0)*{}="t2";
+  "t2";"t1" **\crv{(20,24) & (-20,24)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(20,-24) & (-20,-24)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs \ell+b+1};
+   \endxy
+\]
+\[ \refequal{\eqref{eq_defpil}}
+\;\; \sum^a_{\ell=0} \; (-v_{ij})^{\ell}\; \;
+ \xy
+  (5,5)*{\lambda}; (1,5)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+  (0,0)*{\mathsf{H}_{i,a-\ell}};
+(-10,0)*{}="t1";  (10,0)*{}="t2";
+  "t2";"t1" **\crv{(10,14) & (-10,14)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(10,-14) & (-10,-14)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(1,-3)*{\scs \ell+b};
+   \endxy \;\; -\;\;\sum^{a+1}_{\ell=1}\;\sum^{a-\ell}_{k=0} (k+1) \; (-v_{ij})^{\ell}\;
+ \xy
+   (-6,-2)*{\icbub{\spadesuit+k}{i}};
+   (10,-2)*{\iccbub{\spadesuit+a-k-\ell}{i}};
+  (8,8)*{\lambda}; (4,8)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+    (-20,0)*{}="t1";  (20,0)*{}="t2";
+  "t2";"t1" **\crv{(20,24) & (-20,24)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(20,-24) & (-20,-24)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(1,-3)*{\scs \ell+b};
+   \endxy
+\]
+Pulling off $k$ of the summands in the second term and observing that the $\ell=a+1$ term vanishes we have
+\[
+=\;\; \sum^a_{\ell=0} \; (-v_{ij})^{\ell}\; \;
+ \xy
+  (5,5)*{\lambda}; (1,5)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+  (0,0)*{\mathsf{H}_{i,a-\ell}};
+(-10,0)*{}="t1";  (10,0)*{}="t2";
+  "t2";"t1" **\crv{(10,14) & (-10,14)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(10,-14) & (-10,-14)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(1,-3)*{\scs \ell+b};
+   \endxy \;\;  -\;\; \sum^a_{\ell=1} \; (-v_{ij})^{\ell}\; \;
+ \xy
+  (5,5)*{\lambda}; (1,5)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+  (0,0)*{\mathsf{H}_{i,a-\ell}};
+(-10,0)*{}="t1";  (10,0)*{}="t2";
+  "t2";"t1" **\crv{(10,14) & (-10,14)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(10,-14) & (-10,-14)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(1,-3)*{\scs \ell+b};
+   \endxy \;-\;\sum^{a}_{\ell=1}\;\sum^{a-\ell}_{k=0}  \; (-v_{ij})^{\ell}\;
+ \xy
+   (-6,-2)*{\icbub{\spadesuit+k}{i}};
+   (10,-2)*{\iccbub{\spadesuit+a-k-\ell}{i}};
+  (8,8)*{\lambda};(4,8)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+    (-20,0)*{}="t1";  (20,0)*{}="t2";
+  "t2";"t1" **\crv{(20,24) & (-20,24)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(20,-24) & (-20,-24)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(1,-3)*{\scs \ell+b};
+   \endxy
+  \]
+\[=\; \;
+ \xy
+  (5,5)*{\lambda}; (1,5)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+  (0,0)*{\mathsf{H}_{i,a}};
+(-10,0)*{}="t1";  (10,0)*{}="t2";
+  "t2";"t1" **\crv{(10,14) & (-10,14)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(10,-14) & (-10,-14)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(1,-3)*{\scs b};
+   \endxy \;\; -\;\; \sum^a_{\ell=1} \; (-v_{ij})^{\ell}\; \;
+ \xy
+  (5,5)*{\lambda};(1,5)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+   (0,0)*{\delta_{a-\ell,0}};
+(-10,0)*{}="t1";  (10,0)*{}="t2";
+  "t2";"t1" **\crv{(10,14) & (-10,14)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(10,-14) & (-10,-14)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(1,-3)*{\scs \ell+b};
+   \endxy \;\; =\;\; \xy
+  (5,5)*{\lambda};
+  (1,5)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};(0,0)*{\mathsf{H}_{i,a}};
+(-10,0)*{}="t1";  (10,0)*{}="t2";
+  "t2";"t1" **\crv{(10,14) & (-10,14)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(10,-14) & (-10,-14)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(1,-3)*{\scs b};
+   \endxy \;\; -\;\; (-v_{ij})^a\; \;
+ \xy
+  (3,3)*{\lambda}; (0,0)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(-10,0)*{}="t1";  (10,0)*{}="t2";
+  "t2";"t1" **\crv{(10,14) & (-10,14)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(10,-14) & (-10,-14)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(1,-3)*{\scs a+b};
+   \endxy
+\]
+\[=\;\;\mathsf{E}_{j,b} \mathsf{H}_{i,a} 1_\lambda - (-v_{ij})^a\;\mathsf{E}_{j,a+b}  1_\lambda. \]
+By choosing \(v_{ij}=1\), we get
+\[[ \mathsf{H}_{i,a}, \mathsf{E}_{j,b}] 1_\lambda = -(-1)^a \mathsf{E}_{j,a+b}1_\lambda .\]
 The relation
-[Hi,a, Fj,b]1λ = (−1)aFj,a+b1λ.
-can be proven in a similar way. C4 follows from the relations (4.16) and (4.17):
-tij
-λ /d16/d16/d79/d79
-j
-•
-b
-/d15/d15/d79/d79
-i
-•
-a+1
-+tji
-λ /d16/d16/d79/d79
-j
-•
-b+1
-/d15/d15/d79/d79
-i
-•
-a
-(4.16) λ
-/d79/d79/d79/d79
-/d15/d15/d79/d79 /d15/d15/d79/d79
-j i
-•a •b
-(4.17) λ
-/d79/d79/d79/d79
-/d15/d15/d79/d79 /d15/d15/d79/d79
-i j
-•b •a
-38 ANNA BELIAKOV A, ZAUR GULIYEV, KAZUO HABIRO, AND AARON D. L AUDA
-(4.16)
-tji
-λ /d16/d16/d79/d79
-i
-•
-a
-/d15/d15/d79/d79
-j
-•
-b+1
-+tij
-λ /d16/d16/d79/d79
-i
-•
-a+1
-/d15/d15/d79/d79
-j
-•
-b
-.
-Dividing both sides of this equation by tij, and by choosing vij = 1, we get
-[Ei,a+1, Ej,b]1λ = −[Ei,a, Ej,b+1]1λ.
-If we reverse the arrows in the preceding equation, they still hold:
-[Fi,a+1, Fj,b]1λ = −[Fi,a, Fj,b+1]1λ.
-The choice of signs in (5.8) correspond to
-[x±
-i,a+1,x ±
-j,b] = [x±
-i,a,x ±
-j,b+1].
-The relation C5 for the case i ⁄=j can be checked the following way:
-Ei,aFj,b1λ = λ /d80/d80/d15/d15
-j
-•
-b
-/d15/d15/d79/d79
-i
-•
-a
-(4.20)
-t−1
-ji
-λ
-/d79/d79/d15/d15
-/d79/d79/d18/d18 /d15/d15/d79/d79
-j i
-•a •b
-(4.17)
-(4.17)
-t−1
-ji
-λ
-/d15/d15/d79/d79
-/d15/d15/d79/d79 /d79/d79/d18/d18
-i j
-•b •a
-(4.20) λ /d16/d16/d79/d79
-i
-•
-a
-/d79/d79/d15/d15
-j
-•
-b
-= Fj,bEi,a1λ.
-We now prove the Serre relation C6 in the case when i ·j = −1. Let us prove the identity
-Ei,aEj,bEi,c1λ + Ei,cEj,bEi,a1λ = Ei,aEi,cEj,b1λ + Ej,bEi,aEi,c1λ.
-(5.9)
-Ei,aEj,bEi,c1λ = λ /d16/d16/d79/d79
-i
-•
-c
-/d15/d15/d79/d79
-j
-•
-b
-/d15/d15/d79/d79
-i
-•
-a
-(4.19)
-t−1
-ij /d79/d79/d79/d79
-/d79/d79/d79/d79
-/d79/d79/d79/d79
-λ
-i j i
-•
-c
-•
-b
-•
-a
-/d15/d15 /d15/d15 /d15/d15
-/d15/d15/d79/d79 /d15/d15/d79/d79 /d15/d15/d79/d79
-−t−1
-ij /d79/d79 /d79/d79
-/d79/d79 /d79/d79
-/d79/d79 /d79/d79
-λ
-iji
-•
-c
-•
-b
-•
-a
-/d15/d15 /d15/d15 /d15/d15
-/d15/d15/d79/d79 /d15/d15/d79/d79 /d15/d15/d79/d79
-.
-TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR 39
-The ﬁrst term on the right-hand-side of (5.9) can be simpliﬁed
-t−1
-ij /d79/d79/d79/d79
-/d79/d79/d79/d79
-/d79/d79/d79/d79
-λ
-i j i
-•
-c
-•
-b
-•
-a
-/d15/d15 /d15/d15 /d15/d15
-/d15/d15/d79/d79 /d15/d15/d79/d79 /d15/d15/d79/d79
-= tij
-λ
-/d15/d15/d79/d79 /d15/d15/d79/d79
-/d79/d79/d79/d79
-/d79/d79 /d79/d79/d79/d79 /d15/d15/d15/d15
-/d15/d15/d15/d15
-/d15/d15
-/d15/d15/d79/d79i ij
-•
-c
-•
-b
-•
-a
-.(5.10)
-using the biadjoint relations and equations (4.14) and (4.15) to slide c rossings around the annulus.
-This diagram can be further simpliﬁed using the KLR relations
-(5.11)
-(4.16)
-t3
-ji
-λ
-/d15/d15/d79/d79 /d15/d15/d79/d79
-/d79/d79/d79/d79
-/d79/d79 /d79/d79/d79/d79 /d15/d15/d15/d15/d15/d15
-/d15/d15/d79/d79i ij
-•
-c
-•
-b+1
-•
-a
-+ t2
-jitij
-λ
-/d15/d15/d79/d79 /d15/d15/d79/d79
-/d79/d79/d79/d79
-/d79/d79 /d79/d79/d79/d79 /d15/d15/d15/d15/d15/d15
-/d15/d15/d79/d79i ij
-•
-c
-•
-b
-•
-a+1
-where we freely slide dots through caps and cups using the dot cyclic ity relation (4.12). The second
-term on the right-hand-side of (5.9) can also be simpliﬁed
-t−1
-ij /d79/d79 /d79/d79
-/d79/d79 /d79/d79
-/d79/d79 /d79/d79
-λ
-iji
-•
-c
-•
-b
-•
-a
-/d15/d15 /d15/d15 /d15/d15
-/d15/d15/d79/d79 /d15/d15/d79/d79 /d15/d15/d79/d79
-= tij
-λ
-/d15/d15/d79/d79 /d15/d15/d79/d79
-/d79/d79/d79/d79
-/d79/d79 /d79/d79 /d79/d79 /d15/d15/d15/d15
-/d15/d15/d15/d15
-/d15/d15
-/d15/d15/d79/d79 i ji
-• c • b • a
-=
-40 ANNA BELIAKOV A, ZAUR GULIYEV, KAZUO HABIRO, AND AARON D. L AUDA
-(4.16)
-t2
-ij
-λ
-/d15/d15/d79/d79 /d15/d15/d79/d79
-/d79/d79/d79/d79 /d79/d79 /d15/d15 /d15/d15 /d15/d15
-/d15/d15/d79/d79 i ji
-•
-b+1
-•
-c
-•
-a
-+ tijtji
-λ
-/d15/d15/d79/d79 /d15/d15/d79/d79
-/d79/d79/d79/d79 /d79/d79 /d15/d15 /d15/d15 /d15/d15
-/d15/d15/d79/d79 i ji
-•
-b
-•
-c+1
-•
-a
-Combining terms and simplifying using that t2
-ij =t2
-ji = 1, vij = 1 for our choice of scalars, we have
-(5.12) λ /d16/d16/d79/d79
-i
-•
-c
-/d15/d15/d79/d79
-j
-•
-b
-/d15/d15/d79/d79
-i
-•
-a
-=
-λ
-/d15/d15/d79/d79 /d15/d15/d79/d79
-/d79/d79/d79/d79
-/d79/d79 /d79/d79/d79/d79 /d15/d15/d15/d15/d15/d15
-/d15/d15/d79/d79i ij
-•
-c
-•
-b+1
-•
-a
-+
-λ
-/d15/d15/d79/d79 /d15/d15/d79/d79
-/d79/d79/d79/d79
-/d79/d79 /d79/d79/d79/d79 /d15/d15/d15/d15/d15/d15
-/d15/d15/d79/d79i ij
-•
-c
-•
-b
-•
-a+1
-− λ
-/d15/d15/d79/d79 /d15/d15/d79/d79
-/d79/d79/d79/d79 /d79/d79 /d15/d15 /d15/d15 /d15/d15
-/d15/d15/d79/d79 i ji
-•
-b+1
-•
-c
-•
-a
-− λ
-/d15/d15/d79/d79 /d15/d15/d79/d79
-/d79/d79/d79/d79 /d79/d79 /d15/d15 /d15/d15 /d15/d15
-/d15/d15/d79/d79 i ji
-•
-b
-•
-c+1
-•
-a
-.
-By interchanging a and c in the equation (5.12), we get
-(5.13) λ /d16/d16/d79/d79
-i
-•
-a
-/d15/d15/d79/d79
-j
-•
-b
-/d15/d15/d79/d79
-i
-•
-c
-=
-λ
-/d15/d15/d79/d79 /d15/d15/d79/d79
-/d79/d79/d79/d79
-/d79/d79 /d79/d79/d79/d79 /d15/d15/d15/d15/d15/d15
-/d15/d15/d79/d79i ij
-•
-a
-•
-b+1
-•
-c
-+
-λ
-/d15/d15/d79/d79 /d15/d15/d79/d79
-/d79/d79/d79/d79
-/d79/d79 /d79/d79/d79/d79 /d15/d15/d15/d15/d15/d15
-/d15/d15/d79/d79i ij
-•
-a
-•
-b
-•
-c+1
-TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR 41
-− λ
-/d15/d15/d79/d79 /d15/d15/d79/d79
-/d79/d79/d79/d79 /d79/d79 /d15/d15 /d15/d15 /d15/d15
-/d15/d15/d79/d79 i ji
-•
-b+1
-•
-a
-•
-c
-− λ
-/d15/d15/d79/d79 /d15/d15/d79/d79
-/d79/d79/d79/d79 /d79/d79 /d15/d15 /d15/d15 /d15/d15
-/d15/d15/d79/d79 i ji
-•
-b
-•
-a+1
-•
-c
-.
-Using the relation (2.7) and induction, one can easily prove the followin g equation:
-(5.14)
-•a •c
-iλ = −
-•c •a
-iλ .
-Also, the following equation directly follows from (2.4) and (5.14)
-(5.15) λ /d16/d16/d79/d79
-i
-•
-c
-/d15/d15/d79/d79
-i
-•
-a
-=
-•a+1 •c
-iλ +
-•c+1 •a
-iλ .
-We add the right and left hand sides of the equations (5.12) and (5.13 ), and after eliminating terms
-using (5.14), we get
-(5.16) λ /d16/d16/d79/d79
-i
-•
-a
-/d15/d15/d79/d79
-j
-•
-b
-/d15/d15/d79/d79
-i
-•
-c
-+ λ /d16/d16/d79/d79
-i
-•
-c
-/d15/d15/d79/d79
-j
-•
-b
-/d15/d15/d79/d79
-i
-•
-a
-=
-42 ANNA BELIAKOV A, ZAUR GULIYEV, KAZUO HABIRO, AND AARON D. L AUDA
-=
-λ
-/d15/d15/d79/d79 /d15/d15/d79/d79
-/d79/d79/d79/d79
-/d79/d79 /d79/d79/d79/d79 /d15/d15/d15/d15/d15/d15
-/d15/d15/d79/d79i ij
-•
-c
-•
-b
-•
-a+1
-− λ
-/d15/d15/d79/d79 /d15/d15/d79/d79
-/d79/d79/d79/d79 /d79/d79 /d15/d15 /d15/d15 /d15/d15
-/d15/d15/d79/d79 i ji
-•
-b
-•
-c+1
-•
-a
-+
-+
-λ
-/d15/d15/d79/d79 /d15/d15/d79/d79
-/d79/d79/d79/d79
-/d79/d79 /d79/d79/d79/d79 /d15/d15/d15/d15/d15/d15
-/d15/d15/d79/d79i ij
-•
-a
-•
-b
-•
-c+1
-− λ
-/d15/d15/d79/d79 /d15/d15/d79/d79
-/d79/d79/d79/d79 /d79/d79 /d15/d15 /d15/d15 /d15/d15
-/d15/d15/d79/d79 i ji
-•
-b
-•
-a+1
-•
-c
-.
-Combining the respective terms using the relation (5.15) in the equat ion (5.16), we have
-(5.17) λ /d16/d16/d79/d79
-i
-•
-a
-/d15/d15/d79/d79
-j
-•
-b
-/d15/d15/d79/d79
-i
-•
-c
-+ λ /d16/d16/d79/d79
-i
-•
-c
-/d15/d15/d79/d79
-j
-•
-b
-/d15/d15/d79/d79
-i
-•
-a
-=
-= λ /d16/d16/d79/d79
-i
-•
-c
-/d15/d15/d79/d79
-i
-•
-a
-/d15/d15/d79/d79
-j
-•
-b
-+ λ /d16/d16/d79/d79
-j
-•
-b
-/d15/d15/d79/d79
-i
-•
-c
-/d15/d15/d79/d79
-i
-•
-a
-=
-= Ej,bEi,aEi,c1λ + Ei,aEi,cEj,b1λ.
-TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR 43
-Reversing the orientation of the arrows, we get the identity
-Fi,aFj,bFi,c1λ + Fi,cFj,bFi,a1λ = Fi,aFi,cFj,b1λ + Fj,bFi,aFi,c1λ.
-□
+\[[ \mathsf{H}_{i,a}, \mathsf{F}_{j,b}] 1_\lambda = (-1)^a \mathsf{F}_{j,a+b}1_\lambda .\]
+can be proven in a similar way.
+\textbf{C4} follows from the relations
+\eqref{eq_r2_ij-gen} and \eqref{eq_dot_slide_ij-gen}:
+\[
+  t_{ij}\;\; \xy
+ (-6,0)*{};
+  (6,0)*{};
+  (0,2)*{\lambda};(0,-2)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+  (-4,0)*{}="t1";  (4,0)*{}="t2";
+ "t2";"t1" **\crv{(4,6) & (-4,6)}; ?(.02)*\dir{<}
+   ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(4,-6) & (-4,-6)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-3)*{\scs b};
+  (-12,0)*{}="t1";  (12,0)*{}="t2";
+  "t2";"t1" **\crv{(12,15) & (-12,15)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs i};
+  "t2";"t1" **\crv{(12,-15) & (-12,-15)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs a+1};
+  \endxy \; + t_{ji}\;\;  \xy
+ (-6,0)*{};
+  (6,0)*{};
+   (0,2)*{\lambda};(0,-2)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+  (-4,0)*{}="t1";  (4,0)*{}="t2";
+ "t2";"t1" **\crv{(4,6) & (-4,6)}; ?(.02)*\dir{<}
+   ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(4,-6) & (-4,-6)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-3)*{\scs b+1};
+  (-12,0)*{}="t1";  (12,0)*{}="t2";
+  "t2";"t1" **\crv{(12,15) & (-12,15)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs i};
+  "t2";"t1" **\crv{(12,-15) & (-12,-15)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs a};
+  \endxy
+  
+  \;\; \refequal{\eqref{eq_r2_ij-gen}}\;\;
+  
+    \xy 0;/r.18pc/:
+     (0,-1)*{
+ };
+ (0,6)*{\lambda};(0,0)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+ (-8,-4)*{\ecross};(-8,4)*{\naecross};
+  (4,0)*{\mline};(12,0)*{\mline};(0,10)*{\scap};(0,12)*{\lcap};
+  (0,-10)*{\scupef};(0,-14)*{\lcupef};
+  (6,-3)*{\scs j};(15,-3)*{\scs i};
+   (-12,8)*{\bullet}+(-2.5,1)*{\scs a};
+ (-4,8)*{\bullet}+(-2.5,1)*{\scs b};
+  \endxy
+
+\;\; \refequal{\eqref{eq_dot_slide_ij-gen}} \;\;
+
+    \xy 0;/r.18pc/:
+     (0,-1)*{
+ };
+(0,6)*{\lambda};(0,0)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+ (-8,-4)*{\ecross};(-8,4)*{\naecross};
+  (4,0)*{\mline};(12,0)*{\mline};(0,10)*{\scap};(0,12)*{\lcap};
+  (0,-10)*{\scupef};(0,-14)*{\lcupef};
+  (6,-3)*{\scs i};(15,-3)*{\scs j};
+   (-12,8)*{\bullet}+(-2.5,1)*{\scs b};
+ (-4,8)*{\bullet}+(-2.5,1)*{\scs a};
+  \endxy
+\]
+\[\; \refequal{\eqref{eq_r2_ij-gen}} \;
+  t_{ji}\;\; \xy
+ (-6,0)*{};
+  (6,0)*{};
+   (0,2)*{\lambda};(0,-2)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};  (-4,0)*{}="t1";  (4,0)*{}="t2";
+ "t2";"t1" **\crv{(4,6) & (-4,6)}; ?(.02)*\dir{<}
+   ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs i};
+  "t2";"t1" **\crv{(4,-6) & (-4,-6)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-3)*{\scs a};
+  (-12,0)*{}="t1";  (12,0)*{}="t2";
+  "t2";"t1" **\crv{(12,15) & (-12,15)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(12,-15) & (-12,-15)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs b+1};
+  \endxy \; + t_{ij}\;\;  \xy
+ (-6,0)*{};
+  (6,0)*{};
+   (0,2)*{\lambda};(0,-2)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+  (-4,0)*{}="t1";  (4,0)*{}="t2";
+ "t2";"t1" **\crv{(4,6) & (-4,6)}; ?(.02)*\dir{<}
+   ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs i};
+  "t2";"t1" **\crv{(4,-6) & (-4,-6)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-3)*{\scs a+1};
+  (-12,0)*{}="t1";  (12,0)*{}="t2";
+  "t2";"t1" **\crv{(12,15) & (-12,15)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(12,-15) & (-12,-15)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs b};
+  \endxy \; \; .\]
+  Dividing both sides of this equation by \(t_{ij}\), and by choosing \(v_{ij}=1\), we get
+  \[ [ \mathsf{E}_{i,a+1},\mathsf{E}_{j,b} ]1_\lambda=-[\mathsf{E}_{i,a},\mathsf{E}_{j,b+1} ]1_\lambda .\]
+  If we reverse the arrows in the preceding equation, they still hold:
+   \[ [ \mathsf{F}_{i,a+1},\mathsf{F}_{j,b} ]1_\lambda=-[\mathsf{F}_{i,a},\mathsf{F}_{j,b+1} ]1_\lambda .\]
+The choice of signs  in \eqref{homomorp} correspond to
+  \[ [x^\pm_{i, a+1}, x^\pm_{j,b}]=[x^\pm_{i,a}, x^\pm_{j,b+1}].\]
+The relation \textbf{C5} for the case \(i\neq j\) can be checked the following way:  \[
+\mathsf{E}_{i,a}\mathsf{F}_{j,b} 1_\lambda
+ \;\; = \;\;
+  \xy
+ (-6,0)*{};
+  (6,0)*{};
+  (0,-2)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(0,2)*{\lambda};
+  (-4,0)*{}="t1";  (4,0)*{}="t2";
+ "t2";"t1" **\crv{(4,6) & (-4,6)}; ?(.02)*\dir{>}
+   ?(1)*\dir{>} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(4,-6) & (-4,-6)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-3)*{\scs b};
+  (-12,0)*{}="t1";  (12,0)*{}="t2";
+  "t2";"t1" **\crv{(12,15) & (-12,15)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs i};
+  "t2";"t1" **\crv{(12,-15) & (-12,-15)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs a};
+  \endxy
+  \;\; \refequal{\eqref{mixed_rel}} \;
+   t^{-1}_{ji}\;  \xy 0;/r.18pc/:
+     (0,-1)*{
+ };(0,-2)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(0,6)*{\lambda};
+(-8,-4)*{\fecross};(-8,4)*{\naecross};
+  (4,0)*{\mline};(12,0)*{\mline};(0,10)*{\scap};(0,12)*{\lcap};
+  (0,-10)*{\scupfe};(0,-14)*{\lcupef};
+  (6,-3)*{\scs j};(15,-3)*{\scs i};
+   (-12,8)*{\bullet}+(-2.5,1)*{\scs a};
+ (-4,8)*{\bullet}+(-2.5,1)*{\scs b};
+  \endxy
+  \;\; \refequal{\eqref{eq_dot_slide_ij-gen}} \;
+\]  \[
+\;\; \refequal{\eqref{eq_dot_slide_ij-gen}} \;
+  t^{-1}_{ji}\;  \xy 0;/r.18pc/:
+     (0,-1)*{ };
+(0,-2)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(0,6)*{\lambda};     (-8,-4)*{\efcross};(-8,4)*{\naecross};
+  (4,0)*{\mline};(12,0)*{\mline};(0,10)*{\scap};(0,12)*{\lcap};
+  (0,-10)*{\scupef};(0,-14)*{\lcupfe};
+  (6,-3)*{\scs i};(15,-3)*{\scs j};
+   (-12,8)*{\bullet}+(-2.5,1)*{\scs b};
+ (-4,8)*{\bullet}+(-2.5,1)*{\scs a};
+  \endxy
+ \;\; \;\; \refequal{\eqref{mixed_rel}} \;
+   \xy
+ (-6,0)*{};
+  (6,0)*{};
+(0,-2)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(0,2)*{\lambda};
+  (-4,0)*{}="t1";  (4,0)*{}="t2";
+ "t2";"t1" **\crv{(4,6) & (-4,6)}; ?(.02)*\dir{<}
+   ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs i};
+  "t2";"t1" **\crv{(4,-6) & (-4,-6)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-3)*{\scs a};
+  (-12,0)*{}="t1";  (12,0)*{}="t2";
+  "t2";"t1" **\crv{(12,15) & (-12,15)}; ?(0)*\dir{>} ?(1)*\dir{>} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(12,-15) & (-12,-15)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs b};
+  \endxy  \;\; \;\; = \;
+\mathsf{F}_{j,b} \mathsf{E}_{i,a}1_\lambda.
+\]
+ 
+
+
+
+
+We now prove the Serre relation \textbf{C6} in the case when $i \cdot j = -1$.
+Let us prove the identity $$\mathsf{E}_{i,a}\mathsf{E}_{j,b}\mathsf{E}_{i,c}1_{\lambda} +\mathsf{E}_{i,c}\mathsf{E}_{j,b}\mathsf{E}_{i,a}1_{\lambda} = \mathsf{E}_{i,a}\mathsf{E}_{i,c}\mathsf{E}_{j,b} 1_{\lambda}+\mathsf{E}_{j,b}\mathsf{E}_{i,a}\mathsf{E}_{i,c} 1_{\lambda}.$$
+\begin{equation} \label{eq_vv1}
+\mathsf{E}_{i,a}\mathsf{E}_{j,b}\mathsf{E}_{i,c}1_{\lambda}  =\;\;
+ \xy
+ (-6,0)*{};
+  (6,0)*{};
+  (0,-2)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(0,2)*{\lambda};
+  (-4,0)*{}="t1";  (4,0)*{}="t2";
+ "t2";"t1" **\crv{(4,6) & (-4,6)}; ?(.02)*\dir{<}
+   ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs i};
+  "t2";"t1" **\crv{(4,-6) & (-4,-6)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-3)*{\scs c};
+  (-12,0)*{}="t1";  (12,0)*{}="t2";
+  "t2";"t1" **\crv{(12,15) & (-12,15)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(12,-15) & (-12,-15)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs b};
+   (-20,0)*{}="t1";  (20,0)*{}="t2";
+  "t2";"t1" **\crv{(20,24) & (-20,24)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs i};
+  "t2";"t1" **\crv{(20,-24) & (-20,-24)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs a};
+  \endxy
+\;\; \refequal{\eqref{eq_r3_hard-gen}}\;\;
+  t^{-1}_{ij} \vcenter{
+ \xy 0;/r.18pc/:
+    (-4,-4)*{};(4,4)*{} **\crv{(-4,-1) & (4,1)}?(1)*\dir{>};
+    (4,-4)*{};(-4,4)*{} **\crv{(4,-1) & (-4,1)}?(1)*\dir{>};
+    (4,4)*{};(12,12)*{} **\crv{(4,7) & (12,9)}?(1)*\dir{>};
+    (12,4)*{};(4,12)*{} **\crv{(12,7) & (4,9)}?(1)*\dir{>};
+    (-4,12)*{};(4,20)*{} **\crv{(-4,15) & (4,17)}?(1)*\dir{>};
+    (4,12)*{};(-4,20)*{} **\crv{(4,15) & (-4,17)}?(1)*\dir{>};
+    (-4,4)*{}; (-4,12) **\dir{-};
+    (12,-4)*{}; (12,4) **\dir{-};
+    (12,12)*{}; (12,20) **\dir{-};
+ (16,4)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(16,12)*{\lambda};
+  (-6,-3)*{\scs i}; (6,-3)*{\scs j};(15,-3)*{\scs i};  (20,5)*{\bullet}+(3,3)*{\scs c};(28,5)*{\bullet}+(3,3)*{\scs b}; (36,5)*{\bullet}+(3,3)*{\scs a};
+  (20,8)*{\lfline};(28,8)*{\lfline};(36,8)*{\lfline};
+  (16,22)*{\scap};(16,24)*{\lcap};(16,30)*{\xlcap};
+  (16,-6)*{\scupef};(16,-10)*{\lcupef};(16,-15)*{\xlcupef};
+\endxy}\;
+ \;\; -\;  t^{-1}_{ij} \;
+ \vcenter{
+ \xy 0;/r.18pc/:
+    (12,-4)*{};(4,4)*{} **\crv{(12,-1) & (4,1)}?(1)*\dir{>};
+    (4,-4)*{};(12,4)*{} **\crv{(4,-1) & (12,1)}?(1)*\dir{>};
+    (4,4)*{};(-4,12)*{} **\crv{(-,7) & (-4,9)}?(1)*\dir{>};
+    (-4,4)*{};(4,12)*{} **\crv{(-4,7) & (4,9)}?(1)*\dir{>};
+    (12,12)*{};(4,20)*{} **\crv{(12,15) & (4,17)}?(1)*\dir{>};
+    (4,12)*{};(12,20)*{} **\crv{(4,15) & (12,17)}?(1)*\dir{>};
+    (12,4)*{}; (12,12) **\dir{-};
+    (-4,-4)*{}; (-4,4) **\dir{-};
+    (-4,12)*{}; (-4,20) **\dir{-};
+   (16,4)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(16,12)*{\lambda};
+  (15,-3)*{\scs i};
+  (2,-3)*{\scs j};
+  (-6,-3)*{\scs i};(20,5)*{\bullet}+(3,3)*{\scs c};(28,5)*{\bullet}+(3,3)*{\scs b}; (36,5)*{\bullet}+(3,3)*{\scs a};
+   (20,8)*{\lfline};(28,8)*{\lfline};(36,8)*{\lfline};
+  (16,22)*{\scap};(16,24)*{\lcap};(16,30)*{\xlcap};
+  (16,-6)*{\scupef};(16,-10)*{\lcupef};(16,-15)*{\xlcupef};
+\endxy}\;\;.
+\end{equation}
+The first term on the right-hand-side of \eqref{eq_vv1} can be simplified
+\begin{eqnarray}
+t^{-1}_{ij} \vcenter{
+ \xy 0;/r.18pc/:
+    (-4,-4)*{};(4,4)*{} **\crv{(-4,-1) & (4,1)}?(1)*\dir{>};
+    (4,-4)*{};(-4,4)*{} **\crv{(4,-1) & (-4,1)}?(1)*\dir{>};
+    (4,4)*{};(12,12)*{} **\crv{(4,7) & (12,9)}?(1)*\dir{>};
+    (12,4)*{};(4,12)*{} **\crv{(12,7) & (4,9)}?(1)*\dir{>};
+    (-4,12)*{};(4,20)*{} **\crv{(-4,15) & (4,17)}?(1)*\dir{>};
+    (4,12)*{};(-4,20)*{} **\crv{(4,15) & (-4,17)}?(1)*\dir{>};
+    (-4,4)*{}; (-4,12) **\dir{-};
+    (12,-4)*{}; (12,4) **\dir{-};
+    (12,12)*{}; (12,20) **\dir{-};
+   (16,4)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(16,12)*{\lambda};
+  (-6,-3)*{\scs i}; (6,-3)*{\scs j};(15,-3)*{\scs i};  (20,5)*{\bullet}+(3,3)*{\scs c};(28,5)*{\bullet}+(3,3)*{\scs b}; (36,5)*{\bullet}+(3,3)*{\scs a};
+  (20,8)*{\lfline};(28,8)*{\lfline};(36,8)*{\lfline};
+  (16,22)*{\scap};(16,24)*{\lcap};(16,30)*{\xlcap};
+  (16,-6)*{\scupef};(16,-10)*{\lcupef};(16,-15)*{\xlcupef};
+\endxy}\;
+\;\; = \;\; t_{ij} \; \vcenter{ \xy 0;/r.18pc/:
+ (8,4)*{ \hackcenter{\begin{tikzpicture}
+
+
+
+
+
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(8,12)*{\lambda};
+  (8,16)*{\lcap};
+  (8,22)*{\xlcap};
+ (8,14)*{\scap};
+ (8,-6)*{\scupef};(8,-14)*{\xlcupef};
+ (0,0)*{\ecross};(-4,8)*{\seline};(4,8)*{\seline};
+ (-12,4)*{\meline};
+ (24,8)*{\fcross};
+ (24,0)*{\fcross};
+ (12,4)*{\mfline};
+ (8,-10)*{\lcupef};
+ (-6,-3)*{\scs i}; (6,-3)*{\scs i};(-15,-3)*{\scs j}; (12,5)*{\bullet}+(3,3)*{\scs c};(-12,5)*{\bullet}+(3,3)*{\scs b}; (-4,5)*{\bullet}+(3,3)*{\scs a};
+ \endxy} \;.
+\end{eqnarray}
+using the biadjoint relations and equations~\eqref{eq_crossl-gen} and \eqref{eq_crossr-gen} to slide crossings around the annulus.  This diagram can be further simplified using the KLR relations
+\begin{equation}
+   \;\; \refequal{\eqref{eq_r2_ij-gen}}\;\;
+   t_{ji}^3 \; \vcenter{ \xy 0;/r.18pc/:
+ (8,4)*{ \hackcenter{\begin{tikzpicture}
+
+
+
+
+
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(8,12)*{\lambda}; (8,16)*{\lcap};  (8,22)*{\xlcap}; (8,14)*{\scap};  (8,-6)*{\scupef};
+  (8,-14)*{\xlcupef}; (0,0)*{\ecross}; (-4,8)*{\seline}; (4,8)*{\seline}; (-12,4)*{\meline};
+ (28,4)*{\mfline}; (20,4)*{\mfline}; (12,4)*{\mfline}; (8,-10)*{\lcupef}; (-6,-3)*{\scs i};
+  (6,-3)*{\scs i};  (-15,-3)*{\scs j}; (12,5)*{\bullet}+(3,3)*{\scs c};(-12,5)*{\bullet}+(4,3)*{\scs {b+1}}; (-4,5)*{\bullet}+(3,3)*{\scs a};
+ \endxy}
+ + \; t_{ji}^2 t_{ij} \;
+\vcenter{ \xy 0;/r.18pc/:
+ (8,4)*{ \hackcenter{\begin{tikzpicture}
+
+
+
+
+
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(8,12)*{\lambda};
+  (8,16)*{\lcap};
+  (8,22)*{\xlcap};
+ (8,14)*{\scap};
+ (8,-6)*{\scupef};(8,-14)*{\xlcupef};
+ (0,0)*{\ecross};(-4,8)*{\seline};(4,8)*{\seline};
+ (-12,4)*{\meline};
+ (28,4)*{\mfline};
+ (20,4)*{\mfline};
+ (12,4)*{\mfline};
+ (8,-10)*{\lcupef};
+ (-6,-3)*{\scs i}; (6,-3)*{\scs i};(-15,-3)*{\scs j};
+(12,5)*{\bullet}+(3,3)*{\scs c};(-12,5)*{\bullet}+(3,3)*{\scs b}; (-4,5)*{\bullet}+(4,3)*{\scs {a+1}};
+ \endxy}
+\end{equation}
+where we freely slide dots through caps and cups using the dot cyclicity relation~\eqref{eq_cyclic_dot}.
+The second term on the right-hand-side of \eqref{eq_vv1} can also be simplified
+\[t^{-1}_{ij} \;
+ \vcenter{
+ \xy 0;/r.18pc/:
+    (12,-4)*{};(4,4)*{} **\crv{(12,-1) & (4,1)}?(1)*\dir{>};
+    (4,-4)*{};(12,4)*{} **\crv{(4,-1) & (12,1)}?(1)*\dir{>};
+    (4,4)*{};(-4,12)*{} **\crv{(-,7) & (-4,9)}?(1)*\dir{>};
+    (-4,4)*{};(4,12)*{} **\crv{(-4,7) & (4,9)}?(1)*\dir{>};
+    (12,12)*{};(4,20)*{} **\crv{(12,15) & (4,17)}?(1)*\dir{>};
+    (4,12)*{};(12,20)*{} **\crv{(4,15) & (12,17)}?(1)*\dir{>};
+    (12,4)*{}; (12,12) **\dir{-};
+    (-4,-4)*{}; (-4,4) **\dir{-};
+    (-4,12)*{}; (-4,20) **\dir{-};
+    (16,4)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(16,12)*{\lambda};
+  (15,-3)*{\scs i};
+  (2,-3)*{\scs j};
+  (-6,-3)*{\scs i};(20,5)*{\bullet}+(3,3)*{\scs c};(28,5)*{\bullet}+(3,3)*{\scs b}; (36,5)*{\bullet}+(3,3)*{\scs a};
+   (20,8)*{\lfline};(28,8)*{\lfline};(36,8)*{\lfline};
+  (16,22)*{\scap};(16,24)*{\lcap};(16,30)*{\xlcap};
+  (16,-6)*{\scupef};(16,-10)*{\lcupef};(16,-15)*{\xlcupef};
+\endxy} \;
+ = \;  t_{ij} \;\vcenter{ \xy 0;/r.18pc/:
+ (8,4)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(8,12)*{\lambda};
+  (8,16)*{\lcap};
+  (8,22)*{\xlcap};
+ (8,14)*{\scap};
+ (8,-6)*{\scupef};(8,-14)*{\xlcupef};
+ (-8,0)*{\ecross};(-12,8)*{\seline};(-4,8)*{\seline};
+ (4,4)*{\meline};
+ (16,8)*{\fcross};
+ (16,0)*{\fcross};
+ (28,4)*{\mfline};
+ (8,-10)*{\lcupef};
+ (-2,-3)*{\scs i}; (6,-3)*{\scs j};(-15,-3)*{\scs i};(12,5)*{\bullet}+(3,1)*{\scs c};(20,5)*{\bullet}+(3,2)*{\scs b}; (28,5)*{\bullet}+(3,2)*{\scs a};
+ \endxy}
+=\]\[
+   \refequal{\eqref{eq_r2_ij-gen}} \;\;
+   t_{ij}^2  \;\; \vcenter{ \xy 0;/r.18pc/:
+ (8,-3)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(8,4)*{\lambda};
+  (8,8)*{\lcap};
+  (8,14)*{\xlcap};
+ (8,6)*{\scap};
+ (8,-6)*{\scupef};(8,-14)*{\xlcupef};
+ (-8,0)*{\ecross};
+ (4,0)*{\seline};
+ (12,0)*{\sfline};
+ (20,0)*{\sfline};
+ (28,0)*{\sfline};
+ (8,-10)*{\lcupef};
+ (-2,-3)*{\scs i}; (15,-3)*{\scs j};(-15,-3)*{\scs i};
+  (12,0)*{\bullet}+(4,3)*{\scs b+1};(20,0)*{\bullet}+(3,3)*{\scs c}; (28,0)*{\bullet}+(3,3)*{\scs a};
+  \endxy}
+ \;\; + \;\;t_{ij}t_{ji}
+\vcenter{ \xy 0;/r.18pc/:
+ (8,-3)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(8,4)*{\lambda};  (8,8)*{\lcap};
+  (8,14)*{\xlcap};
+ (8,6)*{\scap};
+ (8,-6)*{\scupef};(8,-14)*{\xlcupef};
+ (-8,0)*{\ecross};
+ (4,0)*{\seline};
+ (12,0)*{\sfline};
+ (20,0)*{\sfline};
+ (28,0)*{\sfline};
+ (8,-10)*{\lcupef};
+ (-2,-3)*{\scs i}; (15,-3)*{\scs j};(-15,-3)*{\scs i};
+   (12,0)*{\bullet}+(3,3)*{\scs b};(20,0)*{\bullet}+(4,3)*{\scs c+1}; (28,0)*{\bullet}+(3,3)*{\scs a};
+ \endxy} \nn
+\]
+Combining terms and simplifying using that $t_{ij}^2=t_{ji}^2=1, \, v_{ij}=1$ for our choice of scalars, we have
+\begin{equation} \label{fin_eq}
+ \xy
+ (-6,0)*{};
+  (6,0)*{};
+ (0,-2)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(0,2)*{\lambda};  (-4,0)*{}="t1";  (4,0)*{}="t2";
+ "t2";"t1" **\crv{(4,6) & (-4,6)}; ?(.02)*\dir{<}
+   ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs i};
+  "t2";"t1" **\crv{(4,-6) & (-4,-6)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-3)*{\scs c};
+  (-12,0)*{}="t1";  (12,0)*{}="t2";
+  "t2";"t1" **\crv{(12,15) & (-12,15)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(12,-15) & (-12,-15)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs b};
+   (-20,0)*{}="t1";  (20,0)*{}="t2";
+  "t2";"t1" **\crv{(20,24) & (-20,24)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs i};
+  "t2";"t1" **\crv{(20,-24) & (-20,-24)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs a};
+  \endxy
+ \;\; = \;\;
+   \vcenter{ \xy 0;/r.18pc/:
+ (8,4)*{ \hackcenter{\begin{tikzpicture}
+
+
+
+
+
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(8,12)*{\lambda}; (8,16)*{\lcap};  (8,22)*{\xlcap}; (8,14)*{\scap};  (8,-6)*{\scupef};
+  (8,-14)*{\xlcupef}; (0,0)*{\ecross}; (-4,8)*{\seline}; (4,8)*{\seline}; (-12,4)*{\meline};
+ (28,4)*{\mfline}; (20,4)*{\mfline}; (12,4)*{\mfline}; (8,-10)*{\lcupef}; (-6,-3)*{\scs i};
+  (6,-3)*{\scs i};  (-15,-3)*{\scs j}; (12,5)*{\bullet}+(3,3)*{\scs c};(-12,5)*{\bullet}+(4,3)*{\scs {b+1}}; (-4,5)*{\bullet}+(3,3)*{\scs a};
+ \endxy}\;
+ + \;
+\vcenter{ \xy 0;/r.18pc/:
+ (8,4)*{ \hackcenter{\begin{tikzpicture}
+
+
+
+
+
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(8,12)*{\lambda};
+  (8,16)*{\lcap};
+  (8,22)*{\xlcap};
+ (8,14)*{\scap};
+ (8,-6)*{\scupef};(8,-14)*{\xlcupef};
+ (0,0)*{\ecross};(-4,8)*{\seline};(4,8)*{\seline};
+ (-12,4)*{\meline};
+ (28,4)*{\mfline};
+ (20,4)*{\mfline};
+ (12,4)*{\mfline};
+ (8,-10)*{\lcupef};
+ (-6,-3)*{\scs i}; (6,-3)*{\scs i};(-15,-3)*{\scs j};
+(12,5)*{\bullet}+(3,3)*{\scs c};(-12,5)*{\bullet}+(3,3)*{\scs b}; (-4,5)*{\bullet}+(4,3)*{\scs {a+1}};
+ \endxy}
+   \end{equation}
+   \[ - \;\; \vcenter{ \xy 0;/r.18pc/:
+ (8,-3)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(8,4)*{\lambda};
+  (8,8)*{\lcap};
+  (8,14)*{\xlcap};
+ (8,6)*{\scap};
+ (8,-6)*{\scupef};(8,-14)*{\xlcupef};
+ (-8,0)*{\ecross};
+ (4,0)*{\seline};
+ (12,0)*{\sfline};
+ (20,0)*{\sfline};
+ (28,0)*{\sfline};
+ (8,-10)*{\lcupef};
+ (-2,-3)*{\scs i}; (15,-3)*{\scs j};(-15,-3)*{\scs i};
+  (12,0)*{\bullet}+(4,3)*{\scs b+1};(20,0)*{\bullet}+(3,3)*{\scs c}; (28,0)*{\bullet}+(3,3)*{\scs a};
+  \endxy}
+ \;\; - \;\;
+\vcenter{ \xy 0;/r.18pc/:
+ (8,-3)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(8,4)*{\lambda};  (8,8)*{\lcap};
+  (8,14)*{\xlcap};
+ (8,6)*{\scap};
+ (8,-6)*{\scupef};(8,-14)*{\xlcupef};
+ (-8,0)*{\ecross};
+ (4,0)*{\seline};
+ (12,0)*{\sfline};
+ (20,0)*{\sfline};
+ (28,0)*{\sfline};
+ (8,-10)*{\lcupef};
+ (-2,-3)*{\scs i}; (15,-3)*{\scs j};(-15,-3)*{\scs i};
+   (12,0)*{\bullet}+(3,3)*{\scs b};(20,0)*{\bullet}+(4,3)*{\scs c+1}; (28,0)*{\bullet}+(3,3)*{\scs a};
+ \endxy} \nn.\]
+By interchanging \(a\) and \(c\) in the equation  \eqref{fin_eq}, we get
+ \begin{equation} \label{fin_eq2}
+ \xy
+ (-6,0)*{};
+  (6,0)*{};
+ (0,-2)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(0,2)*{\lambda};  (-4,0)*{}="t1";  (4,0)*{}="t2";
+ "t2";"t1" **\crv{(4,6) & (-4,6)}; ?(.02)*\dir{<}
+   ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs i};
+  "t2";"t1" **\crv{(4,-6) & (-4,-6)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-3)*{\scs a};
+  (-12,0)*{}="t1";  (12,0)*{}="t2";
+  "t2";"t1" **\crv{(12,15) & (-12,15)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(12,-15) & (-12,-15)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs b};
+   (-20,0)*{}="t1";  (20,0)*{}="t2";
+  "t2";"t1" **\crv{(20,24) & (-20,24)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs i};
+  "t2";"t1" **\crv{(20,-24) & (-20,-24)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs c};
+  \endxy
+ \;\; = \;\;
+   \vcenter{ \xy 0;/r.18pc/:
+ (8,4)*{ \hackcenter{\begin{tikzpicture}
+
+
+
+
+
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(8,12)*{\lambda}; (8,16)*{\lcap};  (8,22)*{\xlcap}; (8,14)*{\scap};  (8,-6)*{\scupef};
+  (8,-14)*{\xlcupef}; (0,0)*{\ecross}; (-4,8)*{\seline}; (4,8)*{\seline}; (-12,4)*{\meline};
+ (28,4)*{\mfline}; (20,4)*{\mfline}; (12,4)*{\mfline}; (8,-10)*{\lcupef}; (-6,-3)*{\scs i};
+  (6,-3)*{\scs i};  (-15,-3)*{\scs j}; (12,5)*{\bullet}+(3,3)*{\scs a};(-12,5)*{\bullet}+(4,3)*{\scs {b+1}}; (-4,5)*{\bullet}+(3,3)*{\scs c};
+ \endxy}\;
+ + \;
+\vcenter{ \xy 0;/r.18pc/:
+ (8,4)*{ \hackcenter{\begin{tikzpicture}
+
+
+
+
+
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(8,12)*{\lambda};
+  (8,16)*{\lcap};
+  (8,22)*{\xlcap};
+ (8,14)*{\scap};
+ (8,-6)*{\scupef};(8,-14)*{\xlcupef};
+ (0,0)*{\ecross};(-4,8)*{\seline};(4,8)*{\seline};
+ (-12,4)*{\meline};
+ (28,4)*{\mfline};
+ (20,4)*{\mfline};
+ (12,4)*{\mfline};
+ (8,-10)*{\lcupef};
+ (-6,-3)*{\scs i}; (6,-3)*{\scs i};(-15,-3)*{\scs j};
+(12,5)*{\bullet}+(3,3)*{\scs a};(-12,5)*{\bullet}+(3,3)*{\scs b}; (-4,5)*{\bullet}+(4,3)*{\scs {c+1}};
+ \endxy}
+   \end{equation}
+   \[ - \;\; \vcenter{ \xy 0;/r.18pc/:
+ (8,-3)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(8,4)*{\lambda};
+  (8,8)*{\lcap};
+  (8,14)*{\xlcap};
+ (8,6)*{\scap};
+ (8,-6)*{\scupef};(8,-14)*{\xlcupef};
+ (-8,0)*{\ecross};
+ (4,0)*{\seline};
+ (12,0)*{\sfline};
+ (20,0)*{\sfline};
+ (28,0)*{\sfline};
+ (8,-10)*{\lcupef};
+ (-2,-3)*{\scs i}; (15,-3)*{\scs j};(-15,-3)*{\scs i};
+  (12,0)*{\bullet}+(4,3)*{\scs b+1};(20,0)*{\bullet}+(3,3)*{\scs a}; (28,0)*{\bullet}+(3,3)*{\scs c};
+  \endxy}
+ \;\; - \;\;
+\vcenter{ \xy 0;/r.18pc/:
+ (8,-3)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(8,4)*{\lambda};
+  (8,8)*{\lcap};
+  (8,14)*{\xlcap};
+ (8,6)*{\scap};
+ (8,-6)*{\scupef};(8,-14)*{\xlcupef};
+ (-8,0)*{\ecross};
+ (4,0)*{\seline};
+ (12,0)*{\sfline};
+ (20,0)*{\sfline};
+ (28,0)*{\sfline};
+ (8,-10)*{\lcupef};
+ (-2,-3)*{\scs i}; (15,-3)*{\scs j};(-15,-3)*{\scs i};
+   (12,0)*{\bullet}+(3,3)*{\scs b};(20,0)*{\bullet}+(4,3)*{\scs a+1}; (28,0)*{\bullet}+(3,3)*{\scs c};
+ \endxy} \nn.\]
+ Using the relation \eqref{eq_bubble_rel} and induction, one can easily prove the following equation:
+ \begin{equation} \label{ac}
+  \xy 0;/r.16pc/:
+   (8,-3)*{
+ \hackcenter{\begin{tikzpicture}
+  \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+  \end{tikzpicture}}
+ };
+  (8,8)*{\lcap};
+ (8,6)*{\scap};
+ (8,-6)*{\scup};
+ (0,0)*{\naecross};
+ (12,0)*{\sline};
+ (20,0)*{\sline};
+ (8,-10)*{\lcup};
+  (-3.3,6)*{\bullet}+(-4,0)*{\scs a}; (4.7,6)*{\bullet}+(-2.7,0)*{\scs c};
+  (22,0)*{\scs i};
+ (8,3)*{\lambda};
+ \endxy\; \; = - \;\;
+ \xy 0;/r.16pc/:
+   (8,-3)*{
+ \hackcenter{\begin{tikzpicture}
+  \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+  \end{tikzpicture}}
+ };
+  (8,8)*{\lcap};
+ (8,6)*{\scap};
+ (8,-6)*{\scup};
+ (0,0)*{\naecross};
+ (12,0)*{\sline};
+ (20,0)*{\sline};
+ (8,-10)*{\lcup};
+ (-3.3,6)*{\bullet}+(-4,0)*{\scs c}; (4.7,6)*{\bullet}+(-2.7,0)*{\scs a};
+  (22,0)*{\scs i}; (8,3)*{\lambda};
+ \endxy.
+ \end{equation}
+ Also, the following equation directly follows from \eqref{eq_nil_dotslide} and \eqref{ac}
+ \begin{equation} \label{ac2}
+ \xy
+ (-6,0)*{};
+  (6,0)*{};
+   (0,2)*{\lambda};(0,-2)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+  (-4,0)*{}="t1";  (4,0)*{}="t2";
+ "t2";"t1" **\crv{(4,6) & (-4,6)}; ?(.02)*\dir{<}
+   ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs i};
+  "t2";"t1" **\crv{(4,-6) & (-4,-6)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-3)*{\scs c};
+  (-12,0)*{}="t1";  (12,0)*{}="t2";
+  "t2";"t1" **\crv{(12,15) & (-12,15)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs i};
+  "t2";"t1" **\crv{(12,-15) & (-12,-15)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs a};
+  \endxy \;\;=\;\;
+ \xy 0;/r.16pc/:
+   (8,-3)*{
+ \hackcenter{\begin{tikzpicture}
+  \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+  \end{tikzpicture}}
+ };
+  (8,8)*{\lcap};
+ (8,6)*{\scap};
+ (8,-6)*{\scup};
+ (0,0)*{\naecross};
+ (12,0)*{\sline};
+ (20,0)*{\sline};
+ (8,-10)*{\lcup};
+ (-3.3,6)*{\bullet}+(-5,0)*{\scs a+1}; (4.7,6)*{\bullet}+(-2.7,0)*{\scs c};
+  (22,0)*{\scs i}; (8,3)*{\lambda};
+ \endxy\;\; + \;\;
+ \xy 0;/r.16pc/:
+   (8,-3)*{
+ \hackcenter{\begin{tikzpicture}
+  \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+  \end{tikzpicture}}
+ };
+  (8,8)*{\lcap};
+ (8,6)*{\scap};
+ (8,-6)*{\scup};
+ (0,0)*{\naecross};
+ (12,0)*{\sline};
+ (20,0)*{\sline};
+ (8,-10)*{\lcup};
+ (-3.3,6)*{\bullet}+(-5,0)*{\scs c+1}; (4.7,6)*{\bullet}+(-3.5,0)*{\scs a};
+  (22,0)*{\scs i}; (8,3)*{\lambda};
+ \endxy.
+ \end{equation}
+We add  the right and left hand sides of the equations \eqref{fin_eq} and \eqref{fin_eq2}, and after eliminating terms using \eqref{ac}, we get
+\begin{equation}\label{fin_eq3}
+ \xy
+ (-6,0)*{};
+  (6,0)*{};
+(0,-2)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(0,2)*{\lambda};   (-4,0)*{}="t1";  (4,0)*{}="t2";
+ "t2";"t1" **\crv{(4,6) & (-4,6)}; ?(.02)*\dir{<}
+   ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs i};
+  "t2";"t1" **\crv{(4,-6) & (-4,-6)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-3)*{\scs a};
+  (-12,0)*{}="t1";  (12,0)*{}="t2";
+  "t2";"t1" **\crv{(12,15) & (-12,15)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(12,-15) & (-12,-15)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs b};
+   (-20,0)*{}="t1";  (20,0)*{}="t2";
+  "t2";"t1" **\crv{(20,24) & (-20,24)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs i};
+  "t2";"t1" **\crv{(20,-24) & (-20,-24)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs c};
+  \endxy
+ \;\; +\;\;
+ \xy
+ (-6,0)*{};
+  (6,0)*{};
+(0,-2)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(0,2)*{\lambda};   (-4,0)*{}="t1";  (4,0)*{}="t2";
+ "t2";"t1" **\crv{(4,6) & (-4,6)}; ?(.02)*\dir{<}
+   ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs i};
+  "t2";"t1" **\crv{(4,-6) & (-4,-6)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-3)*{\scs c};
+  (-12,0)*{}="t1";  (12,0)*{}="t2";
+  "t2";"t1" **\crv{(12,15) & (-12,15)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(12,-15) & (-12,-15)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs b};
+   (-20,0)*{}="t1";  (20,0)*{}="t2";
+  "t2";"t1" **\crv{(20,24) & (-20,24)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs i};
+  "t2";"t1" **\crv{(20,-24) & (-20,-24)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs a};
+  \endxy
+ \;\; =
+   \end{equation}
+   \[ =\; \;
+\vcenter{ \xy 0;/r.18pc/:
+ (8,4)*{ \hackcenter{\begin{tikzpicture}
+
+
+
+
+
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(8,12)*{\lambda};
+  (8,16)*{\lcap};
+  (8,22)*{\xlcap};
+ (8,14)*{\scap};
+ (8,-6)*{\scupef};(8,-14)*{\xlcupef};
+ (0,0)*{\ecross};(-4,8)*{\seline};(4,8)*{\seline};
+ (-12,4)*{\meline};
+ (28,4)*{\mfline};
+ (20,4)*{\mfline};
+ (12,4)*{\mfline};
+ (8,-10)*{\lcupef};
+ (-6,-3)*{\scs i}; (6,-3)*{\scs i};(-15,-3)*{\scs j};
+(12,5)*{\bullet}+(3,3)*{\scs c};(-12,5)*{\bullet}+(3,3)*{\scs b}; (-4,5)*{\bullet}+(4,3)*{\scs {a+1}};
+ \endxy} - \;\;
+\vcenter{ \xy 0;/r.18pc/:
+(8,-3)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(8,4)*{\lambda};  (8,8)*{\lcap};
+  (8,14)*{\xlcap};
+ (8,6)*{\scap};
+ (8,-6)*{\scupef};(8,-14)*{\xlcupef};
+ (-8,0)*{\ecross};
+ (4,0)*{\seline};
+ (12,0)*{\sfline};
+ (20,0)*{\sfline};
+ (28,0)*{\sfline};
+ (8,-10)*{\lcupef};
+ (-2,-3)*{\scs i}; (15,-3)*{\scs j};(-15,-3)*{\scs i};
+   (12,0)*{\bullet}+(3,3)*{\scs b};(20,0)*{\bullet}+(4,3)*{\scs c+1}; (28,0)*{\bullet}+(3,3)*{\scs a};
+ \endxy} \nn \;\;+
+\]
+\[+\;\;
+\vcenter{ \xy 0;/r.18pc/:
+ (8,4)*{ \hackcenter{\begin{tikzpicture}
+
+
+
+
+
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(8,12)*{\lambda};
+  (8,16)*{\lcap};
+  (8,22)*{\xlcap};
+ (8,14)*{\scap};
+ (8,-6)*{\scupef};(8,-14)*{\xlcupef};
+ (0,0)*{\ecross};(-4,8)*{\seline};(4,8)*{\seline};
+ (-12,4)*{\meline};
+ (28,4)*{\mfline};
+ (20,4)*{\mfline};
+ (12,4)*{\mfline};
+ (8,-10)*{\lcupef};
+ (-6,-3)*{\scs i}; (6,-3)*{\scs i};(-15,-3)*{\scs j};
+(12,5)*{\bullet}+(3,3)*{\scs a};(-12,5)*{\bullet}+(3,3)*{\scs b}; (-4,5)*{\bullet}+(4,3)*{\scs {c+1}};
+ \endxy} \;\; - \;\;
+\vcenter{ \xy 0;/r.18pc/:
+(8,-3)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(8,4)*{\lambda};  (8,8)*{\lcap};
+  (8,14)*{\xlcap};
+ (8,6)*{\scap};
+ (8,-6)*{\scupef};(8,-14)*{\xlcupef};
+ (-8,0)*{\ecross};
+ (4,0)*{\seline};
+ (12,0)*{\sfline};
+ (20,0)*{\sfline};
+ (28,0)*{\sfline};
+ (8,-10)*{\lcupef};
+ (-2,-3)*{\scs i}; (15,-3)*{\scs j};(-15,-3)*{\scs i};
+   (12,0)*{\bullet}+(3,3)*{\scs b};(20,0)*{\bullet}+(4,3)*{\scs a+1}; (28,0)*{\bullet}+(3,3)*{\scs c};
+ \endxy} \nn.\]
+ Combining the respective terms using the relation \eqref{ac2} in the equation \eqref{fin_eq3}, we have
+ \begin{equation}
+ \xy
+ (-6,0)*{};
+  (6,0)*{};
+(0,-2)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(0,2)*{\lambda};   (-4,0)*{}="t1";  (4,0)*{}="t2";
+ "t2";"t1" **\crv{(4,6) & (-4,6)}; ?(.02)*\dir{<}
+   ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs i};
+  "t2";"t1" **\crv{(4,-6) & (-4,-6)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-3)*{\scs a};
+  (-12,0)*{}="t1";  (12,0)*{}="t2";
+  "t2";"t1" **\crv{(12,15) & (-12,15)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(12,-15) & (-12,-15)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs b};
+   (-20,0)*{}="t1";  (20,0)*{}="t2";
+  "t2";"t1" **\crv{(20,24) & (-20,24)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs i};
+  "t2";"t1" **\crv{(20,-24) & (-20,-24)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs c};
+  \endxy
+ \;\; +\;\;
+ \xy
+ (-6,0)*{};
+  (6,0)*{};
+(0,-2)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(0,2)*{\lambda};   (-4,0)*{}="t1";  (4,0)*{}="t2";
+ "t2";"t1" **\crv{(4,6) & (-4,6)}; ?(.02)*\dir{<}
+   ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs i};
+  "t2";"t1" **\crv{(4,-6) & (-4,-6)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-3)*{\scs c};
+  (-12,0)*{}="t1";  (12,0)*{}="t2";
+  "t2";"t1" **\crv{(12,15) & (-12,15)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(12,-15) & (-12,-15)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs b};
+   (-20,0)*{}="t1";  (20,0)*{}="t2";
+  "t2";"t1" **\crv{(20,24) & (-20,24)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs i};
+  "t2";"t1" **\crv{(20,-24) & (-20,-24)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs a};
+  \endxy
+ \;\; =
+ \end{equation}
+ \[=\;\;\xy
+ (-6,0)*{};
+  (6,0)*{};
+(0,-2)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(0,2)*{\lambda};   (-4,0)*{}="t1";  (4,0)*{}="t2";
+ "t2";"t1" **\crv{(4,6) & (-4,6)}; ?(.02)*\dir{<}
+   ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs i};
+  "t2";"t1" **\crv{(4,-6) & (-4,-6)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-3)*{\scs c};
+  (-12,0)*{}="t1";  (12,0)*{}="t2";
+  "t2";"t1" **\crv{(12,15) & (-12,15)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs i};
+  "t2";"t1" **\crv{(12,-15) & (-12,-15)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs a};
+   (-20,0)*{}="t1";  (20,0)*{}="t2";
+  "t2";"t1" **\crv{(20,24) & (-20,24)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(20,-24) & (-20,-24)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs b};
+  \endxy
+ \;\; +\;\;
+ \xy
+ (-6,0)*{};
+  (6,0)*{};
+(0,-2)*{ \hackcenter{\begin{tikzpicture}
+    \path[draw, blue, very thick, fill=white]
+    (-0.15,0) .. controls ++(0,.2) and ++(0,.2) .. (0.15,0)
+            .. controls ++(0,-.2) and ++(0,-.2) .. (-0.15,0);
+\end{tikzpicture}}};
+(0,2)*{\lambda};   (-4,0)*{}="t1";  (4,0)*{}="t2";
+ "t2";"t1" **\crv{(4,6) & (-4,6)}; ?(.02)*\dir{<}
+   ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs j};
+  "t2";"t1" **\crv{(4,-6) & (-4,-6)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-3)*{\scs b};
+  (-12,0)*{}="t1";  (12,0)*{}="t2";
+  "t2";"t1" **\crv{(12,15) & (-12,15)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs i};
+  "t2";"t1" **\crv{(12,-15) & (-12,-15)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs c};
+   (-20,0)*{}="t1";  (20,0)*{}="t2";
+  "t2";"t1" **\crv{(20,24) & (-20,24)}; ?(0)*\dir{<} ?(1)*\dir{<} ?(.3)*\dir{}+(2,2)*{\scs i};
+  "t2";"t1" **\crv{(20,-24) & (-20,-24)};
+  ?(.7)*\dir{}+(0,0)*{\bullet}+(2,-4)*{\scs a};
+  \endxy\;\;=
+ \]
+ \[= \mathsf{E}_{j,b}\mathsf{E}_{i,a}\mathsf{E}_{i,c} 1_{\lambda}+  \mathsf{E}_{i,a}\mathsf{E}_{i,c}\mathsf{E}_{j,b} 1_{\lambda}.
+ \]
+ Reversing the orientation of the arrows, we get the identity $$ \mathsf{F}_{i,a}\mathsf{F}_{j,b}\mathsf{F}_{i,c}1_{\lambda} +\mathsf{F}_{i,c}\mathsf{F}_{j,b}\mathsf{F}_{i,a}1_{\lambda} = \mathsf{F}_{i,a}\mathsf{F}_{i,c}\mathsf{F}_{j,b} 1_{\lambda}+\mathsf{F}_{j,b}\mathsf{F}_{i,a}\mathsf{F}_{i,c} 1_{\lambda}.$$
+\end{proof}

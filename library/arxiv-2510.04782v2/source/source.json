@@ -1,0 +1,27 @@
+{
+ "url": "https://arxiv.org/e-print/2510.04782v2",
+ "content_type": "application/gzip",
+ "sha256": "9c338455871808eb2265681199279607b4b179b3973752d48eca3f711bc25b47",
+ "bytes": 96044,
+ "fetched": "2026-10-10T15:21:50+00:00",
+ "files": [
+  {
+   "path": "files/q-Habiro_arXiv.bbl",
+   "role": "bbl",
+   "sha256": "dcdb8e4d79eb52057908904d2afada972a339e0795fe2faf38573cf36093e924",
+   "bytes": 45751
+  },
+  {
+   "path": "files/q-Habiro_arXiv.tex",
+   "role": "tex",
+   "sha256": "c68387be7ec9172fc6a36bdb62e97745f1f0bd2d404218910ed570c409f3193e",
+   "bytes": 341454
+  },
+  {
+   "path": "files/q-HodgeStyle_minimal.sty",
+   "role": "sty",
+   "sha256": "9ebb594e5deb0548b19573c62e7fcbbd88356d994d2cfaf29a2398d3d65cc96f",
+   "bytes": 28979
+  }
+ ]
+}

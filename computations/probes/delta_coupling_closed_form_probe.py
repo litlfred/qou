@@ -5,7 +5,7 @@
 """P3.A — Closed-form `f` candidate probe for Δ_coupling at magic shells.
 
 Per docs/audits/2026-05-11-1ppb-gap-narrowing-plan.md §Path A and
-content/quantum-observable-universe/braids-and-knots/conj-magic-shell-stabilization.md:160,
+folio/quantum-observable-universe/braids-and-knots/conj-magic-shell-stabilization.md:160,
 the cross-coupling residual at the doubly-magic ⁴He shell is
 
     Δ_coupling(2, 2) = Δ_cat(⁴He) − 2 · Δ_cat(³He) ≈ +13.20 MeV
@@ -63,7 +63,8 @@ not which one to tune.
 
 Output: delta-coupling-closed-form-probe.witness.json
 Reference blocks:
-  - conj:magic-shell-stabilization
+  - `magic-shell-stabilization` -- RETIRED, removed in 3af08b4a9a; record in
+  docs/audits/2026-10-11-retired-label-records.md §B
   - prop:beta-decay-energy-scale
   - thm:knot-mass-formula-unified
 """

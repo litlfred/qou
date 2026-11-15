@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2009.03688v6/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "E8-singularity, invariant theory and modular forms",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2009.03688v6",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "E 8 -singularity, invariant theory and modular forms",
   "contains": [
+    "library/arxiv-2009.03688v6/sections/sec-front-matter",
     "library/arxiv-2009.03688v6/sections/sec-000",
     "library/arxiv-2009.03688v6/sections/sec-001",
     "library/arxiv-2009.03688v6/sections/sec-002",
@@ -13,39 +19,22 @@
     "library/arxiv-2009.03688v6/sections/sec-004",
     "library/arxiv-2009.03688v6/sections/sec-005",
     "library/arxiv-2009.03688v6/sections/sec-006",
-    "library/arxiv-2009.03688v6/sections/sec-007",
-    "library/arxiv-2009.03688v6/sections/sec-008",
-    "library/arxiv-2009.03688v6/sections/sec-009",
-    "library/arxiv-2009.03688v6/sections/sec-010",
-    "library/arxiv-2009.03688v6/sections/sec-011",
-    "library/arxiv-2009.03688v6/sections/sec-012",
-    "library/arxiv-2009.03688v6/sections/sec-013",
-    "library/arxiv-2009.03688v6/sections/sec-014",
-    "library/arxiv-2009.03688v6/sections/sec-015",
-    "library/arxiv-2009.03688v6/sections/sec-016",
-    "library/arxiv-2009.03688v6/sections/sec-017",
-    "library/arxiv-2009.03688v6/sections/sec-018",
-    "library/arxiv-2009.03688v6/sections/sec-019",
-    "library/arxiv-2009.03688v6/sections/sec-020",
-    "library/arxiv-2009.03688v6/sections/sec-021",
-    "library/arxiv-2009.03688v6/sections/sec-022",
-    "library/arxiv-2009.03688v6/sections/sec-023",
-    "library/arxiv-2009.03688v6/sections/sec-024",
-    "library/arxiv-2009.03688v6/sections/sec-025",
-    "library/arxiv-2009.03688v6/sections/sec-026",
-    "library/arxiv-2009.03688v6/sections/sec-027",
-    "library/arxiv-2009.03688v6/sections/sec-028",
-    "library/arxiv-2009.03688v6/sections/sec-029",
-    "library/arxiv-2009.03688v6/sections/sec-030",
-    "library/arxiv-2009.03688v6/sections/sec-031",
-    "library/arxiv-2009.03688v6/sections/sec-032",
-    "library/arxiv-2009.03688v6/sections/sec-033",
-    "library/arxiv-2009.03688v6/sections/sec-034",
-    "library/arxiv-2009.03688v6/sections/sec-035"
+    "library/arxiv-2009.03688v6/sections/sec-007"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2009.03688&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-2009.03688v6",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "2009.03688v6.pdf",
     "source_sha256": "8eb9b4cbe2690730e6267dd96dba32aa9079dfe2b0b9e8c5e2ea7893e1ea0a45",
     "pages": 48,

@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1004.1533v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1004.1533v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1004.1533v3",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1004.1533&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1004.1533v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1004.1533v3",
+    "content_type": "application/gzip",
+    "sha256": "1c42290d1ea9a90c33015c0f3cd8c727c9bbb1b3b4298f45644f54560f657d2d",
+    "bytes": 121496,
+    "fetched": "2026-10-10T15:03:16+00:00",
+    "files": [
+      {
+        "path": "source/files/TV.tex",
+        "role": "tex",
+        "sha256": "e9b0db812604ac78f7e2acc207f5db9fe04387c473702ac63141c9d56295abd6",
+        "bytes": 93091
+      },
+      {
+        "path": "source/files/TVtikz.tex",
+        "role": "tex",
+        "sha256": "35af63cd09ca8477f4f52860a2fea406c7ad687e0134dad96f98d6d803c549c1",
+        "bytes": 49645
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

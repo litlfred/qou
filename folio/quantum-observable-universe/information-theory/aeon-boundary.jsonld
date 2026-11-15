@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-aeon-boundary",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:aeon-boundary",
+  "kind": "definition",
+  "title": "Boundary of an aeon",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-aeon",
+    "papers/quantum-observable-universe/blocks/def-big-bang-state",
+    "papers/quantum-observable-universe/blocks/def-cmb-boundary-datum"
+  ],
+  "cites": [
+    "references/penrose2010"
+  ],
+  "tags": [
+    "aeon",
+    "jet-horizon",
+    "boundary",
+    "big-bang",
+    "cyclic-cosmology"
+  ],
+  "leanRef": "qou:QOU.aeonBoundary",
+  "text": "aeon-boundary.md",
+  "leanSource": "aeon-boundary.lean",
+  "provenance": "authored"
+}

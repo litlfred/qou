@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1202.6268v2/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1202.6268v2/blocks/prose-sec-003",
   "kind": "prose",
   "title": "The 1-loop invariant",
   "pageStart": 5,
   "pageEnd": 6,
   "text": "../sections/sec-003-13-the-1-loop-invariant.md",
-  "derivedFrom": "library/arxiv-1202.6268v2/manifest",
-  "sourceDocument": "library/arxiv-1202.6268v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1202.6268v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1202.6268v2",
   "provenance": "ingested"
 }

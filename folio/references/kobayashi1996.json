@@ -1,0 +1,31 @@
+{
+  "$schema": "folio-reference/v1",
+  "_comment": [
+    "Key in .lean is \"kobayashi1996\"; this is the 1996 Wiley Classics",
+    "reprint of Kobayashi-Nomizu Foundations of Differential Geometry I."
+  ],
+  "id": "kobayashi1996",
+  "type": "book",
+  "title": "Foundations of Differential Geometry, Volume 1",
+  "author": [
+    {
+      "family": "Kobayashi",
+      "given": "Shoshichi"
+    },
+    {
+      "family": "Nomizu",
+      "given": "Katsumi"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        1996
+      ]
+    ]
+  },
+  "publisher": "Wiley-Interscience",
+  "collection-title": "Wiley Classics Library",
+  "ISBN": "9780471157335",
+  "DOI": "10.1002/9780470316559"
+}

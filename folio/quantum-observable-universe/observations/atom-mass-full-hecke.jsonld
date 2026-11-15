@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-atom-mass-full-hecke",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:atom-mass-full-hecke",
+  "kind": "remark",
+  "title": "Atomic mass of $Z = 1$--$10$ via full three-channel Hecke algebra",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-mass-comparison-table",
+    "papers/quantum-observable-universe/blocks/rem-hecke-charge-mass-duality",
+    "papers/quantum-observable-universe/blocks/prop-y-lambda-closed-form-wenzl-bridge"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-mass-comparison-table",
+  "cites": [
+    "references/jones1985",
+    "references/kock2004"
+  ],
+  "tags": [
+    "mass",
+    "hecke-engine",
+    "three-channel",
+    "symmetric",
+    "alternating",
+    "standard",
+    "wedderburn",
+    "binding-energy",
+    "skein-lagrangian"
+  ],
+  "text": "atom-mass-full-hecke.md",
+  "provenance": "authored"
+}

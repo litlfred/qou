@@ -4,10 +4,10 @@
 # Context: qou is CONTENT ONLY. The platform it consumes (content
 # pipeline, schemas, LaTeX rendering, viewer, computations) lives in a
 # SEPARATE repo, litlfred/folio-assistant. qou's content `.ts` files and
-# the `content/schema/*.ts` shims import the platform through the in-repo
-# path `folio-assistant/` (e.g. `content/schema/types.ts` does
-# `export * from "../../folio-assistant/schemas/types"`), and the
-# package.json scripts run `../folio-assistant/content/pipeline/*.ts`.
+# the `folio/schema/*.ts` shims import the platform through the in-repo
+# path `folio-assistant/` (e.g. `folio/schema/builders.ts` re-exports the
+# builders from `../../folio-assistant/cat-harness/schemas/builders`), and the
+# package.json scripts run `../folio-assistant/cat-harness-tools/pipeline/*.ts`.
 # Both resolve to `<repo-root>/folio-assistant/`.
 #
 # This script makes `<repo-root>/folio-assistant/` resolve by:
@@ -119,6 +119,20 @@ if [ -e "$CLONE_DIR" ] && [ ! -d "$CLONE_DIR/.git" ]; then
   die "$CLONE_DIR exists but is not a git clone — move it aside or set FOLIO_ASSISTANT_DIR"
 fi
 
+# A 40-hex SHA pin (the default, from .folio-assistant-pin) cannot be cloned with
+# --branch, and the fallback full clone of the monorepo did not finish within ten
+# minutes through a proxied sandbox (2026-10-04). Fetch exactly the pinned commit
+# instead: one shallow fetch, then the unified checkout below finds it locally.
+if [ ! -d "$CLONE_DIR/.git" ] && printf '%s' "$REF" | grep -Eq '^[0-9a-f]{40}$'; then
+  info "pin is a SHA — fetching only $REF into $CLONE_DIR"
+  mkdir -p "$CLONE_DIR" && git -C "$CLONE_DIR" init --quiet \
+    && git -C "$CLONE_DIR" remote add origin "$REPO_URL" \
+    && git_retry git -C "$CLONE_DIR" fetch --quiet --depth 1 origin "$REF" \
+    && git -C "$CLONE_DIR" checkout --quiet FETCH_HEAD \
+    || die "shallow fetch of $REF failed (check network / repo access)"
+  SHALLOW_PIN_FETCHED=1
+fi
+
 if [ ! -d "$CLONE_DIR/.git" ]; then
   info "cloning $REPO_URL -> $CLONE_DIR (ref: $REF)"
   # --branch accepts a branch or tag but NOT a SHA; on a SHA ref this first
@@ -127,6 +141,12 @@ if [ ! -d "$CLONE_DIR/.git" ]; then
   git_retry git clone --branch "$REF" "$REPO_URL" "$CLONE_DIR" \
     || git_retry git clone "$REPO_URL" "$CLONE_DIR" \
     || die "clone failed after retries (check network / repo access)"
+elif [ "${SHALLOW_PIN_FETCHED:-0}" = 1 ]; then
+  : # just fetched exactly the pinned commit above; a full `fetch --tags` would undo the point
+elif printf '%s' "$REF" | grep -Eq '^[0-9a-f]{40}$' && ! git -C "$CLONE_DIR" rev-parse --verify --quiet "$REF^{commit}" >/dev/null 2>&1; then
+  info "platform clone exists at $CLONE_DIR — fetching only the pinned commit $REF"
+  git_retry git -C "$CLONE_DIR" fetch --quiet --depth 1 origin "$REF" \
+    || info "fetch failed (offline?) — using existing clone as-is"
 else
   info "platform clone exists at $CLONE_DIR — fetching $REF"
   git_retry git -C "$CLONE_DIR" fetch --tags origin \
@@ -168,6 +188,27 @@ else
   info "ref '$REF' not found locally or on origin — leaving clone on its current branch"
 fi
 
+# Platform main (2026-10) carries bootstrap/ and bootstrap-tools/ as git
+# SUBMODULES; without them every pipeline import fails with "Cannot find module
+# ../../bootstrap-tools/schemas/graph". Initialise them at the recorded commits.
+if [ -f "$CLONE_DIR/.gitmodules" ]; then
+  git_retry git -C "$CLONE_DIR" submodule update --init --depth 1 --quiet \
+    || warn "submodule init failed — imports into bootstrap/ and bootstrap-tools/ will not resolve"
+fi
+
+# Platform main (from 2026-10-09) carries NO layer in-tree: cat-harness,
+# cat-harness-tools, folio-assistant-core, folio-assistant-sci, bootstrap, ...
+# are remote mounts recorded in `index.lock.json`, each pinned to a commit and
+# verified against a tree digest. A clone at such a pin has none of them until
+# they are laid down, and every `folio-assistant/cat-harness/...` import fails.
+# The platform's own entry point does it with nothing but bun + git; it is
+# idempotent (an intact mount is reported `current`).
+if [ -f "$CLONE_DIR/index.lock.json" ] && [ -f "$CLONE_DIR/.github/mount-from-lock.sh" ]; then
+  info "mounting platform layers from index.lock.json"
+  (cd "$CLONE_DIR" && bash .github/mount-from-lock.sh --root .) >&2 \
+    || warn "mount-from-lock failed — platform layers (cat-harness, folio-assistant-sci, …) may be absent"
+fi
+
 # absolute, normalized path to the clone
 CLONE_ABS="$(cd "$CLONE_DIR" && pwd)" || die "cannot resolve $CLONE_DIR"
 
@@ -189,12 +230,26 @@ CLONE_ABS="$(cd "$CLONE_DIR" && pwd)" || die "cannot resolve $CLONE_DIR"
 # Probe for a FILE the platform must have, not for the directory: a stray
 # empty `cat-harness/` would otherwise answer "split" and point the link at
 # nothing.
-if [ -f "$CLONE_ABS/cat-harness/schemas/types.ts" ]; then
-  PLATFORM_ABS="$CLONE_ABS/cat-harness"
-  PLATFORM_LAYOUT="split (cat-harness/)"
+#
+# The LINK points at the clone ROOT in both layouts (bean qou-msp2). Every qou
+# importer writes the split path in full — `folio-assistant/cat-harness/<x>` —
+# since the 2026-09-26 pin bump re-pointed them. Until 2026-09-29 this script
+# linked one level deeper, to `<clone>/cat-harness`, so each of those imports
+# resolved to `cat-harness/cat-harness/<x>` and failed: `run-validate.ts` could
+# not start after a stock setup. The layout is still DETECTED, because the
+# bibliography bridge below applies to a pre-split clone only, but it is kept
+# in PLATFORM_SPLIT rather than inferred from where the link points.
+# The schemas code moved to cat-harness-tools/schemas/ on 2026-10-30 (bean 8lcl);
+# either location means the split layout.
+if [ -f "$CLONE_ABS/cat-harness-tools/schemas/types.ts" ] || [ -f "$CLONE_ABS/cat-harness/schemas/types.ts" ]; then
+  PLATFORM_ABS="$CLONE_ABS"
+  PLATFORM_SPLIT=1
+  PLATFORM_LAYOUT="split (code under cat-harness/)"
 elif [ -f "$CLONE_ABS/schemas/types.ts" ]; then
   PLATFORM_ABS="$CLONE_ABS"
-  PLATFORM_LAYOUT="pre-split (clone root)"
+  PLATFORM_SPLIT=0
+  PLATFORM_LAYOUT="pre-split (code at clone root)"
+  warn "pre-split platform clone: qou imports folio-assistant/cat-harness/<x>, which a pre-split clone does not have"
 else
   # Neither answers. Do NOT guess: linking to a root that holds no schemas/
   # produces a link that exists and resolves nothing, which is the state this
@@ -257,7 +312,7 @@ esac
 # --- bridge: expose the repo's bibliography to platform checkers ----------
 # ONLY for a pre-split clone. Both consumers were fixed upstream and the
 # bridges are not merely unnecessary against a split clone — they are WRONG
-# there, because `mkdir -p "$CLONE_ABS/content/schema"` would mint directories
+# there, because `mkdir -p "$CLONE_ABS/folio/schema"` would mint directories
 # at a clone root that no longer holds any of the platform's code, and the
 # consumer looking for them has stopped looking.
 #
@@ -265,7 +320,7 @@ esac
 #
 #   qa-checkers-extended.ts  reads `join(FOLIO_DIR, "schema", "references.ts")`,
 #                            and FOLIO_DIR is `folioDir(findContentRepoRoot())`.
-#                            For qou that resolves through `harness.json` to
+#                            For qou that resolves through `qou.json` to
 #                            `<qou>/content` — the source of truth itself. The
 #                            bridge existed because the path used to be
 #                            import-relative and landed in the platform clone.
@@ -287,24 +342,24 @@ esac
 # So this whole block is dead the moment `.folio-assistant-pin` moves past the
 # split. It is kept, guarded, because the pin has NOT moved yet: until it does,
 # a fresh clone is pre-split and needs these links exactly as before.
-if [ "$PLATFORM_ABS" = "$CLONE_ABS" ]; then
+if [ "$PLATFORM_SPLIT" = 0 ]; then
   # qa-checkers-extended.ts (pre-split) resolved references.ts relative to the
   # PLATFORM clone (CONTENT_DIR = <clone>/content), but the bibliography source
-  # of truth lives in THIS repo at content/schema/references.ts. Without this
+  # of truth lives in THIS repo at folio/schema/references.ts. Without this
   # bridge every \cite{} fails bib-cite-resolves with "does not resolve in
   # references.ts" (the 2026-06-21 233-block false-fail batch).
-  if [ ! -e "$CLONE_ABS/content/schema/references.ts" ]; then
-    mkdir -p "$CLONE_ABS/content/schema"
-    ln -s "$ROOT/content/schema/references.ts" \
-      "$CLONE_ABS/content/schema/references.ts" \
-      && info "bridged content/schema/references.ts into pre-split platform clone" \
+  if [ ! -e "$CLONE_ABS/folio/schema/references.ts" ]; then
+    mkdir -p "$CLONE_ABS/folio/schema"
+    ln -s "$ROOT/folio/schema/references.ts" \
+      "$CLONE_ABS/folio/schema/references.ts" \
+      && info "bridged folio/schema/references.ts into pre-split platform clone" \
       || info "could not bridge references.ts — bib-cite-resolves will false-fail"
   fi
 
   # The pre-split platform imported the bibliography by TWO different paths,
   # and bridging only the one above left the other broken:
   #
-  #   qa-checkers-extended.ts  -> <clone>/content/schema/references  (above)
+  #   qa-checkers-extended.ts  -> <clone>/folio/schema/references  (above)
   #   export-bibtex.ts         -> <clone>/schemas/references         (here)
   #
   # Without this second link, regenerating references.bib dies with
@@ -315,7 +370,7 @@ if [ "$PLATFORM_ABS" = "$CLONE_ABS" ]; then
   # 23 "Citation ... undefined" warnings in the full build.
   if [ ! -e "$CLONE_ABS/schemas/references.ts" ]; then
     mkdir -p "$CLONE_ABS/schemas"
-    ln -s "$ROOT/content/schema/references.ts" \
+    ln -s "$ROOT/folio/schema/references.ts" \
       "$CLONE_ABS/schemas/references.ts" \
       && info "bridged schemas/references.ts into pre-split platform clone" \
       || info "could not bridge schemas/references.ts — export-bibtex will fail"
@@ -381,7 +436,7 @@ setup-folio-assistant: done.
   in-repo link   : $LINK -> $TARGET
 
 Next, from the REPO ROOT:
-  bun run scripts/run-validate.ts content/quantum-observable-universe
+  bun run scripts/run-validate.ts folio/quantum-observable-universe
 
 (\`bun run validate\` no longer exists — the package.json alias was dropped in
 the folio-assistant migration; run-validate.ts is its standalone replacement.)

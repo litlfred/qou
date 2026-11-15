@@ -6,7 +6,11 @@
   "sha256": "3bc566efaefd44c65b2a9536bde79ff211e9facffa8e7387762583d9a986378c",
   "bytes": 228976,
   "pages": 26,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -396,6 +400,151 @@
   "likely_scanned": false,
   "toc_entries": 25,
   "sections": 18,
-  "chars_total": 45864
+  "chars_total": 45864,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "lassalle-first-conjecture01.tex",
+   "tex_sections": 26,
+   "overlaid": 12,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-11-asymptotic-representation-theory-of-symmetric",
+     "title": "Asymptotic representation theory of symmetric groups",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-12-asymptotic-shape-of-young-diagrams",
+     "title": "Asymptotic shape of Young diagrams",
+     "prose_ratio": 0.923,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-13-how-to-normalize-the-characters",
+     "title": "How to normalize the characters?",
+     "prose_ratio": 0.253,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-16-kerov-character-polynomials",
+     "title": "Kerov character polynomials",
+     "prose_ratio": 0.188,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-14-how-to-describe-the-shape-of-a-young-diagram",
+     "title": "How to describe the shape of a Young diagram?",
+     "prose_ratio": 0.233,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-15-free-cumulants",
+     "title": "Free cumulants",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.187,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-006-17-genus-expansion",
+     "title": "Genus expansion",
+     "prose_ratio": 0.907,
+     "coverage_ratio": 0.868,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-18-the-main-result-proof-of-some-conjectures-of",
+     "title": "The main result: proof of some conjectures of Lassalle",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.908,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-19-general-idea-of-the-proof",
+     "title": "General idea of the proof",
+     "prose_ratio": 0.926,
+     "coverage_ratio": 0.872,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-23-goulden-rattan-formula",
+     "title": "Goulden-Rattan formula",
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.896,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-31-implications-of-divisibility",
+     "title": "Implications of divisibility",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.914,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-32-divisibility",
+     "title": "Divisibility",
+     "prose_ratio": 0.8,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-33-proof-of-the-main-result",
+     "title": "Proof of the main result",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.746,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-4-technical-lemmas",
+     "title": "Technical lemmas",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-014-41-identities-on-symmetric-functions",
+     "title": "Identities on symmetric functions",
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.882,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-43-arithmetic-properties-of-kerov-polynomials",
+     "title": "Arithmetic properties of Kerov polynomials",
+     "prose_ratio": 0.932,
+     "coverage_ratio": 0.891,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-acknowledgments",
+     "title": "Acknowledgments",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

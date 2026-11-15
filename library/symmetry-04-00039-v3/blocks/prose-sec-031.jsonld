@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/symmetry-04-00039-v3/blocks/prose-sec-031",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/symmetry-04-00039-v3/blocks/prose-sec-031",
   "kind": "prose",
-  "title": "Dark Matter",
-  "pageStart": 57,
-  "pageEnd": 59,
-  "text": "../sections/sec-031-114-dark-matter.md",
-  "derivedFrom": "library/symmetry-04-00039-v3/manifest",
-  "sourceDocument": "library/symmetry-04-00039-v3/manifest",
+  "title": "Solitonic Behavior",
+  "pageStart": 58,
+  "pageEnd": 61,
+  "text": "../sections/sec-031-a-solitonic-behavior.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/symmetry-04-00039-v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/symmetry-04-00039-v3",
   "provenance": "ingested"
 }

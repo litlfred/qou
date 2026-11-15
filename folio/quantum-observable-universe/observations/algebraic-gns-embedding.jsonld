@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-algebraic-gns-embedding",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:algebraic-gns-embedding",
+  "kind": "proposition",
+  "title": "Markov-trace GNS embedding $H_\\infty(q)/\\mathcal{N} \\hookrightarrow L(\\mathcal{H})$ — operator-algebra route to the Archimedean side",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-wedderburn-weight-canonical"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-algebraic-gns-embedding"
+  ],
+  "cites": [
+    "references/jones1985",
+    "references/wenzl1988"
+  ],
+  "tags": [
+    "causal-fermion-systems",
+    "gns",
+    "markov-trace",
+    "operator-algebra",
+    "subfactor",
+    "pre-archimedean",
+    "established-not-conjectural"
+  ],
+  "leanRef": "qou:QOU.Observations.AlgebraicGnsEmbedding.markov_gns_embedding",
+  "text": "algebraic-gns-embedding.md",
+  "provenance": "authored"
+}

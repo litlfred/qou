@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-six-term-per-derivation-weights-table3-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:six-term-per-derivation-weights-table3-data",
+  "kind": "table",
+  "title": "Table 3 from prop:six-term-per-derivation-weights",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-six-term-per-derivation-weights"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "six-term-per-derivation-weights-table3-data.md",
+  "provenance": "authored"
+}

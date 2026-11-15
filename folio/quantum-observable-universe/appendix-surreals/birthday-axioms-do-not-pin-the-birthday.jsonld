@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-birthday-axioms-do-not-pin-the-birthday",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:birthday-axioms-do-not-pin-the-birthday",
+  "kind": "theorem",
+  "title": "The six birthday axioms admit a two-valued model, so they bound birthday only from above",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-hyperreal-limit-transfer"
+  ],
+  "cites": [
+    "references/conway1976",
+    "references/gonshor1986"
+  ],
+  "tags": [
+    "surreals",
+    "birthday",
+    "axiom-audit",
+    "independence",
+    "hyperreals",
+    "mixin"
+  ],
+  "leanRef": "qou:QOU.AppendixSurreals.birthdayFaithful_independent_witnessed",
+  "text": "birthday-axioms-do-not-pin-the-birthday.md",
+  "provenance": "authored"
+}

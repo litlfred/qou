@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Audit canonical compute scripts for alignment with calibration-inputs.md.
 
-Per content/quantum-observable-universe/braids-and-knots/calibration-inputs.md
+Per folio/quantum-observable-universe/braids-and-knots/calibration-inputs.md
 the canonical 3-input scheme is:
 
   1. m_μ/m_e = 206.768   → fixes q_0 (substrate)
@@ -236,7 +236,7 @@ def main():
     # Scan the compute tree (computations/), not just audits/ (reorg
     # scan-root fix). Skip _deprecated and the audits/ dir itself.
     for py in sorted((HERE.parent).rglob("*.py")):
-        if "_deprecated" in py.parts or HERE.name in py.parts:
+        if ("_deprecated" in py.parts or "fsh-guts" in py.parts) or HERE.name in py.parts:
             continue
         if py.name.startswith("_"):
             continue

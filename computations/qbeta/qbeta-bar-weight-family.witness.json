@@ -1,5 +1,6 @@
 {
   "computation": "qbeta-bar-weight-family",
+  "q0Anchor": "proton",
   "assertions": [
     {
       "name": "bar_fixes_the_bracket_and_swaps_the_bonds",
@@ -115,8 +116,8 @@
     "crossing_w1": "0.44801814497379492716"
   },
   "provenance": {
-    "headSha": "08cb80478a910e743d4476aed2f1c0b8203935f4",
+    "headSha": "eacf7ca73101030f04c9f788e9f705839bef23c3",
     "producer": "computations/qbeta/qbeta_bar_weight_family_probe.py",
-    "elapsed_s": 0.006
+    "elapsed_s": 0.007
   }
 }

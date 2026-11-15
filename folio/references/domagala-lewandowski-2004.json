@@ -1,0 +1,39 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "domagala-lewandowski-2004",
+  "library": {
+    "docId": "arxiv-gr-qc-0407051v2",
+    "dir": "library/arxiv-gr-qc-0407051v2",
+    "pdf": "library/arxiv-gr-qc-0407051v2/0407051v2.pdf",
+    "stage": "candidates",
+    "pages": 14,
+    "sections": 10,
+    "arxiv": "gr-qc/0407051v2"
+  },
+  "type": "article-journal",
+  "title": "Black hole entropy from quantum geometry",
+  "author": [
+    {
+      "family": "Domagała",
+      "given": "Marcin"
+    },
+    {
+      "family": "Lewandowski",
+      "given": "Jerzy"
+    }
+  ],
+  "container-title": "Classical and Quantum Gravity",
+  "volume": "21",
+  "issue": "22",
+  "page": "5233-5243",
+  "issued": {
+    "date-parts": [
+      [
+        2004
+      ]
+    ]
+  },
+  "DOI": "10.1088/0264-9381/21/22/014",
+  "URL": "https://arxiv.org/abs/gr-qc/0407051",
+  "note": "arXiv:gr-qc/0407051. Horizon state-count + projection-constraint combinatorics. Added 2026-06-08 from library/arxiv-gr-qc-0407051v2/0407051v2.pdf; used by docs/audits/2026-06-08-spin-network-count-q-dimension-partition-function.md. HUMAN-REVIEW: unreviewed (DOI/page best-effort)."
+}

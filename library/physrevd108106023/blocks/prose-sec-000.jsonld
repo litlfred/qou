@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/physrevd108106023/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/physrevd108106023/blocks/prose-sec-000",
   "kind": "prose",
-  "title": "INTRODUCTION",
+  "title": "Reverse engineering of Melvin-Morton-Rozansky (MMR) expansion",
   "pageStart": 1,
-  "pageEnd": 2,
-  "text": "../sections/sec-000-i-introduction.md",
-  "derivedFrom": "library/physrevd108106023/manifest",
-  "sourceDocument": "library/physrevd108106023/manifest",
+  "pageEnd": 1,
+  "text": "../sections/sec-000-a-reverse-engineering-of-melvin-morton-rozansky.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/physrevd108106023",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/physrevd108106023",
   "provenance": "ingested"
 }

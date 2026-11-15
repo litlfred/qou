@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-plancherel-weight-boundedness",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:plancherel-weight-boundedness",
+  "kind": "proof",
+  "title": "Proof of plancherel weight boundedness",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-plancherel-weight-boundedness"
+  ],
+  "text": "plancherel-weight-boundedness-proof.md",
+  "provenance": "authored"
+}

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/bn/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/bn/blocks/prose-sec-010",
   "kind": "prose",
-  "title": "From Hodge theory to topology",
-  "pageStart": 14,
-  "pageEnd": 16,
-  "text": "../sections/sec-010-3-from-hodge-theory-to-topology.md",
-  "derivedFrom": "library/bn/manifest",
-  "sourceDocument": "library/bn/manifest",
+  "title": "Complex hyperbolic geometry",
+  "pageStart": 45,
+  "pageEnd": 50,
+  "text": "../sections/sec-010-10-complex-hyperbolic-geometry.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bn",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bn",
   "provenance": "ingested"
 }

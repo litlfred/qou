@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-2506.10206v2/sections/sec-009",
   "@type": [
     "doco:Section"
   ],
-  "title": "Li2",
-  "pageStart": 5,
-  "pageEnd": 6,
+  "title": "A two-term ladder identity for the Plastic Ratio/Constant",
+  "pageStart": 21,
+  "pageEnd": 29,
   "contains": [
     "library/arxiv-2506.10206v2/blocks/prose-sec-009"
   ],
-  "derivedFrom": "library/arxiv-2506.10206v2/manifest",
-  "sourceDocument": "library/arxiv-2506.10206v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2506.10206v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2506.10206v2",
   "provenance": "ingested"
 }

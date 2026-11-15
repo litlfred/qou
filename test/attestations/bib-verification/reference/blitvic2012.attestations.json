@@ -1,0 +1,29 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "blitvic2012",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 23,
+      "entry": {
+        "id": "blitvic2012",
+        "status": "partial",
+        "verified_at": "2026-05-19T17:31:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "note": "PDF MISMATCH: arXiv:1205.4003 = 'Two-Parameter Non-Commutative Central Limit Theorem' by Natasha Blitvi\u0107, but references.ts entry title says 'The (q,t)-Gaussian process'. These are two different Blitvi\u0107 papers \u2014 the bib metadata may be for a different Blitvi\u0107 arxiv id, OR the QOU intent is the (q,t)-Gaussian paper and the URL/arxiv-id needs fixing. Plus bib orphan (no QOU citations). Decision pending: update bib title to match the downloaded paper, OR update arxiv URL to point at the actual (q,t)-Gaussian paper. | UPDATE: actually has 5 citation sites via cites: arrays. The paper-mismatch (arxiv:1205.4003 = 'Two-Parameter Non-Commutative CLT', not the bib title 'The (q,t)-Gaussian process') still needs author decision: split keys or rename bib title. | UPDATE 2026-05-19 17:31: bad URL removed; the existing uploads/blitvic2012.pdf is the CLT paper, now registered as blitvic2012-clt. Need to find correct arxiv id for 'The (q,t)-Gaussian process' and re-fetch under the correct key.",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1016/j.jfa.2012.08.006"
+        }
+      }
+    }
+  ]
+}

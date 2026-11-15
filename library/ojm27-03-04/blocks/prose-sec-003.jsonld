@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ojm27-03-04/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ojm27-03-04/blocks/prose-sec-003",
   "kind": "prose",
-  "title": "A £-fold branched covering of the Whitehead link complement",
-  "pageStart": 7,
-  "pageEnd": 11,
-  "text": "../sections/sec-003-2-a--fold-branched-covering-of-the-whitehead-lin.md",
-  "derivedFrom": "library/ojm27-03-04/manifest",
-  "sourceDocument": "library/ojm27-03-04/manifest",
+  "title": "References",
+  "pageStart": 16,
+  "pageEnd": 17,
+  "text": "../sections/sec-003-references.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ojm27-03-04",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ojm27-03-04",
   "provenance": "ingested"
 }

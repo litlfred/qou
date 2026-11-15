@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-9806163v1/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-9806163v1/blocks/prose-sec-000",
   "kind": "prose",
-  "title": "Abstract",
-  "pageStart": 1,
-  "pageEnd": 1,
-  "text": "../sections/sec-000-abstract.md",
-  "derivedFrom": "library/arxiv-math-9806163v1/manifest",
-  "sourceDocument": "library/arxiv-math-9806163v1/manifest",
+  "title": "Preliminaries and Notation",
+  "pageStart": 2,
+  "pageEnd": 3,
+  "text": "../sections/sec-000-1-preliminaries-and-notation.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9806163v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9806163v1",
   "provenance": "ingested"
 }

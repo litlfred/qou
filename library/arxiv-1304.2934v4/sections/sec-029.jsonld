@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1304.2934v4/sections/sec-029",
   "@type": [
     "doco:Section"
   ],
-  "title": "Dependency graphs and mod-Gaussian convergence",
-  "pageStart": 69,
-  "pageEnd": 70,
+  "title": "Additive arithmetic functions of random integers",
+  "pageStart": 50,
+  "pageEnd": 55,
   "contains": [
     "library/arxiv-1304.2934v4/blocks/prose-sec-029"
   ],
-  "derivedFrom": "library/arxiv-1304.2934v4/manifest",
-  "sourceDocument": "library/arxiv-1304.2934v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1304.2934v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1304.2934v4",
   "provenance": "ingested"
 }

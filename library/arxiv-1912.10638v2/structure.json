@@ -6,7 +6,11 @@
   "sha256": "612e44871d91d2e2791d00d017ff860140582bae360af28d1c24fbbfa0641947",
   "bytes": 1616994,
   "pages": 32,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -282,6 +286,94 @@
   "likely_scanned": false,
   "toc_entries": 20,
   "sections": 10,
-  "chars_total": 59453
+  "chars_total": 59453,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "Asymptotics_of_some_quantum_invariants_of_the_Whitehead_chains.tex",
+   "tex_sections": 24,
+   "overlaid": 8,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-overview-of-volume-conjectures",
+     "title": "Overview of volume conjectures",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-12-strategy-to-prove-the-volume-conjecture",
+     "title": "Strategy to prove the volume conjecture",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-13-main-results",
+     "title": "Main results",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-131-asymptotics-of-the-quantum-invariants-of-the",
+     "title": "Asymptotics of the quantum invariants of the Whitehead link",
+     "prose_ratio": 0.769,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-132-asymptotic-of-the-quantum-invariants-of-the",
+     "title": "Asymptotic of the quantum invariants of the Whitehead chains",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.945,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-14-outline",
+     "title": "Outline",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-15-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 0.748,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-23-the-asymptotics-expansion-formula-for-jm1m2wl",
+     "title": "The asymptotics expansion formula for JM1,M2(WL,e2iN+12)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-24-geometry-of-the-potential-function",
+     "title": "Geometry of the potential function",
+     "prose_ratio": 0.725,
+     "coverage_ratio": 0.669,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

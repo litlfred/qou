@@ -8,109 +8,80 @@ pages: 24-26
 source_pdf: 2311.14221v2.pdf
 source_sha256: 5aa4126bbb6df6eb
 doc_brief: "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS — The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B → C is an exact"
+text_source: latex
+latex_prose_ratio: 0.938
+latex_coverage_ratio: 0.879
 ---
-transformations between additive functors are additive. F or example, if
-(F,ξ ) is an additive monoidal functor, then, natural isomorphis ms
-ξA,B :F (A)⊗F (B)→F (A⊗B),
-are additive in each variable. In this section, we shall stud y what happens
-whenF is a monoidal module functor. We aim at proving that ξ is a module
-natural transformation in the second variable.
-Lemma 5.8. If B is a right monoidal C-module category, then for any
-A∈B , the functor LA :B→B , LA(B) = A⊗B is a C-module functor.
-Proof. For any B∈B ,V ∈C , the module structure of the functor LA is
-given by
-ηB,V :A⊗(B⊳V )→ (A⊗B)⊳V,
-ηB,V =l−1
-A⊗B,V (id A⊗lB,V )
-Let us prove that η satisﬁes ( 2.18). Using that isomorphisms l satisfy dia-
-gram ( 5.4), it follows that for any C∈B and any V,W ∈C we have that
-(5.7) l−1
-C,V ⊗W =l−1
-C⊳V,W (l−1
-C,V⊗id 1⊳W )(id C⊗l1⊳V,W ).
-On one hand we have that
-ηB,V ⊗W =l−1
-A⊗B,V ⊗W (id A⊗lB,V ⊗W )
-=l−1
-(A⊗B)⊳V,W (l−1
-A⊗B,V⊗id 1⊳W )(id A⊗B⊗l1⊳V,W )(id A⊗B⊗l−1
-1⊳V,W )
-(id A⊗lB,V⊗id 1⊳W )(id A⊗lB⊳V,W )
-=l−1
-(A⊗B)⊳V,W (l−1
-A⊗B,V⊗id 1⊳W )(id A⊗lB,V⊗id 1⊳W )(id A⊗lB⊳V,W )
-The second equation follows from using ( 5.7). On the other hand
-(ηB,V ⊳ id W )ηB⊳V,W
-is equal to
-=(l−1
-A⊗B,V ⊳ id W )(id A⊗lB,V⊗id 1⊳W )l−1
-A⊗(B⊳V ),W (id A⊗lB⊳V,W )
-=(l−1
-A⊗B,V ⊳ id W )l−1
-A⊗B⊗(1⊳V ),W (id A⊗lB,V⊗id 1⊳W )(id A⊗lB⊳V,W )
-=l−1
-(A⊗B)⊳V,W (l−1
-A⊗B,V⊗id 1⊳W )(id A⊗lB,V⊗id 1⊳W )(id A⊗lB⊳V,W ).
-The second and third equalities follow from the naturality o f l. □
-Proposition 5.9. Assume that B is a monoidal right C-module category
-and (F,c,ξ ) :B→C a monoidal module functor. The following assertions
-hold.
-(i) The categoryB has structure of C-bimodule category.
-(ii) There areC-module funtors
-H, ~H :B ⊠CB→C ,
-FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS 25
-such that
-H(A ⊠B) = F (A⊗B), ~H(A ⊠B) = F (A)⊗F (B),
-for any A,B∈B .
-(iii) The monoidal structure of the functor F deﬁnes a natural module
-isomorphism ξ : ~H→H.
-Proof. (i). From Proposition 5.6 there is a section G :C→B of the functor
-F . Deﬁne the left action ⊲ :C×B→B as V ⊲B = G(V )⊗B. With this
-actionB becomes aC-bimodule category. Thus, we can consider the Deligne
-tensor product overC,B ⊠CB. This category has an obvious right C-module
-category structure.
-One can prove that functors B×B→C given by
-(A,B )↦→F (A⊗B), (A,B )↦→F (A)⊗F (B),
-areC-balanced, thus deﬁning functors H and ~H. The (right) C-module
-structure of the functor ~H is the one inherited from the functor F . The
-module structure of the functor H is more involved. One can prove that
-natural transformations
-eA,B,V :F (A⊗(B⊳V ))→F (A⊗B)⊗V,
-eA,B,V =cA⊗B,VF (l−1
-A⊗B,V (id A⊗lB,V ))
-areC-balanced, thus deﬁning natural transformations
-eX,V :H(X⊳V )→H(X)⊳V,
-for any X∈B ⊠CB, V ∈C . One can prove also that ( H,e ) is a module
-functor. Note that e is the module structure resulting from the composition
-of module structures of F and the functor LA, presented in Lemma 5.8. This
-proves (ii).
-(iii). To prove that ξ is a natural module transformation in the second
-variable, we need to verify that the diagram
-(5.8) ~H(A,B⊳V )
-id F (A)⊗cB,V
-/d15/d15
-ξA,B⊳V /d47/d47H(A,B⊳V )
-eA,B,V
-/d15/d15
-~H(A,B )⊗V
-ξA,B ⊗id V
-/d47/d47H(A,B )⊗V,
-is commutative for any A,B∈B , V ∈C . Here
-eA,B,V =cA⊗B,VF (l−1
-A⊗B,V (id A⊗lB,V )).
-26 LENTNER AND MOMBELLI
+\label{subsection:nat-bimod} It is known that natural transformations between additive functors are additive. For example, if $(F,\xi)$ is an additive monoidal functor, then, natural isomorphisms
+$$\xi_{A,B}:F(A)\ot F(B)\to F(A\ot B), $$
+are additive in each variable. In this section, we shall study what happens when $F$ is a monoidal module functor. We aim at proving that $\xi$ is a \textit{module} natural transformation in  the second variable. 
+
+\begin{lema}\label{left-mod-nat} If $\Bc$ is a right monoidal $\ca$-module category, then for any $A\in \Bc$, the functor $L_A:\Bc\to \Bc$, $L_A(B)=A\ot B$ is a $\ca$-module functor.
+\end{lema}
+\pf For any $B\in \Bc, V\in \ca$, the module structure  of the functor $L_A$ is given by
+$$\eta_{B,V}: A\ot (B \triangleleft V)\to (A\ot B) \triangleleft V,$$
+$$\eta_{B,V}= l^{-1}_{A\ot B, V}(\id_A\ot l_{B,V})$$ 
+Let us prove that $\eta$ satisfies   \eqref{modfunctor11}. Using that isomorphisms $l$ satisfy diagram \eqref{tens-acting2}, it follows that for any $C\in \Bc$ and any $V, W\in \ca$ we have that
+\begin{equation}\label{on-l-11}
+l^{-1}_{C, V\ot W}= l^{-1}_{C\triangleleft V,  W}(l^{-1}_{C,V}\ot \id_{\uno \triangleleft W})(\id_C\ot l_{\uno \triangleleft V,W}).
+\end{equation}
+ On one hand we have that 
+\begin{align*}
+\eta_{B,V\ot W}=& l^{-1}_{A\ot B, V\ot W}(\id_A\ot l_{B,V\ot W})\\
+=& l^{-1}_{(A\ot B)\triangleleft V,  W}(l^{-1}_{A\ot B,V}\ot \id_{\uno \triangleleft W})(\id_{A\ot B}\ot l_{\uno \triangleleft V,W}) (\id_{A\ot B}\ot l^{-1}_{\uno \triangleleft V,W})\\
+& (\id_A\ot l_{B,V}\ot \id_{\uno \triangleleft W})(\id_A\ot l_{B\triangleleft V,W})\\
+=&l^{-1}_{(A\ot B)\triangleleft V,  W}(l^{-1}_{A\ot B,V}\ot \id_{\uno \triangleleft W})  (\id_A\ot l_{B,V}\ot \id_{\uno \triangleleft W})(\id_A\ot l_{B\triangleleft V,W})
+\end{align*}
+The second equation follows from using \eqref{on-l-11}. On the other hand $$(\eta_{B,V}\triangleleft \id_W) \eta_{B\triangleleft V, W}$$ is equal to
+\begin{align*} =&(l^{-1}_{A\ot B, V} \triangleleft\id_W)(\id_A\ot l_{B,V}\ot \id_{\uno \triangleleft W}) l^{-1}_{A\ot (B \triangleleft V), W} (\id_A\ot l_{B \triangleleft V, W})\\
+=&(l^{-1}_{A\ot B, V} \triangleleft\id_W)  l^{-1}_{A\ot B \ot (\uno\triangleleft V), W}  (\id_A\ot l_{B,V}\ot \id_{\uno \triangleleft W})  (\id_A\ot l_{B \triangleleft V, W})\\
+=&l^{-1}_{(A\ot B)\triangleleft V,  W}(l^{-1}_{A\ot B,V}\ot \id_{\uno \triangleleft W})  (\id_A\ot l_{B,V}\ot \id_{\uno \triangleleft W})(\id_A\ot l_{B\triangleleft V,W}).
+\end{align*}
+The second and third equalities follow from the naturality of $l$.
+\epf
+
+
+
+\begin{prop}\label{bimodule-funct} Assume that $\Bc$ is a monoidal right $\ca$-module category and $(F,  c, \xi):\Bc\to \ca$ a monoidal module functor. The following assertions hold.
+\begin{enumerate}
+\item[(i)] The category $\Bc$ has structure of $\ca$-bimodule category. 
+
+
+\item[(ii)]  There are $\ca$-module funtors
+$$H, \widetilde{H}:\Bc\boxtimes_\ca \Bc\to \ca,$$ such that
+$$ H(A\boxtimes B)=F(A\ot B), \quad \widetilde{H}(A\boxtimes B)=F(A)\ot F(B),$$
+for any $A, B\in \Bc$. 
+\item[(iii)] The monoidal structure of the functor $F$ defines a natural module isomorphism $\xi:\widetilde{H} \to H$.
+\end{enumerate}
+\end{prop}
+\pf (i). From Proposition \ref{lm_section} there is a section $G:\ca\to \Bc$ of the functor $F$. Define the left action $\triangleright:\ca\times \Bc\to \Bc$ as $V\triangleright B=G(V)\ot B$. With this action $\Bc$ becomes a $\ca$-bimodule category. Thus, we can consider the Deligne tensor product over $\ca$, $\Bc\boxtimes_\ca \Bc$. This category has an obvious right $\ca$-module category structure.
+
+One can prove that functors $\Bc\times \Bc\to \ca$ given by
+$$(A,B)\mapsto F(A\ot B), \quad (A,B)\mapsto F(A)\ot F(B),$$
+are $\ca$-balanced, thus defining functors $H$ and $\widetilde{H}$. The (right) $\ca$-module structure of the functor $\widetilde{H}$ is the one inherited from the functor $F$. The module structure of the functor $H$ is more involved. One can prove that natural transformations
+$$e_{A,B,V}: F(A\ot (B\triangleleft V))\to F(A\ot B) \ot V,$$
+$$e_{A,B,V}= c_{A\ot B, V} F(l^{-1}_{A\ot B, V}(\id_A\ot l_{B,V})) $$
+are $\ca$-balanced, thus defining natural transformations 
+$$e_{X,V}: H(X\triangleleft V)\to H(X)\triangleleft V,$$
+for any $X\in \Bc\boxtimes_\ca \Bc$, $V\in \ca$. One can prove also that $(H,e)$ is a module functor. Note that $e$ is the module structure resulting from the composition of module structures of $F$ and the functor $L_A$, presented in Lemma \ref{left-mod-nat}. This proves (ii).
+
+
+
+(iii). To prove that $\xi$ is a natural module transformation in the second variable, we need to verify that the diagram
+\begin{equation}\label{coproduct-cf}
+\xymatrix{
+ \widetilde{H}(A,B\triangleleft V) \ar[d]_{\id_{F(A)}\ot c_{B,V}}\ar[rr]^{\xi_{A,B\triangleleft V}}&& H(A ,B\triangleleft V) 
+ \ar[d]^{e_{A,B,V}} \\
+ \widetilde{H}(A,B) \ot V \ar[rr]_{\xi_{A,B}\ot \id_V }&& H(A ,B) \ot V,}
+\end{equation}
+is commutative for any $A, B\in \Bc$, $V\in \ca$. Here $$e_{A,B,V}= c_{A\ot B, V} F(l^{-1}_{A\ot B, V}(\id_A\ot l_{B,V})). $$ 
 We have
-eA,B,VξA,B⊳V =cA⊗B,VF (l−1
-A⊗B,V (id A⊗lB,V ))ξA,B⊳V
-= (id⊗c1,V )ξ−1
-A⊗B,1⊳VF (id A⊗lB,V )ξA,B⊳V
-= (id⊗c1,V )ξ−1
-A⊗B,1⊳VξA,B⊗(1⊳V )(id F (A)⊗F (lB,V ))
-= (id⊗c1,V )(ξA,B⊗id F (1⊳V ))(id F (A)⊗ξ−1
-B,1⊳V )(id F (A)⊗F (lB,V ))
-= (ξA,B⊗id V )(id F (A)⊗(id F (B)⊗c1,V )ξ−1
-B,1⊳VF (lB,V ))
-= (ξA,B⊗id V )(id F (A)⊗cB,V ).
-The second equality follows from ( 5.5), the third equality follows from the
-naturality of ξ, the fourth one follows from ( 2.1). The last equality follows
-from ( 5.5). □
+\begin{align*} e_{A,B,V} &\xi_{A,B\triangleleft V}=  c_{A\ot B, V} F(l^{-1}_{A\ot B, V}(\id_A\ot l_{B,V}))\xi_{A,B\triangleleft V}\\
+&=(\id\ot c_{\uno, V}) \xi^{-1}_{A\ot B, \uno\triangleleft V} F(\id_A\ot l_{B,V}) \xi_{A,B\triangleleft V}\\
+&=(\id\ot c_{\uno, V}) \xi^{-1}_{A\ot B, \uno\triangleleft V} \xi_{A,B\ot (\uno \triangleleft V)}(\id_{F(A)}\ot F(l_{B,V}))\\
+&=(\id\ot c_{\uno, V}) (\xi_{A,B}\ot \id_{F(\uno \triangleleft V)})(\id_{F(A)}\ot \xi^{-1}_{B, \uno \triangleleft V}) (\id_{F(A)}\ot F(l_{B,V}))\\
+&=(\xi_{A,B}\ot \id_{ V}) (\id_{F(A)}\ot (\id_{F(B)}\ot c_{\uno, V})\xi^{-1}_{B, \uno \triangleleft V}  F(l_{B,V})) \\
+&=(\xi_{A,B}\ot \id_{ V})  (\id_{F(A)}\ot c_{B, V}).
+\end{align*}
+The second equality follows from \eqref{monoidal-mod-functor}, the third equality follows from the naturality of $\xi$, the fourth one follows from \eqref{monoidal-functor}. The last equality follows  from \eqref{monoidal-mod-functor}.
+\epf

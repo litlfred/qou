@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-F3-eps6-leading-eq-neg-2b-cubed",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:F3-eps6-leading-eq-neg-2b-cubed",
+  "kind": "remark",
+  "title": "Lean exact-arithmetic lemma: the ε^6 leading coefficient of (F_3 − 1) at q=1+ε equals exactly −2·b(1)³ = −3√3/4 (closed proof, no sorry)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-beta-c3-hopf-three-fold-markov"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-q-beta-c3-hopf-three-fold-markov",
+  "cites": [
+    "references/jones1985"
+  ],
+  "tags": [
+    "lean-infrastructure",
+    "exact-arithmetic",
+    "hopf-jones",
+    "epsilon-expansion",
+    "class-discharge"
+  ],
+  "text": "F3-eps6-leading-eq-neg-2b-cubed.md",
+  "provenance": "authored"
+}

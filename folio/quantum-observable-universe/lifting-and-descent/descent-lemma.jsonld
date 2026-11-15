@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-descent",
+  "@type": [
+    "folio-assistant-core:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:descent",
+  "kind": "lemma",
+  "title": "Descent preserves the quantum observable universe",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-recursive-brane-tower"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-descent"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-descent-lemma-su2"
+  ],
+  "tags": [
+    "descent",
+    "frobenius-hopf",
+    "star-homomorphism"
+  ],
+  "leanRef": "qou:QOU.DescentLemma",
+  "text": "descent-lemma.md",
+  "leanSource": "descent-lemma.lean",
+  "provenance": "authored"
+}

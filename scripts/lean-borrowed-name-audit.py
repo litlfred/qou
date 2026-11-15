@@ -122,9 +122,9 @@ from lean_decl_scan import (            # noqa: E402  (path set above)
 )
 
 DEFAULT_ROOTS = [
-    "content/quantum-observable-universe",
-    "content/unital-groebner-bases",
-    "content/fred2005-formal-groups",
+    "folio/quantum-observable-universe",
+    "folio/unital-groebner-bases",
+    "folio/fred2005-formal-groups",
 ]
 
 # Proper names and theory labels that denote work done OUTSIDE this corpus.

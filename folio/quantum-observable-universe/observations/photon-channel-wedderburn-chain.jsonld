@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-photon-channel-wedderburn-chain",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:photon-channel-wedderburn-chain",
+  "kind": "remark",
+  "title": "From 4 photon channels to 3 Wedderburn invariants",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-wedderburn-mass-formula"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-wedderburn-mass-formula",
+  "text": "photon-channel-wedderburn-chain.md",
+  "provenance": "authored"
+}

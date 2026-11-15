@@ -1,0 +1,38 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "mann2021partition",
+  "library": {
+    "docId": "022201-1-online",
+    "dir": "library/022201-1-online",
+    "pdf": "library/022201-1-online/022201_1_online.pdf",
+    "stage": "candidates",
+    "pages": 8,
+    "sections": 8
+  },
+  "type": "article-journal",
+  "title": "Efficient algorithms for approximating quantum partition functions",
+  "author": [
+    {
+      "family": "Mann",
+      "given": "Ryan L."
+    },
+    {
+      "family": "Helmuth",
+      "given": "Tyler"
+    }
+  ],
+  "container-title": "Journal of Mathematical Physics",
+  "issued": {
+    "date-parts": [
+      [
+        2021
+      ]
+    ]
+  },
+  "volume": "62",
+  "issue": "2",
+  "page": "022201",
+  "DOI": "10.1063/5.0013689",
+  "URL": "https://doi.org/10.1063/5.0013689",
+  "note": "PDF library/022201-1-online/ — registered 2026-08-30 from the cluster-expansion upload drop. Approximation algorithms for quantum partition functions built on the abstract-polymer / cluster-expansion machinery. The QUANTUM member of this drop, and so the one whose setting is closest to the corpus's; cite for the polymer-model formulation, not for any nuclear claim."
+}

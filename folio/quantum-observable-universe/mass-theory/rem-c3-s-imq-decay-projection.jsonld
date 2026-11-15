@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-c3-s-imq-decay-projection",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:c3-s-imq-decay-projection",
+  "kind": "remark",
+  "title": "The $\\beta$-decay $S = \\mathfrak{Q}_\\beta/E_0$ realizes candidate (iii): a small sign-flipped $\\mathrm{Im}(q)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-im-q-physical-role"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-im-q-physical-role",
+  "tags": [
+    "im-q",
+    "decay-width",
+    "non-hermitian",
+    "q-beta",
+    "c3-bar-odd",
+    "candidate-iii"
+  ],
+  "text": "rem-c3-s-imq-decay-projection.md",
+  "provenance": "authored"
+}

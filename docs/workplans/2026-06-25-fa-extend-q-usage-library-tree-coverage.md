@@ -32,7 +32,7 @@ encode this — `q-usage-archimedean-in-categorical-chapter` (in `qa-checkers-q-
 `lean.ref`**. A content block's `lean.ref` (format `"qou:QOU.Decl.Path"`) resolves in up to three
 ways (qou AGENTS.md §0a):
 1. sibling `<rootName>.lean` next to the block's `.md`/`.ts` (chapter dir);
-2. **`<lakeRoot>/<Decl/Path>.lean` in the Lean library tree** (`qou/content/quantum-observable-universe/lean/QOU/**`);
+2. **`<lakeRoot>/<Decl/Path>.lean` in the Lean library tree** (`qou/folio/quantum-observable-universe/lean/QOU/**`);
 3. grep fallback.
 
 In qou, **most formalisation lives in the library tree (candidate 2)** — 839 files — and **none of

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/descendants-colored-jones/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/descendants-colored-jones/blocks/prose-sec-006",
   "kind": "prose",
   "title": "R-matrices with a spectral parameter",
   "pageStart": 13,
   "pageEnd": 15,
   "text": "../sections/sec-006-r-matrices-with-a-spectral-parameter.md",
-  "derivedFrom": "library/descendants-colored-jones/manifest",
-  "sourceDocument": "library/descendants-colored-jones/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/descendants-colored-jones",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/descendants-colored-jones",
   "provenance": "ingested"
 }

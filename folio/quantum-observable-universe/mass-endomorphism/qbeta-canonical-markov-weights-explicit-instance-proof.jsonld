@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-qbeta-canonical-markov-weights-explicit-instance",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:qbeta-canonical-markov-weights-explicit-instance",
+  "kind": "proof",
+  "title": "Proof of qbeta canonical markov weights explicit instance",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-qbeta-canonical-markov-weights-explicit-instance"
+  ],
+  "text": "qbeta-canonical-markov-weights-explicit-instance-proof.md",
+  "provenance": "authored"
+}

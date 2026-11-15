@@ -1,0 +1,47 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "kucharski-reineke-stosic-sulkowski2017",
+  "library": {
+    "docId": "arxiv-1707.02991v1",
+    "dir": "library/arxiv-1707.02991v1",
+    "pdf": "library/arxiv-1707.02991v1/1707.02991v1.pdf",
+    "stage": "candidates",
+    "pages": 6,
+    "sections": 5,
+    "arxiv": "1707.02991v1"
+  },
+  "type": "article",
+  "title": "BPS States, Knots, and Quivers",
+  "author": [
+    {
+      "family": "Kucharski",
+      "given": "Piotr"
+    },
+    {
+      "family": "Reineke",
+      "given": "Markus"
+    },
+    {
+      "family": "Stošić",
+      "given": "Marko"
+    },
+    {
+      "family": "Sułkowski",
+      "given": "Piotr"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2017
+      ]
+    ]
+  },
+  "container-title": "Physical Review D",
+  "volume": "96",
+  "issue": "12",
+  "page": "121902",
+  "DOI": "10.1103/PhysRevD.96.121902",
+  "URL": "https://arxiv.org/abs/1707.02991",
+  "note": "arXiv:1707.02991v1 [hep-th], Phys. Rev. D 96 (2017) 121902. Added 2026-08-02 from library/arxiv-1707.02991v1/1707.02991v1.pdf (authors verified: Piotr Kucharski, Markus Reineke, Marko Stošić, Piotr Sułkowski). The knots–quivers correspondence: to a knot K one associates a quiver whose vertices are the generators of the (open-BPS) HOMFLY-PT homology, and whose motivic Donaldson–Thomas / LMOV invariants express the colored HOMFLY invariants. Worked example: the trefoil $3_1$ → 3-node quiver (3 = det $3_1$ = # HOMFLY generators). For QOU: gives the concrete OPEN-BPS count of $4_1$ used in the $A_\\omega$ non-degeneracy check — $\\det(4_1)=5$ nodes, which is NOT the GGM resurgent-Stokes $\\{3,4\\}$ (the two BPS sectors are distinct)."
+}

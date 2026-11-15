@@ -1,0 +1,70 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "grassi-gu-marino2019qsw",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 269,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1908.07065v3/1908.07065v3.pdf"
+        },
+        "id": "grassi-gu-marino2019qsw",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "A worked non-perturbative treatment of the quantised Seiberg-Witten curve of SU(2) N=2 super Yang-Mills: all-orders WKB periods and their resurgent structure, the Borel-resummed quantum periods matched against instanton calculus, and a closed formula for a Fredholm determinant. This is the closest published instance of the exact technique the corpus reaches for and cannot currently invoke. docs/audits/2026-07-12-alien-calculus-review-binding-gevrey-half.md states explicitly that 'resurgent reconstruction needs proved endless continuability; the standard theorem base (exact WKB / holonomic modules) does not apply' to the corpus's binding kernel, and leaves as its concrete open target the location of Borel singularities in the correct plane. Supporting rather than core, deliberately: the corpus's object is a Habiro-side binding period that the same audit shows is Gevrey-1/2 with an entire level-1 Borel transform and is NOT q-holonomic at low order, so nothing here transfers without first establishing that the corpus object is a quantum SW curve. Corpus-grep over docs/audits/, content/, computations/, docs/coordination/ confirms the resurgence programme is live and the singularity-location question genuinely open (not closed elsewhere).",
+          "keyResults": [
+            {
+              "locator": "Sect. 3 (Quantum periods from TBA equations)",
+              "statement": "The resurgent properties of the all-orders WKB periods are encoded in Gaiotto-Moore-Neitzke TBA equations determined by the BPS spectrum, and are solved explicitly in the strong-coupling region.",
+              "useForFolio": "A concrete mechanism for locating Borel singularities of a quantum period from a BPS spectrum, which is exactly the open target the alien-calculus audit names. What would need checking first: whether the corpus's binding period is a period of a quantum curve at all, given the audit's own finding that its level-1 Borel transform is entire.",
+              "targets": [
+                "docs/audits/2026-07-12-alien-calculus-review-binding-gevrey-half.md"
+              ]
+            },
+            {
+              "locator": "Sect. 4.2 (Comparison to Borel resummation)",
+              "statement": "The Borel resummation of the quantum periods is compared directly against instanton calculus and found to agree.",
+              "useForFolio": "A template for the corpus's Bridge-equation programme: it shows what a validated resummation-versus-enumeration cross-check looks like, which is the standard the corpus's A_omega Stokes work would have to meet.",
+              "targets": [
+                "computations/lever1_borel_half_singularity_probe.py"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry; the corpus carries Garoufalidis-Gu-Marino 2021/2023 for the knot-invariant side of resurgence but nothing for the quantum-SW-curve side, which is the side its SW-period and Bridge-equation language belongs to.",
+              "target": "computations/lever1_borel_half_singularity_probe.py",
+              "bean": "qou-glqg"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Record the technique and, importantly, the reason it does not apply as-is: the corpus's binding period is Gevrey-1/2 with entire level-1 Borel transform and is not q-holonomic, so the exact-WKB/TBA machinery has no established hook. Writing that down prevents a later agent re-proposing the route as though it were available.",
+              "target": "docs/audits/2026-07-12-alien-calculus-review-binding-gevrey-half.md",
+              "bean": "qou-xfog"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "c43e413aed71"
+        },
+        "note": "Source IS held: library/arxiv-1908.07065v3. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+        "verified_at": "2026-09-03T04:19:53Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

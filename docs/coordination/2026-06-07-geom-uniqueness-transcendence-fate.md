@@ -66,7 +66,7 @@ files, same theme. No conflict.
 ## Lean gap-closing progress (2026-06-07, appended)
 
 The reduction `conj:three-knot-jet-order-independence` is now **formalized**
-in [`QOU.Archimedean.JetOrderIndependence`](../../content/quantum-observable-universe/lean/QOU/Archimedean/JetOrderIndependence.lean)
+in [`QOU.Archimedean.JetOrderIndependence`](../../folio/quantum-observable-universe/lean/QOU/Archimedean/JetOrderIndependence.lean)
 (verified sorry-free, `lake env lean` EXIT 0). It is the §3b-cond conditional
 theorem `hyperbolicVolumeIndependence_of_reduction` deriving the deep
 `HyperbolicVolumeIndependence` from two QOU-native inputs. What moved from

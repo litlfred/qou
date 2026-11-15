@@ -379,7 +379,7 @@ def main() -> int:
     unparseable: list[tuple[str, int, str]] = []
     scanned = 0
     for p in sorted(ROOT.rglob("*.py")):
-        if "_deprecated" in p.parts or ".lake" in p.parts:
+        if ("_deprecated" in p.parts or "fsh-guts" in p.parts) or ".lake" in p.parts:
             continue
         rel = p.relative_to(ROOT).as_posix()
         try:

@@ -5,7 +5,7 @@ They do not. They are two DIFFERENT constructions of the same quantity, and
 the scorecard's only L2 "win" (m_K/m_pi) rests on the one the paper does not
 cite as its formalisation.
 
-    content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.lean
+    folio/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.lean
 
         alphaEmInvCorrected q = 45*[3]_q * (1 + delta + kappa*delta^2)
         delta = hbar_q^4 * [5]_q

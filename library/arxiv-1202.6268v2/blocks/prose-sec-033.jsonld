@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1202.6268v2/blocks/prose-sec-033",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1202.6268v2/blocks/prose-sec-033",
   "kind": "prose",
   "title": "Appendix B. The shape parameters are rational functions on the character variety",
   "pageStart": 39,
   "pageEnd": 40,
   "text": "../sections/sec-033-appendix-b-the-shape-parameters-are-rational-fun.md",
-  "derivedFrom": "library/arxiv-1202.6268v2/manifest",
-  "sourceDocument": "library/arxiv-1202.6268v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1202.6268v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1202.6268v2",
   "provenance": "ingested"
 }

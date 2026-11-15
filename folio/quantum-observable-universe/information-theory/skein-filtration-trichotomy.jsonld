@@ -1,0 +1,41 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-skein-filtration-trichotomy",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:skein-filtration-trichotomy",
+  "kind": "remark",
+  "title": "One length filtration, three problems: $q$-Collatz halting, $P$ vs $NP$, $q$-NS regularity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-computational-horizon",
+    "papers/quantum-observable-universe/blocks/conj-q-collatz",
+    "papers/quantum-observable-universe/blocks/conj-qou-p-neq-np",
+    "papers/quantum-observable-universe/blocks/thm-q-bkm",
+    "papers/quantum-observable-universe/blocks/rem-skein-turing-machine"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-computational-horizon",
+  "cites": [
+    "references/cardona2021",
+    "references/freedman2003"
+  ],
+  "tags": [
+    "skein-module",
+    "markov-trace",
+    "length-filtration",
+    "q-collatz",
+    "p-vs-np",
+    "q-navier-stokes",
+    "computational-horizon",
+    "unification",
+    "information-theory"
+  ],
+  "text": "skein-filtration-trichotomy.md",
+  "provenance": "authored"
+}

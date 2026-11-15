@@ -1,0 +1,112 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "riera-rodriguez-1992",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 395,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/pjm-v154-n1-p09-s/pjm-v154-n1-p09-s.pdf"
+        },
+        "id": "riera-rodriguez-1992",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "JOIN CONFIRMED \u2014 the document's front matter matches the registered entry's volume, issue, date and both authors. CITATION IS LOAD-BEARING AND THE CLAIMED CONTENT IS PRESENT. The \u03b1_EM B2 route takes the S\u2085-invariant period matrix Z = \u03c4\u2080\u00b7C from this document (`alpha_em_b2_bring_period_matrix_probe.py:239`, `x5-bring-prym-jacobian.md:12`, `BringEllipticFactor.lean:57`, `BringHauptmodulGate.lean:39`, `TrBIntegerTracePrune.lean:53`). The document states exactly that \u2014 'The period matrix of Bring's curve is Z = \u03c4\u2080\u00b7c' \u2014 reached via Z = (\u03bc/5)\u00b7c on homology, with the j-invariant computation carrying the 29\u00b3\u00d75 numerator the corpus uses. The registry's CAVEAT is confirmed independently from the other side: the 2012 companion document in this same slice states at its p. 15 that this source swaps the two j-invariant equations and that this is believed to be a typographical error \u2014 precisely the swap the registry warns about and which the corpus's probes already correct for. The scan is a photographic PDF; pdftotext output is OCR-noisy (ligature and subscript damage) but the structural statements and the numerals are legible.",
+          "keyResults": [
+            {
+              "locator": "Period-matrix statement (p. 12 of the scan)",
+              "statement": "The period matrix of Bring's curve is Z = \u03c4\u2080\u00b7c with c the S\u2085-invariant polarization matrix; on homology Z = (\u03bc/5)\u00b7c.",
+              "useForFolio": "Structural input (a) of the \u03b1_EM B2 Bring-period route; already wired and cross-checked against the 2012 companion.",
+              "targets": [
+                "prop:x5-bring-prym-jacobian"
+              ]
+            },
+            {
+              "locator": "j-invariant section (29\u00b3\u00d75 numerator)",
+              "statement": "The j-invariant values j(\u03c4\u2080), j(5\u03c4\u2080) for the elliptic factors \u2014 with the two equations interchanged, per the companion document's typographical-error note.",
+              "useForFolio": "The value the corpus uses AFTER applying that correction; do not transcribe from this document unswapped.",
+              "targets": [
+                "QOU.Archimedean.BringHauptmodulGate"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Join correct, the period-matrix claim verified in-source, and the swap caveat independently confirmed against the companion document in this same slice. The corpus already applies the correction.",
+              "target": "prop:x5-bring-prym-jacobian"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "cbf5c02babe5"
+        }
+      }
+    },
+    {
+      "position": 404,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/the-period-matrix-of-bring-s-curve-1hik02mwva/the-period-matrix-of-bring-s-curve-1hik02mwva.pdf"
+        },
+        "id": "riera-rodriguez-1992",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Identity confirmed from the document's own header (Pacific Journal of Mathematics vol. 154 no. 1, 1992, the period matrix of Bring's curve, two authors) and matches the seeded key exactly, including volume, issue and year. Three citation sites, load-bearing, and the CONTENT checks out \u2014 but the LOCATOR does not. Both QOU/Archimedean/BringHauptmodulGate.lean:39 and QOU/BraidKnot/TrBIntegerTracePrune.lean:53 attribute their claim to 'Thm 1', and they attribute TWO DIFFERENT statements to it: the first says 'Thm 1: residual gauge Gamma_0(5) on Bring's modulus', the second says 'Thm 1: the stabilizer acts on H_1(Bring, Z) by integer symplectic matrices (entries 0, +-1)'. In the scanned text the Gamma_0(5) statement is LEMMA 1 (p. 184): a symplectic M commuting with the automorphism representation has a specific block form, and 'if in addition M is integral then m, n, p and q are integers and 5 divides p, i.e. M in SpGamma_0(5)'; the immediately following result establishes that SpGamma_0(5) is contained in the stabiliser of Bring's half-plane. The integral homology action the second site needs is developed in \u00a72 (the induced matrix [f]_* on H_1(B,Z) in a canonical basis built from the 20-sided hyperbolic polygon), and the phrase 'entries 0, +-1' does not occur in the text. Caveat on my own check: the PDF is a poor-quality scan and its OCR mangles headings, so I can state that no 'Theorem 1' heading is recoverable from the extracted text and that Lemma 1 carries the Gamma_0(5) content, but not that a Theorem 1 provably does not exist. Third site QOU/Archimedean/BringEllipticFactor.lean:57 cites it alongside two other sources for the elliptic-quotient structure; the document does construct the elliptic quotients (E_1 = B/<(2345)> shown to be an elliptic curve with modulus mu, and a second E_2 = B/<(24)(35),(25)(34)>), so that use is supported.",
+          "keyResults": [
+            {
+              "locator": "Lemma 1 (p. 184) and the following proposition",
+              "statement": "An integral symplectic matrix commuting with the S_5-automorphism representation on H_1 lies in SpGamma_0(5) (the block form forces 5 | p), and SpGamma_0(5) is contained in the stabiliser of Bring's half-plane.",
+              "useForFolio": "It is the residual-gauge input BringHauptmodulGate leans on for the discrete t_5 = -10 pass/fail gate. Same content the corpus already uses \u2014 only the locator needs correcting from 'Thm 1' to 'Lemma 1'.",
+              "targets": [
+                "QOU.Archimedean.BringHauptmodulGate"
+              ]
+            },
+            {
+              "locator": "\u00a72 (universal cover, canonical homology basis, induced [f]_* )",
+              "statement": "Construction of a canonical homology basis for Bring's curve from a 20-sided non-euclidean polygon with angles pi/5, pi/4, pi/2, and the explicit integral matrices by which the automorphisms act on H_1(B, Z).",
+              "useForFolio": "This, not a 'Theorem 1', is where the integer homology action cited by TrBIntegerTracePrune actually lives.",
+              "targets": [
+                "QOU.BraidKnot.TrBIntegerTracePrune"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "BringHauptmodulGate.lean:39 attributes the Gamma_0(5) residual gauge to 'Thm 1'; in the source that is Lemma 1 (p. 184) plus the proposition immediately after it. Correct the locator \u2014 the claim itself is supported.",
+              "target": "QOU.Archimedean.BringHauptmodulGate",
+              "bean": "qou-3q4q"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "TrBIntegerTracePrune.lean:53 attributes a DIFFERENT statement (integer symplectic action on H_1 with entries 0, +-1) to the same 'Thm 1'. The integral homology action is constructed in \u00a72; the 'entries 0, +-1' wording does not appear in the source and should either be sourced to the companion reference already cited on the next line or dropped.",
+              "target": "QOU.BraidKnot.TrBIntegerTracePrune",
+              "bean": "qou-fkmt"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "56f8ce317a00"
+        }
+      }
+    }
+  ]
+}

@@ -235,7 +235,7 @@ def main() -> int:
         "approach_A": (
             "Symbolic computation: derive χ_(2,1)((σ_1 σ_2^{-1})^3) "
             "in closed form via Hoefsmit seminormal matrices. "
-            "See content/quantum-observable-universe/braids-and-knots/"
+            "See folio/quantum-observable-universe/braids-and-knots/"
             "chi-v21-hoefsmit-matrix-derivation.md for the matrix "
             "convention."
         ),

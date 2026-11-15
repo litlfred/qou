@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1303.0720v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.0720v2",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1303.0720v2",
   "contains": [
+    "library/arxiv-1303.0720v2/sections/sec-front-matter",
     "library/arxiv-1303.0720v2/sections/sec-000",
     "library/arxiv-1303.0720v2/sections/sec-001",
     "library/arxiv-1303.0720v2/sections/sec-002",
@@ -48,15 +54,20 @@
     "library/arxiv-1303.0720v2/sections/sec-039",
     "library/arxiv-1303.0720v2/sections/sec-040",
     "library/arxiv-1303.0720v2/sections/sec-041",
-    "library/arxiv-1303.0720v2/sections/sec-042",
-    "library/arxiv-1303.0720v2/sections/sec-043",
-    "library/arxiv-1303.0720v2/sections/sec-044",
-    "library/arxiv-1303.0720v2/sections/sec-045",
-    "library/arxiv-1303.0720v2/sections/sec-046"
+    "library/arxiv-1303.0720v2/sections/sec-042"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1303.0720&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1303.0720v2",
+    "title_source": "slug",
     "source_file": "1303.0720v2.pdf",
     "source_sha256": "389ab465e81a06674df137c14c10ae3f34ab0626b329424eac052cf8a8e9f185",
     "pages": 41,

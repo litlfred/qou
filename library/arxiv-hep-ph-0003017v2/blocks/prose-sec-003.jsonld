@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-003",
   "kind": "prose",
-  "title": "Str (MU+M†U−1)",
-  "pageStart": 27,
-  "pageEnd": 47,
-  "text": "../sections/sec-003-2-str-mumu1.md",
-  "derivedFrom": "library/arxiv-hep-ph-0003017v2/manifest",
-  "sourceDocument": "library/arxiv-hep-ph-0003017v2/manifest",
+  "title": "Random Matrix Theory",
+  "pageStart": 15,
+  "pageEnd": 15,
+  "text": "../sections/sec-003-12-random-matrix-theory.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-0003017v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-0003017v2",
   "provenance": "ingested"
 }

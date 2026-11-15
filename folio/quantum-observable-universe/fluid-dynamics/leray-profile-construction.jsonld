@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-leray-profile-construction",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:leray-profile-construction",
+  "kind": "remark",
+  "title": "Construction of the truncated $\\mathrm{SU}_q(2)$ Leray system",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-leray-profile"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-leray-profile",
+  "tags": [
+    "leray",
+    "self-similar",
+    "blowup-profile",
+    "representation-theory",
+    "construction"
+  ],
+  "text": "leray-profile-construction.md",
+  "provenance": "authored"
+}

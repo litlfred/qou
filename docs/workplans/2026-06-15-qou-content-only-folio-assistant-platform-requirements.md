@@ -24,7 +24,7 @@ the end-state and the work to get there.
 **Relationship:** qou *depends on / consumes* folio-assistant. qou's only
 root CI is a **thin caller** that invokes folio-assistant's reusable workflows
 against qou's content. (AGENTS.md already frames `folio-assistant/` as the
-"platform package" and `content/schema/` as *re-exporting* from
+"platform package" and `folio/schema/` as *re-exporting* from
 `folio-assistant/schemas/` — this finishes that separation.)
 
 ## R0 — Confirm the consumption mechanism (owner decision; gates R1+)
@@ -44,14 +44,14 @@ How does qou consume folio-assistant?
 ### STAYS in qou (content)
 - `content/<paper>/` — the `.ts` / `.md` / `.lean` triples (the paper itself),
   **including each paper manifest's `macros`** (e.g. `\ordw`) — these are content.
-- `content/schema/references.ts` — bibliography source (or co-locate with the
+- `folio/schema/references.ts` — bibliography source (or co-locate with the
   schemas package and re-export; owner to decide).
 - `docs/` (audits, coordination, workplans), `todos/`.
 
 ### MOVES to folio-assistant (platform)
 - `content/pipeline/` — validate, render-latex, build, **generate-main-tex**,
   latex-preflight, qa-sweep, migrate-lean-refs, …
-- `content/schema/` types/builders/constraints (consolidate with
+- `folio/schema/` types/builders/constraints (consolidate with
   `folio-assistant/schemas/`; keep a thin re-export shim if qou tooling imports it).
 - `latex/` — `preamble.tex` + rendering-target infra.
 - `.github/workflows/` (done) + `.github/docker/` + `.github/scripts/`

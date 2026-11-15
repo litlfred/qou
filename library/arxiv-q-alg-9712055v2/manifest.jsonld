@@ -1,30 +1,32 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-q-alg-9712055v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "The q-Fourier transform of q-distributions. M.A.Olshanetsky",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-q-alg-9712055v2",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-q-alg-9712055v2",
   "contains": [
+    "library/arxiv-q-alg-9712055v2/sections/sec-front-matter",
     "library/arxiv-q-alg-9712055v2/sections/sec-000",
-    "library/arxiv-q-alg-9712055v2/sections/sec-001",
-    "library/arxiv-q-alg-9712055v2/sections/sec-002",
-    "library/arxiv-q-alg-9712055v2/sections/sec-003",
-    "library/arxiv-q-alg-9712055v2/sections/sec-004",
-    "library/arxiv-q-alg-9712055v2/sections/sec-005",
-    "library/arxiv-q-alg-9712055v2/sections/sec-006",
-    "library/arxiv-q-alg-9712055v2/sections/sec-007",
-    "library/arxiv-q-alg-9712055v2/sections/sec-008",
-    "library/arxiv-q-alg-9712055v2/sections/sec-009",
-    "library/arxiv-q-alg-9712055v2/sections/sec-010",
-    "library/arxiv-q-alg-9712055v2/sections/sec-011",
-    "library/arxiv-q-alg-9712055v2/sections/sec-012",
-    "library/arxiv-q-alg-9712055v2/sections/sec-013",
-    "library/arxiv-q-alg-9712055v2/sections/sec-014"
+    "library/arxiv-q-alg-9712055v2/sections/sec-001"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:q-alg/9712055&metadataPrefix=arXiv), submitted 1998-01-12, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-q-alg-9712055v2",
+    "title_source": "slug",
     "source_file": "9712055v2.pdf",
     "source_sha256": "eccb15d2c3dc7346a6f116a854aba7cf6a2cfbb5df975cf5d35597cecfa85968",
     "pages": 18,

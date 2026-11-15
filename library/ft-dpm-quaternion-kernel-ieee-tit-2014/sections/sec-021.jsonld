@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-021",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Nonlinear Channel Equalisation: Real and Quaternion",
+  "pageStart": 10,
+  "pageEnd": 12,
+  "contains": [
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/blocks/prose-sec-021"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ft-dpm-quaternion-kernel-ieee-tit-2014",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ft-dpm-quaternion-kernel-ieee-tit-2014",
+  "provenance": "ingested"
+}

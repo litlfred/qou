@@ -807,7 +807,7 @@ def _iter_rows(tier: str | None):
         # machines and cannot support a baseline. Its sibling
         # `witness_raw_float64_audit` is correctly scoped (0 worktree hits);
         # this one had simply not been given the exclusion.
-        if {"_deprecated", "node_modules", ".lake", ".claude"} & set(p.parts):
+        if {"_deprecated", "fsh-guts", "node_modules", ".lake", ".claude"} & set(p.parts):
             continue
         if p.resolve() == Path(__file__).resolve():
             continue
@@ -950,7 +950,7 @@ def main() -> int:
     # corpus in memory, so it is not worth doing for the other two.
     corpus = {}
     for q in ROOT.rglob("*.py"):
-        if {"_deprecated", "node_modules", ".lake", ".claude"} & set(q.parts):
+        if {"_deprecated", "fsh-guts", "node_modules", ".lake", ".claude"} & set(q.parts):
             continue
         try:
             corpus[q.relative_to(ROOT).as_posix()] = q.read_text(

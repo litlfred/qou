@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+rust",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-12T21:28:14.298419+00:00",
-  "commitSha": "bf9586059847a1f0b1aad1f79ca3e366aa962788",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T14:59:11.374375+00:00",
+  "commitSha": "1b224ff8c658abb37e80d5188de49b0f4884a964",
   "assertions": [
     {
       "name": "the y_0 the code uses is never 0, so it is not the proved dual",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 6,
   "computation": "uic-gate-justification-disproved",
   "scriptFile": "uic_gate_justification_disproved_probe.py",
-  "scriptHash": "9b64a892f635",
-  "scriptCommitSha": "bad597ca516561fd759f6bec5f6a5725fba37428",
+  "scriptHash": "94ccb2448e23",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -58,14 +58,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -146,5 +146,7 @@
         "with_proved_y0": "-1.60653034864444958740697731099740669827590175952158015845110"
       }
     ]
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

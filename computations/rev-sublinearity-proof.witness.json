@@ -39,7 +39,7 @@
   ],
   "checks_passed": 7,
   "checks_total": 7,
-  "computedAt": "2026-09-07T07:13:47.466851+00:00",
+  "computedAt": "2026-10-13T15:21:27.094424+00:00",
   "constants": {
     "A_sqrt2_predicted_REV_over_sqrt_n": "5.0959456500661407443",
     "A_sum_eps_odd": "3.6033777257198572643",
@@ -252,6 +252,7 @@
     "L1 N_m <= min(ell,lambda_1)",
     "REV = Omega(sqrt n)"
   ],
+  "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0_anchor": "physical_proton",
   "refuted": "L2 'H >= 3r^2-3r+1 with r=min(ell,lambda_1)' is FALSE; counterexample the hook shape (11,1^10) with H=131 vs claimed bound 331. The bad step was h(1,j) >= 2r-j, which needs column j to have >= r cells for all j <= r.",

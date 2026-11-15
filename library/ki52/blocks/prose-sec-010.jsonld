@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ki52/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ki52/blocks/prose-sec-010",
   "kind": "prose",
-  "title": "Calculation of the asymptotic expansion",
-  "pageStart": 30,
-  "pageEnd": 31,
-  "text": "../sections/sec-010-52-calculation-of-the-asymptotic-expansion.md",
-  "derivedFrom": "library/ki52/manifest",
-  "sourceDocument": "library/ki52/manifest",
+  "title": "References",
+  "pageStart": 49,
+  "pageEnd": 52,
+  "text": "../sections/sec-010-references.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ki52",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ki52",
   "provenance": "ingested"
 }

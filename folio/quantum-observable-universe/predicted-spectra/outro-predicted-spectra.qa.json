@@ -1,0 +1,380 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "outro-predicted-spectra",
+  "kind": "prose",
+  "paths": {
+    "ts": "folio/quantum-observable-universe/predicted-spectra/outro-predicted-spectra.ts",
+    "md": "folio/quantum-observable-universe/predicted-spectra/outro-predicted-spectra.md"
+  },
+  "source_hashes": {
+    "md": "0656904361f8",
+    "ts": "a92a4230ff12"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "0656904361f8",
+          "ts": "a92a4230ff12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.287Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "4a953db88fa9",
+          "ts": "a92a4230ff12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:35:00.630Z",
+        "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
+        "evidence": "Full read of the two-paragraph chapter close (prose kind, no Lean, no math beyond the q_0 numeral). The seven-item summary list is a list of seven, not a reflex triple; 'CODATA, PDG, and SnapPy' is a substantive three (three distinct data sources). Pin check: 'q_0 approx 1.1100' is reproduced identically by the proton pin 1.1099785827513808 and the muon pin 1.10997859555733471, and excludes the erroneous rounding 1.1097, so it is currency-safe at the precision shown. No negation-contrast, no rhetorical pivot, no em-dash, no meta-commentary, no performed warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "0656904361f8",
+          "ts": "a92a4230ff12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.287Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "4a953db88fa9",
+          "ts": "a92a4230ff12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:35:00.670Z",
+        "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
+        "evidence": "Full read of the two-paragraph chapter close (prose kind, no Lean, no math beyond the q_0 numeral). The seven-item summary list is a list of seven, not a reflex triple; 'CODATA, PDG, and SnapPy' is a substantive three (three distinct data sources). Pin check: 'q_0 approx 1.1100' is reproduced identically by the proton pin 1.1099785827513808 and the muon pin 1.10997859555733471, and excludes the erroneous rounding 1.1097, so it is currency-safe at the precision shown. No negation-contrast, no rhetorical pivot, no em-dash, no meta-commentary, no performed warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "0656904361f8",
+          "ts": "a92a4230ff12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.287Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 68 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4a953db88fa9",
+          "ts": "a92a4230ff12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:35:00.712Z",
+        "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
+        "evidence": "Full read of the two-paragraph chapter close (prose kind, no Lean, no math beyond the q_0 numeral). The seven-item summary list is a list of seven, not a reflex triple; 'CODATA, PDG, and SnapPy' is a substantive three (three distinct data sources). Pin check: 'q_0 approx 1.1100' is reproduced identically by the proton pin 1.1099785827513808 and the muon pin 1.10997859555733471, and excludes the erroneous rounding 1.1097, so it is currency-safe at the precision shown. No negation-contrast, no rhetorical pivot, no em-dash, no meta-commentary, no performed warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "0656904361f8",
+          "ts": "a92a4230ff12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.287Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (1 in 68 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4a953db88fa9",
+          "ts": "a92a4230ff12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:35:00.752Z",
+        "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
+        "evidence": "Full read of the two-paragraph chapter close (prose kind, no Lean, no math beyond the q_0 numeral). The seven-item summary list is a list of seven, not a reflex triple; 'CODATA, PDG, and SnapPy' is a substantive three (three distinct data sources). Pin check: 'q_0 approx 1.1100' is reproduced identically by the proton pin 1.1099785827513808 and the muon pin 1.10997859555733471, and excludes the erroneous rounding 1.1097, so it is currency-safe at the precision shown. No negation-contrast, no rhetorical pivot, no em-dash, no meta-commentary, no performed warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "0656904361f8",
+          "ts": "a92a4230ff12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.287Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "4a953db88fa9",
+          "ts": "a92a4230ff12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:35:00.959Z",
+        "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
+        "evidence": "The block-final sentence is 'The per-observable 100x accuracy target defines the empirical band for testing.' — a definition handing off to the next chapter, not a quotable flourish. The opening 'Substrate-level predictions assemble into a unified surface' is the closest thing to a rhetorical device in the block, but it introduces a seven-item list rather than closing anything, so it does not fire this criterion.",
+        "notes": "pass on all ten. Two notes for an author, neither a trap. (a) 'assemble into a unified surface' is an unexplained metaphor — the seven listed results are not shown to lie on any common surface, and the chapter does not use 'surface' as a term of art elsewhere; 'assemble into' alone would carry the sentence. (b) 'Setting $q_0 \\approx 1.1100$ compares the predictions against CODATA, PDG, and SnapPy data' dangles its participle — the setting does not do the comparing. Proposed: 'At $q_0 \\approx 1.1100$ the predictions are compared against ...'."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "0656904361f8",
+          "ts": "a92a4230ff12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.287Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "4a953db88fa9",
+          "ts": "a92a4230ff12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:35:00.793Z",
+        "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
+        "evidence": "Full read of the two-paragraph chapter close (prose kind, no Lean, no math beyond the q_0 numeral). The seven-item summary list is a list of seven, not a reflex triple; 'CODATA, PDG, and SnapPy' is a substantive three (three distinct data sources). Pin check: 'q_0 approx 1.1100' is reproduced identically by the proton pin 1.1099785827513808 and the muon pin 1.10997859555733471, and excludes the erroneous rounding 1.1097, so it is currency-safe at the precision shown. No negation-contrast, no rhetorical pivot, no em-dash, no meta-commentary, no performed warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "0656904361f8",
+          "ts": "a92a4230ff12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.287Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "4a953db88fa9",
+          "ts": "a92a4230ff12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:35:00.836Z",
+        "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
+        "evidence": "Full read of the two-paragraph chapter close (prose kind, no Lean, no math beyond the q_0 numeral). The seven-item summary list is a list of seven, not a reflex triple; 'CODATA, PDG, and SnapPy' is a substantive three (three distinct data sources). Pin check: 'q_0 approx 1.1100' is reproduced identically by the proton pin 1.1099785827513808 and the muon pin 1.10997859555733471, and excludes the erroneous rounding 1.1097, so it is currency-safe at the precision shown. No negation-contrast, no rhetorical pivot, no em-dash, no meta-commentary, no performed warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "0656904361f8",
+          "ts": "a92a4230ff12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.287Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "4a953db88fa9",
+          "ts": "a92a4230ff12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:35:00.876Z",
+        "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
+        "evidence": "Full read of the two-paragraph chapter close (prose kind, no Lean, no math beyond the q_0 numeral). The seven-item summary list is a list of seven, not a reflex triple; 'CODATA, PDG, and SnapPy' is a substantive three (three distinct data sources). Pin check: 'q_0 approx 1.1100' is reproduced identically by the proton pin 1.1099785827513808 and the muon pin 1.10997859555733471, and excludes the erroneous rounding 1.1097, so it is currency-safe at the precision shown. No negation-contrast, no rhetorical pivot, no em-dash, no meta-commentary, no performed warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "0656904361f8",
+          "ts": "a92a4230ff12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.287Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "4a953db88fa9",
+          "ts": "a92a4230ff12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:35:01.002Z",
+        "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
+        "evidence": "No maximum-strength claim in the block. It names the 100x accuracy target without asserting how many observables meet it — which is the right call, since the authoritative count per AGENTS.md is 1 of 5 scoreable predictions (m_K/m_pi alone), and a stronger claim here would have been wrong.",
+        "notes": "pass. Worth recording as a positive: the outro resists the over-claim its subject invites. The only nearby hazard is the list item 'alpha_EM from the Hartree-categorical fixed point', which is presented alongside settled results while the alpha_EM per-loop measure derivation is named an open research topic in AGENTS.md — but the sentence says these 'assemble' as predictions, not that they are derived, so it stays inside scope."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "0656904361f8",
+          "ts": "a92a4230ff12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.287Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "4a953db88fa9",
+          "ts": "a92a4230ff12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:35:00.915Z",
+        "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
+        "evidence": "Full read of the two-paragraph chapter close (prose kind, no Lean, no math beyond the q_0 numeral). The seven-item summary list is a list of seven, not a reflex triple; 'CODATA, PDG, and SnapPy' is a substantive three (three distinct data sources). Pin check: 'q_0 approx 1.1100' is reproduced identically by the proton pin 1.1099785827513808 and the muon pin 1.10997859555733471, and excludes the erroneous rounding 1.1097, so it is currency-safe at the precision shown. No negation-contrast, no rhetorical pivot, no em-dash, no meta-commentary, no performed warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ]
+  },
+  "updated_at": "2026-08-22T04:35:01.002Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
+}

@@ -176,7 +176,7 @@ def main():
     print()
 
     print("CHECK 1 -- the theorem states Phi_1 twice, and the two differ")
-    md = (ROOT / "content" / "quantum-observable-universe" / "mass-theory"
+    md = (ROOT / "folio" / "quantum-observable-universe" / "mass-theory"
           / "wedderburn-mass-formula.md").read_text()
     check("the DISPLAYED formula is a sum over i",
           r"\Phi_1 = \sum_i \ln" in md)

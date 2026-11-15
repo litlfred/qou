@@ -17,7 +17,7 @@ lam_sym/lam_alt equal to -q^2, -q^-2, or +-1:
     ne (0,1)     -> +1       ->  0
 
 These are exactly the three cases already proved sorry-free in
-content/quantum-observable-universe/lean/QOU/BraidKnot/HeckeLinearReduction.lean
+folio/quantum-observable-universe/lean/QOU/BraidKnot/HeckeLinearReduction.lean
 (symAltRatio_zero, symAltRatio_full, symAltRatio_half), plus the identity.
 
 Since Phi_3 = sum_i ln|lam_sym(M_i)/lam_alt(M_i)| and each M_i is a product of

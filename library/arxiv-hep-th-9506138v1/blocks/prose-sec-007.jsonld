@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-9506138v1/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-9506138v1/blocks/prose-sec-007",
   "kind": "prose",
-  "title": "References",
-  "pageStart": 28,
-  "pageEnd": 28,
-  "text": "../sections/sec-007-references.md",
-  "derivedFrom": "library/arxiv-hep-th-9506138v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-9506138v1/manifest",
+  "title": "Calculation of the Commutator",
+  "pageStart": 16,
+  "pageEnd": 19,
+  "text": "../sections/sec-007-a1-calculation-of-the-commutator.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9506138v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9506138v1",
   "provenance": "ingested"
 }

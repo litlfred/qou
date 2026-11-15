@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/cor-commutative-chirality-vanishes",
+  "@type": [
+    "folio-assistant-core:Corollary",
+    "doco:Section"
+  ],
+  "label": "cor:commutative-chirality-vanishes",
+  "kind": "corollary",
+  "title": "Chirality term vanishes in the commutative QOU limit",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-commutative-crossing-energy"
+  ],
+  "leanRef": "qou:QOU.WedderburnMass.commutative_chirality_vanishes",
+  "text": "commutative-chirality-vanishes.md",
+  "leanSource": "commutative-chirality-vanishes.lean",
+  "provenance": "authored"
+}

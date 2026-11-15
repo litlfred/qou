@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-035",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The Translation Isomorphism of a DG Functor",
+  "pageStart": 84,
+  "pageEnd": 85,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-035",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-035-01",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-035-02",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-035-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "provenance": "ingested"
+}

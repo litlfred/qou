@@ -2,7 +2,7 @@
 """N_sym numerical anchor — pin the value of the symmetric-channel
 Plancherel normalization at q_0, test ansatze, run PSLQ.
 
-Per conj:n-sym-symmetric-channel-normalization, the closed-form
+Per `n-sym-symmetric-channel-normalization`, the closed-form
 expression for N_v factors as
 
   N_v = (∏_{k=2,3,4} [2k]_q² / [2]_q) · N_sym(q)
@@ -16,6 +16,11 @@ This script:
   4. Computes a candidate Gram-determinant value (candidate (a))
      for comparison
   5. Emits witness JSON
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir

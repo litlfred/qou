@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1508.01627v4/sections/sec-006",
   "@type": [
     "doco:Section"
   ],
-  "title": "An application to small 1-PIMs",
-  "pageStart": 18,
-  "pageEnd": 23,
+  "title": "Lusztig restriction",
+  "pageStart": 5,
+  "pageEnd": 6,
   "contains": [
     "library/arxiv-1508.01627v4/blocks/prose-sec-006"
   ],
-  "derivedFrom": "library/arxiv-1508.01627v4/manifest",
-  "sourceDocument": "library/arxiv-1508.01627v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1508.01627v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1508.01627v4",
   "provenance": "ingested"
 }

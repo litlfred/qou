@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/download/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/download/blocks/prose-sec-001",
   "kind": "prose",
   "title": "Empirical Poincaré inequalities",
   "pageStart": 5,
   "pageEnd": 7,
   "text": "../sections/sec-001-empirical-poincaré-inequalities.md",
-  "derivedFrom": "library/download/manifest",
-  "sourceDocument": "library/download/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/download",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/download",
   "provenance": "ingested"
 }

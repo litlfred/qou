@@ -7,7 +7,7 @@
 
 ## The exact open object
 
-[`S5SO3FiberAction.lean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean)
+[`S5SO3FiberAction.lean`](../../folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean)
 states the conditional class but provides **no instance**:
 
 ```lean
@@ -47,7 +47,7 @@ distinct angles.
 
 - Bring's curve `Σ₄`: genus **4** (`brings_genus := 4`), `Aut(Σ₄) = S₅` (order
   120) — the maximal automorphism group for genus 4 (corpus:
-  [`bring-trefoil-cinquefoil-channel.md`](../../content/quantum-observable-universe/brings-surface/bring-trefoil-cinquefoil-channel.md)).
+  [`bring-trefoil-cinquefoil-channel.md`](../../folio/quantum-observable-universe/brings-surface/bring-trefoil-cinquefoil-channel.md)).
 - `H¹(Σ₄, ℂ)` has dim `2g = 8`; the holomorphic differentials `H⁰(Σ₄, Ω¹)`
   have dim `g = 4` and form a **4-dimensional S₅-representation**.
 - **Classical fact to confirm in-session:** `H⁰(Ω¹) ≅ V_(4,1)` (the standard

@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-categorical-mordell-weil",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:categorical-mordell-weil",
+  "kind": "definition",
+  "title": "Categorical Mordell--Weil group, $q$-Tate--Shafarevich group, and $q$-deformed $L$-function",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-tannaka-krein-isomorphism",
+    "papers/quantum-observable-universe/blocks/prop-descartes-elliptic-curve",
+    "papers/quantum-observable-universe/blocks/def-local-q-zeta-function"
+  ],
+  "cites": [
+    "references/tate1974"
+  ],
+  "tags": [
+    "birch-swinnerton-dyer",
+    "elliptic-curve",
+    "l-function",
+    "mordell-weil",
+    "tate-shafarevich",
+    "categorical",
+    "fibre-functor"
+  ],
+  "leanRef": "qou:QOU.AppendixSurreals.CategoricalMordellWeil",
+  "text": "categorical-mordell-weil.md",
+  "leanSource": "categorical-mordell-weil.lean",
+  "provenance": "authored"
+}

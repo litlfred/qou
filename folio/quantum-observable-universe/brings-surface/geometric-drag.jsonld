@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-geometric-drag",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:geometric-drag",
+  "kind": "remark",
+  "title": "Geometric drag and the mass residue",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter",
+    "papers/quantum-observable-universe/blocks/def-mass-identity"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-mass-identity",
+  "text": "geometric-drag.md",
+  "provenance": "authored"
+}

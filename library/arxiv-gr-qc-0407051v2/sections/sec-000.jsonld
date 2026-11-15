@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-gr-qc-0407051v2/sections/sec-000",
   "@type": [
     "doco:Section"
   ],
-  "title": "Physics Department, 104 Davey, Penn State, University Pa rk, PA 16802, USA",
-  "pageStart": 1,
-  "pageEnd": 1,
+  "title": "Introduction and results",
+  "pageStart": 2,
+  "pageEnd": 4,
   "contains": [
     "library/arxiv-gr-qc-0407051v2/blocks/prose-sec-000"
   ],
-  "derivedFrom": "library/arxiv-gr-qc-0407051v2/manifest",
-  "sourceDocument": "library/arxiv-gr-qc-0407051v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-gr-qc-0407051v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-gr-qc-0407051v2",
   "provenance": "ingested"
 }

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0302267v2/blocks/prose-sec-002",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0302267v2/blocks/prose-sec-002",
   "kind": "prose",
-  "title": "Le point de vue tannakien 13",
-  "pageStart": 2,
-  "pageEnd": 2,
-  "text": "../sections/sec-002-2-le-point-de-vue-tannakien-13.md",
-  "derivedFrom": "library/arxiv-math-0302267v2/manifest",
-  "sourceDocument": "library/arxiv-math-0302267v2/manifest",
+  "title": "Motifs de Tate mixte sur l’anneau des S-entiers de k",
+  "pageStart": 5,
+  "pageEnd": 15,
+  "text": "../sections/sec-002-1-motifs-de-tate-mixte-sur-lanneau-des-s-entiers.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0302267v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0302267v2",
   "provenance": "ingested"
 }

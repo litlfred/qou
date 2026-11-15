@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-beta-decay-skein",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:beta-decay-skein",
+  "kind": "definition",
+  "title": "Beta decay as a Skein crossing change on the Gröbner normal form",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-positron-knot"
+  ],
+  "tags": [
+    "beta-decay",
+    "skein-relation",
+    "groebner-basis",
+    "hecke-algebra",
+    "weak-force",
+    "crossing-change",
+    "lepton",
+    "normal-form"
+  ],
+  "leanRef": "qou:QOU.Archimedean.BetaDecaySkein",
+  "text": "beta-decay-skein.md",
+  "leanSource": "beta-decay-skein.lean",
+  "provenance": "authored"
+}

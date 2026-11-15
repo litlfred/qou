@@ -285,7 +285,7 @@ def main() -> int:
     )
 
     # Structural-identity assertions: verify the Lean theorems in
-    # `content/quantum-observable-universe/braids-and-knots/three-halves-structural-factor.lean`
+    # `folio/quantum-observable-universe/braids-and-knots/three-halves-structural-factor.lean`
     # hold numerically at the canonical q_0 to 50-dps precision.
     # These are NUMERICAL CROSS-CHECKS of the algebraic identities;
     # the Lean proofs are categorical (over generic [Field R]).

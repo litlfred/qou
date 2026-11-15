@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/cuspshapes/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/cuspshapes/blocks/prose-sec-001",
   "kind": "prose",
   "title": "Hyperbolic structures on compression bodies",
   "pageStart": 3,
   "pageEnd": 3,
   "text": "../sections/sec-001-2-hyperbolic-structures-on-compression-bodies.md",
-  "derivedFrom": "library/cuspshapes/manifest",
-  "sourceDocument": "library/cuspshapes/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cuspshapes",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cuspshapes",
   "provenance": "ingested"
 }

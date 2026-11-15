@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2207.07246v2/blocks/prose-sec-036",
+  "kind": "prose",
+  "title": "Ground State Energies",
+  "pageStart": 90,
+  "pageEnd": 90,
+  "text": "../sections/sec-036-41-ground-state-energies.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2207.07246v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2207.07246v2",
+  "provenance": "ingested"
+}

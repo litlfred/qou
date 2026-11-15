@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0501112v3/blocks/prose-sec-016",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0501112v3/blocks/prose-sec-016",
   "kind": "prose",
-  "title": "Canonical probability measure on Young diagrams associated to a",
-  "pageStart": 7,
-  "pageEnd": 7,
-  "text": "../sections/sec-016-25-canonical-probability-measure-on-young-diagra.md",
-  "derivedFrom": "library/arxiv-math-0501112v3/manifest",
-  "sourceDocument": "library/arxiv-math-0501112v3/manifest",
+  "title": "Representations with character factorization property",
+  "pageStart": 10,
+  "pageEnd": 13,
+  "text": "../sections/sec-016-3-representations-with-character-factorization-p.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0501112v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0501112v3",
   "provenance": "ingested"
 }

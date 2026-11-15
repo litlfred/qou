@@ -290,7 +290,7 @@ def main() -> int:
         ),
         "computation": {
             "script": "computations/ocneanu_param_from_fibre_dimension.py",
-            "lean": ("content/quantum-observable-universe/lean/QOU/"
+            "lean": ("folio/quantum-observable-universe/lean/QOU/"
                      "BraidsAndKnots/FibreDimensionForcesTL.lean"),
             "bean": "qou-n1dj",
         },

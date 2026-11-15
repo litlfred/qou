@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1706.06168v3/sections/sec-020",
   "@type": [
     "doco:Section"
   ],
-  "title": "A Tensor Product Decomposition of SL2(C) Representations",
-  "pageStart": 31,
-  "pageEnd": 34,
+  "title": "Deriving the Real Borcea-Brändén Characterization",
+  "pageStart": 25,
+  "pageEnd": 26,
   "contains": [
     "library/arxiv-1706.06168v3/blocks/prose-sec-020"
   ],
-  "derivedFrom": "library/arxiv-1706.06168v3/manifest",
-  "sourceDocument": "library/arxiv-1706.06168v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1706.06168v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1706.06168v3",
   "provenance": "ingested"
 }

@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-derived-mass-formula-light-isotopes",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:derived-mass-formula-light-isotopes",
+  "kind": "proposition",
+  "title": "Derived-only mass formula reproduces light atomic masses to sub-percent",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-frobenius-s-classification"
+  ],
+  "leanRef": "qou:QOU.WedderburnMass.derivedLightIsotopeFormula",
+  "text": "derived-mass-formula-light-isotopes.md",
+  "leanSource": "derived-mass-formula-light-isotopes.lean",
+  "provenance": "authored"
+}

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1601.02479v5/blocks/prose-sec-015",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1601.02479v5/blocks/prose-sec-015",
   "kind": "prose",
   "title": "Framed moduli spaces",
   "pageStart": 32,
   "pageEnd": 32,
   "text": "../sections/sec-015-33-framed-moduli-spaces.md",
-  "derivedFrom": "library/arxiv-1601.02479v5/manifest",
-  "sourceDocument": "library/arxiv-1601.02479v5/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1601.02479v5",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1601.02479v5",
   "provenance": "ingested"
 }

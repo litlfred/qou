@@ -6,7 +6,11 @@
   "sha256": "b298478f5f5b948df63ffd7aaccf2c6940ff65dcd23b1e25a39071a7dc7d40fa",
   "bytes": 208743,
   "pages": 17,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -235,6 +239,93 @@
   "likely_scanned": false,
   "toc_entries": 12,
   "sections": 11,
-  "chars_total": 30550
+  "chars_total": 30550,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "EldanShamir20-arxiv.tex",
+   "tex_sections": 13,
+   "overlaid": 6,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.936,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-11-a-lower-bound-on-the-entropy",
+     "title": "A lower bound on the entropy",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-12-an-application-concentration-of-negatively-de",
+     "title": "An application: Concentration of negatively dependent random variables",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-13-relation-to-the-works-of-anari-liu-oveis-ghar",
+     "title": "Relation to the works of Anari, Liu, Oveis-Gharan and Vinzant",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-2-preliminaries-and-a-stochastic-construction",
+     "title": "Preliminaries and a stochastic construction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-22-stochastic-localization",
+     "title": "Stochastic localization",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-3-proof-of-theorem-2",
+     "title": "Proof of Theorem 2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-31-estimating-the-variance-in-terms-of-the-trans",
+     "title": "Estimating the variance in terms of the transportation distance between tilts",
+     "prose_ratio": 0.488,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-32-proof-of-proposition-13-the-stochastic-coupli",
+     "title": "Proof of Proposition 13: The stochastic coupling",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-4-proof-of-fact-3",
+     "title": "Proof of Fact 3",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-5-proof-of-theorem-5",
+     "title": "Proof of Theorem 5",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

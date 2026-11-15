@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-018",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-018",
   "kind": "prose",
-  "title": "For every element g ∈ G, there is a unique decomposition of g into a",
-  "pageStart": 18,
-  "pageEnd": 18,
-  "text": "../sections/sec-018-4-for-every-element-g-g-there-is-a-unique-decomp.md",
-  "derivedFrom": "library/arxiv-math-ph-0012035v3/manifest",
-  "sourceDocument": "library/arxiv-math-ph-0012035v3/manifest",
+  "title": "Other applications",
+  "pageStart": 41,
+  "pageEnd": 42,
+  "text": "../sections/sec-018-33-other-applications.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-ph-0012035v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-ph-0012035v3",
   "provenance": "ingested"
 }

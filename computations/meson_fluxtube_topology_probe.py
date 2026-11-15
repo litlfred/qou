@@ -112,7 +112,7 @@ def main():
         "all_checks_pass": all(checks.values()),
         "refs": [
             "docs/audits/2026-08-02-meson-fluxtube-junction-reduction.md",
-            "content/quantum-observable-universe/lean/QOU/ParticleInteractions/MesonFluxTubeReduction.lean",
+            "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/MesonFluxTubeReduction.lean",
             "bean qou-qpj9",
         ],
     }

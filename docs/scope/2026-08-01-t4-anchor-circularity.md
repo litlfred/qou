@@ -4,7 +4,7 @@
 **Nothing retracted numerically — every number below is correct. What is corrected is what those numbers *establish*.**
 
 New audit axis introduced alongside this note:
-[`content/pipeline/circular-anchor-audit.ts`](../../content/pipeline/circular-anchor-audit.ts)
+[`folio/pipeline/circular-anchor-audit.ts`](../../folio/pipeline/circular-anchor-audit.ts)
 (mechanical) + [`circular-anchor-review-ledger.json`](../audits/circular-anchor-review-ledger.json)
 (agentic).
 
@@ -39,7 +39,7 @@ S_muon_T4 = A_omega_41 * kappa_41 * (ln_q0**2 - theta_muon_T4**2)
 ## Both reported checks are weaker than they read
 
 T4's verdict is *"both anchors yield real ϑ_K, with correct boost/spin dominance"*.
-Formalizing the channel ([`ThetaRealityBound.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/ThetaRealityBound.lean),
+Formalizing the channel ([`ThetaRealityBound.lean`](../../folio/quantum-observable-universe/lean/QOU/QBeta/ThetaRealityBound.lean),
 sorry-free) shows what each check is worth:
 
 | reported check | what it actually is |

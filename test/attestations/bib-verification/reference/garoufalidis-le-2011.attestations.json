@@ -1,0 +1,59 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "garoufalidis-le-2011",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 174,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-0508100v6/0508100v6.pdf"
+        },
+        "id": "garoufalidis-le-2011",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "JOIN CONFIRMED from the arXiv title page (arXiv:math/0508100v6, math.GT) - subject, two-author form and identifier match the seeded entry. Citation site: QOU/Knot/BorromeanVolume.lean:34. LOAD-BEARING AND CORRECT, and the reference entry's note checks out verbatim against the PDF: the paper carries 'Appendix A. The volume conjecture for the Borromean rings' (text lines 95 and 2394), whose Theorem A.1 states lim_{n->inf} (1/n) log |J_{B,n}(e^{2 pi i/n})| = (1/2 pi) vol(S^3 - B) for B the Borromean rings, and whose proof runs through 'Habiro's formula for J~_L of the Borromean ring' (text line 2438) - exactly the Habiro-cyclotomic route the note claims, and exactly the identification BorromeanVolume.lean's docstring names as 'the cited literature input' for its otherwise-DEFINED borromeanKashaev sum. The paper's keyword list independently confirms the ideal-octahedron / Catalan-constant context behind that file's 8 Cl_2(pi/2) squeeze target.",
+          "keyResults": [
+            {
+              "locator": "Thm A.1",
+              "statement": "For the Borromean rings B, lim (1/n) log |J_{B,n}(e^{2 pi i/n})| = vol(S^3 - B)/(2 pi); proved via Habiro's cyclotomic formula for the Borromean colored Jones.",
+              "useForFolio": "The literature input that licenses identifying QOU's explicitly-DEFINED borromeanKashaev sum with the Kashaev invariant / colored Jones at the root of unity, i.e. the epistemic hinge of BorromeanVolume.lean.",
+              "targets": [
+                "qou:QOU.Knot.FigureEightVolume.borromeanKashaev"
+              ]
+            },
+            {
+              "locator": "eq. (46)-(47), App. A",
+              "statement": "The explicit x_j = 2 sin(j pi/n), z_k = prod x_j reindexing with x_{n-j} = -x_{n+j} and z_k = n/z_{n-1-k}.",
+              "useForFolio": "The same sine-product bookkeeping BorromeanVolume.lean's borromeanDen/borromeanTerm implement; a direct check that the Lean's sign-absorbing squaring matches the source.",
+              "targets": [
+                "qou:QOU.Knot.FigureEightVolume.borromeanDen"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "BorromeanVolume.lean cites the paper only by DOI in the header. Naming 'Appendix A, Theorem A.1' at the point where the docstring asserts the identification would make the epistemic-status paragraph checkable without opening the PDF.",
+              "target": "qou:QOU.Knot.FigureEightVolume.borromeanKashaev",
+              "bean": "qou-krtl"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "9cc100a86b40"
+        }
+      }
+    }
+  ]
+}

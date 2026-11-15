@@ -3,7 +3,7 @@
 
 **Date:** 2026-04-25  
 **Reviewer:** Claude Code (automated thorough review)  
-**Chapter Dir:** `/home/user/qou/content/quantum-observable-universe/particle-interactions/`  
+**Chapter Dir:** `/home/user/qou/folio/quantum-observable-universe/particle-interactions/`  
 **Manifest:** `particle-interactions.ts`
 
 ---

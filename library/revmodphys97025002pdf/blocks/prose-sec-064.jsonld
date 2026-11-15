@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/revmodphys97025002pdf/blocks/prose-sec-064",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/revmodphys97025002pdf/blocks/prose-sec-064",
   "kind": "prose",
   "title": "Decreased and increased uncertainties",
   "pageStart": 55,
   "pageEnd": 55,
   "text": "../sections/sec-064-4-decreased-and-increased-uncertainties.md",
-  "derivedFrom": "library/revmodphys97025002pdf/manifest",
-  "sourceDocument": "library/revmodphys97025002pdf/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/revmodphys97025002pdf",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/revmodphys97025002pdf",
   "provenance": "ingested"
 }

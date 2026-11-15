@@ -3,7 +3,7 @@
 # upstream beta-decay-energy-scale witness, exposes predicted MeV
 # observables.
 """
-**CONTEXT (per prop:li2q-phiq-bar-symmetrization).** This module
+**CONTEXT (per `li2q-phiq-bar-symmetrization`).** This module
 predicts both **MASS** observables (m_p, m_n, m_e via β-decay scale)
 and **BINDING-derived** quantities (Q_β, isotope binding via mass
 differences). Φ_q usage in this script is in the MASS leg (anchor
@@ -30,8 +30,8 @@ Framework-derived energy observables for the QOU mass / β-decay
 sector.
 
 Predictions come from the **FULL** chain per
-[`prop:beta-decay-energy-scale`](../../content/quantum-observable-universe/particle-interactions/beta-decay-energy-scale.md)
-and [`prop:meson-to-proton-via-borromean`](../../content/quantum-observable-universe/archimedean-universe/meson-to-proton-via-borromean.md),
+[`prop:beta-decay-energy-scale`](../../folio/quantum-observable-universe/particle-interactions/beta-decay-energy-scale.md)
+and [`prop:meson-to-proton-via-borromean`](../../folio/quantum-observable-universe/archimedean-universe/meson-to-proton-via-borromean.md),
 NOT from the LO simplification (where |tr_M| cancels exactly between
 numerator and denominator of ρ_K^LO and the prediction reduces to
 the constituent sum Z·m_p + N·m_n; cf.
@@ -100,7 +100,7 @@ asymptotic states.
 
 The proton and neutron rest masses in the FULL form require the
 multi-term unified knot mass formula
-([`prop:atom-knot-mass-derivation`](../../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md)):
+([`prop:atom-knot-mass-derivation`](../../folio/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md)):
 
     M(𝔥) = ρ · [|tr_M(T_w)| + tower(T_w) + tr_M(C_dim_q)]
     m_𝔥 = m_e · M(𝔥)|_{q = q_0}
@@ -117,7 +117,7 @@ is the framework's FULL prediction.
 So `proton_mass_mev()` and `neutron_mass_mev()` raise
 `NotImplementedError` until either (a) the multiplicative-T1 bug
 is fixed via the LP-dual shadow-price scheme of
-[`prop:operator-selection-lp`](../../content/quantum-observable-universe/braids-and-knots/operator-selection-lp.md),
+[`prop:operator-selection-lp`](../../folio/quantum-observable-universe/braids-and-knots/operator-selection-lp.md),
 or (b) a separate brane-tower-clean derivation is wired (Workplan 2
 Phase 2 50-dps m_e_Hecke).
 
@@ -129,6 +129,11 @@ For now, consumers should:
   * NOT consume CODATA `M_P_MEV_VALIDATION` / `M_N_MEV_VALIDATION`
     as inputs to mass-prediction scripts (discipline violation,
     Workplan 0b)
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 
@@ -265,7 +270,7 @@ def e_0_n0_mev() -> mp.mpf:
     Equivalent form `m_e · c_q² · ℏ_q` (with `c_q = 1/(q-1)` per the
     notation register Ch 11 and `ℏ_q = (q-1)/q`) — derivation given
     in
-    [`beta-decay-energy-scale.md`](../../content/quantum-observable-universe/particle-interactions/beta-decay-energy-scale.md).
+    [`beta-decay-energy-scale.md`](../../folio/quantum-observable-universe/particle-interactions/beta-decay-energy-scale.md).
     Stick to the explicit `m_e / (q_0 (q_0-1))` form here to avoid
     ambiguity over which `c_q` convention is in scope.
 
@@ -300,7 +305,7 @@ def li2q_symmetric(z, q, terms: int | None = None):
     """Symmetric q-dilogarithm Li_2^q(z) = Σ_{n≥1} z^n / (n · [n]_q).
 
     With symmetric q-integer [n]_q = (q^n − q^{-n})/(q − q^{-1}).
-    Per [`prop:mass-endomorphism-tower`](../../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md)
+    Per [`prop:mass-endomorphism-tower`](../../folio/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md)
     lines 162–183 (the bounded Kashaev specialisation, distinct from
     the divergent compact q-dilog Φ_q). Series converges for |z| < 1.
 
@@ -368,9 +373,9 @@ def e_0_full_mev() -> mp.mpf:
     wired here, and the **bounded** symmetric q-dilogarithm form
     `e_0_full_li2q_mev()`. The categorical question of which is the
     correct resummation of the $\\alpha_k$ stratum prefactors
-    ([`prop:alpha-k-derivation-procedure`](../../content/quantum-observable-universe/braids-and-knots/alpha-k-derivation-procedure.md))
+    ([`prop:alpha-k-derivation-procedure`](../../folio/quantum-observable-universe/braids-and-knots/alpha-k-derivation-procedure.md))
     is open — see
-    [`conj:alpha-k-categorical-closure`](../../content/quantum-observable-universe/braids-and-knots/alpha-k-categorical-closure.md).
+    [`conj:alpha-k-categorical-closure`](../../folio/quantum-observable-universe/braids-and-knots/alpha-k-categorical-closure.md).
     The empirical $\\alpha_k$ values at $H_3$ (1, 0, $z^2$,
     $z(1+q^{1/2}-q^{-1/2})$) do **not** match the naive geometric
     recursion $\\alpha_k = \\hbar_q^{2(k-1)}\\alpha_{k-1}$.
@@ -395,7 +400,7 @@ def e_0_full_li2q_mev() -> mp.mpf:
 
     E_0^{full,Li2q} := E_0^{(N=0)} · (1 + (−Li_2^q(−ℏ_q²)))
 
-    Per [`prop:mass-endomorphism-tower`](../../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md)
+    Per [`prop:mass-endomorphism-tower`](../../folio/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md)
     lines 162–183, the **bounded** Kashaev specialisation of the
     brane-tower integral is $-\\mathrm{Li}_2^q(-V)$, not the
     divergent $\\Phi_q(V)$ — the 2026-05-03 audit verified the
@@ -420,7 +425,7 @@ def e_0_full_li2q_mev() -> mp.mpf:
     from `prop:mass-endomorphism-tower` (summing
     $-\\mathrm{Li}_2^q(-|\\hat V_i|)$ over generators with proper
     $|\\hat V_i|$ values) requires atomic-braid input; see
-    [`conj:alpha-k-categorical-closure`](../../content/quantum-observable-universe/braids-and-knots/alpha-k-categorical-closure.md)
+    [`conj:alpha-k-categorical-closure`](../../folio/quantum-observable-universe/braids-and-knots/alpha-k-categorical-closure.md)
     for the open question of which categorical resummation closes
     CAL-3 in the correct direction.
     """
@@ -455,7 +460,7 @@ def e_0_calibrated_mev() -> mp.mpf:
 def q_beta_predicted_mev() -> mp.mpf:
     """Q_β prediction via the symbolic single-wrap closed form.
 
-    Per [`prop:neutron-qvalue-symbolic`](../../content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md):
+    Per [`prop:neutron-qvalue-symbolic`](../../folio/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md):
 
         Q_β = m_e · |q_0² - 2q_0 - 1| · (q_0 + 1) / (2 q_0³)
 
@@ -593,7 +598,7 @@ def q_beta_observable_mev() -> mp.mpf:
     trefoil e^-) — topologically non-trivial, physically observed.
     ≈ 0.457 MeV (58.5% of full Q_β).
 
-    Per [`beta-decay-energy-scale`](../../content/quantum-observable-universe/particle-interactions/beta-decay-energy-scale.md)
+    Per [`beta-decay-energy-scale`](../../folio/quantum-observable-universe/particle-interactions/beta-decay-energy-scale.md)
     §"Observable vs virtual: Q_{≥2}".
     """
     w = _beta_witness()

@@ -2,8 +2,8 @@
 import { readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
 const REPO = "/home/user/qou";
-const PAPER = join(REPO, "content/quantum-observable-universe");
-const LAKE = join(REPO, "content/quantum-observable-universe/lean");
+const PAPER = join(REPO, "folio/quantum-observable-universe");
+const LAKE = join(REPO, "folio/quantum-observable-universe/lean");
 const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 async function walk(d: string, ext: string, out: string[] = []): Promise<string[]> {
   let es; try { es = await readdir(d, { withFileTypes: true }); } catch { return out; }

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/invariant-eigendistributions-2/blocks/prose-sec-012",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/invariant-eigendistributions-2/blocks/prose-sec-012",
   "kind": "prose",
-  "title": "Supported bya grant from NSERC Canada",
-  "pageStart": 1,
-  "pageEnd": 4,
-  "text": "../sections/sec-012-1-supported-bya-grant-from-nserc-canada.md",
-  "derivedFrom": "library/invariant-eigendistributions-2/manifest",
-  "sourceDocument": "library/invariant-eigendistributions-2/manifest",
+  "title": "Lemma.",
+  "pageStart": 21,
+  "pageEnd": 24,
+  "text": "../sections/sec-012-92-lemma.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/invariant-eigendistributions-2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/invariant-eigendistributions-2",
   "provenance": "ingested"
 }

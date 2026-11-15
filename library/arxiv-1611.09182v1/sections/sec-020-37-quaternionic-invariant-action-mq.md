@@ -8,22 +8,28 @@ pages: 24-24
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
 doc_brief: "Standard model physics from an algebra? — 57 sections: Abstract; Acknowledgements; Introduction"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-Finally, we will now consider the quaternionic invariant-action, mq. This new action leads
-to generalized ideals, which are more commonly known as Lorentz scalars, φ, and the ﬁeld
-strength tensor, F ,
-b′ =ab ~a. (3.23)
-C⊗ H can be partitioned once again, this time into subspaces of the form φ∈ C and
-F = (F 32 +iF 01)ϵx + (F 13 +iF 02)ϵy + (F 21 +iF 03)ϵz, with Fmn∈ R. As ~φ = φ, and
-~F =−F , it is clear that each of these two subspaces is closed under the multiplication
-b′ =ab~a from any element a of the algebra. Hence, they each constitute generalized ideals
-under mq.
-Lorentz transformations on these two generalized ideals can be found, again, by replac-
-ing a with L. For our scalar, φ, we have φ′ =Lφ~L. Since φ∈ C, it commutes with every
-element in C⊗ H, and so φ′ =Lφ~L =L~Lφ. It is then easily conﬁrmed that ~L =L−1 ∀L,
-so that φ is indeed a Lorentz scalar, φ′ =φ.
-In [40] it is shown that the usual ﬁeld strength tensor is represented by F , which
-transforms as F′ = LF~L under the Lorentz group. F∗ = (B1 +iE1)ϵx + (B2 +iE2)ϵy +
-(B3 +iE3)ϵz gives the ﬁeld strength Fµν, while F givesFµν.
-Readers are referred to the upcoming Section 4.9, where the description of Fµν will be
-extended so as to satisfy parity transformations, deﬁned there.
+Finally, we will now consider the quaternionic invariant-action, $m_q$.  This new action leads to generalized ideals, which are more commonly known as Lorentz scalars, $\phi$, and the field strength tensor, $F$,
+
+\begin{equation} \underline{b} ' = a\hspace{1mm}\underline{b} \hspace{1mm}\widetilde{a}.
+\end{equation}
+
+$\mathbb{C}\otimes\mathbb{H}$ can be partitioned once again, this time into subspaces of the form $\phi \in \mathbb{C} $ and $F = \left( F^{32} +iF^{01}\right){\epsilon_x} + \left( F^{13}+iF^{02} \right){\epsilon_y}  + \left( F^{21}+iF^{03}  \right){\epsilon_z}  $, with $F^{mn} \in \mathbb{R}$.  As $\widetilde{\phi} = \phi$, and $\widetilde{F} = -F$, it is clear that each of these two subspaces is closed under the multiplication $\underline{b}' = a \underline{b} \widetilde{a}$ from any element $a$ of the algebra.  Hence, they each constitute generalized ideals under $m_q$.
+
+Lorentz transformations on these two generalized ideals can be found, again, by replacing $a$ with $L$.  For our scalar, $\phi$, we have $\phi' = L \phi \widetilde{L}$.  Since $\phi \in \mathbb{C}$, it commutes with every element in $\CH$, and so $\phi' = L \phi \widetilde{L} =  L\widetilde{L} \phi$.  It is then easily confirmed that $\widetilde{L} = L^{-1}$ $\hspace{1mm}\forall L$, so that $\phi$ is indeed a Lorentz scalar, $\phi' = \phi$.
+
+In~\cite{gs} it is shown that the usual field strength tensor is represented by $F$, which transforms as $F' = L F \widetilde{L} $ under the Lorentz group.  $F ^* = \left( B_1 +iE_1\right){\epsilon_x} + \left( B_2+iE_2 \right){\epsilon_y}  + \left( B_3+iE_3  \right){\epsilon_z} $ gives the  field strength $F_{\mu\nu}$, while $F $ gives $F^{\mu\nu}$.  
+
+
+
+
+
+
+Readers are referred to the upcoming Section \ref{Fmunu}, where the description of $F_{\mu\nu}$ will be extended so as to satisfy parity transformations, defined there.
+
+\vspace{1cm}
+
+In summary, we have just seen that the Lorentz scalar, $\phi$, and the field strength tensor, $F$, are simply generalized ideals under the quaternionic invariant-action, $m_q$.  These generalized ideals transform as $\phi' = L\phi \widetilde{L} = \phi$ and $F' = L F \widetilde{L}$ under the Lorentz group, where $L$ represents an element of $SL(2, \mathbb{C})$.

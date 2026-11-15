@@ -5,7 +5,13 @@
   "file": "2506.10206v2.pdf",
   "sha256": "d0631a9abd9b1da35ba729381b8abcf5811d472139f359e25e2a527f70d99c1b",
   "bytes": 438449,
-  "pages": 40
+  "pages": 40,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:22Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -15,1126 +21,1262 @@
    "stamp_date": "19 Jun 2025"
   },
   "doi": null,
-  "title": "Analytic dilogarithm identities",
-  "authors_raw": "Moreover, single-term dilogarithm evaluations are introduced and derived",
-  "abstract": "We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations, solving open problems given by both Bytsko and Campbell, and that we further apply to construct and prove new ladder relations with quartic and sextic bases. We also apply our method to introduce and prove two-term Li 2-relations and ladder-like identities with arguments in algebraic number fields such asQ( √ 2), Q( √ 3), Q( √ 5), and Q(√−7). Moreover, single-term dilogarithm evaluations are introduced and derived.",
-  "docinfo": {
-   "Author": "Cetin Hakimoglu-Brown",
-   "Creator": "arXiv GenPDF (tex2pdf:)",
-   "Producer": "pikepdf 8.15.1",
-   "Title": "Analytic Dilogarithm Identities"
-  },
+  "title": "Analytic Dilogarithm Identities",
+  "authors_raw": "Cetin Hakimoglu-Brown",
   "title_lines": [
-   "Analytic dilogarithm identities",
-   "Cetin Hakimoglu-Brown"
+   "Analytic dilogarithm identities"
   ],
-  "title_prev": "Analytic dilogarithm identities Cetin Hakimoglu-Brown"
+  "abstract": "We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations, solving open problems given by both Bytsko and Campbell, and that we further apply to construct and prove new ladder relations with quartic and sextic bases. We also apply our method to introduce and prove two-term Li2-relations and ladder-like identities with arguments in algebraic number fields such as Q( \u221a 2), Q( \u221a 3), Q( \u221a 5), and Q(\u221a\u22127). Moreover, single-term dilogarithm evaluations are introduced and derived.",
+  "docinfo": {
+   "Title": "Analytic Dilogarithm Identities",
+   "Author": "Cetin Hakimoglu-Brown",
+   "Producer": "pikepdf 8.15.1",
+   "Creator": "arXiv GenPDF (tex2pdf:)"
+  },
+  "title_raw": "Analytic dilogarithm identities",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Analytic Dilogarithm Identities",
+   "heading": "Analytic dilogarithm identities Introduction",
+   "text": "Analytic dilogarithm identities",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
-  {
-   "level": 1,
-   "title": "Abstract",
-   "page": 1,
-   "source": "inferred",
-   "number": null
-  },
   {
    "level": 1,
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(7ζ(3) + (3− 2G)π− 12)",
-   "page": 1,
-   "source": "inferred",
-   "number": "2"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Preliminaries",
    "page": 2,
    "source": "inferred",
-   "number": "1.1"
-  },
-  {
-   "level": 1,
-   "title": "Li(x) + 2 Li(−x) = Li(x2), (5)",
-   "page": 3,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Li2(x)− 1",
-   "page": 3,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Li2(−x) = 1",
-   "page": 3,
-   "source": "inferred",
-   "number": "2"
+   "number": "1.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Sextic integrals and dilogarithm identities",
    "page": 4,
    "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(1−y)2n+1, (15)",
-   "page": 4,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Li2",
-   "page": 6,
-   "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "Applications",
    "page": 7,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "A full solution to a problem due to Sun",
    "page": 7,
    "source": "inferred",
-   "number": "3.1"
-  },
-  {
-   "level": 1,
-   "title": "Li2",
-   "page": 7,
-   "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "Li2",
-   "page": 8,
-   "source": "inferred",
-   "number": "3"
+   "number": "3.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "On an identity attributed to Lima",
    "page": 9,
    "source": "inferred",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "9"
   },
   {
    "level": 2,
-   "title": "Zagier’s four-term identity",
+   "title": "Zagier's four-term identity",
    "page": 9,
    "source": "inferred",
-   "number": "3.3"
-  },
-  {
-   "level": 1,
-   "title": "Li2",
-   "page": 11,
-   "source": "inferred",
-   "number": "27"
+   "number": "3.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "9"
   },
   {
    "level": 2,
-   "title": "Identities related of an evaluation for the inverse tangent in-",
+   "title": "Identities related of an evaluation for the inverse tangent integral",
    "page": 12,
    "source": "inferred",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "12"
   },
   {
    "level": 2,
-   "title": "A series of convergence rate 1",
+   "title": "A series of convergence rate $\\frac{1}{243}$",
    "page": 13,
    "source": "inferred",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "13"
   },
   {
    "level": 1,
-   "title": "Elliptic 4F3-series",
+   "title": "Elliptic ${}_{4}F_{3}$-series",
    "page": 13,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "13"
   },
   {
    "level": 1,
-   "title": "Hypergeometric series for π2",
+   "title": "Hypergeometric series for $\\pi^2$",
    "page": 15,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "15"
   },
   {
    "level": 1,
-   "title": "(π− 2 arctan(h))2 + ln2",
+   "title": "A proof of Campbell's conjecture",
    "page": 16,
    "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "A proof of Campbell’s conjecture",
-   "page": 16,
-   "source": "inferred",
-   "number": "6"
+   "number": "6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Related dilogarithm identities",
    "page": 18,
    "source": "inferred",
-   "number": "6.1"
-  },
-  {
-   "level": 1,
-   "title": "Li2",
-   "page": 20,
-   "source": "inferred",
-   "number": "4"
+   "number": "6.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "18"
   },
   {
    "level": 1,
    "title": "Higher-order fields",
    "page": 21,
    "source": "inferred",
-   "number": "7"
+   "number": "7",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "A two-term ladder identity for the Plastic Ratio/Constant",
    "page": 21,
    "source": "inferred",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "21"
   },
   {
    "level": 1,
-   "title": "Li2(2z−z2) +π2",
-   "page": 21,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Li2(z2) + 6 Li2(z) =− ln2(z−z2)− 6 ln(z) ln(z + 1) +π2",
-   "page": 22,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Applications of Roger’s identity",
+   "title": "Applications of Roger's identity",
    "page": 23,
    "source": "inferred",
-   "number": "8"
+   "number": "8",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "23"
   },
   {
    "level": 1,
-   "title": "Li2(u) + 3 Li2((u− 1)2)",
-   "page": 23,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "(u4− 3u3 + 4u2− 2u + 1)",
-   "page": 24,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Derivation of the Loxton–Lewin π",
+   "title": "Derivation of the Loxton--Lewin $\\frac{\\pi}{9}$-identities",
    "page": 26,
    "source": "inferred",
-   "number": "9"
-  },
-  {
-   "level": 1,
-   "title": "Li2(r3) = Li2",
-   "page": 27,
-   "source": "inferred",
-   "number": "3"
+   "number": "9",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "26"
   },
   {
    "level": 2,
-   "title": "Derivation of the Loxton-Lewin four-term π",
+   "title": "Derivation of the Loxton-Lewin four-term $\\frac{\\pi}{9}$-identities",
    "page": 27,
    "source": "inferred",
-   "number": "9.1"
+   "number": "9.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "27"
   },
   {
    "level": 1,
    "title": "Two-term complex identities of the imaginary part",
    "page": 29,
    "source": "inferred",
-   "number": "10"
-  },
-  {
-   "level": 1,
-   "title": "Li2(u2)",
-   "page": 30,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Li2(2u−u2) + Li2",
-   "page": 30,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(u4− 3u3 + 4u2− 2u + 1) =z",
-   "page": 30,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(u4− 3u3 + 4u2− 2u + 1) = 1",
-   "page": 30,
-   "source": "inferred",
-   "number": "2"
+   "number": "10",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "29"
   },
   {
    "level": 1,
    "title": "Miscellaneous results",
    "page": 31,
    "source": "inferred",
-   "number": "11"
+   "number": "11",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "31"
   },
   {
    "level": 2,
    "title": "A cubic single-term identity",
    "page": 31,
    "source": "inferred",
-   "number": "11.1"
+   "number": "11.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "31"
   },
   {
    "level": 2,
    "title": "A sextic two-term identity",
    "page": 31,
    "source": "inferred",
-   "number": "11.2"
+   "number": "11.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "31"
   },
   {
    "level": 2,
-   "title": "A two-term identity over Q(",
+   "title": "A two-term identity over $\\mathbb{Q}(\\sqrt{2})$",
    "page": 32,
    "source": "inferred",
-   "number": "11.3"
+   "number": "11.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "32"
   },
   {
    "level": 2,
-   "title": "A ladder related to Cl2",
+   "title": "A ladder related to $\\rm{Cl}_2\\big(\\tfrac{\\pi}3\\big)$",
    "page": 32,
    "source": "inferred",
-   "number": "11.4"
+   "number": "11.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "32"
   },
   {
    "level": 2,
-   "title": "A modified Watson π",
+   "title": "A modified Watson $\\frac{\\pi}{7}$-dilogarithm identity",
    "page": 33,
    "source": "inferred",
-   "number": "11.5"
+   "number": "11.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "33"
+  },
+  {
+   "level": 2,
+   "title": "8th-degree single-term identity",
+   "page": 33,
+   "source": "inferred",
+   "number": "11.6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "33"
   },
   {
    "level": 1,
    "title": "New Ladders",
    "page": 33,
    "source": "inferred",
-   "number": "12"
+   "number": "12",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "33"
   },
   {
    "level": 2,
    "title": "A three-term ladder relation",
    "page": 34,
    "source": "inferred",
-   "number": "12.1"
+   "number": "12.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "34"
   },
   {
    "level": 2,
    "title": "Five-term ladder relations, part 1",
    "page": 34,
    "source": "inferred",
-   "number": "12.2"
-  },
-  {
-   "level": 1,
-   "title": "Li2(h2) + 4 Li2(h)− 3",
-   "page": 35,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Li2(h4) + 4 Li2(h3)− 1",
-   "page": 35,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Li2(h6) = 5π2",
-   "page": 35,
-   "source": "inferred",
-   "number": "2"
+   "number": "12.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "34"
   },
   {
    "level": 2,
    "title": "A six-term ladder relation",
    "page": 35,
    "source": "inferred",
-   "number": "12.3"
-  },
-  {
-   "level": 1,
-   "title": "Li2(h8)− 3",
-   "page": 36,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Li2(h6) + 4 Li2(h4) + 4 Li2(h3)− 3",
-   "page": 36,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Li2(h2) + 4 Li2(h)",
-   "page": 36,
-   "source": "inferred",
-   "number": "2"
+   "number": "12.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "35"
   },
   {
    "level": 2,
-   "title": "Using the “radius method” to derive new ladders",
+   "title": "Using the ``radius method'' to derive new ladders",
    "page": 37,
    "source": "inferred",
-   "number": "12.4"
+   "number": "12.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "37"
   },
   {
-   "level": 1,
-   "title": "Li2(r3)",
-   "page": 37,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Li2(−r3)",
-   "page": 37,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Li2(r6)− 1",
-   "page": 37,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Li2(r4) + 4",
-   "page": 37,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Li2(r3) + 11",
-   "page": 37,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Li2(r2)− 4 Li2(r) + 11",
-   "page": 37,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
+   "level": 2,
    "title": "Acknowledgements",
    "page": 38,
    "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 38,
-   "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "38"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-abstract",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Abstract",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 710,
-   "n_words": 102
+   "n_chars": 818,
+   "n_words": 114,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 1722,
-   "n_words": 297
-  },
-  {
-   "id": "sec-002-2-7ζ3-3-2gπ-12",
-   "number": "2",
-   "title": "(7ζ(3) + (3− 2G)π− 12)",
-   "level": 1,
-   "page_start": 1,
    "page_end": 2,
-   "n_chars": 1251,
-   "n_words": 217
+   "n_chars": 3030,
+   "n_words": 548,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
-   "id": "sec-003-11-preliminaries",
+   "id": "sec-001-11-preliminaries",
    "number": "1.1",
    "title": "Preliminaries",
    "level": 2,
    "page_start": 2,
-   "page_end": 3,
-   "n_chars": 1298,
-   "n_words": 240
-  },
-  {
-   "id": "sec-004-2-lix-2-lix-lix2-5",
-   "number": "2",
-   "title": "Li(x) + 2 Li(−x) = Li(x2), (5)",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 586,
-   "n_words": 110
-  },
-  {
-   "id": "sec-005-2-li2x-1",
-   "number": "2",
-   "title": "Li2(x)− 1",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-006-2-li2x-1",
-   "number": "2",
-   "title": "Li2(−x) = 1",
-   "level": 1,
-   "page_start": 3,
    "page_end": 4,
-   "n_chars": 1169,
-   "n_words": 223
+   "n_chars": 3161,
+   "n_words": 634,
+   "label_start": "2",
+   "label_end": "4"
   },
   {
-   "id": "sec-007-2-sextic-integrals-and-dilogarithm-identities",
+   "id": "sec-002-2-sextic-integrals-and-dilogarithm-identities",
    "number": "2",
    "title": "Sextic integrals and dilogarithm identities",
    "level": 1,
    "page_start": 4,
-   "page_end": 4,
-   "n_chars": 1687,
-   "n_words": 323
-  },
-  {
-   "id": "sec-008-2-1y2n1-15",
-   "number": "2",
-   "title": "(1−y)2n+1, (15)",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 5,
-   "n_chars": 1549,
-   "n_words": 323
-  },
-  {
-   "id": "sec-009-2-li2",
-   "number": "2",
-   "title": "Li2",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 6,
-   "n_chars": 598,
-   "n_words": 228
-  },
-  {
-   "id": "sec-010-8-li2",
-   "number": "8",
-   "title": "Li2",
-   "level": 1,
-   "page_start": 6,
    "page_end": 7,
-   "n_chars": 1520,
-   "n_words": 346
+   "n_chars": 6177,
+   "n_words": 1533,
+   "label_start": "4",
+   "label_end": "7"
   },
   {
-   "id": "sec-011-3-li2",
-   "number": "3",
-   "title": "Li2",
-   "level": 1,
-   "page_start": 7,
-   "page_end": 7,
-   "n_chars": 643,
-   "n_words": 170
-  },
-  {
-   "id": "sec-012-3-applications",
+   "id": "sec-003-3-applications",
    "number": "3",
    "title": "Applications",
    "level": 1,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 103,
-   "n_words": 14
+   "n_chars": 107,
+   "n_words": 15,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
-   "id": "sec-013-31-a-full-solution-to-a-problem-due-to-sun",
+   "id": "sec-004-31-a-full-solution-to-a-problem-due-to-sun",
    "number": "3.1",
    "title": "A full solution to a problem due to Sun",
    "level": 2,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 1943,
-   "n_words": 495
+   "n_chars": 1959,
+   "n_words": 508,
+   "label_start": "7",
+   "label_end": "9"
   },
   {
-   "id": "sec-014-32-on-an-identity-attributed-to-lima",
+   "id": "sec-005-32-on-an-identity-attributed-to-lima",
    "number": "3.2",
    "title": "On an identity attributed to Lima",
    "level": 2,
    "page_start": 9,
-   "page_end": 9,
-   "n_chars": 936,
-   "n_words": 227
-  },
-  {
-   "id": "sec-015-33-zagiers-four-term-identity",
-   "number": "3.3",
-   "title": "Zagier’s four-term identity",
-   "level": 2,
-   "page_start": 9,
-   "page_end": 10,
-   "n_chars": 485,
-   "n_words": 112
-  },
-  {
-   "id": "sec-016-27-li2",
-   "number": "27",
-   "title": "Li2",
-   "level": 1,
-   "page_start": 10,
    "page_end": 12,
-   "n_chars": 3081,
-   "n_words": 830
+   "n_chars": 4550,
+   "n_words": 1180,
+   "label_start": "9",
+   "label_end": "12"
   },
   {
-   "id": "sec-017-34-identities-related-of-an-evaluation-for-the-i",
+   "id": "sec-006-34-identities-related-of-an-evaluation-for-the-i",
    "number": "3.4",
-   "title": "Identities related of an evaluation for the inverse tangent in-",
+   "title": "Identities related of an evaluation for the inverse tangent integral",
    "level": 2,
    "page_start": 12,
-   "page_end": 13,
-   "n_chars": 1913,
-   "n_words": 511
-  },
-  {
-   "id": "sec-018-35-a-series-of-convergence-rate-1",
-   "number": "3.5",
-   "title": "A series of convergence rate 1",
-   "level": 2,
-   "page_start": 13,
-   "page_end": 13,
-   "n_chars": 376,
-   "n_words": 96
-  },
-  {
-   "id": "sec-019-4-elliptic-4f3-series",
-   "number": "4",
-   "title": "Elliptic 4F3-series",
-   "level": 1,
-   "page_start": 13,
-   "page_end": 15,
-   "n_chars": 1781,
-   "n_words": 445
-  },
-  {
-   "id": "sec-020-5-hypergeometric-series-for-π2",
-   "number": "5",
-   "title": "Hypergeometric series for π2",
-   "level": 1,
-   "page_start": 15,
-   "page_end": 16,
-   "n_chars": 2144,
-   "n_words": 522
-  },
-  {
-   "id": "sec-021-4-π-2-arctanh2-ln2",
-   "number": "4",
-   "title": "(π− 2 arctan(h))2 + ln2",
-   "level": 1,
-   "page_start": 16,
-   "page_end": 16,
-   "n_chars": 378,
-   "n_words": 90
-  },
-  {
-   "id": "sec-022-6-a-proof-of-campbells-conjecture",
-   "number": "6",
-   "title": "A proof of Campbell’s conjecture",
-   "level": 1,
-   "page_start": 16,
    "page_end": 18,
-   "n_chars": 2582,
-   "n_words": 614
+   "n_chars": 9468,
+   "n_words": 2440,
+   "label_start": "12",
+   "label_end": "18"
   },
   {
-   "id": "sec-023-61-related-dilogarithm-identities",
+   "id": "sec-007-61-related-dilogarithm-identities",
    "number": "6.1",
    "title": "Related dilogarithm identities",
    "level": 2,
    "page_start": 18,
-   "page_end": 19,
-   "n_chars": 663,
-   "n_words": 127
-  },
-  {
-   "id": "sec-024-4-li2",
-   "number": "4",
-   "title": "Li2",
-   "level": 1,
-   "page_start": 19,
    "page_end": 21,
-   "n_chars": 2573,
-   "n_words": 674
+   "n_chars": 3281,
+   "n_words": 829,
+   "label_start": "18",
+   "label_end": "21"
   },
   {
-   "id": "sec-025-7-higher-order-fields",
+   "id": "sec-008-7-higher-order-fields",
    "number": "7",
    "title": "Higher-order fields",
    "level": 1,
    "page_start": 21,
    "page_end": 21,
-   "n_chars": 1029,
-   "n_words": 206
+   "n_chars": 1044,
+   "n_words": 218,
+   "label_start": "21",
+   "label_end": "21"
   },
   {
-   "id": "sec-026-71-a-two-term-ladder-identity-for-the-plastic-ra",
+   "id": "sec-009-71-a-two-term-ladder-identity-for-the-plastic-ra",
    "number": "7.1",
    "title": "A two-term ladder identity for the Plastic Ratio/Constant",
    "level": 2,
    "page_start": 21,
-   "page_end": 21,
-   "n_chars": 274,
-   "n_words": 49
-  },
-  {
-   "id": "sec-027-2-li22zz2-π2",
-   "number": "2",
-   "title": "Li2(2z−z2) +π2",
-   "level": 1,
-   "page_start": 21,
-   "page_end": 22,
-   "n_chars": 281,
-   "n_words": 76
-  },
-  {
-   "id": "sec-028-3-li2z2-6-li2z-ln2zz2-6-lnz-lnz-1-π2",
-   "number": "3",
-   "title": "Li2(z2) + 6 Li2(z) =− ln2(z−z2)− 6 ln(z) ln(z + 1) +π2",
-   "level": 1,
-   "page_start": 22,
-   "page_end": 23,
-   "n_chars": 1949,
-   "n_words": 453
-  },
-  {
-   "id": "sec-029-8-applications-of-rogers-identity",
-   "number": "8",
-   "title": "Applications of Roger’s identity",
-   "level": 1,
-   "page_start": 23,
-   "page_end": 23,
-   "n_chars": 247,
-   "n_words": 50
-  },
-  {
-   "id": "sec-030-3-li2u-3-li2u-12",
-   "number": "3",
-   "title": "Li2(u) + 3 Li2((u− 1)2)",
-   "level": 1,
-   "page_start": 23,
-   "page_end": 24,
-   "n_chars": 530,
-   "n_words": 140
-  },
-  {
-   "id": "sec-031-2-u4-3u3-4u2-2u-1",
-   "number": "2",
-   "title": "(u4− 3u3 + 4u2− 2u + 1)",
-   "level": 1,
-   "page_start": 24,
-   "page_end": 26,
-   "n_chars": 2267,
-   "n_words": 610
-  },
-  {
-   "id": "sec-032-9-derivation-of-the-loxtonlewin-π",
-   "number": "9",
-   "title": "Derivation of the Loxton–Lewin π",
-   "level": 1,
-   "page_start": 26,
-   "page_end": 27,
-   "n_chars": 906,
-   "n_words": 193
-  },
-  {
-   "id": "sec-033-3-li2r3-li2",
-   "number": "3",
-   "title": "Li2(r3) = Li2",
-   "level": 1,
-   "page_start": 27,
-   "page_end": 27,
-   "n_chars": 865,
-   "n_words": 183
-  },
-  {
-   "id": "sec-034-91-derivation-of-the-loxton-lewin-four-term-π",
-   "number": "9.1",
-   "title": "Derivation of the Loxton-Lewin four-term π",
-   "level": 2,
-   "page_start": 27,
    "page_end": 29,
-   "n_chars": 4510,
-   "n_words": 959
+   "n_chars": 12202,
+   "n_words": 2869,
+   "label_start": "21",
+   "label_end": "29"
   },
   {
-   "id": "sec-035-10-two-term-complex-identities-of-the-imaginary",
+   "id": "sec-010-10-two-term-complex-identities-of-the-imaginary",
    "number": "10",
    "title": "Two-term complex identities of the imaginary part",
    "level": 1,
    "page_start": 29,
-   "page_end": 30,
-   "n_chars": 525,
-   "n_words": 106
-  },
-  {
-   "id": "sec-036-2-li2u2",
-   "number": "2",
-   "title": "Li2(u2)",
-   "level": 1,
-   "page_start": 30,
-   "page_end": 30,
-   "n_chars": 257,
-   "n_words": 50
-  },
-  {
-   "id": "sec-037-2-li22uu2-li2",
-   "number": "2",
-   "title": "Li2(2u−u2) + Li2",
-   "level": 1,
-   "page_start": 30,
-   "page_end": 30,
-   "n_chars": 548,
-   "n_words": 118
-  },
-  {
-   "id": "sec-038-2-u4-3u3-4u2-2u-1-z",
-   "number": "2",
-   "title": "(u4− 3u3 + 4u2− 2u + 1) =z",
-   "level": 1,
-   "page_start": 30,
-   "page_end": 30,
-   "n_chars": 34,
-   "n_words": 12
-  },
-  {
-   "id": "sec-039-2-u4-3u3-4u2-2u-1-1",
-   "number": "2",
-   "title": "(u4− 3u3 + 4u2− 2u + 1) = 1",
-   "level": 1,
-   "page_start": 30,
    "page_end": 31,
-   "n_chars": 475,
-   "n_words": 94
+   "n_chars": 1970,
+   "n_words": 442,
+   "label_start": "29",
+   "label_end": "31"
   },
   {
-   "id": "sec-040-11-miscellaneous-results",
+   "id": "sec-011-11-miscellaneous-results",
    "number": "11",
    "title": "Miscellaneous results",
    "level": 1,
    "page_start": 31,
    "page_end": 31,
-   "n_chars": 406,
-   "n_words": 84
+   "n_chars": 413,
+   "n_words": 87,
+   "label_start": "31",
+   "label_end": "31"
   },
   {
-   "id": "sec-041-111-a-cubic-single-term-identity",
+   "id": "sec-012-111-a-cubic-single-term-identity",
    "number": "11.1",
    "title": "A cubic single-term identity",
    "level": 2,
    "page_start": 31,
    "page_end": 31,
-   "n_chars": 628,
-   "n_words": 150
+   "n_chars": 647,
+   "n_words": 165,
+   "label_start": "31",
+   "label_end": "31"
   },
   {
-   "id": "sec-042-112-a-sextic-two-term-identity",
+   "id": "sec-013-112-a-sextic-two-term-identity",
    "number": "11.2",
    "title": "A sextic two-term identity",
    "level": 2,
    "page_start": 31,
-   "page_end": 32,
-   "n_chars": 749,
-   "n_words": 174
-  },
-  {
-   "id": "sec-043-113-a-two-term-identity-over-q",
-   "number": "11.3",
-   "title": "A two-term identity over Q(",
-   "level": 2,
-   "page_start": 32,
-   "page_end": 32,
-   "n_chars": 654,
-   "n_words": 145
-  },
-  {
-   "id": "sec-044-114-a-ladder-related-to-cl2",
-   "number": "11.4",
-   "title": "A ladder related to Cl2",
-   "level": 2,
-   "page_start": 32,
    "page_end": 33,
-   "n_chars": 770,
-   "n_words": 159
+   "n_chars": 2703,
+   "n_words": 593,
+   "label_start": "31",
+   "label_end": "33"
   },
   {
-   "id": "sec-045-115-a-modified-watson-π",
-   "number": "11.5",
-   "title": "A modified Watson π",
+   "id": "sec-014-116-8th-degree-single-term-identity",
+   "number": "11.6",
+   "title": "8th-degree single-term identity",
    "level": 2,
    "page_start": 33,
    "page_end": 33,
-   "n_chars": 1871,
-   "n_words": 359
+   "n_chars": 1433,
+   "n_words": 291,
+   "label_start": "33",
+   "label_end": "33"
   },
   {
-   "id": "sec-046-12-new-ladders",
+   "id": "sec-015-12-new-ladders",
    "number": "12",
    "title": "New Ladders",
    "level": 1,
    "page_start": 33,
    "page_end": 34,
-   "n_chars": 424,
-   "n_words": 68
+   "n_chars": 430,
+   "n_words": 70,
+   "label_start": "33",
+   "label_end": "34"
   },
   {
-   "id": "sec-047-121-a-three-term-ladder-relation",
+   "id": "sec-016-121-a-three-term-ladder-relation",
    "number": "12.1",
    "title": "A three-term ladder relation",
    "level": 2,
    "page_start": 34,
    "page_end": 34,
-   "n_chars": 837,
-   "n_words": 195
+   "n_chars": 851,
+   "n_words": 205,
+   "label_start": "34",
+   "label_end": "34"
   },
   {
-   "id": "sec-048-122-five-term-ladder-relations-part-1",
+   "id": "sec-017-122-five-term-ladder-relations-part-1",
    "number": "12.2",
    "title": "Five-term ladder relations, part 1",
    "level": 2,
    "page_start": 34,
    "page_end": 35,
-   "n_chars": 1528,
-   "n_words": 332
+   "n_chars": 1703,
+   "n_words": 376,
+   "label_start": "34",
+   "label_end": "35"
   },
   {
-   "id": "sec-049-2-li2h2-4-li2h-3",
-   "number": "2",
-   "title": "Li2(h2) + 4 Li2(h)− 3",
-   "level": 1,
-   "page_start": 35,
-   "page_end": 35,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-050-2-li2h4-4-li2h3-1",
-   "number": "2",
-   "title": "Li2(h4) + 4 Li2(h3)− 1",
-   "level": 1,
-   "page_start": 35,
-   "page_end": 35,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-051-2-li2h6-5π2",
-   "number": "2",
-   "title": "Li2(h6) = 5π2",
-   "level": 1,
-   "page_start": 35,
-   "page_end": 35,
-   "n_chars": 94,
-   "n_words": 17
-  },
-  {
-   "id": "sec-052-123-a-six-term-ladder-relation",
+   "id": "sec-018-123-a-six-term-ladder-relation",
    "number": "12.3",
    "title": "A six-term ladder relation",
    "level": 2,
    "page_start": 35,
-   "page_end": 36,
-   "n_chars": 917,
-   "n_words": 222
-  },
-  {
-   "id": "sec-053-2-li2h8-3",
-   "number": "2",
-   "title": "Li2(h8)− 3",
-   "level": 1,
-   "page_start": 36,
-   "page_end": 36,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-054-2-li2h6-4-li2h4-4-li2h3-3",
-   "number": "2",
-   "title": "Li2(h6) + 4 Li2(h4) + 4 Li2(h3)− 3",
-   "level": 1,
-   "page_start": 36,
-   "page_end": 37,
-   "n_chars": 874,
-   "n_words": 167
-  },
-  {
-   "id": "sec-055-124-using-the-radius-method-to-derive-new-ladder",
-   "number": "12.4",
-   "title": "Using the “radius method” to derive new ladders",
-   "level": 2,
-   "page_start": 37,
-   "page_end": 37,
-   "n_chars": 477,
-   "n_words": 111
-  },
-  {
-   "id": "sec-056-3-li2r3",
-   "number": "3",
-   "title": "Li2(r3)",
-   "level": 1,
-   "page_start": 37,
-   "page_end": 37,
-   "n_chars": 81,
-   "n_words": 26
-  },
-  {
-   "id": "sec-057-3-li2r3",
-   "number": "3",
-   "title": "Li2(−r3)",
-   "level": 1,
-   "page_start": 37,
-   "page_end": 37,
-   "n_chars": 46,
-   "n_words": 9
-  },
-  {
-   "id": "sec-058-2-li2r6-1",
-   "number": "2",
-   "title": "Li2(r6)− 1",
-   "level": 1,
-   "page_start": 37,
-   "page_end": 37,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-059-2-li2r4-4",
-   "number": "2",
-   "title": "Li2(r4) + 4",
-   "level": 1,
-   "page_start": 37,
-   "page_end": 37,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-060-3-li2r3-11",
-   "number": "3",
-   "title": "Li2(r3) + 11",
-   "level": 1,
-   "page_start": 37,
-   "page_end": 37,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-061-2-li2r2-4-li2r-11",
-   "number": "2",
-   "title": "Li2(r2)− 4 Li2(r) + 11",
-   "level": 1,
-   "page_start": 37,
    "page_end": 38,
-   "n_chars": 1305,
-   "n_words": 272
+   "n_chars": 3918,
+   "n_words": 871,
+   "label_start": "35",
+   "label_end": "38"
   },
   {
-   "id": "sec-062-acknowledgements",
+   "id": "sec-019-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
-   "level": 1,
-   "page_start": 38,
-   "page_end": 38,
-   "n_chars": 147,
-   "n_words": 25
-  },
-  {
-   "id": "sec-063-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
+   "level": 2,
    "page_start": 38,
    "page_end": 40,
-   "n_chars": 5578,
-   "n_words": 875
+   "n_chars": 5719,
+   "n_words": 883,
+   "label_start": "38",
+   "label_end": "40"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 65,
-  "sections": 64,
-  "chars_total": 63774
+  "toc_entries": 32,
+  "toc_inferred_entries": 32,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 21,
+  "chars_total": 65584,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "main.tex",
+   "tex_sections": 32,
+   "overlaid": 19,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.924,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-11-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 0.921,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-2-sextic-integrals-and-dilogarithm-identities",
+     "title": "Sextic integrals and dilogarithm identities",
+     "prose_ratio": 0.932,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-3-applications",
+     "title": "Applications",
+     "prose_ratio": 0.9,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-31-a-full-solution-to-a-problem-due-to-sun",
+     "title": "A full solution to a problem due to Sun",
+     "prose_ratio": 0.931,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-32-on-an-identity-attributed-to-lima",
+     "title": "On an identity attributed to Lima",
+     "prose_ratio": 0.939,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-34-identities-related-of-an-evaluation-for-the-i",
+     "title": "Identities related of an evaluation for the inverse tangent integral",
+     "prose_ratio": 0.945,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-61-related-dilogarithm-identities",
+     "title": "Related dilogarithm identities",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-7-higher-order-fields",
+     "title": "Higher-order fields",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-71-a-two-term-ladder-identity-for-the-plastic-ra",
+     "title": "A two-term ladder identity for the Plastic Ratio/Constant",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-10-two-term-complex-identities-of-the-imaginary",
+     "title": "Two-term complex identities of the imaginary part",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-11-miscellaneous-results",
+     "title": "Miscellaneous results",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-111-a-cubic-single-term-identity",
+     "title": "A cubic single-term identity",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-112-a-sextic-two-term-identity",
+     "title": "A sextic two-term identity",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-116-8th-degree-single-term-identity",
+     "title": "8th-degree single-term identity",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-12-new-ladders",
+     "title": "New Ladders",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-121-a-three-term-ladder-relation",
+     "title": "A three-term ladder relation",
+     "prose_ratio": 0.943,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-122-five-term-ladder-relations-part-1",
+     "title": "Five-term ladder relations, part 1",
+     "prose_ratio": 0.918,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-123-a-six-term-ladder-relation",
+     "title": "A six-term ladder relation",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-019-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.062,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

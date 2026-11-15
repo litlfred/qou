@@ -8,57 +8,24 @@ pages: 7-8
 source_pdf: 2302.05903v2.pdf
 source_sha256: 9a17abd36cc8a317
 doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials — We elaborate on the recent suggestion to consider averaging of Cauchy identities"
+text_source: latex
+latex_prose_ratio: 0.969
+latex_coverage_ratio: 0.954
 ---
-Note that the averaging procedure allows one to evaluate various sums of combinatorics quantities by evaluating
-the Gaussian moment. For instance (using the Fr¨ obenius formula [10]),
-⟨p∆⟩A =
-X
-R
-ψR(∆)⟨SR⟩A =
-X
-R
-ψR(∆) (50)
-7
-i.e. (see also [7, Example 11, sec.I.7])
-X
-R
-ψR(∆) =
-∞Y
-i=1
-⟨pmi
-i ⟩A (51)
-are products of the Gaussian moments. Here ∆ is a partition with parts δi, p∆ :=Ql∆
-i=1pδi, and ψR(∆) is the
-character of the symmetric group S|R| in the representation R. Also
-X
-P
-NR
-PQ =
+Note that the averaging procedure allows one to evaluate various sums of combinatorics quantities by evaluating the Gaussian moment. For instance (using the Fröbenius formula [@Fulton]), $$\begin{aligned}
+\left<p_\Delta\right>^{\bf A}=\sum_R\psi_R(\Delta)\left<S_R\right>^{\bf A}=\sum_R\psi_R(\Delta)
+\end{aligned}$$ i.e. (see also [@Mac Example 11, sec.I.7]) $$\begin{aligned}
+\sum_R\psi_R(\Delta)=\prod_{i=1}^\infty\left<p_i^{m_i}\right>^{\bf A}
+\end{aligned}$$ are products of the Gaussian moments. Here $\Delta$ is a partition with parts $\delta_i$, $p_\Delta:=\prod_{i=1}^{l_\Delta}p_{\delta_i}$, and $\psi_R(\Delta)$ is the character of the symmetric group ${\cal S}_{|R|}$ in the representation $R$. Also $$\begin{aligned}
+\sum_PN^R_{PQ}=\left<S_{R/Q}\right>^{\bf A}\\
+\sum_RN^R_{PQ}=\left<S_PS_Q\right>^{\bf A}\\
+\hbox{etc.}
+\end{aligned}$$ where $N^R_{PQ}$ are the Littlewood-Richardson coefficients, $$\begin{aligned}
+S_PS_Q=\sum_RN^R_{PQ}S_R
+\end{aligned}$$ and we used that [@Mac] $$\begin{aligned}
+S_{R/Q}=\sum_PN^R_{PQ}S_P
+\end{aligned}$$
 
-SR/Q
+# Strong superintegrability and $W$-operators
 
-A
-(52)
-X
-R
-NR
-PQ =⟨SPSQ⟩A (53)
-etc. (54)
-where NR
-PQ are the Littlewood-Richardson coefficients,
-SPSQ =
-X
-R
-NR
-PQSR (55)
-and we used that [7]
-SR/Q =
-X
-P
-NR
-PQSP (56)
-4 Strong superintegrability and W -operators
-As we saw in the previous sections, the Schur functions form a full set of polynomials that have simple averages,
-this phenomenon is called superintegrability [11]. Similarly, one can construct a full set of bilinear combinations
-with simple averages too. This phenomenon is called strong superintegrability, and first we remind how this
-phenomenon looks like in the case of the Gaussian Hermitian matrix model.
+As we saw in the previous sections, the Schur functions form a full set of polynomials that have simple averages, this phenomenon is called superintegrability [@MMsi]. Similarly, one can construct a full set of *bilinear* combinations with simple averages too. This phenomenon is called strong superintegrability, and first we remind how this phenomenon looks like in the case of the Gaussian Hermitian matrix model.

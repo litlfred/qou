@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-9609174v2/blocks/prose-sec-002",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-9609174v2/blocks/prose-sec-002",
   "kind": "prose",
-  "title": "(V (λ)+V (µ)) 1",
-  "pageStart": 8,
-  "pageEnd": 11,
-  "text": "../sections/sec-002-2-v-λv-µ-1.md",
-  "derivedFrom": "library/arxiv-hep-th-9609174v2/manifest",
-  "sourceDocument": "library/arxiv-hep-th-9609174v2/manifest",
+  "title": "Asymptotics of orthogonal polynomials",
+  "pageStart": 5,
+  "pageEnd": 8,
+  "text": "../sections/sec-002-21-asymptotics-of-orthogonal-polynomials.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9609174v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9609174v2",
   "provenance": "ingested"
 }

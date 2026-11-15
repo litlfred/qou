@@ -157,7 +157,7 @@ Validation is three layers (run via `bun run validate` from `content/`):
 2. **Constraint rules** — file existence, cross-references, lean requirements
 3. **AST validation** — `unified-latex` parse of rendered LaTeX
 
-See `content/schema/types.ts` for the typed manifest definitions and [`AGENTS.md`](../AGENTS.md) §"Content-object architecture" for the full rules.
+See `folio-assistant/cat-harness/schemas/types.ts` for the typed manifest definitions and [`AGENTS.md`](../AGENTS.md) §"Content-object architecture" for the full rules.
 
 ## Lean workspace
 
@@ -165,9 +165,9 @@ The repo uses a **single root Lake workspace** ([`/lakefile.toml`](../lakefile.t
 
 | Package | Paper directory | Library module |
 |---|---|---|
-| `qou` | `content/quantum-observable-universe/lean/` | `QOU` |
-| `ugb` | `content/unital-groebner-bases/lean/` | `UGB` |
-| `fred2005` | `content/fred2005-formal-groups/lean/` | `Fred2005` |
+| `qou` | `folio/quantum-observable-universe/lean/` | `QOU` |
+| `ugb` | `folio/unital-groebner-bases/lean/` | `UGB` |
+| `fred2005` | `folio/fred2005-formal-groups/lean/` | `Fred2005` |
 
 **Preferred build commands** (from repo root):
 
@@ -187,7 +187,7 @@ The CI [`lean_ci.yml`](../.github/workflows/lean_ci.yml) uses the [`lake-cache-r
 |---|---|---|---:|
 | [`witness-pipeline.yml`](../.github/workflows/witness-pipeline.yml) | push / PR | 9 substrate-precision smoke scripts | ~2 min |
 | [`lean_ci.yml`](../.github/workflows/lean_ci.yml) | push / PR | `lake build` workspace (with 3-tier cache) | ~30 s warm, ~10 min cold |
-| [`publish.yml`](../.github/workflows/publish.yml) | push / PR | Content → LaTeX → PDF → gh-pages preview (uses `paper-builder` Docker container — Phase C of parallelization) | ~22-28 min |
+| `publish.yml` **(platform)** | `workflow_dispatch` via qou's `build.yml` | Content → LaTeX → PDF → gh-pages. **Not in this repo** — it lives in `folio-assistant/.github/workflows/` and is reached from `.github/workflows/build.yml:27`, pinned to `.folio-assistant-pin`. Live but undispatched since 2026-06-30. | ~22-28 min |
 | [`blueprint.yml`](../.github/workflows/blueprint.yml) | push to main | LeanBlueprint dependency graph + axiom report | ~5-10 min |
 | [`paper-builder-image.yml`](../.github/workflows/paper-builder-image.yml) | Dockerfile change | Builds `ghcr.io/litlfred/qou-paper-builder` (TeX Live + bun + py-sci) | ~15-20 min |
 | [`lake-cache-refresh.yml`](../.github/workflows/lake-cache-refresh.yml) | lakefile / lean-toolchain change on main | Refreshes `lake-cache/*` orphan branches | ~5-15 min/pkg |
@@ -205,8 +205,8 @@ The CI [`lean_ci.yml`](../.github/workflows/lean_ci.yml) uses the [`lake-cache-r
 | `index.html` | `publish.yml` | Folio landing page |
 | `papers/<dir>/` | `publish.yml` | Per-paper viewer + PDF |
 | `blueprint/` | `blueprint.yml` | LeanBlueprint interactive graph |
-| `docs/` | `blueprint.yml` | doc-gen4 API documentation |
-| `content/quantum-observable-universe/lean/` | `lean_ci.yml` | Raw Lean source browser |
+| ~~`docs/`~~ | ~~`blueprint.yml`~~ | **Neither exists.** `blueprint.yml` is absent from the tree and no `docs/` directory has ever been created on `gh-pages`. |
+| `folio/quantum-observable-universe/lean/` | `lean_ci.yml` | Raw Lean source browser |
 | `schema-docs/` | `publish.yml` | TypeDoc content-object reference |
 | `drafts/<branch>/` | `publish.yml` | Feature-branch previews |
 

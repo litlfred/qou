@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s10052-023-11923-y-a/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/s10052-023-11923-y-a/blocks/prose-sec-000",
   "kind": "prose",
   "title": "Three generations of colored fermions with S3 family symmetry from Cayley–Dickson sedenions",
   "pageStart": 1,
   "pageEnd": 1,
   "text": "../sections/sec-000-three-generations-of-colored-fermions-with-s3-fa.md",
-  "derivedFrom": "library/s10052-023-11923-y-a/manifest",
-  "sourceDocument": "library/s10052-023-11923-y-a/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s10052-023-11923-y-a",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s10052-023-11923-y-a",
   "provenance": "ingested"
 }

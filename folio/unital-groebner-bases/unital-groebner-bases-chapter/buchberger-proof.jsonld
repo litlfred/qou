@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/unital-groebner-bases/blocks/prf-buchberger",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:buchberger",
+  "kind": "proof",
+  "uses": [
+    "papers/unital-groebner-bases/blocks/thm-buchberger",
+    "papers/unital-groebner-bases/blocks/prop-s-polynomial-decomposition"
+  ],
+  "text": "buchberger-proof.md",
+  "provenance": "authored"
+}

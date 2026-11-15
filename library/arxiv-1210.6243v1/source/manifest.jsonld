@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1210.6243v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1210.6243v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1210.6243v1",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1210.6243&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1210.6243v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1210.6243v1",
+    "content_type": "application/gzip",
+    "sha256": "7bf66427c4b745c22a036793973e2bde217f63179434670fee4f2a8837acfadb",
+    "bytes": 16978660,
+    "fetched": "2026-10-10T15:07:38+00:00",
+    "files": [
+      {
+        "path": "source/files/Controlled_double_slit_diffraction_archive.tex",
+        "role": "tex",
+        "sha256": "817d5a707bd90f8e4f0e6451a67220a5bf440ab148b491ecee80b87c9d459bf6",
+        "bytes": 15045
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

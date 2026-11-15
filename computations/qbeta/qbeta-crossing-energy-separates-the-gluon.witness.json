@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-14T16:40:06.348190+00:00",
-  "commitSha": "e41e9492303f7af20478368e294a0e51cf8720f4",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T14:59:26.492656+00:00",
+  "commitSha": "cf13de45381038fe90515829757a2d4b8ed809af",
   "assertions": [
     {
       "name": "crossing_energy_orientation_matches_the_published_pair",
@@ -55,11 +55,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 37,
+  "durationMs": 35,
   "computation": "qbeta-crossing-energy-separates-the-gluon",
   "scriptFile": "qbeta_crossing_energy_separates_the_gluon_probe.py",
-  "scriptHash": "e8d4a3fb2fcc",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "527f0f2f7670",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -67,14 +67,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -185,5 +185,7 @@
     },
     "q0_pin": "proton",
     "q0_value": "1.1099785827513808075916690956107688798744991218736"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

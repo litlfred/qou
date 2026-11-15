@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2101.10016v16/sections/sec-025",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Turning C*-categories with tensor structures into tensor C*-categories, II",
+  "pageStart": 163,
+  "pageEnd": 166,
+  "contains": [
+    "library/arxiv-2101.10016v16/blocks/prose-sec-025",
+    "library/arxiv-2101.10016v16/blocks/def-sec-025-01",
+    "library/arxiv-2101.10016v16/blocks/thm-sec-025-02",
+    "library/arxiv-2101.10016v16/blocks/remark-sec-025-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2101.10016v16",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2101.10016v16",
+  "provenance": "ingested"
+}

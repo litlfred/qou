@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/lee-vanderveen-colored-jones-polynomials-without-tails/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "COLORED JONES POLYNOMIALS WITHOUT TAILS",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/lee-vanderveen-colored-jones-polynomials-without-tails",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "lee-vanderveen-colored-jones-polynomials-without-tails",
   "contains": [
     "library/lee-vanderveen-colored-jones-polynomials-without-tails/sections/sec-000",
     "library/lee-vanderveen-colored-jones-polynomials-without-tails/sections/sec-001",
@@ -15,8 +20,10 @@
     "library/lee-vanderveen-colored-jones-polynomials-without-tails/sections/sec-006"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "lee-vanderveen-colored-jones-polynomials-without-tails",
+    "title_source": "slug",
     "source_file": "lee-vanderveen-colored-jones-polynomials-without-tails.pdf",
     "source_sha256": "fcc45aebd34e25dca6e89084c6609f3715e13ab3dc689eb942bddd8595a352e6",
     "pages": 5,

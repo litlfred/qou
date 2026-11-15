@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1207.4990v3/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1207.4990v3/blocks/prose-sec-004",
   "kind": "prose",
   "title": "Fisher-Hartwig singularities. Fisher-Hartwig conjecture",
   "pageStart": 29,
   "pageEnd": 36,
   "text": "../sections/sec-004-6-fisher-hartwig-singularities-fisher-hartwig-co.md",
-  "derivedFrom": "library/arxiv-1207.4990v3/manifest",
-  "sourceDocument": "library/arxiv-1207.4990v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1207.4990v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1207.4990v3",
   "provenance": "ingested"
 }

@@ -7,7 +7,11 @@
   "bytes": 1280353,
   "pages": 22,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -359,6 +363,146 @@
   "likely_scanned": false,
   "toc_entries": 21,
   "sections": 17,
-  "chars_total": 101733
+  "chars_total": 101733,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "main.tex",
+   "tex_sections": 17,
+   "overlaid": 13,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-adonis-a-differentiable-generator-of-neutrino-in",
+     "title": "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.85,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-differentiable-programming-in-particle-physics",
+     "title": "Differentiable programming in particle physics",
+     "prose_ratio": 0.905,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-differentiability-by-reweighting",
+     "title": "Differentiability by reweighting",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-nuclear-ground-state-reweighting",
+     "title": "Nuclear ground-state reweighting",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.945,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-hard-scattering-amplitudes",
+     "title": "Hard-scattering amplitudes",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.909,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-intranuclear-cascade",
+     "title": "Intranuclear cascade",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.916,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-channel-normalisations",
+     "title": "Channel normalisations",
+     "prose_ratio": 0.87,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-differentiable-events-and-observables",
+     "title": "Differentiable events and observables",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-gradients-and-higher-order-derivatives",
+     "title": "Gradients and higher-order derivatives",
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-validation",
+     "title": "Validation",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.931,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-gradient-information",
+     "title": "Gradient information",
+     "prose_ratio": 0.544,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-computational-cost",
+     "title": "Computational cost",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-unfolding",
+     "title": "Unfolding",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-conclusions",
+     "title": "Conclusions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-acknowledgments",
+     "title": "Acknowledgments",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.04,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-016-additional-validation-distributions",
+     "title": "Additional validation distributions",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

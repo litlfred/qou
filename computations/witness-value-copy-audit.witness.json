@@ -4,13 +4,13 @@
   "scriptFile": "witness_value_copy_audit.py",
   "description": "Source literals of >= 11 significant digits that also appear in a *.witness.json the script does not itself produce \u2014 a value copied instead of loaded. Such a copy goes stale silently when the producer is re-run.",
   "min_sig_digits": 11,
-  "indexed_literals": 232482,
-  "total": 415,
-  "narrow_total": 211,
-  "narrow_files": 138,
+  "indexed_literals": 233340,
+  "total": 427,
+  "narrow_total": 223,
+  "narrow_files": 151,
   "shared_total": 204,
-  "files": 258,
-  "from_deprecated_witness": 18,
+  "files": 269,
+  "from_deprecated_witness": 20,
   "findings": [
     {
       "file": "computations/a3_mirror_residual_reconciliation.py",
@@ -24,7 +24,7 @@
         "computations/deltalambda/alpha-activation-brunnian.witness.json",
         "computations/deltalambda/alpha-cluster-volume-additivity.witness.json"
       ],
-      "witness_count": 13,
+      "witness_count": 12,
       "deprecated_source": false
     },
     {
@@ -39,7 +39,7 @@
         "computations/_deprecated/family-1-kashaev.witness.json",
         "computations/_deprecated/isotope-mass-structural-y-lambda.witness.json"
       ],
-      "witness_count": 40,
+      "witness_count": 37,
       "deprecated_source": true
     },
     {
@@ -49,12 +49,12 @@
       "sig_digits": 16,
       "spread": "SHARED",
       "witnesses": [
-        "computations/probes/casimir-grid-sweep-probe.witness.json",
         "computations/probes/finite-q-volume-conjecture-probe.witness.json",
         "computations/qns-pair-riccati-probe.witness.json",
-        "computations/reeb-rotation-pn-test-reeb.witness.json"
+        "computations/reeb-rotation-pn-test-reeb.witness.json",
+        "computations/rt-habiro-borromean-cross-validation.witness.json"
       ],
-      "witness_count": 5,
+      "witness_count": 4,
       "deprecated_source": false
     },
     {
@@ -64,12 +64,12 @@
       "sig_digits": 16,
       "spread": "SHARED",
       "witnesses": [
-        "computations/probes/casimir-grid-sweep-probe.witness.json",
         "computations/probes/finite-q-volume-conjecture-probe.witness.json",
         "computations/qns-pair-riccati-probe.witness.json",
-        "computations/reeb-rotation-pn-test-reeb.witness.json"
+        "computations/reeb-rotation-pn-test-reeb.witness.json",
+        "computations/rt-habiro-borromean-cross-validation.witness.json"
       ],
-      "witness_count": 5,
+      "witness_count": 4,
       "deprecated_source": false
     },
     {
@@ -176,12 +176,12 @@
       "sig_digits": 16,
       "spread": "SHARED",
       "witnesses": [
-        "computations/probes/casimir-grid-sweep-probe.witness.json",
         "computations/probes/finite-q-volume-conjecture-probe.witness.json",
         "computations/qns-pair-riccati-probe.witness.json",
-        "computations/reeb-rotation-pn-test-reeb.witness.json"
+        "computations/reeb-rotation-pn-test-reeb.witness.json",
+        "computations/rt-habiro-borromean-cross-validation.witness.json"
       ],
-      "witness_count": 5,
+      "witness_count": 4,
       "deprecated_source": false
     },
     {
@@ -312,6 +312,18 @@
       "deprecated_source": true
     },
     {
+      "file": "computations/barparity/cp_theta_defect_and_two_asymmetries_probe.py",
+      "line": 126,
+      "literal": "7.2973525643",
+      "sig_digits": 11,
+      "spread": "NARROW",
+      "witnesses": [
+        "computations/codata-corpus-vintage-scan.witness.json"
+      ],
+      "witness_count": 1,
+      "deprecated_source": false
+    },
+    {
       "file": "computations/binding_endomorphism_deuteron.py",
       "line": 51,
       "literal": "0.5952397103674884",
@@ -335,7 +347,7 @@
         "computations/deltalambda/alpha-activation-brunnian.witness.json",
         "computations/deltalambda/alpha-cluster-volume-additivity.witness.json"
       ],
-      "witness_count": 13,
+      "witness_count": 12,
       "deprecated_source": false
     },
     {
@@ -350,7 +362,7 @@
         "computations/_deprecated/family-1-kashaev.witness.json",
         "computations/_deprecated/isotope-mass-structural-y-lambda.witness.json"
       ],
-      "witness_count": 40,
+      "witness_count": 37,
       "deprecated_source": true
     },
     {
@@ -601,7 +613,7 @@
         "computations/deltalambda/alpha-activation-brunnian.witness.json",
         "computations/deltalambda/he4-vol4-prediction-test.witness.json"
       ],
-      "witness_count": 12,
+      "witness_count": 11,
       "deprecated_source": false
     },
     {
@@ -616,7 +628,7 @@
         "computations/_deprecated/family-1-kashaev.witness.json",
         "computations/_deprecated/isotope-mass-structural-y-lambda.witness.json"
       ],
-      "witness_count": 39,
+      "witness_count": 36,
       "deprecated_source": true
     },
     {
@@ -683,7 +695,7 @@
         "computations/deltalambda/alpha-activation-brunnian.witness.json",
         "computations/deltalambda/alpha-cluster-volume-additivity.witness.json"
       ],
-      "witness_count": 12,
+      "witness_count": 11,
       "deprecated_source": false
     },
     {
@@ -698,20 +710,8 @@
         "computations/_deprecated/family-1-kashaev.witness.json",
         "computations/_deprecated/isotope-mass-structural-y-lambda.witness.json"
       ],
-      "witness_count": 39,
+      "witness_count": 36,
       "deprecated_source": true
-    },
-    {
-      "file": "computations/deltalambda/ka_additive_cluster_derivation_probe.py",
-      "line": 84,
-      "literal": "5.852902577599116",
-      "sig_digits": 16,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/deltalambda/perknot-pn-bond-resolved-extensivity.witness.json"
-      ],
-      "witness_count": 1,
-      "deprecated_source": false
     },
     {
       "file": "computations/deltalambda/ka_additive_cluster_derivation_probe.py",
@@ -720,10 +720,9 @@
       "sig_digits": 16,
       "spread": "NARROW",
       "witnesses": [
-        "computations/audits/drifted-witness-copy-audit.witness.json",
-        "computations/deltalambda/perknot-pn-bond-resolved-extensivity.witness.json"
+        "computations/audits/drifted-witness-copy-audit.witness.json"
       ],
-      "witness_count": 2,
+      "witness_count": 1,
       "deprecated_source": false
     },
     {
@@ -733,20 +732,7 @@
       "sig_digits": 17,
       "spread": "NARROW",
       "witnesses": [
-        "computations/audits/drifted-witness-copy-audit.witness.json",
-        "computations/deltalambda/perknot-pn-bond-resolved-extensivity.witness.json"
-      ],
-      "witness_count": 2,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/deltalambda/ka_additive_cluster_derivation_probe.py",
-      "line": 87,
-      "literal": "9.313340597451814",
-      "sig_digits": 16,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/deltalambda/perknot-pn-bond-resolved-extensivity.witness.json"
+        "computations/audits/drifted-witness-copy-audit.witness.json"
       ],
       "witness_count": 1,
       "deprecated_source": false
@@ -797,10 +783,9 @@
       "spread": "NARROW",
       "witnesses": [
         "computations/audits/drifted-witness-copy-audit.witness.json",
-        "computations/deltalambda/ka-additive-cluster-derivation.witness.json",
-        "computations/deltalambda/perknot-pn-bond-resolved-extensivity.witness.json"
+        "computations/deltalambda/ka-additive-cluster-derivation.witness.json"
       ],
-      "witness_count": 3,
+      "witness_count": 2,
       "deprecated_source": false
     },
     {
@@ -811,10 +796,9 @@
       "spread": "NARROW",
       "witnesses": [
         "computations/audits/drifted-witness-copy-audit.witness.json",
-        "computations/deltalambda/ka-additive-cluster-derivation.witness.json",
-        "computations/deltalambda/perknot-pn-bond-resolved-extensivity.witness.json"
+        "computations/deltalambda/ka-additive-cluster-derivation.witness.json"
       ],
-      "witness_count": 3,
+      "witness_count": 2,
       "deprecated_source": false
     },
     {
@@ -894,7 +878,7 @@
         "computations/_deprecated/family-1-kashaev.witness.json",
         "computations/_deprecated/isotope-mass-structural-y-lambda.witness.json"
       ],
-      "witness_count": 39,
+      "witness_count": 36,
       "deprecated_source": true
     },
     {
@@ -937,6 +921,98 @@
       "deprecated_source": false
     },
     {
+      "file": "computations/deltalambda/rev_e_infinity_block_sup_relaxation_probe.py",
+      "line": 155,
+      "literal": "2.43929645512078402706542884314",
+      "sig_digits": 30,
+      "spread": "SHARED",
+      "witnesses": [
+        "computations/deltalambda/rev-e-infinity-block-sup-relaxation.witness.json",
+        "computations/deltalambda/rev-e-infinity-closed-form.witness.json",
+        "computations/deltalambda/rev-e-infinity-edge-limit.witness.json",
+        "computations/deltalambda/rev-e-infinity-search-reduction.witness.json"
+      ],
+      "witness_count": 4,
+      "deprecated_source": false
+    },
+    {
+      "file": "computations/deltalambda/rev_e_infinity_block_sup_relaxation_probe.py",
+      "line": 156,
+      "literal": "2.1598023761182859616035304",
+      "sig_digits": 26,
+      "spread": "NARROW",
+      "witnesses": [
+        "computations/deltalambda/rev-e-infinity-block-sup-relaxation.witness.json",
+        "computations/deltalambda/rev-e-infinity-search-reduction.witness.json"
+      ],
+      "witness_count": 2,
+      "deprecated_source": false
+    },
+    {
+      "file": "computations/deltalambda/rev_e_infinity_block_sup_relaxation_probe.py",
+      "line": 157,
+      "literal": "3.92139923021415319458053",
+      "sig_digits": 24,
+      "spread": "NARROW",
+      "witnesses": [
+        "computations/deltalambda/rev-e-infinity-block-sup-relaxation.witness.json"
+      ],
+      "witness_count": 1,
+      "deprecated_source": false
+    },
+    {
+      "file": "computations/deltalambda/rev_e_infinity_g1_bottom_edge_cap_probe.py",
+      "line": 183,
+      "literal": "0.0198162676389039602300948111946348416306",
+      "sig_digits": 39,
+      "spread": "NARROW",
+      "witnesses": [
+        "computations/deltalambda/rev-e-infinity-g1-bottom-edge-cap.witness.json"
+      ],
+      "witness_count": 1,
+      "deprecated_source": false
+    },
+    {
+      "file": "computations/deltalambda/rev_e_infinity_hessian_budget_probe.py",
+      "line": 74,
+      "literal": "2.159802376118285961604",
+      "sig_digits": 22,
+      "spread": "NARROW",
+      "witnesses": [
+        "computations/deltalambda/rev-e-infinity-block-sup-relaxation.witness.json"
+      ],
+      "witness_count": 1,
+      "deprecated_source": false
+    },
+    {
+      "file": "computations/deltalambda/rev_e_infinity_search_reduction_probe.py",
+      "line": 149,
+      "literal": "2.43929645512078402706542884314",
+      "sig_digits": 30,
+      "spread": "SHARED",
+      "witnesses": [
+        "computations/deltalambda/rev-e-infinity-block-sup-relaxation.witness.json",
+        "computations/deltalambda/rev-e-infinity-closed-form.witness.json",
+        "computations/deltalambda/rev-e-infinity-edge-limit.witness.json",
+        "computations/deltalambda/rev-e-infinity-search-reduction.witness.json"
+      ],
+      "witness_count": 4,
+      "deprecated_source": false
+    },
+    {
+      "file": "computations/deltalambda/rev_e_infinity_search_reduction_probe.py",
+      "line": 380,
+      "literal": "2.1598023761182859616",
+      "sig_digits": 20,
+      "spread": "NARROW",
+      "witnesses": [
+        "computations/deltalambda/rev-e-infinity-g1-bottom-edge-cap.witness.json",
+        "computations/deltalambda/rev-e-infinity-search-reduction.witness.json"
+      ],
+      "witness_count": 2,
+      "deprecated_source": false
+    },
+    {
       "file": "computations/deltalambda/vol4_4he_snappy_falsification_probe.py",
       "line": 45,
       "literal": "7.327724753417752",
@@ -948,7 +1024,7 @@
         "computations/_deprecated/family-1-kashaev.witness.json",
         "computations/_deprecated/isotope-mass-structural-y-lambda.witness.json"
       ],
-      "witness_count": 39,
+      "witness_count": 36,
       "deprecated_source": true
     },
     {
@@ -963,7 +1039,7 @@
         "computations/deltalambda/alpha-activation-brunnian.witness.json",
         "computations/deltalambda/alpha-cluster-volume-additivity.witness.json"
       ],
-      "witness_count": 12,
+      "witness_count": 11,
       "deprecated_source": false
     },
     {
@@ -993,7 +1069,7 @@
         "computations/_deprecated/family-1-kashaev.witness.json",
         "computations/_deprecated/isotope-mass-structural-y-lambda.witness.json"
       ],
-      "witness_count": 40,
+      "witness_count": 37,
       "deprecated_source": true
     },
     {
@@ -1369,7 +1445,7 @@
         "computations/meson/deuteron-cost-and-sign-structure.witness.json",
         "computations/meson/deuteron-support-reachability.witness.json"
       ],
-      "witness_count": 5,
+      "witness_count": 6,
       "deprecated_source": false
     },
     {
@@ -1384,7 +1460,7 @@
         "computations/meson/deuteron-cost-and-sign-structure.witness.json",
         "computations/meson/deuteron-support-reachability.witness.json"
       ],
-      "witness_count": 5,
+      "witness_count": 6,
       "deprecated_source": false
     },
     {
@@ -1427,7 +1503,7 @@
         "computations/meson/deuteron-cost-and-sign-structure.witness.json",
         "computations/meson/deuteron-support-reachability.witness.json"
       ],
-      "witness_count": 5,
+      "witness_count": 6,
       "deprecated_source": false
     },
     {
@@ -1442,7 +1518,7 @@
         "computations/meson/deuteron-cost-and-sign-structure.witness.json",
         "computations/meson/deuteron-support-reachability.witness.json"
       ],
-      "witness_count": 5,
+      "witness_count": 6,
       "deprecated_source": false
     },
     {
@@ -1579,7 +1655,7 @@
         "computations/_deprecated/magic-A-formula.witness.json",
         "computations/alphaem-dilog-bloch-probe.witness.json"
       ],
-      "witness_count": 14,
+      "witness_count": 13,
       "deprecated_source": true
     },
     {
@@ -1609,7 +1685,7 @@
         "computations/_deprecated/family-1-kashaev.witness.json",
         "computations/_deprecated/isotope-mass-structural-y-lambda.witness.json"
       ],
-      "witness_count": 40,
+      "witness_count": 37,
       "deprecated_source": true
     },
     {
@@ -1651,7 +1727,7 @@
         "computations/chi-helium-4-h12-at-q0-50dps.witness.json",
         "computations/deltalambda/ka-additive-cluster-derivation.witness.json"
       ],
-      "witness_count": 10,
+      "witness_count": 11,
       "deprecated_source": false
     },
     {
@@ -2456,7 +2532,7 @@
         "computations/deltalambda/alpha-activation-brunnian.witness.json",
         "computations/deltalambda/alpha-cluster-volume-additivity.witness.json"
       ],
-      "witness_count": 12,
+      "witness_count": 11,
       "deprecated_source": false
     },
     {
@@ -2471,7 +2547,7 @@
         "computations/_deprecated/family-1-kashaev.witness.json",
         "computations/_deprecated/isotope-mass-structural-y-lambda.witness.json"
       ],
-      "witness_count": 39,
+      "witness_count": 36,
       "deprecated_source": true
     },
     {
@@ -2486,7 +2562,7 @@
         "computations/_deprecated/family-1-kashaev.witness.json",
         "computations/_deprecated/isotope-mass-structural-y-lambda.witness.json"
       ],
-      "witness_count": 39,
+      "witness_count": 36,
       "deprecated_source": true
     },
     {
@@ -3893,7 +3969,7 @@
     },
     {
       "file": "computations/probes/weak_channel_is_a_flavour_flip_probe.py",
-      "line": 317,
+      "line": 324,
       "literal": "0.676821592386",
       "sig_digits": 12,
       "spread": "SHARED",
@@ -3908,7 +3984,7 @@
     },
     {
       "file": "computations/probes/weak_channel_is_a_flavour_flip_probe.py",
-      "line": 317,
+      "line": 324,
       "literal": "0.907262265533",
       "sig_digits": 12,
       "spread": "SHARED",
@@ -4013,12 +4089,12 @@
       "sig_digits": 16,
       "spread": "SHARED",
       "witnesses": [
-        "computations/probes/casimir-grid-sweep-probe.witness.json",
         "computations/probes/finite-q-volume-conjecture-probe.witness.json",
         "computations/qns-pair-riccati-probe.witness.json",
-        "computations/reeb-rotation-pn-test-reeb.witness.json"
+        "computations/reeb-rotation-pn-test-reeb.witness.json",
+        "computations/rt-habiro-borromean-cross-validation.witness.json"
       ],
-      "witness_count": 5,
+      "witness_count": 4,
       "deprecated_source": false
     },
     {
@@ -4028,12 +4104,12 @@
       "sig_digits": 16,
       "spread": "SHARED",
       "witnesses": [
-        "computations/probes/casimir-grid-sweep-probe.witness.json",
         "computations/probes/finite-q-volume-conjecture-probe.witness.json",
         "computations/qns-pair-riccati-probe.witness.json",
-        "computations/reeb-rotation-pn-test-reeb.witness.json"
+        "computations/reeb-rotation-pn-test-reeb.witness.json",
+        "computations/rt-habiro-borromean-cross-validation.witness.json"
       ],
-      "witness_count": 5,
+      "witness_count": 4,
       "deprecated_source": false
     },
     {
@@ -4043,12 +4119,12 @@
       "sig_digits": 16,
       "spread": "SHARED",
       "witnesses": [
-        "computations/probes/casimir-grid-sweep-probe.witness.json",
         "computations/probes/finite-q-volume-conjecture-probe.witness.json",
         "computations/qns-pair-riccati-probe.witness.json",
-        "computations/reeb-rotation-pn-test-reeb.witness.json"
+        "computations/reeb-rotation-pn-test-reeb.witness.json",
+        "computations/rt-habiro-borromean-cross-validation.witness.json"
       ],
-      "witness_count": 5,
+      "witness_count": 4,
       "deprecated_source": false
     },
     {
@@ -4058,12 +4134,12 @@
       "sig_digits": 16,
       "spread": "SHARED",
       "witnesses": [
-        "computations/probes/casimir-grid-sweep-probe.witness.json",
         "computations/probes/finite-q-volume-conjecture-probe.witness.json",
         "computations/qns-pair-riccati-probe.witness.json",
-        "computations/reeb-rotation-pn-test-reeb.witness.json"
+        "computations/reeb-rotation-pn-test-reeb.witness.json",
+        "computations/rt-habiro-borromean-cross-validation.witness.json"
       ],
-      "witness_count": 5,
+      "witness_count": 4,
       "deprecated_source": false
     },
     {
@@ -4073,12 +4149,12 @@
       "sig_digits": 16,
       "spread": "SHARED",
       "witnesses": [
-        "computations/probes/casimir-grid-sweep-probe.witness.json",
         "computations/probes/finite-q-volume-conjecture-probe.witness.json",
         "computations/qns-pair-riccati-probe.witness.json",
-        "computations/reeb-rotation-pn-test-reeb.witness.json"
+        "computations/reeb-rotation-pn-test-reeb.witness.json",
+        "computations/rt-habiro-borromean-cross-validation.witness.json"
       ],
-      "witness_count": 5,
+      "witness_count": 4,
       "deprecated_source": false
     },
     {
@@ -4088,12 +4164,12 @@
       "sig_digits": 16,
       "spread": "SHARED",
       "witnesses": [
-        "computations/probes/casimir-grid-sweep-probe.witness.json",
         "computations/probes/finite-q-volume-conjecture-probe.witness.json",
         "computations/qns-pair-riccati-probe.witness.json",
-        "computations/reeb-rotation-pn-test-reeb.witness.json"
+        "computations/reeb-rotation-pn-test-reeb.witness.json",
+        "computations/rt-habiro-borromean-cross-validation.witness.json"
       ],
-      "witness_count": 5,
+      "witness_count": 4,
       "deprecated_source": false
     },
     {
@@ -4193,6 +4269,20 @@
       "deprecated_source": false
     },
     {
+      "file": "computations/qbeta/qbeta_c3_two_bands_are_the_l2_factor_probe.py",
+      "line": 63,
+      "literal": "2.0693425728",
+      "sig_digits": 11,
+      "spread": "NARROW",
+      "witnesses": [
+        "computations/qbeta/qbeta-constant-residue-character-doubling.witness.json",
+        "computations/qbeta/qbeta-ladder-form-cannot-reach-ruled-base.witness.json",
+        "computations/qbeta/qbeta-ladder-uniform-coefficient-bound.witness.json"
+      ],
+      "witness_count": 3,
+      "deprecated_source": false
+    },
+    {
       "file": "computations/qbeta/qbeta_c3_two_route_cross_pin_probe.py",
       "line": 152,
       "literal": "0.192278982353",
@@ -4257,6 +4347,20 @@
         "computations/qbeta/qbeta-bond-factors-derived.witness.json"
       ],
       "witness_count": 5,
+      "deprecated_source": false
+    },
+    {
+      "file": "computations/qbeta/qbeta_ck_c5_slot_and_size_mismatch_probe.py",
+      "line": 94,
+      "literal": "2.0693425728",
+      "sig_digits": 11,
+      "spread": "NARROW",
+      "witnesses": [
+        "computations/qbeta/qbeta-constant-residue-character-doubling.witness.json",
+        "computations/qbeta/qbeta-ladder-form-cannot-reach-ruled-base.witness.json",
+        "computations/qbeta/qbeta-ladder-uniform-coefficient-bound.witness.json"
+      ],
+      "witness_count": 3,
       "deprecated_source": false
     },
     {
@@ -4436,7 +4540,7 @@
     },
     {
       "file": "computations/qbeta/qbeta_delta_element_fork_pricing_probe.py",
-      "line": 321,
+      "line": 352,
       "literal": "0.260387641790120802073285342788008683395823953848006260161245",
       "sig_digits": 60,
       "spread": "NARROW",
@@ -4449,7 +4553,7 @@
     },
     {
       "file": "computations/qbeta/qbeta_delta_element_fork_pricing_probe.py",
-      "line": 322,
+      "line": 353,
       "literal": "0.106814457651578049623631258921144907521837554045064212540761",
       "sig_digits": 60,
       "spread": "NARROW",
@@ -4461,7 +4565,7 @@
     },
     {
       "file": "computations/qbeta/qbeta_delta_element_fork_pricing_probe.py",
-      "line": 323,
+      "line": 354,
       "literal": "0.171538643776599505671840531694425115158778702109050313959100",
       "sig_digits": 60,
       "spread": "NARROW",
@@ -4538,6 +4642,20 @@
       "deprecated_source": false
     },
     {
+      "file": "computations/qbeta/qbeta_k3_rung_spec_and_candidate_test_probe.py",
+      "line": 79,
+      "literal": "2.0693425728",
+      "sig_digits": 11,
+      "spread": "NARROW",
+      "witnesses": [
+        "computations/qbeta/qbeta-constant-residue-character-doubling.witness.json",
+        "computations/qbeta/qbeta-ladder-form-cannot-reach-ruled-base.witness.json",
+        "computations/qbeta/qbeta-ladder-uniform-coefficient-bound.witness.json"
+      ],
+      "witness_count": 3,
+      "deprecated_source": false
+    },
+    {
       "file": "computations/qbeta/qbeta_kashaev_habiro_chain_beta.py",
       "line": 129,
       "literal": "2.06934257711516783787971951725",
@@ -4565,6 +4683,32 @@
         "computations/probes/qbeta-ck-basis-constrained-pslq.witness.json"
       ],
       "witness_count": 17,
+      "deprecated_source": false
+    },
+    {
+      "file": "computations/qbeta/qbeta_ladder_form_cannot_reach_ruled_base_probe.py",
+      "line": 267,
+      "literal": "2.0693425728",
+      "sig_digits": 11,
+      "spread": "NARROW",
+      "witnesses": [
+        "computations/qbeta/qbeta-constant-residue-character-doubling.witness.json",
+        "computations/qbeta/qbeta-ladder-uniform-coefficient-bound.witness.json"
+      ],
+      "witness_count": 2,
+      "deprecated_source": false
+    },
+    {
+      "file": "computations/qbeta/qbeta_ladder_uniform_coefficient_bound_probe.py",
+      "line": 133,
+      "literal": "2.0693425728",
+      "sig_digits": 11,
+      "spread": "NARROW",
+      "witnesses": [
+        "computations/qbeta/qbeta-constant-residue-character-doubling.witness.json",
+        "computations/qbeta/qbeta-ladder-form-cannot-reach-ruled-base.witness.json"
+      ],
+      "witness_count": 2,
       "deprecated_source": false
     },
     {
@@ -4803,6 +4947,20 @@
       "deprecated_source": false
     },
     {
+      "file": "computations/qbeta/qbeta_wenzl_c3_candidate_audit_probe.py",
+      "line": 132,
+      "literal": "2.0693425728",
+      "sig_digits": 11,
+      "spread": "NARROW",
+      "witnesses": [
+        "computations/qbeta/qbeta-constant-residue-character-doubling.witness.json",
+        "computations/qbeta/qbeta-ladder-form-cannot-reach-ruled-base.witness.json",
+        "computations/qbeta/qbeta-ladder-uniform-coefficient-bound.witness.json"
+      ],
+      "witness_count": 3,
+      "deprecated_source": false
+    },
+    {
       "file": "computations/qbeta/qbeta_wenzl_habiro_chain_alpha.py",
       "line": 116,
       "literal": "2.06934257711516783787971951725",
@@ -4989,7 +5147,7 @@
     },
     {
       "file": "computations/substrate/experimental_constants.py",
-      "line": 275,
+      "line": 281,
       "literal": "2.828122088330783",
       "sig_digits": 16,
       "spread": "SHARED",
@@ -5004,22 +5162,21 @@
     },
     {
       "file": "computations/substrate/experimental_constants.py",
-      "line": 338,
+      "line": 344,
       "literal": "4.400832516123046",
       "sig_digits": 16,
-      "spread": "SHARED",
+      "spread": "NARROW",
       "witnesses": [
         "computations/_deprecated/family-1-kashaev.witness.json",
         "computations/per-atom-rho-deviation.witness.json",
-        "computations/substrate/sw-hyperbolicity-gate.witness.json",
-        "computations/sweeps/low-isotope-binding-sweep.witness.json"
+        "computations/substrate/sw-hyperbolicity-gate.witness.json"
       ],
-      "witness_count": 4,
+      "witness_count": 3,
       "deprecated_source": true
     },
     {
       "file": "computations/substrate/experimental_constants.py",
-      "line": 340,
+      "line": 346,
       "literal": "8.286316817806593",
       "sig_digits": 16,
       "spread": "SHARED",
@@ -5029,12 +5186,12 @@
         "computations/deltalambda/alpha-activation-brunnian.witness.json",
         "computations/deltalambda/alpha-cluster-volume-additivity.witness.json"
       ],
-      "witness_count": 13,
+      "witness_count": 12,
       "deprecated_source": false
     },
     {
       "file": "computations/substrate/experimental_constants.py",
-      "line": 344,
+      "line": 350,
       "literal": "4.749499981874439",
       "sig_digits": 16,
       "spread": "SHARED",
@@ -5044,7 +5201,7 @@
         "computations/per-atom-rho-deviation.witness.json",
         "computations/substrate/sw-hyperbolicity-gate.witness.json"
       ],
-      "witness_count": 5,
+      "witness_count": 4,
       "deprecated_source": true
     },
     {
@@ -5059,7 +5216,7 @@
         "computations/deltalambda/alpha-activation-brunnian.witness.json",
         "computations/deltalambda/alpha-cluster-volume-additivity.witness.json"
       ],
-      "witness_count": 13,
+      "witness_count": 12,
       "deprecated_source": false
     },
     {
@@ -5074,7 +5231,7 @@
         "computations/_deprecated/family-1-kashaev.witness.json",
         "computations/_deprecated/isotope-mass-structural-y-lambda.witness.json"
       ],
-      "witness_count": 40,
+      "witness_count": 37,
       "deprecated_source": true
     },
     {
@@ -5089,7 +5246,7 @@
         "computations/_deprecated/family-1-kashaev.witness.json",
         "computations/_deprecated/isotope-mass-structural-y-lambda.witness.json"
       ],
-      "witness_count": 40,
+      "witness_count": 37,
       "deprecated_source": true
     },
     {
@@ -5104,7 +5261,7 @@
         "computations/deltalambda/alpha-activation-brunnian.witness.json",
         "computations/deltalambda/alpha-cluster-volume-additivity.witness.json"
       ],
-      "witness_count": 13,
+      "witness_count": 12,
       "deprecated_source": false
     },
     {
@@ -5119,7 +5276,7 @@
         "computations/_deprecated/family-1-kashaev.witness.json",
         "computations/_deprecated/isotope-mass-structural-y-lambda.witness.json"
       ],
-      "witness_count": 40,
+      "witness_count": 37,
       "deprecated_source": true
     },
     {
@@ -5134,7 +5291,7 @@
         "computations/_deprecated/family-1-kashaev.witness.json",
         "computations/_deprecated/isotope-mass-structural-y-lambda.witness.json"
       ],
-      "witness_count": 40,
+      "witness_count": 37,
       "deprecated_source": true
     },
     {
@@ -5149,7 +5306,7 @@
         "computations/deltalambda/alpha-activation-brunnian.witness.json",
         "computations/deltalambda/alpha-cluster-volume-additivity.witness.json"
       ],
-      "witness_count": 12,
+      "witness_count": 11,
       "deprecated_source": false
     },
     {
@@ -5164,7 +5321,7 @@
         "computations/_deprecated/family-1-kashaev.witness.json",
         "computations/_deprecated/isotope-mass-structural-y-lambda.witness.json"
       ],
-      "witness_count": 39,
+      "witness_count": 36,
       "deprecated_source": true
     },
     {
@@ -5179,7 +5336,7 @@
         "computations/_deprecated/family-1-kashaev.witness.json",
         "computations/_deprecated/isotope-mass-structural-y-lambda.witness.json"
       ],
-      "witness_count": 39,
+      "witness_count": 36,
       "deprecated_source": true
     },
     {
@@ -5233,7 +5390,7 @@
         "computations/_deprecated/family-1-kashaev.witness.json",
         "computations/_deprecated/isotope-mass-structural-y-lambda.witness.json"
       ],
-      "witness_count": 40,
+      "witness_count": 37,
       "deprecated_source": true
     },
     {
@@ -5261,7 +5418,7 @@
         "computations/_deprecated/family-1-kashaev.witness.json",
         "computations/_deprecated/isotope-mass-structural-y-lambda.witness.json"
       ],
-      "witness_count": 40,
+      "witness_count": 37,
       "deprecated_source": true
     },
     {
@@ -5553,7 +5710,7 @@
         "computations/markov/markov-trace-canonical.witness.json",
         "computations/option-e-phase1-gram-h6.witness.json"
       ],
-      "witness_count": 9,
+      "witness_count": 13,
       "deprecated_source": false
     },
     {
@@ -5603,14 +5760,13 @@
       "line": 294,
       "literal": "4.400832516123046",
       "sig_digits": 16,
-      "spread": "SHARED",
+      "spread": "NARROW",
       "witnesses": [
         "computations/_deprecated/family-1-kashaev.witness.json",
         "computations/per-atom-rho-deviation.witness.json",
-        "computations/substrate/sw-hyperbolicity-gate.witness.json",
-        "computations/sweeps/low-isotope-binding-sweep.witness.json"
+        "computations/substrate/sw-hyperbolicity-gate.witness.json"
       ],
-      "witness_count": 4,
+      "witness_count": 3,
       "deprecated_source": true
     },
     {
@@ -5625,7 +5781,7 @@
         "computations/deltalambda/alpha-activation-brunnian.witness.json",
         "computations/deltalambda/alpha-cluster-volume-additivity.witness.json"
       ],
-      "witness_count": 13,
+      "witness_count": 12,
       "deprecated_source": false
     },
     {
@@ -5640,7 +5796,7 @@
         "computations/per-atom-rho-deviation.witness.json",
         "computations/substrate/sw-hyperbolicity-gate.witness.json"
       ],
-      "witness_count": 5,
+      "witness_count": 4,
       "deprecated_source": true
     },
     {
@@ -5697,7 +5853,7 @@
         "computations/markov/markov-trace-canonical.witness.json",
         "computations/option-e-phase1-gram-h6.witness.json"
       ],
-      "witness_count": 9,
+      "witness_count": 13,
       "deprecated_source": false
     },
     {
@@ -5708,11 +5864,11 @@
       "spread": "SHARED",
       "witnesses": [
         "computations/alphaem-dilog-bloch-probe.witness.json",
-        "computations/casimir-d6-qcorrection-structure.witness.json",
         "computations/deltalambda/alpha-activation-brunnian.witness.json",
-        "computations/kashaev-state-sum.witness.json"
+        "computations/kashaev-state-sum.witness.json",
+        "computations/mass-from-q-symbolic.witness.json"
       ],
-      "witness_count": 13,
+      "witness_count": 10,
       "deprecated_source": false
     }
   ]

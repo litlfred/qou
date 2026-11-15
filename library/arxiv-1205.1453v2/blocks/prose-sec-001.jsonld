@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1205.1453v2/blocks/prose-sec-001",
+  "kind": "prose",
+  "title": "Basic notations",
+  "pageStart": 5,
+  "pageEnd": 8,
+  "text": "../sections/sec-001-2-basic-notations.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1205.1453v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1205.1453v2",
+  "provenance": "ingested"
+}

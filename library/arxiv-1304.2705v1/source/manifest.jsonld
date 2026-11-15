@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1304.2705v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1304.2705v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1304.2705v1",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1304.2705&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1304.2705v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1304.2705v1",
+    "content_type": "application/gzip",
+    "sha256": "61d653ad25eba29d25d001629b8aa63f41f5441e8421ac8295feaa411245adb0",
+    "bytes": 22945,
+    "fetched": "2026-10-10T15:08:11+00:00",
+    "files": [
+      {
+        "path": "source/files/text12.bbl",
+        "role": "bbl",
+        "sha256": "1e9eb82536114a25fb39d07a1d0fa50636ba5be0d88d0894759a7cf81a491310",
+        "bytes": 3447
+      },
+      {
+        "path": "source/files/text12.tex",
+        "role": "tex",
+        "sha256": "36a98d81258100df52623fbdc251482bf6353a572efd1b735916018ff816db03",
+        "bytes": 37454
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

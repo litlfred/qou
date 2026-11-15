@@ -88,7 +88,7 @@ by `λ`, weights `y_λ`.
 >
 > **What is true.** Measured with
 > `grep -ril "q-plancherel\|q_plancherel" computations/ content/ docs/`:
-> **202 live files**, plus 8 under `computations/_deprecated/` and 16 beans.
+> **202 live files**, plus 8 under `fsh-guts/deprecated/computations/` and 16 beans.
 > The corpus carries content blocks named
 > `prop:q-plancherel-asymptotic-skeleton` and
 > `conj:q-plancherel-asymptotic-skeleton`, and `computations/deltalambda/`

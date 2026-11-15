@@ -1,0 +1,62 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "murakami-y2022",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 287,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2205.01282v2/2205.01282v2.pdf"
+        },
+        "id": "murakami-y2022",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "WRONG JOIN. The seeded id was zagier2010, whose ref() entry (references.ts:356) is a conference-proceedings chapter on quantum modular forms. This document is a 2022/2024 single-author research article, arXiv:2205.01282v2 [math.GT], proving a conjecture of Gukov-Pei-Putrov-Vafa for a wide class of plumbed 3-manifolds: that WRT invariants are radial limits of the homological blocks (q-series for plumbed 3-manifolds with negative-definite linking matrices), with the hard step being the vanishing of weighted Gauss sums in the negative-degree coefficients of the asymptotic expansions, handled by a new technique comparing asymptotic expansions of rational functions against false theta functions. It is not the quantum-modular-forms chapter and the join must be broken. No existing ref() key matches it: grep of references.ts for '2205.01282' and for 'homological block' returns nothing, so id is null. This is the most valuable of the five mis-joins, because the corpus cites gukov-pei-putrov-vafa2017 (library/arxiv-1701.06567v2/1701.06567v2.pdf, also in this slice) at QOU/QBeta/StokesDTBPSBridge.lean:55 as a CONJECTURAL class field \u2014 and this document PROVES the relevant GPPV conjecture for a wide class. Corpus-grep before declaring the gap: docs/audits/, docs/coordination/, content/ and computations/ contain no reference to this arXiv id or to 'homological blocks', so no prior agent has already closed it.",
+          "keyResults": [
+            {
+              "locator": "main theorem (abstract statement)",
+              "statement": "For a wide class of plumbed 3-manifolds with negative-definite linking matrix, the WRT invariant is the radial limit of the corresponding homological block; the proof establishes vanishing of the weighted Gauss sums appearing in negative-degree coefficients of the blocks' asymptotic expansions.",
+              "useForFolio": "StokesDTBPSBridge.lean currently carries the GPPV identification as an ASSUMED class field. This document upgrades part of that assumption to a proved statement on a restricted class, so the bridge's epistemic tier could be sharpened \u2014 but only if 4_1's relevant 3-manifold is in the plumbed negative-definite class, which I have NOT checked. Until that is checked this is a citation to record, not a hypothesis to discharge.",
+              "targets": [
+                "QOU.QBeta.StokesDTBPSBridge"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "It proves a conjecture the corpus currently assumes as a class field, and has no ref() entry. Create one; the ledger row keeps id null until then so the false join to the quantum-modular-forms key is not propagated.",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-av0r"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Record what would have to be checked before this changes any epistemic tier: whether the knot complements / 3-manifolds the folio's A_omega argument uses fall inside this document's plumbed, negative-definite-linking-matrix class. If they do not, the GPPV identification stays conjectural for the folio's purposes and the bridge's class fields must remain as they are.",
+              "target": "QOU.QBeta.StokesDTBPSBridge",
+              "bean": "qou-8dlq"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "00f656afa60d"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

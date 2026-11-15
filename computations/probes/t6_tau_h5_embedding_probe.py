@@ -4,7 +4,7 @@ T6 tau probe — recompute V̂_τ at H_5 (5-strand) instead of H_3.
 
 Per PR #1127's lepton-tower H_n+1 branching conjecture
 ([conj:lepton-tower-h-n-plus-1-branching](
-../../content/quantum-observable-universe/braids-and-knots/conj-lepton-tower-h-n-plus-1-branching.md)):
+../../folio/quantum-observable-universe/braids-and-knots/conj-lepton-tower-h-n-plus-1-branching.md)):
 muon (m=2) closes at H_3+1 = H_4 std rep (3,1) factor [3]_q · [2]_q / [4]_q.
 By analogy, tau (m=3) should close at H_4+1 = H_5 std rep (4,1) factor.
 

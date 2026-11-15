@@ -8,91 +8,53 @@ pages: 77-79
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
 doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R) — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual"
+text_source: latex
+latex_prose_ratio: 0.925
+latex_coverage_ratio: 0.931
 ---
-By taking the pairing above with the fundamental corepresentatio n deﬁned in Sec-
-tion 7.2, we obtain:
-Theorem 8.6. The fundamental corepresentation T λ,t corresponds to the repre-
-sentationPλ,t, called the principal series representation , given on L2(R,ds ) by:
-K0 = eπbt,
-K = e−πbs,
-E = [ Q
-2b− i
-b (s−λ)]qe−2πbps,
-F = [ Q
-2b + i
-b (s +λ)]qe2πbps,
-where [n]q = qn−q−n
-q−q−1 . The operators are all positive essentially self-adjoint.
-77
-Proof. Recall that we choose c =−iq1/2 in the pairing. Recall also that we have to
-multiply the expressions by Gb(Q+iα)Gb(Q+iτ )
-(1−q2)ib−1 (α +τ ) . From the expression (7.31) we obtain
-for K0 and K that τ = α = 0. The factor becomes lim
-α− →0
-Gb(−iα)Gb(Q +iα) = 1
-and the rest becomes
-K0 :f (s) ↦→ f (s)· (q−1/2)ib−1(t−s)(q−1/2)ib−1(t+s)
-= eπbtf (s),
-K :f (s) ↦→ f (s)· (q−1/2)ib−1(t−s)(q1/2)ib−1(t+s)
-= e−πbsf (s).
-ForE, we have τ =−ib,α = 0 so that the factor lim
-α− →0
-Gb(−iα)Gb(Q +iα) = 1 as
-well, and we obtain
-E :f (s) ↦→ −iq1/2f (s +ib)
-1−q2
-Gb( Q
-2−is +iλ +b)
-Gb( Q
-2−is +iλ)
-eπλb−2πbs+πbt· (qib−1(t−s))
-= iq−1/2
-q−q−1 (1−e2πib( Q
-2 −is+iλ))eπb(λ−s)f (s +ib)
-= i
-q−q−1 (q1/2eπb(s−λ) +q−1/2e−πb(s−λ))f (s +ib)
-= [ Q
-2b− i
-b (s−λ)]qf (s +ib).
-Finally, forF we haveα =−ib,τ = 0, the factor lim
-α− →−ib
-Gb(−iα)Gb(Q +iα) =−q2,
-and we obtain
-F :f (s) ↦→ iq−1/2(−q2)f (s−ib)
-1−q2
-Gb( Q
-2−is−iλ)
-Gb( Q
-2−is−iλ−b)
-e−πλb+πbt· (qib−1(t+s))
-= iq1/2
-q−q−1 (1−e2πib( Q
-2 −is−iλ−b))e−πb(λ+s)f (s−ib)
-= i
-q−q−1 (q−1/2eπb(s+λ) +q1/2e−πb(s+λ))f (s−ib)
-= [ Q
-2b + i
-b (s +λ)]qf (s−ib).
-Since i
-q−q−1 = 1
-2 sin(πb2) > 0, we immediately see that the operators are positive.
-We note that the expression for E can be rewritten as
-E = i
-q−q−1 (eπb(s−λ−ps) +eπb(λ−s−ps)), (8.6)
-where the summand q2-commutes. Hence using Proposition 4.1, it is unitary equiv-
-alent to eπb(s−λ−ps) which in turn is equivalent to e−πb(ps+λ) by multiplication by
-78
-e−πis2
-. Hence it is essentially self-adjoint. Similar analysis applies to F , hence all
-operators are positive essentially self-adjoint.
-Remark 8.7. We note that by restricting to Uq(sl(2, R)), this is precisely (the
-Fourier transform of ) the continuous series representatio nPs obtained in [2] given
-by
-Kδ k = e−πbkδk,
-Esδk = [ Q
-2b− i
-b (k−s)]qδk+ib,
-Fsδk = [ Q
-2b + i
-b (k +s)]qδk−ib
-under the correspondences s←→k,λ←→s.
+\label{sec:regular:principal}
+By taking the pairing above with the fundamental corepresentation defined in Section \ref{sec:double:matrix}, we obtain:
+\begin{Thm}\label{fundrep} The fundamental corepresentation $T^{\l,t}$ corresponds to the representation $\cP_{\l,t}$, called the \emph{principal series representation}, given on $L^2(\R,ds)$ by:
+\begin{eqnarray*}
+K_0 &=& e^{\pi bt},\\
+K&=&e^{-\pi bs},\\
+E &=&[\frac{Q}{2b}-\frac{i}{b}(s-\l)]_q e^{-2\pi bp_{s}},\\
+F &=&[\frac{Q}{2b}+\frac{i}{b}(s+\l)]_q e^{2\pi bp_{s}},\\
+\end{eqnarray*}
+where $[n]_q=\frac{q^n-q^{-n}}{q-q\inv}$. The operators are all positive essentially self-adjoint.
+\end{Thm}
+\begin{proof}
+Recall that we choose $c=-iq^{1/2}$ in the pairing.  Recall also that we have to multiply the expressions by $\frac{G_b(Q+i\a)G_b(Q+i\t)}{(1-q^2)^{ib\inv (\a+\t)}}$. From the expression \eqref{fundcorep} we obtain for $K_0$ and $K$ that $\t=\a=0$. The factor becomes $\dis\lim_{\a\to0}G_b(-i\a)G_b(Q+i\a)=1$ and the rest becomes
+\begin{eqnarray*} 
+K_0:f(s)&\mapsto&f(s)\cdot (q^{-1/2})^{ib\inv(t-s)}(q^{-1/2})^{ib\inv(t+s)}\\
+&=&e^{\pi bt}f(s),\\
+K:f(s)&\mapsto&f(s)\cdot (q^{-1/2})^{ib\inv(t-s)}(q^{1/2})^{ib\inv(t+s)}\\
+&=&e^{-\pi bs}f(s).\\
+\end{eqnarray*}
+For $E$, we have $\t=-ib,\a=0$ so that the factor $\dis\lim_{\a\to0}G_b(-i\a)G_b(Q+i\a)=1$ as well, and we obtain
+\begin{eqnarray*}
+E:f(s)&\mapsto&\frac{-iq^{1/2}f(s+ib)}{1-q^2}\frac{G_b(\frac{Q}{2}-is+i\l+b)}{G_b(\frac{Q}{2}-is+i\l)}e^{\pi \l b-2\pi bs+\pi bt}\cdot (q^{ib\inv(t-s)})\\
+&=&\frac{iq^{-1/2}}{q-q\inv} (1-e^{2\pi i b(\frac{Q}{2}-is+i\l)})e^{\pi b(\l-s)} f(s+ib)\\
+&=&\frac{i}{q-q\inv}(q^{1/2}e^{\pi b(s-\l)}+q^{-1/2}e^{-\pi b(s-\l)}) f(s+ib)\\
+&=&[\frac{Q}{2b}-\frac{i}{b}(s-\l)]_q f(s+ib).
+\end{eqnarray*}
+Finally, for $F$ we have $\a=-ib,\t=0$, the factor $\dis\lim_{\a\to-ib}G_b(-i\a)G_b(Q+i\a)=-q^2$, and we obtain
+\begin{eqnarray*}
+F:f(s)&\mapsto&\frac{iq^{-1/2}(-q^2)f(s-ib)}{1-q^2}\frac{G_b(\frac{Q}{2}-is-i\l)}{G_b(\frac{Q}{2}-is-i\l-b)}e^{-\pi \l b+\pi bt}\cdot (q^{ib\inv(t+s)})\\
+&=&\frac{iq^{1/2}}{q-q\inv} (1-e^{2\pi i b(\frac{Q}{2}-is-i\l-b)})e^{-\pi b(\l+s)} f(s-ib)\\
+&=&\frac{i}{q-q\inv}(q^{-1/2}e^{\pi b(s+\l)}+q^{1/2}e^{-\pi b(s+\l)}) f(s-ib)\\
+&=&[\frac{Q}{2b}+\frac{i}{b}(s+\l)]_q f(s-ib).
+\end{eqnarray*}
+Since $\frac{i}{q-q\inv}=\frac{1}{2\sin(\pi b^2)}>0$, we immediately see that the operators are positive. We note that the expression for $E$ can be rewritten as
+\Eq{E=\frac{i}{q-q\inv} (e^{\pi b(s-\l-p_s)}+e^{\pi b(\l-s-p_s)}),}
+where the summand $q^2$-commutes. Hence using Proposition \ref{x+p}, it is unitary equivalent to $e^{\pi b(s-\l-p_s)}$ which in turn is equivalent to $e^{-\pi b(p_s+\l)}$ by multiplication by $e^{-\pi is^2}$. Hence it is essentially self-adjoint. Similar analysis applies to $F$, hence all operators are positive essentially self-adjoint.
+\end{proof}
+
+\begin{Rem} We note that by restricting to $U_q(\sl(2,\R))$, this is precisely (the Fourier transform of) the continuous series representation $\cP_{s}$ obtained in \cite{BT} given by
+\begin{eqnarray*}
+K\d_k&=&e^{-\pi bk}\d_k,\\
+E_s\d_k&=&[\frac{Q}{2b}-\frac{i}{b}(k-s)]_q \d_{k+ib},\\
+F_s\d_k&=&[\frac{Q}{2b}+\frac{i}{b}(k+s)]_q\d_{k-ib}\\
+\end{eqnarray*}
+under the correspondences $s\corr k, \l\corr s$.
+\end{Rem}

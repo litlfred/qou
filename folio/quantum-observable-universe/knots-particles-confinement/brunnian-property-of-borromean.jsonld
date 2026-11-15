@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-brunnian-property-of-borromean",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:brunnian-property-of-borromean",
+  "kind": "conjecture",
+  "title": "Brunnian property of $\\mathcal{B}_3$: every two-component sub-link is the unlink",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-borromean-baryon",
+    "papers/quantum-observable-universe/blocks/rem-borromean-topological-confinement"
+  ],
+  "cites": [
+    "references/kawauchi1996"
+  ],
+  "tags": [
+    "tier:S",
+    "borromean",
+    "brunnian",
+    "link-theory",
+    "knot-complement",
+    "color-confinement",
+    "topology",
+    "conditional-on-class",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.KnotTheory.Brunnian.borromean_brunnian",
+  "text": "brunnian-property-of-borromean.md",
+  "provenance": "authored"
+}

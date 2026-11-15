@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0203206v1/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0203206v1/blocks/prose-sec-004",
   "kind": "prose",
-  "title": "For all X,Y,Z ∈ C the following diagram commutes:",
-  "pageStart": 4,
-  "pageEnd": 4,
-  "text": "../sections/sec-004-2-for-all-xyz-c-the-following-diagram-commutes.md",
-  "derivedFrom": "library/arxiv-math-0203206v1/manifest",
-  "sourceDocument": "library/arxiv-math-0203206v1/manifest",
+  "title": "Discrete and Compact Case",
+  "pageStart": 9,
+  "pageEnd": 11,
+  "text": "../sections/sec-004-23-discrete-and-compact-case.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203206v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203206v1",
   "provenance": "ingested"
 }

@@ -1,0 +1,43 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-borromean-baryon-mass-formula",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:borromean-baryon-mass-formula",
+  "kind": "conjecture",
+  "title": "Borromean baryon mass formula with common Borromean term $\\mathfrak{m}_{\\mathcal{B}_3}(q_0)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-borromean-baryon",
+    "papers/quantum-observable-universe/blocks/def-typed-crossing-operator",
+    "papers/quantum-observable-universe/blocks/prop-graded-hecke-energy-truncation-bound"
+  ],
+  "cites": [
+    "references/thurston1978",
+    "references/kashaev1997",
+    "references/murakami-murakami2001",
+    "references/codata2022"
+  ],
+  "tags": [
+    "tier:E",
+    "borromean",
+    "baryon",
+    "mass-formula",
+    "topological-mass",
+    "lambda-scale",
+    "common-scale",
+    "open-problem",
+    "substrate-only",
+    "vol-form"
+  ],
+  "leanRef": "qou:QOU.Borromean.MassFormula",
+  "text": "borromean-baryon-mass-formula.md",
+  "leanSource": "borromean-baryon-mass-formula.lean",
+  "provenance": "authored"
+}

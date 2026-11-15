@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1401.5542v1/blocks/prose-sec-006",
+  "kind": "prose",
+  "title": "The Ptolemy varieties",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "text": "../sections/sec-006-3-the-ptolemy-varieties.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1401.5542v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1401.5542v1",
+  "provenance": "ingested"
+}

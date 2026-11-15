@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ki6c/blocks/prose-sec-018",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ki6c/blocks/prose-sec-018",
   "kind": "prose",
-  "title": "Estimate of the range of ∆′",
-  "pageStart": 30,
-  "pageEnd": 33,
-  "text": "../sections/sec-018-42-estimate-of-the-range-of.md",
-  "derivedFrom": "library/ki6c/manifest",
-  "sourceDocument": "library/ki6c/manifest",
+  "title": "Calculation of the critical value",
+  "pageStart": 50,
+  "pageEnd": 52,
+  "text": "../sections/sec-018-53-calculation-of-the-critical-value.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ki6c",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ki6c",
   "provenance": "ingested"
 }

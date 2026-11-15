@@ -1,5 +1,6 @@
 {
   "computation": "qbeta-averaging-index-k",
+  "q0Anchor": "proton",
   "assertions": [
     {
       "name": "the_three_forms_agree",
@@ -99,7 +100,7 @@
     "corpus_k": "-0.006592397578743054"
   },
   "provenance": {
-    "headSha": "746265d837e101bd98c1e5cf1d58c61ebf5e753c",
+    "headSha": "eacf7ca73101030f04c9f788e9f705839bef23c3",
     "producer": "computations/qbeta/qbeta_averaging_index_k_probe.py",
     "elapsed_s": 0.008
   }

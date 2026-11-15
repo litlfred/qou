@@ -239,6 +239,114 @@ GATES=(
   # circumstantial ("lists of places to look", per its own docstring), and a
   # gate that fails on a high-recall list gets muted rather than fixed.
   "f64-into-mpmath (advisory)|computations/f64_into_mpmath_audit.py||yes|no"
+  # ADVISORY, red on arrival, and never wired in at all until now.
+  #
+  # Catches a dependency renaming or removing a module-level name while the
+  # consumer's import is never updated. The consumer's OWN file hash does not
+  # change, so every scriptHash-keyed staleness path reports it healthy while
+  # the script cannot be imported. Worked case: snappy_cusp_seeding.py sat
+  # scriptHash-IN-SYNC with its witness for three weeks while un-importable,
+  # because q_pochhammer_seed.IM_PERTURBATION had become IM_PERTURBATION_STR
+  # in the NO-FLOAT64 migration. Bean qou-2cz1.
+  #
+  # This is AGENTS.md's import-cone drift class one step worse: there, a
+  # byte-stable producer's NUMBER moves because a numeric module in its cone
+  # changed; here the cone change stops the producer running at all, which no
+  # staleness metric can express. witness_import_cone_staleness_audit.py ranks
+  # by "a cone module changed more recently than the witness" -- a recency
+  # heuristic -- and never asks whether the import resolves.
+  #
+  # FLIP TO BLOCKING WHEN THE UNRESOLVED COUNT REACHES 0. It is pure AST, so
+  # nothing is imported or executed and no producer writes a sibling witness
+  # while it runs; --selftest is calibrated on a synthetic fixture rather than
+  # on a live defect, and mutation-tested four ways. Advisory only because a
+  # gate that is red on arrival gets muted rather than fixed, which is the
+  # failure this script's own header is about.
+  #
+  # Count as measured on main 2ab87236c9: 3. A sibling branch (qou-2cz1) has
+  # since dispositioned all three -- one was corpus-decided and is fixed (the
+  # absent hook_length_dim_lambda is specht_dim), and the other two are a
+  # SUPERSEDED ALGORITHM rather than missing names, so there is no candidate of
+  # any name to import. Re-measure before quoting either number; do not read
+  # "2 remain" as "2 renames pending".
+  #
+  # 🛑 AND THAT IS A STATEMENT ABOUT A BRANCH, NOT ABOUT THE TREE YOU ARE ON.
+  # Measured 2026-10-10 at the same hour, same audit, varying only the checkout:
+  #
+  #     claude/qou2cz1-unresolved-imports-2026-10-10  ->  UNRESOLVED 0
+  #     claude/qou3kni-docstrings-and-import-gate-...  ->  UNRESOLVED 3
+  #     origin/main                                    ->  UNRESOLVED 3
+  #
+  # `ac520bba3b` ("UNRESOLVED 2 -> 0") is NOT an ancestor of origin/main, so
+  # the drain exists only on the branch that did it. This entry was one edit
+  # away from being flipped to blocking on the strength of the 0 -- which would
+  # have shipped a gate RED ON ARRIVAL at 3 on main, the exact failure this
+  # file's header says gets a gate muted rather than fixed.
+  #
+  # FLIP TO BLOCKING ONLY FROM A TREE WHERE IT MEASURES 0, i.e. after the
+  # qou-2cz1 fixes land on main -- and re-measure there, because a count read
+  # on a feature branch is a property of that branch.
+  "local import resolution (advisory)|computations/audits/local_import_resolution_audit.py||yes|no"
+  # BLOCKING as a DRAINING RATCHET (--max 26), not at zero. The surface was
+  # UNMEASURED until now (bean qou-3kni item 3: "the population is unmeasured").
+  #
+  # A corpus label cited in a producer DOCSTRING that resolves to no block.
+  # `uses-resolve` reads MANIFEST uses[], so a label in a docstring is not a
+  # manifest edge and no existing gate sees it: a reader following one lands on
+  # nothing. Measured on main: 487 distinct labels across 860 files, 25 dead,
+  # 57 citations pointing at nothing. The bean's sample was "three dead labels
+  # in two files"; the worst single label is cited by NINE files, among them
+  # the load-bearing computations/_li_2_q_util.py.
+  #
+  # 🛑 ZERO IS THE WRONG TRIGGER, and this entry said otherwise until
+  # 2026-10-10 ("FLIP TO BLOCKING WHEN THE DEAD COUNT REACHES 0"). The audit
+  # cannot distinguish CITING a dead label from DOCUMENTING that one is dead,
+  # so a producer that explains a retired label in prose RAISES the count:
+  # redirecting prop:per-partition-k-lambda-rule's two citations to the audit
+  # doc holding its record moved the count 25 -> 26, because the explanatory
+  # note has to name the label in order to say it is gone. A zero-threshold
+  # gate punishes exactly the fix it is meant to reward.
+  #
+  # So the bound is a ratchet: 26 today, and it may only fall. A new dead
+  # citation fails the gate; draining one lowers --max HERE, in the same
+  # commit that drains it, where a reviewer sees the number next to the gate.
+  # Same discipline as raw-float64-baseline.json -- baselines drain, never
+  # grow. Owner ruling "c1", relayed 2026-10-10: the gate "blocks only when
+  # the count INCREASES, not at 0".
+  #
+  # The count is also PINNED TO THE REPO ROOT as of the same ruling: git
+  # ls-files and git grep resolve pathspecs relative to the cwd, so the same
+  # tree at the same commit read 26 from the root and 400 from computations/.
+  # The gate harness happens to run from the root, so the gate read the right
+  # number while a human running it beside the files it scans read the wrong
+  # one. A gate whose count depends on its cwd has no threshold at all.
+  #
+  # BOUND 26 -> 10 -> 0 on 2026-10-11. THE SURFACE IS DRAINED: all 26 labels and
+  # all 58 citations are gone, so the gate now blocks any NEW dead citation from
+  # zero.
+  #
+  # 🛑 AND THE THRESHOLD WAS NEVER THE THING TO CHANGE -- the CONVENTION was.
+  # The comment block above argued that 0 is unreachable "while any producer
+  # explains a retired label in prose". That followed only because the
+  # explanations were written in LABEL SYNTAX. Drop the `prop:`/`conj:` prefix --
+  # say "the retired `constit-factor-tau-M-proton-identity` proposition" and
+  # point at docs/audits/2026-10-11-retired-label-records.md, which carries the
+  # label, the retiring commit and the recovery command -- and the prose keeps
+  # every pointer a reader needs while this detector stops counting it. The
+  # record doc is in docs/, which the audit does not scan.
+  #
+  # Drained in three groups, read PER LABEL and not per group: C (never existed,
+  # 7), B (deleted outright, 9), A (demoted to _deprecated/, 10, 40 citations).
+  # Every one of the 39 group-A files is byte-identical in CODE -- verified by
+  # comparing each AST with docstrings stripped -- because two of the 58 sites
+  # were code, not docstrings, and one of those writes a committed witness.
+  # --selftest asserts no
+  # truncation plus two known-live and two known-dead labels; mutation-tested
+  # four ways. The truncation assertion is not decoration: the first version
+  # used [a-z0-9-] for the stem and silently clipped
+  # prop:constit-factor-tau-M-proton-identity at the uppercase M, then reported
+  # the fragment as dead -- the label's own character class was the blind spot.
+  "docstring label carriers|computations/audits/docstring_label_carrier_audit.py|--max 0|yes|yes"
   # BLOCKING as of 2026-08-19, and green on arrival. Bean qou-irzg.
   #
   # It ran ADVISORY because the ratchet had no MEMORY for this tree, not
@@ -465,6 +573,27 @@ if [ "${1:-}" = "--changed" ]; then
   # nothing to scope down — but if this change cannot have moved any of them,
   # skip the run entirely.
   #
+  # 🛑 THAT PATTERN WAS `content/` AND WENT DEAD ON THE TREE RENAME (2026-10-10).
+  # The paper tree moved `content/` -> `folio/` (#7485) and `content/` does not
+  # exist on main at all, so the third alternative matched NOTHING: a Lean-only
+  # or .ts-only commit skipped this entire suite and printed
+  # "0 relevant of N changed file(s) — skipped". The "A SKIP IS NOT A PASS"
+  # note below is what makes that legible rather than silent — it was doing its
+  # job, and the fact it reported was wrong.
+  #
+  # MEASURED, same six-file sample through the old and new predicate:
+  #   old (^content/): 2 relevant   — the two computations/ files only
+  #   new (^folio/):   5 relevant   — plus the paper .lean, the block .ts, and
+  #                                   folio/values/registry.ts
+  # That last one is cited BY NAME in codata_corpus_literal_scan.py's own
+  # docstring as a CODATA value site (`folio/values/registry.ts:647`), so the
+  # predicate was skipping a file the gate it was widened for documents.
+  #
+  # The gate itself was never stale: codata_corpus_literal_scan.py walks
+  # `REPO.rglob("*")`, and a live run reports 63 `folio/` hits against 315
+  # `computations/` and 139 `docs/`. Only the short-circuit was wrong, which is
+  # the worse place for it to be — a blind gate still runs and still reports.
+  #
   # `content/**/*.{lean,ts}` was ADDED to this predicate on 2026-08-22, with
   # the CODATA stale-edition gate. Every other gate here examines witnesses
   # and `computations/` Python, so the old two-pattern predicate was exactly
@@ -495,7 +624,7 @@ if [ "${1:-}" = "--changed" ]; then
   # cannot make a clean checkout run the suite for no reason.
   considered=$(changed_files)
   relevant=$(printf '%s\n' "$considered" \
-             | grep -E '(\.witness\.json$|^computations/.*\.py$|^content/.*\.(lean|ts)$)' || true)
+             | grep -E '(\.witness\.json$|^computations/.*\.py$|^folio/.*\.(lean|ts)$)' || true)
   # A SKIP IS NOT A PASS (#5495, requested by the sibling on #5453). "0 files
   # considered" and "N considered, none relevant" were the same sentence, and
   # they are not the same fact: the first means this gate examined NOTHING.

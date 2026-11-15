@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/phys-rep09/sections/sec-053",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Some applications of the numerical integrators based on ME",
+  "pageStart": 71,
+  "pageEnd": 72,
+  "contains": [
+    "library/phys-rep09/blocks/prose-sec-053"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/phys-rep09",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/phys-rep09",
+  "provenance": "ingested"
+}

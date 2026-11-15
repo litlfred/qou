@@ -1,0 +1,23 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "majid1995",
+  "type": "book",
+  "title": "Foundations of Quantum Group Theory",
+  "author": [
+    {
+      "family": "Majid",
+      "given": "Shahn"
+    }
+  ],
+  "publisher": "Cambridge University Press",
+  "publisher-place": "Cambridge",
+  "issued": {
+    "date-parts": [
+      [
+        1995
+      ]
+    ]
+  },
+  "ISBN": "978-0-521-46032-7",
+  "note": "Verified 2026-06-23 (doth): Majid, Foundations of Quantum Group Theory, CUP 1995, ISBN 0521460328 (978-0-521-46032-7) — confirmed via ISBN registries. Cited in QuaternionFromHecke.lean. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §D."
+}

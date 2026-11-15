@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-derived-atom",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:derived-atom",
+  "kind": "definition",
+  "title": "Derived atom $\\mathcal{A}(Z, N)$ from pair production",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-four-term-pair-nucleon"
+  ],
+  "tags": [
+    "atom",
+    "derived",
+    "pair-production",
+    "nucleon",
+    "confinement",
+    "normal-form",
+    "general"
+  ],
+  "leanRef": "qou:QOU.Interactions.DerivedAtom",
+  "text": "derived-atom.md",
+  "leanSource": "derived-atom.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-archimedean-image-table",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:archimedean-image-table",
+  "kind": "remark",
+  "title": "Per-structure action of the archimedean realisation $\\tau$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-markov-trace-axiomatic-closed-form"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-archimedean-realization-functor",
+  "tags": [
+    "archimedean",
+    "realization-functor",
+    "algebraic-infrastructure",
+    "mass-tower",
+    "homflypt"
+  ],
+  "text": "archimedean-image-table.md",
+  "provenance": "authored"
+}

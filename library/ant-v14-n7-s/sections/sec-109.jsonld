@@ -1,16 +1,28 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ant-v14-n7-s/sections/sec-109",
   "@type": [
     "doco:Section"
   ],
-  "title": "2A. Outline of the proof",
-  "pageStart": 196,
-  "pageEnd": 197,
+  "title": "8D. Hermitian K-theory and Witt theory",
+  "pageStart": 175,
+  "pageEnd": 181,
   "contains": [
-    "library/ant-v14-n7-s/blocks/prose-sec-109"
+    "library/ant-v14-n7-s/blocks/prose-sec-109",
+    "library/ant-v14-n7-s/blocks/thm-sec-109-01",
+    "library/ant-v14-n7-s/blocks/thm-sec-109-02",
+    "library/ant-v14-n7-s/blocks/cor-sec-109-03",
+    "library/ant-v14-n7-s/blocks/thm-sec-109-04",
+    "library/ant-v14-n7-s/blocks/cor-sec-109-05",
+    "library/ant-v14-n7-s/blocks/remark-sec-109-06",
+    "library/ant-v14-n7-s/blocks/remark-sec-109-07"
   ],
-  "derivedFrom": "library/ant-v14-n7-s/manifest",
-  "sourceDocument": "library/ant-v14-n7-s/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s",
   "provenance": "ingested"
 }

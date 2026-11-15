@@ -1,0 +1,46 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "giotopoulos2026",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 316,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-2601.15862v1/2601.15862v1.pdf"
+        },
+        "id": "giotopoulos2026",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "tangential",
+          "rationale": "Proves that the embedding of Frechet smooth manifolds into the Cahiers topos of formal smooth sets preserves the projective limits defining infinite jet bundles, closing a previously tacit assumption in the comonadic formulation of PDE theory (diffieties inside jet bundles). The shared vocabulary with this corpus is a false friend and that is the useful finding. The corpus's jets -- prop:vertex-algebra-jet-relations, the recursive brane tower, the jet filtration and jet-order valuation -- are ALGEBRAIC: J^n(A) = A_n is a finite level of a vertex-algebra/arc-type tower whose prolongation L_{-1} promotes H^(n)(q) to H^(n+1)(q). No smooth manifold, no PDE, no infinite jet limit, no topos. A corpus grep for 'synthetic differential', 'Cahiers topos', 'diffiety' and 'comonad' returns zero hits across content/ and docs/audits/. Since the corpus never takes the projective limit this document's theorem is about, and never works in a smooth-geometry category, there is no statement here it can consume. Scope note (a): this document, as read, supplies nothing usable here. That is not a claim that synthetic differential geometry is irrelevant to the framework -- only that this particular technical lemma has no consumer, and a citation would be decorative.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Read the statement and the corpus's jet blocks side by side; the two notions of jet are different constructions in different categories, and no corpus block asserts anything this lemma would source.",
+              "target": "prop:vertex-algebra-jet-relations"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "e37fa9b4515f"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

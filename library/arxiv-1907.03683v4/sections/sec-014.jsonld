@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1907.03683v4/sections/sec-014",
   "@type": [
     "doco:Section"
   ],
-  "title": "Proof of Theorem 3.1. We will use the following Lemma, which we prove at the end",
-  "pageStart": 13,
-  "pageEnd": 14,
+  "title": "The z-measures and a deformation of the gamma process",
+  "pageStart": 18,
+  "pageEnd": 25,
   "contains": [
     "library/arxiv-1907.03683v4/blocks/prose-sec-014"
   ],
-  "derivedFrom": "library/arxiv-1907.03683v4/manifest",
-  "sourceDocument": "library/arxiv-1907.03683v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1907.03683v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1907.03683v4",
   "provenance": "ingested"
 }

@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T07:48:45.995153+00:00",
-  "commitSha": "5581d089576c181598f5ad344c7a4af8b787581e",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T16:17:56.160622+00:00",
+  "commitSha": "bd6cd22b8c7092ad8fd1ac2a69e2ff2b10ce48e2",
   "assertions": [
     {
       "name": "two-strand trace of a single sigma is the Markov z = q^3/(q^2+1)",
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 8,
   "computation": "the_canonical_mass_trace_factorises_over_the_chain_probe",
   "scriptFile": "the_canonical_mass_trace_factorises_over_the_chain_probe.py",
   "scriptHash": "07883445acdc",
-  "scriptCommitSha": "24c95ba7f73f7d6a6a46c0c2a72e0e80498e6ab6",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,11 +60,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -83,5 +86,7 @@
   "caveats": [
     "Checked at A <= 4 (n <= 12) in CI budget; the identity is a theorem for every A given the chain form, which the chain probe verified through A = 12. A = 6 is the same computation on a longer run.",
     "Says nothing about which non-composite closure would carry many-body binding, or whether one exists in the framework. It says the canonical chain cannot, and why."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-glossary-derived-category",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:glossary-derived-category",
+  "kind": "remark",
+  "title": "Derived category",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-glossary-distinguished-triangle"
+  ],
+  "tags": [
+    "glossary",
+    "homological-algebra",
+    "derived"
+  ],
+  "defines": [
+    "derived-category"
+  ],
+  "text": "glossary-derived-category.md",
+  "provenance": "authored"
+}

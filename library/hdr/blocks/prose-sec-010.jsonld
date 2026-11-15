@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/hdr/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/hdr/blocks/prose-sec-010",
   "kind": "prose",
   "title": "Schur elements and the a-function",
   "pageStart": 28,
   "pageEnd": 29,
   "text": "../sections/sec-010-schur-elements-and-the-a-function.md",
-  "derivedFrom": "library/hdr/manifest",
-  "sourceDocument": "library/hdr/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hdr",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hdr",
   "provenance": "ingested"
 }

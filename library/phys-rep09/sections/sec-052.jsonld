@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/phys-rep09/sections/sec-052",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The general nonlinear problem",
+  "pageStart": 70,
+  "pageEnd": 71,
+  "contains": [
+    "library/phys-rep09/blocks/prose-sec-052"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/phys-rep09",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/phys-rep09",
+  "provenance": "ingested"
+}

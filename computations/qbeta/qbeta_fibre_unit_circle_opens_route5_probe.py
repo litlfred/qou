@@ -99,6 +99,7 @@ from codata_constants import M_E_MEV, Q_BETA_MEV               # noqa: E402
 from q_parameter import q_at                                   # noqa: E402
 
 DPS = 50
+mp.dps = DPS   # before the module-scope mpf literals below (import-time dps ratchet)
 TARGET_OWN_UNCERTAINTY = mp.mpf("4.0e-4")   # form-vs-experiment gap, PR #6688
 
 results: list[tuple[str, bool, str]] = []
@@ -247,7 +248,7 @@ def main() -> int:
                   "the target's own 4.0e-4 uncertainty, so it is neither excluded nor "
                   "evidence.",
         "scope": "(a) for the arithmetic; the ellipticity criterion is an identity",
-        "q0": mp.nstr(q, 20), "q0_pin": "proton (q_at)", "dps": DPS,
+        "q0": mp.nstr(q, 20), "q0_pin": "proton (q_at)", "q0Anchor": "proton", "dps": DPS,
         "theta_required": mp.nstr(theta, 20),
         "theta_over_2pi": mp.nstr(ratio, 20),
         "det_A_at_real_q0": mp.nstr(detA_real, 20),

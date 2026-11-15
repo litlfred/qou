@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0410233v4/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0410233v4/blocks/prose-sec-005",
   "kind": "prose",
   "title": "Organization of this paper",
   "pageStart": 7,
   "pageEnd": 7,
   "text": "../sections/sec-005-15-organization-of-this-paper.md",
-  "derivedFrom": "library/arxiv-math-0410233v4/manifest",
-  "sourceDocument": "library/arxiv-math-0410233v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0410233v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0410233v4",
   "provenance": "ingested"
 }

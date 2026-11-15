@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-q-harmonic-flow",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:q-harmonic-flow",
+  "kind": "conjecture",
+  "title": "The substrate field $q(p)$ evolves by the $q$-harmonic-map heat flow $\\partial_t q = -\\Delta_q q$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-germ-commutator-q-curvature",
+    "papers/quantum-observable-universe/blocks/prop-q-gaussian-solves-q-heat",
+    "papers/quantum-observable-universe/blocks/def-q-flat-connection"
+  ],
+  "tags": [
+    "substrate-parameter",
+    "q-connection",
+    "q-heat",
+    "local-substrate",
+    "evolution-law",
+    "ansatz"
+  ],
+  "leanRef": "qou:QOU.LocalQ.QHarmonicFlow",
+  "text": "q-harmonic-flow.md",
+  "leanSource": "q-harmonic-flow.lean",
+  "provenance": "authored"
+}

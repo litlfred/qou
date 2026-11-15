@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-isotope-knot",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:isotope-knot",
+  "kind": "definition",
+  "title": "Isotope as a knot variant of fixed proton block",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-atom-knot"
+  ],
+  "tags": [
+    "isotope",
+    "knot",
+    "proton-block",
+    "neutron-block",
+    "categorical"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.IsotopeKnot",
+  "text": "isotope-knot.md",
+  "leanSource": "isotope-knot.lean",
+  "provenance": "authored"
+}

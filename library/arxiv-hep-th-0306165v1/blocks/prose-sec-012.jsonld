@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-0306165v1/blocks/prose-sec-012",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-0306165v1/blocks/prose-sec-012",
   "kind": "prose",
-  "title": "SL(2,",
-  "pageStart": 13,
-  "pageEnd": 13,
-  "text": "../sections/sec-012-22-sl2.md",
-  "derivedFrom": "library/arxiv-hep-th-0306165v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-0306165v1/manifest",
+  "title": "Semi-Classical Approximation",
+  "pageStart": 25,
+  "pageEnd": 30,
+  "text": "../sections/sec-012-32-semi-classical-approximation.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0306165v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0306165v1",
   "provenance": "ingested"
 }

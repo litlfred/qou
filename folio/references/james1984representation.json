@@ -1,0 +1,28 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "james1984representation",
+  "type": "book",
+  "title": "The Representation Theory of the Symmetric Group",
+  "author": [
+    {
+      "family": "James",
+      "given": "Gordon"
+    },
+    {
+      "family": "Kerber",
+      "given": "Adalbert"
+    }
+  ],
+  "publisher": "Cambridge University Press",
+  "publisher-place": "Cambridge",
+  "collection-title": "Encyclopedia of Mathematics and its Applications",
+  "collection-number": 16,
+  "issued": {
+    "date-parts": [
+      [
+        1984
+      ]
+    ]
+  },
+  "note": "Partially verified 2026-06-23 (doth): confirmed authors James & Kerber, 'The Representation Theory of the Symmetric Group', Encyclopedia of Mathematics and its Applications vol. 16 (Cambridge Core review link title). PLACEHOLDER — EDITION/YEAR unresolved: the ORIGINAL is Addison-Wesley 1981; CUP issued a later paperback reprint (current entry shows CUP/1984). Author to confirm which edition the QOU Lean Refs (S5SO3FiberAction.lean / S4S3HalfSymmetricProjection.lean) cite, then fix publisher/year. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §C."
+}

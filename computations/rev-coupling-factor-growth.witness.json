@@ -56,10 +56,11 @@
   ],
   "checks_passed": 3,
   "checks_total": 3,
-  "computedAt": "2026-09-07T17:04:57.671552+00:00",
+  "computedAt": "2026-10-13T15:47:50.762443+00:00",
   "dps": 40,
   "method": "local search gives configurations whose energy UPPER-bounds P_min, hence upper-bounds the coupling ratio; calibrated against brute force at l = 4..8",
   "probe": "rev_coupling_factor_growth_probe",
+  "q0Anchor": "proton",
   "q0_anchor": "physical_proton",
   "ratio_growth_l8_to_l60": "0.887286501",
   "ratio_scan": [

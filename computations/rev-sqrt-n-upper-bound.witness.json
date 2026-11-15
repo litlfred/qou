@@ -2254,7 +2254,7 @@
   ],
   "checks_passed": 7,
   "checks_total": 7,
-  "computedAt": "2026-09-11T15:24:05.483848+00:00",
+  "computedAt": "2026-10-13T15:21:24.605491+00:00",
   "constants": {
     "C": "6.171405720079135120223184976725402710568",
     "C_over_ln_q0": "59.146665857592522749",
@@ -2264,10 +2264,11 @@
     "ln_q0": "0.1043407203195195123159062799730723970537"
   },
   "dps": 60,
-  "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot/HookSumRowTangentBound.lean",
+  "lean": "folio/quantum-observable-universe/lean/QOU/BraidKnot/HookSumRowTangentBound.lean",
   "n_exact_sweep": 30,
   "n_scan": 44,
   "probe": "rev_sqrt_n_upper_bound_probe",
+  "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0_anchor": "physical_proton",
   "rate_scan": [

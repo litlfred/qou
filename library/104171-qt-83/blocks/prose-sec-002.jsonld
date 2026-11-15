@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/104171-qt-83/blocks/prose-sec-002",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/104171-qt-83/blocks/prose-sec-002",
   "kind": "prose",
   "title": "Calculation by the Poisson summation formula",
   "pageStart": 25,
   "pageEnd": 63,
   "text": "../sections/sec-002-calculation-by-the-poisson-summation-formula.md",
-  "derivedFrom": "library/104171-qt-83/manifest",
-  "sourceDocument": "library/104171-qt-83/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/104171-qt-83",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/104171-qt-83",
   "provenance": "ingested"
 }

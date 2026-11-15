@@ -12,14 +12,18 @@ binding energy from the canonical chain end-to-end at 50 dps:
     m_e  = CODATA leptonic mass
     Q_β(n) = m_n − m_p − m_e  (CODATA splitting calibration)
 
-  Step 1: Habiro polynomial evaluation
-    tr_M(p, q_0)   = exact value from habiro-coefficients-atomic
-                    (polynomial deg 48 in u = q^{1/2}, integral)
-    tr_M(n, q_0)   = exact value (deg 40, integral)
-    tr_M(D, q_0)   = exact value (deg 104, integral, include_inter=True)
+  Step 1-2: ONE trace functional for every trace in Term 1 (2026-11-15)
+    Convention-D Markov trace (Ocneanu, z = q^3/(q^2+1)) on the ruled
+    borromean words (owner ruling qou-hu1f), at the proton pin, 50 dps:
+      tr_M(p), tr_M(n), tr_M(D_atom)  from atomic-tr-m-mpfr-50dps-proton
+      tr_M(D_free)                    from binding-canonical (the disconnected
+                                      p ⊔ n word), checked == tr_M(p)·tr_M(n)
 
-  Step 2: Free-nucleon disconnected Markov trace at q_0
-    tr_M(D_free) via light_isotope_sweep.tr_M_at_q0(1, 1, False)
+    Until 2026-11-15 Term 1 mixed two functionals: Q_cat and tr_M(D_free)
+    came from light_isotope_sweep.tr_M_at_q0 (float64, Plancherel-weighted
+    character sum), while tr_M(D_atom) came from the habiro-coefficients-atomic
+    witness (grouped word, convention C, 0.38829). |free − atom| was therefore a
+    difference of two different objects. Owner-approved fix, tracker #7735.
 
   Step 3: Term 1 (descended, β-calibrated subtraction)
     Q_cat = tr_M(n_free) − tr_M(p_free) (numerical)
@@ -54,51 +58,61 @@ import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).parent))
 from experimental_constants import M_E_MEV, Q_NEUTRON_MEV, M_P_MEV, M_N_MEV
-from light_isotope_sweep import tr_M_at_q0
 from witness_base import WitnessBuilder
 
 from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
 
-# Substrate parameter at 50 dps
-VOL_FIGURE_EIGHT = mp.mpf("2.029883212819307")
-# CAL-2: m_μ/m_e from q_parameter registry (P31-triage Phase A).
-from q_parameter import MASS_RATIO_MU_E_STR as _MU_E_STR  # noqa: E402
+# Substrate parameter: the q_parameter pin (PROTON — this producer is not in
+# `ideal_muon`, and is listed `physical_proton` in q0_anchor_manifest.json).
+#
+# Until 2026-11-15 this block DERIVED its own q_0 from the muon ratio
+# (Vol(4_1)/(m_mu/m_e)) and recorded that as `q_0_mpf50` -- while every number
+# it actually computed came from the proton pin: the free traces it then read
+# from `tr_M_at_q0` used `q_parameter.Q`, `term4_frobenius_codim` likewise, and the Habiro witness it
+# loads is stamped at the proton q_0. The local muon q_0 was used for nothing
+# but the printout and the witness field, so the witness declared one layer
+# and computed in the other (the straddle AGENTS.md §q0 anchor convention
+# forbids). It now records the pin it uses.
+from q_parameter import q_at as _q_at  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
-MASS_RATIO_MU_E  = mp.mpf(_MU_E_STR)
-HBAR_Q_SQ        = VOL_FIGURE_EIGHT / MASS_RATIO_MU_E
-HBAR_Q           = mp.sqrt(HBAR_Q_SQ)
-Q0               = mp.mpf(1) / (mp.mpf(1) - HBAR_Q)
+Q0               = mp.mpf(_q_at(70))
 QI0              = mp.mpf(1) / Q0
 HA               = Q0 - QI0
 TWO_Q            = Q0 + QI0  # [2]_q
 
 
-def load_habiro_tr_M(label: str) -> mp.mpf:
-    """Load tr_M(label, q_0) from habiro-coefficients-atomic witness."""
-    # The witness moved into `computations/habiro/` (it is written there by
-    # `habiro/habiro_coefficients_atomic.py`); this looked only in
-    # `computations/` and so died with FileNotFoundError on a clean tree, which
-    # reads as "the input is missing" when in fact it is one directory over.
-    # Try the real location first, keep the old one as a fallback so a tree that
-    # still has it beside this file keeps working.
-    _here = Path(__file__).parent
-    for _cand in (_here / "habiro" / "habiro-coefficients-atomic.witness.json",
-                  _here / "habiro-coefficients-atomic.witness.json"):
-        if _cand.exists():
-            path = _cand
-            break
-    else:
-        raise FileNotFoundError(
-            "habiro-coefficients-atomic.witness.json not found in "
-            f"{_here/'habiro'} or {_here}. It is produced by "
-            "computations/habiro/habiro_coefficients_atomic.py.")
-    with open(path) as f:
-        d = json.load(f)
-    for key, r in d.get("results", {}).items():
-        if label in key.lower():
-            return mp.mpf(str(r["tr_M_at_q0"]))
-    raise KeyError(f"label {label!r} not found")
+def _load_witness(name: str) -> dict:
+    with open(Path(__file__).parent / name) as f:
+        return json.load(f, parse_float=str)
+
+
+def canonical_traces() -> dict:
+    """tr_M(p), tr_M(n), tr_M(D_atom), tr_M(D_free) on ONE functional.
+
+    Refuses unless both owning witnesses are at the pin this producer runs at,
+    and unless the free trace equals tr_M(p)·tr_M(n) and the two witnesses
+    agree on tr_M(D_atom), each to 1e-40.
+    """
+    from canonical_trm_reference import tr_m_nucleon
+    p = tr_m_nucleon("proton")
+    n = tr_m_nucleon("neutron")
+    d_atom = tr_m_nucleon("deuteron")
+    bc = _load_witness("binding-canonical.witness.json")
+    if bc.get("q0Anchor") != "proton":
+        raise SystemExit("refusing: binding-canonical.witness.json is not at "
+                         f"the proton pin (q0Anchor={bc.get('q0Anchor')!r})")
+    rows = {r["atom"]: r for r in bc["data"]["results"]}
+    d_free = mp.mpf(rows["D"]["tr_M_free"])
+    d_atom_bc = mp.mpf(rows["D"]["tr_M_atom"])
+    tol = mp.mpf(10) ** -40
+    if not mp.almosteq(d_atom_bc, d_atom, rel_eps=tol):
+        raise SystemExit(f"refusing: binding-canonical D atom {d_atom_bc} != "
+                         f"atomic-tr-m-mpfr-50dps-proton {d_atom}")
+    if not mp.almosteq(d_free, p * n, rel_eps=tol):
+        raise SystemExit(f"refusing: tr_M(D_free) {d_free} != tr_M(p)tr_M(n) "
+                         f"{p * n}")
+    return {"proton": p, "neutron": n, "D_atom": d_atom, "D_free": d_free}
 
 
 def main():
@@ -121,35 +135,11 @@ def main():
     # ────────────────────────────────────────────────────────────
     # Step 1: Habiro polynomial values at 50 dps (EXACT, no f64)
     # ────────────────────────────────────────────────────────────
-    print("Step 1: Habiro polynomial Markov trace values @ q_0 (50 dps)")
+    print("Step 1-2: canonical Markov traces @ q_0 (conv D, borromean, proton)")
     print("─" * 78)
-    tr_M_p_habiro = load_habiro_tr_M("proton")
-    tr_M_n_habiro = load_habiro_tr_M("neutron")
-    tr_M_D_atom_habiro = load_habiro_tr_M("deuteron")
-    print(f"  tr_M(p)        = {mp.nstr(tr_M_p_habiro, 30)}")
-    print(f"  tr_M(n)        = {mp.nstr(tr_M_n_habiro, 30)}")
-    print(f"  tr_M(D atom)   = {mp.nstr(tr_M_D_atom_habiro, 30)}")
-    print()
-
-    # ────────────────────────────────────────────────────────────
-    # Step 2: Free-nucleon disconnected Markov trace
-    # ────────────────────────────────────────────────────────────
-    print("Step 2: Free-nucleon Markov trace (disconnected p⊗n)")
-    print("─" * 78)
-    # For binding subtraction we need tr_M(D, include_inter=False).
-    # This is the Markov trace of the DISCONNECTED tensor p ⊗ n
-    # under H_3(q)^⊗2 ↪ H_6(q).
-    # Light_isotope_sweep gives this via include_inter=False at f64;
-    # we use it as a finite-precision input (Habiro polynomial for
-    # this specific 'free deuteron' is not tabulated in the atomic
-    # witness — only include_inter=True is).
-    tr_M_p_f64, _, _ = tr_M_at_q0(1, 0, include_inter=False)
-    tr_M_n_f64, _, _ = tr_M_at_q0(0, 1, include_inter=False)
-    tr_M_D_free_f64, _, _ = tr_M_at_q0(1, 1, include_inter=False)
-    print(f"  tr_M(p, f64)        = {tr_M_p_f64}")
-    print(f"  tr_M(n, f64)        = {tr_M_n_f64}")
-    print(f"  tr_M(D_free, f64)   = {tr_M_D_free_f64}")
-    print(f"  (Habiro 50dps p,n disagree with f64 by ~1e-6 due to f64 noise)")
+    TR = canonical_traces()
+    for k in ("proton", "neutron", "D_atom", "D_free"):
+        print(f"  tr_M({k:<7}) = {mp.nstr(TR[k], 30)}")
     print()
 
     # ────────────────────────────────────────────────────────────
@@ -157,13 +147,11 @@ def main():
     # ────────────────────────────────────────────────────────────
     print("Step 3: Term 1 (descended, β-calibrated)")
     print("─" * 78)
-    Q_cat = mp.mpf(str(tr_M_n_f64)) - mp.mpf(str(tr_M_p_f64))
+    Q_cat = TR["neutron"] - TR["proton"]
     E_0 = mp.mpf(str(Q_NEUTRON_MEV)) / mp.fabs(Q_cat)
     print(f"  Q_cat = tr_M(n) − tr_M(p)   = {mp.nstr(Q_cat, 12)}")
     print(f"  E_0  = Q_β / |Q_cat|        = {mp.nstr(E_0, 12)} MeV/cat")
-    # Mix Habiro 50dps for atom + f64 for free (only avenue available)
-    tr_M_D_free_mp = mp.mpf(str(tr_M_D_free_f64))
-    delta_tr_M = mp.fabs(tr_M_D_free_mp - tr_M_D_atom_habiro)
+    delta_tr_M = mp.fabs(TR["D_free"] - TR["D_atom"])
     T1 = E_0 * delta_tr_M
     print(f"  Δtr_M = |free − atom|       = {mp.nstr(delta_tr_M, 12)}")
     print(f"  Term 1 = E_0 · Δtr_M        = {mp.nstr(T1, 12)} MeV")
@@ -208,50 +196,42 @@ def main():
     err_ppb = err_pct * mp.mpf(10)**7
     print(f"  T1 + T4 + Δm_shell    = {mp.nstr(B_pred, 15)} MeV")
     print(f"  AME B(D)              = {mp.nstr(B_AME, 15)} MeV")
-    print(f"  err vs AME            = {float(err_pct):>+.6f}%")
-    print(f"  err in ppb            = {float(err_ppb):>+.4e}")
+    print(f"  err vs AME            = {mp.nstr(err_pct, 8)}%")
+    print(f"  err in ppb            = {mp.nstr(err_ppb, 6)}")
     print()
 
     # Per-term breakdown
     print("Per-term breakdown:")
-    print(f"  Term 1 (descended)     = {mp.nstr(T1, 10)} MeV  ({float(T1/B_AME*100):>+.2f}% of AME)")
-    print(f"  Term 4 (Frobenius)    = {mp.nstr(T4, 10)} MeV  ({float(T4/B_AME*100):>+.2f}% of AME)")
-    print(f"  Δm_shell              = {mp.nstr(Dm_shell, 10)} MeV  ({float(Dm_shell/B_AME*100):>+.2f}% of AME)")
-    print(f"  Sum                   = {mp.nstr(B_pred, 10)} MeV  ({float(B_pred/B_AME*100):>+.2f}% of AME)")
+    print(f"  Term 1 (descended)     = {mp.nstr(T1, 10)} MeV  ({mp.nstr(T1/B_AME*100, 4)}% of AME)")
+    print(f"  Term 4 (Frobenius)    = {mp.nstr(T4, 10)} MeV  ({mp.nstr(T4/B_AME*100, 4)}% of AME)")
+    print(f"  Δm_shell              = {mp.nstr(Dm_shell, 10)} MeV  ({mp.nstr(Dm_shell/B_AME*100, 4)}% of AME)")
+    print(f"  Sum                   = {mp.nstr(B_pred, 10)} MeV  ({mp.nstr(B_pred/B_AME*100, 4)}% of AME)")
     print()
 
-    # Compare to existing T1+T4 prediction at f64
-    T1_T4_f64 = mp.mpf("2.271368715455014")  # from mass-formula-6term.witness
-    print(f"For comparison: T1+T4 from mass-formula-6term (f64) = {T1_T4_f64} MeV")
-    print(f"Difference                                          = {mp.nstr(B_pred - T1_T4_f64, 10)} MeV")
-    print(f"(this difference is mostly from Δm_shell + Habiro precision improvement on Term 1)")
 
     # Build witness
     w = (
         WitnessBuilder("d-from-scratch", engine="python+mpmath")
         .set_description(
             "Deuteron binding from scratch using full canonical infra at "
-            "50 dps mpmath. Combines Habiro polynomial Markov trace values "
-            "(exact at q_0 from habiro-coefficients-atomic.witness.json) "
-            "for the atom-level tr_M with light_isotope_sweep f64 values "
-            "for the free-nucleon disconnected baseline. Term 4 and "
-            "Δm_shell computed exactly at 50 dps. NO Vol_hyp, NO BW "
+            "50 dps mpmath. Every trace in Term 1 (tr_M(p), tr_M(n), "
+            "tr_M(D_atom), tr_M(D_free)) is the convention-D Markov trace on "
+            "the ruled borromean words at the proton pin, read from "
+            "atomic-tr-m-mpfr-50dps-proton and binding-canonical (since "
+            "2026-11-15; previously a float64 Plancherel character sum was "
+            "subtracted from a convention-C Habiro trace). NO Vol_hyp, NO BW "
             "(invalid at A=2), NO census."
         )
         .set_content_block("prop:atom-knot-mass-derivation")
         .add_parameter("q_0_mpf50", mp.nstr(Q0, 50))
         .add_parameter("m_e_MeV", M_E_MEV)
         .add_parameter("Q_beta_n_MeV", Q_NEUTRON_MEV)
-        .add_parameter("E_0_MeV_per_cat", float(E_0))
-        .add_data("tr_M_habiro_50dps", {
-            "proton":  mp.nstr(tr_M_p_habiro, 50),
-            "neutron": mp.nstr(tr_M_n_habiro, 50),
-            "D_atom":  mp.nstr(tr_M_D_atom_habiro, 50),
-        })
-        .add_data("tr_M_f64", {
-            "proton_free":  tr_M_p_f64,
-            "neutron_free": tr_M_n_f64,
-            "D_free":       tr_M_D_free_f64,
+        .add_parameter("E_0_MeV_per_cat", fmt(E_0))
+        .add_data("tr_M_canonical_50dps", {k: mp.nstr(v, 50) for k, v in TR.items()})
+        .add_data("tr_M_source", {
+            "functional": "convention-D Markov trace, borromean word, proton pin",
+            "proton/neutron/D_atom": "atomic-tr-m-mpfr-50dps-proton.witness.json",
+            "D_free": "binding-canonical.witness.json (checked == tr_M(p)·tr_M(n) to 1e-40)",
         })
         .add_data("terms_50dps", {
             "Term_1_descended_MeV": mp.nstr(T1, 30),
@@ -259,15 +239,13 @@ def main():
             "delta_m_shell_MeV":   mp.nstr(Dm_shell, 30),
             "B_pred_MeV":          mp.nstr(B_pred, 30),
             "B_AME_MeV":           mp.nstr(B_AME, 30),
-            "err_pct":             float(err_pct),
-            "err_ppb":             float(err_ppb),
+            "err_pct":             fmt(err_pct),
+            "err_ppb":             fmt(err_ppb),
         })
         .add_caveat(
-            "Free-nucleon Markov trace tr_M(D, include_inter=False) is "
-            "computed at f64 via light_isotope_sweep — Habiro polynomial "
-            "for this specific configuration is not yet in the witness. "
-            "An end-to-end 50 dps result requires extending Habiro "
-            "extraction to include_inter=False atom braids."
+            "Δm_shell uses the typed σ_shell value 5.889176e-3 (A_magic = 2), "
+            "which has no owning witness read here; its convention is not "
+            "re-checked by this producer."
         )
         .add_caveat(
             "Term 5 (BW) explicitly NOT included — BW formula is "

@@ -1,0 +1,71 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "broda2002",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 138,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-math-ph-0012035v3/0012035v3.pdf"
+        },
+        "id": "broda2002",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "A physics-side review of the non-Abelian Stokes theorem: the operator form, two path-integral variants, the topologically-nontrivial (knotted-loop) generalisation, a higher-degree-form recipe, and applications to 2d Yang-Mills and Chern-Simons. The corpus's load-bearing non-abelian Stokes is the algebraic Yekutieli multiplicative integral (rem:yekutieli-stokes, sec:yekutieli-mapping-table), so this is not load-bearing. It is nonetheless the closest literature statement of the form the corpus actually writes down in rem:lattice-qcd-from-qou, which asserts Hol(dSigma) as a surface-ordered path-ordered integral of the q-deformed curvature over a Seifert surface with no citation at all. Section 2.3.1 additionally treats the case the corpus needs and the standard statement does not cover: the loop bounding the surface is knotted. Not core because the corpus derives nothing from it -- it would source a statement, not supply a step.",
+          "keyResults": [
+            {
+              "locator": "eq. (14), sec. 2.2 (\"Theorem\")",
+              "statement": "In its operator form the non-Abelian Stokes theorem states that the path-ordered holonomy around a closed curve C = boundary(S) equals the surface-ordered exponential of the twisted curvature over S.",
+              "useForFolio": "Sources the surface-ordered-exponential formula that rem:lattice-qcd-from-qou states without a citation.",
+              "targets": [
+                "rem:lattice-qcd-from-qou"
+              ]
+            },
+            {
+              "locator": "sec. 2.3.1 (\"Topology\"), Fig. 9",
+              "statement": "When the loop is knotted the naive surface-ordered form fails; the knotted loop is decomposed into a product of surface factors indexed by the genus of the spanning surface, giving the topologically-nontrivial version of the theorem.",
+              "useForFolio": "The corpus applies non-abelian Stokes to holonomy around knots with a Seifert spanning surface, i.e. exactly the topologically-nontrivial case; this flags that the untwisted statement does not cover it.",
+              "targets": [
+                "rem:lattice-qcd-from-qou",
+                "rem:yekutieli-stokes"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry exists; the surface-ordered non-abelian Stokes form used in rem:lattice-qcd-from-qou currently has no source of any kind.",
+              "target": "rem:lattice-qcd-from-qou",
+              "bean": "qou-lq88"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "rem:lattice-qcd-from-qou opens with the surface-ordered holonomy formula and cites nothing; the knotted-loop caveat of sec. 2.3.1 is directly relevant since the corpus's spanning surface is a Seifert surface of a knot.",
+              "target": "rem:lattice-qcd-from-qou",
+              "bean": "qou-bn8h"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "06a4c8096c8e"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

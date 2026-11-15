@@ -1,0 +1,28 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "barnatan2024",
+  "type": "webpage",
+  "title": "The Knot Atlas (and KnotInfo database)",
+  "author": [
+    {
+      "family": "Bar-Natan",
+      "given": "Dror"
+    },
+    {
+      "family": "Morrison",
+      "given": "Scott"
+    },
+    {
+      "literal": "et al."
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2024
+      ]
+    ]
+  },
+  "URL": "http://katlas.org",
+  "note": "Reference compendium of knot and link invariants, including Jones polynomials, Khovanov homology, and SnapPy hyperbolic data."
+}

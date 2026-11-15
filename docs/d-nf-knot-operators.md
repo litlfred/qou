@@ -136,6 +136,6 @@ All symbolic, no SnapPy, no knot-matching needed. This is the
   (H₃ NF basis = named knot operators)
 - `computations/basis_knot_tables.py`
   (H₃ 6-basis multiplication tables)
-- `content/quantum-observable-universe/braids-and-knots/algebraic-quantum-volume.md`
-- `content/quantum-observable-universe/braids-and-knots/algebraic-quantum-volume-specialization.md`
-- `content/quantum-observable-universe/particle-interactions/wedderburn-mass-formula.md`
+- `folio/quantum-observable-universe/braids-and-knots/algebraic-quantum-volume.md`
+- `folio/quantum-observable-universe/braids-and-knots/algebraic-quantum-volume-specialization.md`
+- `folio/quantum-observable-universe/particle-interactions/wedderburn-mass-formula.md`

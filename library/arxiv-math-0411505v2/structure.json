@@ -5,7 +5,13 @@
   "file": "0411505v2.pdf",
   "sha256": "a38cec365e0a227ecbfd1f3feaa9910d56cc8026e406fc0148fbbb1c598e45cf",
   "bytes": 350769,
-  "pages": 22
+  "pages": 22,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:24Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,18 +23,25 @@
   "doi": null,
   "title": "A NON-COMMUTATIVE FORMULA FOR THE COLORED JONES FUNCTION",
   "authors_raw": "STAVROS GAROUFALIDIS AND MARTIN LOEBL",
-  "abstract": "The colored Jones function of a knot is a sequence of Laurent p olynomials that encodes the Jones polynomial of a knot and its parallels. It has been unde rstood in terms of representations of quantum groups and Witten gave an intrinsic quantum ﬁeld theory inte rpretation of the colored Jones function as the expectation value of Wilson loops of a 3-dimensional gauge t heory, the Chern-Simons theory. W e present the colored Jones function as an evaluation of the inverse of a non-commutative fermionic partition function. This result is in the form familiar in quantum ﬁeld theory, na mely the inverse of a generalized determinant. Our formula also reveals a direct relation between the Alexa nder polynomial and the colored Jones function of a knot and immediately implies the extensively studied Me lvin-Morton-Rozansky conjecture, ﬁrst proved by Bar-Natan and the ﬁrst author about ten years ago.",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181122035632-05'00'",
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  },
-  "title_prev": "A NON-COMMUT A TIVE FORMULA FOR THE COLORED JONES FUNCTION",
   "title_lines": [
    "A NON-COMMUTATIVE FORMULA FOR THE COLORED JONES FUNCTION"
-  ]
+  ],
+  "abstract": "The colored Jones function of a knot is a sequence of Laurent polynomials that encodes the Jones polynomial of a knot and its parallels. It has been understood in terms of representations of quantum groups and Witten gave an intrinsic quantum \ufb01eld theory interpretation of the colored Jones function as the expectation value of Wilson loops of a 3-dimensional gauge theory, the Chern-Simons theory. We present the colored Jones function as an evaluation of the inverse of a non-commutative fermionic partition function. This result is in the form familiar in quantum \ufb01eld theory, namely the inverse of a generalized determinant. Our formula also reveals a direct relation between the Alexander polynomial and the colored Jones function of a knot and immediately implies the extensively studied Melvin-Morton-Rozansky conjecture, \ufb01rst proved by Bar-Natan and the \ufb01rst author about ten years ago.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181122035632-05'00'"
+  },
+  "title_raw": "A NON-COMMUTATIVE FORMULA FOR THE COLORED JONES FUNCTION",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "A NON-COMMUTATIVE FORMULA FOR THE COLORED JONES FUNCTION Contents Introduction The Jones polynomial of a knot Statement of the main result Acknowledgement The zeta function of a graph and the quantum MacMahon Master Theorem The arc-graph of a knot projection The enhanced arc-graph and the Jones poly",
+   "outline": "1. Introduction",
+   "text": "A NON-COMMUTATIVE FORMULA FOR THE COLORED JONES FUNCTION",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -36,158 +49,464 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "The Jones polynomial of a knot",
    "page": 1,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Statement of the main result",
    "page": 2,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Acknowledgement",
    "page": 4,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "The zeta function of a graph and the quantum MacMahon Master Theorem",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "The arc-graph of a knot projection",
    "page": 5,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "The enhanced arc-graph and the Jones polynomial",
    "page": 7,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Proof of Theorem 2",
    "page": 8,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Row and column arcs order",
    "page": 8,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
-   "title": "Flows on GK and monomials of GB'K(m1,…mr)",
+   "title": "Flows on GK and monomials of GB'K(m1,\u2026mr)",
    "page": 8,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "Cabling of the arc graph",
    "page": 9,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Comparison of excess numbers",
    "page": 11,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "Sortings and multiplicities of flows",
    "page": 12,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Sortings",
    "page": 12,
    "source": "outline",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Sortings and the Jones polynomial",
    "page": 13,
    "source": "outline",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Proof of Theorem 7",
    "page": 14,
    "source": "outline",
-   "number": "7.3"
+   "number": "7.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "Appendix A. The zeta function of a graph and the Foata-Zeilberger formula",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "A.1. The Foata-Zeilberger formula",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 1,
    "title": "Appendix B. A state sum for the Jones polynomial",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "B.1. Rotation and Excess numbers",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "Appendix C. A combinatorial counting of structures",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 1,
    "title": "References",
    "page": 22,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "From a planar projection to the arc-graph. Transitions in the planar projection are indicated by dashed paths, and the corresponding edges in the arc-graph are blue (depicted with a small circle on them) or red",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1055,
+   "n_words": 160,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -195,8 +514,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 6,
+   "n_words": 2,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-001-11-the-jones-polynomial-of-a-knot",
@@ -205,8 +526,10 @@
    "level": 2,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 6,
+   "n_words": 2,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-002-12-statement-of-the-main-result",
@@ -215,8 +538,10 @@
    "level": 2,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 9148,
-   "n_words": 1710
+   "n_chars": 9092,
+   "n_words": 1653,
+   "label_start": "1",
+   "label_end": "4"
   },
   {
    "id": "sec-003-13-acknowledgement",
@@ -225,8 +550,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 169,
-   "n_words": 28
+   "n_chars": 168,
+   "n_words": 27,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
    "id": "sec-004-2-the-zeta-function-of-a-graph-and-the-quantum-m",
@@ -235,8 +562,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 3998,
-   "n_words": 823
+   "n_chars": 3966,
+   "n_words": 791,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-005-3-the-arc-graph-of-a-knot-projection",
@@ -245,8 +574,10 @@
    "level": 1,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 2784,
-   "n_words": 597
+   "n_chars": 2773,
+   "n_words": 586,
+   "label_start": "5",
+   "label_end": "7"
   },
   {
    "id": "sec-006-4-the-enhanced-arc-graph-and-the-jones-polynomia",
@@ -255,8 +586,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 3590,
-   "n_words": 750
+   "n_chars": 3551,
+   "n_words": 711,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
    "id": "sec-007-5-proof-of-theorem-2",
@@ -265,8 +598,10 @@
    "level": 1,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 128,
-   "n_words": 28
+   "n_chars": 127,
+   "n_words": 27,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
    "id": "sec-008-51-row-and-column-arcs-order",
@@ -275,8 +610,10 @@
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 4345,
-   "n_words": 960
+   "n_chars": 4275,
+   "n_words": 890,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
    "id": "sec-009-6-cabling-of-the-arc-graph",
@@ -285,8 +622,10 @@
    "level": 1,
    "page_start": 9,
    "page_end": 11,
-   "n_chars": 4276,
-   "n_words": 982
+   "n_chars": 4252,
+   "n_words": 958,
+   "label_start": "9",
+   "label_end": "11"
   },
   {
    "id": "sec-010-61-comparison-of-excess-numbers",
@@ -295,8 +634,10 @@
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 2747,
-   "n_words": 659
+   "n_chars": 2713,
+   "n_words": 625,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
    "id": "sec-011-7-sortings-and-multiplicities-of-flows",
@@ -305,8 +646,10 @@
    "level": 1,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 2157,
-   "n_words": 523
+   "n_chars": 2127,
+   "n_words": 493,
+   "label_start": "12",
+   "label_end": "13"
   },
   {
    "id": "sec-012-72-sortings-and-the-jones-polynomial",
@@ -315,8 +658,10 @@
    "level": 2,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 2950,
-   "n_words": 656
+   "n_chars": 2899,
+   "n_words": 605,
+   "label_start": "13",
+   "label_end": "14"
   },
   {
    "id": "sec-013-73-proof-of-theorem-7",
@@ -325,8 +670,10 @@
    "level": 2,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 2727,
-   "n_words": 630
+   "n_chars": 2654,
+   "n_words": 557,
+   "label_start": "14",
+   "label_end": "15"
   },
   {
    "id": "sec-014-appendix-a-the-zeta-function-of-a-graph-and-the",
@@ -334,56 +681,254 @@
    "title": "Appendix A. The zeta function of a graph and the Foata-Zeilberger formula",
    "level": 1,
    "page_start": 15,
-   "page_end": 16,
-   "n_chars": 2543,
-   "n_words": 525
+   "page_end": 15,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "15",
+   "label_end": "15"
   },
   {
-   "id": "sec-015-appendix-b-a-state-sum-for-the-jones-polynomial",
+   "id": "sec-015-a1-the-foata-zeilberger-formula",
+   "number": null,
+   "title": "A.1. The Foata-Zeilberger formula",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 2426,
+   "n_words": 496,
+   "label_start": "15",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-016-appendix-b-a-state-sum-for-the-jones-polynomial",
    "number": null,
    "title": "Appendix B. A state sum for the Jones polynomial",
    "level": 1,
    "page_start": 16,
    "page_end": 19,
-   "n_chars": 6352,
-   "n_words": 1298
+   "n_chars": 6319,
+   "n_words": 1265,
+   "label_start": "16",
+   "label_end": "19"
   },
   {
-   "id": "sec-016-b1-rotation-and-excess-numbers",
+   "id": "sec-017-b1-rotation-and-excess-numbers",
    "number": null,
    "title": "B.1. Rotation and Excess numbers",
    "level": 2,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 2029,
-   "n_words": 406
+   "n_chars": 2016,
+   "n_words": 393,
+   "label_start": "19",
+   "label_end": "20"
   },
   {
-   "id": "sec-017-appendix-c-a-combinatorial-counting-of-structure",
+   "id": "sec-018-appendix-c-a-combinatorial-counting-of-structure",
    "number": null,
    "title": "Appendix C. A combinatorial counting of structures",
    "level": 1,
    "page_start": 20,
    "page_end": 22,
-   "n_chars": 4143,
-   "n_words": 883
+   "n_chars": 4173,
+   "n_words": 913,
+   "label_start": "20",
+   "label_end": "22"
   },
   {
-   "id": "sec-018-references",
+   "id": "sec-019-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 22,
    "page_end": 22,
-   "n_chars": 4226,
-   "n_words": 657
+   "n_chars": 4183,
+   "n_words": 614,
+   "label_start": "22",
+   "label_end": "22"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 22,
-  "sections": 19,
-  "chars_total": 58312
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 4,
+    "items": [
+     "Introduction",
+     "Sortings",
+     "A state sum for the Jones polynomial",
+     "A combinatorial counting of structures"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 21,
+  "chars_total": 58781,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "text50.tex",
+   "tex_sections": 16,
+   "overlaid": 10,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-the-jones-polynomial-of-a-knot",
+     "title": "The Jones polynomial of a knot",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-12-statement-of-the-main-result",
+     "title": "Statement of the main result",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.511,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-13-acknowledgement",
+     "title": "Acknowledgement",
+     "prose_ratio": 0.7,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-2-the-zeta-function-of-a-graph-and-the-quantum-m",
+     "title": "The zeta function of a graph and the quantum MacMahon Master Theorem",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-3-the-arc-graph-of-a-knot-projection",
+     "title": "The arc-graph of a knot projection",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-4-the-enhanced-arc-graph-and-the-jones-polynomia",
+     "title": "The enhanced arc-graph and the Jones polynomial",
+     "prose_ratio": 0.924,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-5-proof-of-theorem-2",
+     "title": "Proof of Theorem 2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-51-row-and-column-arcs-order",
+     "title": "Row and column arcs order",
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-6-cabling-of-the-arc-graph",
+     "title": "Cabling of the arc graph",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-61-comparison-of-excess-numbers",
+     "title": "Comparison of excess numbers",
+     "prose_ratio": 0.931,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-7-sortings-and-multiplicities-of-flows",
+     "title": "Sortings and multiplicities of flows",
+     "prose_ratio": 0.91,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-72-sortings-and-the-jones-polynomial",
+     "title": "Sortings and the Jones polynomial",
+     "prose_ratio": 0.79,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-73-proof-of-theorem-7",
+     "title": "Proof of Theorem 7",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-appendix-a-the-zeta-function-of-a-graph-and-the",
+     "title": "Appendix A. The zeta function of a graph and the Foata-Zeilberger formula",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-a1-the-foata-zeilberger-formula",
+     "title": "A.1. The Foata-Zeilberger formula",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-appendix-b-a-state-sum-for-the-jones-polynomial",
+     "title": "Appendix B. A state sum for the Jones polynomial",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-b1-rotation-and-excess-numbers",
+     "title": "B.1. Rotation and Excess numbers",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-appendix-c-a-combinatorial-counting-of-structure",
+     "title": "Appendix C. A combinatorial counting of structures",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

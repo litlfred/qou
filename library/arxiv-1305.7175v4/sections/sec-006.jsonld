@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1305.7175v4/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Preliminaries",
+  "pageStart": 16,
+  "pageEnd": 17,
+  "contains": [
+    "library/arxiv-1305.7175v4/blocks/prose-sec-006",
+    "library/arxiv-1305.7175v4/blocks/example-sec-006-01",
+    "library/arxiv-1305.7175v4/blocks/example-sec-006-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1305.7175v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1305.7175v4",
+  "provenance": "ingested"
+}

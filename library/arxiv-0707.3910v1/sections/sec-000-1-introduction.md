@@ -8,251 +8,235 @@ pages: 1-4
 source_pdf: 0707.3910v1.pdf
 source_sha256: ad31f3cba16c4ea4
 doc_brief: "LANDEN TRANSFORMATIONS AND THE INTEGRATION OF RATIONAL FUNCTIONS — We present a rational version of the classical Landen transfor- mation for elliptic integrals."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-We consider the space of even rational functions of degree 2p
-E2p
-:=
-(
-R(z) = P(z)
-Q(z)
+\label{sec-intro} 
+\setcounter{equation}{0}
+ 
+We consider the space of
+even rational functions of degree $2p$
+\ba
+{\E}_{2p} & := & \left\{ R(z) = \frac{P(z)}{Q(z)} \; {\Big{|}} \; 
+P(z) := \sum_{k=0}^{p-1} b_{k} z^{2(p-1-k)} \text{ and }
+Q(z) := \sum_{k=0}^{p} a_{k} z^{2(p-k)} \right\} \nn
+\ea
+\no
+with positive real coefficients $a_{k}, \, b_{k} \in \rplus$ 
+normalized by the condition $a_{0} = a_{p} = 1$,  the space
+\ba
+{\E}_{\infty}  & := & \bigcup_{p=1}^{\infty} {\E}_{2p} \nn
+\ea
+\no
+of normalized even rational functions, and the set 
+of $2p-1$ parameters 
+$${\mathfrak{P}}_{2p} := \{ a_{1}, \cdots, a_{p-1}; b_{0}, \cdots, 
+b_{p-1} \}.$$ 
+\no
+We describe an algorithm to determine, as a 
+function of the parameter set 
+${\mathfrak{P}}_{2p}$,  a {\em closed-form} expression of the 
+integral 
+\ba
+I & := & \ift R(z) \, dz \label{integral1}
+\ea
+\no
+for a large class of functions $R \in {\E}_{\infty}$. The function $R$ is 
+called {\em symmetric} if its denominator $Q$ satisfies $Q(1/z) = z^{-2p}Q(z)$.
+This is equivalent to its coefficients being palindromic, i.e.
+$a_{j} = a_{p-j}$ for $1 \leq j \leq p$.  
 
- P(z) :=
-p−1
-X
-k=0
-bkz2(p−1−k) and Q(z) :=
-p
-X
-k=0
-akz2(p−k)
-)
-with positive real coeﬃcients ak, bk ∈R+ normalized by the condition a0 = ap = 1,
-the space
-E∞
-:=
-∞
-[
-p=1
-E2p
-of normalized even rational functions, and the set of 2p −1 parameters
-P2p := {a1, · · · , ap−1; b0, · · · , bp−1}.
-We describe an algorithm to determine, as a function of the parameter set P2p, a
-closed-form expression of the integral
-I
-:=
-Z ∞
-0
-R(z) dz
-(1.1)
-for a large class of functions R ∈E∞. The function R is called symmetric if its
-denominator Q satisﬁes Q(1/z) = z−2pQ(z). This is equivalent to its coeﬃcients
-being palindromic, i.e. aj = ap−j for 1 ≤j ≤p.
-The class of symmetric functions plays a crucial role in this algorithm. Deﬁne
-Es
-2p
-:=
-{R ∈E2p
+The class of symmetric functions plays a crucial role in this 
+algorithm.  Define
+\ba
+{\E}_{2p}^{s} & := & \{ R \in {\E}_{2p} \; {\Big{|}} \;  
+den(R) \text{ is symmetric} \}
+\nn
+\ea 
+\no
+(where $den(R)$ denotes the denominator of $R$), 
+the class of rational functions with symmetric denominators of degree $2p$, and
+\ba
+{\E}_{\infty}^{s}  & := & \bigcup_{p=1}^{\infty} {\E}_{2p}^{s}. \nn
+\ea
+\no
+For $m \in \mathbb{N}$  define
+\ba
+{\E}_{2p}^{m} & := & \{ R \in {\E}_{\infty} \; {\Big{|}} \;  (den(R))^{1/(m+1)} 
+\text{ is even, symmetric of degree } 2p \}
+\nn
+\ea 
+\no
+and ${\E}_{2p}^{m,s} := {\E}_{2p}^{m} \cap {\E}_{2p}^{s}$, so a function
+$R \in {\E}_{2p}^{m,s}$ can be written in the form 
+\ba
+R(z) & = &  \frac{P(z)}{Q^{m+1}(z) }, \nn
+\ea
+\no
+where $P(z)$ is an even polynomial and $Q(z)$ is an even 
+symmetric polynomial of degree  $2p$. 
 
- den(R) is symmetric}
-(where den(R) denotes the denominator of R), the class of rational functions with
-symmetric denominators of degree 2p, and
-Es
-∞
-:=
-∞
-[
-p=1
-Es
-2p.
-Date: August 11, 2021.
-1991 Mathematics Subject Classiﬁcation. Primary 33.
-Key words and phrases. Rational functions, Landen transformation, Integrals.
-The second author was supported in part by NSF Grant DMS-0070567.
-1
-2
-GEORGE BOROS AND VICTOR H. MOLL
-For m ∈N deﬁne
-Em
-2p
-:=
-{R ∈E∞
 
- (den(R))1/(m+1) is even, symmetric of degree 2p}
-and Em,s
-2p
-:= Em
-2p ∩Es
-2p, so a function R ∈Em,s
-2p
-can be written in the form
-R(z)
-=
-P(z)
-Qm+1(z),
-where P(z) is an even polynomial and Q(z) is an even symmetric polynomial of
-degree 2p.
-The method of partial fractions gives (in principle) the value of I in terms of
-the roots of Q. Symbolic computations yield either a closed-form answer, an ex-
-pression in terms of the roots of an associated polynomial, or the integral returned
-unevaluated.
-The algorithm described here allows only algebraic operations on elementary
-functions and changes of variables of the same type. In particular, we exclude the
-solution of algebraic equations of degree higher than 2. We say that a rational
-function R ∈E∞is computable if its integral can be evaluated by our algorithm.
-The ﬁrst step in the algorithm is to consider symmetric rational functions. In
-Section 2 we prove a reduction formula, i.e. a map Fp : Es
-2p →Rp that reduces the
-computability of the integral of the symmetric function R to that of one of degree
-1
-2deg(R). Here Rp is the space of rational functions with denominator of degree p.
-These new functions are not necessarily symmetric, and this is the main limitation
-of our algorithm. The details of Fp require the evaluation of some binomial sums
-which are presented in Appendix A. The classical Wallis’ formula
-Z ∞
-0
-dz
-(z2 + 1)m+1
-=
-π
-22m+1
-2m
-m
-
-shows that every R ∈Em
-2 is computable. The reduction formula now implies that
-every R ∈Em
-4 is computable. This is described in Section 3. The computability of
-R ∈E4 is also a consequence of the classical theory of hypergeometric functions;
-the details are given in [2]. In Section 4 we compute the integral of every function
-in Em,s
-8
-, where the reduction method expresses these integrals in terms of functions
-in Em
-4 . The algorithm does not, in general, provide a value for the integral of a
-nonsymmetric function of degree 8.
-The ﬁnal piece of the algorithm is described in Section 5: for R ∈E2p, the
-symmetrization of its denominator produces a (symmetric) rational function in E4p
-with the same integral as R. The reduction formula now yields a new function in
-E2p with the same integral as R. We thus obtain a map T2p : E2p →E2p such that
-Z ∞
-0
-R(z) dz
-=
-Z ∞
-0
-T2p(R(z)) dz.
-(1.2)
-In particular, the class of computable rational functions of degree 2p is invariant
-under forward and backward iteration of T2p. This map is the rational analog of
-the original Landen transformation for elliptic integrals described in [4, 13]. The
-map T2p can also be interpreted as a map on the coeﬃcients Φ2p : O+
-2p →O+
-2p
-where O+
-2p = R+
-p−1 × R+
-p.
-LANDEN TRANSFORMATIONS AND THE INTEGRATION OF RATIONAL FUNCTIONS
-3
-The case of Φ6 is described in detail in Section 6 and is given explicitly by
-a1
-→
-9 + 5a1 + 5a2 + a1a2
-(a1 + a2 + 2)4/3
-(1.3)
-a2
-→
-a1 + a2 + 6
-(a1 + a2 + 2)2/3
-b0
-→
-b0 + b1 + b2
-(a1 + a2 + 2)2/3
-b1
-→
-b0(a2 + 2) + 2b1 + b2(a1 + 3)
-a1 + a2 + 2
-b2
-→
-b0 + b2
-(a1 + a2 + 2)1/3 .
-Let x0 := (a1, a2; b0, b1, b2). Then Φ6 : O+
-6 →O+
-6 is iterated to produce a sequence
-xn+1 := Φ6(xn) of points in O+
-6 that yield a sequence of rational functions with
-constant integral. We have proved in [3] the existence of L ∈R+, depending upon
-the initial point x0 = (a1, a2; b0, b1, b2), such that xn →(3, 3; L, 2L, L). Thus
-Z ∞
-0
-b0z4 + b1z2 + b2
-z6 + a1z4 + a2z2 + 1 dz
-=
-L(x0) × π
-2 .
-(1.4)
-This establishes a numerical method to compute the integral in (1.4).
-Numerical studies on integrals of even degree 2p suggest the existence of a lim-
-iting value L = L(x0) such that the sequence xn := Φ2p(xn) satisﬁes
-xn
-→
-p
-1
-
-,
-p
-2
-
-, · · · ,
-
-p
-p −1
-
-;
-p −1
-0
-
-L,
-p −1
-1
-
-L, · · · ,
-p −1
-p −1
-
-L
-
-.
+The method of partial fractions gives (in principle) the 
+value of $I$ in terms of the roots of $Q$. Symbolic computations yield
+either a closed-form answer, an expression in terms of the 
+roots of an associated polynomial, or the integral returned unevaluated.
+
+The algorithm described here allows only algebraic 
+operations on elementary functions and changes of variables of the same type.
+In particular, we exclude the solution of algebraic equations of degree higher 
+than $2$.
+We say that a rational function 
+$R \in {\E}_{\infty}$ is {\em computable}  if its integral can be evaluated by 
+our algorithm. 
+
+The first step in the algorithm is to consider 
+symmetric rational functions.  In Section \ref{sec-reduc}
+we prove a reduction formula, i.e. a map 
+${\mathfrak{F}}_{p} : {\E}_{2p}^{s} \to {\rat}_{p}$ that 
+reduces the computability of the integral of the symmetric function 
+$R$ to that of one
+of degree $\tfrac{1}{2} deg(R)$. Here ${\rat}_{p}$ is the space of rational 
+functions with denominator of degree $p$. These new
+functions are not necessarily symmetric, and this is the main limitation 
+of our algorithm. The details of 
+${\mathfrak{F}}_{p}$ require the evaluation of some binomial sums which are 
+presented in Appendix \ref{sec-binom}.  The classical Wallis' formula 
+\ba
+\ift \frac{dz}{(z^{2} + 1)^{m+1} } & = & \frac{\pi}{2^{2m+1}} \binom{2m}{m}
+\nn
+\ea
+\no
+shows that
+every $R \in {\E}_{2}^{m}$ is computable. The reduction formula now 
+implies that every $R \in {\E}_{4}^{m}$ is computable. This is 
+described in Section
+\ref{sec-quartic}.  The computability of $R \in {\E}_{4}$ is also a 
+consequence of the 
+classical theory of hypergeometric functions; the details are given
+in \cite{hyp}. In Section \ref{sec-degree8} we compute the 
+integral of every function in ${\E}_{8}^{m,s}$, where the reduction method 
+expresses these integrals in terms of functions in ${\E}_{4}^{m}$.  The
+algorithm does not, in general, provide a value for the integral of a 
+nonsymmetric function of degree $8$. 
+
+The final 
+piece of the algorithm is described in Section \ref{sec-landen}: for 
+$R \in {\E}_{2p}$, the 
+symmetrization of its denominator produces a (symmetric) rational 
+function in ${\E}_{4p}$ with the same integral as $R$. The
+reduction formula now yields a new function in
+${\E}_{2p}$ with the same integral as $R$. We thus obtain a map 
+$ {\mathfrak{T}}_{2p}: {\E}_{2p} \to {\E}_{2p}$
+such that 
+\ba
+\int_{0}^{\infty} R(z) \, dz & = & \int_{0}^{\infty} 
+{{{\mathfrak{T}}_{2p}}(R(z))} \, dz.  \label{1invar}
+\ea
+
+
+\no
+In particular, the class of computable rational functions of degree $2p$ is 
+invariant under forward and backward iteration of ${\mathfrak{T}}_{2p}$. 
+This map is the rational analog of the original Landen transformation 
+for elliptic integrals described in \cite{borbor,mckmoll}.  The  map 
+${\mathfrak{T}}_{2p}$ can also be interpreted as a map on the coefficients 
+$\Phi_{2p} : {\mathfrak{O}}_{2p}^{+} \to 
+{\mathfrak{O}}_{2p}^{+}$ where 
+${\mathfrak{O}}_{2p}^{+} = 
+{\mathbb{R}_{+}}^{p-1} \times {\mathbb{R}_{+}}^{p}$. 
+
+The case of $\Phi_{6}$ is described in detail in  
+Section \ref{sec-degree6} and
+is given explicitly by 
+\ba
+a_{1} & \to & \frac{9 + 5a_{1} + 5a_{2} + a_{1}a_{2}}
+{( a_{1} + a_{2} + 2)^{4/3} } \label{scheme6a}  \\
+a_{2} & \to & \frac{a_{1} + a_{2}+6}{( a_{1} + a_{2} + 2)^{2/3} } \nn \\
+b_{0} & \to & \frac{b_{0} + b_{1} + b_{2}}{(a_{1}+a_{2}+2)^{2/3} } \nn \\ 
+b_{1} & \to & \frac{b_{0}(a_{2} + 2) + 2b_{1} + b_{2}(a_{1} + 3)}{ a_{1} + a_{2} + 2} \nn \\
+b_{2} & \to & \frac{b_{0} + b_{2}}{( a_{1} + a_{2} + 2)^{1/3} }. \nn 
+\ea
+
+\no
+Let ${\mathbf{x}}_{0}:= (a_{1},a_{2};b_{0},b_{1},b_{2})$. Then
+$\Phi_{6}: {\mathfrak{O}^{+}_{6}} \to {\mathfrak{O}^{+}_{6}}$ is 
+iterated to produce a sequence ${\mathbf{x}}_{n+1} := 
+\Phi_{6}({\mathbf{x}}_{n})$
+of points in ${\mathfrak{O}^{+}_{6}}$ that yield a sequence of
+rational functions with constant integral. We have proved 
+in \cite{landen} the existence of 
+$L \in {\mathbb{R}^{+}}$, depending upon the initial 
+point ${\mathbf{x}}_{0} = (a_{1},a_{2};b_{0},b_{1},b_{2}),$  such that  
+${\mathbf{x}}_{n} \to 
+(3,3;L,2L,L)$. Thus
+\ba
+\ift \frac{b_{0}z^{4} + b_{1}z^{2} + 
+b_{2}}{z^{6} + a_{1}z^{4} + 
+a_{2}z^{2} + 1} \; dz & = &  
+L({\mathbf{x}}_{0}) \times \frac{\pi}{2}.  \label{int1}
+\ea
+\no
+This establishes a numerical method to compute the integral in (\ref{int1}). 
+
+Numerical studies on integrals of even degree $2p$ 
+suggest the existence of a limiting value 
+$L = L( {\mathbf{x}}_{0})$ such that the sequence 
+${\mathbf{x}}_{n} := \Phi_{2p}( 
+{\mathbf{x}}_{n} )$  satisfies 
+\ba
+{\mathbf{x}}_{n} & \to &  \left( 
+\binom{p}{1}, \binom{p}{2}, \cdots, \binom{p}{p-1};
+\binom{p-1}{0} \, L, \binom{p-1}{1} \, L, \cdots, 
+\binom{p-1}{p-1} \, L \right).
+\nn 
+\ea
+\no
 The integral of the original rational function is thus
-π
-2 × L(x0).
-The proof of
-convergence remains open for p ≥4. Examples are given in Section 7.
-The most important issues left unresolved in this paper are the convergence of
-the iteration of the map Φ2p discussed above and the geometric interpretation of the
-Landen transformation T2p. Finally, the question of integration of odd functions
-has not been addressed at all.
-Some history. The problem of integration of rational functions R(z) = P(z)/Q(z)
-was considered by J. Bernoulli in the 18th century.
-He completed the original
-attempt by Leibniz of a general partial fraction decomposition of R(z). The main
-diﬃculty associated with this procedure is to obtain a complete factorization of
-Q(z) over R. Once this is known the partial fraction decomposition of R(z) can be
-computed. The fact is that the primitive of a rational function is always elementary:
-it consists of a new rational function (its rational part) and the logarithm of a second
-rational function (its transcendental part). In his classic monograph [9] G. H. Hardy
-states: The solution of the problem (of deﬁnite integration) in the case of rational
-functions may therefore be said to be complete; for the diﬃculty with regard to the
-explicit solution of algebraical equations is one not of inadequate knowledge but of
-proved impossibility. He goes on to add: It appears from the preceding paragraphs
-that we can always ﬁnd the rational part of the integral, and can ﬁnd the complete
-integral if we can ﬁnd the roots of Q(z) = 0.
-4
-GEORGE BOROS AND VICTOR H. MOLL
-In the middle of the last century Hermite [10] and Ostrogradsky [15] developed
-algorithms to compute the rational part of the primitive of R(z) without factor-
-ing Q(z). More recently Horowitz [11] rediscovered this method and discussed its
-complexity. The problem of computing the transcendental part of the primitive
-was ﬁnally solved by Lazard and Rioboo [12], Rothstein [17] and Trager [18]. For
-detailed descriptions and proofs of these algorithms the reader is referred to [5] and
-[6].
+$\tfrac{\pi}{2} \times L({\mathbf{x}}_{0})$. The proof of convergence remains 
+open for $p \geq 4$.  Examples are given in Section \ref{sec-examples}. 
+
+
+The most important
+issues left unresolved in this paper are the convergence of the iteration 
+of the map $\Phi_{2p}$ discussed above and the geometric interpretation of 
+the Landen transformation ${\mathfrak{T}}_{2p}$. Finally, the question of
+integration of odd functions has not been addressed at all.
+
+\vskip 20pt
+
+\no
+{\bf Some history}. The problem of 
+integration of rational functions $R(z)=P(z)/Q(z)$ was 
+considered by 
+J. Bernoulli in the $18^{th}$ century.  He completed the original 
+attempt by Leibniz
+of a general partial fraction decomposition of $R(z)$. 
+The main difficulty associated with this procedure is to obtain a 
+complete factorization of $Q(z)$ over $\R$. Once this is known
+the partial fraction decomposition of $R(z)$ can be  computed. The 
+fact is that the primitive of a rational function is always 
+elementary: it consists of a new rational function (its {\em rational 
+part}) and the logarithm of a second rational function (its {\em 
+transcendental part}). In his classic monograph \cite{hardy} G. H. Hardy states:
+{\em The solution of the problem (of definite integration) in the case of 
+rational functions may therefore be said to be complete; for the difficulty 
+with regard to the explicit solution of algebraical equations is one not of 
+inadequate knowledge but of proved impossibility}. He goes on to add: 
+{\em It appears from the preceding paragraphs that we can always find the
+rational part of the integral, and can find the complete integral if we 
+can find the roots of} $Q(z) = 0 $. 
+
+In the middle of the last century Hermite \cite{herm} and Ostrogradsky
+\cite{ostro} developed algorithms to compute the rational part of the primitive
+of $R(z)$ {\em without} factoring $Q(z)$. More recently Horowitz \cite{horo}
+rediscovered this method and discussed its complexity.  The problem of 
+computing the transcendental part of the primitive was finally solved by 
+Lazard and Rioboo \cite{lazrio}, Rothstein \cite{roth} and 
+Trager \cite{trag}.  For detailed descriptions and proofs of these algorithms 
+the reader is referred to \cite{bron} and \cite{geddes}. 
+
+
+
+\no

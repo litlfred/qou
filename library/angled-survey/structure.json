@@ -5,24 +5,37 @@
   "file": "angled-survey.pdf",
   "sha256": "8b49e682a39848bc7a807c17ae55ec3c0fb0e45c95a1f347f80047f6ec80914d",
   "bytes": 497241,
-  "pages": 24
+  "pages": 24,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:18Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.1090/conm/541/10683",
-  "title": "From angled triangulations to hyperbolic structures",
-  "authors_raw": "David Futer and Fran¸cois Guéritaud",
-  "abstract": "This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on a 3–manifoldM with toroidal boundary. We also survey a number of applications of this technique. The method involves subdividingM into ideal tetrahedra and solving a system of gluing equations to ﬁnd hyperbolic shapes for the tetrahedra. The gluing equations decompose into a linear and non-linear part. The solutions to the linear equations form a convex polytopeA. The solution to the non-linear part (unique if it exists) is a critical point of a certainvolume functional on this polytope. The main contribution of this paper is an elementary proof of Rivin’s theorem that a critical point of the volume functional onA produces a complete hyperbolic structure onM.",
-  "docinfo": {
-   "CreationDate": "D:20190704083135-04'00'",
-   "Creator": "pdftk 2.02 - www.pdftk.com",
-   "Producer": "itext-paulo-155 (itextpdf.sf.net-lowagie.com)"
-  },
+  "title": "Contemporary Mathematics From angled triangulations to hyperbolic structures",
+  "authors_raw": "David Futer and Fran\u00b8cois Gu\u00e9ritaud",
   "title_lines": [
    "Contemporary Mathematics",
    "From angled triangulations to hyperbolic structures"
   ],
-  "title_prev": "Contemporary Mathematics From angled triangulations to hyperbolic structures"
+  "abstract": "This survey paper contains an elementary exposition of Casson and Rivin\u2019s technique for \ufb01nding the hyperbolic metric on a 3\u2013manifold M with toroidal boundary. We also survey a number of applications of this technique. The method involves subdividing M into ideal tetrahedra and solving a system of gluing equations to \ufb01nd hyperbolic shapes for the tetrahedra. The gluing equations decompose into a linear and non-linear part. The solutions to the linear equations form a convex polytope A. The solution to the non-linear part (unique if it exists) is a critical point of a certain volume functional on this polytope. The main contribution of this paper is an elementary proof of Rivin\u2019s theorem that a critical point of the volume functional on A produces a complete hyperbolic structure on M.",
+  "docinfo": {
+   "Producer": "itext-paulo-155 (itextpdf.sf.net-lowagie.com)",
+   "Creator": "pdftk 2.02 - www.pdftk.com",
+   "CreationDate": "D:20190704083135-04'00'"
+  },
+  "title_raw": "Contemporary Mathematics From angled triangulations to hyperbolic structures",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "From angled triangulations to hyperbolic structures David Futer and Fran\u00b8cois Gu\u00b4eritaud",
+   "text": "Contemporary Mathematics From angled triangulations to hyperbolic structures",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -30,537 +43,527 @@
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 2,
-   "title": "Where to ﬁnd proofs. Proofs of Theorem 1.1 are readily available in",
-   "page": 2,
-   "source": "inferred",
-   "number": "1.1"
-  },
-  {
-   "level": 2,
-   "title": "Extending and applying the method. Section 6, at the end of the",
-   "page": 3,
-   "source": "inferred",
-   "number": "1.2"
-  },
-  {
-   "level": 2,
-   "title": "For each of these families of manifolds, certain angle inequalities obtained while",
-   "page": 3,
-   "source": "inferred",
-   "number": "6.3"
-  },
-  {
-   "level": 1,
-   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
-   "page": 4,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 2,
-   "title": "A reader’s guide. For a relative novice to this subject, we recommend",
-   "page": 4,
-   "source": "inferred",
-   "number": "1.3"
-  },
-  {
-   "level": 2,
-   "title": "Acknowledgements. The proof of Theorem 1.2 was developed while",
-   "page": 4,
-   "source": "inferred",
-   "number": "1.4"
+   "number": "1",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Gluing equations",
    "page": 4,
    "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
-   "page": 6,
-   "source": "inferred",
-   "number": "6"
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "The polytope of angle structures",
    "page": 7,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "7"
   },
   {
    "level": 1,
-   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
-   "page": 8,
-   "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "With this setup, the system of equations is",
-   "page": 8,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
+   "title": "Leading\u2013trailing deformations",
    "page": 10,
    "source": "inferred",
-   "number": "10"
-  },
-  {
-   "level": 1,
-   "title": "Leading–trailing deformations",
-   "page": 10,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
-   "page": 12,
-   "source": "inferred",
-   "number": "12"
-  },
-  {
-   "level": 1,
-   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
-   "page": 14,
-   "source": "inferred",
-   "number": "14"
-  },
-  {
-   "level": 1,
-   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
-   "page": 16,
-   "source": "inferred",
-   "number": "16"
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "10"
   },
   {
    "level": 1,
    "title": "Volume maximization",
    "page": 16,
    "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
-   "page": 18,
-   "source": "inferred",
-   "number": "18"
+   "number": "5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "16"
   },
   {
    "level": 1,
    "title": "Extensions, applications, generalizations",
    "page": 19,
    "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 2,
-   "title": "Closed manifolds via Dehn ﬁlling.The most straightforward way to",
-   "page": 19,
-   "source": "inferred",
-   "number": "6.1"
-  },
-  {
-   "level": 1,
-   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
-   "page": 20,
-   "source": "inferred",
-   "number": "20"
-  },
-  {
-   "level": 2,
-   "title": "Manifolds with polyhedral boundary. There is also an analogue of",
-   "page": 20,
-   "source": "inferred",
-   "number": "6.2"
-  },
-  {
-   "level": 2,
-   "title": "Generalized angle structures.All of the angle structures discussed so",
-   "page": 20,
-   "source": "inferred",
-   "number": "6.3"
-  },
-  {
-   "level": 2,
-   "title": "Volume estimates. Recall that, by Lemma 5.3, the volume functional",
-   "page": 21,
-   "source": "inferred",
-   "number": "6.4"
-  },
-  {
-   "level": 1,
-   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
-   "page": 22,
-   "source": "inferred",
-   "number": "22"
-  },
-  {
-   "level": 2,
-   "title": "Canonical triangulations. Nearly everything discussed thus far in this",
-   "page": 22,
-   "source": "inferred",
-   "number": "6.5"
-  },
-  {
-   "level": 2,
-   "title": "Weil rigidity. We close this paper with an application whose statement",
-   "page": 23,
-   "source": "inferred",
-   "number": "6.6"
+   "number": "6",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "References",
    "page": 23,
    "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
-   "page": 24,
-   "source": "inferred",
-   "number": "24"
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "23"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Left: the shape of an ideal tetrahedron is de\ufb01ned by three dihedral angles. Right: the gluing of tetrahedra, seen from an ideal vertex",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "A normal path \u03c3 passing through the tessellation of a torus by boundary triangles",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The leading\u2013trailing deformation along \u03c3 increases the angles marked + and decreases the angles marked \u2296",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The leading\u2013trailing deformation about a single edge e of M. Every increase to an angle in a tetrahedron is canceled out by a decrease to an adjacent angle",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Decomposing \u03c3 into smaller curves. Left: when two segments of \u03c3 pass through the same boundary triangle, we may cut and rejoin to form two normal curves \u03c3\u2032, \u03c3\u2032\u2032. Right: a local isotopy in the complement of the vertices may be required to ensure",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Left: the boundary polygon Pv comprised of boundary triangles \u03941, . . . , \u0394j adjacent to v. In each \u0394i, the smallest angle",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "When \u03c3 crosses \u03c1 from right to left, the part of the polygon P to the left of \u03c1 contains an excess of two +\u2019s",
+   "page": 15,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "15"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 917,
+   "n_words": 143,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 2,
-   "n_chars": 1911,
-   "n_words": 286
-  },
-  {
-   "id": "sec-001-2-david-futer-and-francoisgu-eritaud",
-   "number": "2",
-   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 2685,
-   "n_words": 446
-  },
-  {
-   "id": "sec-002-11-where-to-ﬁnd-proofs-proofs-of-theorem-11-are",
-   "number": "1.1",
-   "title": "Where to ﬁnd proofs. Proofs of Theorem 1.1 are readily available in",
-   "level": 2,
-   "page_start": 2,
    "page_end": 3,
-   "n_chars": 2236,
-   "n_words": 343
+   "n_chars": 6987,
+   "n_words": 1135,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
-   "id": "sec-003-2-gluing-equations",
+   "id": "sec-001-2-gluing-equations",
    "number": "2",
    "title": "Gluing equations",
    "level": 1,
    "page_start": 3,
-   "page_end": 3,
-   "n_chars": 652,
-   "n_words": 110
-  },
-  {
-   "id": "sec-004-12-extending-and-applying-the-method-section-6-a",
-   "number": "1.2",
-   "title": "Extending and applying the method. Section 6, at the end of the",
-   "level": 2,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 838,
-   "n_words": 125
-  },
-  {
-   "id": "sec-005-63-for-each-of-these-families-of-manifolds-certa",
-   "number": "6.3",
-   "title": "For each of these families of manifolds, certain angle inequalities obtained while",
-   "level": 2,
-   "page_start": 3,
-   "page_end": 4,
-   "n_chars": 731,
-   "n_words": 116
-  },
-  {
-   "id": "sec-006-4-david-futer-and-francoisgu-eritaud",
-   "number": "4",
-   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 4,
-   "n_chars": 127,
-   "n_words": 21
-  },
-  {
-   "id": "sec-007-13-a-readers-guide-for-a-relative-novice-to-this",
-   "number": "1.3",
-   "title": "A reader’s guide. For a relative novice to this subject, we recommend",
-   "level": 2,
-   "page_start": 4,
-   "page_end": 4,
-   "n_chars": 887,
-   "n_words": 143
-  },
-  {
-   "id": "sec-008-14-acknowledgements-the-proof-of-theorem-12-was",
-   "number": "1.4",
-   "title": "Acknowledgements. The proof of Theorem 1.2 was developed while",
-   "level": 2,
-   "page_start": 4,
-   "page_end": 6,
-   "n_chars": 4714,
-   "n_words": 787
-  },
-  {
-   "id": "sec-009-6-david-futer-and-francoisgu-eritaud",
-   "number": "6",
-   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
-   "level": 1,
-   "page_start": 6,
    "page_end": 7,
-   "n_chars": 3185,
-   "n_words": 522
+   "n_chars": 11575,
+   "n_words": 1981,
+   "label_start": "3",
+   "label_end": "7"
   },
   {
-   "id": "sec-010-3-the-polytope-of-angle-structures",
+   "id": "sec-002-3-the-polytope-of-angle-structures",
    "number": "3",
    "title": "The polytope of angle structures",
    "level": 1,
    "page_start": 7,
-   "page_end": 8,
-   "n_chars": 2587,
-   "n_words": 422
-  },
-  {
-   "id": "sec-011-8-david-futer-and-francoisgu-eritaud",
-   "number": "8",
-   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
-   "level": 1,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 1954,
-   "n_words": 382
-  },
-  {
-   "id": "sec-012-2-with-this-setup-the-system-of-equations-is",
-   "number": "2",
-   "title": "With this setup, the system of equations is",
-   "level": 1,
-   "page_start": 8,
    "page_end": 10,
-   "n_chars": 4161,
-   "n_words": 773
+   "n_chars": 10370,
+   "n_words": 2013,
+   "label_start": "7",
+   "label_end": "10"
   },
   {
-   "id": "sec-013-10-david-futer-and-francoisgu-eritaud",
-   "number": "10",
-   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 10,
-   "n_chars": 1385,
-   "n_words": 261
-  },
-  {
-   "id": "sec-014-4-leadingtrailing-deformations",
+   "id": "sec-003-4-leadingtrailing-deformations",
    "number": "4",
-   "title": "Leading–trailing deformations",
+   "title": "Leading\u2013trailing deformations",
    "level": 1,
    "page_start": 10,
-   "page_end": 12,
-   "n_chars": 3546,
-   "n_words": 596
-  },
-  {
-   "id": "sec-015-12-david-futer-and-francoisgu-eritaud",
-   "number": "12",
-   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
-   "level": 1,
-   "page_start": 12,
-   "page_end": 14,
-   "n_chars": 5835,
-   "n_words": 1063
-  },
-  {
-   "id": "sec-016-14-david-futer-and-francoisgu-eritaud",
-   "number": "14",
-   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
-   "level": 1,
-   "page_start": 14,
    "page_end": 16,
-   "n_chars": 5235,
-   "n_words": 930
+   "n_chars": 16544,
+   "n_words": 3156,
+   "label_start": "10",
+   "label_end": "16"
   },
   {
-   "id": "sec-017-16-david-futer-and-francoisgu-eritaud",
-   "number": "16",
-   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
-   "level": 1,
-   "page_start": 16,
-   "page_end": 16,
-   "n_chars": 1545,
-   "n_words": 289
-  },
-  {
-   "id": "sec-018-5-volume-maximization",
+   "id": "sec-004-5-volume-maximization",
    "number": "5",
    "title": "Volume maximization",
    "level": 1,
    "page_start": 16,
-   "page_end": 18,
-   "n_chars": 3670,
-   "n_words": 662
-  },
-  {
-   "id": "sec-019-18-david-futer-and-francoisgu-eritaud",
-   "number": "18",
-   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
-   "level": 1,
-   "page_start": 18,
    "page_end": 19,
-   "n_chars": 3867,
-   "n_words": 666
+   "n_chars": 7716,
+   "n_words": 1472,
+   "label_start": "16",
+   "label_end": "19"
   },
   {
-   "id": "sec-020-6-extensions-applications-generalizations",
+   "id": "sec-005-6-extensions-applications-generalizations",
    "number": "6",
    "title": "Extensions, applications, generalizations",
    "level": 1,
    "page_start": 19,
-   "page_end": 19,
-   "n_chars": 517,
-   "n_words": 82
-  },
-  {
-   "id": "sec-021-61-closed-manifolds-via-dehn-ﬁllingthe-most-stra",
-   "number": "6.1",
-   "title": "Closed manifolds via Dehn ﬁlling.The most straightforward way to",
-   "level": 2,
-   "page_start": 19,
-   "page_end": 20,
-   "n_chars": 1102,
-   "n_words": 182
-  },
-  {
-   "id": "sec-022-20-david-futer-and-francoisgu-eritaud",
-   "number": "20",
-   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
-   "level": 1,
-   "page_start": 20,
-   "page_end": 20,
-   "n_chars": 317,
-   "n_words": 50
-  },
-  {
-   "id": "sec-023-62-manifolds-with-polyhedral-boundary-there-is-a",
-   "number": "6.2",
-   "title": "Manifolds with polyhedral boundary. There is also an analogue of",
-   "level": 2,
-   "page_start": 20,
-   "page_end": 20,
-   "n_chars": 2030,
-   "n_words": 331
-  },
-  {
-   "id": "sec-024-63-generalized-angle-structuresall-of-the-angle",
-   "number": "6.3",
-   "title": "Generalized angle structures.All of the angle structures discussed so",
-   "level": 2,
-   "page_start": 20,
-   "page_end": 21,
-   "n_chars": 2671,
-   "n_words": 413
-  },
-  {
-   "id": "sec-025-64-volume-estimates-recall-that-by-lemma-53-the",
-   "number": "6.4",
-   "title": "Volume estimates. Recall that, by Lemma 5.3, the volume functional",
-   "level": 2,
-   "page_start": 21,
-   "page_end": 22,
-   "n_chars": 1663,
-   "n_words": 269
-  },
-  {
-   "id": "sec-026-22-david-futer-and-francoisgu-eritaud",
-   "number": "22",
-   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
-   "level": 1,
-   "page_start": 22,
-   "page_end": 22,
-   "n_chars": 1049,
-   "n_words": 163
-  },
-  {
-   "id": "sec-027-65-canonical-triangulations-nearly-everything-di",
-   "number": "6.5",
-   "title": "Canonical triangulations. Nearly everything discussed thus far in this",
-   "level": 2,
-   "page_start": 22,
    "page_end": 23,
-   "n_chars": 3407,
-   "n_words": 516
+   "n_chars": 14635,
+   "n_words": 2402,
+   "label_start": "19",
+   "label_end": "23"
   },
   {
-   "id": "sec-028-66-weil-rigidity-we-close-this-paper-with-an-app",
-   "number": "6.6",
-   "title": "Weil rigidity. We close this paper with an application whose statement",
-   "level": 2,
-   "page_start": 23,
-   "page_end": 23,
-   "n_chars": 1242,
-   "n_words": 197
-  },
-  {
-   "id": "sec-029-references",
+   "id": "sec-006-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 1558,
-   "n_words": 232
-  },
-  {
-   "id": "sec-030-24-david-futer-and-francoisgu-eritaud",
-   "number": "24",
-   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
-   "level": 1,
-   "page_start": 24,
-   "page_end": 24,
-   "n_chars": 3228,
-   "n_words": 465
+   "n_chars": 4797,
+   "n_words": 673,
+   "label_start": "23",
+   "label_end": "24"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 31,
-  "sections": 31,
-  "chars_total": 70535
+  "toc_entries": 7,
+  "toc_inferred_entries": 7,
+  "toc_inferred_mean_confidence": 0.75,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 7,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 73541
  }
 }

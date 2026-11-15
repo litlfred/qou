@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-sigma-shell-from-beta-chain-derivation",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:sigma-shell-from-beta-chain-derivation",
+  "kind": "proposition",
+  "title": "Closed-form derivation of $\\sigma_{\\mathrm{shell}}$ magnitude from compound $\\beta$-decay chain Q-values",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-compound-beta-shell-calibration",
+    "papers/quantum-observable-universe/blocks/prop-rho-k-h3a-refinement"
+  ],
+  "cites": [
+    "references/wenzl1988",
+    "references/kassel1995"
+  ],
+  "tags": [
+    "sigma-shell",
+    "beta-decay",
+    "AME",
+    "shell-magnitude",
+    "y-target",
+    "magic-numbers",
+    "1ppb",
+    "derivation"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.sigma_shell_from_beta_chain",
+  "text": "sigma-shell-from-beta-chain-derivation.md",
+  "leanSource": "sigma-shell-from-beta-chain-derivation.lean",
+  "provenance": "authored"
+}

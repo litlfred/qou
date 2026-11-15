@@ -8,168 +8,39 @@ pages: 18-20
 source_pdf: 2601.07042v1.pdf
 source_sha256: c2f3e302624e7abb
 doc_brief: "A TANNAKIAN DESCRIPTION OF THE LOCAL KALETHA GERBE — We construct, for ap-adic fieldF, an explicit semisimple Tannakian categoryRigIsoc F whose category of fiber functors recovers Kaletha’s Galois"
+text_source: latex
+latex_prose_ratio: 0.974
+latex_coverage_ratio: 0.685
 ---
-IsocF toRigIsoc F . The categoryIsoc F,s of isocrystals whose slopes are a multiple of 1
-s is equivalent to
-the categoryI F{F,s . Indeed, we can define the equivalence by mapping the isocrystalpV,Φqto the space
-pV, ˜Φ,Dqwhere the gradingDis defined such thatV aσ{s is the´a σ{sslope isotypic piece ofVand the
-WL{F -action is given byΦ.
-Then for any isocrystalpV,Φq, we choose some sufficiently largekPNsuch thatpV,ΦqPIsoc F,nk and
-pV, ˜Φ,Dqis the corresponding object ofI F{F,nk. We then apply the quotient functor to obtain an object
-RIF{F,nk and finally the transition mapRI F{F,nkÑRI Ek{F,nk.
-If we restrict ourselves to isocrystals with slopes of denominator dividingn k for some fixedk, then we
-see that, on bands, the above functor is the composition
-(3) Res Ek{Fpµnkq
-´NEk{F
-ÝÝÝÝÝÑµnk ãÑGm,
-which, after taking inverse limits, implies that the above morphism of Tannakian categories overFcorre-
-sponds to the composition
-uÑµÑD,
-where the first map is given by the inverse limit of the negative norm maps.
-Recall that [Kal18, §3.3] constructs a homomorphismE 1
-Kal ÑE iso for any choice of gerbeE 1
-Kal repre-
-senting the canonical class´1PH 2pF,uqwhich is compatible with the projections toΓ F{F and agrees
-with the map (3) on bands. Since the choice ofE 1
-Kal is only canonical up to conjugation byu, any such map
-is only unique up to post-composing by the automorphisms ofE iso induced byIntpxqforxPDp Fq. In fact,
-all maps satisfying these two properties differ in this manner, sinceH 1pF,Dqis trivial. In particular, the
-morphism of gerbesE KalÑE iso induced by our functorIsoc F ÑRigIsoc F is such a morphism.
-3.3.Comparison with Fargues’ extended isocrystals.We first briefly recall the Tannakian category Isoce
-F
-constructed by Fargues in [Far22, §6] corresponding to the gerbeE KalˆE iso:
-First, one picks a splitting of the short exact sequence
-0ÑlimÝ Ñ
-ź
-ΓK{F
-ZÑlimÝ Ñ
-ź
-ΓK{F
-QÑlimÝ Ñ
-ź
-ΓK{F
-,Q{ZÑ0,
-where the direct limits are over all finite Galois extensionsK{F, with corresponding2-cocyclec. We will
-take the splitting to be the unique one valued inr0,1q, such thatctakes values inlimÝ Ñ
-ś
-ΓK{F
-t0,1u.
-18
-As in [Far22, §6.2], one constructs, for a fixed finite GaloisE{F, a canonical rank one, slope oneE-
-isocrystalLE. We will not need the precise definition of this isocrystal (it is built using the Fargues–Fontaine
-curve)—the only property needed for the construction ofIsoce
-F is that for eachK{Ea finite Galois extension
-one has thatN K{EpLKq:“ Â
-τPΓK{E
-LKbLK,˜τLK, where˜τis some lift ofτtoΓ LK{E, equalsL E. Our
-norm-compatible system of (anti-)uniformizers evidently furnishes us with such a system by settingL E to
-the vector spaceLE with the Frobenius ofEacting on1byϖ ´1
-E .
-For a fixed functionΓE{F
-αÝ ÑZ, we define theE-isocrystal
-Lα
-8 :“
-â
-τPΓE{F
-Lbαpτq
-E bLE,˜τLE,
-where˜τis some lift ofτtoΓ LE{F . By construction, this is a finite dimensional discrete, semilinearW E-
-module overL.
-The Tannakian category Isoce has objects given bylimÝ Ñ
-ś
-ΓK{F
-,Q{Z-graded finite-dimensional L-vector
-spaces
-D“
-à
-αPlimÝ Ñ
-ś
-ΓK{F
-,Q{Z
-Dα
-equipped with a discrete, semilinearW F -action such that acting byτPW F is an isomorphism fromD α to
-Dτα, with tensor product given by
-pDbD 1qα“
-à
-β`γ“α
-DβbF D1
-γbL Lcpβ,γq
-8 ,
-whereWF acts onLcpβ,γq
-8 by mapping it topLcpβ,γq
-8 qτ »L
-τcpβ,γq
-8 via the mapLα
-8ÑL α
-8bLE,σL,xÞÑxb1.
-We will denote all of the above data byD“pV D,ΦD,DD,q(the underlying vector space, theW F -action,
-and the grading, respectively). The morphisms in Isoce are morphisms of gradedWF -modules.
-The goal is to define a morphism of Tannakian categories
-RigIsocF ÑIsoc e
-F
-corresponding (possibly up to twisting by a coboundary) to the projection mapE KalˆE isoÑE Kal.
-At the level of objects, this functor is the exact functor given by sendingpV,˜Φ,DqtopV r0,1q, ˜Φ, Dq, where
-Vr0,1q denotes the direct sum of the graded pieces ofVall of whose entries lie inlimÝ Ñ
-ś
-ΓK{F
-r0,1q, which is
-preserved by theWF -action ˜Φ, and Dis thelimÝ Ñ
-ś
-ΓK{F
-,Q{Zgrading induced by thelimÝ Ñ
-ś
-ΓK{F
-Q-grading.
-On morphisms the functor sendsfto f(this makes sense becausefisR F{F -equivariant).
-It remains to justify that this functor preserves the tensor structure. To check tensor compatibility we
-first compute that (for fixedE{Ffinite Galois) andpa σqσ,pb σqσ in ś
-ΓE{F
-r0,1q, denoting by ˜bthe tensor
-product in Isoce:
-Vpaσq ˜bWpbσq“pVpaσqbWpbσqqbL cppaσq,pbσqq
-8 ĎpVbWq paσ`bσq
-whereL cppaσq,pbσqq
-8 is the tensor product of eachL EbLE,˜σLE such thata σ`bσ ě1. On the other hand,
-first note that for any graded componentUpcσq that
-UpcτqbpLEbLE,˜σLEq“1 δσp´1q¨Upcτq,
-whereδ σp´1qdenotes the element of ś
-ΓE{F
-Zwith´1in theσ-coordinate and zeros elsewhere such that
-1δσp´1q PR E{F . Using the above two computations, we find (using that the tensor productVbWin
-RigIsocF is a tensor product ofRE{F -modules) that
-pr1p´cppaσq,pbσqqqσ
-¨VpaσqsbW pbσqq“pV paσqbr1p´cppaσq,pbσqqqσ
-¨WpbσqsqĎpVbWq r0,1q
-and equalsVpaσq ˜bWpbσq. From here, the desired tensor compatibility follows easily.
-19
-We conclude this subsection by studying the map on gerbesE KalˆE iso ÑE Kal corresponding to this
-morphism of Tannakian categoriesRigIsocF ÑIsoc e
-F .
-A fiber functor ofIsoc e
-F is given, at a fixed finiteK{F-level, by the following composition 2
-Isoce
-F,K ÑVectF ÑR K{F -modÑVect F,
-whereIsoce
-F,K denotes the full subcategory ofIsoce
-F where the grading factors throughś
-ΓK{F
-Q{Z, the first
-functor forgets thelimÝ Ñ
-ś
-ΓK{F
-Q{Z-grading andW F -action, the second functor sendsYtoYb LK RK{F ,
-and the third functor is the fiber functor on finitely-generatedR K{F -modules from §2.3. We deduce that
-the automorphism group this fiber functor, identified withu FˆDF , acts on the image of the ś
-ΓK{F
-Q{Z-
-graded pieceV pcσ{sqσ of an objectXofIsoc e
-F according to the ś
-ΓK{F
-Q{Z-grading via theu F -factor,
-showing that, at the level of bands, the morphism of gerbesE KalˆE iso ÑE Kal is the projection map.
-This lets us deduce that this morphism of gerbes agrees with the projection mapE KalˆE isoÑE Kal up to
-possibly composing withIntpaqforaPup FqˆDp Fq—we suspect that this in fact equals the projection
-map, but have not verified this. Note that the equality up toIntpaqalready implies that the pullback map
-H1
-étpEKal,GqÑH 1
-étpEKalˆE iso,Gqagrees with pullback by the projection map.
+We now construct a morphism of Tannakian categories over $F$ from $\mathop{\mathrm{Isoc}}_{F}$ to $\mathrm{RigIsoc}_{F}$. The category $\mathop{\mathrm{Isoc}}_{F,s}$ of isocrystals whose slopes are a multiple of $\frac{1}{s}$ is equivalent to the category $\mathcal{I}_{F/F, s}$. Indeed, we can define the equivalence by mapping the isocrystal $(V, \Phi)$ to the space $(V, \tilde{\Phi}, \mathcal{D})$ where the grading $\mathcal{D}$ is defined such that $V_{a_{\sigma}/s}$ is the $-a_{\sigma}/s$ slope isotypic piece of $V$ and the $W_{L/F}$-action is given by $\Phi$.
+
+Then for any isocrystal $(V, \Phi)$, we choose some sufficiently large $k \in \mathbb{N}$ such that $(V, \Phi) \in \mathop{\mathrm{Isoc}}_{F,n_k}$ and $(V, \tilde{\Phi}, \mathcal{D})$ is the corresponding object of $\mathcal{I}_{F/F, n_k}$. We then apply the quotient functor to obtain an object $R\mathcal{I}_{F/F, n_k}$ and finally the transition map $R\mathcal{I}_{F/F, n_k} \to R\mathcal{I}_{E_k/F, n_k}$.
+
+If we restrict ourselves to isocrystals with slopes of denominator dividing $n_{k}$ for some fixed $k$, then we see that, on bands, the above functor is the composition $$\label{bandcomp}
+\text{Res}_{E_{k}/F}(\mu_{n_{k}}) \xrightarrow{-N_{E_{k}/F}} \mu_{n_{k}} \hookrightarrow \mathbb{G}_{m},$$ which, after taking inverse limits, implies that the above morphism of Tannakian categories over $F$ corresponds to the composition $$u \to \mu \to \mathbb{D},$$ where the first map is given by the inverse limit of the negative norm maps.
+
+Recall that [@Kaletha18 §3.3] constructs a homomorphism $\mathcal{E}_{\mathop{\mathrm{Kal}}}' \to \mathcal{E}_{\text{iso}}$ for any choice of gerbe $\mathcal{E}_{\mathop{\mathrm{Kal}}}'$ representing the canonical class $-1 \in H^{2}(F,u)$ which is compatible with the projections to $\Gamma_{\overline{F}/F}$ and agrees with the map [\[bandcomp\]](#bandcomp){reference-type="eqref" reference="bandcomp"} on bands. Since the choice of $\mathcal{E}_{\mathop{\mathrm{Kal}}}'$ is only canonical up to conjugation by $u$, any such map is only unique up to post-composing by the automorphisms of $\mathcal{E}_{\text{iso}}$ induced by $\mathop{\mathrm{Int}}(x)$ for $x \in \mathbb{D}(\overline{F})$. In fact, all maps satisfying these two properties differ in this manner, since $H^{1}(F, \mathbb{D})$ is trivial. In particular, the morphism of gerbes $\mathcal{E}_{\mathop{\mathrm{Kal}}} \to \mathcal{E}_{\text{iso}}$ induced by our functor $\mathop{\mathrm{Isoc}}_{F} \to \mathrm{RigIsoc}_{F}$ is such a morphism.
+
+## Comparison with Fargues' extended isocrystals
+
+We first briefly recall the Tannakian category $\text{Isoc}_{F}^{e}$ constructed by Fargues in [@Fargues §6] corresponding to the gerbe $\mathcal{E}_{\text{Kal}} \times \mathcal{E}_{\text{iso}}$:
+
+First, one picks a splitting of the short exact sequence $$0 \to \varinjlim \prod_{\Gamma_{K/F}} \mathbb{Z} \to \varinjlim \prod_{\Gamma_{K/F}} \mathbb{Q}\to \varinjlim \prod_{\Gamma_{K/F}}, \mathbb{Q}/\mathbb{Z} \to 0,$$ where the direct limits are over all finite Galois extensions $K/F$, with corresponding $2$-cocycle $c$. We will take the splitting to be the unique one valued in $[0,1)$, such that $c$ takes values in $\varinjlim \prod_{\Gamma_{K/F}}\{0,1\}$.
+
+As in [@Fargues §6.2], one constructs, for a fixed finite Galois $E/F$, a canonical rank one, slope one $E$-isocrystal $\mathbb{L}_{E}$. We will not need the precise definition of this isocrystal (it is built using the Fargues--Fontaine curve)---the only property needed for the construction of $\mathop{\mathrm{Isoc}}^{e}_{F}$ is that for each $K/E$ a finite Galois extension one has that $N_{K/E}(\mathbb{L}_{K}) := \bigotimes_{\tau \in \Gamma_{K/E}} \mathbb{L}_{K} \otimes_{L_{K}, \tilde{\tau}} L_{K}$, where $\tilde{\tau}$ is some lift of $\tau$ to $\Gamma_{L_{K}/E}$, equals $\mathbb{L}_{E}$. Our norm-compatible system of (anti-)uniformizers evidently furnishes us with such a system by setting $\mathbb{L}_{E}$ to the vector space $L_{E}$ with the Frobenius of $E$ acting on $1$ by $\varpi_{E}^{-1}$.
+
+For a fixed function $\Gamma_{E/F} \xrightarrow{\alpha} \mathbb{Z}$, we define the $E$-isocrystal $$\mathbb{L}_{\infty}^{\alpha} := \bigotimes_{\tau \in \Gamma_{E/F}} \mathbb{L}_{E}^{\otimes\alpha(\tau)} \otimes_{L_{E},\tilde{\tau}} L_{E},$$ where $\tilde{\tau}$ is some lift of $\tau$ to $\Gamma_{L_{E}/F}$. By construction, this is a finite dimensional discrete, semilinear $W_{E}$-module over $\overline{L}$.
+
+The Tannakian category $\text{Isoc}^{e}$ has objects given by $\varinjlim \prod_{\Gamma_{K/F}}, \mathbb{Q}/\mathbb{Z}$-graded finite-dimensional $\overline{L}$-vector spaces $$D = \bigoplus_{\alpha \in  \varinjlim \prod_{\Gamma_{K/F}}, \mathbb{Q}/\mathbb{Z}} D_{\alpha}$$ equipped with a discrete, semilinear $W_{F}$-action such that acting by $\tau \in W_{F}$ is an isomorphism from $D_{\alpha}$ to $D_{\prescript{\tau}{}\alpha}$, with tensor product given by $$(D \otimes D')_{\alpha} = \bigoplus_{\beta + \gamma = \alpha} D_{\beta} \otimes_{\overline{F}} D'_{\gamma} \otimes_{\overline{L}} \mathbb{L}_{\infty}^{c(\beta,\gamma)},$$ where $W_{F}$ acts on $\mathbb{L}_{\infty}^{c(\beta,\gamma)}$ by mapping it to $(\mathbb{L}_{\infty}^{c(\beta,\gamma)})^{\tau} \simeq \mathbb{L}_{\infty}^{\prescript{\tau}{}c(\beta,\gamma)}$ via the map $\mathbb{L}_{\infty}^{\alpha} \to \mathbb{L}_{\infty}^{\alpha} \otimes_{L_{E},\sigma} \overline{L}$, $x \mapsto x \otimes 1$. We will denote all of the above data by $D = (V_{D}, \Phi_{D},\mathcal{D}_{D},)$ (the underlying vector space, the $W_{F}$-action, and the grading, respectively). The morphisms in $\text{Isoc}^{e}$ are morphisms of graded $W_{F}$-modules.
+
+The goal is to define a morphism of Tannakian categories $$\mathrm{RigIsoc}_{F} \to \text{Isoc}_{F}^{e}$$ corresponding (possibly up to twisting by a coboundary) to the projection map $\mathcal{E}_{\text{Kal}} \times \mathcal{E}_{\text{iso}} \to \mathcal{E}_{\text{Kal}}$.
+
+At the level of objects, this functor is the exact functor given by sending $(V,\tilde{\Phi},\mathcal{D})$ to $(V_{[0,1)},\tilde{\Phi},\overline{\mathcal{D}})$, where $V_{[0,1)}$ denotes the direct sum of the graded pieces of $V$ all of whose entries lie in $\varinjlim \prod_{\Gamma_{K/F}} [0,1)$, which is preserved by the $W_{F}$-action $\tilde{\Phi}$, and $\overline{\mathcal{D}}$ is the $\varinjlim \prod_{\Gamma_{K/F}}, \mathbb{Q}/\mathbb{Z}$ grading induced by the $\varinjlim \prod_{\Gamma_{K/F}} \mathbb{Q}$-grading. On morphisms the functor sends $f$ to $\overline{f}$ (this makes sense because $f$ is $R_{\overline{F}/F}$-equivariant).
+
+It remains to justify that this functor preserves the tensor structure. To check tensor compatibility we first compute that (for fixed $E/F$ finite Galois) and $(a_{\sigma})_{\sigma}$, $(b_{\sigma})_{\sigma}$ in $\prod_{\Gamma_{E/F}} [0,1)$, denoting by $\tilde{\otimes}$ the tensor product in $\text{Isoc}^{e}$: $$V_{(a_{\sigma})} \tilde{\otimes} W_{(b_{\sigma})} = (V_{(a_{\sigma})} \otimes W_{(b_{\sigma})}) \otimes \mathbb{L}_{\infty}^{c(\overline{(a_{\sigma})}, \overline{(b_{\sigma})})} \subseteq (V \otimes W)_{(a_{\sigma} + b_{\sigma})}$$ where $\mathbb{L}^{c(\overline{(a_{\sigma})}, \overline{(b_{\sigma})})}_{\infty}$ is the tensor product of each $\mathbb{L}_{E} \otimes_{L_{E}, \tilde{\sigma}} L_{E}$ such that $a_{\sigma} + b_{\sigma} \geq 1$. On the other hand, first note that for any graded component $U_{(c_{\sigma})}$ that $$U_{(c_{\tau})} \otimes (\mathbb{L}_{E} \otimes_{L_{E}, \tilde{\sigma}} L_{E}) = 1_{\delta_{\sigma}(-1)} \cdot U_{(c_{\tau})},$$ where $\delta_{\sigma}(-1)$ denotes the element of $\prod_{\Gamma_{E/F}}\mathbb{Z}$ with $-1$ in the $\sigma$-coordinate and zeros elsewhere such that $1_{\delta_{\sigma}(-1)} \in R_{E/F}$. Using the above two computations, we find (using that the tensor product $V \otimes W$ in $\mathrm{RigIsoc}_{F}$ is a tensor product of $R_{E/F}$-modules) that $$([1_{(-c(\overline{(a_{\sigma})}, \overline{(b_{\sigma})}))_{\sigma}} \cdot V_{(a_{\sigma})}] \otimes W_{(b_{\sigma})}) = (V_{(a_{\sigma})} \otimes [1_{(-c(\overline{(a_{\sigma})}, \overline{(b_{\sigma})}))_{\sigma}} \cdot W_{(b_{\sigma})}])  \subseteq (V \otimes W)_{[0,1)}$$ and equals $V_{(a_{\sigma})} \tilde{\otimes} W_{(b_{\sigma})}$. From here, the desired tensor compatibility follows easily.
+
+We conclude this subsection by studying the map on gerbes $\mathcal{E}_{\mathop{\mathrm{Kal}}} \times \mathcal{E}_{\text{iso}} \to \mathcal{E}_{\mathop{\mathrm{Kal}}}$ corresponding to this morphism of Tannakian categories $\mathrm{RigIsoc}_{F} \to \mathop{\mathrm{Isoc}}_{F}^{e}$.
+
+A fiber functor of $\mathop{\mathrm{Isoc}}_{F}^{e}$ is given, at a fixed finite $K/F$-level, by the following composition [^1] $$\mathop{\mathrm{Isoc}}_{F,K}^{e} \to \mathrm{Vect}_{\overline{F}} \to \text{$R_{K/F}$-mod} \to \mathrm{Vect}_{\overline{F}},$$ where $\mathop{\mathrm{Isoc}}_{F,K}^{e}$ denotes the full subcategory of $\mathop{\mathrm{Isoc}}_{F}^{e}$ where the grading factors through $\prod_{\Gamma_{K/F}} \mathbb{Q}/\mathbb{Z}$, the first functor forgets the $\varinjlim \prod_{\Gamma_{K/F}} \mathbb{Q}/\mathbb{Z}$-grading and $W_{F}$-action, the second functor sends $Y$ to $Y \otimes_{L_{K}} R_{K/F}$, and the third functor is the fiber functor on finitely-generated $R_{K/F}$-modules from §[\[sec:mod\]](#sec:mod){reference-type="ref" reference="sec:mod"}. We deduce that the automorphism group this fiber functor, identified with $u_{\overline{F}} \times \mathbb{D}_{\overline{F}}$, acts on the image of the $\prod_{\Gamma_{K/F}} \mathbb{Q}/\mathbb{Z}$-graded piece $V_{(c_{\sigma}/s)_{\sigma}}$ of an object $X$ of $\mathop{\mathrm{Isoc}}_{F}^{e}$ according to the $\prod_{\Gamma_{K/F}} \mathbb{Q}/\mathbb{Z}$-grading via the $u_{\overline{F}}$-factor, showing that, at the level of bands, the morphism of gerbes $\mathcal{E}_{\mathop{\mathrm{Kal}}} \times \mathcal{E}_{\text{iso}} \to \mathcal{E}_{\mathop{\mathrm{Kal}}}$ is the projection map. This lets us deduce that this morphism of gerbes agrees with the projection map $\mathcal{E}_{\mathop{\mathrm{Kal}}} \times \mathcal{E}_{\text{iso}} \to \mathcal{E}_{\mathop{\mathrm{Kal}}}$ up to possibly composing with $\mathop{\mathrm{Int}}(a)$ for $a \in u(\overline{F}) \times \mathbb{D}(\overline{F})$---we suspect that this in fact equals the projection map, but have not verified this. Note that the equality up to $\mathop{\mathrm{Int}}(a)$ already implies that the pullback map $H^{1}_{\text{\'{e}t}}(\mathcal{E}_{\mathop{\mathrm{Kal}}}, G) \to H^{1}_{\text{\'{e}t}}(\mathcal{E}_{\mathop{\mathrm{Kal}}} \times \mathcal{E}_{\text{iso}},G)$ agrees with pullback by the projection map.
+
+[^1]: We warn the reader that the first functor is not a tensor functor, but when composed with the second functor it is.

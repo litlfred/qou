@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2108.03616v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2108.03616v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2108.03616v2",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2108.03616&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2108.03616v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2108.03616v2",
+    "content_type": "application/gzip",
+    "sha256": "c53e28232f19faf66ef6c9f8636a9d4cc050d1dee0801e16d1b86eb84e9eaae5",
+    "bytes": 74621,
+    "fetched": "2026-10-10T15:16:38+00:00",
+    "files": [
+      {
+        "path": "source/files/arxiv-stripped-squeezed.bbl",
+        "role": "bbl",
+        "sha256": "f17e239c4e84981d7a359c40f74724e325614c0fc34771a436dd6c8478f0a93e",
+        "bytes": 18146
+      },
+      {
+        "path": "source/files/arxiv-stripped-squeezed.tex",
+        "role": "tex",
+        "sha256": "12fe15d90e6704832be4ec4634df7e6cefcbd1cfc91d849f026589d1fb480afc",
+        "bytes": 160802
+      },
+      {
+        "path": "source/files/circuits.bib",
+        "role": "bib",
+        "sha256": "3619d7d87462f2d843abf506337604d55e000f50dc1069ceac37ad7c1fb95465",
+        "bytes": 45502
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

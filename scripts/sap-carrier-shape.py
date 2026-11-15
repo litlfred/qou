@@ -167,7 +167,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-CONTENT = ROOT / "content/quantum-observable-universe"
+CONTENT = ROOT / "folio/quantum-observable-universe"
 
 # A field's type "looks like a claim" if it carries a relation or quantifier.
 #

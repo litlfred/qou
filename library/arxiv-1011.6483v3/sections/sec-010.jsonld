@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1011.6483v3/sections/sec-010",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Relationship with topological chiral homology",
+  "pageStart": 40,
+  "pageEnd": 40,
+  "contains": [
+    "library/arxiv-1011.6483v3/blocks/prose-sec-010"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1011.6483v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1011.6483v3",
+  "provenance": "ingested"
+}

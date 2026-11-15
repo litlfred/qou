@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s0002-9947-96-01660-1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "AMERICAN MATHEMATICAL SOCIETY INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s0002-9947-96-01660-1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "s0002-9947-96-01660-1",
   "contains": [
     "library/s0002-9947-96-01660-1/sections/sec-000",
     "library/s0002-9947-96-01660-1/sections/sec-001",
@@ -32,8 +37,10 @@
     "library/s0002-9947-96-01660-1/sections/sec-023"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "s0002-9947-96-01660-1",
+    "title_source": "slug",
     "source_file": "S0002-9947-96-01660-1.pdf",
     "source_sha256": "aa63e62b78aa50451837fffef1bce1f91596ccbf31ffb01852877fb096572dd1",
     "pages": 26,

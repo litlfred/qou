@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/helicity03mmj/sections/sec-010",
   "@type": [
     "doco:Section"
@@ -9,19 +14,19 @@
   "pageEnd": 22,
   "contains": [
     "library/helicity03mmj/blocks/prose-sec-010",
-    "library/helicity03mmj/blocks/rem-sec-010-01",
-    "library/helicity03mmj/blocks/rem-sec-010-02",
+    "library/helicity03mmj/blocks/remark-sec-010-01",
+    "library/helicity03mmj/blocks/remark-sec-010-02",
     "library/helicity03mmj/blocks/thm-sec-010-03",
     "library/helicity03mmj/blocks/thm-sec-010-04",
-    "library/helicity03mmj/blocks/rem-sec-010-05",
-    "library/helicity03mmj/blocks/rem-sec-010-06",
+    "library/helicity03mmj/blocks/remark-sec-010-05",
+    "library/helicity03mmj/blocks/remark-sec-010-06",
     "library/helicity03mmj/blocks/thm-sec-010-07",
-    "library/helicity03mmj/blocks/rem-sec-010-08",
+    "library/helicity03mmj/blocks/remark-sec-010-08",
     "library/helicity03mmj/blocks/prop-sec-010-09",
     "library/helicity03mmj/blocks/thm-sec-010-10",
-    "library/helicity03mmj/blocks/rem-sec-010-11"
+    "library/helicity03mmj/blocks/remark-sec-010-11"
   ],
-  "derivedFrom": "library/helicity03mmj/manifest",
-  "sourceDocument": "library/helicity03mmj/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/helicity03mmj",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/helicity03mmj",
   "provenance": "ingested"
 }

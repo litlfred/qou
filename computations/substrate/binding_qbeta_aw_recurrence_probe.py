@@ -3,7 +3,7 @@
 
 Numerical counterpart of the Lean theorem `recurrence_invol_descent`
 (`qou:QOU.MassEndomorphism` in
-content/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.lean):
+folio/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.lean):
 IF the complex ladder 𝔙_A satisfies ONE three-term recurrence
 𝔙_{A+1} = c·𝔙_A − 𝔙_{A−1} with a BAR-EVEN multiplier c (σc = c), THEN the
 bar-even (binding) and bar-odd (𝔔_β) ladders each satisfy the SAME recurrence.
@@ -332,7 +332,7 @@ def main() -> int:
         "lean_counterpart": (
             "qou:QOU.MassEndomorphism.recurrence_invol_descent + "
             "AWDeformationPath.channel_ladders "
-            "(content/quantum-observable-universe/mass-endomorphism/"
+            "(folio/quantum-observable-universe/mass-endomorphism/"
             "binding-qbeta-complex-volume.lean)"
         ),
         "predecessor": "docs/audits/2026-06-30-complex-volume-bar-parity-binding-probe.md",

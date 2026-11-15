@@ -8,178 +8,50 @@ pages: 11-13
 source_pdf: 1404.2541v1.pdf
 source_sha256: edb7c9b2b1561ac3
 doc_brief: "The Stokes phenomenon for the Ramanujan’s q-difference equation and its higher order extension — We show connection formulae of local solutions of the Ramanu - jan equation between the origin and the"
+text_source: latex
+latex_prose_ratio: 0.99
+latex_coverage_ratio: 0.981
 ---
-We deﬁne a covering transformation for a second order linear q-diﬀerence
-equation.
-Deﬁnition 4.1. For a q-diﬀerence equation
-a(x)u(q2x) +b(x)u(qx) +c(x)u(x) = 0, (9)
-we deﬁne the covering transformation as follows
-t2 :=x, v (t) := u(t2), p := √
-q.
-The covering transform of the equation (9) is given by
-a(t2)v(p2t) +b(t2)v(pt) +c(t2)v(t) = 0.
-By the covering transformation, the equation
-(
-K ·xσ 2
-q −σq + 1
-)
-u(x) = 0
-is transformed to (
-K ·t2σ 2
-p −σp + 1
-)
-v(t) = 0, (10)
-where K is a ﬁxed constant in C∗.
-5 The Ramanujan function and the q-Airy
-function
-There are two diﬀerent q-analogue of the Airy function. One is called the
-Ramanujan function which appears in [12]. Ismail [6] pointed out that the
-Ramanujan function can be considered as a q-analogue of the Airy function.
-The other one is called the q-Airy function which is obtained by K. Kajiwara,
-T. Masuda, M. Noumi, Y. Ohta and Y. Yamada [8]. In this section, we
-see the properties of these functions. We explain the reason why t hey are
-called q-analogues of the Airy function and we show q-diﬀerence equations
-which they satisfy.The Ramanujan function appears in Ramanujan’s “Lost
-notebook” [12]. Ismail has pointed out that the Ramanujan functio n can be
-11
-considered as a q-analogue of the Airy function. The Ramanujan function is
-deﬁned by following convergent series;
-Aq(x) :=
-∑
-n≥0
-qn2
-(q;q)n
-(−x)n = 0ϕ 1(−; 0;q, −qx).
-In the theory of ordinary diﬀerencial equations, the term Planche rel-
-Rotach asymptotics refers to asymptotics around the largest an d smallest
-zeros. With x = √2n + 1 − 2
-1
-2 3
-1
-3n
-1
-6t and for t ∈ C, the Plancherel-Rotach
-asymptotic formula for Hermite polynomials Hn(x) is
-lim
-n→+∞
-e− x2
-2
-3
-1
-3π − 3
-4 2
-n
-2 + 1
-4
-√
-n!
-Hn(x) = Ai(t). (11)
-In [6], Ismail shows the q-analogue of (11);
-Proposition 5.1. We have
-lim
-n→∞
-qn2
-tn hn(sinhξn|q) = A q
-( 1
-t2
-)
-whereeξn =tq− n
-2 .
-Here,hn(·|q) is the q-Hermite polynomial. In this sense, we can deal with
-the Ramanujan function A q(x) as a q-analogue of the Airy function. The
-Ramanujan function satisﬁes the following q-diference equation;
-(
-qxσ 2
-q −σq + 1
-)
-u(x) = 0. (12)
-Remark. We remark that another solution of the equation (12) is given by
-u(x) = θ(x)2ϕ 0(0, 0; −;q, −x/q ).
-Here,
-2ϕ 0
-(
-0, 0; −;q, −x
-q
-)
-=
-∑
-n≥0
-1
-(q;q)n
-{
-(−1)nq
-n(n− 1)
-2
-} −1(
-−x
-q
-) n
-is a divergent series.
-12
-The q-Airy function is found by K. Kajiwara, T. Masuda, M. Noumi,
-Y. Ohta and Y. Yamada [8], in their study of the q-Painlev´ e equations. This
-function is the special solution of the second q-Painlev´ e equations and given
-by the following series
-Aiq(x) :=
-∑
-n≥0
-1
-(−q,q ;q)n
-{
-(−1)nq
-n(n− 1)
-2
-}
-(−x)n = 1ϕ 1(0; −q;q, −x).
-T. Hamamoto, K. Kajiwara, N. S. Witte [4] proved following asymptot ic
-expansions;
-Proposition 5.2. With q =e− δ 3
-2 , x = −2ie− s
-2 δ2
-as δ → 0,
-1ϕ 1(0; −q;q, −qx) = 2π
-1
-2δ− 1
-2e−( πi
-δ 3 ) ln 2+( πi
-2δ )s+ πi
-12
-[
-Ai
-(
-se
-πi
-3
-)
-+O(δ2)
-]
-,
-1ϕ 1(0; −q;q,qx ) = 2π
-1
-2δ− 1
-2e−( πi
-δ 3 ) ln 2−( πi
-2δ )s− πi
-12
-[
-Ai
-(
-se− πi
-3
-)
-+O(δ2)
-]
-for s in any compact domain of C.
-Here, Ai(x) is the Airy function. From this proposition, we can regard
-the q-Airy function as a q-analogue of the Airy function.
-We can easily check out that the q-Airy function satisﬁes the second order
-linear q-diﬀerence equation
-(
-σ 2
-q +xσq − 1
-)
-u(x) = 0. (13)
-Another solution of the equation (13) is given by
-u(x) = eπi( log x
-log q )1ϕ 1(0; −q;q,x ) = eπi( log x
-log q ) Aiq(−x).
+We define a covering transformation for a second order linear $q$-difference equation.
+
+::: dfn
+For a $q$-difference equation $$\label{sh}
+a(x)u(q^2x)+b(x)u(qx)+c(x)u(x)=0,$$ we define the covering transformation as follows $$t^2:=x,\quad v(t):=u(t^2),\quad p:=\sqrt{q}.$$
+:::
+
+The covering transform of the equation [\[sh\]](#sh){reference-type="eqref" reference="sh"} is given by $$a(t^2)v(p^2t)+b(t^2)v(pt)+c(t^2)v(t)=0.$$ By the covering transformation, the equation $$\left(K\cdot x\sigma_q^2-\sigma_q+1\right)u(x)=0$$ is transformed to $$\left(K\cdot t^2\sigma_p^2-\sigma_p+1\right)v(t)=0,\label{kram}$$ where $K$ is a fixed constant in $\mathbb{C}^*$.
+
+# The Ramanujan function and the $q$-Airy function
+
+There are two different $q$-analogue of the Airy function. One is called the Ramanujan function which appears in [@Ramanujan]. Ismail [@Is] pointed out that the Ramanujan function can be considered as a $q$-analogue of the Airy function. The other one is called the $q$-Airy function which is obtained by K. Kajiwara, T. Masuda, M. Noumi, Y. Ohta and Y. Yamada [@KMNOY]. In this section, we see the properties of these functions. We explain the reason why they are called $q$-analogues of the Airy function and we show $q$-difference equations which they satisfy.The Ramanujan function appears in Ramanujan's "Lost notebook" [@Ramanujan]. Ismail has pointed out that the Ramanujan function can be considered as a $q$-analogue of the Airy function. The Ramanujan function is defined by following convergent series; $$\operatorname{A}_q(x):=\sum_{n\ge 0}\frac{q^{n^2}}{(q;q)_n}(-x)^n
+={_0\varphi_1}(-;0;q,-qx).$$
+
+In the theory of ordinary differencial equations, the term Plancherel-Rotach asymptotics refers to asymptotics around the largest and smallest zeros. With $x=\sqrt{2n+1}-2^{\frac{1}{2}}3^{\frac{1}{3}}n^{\frac{1}{6}}t$ and for $t\in\mathbb{C}$, the Plancherel-Rotach asymptotic formula for Hermite polynomials $H_n(x)$ is $$\lim_{n\to +\infty}\frac{e^{-\frac{x^2}{2}}}{3^{\frac{1}{3}}\pi^{-\frac{3}{4}}2^{\frac{n}{2}+\frac{1}{4}}\sqrt{n!}}H_n(x)=\operatorname{Ai}(t). \label{pr}$$ In [@Is], Ismail shows the $q$-analogue of [\[pr\]](#pr){reference-type="eqref" reference="pr"};
+
+::: prp
+We have $$\lim_{n\to\infty}\frac{q^{n^2}}{t^n}h_n(\sinh\xi_n|q)=\operatorname{A}_q\left(\frac{1}{t^2}\right)$$ where $e^{\xi_n}=tq^{-\frac{n}{2}}$.
+:::
+
+Here, $h_n(\cdot |q)$ is the $q$-Hermite polynomial. In this sense, we can deal with the Ramanujan function $\operatorname{A}_q(x)$ as a $q$-analogue of the Airy function. The Ramanujan function satisfies the following $q$-diference equation; $$\left(qx\sigma_q^2-\sigma_q+1\right)u(x)=0.
+\label{ram}$$
+
+::: rem
+We remark that another solution of the equation [\[ram\]](#ram){reference-type="eqref" reference="ram"} is given by $$u(x)=\theta (x){}_2\varphi_0(0,0;-;q,-x/q).$$ Here, $${}_2\varphi_0\left(0,0;-;q,-\frac{x}{q}\right)=\sum_{n\ge 0}\frac{1}{(q;q)_n}\left\{(-1)^nq^{\frac{n(n-1)}{2}}\right\}^{-1}\left(-\frac{x}{q}\right)^n$$ is a divergent series.
+:::
+
+The $q$-Airy function is found by K. Kajiwara, T. Masuda, M. Noumi, Y. Ohta and Y. Yamada [@KMNOY], in their study of the $q$-Painlevé equations. This function is the special solution of the second $q$-Painlevé equations and given by the following series $$\operatorname{Ai}_q(x):=\sum_{n\ge 0}\frac{1}{(-q,q;q)_n}\left\{(-1)^nq^\frac{n(n-1)}{2}\right\}(-x)^n={}_1\varphi_1(0;-q;q,-x).$$
+
+T. Hamamoto, K. Kajiwara, N. S. Witte [@hama] proved following asymptotic expansions;
+
+::: prp
+With $q=e^{-\frac{\delta^3}{2}}$, $x=-2ie^{-\frac{s}{2}\delta^2}$ as $\delta\to 0$, $${_1\varphi_1}(0;-q;q,-qx)=2\pi^{\frac{1}{2}}\delta^{-\frac{1}{2}}
+e^{-\left(\frac{\pi i}{\delta^3}\right)\ln 2+\left(\frac{\pi i}{2\delta }\right)s+\frac{\pi i}{12}}\left[\operatorname{Ai}\left(se^{\frac{\pi i}{3}}\right)+O(\delta^2)\right],$$ $${_1\varphi_1}(0;-q;q,qx)=2\pi^{\frac{1}{2}}\delta^{-\frac{1}{2}}
+e^{-\left(\frac{\pi i}{\delta^3}\right)\ln 2-\left(\frac{\pi i}{2\delta }\right)s-\frac{\pi i}{12}}\left[\operatorname{Ai}\left(se^{-\frac{\pi i}{3}}\right)+O(\delta^2)\right]$$ for $s$ in any compact domain of $\mathbb{C}$.
+:::
+
+Here, $\operatorname{Ai}(x)$ is the Airy function. From this proposition, we can regard the $q$-Airy function as a $q$-analogue of the Airy function.
+
+We can easily check out that the $q$-Airy function satisfies the second order linear $q$-difference equation $$\left(\sigma_q^2+x\sigma_q-1\right)u(x)=0.
+\label{qai}$$ Another solution of the equation [\[qai\]](#qai){reference-type="eqref" reference="qai"} is given by $$u(x)=
+e^{\pi i\left(\frac{\log x}{\log q}\right)}{_1\varphi_1}(0;-q;q,x)
+=e^{\pi i\left(\frac{\log x}{\log q}\right)}\operatorname{Ai}_q(-x).$$

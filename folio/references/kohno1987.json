@@ -1,0 +1,33 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "kohno1987",
+  "library": {
+    "docId": "kohno1987-aif",
+    "dir": "library/kohno1987-aif",
+    "pdf": "library/kohno1987-aif/kohno1987-aif.pdf",
+    "stage": "candidates",
+    "pages": 23,
+    "sections": 8
+  },
+  "type": "article-journal",
+  "title": "Monodromy representations of braid groups and Yang-Baxter equations",
+  "author": [
+    {
+      "family": "Kohno",
+      "given": "Toshitake"
+    }
+  ],
+  "container-title": "Annales de l'Institut Fourier",
+  "volume": "37",
+  "issue": "4",
+  "page": "139-160",
+  "issued": {
+    "date-parts": [
+      [
+        1987
+      ]
+    ]
+  },
+  "DOI": "10.5802/aif.1075",
+  "note": "Proves that monodromy of the Knizhnik-Zamolodchikov connection on the configuration space $X_n$ coincides with the quantum-group R-matrix representation of $U_q(g)$.  Flatness of the KZ connection at generic q is the mathematical content behind the lifted-crossing locality hypothesis in the mass-volume expansion.  PDF library/kohno1987-aif/ — Numdam copy."
+}

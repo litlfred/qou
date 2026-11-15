@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1706.06168v3/blocks/prose-sec-021",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1706.06168v3/blocks/prose-sec-021",
   "kind": "prose",
-  "title": "B.1 Polarization and Projection",
-  "pageStart": 34,
-  "pageEnd": 35,
-  "text": "../sections/sec-021-b1-polarization-and-projection.md",
-  "derivedFrom": "library/arxiv-1706.06168v3/manifest",
-  "sourceDocument": "library/arxiv-1706.06168v3/manifest",
+  "title": "Ray and Interval Stability",
+  "pageStart": 26,
+  "pageEnd": 31,
+  "text": "../sections/sec-021-74-ray-and-interval-stability.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1706.06168v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1706.06168v3",
   "provenance": "ingested"
 }

@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2403.00360v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2403.00360v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2403.00360v2",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2403.00360&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2403.00360v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2403.00360v2",
+    "content_type": "application/gzip",
+    "sha256": "a01f1ef036a420b980585fa70facba7b2cdffa1dcaf2685a8ee27a7c3c4e5638",
+    "bytes": 96289,
+    "fetched": "2026-10-10T15:19:53+00:00",
+    "files": [
+      {
+        "path": "source/files/octonions.tex",
+        "role": "tex",
+        "sha256": "06eaee8c32ae2eadf55bd1923a9216cae9266da627bc9bcb0f4b86f42e889838",
+        "bytes": 143273
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

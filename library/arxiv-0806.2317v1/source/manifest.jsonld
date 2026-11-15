@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0806.2317v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-0806.2317v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0806.2317v1",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0806.2317&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0806.2317v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/0806.2317v1",
+    "content_type": "application/gzip",
+    "sha256": "9df63168f8c7bc91652e1a9f6bb02c1cacff78b52365be9ade0e414ea47edb3f",
+    "bytes": 25329,
+    "fetched": "2026-10-10T15:00:48+00:00",
+    "files": [
+      {
+        "path": "source/files/mathdots.sty",
+        "role": "sty",
+        "sha256": "990eb71f66cb8efe9160be69755479b906f22929fc899e5c285faa0f7483e9de",
+        "bytes": 3342
+      },
+      {
+        "path": "source/files/subspacepaper.bbl",
+        "role": "bbl",
+        "sha256": "d2b4fcdfb78ab94e31db333758fa1062162ad1497dcd0d0164e0a687ee7b400a",
+        "bytes": 4200
+      },
+      {
+        "path": "source/files/subspacepaper.tex",
+        "role": "tex",
+        "sha256": "1e43680661df39a75a200da85f0cdc00a482872e2f6643da2d90dd1008f7e1bc",
+        "bytes": 74231
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

@@ -63,7 +63,7 @@ import sympy as sp  # noqa: E402
 from mpmath import mp, mpf, besselj, qp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 with mp.workdps(50):
@@ -227,17 +227,48 @@ def gate_row(row_fn, targets, x_max, grid, tol=mpf("1e-6")):
         e3 = abs(row_fn(11, r) / r1 - t3) / t3
         e4 = abs(row_fn(13, r) / r1 - t4) / t4
         err = max(e3, e4)
+        # mpf-valued: `max_rel_err` is the key of the `min`-by-comparison above
+        # AND the quantity the gate verdict is decided on one line down, so it is
+        # arithmetic. Serialized once, by `_ser_deep` at the witness.
         if best is None or err < best["max_rel_err"]:
-            best = {"x": float(r), "ratio_11": float(row_fn(11, r) / r1),
-                    "ratio_13": float(row_fn(13, r) / r1),
-                    "target_11": float(t3), "target_13": float(t4),
-                    "max_rel_err": float(err)}
-    passed = best is not None and best["max_rel_err"] < float(tol)
+            best = {"x": r, "ratio_11": row_fn(11, r) / r1,
+                    "ratio_13": row_fn(13, r) / r1,
+                    "target_11": t3, "target_13": t4,
+                    "max_rel_err": err}
+    # mpf both sides: the verdict was previously decided by comparing an
+    # already-truncated float against float(tol).  Measured margins make no
+    # verdict change possible here (the four rows land at 0.127 / 0.474 / 0.557 /
+    # 0.904 against a 1e-6 gate, i.e. they FAIL by 5-6 orders), but the
+    # comparison should not be the place that decides at binary64 grade.
+    passed = best is not None and best["max_rel_err"] < tol
     return passed, len(roots), best
 
 
+def _ser_deep(obj):
+    """Serialize every mpf in a nested structure to a 60-dps decimal string.
+
+    The SINGLE serialization point for this probe: `run()` keeps everything in
+    mpf — including the four `channel_value_screen` ratios and `max_rel_err`,
+    which decide four published verdicts — and this converts at the witness
+    boundary only. `bool` is checked before `int` because `bool` is an `int`
+    subclass and would otherwise pass through the numeric branch.
+    """
+    if isinstance(obj, dict):
+        return {k: _ser_deep(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)):
+        return [_ser_deep(v) for v in obj]
+    if isinstance(obj, bool) or isinstance(obj, int) or isinstance(obj, str) or obj is None:
+        return obj
+    try:
+        return fmt(obj)          # mpf / mpc real part / anything mpmath-valued
+    except Exception:
+        return obj
+
+
 def run():
-    out = {"q0": float(Q0), "inv_q0": float(INV), "qhat": float(QHAT), "P": P}
+    # mpf throughout `out`; `_ser_deep` at the witness is the single
+    # serialization point, so nothing here needs a float() cast.
+    out = {"q0": Q0, "inv_q0": INV, "qhat": QHAT, "P": P}
 
     # (A) derive + verify the colored residue character
     chars = {}
@@ -255,7 +286,7 @@ def run():
             "global_sign": chi_hat[support[0]] if uniform and support else 0,
             "fold_consistent_odd_periodic": consistent,
             "all_weights_pm1": pm1,
-            "identity_residual": float(resid),
+            "identity_residual": resid,  # mpf; `_ser_deep` serializes at the witness
         }
     out["derived_characters"] = chars
     out["alpha1_reproduces_bare_support"] = chars[1]["support_1_30"] == [1, 11, 19, 29]
@@ -269,26 +300,33 @@ def run():
 
     # (B) per-exponent channel amplitudes at 1/q0 + bare-sum validation
     channels = {e: channel_value(e, INV) for e in E8_EXPONENTS}
-    out["channels_at_inv_q0"] = {str(e): float(v) for e, v in channels.items()}
+    out["channels_at_inv_q0"] = {str(e): v for e, v in channels.items()}
     bare_sum = mp.fsum(channels[e] for e in (1, 11, 19, 29))
-    out["bare_channel_sum"] = float(bare_sum)
+    out["bare_channel_sum"] = bare_sum
     out["bare_sum_matches_bare_invariant"] = bool(abs(bare_sum - BARE_PSI) < mpf("5e-4"))
 
     # (C) channel value screen vs d_q + analytic q→1 gate
-    tgt_ratio = {e: float(D_Q_TARGETS[e] / D_Q_TARGETS[1]) for e in DUAL_PAIR_REPS}
+    tgt_ratio = {e: D_Q_TARGETS[e] / D_Q_TARGETS[1] for e in DUAL_PAIR_REPS}
     screen = []
     for e in DUAL_PAIR_REPS:
         ch, pt = channels[e], channels[PAIR_PARTNER[e]]
+        # mpf-valued: all four are read back by `refuted()` below, which decides
+        # three of this probe's published verdicts.
         screen.append({
             "e": e, "class": CLASS_OF_REP[e], "target_dq_ratio": tgt_ratio[e],
-            "channel_ratio": float(ch / channels[1]),
-            "pair_sum_ratio": float((ch + pt) / (channels[1] + channels[29])),
-            "pair_diff_ratio": float((ch - pt) / (channels[1] - channels[29])),
+            "channel_ratio": ch / channels[1],
+            "pair_sum_ratio": (ch + pt) / (channels[1] + channels[29]),
+            "pair_diff_ratio": (ch - pt) / (channels[1] - channels[29]),
         })
     out["channel_value_screen"] = screen
 
     def refuted(key):
-        return not all(abs(s[key] - s["target_dq_ratio"]) < 1e-6 for s in screen)
+        # mpf threshold: the operands are now mpf, and the differences this
+        # decides on are O(1) (e.g. 0.734 against a target of 6.220), so the
+        # verdicts are nowhere near 1e-6 either way.
+        return not all(
+            abs(s[key] - s["target_dq_ratio"]) < mpf("1e-6") for s in screen
+        )
 
     out["channel_refuted"] = refuted("channel_ratio")
     out["pair_sum_refuted"] = refuted("pair_sum_ratio")
@@ -301,14 +339,20 @@ def run():
         qv = 1 - eps
         nmax = int((8280 / float(eps)) ** 0.5) + 200
         vals = {e: channel_value(e, qv, nterms=nmax) for e in DUAL_PAIR_REPS}
-        lrat = {e: float(vals[e] / vals[1]) for e in DUAL_PAIR_REPS}
-        q1_gate.append({"eps": float(eps), "ratios": {str(e): lrat[e] for e in DUAL_PAIR_REPS}})
-    lval = {e: float(mpf(30 - e) / 29) for e in DUAL_PAIR_REPS}  # L(0,χ_e)/L(0,χ_1)
+        lrat = {e: vals[e] / vals[1] for e in DUAL_PAIR_REPS}
+        q1_gate.append({"eps": eps, "ratios": {str(e): lrat[e] for e in DUAL_PAIR_REPS}})
+    lval = {e: mpf(30 - e) / 29 for e in DUAL_PAIR_REPS}  # L(0,χ_e)/L(0,χ_1)
     out["q1_gate"] = {"numeric": q1_gate,
                       "L_value_prediction": {str(e): lval[e] for e in DUAL_PAIR_REPS}}
     last = q1_gate[-1]["ratios"]
+    # mpf threshold. This is the TIGHTEST decision in the file and therefore the
+    # one worth naming: at eps = 1e-4 the e = 7 ratio is 0.79317 against
+    # L(0,chi_7)/L(0,chi_1) = 23/29 = 0.79310, a gap of 6.9e-5 inside a 5e-3
+    # gate -- 72x margin.  Still eleven orders above binary64 noise, so the cast
+    # was not deciding anything, but 72x is close enough that the comparison
+    # belongs in mpf rather than in a float.
     out["q1_matches_L_values"] = all(
-        abs(last[str(e)] - lval[e]) < 5e-3 for e in DUAL_PAIR_REPS)
+        abs(last[str(e)] - lval[e]) < mpf("5e-3") for e in DUAL_PAIR_REPS)
     out["q1_channel_ratios_decrease"] = all(
         last[str(a)] > last[str(b)] for a, b in zip(DUAL_PAIR_REPS, DUAL_PAIR_REPS[1:]))
 
@@ -462,7 +506,7 @@ def main(argv=None):
                 "channel_refuted", "pair_sum_refuted", "pair_diff_refuted",
                 "q1_gate", "q1_matches_L_values", "q1_channel_ratios_decrease",
                 "bessel_row_gates", "any_bessel_row_passed"):
-        w.add_data(key, res[key])
+        w.add_data(key, _ser_deep(res[key]))
     w.add_assertion(
         "colored_residue_character_derived_and_pure_sign",
         computed=1 if (res["alpha1_reproduces_bare_support"]

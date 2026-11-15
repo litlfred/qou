@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-binding-closure-conditional",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:binding-closure-conditional",
+  "kind": "proof",
+  "title": "Proof of binding closure conditional on the per-term mass identity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-binding-closure-conditional",
+    "papers/quantum-observable-universe/blocks/lem-bond-order-eq-jet-degree"
+  ],
+  "text": "binding-closure-conditional-proof.md",
+  "provenance": "authored"
+}

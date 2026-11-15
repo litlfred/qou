@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2205.06874v2/blocks/prose-sec-029",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2205.06874v2/blocks/prose-sec-029",
   "kind": "prose",
   "title": "State sums with defect surfaces",
   "pageStart": 51,
   "pageEnd": 59,
   "text": "../sections/sec-029-state-sums-with-defect-surfaces.md",
-  "derivedFrom": "library/arxiv-2205.06874v2/manifest",
-  "sourceDocument": "library/arxiv-2205.06874v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2205.06874v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2205.06874v2",
   "provenance": "ingested"
 }

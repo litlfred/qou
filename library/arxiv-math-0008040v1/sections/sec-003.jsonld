@@ -1,17 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0008040v1/sections/sec-003",
   "@type": [
     "doco:Section"
   ],
-  "title": "(B) is a Q(v)-basis of U −, called the canonical",
-  "pageStart": 4,
-  "pageEnd": 5,
+  "title": "Canonical basis elements corresponding to spanning vectors",
+  "pageStart": 8,
+  "pageEnd": 9,
   "contains": [
-    "library/arxiv-math-0008040v1/blocks/prose-sec-003",
-    "library/arxiv-math-0008040v1/blocks/thm-sec-003-01"
+    "library/arxiv-math-0008040v1/blocks/prose-sec-003"
   ],
-  "derivedFrom": "library/arxiv-math-0008040v1/manifest",
-  "sourceDocument": "library/arxiv-math-0008040v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0008040v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0008040v1",
   "provenance": "ingested"
 }

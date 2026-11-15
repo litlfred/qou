@@ -111,7 +111,7 @@ def sha12(p: Path) -> str:
 def corpus_lean() -> list[Path]:
     """Every .lean under content/, EXCLUDING .lake (Mathlib + package source)."""
     return sorted(
-        p for p in (ROOT / "content").rglob("*.lean") if ".lake" not in p.parts
+        p for p in (ROOT / "folio").rglob("*.lean") if ".lake" not in p.parts
     )
 
 
@@ -120,7 +120,7 @@ def scan() -> tuple[list[tuple], dict]:
 
     producers: dict[str, list[Path]] = {}
     for p in (ROOT / "computations").rglob("*.py"):
-        if "_deprecated" in p.parts:
+        if ("_deprecated" in p.parts or "fsh-guts" in p.parts):
             continue
         producers.setdefault(p.stem, []).append(p)
 

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1705.01853v2/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1705.01853v2/blocks/prose-sec-004",
   "kind": "prose",
-  "title": "Electroweak Symmetry Breaking 12",
-  "pageStart": 2,
-  "pageEnd": 2,
-  "text": "../sections/sec-004-32-electroweak-symmetry-breaking-12.md",
-  "derivedFrom": "library/arxiv-1705.01853v2/manifest",
-  "sourceDocument": "library/arxiv-1705.01853v2/manifest",
+  "title": "Electroweak Symmetry Breaking",
+  "pageStart": 13,
+  "pageEnd": 15,
+  "text": "../sections/sec-004-32-electroweak-symmetry-breaking.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1705.01853v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1705.01853v2",
   "provenance": "ingested"
 }

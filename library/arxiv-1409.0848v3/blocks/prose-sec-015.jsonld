@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1409.0848v3/blocks/prose-sec-015",
+  "kind": "prose",
+  "title": "Non-abelian Poincaré duality",
+  "pageStart": 40,
+  "pageEnd": 42,
+  "text": "../sections/sec-015-34-non-abelian-poincaré-duality.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1409.0848v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1409.0848v3",
+  "provenance": "ingested"
+}

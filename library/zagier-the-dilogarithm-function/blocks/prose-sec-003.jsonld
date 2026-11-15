@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/zagier-the-dilogarithm-function/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/zagier-the-dilogarithm-function/blocks/prose-sec-003",
   "kind": "prose",
-  "title": "Volumes of hyperbolic 3-manifolds... ........................... 1 3",
-  "pageStart": 1,
-  "pageEnd": 1,
-  "text": "../sections/sec-003-4-volumes-of-hyperbolic-3-manifolds-1-3.md",
-  "derivedFrom": "library/zagier-the-dilogarithm-function/manifest",
-  "sourceDocument": "library/zagier-the-dilogarithm-function/manifest",
+  "title": ". . . and values of Dedekind zeta functions",
+  "pageStart": 14,
+  "pageEnd": 18,
+  "text": "../sections/sec-003-5-and-values-of-dedekind-zeta-functions.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/zagier-the-dilogarithm-function",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/zagier-the-dilogarithm-function",
   "provenance": "ingested"
 }

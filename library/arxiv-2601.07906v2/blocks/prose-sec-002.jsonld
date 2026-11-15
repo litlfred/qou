@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2601.07906v2/blocks/prose-sec-002",
+  "kind": "prose",
+  "title": "Kinematic constraints",
+  "pageStart": 11,
+  "pageEnd": 13,
+  "text": "../sections/sec-002-kinematic-constraints.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2601.07906v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2601.07906v2",
+  "provenance": "ingested"
+}

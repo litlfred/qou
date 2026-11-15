@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2407.04744v2/blocks/prose-sec-015",
+  "kind": "prose",
+  "title": "Conclusions",
+  "pageStart": 19,
+  "pageEnd": 20,
+  "text": "../sections/sec-015-conclusions.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2407.04744v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2407.04744v2",
+  "provenance": "ingested"
+}

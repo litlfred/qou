@@ -183,12 +183,13 @@
   ],
   "checks_passed": 7,
   "checks_total": 7,
-  "computedAt": "2026-09-07T11:21:28.582729+00:00",
+  "computedAt": "2026-10-13T15:17:56.220917+00:00",
   "dps": 50,
   "identity": "R_lambda = sum_i F(beta_i) - sum_{i<j} eps_(beta_i-beta_j) - F(n); H = sum_i beta_i(beta_i+1)/2 - sum_{i<j}(beta_i-beta_j); n = sum_i beta_i - l(l-1)/2",
   "pair_deficit_C_minus_A": "2.568027994359277855909882",
   "pair_deficit_pct_of_C": "41.611719",
   "probe": "rev_beta_coordinate_identity_probe",
+  "q0Anchor": "proton",
   "q0_anchor": "physical_proton",
   "staircase_scaling": [
     {

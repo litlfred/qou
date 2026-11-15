@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0902.0350v1/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Biconnected graphs",
+  "pageStart": 22,
+  "pageEnd": 35,
+  "contains": [
+    "library/arxiv-0902.0350v1/blocks/prose-sec-009",
+    "library/arxiv-0902.0350v1/blocks/thm-sec-009-01",
+    "library/arxiv-0902.0350v1/blocks/lem-sec-009-02",
+    "library/arxiv-0902.0350v1/blocks/lem-sec-009-03",
+    "library/arxiv-0902.0350v1/blocks/lem-sec-009-04",
+    "library/arxiv-0902.0350v1/blocks/remark-sec-009-05",
+    "library/arxiv-0902.0350v1/blocks/lem-sec-009-06",
+    "library/arxiv-0902.0350v1/blocks/lem-sec-009-07",
+    "library/arxiv-0902.0350v1/blocks/lem-sec-009-08",
+    "library/arxiv-0902.0350v1/blocks/lem-sec-009-09",
+    "library/arxiv-0902.0350v1/blocks/lem-sec-009-10",
+    "library/arxiv-0902.0350v1/blocks/lem-sec-009-11",
+    "library/arxiv-0902.0350v1/blocks/lem-sec-009-12",
+    "library/arxiv-0902.0350v1/blocks/lem-sec-009-13"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0902.0350v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0902.0350v1",
+  "provenance": "ingested"
+}

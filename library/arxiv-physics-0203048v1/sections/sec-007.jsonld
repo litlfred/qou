@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-physics-0203048v1/sections/sec-007",
   "@type": [
     "doco:Section"
   ],
-  "title": "Conclusions",
-  "pageStart": 11,
-  "pageEnd": 11,
+  "title": "Equivalence of the link integrals for disjunct flux tubes",
+  "pageStart": 13,
+  "pageEnd": 14,
   "contains": [
     "library/arxiv-physics-0203048v1/blocks/prose-sec-007"
   ],
-  "derivedFrom": "library/arxiv-physics-0203048v1/manifest",
-  "sourceDocument": "library/arxiv-physics-0203048v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-physics-0203048v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-physics-0203048v1",
   "provenance": "ingested"
 }

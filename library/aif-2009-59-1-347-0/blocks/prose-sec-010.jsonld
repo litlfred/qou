@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/aif-2009-59-1-347-0/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/aif-2009-59-1-347-0/blocks/prose-sec-010",
   "kind": "prose",
   "title": "Part 2. Summation of divergent q-series and confluence: the case q>1",
   "pageStart": 28,
   "pageEnd": 29,
   "text": "../sections/sec-010-part-2-summation-of-divergent-q-series-and-confl.md",
-  "derivedFrom": "library/aif-2009-59-1-347-0/manifest",
-  "sourceDocument": "library/aif-2009-59-1-347-0/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/aif-2009-59-1-347-0",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/aif-2009-59-1-347-0",
   "provenance": "ingested"
 }

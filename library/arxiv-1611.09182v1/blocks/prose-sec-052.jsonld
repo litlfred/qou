@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1611.09182v1/blocks/prose-sec-052",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1611.09182v1/blocks/prose-sec-052",
   "kind": "prose",
   "title": "Introduction",
   "pageStart": 79,
   "pageEnd": 84,
   "text": "../sections/sec-052-91-introduction.md",
-  "derivedFrom": "library/arxiv-1611.09182v1/manifest",
-  "sourceDocument": "library/arxiv-1611.09182v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1611.09182v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1611.09182v1",
   "provenance": "ingested"
 }

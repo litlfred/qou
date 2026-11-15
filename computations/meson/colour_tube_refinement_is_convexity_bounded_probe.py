@@ -84,7 +84,7 @@ mp.mp.dps = max(mp.mp.dps, 40)
 
 HERE = pathlib.Path(__file__).resolve().parent
 FRONTS = HERE / "two-remaining-fronts.witness.json"
-BLOCK = (HERE.parent.parent / "content" / "quantum-observable-universe" /
+BLOCK = (HERE.parent.parent / "folio" / "quantum-observable-universe" /
          "brings-surface" / "inter-nucleon-channel-color-tube.md")
 
 

@@ -1,298 +1,157 @@
 ---
 doc_id: arxiv-math-0203003v2
-doc_title: "On the quantum Kazhdan-Lusztig functor Pavel I. Etingof Adriano A. Moura etingof@math.mit.edu adrianoam@ime.unicamp.br Introduction One of the most exciting developments in represe"
+doc_title: "arXiv:math/0203003v2 [math.QA] 24 Apr 2002"
 section_id: sec-002-2-exchange-representations
 section_title: "Exchange Representations"
 section_number: 2
 pages: 4-8
 source_pdf: 0203003v2.pdf
 source_sha256: 7579ae76959396b8
-doc_brief: "On the quantum Kazhdan-Lusztig functor Pavel I. Etingof Adriano A. Moura etingof@math.mit.edu adrianoam@ime.unicamp.br Introduction One of the most exciting developments in representation the ory in t"
+toc_source: inferred
+text_source: latex
+latex_prose_ratio: 0.974
+latex_coverage_ratio: 0.965
 ---
-Let g be a ﬁnite dimensional simple Lie algebra, and ˆg the corresponding aﬃne Lie algebra. Let
-q ∈ C∗, |q| ⁄= 1, and let Uq(ˆg) be the associated quantum aﬃne algebra (we will use the deﬁn ition
-given in [EFK98]). Let Repf(Uq(ˆg)) be the category of ﬁnite dimensional (type 1) representat ions
-of Uq(ˆg). For any V ∈ Repf(Uq(ˆg)) and z ∈ C∗ we can consider the shifted representation V (z)
-where all the Chevalley generators act as before except for e0 and f0 which now act by ze0 and
-z−1f0 respectively.
+Let $\mathfrak{g}$ be a finite dimensional simple Lie algebra, and $\widehat{\mathfrak{g}}$ the corresponding affine Lie algebra. Let $q\in {\mathbb C}^*,|q|\ne 1$, and let $U_q(\widehat{\mathfrak{g}})$ be the associated quantum affine algebra (we will use the definition given in [@EFK98]). Let $\text{\bf Rep}_{\text{f}}(U_q(\widehat{\mathfrak{g}}))$ be the category of finite dimensional (type 1) representations of $U_q(\widehat{\mathfrak{g}})$. For any $V \in \text{\bf Rep}_{\text{f}}(U_q(\widehat{\mathfrak{g}}))$ and $z\in \text{$\mathbb{C}$}^*$ we can consider the shifted representation $V(z)$ where all the Chevalley generators act as before except for $e_0$ and $f_0$ which now act by $ze_0$ and $z^{-1}f_0$ respectively.
+
 We will need the following theorem.
-Theorem 2.1. (Kazhdan-Soibelman, [KS95], Section 5) Let V,W ∈ Repf(Uq(ˆg)), and RV W (z)
-be the series obtained by evaluating the universal R-matrix in V (z) ⊗W . Then RV W (z) is an
-analytic function near zero, that extends meromorphically to C.
-We will give a new proof of this result (a bit simpler than the o ne in [KS95]) in the appendix.
-Now let h denote a Cartan subalgebra of g, and ˆh = h ⊕ C the corresponding Cartan subalegbra
-in ˆg. We denote the elements of ˆh∗ by ˆλ = (λ,k ). Then we can deﬁne the fusion matrix
-JV,W (u, ˆλ) : V (e−2πiu ) ⊗W →V (e−2πiu ) ⊗W,
-which is a formal power series in e2πiu with coeﬃcients being End( V ⊗W )-valued rational functions
-of q(ˆλ,α i), where α i are the simple roots. (see [ES98] and also [EFK98]). Namely, let Mˆλ be the
-Verma module over Uq(ˆg) with highest weight ˆλ, and let xλ be its highest weight vector. Let v ∈V
-be a homogeneous vector, and Φ v
-ˆλ (u) : Mˆλ →Mˆλ −weight(v) ˆ⊗V (z) be the intertwining operator such
-that the matrix coeﬃcient ( x∗
-ˆλ −weight(v), Φ v
-ˆλ (z)xλ ) equals v (here x∗
-ˆµ is the lowest weight vector of
-M ∗
-ˆµ ). Then for any homogeneous vectors v ∈V , w ∈W ,
-JV,W (u, ˆλ) := (x∗
-ˆλ −weight(v)−weight(w), (Φ v
-ˆλ −weight(w)(e−2πiu ) ⊗ 1)Φ w
-ˆλ (1)xλ ).
-Let m be the ratio of the squared lengths of long and short root s of g (m = 1, 2 or 3), and h∨
-be the dual Coxeter number of g.
-Proposition 2.2. The coeﬃcients of the series JV,W (u, ˆλ) have an expansion into a power series
-in p :=q−2m(k+h∨ ), and the sequence of these coeﬃcients tends to 0 in the p-adic norm.
-Proof. This follows from the ABRR equation for the fusion matrix [ES 99] (which in our case is
-equivalent the qKZ equation of Frenkel and Reshetikhin [FR9 2],[EFK98]).
-Proposition 2.2 implies that one may consider the fusion ope ratorJV,W (ˆλ) := JV,W (0, ˆλ ), which
-is a power series in p.
-Proposition 2.3. The series JV,W (ˆλ) is convergent when |p| << 1, and the sum of this series
-extends to a meromorphic function in the region {(λ,k ) : |p|< 1}.
-Proof. This follows from the qKZ equation [FR92],[EFK98] and Theor em 2.1.
-Now deﬁne the exchange matrix with spectral parameter
-RV,W (u, ˆλ) = JV,W (u, ˆλ)−1R21
-W,V (e2πiu )J 21
-W,V (−u, ˆλ).
-4
-It follows by the arguments sketched above that both JV,W (u, ˆλ) and RV,W (u, ˆλ) are meromorphic
-functions on C × U, where the open set U ⊂ ˆh∗ is deﬁned by the condition |q−2m(k+h∨ )| < 1.
-Moreover, these arguments actually show that the divisor of singularities of these functions is a
-union of hyperplanes of the form u −bk =c, <x,λ> −bk =c, where b,c ∈ C,x ∈ h.
-Example 2.1. Let g = sln. When V = Cn, the formula for RV,V was obtained in [M01].
-Theorem 2.4.
-1. [ES99] The fusion matrix satisﬁes the dynamical twist equ ation
-J 12, 3
-V ⊗W,U (ˆλ)J 12
-V,W (ˆλ −h(3)) = J 1, 23
-V,W ⊗U (ˆλ)J 23
-W,U (ˆλ) (2.1)
-2. [ES98] For any three ﬁnite dimensional representations V1,V 2,V 3 ofUq(ˆg) the exchange matrix
-satisﬁes the quantum dynamical Yang-Baxter equation
-R12
-V1,V 2(u1 −u2, ˆλ −h(3))R13
-V1,V 3(u1 −u3, ˆλ)R23
-V2,V 3(u2 −u3, ˆλ −h(1))
-=R23
-V2,V 3(u2 −u3, ˆλ)R13
-V1,V 3(u1 −u3, ˆλ −h(2))R12
-V1,V 2(u1 −u2, ˆλ). (2.2)
-In particular, for any V ∈ Repf(Uq(ˆg)) the function RV,V (u, ˆλ) is a quantum dynamical
-R-matrix with spectral parameter and step 1.
-Remark: Strictly speaking, the last statement of the theorem contai ns an abuse of terminology,
-since RV,V is a meromorphic function not on C × ˆh∗, but on its open subset C × U. In this paper,
-we will ignore this terminological problem.
-Let V be a ﬁnite dimensional representation of Uq(ˆg) and deﬁne RV = RV,V . It follows from
-theorem 2.4 that for any W ∈ Repf(Uq(ˆg)), the pair ( W,R V,W (u, ˆλ)) is a representation of RV . It
-is called the exchange representation of RV associated to W .
-Now let us explain the main construction of this paper. Let V ∈ Repf(Uq(ˆg)). Denote by M
-the ﬁeld of meromorphic functions on U and let MV ⊂ M be the subﬁeld of functions periodic
-under the weights of V . Set C(V ) = Repf(Uq(ˆg)) ⊗CMV . It is easy to see then that the assignment
-W → (W,R V,W ) provides an exact, faithful functor F V : C(V ) → Repf(RV ).
-One of our main results is the following theorem, which shows that for a nontrivial V , the
-category C(V ) (which is obtained from Repf(Uq(ˆg)) by extension of scalars) is a full subcategory
-in Repf(RV ).
-Theorem 2.5. The functor F V : C(V ) → Repf(RV ) is a tensor functor. Furthermore, if V is
-nontrivial, then this functor is fully faithful.
-Proof. We start with the following lemma.
-Lemma 2.6.
-R12
-V,W (u, ˆλ −h(3))R13
-V,U (u, ˆλ) = J 23
-W,U (ˆλ)−1R1, 23
-V,W ⊗U (u, ˆλ)J 23
-W,U (ˆλ −h(1)) (2.3)
-Proof. To shorten the notation we will write V [u] instead of V (e−2πiu ). Let R21
-W,V [u] = R21|W ⊗V [u]
-5
-(analogously for other pairs of indices). Then
-l.h.s. =J 12
-V,W (u, ˆλ −h(3))−1R21
-W,V [u]J 21
-W,V (−u, ˆλ −h(3))J 13
-V,U (u, ˆλ)−1R31
-U,V [u]J 31
-U,V (−u, ˆλ) =
-J 12
-V [u],W (ˆλ −h(3))−1R21
-W,V [u]
-(
-J 21
-W,V [u](ˆλ −h(3))J 13
-V [u],U (ˆλ)−1
-)
-R31
-U,V [u]J 31
-U,V [u](ˆλ)
-(2.1)
-=
-J 12
-V [u],W (ˆλ −h(3))−1R21
-W,V [u]
-(
-J 21, 3
-W ⊗V [u],U (ˆλ)−1J 2, 13
-W,V [u]⊗U (ˆλ)
-)
-R31
-U,V [u]J 31
-U,V [u](ˆλ) =
-(
-J 12
-V [u],W (ˆλ −h(3))−1J 12, 3
-V [u]⊗W,U (ˆλ)−1
-)
-R21
-W,V [u]R31
-U,V [u]
-(
-J 2, 31
-W,U ⊗V [u](ˆλ)J 31
-U,V [u](ˆλ)
-) (2.1)
-=
-(
-J 23
-W,U (ˆλ)−1J 1, 23
-V [u],W ⊗U (ˆλ)−1
-)
-R21
-W,V [u]R31
-U,V [u]
-(
-J 23, 1
-W ⊗U,V [u](ˆλ)J 23
-W,U (ˆλ −h(1))
-)
-= r.h.s.
-The fourth equality is clear while the last follows from the h exagon axiom for the R-matrix.
-Remark: A more general version of this lemma in the non-aﬃne situatio n is used in [EV00].
-Now let us prove that F is a tensor functor. To do this, deﬁne the tensor structure
-F V (W ) ⊙ F V (U ) → F V (W ⊗U ) to be given by
-JW,U (ˆλ) : (W,R V,W ) ⊙ (U,R V,U ) → (W ⊗U,R V,W ⊗U )
-It follows from Lemma 2.6 that JW,U is a morphism (in fact an isomorphism) and from (2.1) that
-it satisﬁes the properties of a tensor structure on a functor , as required.
-The rest of the section is dedicated to the proof of the full fa ithfulness of F in the case when
-V is nontrivial.
-Following the conventions of [EFK98], set L+
-W (z) := R21
-W,V (z).
-Lemma 2.7. One has Hom Uq(ˆg)(W,U ) = {A ∈ HomUq(ˆh)(W,U ); L+
-U (z)−1(1 ⊗A)L+
-W (z) is of zero
-weight in both components }.
-Proof. It is clear that the ﬁrst space is a subspace in the second one. For the converse it is enough to
-prove that, if A :W →U is such that L+
-U (z)−1(1 ⊗A)L+
-W (z) is of zero weight in both components,
-then A ∈ HomUq(ˆg)(W,U ). To do this, recall that the universal R-matrix on modules w ith central
-charge 0 can be written as
-R =q
-∑ xi⊗xi
-(
-1 +
-∑
-i≥0
-(qi −q−1
-i )ei ⊗fi +...
-)
-where xi form an orthonormal basis for h and the remaining terms are in Uq(ˆn+) ⊗Uq(ˆn−) and
-correspond to other weights. This means that for nontrivial V , the condition that the expression
-L+
-U (z)−1(1 ⊗A)L+
-W (z) is of zero weight in both components implies that A is of zero weight, and
-fi|V ⊗ [ei,A ] = 0 ∀i ≥ 0 (one just needs to look at the terms corresponding to simple roots in the
-expression of the universal R-matrix). It follows that [ ei,A ] = 0. Hence A is an interwiner over
-Uq(ˆb+). But it is proved in Proposition 4.1.3 of [KS95] that the ima ges of Uq(ˆb+) and Uq(ˆg) in
-the endomorphism algebra of any ﬁnite dimensional Uq(ˆg)-module are the same. Hence, A is an
-intertwiner over the whole Uq(ˆg), as desired.
-Let M(W,U ) := Hom Uq(ˆg)(W,U ) ⊗C MV be the space of morphisms between W and U in
-the category C(V ), and let ~M(W,U ) := M(W,U ) ⊗MV M . Lemma 2.7 implies that ~M(W,U ) is
-the space of solutions over M of the system of linear algebraic equations in ﬁnitely many v ari-
-ables (entries of A), expressing the condition that L+
-U (z)−1(1 ⊗A)L+
-W (z) is of zero weight in both
-components.
-6
-Now let N (W,U ) = Hom Repf(RV )(F (W ), F (U )). Below we will show that the space ~N (W,U ) :=
-N (W,U ) ⊗MV M is contained in the space of solutions over M of a deformation of this system of
-linear algebraic equations. This will imply that dim N (W,U ) ≤ dimM(W,U ), which immediately
-implies that the injective map M(W,U ) → N (W,U ) deﬁned by F is actually an isomorphism, i.e.,
-F is fully faithful.
+
+::: thm
+[]{#mero label="mero"} (Kazhdan-Soibelman, [@KaSo95], Section 5) Let $V,W\in\text{\bf Rep}_{\text{f}}(U_q(\widehat{\mathfrak{g}}))$, and $\mathbf R_{VW}(z)$ be the series obtained by evaluating the universal R-matrix in $V(z)\otimes W$. Then $\mathbf R_{VW}(z)$ is an analytic function near zero, that extends meromorphically to $\text{$\mathbb{C}$}$.
+:::
+
+We will give a new proof of this result (a bit simpler than the one in [@KaSo95]) in the appendix.
+
+Now let $\mathfrak{h}$ denote a Cartan subalgebra of $\mathfrak{g}$, and $\widehat{\mathfrak{h}} = \mathfrak{h} \oplus \text{$\mathbb{C}$}$ the corresponding Cartan subalegbra in $\widehat{\mathfrak{g}}$. We denote the elements of $\widehat{\mathfrak{h}}^*$ by $\hat{\lambda} = (\lambda,k)$. Then we can define the fusion matrix $$J_{V,W}(u,\hat{\lambda}) : V(e^{-2\pi iu})\otimes W \to 
+V(e^{-2\pi iu})\otimes W,$$ which is a formal power series in $e^{2\pi iu}$ with coefficients being ${\rm End}(V\otimes W)$-valued rational functions of $q^{(\hat\lambda,\alpha_i)}$, where $\alpha_i$ are the simple roots. (see [@EtSc98b] and also [@EFK98]). Namely, let $M_{\hat\lambda}$ be the Verma module over $U_q(\widehat{\mathfrak{g}})$ with highest weight $\hat\lambda$, and let $x_\lambda$ be its highest weight vector. Let $v\in V$ be a homogeneous vector, and $\Phi_{\hat\lambda}^v(u):
+M_{\hat\lambda}\to M_{\hat\lambda-{\rm weight}(v)}\hat\otimes V(z)$ be the intertwining operator such that the matrix coefficient $(x^*_{\hat\lambda-{\rm
+    weight}(v)},\Phi_{\hat\lambda}^v(z)x_\lambda)$ equals $v$ (here $x_{\hat\mu}^*$ is the lowest weight vector of $M_{\hat\mu}^*$). Then for any homogeneous vectors $v\in V$, $w\in W$, $$J_{V,W}(u,\hat\lambda):=(x^*_{\hat\lambda-{\rm
+    weight}(v)-{\rm weight}(w)},(\Phi^v_{\hat\lambda-{\rm
+    weight}(w)}(e^{-2\pi iu})\otimes
+1)\Phi^w_{\hat\lambda}(1)x_\lambda).$$
+
+Let ${\rm m}$ be the ratio of the squared lengths of long and short roots of $\mathfrak{g}$ (${\rm m}=1,2$ or $3$), and $h^\vee$ be the dual Coxeter number of $\mathfrak{g}$.
+
+::: prop
+[]{#p-adic label="p-adic"} The coefficients of the series $J_{V,W}(u,\hat\lambda)$ have an expansion into a power series in $p:=q^{-2{\rm m}(k+h^\vee)}$, and the sequence of these coefficients tends to $0$ in the p-adic norm.
+:::
+
+::: proof
+*Proof.* This follows from the ABRR equation for the fusion matrix [@EtSc99] (which in our case is equivalent the qKZ equation of Frenkel and Reshetikhin [@FrRe92],[@EFK98]). ◻
+:::
+
+Proposition [\[p-adic\]](#p-adic){reference-type="ref" reference="p-adic"} implies that one may consider the fusion operator $J_{V,W}(\hat\lambda):=J_{V,W}(0,\hat\lambda)$, which is a power series in $p$.
+
+::: prop
+The series $J_{V,W}(\hat\lambda)$ is convergent when $|p|<<1$, and the sum of this series extends to a meromorphic function in the region $\lbrace{(\lambda,k):
+|p|<1\rbrace}$.
+:::
+
+::: proof
+*Proof.* This follows from the qKZ equation [@FrRe92],[@EFK98] and Theorem [\[mero\]](#mero){reference-type="ref" reference="mero"}. ◻
+:::
+
+Now define the exchange matrix with spectral parameter $$R_{V,W}(u,\hat{\lambda}) = J_{V,W}(u,\hat{\lambda})^{-1} 
+\mathbf R_{W,V}^{21}(e^{2\pi i u}) J^{21}_{W,V}(-u,\hat{\lambda}).$$ It follows by the arguments sketched above that both $J_{V,W}(u,\hat\lambda)$ and $R_{V,W}(u,\hat\lambda)$ are meromorphic functions on ${\mathbb C}\times \mathfrak{U}$, where the open set $\mathfrak{U}\subset \widehat{\mathfrak{h}}^*$ is defined by the condition $|q^{-2{\rm m}(k+h^\vee)}|<1$. Moreover, these arguments actually show that the divisor of singularities of these functions is a union of hyperplanes of the form $u-bk=c$, $<x,\lambda>-bk=c$, where $b,c\in \text{$\mathbb{C}$}, x\in \mathfrak{h}$.
+
+::: ex
+[]{#ex:sln label="ex:sln"} Let $\mathfrak{g} = \mathfrak{sl}_n$. When $V = \text{$\mathbb{C}$}^n$, the formula for $R_{V,V}$ was obtained in [@Mou01].
+:::
+
+::: thm
+[]{#thm:excisRm label="thm:excisRm"}
+
+1.  [@EtSc99] The fusion matrix satisfies the dynamical twist equation $$\label{eq:dtwist}
+    J_{V\otimes W,U}^{12,3}(\hat\lambda) J_{V,W}^{12}(\hat\lambda - h^{(3)}) = J_{V,W\otimes U}^{1,23}(\hat\lambda)J_{W,U}^{23}(\hat\lambda)$$
+
+2.  [@EtSc98b] For any three finite dimensional representations $V_1,V_2,V_3$ of $U_q(\widehat{\mathfrak{g}})$ the exchange matrix satisfies the quantum dynamical Yang-Baxter equation $$\begin{aligned}
+    \notag
+    R_{V_1,V_2}^{12}(u_1-u_2,\hat\lambda- h^{(3)}) R_{V_1,V_3}^{13}(u_1-u_3,\hat\lambda) 
+    R_{V_2,V_3}^{23}(u_2-u_3,\hat\lambda- h^{(1)})\\ \label{eq:qdybs1}
+    = R_{V_2,V_3}^{23}(u_2-u_3,\hat\lambda) R_{V_1,V_3}^{13}(u_1-u_3,\hat\lambda- h^{(2)}) 
+    R_{V_1,V_2}^{12}(u_1-u_2,\hat\lambda).
+    \end{aligned}$$ In particular, for any $V\in \text{\bf Rep}_{\text{f}}(U_q(\widehat{\mathfrak{g}}))$ the function $R_{V,V}(u,\hat\lambda)$ is a quantum dynamical R-matrix with spectral parameter and step 1.
+:::
+
+Strictly speaking, the last statement of the theorem contains an abuse of terminology, since $R_{V,V}$ is a meromorphic function not on $\text{$\mathbb{C}$}\times \widehat{\mathfrak{h}}^*$, but on its open subset $\text{$\mathbb{C}$}\times \mathfrak{U}$. In this paper, we will ignore this terminological problem.
+
+Let $V$ be a finite dimensional representation of $U_q(\widehat{\mathfrak{g}})$ and define $R_V = R_{V,V}$. It follows from theorem [\[thm:excisRm\]](#thm:excisRm){reference-type="ref" reference="thm:excisRm"} that for any $W \in \text{\bf Rep}_{\text{f}}(U_q(\widehat{\mathfrak{g}}))$, the pair $(W,R_{V,W}(u,\hat{\lambda}))$ is a representation of $R_{V}$. It is called the **exchange representation** of $R_V$ associated to $W$.
+
+Now let us explain the main construction of this paper. Let $V \in \text{\bf Rep}_{\text{f}}(U_q(\widehat{\mathfrak{g}}))$. Denote by $M$ the field of meromorphic functions on $\mathfrak{U}$ and let $M_V \subset M$ be the subfield of functions periodic under the weights of $V$. Set $\text{$\mathcal{C}$}(V) = \text{\bf Rep}_{\text{f}}(U_q(\widehat{\mathfrak{g}}))\otimes_{\text{$\mathbb{C}$}} M_V$. It is easy to see then that the assignment $W\to (W,R_{V,W})$ provides an exact, faithful functor $\text{$\mathcal{F}$}_V : \text{$\mathcal{C}$}(V) \to \text{\bf Rep}_{\text{f}}(R_V)$.
+
+One of our main results is the following theorem, which shows that for a nontrivial $V$, the category ${\mathcal C}(V)$ (which is obtained from $\text{\bf Rep}_{\text{f}}(U_q(\widehat{\mathfrak{g}}))$ by extension of scalars) is a full subcategory in $\text{\bf Rep}_{\text{f}}(R_{V})$.
+
+::: thm
+[]{#main label="main"} The functor $\text{$\mathcal{F}$}_{V} : \text{$\mathcal{C}$}(V) \to \text{\bf Rep}_{\text{f}}(R_{V})$ is a tensor functor. Furthermore, if $V$ is nontrivial, then this functor is fully faithful.
+:::
+
+::: proof
+*Proof.* We start with the following lemma.
+
+::: lem
+[]{#lem:tensoriso label="lem:tensoriso"} $$R_{V,W}^{12}(u,\hat\lambda - h^{(3)}) R_{V,U}^{13}(u,\hat\lambda) = J_{W,U}^{23}(\hat\lambda)^{-1}R_{V,W\otimes U}^{1,23}(u,\hat\lambda) J_{W,U}^{23}(\hat\lambda - h^{(1)})$$
+:::
+
+::: proof
+*Proof.* To shorten the notation we will write $V[u]$ instead of $V(e^{-2\pi iu})$. Let $\mathbf R_{W,V}^{21}[u] = \text{$\mathcal{R}$}^{21}|_{W\otimes V[u]}$ (analogously for other pairs of indices). Then $$\begin{aligned}
+\text{l.h.s.} = & J_{V,W}^{12}(u,\hat\lambda - h^{(3)})^{-1}\mathbf R^{21}_{W,V}[u] J_{W,V}^{21}(-u,\hat\lambda-h^{(3)}) J_{V,U}^{13}(u,\hat\lambda)^{-1}\mathbf R^{31}_{U,V}[u] J^{31}_{U,V}(-u,\hat\lambda)  = \\
+& J_{V[u],W}^{12}(\hat\lambda - h^{(3)})^{-1}\mathbf R^{21}_{W,V}[u] \Big(J_{W,V[u]}^{21}(\hat\lambda-h^{(3)}) J_{V[u],U}^{13}(\hat\lambda)^{-1}\Big)\mathbf R^{31}_{U,V}[u] J^{31}_{U,V[u]}(\hat\lambda)  \stackrel{\eqref{eq:dtwist}}{=} \\ 
+& J_{V[u],W}^{12}(\hat\lambda - h^{(3)})^{-1}\mathbf R^{21}_{W,V}[u] \Big(J_{W\otimes V[u],U}^{21,3}(\hat\lambda)^{-1} J_{W,V[u]\otimes U}^{2,13}(\hat\lambda)\Big)\mathbf R^{31}_{U,V}[u] J^{31}_{U,V[u]}(\hat\lambda) =\\  
+& \Big(J_{V[u],W}^{12}(\hat\lambda - h^{(3)})^{-1} J_{V[u]\otimes W,U}^{12,3}(\hat\lambda)^{-1}\Big)\mathbf R^{21}_{W,V}[u]\mathbf R^{31}_{U,V}[u]\Big( J_{W,U\otimes V[u]}^{2,31}(\hat\lambda)  J^{31}_{U,V[u]}(\hat\lambda)\Big) \stackrel{\eqref{eq:dtwist}}{=} \\
+& \Big(J_{W,U}^{23}(\hat\lambda)^{-1} J_{V[u],W\otimes U}^{1,23}(\hat\lambda)^{-1}\Big) \mathbf R^{21}_{W,V}[u]\mathbf R^{31}_{U,V}[u]\Big( J_{W\otimes U,V[u]}^{23,1}(\hat\lambda)  J^{23}_{W,U}(\hat\lambda-h^{(1)})\Big) = \text{r.h.s.} 
+\end{aligned}$$ The fourth equality is clear while the last follows from the hexagon axiom for the R-matrix. ◻
+:::
+
+A more general version of this lemma in the non-affine situation is used in [@EtVa00].
+
+Now let us prove that $\text{$\mathcal{F}$}$ is a tensor functor. To do this, define the tensor structure $\text{$\mathcal{F}$}_V(W)\odot \text{$\mathcal{F}$}_V(U) \to \text{$\mathcal{F}$}_V(W\otimes U)$ to be given by $$J_{W,U}(\hat{\lambda}) : (W,R_{V,W})\odot (U,R_{V,U}) \to (W\otimes U,R_{V,W\otimes U})$$ It follows from Lemma [\[lem:tensoriso\]](#lem:tensoriso){reference-type="ref" reference="lem:tensoriso"} that $J_{W,U}$ is a morphism (in fact an isomorphism) and from [\[eq:dtwist\]](#eq:dtwist){reference-type="eqref" reference="eq:dtwist"} that it satisfies the properties of a tensor structure on a functor, as required.
+
+The rest of the section is dedicated to the proof of the full faithfulness of $\text{$\mathcal{F}$}$ in the case when $V$ is nontrivial.
+
+Following the conventions of [@EFK98], set $L_W^+(z):=\mathbf
+R_{W,V}^{21}(z)$.
+
+::: lem
+[]{#lem:M(W,U) label="lem:M(W,U)"} One has ${\rm Hom}_{U_q(\widehat{\mathfrak{g}})}(W,U) = \{ A\in \text{Hom}_{U_q(\widehat{\mathfrak{h}})}(W,U)$; $L^{+}_U(z)^{-1}(1\otimes A)L^{+}_W (z)$ is of zero weight in both components$\}$.
+:::
+
+::: proof
+*Proof.* It is clear that the first space is a subspace in the second one. For the converse it is enough to prove that, if $A:W \to U$ is such that $L^{+}_U(z)^{-1}(1\otimes A)L^{+}_W (z)$ is of zero weight in both components, then $A \in \text{Hom}_{U_q(\widehat{\mathfrak{g}})}(W,U)$. To do this, recall that the universal R-matrix on modules with central charge $0$ can be written as $$\text{$\mathcal{R}$} = q^{\sum x_i\otimes x_i}\big(1 + \sum_{i\geq 0} (q_i - q_i^{-1}) e_i\otimes f_i +\dots \big)$$ where $x_i$ form an orthonormal basis for $\mathfrak{h}$ and the remaining terms are in $U_q(\widehat{\mathfrak{n}}_+)\otimes U_q(\widehat{\mathfrak{n}}_-)$ and correspond to other weights. This means that for nontrivial $V$, the condition that the expression $L^{+}_U(z)^{-1}(1\otimes
+A)L^{+}_W (z)$ is of zero weight in both components implies that $A$ is of zero weight, and $f_i|_V\otimes[e_i,A] = 0 \,\forall\,i\ge 0$ (one just needs to look at the terms corresponding to simple roots in the expression of the universal R-matrix). It follows that $[e_i,A]=0$. Hence $A$ is an interwiner over $U_q(\widehat{\mathfrak{b}}_+)$. But it is proved in Proposition 4.1.3 of [@KaSo95] that the images of $U_q(\widehat{\mathfrak{b}}_+)$ and $U_q(\widehat{\mathfrak{g}})$ in the endomorphism algebra of any finite dimensional $U_q(\widehat{\mathfrak{g}})$-module are the same. Hence, $A$ is an intertwiner over the whole $U_q(\widehat{\mathfrak{g}})$, as desired. ◻
+:::
+
+Let $\text{$\mathcal{M}$}(W,U):={\rm Hom}_{U_q(\widehat{\mathfrak{g}})}(W,U)\otimes_{\text{$\mathbb{C}$}} M_V$ be the space of morphisms between $W$ and $U$ in the category $\text{$\mathcal{C}$}(V)$, and let $\widetilde{\text{$\mathcal{M}$}}(W,U):={\text{$\mathcal{M}$}}(W,U)\otimes_{M_V}M$. Lemma [\[lem:M(W,U)\]](#lem:M(W,U)){reference-type="ref" reference="lem:M(W,U)"} implies that $\widetilde{\text{$\mathcal{M}$}}(W,U)$ is the space of solutions over $M$ of the system of linear algebraic equations in finitely many variables (entries of $A$), expressing the condition that $L^{+}_U(z)^{-1}(1\otimes A)L^{+}_W (z)$ is of zero weight in both components.
+
+Now let ${\text{$\mathcal{N}$}}(W,U)={\rm Hom}_{\text{\bf Rep}_{\text{f}}(R_V)}({\text{$\mathcal{F}$}}(W),{\text{$\mathcal{F}$}}(U))$. Below we will show that the space $\widetilde{\text{$\mathcal{N}$}}(W,U):={\text{$\mathcal{N}$}}(W,U)\otimes_{M_V}M$ is contained in the space of solutions over $M$ of a **deformation** of this system of linear algebraic equations. This will imply that ${\rm dim}{\text{$\mathcal{N}$}}(W,U)\le {\rm dim}{\text{$\mathcal{M}$}}(W,U)$, which immediately implies that the injective map ${\text{$\mathcal{M}$}}(W,U)\to {\text{$\mathcal{N}$}}(W,U)$ defined by ${\text{$\mathcal{F}$}}$ is actually an isomorphism, i.e., ${\text{$\mathcal{F}$}}$ is fully faithful.
+
 To do this, we need the following lemma.
-Lemma 2.8. Let LW,L U be the exchange operators RV,W ,R V,U and ~M ′(W,U ) = {A(ˆλ) ∈
-HomUq(ˆh)(W,U ) ⊗CM ;LU (u, ˆλ)−1(1 ⊗A(ˆλ ))LW (u, ˆλ) is of zero weight in both components }. Then
-the natural map ξ : N (W,U ) ⊗MV M → ~M ′(W,U ) is injective.
-Proof. We need to show that any MV -linearly independent set {a1,...,a m} ⊂ N (W,U ) is also
-linearly independent over M . Assume it is false and take a counterexample with the smalle st
-length. We can assume that am =g1a1 + · · · +gm−1am−1 with gi ∈M but not all of them in MV .
-Then
-am(ˆλ −h(1)) = LU (u, ˆλ)−1(1 ⊗am(ˆλ))LW (u, ˆλ)
-=
-∑
-gi(ˆλ)LU (u, ˆλ)−1(1 ⊗ai(ˆλ))LW (u, ˆλ) =
-∑
-gi(ˆλ)ai(ˆλ −h(1))
-Let v ∈V be homogeneous of weight µ . Then, applying the last equality to v ⊗ Id, we have
-am(ˆλ −µ ) =
-∑
-gi(ˆλ)ai(ˆλ −µ ) ⇔ am(ˆλ) =
-∑
-gi(ˆλ +µ )ai(ˆλ)
-Hence, for some µ , ∑ (
-gi(ˆλ) −gi(ˆλ +µ )
-)
-ai(ˆλ) is a non-trivial (since not all gi are in MV ) vanishing
-linear combination of an even smaller length. Contradictio n.
-Now it remains to prove that LW (u, ˆλ) is a deformation of L+
-W (z), where z =e2πiu .
-Let κ =k +h∨ and p =q−2mκ . We will write k → ∞ to mean p → 0 keeping q ﬁxed.
-Lemma 2.9. Let JV,W (λ) be the fusion matrix corresponding to the the “ﬁnite dimens ional”
-quantum group Uq(g). Then lim k→∞JV,W (u, ˆλ) = JV,W (λ).
-Proof. Letv andw be homogeneous vectors in V and W respectively and consider the correlation
-function [EFK98] ψ (z, ˆλ) = z∆ JV,W (u, ˆλ)(v ⊗w) where ∆ depends on the weights of v and w and
-on ˆλ. It is easy to see that
-ψ (z, ˆλ) = z∆ ∑
-m≥0
-ψ m(ˆλ)zm
-and that ψ 0(ˆλ) = JV,W (λ)(v ⊗w). Furthermore, ψ satisﬁes the q-Knizhnik-Zamolodchikov equa-
-tions, from which we get
-ψ (pz, ˆλ) = R21
-W,V (pz)qΛ
-(2)ψ (z, ˆλ )
-where Λ depends only on λ and the weights of v,w (not on k). Writing R21
-W,V (z) = ∑
-j≥0 R21
-j zj we
-ﬁnd
-p∆ ∑
-m≥0
-ψ m(ˆλ)pmzm =
-( ∑
-j≥0
-R21
-j pjzj
-)
-qΛ
-(2)
-( ∑
-i≥0
-ψ i(ˆλ)zi
-)
-Actuallyp∆ is some constant c depending only on q,λ and the weights of v,w . We collect the term
-in zl in both sides to get
-(cpl − R21
-0 qΛ
-(2))ψ l =
-l∑
-m=1
-R21
-mpmqΛ
-(2)ψ l−m
-from where we conclude by induction that ψ l → 0 as k → ∞ for all l> 1, as stated.
-7
-Now assume that |q| < 1 and let λ → −∞ mean Re(λ,α i) → −∞ , where α i are the simple
-roots. Then, by [EV00], JV,W (λ) → 1 as λ → −∞, and we conclude that LW (u, ˆλ) → R21
-W,V (z) and,
-therefore, LW (u, ˆλ) is a deformation of L+
-W (z). One can proceed analogously for |q|> 1. Theorem
-2.5 is proved.
+
+::: lem
+[]{#lem:M'(W,U) label="lem:M'(W,U)"} Let $L_W, L_U$ be the exchange operators $R_{V,W}, R_{V,U}$ and $\widetilde{\text{$\mathcal{M}$}}\,'(W,U) = \{ A(\hat\lambda) \in \text{Hom}_{U_q(\widehat{\mathfrak{h}})}(W,U)\otimes_{\text{$\mathbb{C}$}}M; L_U(u,\hat\lambda)^{-1}(1\otimes A(\hat\lambda))L_W (u,\hat\lambda)$ is of zero weight in both components$\}$. Then the natural map $\xi:{\text{$\mathcal{N}$}}(W,U)\otimes_{M_V}M \to \widetilde{\text{$\mathcal{M}$}}\,'(W,U)$ is injective.
+:::
+
+::: proof
+*Proof.* We need to show that any $M_V$-linearly independent set $\{a_1, \dots, a_m\} \subset {\text{$\mathcal{N}$}}(W,U)$ is also linearly independent over $M$. Assume it is false and take a counterexample with the smallest length. We can assume that $a_m = g_1 a_1 + \dots + g_{m-1} a_{m-1}$ with $g_i \in M$ but not all of them in $M_V$. Then $$\begin{aligned}
+a_m(\hat\lambda - h^{(1)}) & = L_U(u,\hat\lambda)^{-1}(1\otimes a_m(\hat\lambda))L_W (u,\hat\lambda)\\ & = \sum g_i(\hat\lambda) L_U(u,\hat\lambda)^{-1}(1\otimes a_i(\hat\lambda))L_W (u,\hat\lambda) = \sum g_i(\hat\lambda) a_i(\hat\lambda -h^{(1)})
+\end{aligned}$$ Let $v \in V$ be homogeneous of weight $\mu$. Then, applying the last equality to $v\otimes {\rm Id}$, we have $$a_m(\hat\lambda-\mu) = \sum g_i(\hat\lambda)a_i(\hat\lambda -\mu) \quad\Leftrightarrow\quad a_m(\hat\lambda) = \sum g_i(\hat\lambda+\mu)a_i(\hat\lambda)$$ Hence, for some $\mu$, $\sum \big(g_i(\hat\lambda)-g_i(\hat\lambda+\mu)\big)a_i(\hat\lambda)$ is a non-trivial (since not all $g_i$ are in $M_V$) vanishing linear combination of an even smaller length. Contradiction. ◻
+:::
+
+Now it remains to prove that $L_W(u,\hat\lambda)$ is a deformation of $L_W^{+}(z)$, where $z=e^{2\pi iu}$.
+
+Let $\kappa = k+h^\vee{}$ and $p=q^{-2{\rm m}\kappa}$. We will write $k \to \infty$ to mean $p \to 0$ keeping $q$ fixed.
+
+::: lem
+[]{#lem:klimit label="lem:klimit"} Let $J_{V,W}(\lambda)$ be the fusion matrix corresponding to the the "finite dimensional" quantum group $U_q(\mathfrak{g})$. Then $\lim_{k\to \infty} J_{V,W}(u,\hat\lambda) = 
+J_{V,W}(\lambda)$.
+:::
+
+::: proof
+*Proof.* Let $v$ and $w$ be homogeneous vectors in $V$ and $W$ respectively and consider the correlation function [@EFK98] $\psi(z,\hat\lambda) = z^{\Delta}J_{V,W}(u,\hat\lambda)(v\otimes
+w)$ where $\Delta$ depends on the weights of $v$ and $w$ and on $\hat\lambda$. It is easy to see that $$\psi(z,\hat\lambda) = z^{\Delta}\sum_{m\geq 0} \psi_m(\hat\lambda)z^m$$ and that $\psi_0(\hat\lambda) = J_{V,W}(\lambda)(v\otimes w)$. Furthermore, $\psi$ satisfies the q-Knizhnik-Zamolodchikov equations, from which we get $$\psi(pz,\hat\lambda) = \mathbf R_{W,V}^{21}(pz) q_{(2)}^{\Lambda} \psi(z,\hat\lambda)$$ where $\Lambda$ depends only on $\lambda$ and the weights of $v,w$ (not on $k$). Writing $\mathbf R_{W,V}^{21}(z) = \sum_{j\geq 0} \mathbf R^{21}_j z^j$ we find $$p^{\Delta} \sum_{m\geq 0}\psi_m(\hat\lambda) p^m z^m = \Big(\sum_{j\geq 0} \mathbf R^{21}_j p^j z^j\Big) q^{\Lambda}_{(2)}\Big(\sum_{i\geq 0} \psi_i(\hat\lambda)z^i\Big)$$ Actually $p^{\Delta}$ is some constant $c$ depending only on $q,\lambda$ and the weights of $v,w$. We collect the term in $z^l$ in both sides to get $$(cp^l - \mathbf R_0^{21}q^{\Lambda}_{(2)}) \psi_l = \sum_{m=1}^l \mathbf R^{21}_m p^m q^{\Lambda}_{(2)} \psi_{l-m}$$ from where we conclude by induction that $\psi_l \to 0$ as $k \to \infty$ for all $l>1$, as stated. ◻
+:::
+
+Now assume that $|q|<1$ and let $\lambda \to -\infty$ mean ${\rm
+  Re}(\lambda,\alpha_i) \to -\infty$, where $\alpha_i$ are the simple roots. Then, by [@EtVa00], $J_{V,W}(\lambda) \to 1$ as $\lambda \to
+-\infty$, and we conclude that $L_W(u,\hat\lambda) \to
+\mathbf R_{W,V}^{21}(z)$ and, therefore, $L_W(u,\hat\lambda)$ is a deformation of $L_W^{+}(z)$. One can proceed analogously for $|q|>1$. Theorem [\[main\]](#main){reference-type="ref" reference="main"} is proved. ◻
+:::

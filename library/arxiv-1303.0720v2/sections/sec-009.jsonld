@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1303.0720v2/sections/sec-009",
   "@type": [
     "doco:Section"
   ],
-  "title": "The two polyanalytic Bergman metrics in the model case of the unit disk with constant",
-  "pageStart": 6,
+  "title": "Introductory comments",
+  "pageStart": 7,
   "pageEnd": 7,
   "contains": [
     "library/arxiv-1303.0720v2/blocks/prose-sec-009"
   ],
-  "derivedFrom": "library/arxiv-1303.0720v2/manifest",
-  "sourceDocument": "library/arxiv-1303.0720v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.0720v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.0720v2",
   "provenance": "ingested"
 }

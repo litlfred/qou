@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-beta-decay-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:beta-decay-interpretation",
+  "kind": "remark",
+  "title": "Beta decay universality, tritium example, and double beta decay",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-Q-value-transition"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-beta-decay-transfer-matrix",
+  "tags": [
+    "beta-decay",
+    "universality",
+    "tritium",
+    "double-beta",
+    "transfer-matrix",
+    "worked-example"
+  ],
+  "text": "beta-decay-interpretation.md",
+  "provenance": "authored"
+}

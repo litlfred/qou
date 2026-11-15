@@ -1,0 +1,124 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1508.01627v4",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "778e60219862e371fbb004d915345bdfff963fd1f8a0746784e1493af4efd48d",
+  "file": "1508.01627v4.pdf"
+ },
+ "provenance": {
+  "title": "REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN\u2013NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS",
+  "authors": null,
+  "arxiv": {
+   "id": "1508.01627",
+   "version": "4",
+   "primary_class": "math.RT",
+   "stamp_date": "25 Oct 2016"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 7,
+  "by_kind": {
+   "theorem": 4,
+   "lemma": 2,
+   "proposition": 1
+  },
+  "formalization_candidates": 7
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": "Let \u2113> 2 be a prime and G a \ufb01nite quasi-simple group of \u2113-rank at least 3. Then for any",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-2",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.1",
+   "name": null,
+   "statement": ") which may be of independent interest.",
+   "section_file": "sections/sec-001-22-regular-semisimple-elements.md",
+   "section_title": "Regular semisimple elements",
+   "pages": "2-2",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
+   "name": null,
+   "statement": "Let G be a \ufb01nite quasi-simple group of classical Lie type Bn, Cn, Dn or 2Dn with non-",
+   "section_file": "sections/sec-001-22-regular-semisimple-elements.md",
+   "section_title": "Regular semisimple elements",
+   "pages": "2-2",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3",
+   "name": null,
+   "statement": "Let G be a \ufb01nite simple group of classical Lie type Bn, Cn, Dn or 2Dn. Let \u2113> 2 be a",
+   "section_file": "sections/sec-001-22-regular-semisimple-elements.md",
+   "section_title": "Regular semisimple elements",
+   "pages": "2-2",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "7.1",
+   "name": null,
+   "statement": "Let G be a \ufb01nite simple group of classical Lie type Bn, Cn, Dn or 2Dn. Let \u2113> 2 be a",
+   "section_file": "sections/sec-017-7-an-application-to-small-1-pims.md",
+   "section_title": "An application to small 1-PIMs",
+   "pages": "18-22",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "1",
+   "name": null,
+   "statement": "Let G be a \ufb01nite group and p a prime.",
+   "section_file": "sections/sec-017-7-an-application-to-small-1-pims.md",
+   "section_title": "An application to small 1-PIMs",
+   "pages": "18-22",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2",
+   "name": null,
+   "statement": "Let G be a \ufb01nite simple group of Lie type in characteristic p. Then",
+   "section_file": "sections/sec-017-7-an-application-to-small-1-pims.md",
+   "section_title": "An application to small 1-PIMs",
+   "pages": "18-22",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

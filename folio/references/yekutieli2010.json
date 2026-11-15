@@ -1,0 +1,35 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "yekutieli2010",
+  "library": {
+    "docId": "arxiv-0801.0083v4",
+    "dir": "library/arxiv-0801.0083v4",
+    "pdf": "library/arxiv-0801.0083v4/0801.0083v4.pdf",
+    "stage": "candidates",
+    "pages": 36,
+    "sections": 7,
+    "arxiv": "0801.0083v4"
+  },
+  "type": "article-journal",
+  "title": "Central Extensions of Gerbes",
+  "author": [
+    {
+      "family": "Yekutieli",
+      "given": "Amnon"
+    }
+  ],
+  "container-title": "Advances in Mathematics",
+  "issued": {
+    "date-parts": [
+      [
+        2010
+      ]
+    ]
+  },
+  "volume": "225",
+  "issue": "1",
+  "page": "445-486",
+  "DOI": "10.1016/j.aim.2010.03.002",
+  "note": "arXiv:0801.0083. PDF library/arxiv-0801.0083v4/0801.0083v4.pdf (ingested 2026-09-05, owner upload ad60e3f2). Numbered results as held: Thm 3.13 (quotient gerbe G/N), Thm 4.6 (obstruction to lifting isomorphisms, cl^1), Thm 4.17 (obstruction to lifting objects, cl^2), Thm 5.11 (existence of cl^2 under N-acyclic coverings), Thm 6.10 (pronilpotent gerbes: connectivity from H^1/H^2 of the graded pieces). NOTE: until 2026-09-06 the corpus cited this paper as Thm 1.7 / Thm 3.4 / Thm 4.5 — none of those numbers exist in it (nor does a Proposition 3.4: the only 'Proposition 3.4' string in the held text is a citation to [Gr2, Cor. to Prop. 3.4.2]). Remapped corpus-wide (bean qou-smw9): lifting criterion / twisted sectors -> Thm 4.17 (+ Def 4.15 for cl^2), tower as central extension -> Thm 3.13 (+ §6 for the central-filtration tower), 'twisted quantization map' -> yekutieli2015-twisted-dq Thm 0.10.1. Finding: docs/audits/2026-09-05-binding-gap-groupoids-derived-categories-full-tower.md §9.",
+  "URL": "https://arxiv.org/abs/0801.0083"
+}

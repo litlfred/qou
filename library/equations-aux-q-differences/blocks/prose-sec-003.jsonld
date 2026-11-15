@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/equations-aux-q-differences/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/equations-aux-q-differences/blocks/prose-sec-003",
   "kind": "prose",
-  "title": "L. DI VIZIO, J.-P. RAMIS, J. SAULOY, C. ZHANG",
-  "pageStart": 5,
-  "pageEnd": 5,
-  "text": "../sections/sec-003-24-l-di-vizio-j-p-ramis-j-sauloy-c-zhang.md",
-  "derivedFrom": "library/equations-aux-q-differences/manifest",
-  "sourceDocument": "library/equations-aux-q-differences/manifest",
+  "title": "Conﬂuence des solutions locales",
+  "pageStart": 12,
+  "pageEnd": 13,
+  "text": "../sections/sec-003-32-conﬂuence-des-solutions-locales.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/equations-aux-q-differences",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/equations-aux-q-differences",
   "provenance": "ingested"
 }

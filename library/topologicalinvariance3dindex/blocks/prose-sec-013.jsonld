@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/topologicalinvariance3dindex/blocks/prose-sec-013",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/topologicalinvariance3dindex/blocks/prose-sec-013",
   "kind": "prose",
   "title": "Regular triangulations",
   "pageStart": 34,
   "pageEnd": 43,
   "text": "../sections/sec-013-62-regular-triangulations.md",
-  "derivedFrom": "library/topologicalinvariance3dindex/manifest",
-  "sourceDocument": "library/topologicalinvariance3dindex/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/topologicalinvariance3dindex",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/topologicalinvariance3dindex",
   "provenance": "ingested"
 }

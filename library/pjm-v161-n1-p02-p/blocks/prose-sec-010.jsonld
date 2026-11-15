@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-010",
   "kind": "prose",
   "title": "Thus, going to Figure 5.4(c) we conclude that the only possibility",
   "pageStart": 46,
   "pageEnd": 53,
   "text": "../sections/sec-010-l-thus-going-to-figure-54c-we-conclude-that-the.md",
-  "derivedFrom": "library/pjm-v161-n1-p02-p/manifest",
-  "sourceDocument": "library/pjm-v161-n1-p02-p/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/pjm-v161-n1-p02-p",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/pjm-v161-n1-p02-p",
   "provenance": "ingested"
 }

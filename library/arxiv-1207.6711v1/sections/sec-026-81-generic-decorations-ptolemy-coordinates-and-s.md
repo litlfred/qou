@@ -8,176 +8,110 @@ pages: 26-28
 source_pdf: 1207.6711v1.pdf
 source_sha256: 320c4301ac66fff1
 doc_brief: "GLUING EQUATIONS FOR PGL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — In [11] we parametrized boundary-unipotent representations of a 3-manifold group into SL(n, C) using Ptolemy coordinates, which were"
+text_source: latex
+latex_prose_ratio: 0.915
+latex_coverage_ratio: 0.917
 ---
-GL(n, C), let{g}i denote the ordered set consisting of the ﬁrst i column vectors of g.
-Deﬁnition 8.6. A GL(n, C)/N-decoration (g0N,g 1N,g 2N,g 3N) on ∆3
-n is generic if for each
-(t0,t 1,t 2,t 3)∈ ∆3
-n(Z)
-(8.1) det
-(
-{g0}t0∪{g1}t1∪{g2}t2∪{g3}t3
-)
-⁄= 0.
-Genericity of PGL(n, C)/B-decorations is deﬁned similarly.
-The deﬁnition is obviously independent of the choice of coset representatives, and of the
-ordering of the tuple.
-Remark 8.7. Although all representations can be decorated, some representations may
-only have non-generic decorations. However, after a single barycentric subdivision, every
-representation has a generic decoration. For SL( n, C)/N-decorations this is proved in [11,
-Prop. 5.4], and the proof for PGL( n, C)/B-decorations is similar. This proves the last
-statement of Theorem 1.2.
-Lemma 8.8 (Fock-Goncharov [8, Lemma 10.3]; see also [11]) . A generic GL( n, C)/N-
-decoration (g0N,g 1N,g 2N,g 3N) of ∆ 3
-n induces a Ptolemy assignment
-(8.2) c: ˙∆3
-n(Z)→ C∗, t ↦→ det ({g0}t0∪{g1}t1∪{g2}t2∪{g3}t3).
-□
-Corollary 8.9. We have a map
-(8.3) C :{Generic GL(n, C)/N-decorations on ∆ 3
-n}→{ Ptolemy assignments on ∆ 3
-n}.
-□
-Note thatC is invariant under the left action by SL(N, C).
-Lemma 8.10. The mapC is compatible with pullbacks, i.e.,
-(8.4) σ∗(C(g0N,g 1N,g 2N,g 3N) =C(gσ(0)N,gσ(1)N,gσ(2)N,gσ(3)N).
-Proof. Let c =C(g0N,g 1N,g 2N,g 3N) and c′ =C(gσ(0)N,gσ(1)N,gσ(2)N,gσ(3)N). Then
-(8.5) cσ(t) = det
-( 3⋃
-i=0
-{gi}tσ−1(i)
-)
-, c ′
-t = det
-( 3⋃
-i=0
-{gσ(i)}ti
-)
-.
+For an element $g\in\GL(n,\C)$, let $\{g\}_i$ denote the ordered set consisting of the first $i$ column vectors of $g$.
+\begin{definition}\label{def:generic}
+A $\GL(n,\C)/N$-decoration $(g_0N,g_1N,g_2N,g_3N)$ on $\Delta^3_n$ is \emph{generic} if for each $(t_0,t_1,t_2,t_3)\in\Delta_n^3(\Z)$
+\begin{equation}\label{eqn:PtolemyDets}
+\det\big(\{g_0\}_{t_0}\cup\{g_1\}_{t_1}\cup\{g_2\}_{t_2}\cup\{g_3\}_{t_3}\big)\neq 0.
+\end{equation}
+Genericity of $\PGL(n,\C)/B$-decorations is defined similarly.
+\end{definition}
+The definition is obviously independent of the choice of coset representatives, and of the ordering of the tuple.
+
+\begin{remark}\label{rm:FineTriangulation}
+Although all representations can be decorated, some representations may only have non-generic decorations. However, after a single barycentric subdivision, every representation has a generic decoration. For $\SL(n,\C)/N$-decorations this is proved in \cite[Prop.~5.4]{GaroufalidisThurstonZickert}, and the proof for $\PGL(n,\C)/B$-decorations is similar. This proves the last statement of Theorem~\ref{thm:ShortMainThm}.
+\end{remark}
+
+\begin{lemma}[{Fock-Goncharov~\cite[Lemma~10.3]{FockGoncharov}; see also~\cite{GaroufalidisThurstonZickert}}]\label{lemma:DecorationToPtolemy}
+A generic $\GL(n,\C)/N$-decoration $(g_0N,g_1N,g_2N,g_3N)$ of $\Delta^3_n$ induces a Ptolemy assignment
+\begin{equation}\label{eqn:DecoToPtolemy}
+c\colon\dot\Delta_n^3(\Z)\to \C^*,\quad t\mapsto \det\left(\{g_0\}_{t_0}\cup\{g_1\}_{t_1}\cup\{g_2\}_{t_2}\cup\{g_3\}_{t_3}\right).
+\end{equation}\qed
+\end{lemma}
+\begin{corollary} We have a map
+\begin{equation}
+\mathcal C\colon\text{\{Generic $\GL(n,\C)/N$-decorations on $\Delta^3_n$\}}\to \text{\{Ptolemy assignments on $\Delta^3_n$\}}. 
+\end{equation}\qed
+\end{corollary}
+Note that $\mathcal C$ is invariant under the left action by $\SL(N,\C)$.
+
+\begin{lemma} \label{lemma:DecorationsAndPullbacks}
+The map $\mathcal C$ is compatible with pullbacks, i.e., 
+\begin{equation}\label{eq:DecorationsAndPullbacks}
+\sigma^*(\mathcal C(g_0N,g_1N,g_2N,g_3N)=\mathcal C(g_{\sigma(0)}N,g_{\sigma(1)}N,g_{\sigma(2)}N,g_{\sigma(3)}N).
+\end{equation}
+
+\end{lemma}
+\begin{proof}
+
+
+Let $c=\mathcal C(g_0N,g_1N,g_2N,g_3N)$ and $c'=\mathcal C(g_{\sigma(0)}N,g_{\sigma(1)}N,g_{\sigma(2)}N,g_{\sigma(3)}N)$. Then
+\begin{equation}
+c_{\sigma(t)}=\det\left(\bigcup_{i=0}^3\{g_i\}_{t_{\sigma^{-1}(i)}}\right),\qquad c'_t=\det\left(\bigcup_{i=0}^3\{g_{\sigma(i)}\}_{t_i}\right).
+\end{equation}
 One easily checks that
-(8.6)
-( 3⋃
-i=0
-{gi}tσ−1(i)
-)
-Iσ,σ(t) =
-3⋃
-i=0
-{gσ(i)}ti,
-from which it follows that (σ∗c)t =cσ(t) det(Iσ,σ(t)) =c′
-t. This proves the result. □
-Corollary 8.11. A generic SL(n, C)/N-decoration on (M,T ) induces a Ptolemy assignment
-on (M,T ).
-Proof. We only need to show that Ptolemy coordinates are identiﬁed via the pullback. This
-follows from Lemma 8.10. □
-GLUING EQUATIONS FOR PGL( n, C)-REPRESENTATIONS OF 3-MANIFOLDS 27
-Remark 8.12. A GL(N, C)/N-decoration does not induce a Ptolemy assignment on (M,T ).
-Forg∈ GL(N, C), let ¯g denote the image of g in PGL(N, C).
-Proposition 8.13. We have a well deﬁned map
-(8.7) Z :{PGL(n, C)/B-decorations on ∆ 3
-n}→{ shape assignments on ∆ 3
-n},
-(¯g0B, ¯g1B, ¯g2B, ¯g3B)↦→µ◦C (g0N,g 1N,g 2N,g 3N),
-which is invariant under the left PGL(n, C)-action and compatible with pullbacks.
-Proof. Let c =C(g0N,g 1N,g 2N,g 3N). To prove thatZ is well deﬁned, we must prove that
-(8.8) µ(c) =µ(c′), with c′ =C(g0d0N,...,g 3d3N),
-wheredi =d(λi
-1,...,λ i
-n) are diagonal matrices. We prove that µ(c)1100
-s =µ(c′)1100
-s , the other
-cases being similar. Using (8.1) we have
-(8.9) µ(c′)1100
-s = c′
-s+1001c′
-s+0110
-c′
-s+1010c′
-s+0101
-, c ′
-t = det(
-⋃
-{gidi}ti) =
-( 3∏
-j=0
-ti∏
-i=1
-λj
-i
-)
-ct.
+\begin{equation}
+\left(\bigcup_{i=0}^3\{g_i\}_{t_{\sigma^{-1}(i)}}\right)I_{\sigma,\sigma(t)}=\bigcup_{i=0}^3\{g_{\sigma(i)}\}_{t_i},
+\end{equation}
+from which it follows that $(\sigma^*c)_t=c_{\sigma(t)}\det(I_{\sigma,\sigma(t)})=c'_t$. This proves the result.
+\end{proof}
+\begin{corollary}
+A generic $\SL(n,\C)/N$-decoration on $(M,\mathcal{T})$ induces a Ptolemy assignment on $(M,\mathcal{T})$.
+\end{corollary}
+
+\begin{proof}
+We only need to show that Ptolemy coordinates are identified via the pullback. This follows from Lemma~\ref{lemma:DecorationsAndPullbacks}.
+\end{proof}
+
+\begin{remark}
+A $\GL(N,\C)/N$-decoration does \emph{not} induce a Ptolemy assignment on $(M,\T)$.
+\end{remark}
+
+For $g\in\GL(N,\C)$, let $\bar{g}$ denote the image of $g$ in $\PGL(N,\C)$. 
+
+\begin{proposition}\label{prop:DefofZ}
+We have a well defined map
+\begin{equation}
+\begin{gathered}
+\mathcal Z\colon\text{\{$\PGL(n,\C)/B$-decorations on $\Delta^3_n$\}}\to\text{\{shape assignments on $\Delta^3_n$\}},\\
+(\bar{g}_0B,\bar{g}_1B,\bar{g}_2B,\bar{g}_3B)\mapsto\mu\circ\mathcal C(g_0N,g_1N,g_2N,g_3N),
+\end{gathered}
+\end{equation}
+which is invariant under the left $\PGL(n,\C)$-action and compatible with pullbacks. 
+\end{proposition}
+\begin{proof}
+Let $c=\mathcal C(g_0N,g_1N,g_2N,g_3N)$.
+To prove that $\mathcal Z$ is well defined, we must prove that 
+\begin{equation}\mu(c)=\mu(c'),\text{ with } c'=\mathcal C(g_0d_0N,\dots,g_3d_3N),
+\end{equation}
+where $d_i=d(\lambda^i_1,\dots,\lambda^i_n)$ are diagonal matrices. We prove that $\mu(c)_s^{1100}=\mu(c')^{1100}_s$, the other cases being similar.
+Using \eqref{eqn:PtolemyDets} we have
+\begin{equation}\mu(c')_s^{1100}=\frac{c'_{s+1001}c'_{s+0110}}{c'_{s+1010}c'_{s+0101}},\quad c'_t=\det(\bigcup\{g_id_i\}_{t_i})=\left(\prod_{j=0}^{3}\prod_{i=1}^{t_i} \lambda^j_i\right) c_t.
+\end{equation}
 Expanding each term, we obtain
-(8.10)
-c′
-s+1001 =
-( 3∏
-j=0
-si∏
-i=1
-λj
-i
-)
-λ0
-s0+1λ3
-s3+1cs+1001, c ′
-s+0110 =
-( 3∏
-j=0
-si∏
-i=1
-λj
-i
-)
-λ1
-s1+1λ2
-s2+1cs+0110
-c′
-s+1010 =
-( 3∏
-j=0
-si∏
-i=1
-λj
-i
-)
-λ0
-s0+1λ2
-s2+1cs+1010, c ′
-s+0101 =
-( 3∏
-j=0
-si∏
-i=1
-λj
-i
-)
-λ1
-s1+1λ3
-s3+1cs+0101.
-It now easily follows that
-(8.11) µ(c′)1100
-s = c′
-s+1001c′
-s+0110
-c′
-s+1010c′
-s+0101
-= cs+1001cs+0110
-cs+1010cs+0101
-=µ(c)1100
-s
-as desired. Invariance under left multiplication follows from the fact that det( ∪{ggi}ti) =
-det(g) det(∪{gi}ti), and compatibility with pullbacks follows from the fact that both µ and
-C enjoy this property. □
-Corollary 8.14. A generic PGL(n, C)/B-decoration on (M,T ) induces a shape assignment
-on (M,T ).
-Proof. By Proposition 8.13, we have a shape assignment on each simplex, and we must
-prove that these satisfy the generalized gluing equations. We proceed as in the proof of
-Theorem 6.3. Let K be the local model of an edge point as deﬁned in Section 6.1. We can
-pullback the decoration on T to a decoration on K using the simplical map π. Since K is
-simply connected, we can change the decoration of each simplex by left multiplication by an
-element in PGL(n, C) such that vertices of simplices that get identiﬁed in K carry the same
-coset. This does not aﬀect the shapes. For each vertex in K decorated by gB we pick a lift
-˜gN and applyC to get a Ptolemy assignment on K. By Lemma 6.5 the shapes satisfy the
-edge equations. The result for the face, and interior gluing equations is similar. □
-28 STA VROS GAROUF ALIDIS, MATTHIAS GOERNER, AND CHRISTIAN K. ZICKERT
+\begin{equation}
+\begin{gathered}
+c'_{s+1001} = \left(\prod_{j=0}^{3}\prod_{i=1}^{s_i} \lambda^j_i\right) \lambda^0_{s_0+1} \lambda^3_{s_3+1} c_{s+1001},\quad
+c'_{s+0110} = \left(\prod_{j=0}^{3}\prod_{i=1}^{s_i} \lambda^j_i\right) \lambda^1_{s_1+1} \lambda^2_{s_2+1} c_{s+0110}\\
+c'_{s+1010} = \left(\prod_{j=0}^{3}\prod_{i=1}^{s_i} \lambda^j_i\right) \lambda^0_{s_0+1} \lambda^2_{s_2+1} c_{s+1010},\quad
+c'_{s+0101} = \left(\prod_{j=0}^{3}\prod_{i=1}^{s_i} \lambda^j_i\right) \lambda^1_{s_1+1} \lambda^3_{s_3+1} c_{s+0101}.
+\end{gathered}
+\end{equation}
+It now easily follows that 
+\begin{equation}
+\mu(c')_s^{1100}=\frac{c'_{s+1001}c'_{s+0110}}{c'_{s+1010}c'_{s+0101}}=\frac{c_{s+1001}c_{s+0110}}{c_{s+1010}c_{s+0101}}=\mu(c)_s^{1100}
+\end{equation}
+as desired. Invariance under left multiplication follows from the fact that $\det(\cup\{gg_i\}_{t_i})=\det(g)\det(\cup\{g_i\}_{t_i})$, and compatibility with pullbacks follows from the fact that both $\mu$ and $\mathcal C$ enjoy this property. 
+\end{proof}
+
+\begin{corollary}
+A generic $\PGL(n,\C)/B$-decoration on $(M,\T)$ induces a shape assignment on $(M,\T)$.
+\end{corollary}
+
+\begin{proof}
+By Proposition~\ref{prop:DefofZ}, we have a shape assignment on each simplex, and we must prove that these satisfy the generalized gluing equations. We proceed as in the proof of Theorem~\ref{thm:PtolemyYieldsShapes}. Let $K$ be the local model of an edge point as defined in Section~\ref{subsection:ProofForEdgeEqn}. We can pullback the decoration on $\T$ to a decoration on $K$ using the simplical map $\pi$. Since $K$ is simply connected, we can change the decoration of each simplex by left multiplication by an element in $\PGL(n,\C)$ such that vertices of simplices that get identified in $K$ carry the same coset. This does not affect the shapes. For each vertex in $K$ decorated by $gB$ we pick a lift $\tilde{g}N$ and apply $\mathcal C$ to get a Ptolemy assignment on $K$. By Lemma~\ref{lemma:edgelocalmodel} the shapes satisfy the edge equations. The result for the face, and interior gluing equations is similar.
+\end{proof}

@@ -7,7 +7,11 @@
   "bytes": 807177,
   "pages": 70,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -218,6 +222,99 @@
   "likely_scanned": false,
   "toc_entries": 11,
   "sections": 10,
-  "chars_total": 177473
+  "chars_total": 177473,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 12,
+   "overlaid": 10,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-setting-the-problem",
+     "title": "Setting the problem",
+     "prose_ratio": 0.999,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-toeplitz-meets-ising",
+     "title": "Toeplitz meets Ising",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-4-back-to-ising",
+     "title": "Back to Ising",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-5-new-questions-for-sslt",
+     "title": "New questions for SSLT",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-6-fisher-hartwig-singularities-fisher-hartwig-co",
+     "title": "Fisher-Hartwig singularities. Fisher-Hartwig conjecture",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-7-basor-tracy-conjecture",
+     "title": "Basor-Tracy conjecture",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-8-hankel-and-toeplitzhankel-determinants",
+     "title": "Hankel and Toeplitz+Hankel determinants",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-9-some-applications",
+     "title": "Some applications",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-10-block-toeplitz-matrices",
+     "title": "Block Toeplitz matrices",
+     "prose_ratio": 0.998,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-11-double-scaling-limits",
+     "title": "Double-scaling limits",
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

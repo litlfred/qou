@@ -215,7 +215,7 @@ def _docs() -> dict[str, str]:
     return {
         str(p.relative_to(ROOT)): p.read_text()
         for p in sorted((ROOT / "computations").rglob("*.derivation.json"))
-        if "_deprecated" not in str(p)
+        if ("_deprecated" not in str(p) and "fsh-guts" not in str(p))
     }
 
 

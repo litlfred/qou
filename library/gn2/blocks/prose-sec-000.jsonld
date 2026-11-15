@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/gn2/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/gn2/blocks/prose-sec-000",
   "kind": "prose",
-  "title": "The Kau",
-  "pageStart": 1,
-  "pageEnd": 1,
-  "text": "../sections/sec-000-12-the-kau.md",
-  "derivedFrom": "library/gn2/manifest",
-  "sourceDocument": "library/gn2/manifest",
+  "title": "The Kauﬀman bracket skein module of the m-twist knot exterior.",
+  "pageStart": 2,
+  "pageEnd": 3,
+  "text": "../sections/sec-000-12-the-kauﬀman-bracket-skein-module-of-the-m-twi.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/gn2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/gn2",
   "provenance": "ingested"
 }

@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-averaging-resonance-rule",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:averaging-resonance-rule",
+  "kind": "theorem",
+  "title": "Averaging-resonant rung selection: $k_{\\mathrm{res}}(n_{\\mathrm{total}}) = \\lfloor n_{\\mathrm{total}}/2 \\rfloor + \\mathbb{1}_{\\mathrm{wrap}}$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-bar-involution",
+    "papers/quantum-observable-universe/blocks/prop-pn-averaging-uniqueness"
+  ],
+  "cites": [
+    "references/wenzl1988",
+    "references/jones1987"
+  ],
+  "tags": [
+    "averaging-resonance",
+    "half-fill-cyclicity",
+    "rung-selection",
+    "bar-invariant",
+    "level-selection-rule",
+    "closure-tier-a",
+    "phase-1-discharge"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.AveragingResonanceRule",
+  "text": "averaging-resonance-rule.md",
+  "leanSource": "averaging-resonance-rule.lean",
+  "provenance": "authored"
+}

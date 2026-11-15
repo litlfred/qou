@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-074",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "DG Ring Quasi-Isomorphisms",
+  "pageStart": 238,
+  "pageEnd": 240,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-074",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-074-01",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-074-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "provenance": "ingested"
+}

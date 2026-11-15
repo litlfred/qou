@@ -8,263 +8,242 @@ pages: 16-19
 source_pdf: 2208.14188v2.pdf
 source_sha256: 92a7651c81b799b3
 doc_brief: "Resurgence in complex Chern-Simons theory at generic levels — In this note we study the resurgent structure of sl(2, C) Chern-Simons state integral model on knot complements S3\41,S 3\52 with generic"
+text_source: latex
+latex_prose_ratio: 0.956
+latex_coverage_ratio: 0.912
 ---
-The state integral of ﬁgure eight knot at level k is already given as a one-dimensional
-integral in [13]
-χ(k)
-41 (µ,n ;τ) =ηk
-k
-∑
-m∈Zk
-∫
-R+i Im(cb)−i|µ|−i0
-dσZ(k)
-b [∆](σ−µ,m−n)Z(k)
-b [∆](σ,m )
-× (−1)me
-πi
-k ((σ−cb)2−2(µ−σ+cb)2−m2+2(n−m)2), (3.1)
-whereηk = exp πi
-6 (k + 2c2
-b/k). This can be derived from the generic formula (2.8). We can
-choose the Neumann-Zagier data
-AAA =
-(
-1 0
-1 1
-)
-, BBB =
-(
-0 −1
-−1−1
-)
-, ν =
-(
-0
-0
-)
-, (3.2)
-with which (2.8) yields
-Z(k)
-γ (µ,n ; b)
-= 1
-ik2
-∑
-m∈(Zk)2
-∫
-d2σe
-2πi
-k (−σ1µ1+σ2µ1+m1n1−m2n1)e
-πi
-k (2σ1σ2−2m1m2)Z(k)
-b [∆](σ1,m 1)Z(k)
-b [∆](σ2,m 2)
-=e
-πi
-12 (k+
-8c2
-b
-k )
-ik
-∑
-m∈Zk
-∫
-dσZ(k)
-b [∆](σ,m )Z(k)
-b [∆](σ +µ,m +n)
-(−1)m+n expπi
-k
-(
-−(σ−cb)2− 4µσ−µ2 + 2cbµ +m2 + 4mn +n2)
-.
-(3.3)
-In the last step, we have integrated over σ2 and summed over m2 using the Fourier trans-
-formation (A.13). We then relabeled ( σ1,m 1) to (σ,m ) as well as (µ1,n 1) to (µ,n ). After
-4There are missing BPS states concerning the Abelian ﬂat connection σ0. But they are related to the
-Stokes automorphisms of the asymptotic series associated to σ0, which is invisible in the state integral
-model. See some discussion in Section 5.
-– 15 –
-changing the signs of µ,n we ﬁnd the same expression as (3.1) up to an overall irrelevant
-factor
-χ(k)
-41 (µ,n ;τ) = ie
-πi
-12 (k−
-4c2
-b
-k )(−1)ne
-πi
-k (−µ2−2cbµ+n2)Z(k)
-γ (−µ,−n; ℏ). (3.4)
-As a one-dimensional integral, it is much easier to perform saddle point analysis on
-(3.1). We ﬁrst introduce an alternative representation of the tetrahedron partition func-
-tion5
-D(k)
-b (u,m ) =Z(k)
-b [∆](cb−
-√
-ku,m ), (3.5)
-in terms of which, the state integral (3.1) reads
-χ(k)
-41 (µ,n ;τ) =ηk
-k
-∑
-m∈Zk
-(−1)me
-πi
-k (2n2−4nm+m2)
-×
-∫
-R+i0
-dσ D(k)
-b ( 1√
-k
-(σ +µ),m−n) D(k)
-b ( 1√
-k
-σ,m )e
-πi
-k (−2µ2−4µσ−σ2). (3.6)
+\label{sc:41.asymp}
+
+The state integral of figure eight knot at level $k$ is already given
+as a one-dimensional integral in \cite{Andersen:2016ugz}
+\begin{align}
+  \chi^{(k)}_{\knot{4}_1}(\mu,n;\tau) =
+  &\frac{\eta_k}{k}\sum_{m\in \IZ_k}\int_{\IR+\ri\imag(c_\bb)-\ri|\mu|-\ri 0}\rd \sigma
+    \mc{Z}^{(k)}_\bb[\Delta](\sigma-\mu,m-n)
+    \mc{Z}^{(k)}_\bb[\Delta](\sigma,m)\nn
+  &\phantom{==}\times(-1)^m
+    \re^{\frac{\pi\ri}{k}((\sigma-c_\bb)^2-2(\mu-\sigma+c_\bb)^2-m^2+2(n-m)^2)},
+      \label{eq:chi-41}
+\end{align}
+where $\eta_k = \exp \frac{\pi\ri}{6}(k+2 c_\bb^2/k)$.
+This can be derived from the generic formula \eqref{eq:ZNgmMu0}.
+We can choose the Neumann-Zagier data
+\begin{equation}
+  \pmb{A} =
+  \begin{pmatrix}
+    1&0\\1&1
+  \end{pmatrix},\quad
+  \pmb{B} =
+  \begin{pmatrix}
+    0&-1\\-1&-1
+  \end{pmatrix},\quad
+  \bs\nu =
+  \begin{pmatrix}
+    0\\0
+  \end{pmatrix},
+\end{equation}
+with which \eqref{eq:ZNgmMu0} yields
+\begin{align}
+  &\mc{Z}_\gamma^{(k)}(\mu,n;\bb)\nn =
+  &\frac{1}{\ri k^2}\sum_{m\in (\IZ_k)^2}\int \rd^2\sigma
+    \re^{\frac{2\pi\ri}{k}(-\sigma_1\mu_1+\sigma_2\mu_1+m_1n_1-m_2n_1)}
+    \re^{\frac{\pi\ri}{k}(2\sigma_1\sigma_2-2m_1m_2)}
+    \mc{Z}_\bb^{(k)}[\Delta](\sigma_1,m_1)
+    \mc{Z}_\bb^{(k)}[\Delta](\sigma_2,m_2) \nn=
+  &\frac{\re^{\frac{\pi\ri}{12}(k+\frac{8c_\bb^2}{k})}}{\ri k}
+    \sum_{m\in\IZ_k}
+    \int\rd \sigma
+    \mc{Z}_\bb^{(k)}[\Delta](\sigma,m)
+    \mc{Z}_\bb^{(k)}[\Delta](\sigma+\mu,m+n)\nn
+  &\phantom{=========}
+    (-1)^{m+n}
+    \exp\frac{\pi\ri}{k}\left(
+    -(\sigma-c_\bb)^2-4\mu\sigma-\mu^2+2c_\bb\mu+m^2+4mn+n^2
+    
+    \right).
+\end{align}
+In the last step, we have integrated over $\sigma_2$ and summed
+over $m_2$ using the Fourier transformation \eqref{eq:FourierFQD}.
+We then relabeled $(\sigma_1,m_1)$ to $(\sigma,m)$ as well as
+$(\mu_1,n_1)$ to $(\mu,n)$.  After changing the signs of $\mu,n$ we
+find the same expression as \eqref{eq:chi-41} up to an overall
+irrelevant factor
+\begin{equation}
+  \chi^{(k)}_{\knot{4}_1}(\mu,n;\tau) = \ri
+  \re^{\frac{\pi\ri}{12}(k-\frac{4c_{\bb}^2}{k})}(-1)^n
+  \re^{\frac{\pi\ri}{k}(-\mu^2-2c_\bb\mu+n^2)}
+  \mc{Z}_{\gamma}^{(k)}(-\mu,-n;\hbar).
+\end{equation}
+
+As a one-dimensional integral, it is much easier to perform saddle
+point analysis on \eqref{eq:chi-41}.  We first introduce an
+alternative representation of the tetrahedron partition
+function\footnote{This version of tetrahedron partition function was
+  introduced in \cite{Andersen:2016ugz}.}
+\begin{equation}
+  \DD_\bb^{(k)}(u,m) = \mc{Z}_\bb^{(k)}[\Delta](c_\bb-\sqrt{k}u,m),
+  \label{eq:Dk}
+\end{equation}
+in terms of which, the state integral \eqref{eq:chi-41} reads
+\begin{align}
+  \chi^{(k)}_{\knot{4}_1}(\mu,n;\tau) =
+  &\frac{\eta_k}{k}\sum_{m\in \IZ_k}
+    (-1)^m \re^{\frac{\pi\ri}{k}(2n^2-4nm+m^2)}
+    \nn
+  &\phantom{=}\times
+    \int_{\IR+\ri 0}\rd \sigma
+    \DD^{(k)}_\bb(\frac{1}{\sqrt{k}}(\sigma+\mu),m-n)
+    \DD^{(k)}_\bb(\frac{1}{\sqrt{k}}\sigma,m)
+    \re^{\frac{\pi\ri}{k}(-2\mu^2-4\mu\sigma-\sigma^2)}.
+\end{align}
+
 We scale the variables
-Z = 2πbσ, u = 2πbµ (3.7)
-and then perform asymptotic expansion of the tetrahedron partition functions in the small
-b limit using (A.15),
-χ(k)
-41 (µ,n ; b)∼ ηk
-2πbk
-∑
-m∈Zk
-(−1)me
-πi
-k (2n2−4nm+m2)
-∫
-dZ exp
-∑
-𝓁≥0
-(2πib2)𝓁−1U𝓁(u,Z ) (3.8)
+\begin{equation}
+  Z = 2\pi\bb \sigma,\quad u =2\pi\bb \mu
+\end{equation}
+and then perform asymptotic expansion of the tetrahedron partition
+functions in the small $\bb$ limit using \eqref{eq:ZDasymp},
+\begin{equation}
+  \chi_{\knot{4}_1}^{(k)}(\mu,n;\bb) \sim
+  \frac{\eta_k}{2\pi\bb k}\sum_{m\in\IZ_k}
+  (-1)^m \re^{\frac{\pi\ri}{k}(2n^2-4nm+m^2)}
+  \int \rd Z \exp\sum_{\ell\geq 0}(2\pi\ri\bb^2)^{\ell-1} U_\ell(u,Z)
+\end{equation}
 where the potential functions are
-U0(u,Z ) =1
-k
-(
-u2 + 2uZ + Z2
-2 + Li2(−eZ) + Li2(−eu+Z)
-)
-, (3.9a)
-U𝓁≥1(u,Z ) = 1
-𝓁!
-∑
-j∈Zk
-B𝓁(1− 1/(2k)−j/k)
-(
-Li2−𝓁(ζm−j−1/2eZ/k) + Li2−𝓁(ζm−j−1/2eZ/kx)
-)
-.
-(3.9b)
+\begin{subequations}
+  \begin{align}
+    U_0(u,Z) =
+    &\frac{1}{k}\left(
+    u^2+2uZ +\frac{Z^2}{2} + 
+    \Li_2(-\re^{Z}) + \Li_2(-\re^{u+Z})\right),\\
+    U_{\ell\geq 1}(u,Z) =
+    &\frac{1}{\ell!}\sum_{j\in\IZ_k}
+      B_\ell(1-1/(2k)-j/k)
+      \left(
+      \Li_{2-\ell}(\zeta^{m-j-1/2} \re^{Z/k})
+      +\Li_{2-\ell}(\zeta^{m-j-1/2}\re^{Z/k}x)
+      \right).
+  \end{align}
+\end{subequations}
 The critical equation of the leading order potential function reads
-0 = ∂
-∂ZU0(u,Z ) = 1
-k
-(
-2u +Z− log(1 + eZ)− log(1 + eu+Z)
-)
-, (3.10)
-which can be simpliﬁed to the algebraic equation
-−X2Y = (1−XY )(1−Y ), (3.11)
+\begin{equation}
+  0 = \frac{\pd}{\pd Z}U_0(u,Z) = \frac{1}{k}\left(2u+Z -\log(1+\re^{Z})
+    -\log(1+\re^{u+Z})\right),
+\end{equation}
+which can be simplified to the algebraic equation
+\begin{equation}
+  -X^2 Y = (1-XY)(1-Y),
+  \label{eq:alcr.41}
+\end{equation}
 with
-X = eu =xk, Y =−eZ. (3.12)
-We also introduce the variable θ such that
-Y =−θk. (3.13)
-5This version of tetrahedron partition function was introduced in [13].
-– 16 –
-The critical point equation (3.11) has two solutions in terms ofY , corresponding to the
-geometric and conjugate ﬂat connectionsσ1,σ 2 on the knot complement. Numerically, they
-are the ones that in the limit X→ 1 reduce respectively to the solutions e πi/3 and e−πi/3
-of (3.11). Near each critical point σj, the integrand is approximated by the exponential
-exp
-(
-V (k)(σj)
-2πiτ
-)
-, (3.14)
+\begin{equation}
+  X = \re^u = x^k,\quad Y = -\re^{Z}.
+\end{equation}
+We also introduce the variable $\theta$ such that
+\begin{equation}
+  Y = -\theta^k.
+\end{equation}
+
+The critical point equation \eqref{eq:alcr.41} has two solutions in
+terms of $Y$, corresponding to the geometric and conjugate flat
+connections $\s_1, \s_2$ on the knot complement.
+
+Numerically, they are the ones that in the limit $X\rightarrow 1$
+reduce respectively to the solutions $\re^{\pi\ri/3}$ and
+$\re^{-\pi\ri/3}$ of \eqref{eq:alcr.41}.
+
+Near each critical point $\s_j$, the integrand is approximated by the
+exponential
+\begin{equation}
+  \exp\left(\frac{V^{(k)}(\s_j)}{2\pi\ri\tau}\right),
+  \label{eq:exp}
+\end{equation}
 where
-V (k)(σj) =U0(log(X), log(−Yj)) +π2
-6k. (3.15)
-The extra factorπ2/(6k) comes from the factorηk. Note the interesting relationV (k)(X,Y ) =
-V (1)(X,Y )/k.
-In addition, by expanding near the critical point and performing the Gaussian inte-
-gration order by order, for each critical point σj we can ﬁnd an asymptotic power series
-ϕ(k,σj)(x;τ), which, together with the exponential factor (4.13), forms the trans-series
-Φ(k,σj)
-41 (x;τ) = eV (k)(σj)/(2πiτ)ϕ(k,σj)
-41 (x;τ), j = 1, 2. (3.16)
-The one-loop contribution ϕ(k,σj)
-41 (x; 0) =ω(k,σj)
-41 (x) has a universal expression
-ω(k,σj)
-41 (x) =e
-πi
-4 +πik
-6 + 2πi
-k (n2−1/12)
-√
-k(xkθ2k− 1)
-θ1/2xD∗
-k(ζ−1/2θ)1/kD∗
-k(ζ−1/2θx)1/k
-×
-∑
-m∈Zk
-(−1)mζm2/2θmx2m(ζ1/2θ;ζ)−1
-m (ζ1/2θx;ζ)−1
-m . (3.17)
-The power series ϕ(k,σj)
-41 (x;τ)/ω(k,σj)
-41 (x) on the other hand, depends in a very complicated
-way on the level k.
-The case of k = 1 is particularly simple. The dependence on n∈ Z1 is trivial, and the
-state integral reduces to [31]
-χ41(µ;τ) =χ(1)
-41 (µ;τ) = Φb(0)−2
-∫
-R+i0
-dvΦb(µ +v)Φb(v)eπi(v2−2(µ+v)2). (3.18)
-where we have used η1 = Φb(0)−2. The power series ϕ(σi)
-41 (x;τ) =ϕ(k=1,σi)
-41 (x;τ) are given
-by [31]
-(ω(σ1)
-41 )−1ϕ(σ1)
-41 (x; τ
-2πi) =1− 1
-24γ(x)3
-(
-x−3−x−2− 2x−1 + 15− 2x−x2 +x3)
-τ
-+ 1
-1152γ6(x)
-(
-x−6− 2x−5− 3x−4 + 610x−3− 606x−2− 1210x−1
-+ 3117− 1210x− 606x2 + 610x3− 3x4− 2x5 +x6)
-τ 2 +O(τ 3).
-(3.19)
+\begin{align}
+  V^{(k)}(\s_j) = U_0(\log(X),\log(-Y_j))+\frac{\pi^2}{6k}.
+\end{align}
+The extra factor $\pi^2/(6k)$ comes from the factor $\eta_k$.
+Note the interesting relation $V^{(k)}(X,Y) = V^{(1)}(X,Y)/k$.
+
+In addition, by expanding near the critical point and performing the
+Gaussian integration order by order, for each critical point $\s_j$ we
+can find an asymptotic power series $\varphi^{(k,\s_j)}(x;\tau)$,
+which, together with the exponential factor \eqref{eq:exp}, forms the
+trans-series
+\begin{equation}
+  \Phi_{\knot{4}_1}^{(k,\sigma_j)}(x;\tau) =
+  \re^{V^{(k)}(\s_j)/(2\pi\ri\tau)}
+  \varphi_{\knot{4}_1}^{(k,\s_j)}(x;\tau),\quad
+  j=1,2.
+\end{equation}
+The one-loop contribution
+$\varphi_{\knot{4}_1}^{(k,\s_j)}(x;0) =
+\omega^{(k,\s_j)}_{\knot{4}_1}(x)$ has a universal
+expression
+\begin{align}
+  \omega^{(k,\s_j)}_{\knot{4}_1}(x)=
+  &\frac{\re^{\frac{\pi\ri}{4}+\frac{\pi\ri  k}{6}+\frac{2\pi\ri}{k}(n^2-1/12)}}
+    {\sqrt{k(x^k\theta^{2k}-1)}}\theta^{1/2}x
+    D_k^{*}(\zeta^{-1/2}\theta)^{1/k}
+    D_k^{*}(\zeta^{-1/2}\theta x)^{1/k}\nn
+  &\times\sum_{m\in\IZ_k}
+    (-1)^m\zeta^{m^2/2}\theta^m x^{2m}
+    (\zeta^{1/2}\theta;\zeta)_m^{-1}(\zeta^{1/2}\theta x;\zeta)_m^{-1}.
+\end{align}
+The power series
+$\varphi_{\knot{4}_1}^{(k,\s_j)}(x;\tau)/\omega^{(k,\s_j)}_{\knot{4}_1}(x)$
+on the other hand, depends in a very complicated way on the level $k$.
+
+
+The case of $k=1$ is particularly simple. The dependence on
+$n\in\IZ_1$ is trivial, and the state integral reduces to
+\cite{Garoufalidis:2020xec}
+
+\begin{align}
+  \chi_{\knot{4}_1}(\mu;\tau) =
+  \chi_{\knot{4}_1}^{(1)}(\mu;\tau) =
+  \Phi_\bb(0)^{-2}\int_{\IR+\ri 0} \rd v \Phi_\bb(\mu+v)\Phi_\bb(v)
+  \re^{\pi\ri(v^2-2(\mu+v)^2)}.
+\end{align}
+where we have used $\eta_1 = \Phi_\bb(0)^{-2}$.  The power series
+$\varphi_{\knot{4}_1}^{(\s_i)}(x;\tau) =
+\varphi_{\knot{4}_1}^{(k=1,\s_i)}(x;\tau)$ are given by
+\cite{Garoufalidis:2020xec}
+\begin{align}
+  (\omega_{\knot{4}_1}^{(\s_1)})^{-1}
+  \varphi_{\knot{4}_1}^{(\s_1)}(x;\frac{\tau}{2\pi\ri}) =
+  &1-
+    \frac{1}{24\gamma(x)^3}\left(
+    x^{-3}-x^{-2}-2x^{-1}+15-2x-x^2+x^3\right)\tau\nn  +
+  &\frac{1}{1152\gamma^6(x)}\left(
+    x^{-6}-2x^{-5}-3x^{-4}+610x^{-3}-606x^{-2}-1210x^{-1}\right.\nn+
+  &\left.3117 -1210x-606x^2+610x^3-3x^4-2x^5+x^6
+    \right)\tau^2+\cO(\tau^3).
+    \label{eq:vphi1.k1}
+\end{align}
 with
-γ(x) =
-√
-x−2− 2x−1− 1− 2x +x2. (3.20)
-– 17 –
-while ϕ(σ2)
-2 (x;τ) = iϕ(σ2)
-1 (x;−τ). At level k = 2, the power series are
-(ω(k=2,σj)
-41 )−1ϕ(k=2,σj)
-41 (x;τ)
-=1− ((1 + 6x + 5x2− 30x3 + 10x4 + 30x5− 3x6 + 30x7 + 10x8− 30x9 + 5x10 + 6x11 +x12)
-(−1−x2 +x4 + 2x2Yj))/(48(−1−x +x2)2(1−x +x2)2(−1 +x +x2)2(1 +x +x2)2)τ +O(τ 2).
-(3.21)
-Additional terms as well as ﬁrst few terms of the power series at level k = 3 can be found
-in Appendix B.1.
-Several conclusions can be drawn from these data. It is clear that the coeﬃcients of
-the power series depend only on the solution Yj to the NZ equation, but not on a k-th
-root of Yj. Furthermore, they depend on the deformation parameters u,n only through
-the holonomy parameter x. Finally, it is evident that the power series become increasingly
-more complicated at higher levels k.
+\begin{equation}
+  \gamma(x) = \sqrt{x^{-2}-2x^{-1}-1-2x+x^2}.
+\end{equation}
+while $\varphi_2^{(\s_2)}(x;\tau) = \ri \varphi_1^{(\s_2)}(x;-\tau)$.
+At level $k=2$, the power series are
+\begin{align}
+  &(\omega_{\knot{4}_1}^{(k=2,\s_j)})^{-1}\varphi_{\knot{4}_1}^{(k=2,\s_j)}(x;\tau)\nn
+    =
+  &1 -((1 + 6 x + 5 x^2 - 30 x^3 + 10 x^4 + 30 x^5 - 3 x^6 + 30 x^7 + 
+    10 x^8 - 30 x^9 + 5 x^{10} + 6 x^{11} + x^{12}) \nn
+  &(-1 - x^2 + x^4 + 2 x^2 Y_j))/(48 (-1 - x + x^2)^2 (1 - x + x^2)^2 (-1 + x + 
+    x^2)^2 (1 + x + x^2)^2)\tau + \cO(\tau^2).
+    \label{eq:phi41k2}
+\end{align}
+
+
+Additional terms as well as first few terms of the power series at
+level $k=3$ can be found in Appendix~\ref{sc:phi.41}.
+
+Several conclusions can be drawn from these data.  It is clear that
+the coefficients of the power series depend only on the solution $Y_j$
+to the NZ equation, but not on a $k$-th root of $Y_j$.  Furthermore,
+they depend on the deformation parameters $u,n$ only through the
+holonomy parameter $x$.  Finally, it is evident that the power series
+become increasingly more complicated at higher levels $k$.

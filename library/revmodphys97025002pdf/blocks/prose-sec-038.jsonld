@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/revmodphys97025002pdf/blocks/prose-sec-038",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/revmodphys97025002pdf/blocks/prose-sec-038",
   "kind": "prose",
   "title": "C. 2021 Measurement of the muon anomaly at the Fermi National Accelerator Laboratory",
   "pageStart": 26,
   "pageEnd": 27,
   "text": "../sections/sec-038-c-2021-measurement-of-the-muon-anomaly-at-the-fe.md",
-  "derivedFrom": "library/revmodphys97025002pdf/manifest",
-  "sourceDocument": "library/revmodphys97025002pdf/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/revmodphys97025002pdf",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/revmodphys97025002pdf",
   "provenance": "ingested"
 }

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/acsv231201/blocks/prose-sec-048",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/acsv231201/blocks/prose-sec-048",
   "kind": "prose",
   "title": "Surgery, non-generic directions, and non-arrangement points",
   "pageStart": 345,
   "pageEnd": 357,
   "text": "../sections/sec-048-surgery-non-generic-directions-and-non-arrangeme.md",
-  "derivedFrom": "library/acsv231201/manifest",
-  "sourceDocument": "library/acsv231201/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
   "provenance": "ingested"
 }

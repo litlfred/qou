@@ -1,0 +1,49 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "gauthier2019",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 46,
+      "entry": {
+        "id": "gauthier2019",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T15:48:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 0,
+        "fix_commit": null,
+        "note": "PDF verified: 'Giant Vortex Clusters in a Two-Dimensional Quantum Fluid' by Gauthier et al., arXiv:1801.06951. Vortex clusters in 2D BEC \u2014 matches QOU's vortex-condensation citation.",
+        "source": {
+          "kind": "upload",
+          "file": "uploads/gauthier2019.pdf"
+        },
+        "local_pdf": "uploads/gauthier2019.pdf",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "FILE ABSENT: the ledger row points at this path but the file does not exist anywhere in the working tree (verified by find over the whole repo; uploads/ holds 294 files and this is not one of them). The prior 2026-05-19 verification row therefore cannot be re-checked, and I could not confirm the seeded join against the document's own front matter. The verdict is undetermined on that ground alone. The corpus-side citation audit below did not need the document and is reported in full. CITATION AUDIT: one substantive site, observations/bec-vortex-data.md:13 (prose \\cite) with the matching cites[] entry at bec-vortex-data.ts:12. The cited claim is specific and empirical: the block asserts that giant vortex clusters were observed in 2D 87-Rb condensates with same-sign vortices aggregating into macroscopic circulation structures, that 'the cluster circulation is quantised in multiples of the single-vortex quantum', and that this 'directly demonstrates the additive structure j_cluster = j_1 + j_2 + ...'. The registered entry's subject matches the first sentence closely enough that the attribution is plausible; what I cannot check without the document is the stronger second sentence - specifically whether the source reports quantisation of the CLUSTER circulation in units of the single-vortex quantum, as opposed to reporting clustering of individually-quantised same-sign vortices. The block then reads that additivity as SU_q(2) Clebsch-Gordan, which is the folio's own interpretive step and is correctly not attributed to the source.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "The block leans on a specific empirical claim (cluster circulation quantised in multiples of the single-vortex quantum) that is stronger than the paper's title-level result and cannot be checked with the document missing. Either re-obtain it and add a figure/section locator, or weaken the sentence to what is uncontroversially reported.",
+              "target": "folio/quantum-observable-universe/observations/bec-vortex-data.md",
+              "bean": "qou-6m79"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z"
+        }
+      }
+    }
+  ]
+}

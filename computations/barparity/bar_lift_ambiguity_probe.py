@@ -3,7 +3,7 @@
 
 Beans `qou-ndt5` (is the negative branch s = -sqrt(q) observable?) and
 `qou-fi93`.  Lean:
-`content/quantum-observable-universe/lean/QOU/BringsSurface/BarLiftAmbiguity.lean`.
+`folio/quantum-observable-universe/lean/QOU/BringsSurface/BarLiftAmbiguity.lean`.
 
 WHY THIS EXISTS.  Two corpus arcs define the SAME expression and do not cite
 each other:

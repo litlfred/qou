@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/disssubmission/blocks/prose-sec-012",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/disssubmission/blocks/prose-sec-012",
   "kind": "prose",
-  "title": "Chapter 1 – Vanishing theorems on abelian varieties",
-  "pageStart": 24,
-  "pageEnd": 25,
-  "text": "../sections/sec-012-16-chapter-1-vanishing-theorems-on-abelian-varie.md",
-  "derivedFrom": "library/disssubmission/manifest",
-  "sourceDocument": "library/disssubmission/manifest",
+  "title": "The Andr´e-Kahn quotient",
+  "pageStart": 40,
+  "pageEnd": 43,
+  "text": "../sections/sec-012-24-the-andre-kahn-quotient.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/disssubmission",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/disssubmission",
   "provenance": "ingested"
 }

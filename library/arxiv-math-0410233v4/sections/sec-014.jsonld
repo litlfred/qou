@@ -1,18 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0410233v4/sections/sec-014",
   "@type": [
     "doco:Section"
   ],
-  "title": "Selecting local deformations",
-  "pageStart": 19,
-  "pageEnd": 21,
+  "title": "Bounding the boundary terms",
+  "pageStart": 17,
+  "pageEnd": 18,
   "contains": [
-    "library/arxiv-math-0410233v4/blocks/prose-sec-014",
-    "library/arxiv-math-0410233v4/blocks/lem-sec-014-01",
-    "library/arxiv-math-0410233v4/blocks/lem-sec-014-02"
+    "library/arxiv-math-0410233v4/blocks/prose-sec-014"
   ],
-  "derivedFrom": "library/arxiv-math-0410233v4/manifest",
-  "sourceDocument": "library/arxiv-math-0410233v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0410233v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0410233v4",
   "provenance": "ingested"
 }

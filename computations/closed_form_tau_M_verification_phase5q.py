@@ -19,8 +19,13 @@ migration described in `docs/canonical-derivation-cheat-sheet.md` §5
 action #4.
 
   Ref: prop:interface-knot-markov-z.md (Phase 5c.1 interface identity)
-  Ref: prop:constit-factor-tau-M-proton-identity.md (Phase 5l constit identity)
+  Ref: `constit-factor-tau-M-proton-identity` (Phase 5l constit identity)
   Ref: closed_form_tau_M.py (the shared utility under test)
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 
@@ -236,7 +241,7 @@ def main() -> int:
     builder.add_data("lean_uniqueness_ref", {
         "generic": "qou:QOU.BraidKnot.@nucleus_uniqueness_closed (3*A)",
         "framework_doc":
-            "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+            "folio/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
         "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md.",
     })
 

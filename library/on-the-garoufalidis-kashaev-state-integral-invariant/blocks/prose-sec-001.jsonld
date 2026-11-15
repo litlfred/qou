@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-001",
   "kind": "prose",
   "title": "ABSTRACT",
   "pageStart": 5,
   "pageEnd": 10,
   "text": "../sections/sec-001-abstract.md",
-  "derivedFrom": "library/on-the-garoufalidis-kashaev-state-integral-invariant/manifest",
-  "sourceDocument": "library/on-the-garoufalidis-kashaev-state-integral-invariant/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/on-the-garoufalidis-kashaev-state-integral-invariant",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/on-the-garoufalidis-kashaev-state-integral-invariant",
   "provenance": "ingested"
 }

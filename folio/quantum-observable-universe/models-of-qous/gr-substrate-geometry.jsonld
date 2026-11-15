@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-gr-substrate-geometry",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:gr-substrate-geometry",
+  "kind": "remark",
+  "title": "General Relativity as the Substrate Geometry",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-yang-mills-levi"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-yang-mills-levi",
+  "tags": [
+    "gravity",
+    "substrate"
+  ],
+  "text": "gr-substrate-geometry.md",
+  "provenance": "authored"
+}

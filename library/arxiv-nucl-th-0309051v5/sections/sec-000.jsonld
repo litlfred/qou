@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-nucl-th-0309051v5/sections/sec-000",
   "@type": [
     "doco:Section"
   ],
-  "title": "(∂µ ˆn)2 − α",
-  "pageStart": 2,
-  "pageEnd": 2,
+  "title": "Reinterpretation of Faddeev-Niemi Knot in Skyrme Theory",
+  "pageStart": 1,
+  "pageEnd": 4,
   "contains": [
     "library/arxiv-nucl-th-0309051v5/blocks/prose-sec-000"
   ],
-  "derivedFrom": "library/arxiv-nucl-th-0309051v5/manifest",
-  "sourceDocument": "library/arxiv-nucl-th-0309051v5/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-nucl-th-0309051v5",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-nucl-th-0309051v5",
   "provenance": "ingested"
 }

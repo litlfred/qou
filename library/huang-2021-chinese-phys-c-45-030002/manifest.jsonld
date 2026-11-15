@@ -1,16 +1,23 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/huang-2021-chinese-phys-c-45-030002/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "The AME 2020 atomic mass evaluation (I). Evaluation of input data, and adjustment procedures",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/huang-2021-chinese-phys-c-45-030002",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "huang-2021-chinese-phys-c-45-030002",
   "contains": [
     "library/huang-2021-chinese-phys-c-45-030002/sections/sec-000"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "huang-2021-chinese-phys-c-45-030002",
+    "title_source": "slug",
     "source_file": "Huang_2021_Chinese_Phys._C_45_030002.pdf",
     "source_sha256": "1dd3329ed87476c8a7be8c469b098ec0edf26a2ee8adec893869c10bb5513173",
     "pages": 343,

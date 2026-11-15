@@ -91,7 +91,7 @@ existing corpus negative, not a new claim.
       [ -d "$d" ] && LP="$LP:$(pwd)/$d"; done
     export LEAN_PATH="${LP#:}"
     mkdir -p /tmp/leanprobe && cp lean-toolchain /tmp/leanprobe/
-    sed '$ d' content/quantum-observable-universe/mass-theory/\
+    sed '$ d' folio/quantum-observable-universe/mass-theory/\
 habiro-precision-ladder-equivalence.lean > /tmp/leanprobe/P.lean
     printf '\nexample : QbetaHabiroTaylorBridgeClass := <anonymous ctor with the tactic>\n' \
       >> /tmp/leanprobe/P.lean
@@ -201,6 +201,8 @@ record(
 )
 
 out = {
+
+    "q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal",
     "probe": _HERE.stem,
     "bean": "qou-cds1",
     "question": "can QbetaHabiroTaylorBridgeClass be worked as a Lean target?",

@@ -1,11 +1,13 @@
 {
   "schema": "https://litlfred.github.io/qou/schemas/witness/v1",
-  "computedAt": "2026-09-14T06:51:46.776177+00:00",
+  "computedAt": "2026-10-13T14:11:24.378016+00:00",
   "computation": {
     "script": "computations/deltalambda/rev_e_infinity_closed_form_probe.py"
   },
   "bean": "qou-hok7",
   "anchor": "physical_proton",
+  "q0Anchor": "proton",
+  "scriptFile": "rev_e_infinity_closed_form_probe.py",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "description": "Both pieces of e_inf -- the edge energy and the run -- are explicit convergent series in q0, so the last unknown constant of the REV_n asymptotics no longer needs an enumeration to evaluate.  The run re-indexes to sum_d min(d,ell) T(d) - (ln q0/2) ell with T the second difference of eps along the progression, whose intercept resums to a single Lambert-type series; the edge's block-to-bulk tails resum the same way.  Both are checked against the direct pair sums and across a sweep of q, so they are identities rather than anchor coincidences.  What is NOT closed is the SEARCH: the maximising block [3,2,1,1,1] and run length 16 are inputs here, taken from PR #7335, and nothing in this probe proves them optimal.  Nor does anything here prove the limit e_k -> e_inf exists -- the upper bound on M_n is still open.",
   "constants": {

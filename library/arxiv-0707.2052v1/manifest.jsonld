@@ -1,0 +1,74 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0707.2052v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-0707.2052v1",
+  "contains": [
+    "library/arxiv-0707.2052v1/sections/sec-front-matter",
+    "library/arxiv-0707.2052v1/sections/sec-000",
+    "library/arxiv-0707.2052v1/sections/sec-001",
+    "library/arxiv-0707.2052v1/sections/sec-002",
+    "library/arxiv-0707.2052v1/sections/sec-003",
+    "library/arxiv-0707.2052v1/sections/sec-004",
+    "library/arxiv-0707.2052v1/sections/sec-005",
+    "library/arxiv-0707.2052v1/sections/sec-006",
+    "library/arxiv-0707.2052v1/sections/sec-007",
+    "library/arxiv-0707.2052v1/sections/sec-008",
+    "library/arxiv-0707.2052v1/sections/sec-009",
+    "library/arxiv-0707.2052v1/sections/sec-010",
+    "library/arxiv-0707.2052v1/sections/sec-011",
+    "library/arxiv-0707.2052v1/sections/sec-012",
+    "library/arxiv-0707.2052v1/sections/sec-013",
+    "library/arxiv-0707.2052v1/sections/sec-014",
+    "library/arxiv-0707.2052v1/sections/sec-015",
+    "library/arxiv-0707.2052v1/sections/sec-016",
+    "library/arxiv-0707.2052v1/sections/sec-017",
+    "library/arxiv-0707.2052v1/sections/sec-018",
+    "library/arxiv-0707.2052v1/sections/sec-019",
+    "library/arxiv-0707.2052v1/sections/sec-020",
+    "library/arxiv-0707.2052v1/sections/sec-021",
+    "library/arxiv-0707.2052v1/sections/sec-022",
+    "library/arxiv-0707.2052v1/sections/sec-023",
+    "library/arxiv-0707.2052v1/sections/sec-024",
+    "library/arxiv-0707.2052v1/sections/sec-025",
+    "library/arxiv-0707.2052v1/sections/sec-026"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0707.2052&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0707.2052v1",
+    "title_source": "slug",
+    "source_file": "0707.2052v1.pdf",
+    "source_sha256": "0a1d1cca848706bef76372a2fed96571fae1dd49b6e75e41ec98d86115ff5ed9",
+    "pages": 39,
+    "arxiv": {
+      "id": "0707.2052",
+      "version": "1",
+      "primary_class": "math.AG",
+      "stamp_date": "13 Jul 2007"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

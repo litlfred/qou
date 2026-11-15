@@ -1,0 +1,84 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "faddeev-kashaev-volkov2000",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 137,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-hep-th-0006156v1/0006156v1.pdf"
+        },
+        "id": "faddeev-kashaev-volkov2000",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Lattice-Liouville paper whose appendix (Sect. 6) is a self-contained treatment of the non-compact quantum dilogarithm e_b(z): the two modular-double shift equations, the unitarity relation, the product-ratio formula, the directional asymptotics at infinity, and an operator five-term (pentagon) identity proved for COMPLEX b (real b then by continuity). Every one of those ingredients is already load-bearing in the corpus: prop:faddeev-phib-uniqueness writes the same product as its definition of Phi_b and names exactly the shift equations + inversion + sigma-unitarity + strip growth as its four rigidity inputs, and rem:q-dilogarithm-pentagon-associator asserts the operator pentagon on a Weyl pair. NOT core, and the distinction matters: those citation sites are already sourced (faddeev1994, faddeev_kashaev1994, faddeev1995), and prop:faddeev-phib-uniqueness deliberately derives its own analytic bounds 'without contour integration'. So this document supplies a better-localised and in one case stronger (complex-b pentagon; sector-wise asymptotics rather than a crude bound) source for material the corpus already has sourced and already proves \u2014 real citation value, no new mathematics entering the folio. Corpus-grep run over docs/audits/, content/, computations/, docs/coordination/ for modular-double / Phi_b: the material is present and closed, not open.",
+          "keyResults": [
+            {
+              "locator": "Sect. 6.2, eq. (21)",
+              "statement": "e_b(z) equals a ratio of two q-exponentials with q = e^{i pi b^2} and qbar = e^{-i pi b^{-2}}, defining a meromorphic function on all of C with an explicit zero/pole lattice.",
+              "useForFolio": "Primary source for the modular-double product that prop:faddeev-phib-uniqueness writes verbatim as its Phi_b, and for the meromorphy + isolated-zeros facts that block currently establishes by hand.",
+              "targets": [
+                "prop:faddeev-phib-uniqueness"
+              ]
+            },
+            {
+              "locator": "Sect. 6.2, eq. (22)",
+              "statement": "Four-sector asymptotic behaviour of e_b(z) as |z| -> infinity, with Gaussian, theta-function and constant regimes selected by arg(z) relative to arg(b).",
+              "useForFolio": "The sector-wise growth input behind prop:faddeev-phib-uniqueness's 'strip growth' hypothesis; applicable on that block's branch Im b^2 > 0 (arg b = pi/4), so it can replace the block's elementary product-norm bound with a literature statement.",
+              "targets": [
+                "prop:faddeev-phib-uniqueness"
+              ]
+            },
+            {
+              "locator": "Sect. 6.1, eq. (20) + Sect. 6.5",
+              "statement": "The operator five-term identity e_b(P) e_b(X) = e_b(X) e_b(P+X) e_b(P) on a Heisenberg pair, with a proof valid for complex b (real b by continuity).",
+              "useForFolio": "Sources the operator pentagon that rem:q-dilogarithm-pentagon-associator states, at the complex-b generality the corpus's fibre-vs-observable split needs (fibre-level q need not be real).",
+              "targets": [
+                "rem:q-dilogarithm-pentagon-associator"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "No ref() entry exists; the paper's Sect. 6 is the appropriate source for three separate Phi_b facts the corpus uses.",
+              "target": "prop:faddeev-phib-uniqueness",
+              "bean": "qou-fc7k"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "prop:faddeev-phib-uniqueness currently cites only faddeev1995 + faddeev1994 while stating the product formula and the strip-growth hypothesis that this paper's eqs. (21)-(22) give explicitly.",
+              "target": "prop:faddeev-phib-uniqueness",
+              "bean": "qou-r6ki"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "rem:q-dilogarithm-pentagon-associator cites faddeev_kashaev1994 for the operator pentagon; this paper carries a proof at complex b, which is the regime the corpus's fibre-level (non-real q) framing requires.",
+              "target": "rem:q-dilogarithm-pentagon-associator",
+              "bean": "qou-cy96"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "b799d4ef1502"
+        },
+        "note": "Source IS held: library/arxiv-hep-th-0006156v1. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+        "verified_at": "2026-09-03T04:19:53Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

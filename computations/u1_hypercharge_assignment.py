@@ -14,7 +14,7 @@ THIS probe attacks the structural question WITHOUT tuning c:
   Q1. What is c, STRUCTURALLY?  Is the per-crossing coupling fixed by an
       EXISTING framework object, or is it free (the obstruction)?
       FINDING (derived from corpus, NOT fitted):
-        def:coulomb-charge (content/quantum-observable-universe/
+        def:coulomb-charge (folio/quantum-observable-universe/
         knots-particles-confinement/coulomb-charge.lean, .md) defines
               Q(H) = (1/2)(n_+ - n_-)
         where n_+, n_- are the positive/negative crossing counts.  The writhe

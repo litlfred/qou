@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1304.2934v4/sections/sec-009",
   "@type": [
     "doco:Section"
   ],
-  "title": "Deviations at the scale O(tn)",
-  "pageStart": 16,
-  "pageEnd": 21,
+  "title": "Gaussian integrals",
+  "pageStart": 13,
+  "pageEnd": 14,
   "contains": [
     "library/arxiv-1304.2934v4/blocks/prose-sec-009"
   ],
-  "derivedFrom": "library/arxiv-1304.2934v4/manifest",
-  "sourceDocument": "library/arxiv-1304.2934v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1304.2934v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1304.2934v4",
   "provenance": "ingested"
 }

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-hep-th-0306165v1/sections/sec-024",
   "@type": [
     "doco:Section"
   ],
-  "title": "Non-perturbative Aspects",
-  "pageStart": 31,
-  "pageEnd": 34,
+  "title": "A Contribution of the Trivial Connection",
+  "pageStart": 49,
+  "pageEnd": 50,
   "contains": [
     "library/arxiv-hep-th-0306165v1/blocks/prose-sec-024"
   ],
-  "derivedFrom": "library/arxiv-hep-th-0306165v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-0306165v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0306165v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0306165v1",
   "provenance": "ingested"
 }

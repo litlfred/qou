@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1701.06567v2/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1701.06567v2/blocks/prose-sec-006",
   "kind": "prose",
-  "title": "D2×S1 partition function of T [M3] and WRT invariant",
-  "pageStart": 7,
-  "pageEnd": 14,
-  "text": "../sections/sec-006-22-d2s1-partition-function-of-t-m3-and-wrt-invar.md",
-  "derivedFrom": "library/arxiv-1701.06567v2/manifest",
-  "sourceDocument": "library/arxiv-1701.06567v2/manifest",
+  "title": "Categorifying the index",
+  "pageStart": 29,
+  "pageEnd": 39,
+  "text": "../sections/sec-006-311-categorifying-the-index.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1701.06567v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1701.06567v2",
   "provenance": "ingested"
 }

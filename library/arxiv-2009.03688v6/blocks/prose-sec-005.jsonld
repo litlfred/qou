@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2009.03688v6/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2009.03688v6/blocks/prose-sec-005",
   "kind": "prose",
-  "title": "Q 18 and E20-singularities from CY /SL(2, 13) over X(13) and",
-  "pageStart": 2,
-  "pageEnd": 7,
-  "text": "../sections/sec-005-5-q-18-and-e20-singularities-from-cy-sl2-13-over.md",
-  "derivedFrom": "library/arxiv-2009.03688v6/manifest",
-  "sourceDocument": "library/arxiv-2009.03688v6/manifest",
+  "title": "Invariant theory and modular forms for SL(2, 13)",
+  "pageStart": 16,
+  "pageEnd": 39,
+  "text": "../sections/sec-005-3-invariant-theory-and-modular-forms-for-sl2-13.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2009.03688v6",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2009.03688v6",
   "provenance": "ingested"
 }

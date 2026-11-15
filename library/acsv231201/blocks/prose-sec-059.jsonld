@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/acsv231201/blocks/prose-sec-059",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/acsv231201/blocks/prose-sec-059",
   "kind": "prose",
   "title": "Algebraic generating functions",
   "pageStart": 420,
   "pageEnd": 422,
   "text": "../sections/sec-059-algebraic-generating-functions.md",
-  "derivedFrom": "library/acsv231201/manifest",
-  "sourceDocument": "library/acsv231201/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
   "provenance": "ingested"
 }

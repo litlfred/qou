@@ -8,133 +8,83 @@ pages: 13-16
 source_pdf: 1112.5179v1.pdf
 source_sha256: b58af08336c40994
 doc_brief: "3-Manifolds and 3d Indices — We identify a large classR of three-dimensionalN = 2 superconformal ﬁeld the- ories."
+text_source: latex
+latex_prose_ratio: 0.973
+latex_coverage_ratio: 0.961
 ---
-In [8] (see also [9, 19]), we encountered a certain universal structure common to 3d N = 2
-theories withU(1)N ﬂavor symmetry. Upon compactiﬁcation on R2×S1, the moduli space of
-SUSY vacua maps to a Lagrangian submanifoldL of (C∗)2N, parameterized by the choices of
-complexiﬁed twisted masses X and eﬀective complexiﬁed FI parameters P . Both parameters
-have periodic imaginary parts (ﬂavor Wilson lines and eﬀective theta angles respectively), so
-the true ( C∗)2N parameters are
-x =eX, p =eP. (2.26)
-The eﬀective FI parameters are derived from the low energy eﬀective twisted superpotential
-~W as
-p = exp
-(
-∂X~W
-)
-. (2.27)
-8For example, we will see later that the index of the tetrahedron theory, as a function of q, has a natural
-boundary at|q| = 1. We expect this to hold true for more general theories in class R.
-– 12 –
-The symplectic groupSp(2N, Z) simply acts by left multiplication on the symplectic vec-
-tor (X,P )T . Moreover, the shifts in fermion number act as translations. The compactiﬁcation
-on R2×S1 is done with supersymmetry-preserving boundary conditions. Hence, an electric
-shift in the deﬁnition of F by αe is equivalent to a shift of the ﬂavor Wilson lines by iπαe.
-More generally, a shift α in the deﬁnition of F turns into a shift of ( X,P ) by iπα. Shifts in
-the deﬁnition of R are not visible. The operation of adding an operator of charge c to the
-superpotential is equivalent to a symplectic quotient of both the ambient space and ofL with
-moment map⟨c,P⟩.
-The classical structure of the R2×S1 moduli space has a quantum counterpart in the S3
-b
-partition function. The S3
-b partition function is a function of the complexiﬁed twisted masses
-mX, whose imaginary parts are now proportional to the contribution of the ﬂavor symmetries
-to the choice of R-charge. We can deﬁne operators ˆX that act on the S3
-b partition function
-as multiplication by 2πbmX, and ˆP acting as ib∂mX. These operators satisfy commutation
-relations
-[ ˆPj ˆXj′] = ℏδjj′, ℏ≡ 2πib2. (2.28)
-Then the S3
-b partition function behaves as a wavefunction, killed by a quantum version
-ˆL( ˆX, ˆP, ℏ) of the equations that deﬁne L.
-The group Sp(2N, Z) again simply acts by left multiplication on ( ˆX, ˆP )T . Moreover,
-shifts in the deﬁnition of R used in the partition function give rise to shifts of ( ˆX, ˆP ) by
-(iπ + ℏ/2)α. In the limit ℏ→ 0, the ellipsoid is degenerates into R2×S1, with a choice
-of fermion number that appears to depend on the choice of R in S3
-b . Finally, operation of
-adding an operator of charge c to the superpotential is equivalent to a “quantum symplectic
-quotient” with moment map⟨c, ˆP⟩.
-We would like to carry this algebraic machinery over to index calculations. We can
-actually deﬁne two commuting sets of interesting operators. The ﬁrst set is
-ˆX+ = ℏ
-2m−∂e
-ˆP+ = ℏ
-2e +∂m
-, [ ˆP+, ˆX+] = ℏ, (2.29a)
+[]{#sec:ops label="sec:ops"}
+
+In [@DGH] (see also [@DG-Sdual; @DGG]), we encountered a certain universal structure common to 3d $\mathcal{N}=2$ theories with $U(1)^N$ flavor symmetry. Upon compactification on ${\mathbb R}^2 \times S^1$, the moduli space of SUSY vacua maps to a Lagrangian submanifold $\mathcal{L}$ of $({\mathbb C}^*)^{2N}$, parameterized by the choices of complexified twisted masses $X$ and effective complexified FI parameters $P$. Both parameters have periodic imaginary parts (flavor Wilson lines and effective theta angles respectively), so the true $({\mathbb C}^*)^{2N}$ parameters are $$x = e^X\,, \qquad p=e^P\,.$$
+
+The effective FI parameters are derived from the low energy effective twisted superpotential $\widetilde\mathcal{W}$ as $$p = \exp\big(\partial_X \widetilde\mathcal{W}\big)\,.$$
+
+The symplectic group $Sp(2N,{\mathbb Z})$ simply acts by left multiplication on the symplectic vector $(X,P)^T$. Moreover, the shifts in fermion number act as translations. The compactification on ${\mathbb R}^2 \times S^1$ is done with supersymmetry-preserving boundary conditions. Hence, an electric shift in the definition of $F$ by $\alpha_e$ is equivalent to a shift of the flavor Wilson lines by $i\pi \alpha_e$. More generally, a shift $\alpha$ in the definition of $F$ turns into a shift of $(X,P)$ by $i \pi \alpha$. Shifts in the definition of $R$ are not visible. The operation of adding an operator of charge $c$ to the superpotential is equivalent to a symplectic quotient of both the ambient space and of $\mathcal{L}$ with moment map $\langle c, P \rangle$.
+
+The classical structure of the ${\mathbb R}^2 \times S^1$ moduli space has a quantum counterpart in the $S^3_b$ partition function. The $S^3_b$ partition function is a function of the complexified twisted masses $m_X$, whose imaginary parts are now proportional to the contribution of the flavor symmetries to the choice of R-charge. We can define operators $\hat X$ that act on the $S^3_b$ partition function as multiplication by $2 \pi b m_X$, and $\hat P$ acting as $i b \partial_{m_X}$. These operators satisfy commutation relations
+
+$$=\hbar\delta_{jj'}\,,\qquad \hbar \equiv 2\pi i b^2\,.$$
+
+Then the $S^3_b$ partition function behaves as a wavefunction, killed by a quantum version $\hat \mathcal{L}(\hat X, \hat P, \hbar)$ of the equations that define $\mathcal{L}$.
+
+The group $Sp(2N,{\mathbb Z})$ again simply acts by left multiplication on $(\hat X, \hat P)^T$. Moreover, shifts in the definition of $R$ used in the partition function give rise to shifts of $(\hat X, \hat P)$ by $(i \pi + \hbar/2) \alpha$. In the limit $\hbar \to 0$, the ellipsoid is degenerates into ${\mathbb R}^2 \times S^1$, with a choice of fermion number that appears to depend on the choice of $R$ in $S^3_b$. Finally, operation of adding an operator of charge $c$ to the superpotential is equivalent to a "quantum symplectic quotient" with moment map $\langle c, \hat P \rangle$.
+
+We would like to carry this algebraic machinery over to index calculations. We can actually define two commuting sets of interesting operators. The first set is
+
+$$\label{XP}
+\begin{align}
+\left.\begin{array}{l}
+\hat X_+ = \tfrac{\hbar}{2} m - \partial_e \\[.1cm]
+\hat P_+ = \tfrac{\hbar}{2} e + \partial_m
+\end{array}\right.\;\;,
+\qquad [\hat P_+,\hat X_+]=\hbar\,,
+\end{align}
+
 and the second set is
-ˆX− = ℏ
-2m +∂e
-ˆP− = ℏ
-2e−∂m
-, [ ˆP−, ˆX−] =−ℏ, (2.29b)
-with each ˆX± and ˆP± denoting a vector of N operators, and
-ℏ = logq. (2.30)
-Although we write the operators in logarithmic form, as partial derivatives, the actual algebra
-that acts on the index is generated by the well-deﬁned multiplication and shift operators
-(ˆx±, ˆp±) = (e ˆX±,e ˆP±). The exponentiated operators satisfy q-commutation relations
-ˆpj+ˆxj′+ =qδjj′ ˆxj′+ˆpj+, ˆpj−ˆxj′− =q−δjj′ ˆxj′−ˆpj−, (2.31)
-– 13 –
+
+\begin{align}
+\left.\begin{array}{l}
+\hat X_- = \tfrac{\hbar}{2} m + \partial_e \\[.1cm]
+\hat P_- = \tfrac{\hbar}{2} e - \partial_m
+\end{array}\right.\;\;,
+\qquad [\hat P_-,\hat X_-]=-\hbar\,,
+\end{align}$$
+
+with each $\hat X_\pm$ and $\hat P_\pm$ denoting a vector of $N$ operators, and
+
+$$\boxed{\hbar = \log q\,.}
+\label{hlogq}$$
+
+Although we write the operators in logarithmic form, as partial derivatives, the actual algebra that acts on the index is generated by the well-defined multiplication and shift operators $(\hat x_\pm,\hat p_\pm) = (e^{\hat X_\pm}, e^{\hat P_\pm})$. The exponentiated operators satisfy $q$-commutation relations
+
+$$\hat p_j{}_+\hat x_{j'}{}_+ = q^{\delta_{jj'}}\hat x_{j'}{}_+\hat p_j{}_+\,,\qquad \hat p_j{}_-\hat x_{j'}{}_- = q^{-\delta_{jj'}}\hat x_{j'}{}_-\hat p_j{}_-\,,$$
+
 with all other pairs of operators commuting.
-We could also consider the action of these operators on the standard index IT (m;q,ζ ) in
-a fugacity basis. If we set ζ≡eiθ, we ﬁnd that ∂e→iθ and e→−i∂θ, so that
-ˆX± = ℏ
-2m±iθ, ˆP± =±∂m− iℏ
-2∂θ. (2.32)
-Therefore, in a fugacity basis, the index is simply an eigenfunction of the ˆX± operators. In
-either basis, the ρ transformation of Section 2.4 conjugates one set of operators to the other:
-ρ−1( ˆX±, ˆP±)ρ = ( ˆX∓, ˆP∓). (2.33)
-Just as in the cases of S3
-b partition functions and R2×S1 moduli spaces, reviewed above,
-there is a natural action of the aﬃne symplectic group on the operator algebra generated
-by (2.29). This action intertwines the aﬃne symplectic action on the index. In particular,
-g∈Sp(2N, Z) acts as matrix multiplication on ( ˆX±, ˆP±), so that
-( ˆX′
-±
-ˆP′
-±
-)
-·Ig◦T (γ′) =
-[
-g
-( ˆX±
-ˆP±
-)
-·IT (γ)
-]
-γ→g−1γ′
-. (2.34)
-(It may help to recall from (2.7) thatIg◦T (γ′) =I(g−1γ′).) For example, if N = 1 andg =T
-is the T element of SL(2, Z), this intertwining property would imply that
-ˆP′·IT (m′,e′−m′) =
-[
-( ˆX + ˆP )·IT (m,e )
-]
-(m,e)→(m′,e′−m′)
-. (2.35)
+
+We could also consider the action of these operators on the standard index $\mathcal{I}_\mathcal{T}(m;q,\zeta)$ in a fugacity basis. If we set $\zeta \equiv e^{i\theta}$, we find that $\partial_e \to i\theta$ and $e\to -i\partial_\theta$, so that
+
+$$\hat X_\pm  = \frac\hbar2 m \pm i\theta\,,\qquad \hat P_\pm = \pm\partial_m-\frac{i\hbar}2\partial_\theta\,. \label{XPz}$$
+
+Therefore, in a fugacity basis, the index is simply an eigenfunction of the $\hat X_\pm$ operators. In *either* basis, the $\rho$ transformation of Section [\[sec:kappa\]](#sec:kappa){reference-type="ref" reference="sec:kappa"} conjugates one set of operators to the other:
+
+$$\rho^{-1}(\hat X_\pm,\hat P_\pm)\,\rho = (\hat X_\mp,\hat P_\mp)\,.$$
+
+Just as in the cases of $S^3_b$ partition functions and ${\mathbb R}^2\times S^1$ moduli spaces, reviewed above, there is a natural action of the affine symplectic group on the operator algebra generated by [\[XP\]](#XP){reference-type="eqref" reference="XP"}. This action intertwines the affine symplectic action on the index. In particular, $g\in Sp(2N,{\mathbb Z})$ acts as matrix multiplication on $(\hat X_\pm,\hat P_\pm)$, so that
+
+$$\label{intertwine}
+ \boxed{\begin{pmatrix} \hat X_\pm' \\ \hat P_\pm '\end{pmatrix}
+\cdot \mathcal{I}_{g\circ \mathcal{T}}(\gamma') = \left[ g\begin{pmatrix} \hat X_\pm \\ \hat P_\pm \end{pmatrix}\cdot I_\mathcal{T}(\gamma)\right]_{\gamma\,\to\, g^{-1}\gamma'}\,.}$$
+
+(It may help to recall from [\[Spem\]](#Spem){reference-type="eqref" reference="Spem"} that $\mathcal{I}_{g\circ \mathcal{T}}(\gamma') = \mathcal{I}(g^{-1}\gamma')$.) For example, if $N=1$ and $g=T$ is the $T$ element of $SL(2,{\mathbb Z})$, this intertwining property would imply that
+
+$$\hat P' \cdot \mathcal{I}_\mathcal{T}(m',e'-m') = \left[(\hat X+\hat P)\cdot \mathcal{I}_\mathcal{T}(m,e)\right]_{(m,e)\to (m',e'-m')}\,.$$
+
 In a similar way, the translations
-σR(α) : ( ˆX±, ˆP±) ↦→ ( ˆX′
-±, ˆP′
-±) = ( ˆX±, ˆP±)± ℏ
-2α, (2.36)
-σF (α) : ( ˆX±, ˆP±) ↦→ ( ˆX′
-±, ˆP′
-±) = ( ˆX±, ˆP±)±iπα (2.37)
-intertwine the action of R-charge and fermion-number shifts in the index. If we always
-combine an R-symmetry shift with an equal F-symmetry shift, we recover the familiar shifts
-by multiples of iπ + ℏ
-2 that were encountered in the S3
-b partition functions of TM theories
-[19]. Finally, the operation of adding an operator of charge c to the superpotential is again
-equivalent to a “quantum symplectic quotient” with moment map ⟨c, ˆP±⟩.
-As we take the radius of the circle used in the deﬁnition of index to zero, i.e. q→ 1,
-or equivalently the radius of the S2 to inﬁnity, we expect to be able to connect back to the
-problem on R2×S1. One may hope that in the q→ 1 limit both sets of operators deﬁned
-above may go to the classical ( X,P ) coordinates. In concrete examples, we ﬁnd a striking
-result: the index of the 3d SCFTs is annihilated by the same set of equations as the S3
-b
-partition function is, written in terms of either set of operators: ˆL( ˆX±, ˆP±, ℏ±)·IT = 0. The
-fact that both ‘±’ sets of equations annihilate the index is consistent with the claim of Section
-2.4 that the index of TM theories enjoys a formal ρ symmetry. We expect this statement to
-have a universal validity, beyond the examples considered in this paper. In Section 5 we will
-sketch a proof of this statement.
-– 14 –
+
+$$\begin{aligned}
+ \sigma^R(\alpha)\,:\; (\hat X_\pm,\hat P_\pm) &\;\mapsto\; (\hat X_\pm',\hat P_\pm') = (\hat X_\pm,\hat P_\pm) \pm \frac\hbar2 \alpha\,, \\
+\sigma^F(\alpha)\,:\; (\hat X_\pm,\hat P_\pm) &\;\mapsto\; (\hat X_\pm',\hat P_\pm') = (\hat X_\pm,\hat P_\pm) \pm i\pi \alpha\,
+\end{aligned}$$
+
+intertwine the action of R-charge and fermion-number shifts in the index. If we always combine an R-symmetry shift with an equal F-symmetry shift, we recover the familiar shifts by multiples of $i \pi + \tfrac{\hbar}{2}$ that were encountered in the $S^3_b$ partition functions of $T_M$ theories [@DGG]. Finally, the operation of adding an operator of charge $c$ to the superpotential is again equivalent to a "quantum symplectic quotient" with moment map $\langle c, \hat P_\pm \rangle$.
+
+As we take the radius of the circle used in the definition of index to zero, *i.e.* $q \to 1$, or equivalently the radius of the $S^2$ to infinity, we expect to be able to connect back to the problem on ${\mathbb R}^2 \times S^1$. One may hope that in the $q \to 1$ limit both sets of operators defined above may go to the classical $(X,P)$ coordinates. In concrete examples, we find a striking result: the index of the 3d SCFTs is annihilated by the same set of equations as the $S^3_b$ partition function is, written in terms of either set of operators: $\hat \mathcal{L}(\hat X_\pm, \hat P_\pm, \hbar_\pm) \cdot \mathcal{I}_\mathcal{T}= 0$. The fact that both '$\pm$' sets of equations annihilate the index is consistent with the claim of Section [\[sec:kappa\]](#sec:kappa){reference-type="ref" reference="sec:kappa"} that the index of $T_M$ theories enjoys a formal $\rho$ symmetry. We expect this statement to have a universal validity, beyond the examples considered in this paper. In Section [\[sec:3d4d\]](#sec:3d4d){reference-type="ref" reference="sec:3d4d"} we will sketch a proof of this statement.

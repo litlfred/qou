@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0903.0853v3/blocks/prose-sec-035",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0903.0853v3/blocks/prose-sec-035",
   "kind": "prose",
-  "title": "Unity . — An important particular object is the unity 1",
-  "pageStart": 18,
-  "pageEnd": 18,
-  "text": "../sections/sec-035-2111-unity-an-important-particular-object-is-the.md",
-  "derivedFrom": "library/arxiv-0903.0853v3/manifest",
-  "sourceDocument": "library/arxiv-0903.0853v3/manifest",
+  "title": "Asymptotics and residues (II)",
+  "pageStart": 85,
+  "pageEnd": 94,
+  "text": "../sections/sec-035-162-asymptotics-and-residues-ii.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0903.0853v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0903.0853v3",
   "provenance": "ingested"
 }

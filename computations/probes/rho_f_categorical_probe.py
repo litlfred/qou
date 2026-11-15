@@ -9,7 +9,7 @@
 > [`q_pinning_50_digit.py`](q_pinning_50_digit.py) per
 > [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../docs/audits/2026-05-24-superseded-rho-q-purge.md)).
 > The categorical replacement target is
-> [`prop:rho-k-graded-expansion`](../../content/quantum-observable-universe/braids-and-knots/rho-k-graded-expansion.md);
+> [`prop:rho-k-graded-expansion`](../../folio/quantum-observable-universe/braids-and-knots/rho-k-graded-expansion.md);
 > this probe's candidates are direct competitors.
 
 Goal: find a PURELY categorical formula for ρ_F(Z,N) that improves on
@@ -75,7 +75,7 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 set_compute_dps()
 
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
-from canonical_trm_reference import tr_m_nucleon  # noqa: E402
+from canonical_trm_reference import tr_m_nucleon  # noqa: E402  (serves the deuteron row too)
 import json
 import sys
 
@@ -124,7 +124,9 @@ TR_M: dict = {
     # 7.55% from the canonical D values.
     (1, 0): tr_m_nucleon("proton"),
     (0, 1): tr_m_nucleon("neutron"),
-    (1, 1): _mp.mpf("0.3882864715477132"),   # deuteron  (D)
+    # deuteron: was the superseded grouped/convention-C literal 0.38828647…
+    # (tracker #7735 item K). Never read below (only p/n are); kept consistent.
+    (1, 1): tr_m_nucleon("deuteron"),   # deuteron  (D)
     (1, 2): _mp.mpf("0.1040521186755260"),   # tritium   (³H)
     (2, 1): _mp.mpf("0.2065408585622625"),   # helium-3  (³He)
     (2, 2): _mp.mpf("0.0553483458766980"),   # helium-4  (⁴He)

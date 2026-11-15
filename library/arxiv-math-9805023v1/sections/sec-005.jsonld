@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-9805023v1/sections/sec-005",
   "@type": [
     "doco:Section"
   ],
-  "title": "(α +1)(k+l)(−1)k+l",
-  "pageStart": 11,
-  "pageEnd": 11,
+  "title": "Proof of the dual orthogonality relations.",
+  "pageStart": 13,
+  "pageEnd": 20,
   "contains": [
     "library/arxiv-math-9805023v1/blocks/prose-sec-005"
   ],
-  "derivedFrom": "library/arxiv-math-9805023v1/manifest",
-  "sourceDocument": "library/arxiv-math-9805023v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9805023v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9805023v1",
   "provenance": "ingested"
 }

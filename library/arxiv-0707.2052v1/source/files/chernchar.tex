@@ -1,0 +1,215 @@
+\section{The Chern character}
+\label{sec:chernchar}
+
+In this section we define the Chern character map $\ch\colon \K_0(X)
+\ra \HH_0(X)$.  We discuss the relationship between our construction
+and the one of Markarian~\cite[Definition~2]{Mar}.  Then we show that
+the Chern character maps the Euler pairing to the Mukai pairing: we
+call this the Semi-Hirzebruch-Riemann-Roch Theorem.
+
+\subsection{Definition of the Chern character.}
+Suppose $X$ is a space, and $\cE$ is an object in $\D(X)$. Consider
+$\cE$ as an object of $\D(\pt\times X)$, i.e., as a kernel $\pt \ra
+X$, so there is an induced linear map
+\[ \cE_*\colon\HH_\blob(\pt) \ra \HH_\blob(X). \]
+Now, because the Serre functor on a point is trivial, $\HH_0(\pt)$ is
+canonically identifiable with $\Hom_{\pt\times \pt}(\cO_\pt, \cO_\pt)$
+so there is a distinguished class $\bone \in \HH_0(\pt)$ corresponding
+to the identity map.  Define the Chern character of $\cE$ as
+\[ \ch(\cE) := \cE_*(\bone) \in \HH_0(X). \]
+Graphically this has the following description:
+\[\ch(\cE):=\pic{chE}.\]
+Naturality of push-forward leads to the next theorem.
+
+\begin{Theorem}
+\label{thm:commut}
+If $X$ and $Y$ are spaces and $\Phi\colon X\to Y$ is a kernel then the
+diagram below commutes.
+\[
+\begin{diagram}[height=2em,width=2em,labelstyle=\scriptstyle]
+\D(X) & \rTo^{\Phi\circ {-}} & \D(Y) \\
+\dTo_{\ch} & & \dTo_{\ch} \\
+\HH_0(X) & \rTo^{\Phi_*} & \HH_0(Y).
+\end{diagram}
+\]
+\end{Theorem}
+
+\begin{Proof}
+  Let $\cE$ be an object of $\D(X)$.  We will regard it either as an
+  object in $\D(X)$, or as a kernel $\pt \ra X$, and similarly we will
+  regard $\Phi\circ\cE$ either as an object in $\D(Y)$ or as a kernel
+  $\pt \ra Y$.  By Theorem~\ref{thm:functorial} we have
+  \begin{align*}
+    \Phi_* \ch(\cE) & = \Phi_* \left(\cE_* (\bone)\right) = (\Phi\circ
+    \cE)_* \bone = \ch(\Phi\circ\cE).\qedhere
+  \end{align*}
+\end{Proof}
+
+ \subsection{The Chern character as a map on K-theory.}
+\label{subsec:iotae}
+To show that the Chern character descends to a map on K-theory we give
+a characterization of the Chern character similar to that of
+Markarian~\cite{Mar}.
+
+For any object $\cE\in \D(X)$, which is to be considered an object of
+$\D( \pt\times X)$, there are the following two maps:
+\[\iota_\cE\colon \HH_\blob(X)\to \Hom_{\D(X\times X)}^\blob(\cE,\SerK_X\circ \cE);
+\qquad\pic{vinHH}\,\mapsto \,\pic{iEofvinHH}\]
+and
+\[\iota^\cE\colon \Hom_{\D(X\times X)}^\blob(\cE,\cE)\to\HH_\blob(X);
+\qquad\pic{einHomEE}\mapsto \,\pic{homologyiEofeinHomEE}. \]
+
+Recall that the Mukai pairing is a non-degenerate pairing on $\HH_\blob(X)$ and that the Serre pairing is a perfect pairing between $\Hom_{\D(X\times X)}^\blob(\cE,\SerK_X\circ \cE)$
+and $\Hom_{\D(X\times X)}^\blob(\cE,\cE)$.
+%The vector space $\HH_\blob(X)$ is self dual by virtue of the Mukai
+%pairing. Similarly, $\Hom_{\D(X\times X)}^\blob(\cE,\SerK_X\circ \cE)$
+%and $\Hom_{\D(X\times X)}^\blob(\cE,\cE)$ are dual by the Serre
+%pairing. 
+ With respect to these pairings the two maps $\iota^\cE$ and
+$\iota_\cE$ are adjoint in the following sense.
+
+\begin{Proposition}\label{prop:iotasadjoint}
+  For $\phi\in \Hom^\blob(\cE,\cE)$ and $v\in \HH_\blob(X)$ the
+  following equality holds:
+  \[\langle v,\, \iota^\cE\phi\rangle_{\rm M} =\SP{\iota_\cE v}{\phi}\]
+\end{Proposition}
+
+\begin{Proof}
+  Here in the third equality we use the invariance of the Serre trace
+  under the partial trace map.
+  \begin{align*}
+    \MP{v}{\iota^\cE\phi}&=
+    \MPbig{\pic{vinHH}}{\pic{homologyiEofeinHomEE}}
+    :=\Tr\left(\pic{iEadjoint3}\right)\\&=
+    \Tr\left(\pic{iEadjoint4}\right)
+    =\Tr\left(\pic{iEadjoint5}\right)\\
+    &=: \SPbig{\pic{iEofvinHH}\quad}{\quad\pic{einHomEE}} =:\SP{\iota_\cE
+      v}{\phi}.\qedhere
+  \end{align*}
+\end{Proof}
+\noindent
+Note that, using this, the Chern character could have been defined as
+\[\ch(\cE):=\iota^\cE(\id_\cE).\]
+Then from the above proposition the following is immediate.
+
+\begin{Lemma}
+  For $v\in \HH_0(X)$ and $\cE\in \D(X)$ there is the equality
+  \[\MP{v}{\ch(\cE)}=\Tr(\iota_\cE(v)),\]
+  and this defines $\ch(\cE)$ uniquely.
+\end{Lemma}
+
+The fact that the Chern character descends to a function on the
+K-group can now be demonstrated.
+
+\begin{Proposition}
+  For $\cE\in \D(X)$ the Chern character $\ch(\cE)$ depends only on
+  the class of $\cE$ in $\K_0(X)$.  Thus the Chern character can be
+  considered as a map
+  \[ \ch\colon \K_0(X) \ra \HH_0(X). \]
+\end{Proposition}
+
+\begin{Proof}
+  It suffices to show that if $\cF\ra \cG\ra \cH\ra \cF[1]$ is an
+  exact triangle in $\D(X)$, then
+  \[ \ch(\cF) - \ch(\cG) + \ch(\cH) = 0 \]
+  in $\HH_0(X)$.
+
+  For $\cG,\cH\in \D(X)$, $\alpha \colon \cG\to \cH$ and $v\in
+  \HH_\blob(X)$ the diagram on the left commutes as it expresses the
+  equality on the right:
+  \[
+  \begin{diagram}[height=2em,width=2em]
+    \cG & \rTo^{\alpha} & \cH\\
+    \dTo^{\iota_\cG( v)} & &
+    \dTo_{\iota_\cH( v)}  \\
+    \SerK_X \circ\cG & \rTo^{\Id_{\SerK_X}\circ \alpha} & \SerK_X
+    \circ\cH.
+  \end{diagram}\qquad;\qquad\pic{ChernOnK1}\ =\ \pic{ChernOnK2}\ .
+  \]
+  In other words, from an element $v\in \HH_\blob(X)$ we get
+  $\tau_R(v)\in \Hom(\Id_X,\SerK_X)$, which in turn gives rise to
+  a natural transformation between the functors $\Id_{\D(X)}\colon \D(X)\to
+  \D(X)$ and $\SerK_X\circ{-}\colon \D(X)\to \D(X)$.  This leads to a
+  map of triangles
+  \[
+  \begin{diagram}[height=2em,width=2em]
+    \cF & \rTo & \cG & \rTo & \cH & \rTo & \cF[1] \\
+    \dTo_{\iota_\cF( v)} & & \dTo_{\iota_\cG( v)} & &
+    \dTo_{\iota_\cH( v)} & & \dTo_{\iota_\cF( v)[1]} \\
+    S_X \cF & \rTo & S_X \cG & \rTo & S_X \cH & \rTo & S_X \cF[1].
+  \end{diagram}
+  \]
+  Observe that if we represent the morphism $v$ by an actual map of
+  complexes of injectives, and the objects $\cF$, $\cG$ and $\cH$ by
+  complexes of locally free sheaves, then the resulting maps in the
+  above diagram commute on the nose (no further injective or locally
+  free resolutions are needed), so we can apply
+  \cite[Theorem~1.9]{May} to get
+  \[ \Tr_X(\iota_\cF( v)) - \Tr_X(\iota_\cG( v)) + \Tr_X(\iota_\cH(
+  v)) = 0. \] Therefore, by the lemma above, for any $ v\in
+  \HH_\blob(X)$,
+  \[ \MP{v}{\ch(\cF)-\ch(\cG)+\ch(\cH)}= 0 .\]
+  Since the Mukai pairing on $\HH_0(X)$ is
+  non-degenerate, we conclude that
+  \[ \ch(\cF) - \ch(\cG) + \ch(\cH) = 0. \qedhere\]
+\end{Proof}
+
+ \subsection{The Chern character and inner products.}
+One reading of the Hirzebruch-Riemann-Roch Theorem is that it says
+that the usual Chern character map $\ch\colon \K_0\to \H^\blob(X)$ is
+a map of inner product spaces when $\K_0(X)$ is equipped with the
+Euler pairing (see below) and $\H^\blob(X)$ is equipped with the
+pairing $\langle x_1,x_2\rangle:=(x_1\cup x_2 \cup \Td_X)\cap [X]$.
+It is shown in~\cite{CalHH2} that the Hochschild homology Chern
+character composed with the Hochschild-Kostant-Rosenberg map
+$I_{\text{HKR}}$ gives the usual Chern character:
+\[\K_0\xrightarrow{\ch}\HH_0(X)\xrightarrow{I_\text{HKR}}
+\bigoplus_p \H^{p,p}(X).\]
+Here we show that the Hochschild homology Chern character is an
+inner-product map when $\HH_\blob(X)$ is equipped with the Mukai
+pairing.
+
+First recall that the Euler pairing on $\K_0(X)$ is defined by
+\[\chi(\cE,\cF):=\sum_i (-1)^i \dim \Ext^i_X(\cE, \cF). \]
+
+\begin{Theorem}[Semi-Hirzebruch-Riemann-Roch]
+\label{thm:hrr}
+The Chern character
+\[ \ch\colon \K_0\to \HH_0(X) \]
+is a map of inner-product spaces: in other words, for $\cE, \cF\in
+\D(X)$ we have
+\[ \MP{\ch(\cE)}{\ch(\cF)} = \chi(\cE, \cF). \]
+\end{Theorem}
+
+\begin{Proof}
+  The first thing to do is to get an interpretation of the Euler
+  pairing.  Considering the totality of $\Ext$-groups
+  $\Ext^\blob(\cE,\cF)$ as a graded vector space, the Euler
+  characteristic is just the graded dimension of
+  $\Ext^\blob(\cE,\cF)$, which is to say it is the trace of the
+  identity map on $\Ext^\blob(\cE,\cF)$.  Moreover, if ${\mathbf R}\pi_*\colon
+  \D(X)\to \D(\pt)$ is the derived functor coming from the map $X\to
+  \pt$, then
+  $$\Ext^\blob(\cE,\cF)\cong
+  \H^\blob(X,\cE^\chk\otimes\cF)\cong {\mathbf R}\pi_*(\cE^\chk\otimes\cF)$$ and
+  the latter is just the composition $\cE^\chk\circ \cF$, where
+  $\cE^\chk$ and $\cF$ are considered as kernels respectively $X\to
+  \pt$ and $\pt\to X$.  Thus, using the invariance of the Serre trace
+  under the partial trace map,
+  \begin{align*}
+    \chi(\cE,\cF)&=\Tr(\Id_{\cE^\chk\circ \cF})
+    =\Tr\left(\pic{HRR1}\right)
+    =\Tr\left(\pic{HRR2}\right)\\&=\MPbig{\pic{chE}}{\pic{chF}}
+    =\MP{\ch(\cE)}{\ch(\cF)}.\qedhere
+  \end{align*}
+\end{Proof}
+
+ \subsection{Example.}  To have a non-commutative example at
+hand, consider the case when $G$ is a finite group acting trivially
+on a point.  The orbifold $BG$ is defined to be the global quotient $[\scdot/G]$ and then the category of coherent sheaves on the
+orbifold $BG$ is precisely the category of finite
+dimensional representations of $G$.  One can naturally identify
+$\HH_0(BG)$ with the space of conjugation invariant functions on $G$,
+and the Chern character of a representation $\rho$ is precisely the
+representation-theoretic character of $\rho$.
+See~\cite{WilGr} for details.

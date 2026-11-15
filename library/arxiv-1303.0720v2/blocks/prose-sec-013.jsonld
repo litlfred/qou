@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1303.0720v2/blocks/prose-sec-013",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1303.0720v2/blocks/prose-sec-013",
   "kind": "prose",
-  "title": "Asymptotic expansion of polyanalytic Bergman kernels",
-  "pageStart": 9,
-  "pageEnd": 9,
-  "text": "../sections/sec-013-5-asymptotic-expansion-of-polyanalytic-bergman-k.md",
-  "derivedFrom": "library/arxiv-1303.0720v2/manifest",
-  "sourceDocument": "library/arxiv-1303.0720v2/manifest",
+  "title": "The weighted polyanalytic Bergman space and kernel for power weights",
+  "pageStart": 10,
+  "pageEnd": 10,
+  "text": "../sections/sec-013-51-the-weighted-polyanalytic-bergman-space-and-k.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.0720v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.0720v2",
   "provenance": "ingested"
 }

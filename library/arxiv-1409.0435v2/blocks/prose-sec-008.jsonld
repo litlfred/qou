@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1409.0435v2/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1409.0435v2/blocks/prose-sec-008",
   "kind": "prose",
-  "title": "(0) = sin θ0",
-  "pageStart": 24,
-  "pageEnd": 24,
-  "text": "../sections/sec-008-12-0-sin-θ0.md",
-  "derivedFrom": "library/arxiv-1409.0435v2/manifest",
-  "sourceDocument": "library/arxiv-1409.0435v2/manifest",
+  "title": "Heuristic discussion of the asymptotics for $s>e^{-x_cn}$",
+  "pageStart": 26,
+  "pageEnd": 26,
+  "text": "../sections/sec-008-54-heuristic-discussion-of-the-asymptotics-for-s.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1409.0435v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1409.0435v2",
   "provenance": "ingested"
 }

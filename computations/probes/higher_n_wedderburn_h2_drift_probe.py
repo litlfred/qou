@@ -33,7 +33,7 @@ terminates at some max order ≤ N-2 by hook-length argument).
 
 - [audit 2026-05-25 path-C](../../docs/audits/2026-05-25-path-c-categorical-principle-hunt.md)
 - [PR #701](https://github.com/litlfred/qou/pull/701) — Wedderburn-search falsification
-- [`lambda-scale-substrate-form.lean`](../../content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.lean) — Family A theorem at N=4
+- [`lambda-scale-substrate-form.lean`](../../folio/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.lean) — Family A theorem at N=4
 """
 from __future__ import annotations
 

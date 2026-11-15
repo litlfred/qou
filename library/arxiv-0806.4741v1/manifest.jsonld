@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0806.4741v1/manifest",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0806.4741v1",
   "@type": [
-    "folio:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "The deformation quantizations of the hyperbolic plane",
   "contains": [
+    "library/arxiv-0806.4741v1/sections/sec-front-matter",
     "library/arxiv-0806.4741v1/sections/sec-000",
     "library/arxiv-0806.4741v1/sections/sec-001",
     "library/arxiv-0806.4741v1/sections/sec-002",
@@ -18,11 +24,24 @@
     "library/arxiv-0806.4741v1/sections/sec-009",
     "library/arxiv-0806.4741v1/sections/sec-010",
     "library/arxiv-0806.4741v1/sections/sec-011",
-    "library/arxiv-0806.4741v1/sections/sec-012"
+    "library/arxiv-0806.4741v1/sections/sec-012",
+    "library/arxiv-0806.4741v1/sections/sec-013",
+    "library/arxiv-0806.4741v1/sections/sec-014"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0806.4741&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-0806.4741v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0806.4741v1.pdf",
     "source_sha256": "5e7ad85a99fb355293d35eb086cb3b6b761482e01a4afac313a2e33d7067692f",
     "pages": 26,

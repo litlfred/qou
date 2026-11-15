@@ -543,7 +543,7 @@ def main() -> int:
                               "closed-form B_sym chain), "
                               "computations/canonical_mass.py facade",
         "formal_appearances": [
-            "content/quantum-observable-universe/lean/QOU/Mass/"
+            "folio/quantum-observable-universe/lean/QOU/Mass/"
             "KeystoneBridgeC1Binding.lean (normalizer strip, recurrence)",
             "docs/audits/2026-07-20-qlift-routeD-qborel-transform.md "
             "(coefficient-level FORMAL q-Borel — diagonal weight)",

@@ -42,7 +42,7 @@ wrong and a reviewer would have found the carriers immediately.
     degree and to REV, is what this probe contributes.
 
 Stanley's formula is cited as `[stanley1999]` Cor. **7.21.5**.  That reference is registered in
-`content/schema/references.ts:2380` but is NOT ingested into `library/`, so the statement cannot be
+`folio/schema/references.ts:2380` but is NOT ingested into `library/`, so the statement cannot be
 grep-verified against a held copy; it is therefore also verified in-container here (R2), following
 the precedent of `lever1_kernel_maj_involution_identification.py`.  NOTE four corpus sites cite
 Cor. 7.12.5 for the hook-content telescope -- a different fact.  Do not copy that locator.
@@ -504,6 +504,8 @@ def main() -> int:
     print("=" * 78)
 
     payload = {
+
+        "q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal",
         "probe": "zn_hook_length_closed_form_probe",
         "bean": "qou-hok7",
         "computedAt": datetime.now(timezone.utc).isoformat(),

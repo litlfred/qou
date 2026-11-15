@@ -1,17 +1,31 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1007.1250v4/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Nonabelian Multiplicative Integration on Surfaces",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1007.1250v4",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1007.1250v4",
   "contains": [
     "library/arxiv-1007.1250v4/sections/sec-000",
     "library/arxiv-1007.1250v4/sections/sec-001"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1007.1250&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1007.1250v4",
+    "title_source": "slug",
     "source_file": "1007.1250v4.pdf",
     "source_sha256": "541ba4fb3068de8b464453d4bca4b572f5b0004c4ff948bf487c38f9b96e8a87",
     "pages": 139,

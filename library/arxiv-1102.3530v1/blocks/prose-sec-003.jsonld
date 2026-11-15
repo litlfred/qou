@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1102.3530v1/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1102.3530v1/blocks/prose-sec-003",
   "kind": "prose",
   "title": "Representation",
   "pageStart": 10,
   "pageEnd": 11,
   "text": "../sections/sec-003-41-representation.md",
-  "derivedFrom": "library/arxiv-1102.3530v1/manifest",
-  "sourceDocument": "library/arxiv-1102.3530v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1102.3530v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1102.3530v1",
   "provenance": "ingested"
 }

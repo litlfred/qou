@@ -1,0 +1,35 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "charlier-claeys2015",
+  "library": {
+    "docId": "arxiv-1409.0435v2",
+    "dir": "library/arxiv-1409.0435v2",
+    "pdf": "library/arxiv-1409.0435v2/1409.0435v2.pdf",
+    "stage": "sections",
+    "pages": 28,
+    "sections": 14,
+    "arxiv": "1409.0435v2"
+  },
+  "type": "article",
+  "title": "Asymptotics for Toeplitz determinants: perturbation of symbols with a gap",
+  "author": [
+    {
+      "family": "Charlier",
+      "given": "Christophe"
+    },
+    {
+      "family": "Claeys",
+      "given": "Tom"
+    }
+  ],
+  "container-title": "Journal of Mathematical Physics",
+  "issued": {
+    "date-parts": [
+      [
+        2015
+      ]
+    ]
+  },
+  "URL": "https://arxiv.org/abs/1409.0435",
+  "note": "Rigorous Riemann–Hilbert analysis of Dn(f) for a symbol that jumps at e^{±iθ0} and tends to zero on the complementary arc at rate s = e^{-xn}. Theorem 1.1 extends Widom's arc asymptotic (1.3) — n² ln sin(θ0/2) + n f̂W_0 − (1/4) ln n + Σ k f̂W_k f̂W_{-k} − (1/4) ln cos(θ0/2) + (1/12) ln 2 + 3ζ'(−1) + o(1) — into the double-scaling regime 0 ≤ s ≤ e^{-xc n}, with error O(n^{-1/2} e^{xc n} s). Application 2 re-derives, rigorously, the sine-kernel Fredholm determinant asymptotic ln det(1−(1−s)K_y) = −π²y²/2 − (1/4) ln πy + c + O(y^{-1}), c = (1/12) ln 2 + 3ζ'(−1). The RH local (modified Bessel) vs global parametrix matching P = (I + O(n^{-1}))P^∞ (eq 4.22) is the structural source of the 1/n correction. RELEVANCE to qou-k5r5: this is the CONTINUOUS sine-kernel GAP-PROBABILITY (CUE arc-counting), NOT the Plancherel discrete-kernel LINEAR-STATISTIC variance — same kernel neighbourhood, adjacent functional; it supplies the rigorous limit object + the rate MECHANISM, not the Σ|c| variance constant. PDF library/arxiv-1409.0435v2/."
+}

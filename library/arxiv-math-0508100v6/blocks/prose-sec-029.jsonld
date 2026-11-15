@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0508100v6/blocks/prose-sec-029",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0508100v6/blocks/prose-sec-029",
   "kind": "prose",
   "title": "Bounds for higher rank groups",
   "pageStart": 24,
   "pageEnd": 24,
   "text": "../sections/sec-029-102-bounds-for-higher-rank-groups.md",
-  "derivedFrom": "library/arxiv-math-0508100v6/manifest",
-  "sourceDocument": "library/arxiv-math-0508100v6/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0508100v6",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0508100v6",
   "provenance": "ingested"
 }

@@ -1,0 +1,42 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0308152v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-hep-th-0308152v1",
+  "contains": [
+    "library/arxiv-hep-th-0308152v1/sections/sec-000"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-th/0308152&metadataPrefix=arXiv), submitted 2003-08-22, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-hep-th-0308152v1",
+    "title_source": "slug",
+    "source_file": "0308152v1.pdf",
+    "source_sha256": "93bcc14b8be912579d13477397bfbfd046c3fd761a9d3d77084fed4a3b32ea56",
+    "pages": 10,
+    "arxiv": {
+      "id": "hep-th/0308152",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "22 Aug 2003"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

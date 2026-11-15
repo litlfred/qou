@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0605314v1/blocks/prose-sec-019",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0605314v1/blocks/prose-sec-019",
   "kind": "prose",
-  "title": "KAZUO HABIRO",
-  "pageStart": 12,
-  "pageEnd": 12,
-  "text": "../sections/sec-019-12-kazuo-habiro.md",
-  "derivedFrom": "library/arxiv-math-0605314v1/manifest",
-  "sourceDocument": "library/arxiv-math-0605314v1/manifest",
+  "title": "Remarks on boundary links and boundary bottom tangles",
+  "pageStart": 31,
+  "pageEnd": 32,
+  "text": "../sections/sec-019-85-remarks-on-boundary-links-and-boundary-bottom.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0605314v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0605314v1",
   "provenance": "ingested"
 }

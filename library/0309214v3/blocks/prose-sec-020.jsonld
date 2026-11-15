@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/0309214v3/blocks/prose-sec-020",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/0309214v3/blocks/prose-sec-020",
   "kind": "prose",
   "title": "Quantum knot invariants",
   "pageStart": 29,
   "pageEnd": 37,
   "text": "../sections/sec-020-73-quantum-knot-invariants.md",
-  "derivedFrom": "library/0309214v3/manifest",
-  "sourceDocument": "library/0309214v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0309214v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0309214v3",
   "provenance": "ingested"
 }

@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2507.12454v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "COHOMOLOGY RINGS OF CHARACTER VARIETIES ANTON MELLIT",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2507.12454v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Cohomology rings of character varieties",
   "contains": [
     "library/arxiv-2507.12454v1/sections/sec-000",
     "library/arxiv-2507.12454v1/sections/sec-001",
@@ -17,8 +22,18 @@
     "library/arxiv-2507.12454v1/sections/sec-008"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2507.12454&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-2507.12454v1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "2507.12454v1.pdf",
     "source_sha256": "156fd9080847b4e75e8a4f4b16558161b49cc0fdbcf7149ff9f35fa90819c152",
     "pages": 23,

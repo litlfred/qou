@@ -19,7 +19,7 @@
   ],
   "checks_passed": 3,
   "checks_total": 3,
-  "computedAt": "2026-09-07T06:27:49.524617+00:00",
+  "computedAt": "2026-10-13T15:19:55.151129+00:00",
   "deficit_spectrum_identified_as": "excess total hook length H(lambda) - H_min(n)",
   "dps": 60,
   "growth_diagnostics_MEASURED_not_derived": [
@@ -134,6 +134,7 @@
   ],
   "identity": "REV_n = log sum_{lambda|-n} exp(R_lambda - (H(lambda)-H_min) ln q0), R_lambda = log term_lambda(q0) - (n^2-H(lambda)) ln q0, 0 <= R_lambda <= log f^lambda",
   "probe": "rev_free_energy_over_shapes_probe",
+  "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0_anchor": "physical_proton",
   "rev_table": [

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1309.0865v1/blocks/prose-sec-009",
+  "kind": "prose",
+  "title": "The Hecke Algebra",
+  "pageStart": 13,
+  "pageEnd": 13,
+  "text": "../sections/sec-009-2-the-hecke-algebra.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1309.0865v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1309.0865v1",
+  "provenance": "ingested"
+}

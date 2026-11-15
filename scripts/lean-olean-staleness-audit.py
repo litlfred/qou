@@ -59,7 +59,7 @@ import sys
 from datetime import datetime, timezone
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-LEAN_ROOT = ROOT / "content/quantum-observable-universe/lean"
+LEAN_ROOT = ROOT / "folio/quantum-observable-universe/lean"
 SRC_ROOT = LEAN_ROOT / "QOU"
 BUILD = LEAN_ROOT / ".lake/build/lib/lean/QOU"
 

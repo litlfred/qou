@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-complex-mass-constituent-functional",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:complex-mass-constituent-functional",
+  "kind": "conjecture",
+  "title": "Complex-mass constituent functional",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-flavor-dressing-functor",
+    "papers/quantum-observable-universe/blocks/rem-chern-simons-as-knot-invariant"
+  ],
+  "leanRef": "qou:QOU.MassTheory.ComplexMassConstituent",
+  "text": "complex-mass-constituent-functional.md",
+  "leanSource": "complex-mass-constituent-functional.lean",
+  "provenance": "authored"
+}

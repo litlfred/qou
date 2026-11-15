@@ -1,0 +1,50 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1108.1048v3",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1108.1048v3",
+  "contains": [
+    "library/arxiv-1108.1048v3/sections/sec-front-matter",
+    "library/arxiv-1108.1048v3/sections/sec-000",
+    "library/arxiv-1108.1048v3/sections/sec-001",
+    "library/arxiv-1108.1048v3/sections/sec-002",
+    "library/arxiv-1108.1048v3/sections/sec-003",
+    "library/arxiv-1108.1048v3/sections/sec-004",
+    "library/arxiv-1108.1048v3/sections/sec-005",
+    "library/arxiv-1108.1048v3/sections/sec-006",
+    "library/arxiv-1108.1048v3/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1108.1048&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1108.1048v3",
+    "title_source": "slug",
+    "source_file": "1108.1048v3.pdf",
+    "source_sha256": "6f2b83450ba923d0130f9827d9668585e65c2f140ff41e1977aaa49f7be8e91d",
+    "pages": 45,
+    "arxiv": {
+      "id": "1108.1048",
+      "version": "3",
+      "primary_class": "math.RT",
+      "stamp_date": "9 Oct 2012"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

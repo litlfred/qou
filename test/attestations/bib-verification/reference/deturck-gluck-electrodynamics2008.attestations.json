@@ -1,0 +1,74 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "deturck-gluck-electrodynamics2008",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 175,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/0510388v1/0510388v1.pdf"
+        },
+        "id": "deturck-gluck-electrodynamics2008",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "JOIN CORRECT \u2014 and it is the better of two candidates. This file is the FULL paper whose title the registered entry's title field names; the other file in uploads/ under the arXiv id the entry's URL points at is the SHORT ANNOUNCEMENT, as this document itself says on p. 1. The theorems the registry note cites live here, not there. THREE FINDINGS. (1) THE 'CORRUPTED PDF' CLAIM IS WRONG. `docs/audits/2026-08-01-em-linking-reads-round1.md:53` records this file as 'mixed/corrupted; only tail pages recovered' and line 55 puts the source on a re-upload list. It is NOT corrupted: pdftotext (poppler 24.02.0) extracts 115 kB of clean text end-to-end \u2014 p. 3 statements of results, p. 8 Thm 1(3), p. 11 Thm 2(3), p. 14\u201315 \u00a75. The earlier finding was a tooling artifact and the re-upload is unnecessary. (2) THE REGISTRY MISSTATES THE SOURCE'S OWN FORMULA. The note says the source supplies the H\u00b3 Laplacian Green's function \u03c6\u2080(\u03b1) = \u2212coth(\u03b1)/4\u03c0. The source (\u00a75, p. 15) gives \u03c6\u2080(\u03b1) = (\u22121/4\u03c0)(coth \u03b1 \u2212 1). The \u22121 is load-bearing, not cosmetic: it is exactly what makes the property stated on the next line, 'Gr(f)(y) \u2192 0 as y \u2192 \u221e', hold in H\u00b3; dropping it leaves a nonzero constant at infinity. Anyone building the EM-linking pair energy from the note rather than the source inherits a wrong kernel. (3) BIB ORPHAN. `rg` over content/, computations/ and docs/ finds exactly one hit \u2014 the `ref()` entry at references.ts:8051. The audit doc names the authors in prose but never writes the refid.",
+          "keyResults": [
+            {
+              "locator": "Thm 1(3), p. 8 (statements at p. 3)",
+              "statement": "The H\u00b3 Gauss linking integral in parallel-transport format, with kernel \u03c6(\u03b1) = (\u22121/4\u03c0) csch \u03b1 \u2014 stated on the same page to be the fundamental solution of a SHIFTED Laplacian on H\u00b3, not of the plain Laplacian.",
+              "useForFolio": "The H\u00b3 analogue of the Euclidean 1/r linking kernel for the EM-linking attack; the 'shifted' qualifier matters.",
+              "targets": [
+                "docs/audits/2026-08-01-em-linking-reads-round1.md"
+              ]
+            },
+            {
+              "locator": "\u00a75, p. 14\u201315",
+              "statement": "The scalar Green's operator on H\u00b3 is convolution with \u03c6\u2080(\u03b1) = (\u22121/4\u03c0)(coth \u03b1 \u2212 1), satisfying \u0394 Gr(f) = f and Gr(f)(y) \u2192 0 at infinity.",
+              "useForFolio": "Corrects the registry note's \u03c6\u2080 = \u2212coth(\u03b1)/4\u03c0; the \u22121 is what enforces decay at infinity.",
+              "targets": [
+                "docs/audits/2026-08-01-em-linking-reads-round1.md"
+              ]
+            },
+            {
+              "locator": "Thm 2(3), p. 11",
+              "statement": "The H\u00b3 Biot\u2013Savart operator BS(V)(y) = \u222b_{H\u00b3} P_yx V(x) \u00d7 \u2207_y \u03c6(x,y) dx with the same csch kernel; the authors state they do not yet know how to characterise BS in H\u00b3.",
+              "useForFolio": "The magnetic-field half of the pair-energy construction, with its stated limitation.",
+              "targets": [
+                "docs/audits/2026-08-01-em-linking-reads-round1.md"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "new-remark",
+              "rationale": "Correct the audit doc's 'mixed/corrupted; only tail pages recovered' verdict for this file and remove the source from the re-upload list \u2014 the PDF reads cleanly and all three cited theorems are verifiable in-repo.",
+              "target": "docs/audits/2026-08-01-em-linking-reads-round1.md",
+              "bean": "qou-ut4e"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "Fix the \u03c6\u2080 formula in the references.ts note (restore the \u22121) and give the reference a refid-keyed citation site so the H\u00b3 kernels are reachable from the dependency graph rather than only from bibliography metadata.",
+              "target": "folio/schema/references.ts",
+              "bean": "qou-tk1r"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "c83c0f6a2eaa"
+        },
+        "notes": "Re-keyed 2026-08-16: two rows claimed [deturck-gluck2008]. This file is the 108pp 'Electrodynamics and the Gauss linking integral', a different paper from the 40pp 'The Gauss linking integral', and now has its own entry."
+      }
+    }
+  ]
+}

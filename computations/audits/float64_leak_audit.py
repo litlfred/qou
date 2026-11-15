@@ -270,7 +270,7 @@ def main() -> int:
     # computations/audits/ that glob saw only 2 files (a vacuous green).
     # Walk computations/ recursively, skipping _deprecated.
     for py in sorted((HERE.parent).rglob("*.py")):
-        if "_deprecated" in py.parts:
+        if ("_deprecated" in py.parts or "fsh-guts" in py.parts):
             continue
         if py.name.startswith("_"):
             continue

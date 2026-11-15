@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-shell-transition-knot-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:shell-transition-knot-interpretation",
+  "kind": "remark",
+  "title": "Shell-transition threshold at $N = 3$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-shell-transition-knot"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-shell-transition-knot",
+  "tags": [
+    "nuclear-shell",
+    "borromean",
+    "shell-transition",
+    "crossing-number",
+    "spin-orbit"
+  ],
+  "text": "shell-transition-knot-interpretation.md",
+  "provenance": "authored"
+}

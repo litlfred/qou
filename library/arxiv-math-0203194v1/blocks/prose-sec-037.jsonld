@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0203194v1/blocks/prose-sec-037",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0203194v1/blocks/prose-sec-037",
   "kind": "prose",
-  "title": "(S,s ), ∇(V ) = 0. This sets up an equivalence of",
-  "pageStart": 21,
-  "pageEnd": 21,
-  "text": "../sections/sec-037-1-ss-v-0-this-sets-up-an-equivalence-of.md",
-  "derivedFrom": "library/arxiv-math-0203194v1/manifest",
-  "sourceDocument": "library/arxiv-math-0203194v1/manifest",
+  "title": "Temperate fundamental groups.",
+  "pageStart": 130,
+  "pageEnd": 137,
+  "text": "../sections/sec-037-14-temperate-fundamental-groups.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203194v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203194v1",
   "provenance": "ingested"
 }

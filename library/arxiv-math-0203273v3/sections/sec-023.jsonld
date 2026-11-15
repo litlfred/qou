@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0203273v3/sections/sec-023",
   "@type": [
     "doco:Section"
   ],
-  "title": "Radical. On d´ emontre [30] que",
-  "pageStart": 13,
-  "pageEnd": 14,
+  "title": "Premi`ere correction",
+  "pageStart": 126,
+  "pageEnd": 127,
   "contains": [
     "library/arxiv-math-0203273v3/blocks/prose-sec-023"
   ],
-  "derivedFrom": "library/arxiv-math-0203273v3/manifest",
-  "sourceDocument": "library/arxiv-math-0203273v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203273v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203273v3",
   "provenance": "ingested"
 }

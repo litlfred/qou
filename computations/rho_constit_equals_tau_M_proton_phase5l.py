@@ -17,9 +17,14 @@ This script verifies the identity empirically across the substrate
 window q ∈ [1.05, 1.17].  If correct, the rel.err. should be at
 mpfr-50-dps precision (~10^-50) at every q.
 
-  Ref: conj:constit-factor-2q-minus-1.md (Phase 5k.2 falsification)
+  Ref: `constit-factor-2q-minus-1` (Phase 5k.2 falsification)
   Ref: prop:interface-knot-markov-z.md (interface-side companion)
   Ref: PR #842 Phase 5k.2 (the varying-q falsification)
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 

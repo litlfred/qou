@@ -2,7 +2,7 @@
 
 **Date:** 2026-06-06
 **Status:** scoping only (no execution) — research-grade, multi-session
-**Block:** [`conj:canonical-knot-id-sdp`](../../content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.md)
+**Block:** [`conj:canonical-knot-id-sdp`](../../folio/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.md)
 **Lean:** `qou:QOU.BraidKnot.helium3_uniqueness_closed`
 (= `nucleus_uniqueness_closed 9`)
 
@@ -70,7 +70,7 @@ Two structural stubs block the bridge from meaning "L_6a4 is the knot":
 **Bottom line:** the conjecture's *uniqueness shape* is sorry-free on a
 degenerate instance; the *substantive content* (the real SDP selects the
 real knot) is open. (Trivial-skeleton lineage:
-`docs/audits/_deprecated/2026-05-08-trivial-skeleton-workplan.md`.)
+`fsh-guts/deprecated/docs/audits/2026-05-08-trivial-skeleton-workplan.md`.)
 
 ---
 

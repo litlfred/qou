@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/ft-dpm-quaternion-kernel-ieee-tit-2014/blocks/prose-sec-front-matter",
+  "kind": "prose",
+  "title": "Front matter",
+  "pageStart": 1,
+  "pageEnd": 1,
+  "text": "../sections/sec-front-matter.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ft-dpm-quaternion-kernel-ieee-tit-2014",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ft-dpm-quaternion-kernel-ieee-tit-2014",
+  "provenance": "ingested"
+}

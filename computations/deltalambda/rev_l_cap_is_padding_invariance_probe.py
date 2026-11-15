@@ -52,7 +52,7 @@ Runs at `mp.dps = 50` — higher than #7294's 30, so the residual in P2 can be e
 arithmetic noise rather than asserted to be.  Proton-pinned; no Markov parameter in this cone,
 so convention C/D does not arise.  Exact integers for n/H.  mpmath throughout; no float64.
 
--- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/BraidKnot/HookSumBetaCoordinates.lean
+-- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/BraidKnot/HookSumBetaCoordinates.lean
 """
 
 from __future__ import annotations
@@ -600,6 +600,10 @@ _w = {
     "computation": "rev_l_cap_is_padding_invariance_probe",
     "bean": "qou-hok7",
     "anchor": "physical_proton",
+    # Canonical anchor key read by the q0 audits/ratchet (the "anchor" key above is
+    # a near-miss spelling they cannot see), plus scriptFile provenance.
+    "q0Anchor": "proton",
+    "scriptFile": os.path.basename(__file__),
     "q0Value": Q_50_DIGIT_STR,
     "description": (
         "Withdraws PR #7294's 'l-cap censoring' caveat. Above the maximiser's row count l*, the "
@@ -612,7 +616,7 @@ _w = {
     ),
     "lean": {
         "theorem": "QOU.BraidKnot.HookSum.betaSide_eq_hookSum",
-        "file": ("content/quantum-observable-universe/lean/QOU/BraidKnot/"
+        "file": ("folio/quantum-observable-universe/lean/QOU/BraidKnot/"
                  "HookSumBetaCoordinates.lean"),
         "companion": "QOU.BraidKnot.HookSum.betaSide_padding_invariant",
         "axioms": ["propext", "Classical.choice", "Quot.sound"],

@@ -1,0 +1,20 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/unital-groebner-bases/blocks/prf-s-polynomial-decomposition",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:s-polynomial-decomposition",
+  "kind": "proof",
+  "uses": [
+    "papers/unital-groebner-bases/blocks/prop-s-polynomial-decomposition"
+  ],
+  "text": "s-polynomial-decomposition-proof.md",
+  "provenance": "authored"
+}

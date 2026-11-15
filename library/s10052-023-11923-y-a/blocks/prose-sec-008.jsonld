@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s10052-023-11923-y-a/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/s10052-023-11923-y-a/blocks/prose-sec-008",
   "kind": "prose",
   "title": "Two additional generations from an S3 automorphism",
   "pageStart": 9,
   "pageEnd": 10,
   "text": "../sections/sec-008-53-two-additional-generations-from-an-s3-automor.md",
-  "derivedFrom": "library/s10052-023-11923-y-a/manifest",
-  "sourceDocument": "library/s10052-023-11923-y-a/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s10052-023-11923-y-a",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s10052-023-11923-y-a",
   "provenance": "ingested"
 }

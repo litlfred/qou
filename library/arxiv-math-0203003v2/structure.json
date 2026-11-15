@@ -6,7 +6,12 @@
   "sha256": "7579ae76959396b8dd4a05f6fe3f58a79b25d1b8bc72c21e6fd1ec6ac82819ef",
   "bytes": 187029,
   "pages": 13,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -16,21 +21,29 @@
    "stamp_date": "24 Apr 2002"
   },
   "doi": null,
-  "title": "On the quantum Kazhdan-Lusztig functor Pavel I. Etingof Adriano A. Moura etingof@math.mit.edu adrianoam@ime.unicamp.br Introduction One of the most exciting developments in representation the ory in the recent years was the discovery",
-  "authors_raw": null,
+  "title": "arXiv:math/0203003v2 [math.QA] 24 Apr 2002",
+  "authors_raw": "Pavel I. Etingof",
   "title_lines": [
-   "On the quantum Kazhdan-Lusztig functor",
-   "Pavel I. Etingof Adriano A. Moura",
-   "etingof@math.mit.edu adrianoam@ime.unicamp.br",
-   "Introduction",
-   "One of the most exciting developments in representation the ory in the recent years was the discovery"
+   "On the quantum Kazhdan-Lusztig functor"
   ],
   "abstract": null,
   "docinfo": {
+   "Title": "arXiv:math/0203003v2  [math.QA]  24 Apr 2002",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181114011333-05'00'",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Title": "arXiv:math/0203003v2  [math.QA]  24 Apr 2002"
+   "CreationDate": "D:20181114011333-05'00'"
+  },
+  "title_raw": "On the quantum Kazhdan-Lusztig functor",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:math/0203003v2 [math.QA] 24 Apr 2002",
+   "heading": "On the quantum Kazhdan-Lusztig functor",
+   "text": "On the quantum Kazhdan-Lusztig functor",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -39,53 +52,228 @@
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "1"
   },
   {
    "level": 1,
-   "title": "Representations of Quantum Dynamical R-Matrices with Spe c-",
+   "title": "Representations of Quantum Dynamical R-Matrices with Spectral Parameters",
    "page": 2,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Exchange Representations",
    "page": 4,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "Gauge Transformations",
    "page": 8,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "Evaluation Representations",
    "page": 10,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "10"
   },
   {
    "level": 1,
-   "title": "Comparison of F with the classical Kazhdan-Lusztig functor",
+   "title": "Comparison of $\\mathcal F$ with the classical Kazhdan-Lusztig functor",
    "page": 10,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "10"
   },
   {
    "level": 1,
-   "title": "References",
-   "page": 12,
+   "title": "Appendix : Meromorphicity of the R-matrix",
+   "page": 11,
    "source": "inferred",
-   "number": null
+   "number": "A",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "11"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 174,
+   "n_words": 19,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -93,18 +281,22 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 5176,
-   "n_words": 817
+   "n_chars": 5141,
+   "n_words": 781,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-001-1-representations-of-quantum-dynamical-r-matrice",
    "number": "1",
-   "title": "Representations of Quantum Dynamical R-Matrices with Spe c-",
+   "title": "Representations of Quantum Dynamical R-Matrices with Spectral Parameters",
    "level": 1,
    "page_start": 2,
    "page_end": 4,
-   "n_chars": 3596,
-   "n_words": 725
+   "n_chars": 3542,
+   "n_words": 670,
+   "label_start": "2",
+   "label_end": "4"
   },
   {
    "id": "sec-002-2-exchange-representations",
@@ -113,8 +305,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 8,
-   "n_chars": 11136,
-   "n_words": 2278
+   "n_chars": 10930,
+   "n_words": 2071,
+   "label_start": "4",
+   "label_end": "8"
   },
   {
    "id": "sec-003-3-gauge-transformations",
@@ -123,8 +317,10 @@
    "level": 1,
    "page_start": 8,
    "page_end": 10,
-   "n_chars": 4550,
-   "n_words": 921
+   "n_chars": 4494,
+   "n_words": 864,
+   "label_start": "8",
+   "label_end": "10"
   },
   {
    "id": "sec-004-4-evaluation-representations",
@@ -132,36 +328,103 @@
    "title": "Evaluation Representations",
    "level": 1,
    "page_start": 10,
-   "page_end": 10,
-   "n_chars": 2670,
-   "n_words": 447
+   "page_end": 11,
+   "n_chars": 5255,
+   "n_words": 863,
+   "label_start": "10",
+   "label_end": "11"
   },
   {
-   "id": "sec-005-5-comparison-of-f-with-the-classical-kazhdan-lus",
-   "number": "5",
-   "title": "Comparison of F with the classical Kazhdan-Lusztig functor",
+   "id": "sec-005-a-appendix-meromorphicity-of-the-r-matrix",
+   "number": "A",
+   "title": "Appendix : Meromorphicity of the R-matrix",
    "level": 1,
-   "page_start": 10,
-   "page_end": 12,
-   "n_chars": 4968,
-   "n_words": 952
-  },
-  {
-   "id": "sec-006-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 12,
+   "page_start": 11,
    "page_end": 13,
-   "n_chars": 3053,
-   "n_words": 434
+   "n_chars": 5358,
+   "n_words": 865,
+   "label_start": "11",
+   "label_end": "13"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 7,
+  "toc_inferred_entries": 7,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
   "sections": 7,
-  "chars_total": 35149
+  "chars_total": 34894,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 6,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-1-representations-of-quantum-dynamical-r-matrice",
+     "title": "Representations of Quantum Dynamical R-Matrices with Spectral Parameters",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-2-exchange-representations",
+     "title": "Exchange Representations",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-3-gauge-transformations",
+     "title": "Gauge Transformations",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-4-evaluation-representations",
+     "title": "Evaluation Representations",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-a-appendix-meromorphicity-of-the-r-matrix",
+     "title": "Appendix : Meromorphicity of the R-matrix",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-feynman-eigenbasis-decomposition",
+  "@type": [
+    "folio-assistant-core:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:feynman-eigenbasis-decomposition",
+  "kind": "lemma",
+  "title": "Eigenbasis decomposition for the Feynman amplitude",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-knot-eigenbasis-complete"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-feynman-eigenbasis-decomposition"
+  ],
+  "tags": [
+    "schur-weyl",
+    "eigenbasis",
+    "feynman",
+    "hecke",
+    "decomposition"
+  ],
+  "leanRef": "qou:QOU.FeynmanPathIntegrals.eigenbasis_decomposition",
+  "text": "feynman-eigenbasis-decomposition.md",
+  "provenance": "authored"
+}

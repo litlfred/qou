@@ -1,0 +1,34 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "garoufalidis-yoon-2024",
+  "library": {
+    "docId": "arxiv-2411.03801v2",
+    "dir": "library/arxiv-2411.03801v2",
+    "pdf": "library/arxiv-2411.03801v2/2411.03801v2.pdf",
+    "stage": "candidates",
+    "pages": 24,
+    "sections": 14,
+    "arxiv": "2411.03801v2"
+  },
+  "type": "article",
+  "title": "1-loop equals torsion for two-bridge knots",
+  "author": [
+    {
+      "family": "Garoufalidis",
+      "given": "Stavros"
+    },
+    {
+      "family": "Yoon",
+      "given": "Seokbeom"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2024
+      ]
+    ]
+  },
+  "URL": "https://arxiv.org/abs/2411.03801",
+  "note": "arXiv:2411.03801 (posted 2024-11-06, 24pp, math.GT). Proves the Dimofte–Garoufalidis 1-loop conjecture — the constant (1-loop) term of the DG power series equals the adjoint Reidemeister torsion — for hyperbolic two-bridge knots, by combining Ohtsuki–Takata with an explicit computation. 6_2 is two-bridge (fraction 11/3) so the theorem covers it; the QOU deuteron closure. Used as the literature backing for the ρ_F=ν_SDP falsifiable probe (bean qou-r307): the adjoint torsion IS the topological density selecting the geometric connection. Authors + title + arXiv id verified via arXiv listing + abstract (WebSearch, 2026-08-02); PDF body 403 in-sandbox, no DOI (preprint)."
+}

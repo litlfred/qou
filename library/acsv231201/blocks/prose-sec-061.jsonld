@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/acsv231201/blocks/prose-sec-061",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/acsv231201/blocks/prose-sec-061",
   "kind": "prose",
   "title": "Limit laws from probability theory",
   "pageStart": 430,
   "pageEnd": 442,
   "text": "../sections/sec-061-limit-laws-from-probability-theory.md",
-  "derivedFrom": "library/acsv231201/manifest",
-  "sourceDocument": "library/acsv231201/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
   "provenance": "ingested"
 }

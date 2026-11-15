@@ -79,7 +79,7 @@ from q_parameter import q_at                                  # noqa: E402
 
 DPS = 50
 REPO = _COMP.parent
-BRIDGE = REPO / "content/quantum-observable-universe/nuclear-interactions"
+BRIDGE = REPO / "folio/quantum-observable-universe/nuclear-interactions"
 BRIDGE_FILES = [
     BRIDGE / "q-beta-spectral-bridge.md",
     BRIDGE / "q-beta-spectral-bridge.lean",
@@ -232,7 +232,7 @@ def main() -> int:
         "scope": "(a) -- about the cited attribution, not about whether any "
                  "phase term is derivable",
         "q0": mp.nstr(q, 20),
-        "q0_pin": "proton (q_at)",
+        "q0_pin": "proton (q_at)", "q0Anchor": "proton",
         "dps": DPS,
         "h": mp.nstr(h, 20),
         "u": mp.nstr(u, 20),

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1204.5807v1/sections/sec-020",
   "@type": [
     "doco:Section"
   ],
-  "title": "Let H be a pointed Hopf algebra and set G = G(H). We assume",
-  "pageStart": 11,
-  "pageEnd": 11,
+  "title": "Acknowledgements",
+  "pageStart": 25,
+  "pageEnd": 27,
   "contains": [
     "library/arxiv-1204.5807v1/blocks/prose-sec-020"
   ],
-  "derivedFrom": "library/arxiv-1204.5807v1/manifest",
-  "sourceDocument": "library/arxiv-1204.5807v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1204.5807v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1204.5807v1",
   "provenance": "ingested"
 }

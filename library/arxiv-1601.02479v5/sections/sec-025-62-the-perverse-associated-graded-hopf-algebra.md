@@ -8,461 +8,68 @@ pages: 53-56
 source_pdf: 1601.02479v5.pdf
 source_sha256: 52c2dcd4adf2e72b
 doc_brief: "Cohomological Donaldson-Thomas theory of a quiver with potential and quantum enveloping algebras — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and"
+text_source: latex
+latex_prose_ratio: 0.917
+latex_coverage_ratio: 0.944
 ---
-localised comultiplication in a little more detail, for further details see [1 0]. Consider
-the proper map sd′,d′′ : Mζ -ss
-d′,d′′ → Mζ -ss
-d deﬁned as in (77). We form the map
-(93)
-γ : H c(Mζ -ss,S
-d , ICζ
-W,d)∨ → L(d′,d′′)/2 ⊗ Hc(Mζ -ss,S
-d′,d′′ ,φ mon
-Tr(W )ζ
-d′ , d′′
-IC Mζ -ss
-d′, d′′
-(Q))∨
-54 BEN DA VISON AND SVEN MEINHARDT
-given, via Verdier duality and Proposition 2.13(2), as the tensor pro duct with
-L(d,d)/2 of the limit as N ↦→ ∞of the composition of maps
-H
-(
-Dim∗ ω!
-d,Nφ mon
-Tr(W )ζ
-d,N
-QXζ -ss
-d,N
-)
-→ H
-(
-Dim∗ ω!
-d,Nφ mon
-Tr(W )ζ
-d,N
-sd′,d′′,N,∗QXζ -ss
-d′ , d′′,N
-) ∼=− →
-(94)
-→ H
-(
-Dim∗ ω!
-d,N sd′,d′′,N,∗φ mon
-Tr(W )ζ
-d′ , d′′,N
-QXζ -ss
-d′, d′′ ,N
-)
-∼=− → H
-(
-Dim∗ sd′,d′′,N,∗ω!
-d′,d′′,Nφ mon
-Tr(W )ζ
-d′ , d′′,N
-QXζ -ss
-d′, d′′ ,N
-)
-.
-Since the morphism Dim factors through a map to the base Mζ -ss
-d , we deduce as
-in Section 5.3 that γ preserves the perverse ﬁltration, i.e.
-γ
-(
-Ps
-(
-Hc(Mζ -ss,S
-d , ICζ
-W,d)∨
-))
-⊂ Ps
-(
-L(d′,d′′)/2 ⊗ Hc
-(
-Mζ -ss,S
-d′,d′′ ,φ mon
-Tr(W )ζ
-d′, d′′
-IC Mζ -ss
-d′ , d′′
-(Q)
-) ∨)
-.
-Composing with the isomorphism
-Γ : L(d′,d′′)/2 ⊗ Hc
-(
-Mζ -ss,S
-d′,d′′ ,φ mon
-Tr(W )ζ
-d′, d′′
-IC Mζ -ss, S
-d′ , d′′
-(Q)
-) ∨
-→
-L(d′,d′′)/2+(d′′,d′)/2 ⊗ Hc(Mζ -ss
-d′ , ICζ
-W,d′ )∨ ⊗ Hc(Mζ -ss,S
-d′′ , ICζ
-W,d′′ )∨
-we likewise deduce
-Γ ◦γ
-(
-Ps
-(
-Hc(Mζ -ss,S
-d , ICζ
-W,d)∨
-))
-⊂
-Ps
-(
-L(d′,d′′)/2+(d′′,d′)/2 ⊗ H(Mζ -ss,S
-d′ , ICζ
-W,d′ ) ⊗ Hc(Mζ -ss,S
-d′′ , ICζ
-W,d′′ )∨
-)
-= Ps
-(
-L(d′,d′′) ⊗ Hc(Mζ -ss,S
-d′ , ICζ
-W,d′ )∨ ⊠tw
-+ Hc(Mζ -ss,S
-d′′ , ICζ
-W,d′′ )∨
-)
-= Ps−2(d′,d′′)
-(
-Hc(Mζ -ss,S
-d′ , ICζ
-W,d′ )∨ ⊠tw
-+ Hc(Mζ -ss,S
-d′′ , ICζ
-W,d′′ )∨
-)
-,(95)
-since Γ is obtained by taking the hypercohomology of a morphism of complexe s
-of monodromic mixed Hodge modules on Mζ -ss
-µ . The ﬁnal equality (95) does not
-preserve the cohomological degree, or the mixed Hodge structur e. We deﬁne
-E1,d′,d′′ :=
-∏
-a∈Q1
-∏
-1≤l′≤d′
-s(a)
-∏
-1≤l′′≤d′′
-t(a)
-(xs(a),l′ − yt(a),l′′ )
-and
-E0,d′,d′′ :=
-∏
-i∈Q0
-∏
-1≤l′≤d′
-i
-∏
-1≤l′′≤d′′
-i
-(xi,l′ − yi,l′′ ).
-Multiplication by E−1
-1,d′,d′′ E0,d′,d′′ deﬁnes a map
-β ∗ : H( Aζ ,S
-W,d′) ⊠tw
-+ H(Aζ ,S
-W,d′′ ) →
-(
-H(Aζ ,S
-W,d′) ⊠tw
-+ H(Aζ ,S
-W,d′′ )
-)
-[L−1
-d′,d′′ ].(96)
-The comultiplication is deﬁned [10, Cor.5.9] by
-∆ ζ ,S
-W,d′,d′′ : H( Aζ ,S
-W,d) →
-(
-H(Aζ ,S
-W,d′ ) ⊠tw
-+ H(Aζ ,S
-W,d′′ )
-)
-[L−1
-d′,d′′ ]
-∆ ζ ,S
-W,d′,d′′ :=(·E−1
-1,d′,d′′ E0,d′,d′′ ) ◦Γ ◦γ .
-This comultiplication then respects cohomological degree, and lifts t o a morphism
-in the category of cohomologically graded monodromic mixed Hodge st ructures.
-For a dimension vector e, we deﬁne |e| =∑
-i∈Q0 ei. So, for example, Ld′,d′′ is of
-cohomological degree 2 |d′||d′′|. We extend the perverse ﬁltration to the right hand
-COHAS AND QUANTUM ENVELOPING ALGEBRAS 55
-side of (90) by setting
-Ps
-((
-H(Aζ ,S
-W,d′ ) ⊠tw
-+ H(Aζ ,S
-W,d′′ )
-)
-[L−1
-d′,d′′ ]
-)
-:=(97)
-∑
-n≥0
-Ps+2|d′′||d′|n
-((
-H(Aζ ,S
-W,d′ ) ⊠tw
-+ H(Aζ ,S
-W,d′′ )
-))
-· L−n
-d′,d′′ .
-By [10, Prop.4.1], the localisation map
-(
-H(Aζ ,S
-W,d′) ⊠tw
-+ H(Aζ ,S
-W,d′′ )
-) fd′, d′′
-− − − − →
-(
-H(Aζ ,S
-W,d′ ) ⊠tw
-+ H(Aζ ,S
-W,d′′ )
-)
-[L−1
-d′,d′′ ](98)
-is an inclusion, since the operation ·Ld′,d′′ is injective on the domain. By deﬁnition
-(97), fd′,d′′ preserves the perverse ﬁltration. By Lemma 5.8 multiplication by
-E−1
-1,d′,d′′ · E0,d′,d′′ induces a map
-Ps
-((
-H(Aζ ,S
-W,d′) ⊠tw
-+ H(Aζ ,S
-W,d′′)
-)
-[L−1
-d′,d′′ ]
-)
-→
-Ps+2(d′,d′′)
-((
-H(Aζ ,S
-W,d′ ) ⊠tw
-+ H(Aζ ,S
-W,d′′ )
-)
-[L−1
-d′,d′′]
-)
-.(99)
-Combining the shifts in perverse degree in (99) and (95), we deduce that
-∆ ζ
-W,d′,d′′
-(
-Ps
-(
-H
-(
-Aζ ,S
-W,d
-)))
-⊂ Ps
-((
-H(Aζ ,S
-W,d′ ) ⊠tw
-+ H(Aζ ,S
-W,d′′ )
-)
-[L−1
-d′,d′′ ]
-)
-.
-The proof of the following is essentially the original proof of the Atiya h–Bott lemma
-of [2], adapted to deal with vanishing cycles and passage to the asso ciated graded
-of the perverse ﬁltration.
-Lemma 6.3. The map GrP(fd′,d′′) induced by the map (98) is injective.
-Proof. We abbreviate Pi = Pi
-(
-H(Mζ -ss,S
-d′ , ICζ
-W,d′) ⊠tw
-+ H(Mζ -ss,S
-d′′ , ICζ
-W,d′′ )
-)
-. It
-is suﬃcient to show that the degree 2 |d′||d′′| map Gr P(·Ld′,d′′ ) is injective. For
-then if
-fd′,d′′ (a) ∈
-
-∑
-r≥0
-Pi+2|d′||d′′|r
-(
-H(Mζ -ss,S
-d′ , ICζ
-W,d′ ) ⊠tw
-+ H(Mζ -ss,S
-d′′ , ICζ
-W,d′′ )
-)
-· L−r
-d′,d′′
-
-
-we can write a = ∑
-r≤n br · L−r
-d′,d′′ for br ∈ Pi+2|d′||d′′|r. Then a · Ln
-d′,d′′ ∈
-Pi+2|d′||d′′|n by Lemma 5.8, and so a ∈ Pi, by injectivity of Gr P(·Ld′,d′′ ).
-Consider the subgroup Gm ∼
-= T ⊂ Gd′ × Gd′′ given by the embedding
-z ↦→
-(
-(zd′′
-i idCd′
-i )i∈Q0 , (z− d′
-i idCd′′
-i )i∈Q0
-)
-and let Pd′,d′′ := (Gd′ × Gd′′ )/T . Note that T acts trivially on Xζ -ss
-d′ × Xζ -ss
-d′′ and
-furthermore T acts trivially on the linearization (39), so that the linearization of
-the Gd′ × Gd′′ -action lifts to a linearization of the Pd′,d′′ action. Let
-p′
-d′,d′′ : ( Xζ -ss
-d′ × Xζ -ss
-d′′ )/Pd′,d′′ → Mζ -ss
-d′ × Mζ -ss
-d′′
-be the map to the GIT quotient. Via the Cartesian square
-Mζ -ss
-d′ × Mζ -ss
-d′′ /d47/d47
-/d15/d15
-pt /(Gd′ × Gd′′ )
-/d15/d15
-(Xζ -ss
-d′ × Xζ -ss
-d′′ )/Pd′,d′′ /d47/d47 pt /Pd′,d′′
-56 BEN DA VISON AND SVEN MEINHARDT
-we obtain the isomorphism
-H
-(
-pζ
-d′,∗ICζ
-W,d′ ⊠ pζ
-d′′,∗ICζ
-W,d′′
-)
-∼
-=
-H
-(
-p′
-d′,d′′,∗φ mon
-f IC Xζ -ss
-d′ ×Xζ -ss
-d′′ /Pd′ , d′′ (Q)
-)
-⊗HPd′, d′′ (pt) HGd′ ×Gd′′ (pt) ⊗ L1/2.
-where f is the function induced by Tr( W )d′ ⊞ Tr(W )d′′ on ( Xζ -ss
-d′ × Xζ -ss
-d′′ )/Pd′,d′′ .
-After picking a splitting
-λ : H Gd′ ×Gd′′ (pt) ∼
-= HPd′, d′′ (pt) ⊗ HT (pt)
-we obtain an isomorphism
-H
-(
-pζ
-d′,∗ICζ
-W,d′ ⊠ pζ
-d′′,∗ICζ
-W,d′′
-)
-∼
-= H
-(
-p′
-d′,d′′,∗φ mon
-f IC Xζ -ss
-d′ ×Xζ -ss
-d′′ /Pd′ , d′′ (Q)
-)
-⊗ H(IC pt /T (Q)).
-We deﬁne the ﬁltration
-Di = H
-(
-Mζ -ss,S
-d′ × Mζ -ss,S
-d′′ , ˜ω! H≥i
-(
-p′
-d′,d′′,∗φ mon
-f IC Xζ -ss
-d′ ×Xζ -ss
-d′′ /Pd′ , d′′ (Q)
-)
-⊗ H(IC pt /T (Q)
-)
-⊂ H
-(
-Mζ -ss,S
-d′ × Mζ -ss,S
-d′′ , ˜ω! H
-(
-pζ
-d′,∗ICζ
-W,d′ ⊠ pζ
-d′′,∗ICζ
-W,d′′
-))
-= Gr P
-(
-H(Aζ ,S
-W,d′) ⊠tw
-+ H(Aζ ,S
-W,d′′ )
-)
-=: B
-where we have made the abbreviation
-˜ω = ˜ωζ
-d′ × ˜ωζ
-d′′ : Mζ -ss,S
-d′ × Mζ -ss,S
-d′′֒Mζ -ss
-d′ × Mζ -ss
-d′′ .
-Consider the associated graded object Gr D B. Multiplication by Ld′,d′′ preserves
-D degree, and so induces a map
-GrD(GrP(·Ld′,d′′ )) : Gr D B → GrD B.
-Speciﬁcally, the map is given by multiplication by the T -equivariant Euler charac-
-teristic of Xd′,d′′ → Xd′ × Xd′′ , which is nonzero since the vector bundle has no
-sub-bundle with trivial T -weight. It follows that Gr D(GrP(·Ld′,d′′ )) is injective, so
-that Gr P(·Ld′,d′′ ) is injective too.
-□
+Next we describe the localised comultiplication in a little more detail, for further details see [@Da13]. Consider the proper map $s_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}\colon \mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta\mathop{\mathrm{-ss}}}\rightarrow\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}$ defined as in ([\[smap\]](#smap){reference-type="ref" reference="smap"}). We form the map $$\label{gammadef}
+\upgamma\colon \mathop{\mathrm{H}}_c(\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}},\mathfrak{IC}_{W,\mathop{\mathrm{\mathbf{d}}}}^{\upzeta})^{\vee}\rightarrow \mathbb{L}^{(\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'')/2}\otimes\mathop{\mathrm{H}}_c(\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''},\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta}}\mathcal{IC}_{\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta\mathop{\mathrm{-ss}}}}(\mathbb{Q}))^{\vee}$$ given, via Verdier duality and Proposition [\[basicfacts\]](#basicfacts){reference-type="ref" reference="basicfacts"}(2), as the tensor product with $\mathbb{L}^{(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{d}}})/2}$ of the limit as $N\mapsto\infty$ of the composition of maps
+
+$$\begin{aligned}
+\label{sagain}
+&\mathop{\mathrm{\mathcal{H}}}\left(\mathop{\mathrm{\mathrm{Dim}}}_*\omega^!_{\mathop{\mathrm{\mathbf{d}}},N}\upphi^{\mathop{\mathrm{mon}}}_{\mathrm{Tr}(W)_{\mathop{\mathrm{\mathbf{d}}},N}^{\upzeta}}\mathbb{Q}_{X_{\mathop{\mathrm{\mathbf{d}}},N}^{\upzeta\mathop{\mathrm{-ss}}}}\right)\rightarrow \mathop{\mathrm{\mathcal{H}}}\left(\mathop{\mathrm{\mathrm{Dim}}}_*\omega_{\mathop{\mathrm{\mathbf{d}}},N}^!\upphi^{\mathop{\mathrm{mon}}}_{\mathrm{Tr}(W)^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}},N}}s_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'',N,*}\mathbb{Q}_{X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'',N}}\right)\xrightarrow{\cong}\\&\rightarrow \mathop{\mathrm{\mathcal{H}}}\left(\mathop{\mathrm{\mathrm{Dim}}}_*\omega_{\mathop{\mathrm{\mathbf{d}}},N}^!s_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'',N,*}\upphi^{\mathop{\mathrm{mon}}}_{\mathrm{Tr}(W)^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'',N}}\mathbb{Q}_{X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'',N}}\right)\xrightarrow{\cong}\mathop{\mathrm{\mathcal{H}}}\left(\mathop{\mathrm{\mathrm{Dim}}}_*s_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'',N,*}\omega_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'',N}^!\upphi^{\mathop{\mathrm{mon}}}_{\mathrm{Tr}(W)^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'',N}}\mathbb{Q}_{X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'',N}}\right).\nonumber
+\end{aligned}$$ Since the morphism $\mathop{\mathrm{\mathrm{Dim}}}$ factors through a map to the base $\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}$, we deduce as in Section [\[PervSec\]](#PervSec){reference-type="ref" reference="PervSec"} that $\upgamma$ preserves the perverse filtration, i.e. $$\upgamma\left(\mathop{\mathrm{\mathfrak{P}}}_s\left(\mathop{\mathrm{H}}_c(\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}},\mathfrak{IC}_{W,\mathop{\mathrm{\mathbf{d}}}}^{\upzeta})^{\vee}\right)\right)\subset \mathop{\mathrm{\mathfrak{P}}}_{s}\left(\mathbb{L}^{(\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'')/2}\otimes\mathop{\mathrm{H}}_c\left(\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''},\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}}\mathcal{IC}_{\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta\mathop{\mathrm{-ss}}}}(\mathbb{Q})\right)^{\vee}\right).$$ Composing with the isomorphism $$\begin{aligned}
+\Upgamma\colon &\mathbb{L}^{(\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'')/2}\otimes \mathop{\mathrm{H}}_c\left(\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''},\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}}\mathcal{IC}_{\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}}(\mathbb{Q})\right)^{\vee}\rightarrow \\&\mathbb{L}^{(\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'')/2+(\mathop{\mathrm{\mathbf{d}}}'',\mathop{\mathrm{\mathbf{d}}}')/2}\otimes \mathop{\mathrm{H}}_c(\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}'},\mathfrak{IC}_{W,\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta})^{\vee}\otimes\mathop{\mathrm{H}}_c(\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}''},\mathfrak{IC}_{W,\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta})^{\vee}
+\end{aligned}$$ we likewise deduce $$\begin{aligned}
+\nonumber
+&\Upgamma\circ\upgamma\left(\mathop{\mathrm{\mathfrak{P}}}_s\left(\mathop{\mathrm{H}}_c(\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}},\mathfrak{IC}_{W,\mathop{\mathrm{\mathbf{d}}}}^{\upzeta})^{\vee}\right)\right)\subset
+\\\nonumber& \mathop{\mathrm{\mathfrak{P}}}_s\left(\mathbb{L}^{(\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'')/2+(\mathop{\mathrm{\mathbf{d}}}'',\mathop{\mathrm{\mathbf{d}}}')/2}\otimes\mathop{\mathrm{H}}(\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}'},\mathfrak{IC}_{W,\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta})\otimes\mathop{\mathrm{H}}_c(\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}''},\mathfrak{IC}_{W,\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta})^{\vee}\right)\\\nonumber
+& =\mathop{\mathrm{\mathfrak{P}}}_s\left(\mathbb{L}^{(\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'')}\otimes \mathop{\mathrm{H}}_c(\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}'},\mathfrak{IC}_{W,\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta})^{\vee}\boxtimes_+^{\mathop{\mathrm{tw}}}\mathop{\mathrm{H}}_c(\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}''},\mathfrak{IC}_{W,\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta})^{\vee}\right)\\\label{downshift}
+& =\mathop{\mathrm{\mathfrak{P}}}_{s-2(\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'')}\left(\mathop{\mathrm{H}}_c(\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}'},\mathfrak{IC}_{W,\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta})^{\vee}\boxtimes_+^{\mathop{\mathrm{tw}}}\mathop{\mathrm{H}}_c(\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}''},\mathfrak{IC}_{W,\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta})^{\vee}\right),
+\end{aligned}$$ since $\Upgamma$ is obtained by taking the hypercohomology of a morphism of complexes of monodromic mixed Hodge modules on $\mathcal{M}_{\upmu}^{\upzeta\mathop{\mathrm{-ss}}}$. The final equality ([\[downshift\]](#downshift){reference-type="ref" reference="downshift"}) does not preserve the cohomological degree, or the mixed Hodge structure. We define $$\mathfrak{E}_{1,\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}\colonequals \prod_{a\in Q_1}\prod_{1\leq l'\leq \mathop{\mathrm{\mathbf{d}}}'_{s(a)}}\prod_{1\leq l''\leq \mathop{\mathrm{\mathbf{d}}}''_{t(a)}}(x_{s(a),l'}-y_{t(a),l''})$$ and $$\mathfrak{E}_{0,\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}\colonequals \prod_{i\in Q_0}\prod_{1\leq l'\leq \mathop{\mathrm{\mathbf{d}}}'_i}\prod_{1\leq l''\leq \mathop{\mathrm{\mathbf{d}}}''_i}(x_{i,l'}-y_{i,l''}).$$
+
+Multiplication by $\mathfrak{E}^{-1}_{1,\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}\mathfrak{E}_{0,\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}$ defines a map $$\begin{aligned}
+\upbeta^*\colon &\mathop{\mathrm{H}}(\mathcal{A}^{\upzeta,\mathcal{S}}_{W,\mathop{\mathrm{\mathbf{d}}}'})\boxtimes_+^{\mathop{\mathrm{tw}}}\mathop{\mathrm{H}}(\mathcal{A}^{\upzeta,\mathcal{S}}_{W,\mathop{\mathrm{\mathbf{d}}}''})\rightarrow   \left(\mathop{\mathrm{H}}(\mathcal{A}^{\upzeta,\mathcal{S}}_{W,\mathop{\mathrm{\mathbf{d}}}'})\boxtimes_+^{\mathop{\mathrm{tw}}}\mathop{\mathrm{H}}(\mathcal{A}^{\upzeta,\mathcal{S}}_{W,\mathop{\mathrm{\mathbf{d}}}''})\right)[\mathfrak{L}^{-1}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}].
+\end{aligned}$$ The comultiplication is defined [@Da13 Cor.5.9] by $$\begin{aligned}
+ \Delta_{W,\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta,\mathcal{S}}\colon &\mathop{\mathrm{H}}(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}}^{\upzeta,\mathcal{S}})\rightarrow \left(\mathop{\mathrm{H}}(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta,\mathcal{S}})\boxtimes^{\mathop{\mathrm{tw}}}_+ \mathop{\mathrm{H}}(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta,\mathcal{S}})\right)[\mathfrak{L}^{-1}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}]
+\\ 
+\Delta_{W,\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta,\mathcal{S}}\colonequals &(\cdot\mathfrak{E}^{-1}_{1,\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}\mathfrak{E}_{0,\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''})\circ \Upgamma\circ\upgamma.  
+\end{aligned}$$ This comultiplication then respects cohomological degree, and lifts to a morphism in the category of cohomologically graded monodromic mixed Hodge structures. For a dimension vector $\mathop{\mathrm{\mathbf{e}}}$, we define $\lvert \mathop{\mathrm{\mathbf{e}}}\rvert=\sum_{i\in Q_0}\mathop{\mathrm{\mathbf{e}}}_i$. So, for example, $\mathfrak{L}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}$ is of cohomological degree $2\lvert\mathop{\mathrm{\mathbf{d}}}'\rvert \lvert \mathop{\mathrm{\mathbf{d}}}''\rvert$. We extend the perverse filtration to the right hand side of ([\[coprodint\]](#coprodint){reference-type="ref" reference="coprodint"}) by setting $$\begin{aligned}
+\label{pervExt}
+&\mathop{\mathrm{\mathfrak{P}}}_{s}\left(\left(\mathop{\mathrm{H}}(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta,\mathcal{S}})\boxtimes^{\mathop{\mathrm{tw}}}_+ \mathop{\mathrm{H}}(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta,\mathcal{S}})\right)[\mathfrak{L}^{-1}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}]\right)\colonequals\\&\sum_{n\geq 0}\mathop{\mathrm{\mathfrak{P}}}_{s+2\lvert\mathop{\mathrm{\mathbf{d}}}''\rvert\lvert\mathop{\mathrm{\mathbf{d}}}'\rvert n}\left(\left(\mathop{\mathrm{H}}(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta,\mathcal{S}})\boxtimes^{\mathop{\mathrm{tw}}}_+ \mathop{\mathrm{H}}(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta,\mathcal{S}})\right)\right)\cdot \mathfrak{L}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}^{-n}.\nonumber
+\end{aligned}$$ By [@Da13 Prop.4.1], the localisation map $$\begin{aligned}
+\label{fDef}
+\left(\mathop{\mathrm{H}}(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta,\mathcal{S}})\boxtimes^{\mathop{\mathrm{tw}}}_+ \mathop{\mathrm{H}}(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta,\mathcal{S}})\right)\xrightarrow{f_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}} \left(\mathop{\mathrm{H}}(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta,\mathcal{S}})\boxtimes^{\mathop{\mathrm{tw}}}_+ \mathop{\mathrm{H}}(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta,\mathcal{S}})\right)[\mathfrak{L}^{-1}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}]
+\end{aligned}$$ is an inclusion, since the operation $\cdot\mathfrak{L}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}$ is injective on the domain. By definition ([\[pervExt\]](#pervExt){reference-type="ref" reference="pervExt"}), $f_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}$ preserves the perverse filtration. By Lemma [\[HCM\]](#HCM){reference-type="ref" reference="HCM"}  multiplication by $\mathfrak{E}_{1,\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}^{-1}\cdot\mathfrak{E}_{0,\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}$ induces a map
+
+$$\begin{aligned}
+\nonumber&\mathop{\mathrm{\mathfrak{P}}}_s\left(\left(\mathop{\mathrm{H}}(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta,\mathcal{S}})\boxtimes^{\mathop{\mathrm{tw}}}_+ \mathop{\mathrm{H}}(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta,\mathcal{S}})\right)[\mathfrak{L}^{-1}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}]\right)\rightarrow \\ \label{upshift}
+&\mathop{\mathrm{\mathfrak{P}}}_{s+2(\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'')}\left(\left(\mathop{\mathrm{H}}(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta,\mathcal{S}})\boxtimes^{\mathop{\mathrm{tw}}}_+ \mathop{\mathrm{H}}(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta,\mathcal{S}})\right)[\mathfrak{L}^{-1}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}]\right).
+\end{aligned}$$ Combining the shifts in perverse degree in ([\[upshift\]](#upshift){reference-type="ref" reference="upshift"}) and ([\[downshift\]](#downshift){reference-type="ref" reference="downshift"}), we deduce that $$\Delta^{\upzeta}_{W,\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}\left(\mathop{\mathrm{\mathfrak{P}}}_s \left(\mathop{\mathrm{H}}\left(\mathcal{A}^{\upzeta,\mathcal{S}}_{W,\mathop{\mathrm{\mathbf{d}}}}\right)\right)\right)\subset \mathop{\mathrm{\mathfrak{P}}}_s\left(\left(\mathop{\mathrm{H}}(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta,\mathcal{S}})\boxtimes^{\mathop{\mathrm{tw}}}_+ \mathop{\mathrm{H}}(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta,\mathcal{S}})\right)[\mathfrak{L}^{-1}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}]\right).$$ The proof of the following is essentially the original proof of the Atiyah--Bott lemma of [@AtBo83], adapted to deal with vanishing cycles and passage to the associated graded of the perverse filtration.
+
+::: lemma
+[]{#PAB label="PAB"} The map $\mathop{\mathrm{Gr}}_{\mathop{\mathrm{\mathfrak{P}}}}(f_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''})$ induced by the map ([\[fDef\]](#fDef){reference-type="ref" reference="fDef"}) is injective.
+:::
+
+::: proof
+*Proof.* We abbreviate $\mathop{\mathrm{\mathfrak{P}}}_i=\mathop{\mathrm{\mathfrak{P}}}_i\left(\mathop{\mathrm{H}}(\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}'},\mathfrak{IC}_{W,\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta})\boxtimes_+^{\mathop{\mathrm{tw}}} \mathop{\mathrm{H}}(\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}''},\mathfrak{IC}_{W,\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta})\right)$. It is sufficient to show that the degree $2\lvert\mathop{\mathrm{\mathbf{d}}}'\rvert \lvert\mathop{\mathrm{\mathbf{d}}}''\rvert$ map $\mathop{\mathrm{Gr}}_{\mathop{\mathrm{\mathfrak{P}}}}(\cdot \mathfrak{L}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''})$ is injective. For then if $$f_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}(a)\in \left(\sum_{r\geq 0}\mathop{\mathrm{\mathfrak{P}}}_{i+2\lvert\mathop{\mathrm{\mathbf{d}}}'\rvert \lvert\mathop{\mathrm{\mathbf{d}}}''\rvert r}\left(\mathop{\mathrm{H}}(\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}'},\mathfrak{IC}_{W,\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta})\boxtimes_+^{\mathop{\mathrm{tw}}} \mathop{\mathrm{H}}(\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}''},\mathfrak{IC}_{W,\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta})\right)\cdot \mathfrak{L}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}^{-r}\right)$$ we can write $a=\sum_{r\leq n} b_r\cdot\mathfrak{L}^{-r}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}$ for $b_r\in \mathop{\mathrm{\mathfrak{P}}}_{i+2\lvert\mathop{\mathrm{\mathbf{d}}}'\rvert \lvert\mathop{\mathrm{\mathbf{d}}}''\rvert r}$. Then $a\cdot \mathfrak{L}^n_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}\in\mathop{\mathrm{\mathfrak{P}}}_{i+2\lvert\mathop{\mathrm{\mathbf{d}}}'\rvert \lvert\mathop{\mathrm{\mathbf{d}}}''\rvert n}$ by Lemma [\[HCM\]](#HCM){reference-type="ref" reference="HCM"}, and so $a\in \mathop{\mathrm{\mathfrak{P}}}_{i}$, by injectivity of $\mathop{\mathrm{Gr}}_{\mathop{\mathrm{\mathfrak{P}}}}(\cdot \mathfrak{L}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''})$.
+
+Consider the subgroup $\mathbb{G}_m\cong T\subset G_{\mathop{\mathrm{\mathbf{d}}}'}\times G_{\mathop{\mathrm{\mathbf{d}}}''}$ given by the embedding $$z\mapsto \left( (z^{\mathop{\mathrm{\mathbf{d}}}''_i}\mathop{\mathrm{id}}_{\mathbb{C}^{\mathop{\mathrm{\mathbf{d}}}'_i}})_{i\in Q_0},(z^{-\mathop{\mathrm{\mathbf{d}}}'_i}\mathop{\mathrm{id}}_{\mathbb{C}^{\mathop{\mathrm{\mathbf{d}}}''_i}})_{i\in Q_0}\right)$$ and let $P_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}\colonequals (G_{\mathop{\mathrm{\mathbf{d}}}'}\times G_{\mathop{\mathrm{\mathbf{d}}}''})/T$. Note that $T$ acts trivially on $X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}'}\times X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}''}$ and furthermore $T$ acts trivially on the linearization ([\[charDef\]](#charDef){reference-type="ref" reference="charDef"}), so that the linearization of the $G_{\mathop{\mathrm{\mathbf{d}}}'}\times G_{\mathop{\mathrm{\mathbf{d}}}''}$-action lifts to a linearization of the $P_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}$ action. Let $$p'_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}\colon (X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}'}\times X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}''})/P_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}\rightarrow \mathcal{M}_{\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta\mathop{\mathrm{-ss}}}\times \mathcal{M}_{\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta\mathop{\mathrm{-ss}}}$$ be the map to the GIT quotient. Via the Cartesian square $$\xymatrix{
+\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta\mathop{\mathrm{-ss}}}\times \mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta\mathop{\mathrm{-ss}}}\ar[r]\ar[d]&\mathop{\mathrm{pt}}/(G_{\mathop{\mathrm{\mathbf{d}}}'}\times G_{\mathop{\mathrm{\mathbf{d}}}''})\ar[d]\\
+(X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}'}\times X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}''})/P_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}\ar[r]&\mathop{\mathrm{pt}}/P_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}
+}$$ we obtain the isomorphism $$\begin{aligned}
+&\mathop{\mathrm{\mathcal{H}}}\left(p^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}',*}\mathfrak{IC}_{W,\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta}\boxtimes p^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}'',*}\mathfrak{IC}_{W,\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta}\right)\cong\\& \mathop{\mathrm{\mathcal{H}}}\left(p'_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'',*}\upphi^{\mathop{\mathrm{mon}}}_{f}\mathcal{IC}_{X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}'}\times X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}''}/P_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}}(\mathbb{Q})\right)\otimes_{\mathop{\mathrm{H}}_{P_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}}(\mathop{\mathrm{pt}})}\mathop{\mathrm{H}}_{G_{\mathop{\mathrm{\mathbf{d}}}'}\times G_{\mathop{\mathrm{\mathbf{d}}}''}}(\mathop{\mathrm{pt}})\otimes \mathbb{L}^{1/2}.
+\end{aligned}$$ where $f$ is the function induced by $\mathrm{Tr}(W)_{\mathop{\mathrm{\mathbf{d}}}'}\boxplus \mathrm{Tr}(W)_{\mathop{\mathrm{\mathbf{d}}}''}$ on $(X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}'}\times X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}''})/P_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}$. After picking a splitting $$\lambda\colon \mathop{\mathrm{H}}_{G_{\mathop{\mathrm{\mathbf{d}}}'}\times G_{\mathop{\mathrm{\mathbf{d}}}''}}(\mathop{\mathrm{pt}})\cong \mathop{\mathrm{H}}_{P_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}}(\mathop{\mathrm{pt}})\otimes \mathop{\mathrm{H}}_{T}(\mathop{\mathrm{pt}})$$ we obtain an isomorphism $$\begin{aligned}
+&\mathop{\mathrm{\mathcal{H}}}\left(p^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}',*}\mathfrak{IC}_{W,\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta}\boxtimes p^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}'',*}\mathfrak{IC}_{W,\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta}\right)\cong \mathop{\mathrm{\mathcal{H}}}\left(p'_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'',*}\upphi^{\mathop{\mathrm{mon}}}_{f}\mathcal{IC}_{X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}'}\times X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}''}/P_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}}(\mathbb{Q})\right)\otimes \mathop{\mathrm{H}}(\mathcal{IC}_{\mathop{\mathrm{pt}}/T}(\mathbb{Q})).
+\end{aligned}$$ We define the filtration $$\begin{aligned}
+D^i=&\mathop{\mathrm{H}}\left(\mathcal{M}_{\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}\times \mathcal{M}_{\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}},\tilde{\omega}^!\mathop{\mathrm{\mathcal{H}}}^{\geq i}\left(p'_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'',*}\upphi^{\mathop{\mathrm{mon}}}_{f}\mathcal{IC}_{X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}'}\times X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}''}/P_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}}(\mathbb{Q})\right)\otimes \mathop{\mathrm{H}}(\mathcal{IC}_{\mathop{\mathrm{pt}}/T}(\mathbb{Q})\right)\\&
+\subset \mathop{\mathrm{H}}\left(\mathcal{M}_{\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}\times \mathcal{M}_{\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}, \tilde{\omega}^!\mathop{\mathrm{\mathcal{H}}}\left(p^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}',*}\mathfrak{IC}_{W,\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta}\boxtimes p^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}'',*}\mathfrak{IC}_{W,\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta}\right)\right)\\&
+=\mathop{\mathrm{Gr}}_{\mathop{\mathrm{\mathfrak{P}}}}\left(\mathop{\mathrm{H}}(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta,\mathcal{S}})\boxtimes^{\mathop{\mathrm{tw}}}_+ \mathop{\mathrm{H}}(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta,\mathcal{S}})\right)=:\mathcal{B}
+\end{aligned}$$ where we have made the abbreviation $$\tilde{\omega}=\tilde{\omega}^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}'}\times\tilde{\omega}^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}''}\colon \mathcal{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}'}\times\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}''}\hookrightarrow \mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}'}\times\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}''}.$$ Consider the associated graded object $\mathop{\mathrm{Gr}}_D\mathcal{B}$. Multiplication by $\mathfrak{L}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}$ preserves $D$ degree, and so induces a map $$\mathop{\mathrm{Gr}}_{D}(\mathop{\mathrm{Gr}}_{\mathop{\mathrm{\mathfrak{P}}}}(\cdot \mathfrak{L}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}))\colon \mathop{\mathrm{Gr}}_{D}\mathcal{B}\rightarrow \mathop{\mathrm{Gr}}_{D}\mathcal{B}.$$ Specifically, the map is given by multiplication by the $T$-equivariant Euler characteristic of $X_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}\rightarrow X_{\mathop{\mathrm{\mathbf{d}}}'}\times X_{\mathop{\mathrm{\mathbf{d}}}''}$, which is nonzero since the vector bundle has no sub-bundle with trivial $T$-weight. It follows that $\mathop{\mathrm{Gr}}_{D}(\mathop{\mathrm{Gr}}_{\mathop{\mathrm{\mathfrak{P}}}}(\cdot \mathfrak{L}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}))$ is injective, so that $\mathop{\mathrm{Gr}}_{\mathop{\mathrm{\mathfrak{P}}}}(\cdot \mathfrak{L}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''})$ is injective too. ◻
+:::
+
 We deduce the following proposition.
-Proposition 6.4. The triple
-(
-GrP(H(Aζ ,S
-W,µ )), GrP(H(˜∗ζ ,S
-W,µ )), GrP(∆ ζ ,S
-W,µ )
-)
-deﬁnes
-a localised bialgebra in the categoryτ D≥,lf (MMHM(Λζ
-µ )) in the sense of [10, Def.5.3].
+
+::: proposition
+The triple $\left(\mathop{\mathrm{Gr}}_{\mathop{\mathrm{\mathfrak{P}}}}(\mathop{\mathrm{H}}(\mathop{\mathrm{\mathcal{A}}}_{W,\upmu}^{\upzeta,\mathcal{S}})),\mathop{\mathrm{Gr}}_{\mathop{\mathrm{\mathfrak{P}}}}(\mathop{\mathrm{H}}(\mathop{\mathrm{\tilde{\ast}}}^{\upzeta,\mathcal{S}}_{W,\upmu})),\mathop{\mathrm{Gr}}_{\mathop{\mathrm{\mathfrak{P}}}}(\Delta_{W,\upmu}^{\upzeta,\mathcal{S}})\right)$ defines a localised bialgebra in the category ${}^{\uptau}\mathcal{D}^{\geq, \mathrm{lf}}(\mathop{\mathrm{MMHM}}(\Uplambda_{\upmu}^{\upzeta}))$ in the sense of [@Da13 Def.5.3].
+:::

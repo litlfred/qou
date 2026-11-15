@@ -17,7 +17,7 @@ answer is unique and equal to **zero**.
 
 THE TWO CONVENTIONS (both pre-existing in the corpus — see §Phase 0 of the audit)
 
-  G. GERM.  `def:germ-commutator-q-curvature` (content/quantum-observable-universe/
+  G. GERM.  `def:germ-commutator-q-curvature` (folio/quantum-observable-universe/
      quantum-observable-universes/germ-commutator-q-curvature.md) defines δq_i as a
      *germ-level increment of the substrate parameter q* in A/𝔪_p², i.e. the
      logarithmic q-derivative  δq_i = q·(∂_q σ_i)·σ_i⁻¹.  The competing "log σ"

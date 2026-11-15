@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9804005v3/blocks/prose-sec-063",
+  "kind": "prose",
+  "title": "It follows from Theorem 6.17 and Proposition 3.9(1) that",
+  "pageStart": 36,
+  "pageEnd": 38,
+  "text": "../sections/sec-063-4-it-follows-from-theorem-617-and-proposition-39.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9804005v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9804005v3",
+  "provenance": "ingested"
+}

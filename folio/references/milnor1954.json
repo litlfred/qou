@@ -1,0 +1,25 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "milnor1954",
+  "type": "article-journal",
+  "title": "Link groups",
+  "author": [
+    {
+      "family": "Milnor",
+      "given": "John"
+    }
+  ],
+  "container-title": "Annals of Mathematics",
+  "issued": {
+    "date-parts": [
+      [
+        1954
+      ]
+    ]
+  },
+  "volume": "59",
+  "page": "177-195",
+  "DOI": "10.2307/1969685",
+  "URL": "https://doi.org/10.2307/1969685",
+  "note": "Source of the μ̄ triple-linking invariant and its indeterminacy (well-defined modulo the gcd of pairwise linking numbers) — the literature input for QOU/Mass/MilnorIndeterminacyGate.lean and the -- Ref: headers in MilnorSignRepObstruction.lean (added 2026-07-14, R7-a)."
+}

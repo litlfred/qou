@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1409.2799v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "DIAGRAM CATEGORIES FOR Uq-TILTING MODULES AT ROOTS OF UNITY",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1409.2799v2",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Diagram categories for Uq-tilting modules at roots of unity",
   "contains": [
     "library/arxiv-1409.2799v2/sections/sec-000",
     "library/arxiv-1409.2799v2/sections/sec-001",
@@ -19,8 +24,18 @@
     "library/arxiv-1409.2799v2/sections/sec-010"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1409.2799&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1409.2799v2",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "1409.2799v2.pdf",
     "source_sha256": "2f2067b7b583e731e0baec27574c5f7cd189c7bcd3493cfbf9533aa0d44e48eb",
     "pages": 50,

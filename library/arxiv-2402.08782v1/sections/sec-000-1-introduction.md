@@ -8,109 +8,70 @@ pages: 1-3
 source_pdf: 2402.08782v1.pdf
 source_sha256: 30311f0bd815f93f
 doc_brief: "Hecke–Farey coordinates for Bring’s surface — The modular groupΓ (which is the Hecke groupH3) can be used to study triangular maps, Here we use the Hecke groupH4 to study the reg- ular map that"
+text_source: latex
+latex_prose_ratio: 0.993
+latex_coverage_ratio: 0.866
 ---
-The Farey mapF, defined in section 2, is the universal triangular map, in that
-every triangular map on an orientable surface is a quotient ofF by a subgroup of
-the modular group, Γ and every regular triangular map is a quotient ofF by a
-normal subgroup of Γ. This gives rise to many important Riemann surfaces such
-as the Klein surface. In [4] we used the Farey map to study the Klein surface. In
-particular we showed how the Farey structure could be used to construct the famous
-14-sided fundamental polygon that represents the Klein surface. (Other Riemann
-surfaces coming out of triangular maps are described in [11]). In this paper we
-describe an important Riemann surface that comes from a regular 4-gonal map,
-namely Bring’s surface. We now use the universal 4-gonal map and the modular
-group is replaced by the Hecke groupH4. Our main result is to use Hecke-Farey
-coordinates to describe the 20-sided polygon that represents Bring’s surface and
-describe the side pairings needed to construct the surface. This polygon was also
-given by [9] and discussed by [1] but here we provide detailed proofs that this
-polygon and side pairings does indeed give Bring’s surface.
-2. Bring’s surface
-We start with the following result which comes from Conder and Dobcsanyi’s
-classifications of regular maps of small genus [2].
-Theorem 2.1. There is a unique regular map of type {5, 4} of genus 4 with
-120 automorphisms. The automorphism group of this map here is the symmetric
-groupS5.
-Underlying this map is a unique Riemann surface of genus 4 with automorphism
-group S5. This surface is calledBring’s Surface. (Type{5, 4} means that all faces
-are quadrilaterrals and all vertices have valency 5.)
-We let Γ(2, 5, 4) denote the triangle group with periods 2, 5, 4. This triangle
-group acts as a group of conformal automorphisms of the upper-half complex plane
-H and it has a presentation
-1
-arXiv:2402.08782v1  [math.GR]  13 Feb 2024
-2 DOHA KATTAN 1 AND DAVID SINGERMAN2
-Γ(2, 5, 4) =⟨X,Y,Z |X 2 =Y 5 =Z 4 =XYZ = 1⟩.
-There is an epimorphismθ : Γ(2, 5, 4)7→S5 given byX7→x = (1, 5),Y 7→y =
-(5, 4, 3, 2, 1), andZ7→z = (2, 3, 4, 5).
-The kernelK of this epimorphism is a surface group of index 120 inΓ and so
-by the Riemann-Hurwitz formulaH/K is a Riemann surface of genus 4 withS5 as
-automorphism group and so by Theorem 2.1, this surface is Bring’s Surface.
-As K is a normal subgroup of the triangle groupΓ(2, 5, 4), it follows from [5]
-that underlying Bring’s surface there is a regular map of type{5, 4} which we
-consider in more detail later.
-All compact Riemann surfaces arise from compact algebraic curves. Bring’s
-surface is the underlying Riemann surface ofBring’s Curve which is the complete
-intersection of of the three hyper-surfaces
-(2.1)
-5X
-i=1
-xi = 0
-5X
-i=1
-x2
-i = 0
-5X
-i=1
-x3
-i = 0.
-Another way of considering Bring’s Surface is in terms of the Hecke groupH4.
-Consider a group with the two generatorsT :z7→z +λ and S :z7→−1
-z .
-Hecke showed that this group is discrete, i.e., a Fuchsian group, if and only if
-(i) λ =λq = 2 cosπ
-q or
-(ii) λ≥ 2.
-We are interested in case (i).
-We then find that
-R(z) =TS (z) = λqz− 1
-z .
-This transformation is represented by the matrix
-λq −1
-1 0
-
-.
-The eigenvalues of this matrix aree±πi/q and soR has periodq. It is known
-that as a groupHq∼=C2∗Cq.
-In this paper we are interested in the caseq = 4 and thenλ4 =
-√
-2. The group
-H4 has two generators
-T :z7→z +
-√
-2 and S :z7→−1
-z .
-Writing the Möbius transformations as matrices we find that the transforma-
-tions ofH4 are of two types
-(i)  a b
-√
-2
-c
-√
-2 d
-
-a,b,c,d ∈ Z, ad− 2bc = 1
-and
-HECKE–FAREY COORDINATES FOR BRING’S SURFACE 3
-(ii)
-a
-√
-2 b
-c d
-√
-2
-
-a,b,c,d ∈ Z, 2ad−bc = 1.
-The matrices of type (i) form a subgroup of index 2 inH4 and are calledeven
-matrices. We denote this subgroup byHe
-4. The matrices of type (ii) are calledodd
-matrices and they form a coset.
+The Farey map $\mathbb{F}$, defined in section 2, is the universal triangular map, in that every triangular map on an orientable surface is a quotient of $\mathbb{F}$ by a subgroup of the modular  group, $\Gamma$ and every regular triangular map is a quotient of $\mathbb{F}$ by a normal subgroup of $\Gamma.$  This gives rise to many important Riemann surfaces such as the Klein surface.  In \cite{ISS} we used the Farey map to study the Klein surface.  In particular we showed how the Farey structure could be used to construct the famous 14-sided fundamental polygon that represents the Klein surface. (Other Riemann surfaces coming out of triangular maps are described in \cite{SS16}). In this paper we describe an important Riemann  surface that comes from a regular 4-gonal map,  namely Bring's surface.  We now use the universal 4-gonal map and the modular group is replaced by the Hecke group $H_4$.  Our main  result is to use Hecke-Farey coordinates to describe the 20-sided polygon that represents Bring's surface and describe the side pairings
+needed to construct the surface.  This polygon was also given by \cite{RR92} and discussed by \cite{BN12} but here we provide detailed proofs that this polygon and side pairings does indeed give Bring's surface.
+
+ 
+\section{Bring's surface} We start with the following result which comes from Conder and Dobcsanyi's classifications of regular maps of small genus~\cite{CD01}.
+ 
+  \begin{theorem} \label{th1}There is a unique regular map of type $\{5,4\}$ of genus 4 with 120 automorphisms.  The automorphism group of this map here is the symmetric group $S_5$.
+    \end{theorem}
+
+  Underlying this map is a unique Riemann surface of genus 4 with automorphism group $S_5$.  This surface is called {\it Bring's Surface}.  (Type $\{5, 4\}$ means that all faces are quadrilaterrals and all vertices have valency 5.)
+
+ 
+We let $\Gamma(2, 5, 4)$ denote the triangle group with periods 2, 5, 4.  This triangle group acts as a group of conformal  automorphisms of the upper-half complex plane $\mathbb{H}$ and it has a presentation  
+ 
+$$\Gamma(2,5,4)=\langle X,Y,Z\,|\,X^{2}=Y^{5}=Z^{4}=XYZ=1\rangle.$$
+  \vspace{0.2cm}
+
+  There is an epimorphism $\theta:\Gamma(2,5,4)\mapsto S_5$ given by $X\mapsto x=(1, 5),   Y\mapsto y=(5,4,3,2, 1)$,  and $Z\mapsto z=(2, 3, 4, 5).$
+  
+  The kernel $K$ of this epimorphism is a surface group of index 120 in $\Gamma$ and so by the Riemann-Hurwitz formula $\mathbb{H}/K$ is a Riemann surface of genus 4 with $S_5$ as automorphism group and so by Theorem \ref{th1}, this surface is Bring's Surface.
+  
+  As $K$ is a normal subgroup of the triangle group $\Gamma(2, 5, 4)$, it follows from~\cite{JS78} that underlying  Bring's surface  there is a regular map of type $\{5, 4\}$ which we consider in more detail later.
+
+  \vspace{0.2cm}
+
+  All compact Riemann surfaces arise from compact algebraic curves.  Bring's surface is the underlying Riemann surface of  {\it Bring's Curve} which is the complete intersection of of the three hyper-surfaces
+\begin{equation}
+\sum_{i=1}^{5} x_i = 0\;\;\;\; \sum_{i=1}^{5} x_i^{2} = 0\;\;\;\;\sum_{i=1}^{5} x_i^{3} = 0.
+\end{equation} 
+  \vspace{0.2cm}
+
+Another way of considering Bring's Surface is  in terms of the Hecke group $H_4$.
+
+Consider a group with the two generators $T: z\mapsto z+\lambda$ and $S: z\mapsto \frac{-1}{z}$.
+
+Hecke showed that this group is discrete, i.e., a Fuchsian group, if and only if 
+
+
+(i) $\lambda=\lambda_q=2\cos \frac{\pi}{q}$ or 
+
+(ii) $\lambda\ge 2$.
+  \vspace{0.2cm}
+
+We are interested in case (i).\\
+
+We then find that $$R(z)=TS(z)=\frac{\lambda_q z-1}{z}.$$
+
+This transformation is represented by the matrix 
+$$\begin{pmatrix}\lambda_q&-1\\1&0\\\end{pmatrix}.$$
+
+The eigenvalues of this matrix are $e^{\pm \pi i/q}$ and so $R$ has period $q$.  It is known that as a group  $H_q\cong C_2*C_q$.
+  \vspace{0.2cm}
+
+In this paper we are interested in the case  $q=4$ and then $\lambda_4=\sqrt 2$.
+  The group $H_4$ has two generators 
+  
+ $$T:z\mapsto z+\sqrt 2 \;\;\;\;and\;\;\;\;  S: z\mapsto \frac{-1}{z}.$$
+ 
+  Writing the M\"obius transformations as matrices we find that the transformations of $H_4$ are of two types\\
+ (i) $$\begin{pmatrix}a&b\sqrt 2\\c\sqrt 2& d\\ \end{pmatrix}  \;  a,b,c,d \in \mathbb{Z} \;,\; ad-2bc=1$$ \\ and\\(ii) $$\begin{pmatrix}a\sqrt 2&b\\c&d\sqrt 2\\ \end{pmatrix}\;  a,b,c,d \in \mathbb{Z} \;,\; 2ad-bc=1.$$
+ 
+ The matrices of type (i) form a subgroup of index 2 in $H_4$ and are called {\it even} matrices.  We denote this subgroup by $H_{4}^{e}$.
+ The matrices of type (ii) are called {\it odd} matrices and they form a coset.

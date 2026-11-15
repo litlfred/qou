@@ -38,7 +38,7 @@ Strategies named "F/G/H to derive λ_scale from H_4 substrate" are explicitly ca
 
 1. **Bring color-tube quark-weighted averaging** ([`probe_pn_flavor_asymmetry.py`](../../computations/script-qa/probe_pn_flavor_asymmetry.script-qa.json) — script archived; QA sidecar surviving): per-sheet PL integration on Bring's surface (Scheme 4) gives `Δm_{n−p}` to ~0.14% — **but this closes the p/n split, not the m_avg gap**. Path forward: extend this color-tube formalism to the BASE mass scale of `VolDensity(𝓑₃)`, not just the difference. Open: define canonical color-sheet ↔ quark-flavor mapping (research-level — not explicitly in the paper).
 
-2. **g·g' substrate-derived couplings** ([`SubstrateEWHypotheses.lean`](../../content/quantum-observable-universe/braids-and-knots/) class-conditional theorems): `g = π·h_0` matches SM 0.6535 to **+0.26%**; `v_framework / v_SM = log(6) = log(|S_3|)` matches at **−0.50%**. Open: rigorously derive π·h_0 from connection 1-form integration on substrate (Yekutieli MI machinery); upgrade `sorry` markers in SubstrateEWHypotheses.lean.
+2. **g·g' substrate-derived couplings** ([`SubstrateEWHypotheses.lean`](../../folio/quantum-observable-universe/braids-and-knots/) class-conditional theorems): `g = π·h_0` matches SM 0.6535 to **+0.26%**; `v_framework / v_SM = log(6) = log(|S_3|)` matches at **−0.50%**. Open: rigorously derive π·h_0 from connection 1-form integration on substrate (Yekutieli MI machinery); upgrade `sorry` markers in SubstrateEWHypotheses.lean.
 
 3. **Bloch-Wigner / dilogarithm cohomology higher-rank classes** — the unit-circle class was refuted, but the BlochWigner module under PR #956's Lake-wiring roadmap may admit a higher-rank class beyond the literal-rfl loophole. Phase-1b Lake-wiring queued.
 

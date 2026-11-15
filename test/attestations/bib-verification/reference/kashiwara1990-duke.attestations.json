@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "kashiwara1990-duke",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 120,
+      "entry": {
+        "id": "kashiwara1990-duke",
+        "status": "verified-clean",
+        "verified_at": "2026-05-19T18:13:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 1,
+        "fix_commit": "(this commit)",
+        "note": "RESOLVED 2026-06-23 (doth): the inline DOI 10.1215/S0012-7094-90-06120-X was a spurious 1990 Duke vol-61 slot (not Kashiwara). Corrected to Kashiwara, 'The crystal base and Littelmann's refined Demazure character formula', Duke MJ 71(3) (1993) 839-858, DOI 10.1215/S0012-7094-93-07131-1; references.ts + 3 .lean inline DOIs synced. Link-title confidence (sandbox 403'd DOI pages). See docs/audits/2026-06-23-bibliography-doi-verification-doth.md \u00a7A.",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1215/S0012-7094-93-07131-1"
+        }
+      }
+    }
+  ]
+}

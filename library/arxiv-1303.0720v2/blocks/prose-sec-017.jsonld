@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1303.0720v2/blocks/prose-sec-017",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1303.0720v2/blocks/prose-sec-017",
   "kind": "prose",
-  "title": "The connection with random normal matrix theory. Apart from to the connection with to",
-  "pageStart": 11,
-  "pageEnd": 11,
-  "text": "../sections/sec-017-53-the-connection-with-random-normal-matrix-theo.md",
-  "derivedFrom": "library/arxiv-1303.0720v2/manifest",
-  "sourceDocument": "library/arxiv-1303.0720v2/manifest",
+  "title": "Asymptotic analysis of weighted polyanalytic Bergman kernels",
+  "pageStart": 12,
+  "pageEnd": 12,
+  "text": "../sections/sec-017-55-asymptotic-analysis-of-weighted-polyanalytic.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.0720v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.0720v2",
   "provenance": "ingested"
 }

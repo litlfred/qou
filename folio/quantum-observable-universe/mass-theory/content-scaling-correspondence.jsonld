@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-content-scaling-correspondence",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:content-scaling-correspondence",
+  "kind": "proposition",
+  "title": "Box content is the $q$-Jucys--Murphy eigenvalue exponent",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-knot-eigenbasis-complete",
+    "papers/quantum-observable-universe/blocks/rem-hecke-algebra-from-braiding"
+  ],
+  "cites": [
+    "references/jimbo1986",
+    "references/ram1997"
+  ],
+  "tags": [
+    "schur-weyl",
+    "content",
+    "magnetic-quantum-number",
+    "scaling",
+    "braid-graph"
+  ],
+  "leanRef": "qou:QOU.SchurWeyl.SeminormalRep.seminormalRep_qJM",
+  "text": "content-scaling-correspondence.md",
+  "provenance": "authored"
+}

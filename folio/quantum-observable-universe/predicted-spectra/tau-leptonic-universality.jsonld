@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-tau-leptonic-universality",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:tau-leptonic-universality",
+  "kind": "proposition",
+  "title": "Lepton universality from the $T_{3,5}$ weak vertex",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-lepton-continuant-recurrence"
+  ],
+  "tags": [
+    "tau-decay",
+    "lepton-universality",
+    "weak-vertex",
+    "branching-ratio",
+    "hecke-algebra",
+    "markov-trace",
+    "T35",
+    "factorized-model"
+  ],
+  "leanRef": "qou:QOU.Archimedean.tau_leptonic_universality",
+  "text": "tau-leptonic-universality.md",
+  "provenance": "authored"
+}

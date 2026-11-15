@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2604.16077v1/blocks/prose-sec-014",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2604.16077v1/blocks/prose-sec-014",
   "kind": "prose",
-  "title": "Gluing varieties and the holonomy map. In this section we explain how the structures",
-  "pageStart": 10,
-  "pageEnd": 12,
-  "text": "../sections/sec-014-212-gluing-varieties-and-the-holonomy-map-in-thi.md",
-  "derivedFrom": "library/arxiv-2604.16077v1/manifest",
-  "sourceDocument": "library/arxiv-2604.16077v1/manifest",
+  "title": "Some logarithmic limits of log-parameters",
+  "pageStart": 34,
+  "pageEnd": 35,
+  "text": "../sections/sec-014-36-some-logarithmic-limits-of-log-parameters.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2604.16077v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2604.16077v1",
   "provenance": "ingested"
 }

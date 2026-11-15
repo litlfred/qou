@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-interaction-sector-taxonomy",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:interaction-sector-taxonomy",
+  "kind": "definition",
+  "title": "Interaction-sector taxonomy",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-binding-qbeta-complex-volume",
+    "papers/quantum-observable-universe/blocks/def-fusion-process"
+  ],
+  "tags": [
+    "interaction",
+    "taxonomy",
+    "strong",
+    "electromagnetic",
+    "weak",
+    "bar-involution",
+    "sector"
+  ],
+  "leanRef": "qou:QOU.Interactions.SectorTaxonomy.Sector",
+  "text": "interaction-sector-taxonomy.md",
+  "leanSource": "interaction-sector-taxonomy.lean",
+  "provenance": "authored"
+}

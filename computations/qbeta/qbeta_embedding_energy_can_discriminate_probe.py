@@ -6,7 +6,7 @@ bridge is built.
 
 # Ref: computations/qbeta/qbeta_crossing_energy_separates_the_gluon_probe.py  (the tie this prunes)
 # Ref: computations/mobius_cross_energy_hopf_calibration.py                   (the integrator, calibrated to 2*pi^2)
-# Ref: content/quantum-observable-universe/lean/QOU/MobiusEnergy.lean
+# Ref: folio/quantum-observable-universe/lean/QOU/MobiusEnergy.lean
 # Ref: .beans/qou-99qc--...md
 
 WHY THIS RUNS BEFORE THE BRIDGE. The owner's proposal is to select the gluon

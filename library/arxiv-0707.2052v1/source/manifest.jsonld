@@ -1,0 +1,123 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0707.2052v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-0707.2052v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0707.2052v1",
+  "provenance": "ingested",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0707.2052&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0707.2052v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/0707.2052v1",
+    "content_type": "application/gzip",
+    "sha256": "946b4d65c02a50b054502b2a8c2bece2ae3f30480094ccf78c89250ac4729b2e",
+    "bytes": 344797,
+    "fetched": "2026-10-10T14:59:58+00:00",
+    "files": [
+      {
+        "path": "source/files/abstract.tex",
+        "role": "tex",
+        "sha256": "98562fbbe1a04d4e34f655ca818d0b3a5db87a3224068cc7e2eb89ef89c049fb",
+        "bytes": 695
+      },
+      {
+        "path": "source/files/adjoint.tex",
+        "role": "tex",
+        "sha256": "588eaee393c9b3d5116ac248244833801e786fe8491daca2bce527d60cbbc43f",
+        "bytes": 2865
+      },
+      {
+        "path": "source/files/adjoints.tex",
+        "role": "tex",
+        "sha256": "163493710a51b38848b45ed55a3a221e1ecd83e59f91ca6900fc15f120939c29",
+        "bytes": 12842
+      },
+      {
+        "path": "source/files/biblio.tex",
+        "role": "tex",
+        "sha256": "36fc97f704d9658e554ec8d6fffaa6f6a8e789fff5663c27578c9d52207692b9",
+        "bytes": 3661
+      },
+      {
+        "path": "source/files/cardy.tex",
+        "role": "tex",
+        "sha256": "bd6023e78485481c47e468b284192bfe3923bad23b2905d6ee7c180cfb188454",
+        "bytes": 15330
+      },
+      {
+        "path": "source/files/chernchar.tex",
+        "role": "tex",
+        "sha256": "703375aa9967e5e3d2cd11689651f4385e1d9d717d827dcce0753e8d8a8d90c5",
+        "bytes": 9111
+      },
+      {
+        "path": "source/files/defmaps.tex",
+        "role": "tex",
+        "sha256": "ffdca0724aaac31ac1d71d0168c132c62e91a1d5948f2ee0454ea2958aedf35c",
+        "bytes": 6010
+      },
+      {
+        "path": "source/files/defs.tex",
+        "role": "tex",
+        "sha256": "e34b36043c15f85b44f8cf68dd91e33fbc32f602d5d231e621697d5758e0ce97",
+        "bytes": 4650
+      },
+      {
+        "path": "source/files/duality.tex",
+        "role": "tex",
+        "sha256": "8d95826df92b8723666f62738b537eb5de23b87f62fd6a3c235d8b173de87a11",
+        "bytes": 15593
+      },
+      {
+        "path": "source/files/intro.tex",
+        "role": "tex",
+        "sha256": "b2cb32ed2af1932b0ff7950af65fcf7b7c04dd500800f6e6ae90d3609bb01b70",
+        "bytes": 14513
+      },
+      {
+        "path": "source/files/inttrans.tex",
+        "role": "tex",
+        "sha256": "b87aad3619a7d9b76159c85a16ebc3b440b33087b870a064f34c468193cb6f7c",
+        "bytes": 9006
+      },
+      {
+        "path": "source/files/main.tex",
+        "role": "tex",
+        "sha256": "5b2250298777c5079455553a1b174a54c98bd6821c51ee0226439dc7673dfb49",
+        "bytes": 1065
+      },
+      {
+        "path": "source/files/serre.tex",
+        "role": "tex",
+        "sha256": "3f6b10613f128b7ae3661d0b53e8c6a7bb0e95550b83e5c8e4424d9e68c256ff",
+        "bytes": 3839
+      },
+      {
+        "path": "source/files/title.tex",
+        "role": "tex",
+        "sha256": "a9b59a0c81d88f73ce42ef9fe8e263236cc47c572790ef9fa7f192d2ecae6395",
+        "bytes": 904
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

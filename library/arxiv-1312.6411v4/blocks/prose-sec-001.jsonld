@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1312.6411v4/blocks/prose-sec-001",
+  "kind": "prose",
+  "title": "DG Modules and their Resolutions",
+  "pageStart": 7,
+  "pageEnd": 11,
+  "text": "../sections/sec-001-1-dg-modules-and-their-resolutions.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1312.6411v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1312.6411v4",
+  "provenance": "ingested"
+}

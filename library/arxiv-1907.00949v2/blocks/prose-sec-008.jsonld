@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1907.00949v2/blocks/prose-sec-008",
+  "kind": "prose",
+  "title": "Riemannian notions",
+  "pageStart": 7,
+  "pageEnd": 7,
+  "text": "../sections/sec-008-24-riemannian-notions.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1907.00949v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1907.00949v2",
+  "provenance": "ingested"
+}

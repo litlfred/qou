@@ -3,7 +3,7 @@
 
 Why a verdict goes stale
 ------------------------
-`content/pipeline/lean-vacuity-axiom-audit.ts` keys staleness on `file_sha` =
+`folio/pipeline/lean-vacuity-axiom-audit.ts` keys staleness on `file_sha` =
 `sha256(whole file)[:12]`.  So ANY edit to the file expires every verdict in it,
 including edits nowhere near the reviewed declaration.  That is deliberate --
 the machine cannot know an edit was irrelevant -- and it is why the

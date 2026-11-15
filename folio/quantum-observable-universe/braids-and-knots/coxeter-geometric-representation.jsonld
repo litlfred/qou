@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-coxeter-geometric-representation",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:coxeter-geometric-representation",
+  "kind": "proposition",
+  "title": "The geometric representation: simple-injectivity at every Coxeter system",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-coxeter-tits-residue-collapse",
+    "papers/quantum-observable-universe/blocks/prop-coxeter-parabolic-transversal"
+  ],
+  "cites": [
+    "references/kassel1995",
+    "references/jones1987"
+  ],
+  "tags": [
+    "coxeter",
+    "geometric-representation",
+    "faithfulness",
+    "chebyshev",
+    "hecke-algebra"
+  ],
+  "leanRef": "qou:QOU.Machinery.CoxeterParabolic.simple_injective",
+  "text": "coxeter-geometric-representation.md",
+  "provenance": "authored"
+}

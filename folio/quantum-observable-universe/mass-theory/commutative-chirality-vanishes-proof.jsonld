@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-commutative-chirality-vanishes",
+  "@type": [
+    "folio-assistant-core:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:commutative-chirality-vanishes",
+  "kind": "proof",
+  "title": "Proof of commutative chirality vanishes",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/cor-commutative-chirality-vanishes"
+  ],
+  "text": "commutative-chirality-vanishes-proof.md",
+  "provenance": "authored"
+}

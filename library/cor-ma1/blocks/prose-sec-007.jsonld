@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/cor-ma1/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/cor-ma1/blocks/prose-sec-007",
   "kind": "prose",
   "title": "Paths and successive ranks",
   "pageStart": 12,
   "pageEnd": 13,
   "text": "../sections/sec-007-4-paths-and-successive-ranks.md",
-  "derivedFrom": "library/cor-ma1/manifest",
-  "sourceDocument": "library/cor-ma1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cor-ma1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cor-ma1",
   "provenance": "ingested"
 }

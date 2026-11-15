@@ -76,6 +76,7 @@ from codata_constants import M_E_MEV, Q_BETA_MEV               # noqa: E402
 from q_parameter import q_at                                   # noqa: E402
 
 DPS = 50
+mp.dps = DPS   # before the module-scope mpf literals below (import-time dps ratchet)
 QUOTED_TARGET = mp.mpf("0.0565947")     # as quoted by HolonomySpectrumSignObstruction
 
 results: list[tuple[str, bool, str]] = []
@@ -196,7 +197,7 @@ def main() -> int:
         "required_N1_factor": mp.nstr(required, 20),
         "scope": "(a) -- about the provenance of the target, not about any candidate",
         "q0": mp.nstr(q, 20),
-        "q0_pin": "proton (q_at)",
+        "q0_pin": "proton (q_at)", "q0Anchor": "proton",
         "dps": DPS,
         "Q_A_MeV": mp.nstr(Q_A, 20),
         "Q_exp_MeV": mp.nstr(Q_exp, 20),

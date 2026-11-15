@@ -1,0 +1,30 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "jones1987",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 8,
+      "entry": {
+        "id": "jones1987",
+        "status": "fixed",
+        "verified_at": "2026-05-19T06:50:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "fixes_applied": 142,
+        "fix_commit": "(this commit)",
+        "note": "Jones, 'Hecke algebra representations of braid groups and link polynomials', Ann. Math. 126 (1987). 142 bare-URL `-- Ref: [jones1987] https://doi.org/10.2307/1971403` lines across 58 .lean files bulk-updated to \u00a7-specific citation: \u00a73 (The Markov trace) + \u00a74 (Link polynomials), the two sections that cover all sampled Lean citations (Markov trace conjugation invariance, Hecke trace evaluation, skein/braid polynomial calculations, trefoil/Borromean link polynomials, q-Schur-Weyl in Hecke algebra). 20-context sample (random + targeted) confirmed uniform \u00a73+\u00a74 scope before bulk-replace. No local PDF in uploads/ (Annals of Mathematics paywalled; not on arxiv). Status fixed: 142 lines now \u00a7-specific.",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.2307/1971403"
+        }
+      }
+    }
+  ]
+}

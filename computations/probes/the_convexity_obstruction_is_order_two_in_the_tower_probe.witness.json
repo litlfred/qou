@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T09:13:22.284068+00:00",
-  "commitSha": "4ab334dd0eaf00f58b60a5b1129ebb6d3bf6ee31",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T16:18:07.331155+00:00",
+  "commitSha": "bd6cd22b8c7092ad8fd1ac2a69e2ff2b10ce48e2",
   "assertions": [
     {
       "name": "at the trace level pn is ABOVE the midpoint — no obstruction there",
@@ -64,7 +64,7 @@
   "computation": "the_convexity_obstruction_is_order_two_in_the_tower_probe",
   "scriptFile": "the_convexity_obstruction_is_order_two_in_the_tower_probe.py",
   "scriptHash": "5782805240bd",
-  "scriptCommitSha": "bdb8d82874858b4e9334bfc187d325293b49d68d",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -72,11 +72,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -108,5 +111,7 @@
     "Reports both gradings. The corpus's is h = q - 1/q; hbar = log q is included only to show that 'which order' is not grading-independent (first escape 5 in hbar, type 4 in h).",
     "Shows only that the SIGN obstruction is absent at type 4. No claim that a type-4 LP produces a valley of stability, an asymmetry energy, or any binding number at all.",
     "Says nothing about qou-bygw's ordering ambiguity, the valley of stability, or A >= 3; those inherit whatever the bond constants do."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

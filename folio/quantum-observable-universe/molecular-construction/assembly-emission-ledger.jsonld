@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-assembly-emission-ledger",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:assembly-emission-ledger",
+  "kind": "remark",
+  "title": "Net-emission ledger: photon (categorical) and phonon (archimedean)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-benzene-assembly-spine",
+    "papers/quantum-observable-universe/blocks/rem-trivial-knot-photon-interpretation",
+    "papers/quantum-observable-universe/blocks/def-embeddable-knot-operator"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-co-lp-dual-binding",
+  "tags": [
+    "assembly-spine",
+    "net-emission",
+    "photon",
+    "phonon",
+    "ledger",
+    "binding-energy"
+  ],
+  "text": "assembly-emission-ledger.md",
+  "provenance": "authored"
+}

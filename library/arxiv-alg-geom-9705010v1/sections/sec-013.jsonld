@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-alg-geom-9705010v1/sections/sec-013",
   "@type": [
     "doco:Section"
   ],
-  "title": "RON Y. DONAGI",
+  "title": "The spectral curves",
   "pageStart": 24,
   "pageEnd": 26,
   "contains": [
     "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-013"
   ],
-  "derivedFrom": "library/arxiv-alg-geom-9705010v1/manifest",
-  "sourceDocument": "library/arxiv-alg-geom-9705010v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-alg-geom-9705010v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-alg-geom-9705010v1",
   "provenance": "ingested"
 }

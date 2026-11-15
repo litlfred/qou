@@ -7,7 +7,10 @@
   "bytes": 148346,
   "pages": 18,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +20,7 @@
    "stamp_date": "14 Dec 1992"
   },
   "doi": null,
-  "title": "Random matrix theory and spectral sum rules for the Dirac operator in QCD1",
+  "title": "arXiv:hep-th/9212088v1 14 Dec 1992",
   "authors_raw": "E.V. Shuryak and J.J.M. Verbaarschot",
   "title_lines": [
    "Random matrix theory and spectral sum rules for the Dirac operator in QCD1"
@@ -28,6 +31,18 @@
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "CreationDate": "D:20180716111330-04'00'"
+  },
+  "title_raw": "Random matrix theory and spectral sum rules for the Dirac operator in QCD1",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:hep-th/9212088v1 14 Dec 1992",
+   "heading": "SUNY-NTG-92/45 Random matrix theory and spectral sum rules for the Dirac operator in QCD 1 E.V. Shuryak and J.J.M. Verbaarschot Department of Physics SUNY, Stony Brook, New York 11794 Abstract We construct a random matrix model that, in the large N limit, reduces to the low energy limit of the QCD p",
+   "text": "Random matrix theory and spectral sum rules for the Dirac operator in QCD1",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -36,74 +51,333 @@
    "title": "Abstract",
    "page": 1,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Introduction",
    "page": 2,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Random matrix model",
    "page": 3,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Calculation of the partition function",
    "page": 6,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "Sum rules for one and two \ufb02avors",
    "page": 9,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "9"
   },
   {
    "level": 1,
    "title": "Sum rules in the instanton liquid",
    "page": 12,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "Discussion and conclusions",
    "page": 13,
    "source": "inferred",
-   "number": "6"
+   "number": "6",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "Acknowledgements",
    "page": 14,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "14"
   },
   {
    "level": 1,
-   "title": "(\u03c3 \u2212i\u00af\u03c3 \u2212m)",
+   "title": "Appendix A",
    "page": 14,
    "source": "inferred",
-   "number": "2"
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "References",
    "page": 16,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.55,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": "16"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Numerical results for the spectral properties of the Dirac operator in the gauge \ufb01eld of a liquid of instantons. From the comparison of the 3rd and 4th, the 5th and 6th and the 7th and 8th rows we conclude that the Leutwyler-Smilga sum rules are observed by this model. For the de\ufb01nition and further",
+   "page": 18,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "18"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 218,
+   "n_words": 32,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-abstract",
    "number": null,
@@ -112,7 +386,9 @@
    "page_start": 1,
    "page_end": 2,
    "n_chars": 875,
-   "n_words": 147
+   "n_words": 147,
+   "label_start": null,
+   "label_end": "2"
   },
   {
    "id": "sec-001-1-introduction",
@@ -122,7 +398,9 @@
    "page_start": 2,
    "page_end": 3,
    "n_chars": 2567,
-   "n_words": 424
+   "n_words": 424,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-002-2-random-matrix-model",
@@ -132,7 +410,9 @@
    "page_start": 3,
    "page_end": 6,
    "n_chars": 5439,
-   "n_words": 1016
+   "n_words": 1016,
+   "label_start": "3",
+   "label_end": "6"
   },
   {
    "id": "sec-003-3-calculation-of-the-partition-function",
@@ -142,7 +422,9 @@
    "page_start": 6,
    "page_end": 9,
    "n_chars": 5940,
-   "n_words": 1163
+   "n_words": 1163,
+   "label_start": "6",
+   "label_end": "9"
   },
   {
    "id": "sec-004-4-sum-rules-for-one-and-two-\ufb02avors",
@@ -152,7 +434,9 @@
    "page_start": 9,
    "page_end": 12,
    "n_chars": 5449,
-   "n_words": 1053
+   "n_words": 1053,
+   "label_start": "9",
+   "label_end": "12"
   },
   {
    "id": "sec-005-5-sum-rules-in-the-instanton-liquid",
@@ -162,7 +446,9 @@
    "page_start": 12,
    "page_end": 13,
    "n_chars": 1893,
-   "n_words": 336
+   "n_words": 336,
+   "label_start": "12",
+   "label_end": "13"
   },
   {
    "id": "sec-006-6-discussion-and-conclusions",
@@ -172,7 +458,9 @@
    "page_start": 13,
    "page_end": 14,
    "n_chars": 2238,
-   "n_words": 365
+   "n_words": 365,
+   "label_start": "13",
+   "label_end": "14"
   },
   {
    "id": "sec-007-acknowledgements",
@@ -181,18 +469,22 @@
    "level": 1,
    "page_start": 14,
    "page_end": 14,
-   "n_chars": 501,
-   "n_words": 90
+   "n_chars": 278,
+   "n_words": 45,
+   "label_start": "14",
+   "label_end": "14"
   },
   {
-   "id": "sec-008-2-\u03c3-i\u03c3-m",
-   "number": "2",
-   "title": "(\u03c3 \u2212i\u00af\u03c3 \u2212m)",
+   "id": "sec-008-appendix-a",
+   "number": null,
+   "title": "Appendix A",
    "level": 1,
    "page_start": 14,
    "page_end": 16,
-   "n_chars": 1226,
-   "n_words": 250
+   "n_chars": 1452,
+   "n_words": 297,
+   "label_start": "14",
+   "label_end": "16"
   },
   {
    "id": "sec-009-references",
@@ -202,14 +494,26 @@
    "page_start": 16,
    "page_end": 18,
    "n_chars": 2195,
-   "n_words": 388
+   "n_words": 388,
+   "label_start": "16",
+   "label_end": "18"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 10,
-  "sections": 10,
-  "chars_total": 28323
+  "toc_inferred_entries": 10,
+  "toc_inferred_mean_confidence": 0.71,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 11,
+  "chars_total": 28544
  }
 }

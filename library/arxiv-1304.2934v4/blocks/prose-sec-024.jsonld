@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1304.2934v4/blocks/prose-sec-024",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1304.2934v4/blocks/prose-sec-024",
   "kind": "prose",
-  "title": "Characteristic polynomials of random matrices in a compact Lie group",
-  "pageStart": 61,
-  "pageEnd": 64,
-  "text": "../sections/sec-024-75-characteristic-polynomials-of-random-matrices.md",
-  "derivedFrom": "library/arxiv-1304.2934v4/manifest",
-  "sourceDocument": "library/arxiv-1304.2934v4/manifest",
+  "title": "Technical preliminaries",
+  "pageStart": 45,
+  "pageEnd": 46,
+  "text": "../sections/sec-024-61-technical-preliminaries.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1304.2934v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1304.2934v4",
   "provenance": "ingested"
 }

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/0504116v2/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/0504116v2/blocks/prose-sec-009",
   "kind": "prose",
   "title": "Smoothness at the complete structure",
   "pageStart": 12,
   "pageEnd": 13,
   "text": "../sections/sec-009-2-smoothness-at-the-complete-structure.md",
-  "derivedFrom": "library/0504116v2/manifest",
-  "sourceDocument": "library/0504116v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0504116v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0504116v2",
   "provenance": "ingested"
 }

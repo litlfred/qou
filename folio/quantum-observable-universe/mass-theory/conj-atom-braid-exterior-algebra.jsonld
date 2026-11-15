@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-atom-braid-exterior-algebra",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:atom-braid-exterior-algebra",
+  "kind": "conjecture",
+  "title": "Canonical atom-braid `atom_braid_word_3A(Z, N)` in `H_{3A}(q)` generates a sub-algebra graded-isomorphic to the exterior algebra Λ*(ℂ^{3A−Z}) with grade shift δ = Z−1; total dim = 2^{3A−Z}, k-th component dim = C(3A−Z, k−δ). Empirically verified across D, T, ³He, ⁴He.",
+  "tags": [
+    "tier:S",
+    "atom-braid",
+    "exterior-algebra",
+    "fermion-fock-space",
+    "schur-weyl",
+    "crystal-basis",
+    "hecke-algebra",
+    "R5-full",
+    "open-conjecture"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.AtomBraidExteriorAlgebra.AtomBraidExteriorAlgebraStructure",
+  "text": "conj-atom-braid-exterior-algebra.md",
+  "leanSource": "conj-atom-braid-exterior-algebra.lean",
+  "provenance": "authored"
+}

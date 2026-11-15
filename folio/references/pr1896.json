@@ -1,0 +1,20 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "pr1896",
+  "type": "webpage",
+  "title": "Mass-side kernel §4 formalize-first gate (mass-side §4 matrix)",
+  "author": [
+    {
+      "literal": "QOU project (litlfred/qou)"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2026
+      ]
+    ]
+  },
+  "URL": "https://github.com/litlfred/qou/pull/1896",
+  "note": "Internal QOU pull request #1896 (mass-side §4 matrix). Mass-side analogue of the §4 formalize-first invariant gates. Cited by mass-side-kernel-formalize-first-gates.lean."
+}

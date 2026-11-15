@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-016",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-016",
   "kind": "prose",
-  "title": "O(p4) Lagrangian",
-  "pageStart": 11,
-  "pageEnd": 11,
-  "text": "../sections/sec-016-41-op4-lagrangian.md",
-  "derivedFrom": "library/arxiv-hep-ph-9502366v1/manifest",
-  "sourceDocument": "library/arxiv-hep-ph-9502366v1/manifest",
+  "title": "Non-leptonic hyperon decays",
+  "pageStart": 41,
+  "pageEnd": 42,
+  "text": "../sections/sec-016-93-non-leptonic-hyperon-decays.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-9502366v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-9502366v1",
   "provenance": "ingested"
 }

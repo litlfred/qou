@@ -1,0 +1,53 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "kohno1987-aif",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "88c5119985dfe878f41c40936d3df957ea2f48e9afb04c1f3f0712e2baa78d6a",
+  "file": "kohno1987-aif.pdf"
+ },
+ "provenance": {
+  "title": "Monodromy representations of braid groups and Yang-Baxter equations",
+  "authors": "TOSHITAKE KOHNO",
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "definition": 1,
+   "corollary": 1
+  },
+  "formalization_candidates": 2
+ },
+ "candidates": [
+  {
+   "kind": "definition",
+   "source_kind": "definition",
+   "number": null,
+   "name": null,
+   "statement": "of primary fields. - We are interested in operators on the",
+   "section_file": "sections/sec-004-2-monodromy-of-i-point-functions.md",
+   "section_title": "MONODROMY OF /i-POINT FUNCTIONS",
+   "pages": "13-18",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "2.2.6",
+   "name": null,
+   "statement": "to our situation (see also",
+   "section_file": "sections/sec-005-22-monodromy-associated-with-higher-representati.md",
+   "section_title": "Monodromy associated with higher representations",
+   "pages": "18-22",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

@@ -1,0 +1,203 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/notation/notation-collisions",
+    "path": "folio/quantum-observable-universe/notation/notation-collisions"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed. The chapter no longer reads as a governance record. The dated owner-ruling heading becomes \"**Convention — M = endomorphism; the mass functional is m**\", with \"Ruling:\" → \"Convention:\" and \"Scope of the ruling\" → \"Scope of the convention\"; the dated agent-rule heading \"(STRICT — recurring-mistake rule, 2026-08-01)\" is dropped from the photon/unknot section title. All four rename dates are gone, restated as what still appears in older text: \"canonized 2026-07-12\" (twice), \"renamed this from r on 2026-06-04\", \"retired Habiro u = q^{1/2} on 2026-06-04\", and \"renamed this from r_W in the May 2026 notation cleanup\" (whose trailing instruction to migrate old code/docs is also dropped). \"overloaded three ways across the corpus\" is now \"in the literature and in earlier text\", and \"Where the corpus writes tau into a different target\" is now \"Where tau is written into a different target\". The open work item is restated as a fact rather than a follow-up: the Askey-two-saddle Phi_q collision is unresolved, with no distinct glyph reserved, so the reader disambiguates from context. The B_lambda status cell \"Delta_lambda-gated\" is now \"open (the Delta_lambda magnitude)\". Every convention, distinction and violation rule is unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "a979322519b4",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:21.762Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read of all 5188 words. Checked z bar-partner (z-h equals z-bar exactly under D), theta_p functional equation, tilde-c_2 = c_2 - 1/8, sum w_lambda(q) = 0.987 at n=3, 10^-165 modular suppression, sum Delta_lambda = -2, e_i^2 = [2]_q e_i - all correct. Numeric and self-consistency defects reported separately.",
+        "notes": "no assertion-by-denial beyond substantive mathematical contrast"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "a979322519b4",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:21.801Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read of all 5188 words. Checked z bar-partner (z-h equals z-bar exactly under D), theta_p functional equation, tilde-c_2 = c_2 - 1/8, sum w_lambda(q) = 0.987 at n=3, 10^-165 modular suppression, sum Delta_lambda = -2, e_i^2 = [2]_q e_i - all correct. Numeric and self-consistency defects reported separately.",
+        "notes": "no setup-then-reframe construction"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "a979322519b4",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:21.839Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read of all 5188 words. Checked z bar-partner (z-h equals z-bar exactly under D), theta_p functional equation, tilde-c_2 = c_2 - 1/8, sum w_lambda(q) = 0.987 at n=3, 10^-165 modular suppression, sum Delta_lambda = -2, e_i^2 = [2]_q e_i - all correct. Numeric and self-consistency defects reported separately.",
+        "notes": "em-dashes are glossary glosses / true parentheticals, not sentence-structure substitutes"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "a979322519b4",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:21.877Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read of all 5188 words. Checked z bar-partner (z-h equals z-bar exactly under D), theta_p functional equation, tilde-c_2 = c_2 - 1/8, sum w_lambda(q) = 0.987 at n=3, 10^-165 modular suppression, sum Delta_lambda = -2, e_i^2 = [2]_q e_i - all correct. Numeric and self-consistency defects reported separately.",
+        "notes": "no reflex three-item list; enumerations present are substantive"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "a979322519b4",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:21.915Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read of all 5188 words. Checked z bar-partner (z-h equals z-bar exactly under D), theta_p functional equation, tilde-c_2 = c_2 - 1/8, sum w_lambda(q) = 0.987 at n=3, 10^-165 modular suppression, sum Delta_lambda = -2, e_i^2 = [2]_q e_i - all correct. Numeric and self-consistency defects reported separately.",
+        "notes": "block does not end on a manufactured quotable line"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "a979322519b4",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:21.953Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read of all 5188 words. Checked z bar-partner (z-h equals z-bar exactly under D), theta_p functional equation, tilde-c_2 = c_2 - 1/8, sum w_lambda(q) = 0.987 at n=3, 10^-165 modular suppression, sum Delta_lambda = -2, e_i^2 = [2]_q e_i - all correct. Numeric and self-consistency defects reported separately.",
+        "notes": "emphasis is placed, not announced"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "a979322519b4",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:21.993Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read of all 5188 words. Checked z bar-partner (z-h equals z-bar exactly under D), theta_p functional equation, tilde-c_2 = c_2 - 1/8, sum w_lambda(q) = 0.987 at n=3, 10^-165 modular suppression, sum Delta_lambda = -2, e_i^2 = [2]_q e_i - all correct. Numeric and self-consistency defects reported separately.",
+        "notes": "no block-final restatement of what the text established"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "a979322519b4",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:22.033Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read of all 5188 words. Checked z bar-partner (z-h equals z-bar exactly under D), theta_p functional equation, tilde-c_2 = c_2 - 1/8, sum w_lambda(q) = 0.987 at n=3, 10^-165 modular suppression, sum Delta_lambda = -2, e_i^2 = [2]_q e_i - all correct. Numeric and self-consistency defects reported separately.",
+        "notes": "institutional register throughout"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "a979322519b4",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:22.072Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read of all 5188 words. Checked z bar-partner (z-h equals z-bar exactly under D), theta_p functional equation, tilde-c_2 = c_2 - 1/8, sum w_lambda(q) = 0.987 at n=3, 10^-165 modular suppression, sum Delta_lambda = -2, e_i^2 = [2]_q e_i - all correct. Numeric and self-consistency defects reported separately.",
+        "notes": "no unqualified maximum-strength claim"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "a979322519b4",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:22.112Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read of all 5188 words. Checked z bar-partner (z-h equals z-bar exactly under D), theta_p functional equation, tilde-c_2 = c_2 - 1/8, sum w_lambda(q) = 0.987 at n=3, 10^-165 modular suppression, sum Delta_lambda = -2, e_i^2 = [2]_q e_i - all correct. Numeric and self-consistency defects reported separately.",
+        "notes": "noun chains parse aloud"
+      }
+    ]
+  }
+}

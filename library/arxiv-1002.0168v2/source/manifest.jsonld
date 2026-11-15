@@ -1,0 +1,250 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1002.0168v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1002.0168v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1002.0168v2",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1002.0168&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1002.0168v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1002.0168v2",
+    "content_type": "application/gzip",
+    "sha256": "885537b37cc2ecea8123047717df4fc4d32c1fff61c1bf148473efc30df90f9e",
+    "bytes": 224296,
+    "fetched": "2026-10-10T15:03:02+00:00",
+    "files": [
+      {
+        "path": "source/files/article.bbl",
+        "role": "bbl",
+        "sha256": "336bf5713b7746845b598cd5ac2e55ed3c55ca3fffa0d56c5c0fd25606e97f5b",
+        "bytes": 5873
+      },
+      {
+        "path": "source/files/article.tex",
+        "role": "tex",
+        "sha256": "233f1fbfb32fbf5ef60e22a5159aba2aad5207f1cc0474daa20c710cd447be04",
+        "bytes": 9593
+      },
+      {
+        "path": "source/files/diagrams/tikz/Bexpanded.tex",
+        "role": "tex",
+        "sha256": "9915f28d812b232f9285f1c7a3c0b05d8fe2839746be2d41c5a0b82801964e96",
+        "bytes": 445
+      },
+      {
+        "path": "source/files/diagrams/tikz/Bprimeexpanded.tex",
+        "role": "tex",
+        "sha256": "5cf5122fc523f67955478b654394e13d6add1503c1a773b1bd3380e6ec8df025",
+        "bytes": 495
+      },
+      {
+        "path": "source/files/diagrams/tikz/EvenTwisted.tex",
+        "role": "tex",
+        "sha256": "dc1ca6cb75af5ee915d581a2125172f4241d6d20d03d692f6416c9c728d7ec56",
+        "bytes": 1272
+      },
+      {
+        "path": "source/files/diagrams/tikz/SampleTangle.tex",
+        "role": "tex",
+        "sha256": "9e7763f9c5a937ef2ddcc6dbdad76fccab5303bbf7f0bb485a163d859a3ad167",
+        "bytes": 823
+      },
+      {
+        "path": "source/files/diagrams/tikz/Texpanded.tex",
+        "role": "tex",
+        "sha256": "ae03cd16f81dfe3e006608276cd9de4adc4fc241248d80c3ab6bd85dbd344d6b",
+        "bytes": 559
+      },
+      {
+        "path": "source/files/diagrams/tikz/TikzStyles.tex",
+        "role": "tex",
+        "sha256": "f4f5ae3327191a60f3923cc9366abdde4b9514b22a6ba6ad4c3c520f843a4333",
+        "bytes": 1163
+      },
+      {
+        "path": "source/files/diagrams/tikz/Tprimeexpanded.tex",
+        "role": "tex",
+        "sha256": "8854c7a356f0b83f7a7502a6ff68eacadc297a5ad28c7c439ed986c94019074a",
+        "bytes": 594
+      },
+      {
+        "path": "source/files/diagrams/tikz/circle.tex",
+        "role": "tex",
+        "sha256": "111e354f3b024455307942748bcfcc1501b45a91745c8cde40e0fb0e17f43456",
+        "bytes": 227
+      },
+      {
+        "path": "source/files/diagrams/tikz/circles.tex",
+        "role": "tex",
+        "sha256": "6813dbc0180a491194ea4bd8f25f97917fd19f0fd33ee98f3ad98ac7c74b10e2",
+        "bytes": 237
+      },
+      {
+        "path": "source/files/diagrams/tikz/epsilon1.tex",
+        "role": "tex",
+        "sha256": "86175ca6ff92caaa5131d2dba97a334a5345ef536e97396547247c42e35f9603",
+        "bytes": 501
+      },
+      {
+        "path": "source/files/diagrams/tikz/epsilon2.tex",
+        "role": "tex",
+        "sha256": "042e20b57805a4cbe8efc9e22999c1ea2cd21c08cfdf96c2882461943da814b9",
+        "bytes": 487
+      },
+      {
+        "path": "source/files/diagrams/tikz/epsilon2k.tex",
+        "role": "tex",
+        "sha256": "3d8c5ae566c2d43e90b5eb17a4edd7a504f1351fda29bbbf287d51cf7ffb7086",
+        "bytes": 497
+      },
+      {
+        "path": "source/files/diagrams/tikz/inductionfunctor.tex",
+        "role": "tex",
+        "sha256": "ae56ccb17ea8bed761a9e12ec4229755562e7021414c9d43fb7c2df7d3fad7e4",
+        "bytes": 1584
+      },
+      {
+        "path": "source/files/diagrams/tikz/multiplication.tex",
+        "role": "tex",
+        "sha256": "e7f703d633e398b643d4031547e52be4e791292eb8ff8993c8fc3985acaf7e05",
+        "bytes": 992
+      },
+      {
+        "path": "source/files/diagrams/tikz/rationalinductionfunctor.tex",
+        "role": "tex",
+        "sha256": "a90584c86f4b9b5461c195c6206f586c057babdeaeeb35389b008d033595d415",
+        "bytes": 1609
+      },
+      {
+        "path": "source/files/diagrams/tikz/relations/A.tex",
+        "role": "tex",
+        "sha256": "3f001cd88119dc78f43ef5bb49d80f603f27006c2ae300fa1a5c1a76260452a0",
+        "bytes": 167
+      },
+      {
+        "path": "source/files/diagrams/tikz/relations/B.tex",
+        "role": "tex",
+        "sha256": "e8836d050e59dfffbead35aeff5f6ef7a6ba7aa68f8680b8e9b1756f3c9240bc",
+        "bytes": 193
+      },
+      {
+        "path": "source/files/diagrams/tikz/relations/C.tex",
+        "role": "tex",
+        "sha256": "a56c988b682f8e907eca9a37de6833a848548a1ef6930128242504f0fb3a8b92",
+        "bytes": 166
+      },
+      {
+        "path": "source/files/diagrams/tikz/relations/D.tex",
+        "role": "tex",
+        "sha256": "0d1160d8d581d75d7f1364dc295a60276e3a89979ad2ba3ea854761cddd3c071",
+        "bytes": 207
+      },
+      {
+        "path": "source/files/diagrams/tikz/relations/STrains.tex",
+        "role": "tex",
+        "sha256": "f0f3067ca1391a0b1d05781541a74bd514ad2717ccf3812d337ebfc00ef4c866",
+        "bytes": 3760
+      },
+      {
+        "path": "source/files/diagrams/tikz/rho.tex",
+        "role": "tex",
+        "sha256": "bbeeb45f0e0590037680b4f2230ef26c57176b689013f9706e670c6b0f27e698",
+        "bytes": 473
+      },
+      {
+        "path": "source/files/diagrams/tikz/tensor.tex",
+        "role": "tex",
+        "sha256": "7c1ce9d7bbc2f9ef5b5f950013a793bdbf23d2ccaccea9485f93dbf8585207d5",
+        "bytes": 1006
+      },
+      {
+        "path": "source/files/diagrams/tikz/theta.tex",
+        "role": "tex",
+        "sha256": "315a1b2ea10949d63a4ec017aa8de450c6bf0b5057b29a4ad3af8ff7a41814f7",
+        "bytes": 258
+      },
+      {
+        "path": "source/files/diagrams/tikz/trace.tex",
+        "role": "tex",
+        "sha256": "2fe4b8220f7f31ae8a35428096c3d0f25a728aa86ef3ad941521c90e21a08b3a",
+        "bytes": 1000
+      },
+      {
+        "path": "source/files/diagrams/tikz/twistedTTT.tex",
+        "role": "tex",
+        "sha256": "611cdf82e8f62f80b9dcef17e1aa1654f8e2733d164531ddcbc07aac6b77ccc5",
+        "bytes": 1508
+      },
+      {
+        "path": "source/files/gtart.cls",
+        "role": "cls",
+        "sha256": "67d19960013d95fe7bc61654eec2f291ac625474c19c5aab66cc6dfed1768c30",
+        "bytes": 16715
+      },
+      {
+        "path": "source/files/preamble.tex",
+        "role": "tex",
+        "sha256": "067a9037fd2ac1fc72a72d57ad22d760991e602ac7a76ea8aebf233d5aab41f7",
+        "bytes": 10540
+      },
+      {
+        "path": "source/files/text/article_preamble.tex",
+        "role": "tex",
+        "sha256": "99b33214189b2b2e1cea0a8c2714769ffd7abb9526955107002bb4035753be64",
+        "bytes": 975
+      },
+      {
+        "path": "source/files/text/background.tex",
+        "role": "tex",
+        "sha256": "2702902bc39db3b973aab053affd080c0f1e1d75f69073f15bcf6bb8f8861dcf",
+        "bytes": 24289
+      },
+      {
+        "path": "source/files/text/center.tex",
+        "role": "tex",
+        "sha256": "b3daa207123f6b1578e8f60f4123ca9a27043479fe97da1f565ef3e850d9359e",
+        "bytes": 13750
+      },
+      {
+        "path": "source/files/text/construction.tex",
+        "role": "tex",
+        "sha256": "b43ed2fdd1c586d99c6326f8e46c208e9ad50fa130151ddc1e74d82f9849db72",
+        "bytes": 12758
+      },
+      {
+        "path": "source/files/text/galois.tex",
+        "role": "tex",
+        "sha256": "f5c3580982dda7be070bd716209d98e494dc95f369fd68dda5b100d45476cc9f",
+        "bytes": 1506
+      },
+      {
+        "path": "source/files/text/noncyclotomic.tex",
+        "role": "tex",
+        "sha256": "2894ebe123d618c7c7609d5ad734c08bb2bfc924aa455bb8a25eb850d1365d6e",
+        "bytes": 10000
+      },
+      {
+        "path": "source/files/text/top_matter.tex",
+        "role": "tex",
+        "sha256": "0e91d66dff1114eddca910358b57d46ac476146e7c4d05c8865ca5731d4039fe",
+        "bytes": 999
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

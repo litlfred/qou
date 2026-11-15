@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0706.2213v3/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0706.2213v3/blocks/prose-sec-009",
   "kind": "prose",
   "title": "Review on the non–abelian Reidemeister torsion and twisted polynomial torsion",
   "pageStart": 14,
   "pageEnd": 16,
   "text": "../sections/sec-009-4-review-on-the-nonabelian-reidemeister-torsion.md",
-  "derivedFrom": "library/arxiv-0706.2213v3/manifest",
-  "sourceDocument": "library/arxiv-0706.2213v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0706.2213v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0706.2213v3",
   "provenance": "ingested"
 }

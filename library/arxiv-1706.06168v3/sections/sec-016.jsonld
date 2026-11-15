@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1706.06168v3/sections/sec-016",
   "@type": [
     "doco:Section"
   ],
-  "title": "Stability Properties of Real Linear Operators",
-  "pageStart": 23,
+  "title": "Deriving the Complex Borcea-Brändén Characterization",
+  "pageStart": 22,
   "pageEnd": 23,
   "contains": [
     "library/arxiv-1706.06168v3/blocks/prose-sec-016"
   ],
-  "derivedFrom": "library/arxiv-1706.06168v3/manifest",
-  "sourceDocument": "library/arxiv-1706.06168v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1706.06168v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1706.06168v3",
   "provenance": "ingested"
 }

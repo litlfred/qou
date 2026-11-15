@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-breit-wheeler-observation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:breit-wheeler-observation",
+  "kind": "remark",
+  "title": "Breit--Wheeler process: first direct observation and QOU prediction",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-breit-wheeler-vertex",
+    "papers/quantum-observable-universe/blocks/rem-pair-creation-energy"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-pair-creation-energy",
+  "cites": [
+    "references/star2021bw",
+    "references/atlas2021bw"
+  ],
+  "tags": [
+    "breit-wheeler",
+    "pair-creation",
+    "polarisation",
+    "STAR",
+    "ATLAS",
+    "testable",
+    "first-testable",
+    "cos2phi",
+    "azimuthal-asymmetry"
+  ],
+  "text": "breit-wheeler-observation.md",
+  "provenance": "authored"
+}

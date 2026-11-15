@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1001.2933v4/sections/sec-018",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Analytic Continuation Of The Colored Jones Polynomial",
+  "pageStart": 85,
+  "pageEnd": 86,
+  "contains": [
+    "library/arxiv-1001.2933v4/blocks/prose-sec-018"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1001.2933v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1001.2933v4",
+  "provenance": "ingested"
+}

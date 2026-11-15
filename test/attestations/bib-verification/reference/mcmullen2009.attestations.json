@@ -1,0 +1,56 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "mcmullen2009",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 372,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/bn/bn.pdf"
+        },
+        "id": "mcmullen2009",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "An account of the unitary representations of the braid group arising from the Hodge theory of cyclic branched coverings of the projective line, with their connections to complex reflection groups, period maps, arithmetic versus thin monodromy groups, ergodic theory and moduli of one-forms. conj:gauge-hecke-realization is the corpus block that reasons about linear realisations of braid symmetry: it notes that the Burau representation is the (n-1)-dimensional Hecke summand and is unfaithful for n >= 5, that Lawrence--Krammer is faithful for all n, and then records two open residues -- that faithfulness at GENERIC parameters does not imply faithfulness of the specialisation at the substrate anchor q_0, and that the gauge automorphism monoids must first be identified with braid groups. This document is the natural reference for the first residue: the unitary structure and the arithmetic-versus-thin character of the braid image depend precisely on the specialisation parameter, which is the question the block leaves open. It is supporting because it supplies no lemma the block can invoke to close the residue -- the classification is about specialisations at roots of unity and about lattice conditions, not about a real anchor near 1.11 -- so it sharpens the question rather than answering it. Only one corpus block mentions Burau or complex reflection groups at all, so the connection is currently absent rather than contested.",
+          "keyResults": [
+            {
+              "locator": "Sections on complex reflection groups, the period map, and arithmetic groups",
+              "statement": "The braid group's Hodge-theoretic representations on cyclic branched covers are unitary for suitable parameters, factor through complex reflection groups, and have monodromy image that is arithmetic in some parameter ranges and thin in others.",
+              "useForFolio": "Frames the open residue in conj:gauge-hecke-realization -- that faithfulness at generic parameters need not survive specialisation at the substrate anchor -- as a known parameter-dependent phenomenon with a literature, rather than as an isolated worry.",
+              "targets": [
+                "conj:gauge-hecke-realization"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "The gauge-Hecke conjecture reasons about braid representation faithfulness and unitarity under specialisation and cites only faithfulness results, not the parameter-dependence literature.",
+              "target": "conj:gauge-hecke-realization",
+              "bean": "qou-hj1v"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "95ed0908ceb5"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

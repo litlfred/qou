@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2008.09788v2/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2008.09788v2/blocks/prose-sec-006",
   "kind": "prose",
-  "title": "References",
-  "pageStart": 28,
-  "pageEnd": 31,
-  "text": "../sections/sec-006-references.md",
-  "derivedFrom": "library/arxiv-2008.09788v2/manifest",
-  "sourceDocument": "library/arxiv-2008.09788v2/manifest",
+  "title": "On the algorithmic undecidability of the embeddability problem for algebraic varieties over a field of characteristic zero",
+  "pageStart": 25,
+  "pageEnd": 28,
+  "text": "../sections/sec-006-32-on-the-algorithmic-undecidability-of-the-embe.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2008.09788v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2008.09788v2",
   "provenance": "ingested"
 }

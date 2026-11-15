@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-entropic-gravity",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:entropic-gravity",
+  "kind": "remark",
+  "title": "Entropic forces and the substrate parameter",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-gr-substrate-geometry"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-substrate-parameter",
+  "cites": [
+    "references/carney2025"
+  ],
+  "tags": [
+    "gravity",
+    "entropic",
+    "observation"
+  ],
+  "text": "entropic-gravity.md",
+  "provenance": "authored"
+}

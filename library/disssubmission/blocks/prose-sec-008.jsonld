@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/disssubmission/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/disssubmission/blocks/prose-sec-008",
   "kind": "prose",
-  "title": "Kodaira-Nakano-type vanishing theorems",
-  "pageStart": 20,
-  "pageEnd": 21,
-  "text": "../sections/sec-008-13-kodaira-nakano-type-vanishing-theorems.md",
-  "derivedFrom": "library/disssubmission/manifest",
-  "sourceDocument": "library/disssubmission/manifest",
+  "title": "Proof of the vanishing theorem(s)",
+  "pageStart": 31,
+  "pageEnd": 31,
+  "text": "../sections/sec-008-2-proof-of-the-vanishing-theorems.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/disssubmission",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/disssubmission",
   "provenance": "ingested"
 }

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0606435v2/blocks/prose-sec-021",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0606435v2/blocks/prose-sec-021",
   "kind": "prose",
-  "title": "(if q > 1), which are the ﬁbers of",
-  "pageStart": 13,
-  "pageEnd": 13,
-  "text": "../sections/sec-021-3-if-q-1-which-are-the-ﬁbers-of.md",
-  "derivedFrom": "library/arxiv-math-0606435v2/manifest",
-  "sourceDocument": "library/arxiv-math-0606435v2/manifest",
+  "title": "Studying alternating links by braid index",
+  "pageStart": 38,
+  "pageEnd": 42,
+  "text": "../sections/sec-021-6-studying-alternating-links-by-braid-index.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0606435v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0606435v2",
   "provenance": "ingested"
 }

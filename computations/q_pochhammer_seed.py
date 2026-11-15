@@ -10,8 +10,11 @@ picard_lefschetz_thimble.py.
 Manuscript references:
   - def:q-pochhammer-partial-product
   - conj:shared-denominator-cusp-holonomy
-  - conj:denominator-zeros-as-sw-critical-points
-  - conj:pl-jsj-mass-integration-equivalence
+  - `denominator-zeros-as-sw-critical-points`  [no carrier]
+  - `pl-jsj-mass-integration-equivalence`          [REMOVED -- see below]
+  (The two labels marked [no carrier] were blocks in the removed
+   `descartes-universe/` chapter; no file in the tree defines them.
+   See bean qou-3kni.)
 
 The witness records:
   - The n algebraic denominator zeros for each tested n
@@ -97,6 +100,21 @@ exists, and the reason it is worth its extra twenty lines.
 (This paragraph first asserted the opposite — "that failure is therefore real"
 — written from the historical loop's output before the deep pass had been run.
 Corrected the same hour, by running the measurement it was added to make.)
+
+Removal record for `pl-jsj-mass-integration-equivalence` (owner ruling
+"a1", relayed 2026-10-10: the carrier stays REMOVED and citations point at the
+record). Deleted in f86ea9d7ac, 2026-05-18, "content(thimble): demote
+def:picard-lefschetz-thimble + delete redundant bridges" -- Phase C of the
+thimble simplification, on the stated ground that "PL is no longer rigorously
+needed after Tier 1+2 (algebraic-residue swap on principal Galois orbit +
+Moebius-from-binomials derivation)". It was a REDUNDANT bridge, not a lost one.
+Its chapter `descartes-universe/` has since been removed entirely, so there is
+no longer anywhere for it to live. Do NOT restore it.
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 

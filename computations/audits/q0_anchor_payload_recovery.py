@@ -151,7 +151,7 @@ def iter_anchor_missing():
         # Match q0_anchor_consistency_audit.py exactly. Without this skip the
         # population is 2275 rather than 1905 — 370 _deprecated witnesses that
         # the audit does not count and that nobody should be labelling.
-        if "_deprecated" in p.parts:
+        if ("_deprecated" in p.parts or "fsh-guts" in p.parts):
             continue
         if any(p.name.endswith(suf) for suf in AUDIT_SUFFIXES):
             continue

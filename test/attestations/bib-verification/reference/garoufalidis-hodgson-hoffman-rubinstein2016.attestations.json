@@ -1,0 +1,84 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "garoufalidis-hodgson-hoffman-rubinstein2016",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 252,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/arxiv-1604.02688v1/1604.02688v1.pdf"
+        },
+        "id": "garoufalidis-hodgson-hoffman-rubinstein2016",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Garoufalidis-Hodgson-Hoffman-Rubinstein, 'The 3D-index and normal surfaces': the 3D-index of an ideal triangulation is exhibited as a generating series over (spun-)normal surfaces, connecting it to classical normal surface theory. This paper is LOAD-BEARING in the corpus already and has no ref() entry. It is cited by result number across at least six audit docs (2026-07-18-uploaded-papers-binding-mass-gap-ideas.md, 2026-07-18-borromean-3d-index.md, 2026-07-24-borromean-index-bridge-invariant.md, 2026-07-25-deltalambda-normal-surface-collective-candidate.md, 2026-08-01-ujmw-aomega-dt-index-derivation.md, 2026-08-01-arrow-a-stateintegral-saddle-not-index-series.md) and is consumed by production probes: deltalambda_normal_surface_classes_probe.py uses 'GHHR 1604.02688 Prop A.3 pairing' to compute chi on all 52 vertex spun-normal surfaces of L6a4, and figure_eight_3d_index.py checks against its m004 example and 1-efficiency criterion. Every one of those citations is a bare arXiv number in an audit doc; nothing joins them to the bibliography. Distinct from the registered garoufalidis-hodgson-rubinstein-segerman2015 (arXiv:1303.5278) -- see the mis-keying note in the proposed actions.",
+          "keyResults": [
+            {
+              "locator": "Prop. A.3",
+              "statement": "For a generalized angle structure alpha, the Euler characteristic of a normal surface S satisfies chi(S) = -sum_q alpha(q) x_q / pi + rho_alpha(dS) / 2pi, pairing the angle polytope against the normal-surface cone.",
+              "useForFolio": "This is the identity the Delta_lambda collective-term probe uses to compute chi and the alpha-independence check on the 52 Borromean vertex spun-normal classes; it is cited there by paper section only.",
+              "targets": [
+                "computations/probes/deltalambda_normal_surface_classes_probe.py"
+              ]
+            },
+            {
+              "locator": "Def. 8.1 / Cor. 8.2",
+              "statement": "The 3D-index I^0_T(0) is a generating series summed over normal-surface classes of the ideal triangulation.",
+              "useForFolio": "The stated shape of the candidate collective binding term (idea B3) and the structure the corpus's Borromean/figure-eight index computations assume.",
+              "targets": [
+                "computations/probes/figure_eight_3d_index.py"
+              ]
+            },
+            {
+              "locator": "Cor. 10.21",
+              "statement": "For a 1-efficient ideal triangulation the index sum is a genuine power series (no negative powers of q).",
+              "useForFolio": "This is self-test (i) of the corpus's Borromean 3D-index validation gate, currently cited as 'GHHR Cor 10.21' with no bibliography entry.",
+              "targets": [
+                "computations/probes/figure_eight_3d_index.py"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "add-reference",
+              "rationale": "A paper cited by six audit docs and consumed by two production probes has no ref() entry; every citation is a bare arXiv id, so nothing in the bibliography pipeline sees it.",
+              "target": "computations/probes/deltalambda_normal_surface_classes_probe.py",
+              "bean": "qou-5zmj"
+            },
+            {
+              "action": "cite-in-block",
+              "rationale": "The Prop A.3 pairing and Cor 10.21 criterion are asserted in the probe and its witness with no reference key; once the entry exists the probe docstring and the audit lineage should cite it.",
+              "target": "computations/probes/figure_eight_3d_index.py",
+              "bean": "qou-zyr2"
+            },
+            {
+              "action": "new-remark",
+              "rationale": "Flag the near-collision: 2026-08-01-arrow-a-stateintegral-saddle-not-index-series.md writes 'GHRS arXiv:1604.02688 Rmk 1.13', mixing the GHHR author string of this paper with the acronym of the already-registered garoufalidis-hodgson-rubinstein-segerman2015 (arXiv:1303.5278). Two distinct papers, and the ambiguity should be resolved when the key is minted.",
+              "target": "computations/probes/figure_eight_3d_index.py",
+              "bean": "qou-ukzc"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "bdcafe379519"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

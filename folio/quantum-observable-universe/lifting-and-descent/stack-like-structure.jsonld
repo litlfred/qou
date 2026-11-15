@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-stack-like-structure",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:stack-like-structure",
+  "kind": "remark",
+  "title": "Stack-like structure of the direct limit algebra",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-jet-shell"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-direct-limit-algebra",
+  "cites": [
+    "references/yekutieli2008"
+  ],
+  "tags": [
+    "stack",
+    "twisted-deformation",
+    "yekutieli"
+  ],
+  "text": "stack-like-structure.md",
+  "provenance": "authored"
+}

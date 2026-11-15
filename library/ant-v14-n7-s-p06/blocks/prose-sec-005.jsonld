@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ant-v14-n7-s-p06/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ant-v14-n7-s-p06/blocks/prose-sec-005",
   "kind": "prose",
-  "title": "B, with N′",
-  "pageStart": 14,
-  "pageEnd": 15,
-  "text": "../sections/sec-005-2-b-with-n.md",
-  "derivedFrom": "library/ant-v14-n7-s-p06/manifest",
-  "sourceDocument": "library/ant-v14-n7-s-p06/manifest",
+  "title": "Proof of Theorem 1.1",
+  "pageStart": 29,
+  "pageEnd": 33,
+  "text": "../sections/sec-005-5-proof-of-theorem-11.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p06",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p06",
   "provenance": "ingested"
 }

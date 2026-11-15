@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1508.01627v4/blocks/prose-sec-011",
+  "kind": "prose",
+  "title": "Vanishing of characters",
+  "pageStart": 9,
+  "pageEnd": 9,
+  "text": "../sections/sec-011-4-vanishing-of-characters.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1508.01627v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1508.01627v4",
+  "provenance": "ingested"
+}

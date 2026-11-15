@@ -71,7 +71,12 @@ def check(label, ok, detail=""):
 
 M_E = mpf("0.51099895069")
 # AME/CODATA experimental binding energies, MeV
-B_EXP = {"D": mpf("2.224566"), "3He": mpf("7.718058"), "4He": mpf("28.295673")}
+# Read from the registry (reference-literal ratchet): the literals 2.224566 /
+# 7.718058 / 28.295673 truncated or diverged from AME2020 at 1e-7..2e-6.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION)
+B_EXP = {"D": AME_B_DEUTERON_MEV_VALIDATION, "3He": AME_B_HE3_MEV_VALIDATION,
+         "4He": AME_B_HE4_MEV_VALIDATION}
 # the literals the A3 producers carry
 B_OVER_ME_FILE = {"D": mpf("4.353"), "3He": mpf("15.10"), "4He": mpf("55.37")}
 VOL_FILE = {"D": mpf("12.776"), "3He": mpf("12.554"), "4He": mpf("12.554")}
@@ -178,6 +183,6 @@ if WitnessBuilder is not None:
     for label, ok, detail in ASSERTS:
         w.add_assertion(f"{label}{' -- ' + detail if detail else ''}",
                         computed="true" if ok else "false", expected="true")
-    w.save()
+    w.save({"q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"})
     print("witness written")
 sys.exit(1 if failures else 0)

@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-skein-generation",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:skein-generation",
+  "kind": "proposition",
+  "title": "Skein generation of hadrons from mass-zero fundamentals",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-hadron-operations",
+    "papers/quantum-observable-universe/blocks/def-hadron-fibre-embedding"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-skein-generation"
+  ],
+  "tags": [
+    "skein",
+    "generation",
+    "mass",
+    "hadron",
+    "torus-knot"
+  ],
+  "leanRef": "qou:QOU.Torsion.skein_generation",
+  "text": "skein-generation.md",
+  "provenance": "authored"
+}

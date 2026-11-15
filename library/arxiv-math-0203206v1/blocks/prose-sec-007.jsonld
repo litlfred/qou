@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0203206v1/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0203206v1/blocks/prose-sec-007",
   "kind": "prose",
-  "title": "For every pair ( i,j ) there are only ﬁnitely many k ∈ IC such that Nk",
-  "pageStart": 5,
-  "pageEnd": 5,
-  "text": "../sections/sec-007-1-for-every-pair-ij-there-are-only-ﬁnitely-many.md",
-  "derivedFrom": "library/arxiv-math-0203206v1/manifest",
-  "sourceDocument": "library/arxiv-math-0203206v1/manifest",
+  "title": "The Universal Corepresentation",
+  "pageStart": 12,
+  "pageEnd": 14,
+  "text": "../sections/sec-007-31-the-universal-corepresentation.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203206v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203206v1",
   "provenance": "ingested"
 }

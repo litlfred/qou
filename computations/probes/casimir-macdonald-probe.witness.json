@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-14T18:12:24.374480+00:00",
-  "commitSha": "5c2af221b76dcec548fe73f7d849c792cf69b763",
+  "computedAt": "2026-10-10T08:07:36.108647+00:00",
+  "commitSha": "dad0098b93fcab52d3336b0bb185a6e8e3f0fc9a",
   "assertions": [
     {
       "name": "zero_macdonald_candidates_within_one_percent",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 28,
+  "durationMs": 33,
   "computation": "casimir-macdonald-probe",
   "scriptFile": "casimir_macdonald_probe.py",
-  "scriptHash": "9012f9939664",
-  "scriptCommitSha": "5c2af221b76dcec548fe73f7d849c792cf69b763",
+  "scriptHash": "7bbdddef6faf",
+  "scriptCommitSha": "969a71b90af512a72a0f5748ee5e890db66fa04f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,14 +27,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.17",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "pyhecke_native_build": "2986fe4aa825b156"
   },
   "invocation": {
     "argv": [

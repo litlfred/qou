@@ -1,0 +1,51 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "khesin2003",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 386,
+      "verifier": "unknown",
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/helicity03mmj/helicity03mmj.pdf"
+        },
+        "id": "khesin2003",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Not an orphan: the ref() entry exists (references.ts L8138-8148, id khesin2003) and its note explicitly says 'Uploaded library/helicity03mmj/helicity03mmj.pdf' and 'Read in full 2026-08-01' \u2014 so the seeded orphan classification is a join failure, not a reading gap. I re-read the front matter and \u00a71 to confirm identity: it is a survey of higher-dimensional helicities and Hopf-Novikov invariants via the Brownian ergodic theorem, Arnold's asymptotic Hopf invariant, linking of a field with a foliation, and asymptotic crossing number. The existing note is already carefully scoped and even carries a RETRACTION of an earlier over-reading of Thm 3.6 (single knotted torus, not the multi-component link template). I found nothing that contradicts it and nothing to add. The remaining gap is only that this document, read in full and used to settle obstruction O1, has zero citation sites in content/**/*.md \u2014 its findings live in audit docs only. rem:helicity-physical in the fluid-dynamics chapter is the natural narrative home.",
+          "keyResults": [
+            {
+              "locator": "Rmk 4.8; Rmk 3.4-3.5",
+              "statement": "Linking forms are symmetric or antisymmetric according to the parity of the product of codimensions (1-forms in 3D force antisymmetry), signed invariants cancel between oppositely-linked pairs, and the asymptotic crossing number is the symmetric substitute that is nonzero when the linking number vanishes.",
+              "useForFolio": "Already consumed in docs/audits/2026-08-01-em-linking-reads-round1.md as the structural explanation of obstruction O1; the fluid-dynamics helicity block should carry the citation so the antisymmetry constraint is visible in the narrative, not only in an audit.",
+              "targets": [
+                "rem:helicity-physical"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "A fully-read, load-bearing helicity source with no citation site in content/; rem:helicity-physical is the block whose subject it is.",
+              "target": "rem:helicity-physical",
+              "bean": "qou-eodz"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "e364dad3afff"
+        }
+      }
+    }
+  ]
+}

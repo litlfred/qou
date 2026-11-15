@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-9907032v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Combinatorial optimization in geometry",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9907032v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-9907032v1",
   "contains": [
+    "library/arxiv-math-9907032v1/sections/sec-front-matter",
     "library/arxiv-math-9907032v1/sections/sec-000",
     "library/arxiv-math-9907032v1/sections/sec-001",
     "library/arxiv-math-9907032v1/sections/sec-002",
@@ -17,17 +23,20 @@
     "library/arxiv-math-9907032v1/sections/sec-008",
     "library/arxiv-math-9907032v1/sections/sec-009",
     "library/arxiv-math-9907032v1/sections/sec-010",
-    "library/arxiv-math-9907032v1/sections/sec-011",
-    "library/arxiv-math-9907032v1/sections/sec-012",
-    "library/arxiv-math-9907032v1/sections/sec-013",
-    "library/arxiv-math-9907032v1/sections/sec-014",
-    "library/arxiv-math-9907032v1/sections/sec-015",
-    "library/arxiv-math-9907032v1/sections/sec-016",
-    "library/arxiv-math-9907032v1/sections/sec-017"
+    "library/arxiv-math-9907032v1/sections/sec-011"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/9907032&metadataPrefix=arXiv), submitted 1999-07-06, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-math-9907032v1",
+    "title_source": "slug",
     "source_file": "9907032v1.pdf",
     "source_sha256": "1850f32a2375c8ce79d0d0e501d9be3969799ca3e836937f4661d4cd8e028ee8",
     "pages": 27,

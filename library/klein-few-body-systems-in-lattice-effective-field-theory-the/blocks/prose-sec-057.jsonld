@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-057",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-057",
   "kind": "prose",
-  "title": "Bibliography",
-  "pageStart": 103,
-  "pageEnd": 111,
-  "text": "../sections/sec-057-bibliography.md",
-  "derivedFrom": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest",
-  "sourceDocument": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest",
+  "title": "Non-perturbative calculation of lattice artifacts in the two-boson sector",
+  "pageStart": 99,
+  "pageEnd": 103,
+  "text": "../sections/sec-057-non-perturbative-calculation-of-lattice-artifact.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/klein-few-body-systems-in-lattice-effective-field-theory-the",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/klein-few-body-systems-in-lattice-effective-field-theory-the",
   "provenance": "ingested"
 }

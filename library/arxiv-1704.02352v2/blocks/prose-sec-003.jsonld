@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1704.02352v2/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1704.02352v2/blocks/prose-sec-003",
   "kind": "prose",
-  "title": "Asymptotics",
-  "pageStart": 5,
-  "pageEnd": 5,
-  "text": "../sections/sec-003-110-asymptotics.md",
-  "derivedFrom": "library/arxiv-1704.02352v2/manifest",
-  "sourceDocument": "library/arxiv-1704.02352v2/manifest",
+  "title": "Irreducible characters of symmetric groups. Plancherel measure",
+  "pageStart": 3,
+  "pageEnd": 3,
+  "text": "../sections/sec-003-15-irreducible-characters-of-symmetric-groups-pl.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1704.02352v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1704.02352v2",
   "provenance": "ingested"
 }

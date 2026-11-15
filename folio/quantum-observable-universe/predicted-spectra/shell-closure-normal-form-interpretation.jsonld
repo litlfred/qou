@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-shell-closure-normal-form-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:shell-closure-normal-form-interpretation",
+  "kind": "remark",
+  "title": "Bruhat-symmetric shell filling and the shell-closure permutations",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-shell-closure-normal-form",
+    "papers/quantum-observable-universe/blocks/prop-nuclear-groebner-reduction"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-shell-closure-normal-form",
+  "text": "shell-closure-normal-form-interpretation.md",
+  "provenance": "authored"
+}

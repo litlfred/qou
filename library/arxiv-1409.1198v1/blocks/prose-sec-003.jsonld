@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1409.1198v1/blocks/prose-sec-003",
+  "kind": "prose",
+  "title": "Elementary notions of trace",
+  "pageStart": 7,
+  "pageEnd": 9,
+  "text": "../sections/sec-003-2-elementary-notions-of-trace.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1409.1198v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1409.1198v1",
+  "provenance": "ingested"
+}

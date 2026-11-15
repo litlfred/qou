@@ -252,7 +252,7 @@ def main() -> int:
         "indices, and the gluon pair, remain census-derived. qou-99qc stays "
         "todo: this narrows the search, it does not close it."
     ))
-    w.save()
+    w.save({"q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"})
 
     print()
     if FAILED:

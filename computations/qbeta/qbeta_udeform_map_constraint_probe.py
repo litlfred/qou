@@ -243,7 +243,7 @@ def main() -> int:
         "wrong_form": "Im V ~ sqrt3*Re*Im = (sqrt3/2)|u|^2 sin2phi (implies real a2)",
         "right_form": "Im V = (sqrt3/4)(Re^2 u - Im^2 u) = (sqrt3/4)|u|^2 cos2phi",
         "reason": "A-polynomial cusp modulus tau = -i*sqrt3 (purely imaginary, Q(sqrt-3)) => a2 = i*sqrt3/4",
-        "authoritative": ["content/quantum-observable-universe/lean/QOU/Knot/FigureEightComplexVolume.lean (imV41)",
+        "authoritative": ["folio/quantum-observable-universe/lean/QOU/Knot/FigureEightComplexVolume.lean (imV41)",
                           "computations/probes/sdeformed_channel_signflip_probe.py",
                           "docs/audits/2026-07-26-sdeformed-channel-signflip.md"],
         "lean_companion_contradicted": ("QOU.QBeta.UDeformFamilyPruning cubic_ratio_law / "

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/s0894-0347-00-00337-4/sections/sec-017",
   "@type": [
     "doco:Section"
   ],
-  "title": "Correlation functions in the bulk of the spectrum",
-  "pageStart": 14,
-  "pageEnd": 14,
+  "title": "Acknowledgments",
+  "pageStart": 33,
+  "pageEnd": 33,
   "contains": [
     "library/s0894-0347-00-00337-4/blocks/prose-sec-017"
   ],
-  "derivedFrom": "library/s0894-0347-00-00337-4/manifest",
-  "sourceDocument": "library/s0894-0347-00-00337-4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s0894-0347-00-00337-4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s0894-0347-00-00337-4",
   "provenance": "ingested"
 }

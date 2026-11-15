@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-0903.0853v3/sections/sec-027",
   "@type": [
     "doco:Section"
   ],
-  "title": "Theta F unctions. — Jacobi theta functions pervade the theory",
-  "pageStart": 14,
-  "pageEnd": 15,
+  "title": "Existence of asymptotic solutions",
+  "pageStart": 58,
+  "pageEnd": 62,
   "contains": [
     "library/arxiv-0903.0853v3/blocks/prose-sec-027"
   ],
-  "derivedFrom": "library/arxiv-0903.0853v3/manifest",
-  "sourceDocument": "library/arxiv-0903.0853v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0903.0853v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0903.0853v3",
   "provenance": "ingested"
 }

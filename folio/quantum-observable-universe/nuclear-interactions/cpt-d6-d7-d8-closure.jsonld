@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-cpt-d6-d7-d8-closure",
+  "@type": [
+    "folio-assistant-core:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:cpt-d6-d7-d8-closure",
+  "kind": "conjecture",
+  "title": "CPT closure: charge conjugation, parity and time reversal jointly preserve the Markov trace",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-cpt-orbit-closure-density",
+    "papers/quantum-observable-universe/blocks/def-bar-involution"
+  ],
+  "cites": [
+    "references/wigner1937",
+    "references/jones1987",
+    "references/kassel1995"
+  ],
+  "tags": [
+    "cpt-closure",
+    "discrete-symmetry",
+    "compound-conjecture",
+    "duality-d6-d7-d8",
+    "markov-trace",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.CPTClosure",
+  "text": "cpt-d6-d7-d8-closure.md",
+  "leanSource": "cpt-d6-d7-d8-closure.lean",
+  "provenance": "authored"
+}

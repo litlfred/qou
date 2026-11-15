@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-14T18:48:19.116140+00:00",
-  "commitSha": "b467c3048a3e0828034afbeb748783588a354b53",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T15:29:39.378480+00:00",
+  "commitSha": "eacf7ca73101030f04c9f788e9f705839bef23c3",
   "assertions": [
     {
       "name": "1. every scored candidate closes to a 2-component link",
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 6,
   "computation": "qbeta-candidate-closures-are-links",
   "scriptFile": "qbeta_candidate_closures_are_links_probe.py",
-  "scriptHash": "1d6b09ed3648",
-  "scriptCommitSha": "b467c3048a3e0828034afbeb748783588a354b53",
+  "scriptHash": "a3944b566727",
+  "scriptCommitSha": "b66bb4547db13638c8099f077e34464f80e426d1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,12 +54,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -319,5 +321,7 @@
         "qbeta_cusp_lattice_geodesic_probe -- a genus-1 CUSP TORUS geodesic, not Bring, and proved order-blind by qbeta_bring_ohara_bridge_probe"
       ]
     }
-  }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"
 }

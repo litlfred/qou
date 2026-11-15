@@ -5,7 +5,11 @@
   "file": "0508100v6.pdf",
   "sha256": "9cc100a86b40c33640dfebb0d0e308915f4e2e3beca48ea77992d02602e255f1",
   "bytes": 435437,
-  "pages": 31
+  "pages": 31,
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -16,8 +20,8 @@
   },
   "doi": null,
   "title": "ASYMPTOTICS OF THE COLORED JONES FUNCTION OF A KNOT",
-  "authors_raw": "STA VROS GAROUF ALIDIS AND THANG TQ L Ê",
-  "abstract": "To a knot in 3-space, one can associate a sequence of Laurent p olynomials, whose nth term is the nth colored Jones polynomial. The paper is concerned with the asymptotic behavior of the value of the nth colored Jones polynomial at eα/n , when α is a ﬁxed complex number and n tends to inﬁnity. W e analyze this asymptotic behavior to all orders in 1 /n when α is a suﬃciently small complex number. In addition, we give upper bounds for the coeﬃcients and degree of the nth colored Jones polynomial, with applications to upper bounds in the Generalized Volume Conjecture. W ork of Agol-D unﬁeld-Storm-W.Thurston implies that our bounds are asymptotically optimal. Moreover, we give resul ts for the Generalized Volume Conjecture when α is near 2 πi . Our proofs use crucially the cyclotomic expansion of the co lored Jones function, due to Habiro.",
+  "authors_raw": "STA VROS GAROUF ALIDIS AND THANG TQ L \u00ca",
+  "abstract": "To a knot in 3-space, one can associate a sequence of Laurent p olynomials, whose nth term is the nth colored Jones polynomial. The paper is concerned with the asymptotic behavior of the value of the nth colored Jones polynomial at e\u03b1/n , when \u03b1 is a \ufb01xed complex number and n tends to in\ufb01nity. W e analyze this asymptotic behavior to all orders in 1 /n when \u03b1 is a su\ufb03ciently small complex number. In addition, we give upper bounds for the coe\ufb03cients and degree of the nth colored Jones polynomial, with applications to upper bounds in the Generalized Volume Conjecture. W ork of Agol-D un\ufb01eld-Storm-W.Thurston implies that our bounds are asymptotically optimal. Moreover, we give resul ts for the Generalized Volume Conjecture when \u03b1 is near 2 \u03c0i . Our proofs use crucially the cyclotomic expansion of the co lored Jones function, due to Habiro.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20180827055318-04'00'",
@@ -741,6 +745,280 @@
   "likely_scanned": false,
   "toc_entries": 46,
   "sections": 38,
-  "chars_total": 74628
+  "chars_total": 74628,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "text13.tex",
+   "tex_sections": 41,
+   "overlaid": 20,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-11-asymptotics-of-the-colored-jones-function-of",
+     "title": "Asymptotics of the colored Jones function of a knot",
+     "prose_ratio": 0.221,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.0,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-002-12-the-generalized-volume-conjecture",
+     "title": "The generalized volume conjecture",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-14-upper-bounds-for-the-generalized-volume-conje",
+     "title": "Upper bounds for the generalized volume conjecture",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-16-the-main-ideas-and-organization-of-the-paper",
+     "title": "The main ideas and organization of the paper",
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-17-acknowledgment",
+     "title": "Acknowledgment",
+     "prose_ratio": 0.562,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-2-weak-versus-strong-convergence",
+     "title": "Weak versus strong convergence",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-21-a-lemma-from-complex-analysis",
+     "title": "A lemma from complex analysis",
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-3-two-expansions-of-the-colored-jones-polynomial",
+     "title": "Two expansions of the colored Jones polynomial",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-009-31-the-loop-expansion",
+     "title": "The loop expansion",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.927,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-32-the-cyclotomic-expansion",
+     "title": "The cyclotomic expansion",
+     "prose_ratio": 0.87,
+     "coverage_ratio": 0.915,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-33-comparing-the-cyclotomic-and-the-loop-expansi",
+     "title": "Comparing the cyclotomic and the loop expansion",
+     "prose_ratio": 0.85,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-4-a-reduction-of-theorem-22-to-estimates-of-the",
+     "title": "A reduction of Theorem 2.2 to estimates of the cyclotomic function",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-013-41-uniform-bounds-of-the-colored-jones-function",
+     "title": "Uniform bounds of the colored Jones function",
+     "prose_ratio": 0.792,
+     "coverage_ratio": 0.935,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-42-theorem-42-implies-theorem-22",
+     "title": "Theorem 4.2 implies Theorem 2.2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-5-a-reduction-of-theorem-16-to-estimates-of-the",
+     "title": "A reduction of Theorem 1.6 to estimates of the cyclotomic function",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-016-51-some-estimates",
+     "title": "Some estimates",
+     "prose_ratio": 0.916,
+     "coverage_ratio": 0.918,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-017-6-bounds-for-the-degree-and-coefficients-of-the",
+     "title": "Bounds for the degree and coefficients of the colored Jones function",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-018-63-proof-of-theorem-112",
+     "title": "Proof of Theorem 1.12",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-7-proof-of-theorem-42",
+     "title": "Proof of Theorem 4.2",
+     "prose_ratio": 0.047,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-020-71-the-bound-for-degrees-of-hkn",
+     "title": "The bound for degrees of HK,n",
+     "prose_ratio": 0.935,
+     "coverage_ratio": 0.853,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-021-72-the-bound-for-the-l1-norm-of-hkn",
+     "title": "The bound for the l1-norm of HK,n",
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.887,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-022-8-growth-rates-of-r-matrices-and-the-lobachevsky",
+     "title": "Growth rates of R-matrices and the Lobachevsky function",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-023-82-asymptotics-of-the-r-matrix-using-ideal-octah",
+     "title": "Asymptotics of the R-matrix using ideal octahedra",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-024-83-the-maximum-of-the-growth-rate-of-the-r-matri",
+     "title": "The maximum of the growth rate of the R-matrix",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.94,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-025-84-the-maximum-of-the-r-matrices-at-roots-of-uni",
+     "title": "The maximum of the R-matrices at roots of unity",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-026-85-proof-of-theorem-113",
+     "title": "Proof of Theorem 1.13",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-10-the-q-holonomic-point-of-view",
+     "title": "The q-holonomic point of view",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-028-101-bounds-on-l1-norm-of-q-holonomic-functions",
+     "title": "Bounds on l1-norm of q-holonomic functions",
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-029-102-bounds-for-higher-rank-groups",
+     "title": "Bounds for higher rank groups",
+     "prose_ratio": 0.931,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-030-11-some-physics",
+     "title": "Some physics",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-031-111-a-small-dose-of-physics",
+     "title": "A small dose of physics",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-032-112-the-wkb-method",
+     "title": "The WKB method",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-033-appendix-a-the-volume-conjecture-for-the-borrome",
+     "title": "Appendix A. The volume conjecture for the Borromean rings",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-034-appendix-b-proof-of-proposition-89",
+     "title": "Appendix B. Proof of Proposition 8.9",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-035-b1-preliminary-estimates",
+     "title": "B.1. Preliminary estimates",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-b2-proof-of-proposition-89",
+     "title": "B.2. Proof of Proposition 8.9",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-037-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

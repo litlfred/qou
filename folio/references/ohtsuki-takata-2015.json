@@ -1,0 +1,29 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "ohtsuki-takata-2015",
+  "type": "article-journal",
+  "title": "On the Kashaev invariant and the twisted Reidemeister torsion of two-bridge knots",
+  "author": [
+    {
+      "family": "Ohtsuki",
+      "given": "Tomotada"
+    },
+    {
+      "family": "Takata",
+      "given": "Toshie"
+    }
+  ],
+  "container-title": "Geometry & Topology",
+  "issued": {
+    "date-parts": [
+      [
+        2015
+      ]
+    ]
+  },
+  "volume": "19",
+  "page": "853-952",
+  "DOI": "10.2140/gt.2015.19.853",
+  "URL": "https://doi.org/10.2140/gt.2015.19.853",
+  "note": "Geom. Topol. 19 (2015), no. 2, 853-952 (RIMS-1785). FULL TEXT READ 2026-08-08, upgrading the previous abstract-level note and SETTLING the exponent convention. Their eq (2) is <K>_N = e^{N zeta} N^{3/2} omega(K) (1 + sum kappa_i (2 pi i/N)^i + O(N^{-d-1})), and Theorem 1.1 states omega^2(D) = +- T(K)/(2 sqrt(-1)) with T the twisted Reidemeister torsion — so omega is a constant times sqrt(T), i.e. the +1/2 power, and the constant is PINNED as 1/(2 sqrt(-1)). This agrees with DGLZ (which also carries +1/2 in the torsion) and dissolves the apparent tau^{+1/2} vs |tau|^{-1/2} discrepancy against this corpus: the corpus simply works in the reciprocal variable. Class: two-bridge KNOTS only — nothing multi-cusped, so it does NOT reach the Whitehead link or the Borromean rings. Scope caveat from the paper itself: the identity omega^2 = +- T/(2 sqrt-1) is unconditional, but identifying omega with the actual second coefficient assumes the technical hypotheses of Poisson summation and the saddle-point method, and the asymptotics are rigorous only for hyperbolic knots up to 7 crossings. The half of the 1-loop=torsion input for 6_2 combined by Garoufalidis–Yoon."
+}

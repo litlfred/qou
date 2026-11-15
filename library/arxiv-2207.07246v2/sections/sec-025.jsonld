@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2207.07246v2/sections/sec-025",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Sign Problem",
+  "pageStart": 59,
+  "pageEnd": 61,
+  "contains": [
+    "library/arxiv-2207.07246v2/blocks/prose-sec-025"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2207.07246v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2207.07246v2",
+  "provenance": "ingested"
+}

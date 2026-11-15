@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-003",
   "kind": "prose",
-  "title": "We are grateful to Harry Lee for reminding us of this problem. Of course, it",
-  "pageStart": 4,
-  "pageEnd": 5,
-  "text": "../sections/sec-003-4-we-are-grateful-to-harry-lee-for-reminding-us.md",
-  "derivedFrom": "library/arxiv-hep-ph-9511320v1/manifest",
-  "sourceDocument": "library/arxiv-hep-ph-9511320v1/manifest",
+  "title": "Loops with massive particles",
+  "pageStart": 16,
+  "pageEnd": 18,
+  "text": "../sections/sec-003-5-loops-with-massive-particles.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-9511320v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-9511320v1",
   "provenance": "ingested"
 }

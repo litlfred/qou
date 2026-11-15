@@ -1,0 +1,40 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "braden-northover-2012",
+  "library": {
+    "docId": "sigma12-065",
+    "dir": "library/sigma12-065",
+    "pdf": "library/sigma12-065/sigma12-065.pdf",
+    "stage": "candidates",
+    "pages": 20,
+    "sections": 10,
+    "alternates": [
+      "arxiv-1206.6004v2"
+    ]
+  },
+  "type": "article-journal",
+  "title": "Bring's Curve: its Period Matrix and the Vector of Riemann Constants",
+  "author": [
+    {
+      "family": "Braden",
+      "given": "Harry W."
+    },
+    {
+      "family": "Northover",
+      "given": "Timothy P."
+    }
+  ],
+  "container-title": "SIGMA (Symmetry, Integrability and Geometry: Methods and Applications)",
+  "issued": {
+    "date-parts": [
+      [
+        2012
+      ]
+    ]
+  },
+  "volume": "8",
+  "page": "065",
+  "DOI": "10.3842/SIGMA.2012.065",
+  "URL": "https://doi.org/10.3842/SIGMA.2012.065",
+  "note": "Recovers Riera–Rodríguez's period matrix τ₀·C via the Hulek–Craig sextic model, and additionally (i) identifies the Vector of Riemann Constants and (ii) constructs the explicit anti-holomorphic involution (the real structure / complex conjugation on the plane model), whose fixed set is a union of Hilbert ovals. This explicit conjugation on Jac(Bring) is the concrete Hodge-side object of the α_EM per-loop fibre-level correspondence (docs/audits/2026-07-18-alpha-em-involution-type-nome-independent.md). Corrects the j-invariant labelling: j(τ₀) = −5·29³/2⁵, j(5τ₀) = −25/2, flagging the Riera–Rodríguez swap as a typo. Registered 2026-07-18 from library/ intake; metadata from the uploaded PDF."
+}

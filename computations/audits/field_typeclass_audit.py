@@ -44,7 +44,7 @@ from pathlib import Path
 
 # --- configuration --------------------------------------------------------
 
-LEAN_ROOT = Path("content/quantum-observable-universe/lean/QOU")
+LEAN_ROOT = Path("folio/quantum-observable-universe/lean/QOU")
 SKIP_DIR_PARTS = {".lake", "_Scratch"}
 
 # field-strength classes we audit (var-capturing)

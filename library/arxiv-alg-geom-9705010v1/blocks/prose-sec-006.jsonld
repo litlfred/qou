@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-006",
   "kind": "prose",
-  "title": "RON Y. DONAGI",
-  "pageStart": 10,
-  "pageEnd": 12,
-  "text": "../sections/sec-006-10-ron-y-donagi.md",
-  "derivedFrom": "library/arxiv-alg-geom-9705010v1/manifest",
-  "sourceDocument": "library/arxiv-alg-geom-9705010v1/manifest",
+  "title": "Duality",
+  "pageStart": 12,
+  "pageEnd": 13,
+  "text": "../sections/sec-006-duality.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-alg-geom-9705010v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-alg-geom-9705010v1",
   "provenance": "ingested"
 }

@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-garside-as-compound-flow",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:garside-as-compound-flow",
+  "kind": "remark",
+  "title": "Garside element as a compound Reeb flow",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-six-canonical-knot-operators",
+    "papers/quantum-observable-universe/blocks/def-q-reeb-flow-on-color-coords"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-six-canonical-knot-operators",
+  "tags": [
+    "garside-element",
+    "reeb-flow",
+    "braid-relation",
+    "non-adjacent-transposition"
+  ],
+  "text": "garside-as-compound-flow.md",
+  "provenance": "authored"
+}

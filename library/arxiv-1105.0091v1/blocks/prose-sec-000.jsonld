@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1105.0091v1/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1105.0091v1/blocks/prose-sec-000",
   "kind": "prose",
   "title": "Quasi-symmetric functions and a link with random permutations",
   "pageStart": 12,
   "pageEnd": 22,
   "text": "../sections/sec-000-2-quasi-symmetric-functions-and-a-link-with-rand.md",
-  "derivedFrom": "library/arxiv-1105.0091v1/manifest",
-  "sourceDocument": "library/arxiv-1105.0091v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1105.0091v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1105.0091v1",
   "provenance": "ingested"
 }

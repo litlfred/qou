@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-11T14:44:23.465945+00:00",
-  "commitSha": "0347991069416ec1a6eb95fbf01cb01f18863aaa",
+  "computedAt": "2026-09-27T05:17:17.877183+00:00",
+  "commitSha": "7df1e2f5f5a86e295c33ebbfa75f38046519542a",
   "assertions": [
     {
       "name": "rotation_phase_lead_evaluated",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 678,
+  "durationMs": 2512,
   "computation": "binding-rotation-phase-lead",
   "scriptFile": "binding_rotation_phase_lead.py",
-  "scriptHash": "1f164e12486d",
-  "scriptCommitSha": "8cdcf3865a88511af6f8dc3d4831e956cb60df1f",
+  "scriptHash": "928aaefce048",
+  "scriptCommitSha": "e9becbb9b72228ea847221c963a231201f0a4978",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -51,8 +51,8 @@
           "3He": "3.95708",
           "4He": "9.29828"
         },
-        "spread_pct": "1283.28961588411290206135540488120711419206631290857123038377",
-        "A3_pair_spread_pct": "6.75269366954618756316711365731481202512359778852685689989403"
+        "spread_pct": "1283.28961588411290206135540488120711419206631290857247233029",
+        "A3_pair_spread_pct": "6.75269366954618756316711365731481202512359778852703686332480"
       },
       "S2_dim": {
         "rho_needed": {
@@ -61,8 +61,8 @@
           "3He": "0.0878758",
           "4He": "0.0320461"
         },
-        "spread_pct": "402.256047753593416832239623808531692301577464299894487843659",
-        "A3_pair_spread_pct": "4.67705404828368180039807465161575550060219340830704842093596"
+        "spread_pct": "402.256047753593416832239623808531692301577464299894036907613",
+        "A3_pair_spread_pct": "4.67705404828368180039807465161575550060219340830722488525852"
       },
       "S3_markov": {
         "rho_needed": {
@@ -71,8 +71,8 @@
           "3He": "56.6306",
           "4He": "359.04"
         },
-        "spread_pct": "2303.17900763137688000303782190048634670230179486315941127238",
-        "A3_pair_spread_pct": "36.3998590656064277778218592316551663381856557154106280452614"
+        "spread_pct": "2303.17900763137688000303782190048634670230179486316156889705",
+        "A3_pair_spread_pct": "36.3998590656064277778218592316551663381856557154108579878113"
       },
       "S4_markov_signed": {
         "rho_needed": {
@@ -81,14 +81,14 @@
           "3He": "56.6306",
           "4He": "359.04"
         },
-        "spread_pct": "2303.17900763137688000303782190048634670230179486315941127238",
-        "A3_pair_spread_pct": "36.3998590656064277778218592316551663381856557154106280452614"
+        "spread_pct": "2303.17900763137688000303782190048634670230179486316156889705",
+        "A3_pair_spread_pct": "36.3998590656064277778218592316551663381856557154108579878113"
       }
     },
     "tightest": {
       "aggregation": "S2_dim",
-      "spread_pct": "402.256047753593416832239623808531692301577464299894487843659",
-      "A3_pair_spread_pct": "4.67705404828368180039807465161575550060219340830704842093596"
+      "spread_pct": "402.256047753593416832239623808531692301577464299894036907613",
+      "A3_pair_spread_pct": "4.67705404828368180039807465161575550060219340830722488525852"
     },
     "d0_strong_channel": {
       "per_atom": {
@@ -105,8 +105,8 @@
           "rho_d0_strong": "59.4939"
         }
       },
-      "DTHe3_spread_full_pct": "417.021531952659763048673374948263086643619299323289492312852",
-      "DTHe3_spread_d0_pct": "429.332519694423138149250041768021823690017324607540952437073",
+      "DTHe3_spread_full_pct": "417.021531952659763048673374948263086643619299323290694595685",
+      "DTHe3_spread_d0_pct": "429.332519694423138149250041768021823690017324607542183347899",
       "note": "Removing the antisymmetric −h (sinh) inter-nucleon term (d=0, symmetric cosh/strong channel) tightens the D/T/³He spread and pulls D up toward the A=3 scale — the sinh term carries the deuteron's anomaly. D/T/³He only (H₁₂ too slow)."
     }
   }

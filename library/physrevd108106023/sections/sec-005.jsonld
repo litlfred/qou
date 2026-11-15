@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/physrevd108106023/sections/sec-005",
   "@type": [
     "doco:Section"
   ],
-  "title": "U2 ˜R2",
-  "pageStart": 5,
-  "pageEnd": 6,
+  "title": "ACKNOWLEDGMENTS",
+  "pageStart": 8,
+  "pageEnd": 8,
   "contains": [
     "library/physrevd108106023/blocks/prose-sec-005"
   ],
-  "derivedFrom": "library/physrevd108106023/manifest",
-  "sourceDocument": "library/physrevd108106023/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/physrevd108106023",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/physrevd108106023",
   "provenance": "ingested"
 }

@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-intrinsic-color-cubic-pairing",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:intrinsic-color-cubic-pairing",
+  "kind": "remark",
+  "title": "Intrinsic color cubic: pairing structure",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-aggregate-color-quantities"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-color-tube-coordinates",
+  "text": "intrinsic-color-cubic-pairing.md",
+  "provenance": "authored"
+}

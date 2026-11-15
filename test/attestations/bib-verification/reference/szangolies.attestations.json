@@ -1,0 +1,46 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "szangolies",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 323,
+      "entry": {
+        "source": {
+          "kind": "upload",
+          "file": "library/5s032x/5S032X.pdf"
+        },
+        "id": "szangolies",
+        "status": "unreviewed",
+        "relevance": {
+          "verdict": "undetermined",
+          "rationale": "WRONG JOIN \u2014 THE MOST EXTREME IN THE SLICE. The seeded id names a single-author graduate textbook on general relativity issued by a university press in the 1980s. This PDF's front matter shows a single-author physics preprint arguing that entangled two- and three-qubit systems associate with 5+1 and 9+1 dimensional spacetimes reducing to 3+1 with a residual SU(3)\u00d7SU(2)\u00d7U(1)/Z\u2086 symmetry. Different author, different decade, different subject, different document type. The opaque filename gave the indexer nothing to work with. I set `id: null`; grep over references.ts finds no entry for this author, so no correct key exists. CONSEQUENCE FOR THE THREE CITATION SITES ON THE SEEDED ID: they become UNVERIFIED, not wrong. `MonoidalCalcVar.lean:41` cites 'Theorem 4.3.1'; `MonoidalCalcVar.lean:109` cites '\u00a74.3 (Einstein)'; `GaugeTheory.lean:197` carries a bare pointer to references.ts. The textbook is not in uploads/ under any name, so I cannot confirm that those locators say what the sites claim. Verdict is `undetermined` because the DOCUMENT at this path cannot be assessed as a citation for that id at all \u2014 it is a different work. Separately: this preprint's own subject sits adjacent to the corpus's Standard-Model appendix and to the \u2124\u2086 compatibility relations of another entry in this same slice, so it may be worth triaging on its own merits \u2014 but I read only its abstract and introduction and will not assert relevance on that basis.",
+          "keyResults": [],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "The join must be broken (id set to null here). Registering this preprint would require a relevance judgement I have not made, and the three locators on the seeded id cannot be checked without the textbook, which is not in uploads/.",
+              "target": "folio/quantum-observable-universe/lean/QOU/MathlibExt/MonoidalCalcVar.lean"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-5"
+          },
+          "assessed_at": "2026-08-08T23:34:05.459Z",
+          "source_sha": "17761383781f"
+        },
+        "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+        "verified_at": "2026-09-03T04:37:40Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        }
+      }
+    }
+  ]
+}

@@ -8,101 +8,81 @@ pages: 26-27
 source_pdf: 1402.4615v3.pdf
 source_sha256: b6e7c795cd1a7cd2
 doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel meas ure linked to Jack polynomials."
+text_source: latex
+latex_prose_ratio: 0.931
+latex_coverage_ratio: 0.957
 ---
-aµ
-ρ given by Proposition 3.7 is not strong enough. In this sectio n we give another
-bound which is related to another gradation of Λ (α)
-⋆ deﬁned by:
-deg2(Mk) = k − 2 for k ≥ 2.
-One has the following analogue of Lemma 3.6:
-Lemma 3.9. Let ρ and π be two partitions and g ≥ 0 an integer. Then
-degγ(bρ
-g,π (γ)) ≤ deg2(Mρ) − deg2(Mπ∪(g)),
-degγ(bρ
-g,π (γ)) ≤ deg2(Mρ) − deg2(Mπ∪(g+1)) − 1.
-Proof. The proof is similar to the one of Lemma 3.6. We deﬁne the pre-degree
-(with respect to deg2) of an expression of the form b(γ) Mπ zg
-i to be degγ(b) +
-deg2(Mπ) + g. By Proposition 3.1, the pre-degree of Mk(λ(i)) is equal to k − 2.
-Note that this pre-degree is multiplicative. Then Mρ(λ(i)) has pre-degree |ρ| −
-2ℓ(ρ) = deg 2(Mρ). The lemma follows from the following inequalities: forg ≥ 0,
-deg2(Mπ∪(g)) ≤ deg2(Mπ) + g;
-deg2(Mπ∪(g+1)) ≤ deg2(Mπ) + g − 1.
-Note that in the ﬁrst inequality the difference between the r ight hand side and the
-left hand side is equal to 2, unless g = 0 ; in that case we have an equality. In the
-second inequality, the case g = 0 is obvious as Mπ∪(1) = 0 and hence its degree is
-−∞ by convention. In all other cases, we have an equality. □
-We deduce from this lemma a new bound on the degree of aµ
-ρ.
-Proposition 3.10. The coefﬁcient aµ
-ρ of Mρ in Jack character polynomial Lµ is a
-polynomial in γ of degree smaller or equal to |µ| − ℓ(µ) − (|ρ| − 2ℓ(ρ)).
-The same is true for Kµ.
-Proof. It is a straightforward exercise to adapt the proof of Proposition 3.7. We use
-Lemma 3.9 instead of Lemma 3.6 and |ρ| has to be replaced by |ρ| − 2ℓ(ρ). □
+[]{#SubsectBound2 label="SubsectBound2"} For some purposes the bound on the degree of $a_\rho^\mu$ given by Proposition [\[PropBound1\]](#PropBound1){reference-type="ref" reference="PropBound1"} is not strong enough. In this section we give another bound which is related to another gradation of $\Lambda_\star^{(\alpha)}$ defined by: $$\ \deg_2(M_k)=k-2 \qquad \text{for } k\geq 2 .$$ One has the following analogue of Lemma [\[LemDeg1B\]](#LemDeg1B){reference-type="ref" reference="LemDeg1B"}:
+
+::: lemma
+Let $\rho$ and $\pi$ be two partitions and $g\geq 0$ an integer. Then $$\begin{aligned}
+            \deg_\gamma(b_{g,\pi}^\rho(\gamma)) &\leq \deg_2(M_\rho) - \deg_2(M_{\pi \cup (g)}), \\
+            \deg_\gamma(b_{g,\pi}^\rho(\gamma)) &\leq \deg_2(M_\rho) - \deg_2(M_{\pi \cup (g+1)}) - 1. 
+    
+\end{aligned}$$ []{#LemDeg2B label="LemDeg2B"}
+:::
+
+::: proof
+*Proof.* The proof is similar to the one of Lemma [\[LemDeg1B\]](#LemDeg1B){reference-type="ref" reference="LemDeg1B"}. We define the *pre-degree* (with respect to $\deg_2$) of an expression of the form $b(\gamma)\ M_\pi\ z_i^g$ to be $\deg_\gamma(b)+\deg_2(M_\pi)+g$. By Proposition [\[PropMkLo\]](#PropMkLo){reference-type="ref" reference="PropMkLo"}, the pre-degree of $M_k(\lambda^{(i)})$ is equal to $k-2$. Note that this pre-degree is multiplicative. Then $M_\rho(\lambda^{(i)})$ has pre-degree $|\rho|-2 \ell(\rho)=\deg_2(M_\rho)$. The lemma follows from the following inequalities: for $g\geq 0$, $$\begin{aligned}
+        \deg_2(M_{\pi \cup (g)}) &\leq \deg_2(M_{\pi})+g; \\
+        \deg_2(M_{\pi \cup (g+1)}) &\leq \deg_2(M_{\pi})+g-1.
+    
+\end{aligned}$$ Note that in the first inequality the difference between the right hand side and the left hand side is equal to $2$, unless $g=0$; in that case we have an equality. In the second inequality, the case $g=0$ is obvious as $M_{\pi \cup (1)}=0$ and hence its degree is $-\infty$ by convention. In all other cases, we have an equality. ◻
+:::
+
+We deduce from this lemma a new bound on the degree of $a_\rho^\mu$.
+
+::: proposition
+[]{#PropBound2 label="PropBound2"} The coefficient $a^\mu_\rho$ of $M_\rho$ in Jack character polynomial $L_\mu$ is a polynomial in $\gamma$ of degree smaller or equal to $|\mu|-\ell(\mu) - (|\rho|-2\ell(\rho))$.
+
+The same is true for $K_\mu$.
+:::
+
+::: proof
+*Proof.* It is a straightforward exercise to adapt the proof of Proposition [\[PropBound1\]](#PropBound1){reference-type="ref" reference="PropBound1"}. We use Lemma [\[LemDeg2B\]](#LemDeg2B){reference-type="ref" reference="LemDeg2B"} instead of Lemma [\[LemDeg1B\]](#LemDeg1B){reference-type="ref" reference="LemDeg1B"} and $|\rho|$ has to be replaced by $|\rho| - 2\ell(\rho)$. ◻
+:::
+
 As an immediate consequence we have
-Corollary 3.11. For any partition µ one has:
-deg2(Chµ) = |µ| − ℓ(µ),
-and the top degree part does not depend on α.
-Note that Proposition 3.10 is neither weaker nor stronger th an Proposition 3.7.
-But it is sometimes more appropriate, as we shall see in the next section.
-Remark. The top degree part ofChµ for deg2 does not admit an explicit expression
-as for deg1. One can however compute its linear terms in free cumulants, see
-[FG13, Section 3].
-LARGE DIAGRAMS AND STRUCTURE CONSTANTS 27
-3.6. Polynomiality of θµ(λ). In this section we prove that θµ(λ) is a polynomial
-with rational coefﬁcients in α. This simple statement does not follow directly from
-the deﬁnition of Jack polynomials and had been open for twent y years. It was
-then proved by Lapointe and Vinet [LV95], who also proved the integrality of the
-coefﬁcients in the monomial basis. Short after that, this re sult was completed by a
-positivity result from Knop and Sahi [KS97].
-Using the material of this Section, we can ﬁnd a new proof of th e polynomial-
-ity in α. Integrity and positivity seem unfortunately impossible t o obtain via this
-method.
-First, we consider the dependence of Mk(λ) on α.
-Lemma 3.12. Let k ≥ 2 be an integer and λ a partition. Then √αk−2Mk(λ) is a
-polynomial in α with integer coefﬁcients.
-Proof. We use induction over |λ| and k. Proposition 3.1 can be rewritten as
-√αk−2Mk(λ(i)) − √αk−2Mk(λ) =
-∑
-r≥1,s,t≥0,
-2r+s+t≤k
-αr(√αzi)k−2r−s−t
-( k − t − 1
-2r + s − 1
-)( r + s − 1
-s
-)
-(α − 1)s √αt−2Mt(λ).
-Note that √αzi = αx − y is a polynomial in α with integer coefﬁcients. Hence the
-induction is immediate. □
-Now we write, for µ, λ ⊢ n,
-zµθµ(λ) = α
-|µ|−ℓ(µ)
-2 Chµ(λ) = α
-|µ|−ℓ(µ)
-2
-∑
-ρ
-aµ
-ρ Mρ(λ)
-=
-∑
-ρ
-α
-|µ|−ℓ(µ)−(|ρ|−2ℓ(ρ))
-2 aµ
-ρ
-
- ∏
-i≤ℓ(ρ)
-√
-αρi−2Mρi(λ)
-
- .
-The quantities α
-|µ|−ℓ(µ)−(|ρ|−2ℓ(ρ))
-2 aµ
-ρ and √
-αρi−2Mρi(λ) are polynomials in α (by
-Proposition 3.10 and Lemma 3.12), hence θµ(λ) is a polynomial in α.
+
+::: corollary
+For any partition $\mu$ one has: $$\deg_2(\mathop{\mathrm{Ch}}_\mu) = |\mu| - \ell(\mu),$$ and the top degree part does not depend on $\alpha$.
+:::
+
+Note that Proposition [\[PropBound2\]](#PropBound2){reference-type="ref" reference="PropBound2"} is neither weaker nor stronger than Proposition [\[PropBound1\]](#PropBound1){reference-type="ref" reference="PropBound1"}. But it is sometimes more appropriate, as we shall see in the next section.
+
+::: remark
+The top degree part of $\mathop{\mathrm{Ch}}_\mu$ for $\deg_2$ does not admit an explicit expression as for $\deg_1$. One can however compute its linear terms in free cumulants, see [@FerayGouldenHook Section 3].
+:::
+
+## Polynomiality of $\theta_\mu(\lambda)$ {#SubsectCoefJackPoly}
+
+In this section we prove that $\theta_\mu(\lambda)$ is a polynomial with rational coefficients in $\alpha$. This simple statement does not follow directly from the definition of Jack polynomials and had been open for twenty years. It was then proved by Lapointe and Vinet [@LapointeVinetJack], who also proved the integrality of the coefficients in the monomial basis. Short after that, this result was completed by a positivity result from Knop and Sahi [@KnopSahiCombinatoricsJack].
+
+Using the material of this Section, we can find a new proof of the polynomiality in $\alpha$. Integrity and positivity seem unfortunately impossible to obtain *via* this method.
+
+First, we consider the dependence of $M_k(\lambda)$ on $\alpha$.
+
+::: lemma
+Let $k \geq 2$ be an integer and $\lambda$ a partition. Then $\sqrt{\alpha}^{k-2} M_k(\lambda)$ is a polynomial in $\alpha$ with integer coefficients. []{#LemMkPol label="LemMkPol"}
+:::
+
+::: proof
+*Proof.* We use induction over $|\lambda|$ and $k$. Proposition [\[PropMkLo\]](#PropMkLo){reference-type="ref" reference="PropMkLo"} can be rewritten as $$\begin{gathered}
+ \sqrt{\alpha}^{k-2} M_k(\lambda^{(i)})
+        -\sqrt{\alpha}^{k-2} M_k(\lambda) =
+        \sum_{\substack{r\geq 1, s,t \geq 0, \\ 2r+s+t \leq k}}
+        \alpha^r (\sqrt{\alpha} z_i)^{k-2r-s-t} \\
+    \binom{k-t-1}{2r+s-1}\binom{r+s-1}{s}
+    \left( \alpha-1 \right)^s \sqrt{\alpha}^{t-2} M_t(\lambda).
+\end{gathered}$$ Note that $\sqrt{\alpha} z_i = \alpha x - y$ is a polynomial in $\alpha$ with integer coefficients. Hence the induction is immediate. ◻
+:::
+
+Now we write, for $\mu,\lambda \vdash n$, $$\begin{gathered}
+    z_\mu \theta_\mu(\lambda)=\alpha^{\frac{|\mu|-\ell(\mu)}{2}} \mathop{\mathrm{Ch}}_\mu(\lambda)
+= \alpha^{\frac{|\mu|-\ell(\mu)}{2}} \sum_\rho a^\mu_\rho M_\rho(\lambda) \\
+= \sum_\rho \alpha^{\frac{|\mu|-\ell(\mu)-(|\rho|-2\ell(\rho))}{2}} 
+a^\mu_\rho \left( \prod_{i \leq \ell(\rho)} \sqrt{\alpha}^{\rho_i-2}
+M_{\rho_i}(\lambda) \right).
+\end{gathered}$$ The quantities $\alpha^{\frac{|\mu|-\ell(\mu)-(|\rho|-2\ell(\rho))}{2}} 
+a^\mu_\rho$ and $\sqrt{\alpha}^{\rho_i-2}
+M_{\rho_i}(\lambda)$ are polynomials in $\alpha$ (by Proposition [\[PropBound2\]](#PropBound2){reference-type="ref" reference="PropBound2"} and Lemma [\[LemMkPol\]](#LemMkPol){reference-type="ref" reference="LemMkPol"}), hence $\theta_\mu(\lambda)$ is a polynomial in $\alpha$.

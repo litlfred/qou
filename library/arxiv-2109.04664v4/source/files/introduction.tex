@@ -1,0 +1,243 @@
+\section{Introduction}\label{sec:introduction}
+Let $N\ge2$ be an integer.
+\par
+In \cite{Kashaev:MODPLA95}, R.~Kashaev introduced a link invariant $\langle K\rangle_{N}$ for a knot $K$ in the three-sphere $S^3$ by using the so-called quantum dilogarithm.
+In \cite{Kashaev:LETMP97}, he studied its asymptotic behavior when $N\to\infty$ for several hyperbolic knots and conjectured that it would determine its hyperbolic volume for any {\em hyperbolic} knot, where a knot is called hyperbolic if its complement possesses a complete hyperbolic structure with finite volume.
+More precisely he conjectured
+\begin{conj}[Kashaev's conjecture]
+Let $H$ be a {\em hyperbolic} knot in $S^3$.
+Then the following equality holds.
+\begin{equation}\label{eq:Kashaev}
+  \lim_{N\to\infty}
+  \frac{\log\left|\langle H\rangle_{N}\right|}{N}
+  =
+  \frac{\operatorname{V}\left(S^3\setminus{H}\right)}{2\pi},
+\end{equation}
+where $\operatorname{V}\left(S^3\setminus{H}\right)$ is the hyperbolic volume.
+\end{conj}
+\par
+Let $J_{N}(K;q)$ be the colored Jones polynomial associated with the $N$-dimensional irreducible representation of the Lie algebra $\sl(2;\C)$ \cite{Kirby/Melvin:INVEM1991,Reshetikhin/Turaev:INVEM1991}.
+We normalize it so that $J_{N}(U;q)=1$ for the unknot $U$, and that $J_{2}(K;q)$ is the ordinary Jones polynomial \cite{Jones:BULAM31985}.
+In \cite{Murakami/Murakami:ACTAM12001}, J.~Murakami and the first author proved that Kashaev's invariant $\langle K\rangle_{N}$ coincides with the $N$-dimensional colored Jones polynomial $J_{N}(K;q)$  evaluated at $q=e^{2\pi\i/N}$.
+They also generalized Kashaev's conjecture for general knots:
+\begin{conj}[Volume Conjecture]
+For {\em any} knot $K\subset{S^3}$, we have
+\begin{equation}\label{eq:VC}
+  \lim_{N\to\infty}
+  \frac{\log\left|J_{N}\left(K;e^{2\pi\i/N}\right)\right|}{N}
+  =
+  \frac{\Vol\left(S^3\setminus{K}\right)}{2\pi}.
+\end{equation}
+Here, $\Vol(S^3\setminus{K})$ is the simplicial volume, also known as the Gromov norm \cite{Gromov:INSHE82} {\rm(}see also \cite{Soma:INVEM1981}{\rm)}, which is normalized so that $\Vol\left(S^3\setminus{H}\right)=\operatorname{V}\left(S^3\setminus{H}\right)$ if $H$ is hyperbolic.
+\end{conj}
+\par
+Kashaev's conjecture was complexified by T.~Takata, J.~Murakami, M.~Okamoto, Y.~Yokota and the first author in \cite{Murakami/Murakami/Okamoto/Takata/Yokota:EXPMA02} by dropping the absolute value symbol (and replacing $\langle H\rangle_{N}$ with $J_{N}\left(H;e^{2\pi\i/N}\right)$) in \eqref{eq:Kashaev}.
+\begin{conj}[Complexification of Kashaev's conjecture]
+For a hyperbolic knot $H$, we have
+\begin{equation}\label{eq:CVC}
+  \lim_{N\to\infty}
+  \frac{\log J_{N}\left(H;e^{2\pi\i/N}\right)}{N}
+  =
+  \frac{\operatorname{V}\left(S^3\setminus{H}\right)+\i\CS(S^3\setminus{H})}{2\pi},
+\end{equation}
+where $\CS$ is the $SO(3)$ Chern--Simons invariant of $H$ associated with the Levi-Civita connection \cite{Meyerhoff:LMSLN112}.
+\end{conj}
+\par
+More detailed asymptotic formulas are known for several knots \cite{Andersen/Hansen:JKNOT2006,Ohtsuki:QT2016,Ohtsuki/Yokota:MATPC2018}:
+\begin{equation*}
+  \langle H\rangle_{N}
+  \underset{N\to\infty}{\sim}
+  \omega(H)N^{3/2}\exp\left(\frac{N}{2\pi}\operatorname{CV}(H)\right),
+\end{equation*}
+where $\operatorname{CV}(H):=\Vol\left(S^3\setminus{H}\right)+\i\CS(S^3\setminus{H})$ is the complex volume and $2\i\omega(H)^2$ is the adjoint (cohomological) Reidemeister torsion twisted by the holonomy representation of $\pi_1(S^3\setminus{H})$ to $\SL(2;\C)$ \cite{Ohtsuki/Takata:GEOTO2015}.
+\par
+It was also generalized by replacing $2\pi\i$ with another complex number $\xi$ \cite{Dimofte/Gukov/Lenells/Zagier:CNTP2010,Murakami:JTOP2013}.
+\begin{conj}[Generalized Volume Conjecture]
+Let $\xi\ne2\pi\i$ be a complex number close to $2\pi\i$, and $H$ a hyperbolic knot.
+Then we have
+\begin{equation}\label{eq:GVC}
+  J_{N}\left(H;e^{\xi/N}\right)
+  \underset{N\to\infty}{\sim}
+  \frac{C}{\sinh(\xi)}\times\tau(\xi)^{1/2}\left(\frac{N}{\xi}\right)^d
+  \exp\left(\frac{N}{\xi}S(\xi)\right)
+\end{equation}
+with $d$ a constant.
+Here $S(\xi)$ and $\tau(\xi)$ are related to the $\SL(2;\C)$ Chern--Simons invariant and the adjoint Reidemeister torsion, respectively, both associated with a certain representation of $\pi_1(S^3\setminus{H})$ to $\SL(2;\C)$.
+\end{conj}
+\par
+In this paper, we are mainly interested in the figure-eight knot.
+We first list known results for the asymptotic behavior of the colored Jones polynomial of the figure-eight knot $E$.
+\par
+We define a function $\varphi$ as
+\begin{equation*}
+  \varphi(\xi)
+  :=
+  \arccosh\left(\cosh(\xi)-\frac{1}{2}\right)
+\end{equation*}
+for a complex number $\xi$, where we use the following branch of $\arccosh$:
+\begin{equation*}
+  \arccosh(x)
+  :=
+  \log\left(x-\i\sqrt{1-x^2}\right),
+\end{equation*}
+and we choose the branch cut of $\log$ as $(-\infty,0)$.
+Note that $\varphi(0)=-\pi\i/3$ and $\varphi(\kappa)=0$, where $\kappa:=\log\left(\frac{3+\sqrt{5}}{2}\right)$.
+We also define
+\begin{align*}
+  S(\xi)
+  &:=
+  \Li_2(e^{-\xi-\varphi(\xi)})-\Li_2(e^{-\xi+\varphi(\xi)})+\xi\varphi(\xi),
+  \\
+  \tilde{S}(\xi)
+  &:=
+  \Li_2(e^{-\xi-\varphi(\xi)})-\Li_2(e^{-\xi+\varphi(\xi)})
+  +(\xi-2\pi\i)(\varphi(\xi)+2\pi\i),
+  \\
+  T(\xi)
+  &:=
+  \frac{2}{\sqrt{(2\cosh(\xi)+1)(2\cosh(\xi)-3)}},
+\end{align*}
+where
+\begin{equation*}
+  \Li_2(z):=-\int_{0}^{z}\frac{\log(1-x)}{x}\,dx
+\end{equation*}
+is the dilogarithm function, where we choose the branch cut as $(1,\infty)$.
+Note that $S(0)=\tilde{S}(2\pi\i)=\Li_2(e^{\pi\i/3})-\Li_2(e^{-\pi\i/3})=\i\times 2.02988...$.
+\par
+The quantities $S(\xi)$, $\tilde{S}(\xi)$, and $T(\xi)$ are related to the Chern--Simons invariant and the adjoint Reidemeister torsion associated with a certain representation of $\pi_1\left(S^3\setminus{E}\right)$ to $\SL(2;\C)$.
+See Section~\ref{sec:CST} for details.
+\begin{enumerate}
+\item
+$\xi=2\pi\i$:
+\par
+This corresponds to the case of the Volume Conjecture.
+Kashaev sketched a proof of \eqref{eq:VC} in \cite{Kashaev:LETMP97}, and then T.~Ekholm gave a detailed proof of \eqref{eq:VC}.
+See for example \cite[Section~3.2]{Murakami/Yokota:2018} for Ekholm's proof.
+Later, J.E.~Andersen and S.K.~Hansen \cite[Theorem~1]{Andersen/Hansen:JKNOT2006} followed Kashaev's method to prove the following asymptotic formula.
+\begin{equation*}
+  J_{N}\left(E;e^{2\pi\i/N}\right)
+  \underset{N\to\infty}{\sim}
+  2\pi^{3/2}\left(\frac{N}{2\pi\i}\right)^{3/2}T(2\pi\i)^{1/2}
+  \exp\left(\frac{N}{2\pi\i}\tilde{S}(2\pi\i)\right).
+\end{equation*}
+Since $S(0)=\i\Vol\left(S^3\setminus{E}\right)$, this refines the Volume Conjecture for the figure-eight knot.
+\item
+$\xi$ is close to $2\pi\i$ and not purely imaginary:
+\par
+Y.~Yokota and the first author proved the following formula \cite{Murakami/Yokota:JREIA2007}.
+\begin{equation}\label{eq:Yokota}
+  \lim_{N\to\infty}
+  \frac{\log J_{N}(E;e^{\xi/N})}{N}
+  =
+  \frac{\tilde{S}(\xi)}{\xi}.
+\end{equation}
+\item
+$\xi$ is purely imaginary with $5\pi/3<|\xi|<7\pi/3$, and $2\pi/|\xi|$ is irrational with finite irrationality measure:
+\par
+In \cite{Murakami:KYUMJ2004} (see \cite{Murakami:KYUMJ2016} for correction), the first author proved the following formula.
+\begin{equation*}
+  \lim_{N\to\infty}
+  \frac{\log J_{N}(E;e^{\xi/N})}{N}
+  =
+  \frac{\tilde{S}(\xi)}{\xi}.
+\end{equation*}
+See also \cite[6.2.2]{Murakami:Novosibirsk}.
+\item
+$\xi$ is of the form $2\pi\i+u$ for a real number $u$ with $0<|u|<\kappa$:
+\par
+The first author proved the following asymptotic formula \cite[Theorem~1.4]{Murakami:JTOP2013}:
+\begin{equation}\label{eq:J_top}
+  J_{N}\left(E;e^{\xi/N}\right)
+  \underset{N\to\infty}{\sim}
+  \frac{\sqrt{-\pi}}{2\sinh(u/2)}T(\xi)^{1/2}\left(\frac{N}{\xi}\right)^{1/2}
+  \exp\left(\frac{N}{\xi}\tilde{S}(\xi)\right).
+\end{equation}
+Note that this refines \eqref{eq:Yokota} when $\xi$ is as above.
+\item
+$\xi$ satisfies the inequalities $|2\cosh{\xi}-2|<1$ and $|\Im{\xi}|<\pi/3$:
+\par
+In this case, $J_{N}\left(E;e^{\xi/N}\right)$ converges.
+In fact, we have
+\begin{equation*}
+  \lim_{N\to\infty}
+  J_{N}\left(E;e^{\xi/N}\right)
+  =
+  \frac{1}{\Delta(E;e^{\xi})},
+\end{equation*}
+where $\Delta(E;t)=-t+3-t^{-1}$ is the normalized Alexander polynomial of the figure-eight knot $E$
+\cite[Theorem~1.1]{Murakami:JPJGT2007}.
+\par
+See \cite{Garoufalidis/Le:GEOTO2011} for general knots.
+\item
+$\xi=\pm\kappa$:
+\par
+In this case, $J_{N}\left(E;e^{\kappa/N}\right)$ grows polynomially.
+More precisely, we have
+\begin{equation*}
+  J_{N}\left(E;e^{\kappa/N}\right)
+  \underset{N\to\infty}{\sim}
+  \frac{\Gamma(1/3)}{(3\kappa)^{2/3}}N^{2/3},
+\end{equation*}
+where $\Gamma(z)$ is the Gamma function \cite[Theorem~1.1]{Hikami/Murakami:COMCM2008}.
+\item
+$\xi$ is real and $|\xi|>\kappa$:
+\par
+The first author proved the following formula \cite[Theorem~8.1]{Murakami:KYUMJ2004} (see also \cite[Theorem~3.2]{Murakami:ACTMV2008} and \cite[Lemma~6.7]{Murakami:Novosibirsk}).
+\begin{equation}\label{eq:Kyungpook}
+  \lim_{N\to\infty}
+  \frac{\log J_{N}(E;e^{\xi/N})}{N}
+  =
+  \frac{S(\xi)}{|\xi|}.
+\end{equation}
+\end{enumerate}
+\par
+The purpose of this paper is to refine \eqref{eq:Kyungpook}.
+We will show
+\begin{thm}\label{thm:main}
+If $\xi$ is real and $|\xi|>\kappa$, then we have
+\begin{equation*}
+  J_{N}\left(E;e^{\xi/N}\right)
+  \underset{N\to\infty}{\sim}
+  \frac{\sqrt{\pi}}{2\sinh(|\xi|/2)}T(\xi)^{1/2}\left(\frac{N}{|\xi|}\right)^{1/2}
+  \exp\left(\frac{N}{|\xi|}S(\xi)\right).
+\end{equation*}
+\end{thm}
+Moreover, we can show that $T(\xi)$ is the Reidemeister torsion twisted by the adjoint action of a representation $\rho$ of $\pi_1(S^3\setminus{E})$ to $\SL(2;\C)$ determined by $\xi$, and that $S(\xi)-\xi\eta/2$ is the Chern--Simons invariant of $\rho$ associated with the meridian and the preferred longitude of $E\subset S^{3}$.
+See Section~\ref{sec:CST} for details.
+\begin{rem}
+Suppose that $u:=\xi-2\pi\i$ is a small complex number or a real number with $|u|<\kappa$.
+In this case $\Im\varphi(u)<0$.
+By using a well-known formula
+\begin{equation*}
+  \Li_2(z)+\Li_2(z^{-1})+\frac{\pi^2}{6}+\frac{1}{2}\left(\log(-z)\right)^2=0.
+\end{equation*}
+we have
+\begin{equation*}
+\begin{split}
+  &\tilde{S}(\xi)
+  \\
+  =&
+  -\Li_2(e^{\xi+\varphi(\xi)})+\Li_2(e^{\xi-\varphi(\xi)})
+  -\frac{1}{2}\left(\log(-e^{\xi+\varphi(\xi)})\right)^2
+  +\frac{1}{2}\left(\log(-e^{\xi-\varphi(\xi)})\right)^2
+  \\
+  &+u(\varphi(\xi)+2\pi\i)
+  \\
+  \\
+  =&
+  -\Li_2(e^{u+\varphi(u)})+\Li_2(e^{u-\varphi(u)})
+  -\frac{1}{2}\left(u+\varphi(u)+\pi\i\right)^2
+  \\
+  &+\frac{1}{2}\left(u-\varphi(u)-\pi\i\right)^2
+   +(2\pi\i+u)\varphi(u)
+  \\
+  =&
+  -\Li_2(e^{u+\varphi(u)})+\Li_2(e^{u-\varphi(u)})-u\varphi(u).
+\end{split}
+\end{equation*}
+In the second equality, we use the fact that $\Im\varphi(u)<0$.
+Therefore \eqref{eq:J_top} coincides with the formula appearing in \cite[Theorem~1.4]{Murakami:JTOP2013}.
+\end{rem}
+\begin{rem}
+In \cite{Murakami:JTOP2013}, the first author followed \cite{Andersen/Hansen:JKNOT2006} to obtain the asymptotic formula, but in the current paper we follow \cite{Ohtsuki:QT2016}.
+\end{rem}

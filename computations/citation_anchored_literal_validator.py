@@ -96,7 +96,7 @@ VERIFIED_RE = re.compile(
 # not consume one, so the citation-anchored-input signature does not apply.
 DICT_ENTRY_RE = re.compile(r'^\s*["\'][^"\']+["\']\s*:\s*')
 
-SKIP_DIRS = {"_deprecated", "__pycache__", ".git", "script-qa"}
+SKIP_DIRS = {"_deprecated", "fsh-guts", "__pycache__", ".git", "script-qa"}
 
 
 def docstring_mask(lines: list[str]) -> list[bool]:

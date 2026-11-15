@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-gravitational-constant",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "label": "def:gravitational-constant",
+  "kind": "definition",
+  "title": "Gravitational constant from information geometry",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-information-speed-of-light",
+    "papers/quantum-observable-universe/blocks/rem-gr-substrate-geometry",
+    "papers/quantum-observable-universe/blocks/rem-c-substrate-via-levi"
+  ],
+  "cites": [
+    "references/jacobson1995",
+    "references/bekenstein1981",
+    "references/mcmullen1998"
+  ],
+  "tags": [
+    "gravitational-constant",
+    "information-theory",
+    "jacobson",
+    "entropy-area",
+    "speed-of-light",
+    "emergent-gravity"
+  ],
+  "leanRef": "qou:QOU.Information.gravitationalConstant",
+  "text": "gravitational-constant.md",
+  "leanSource": "gravitational-constant.lean",
+  "provenance": "authored"
+}

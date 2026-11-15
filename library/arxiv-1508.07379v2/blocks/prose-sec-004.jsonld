@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1508.07379v2/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1508.07379v2/blocks/prose-sec-004",
   "kind": "prose",
   "title": "Comparison with recent results and concluding remarks",
   "pageStart": 13,
   "pageEnd": 15,
   "text": "../sections/sec-004-5-comparison-with-recent-results-and-concluding.md",
-  "derivedFrom": "library/arxiv-1508.07379v2/manifest",
-  "sourceDocument": "library/arxiv-1508.07379v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1508.07379v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1508.07379v2",
   "provenance": "ingested"
 }

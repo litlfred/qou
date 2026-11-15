@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-exp-p-adic",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-exp-p-adic",
+  "kind": "remark",
+  "title": "$p$-adic realisations of $\\exp_q$ ($\\mathbb{Q}_p$ and $\\mathbb{C}_p$)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-q-exp-finite-field-obstruction"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-exponential",
+  "tags": [
+    "q-exponential",
+    "p-adic",
+    "witt-vectors",
+    "c-p",
+    "convergence"
+  ],
+  "text": "q-exp-p-adic.md",
+  "provenance": "authored"
+}

@@ -86,7 +86,7 @@ SELFTEST = ["SkeinMultisetInvariant", "HasStrongDuality",
             "QIntRatioBoundSmall", "Term7ShellCorrectionClass"]
 
 
-def builders(carrier: str, root: str = "content") -> list[str]:
+def builders(carrier: str, root: str = "folio") -> list[str]:
     out = []
     pat = re.compile(rf"(?<![.\w]){re.escape(carrier)}(?![\w])")
     for p in pathlib.Path(root).rglob("*.lean"):

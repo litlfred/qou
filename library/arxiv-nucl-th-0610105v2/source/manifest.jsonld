@@ -1,0 +1,45 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-nucl-th-0610105v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-nucl-th-0610105v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-nucl-th-0610105v2",
+  "provenance": "ingested",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:nucl-th/0610105&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-nucl-th-0610105v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/nucl-th/0610105v2",
+    "content_type": "application/gzip",
+    "sha256": "0e87a04d26f6e1994b887a583b63bf753e37b923244c31ff8728d41e6ae9e9c5",
+    "bytes": 33977,
+    "fetched": "2026-10-10T15:32:05+00:00",
+    "files": [
+      {
+        "path": "source/files/4bdyrev2.tex",
+        "role": "tex",
+        "sha256": "44a7fdb39efaa0c1255a9c5e88d1dede70cfc50294b559f6279419c25a405345",
+        "bytes": 49374
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

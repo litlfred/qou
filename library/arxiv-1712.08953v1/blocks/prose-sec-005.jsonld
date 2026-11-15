@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1712.08953v1/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1712.08953v1/blocks/prose-sec-005",
   "kind": "prose",
-  "title": "J. BRUNDAN",
-  "pageStart": 4,
-  "pageEnd": 4,
-  "text": "../sections/sec-005-4-j-brundan.md",
-  "derivedFrom": "library/arxiv-1712.08953v1/manifest",
-  "sourceDocument": "library/arxiv-1712.08953v1/manifest",
+  "title": "Categorical action",
+  "pageStart": 46,
+  "pageEnd": 54,
+  "text": "../sections/sec-005-7-categorical-action.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1712.08953v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1712.08953v1",
   "provenance": "ingested"
 }

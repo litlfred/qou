@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/blocks/prose-sec-004",
+  "kind": "prose",
+  "title": "Synopsis of the Book",
+  "pageStart": 14,
+  "pageEnd": 22,
+  "text": "../sections/sec-004-04-synopsis-of-the-book.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "provenance": "ingested"
+}

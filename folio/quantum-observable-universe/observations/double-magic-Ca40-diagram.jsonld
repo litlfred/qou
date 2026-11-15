@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-double-magic-Ca40-diagram",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:double-magic-Ca40-diagram",
+  "kind": "example",
+  "title": "Double-magic illustration: $^{40}\\mathrm{Ca}$ at $Z = N = 20$ (LR fusion rigid)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-diagrammatic-double-magic-lr-fusion"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-diagrammatic-double-magic-lr-fusion",
+  "cites": [
+    "references/geckpfeiffer2000"
+  ],
+  "tags": [
+    "magic-numbers",
+    "double-magic",
+    "calcium-40",
+    "self-conjugate-partitions",
+    "lr-fusion-rigidity",
+    "diagram"
+  ],
+  "text": "double-magic-Ca40-diagram.md",
+  "provenance": "authored"
+}

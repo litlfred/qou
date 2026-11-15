@@ -1,0 +1,36 @@
+A Frobenius formula for the characters of the Hecke algebras 475
+and the expansions in (4.10) give
+Z qi(x; q)y"  2(Xqy(1 - q-1)
+r≥0
+E su(X)su(qy(1 - q-1))
+hr(X(1 - q-1))q"yr
+≥0
+I:(1 - q-μi)
+Pu(X)q"y".
+q-1 r≥0μｒ u?
+(c) and (d) follow from the last two expressions respectively by comparing coeffic-
+ients of yr with the left hand side. Using Lemma 4.12,
+Zsu(X)su(qy(1 - q-1)) = Z Z su(X)qlulylulsu(1 -q-1)
+≥0μr
+q'y"  s u--(_b-)(_b- I)(x)(uu-)s
+r≥0 m= 1
+- Z y"(q - 1) Z (- 1)-mqm-1s(1r-mm)(X),
+r≥0 m=1
+giving (e). (f) follows immediately from (c). 
+The Frobenius formula
+Let mμu(x) and sa(x) denote the monomial 1 symmetric function and the
+Schur 'function respectively, in the variables Xi,X2,..., Xn. Recall that
+T,= gr-19r-2...91 and that for any partition Iμ=(μi,...,μk),
+ T.X...×T..
+For each r ≥ i, and each partition μ define
+gr(x; q) = Z q" - t()(q - 1)t(v) - 1m,(x) ,
+μr
+t(μ)
+qu(X1,. . ., Xn; q) = II qu(x; q),
+i=1
+respectively.
+We have the following Frobenius type formula for the characters of Hf.
+(4.14) Theorem. For each μ  f,
+qu(x; q) = Z x^(T,)sa(x) ,
+where x~ denotes the irreducible character of H corresponding to a and sa(x) denotes
+the Schur function in the variables Xi, . . . , Xn.

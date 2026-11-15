@@ -1,17 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-2604.16077v1/sections/sec-009",
   "@type": [
     "doco:Section"
   ],
-  "title": "Vol(M ) and",
-  "pageStart": 8,
-  "pageEnd": 8,
+  "title": "The logarithmic limit set",
+  "pageStart": 18,
+  "pageEnd": 20,
   "contains": [
-    "library/arxiv-2604.16077v1/blocks/prose-sec-009",
-    "library/arxiv-2604.16077v1/blocks/rem-sec-009-01"
+    "library/arxiv-2604.16077v1/blocks/prose-sec-009"
   ],
-  "derivedFrom": "library/arxiv-2604.16077v1/manifest",
-  "sourceDocument": "library/arxiv-2604.16077v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2604.16077v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2604.16077v1",
   "provenance": "ingested"
 }
