@@ -13,6 +13,10 @@ export default proposition({
   ],
   authorNotes: [
     {
+      kind: "note",
+      body: "An earlier version of the citation-caution paragraph wrote the Molien weight without the q^{-κ_λ} factor.",
+    },
+    {
       kind: "status",
       date: "2026-09-05",
       body:

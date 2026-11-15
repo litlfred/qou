@@ -52,7 +52,7 @@ same-sign pair, since $y_{m+2}y_{m+1} = (2-q^{m+1})\,y_{m+1}^2 - y_m y_{m+1} > 0
 whenever $y_m y_{m+1} < 0$
 (`QOU.Mass.GGMAlternationOnset.ggm_solution_no_double_flip`, over an
 ordered field). The recurrence *is* oscillatory there — its solutions do change
-sign inside the window, which an earlier version of this note denied — but never
+sign inside the window — but never
 at two consecutive pairs, and that is what the argument needs. So the untwisted
 sequence has same-sign consecutive pairs in that window, the twisted sequence
 acquires flips exactly there, and the obstruction fires on it too. At the

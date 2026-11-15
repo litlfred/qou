@@ -182,8 +182,7 @@ consequences are derived unconditionally from the class:
    cancelled. So the zero-crossing is a conditional structural statement,
    not an established prediction. (The onward identification of this
    $S$-channel with the resurgent monodromy datum $A_\omega$ has no
-   literature support and is not derivable; recorded in
-   `docs/audits/2026-08-14-aomega-to-S-bridge-refuted-O2-negative.md`.)
+   literature support and is not derivable.)
 
 ## The fibre branch ($\lvert q \rvert = 1$, real $b$) and construction status
 

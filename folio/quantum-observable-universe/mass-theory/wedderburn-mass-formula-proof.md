@@ -139,6 +139,4 @@ m_{\mathfrak{n}} + Z \cdot m_e$. $\square$
 
 The numerical agreement of this formula with measured atomic masses
 across the nuclide table is an empirical cross-check, not part of the
-proof; the certifying witness previously cited here
-(`atom-mass-complete-wedderburn.witness.json`) is absent from
-`computations/` and its regeneration is tracked as an open follow-up.
+proof.

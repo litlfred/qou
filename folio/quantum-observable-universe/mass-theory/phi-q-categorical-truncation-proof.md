@@ -34,8 +34,7 @@ and supported on $\mathrm{supp}(T_w) = \{\lambda : \chi_\lambda(\rho(\beta)) \ne
 [Curvature-rank stratification](#prop:curvature-rank-gb-stratification)
 supplies the filtration of $H_n(R, q)$ by the curvature rank $r(T_w)$ of
 **words**. The grading of the centre by *partition* depth used below is a
-further step, not stated there and assumed here; see
-`docs/audits/2026-08-16-word-depth-vs-partition-depth-bridge-is-unstated.md`.
+further step, not stated there and assumed here.
 Granting it, the centre $Z(A)$ admits a GB-depth filtration
 
 $$

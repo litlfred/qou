@@ -21,6 +21,10 @@ export default proposition({
   ],
   authorNotes: [
     {
+      kind: "note",
+      body: "An earlier version of this paragraph conflated connected-sum multiplicativity of the Jones polynomial with the disjoint-union loop value.",
+    },
+    {
       kind: "status",
       date: "2026-08-30",
       body:

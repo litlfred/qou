@@ -10,6 +10,10 @@ export default proposition({
   tags: ["binding", "brane-tower", "level-selection", "gap-a-3", "plancherel"],
   authorNotes: [
     {
+      kind: "refined-framing",
+      body: "This block previously asserted the lower bound for every k; it is false below k = 3, so the statement now carries the threshold.",
+    },
+    {
       kind: "status",
       date: "2026-09-02",
       body:

@@ -37,8 +37,7 @@ form.*
 >
 > **Step 3 below reads $J^\bullet$ this way, so Step 3 is incomplete as
 > it stands.** Two further readings of $J^\bullet$ present elsewhere in
-> the corpus also fail — see
-> [`docs/audits/2026-08-16-three-gb-filtrations-one-name.md`](../../../docs/audits/2026-08-16-three-gb-filtrations-one-name.md).
+> the corpus also fail.
 
 **Step 3: $F^{\,r}$ measures rewrite depth.**
 *By the Leibniz rule and Step 1, $F^{\,r}(T_w) \in I^r$ but

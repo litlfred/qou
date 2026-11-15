@@ -5,7 +5,7 @@
 
 **Restriction of the hypothesis to $A \geq 1$.** Extensivity is imposed only for $A \geq 1$, the physical regime. Excluding $A = 0$ ensures the exclusion is the genuine growth argument rather than a degenerate boundary coincidence: at $A = 0$ the linear side is $M \cdot 0 = 0$, so the inequality would fail or hold for reasons unrelated to the exponential-versus-linear mechanism.
 
-This paragraph previously justified the restriction by saying that "the tower bound forces $w(0) \geq c > 0$ while $M \cdot 0 = 0$". **That reading was backwards.** The tower bound forces no such thing: $w_{\mathrm{std}}(0) = 0$, because no diagram of fewer than three cells contains $(2,1)$. What the $A = 0$ case actually exhibited was not a nuisance of the conclusion but a **falsity in the antecedent** — the growth hypothesis, then stated for every $k$, could not hold at all. That is why [`prop:tower-geometric-lower-bound`](tower-geometric-lower-bound.md) now carries a threshold, and why this proposition is unconditional rather than conditional.
+The tower bound does not force $w(0) \geq c > 0$: $w_{\mathrm{std}}(0) = 0$, because no diagram of fewer than three cells contains $(2,1)$. Stated for every $k$, the growth hypothesis would be false at $k = 0$, so the $A = 0$ case is a falsity in the antecedent rather than a boundary effect in the conclusion. That is why [`prop:tower-geometric-lower-bound`](tower-geometric-lower-bound.md) now carries a threshold, and why this proposition is unconditional rather than conditional.
 
 ## Lean structure
 
