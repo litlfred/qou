@@ -23,3 +23,16 @@ Branch `claude/quark-state-gamma-gamma-nf-2026-11-15`. Corpus-grep: the H₃ NF 
 generically (`QOU.Machinery.H3.mulNF`, `H3A`), and `QuarkAntiquarkProduction.lean` carries the
 φ₀₁ = 0 coordinates as structure fields (asserted, not computed). New file
 `QOU/QuarkState/PhotonPairNormalForm.lean` computes NF(γγ) from `mulNF` and tests the hypothesis.
+
+## Result 2026-11-15 (PR #7827): verified, sorry-free, OWNER DECISIONS PENDING
+
+`lean -DautoImplicit=false -s 65536` exit 0. 25 declarations; `#print axioms` shows no `sorryAx`.
+Audit: `docs/audits/2026-11-15-quark-state-gamma-gamma-nf-test.md`.
+
+- (h-grading) NF(γγ) is exactly affine in h. N₁ = h-coefficient: word degree ≥ 1, bilinear, nonzero.
+- (1) holds only modulo h. A flavour flip moves the degree-0 coordinate by −h on a witness (scope a).
+- (3) fails as stated: the degree ≥ 1 part is affine-bilinear; the connected part is bilinear (scope a).
+- (2) results.md:9-13 is now theorems: order zero is 0 for all shifts; S0 is ≡ 0; S+AVG proton = (q−1)g, g(1) = −1.
+- Trap: H3 coordinate 3 is labelled L₊ but is σ₁σ₀; the remark's L₊ = σ₀σ₁ is coordinate 4.
+
+Stays in-progress: what to call "the quark state" is the owner's choice (D1–D3 in the PR).
