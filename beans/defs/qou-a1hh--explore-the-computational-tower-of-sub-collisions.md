@@ -70,3 +70,7 @@ Status: open. It waits on re-audit decisions A, B and C.
 ## 2026-11-15 — decision C ("try γγ first"): H₂ with a γγ nucleon (PR #7741, `h2_gg_atom/`)
 
 Pre-registered (97dacc709d3), then computed (4901ed2c59b). Nucleon block Vᵐ, m = 3…7. On H₃ only V³ and V⁶ pass reading 3 at every level; p and n are the same word (no flavour on three strands). With the T_w0 electron the bare H₂ word passes every level and the bonds that pass are exactly V³ at s = 4 and 5 (trace ratio 0.9974/0.9985, ep at s=5 ratio 1). With the trefoil electron the bare word fails at level 6, block (3,3), so the electron is now the only non-γγ ingredient blocking. Open owner question: does the one rule cover the electron? Scope (a).
+
+## 2026-11-15 — γγ electron (owner: "Yes, test a γγ electron"), PR #7741 `h2_gg_electron/`
+
+Pre-registered e1e22ebfb1d. Nucleon V³/V⁶, electron V^k, k = 0…7, 224 rows. Bare H₂ passes iff k ∈ {0, 3, 6}; then the passing bonds are exactly V³ at s = 4, 5 (ratio ≈ 0.9984). Under the one rule on three strands nucleon, electron and bond all come from {V³, V⁶} and the bond is V³; nucleon and electron are not distinguished by the grammar. Open: which power is the electron (owner). Scope (a).
