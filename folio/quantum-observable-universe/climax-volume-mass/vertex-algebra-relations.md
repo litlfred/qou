@@ -4,7 +4,7 @@ $$
   \sigma_i^2 = (q - q^{-1})\sigma_i + 1 \qquad (1 \leq i \leq n-1),
 $$
 
-and the vertex algebra of a QUO is the quotient of the free algebra on $\{\sigma_i, \cup, \cap, L_{-1}, \mathrm{tr}_M, d, d_q, \star\}$ by **26 relations** — 14 structural (the QU/QUO axioms QU-1 through QUO-4) and 12 cohomological (C-1 through C-10) — catalogued in [Table 2](#tbl:vertex-algebra-relations-table2-data) and [Table 3](#tbl:vertex-algebra-relations-table3-data), coupled with the Hecke--Skein dictionary $\sigma_i \leftrightarrow L_+$, $\sigma_i^{-1} \leftrightarrow L_-$, $1 \leftrightarrow L_0$.
+and the vertex algebra of a QUO is the quotient of the free algebra on $\{\sigma_i, \cup, \cap, L_{-1}, \mathrm{tr}_M, d, d_q, \star\}$ by **25 relations** — 13 structural (the QU/QUO axioms QU-1 through QUO-4, with QUO-3a withdrawn) and 12 cohomological (C-1 through C-10) — catalogued in [Table 2](#tbl:vertex-algebra-relations-table2-data) and [Table 3](#tbl:vertex-algebra-relations-table3-data), coupled with the Hecke--Skein dictionary $\sigma_i \leftrightarrow L_+$, $\sigma_i^{-1} \leftrightarrow L_-$, $1 \leftrightarrow L_0$.
 
 ## Proof
 
@@ -264,19 +264,17 @@ Equivalently: the only braid word commuting with all generators is the identity.
 
 ### QUO-3: Measurability (anomaly freedom)
 
-The Chern classes $c_1(\mathrm{Ad}(A)) = c_2(\mathrm{Ad}(A)) = 0$ translate via the fibre functor to:
+The second Chern class $c_2(\mathrm{Ad}(A)) = 0$ translates via the fibre functor to the relation QUO-3b below.
 
-**(QUO-3a) First Chern class vanishing** ($c_1 = 0$):
+**(QUO-3a, withdrawn.)** An earlier version stated $c_1(\mathrm{Ad}(A)) = 0$ as $\sum_{i=1}^{n-1} \mathrm{tr}_M(\sigma_i - \sigma_i^{-1}) = 0$. That relation fails for every linear trace with $\mathrm{tr}_M(1) \neq 0$ when $q^2 \neq 1$. The Hecke relation QU-1a gives $\sigma_i^{-1} = \sigma_i - (q - q^{-1})$, so
 
 $$
   \sum_{i=1}^{n-1}
-  \mathrm{tr}_M\!\bigl(
-    \sigma_i - \sigma_i^{-1}
-  \bigr)
-  =  0.
+  \mathrm{tr}_M\!\bigl(\sigma_i - \sigma_i^{-1}\bigr)
+  = (n-1)(q - q^{-1})\,\mathrm{tr}_M(1).
 $$
 
-This indicates the total writhe of the adjoint representation is zero: the adjoint bundle is orientable.
+This is the skein relation $L_+ - L_- = (q - q^{-1}) L_0$ under the trace; it holds for every word and carries no information about $c_1$. A writhe-type functional that could express $c_1(\mathrm{Ad}(A))$ is not known in this framework.
 
 **(QUO-3b) Second Chern class vanishing** ($c_2 = 0$):
 
@@ -370,10 +368,9 @@ $$
   [\xi, a_m]
   = 
   \mathrm{wr}(a) a_m,
-  \qquad
-  \mathrm{wr}(a) = \sum_i \mathrm{tr}_M(\sigma_i - \sigma_i^{-1})
-   \text{(writhe of $\hat{\beta}_a$)}.
 $$
+
+where $\mathrm{wr}(a)$ is the writhe of $\hat{\beta}_a$: the exponent sum of the braid word $\beta_a$, i.e. its image under the abelianisation $B_n \to \mathbb{Z}$, $\sigma_i^{\pm 1} \mapsto \pm 1$. It is not a trace: the trace of $\sum_i (\sigma_i - \sigma_i^{-1})$ is the constant $(n-1)(q - q^{-1})\mathrm{tr}_M(1)$ for every word.
 
 The curvature 2-form $\omega_V$ is the Hecke Casimir:
 
@@ -643,4 +640,4 @@ See [Table 2](#tbl:vertex-algebra-relations-table2-data).
 
 See [Table 3](#tbl:vertex-algebra-relations-table3-data).
 
-These **26 relations** (14 structural + 12 cohomological), coupled with the Hecke--Skein dictionary $T \leftrightarrow L_+$, $T^{-1} \leftrightarrow L_-$, $1 \leftrightarrow L_0$, supply a complete presentation of the QOU vertex algebra in knot coordinates. They encode both algebraic structure and cohomological topology using the single language of braid words and the Markov trace.
+These **25 relations** (13 structural + 12 cohomological), coupled with the Hecke--Skein dictionary $T \leftrightarrow L_+$, $T^{-1} \leftrightarrow L_-$, $1 \leftrightarrow L_0$, supply a complete presentation of the QOU vertex algebra in knot coordinates. They encode both algebraic structure and cohomological topology using the single language of braid words and the Markov trace.
