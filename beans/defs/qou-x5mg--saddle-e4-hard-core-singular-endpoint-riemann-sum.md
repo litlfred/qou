@@ -1,14 +1,14 @@
 ---
 # qou-x5mg
 title: 'saddle E4 (hard core): singular-endpoint Riemann sum (π/N)Σⱼ≤ₖ log(2sin(πj/N)) → ∫₀^{πx}log(2sin) = −clausen(2πx)/2, uniform in k/N→x (split [0,δ]+[δ,πx]; monotone tail comparison at the log singularity)'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - close-candidate
 created_at: 2026-07-19T13:12:36Z
-updated_at: 2026-10-04T15:13:54Z
+updated_at: 2026-11-15T13:50:00Z
 parent: qou-n4nr
 ---
 
@@ -19,3 +19,7 @@ E4 singular-endpoint Riemann sum (π/N)Σⱼ≤ₖ log(2sin(πj/N)) → ∫₀^{
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-07-19 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-15 — closed (branch `claude/volume-dilog-bricks-2026-11-15`)
+
+Discharged on main: the 4₁ volume-conjecture squeeze is sorry-free (`QOU/Knot/FigureEightVolumeSqueeze.lean`, `tendsto_log_kashaev_vol`; E5c uniform deviation `abs_deviation_le` covers this E4 brick).
