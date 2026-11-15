@@ -1,13 +1,13 @@
 ---
 # qou-0hu2
 title: 15 stalled PRs carry live unlanded work — needs per-PR disposition (not supersession)
-status: todo
+status: scrapped
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-10T03:05:31Z
-updated_at: 2026-10-04T15:15:59Z
+updated_at: 2026-11-15T13:31:00Z
 parent: qou-5vkl
 ---
 
@@ -70,3 +70,7 @@ as one rule: **a shallow clone cannot answer questions about branch
 relationships.** It has now produced (1) `merge-tree` CONFLICT on every branch,
 (2) unresolvable merge-bases in file classification, and (3) this. Deepen
 first, then measure.
+
+## Closed 2026-11-15 (owner tap, ops bean triage)
+
+Status set to `scrapped`: its 15 stalled PRs are now 16 merged and 11 closed among the PRs it cites; superseded by the 2026-11-15 idle-PR triage.

@@ -1,13 +1,13 @@
 ---
 # qou-s4ws
 title: 'Session: consolidate the week''s stalled sessions into four streams (2026-10-12)'
-status: todo
+status: scrapped
 type: epic
 priority: normal
 tags:
     - coordination
 created_at: 2026-10-12T19:40:00Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-15T13:31:00Z
 ---
 
 Tracker: litlfred/qou#7735. Plan: `docs/coordination/2026-10-12-stalled-sessions-four-streams.md` (#7736).
@@ -31,3 +31,7 @@ Owner rulings recorded: Omega_2 (qou-uir6) ii+iii; dead-label group B -> removal
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## Closed 2026-11-15 (owner tap, ops bean triage)
+
+Status set to `scrapped`: the four-stream session plan of 2026-10-12 is superseded by the 2026-11-15 project epics, which took over its streams (tracker #7735 continues under them).
