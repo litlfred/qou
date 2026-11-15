@@ -647,7 +647,11 @@ def main() -> int:
         "them rather than silently invalidating the scan. Only the five atoms "
         "at A <= 3 and the two documented pins are covered."
     )
-    print(f"\nWitness: {wb.save()}")
+    # The fingerprints are computed at BOTH documented pins on purpose (a
+    # grouped-era value is recognised wherever it was written, at either pin),
+    # so this is a q0 comparison, not a single-pin result.
+    from qou_substrate.witness import q0_comparison  # noqa: E402
+    print(f"\nWitness: {wb.save(q0_comparison(muon=PINS['muon-live'], proton=str(PINS['proton']), reason='fingerprints grouped-era |tr_M| at BOTH documented pins (proton Q_50_DIGIT_STR and the live CODATA-2022 muon pin q_muon_at(70)) so a grouped value is matched whichever pin produced it; both pins are read on purpose'))}")
     return 0
 
 

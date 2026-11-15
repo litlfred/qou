@@ -248,6 +248,9 @@ def main() -> int:
         "producer": "chi-q-atomic-binding-lossless",
         "convention": "bring_color_weighted-averaged-crossings",
         "precision": precision,
+        # Hand-rolled payload: the q0_anchor_manifest entry cannot reach it
+        # (only WitnessBuilder.build() reads the manifest), so declare the pin.
+        "q0Anchor": "proton", "q0Value": Q_50_DIGIT_STR,
         "q_0_50dps": str(q), "dps": dps, "n_strands": n,
         "atom": "helium-4", "Z": Z, "N": N,
         "n_partitions": len(per_partition), "n_partitions_total": len(shapes),

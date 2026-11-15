@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-07T12:47:45.199688+00:00",
-  "commitSha": "01626896ab25a8c1e52860f1b85b252d2b8c3737",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-15T19:58:56.278308+00:00",
+  "commitSha": "6109ea1793d3bd7dfe1aef4e1c2365f29a6074f2",
   "assertions": [
     {
       "name": "invertibility_test_is_vacuous_min_kappa_already_exceeds_one",
@@ -69,11 +69,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 7,
   "computation": "em-linking-derived-c0-is-invisible-to-the-series",
   "scriptFile": "em_linking_derived_c0_is_invisible_to_the_series_probe.py",
-  "scriptHash": "defb656d0afa",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a6545c816915",
+  "scriptCommitSha": "547b78208f6bb667ec8b3580f16390a74dbb9ce4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -81,12 +81,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "24ca776b0ad05497"
   },
   "invocation": {
     "argv": [
@@ -95,6 +98,8 @@
     "reproduce": "python3 -u computations/em_linking_derived_c0_is_invisible_to_the_series_probe.py"
   },
   "description": "Bean qou-17mq. MEASURES what probe 3 argued: the zero-mean-derived c0 is invisible to the kappa(A) series. Scale-free fit quality is flat across the whole c0 scan (R^2 spread smaller than the variance the best member leaves unexplained) and the derived value sits interior. Also records that the bare-rms metric is monotone in c0 by construction (acoth(kappa+c0) -> 1/c0, a constant, as c0 grows) and therefore cannot rank kernels, and that the invertibility test kappa + c0 > 1 is vacuous here. EXPLORATORY. Nothing fitted, nothing wired, no kernel selected.",
+  "q0Anchor": "ambiguous",
+  "q0AnchorReason": "q0 enters only through upstream data: kappa(A) is read from em-linking-mirror-series.witness.json, whose producer divides by a TYPED per-pair Coulomb unit tanh(ln q0)*B_pp = 0.2376702253 with no recorded pin (the proton-pinned mirror-pair-coulomb-sign-correction witness it cites now carries 0.2212723003), and that upstream witness is itself unstamped; the pin of the series this probe fits is therefore undetermined",
   "n_bound_points": 29,
   "A_range": [
     3,
