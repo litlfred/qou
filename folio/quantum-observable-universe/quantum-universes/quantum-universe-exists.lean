@@ -41,7 +41,7 @@ universe w
     still rests on its own cited `sorry`. -/
 -- Ref: [leitner2026] §1-quantum-universes/quantum-universe-exists
 theorem QuantumUniverse.exists_instance (R : Type w) [CommRing R] :
-    Nonempty (QuantumUniverse.{w + 1, w, w, w, w} R) :=
+    Nonempty (QuantumUniverse.{w + 1, w, w, w} R) :=
   QOU.TrivialWitness.nonempty_quantumUniverse R
 
 end QOU

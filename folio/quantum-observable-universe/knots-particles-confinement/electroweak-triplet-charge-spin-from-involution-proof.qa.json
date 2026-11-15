@@ -1225,7 +1225,25 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "cca13c54c673",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:04.697Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "(S↔P column of thm:ew-triplet-charge-spin-from-involution row) Class `EWSectorSelection` carries the T₃ values as fields, and `ew_charge_spin_forced` returns them; spin is *defined* from the sector. So the conclusion is a field or a definition, not derived. The statement says charge \"follows\" from the postulate, but T₃ *is* the postulate. Proof: \"neutrality is forced by bar-parity\" is contradicted by its own Z case (bar-odd yet neutral). §3 uses the measured spins of H and B as \"independent physical inputs\" (empirical content in a proof)"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-11-15T21:56:04.697Z"
 }

@@ -3,6 +3,12 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   authorNotes: [
     {
+      kind: "status",
+      date: "2026-11-15",
+      body:
+        "QUO-3a withdrawn (owner decision, PR #8005, bean qou-078y). It read $\\sum_{i=1}^{n-1} \\mathrm{tr}_M(\\sigma_i - \\sigma_i^{-1}) = 0$, glossed as $c_1(\\mathrm{Ad}(A)) = 0$, with Lean sibling `axiom first_chern_vanishes`. The Hecke relation gives $\\sigma_i^{-1} = \\sigma_i - (q - q^{-1})$, so the left side is $(n-1)(q - q^{-1})\\mathrm{tr}_M(1)$, nonzero for $q^2 \\neq 1$. The axiom is replaced by the proved `trace_sub_trace_inv` / `trace_ne_trace_inv`. The relation count goes from 26 to 25. The line defining $\\mathrm{wr}(a)$ as a trace sum is replaced by the abelianisation writhe. A $c_1$ functional on $\\mathrm{Ad}(A)$ is an open research item.",
+    },
+    {
       kind: "refined-framing",
       date: "2026-11-15",
       body:

@@ -74,6 +74,8 @@ noncomputable def massSplitting (α : ℝ) : ℝ :=
   α * abs (quarkPhi "udd" - quarkPhi "uud")
 
 /-- At `α = 3.7445`: `Δm ≈ 1.0541` (MeV units), convention D.
+    Conditional on (H_α): that `α = m_e·8G` converts `|ΔΦ|` to energy is an
+    assumption of the block, not derived; this theorem is arithmetic only.
     Model value only; the comparison with the measured splitting is an
     empirical claim and lives in the block prose.  Under the retired
     convention C this goal read `|Δm − 1.302| < 0.001`. -/
@@ -82,10 +84,19 @@ theorem splitting_value :
   unfold massSplitting quarkPhi
   norm_num [show ("udd" = "uud") = False by decide, show ("udd" = "udd") = True by decide]
 
-/-- The same binding scale α appears at quark (confinement)
-    and nuclear (binding) levels. -/
-def same_scale_both_levels (m_e : ℝ) (volB3 : ℝ)
-    (h : volB3 = 8 * 0.9159655941772190) :
-    m_e * volB3 = m_e * volB3 := rfl
+/-- **Hypothesis (H_α), not derived.** The model neutron–proton mass difference `Δm`
+    equals the binding scale `α` times the change of the quark-ordering traced volume.
+    This is the one underived step of `prop:neutron-proton-mass-splitting`
+    (owner ruling 2026-11-15: state it as a named hypothesis). It is a
+    content-bearing class with **no instance**: nothing in the corpus derives it.
+    Audit: `docs/audits/2026-11-15-np-splitting-error-budget.md` §15–§19. -/
+class ScaleHypothesis (α Δm : ℝ) : Prop where
+  conversion : Δm = α * abs (quarkPhi "udd" - quarkPhi "uud")
+
+/-- Conditional on (H_α) at `α = 3.7445`, the model splitting is `≈ 1.0541` MeV. -/
+theorem splitting_of_scaleHypothesis (Δm : ℝ) [h : ScaleHypothesis 3.7445 Δm] :
+    abs (Δm - 1.0541) < 0.001 := by
+  rw [h.conversion]
+  exact splitting_value
 
 end QOU.NeutronProtonSplitting

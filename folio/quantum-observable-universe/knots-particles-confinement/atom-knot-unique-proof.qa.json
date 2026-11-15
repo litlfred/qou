@@ -718,7 +718,7 @@
           "in_degree": 0,
           "cone_size": 2,
           "depth": 2,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -959,6 +959,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9962508cf20f",
+          "ts": "f3837d736d59"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:04.971Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "(S↔P column of prop:atom-knot-unique row) Lean = structure extensionality (records with equal fields are equal). No braids and no isotopy. Proof: \"the Hecke relation σ² = hσ + 1 is a Reidemeister II move\" is false (RII is σσ⁻¹ = 1; the quadratic relation is a skein relation and changes link type). \"Same Hecke image ⇒ braid-equivalent\" needs B_n → H_n(q) faithful, which is unproved (open for n ≥ 4). RII/RIII/far commutation are braid relations, not \"Markov moves\""
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1176,7 +1192,7 @@
         "reviewed_at": "2026-08-15T10:30:58.997Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
-        "evidence": "1 negation-contrast construction(s): \", not up to strict NF equality.\" \u2014 state the positive claim directly"
+        "evidence": "1 negation-contrast construction(s): \", not up to strict NF equality.\" — state the positive claim directly"
       },
       {
         "field_hash": {
@@ -1191,7 +1207,7 @@
         },
         "reviewed_at": "2026-08-15T12:14:43.796Z",
         "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
-        "evidence": "'up to isotopy, not up to strict NF equality' \u2014 scope clarification, the distinction is the content",
+        "evidence": "'up to isotopy, not up to strict NF equality' — scope clarification, the distinction is the content",
         "notes": "pass-with-note: substantive mathematical contrast"
       }
     ],
@@ -1522,6 +1538,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-15T21:56:04.971Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

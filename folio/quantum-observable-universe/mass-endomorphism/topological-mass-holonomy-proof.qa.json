@@ -249,6 +249,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "06ad496d7ae2",
+          "ts": "310c4a6ac144"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:03.159Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "Concludes MI∫_Σ τ̂α = MI∫_{Σ₀} α after showing only that the transient part vanishes on Σ₀. Nothing shows τ̂α is trivial on the discs D_i, so the integral over Σ is not reduced to Σ₀. \"Since ϱ₀ has trivial topology all sections factor through level n\" is asserted"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1833,6 +1849,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-31T04:12:30.658Z",
+  "updated_at": "2026-11-15T21:56:03.159Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

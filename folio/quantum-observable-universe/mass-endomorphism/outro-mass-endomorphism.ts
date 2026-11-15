@@ -1,3 +1,3 @@
 import { prose } from "../../schema/builders";
 
-export default prose({ title: "Chapter close — Mass endomorphism" });
+export default prose({ label: "prose:outro-mass-endomorphism", title: "Chapter close — Mass endomorphism" });
