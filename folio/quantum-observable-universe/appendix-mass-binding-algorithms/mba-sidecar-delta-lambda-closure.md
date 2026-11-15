@@ -20,7 +20,8 @@ for an isotope knot $K$, consumed by Step 9b
 
 **The per-partition value is PROVED, general-$n$:**
 $\Delta_\lambda = (-1)^{n(\lambda)}\dim V_\lambda$
-(`QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional`;
+([`prop:delta-lambda-dt-index-unification`](#prop:delta-lambda-dt-index-unification),
+`QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional`;
 value + chirality sign, no $n \le 5$ restriction). The sign leg is the
 jet-order valuation parity `deltaSign_eq_nStat_parity`; the magnitude leg is
 the Wedderburn dimension. Both are substrate-derived — not fitted.
