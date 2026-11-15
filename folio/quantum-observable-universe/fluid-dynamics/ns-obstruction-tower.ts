@@ -35,7 +35,8 @@ export default proposition({
         "change. Not edited, and carrying the same withdrawn step as Lean: " +
         "`QOU/FluidDynamics/yekutieli_levi_unification.lean` " +
         "(`NSObstructionLeviData`, field for step (d)) and " +
-        "`qou_ns_in_qou.lean` (`QOUFluidUniverseLevi`, branch A). Bean `qou-fm7s`.",
+        "`qou_ns_in_qou.lean` (`QOUFluidUniverseLevi`, branch A). Bean `qou-fm7s`." +
+        " Update 2026-11-15 (owner option 1, PR #7747): all of these are now re-scoped; see bean qou-fm7s.",
     },
   ],
   tags: [
