@@ -704,7 +704,7 @@ function drawGrowthChart(alpha = chartAlpha) {
 
 // ════════════════════════════════════════════════════════════════════
 //   Colour-tube cubic  P(c,z) = c³+(4z+1)c²+(6z²+3z+1)c+(4z³+3z²+2z+1)
-//   and Möbius transform parameters  δ, ρ, κ, disc(μ)
+//   and Möbius transform parameters  δ, ρ, ϖ, disc(μ)
 // ════════════════════════════════════════════════════════════════════
 
 // Roots of c³ + Ac² + Bc + D = 0  (real coefficients, all returned real)
@@ -749,16 +749,16 @@ function mobiusParams(r, xs) {
   const dzP  = 4*rho*rho + (12*z+3)*rho + (12*z*z+6*z+2);
   const denom = rho - b_c;
   const C2    = (Math.abs(denom) < 1e-9) ? NaN : -dzP / denom;
-  const kappa = (!isFinite(C2)||isNaN(C2)||C2<=0) ? NaN : rho / Math.sqrt(C2);
+  const varpi = (!isFinite(C2)||isNaN(C2)||C2<=0) ? NaN : rho / Math.sqrt(C2);
   let disc_m = NaN, type = '—', typeClass = '';
-  if (isFinite(kappa) && !isNaN(kappa) && Math.abs(kappa) > 1e-9) {
-    disc_m = (kappa*kappa - 6*kappa + 1) / (2*kappa);
+  if (isFinite(varpi) && !isNaN(varpi) && Math.abs(varpi) > 1e-9) {
+    disc_m = (varpi*varpi - 6*varpi + 1) / (2*varpi);
     const threshold = 0.015;
     if (Math.abs(disc_m) < threshold) { type='PARABOLIC';  typeClass='type-P'; }
     else if (disc_m < 0)              { type='ELLIPTIC';   typeClass='type-E'; }
     else                              { type='HYPERBOLIC'; typeClass='type-H'; }
   }
-  return { delta, z, rho, b_c, C2, kappa, disc_m, type, typeClass };
+  return { delta, z, rho, b_c, C2, varpi, disc_m, type, typeClass };
 }
 
 // ════════════════════════════════════════════════════════════════════
@@ -855,7 +855,7 @@ function updateHover() {
   // Möbius spectral panel
   const mob   = mobiusParams(bestR, xs);
   const fmtM  = v => (!isFinite(v)||isNaN(v)) ? '—' : (Math.abs(v)>99 ? v.toExponential(2) : v.toFixed(4));
-  const kapStr = fmtM(mob.kappa);
+  const varpiStr = fmtM(mob.varpi);
   document.getElementById('mobius-body').innerHTML =
     `<div class="sec" style="margin-top:0">── z = r = ${bestR.toFixed(3)} ──────────────</div>`+
     `<div class="mob-row"><span class="mob-key">δ = x₂−x₃</span>`+
@@ -866,16 +866,16 @@ function updateHover() {
       `<span class="mob-val">${fmtM(mob.b_c)}</span></div>`+
     `<div class="mob-row"><span class="mob-key">C² = −∂_zP/(ρ−b)</span>`+
       `<span class="mob-val">${fmtM(mob.C2)}</span></div>`+
-    `<div class="mob-row"><span class="mob-key">κ = ρ/C</span>`+
-      `<span class="mob-val">${kapStr}</span></div>`+
-    `<div class="mob-row"><span class="mob-key">disc(μ) = (κ²−6κ+1)/2κ</span>`+
+    `<div class="mob-row"><span class="mob-key">ϖ = ρ/C</span>`+
+      `<span class="mob-val">${varpiStr}</span></div>`+
+    `<div class="mob-row"><span class="mob-key">disc(μ) = (ϖ²−6ϖ+1)/2ϖ</span>`+
       `<span class="mob-val">${fmtM(mob.disc_m)}</span></div>`+
     `<div class="mob-row" style="margin-top:5px"><span class="mob-key">type</span>`+
       `<span class="mob-type ${mob.typeClass}">${mob.type}</span></div>`+
     `<div class="mob-mat">`+
-      `M = [[1,κ],[−1,κ]]  ∈  GL₂(ℤ[κ,½κ])<br>`+
-      `κ ∈ ℤ[√2] at parabolic threshold<br>`+
-      `M = C₀·diag(1,κ),  C₀∈GL₂(ℤ)</div>`;
+      `M = [[1,ϖ],[−1,ϖ]]  ∈  GL₂(ℤ[ϖ,½ϖ])<br>`+
+      `ϖ ∈ ℤ[√2] at parabolic threshold<br>`+
+      `M = C₀·diag(1,ϖ),  C₀∈GL₂(ℤ)</div>`;
 
   drawGrowthChart(bestA);
 }
