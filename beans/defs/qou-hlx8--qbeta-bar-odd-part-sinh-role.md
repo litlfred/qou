@@ -1,6 +1,6 @@
 ---
 # qou-hlx8
-title: 'Does a bar-odd part of the ruled Q_beta trace carry the sinh role (pairing CAL-2 with CAL-3) under z_D?'
+title: Does a bar-odd part of the ruled Q_beta trace carry the sinh role (pairing CAL-2 with CAL-3) under z_D?
 status: todo
 type: task
 priority: normal
@@ -8,9 +8,9 @@ tags:
     - qbeta
     - bar-involution
     - calibration
-parent: qou-qs0e
 created_at: 2026-11-15T09:50:00Z
-updated_at: 2026-11-15T09:50:00Z
+updated_at: 2026-11-15T10:00:28Z
+parent: qou-qs0e
 ---
 
 Owner decision D-W2 (relayed by coordinator session_01M5GA1LmsEf8tSMxFjMkmnn, 2026-11-15).
@@ -39,3 +39,7 @@ odd part. Report the value whatever it is.
 
 Note also: the order-zero E_0 = m_e/(q(q-1)) is itself not bar-covariant, so "bar-odd Q_beta"
 needs a statement of which factor carries the parity.
+
+
+## 2026-11-15 gap-routes sibling (session_01Qmmkt8pE46F2YNM5QTVpHa)
+Route-4 derived: tr_z intertwines bar with q->1/q iff z(q)-z(1/q)=h (z_D yes, z_C no). Exactly f = h*g, so f_odd = h*g_even and f_even = h*g_odd with g_odd = -h[2]_q(q^2+q^-2)/8. f_odd(q0)*E0 = 0.556939460557 MeV (-28.811 %), reported, not proposed. Audit docs/audits/2026-11-15-bar-parity-split-gap-routes.md. Stays todo: the conjecture is open (qou-2djn, qou-z08b).
