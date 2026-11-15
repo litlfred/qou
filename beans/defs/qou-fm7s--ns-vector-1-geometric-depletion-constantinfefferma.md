@@ -75,3 +75,11 @@ Owner chose option 1 ("re-scope all five, and search for files the old scan miss
 - **Missed by the earlier scan:** `prop:root-of-unity-truncation` (box "NS blows up ⟺ Levi non-degenerate ⟺ κ = O(1)" and the κ² = condition-number paragraph) plus its library twin `root_of_unity_truncation.lean`; `ns-obstruction-intro.md` (two stale titles). Re-scoped the same way.
 - Not touched: `Elaboration.lean` `GeneralisedLeviConditions` (CR-manifold Levi signature, unrelated).
 Status stays in-progress: branch (B) is open.
+
+## 2026-11-15 — base chain restated on the global class (owner option 1)
+
+`qou_ns_in_qou.lean`: the obstruction field is now the global Euler class
+`e(ξ) ∈ H²(S, ℤ)` (degree `χ(A)`), not `e(ξ)|_Σ`. Step 2 is `deg e(ξ) = χ(A)`;
+the Kummer justification is dropped. Field names and `descartesQOU` unchanged.
+lean-direct exit 0; `qou_internal_ns_singular` uses no axioms,
+`descartes_internal_ns_singular` only `propext`.
