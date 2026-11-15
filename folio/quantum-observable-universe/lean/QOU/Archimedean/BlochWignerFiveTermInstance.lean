@@ -39,7 +39,8 @@ The upper-half-plane values agree with `BlochWigner_lob` (Kummer's identity,
 plane (a degenerate-tetrahedron convention), so it is **not** odd under
 conjugation and is **not** the function this instance is for.
 
-The rigidity class `BlochSuslinRigidity` is untouched and still has no instance.
+The rigidity class `BlochSuslinRigidity` is instantiated for `blochD` in
+`BlochRigidity/Instance.lean`.
 
 -- Ref: [zagier1991] Zagier, "Polylogarithms, Dedekind zeta functions and the algebraic K-theory of fields" (1991), §2.
 -- Ref: [suslin1991] Suslin, K_3 of a field, and the Bloch group, Trudy Mat. Inst. Steklova 183 (1991) 217-239.

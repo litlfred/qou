@@ -26,13 +26,16 @@ arguments inverted relative to Suslin.  That combination forces every solution t
     the identity is about, and no instance is given for it.
   - `BlochSuslinRigidity D` — every continuous solution with the two
     symmetries is a real multiple of `D`.  This is the rigidity input
-    (Bloch 1978; Suslin 1991), not in Mathlib.
+    (Bloch 1978; Suslin 1991), not in Mathlib.  It is **proved** for
+    `FiveTermProof.blochD`, as the instance `blochSuslinRigidity_blochD` in
+    `BlochRigidity/Instance.lean`.
 
 With both, `archimedean_functor_uniqueness_complex` is proved, and the figure-8
 calibration `figure8_calibration_complex` now evaluates at the genuine shape
 `e^{iπ/3}`, where `BlochWigner_lob = Cl₂(π/3)` is already a theorem
 (`QOU.Knot.Kummer.blochWigner_lob_exp`).  Neither class has an instance in this
-file; `BlochSuslinRigidity` has none anywhere.
+file; both are instantiated for `FiveTermProof.blochD` downstream, and neither
+for `BlochWigner_lob`.
 
 -- Ref: [suslin1991] Suslin, K_3 of a field, and the Bloch group, Trudy Mat. Inst. Steklova 183 (1991) 217-239.
 -- Ref: [bloch2000] Bloch, Higher Regulators, Algebraic K-Theory, and Zeta Functions of Elliptic Curves, AMS CRM 11 (2000).
