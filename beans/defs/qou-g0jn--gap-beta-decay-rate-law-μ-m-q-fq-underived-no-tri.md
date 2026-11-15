@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-15T19:00:22Z
-updated_at: 2026-11-15T20:30:53Z
+updated_at: 2026-11-15T20:41:54Z
 ---
 
 Opened 2026-11-15 from owner question on a decay trigger and translating ILP/SDP likelihood into a rate; owner chose 'bean both gaps, then probe'. prop:hadron-half-life: Γ_β = |W|²μ₀/(2π³)·[2]_q·|M_q|²·f(Q). W(q) has a D closed form (qou-egvf); μ₀, |M_q|² (prop:trace-ratio-observable, proportionality only) and f(Q) do not. def:beta-decay-skein says WHAT, not WHEN. LP/SDP shadow prices are used only for shell binding from measured Q-values. Candidate to test, pre-registered: per-step probability = trace weight of the channel where the insertion reduces to the daughter. half-life-as-q-probe states environmental predictions (neutron-star q ≫ q₀; 1e-9 per metre) with no derivation — scope (a). Neutron lifetime not derived.
@@ -70,3 +70,7 @@ Provenance of W (answer to owner's 'what chose corpus vertex?'): W = σP_R + σ�
 ## PRE-REGISTRATION 7 (2026-11-15 20:33Z, before computing) — emission as the Ř coefficient
 Owner card: 'Test the emission reading'. Reading B: at site k write the vertex W in the basis {1, letter_k} as a_k + b_k·letter_k; emission at site k = b_k × (the unchanged word). Amplitude A_w = (Σ_k b_k)·T_w[d,d], with T_w the same K-weighted closed trace over strands 1,2 used in RESULT 6. Words: V³, s1s2⁻¹, s1⁴, (s1s2)⁵. Report |A_corpus|²/|A_mirror|² exactly and at q₀. Also check W_corpus = q⁻¹J and W_mirror = qJ as 4×4 matrices.
 Prediction (stated before running): ratio = q⁻⁴ for every word (0.659 at q₀), because both vertices are multiples of J. If so, reading B has no word-dependent chirality signal, and the reading-A tension is an artifact of measuring W − letter. If any word departs from q⁻⁴, report it as a word-dependent signal.
+
+
+## RESULT 7 (2026-11-15 20:40Z) — prediction held
+W_corpus = q⁻¹J and W_mirror = qJ confirmed as 4×4 matrices. The Ř coefficient b is the same for σ and σ⁻¹ letters: 2/(q²+1) for the corpus vertex, 2q²/(q²+1) for the mirror. Ratio |A_c|²/|A_m|² = q⁻⁴ exactly for V³, s1s2⁻¹, s1⁴ and (s1s2)⁵ (0.6588 at q₀). Under reading B there is no word-dependent chirality signal; the corpus/mirror difference is only the overall scale q². The V³ tension of RESULTS 5–6 belongs to reading A (emission = W − letter). Which reading is right is still open, so this bean stays open.
