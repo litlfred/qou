@@ -1,13 +1,13 @@
 ---
 # qou-noj1
 title: 'QA-sidecar NEW criterion refs-prose-mentions (user ask): agent audit validating named objects mentioned in prose resolve to a uses[]/defterm ref OR are introduced-before-use — catches forward-refs detangler misses (DAG-only, e.g. ''Bring''s surface specialisation'' in ch4)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-07T21:43:46Z
-updated_at: 2026-11-15T14:20:00Z
+updated_at: 2026-11-15T14:45:00Z
 parent: qou-5vkl
 ---
 
@@ -28,3 +28,5 @@ The worked example is caught: `ex:vacuum-state-su2` -> `def:brings-surface`
 ("Bring's surface", +185 positions). Known blind spots: single-word terms,
 paraphrase, titles of non-definition blocks.
 
+
+Completed 2026-11-15: owner tapped merge on PR #7919. The checker is report-only; working the forward list is a reading task (see fwr10), not part of this bean.
