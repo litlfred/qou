@@ -1,13 +1,13 @@
 ---
 # qou-l1zd
 title: Regenerate level1-qvalues witness on the convention-D Hecke engine
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - convention-d
 created_at: 2026-11-15T18:05:00Z
-updated_at: 2026-11-15T18:05:00Z
+updated_at: 2026-11-15T23:30:00Z
 parent: qou-avtq
 ---
 `computations/hecke/hecke_engine.py` `HeckeRational.z` moved from the rounded
@@ -22,3 +22,7 @@ longer (exact Fraction arithmetic; z_D denominator 2232100 vs 10000). Run with
 `python3 -u level1-qvalues.py 2>&1 | tee /tmp/level1.log` and a multi-hour budget,
 or add a per-nucleus option. Other HeckeRational consumers not re-run:
 hadron_knot_table.py (known >50 min per bound atom), hecke_rust_bridge.py.
+
+## 2026-11-15 23:30Z
+
+Done on branch claude/level1-witness-convention-d-2026-11-15, draft PR #8073 (issue #8072). All 6 decays computed under D. The O(A) traced_volumes_all sweep gives the same exact rationals about 50x faster (210Bi 428 s). 210Bi Q_q = +156.25: no negative site, so the fallback applies. Complete when #8073 merges.
