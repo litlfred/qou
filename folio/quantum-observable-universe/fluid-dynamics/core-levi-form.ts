@@ -60,7 +60,7 @@ export default proposition({
         "conditional banner on `conj:q-aubin-lions`, `conj:ns-counterexample`, " +
         "`conj:critical-exponent`, `prop:blowup-yekutieli` and " +
         "`conj:regularity-breakdown`, and `uses` " +
-        "`prop:vorticity-lower-bound`, `rem:c-substrate-via-levi`. **All of " +
+        "`conj:vorticity-lower-bound`, `rem:c-substrate-via-levi`. **All of " +
         "(a)–(e) are removed.** In dimension $3$ a plane field has complex rank " +
         "$1$, so its Levi form is $1\\times 1$: the eigenvalue pair and its " +
         "condition number are undefined (`levi_restriction_rank_one` in the " +
