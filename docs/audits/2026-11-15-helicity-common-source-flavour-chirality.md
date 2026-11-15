@@ -380,3 +380,152 @@ in §8.
   `qou-hlx7`.
 * **Recommendation (judgement): (A) now, and (B) as a separate investigation.** The scoping
   sentence is cheap and true. Whether the sign in (B) is physical needs its own derivation.
+
+## 10. D-H5 (coordinator's label; it was D-H4 in §9): which letter-level map realises physical P? (A) mirror vs (B) −σ⁻¹
+
+The request (owner, relayed): *"explore implications of A vs B. pros vs cons. what matches
+phys? make sure not fitted"*.
+
+**Result in one line.** Neither (A) nor (B) has the profile of physical P:
+* (A) has the profile of **C** (or CT).
+* (B) has the profile of **CP**.
+* The P profile belongs to a **third** involution, σ ↦ −σ. That map is not K-linear, so it is
+  not a symmetry of the algebra at a fixed q.
+
+No number is used anywhere in this section.
+
+### 10.1 The three letter-level involutions, proved
+
+Take one letter s with eigenprojectors P₊ (eigenvalue q) and P₋ (eigenvalue −q⁻¹), and the
+electron e⁻ = σ₀σ₁σ₀ from the BW block.
+
+| map | moves q? | acts on P₊ (helicity) | e⁻ ↦ | K-linear algebra map? |
+|---|---|---|---|---|
+| **flip** σ ↦ σ⁻¹ — option (A), the braid mirror | q ↦ q⁻¹ | **kept** (`flip_Pp`) | **e⁺**, and e⁺ ≠ e⁻ when h ≠ 0 (`positron_ne_electron`) | **no** (`no_linear_flip`) |
+| **swap** σ ↦ −σ⁻¹ — option (B) | no | **exchanged** (`swap_Pp`) | **−e⁺** (`swap_electron`) | yes on the generators (`swap_hecke`, `swap_braid`) |
+| **neg** σ ↦ −σ — third option | q ↦ q⁻¹ | **exchanged** (`neg_Pp`) | **−e⁻** (`neg_electron`) | **no** (`no_linear_neg`) |
+
+**Group structure (item 2).** Each map is an involution (`flip_flip`, `swap_swap`, and neg
+trivially). Composing any two gives the third: `flip_neg` (flip∘neg = swap) and `flip_swap`
+(flip∘swap = neg). So {1, flip, swap, neg} is a Klein four-group, abelian with every element
+squaring to 1.
+
+`no_linear_flip` and `no_linear_neg` say: a K-algebra endomorphism that sends a letter to its
+inverse, or to its negative, forces 2(q − q⁻¹) = 0. So flip and neg exist only as
+**semilinear** maps, covering q ↦ q⁻¹ on the scalars. On the real substrate q₀ ≠ ±1 no such
+scalar map exists, because the only ring automorphism of ℝ is the identity. That is a
+standard fact, **not formalised here**. So at the evaluated substrate only **swap** survives
+as a symmetry.
+
+### 10.2 Item 1: what physical P must do, map by map
+
+Physical P is a linear involution. It exchanges helicity, reverses momentum, leaves charge and
+flavour unchanged, and sends each particle to **itself**. The physical profiles to compare
+against:
+
+| | helicity | particle | linear? |
+|---|---|---|---|
+| C | kept | → antiparticle | yes |
+| P | exchanged | kept | yes |
+| CP | exchanged | → antiparticle | yes |
+| T | kept (spin and momentum both flip) | kept | antilinear |
+
+The table depends on how the parameter move q ↦ q⁻¹ is read, so there are two readings:
+* **(R1)** q ↦ q⁻¹ is antilinear-like (q⁻¹ = q̄ on |q| = 1). Then flip = **CT**, swap =
+  **CP**, neg = **PT**.
+* **(R2)** q ↦ q⁻¹ carries no physical content. Then flip = **C**, swap = **CP**, neg =
+  **P**.
+
+Both readings are consistent with the Klein relations: CT·PT = CP and C·P = CP. Under
+**either** reading:
+
+* **(A), the braid mirror, is not P.** It keeps helicity and changes the particle (e⁻ → e⁺).
+  It is C or CT. The corpus's label "P (braid mirror)" in `type-b-folding-cpt.md` is a naming,
+  not a derivation.
+* **(B), σ ↦ −σ⁻¹, is not P.** It exchanges helicity and is linear, but it sends the electron
+  to minus the positron, an antiparticle. It is **CP** in both readings. Calling it P "works"
+  only for helicity, and that holds because (B) *is* the eigenline relabelling. On helicity
+  alone, choosing (B) would be a relabelling, not a derivation.
+* **The P profile belongs to neg** (σ ↦ −σ), and only under (R2).
+  - neg sends every word to ± itself, so particle and flavour are kept up to the sign
+    (−1)^length.
+  - It exchanges helicity.
+  - But it is not K-linear and it needs q ↦ q⁻¹. So it is a symmetry of the generic (formal-q)
+    algebra only, not of H(q₀).
+
+**Momentum reversal** is not represented at letter level by any of the three maps. **T**: the
+corpus's T ("Markov-trace cyclicity", `type-b-folding-cpt.md`) is not a letter map and is not
+derived here. So the question **"does CPT compose to an (anti)automorphism"** cannot be
+answered at letter level (scope (a)). Under (R2) the Klein group is {1, C, P, CP} and contains
+no T. Under (R1) it is {1, CT, CP, PT}, whose three nontrivial elements multiply to 1, so it
+contains no CPT element either.
+
+### 10.3 Item 3: consistency with what the corpus proves
+
+* **The bar involution as flavour flip** (§1–2). Bar = flip. It keeps the eigenlines and
+  flips 6a's flavour bit. This is consistent.
+* **9c's one-sided vertex** (#7844, `oneSidedL_flip`: bar exchanges W_L = q⁻¹J and
+  W_R = qJ). This is consistent: bar keeps J (`grading_flip`) and inverts q. So bar exchanges
+  *which line gets the inverted eigenvalue*, not the lines themselves.
+* **The BW helicity roots** +q and −q⁻¹. swap exchanges the roots' lines. flip keeps the
+  lines and inverts the roots.
+* **A tension the corpus carries (scope (a), reported):** one map, σ ↦ σ⁻¹, is used for two
+  different physical operations:
+  - in the BW block it produces the **positron** from the electron (particle → antiparticle);
+  - in 6a / `quark_template` it produces the **d-flavour** letter from u (u → d, which is
+    neither C nor P).
+
+  It cannot be C in both places, because C sends u to ū, not to d. The tension does not
+  depend on how D-H5 is decided; it is there in every option.
+
+### 10.4 Item 4: anti-fit check
+
+No option was chosen or ranked by a number: no mass, width or coupling appears in this
+section, and none was computed. Two places where an option would "work" only by relabelling:
+* (B) matches P on helicity **because** it is the eigenline relabelling.
+* (A) matches P only through the corpus's name "P (braid mirror)".
+
+The observation that only swap (CP) survives as a fixed-q symmetry, with C and P separately
+requiring q ↦ q⁻¹, has the **same shape** as "C and P are separately broken by the weak
+interaction while CP is nearly conserved". That is an observation, **not used to choose**, and
+not an identification. Physical CP is also violated (CKM), so an exact CP symmetry would itself
+be a mismatch.
+
+### 10.5 Owner decision D-H5: how should P be realised?
+
+* **(A) P = braid mirror σ ↦ σ⁻¹ (status quo).**
+  - *Means:* parity keeps helicity and maps e⁻ → e⁺ and u → d.
+  - *Costs:* nothing to change, beyond the scoping sentence of §9.
+  - *Risks:* a referee reads "P" exchanging particle and antiparticle; it has C's profile. It
+    also leaves the §10.3 tension unaddressed.
+  - *Commits to:* a P that does not exchange helicity.
+* **(B) P = σ ↦ −σ⁻¹.**
+  - *Means:* parity exchanges helicity and maps e⁻ → −e⁺.
+  - *Costs:* edits to the CPT block, its Lean sibling, and every "mirror = P" use.
+  - *Risks:* its profile is CP, not P. Adopting it as P is a relabelling (§10.4).
+  - *Commits to:* calling the CP-profile map "P".
+* **(C) P = neg σ ↦ −σ (with q ↦ q⁻¹).**
+  - *Means:* parity exchanges helicity and keeps every particle up to the sign (−1)^length.
+  - *Costs:* new content plus a Lean sibling; the reading (R2) of q ↦ q⁻¹ must be argued, not
+    assumed.
+  - *Risks:* it is not K-linear (`no_linear_neg`), so it does not exist at real q₀. "Parity is
+    not a symmetry at the substrate" would then be a claim the paper has to defend. Under (R1)
+    it is PT, not P.
+  - *Commits to:* parity living on the formal-q algebra only.
+* **(D) Record that no letter-level map has the P profile at fixed q, and leave P
+  unrealised.**
+  - *Means:* the CPT block is scoped to say its "P" is C-like, and that C and P separately need
+    q ↦ q⁻¹.
+  - *Costs:* edits to two sentences in content.
+  - *Risks:* none new; it states what is proved.
+  - *Commits to:* nothing beyond the proofs.
+
+**Default if nothing is said:** nothing changes, and the findings stay in this audit and in
+`qou-hlx7`.
+
+**Recommendation (judgement): (D) now, with (C) as a separate bean.** (D) is exactly what the
+Lean proves. (C) is the only candidate with the right profile, but it needs the q ↦ q⁻¹
+reading argued before anyone builds on it. (A) and (B) both fail the particle test.
+
+The §10.3 tension (σ ↦ σ⁻¹ means positron in one block and d-flavour in another) needs its
+own decision whichever option is chosen. It is recorded in `qou-hlx7`.

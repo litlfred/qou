@@ -285,6 +285,69 @@ theorem swap_word3 (a b : A) :
 theorem swap_word2 (a b : A) : swap q a * swap q b = flip q a * flip q b := by
   simp only [swap_eq_neg_flip, neg_mul, mul_neg, neg_neg]
 
+/-! ### The three letter-level involutions form a Klein four-group (D-H5, bean `qou-hlx7`)
+
+`flip : s ↦ s⁻¹` and `neg : s ↦ −s` move the Hecke parameter `q ↦ q⁻¹`; `swap : s ↦ −s⁻¹`
+keeps it. Each is an involution and the composite of any two is the third. -/
+
+theorem neg_hecke (hs : IsLetter q s) : IsLetter q⁻¹ (-s) := by
+  unfold IsLetter at hs ⊢
+  rw [neg_mul_neg, hs, inv_inv]
+  module
+
+theorem flip_flip : flip q⁻¹ (flip q s) = s := by
+  unfold flip; rw [inv_inv]; module
+
+/-- `neg` exchanges the eigenprojectors (read at the moved parameter). -/
+theorem neg_Pp : Pp q⁻¹ (-s) = Pm q s := by
+  unfold Pp Pm; rw [inv_inv, add_comm q⁻¹ q]; congr 1; abel
+
+theorem neg_Pm : Pm q⁻¹ (-s) = Pp q s := by
+  unfold Pp Pm; rw [inv_inv, add_comm q⁻¹ q]; congr 1; abel
+
+/-- Klein relation: `flip ∘ neg = swap`. -/
+theorem flip_neg : flip q⁻¹ (-s) = swap q s := by
+  unfold flip swap; rw [inv_inv]; module
+
+/-- Klein relation: `flip ∘ swap = neg`. -/
+theorem flip_swap : flip q (swap q s) = -s := by
+  unfold flip swap; abel
+
+/-- **No `K`-linear algebra map realises the flip.** If an algebra endomorphism sends a
+letter to its inverse, then `2(q − q⁻¹) = 0`: impossible for `q² ≠ 1` in char ≠ 2. -/
+theorem no_linear_flip [Nontrivial A] (h2 : (2 : K) ≠ 0) (hs : IsLetter q s)
+    (φ : A →ₐ[K] A) (hφ : φ s = flip q s) : q - q⁻¹ = 0 := by
+  have e := congrArg φ hs
+  unfold IsLetter at e
+  rw [map_mul, map_add, map_smul, map_one, hφ] at e
+  have hf := flip_hecke hs
+  unfold IsLetter at hf
+  rw [hf, inv_inv] at e
+  have hz : ((2 : K) * (q - q⁻¹)) • flip q s = 0 := by
+    have : ((q - q⁻¹) - (q⁻¹ - q)) • flip q s = 0 := by
+      rw [sub_smul]; exact sub_eq_zero.mpr (add_right_cancel e.symm)
+    rw [← this]; congr 1; ring
+  have h1 : ((2 : K) * (q - q⁻¹)) • (1 : A) = 0 := by
+    rw [← (inv_letter hs).2, ← smul_mul_assoc, hz, zero_mul]
+  rcases smul_eq_zero.mp h1 with h | h
+  · exact (mul_eq_zero.mp h).resolve_left h2
+  · exact absurd h one_ne_zero
+
+/-- **No `K`-linear algebra map realises `neg`** either, unless `q² = 1`. -/
+theorem no_linear_neg [Nontrivial A] (h2 : (2 : K) ≠ 0) (hs : IsLetter q s)
+    (φ : A →ₐ[K] A) (hφ : φ s = -s) : q - q⁻¹ = 0 := by
+  have e := congrArg φ hs
+  unfold IsLetter at e
+  rw [map_mul, map_add, map_smul, map_one, hφ, neg_mul_neg, hs] at e
+  have hz : ((2 : K) * (q - q⁻¹)) • s = 0 := by
+    have : (q - q⁻¹) • s - (q - q⁻¹) • (-s) = 0 := sub_eq_zero.mpr (add_right_cancel e)
+    rw [← this]; module
+  have h1 : ((2 : K) * (q - q⁻¹)) • (1 : A) = 0 := by
+    rw [← (inv_letter hs).1, ← smul_mul_assoc, hz, zero_mul]
+  rcases smul_eq_zero.mp h1 with h | h
+  · exact (mul_eq_zero.mp h).resolve_left h2
+  · exact absurd h one_ne_zero
+
 end Abstract
 
 /-! ## On the NF algebra `H₃(q)`: the corpus letters -/
@@ -374,6 +437,25 @@ theorem electron_ne_swap (q : K) (h2 : (2 : K) ≠ 0) :
   have := congrArg (fun x => x.v 5) he
   simp only [H3A.neg_v, Pi.neg_apply, electron_top, positron_top] at this
   apply h2; linear_combination this
+
+/-- `neg` sends the electron to MINUS ITSELF (same word, sign `(−1)^3`). -/
+theorem neg_electron (q : K) : (-sig0 q) * (-sig1 q) * (-sig0 q) = -electron q := by
+  simp only [electron, neg_mul, mul_neg, neg_neg]
+
+/-- The positron's `σ₁σ₀` coordinate is `−h`. -/
+theorem positron_v3 (q : K) : (positron q).v 3 = -(q - q⁻¹) := by
+  simp only [positron, H3A.mul_v, flip_sig0_v, flip_sig1_v]
+  simp [mulNF, mulσ₀, mulσ₁]
+
+/-- **The mirror changes the particle**: `e⁺ ≠ e⁻` whenever `h ≠ 0`. -/
+theorem positron_ne_electron (q : K) (hh : q - q⁻¹ ≠ 0) : positron q ≠ electron q := by
+  intro he
+  have := congrArg (fun x => x.v 3) he
+  simp only [positron_v3] at this
+  apply hh
+  have h3 : (electron q).v 3 = 0 := by
+    simp [electron, sig0, sig1, H3A.mul_v, mulNF, mulσ₀, mulσ₁, s0, s1]
+  rw [h3] at this; linear_combination -this
 
 end NF
 
