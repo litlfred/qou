@@ -13,8 +13,6 @@ $$
   \boxed{
     \text{NS blows up}
     \iff
-    \text{Levi form stays non-degenerate at collision}
-    \iff
     \kappa(t) = O(1).
   }
 $$
@@ -82,6 +80,6 @@ The baseline [vorticity lower bound](#prop:vorticity-lower-bound) strictly manda
 - Assuming $\kappa(t) \sim \kappa$ (exhibiting purely linear growth): the physical core safely flattens exactly mirroring the rate unlocking new modes. Physical vorticity safely spreads forming a wide sheet. The strict lower bound $\omega \geq c/(T^*-t)$ potentially fails. NS may function as completely regular.
 - Assuming $\kappa(t) \sim \kappa^\beta$ spanning $0 < \beta < 1$: an intermediate regime triggers. The firm lower bound holds cleanly provided $\beta < 1/2$ (confirming the physical flattening remains mathematically slower than the approach).
 
-The explicit [Levi form condition number](#def:levi-form-defect) governing the vortex core rigidly evaluates to $\lambda_{\max}/\lambda_{\min}$, perfectly equating to $\kappa(t)^2$. The underlying contact structure mathematically degenerates (flipping completely integrable) exactly if and only if $\lambda_{\min} \to 0$, driving $\kappa(t) \to \infty$. This establishes the boxed equivalence stated above.
+An earlier version of this proposition identified $\kappa(t)^2$ with a Levi form condition number $\lambda_{\max}/\lambda_{\min}$ and inserted "the Levi form stays non-degenerate at collision" as a middle term of the boxed equivalence. That reading is withdrawn. On the three-dimensional flow domain the Levi datum of the vorticity plane field is the single scalar $\xi\cdot\mathrm{curl}\,\xi$ ([core Levi form](#prop:core-levi-form)), so there is no eigenvalue pair and no condition number, and the blow-up implication from non-degenerate Levi data is refuted by a Beltrami solution ([Levi degeneracy conjecture](#conj:levi-degeneracy)). The core aspect ratio $\kappa(t)$ is kept as a statement about the core shape only.
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
