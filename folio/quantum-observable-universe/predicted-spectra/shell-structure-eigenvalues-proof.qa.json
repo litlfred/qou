@@ -718,7 +718,7 @@
           "in_degree": 0,
           "cone_size": 8,
           "depth": 8,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -959,6 +959,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "3962411551e8",
+          "ts": "6cbe2a53c89e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:04.291Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "(S↔P column of prop:shell-structure-eigenvalues row) Ref (library `QOU/Archimedean/shell_structure_eigenvalues.lean:105`) proves only Vieta + Binet recurrence for hypothesised roots λ±; never encodes V̂(n), z or initial data. Sibling `.lean` differs from the library and defines `shellVolume 1 = h/(q^½+q^−½)+1`, i.e. convention C z, against the statement's convention D z = q³/(q²+1) (md:116). Shell energies only via `BorromeanQuark` class field `energy_law`. Narrative: stated V̂(0,q)=1 (md:157) is false for the defined V̂ = z(Tⁿ)₁₁+(Tⁿ)₂₁: V̂(0)=z=q³/(q²+1) (sympy). \"(Tⁿ)₂₁ = U_{n−1}((q−q⁻¹)/2)\" (md:100) is false: n=3 gives (T³)₂₁ − U₂(h/2) = 2 (these are Fibonacci polynomials, U at ih/2 up to iⁿ); library Lean docstring :58 repeats it. Proof (prf:1-2) proves the recurrence for (Tⁿ)₂₁ only (correct; \"det T=−1\" is not what gives (Tⁿ)₂₂=(Tⁿ⁻¹)₂₁, T₂₂=0 is). Proof then carries Rydberg/hydrogen claims: \"ε = 0.1073\" (prf:38) is the stale wrong value the authorNote says was corrected (λ₊−1 = 0.109979); \"reproduces the Rydberg formula to the precision of low-n hydrogen spectroscopy\" (prf:57) is an empirical claim, and e^{−nε} ≈ 1/n² is unproved. No q-range: | λ₊ | >1> | λ₋ | (md:133) needs q>1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1530,6 +1546,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T05:01:33.380Z",
+  "updated_at": "2026-11-15T21:56:04.291Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

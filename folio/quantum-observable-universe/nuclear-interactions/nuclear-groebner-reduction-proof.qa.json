@@ -644,7 +644,7 @@
           "in_degree": 0,
           "cone_size": 6,
           "depth": 4,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -959,6 +959,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5dea3e836b8d",
+          "ts": "09effd01a561"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:10.204Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "see statement row"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1300,7 +1316,7 @@
         "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
         "severity": "minor",
         "evidence": "'the Hecke quadratic ..., the braid relation ..., and far commutativity'; 'Every overlap ambiguity (sigma_i^3, the sigma_i sigma_{i+1} sigma_i sigma_{i+1} overlap, and far-commutation triples)'.",
-        "notes": "Both are substantive: the Gr\u00f6bner basis genuinely has three families and the overlap set genuinely has three classes."
+        "notes": "Both are substantive: the Gröbner basis genuinely has three families and the overlap set genuinely has three classes."
       }
     ],
     "trap-closing-aphorism": [
@@ -1539,6 +1555,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T05:55:58.658Z",
+  "updated_at": "2026-11-15T21:56:10.204Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

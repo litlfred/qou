@@ -718,7 +718,7 @@
           "in_degree": 0,
           "cone_size": 1,
           "depth": 1,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -959,6 +959,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "be5de8e6eb3e",
+          "ts": "f52d8efe92a8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:03.372Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "(S↔P column of cor:spectral-decomposition-qvalue row) Sibling `.lean:122` (ref resolves only there): `x · ∏_{τ∈E} F τ = x · F active` given `hInactive : ∀ τ ≠ active, F τ = 1`, i.e. `Finset.prod_eq_single` with the cancellation as hypothesis; F and E are arbitrary, and the decomposition Q = Q_bare·∏F, the case definition of F, and (v) exactness are not encoded (Q_bare only as a `def`). PR #7915 touches this `.md` (notation `𝔈 → 𝔈_int` only), not the issue. Narrative: (v) \"The decomposition is exact. No higher-order corrections exist\" (md:58) contradicts the block's own md:54, which says the fully-filled (Pauli) case gives F = 0, hence Q = 0 for every magic-number shell under convention D, and that \"a replacement projection has not been derived\"; the proof block adds that F_deg2 ≈ 3.68 > 1 \"is not a proportion\" and that the old 0.6382 Pauli value \"is not reproduced\" (prf:44,64). Proof step 1 (completeness of 𝓔_g as a basis of the representation ring \"by Möbius inversion\" and self-duality, prf:3,21) is asserted: six knots cannot span R(H_n(q)) for all n, and no orthogonality is computed"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1521,6 +1537,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T06:33:27.624Z",
+  "updated_at": "2026-11-15T21:56:03.372Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

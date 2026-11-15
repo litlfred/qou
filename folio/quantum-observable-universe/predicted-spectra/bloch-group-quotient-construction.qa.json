@@ -80,6 +80,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f7cda5bf5e70",
+          "ts": "61a6947286a9",
+          "lean": "f4a3d1cf3626",
+          "lean_statement": "47db9fe82f71"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:59.846Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "Ref (sibling only) is the `def BlochGroup F := PreBlochGroup F ⧸ pentagonSubgroup`. Statement and Lean have drifted apart: md:12 says \"the `HasBlochGroup ℝ` instance is concretely inhabited\", but the Lean (:365-404) records that both instances were removed 2026-09-03 because every field was `trivial`; md:14-27 says the generator set is still unconstrained and a `ValidPentagonShape` restriction \"must\" be added, while the Lean's `pentagonSubgroup` (:277) already takes the closure of `validPentagonRelationGenerators` (Rogers pairs). Mathematical naming defect in both: Free(F∖{0,1}) modulo the five-term relation is the pre-Bloch group 𝔭(F); the Bloch group B(F) is the kernel of 𝔭(F) → ∧²F^×, which is not constructed. So the title's \"closes substantive Mathlib gap 1\" overstates. The five-term relation used ([x]−[y]+[y/x]−[(1−y⁻¹)/(1−x⁻¹)]+[(1−y)/(1−x)]) is Zagier's form and is correct"
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2337,6 +2355,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T01:36:41.074Z",
+  "updated_at": "2026-11-15T21:55:59.846Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
