@@ -43,7 +43,7 @@ factor acting on one side only. This file tests how far the same mechanism goes 
 
 No `sorry`, no axiom, no `native_decide`, no class.
 
--- Ref: [chamseddine-connes2008] https://doi.org/10.1016/j.geomphys.2008.07.010
+-- Ref: [chamseddine-connes-1997] https://doi.org/10.1007/s002200050126
 -/
 
 namespace QOU.StandardModel.QuaternionSidedSymmetry
