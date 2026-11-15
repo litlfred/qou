@@ -203,4 +203,168 @@ theorem split_inj_core {M : Type*} [AddCommGroup M] (hA : A ≤ U v) (hB : B ≤
     simp only [hi, hj, hk, or_self, if_false, z'', z0, hr, splitR_some]
     linear_combination (norm := abel) this
 
+/-! ### Surjectivity on values -/
+
+/-- **Surjectivity on values.** Every 2-cocycle on the nerve of the split
+family differs by a coboundary from the pullback of a 2-cocycle on `U`. -/
+theorem split_surj_core {M : Type*} [AddCommGroup M] (hA : A ≤ U v) (hB : B ≤ U v)
+    (hcov : U v ≤ A ⊔ B) (hU : ConnFamily U) (V' : Option ι → Option ι → Option ι → M)
+    (hV' : ∀ x y z w, N4 (splitFam U v A B) x y z w →
+      V' x y z + V' x z w = V' y z w + V' x y w) :
+    ∃ (V : ι → ι → ι → M) (u : Option ι → Option ι → M),
+      (∀ i j k l, N4 U i j k l → V i j k + V i k l = V j k l + V i j l) ∧
+      ∀ x y z, N3 (splitFam U v A B) x y z →
+        V (splitR v x) (splitR v y) (splitR v z) = V' x y z + (u x y + u y z - u x z) := by
+  classical
+  set S := splitFam U v A B with hS
+  set r : Option ι → ι := splitR v with hr
+  have hSle : ∀ x, ∀ t, t ∈ S x → t ∈ U (r x) := fun x t ht => splitFam_le hA hB x ht
+  have hSb : ∀ q, q ∈ S (some v) → q ∈ B := fun q h => by rwa [hS, splitFam_some_v] at h
+  set u : Option ι → Option ι → M := fun x y => - V' none x y
+  set V'' : Option ι → Option ι → Option ι → M := fun x y z => V' x y z + (u x y + u y z - u x z)
+  have hV''c : ∀ x y z w, N4 S x y z w → V'' x y z + V'' x z w = V'' y z w + V'' x y w := by
+    intro x y z w h
+    have := hV' x y z w h
+    simp only [V'', u]; linear_combination (norm := abel) this
+  -- `V''` vanishes on triples meeting `A`
+  have hH3 : ∀ x y z t, t ∈ A → t ∈ S x → t ∈ S y → t ∈ S z → V'' x y z = 0 := by
+    intro x y z t hA' hx hy hz
+    have := hV' none x y z ((n4_iff S _ _ _ _).2 ⟨t, hA', hx, hy, hz⟩)
+    simp only [V'', u]; linear_combination (norm := abel) -this
+  set V : ι → ι → ι → M := fun i j k =>
+    if N3 S (some i) (some j) (some k) then V'' (some i) (some j) (some k) else 0 with hVdef
+  -- `V'' ` is invariant under moving between lifts
+  have hK : ∀ x y z, N3 S x y z → V (r x) (r y) (r z) = V'' x y z := by
+    intro x y z hT
+    obtain ⟨s, hsx, hsy, hsz⟩ := (n3_iff S x y z).1 hT
+    by_cases hn : x = none ∨ y = none ∨ z = none
+    · have hsA : s ∈ A := by rcases hn with rfl | rfl | rfl <;> assumption
+      have hP0 : r x = v ∨ r y = v ∨ r z = v := by
+        rcases hn with rfl | rfl | rfl <;> simp [hr]
+      rw [hH3 x y z s hsA hsx hsy hsz]
+      simp only [hVdef]
+      split_ifs with hL
+      · obtain ⟨q, hqx, hqy, hqz⟩ := (n3_iff S _ _ _).1 hL
+        have hqB : q ∈ B := by
+          rcases hn with rfl | rfl | rfl
+          · exact hSb q hqx
+          · exact hSb q hqy
+          · exact hSb q hqz
+        have hP := hU.pre3 (r x) (r y) (r z)
+        obtain ⟨w, hw, hwA, hwB⟩ := split_link (A := A) (B := B) hP
+          (fun t ht => by
+            rcases hP0 with h | h | h
+            · exact mem_A_or_B hcov (h ▸ ht.1.1)
+            · exact mem_A_or_B hcov (h ▸ ht.1.2)
+            · exact mem_A_or_B hcov (h ▸ ht.2))
+          (s := s) (t := q) ⟨⟨hSle x s hsx, hSle y s hsy⟩, hSle z s hsz⟩ hsA
+          ⟨⟨by simpa [hr] using hSle (some (r x)) q hqx,
+            by simpa [hr] using hSle (some (r y)) q hqy⟩,
+            by simpa [hr] using hSle (some (r z)) q hqz⟩ hqB
+        exact hH3 _ _ _ w hwA (mem_splitFam_some_of _ hwB hw.1.1)
+          (mem_splitFam_some_of _ hwB hw.1.2) (mem_splitFam_some_of _ hwB hw.2)
+      · rfl
+    · push_neg at hn
+      obtain ⟨i, rfl⟩ := Option.ne_none_iff_exists'.1 hn.1
+      obtain ⟨j, rfl⟩ := Option.ne_none_iff_exists'.1 hn.2.1
+      obtain ⟨k, rfl⟩ := Option.ne_none_iff_exists'.1 hn.2.2
+      simp only [hVdef, hr, splitR_some]
+      rw [if_pos hT]
+  refine ⟨V, u, fun i j k l h => ?_, fun x y z hT => hK x y z hT⟩
+  obtain ⟨t, hti, htj, htk, htl⟩ := (n4_iff U i j k l).1 h
+  let lift : ι → Option ι := fun m => if m = v ∧ t ∈ A then none else some m
+  have hrl : ∀ m, r (lift m) = m := by
+    intro m
+    simp only [lift]
+    split_ifs with hm
+    · simp [hr, hm.1]
+    · simp [hr]
+  have hmem : ∀ m, t ∈ U m → t ∈ S (lift m) := by
+    intro m hm
+    simp only [lift]
+    split_ifs with hmv
+    · exact hmv.2
+    · by_cases hv : m = v
+      · rcases mem_A_or_B hcov (hv ▸ hm) with h' | h'
+        · exact absurd ⟨hv, h'⟩ hmv
+        · exact mem_splitFam_some_of m h' hm
+      · rw [hS, splitFam_some_ne hv]; exact hm
+  have K3 : ∀ m n o, t ∈ U m → t ∈ U n → t ∈ U o → V m n o = V'' (lift m) (lift n) (lift o) := by
+    intro m n o hm hn ho
+    have := hK _ _ _ ((n3_iff S _ _ _).2 ⟨t, hmem m hm, hmem n hn, hmem o ho⟩)
+    rwa [hrl, hrl, hrl] at this
+  rw [K3 i j k hti htj htk, K3 i k l hti htk htl, K3 j k l htj htk htl, K3 i j l hti htj htl]
+  exact hV''c _ _ _ _ ((n4_iff S _ _ _ _).2 ⟨t, hmem i hti, hmem j htj, hmem k htk, hmem l htl⟩)
+
+/-! ### The statement on `H²` -/
+
+variable {G : Type} [TopologicalSpace G] [CommGroup G] [IsTopologicalGroup G]
+  [DiscreteTopology G]
+
+/-- **Splitting one set keeps `H²`.** If `A ∪ B = U v` and both `U` and the
+split family have preconnected pairwise and triple intersections, pulling
+back along the split is a bijection on `H²` with discrete commutative
+coefficients. -/
+theorem split_pull_bijective (hA : A ≤ U v) (hB : B ≤ U v) (hcov : U v ≤ A ⊔ B)
+    (hU : ConnFamily U) (hU' : ConnFamily (splitFam U v A B)) :
+    Function.Bijective (H2.pull (𝒜 := contPresheaf X G) (U := U) (splitR v)
+      (fun x => homOfLE (splitFam_le hA hB x))) := by
+  have hcomm := contPresheaf_comm (X := X) (G := G)
+  constructor
+  · intro x y hxy
+    induction x using Quot.ind with | mk c₁ => ?_
+    induction y using Quot.ind with | mk c₂ => ?_
+    change (c₁.pull _ _).class = (c₂.pull _ _).class at hxy
+    rw [TwoCocycle.class_eq_iff hcomm] at hxy
+    obtain ⟨z', hz'⟩ := (rel_iff_nval hU' _ _).1 hxy
+    change c₁.class = c₂.class
+    rw [TwoCocycle.class_eq_iff hcomm, rel_iff_nval hU]
+    obtain ⟨z, hz⟩ := split_inj_core (M := Additive G) hA hB hcov hU
+      (fun i j k => Additive.ofMul (nval c₂.toTwoCochain i j k) -
+        Additive.ofMul (nval c₁.toTwoCochain i j k))
+      (fun i j k l h => by
+        have e1 := congrArg Additive.ofMul (nval_cocycle hU c₁ i j k l h)
+        have e2 := congrArg Additive.ofMul (nval_cocycle hU c₂ i j k l h)
+        simp only [ofMul_mul] at e1 e2
+        beta_reduce
+        rw [sub_add_sub_comm, sub_add_sub_comm, e1, e2])
+      (fun x y => Additive.ofMul (z' x y))
+      (fun x y z hT => by
+        have e := hz' x y z hT
+        rw [nval_pull hU _ _ _ x y z hT, nval_pull hU _ _ _ x y z hT] at e
+        have e' := congrArg Additive.ofMul e
+        simp only [ofMul_mul, ofMul_inv] at e'
+        beta_reduce
+        rw [e']; abel)
+    refine ⟨fun i j => Additive.toMul (z i j), fun i j k h => ?_⟩
+    apply Additive.ofMul.injective
+    have := hz i j k h
+    simp only [ofMul_mul, ofMul_inv, ofMul_toMul]
+    linear_combination (norm := abel) this
+  · intro x'
+    induction x' using Quot.ind with | mk c' => ?_
+    obtain ⟨V, u, hV, hVu⟩ := split_surj_core (M := Additive G) hA hB hcov hU
+      (fun x y z => Additive.ofMul (nval c'.toTwoCochain x y z))
+      (fun x y z w h => by
+        have e := congrArg Additive.ofMul (nval_cocycle hU' c' x y z w h)
+        simpa only [ofMul_mul] using e)
+    let c : TwoCocycle U (contPresheaf X G) := ofNval (fun i j k => Additive.toMul (V i j k))
+      (fun i j k l h => by
+        apply Additive.ofMul.injective
+        simp only [ofMul_mul, ofMul_toMul]
+        exact hV i j k l h)
+    refine ⟨c.class, ?_⟩
+    change (c.pull _ _).class = c'.class
+    rw [TwoCocycle.class_eq_iff hcomm, rel_iff_nval hU']
+    refine ⟨fun x y => Additive.toMul (-u x y), fun x y z hT => ?_⟩
+    have hT' : N3 U (splitR v x) (splitR v y) (splitR v z) := by
+      obtain ⟨t, h1, h2, h3⟩ := (n3_iff _ _ _ _).1 hT
+      exact (n3_iff U _ _ _).2
+        ⟨t, splitFam_le hA hB x h1, splitFam_le hA hB y h2, splitFam_le hA hB z h3⟩
+    rw [nval_pull hU _ _ _ x y z hT, nval_ofNval _ _ _ _ _ hT']
+    apply Additive.ofMul.injective
+    have := hVu x y z hT
+    simp only [ofMul_mul, ofMul_inv, ofMul_toMul]
+    linear_combination (norm := abel) -this
+
 end QOU.CentralExtension.Cech
