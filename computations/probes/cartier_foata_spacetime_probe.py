@@ -84,7 +84,11 @@ def main() -> int:
                      computed=str(int(all(r["width"] == r["width_bound"] for r in rows if r["word"].startswith("half twist") and int(r["word"].split("_")[1]) >= 4))),
                      expected="1", tolerance="0",
                      source="Lean CommutingGeneratorWidth.exists_far_card")
-    out = wb.save()
+    out = wb.save(extra={
+        "q0Anchor": "independent",
+        "q0AnchorReason": "pure combinatorics on braid-generator indices (Cartier-Foata layers); "
+                          "no q, no q0, no physical value is read",
+    })
     print(f"  witness -> {out}")
     return 0
 
