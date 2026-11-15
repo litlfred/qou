@@ -148,4 +148,23 @@ theorem no_F_with_ruledTrace_odd :
   simp only [Pi.neg_apply]
   linarith
 
+/-- The context trace `g` of the ruled cell: `f = h·g`, with `h = q − q⁻¹` the n − p
+letter difference (probe check `f_equals_h_times_g`). -/
+noncomputable def ruledContext (q : ℚ) : ℚ :=
+  (q ^ 4 + 1) *
+    (2 * q ^ 12 - 6 * q ^ 10 + 3 * q ^ 8 - 6 * q ^ 6 + 5 * q ^ 4 - 5 * q ^ 2 + 2) /
+    (4 * q ^ 6 * (q ^ 2 + 1) ^ 2)
+
+/-- `f = h · g` as rational functions (for `q ≠ 0`). -/
+theorem ruledTrace_eq_h_mul_context (q : ℚ) (hq : q ≠ 0) :
+    ruledTrace q = (q - q⁻¹) * ruledContext q := by
+  have h1 : q ^ 2 + 1 ≠ 0 := by positivity
+  unfold ruledTrace ruledContext
+  field_simp
+
+/-- `g` is not bar-even: `g 2 ≠ g (1/2)`. Equivalent (since `h` is bar-odd and
+nonzero) to `f` not being bar-odd. -/
+theorem ruledContext_not_bar_even : ruledContext 2 ≠ ruledContext (1 / 2) := by
+  norm_num [ruledContext]
+
 end QOU.Mass.BarParitySplitGap
