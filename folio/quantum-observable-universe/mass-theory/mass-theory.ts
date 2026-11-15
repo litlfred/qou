@@ -300,6 +300,7 @@ export default chapter({
             "active-set-trace-concentration",
             "markov-trace-frobenius-selection",
             "markov-trace-frobenius-selection-proof",
+            "convention-d-chirality-side",
             "trace-ledger",
             "categorical-trace-is-the-markov-trace",
             // Re-homed orphans: the min-Frobenius-norm collapse T_β = S·1
